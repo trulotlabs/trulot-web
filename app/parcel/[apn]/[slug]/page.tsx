@@ -46,9 +46,19 @@ export default async function ParcelPage({
 
       <h2>Nearby Development Activity</h2>
 
-      <p><strong>Projects analyzed nearby:</strong> {data.nearby_project_count}</p>
-      <p><strong>Median units built:</strong> {data.median_units_built_nearby}</p>
-      <p><strong>Largest nearby project:</strong> {data.max_units_built_nearby}</p>
+{data.projects_analyzed > 0 ? (
+  <>
+    <p><strong>Projects analyzed nearby:</strong> {data.projects_analyzed}</p>
+    <p><strong>Median units built:</strong> {data.median_units}</p>
+    <p><strong>Largest nearby project:</strong> {data.largest_project}</p>
+  </>
+) : (
+  <p>
+    No nearby development projects were detected within the current search radius.
+    As TruLot expands its development dataset, this section will surface nearby
+    projects, development patterns, and permitting activity.
+  </p>
+)}
 
       <p style={{ marginTop: "30px", color: "#777" }}>
         Current slug: {slug}
