@@ -5,7 +5,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { data, error } = await supabase
     .from("parcel_page_api_v1")
     .select("apn_norm")
-    .limit(1000);
+    .limit(25000);
 
   if (error || !data) return [];
 
