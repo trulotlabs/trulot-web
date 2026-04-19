@@ -3,7 +3,7 @@ import { supabase } from "@/lib/supabase";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { data, error } = await supabase
-    .from("parcel_page_api_v1")
+    .from("parcel_page_api_v2")
     .select("apn_norm")
     .limit(25000);
 

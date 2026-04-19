@@ -7,26 +7,18 @@ type StateConfig = {
   text: string;
 };
 
-// TODO: wire to engine state rules
-function inferProjectState(permitData: any[] | null): StateConfig {
-  if (!permitData || permitData.length === 0) {
-    return { emoji: "⚫", label: "No Activity", bg: "bg-slate-100", text: "text-slate-600" };
+// Uses parcel_page_api_v2 engine-derived fields: nearby counts + active flag
+function stateFromV2(data: any): StateConfig {
+  if (data?.has_nearby_active_project) {
+    return { emoji: "🟢", label: "Active nearby", bg: "bg-emerald-50", text: "text-emerald-700" };
   }
-  const stages = permitData.map((p) => (p.normalized_stage || "").toLowerCase());
-  const statuses = permitData.map((p) => (p.status || "").toLowerCase());
-
-  const activeKeywords = ["active", "open", "issued", "approved", "permit issued", "finaled"];
-  const reviewKeywords = ["review", "pending", "submitted", "plan check", "in progress", "intake"];
-  const stalledKeywords = ["stalled", "expired", "withdrawn", "cancelled", "void", "closed"];
-
-  const hasActive = statuses.some((s) => activeKeywords.some((k) => s.includes(k)));
-  const hasReview = stages.some((s) => reviewKeywords.some((k) => s.includes(k)));
-  const hasStalled = stages.some((s) => stalledKeywords.some((k) => s.includes(k)));
-
-  if (hasActive) return { emoji: "🟢", label: "Active", bg: "bg-emerald-50", text: "text-emerald-700" };
-  if (hasReview) return { emoji: "🟡", label: "In Review", bg: "bg-amber-50", text: "text-amber-700" };
-  if (hasStalled) return { emoji: "⚪", label: "Stalled", bg: "bg-slate-100", text: "text-slate-500" };
-  return { emoji: "🔵", label: "Unknown", bg: "bg-blue-50", text: "text-blue-700" };
+  if (data?.has_nearby_completed_project) {
+    return { emoji: "🔵", label: "Recently built nearby", bg: "bg-blue-50", text: "text-blue-700" };
+  }
+  if ((data?.nearby_stalled_count ?? 0) > 0) {
+    return { emoji: "⚪", label: "Stalled nearby", bg: "bg-slate-100", text: "text-slate-500" };
+  }
+  return { emoji: "⚫", label: "No recent activity", bg: "bg-slate-100", text: "text-slate-600" };
 }
 
 export default async function ParcelPage({
@@ -37,7 +29,7 @@ export default async function ParcelPage({
   const { apn } = await params;
 
   const { data, error } = await supabase
-    .from("parcel_page_api_v1")
+    .from("parcel_page_api_v2")
     .select("*")
     .eq("apn_norm", apn)
     .single();
@@ -64,9 +56,8 @@ export default async function ParcelPage({
     );
   }
 
-  const state = inferProjectState(permitData);
-  const hasDevPotential =
-    data.units_allowed != null || data.units_built != null || data.units_proposed != null;
+  const state = stateFromV2(data);
+  const hasNearby = (data.nearby_project_count ?? 0) > 0;
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -111,65 +102,51 @@ export default async function ParcelPage({
           </span>
         </section>
 
-        {/* ── 3. Development Potential ── */}
+        {/* ── 3. Nearby Development Activity ── */}
         <section className="bg-white border border-slate-200 rounded-xl p-6">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
-            Development Potential
+            Nearby Development Activity
           </h2>
 
-          {hasDevPotential ? (
-            // TODO: wire to engine
-            <div className="grid grid-cols-3 gap-4 text-center">
+          {hasNearby ? (
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
               <div>
-                <p className="text-3xl font-bold text-slate-900">{data.units_allowed ?? "—"}</p>
-                <p className="text-xs text-slate-500 mt-1">Max Allowed</p>
+                <p className="text-2xl font-bold text-slate-900">{data.nearby_project_count ?? 0}</p>
+                <p className="text-xs text-slate-500 mt-1">Total nearby</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-slate-900">{data.units_built ?? "—"}</p>
-                <p className="text-xs text-slate-500 mt-1">Currently Built</p>
+                <p className="text-2xl font-bold text-emerald-700">{data.nearby_active_count ?? 0}</p>
+                <p className="text-xs text-slate-500 mt-1">Active</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-slate-900">{data.units_proposed ?? "—"}</p>
-                <p className="text-xs text-slate-500 mt-1">Proposed</p>
+                <p className="text-2xl font-bold text-blue-700">{data.nearby_completed_count ?? 0}</p>
+                <p className="text-xs text-slate-500 mt-1">Completed</p>
+              </div>
+              <div>
+                <p className="text-2xl font-bold text-slate-500">{data.nearby_stalled_count ?? 0}</p>
+                <p className="text-xs text-slate-500 mt-1">Stalled</p>
               </div>
             </div>
           ) : (
-            // TODO: wire to engine
-            <p className="text-sm text-slate-400 italic">Development potential data coming soon.</p>
+            <p className="text-sm text-slate-400 italic">No nearby development signals detected.</p>
           )}
 
-          {data.projects_analyzed > 0 && (
-            <div className="mt-5 pt-5 border-t border-slate-100 grid grid-cols-3 gap-4 text-center">
-              <div>
-                <p className="text-lg font-semibold text-slate-800">{data.projects_analyzed}</p>
-                <p className="text-xs text-slate-400 mt-0.5">Nearby projects analyzed</p>
-              </div>
-              <div>
-                <p className="text-lg font-semibold text-slate-800">{data.median_units ?? "—"}</p>
-                <p className="text-xs text-slate-400 mt-0.5">Median units built</p>
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-slate-800 leading-snug">{data.largest_project ?? "—"}</p>
-                <p className="text-xs text-slate-400 mt-0.5">Largest nearby project</p>
-              </div>
+          {(data.nearest_active_distance_ft || data.nearest_completed_distance_ft) && (
+            <div className="mt-5 pt-5 border-t border-slate-100 grid grid-cols-2 gap-4 text-center">
+              {data.nearest_active_distance_ft && (
+                <div>
+                  <p className="text-lg font-semibold text-emerald-700">{Math.round(data.nearest_active_distance_ft)} ft</p>
+                  <p className="text-xs text-slate-400 mt-0.5">Nearest active project</p>
+                </div>
+              )}
+              {data.nearest_completed_distance_ft && (
+                <div>
+                  <p className="text-lg font-semibold text-blue-700">{Math.round(data.nearest_completed_distance_ft)} ft</p>
+                  <p className="text-xs text-slate-400 mt-0.5">Nearest completed project</p>
+                </div>
+              )}
             </div>
           )}
-        </section>
-
-        {/* ── 4. Narrative vs Reality ── */}
-        <section className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">
-            Narrative vs Reality
-          </h2>
-          {/* TODO: wire to narrative_claims table */}
-          <div className="hidden sm:grid grid-cols-3 gap-4 pb-2 mb-3 border-b border-slate-100 text-xs font-semibold uppercase tracking-wider text-slate-400">
-            <span>Narrative</span>
-            <span>Reality</span>
-            <span>Verdict</span>
-          </div>
-          <p className="text-sm text-slate-400 italic">
-            TruLot cross-checks listing and market claims against entitlement data. No claims have been logged for this parcel yet.
-          </p>
         </section>
 
         {/* ── 5. Proof — Permit Activity ── */}

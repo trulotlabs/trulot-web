@@ -36,10 +36,10 @@ export default function Home() {
         <div className="mt-12 p-5 bg-white border border-slate-200 rounded-xl text-left max-w-sm w-full">
           <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-2">Example parcel</p>
           <a
-            href="/parcel/5520901000/5520901000"
+            href="/parcel/5470501600/740-47th-st"
             className="text-sm font-medium text-emerald-700 hover:text-emerald-800 underline underline-offset-2"
           >
-            APN 5520901000 — View full intelligence report →
+            740 47th St, San Diego — 13-unit ADU project, active construction →
           </a>
         </div>
       </main>
