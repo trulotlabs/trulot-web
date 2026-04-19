@@ -119,10 +119,13 @@ export default async function ParcelPage({
                 )}
                 <div className="flex-1">
                   <p className="text-base font-semibold text-slate-900 leading-snug">
-                    {primaryProject.primary_project_title || primaryProject.primary_project_type}
+                    {primaryProject.primary_project_label || primaryProject.primary_project_type}
                   </p>
                   <p className="text-sm text-slate-500 mt-1">
-                    {primaryProject.primary_project_type} · <span className="text-slate-700 font-medium">{primaryProject.primary_project_status}</span>
+                    <span className="text-slate-700 font-medium">{primaryProject.primary_project_status}</span>
+                    {primaryProject.primary_project_applicant && (
+                      <> · Applicant: {primaryProject.primary_project_applicant}</>
+                    )}
                   </p>
                   <p className="text-xs text-slate-400 mt-1 font-mono">
                     {primaryProject.primary_project_id}
