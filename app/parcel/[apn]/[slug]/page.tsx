@@ -29,7 +29,9 @@ function momentumStyle(momentum: string | null | undefined): StateConfig {
     case "Completed":
       return { emoji: "✅", label: "Completed / Delivered", bg: "bg-blue-50", text: "text-blue-700" };
     case "Stalled":
-      return { emoji: "⚠️", label: "Stalled", bg: "bg-amber-50", text: "text-amber-700" };
+      return { emoji: "🚫", label: "Stalled", bg: "bg-rose-50", text: "text-rose-700" };
+    case "Awaiting Issuance":
+      return { emoji: "⏳", label: "Awaiting Issuance", bg: "bg-amber-50", text: "text-amber-700" };
     case "No recent activity":
       return { emoji: "⚫", label: "No recent activity", bg: "bg-slate-100", text: "text-slate-600" };
     default:
@@ -191,9 +193,19 @@ export default async function ParcelPage({
                       Project is complete and delivered. Permit paperwork may still show an open stage, but on-site work appears finished.
                     </p>
                   )}
-                  {primaryProject.has_building_project && primaryProject.project_momentum_label === "Stalled" && (
+                  {primaryProject.has_building_project && primaryProject.project_momentum_label === "Active" && primaryProject.momentum_source === "manual_override" && primaryProject.momentum_override_reason && (
+                    <p className="mt-4 text-xs text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-lg px-3 py-2">
+                      ✓ Ground-truth confirmed: {primaryProject.momentum_override_reason}
+                    </p>
+                  )}
+                  {primaryProject.has_building_project && primaryProject.project_momentum_label === "Awaiting Issuance" && (
                     <p className="mt-4 text-xs text-amber-700 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2">
-                      No permit activity in over 540 days. Project appears stalled at the city.
+                      Permit filed but not yet issued by the city. Project cannot break ground until issuance.
+                    </p>
+                  )}
+                  {primaryProject.has_building_project && primaryProject.project_momentum_label === "Stalled" && (
+                    <p className="mt-4 text-xs text-rose-700 bg-rose-50 border border-rose-100 rounded-lg px-3 py-2">
+                      No permit activity in over 900 days. Project appears stalled—potentially abandoned or in legal/financial hold.
                     </p>
                   )}
                 </div>
