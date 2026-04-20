@@ -21,17 +21,17 @@ function stateFromV2(data: any): StateConfig {
   return { emoji: "⚫", label: "No recent activity", bg: "bg-slate-100", text: "text-slate-600" };
 }
 
-// Momentum badge styling — decoupled from permit stage
+// Momentum badge styling — engine-derived only. Never shows manual overrides.
 function momentumStyle(momentum: string | null | undefined): StateConfig {
   switch (momentum) {
     case "Active":
       return { emoji: "🟢", label: "Active", bg: "bg-emerald-50", text: "text-emerald-700" };
     case "Completed":
       return { emoji: "✅", label: "Completed / Delivered", bg: "bg-blue-50", text: "text-blue-700" };
-    case "Stalled":
-      return { emoji: "🚫", label: "Stalled", bg: "bg-rose-50", text: "text-rose-700" };
     case "Awaiting Issuance":
       return { emoji: "⏳", label: "Awaiting Issuance", bg: "bg-amber-50", text: "text-amber-700" };
+    case "Status unclear":
+      return { emoji: "❓", label: "Status unclear", bg: "bg-slate-100", text: "text-slate-600" };
     case "No recent activity":
       return { emoji: "⚫", label: "No recent activity", bg: "bg-slate-100", text: "text-slate-600" };
     default:
@@ -193,20 +193,29 @@ export default async function ParcelPage({
                       Project is complete and delivered. Permit paperwork may still show an open stage, but on-site work appears finished.
                     </p>
                   )}
-                  {primaryProject.has_building_project && primaryProject.project_momentum_label === "Active" && primaryProject.momentum_source === "manual_override" && primaryProject.momentum_override_reason && (
-                    <p className="mt-4 text-xs text-emerald-700 bg-emerald-50 border border-emerald-100 rounded-lg px-3 py-2">
-                      ✓ Ground-truth confirmed: {primaryProject.momentum_override_reason}
-                    </p>
-                  )}
                   {primaryProject.has_building_project && primaryProject.project_momentum_label === "Awaiting Issuance" && (
                     <p className="mt-4 text-xs text-amber-700 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2">
                       Permit filed but not yet issued by the city. Project cannot break ground until issuance.
                     </p>
                   )}
-                  {primaryProject.has_building_project && primaryProject.project_momentum_label === "Stalled" && (
-                    <p className="mt-4 text-xs text-rose-700 bg-rose-50 border border-rose-100 rounded-lg px-3 py-2">
-                      No permit activity in over 900 days. Project appears stalled—potentially abandoned or in legal/financial hold.
+                  {primaryProject.has_building_project && primaryProject.project_momentum_label === "Status unclear" && (
+                    <p className="mt-4 text-xs text-slate-600 bg-slate-50 border border-slate-200 rounded-lg px-3 py-2">
+                      Permit data shows no recent movement, but we don’t yet have enough external signal (inspections, imagery) to confidently call this parcel stalled or active. Status will sharpen as signals come online.
                     </p>
+                  )}
+
+                  {/* Team flag — secondary, clearly labeled as human review, never shown as momentum */}
+                  {primaryProject.team_flag_active && primaryProject.team_flag_reason && (
+                    <div className="mt-3 text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2">
+                      <div className="flex items-start gap-2">
+                        <span className="inline-block mt-0.5 text-amber-600">⚠️</span>
+                        <div>
+                          <div className="font-medium text-slate-700">Team review flag (manual, temporary)</div>
+                          <div className="text-slate-500 mt-0.5">{primaryProject.team_flag_reason}</div>
+                          <div className="text-slate-400 mt-1 italic">Note: engine-derived momentum above does not factor this flag. Flag will be retired when inspection / imagery signals replace it.</div>
+                        </div>
+                      </div>
+                    </div>
                   )}
                 </div>
               );
