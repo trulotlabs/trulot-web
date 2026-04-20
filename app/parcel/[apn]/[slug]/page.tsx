@@ -21,6 +21,22 @@ function stateFromV2(data: any): StateConfig {
   return { emoji: "⚫", label: "No recent activity", bg: "bg-slate-100", text: "text-slate-600" };
 }
 
+// Momentum badge styling — decoupled from permit stage
+function momentumStyle(momentum: string | null | undefined): StateConfig {
+  switch (momentum) {
+    case "Active":
+      return { emoji: "🟢", label: "Active", bg: "bg-emerald-50", text: "text-emerald-700" };
+    case "Completed":
+      return { emoji: "✅", label: "Completed / Delivered", bg: "bg-blue-50", text: "text-blue-700" };
+    case "Stalled":
+      return { emoji: "⚠️", label: "Stalled", bg: "bg-amber-50", text: "text-amber-700" };
+    case "No recent activity":
+      return { emoji: "⚫", label: "No recent activity", bg: "bg-slate-100", text: "text-slate-600" };
+    default:
+      return { emoji: "", label: "", bg: "", text: "" };
+  }
+}
+
 export default async function ParcelPage({
   params,
 }: {
@@ -110,40 +126,79 @@ export default async function ParcelPage({
           </div>
 
           {primaryProject ? (
-            <div>
-              <div className="flex items-start gap-3">
-                {primaryProject.has_building_project ? (
-                  <span className="mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-50 text-emerald-700 text-sm">🏗️</span>
-                ) : (
-                  <span className="mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 text-slate-500 text-sm">📄</span>
-                )}
-                <div className="flex-1">
-                  <p className="text-base font-semibold text-slate-900 leading-snug">
-                    {primaryProject.primary_project_label || primaryProject.primary_project_type}
-                  </p>
-                  <p className="text-sm text-slate-500 mt-1">
-                    <span className="text-slate-700 font-medium">{primaryProject.primary_project_status}</span>
-                    {primaryProject.primary_project_applicant && (
-                      <> · Applicant: {primaryProject.primary_project_applicant}</>
+            (() => {
+              const momentum = momentumStyle(primaryProject.project_momentum_label);
+              const showMomentumBadge = primaryProject.has_building_project && primaryProject.project_momentum_label && primaryProject.project_momentum_label !== "N/A";
+              return (
+                <div>
+                  <div className="flex items-start gap-3">
+                    {primaryProject.has_building_project ? (
+                      <span className="mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-50 text-emerald-700 text-sm">🏗️</span>
+                    ) : (
+                      <span className="mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 text-slate-500 text-sm">📄</span>
                     )}
-                  </p>
-                  <p className="text-xs text-slate-400 mt-1 font-mono">
-                    {primaryProject.primary_project_id}
-                    {primaryProject.primary_project_opened && (
-                      <> · opened {new Date(primaryProject.primary_project_opened).toLocaleDateString()}</>
-                    )}
-                    {primaryProject.primary_project_issued && (
-                      <> · issued {new Date(primaryProject.primary_project_issued).toLocaleDateString()}</>
-                    )}
-                  </p>
+                    <div className="flex-1">
+                      {/* TYPE — what the project is */}
+                      <p className="text-base font-semibold text-slate-900 leading-snug">
+                        {primaryProject.primary_project_label || primaryProject.primary_project_type}
+                      </p>
+
+                      {/* STAGE + MOMENTUM — distinct labeled fields, never blended */}
+                      <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+                        <span>
+                          <span className="text-xs uppercase tracking-wide text-slate-400 font-medium mr-1.5">Stage</span>
+                          <span className="text-slate-700 font-medium">{primaryProject.primary_project_stage || primaryProject.primary_project_status}</span>
+                        </span>
+                        {showMomentumBadge && (
+                          <span>
+                            <span className="text-xs uppercase tracking-wide text-slate-400 font-medium mr-1.5">Momentum</span>
+                            <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${momentum.bg} ${momentum.text}`}>
+                              {momentum.emoji} {momentum.label}
+                            </span>
+                          </span>
+                        )}
+                      </div>
+
+                      {primaryProject.primary_project_applicant && (
+                        <p className="text-sm text-slate-500 mt-2">
+                          Applicant: {primaryProject.primary_project_applicant}
+                        </p>
+                      )}
+
+                      <p className="text-xs text-slate-400 mt-2 font-mono">
+                        {primaryProject.primary_project_id}
+                        {primaryProject.primary_project_opened && (
+                          <> · opened {new Date(primaryProject.primary_project_opened).toLocaleDateString()}</>
+                        )}
+                        {primaryProject.primary_project_issued && (
+                          <> · issued {new Date(primaryProject.primary_project_issued).toLocaleDateString()}</>
+                        )}
+                        {primaryProject.primary_project_closed && (
+                          <> · closed {new Date(primaryProject.primary_project_closed).toLocaleDateString()}</>
+                        )}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Contextual callouts per momentum state */}
+                  {!primaryProject.has_building_project && (
+                    <p className="mt-4 text-xs text-slate-500 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2">
+                      Only execution / support permits on record for this parcel. No building permit filed.
+                    </p>
+                  )}
+                  {primaryProject.has_building_project && primaryProject.project_momentum_label === "Completed" && (
+                    <p className="mt-4 text-xs text-blue-700 bg-blue-50 border border-blue-100 rounded-lg px-3 py-2">
+                      Project is complete and delivered. Permit paperwork may still show an open stage, but on-site work appears finished.
+                    </p>
+                  )}
+                  {primaryProject.has_building_project && primaryProject.project_momentum_label === "Stalled" && (
+                    <p className="mt-4 text-xs text-amber-700 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2">
+                      No permit activity in over 540 days. Project appears stalled at the city.
+                    </p>
+                  )}
                 </div>
-              </div>
-              {!primaryProject.has_building_project && (
-                <p className="mt-4 text-xs text-slate-500 bg-amber-50 border border-amber-100 rounded-lg px-3 py-2">
-                  Only execution / support permits on record for this parcel. No building permit filed.
-                </p>
-              )}
-            </div>
+              );
+            })()
           ) : (
             <p className="text-sm text-slate-400 italic">No permits on record for this parcel.</p>
           )}
