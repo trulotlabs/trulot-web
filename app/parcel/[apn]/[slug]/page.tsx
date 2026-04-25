@@ -16,22 +16,22 @@ function generateStory(primaryProject: any): string {
 }
 
 function formatAPN(apn: string): string {
-  if (apn.length === 10) return `${apn.slice(0,3)}-${apn.slice(3,6)}-${apn.slice(6,8)}-${apn.slice(8,10)}`;
+  if (apn.length === 10) return `${apn.slice(0, 3)}-${apn.slice(3, 6)}-${apn.slice(6, 8)}-${apn.slice(8, 10)}`;
   return apn;
 }
 
 function getStatusBadge(primaryProject: any, pageData: any) {
   if (primaryProject) {
     switch (primaryProject.project_momentum_label) {
-      case "Active": return { emoji: "🟢", label: "Active", bg: "bg-emerald-50", text: "text-emerald-700" };
-      case "Completed": return { emoji: "✅", label: "Completed", bg: "bg-blue-50", text: "text-blue-700" };
-      case "Awaiting Issuance": return { emoji: "🟡", label: "In Review", bg: "bg-amber-50", text: "text-amber-700" };
-      case "Status unclear": return { emoji: "❓", label: "Status unclear", bg: "bg-slate-100", text: "text-slate-600" };
+      case "Active": return { label: "Active", bg: "bg-emerald-50", text: "text-emerald-700" };
+      case "Completed": return { label: "Completed", bg: "bg-blue-50", text: "text-blue-700" };
+      case "Awaiting Issuance": return { label: "In Review", bg: "bg-amber-50", text: "text-amber-700" };
+      case "Status unclear": return { label: "Status unclear", bg: "bg-slate-100", text: "text-slate-600" };
     }
   }
-  if (pageData?.has_nearby_active_project) return { emoji: "🟢", label: "Active nearby", bg: "bg-emerald-50", text: "text-emerald-700" };
-  if (pageData?.has_nearby_completed_project) return { emoji: "🔵", label: "Recently built nearby", bg: "bg-blue-50", text: "text-blue-700" };
-  return { emoji: "⚫️", label: "No recent activity", bg: "bg-slate-100", text: "text-slate-600" };
+  if (pageData?.has_nearby_active_project) return { label: "Active nearby", bg: "bg-emerald-50", text: "text-emerald-700" };
+  if (pageData?.has_nearby_completed_project) return { label: "Recently built nearby", bg: "bg-blue-50", text: "text-blue-700" };
+  return { label: "No recent activity", bg: "bg-slate-100", text: "text-slate-600" };
 }
 
 function getMomentumDescription(momentum: string | null): string {
@@ -57,13 +57,6 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
         <nav className="bg-white border-b border-slate-200 px-4 py-3">
           <a href="/" className="text-emerald-700 font-semibold text-lg tracking-tight">TruLot</a>
         </nav>
-        <div className="flex-1 flex
-
-    return (
-      <div className="min-h-screen bg-slate-50 flex flex-col">
-        <nav className="bg-white border-b border-slate-200 px-4 py-3">
-          <a href="/" className="text-emerald-700 font-semibold text-lg tracking-tight">TruLot</a>
-        </nav>
         <div className="flex-1 flex items-center justify-center text-center px-4">
           <div>
             <h1 className="text-2xl font-semibold text-slate-900 mb-2">Parcel not found</h1>
@@ -75,8 +68,7 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
   }
 
   const status = getStatusBadge(primaryProject, data);
-
-const story = generateStory(primaryProject);
+  const story = generateStory(primaryProject);
   const hasNearby = (data.nearby_project_count ?? 0) > 0;
 
   const seen = new Set<string>();
@@ -86,27 +78,12 @@ const story = generateStory(primaryProject);
     seen.add(key);
     return true;
   });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const supportingPermits = uniquePermits.filter(
     (p: any) => !primaryProject || p.record_number !== primaryProject.primary_project_id
   );
 
-const story = generateStory(primaryProject);
-  const hasNearby = (data.nearby_project_count ?? 0) > 0;
-
-  const seen = new Set<string>();
-  const uniquePermits = (permitData || []).filter((p: any) => {
-    const key = p.record_number || p.record_id;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-  const supportingPermits = uniquePermits.filter(
-    (p: any) => !primaryProject || p.record_number !== primaryProject.primary_project_id
-  );
-
-return
-
-(
+  return (
     <div className="min-h-screen bg-slate-50">
       <nav className="bg-white border-b border-slate-200 px-4 py-3">
         <a href="/" className="text-emerald-700 font-semibold text-lg tracking-tight">TruLot</a>
@@ -121,8 +98,8 @@ return
               <h1 className="text-2xl font-bold text-slate-900">{data.address}</h1>
               <p className="text-slate-500 text-sm mt-0.5">{data.city}, {data.state}</p>
             </div>
-            <span className={`shrink-0 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-medium ${status.bg} ${status.text}`}>
-              {status.emoji} {status.label}
+            <span className={`shrink-0 inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium ${status.bg} ${status.text}`}>
+              {status.label}
             </span>
           </div>
           <div className="mt-4 grid grid-cols-3 gap-4 text-sm border-t border-slate-100 pt-4">
@@ -141,36 +118,26 @@ return
           </div>
         </section>
 
-        {/* 2. 10-Second Story */}
+        {/* 2. What's happening */}
         <section className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">What's happening</h2>
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">What&apos;s happening</h2>
           <p className="text-slate-700 text-base leading-relaxed">{story}</p>
         </section>
 
-        {/* 3. Development Potential */}
+        {/* 3. Development potential */}
         <section className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Development potential</h2>
-          <div className="grid grid-cols-2 gap-4 text-sm">
-            <div>
-              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-0.5">Zone</p>
-              <p className="text-slate-700 font-medium">{data.zone_name}</p>
-              <p className="text-xs text-slate-400 mt-0.5">{data.zone_family} family</p>
-            </div>
-            <div>
-              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-0.5">Lot size</p>
-              <p className="text-slate-700 font-medium">{Math.round(data.lot_area_sqft).toLocaleString()} SF</p>
-              <p className="text-xs text-slate-400 mt-0.5">{data.lot_area_acres} acres</p>
-            </div>
-          </div>
-          <p className="mt-4 text-xs text-slate-400 bg-slate-50 rounded-lg px-3 py-2">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Development potential</h2>
+          <p className="text-sm text-slate-600 leading-relaxed">
+            This parcel is zoned {data.zone_name}{data.zone_family ? ` (${data.zone_family} family)` : ""}. Lot size and zoning together determine the scope of what can be built here.
+          </p>
+          <p className="mt-3 text-xs text-slate-400 bg-slate-50 rounded-lg px-3 py-2">
             Additional ADU capacity may apply under state ADU law, separate from base zoning allowances.
           </p>
         </section>
 
-        {/* 4. Project Activity */}
+        {/* 4. Project activity */}
         {primaryProject && (
           <section className="bg-white border border-slate-200 rounded-xl p-6">
-
             <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Project activity</h2>
             <div className="flex items-start gap-3">
               <span className="mt-0.5 text-lg">{primaryProject.has_building_project ? "🏗" : "📄"}</span>
@@ -178,9 +145,7 @@ return
                 <p className="font-semibold text-slate-900 text-base">
                   {primaryProject.primary_project_label || primaryProject.primary_project_type}
                 </p>
-                {primaryProject.primary_project_description &&
-
-(
+                {primaryProject.primary_project_description && (
                   <p className="text-sm text-slate-500 mt-1 leading-relaxed">{primaryProject.primary_project_description}</p>
                 )}
                 <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
@@ -237,9 +202,8 @@ return
           </ul>
         </section>
 
-        {/* 6. Nearby Activity */}
-
-{hasNearby && (
+        {/* 6. Nearby development */}
+        {hasNearby && (
           <section className="bg-white border border-slate-200 rounded-xl p-6">
             <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Nearby development</h2>
             <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
@@ -248,13 +212,22 @@ return
                 <span className="text-slate-500 ml-1.5">nearby projects</span>
               </div>
               {(data.nearby_completed_count ?? 0) > 0 && (
-                <div><span className="text-lg font-bold text-blue-700">{data.nearby_completed_count}</span><span className="text-slate-500 ml-1.5">completed</span></div>
+                <div>
+                  <span className="text-lg font-bold text-blue-700">{data.nearby_completed_count}</span>
+                  <span className="text-slate-500 ml-1.5">completed</span>
+                </div>
               )}
               {(data.nearby_active_count ?? 0) > 0 && (
-                <div><span className="text-lg font-bold text-emerald-700">{data.nearby_active_count}</span><span className="text-slate-500 ml-1.5">active</span></div>
+                <div>
+                  <span className="text-lg font-bold text-emerald-700">{data.nearby_active_count}</span>
+                  <span className="text-slate-500 ml-1.5">active</span>
+                </div>
               )}
               {(data.nearby_stalled_count ?? 0) > 0 && (
-                <div><span className="text-lg font-bold text-slate-500">{data.nearby_stalled_count}</span><span className="text-slate-500 ml-1.5">stalled</span></div>
+                <div>
+                  <span className="text-lg font-bold text-slate-500">{data.nearby_stalled_count}</span>
+                  <span className="text-slate-500 ml-1.5">stalled</span>
+                </div>
               )}
             </div>
             {data.nearest_completed_distance_ft && (
@@ -266,17 +239,23 @@ return
         {/* 7. CTA */}
         <section className="bg-emerald-700 rounded-xl p-6 text-center">
           <h2 className="text-white font-semibold">Get alerts when this parcel changes</h2>
-          <p className="text-emerald-200 text-sm mt-1 mb-5">Permit filings, status changes, new entitlements — delivered to you.</p>
+          <p className="text-emerald-200 text-sm mt-1 mb-5">Permit filings, status changes, new entitlements &mdash; delivered to you.</p>
           <div className="flex flex-col sm:flex-row gap-2 max-w-sm mx-auto">
-            <input type="email" placeholder="your@email.com" className="flex-1 px-4 py-2.5 rounded-lg text-sm bg-white text-slate-900 placeholder-slate-400 outline-none focus:ring-2 focus:ring-emerald-300" />
-            <button type="button" className="px-5 py-2.5 bg-white text-emerald-700 font-semibold text-sm rounded-lg hover:bg-emerald-50 transition-colors">Notify me</button>
+            <input
+              type="email"
+              placeholder="your@email.com"
+              className="flex-1 px-4 py-2.5 rounded-lg text-sm bg-white text-slate-900 placeholder-slate-400 outline-none focus:ring-2 focus:ring-emerald-300"
+            />
+            <button type="button" className="px-5 py-2.5 bg-white text-emerald-700 font-semibold text-sm rounded-lg hover:bg-emerald-50 transition-colors">
+              Notify me
+            </button>
           </div>
         </section>
 
       </main>
 
       <footer className="mt-8 border-t border-slate-200 py-6 text-center text-xs text-slate-400">
-        © {new Date().getFullYear()} TruLot · Parcel data for San Diego County
+        &copy; {new Date().getFullYear()} TruLot &middot; Parcel data for San Diego County
       </footer>
     </div>
   );
