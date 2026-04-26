@@ -88,6 +88,14 @@ function fmtMonthYear(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString("en-US", { month: "long", year: "numeric" });
 }
 
+// SD ADU Home Density Bonus cap — Single Dwelling Unit Zones
+// Source: SD IB-400 Section C table (lot area ≥ 10,000 SF → max 6 ADUs/JADUs)
+function sdAduCap(lotSqft: number): { maxAduJadu: number; totalMax: number; label: string } {
+  if (lotSqft <= 8000)  return { maxAduJadu: 4, totalMax: 5, label: '1 SDU + up to 4 ADUs/JADUs' };
+  if (lotSqft <= 10000) return { maxAduJadu: 5, totalMax: 6, label: '1 SDU + up to 5 ADUs/JADUs' };
+  return                       { maxAduJadu: 6, totalMax: 7, label: '1 SDU + up to 6 ADUs/JADUs' };
+}
+
 function getWhatCanBeBuilt(zoneName: string, lotSqft: number, primaryProject: any, proposedUnits: string | null) {
   const rsMatch = zoneName?.match(/^RS-1-(\d+)/i);
   const rmMatch = zoneName?.match(/^RM-(\d+)-(\d+)/i);
@@ -95,20 +103,24 @@ function getWhatCanBeBuilt(zoneName: string, lotSqft: number, primaryProject: an
   if (rsMatch) {
     const minSfPerUnit = parseInt(rsMatch[1]) * 1000;
     const baseUnits = Math.floor(lotSqft / minSfPerUnit);
+    const aduCap = sdAduCap(lotSqft);
     const hasAduSignal = !!proposedUnits && /ADU/i.test(proposedUnits);
+
+    // Current program capacity: always show for RS zones (deterministic SD rule)
+    const currentCapacity = `Up to ${aduCap.totalMax} units`;
+    const currentDetail = `${aduCap.label} (SD ADU program — lot ${lotSqft >= 10000 ? '> 10,000' : lotSqft > 8000 ? '8,001–10,000' : '≤ 8,000'} SF)`;
+
     return {
       type: hasAduSignal ? "adu-heavy" : "sfr",
       baseCapacity: `${baseUnits} unit${baseUnits !== 1 ? "s" : ""}`,
       baseLabel: zoneName,
       baseDensity: `${zoneName} → 1 DU / ${minSfPerUnit.toLocaleString()} SF`,
-      interpretation: hasAduSignal
-        ? `Base zoning allows ${baseUnits} unit${baseUnits !== 1 ? "s" : ""} by right. Permit activity shows an ADU-driven development strategy.`
-        : `${zoneName} zoning allows 1 unit per ${minSfPerUnit.toLocaleString()} SF. This parcel supports ${baseUnits} unit${baseUnits !== 1 ? "s" : ""} based on lot size.`,
-      note: hasAduSignal
-        ? "ADU programs may allow significantly more units than base zoning."
-        : "Additional units may be possible under state ADU law.",
+      currentCapacity,
+      currentDetail,
+      interpretation: `Base zoning allows ${baseUnits} unit${baseUnits !== 1 ? "s" : ""} by right. The SD ADU program may allow up to ${aduCap.totalMax} total units on this lot.`,
+      note: "ADU capacity is based on lot size per SD IB-400. Verify current eligibility with the city.",
       potentialCapacity: hasAduSignal ? proposedUnits : null,
-      potentialNote: hasAduSignal ? "Based on permit activity" : null,
+      potentialNote: hasAduSignal ? "From submitted permit plans" : null,
     };
   }
 
@@ -120,6 +132,8 @@ function getWhatCanBeBuilt(zoneName: string, lotSqft: number, primaryProject: an
       baseCapacity: `${baseUnits} unit${baseUnits !== 1 ? "s" : ""}`,
       baseLabel: zoneName,
       baseDensity: `${zoneName} → 1 DU / ${minSfPerUnit.toLocaleString()} SF`,
+      currentCapacity: null,
+      currentDetail: null,
       interpretation: `${zoneName} zoning allows 1 unit per ${minSfPerUnit.toLocaleString()} SF. This parcel supports ${baseUnits} unit${baseUnits !== 1 ? "s" : ""} by-right.`,
       note: "Higher unit counts may be achievable through ADU programs or density bonuses.",
       potentialCapacity: null,
@@ -302,15 +316,23 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
                 <p className="text-slate-900 font-semibold text-2xl">{buildInfo.baseCapacity}</p>
                 <p className="text-xs text-slate-400 mt-0.5">{buildInfo.baseDensity}</p>
               </div>
-              {/* Potential — only when ADU evidence is high confidence */}
+              {/* Current Program Capacity — deterministic SD ADU rule */}
+              {buildInfo.currentCapacity && (
+                <div className="border-t border-slate-100 pt-4">
+                  <p className="text-xs text-emerald-600 uppercase tracking-wide font-medium mb-0.5">Current Program (ADU)</p>
+                  <p className="text-emerald-700 font-semibold text-2xl">{buildInfo.currentCapacity}</p>
+                  <p className="text-xs text-slate-400 mt-0.5">{buildInfo.currentDetail}</p>
+                </div>
+              )}
+              {/* Historical Proposal — only when permit evidence exists */}
               {buildInfo.potentialCapacity && (() => {
                 const showWarning = shouldShowRegulatoryWarning(buildInfo.potentialCapacity, data.zone_name);
                 return (
                   <div className="border-t border-slate-100 pt-4">
-                    <p className="text-xs text-emerald-600 uppercase tracking-wide font-medium mb-0.5">Possible with ADUs</p>
-                    <p className="text-emerald-700 font-semibold text-2xl">{buildInfo.potentialCapacity}</p>
+                    <p className="text-xs text-slate-500 uppercase tracking-wide font-medium mb-0.5">Historical Proposal</p>
+                    <p className="text-slate-700 font-semibold text-2xl">{buildInfo.potentialCapacity}</p>
                     <p className="text-xs text-slate-400 mt-0.5 uppercase tracking-wide font-medium">
-                      Historical proposal — verify under current rules
+                      From submitted permit plans — verify under current rules
                     </p>
                     {showWarning && (
                       <p className="mt-2 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
