@@ -19,6 +19,24 @@ function getStatusBadge(primaryProject: any, pageData: any) {
   return { label: "No recent activity", bg: "bg-slate-100", text: "text-slate-600" };
 }
 
+function getInterpretation(primaryProject: any, proposedUnits: string | null): string | null {
+  if (!primaryProject?.has_building_project) return null;
+  const momentum = primaryProject.project_momentum_label;
+  const isAdu = proposedUnits && /ADU/i.test(proposedUnits);
+  const unitCount = proposedUnits || 'a new development';
+
+  if (isAdu) {
+    if (momentum === 'Awaiting Issuance') return `This site is being planned as a high-density ADU development (${unitCount}).`;
+    if (momentum === 'Active') return `This site is actively under construction as a ${unitCount} ADU project.`;
+    if (momentum === 'Completed') return `This site was developed as a ${unitCount} ADU project.`;
+    if (momentum === 'Status unclear') return `A ${unitCount} ADU project is on record — current construction status is unclear.`;
+  }
+  if (momentum === 'Awaiting Issuance') return 'A development permit has been filed and is pending city approval.';
+  if (momentum === 'Active') return 'Construction is actively underway on this parcel.';
+  if (momentum === 'Completed') return 'A development project on this parcel has been completed.';
+  return null;
+}
+
 function getWhatsHappeningContent(primaryProject: any) {
   if (!primaryProject || !primaryProject.has_building_project) {
     return (
@@ -222,6 +240,7 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
 
   const proposedUnits = parseProposedUnits(primaryProject, permitData || []);
   const buildInfo = getWhatCanBeBuilt(data.zone_name, data.lot_area_sqft, primaryProject, proposedUnits);
+  const interpretation = getInterpretation(primaryProject, proposedUnits);
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -272,9 +291,9 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
               {/* Potential — only when ADU evidence is high confidence */}
               {buildInfo.potentialCapacity && (
                 <div className="border-t border-slate-100 pt-4">
-                  <p className="text-xs text-emerald-600 uppercase tracking-wide font-medium mb-0.5">Potential (ADU Program)</p>
+                  <p className="text-xs text-emerald-600 uppercase tracking-wide font-medium mb-0.5">Possible with ADUs</p>
                   <p className="text-emerald-700 font-semibold text-2xl">{buildInfo.potentialCapacity}</p>
-                  <p className="text-xs text-slate-400 mt-0.5">{buildInfo.potentialNote}</p>
+                  <p className="text-xs text-slate-400 mt-0.5">From submitted permit plans</p>
                 </div>
               )}
               <p className="text-sm text-slate-600 leading-relaxed">{buildInfo.interpretation}</p>
@@ -291,6 +310,11 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
           <div className="text-base leading-relaxed">
             {getWhatsHappeningContent(primaryProject)}
           </div>
+          {interpretation && (
+            <p className="mt-4 text-sm font-medium text-emerald-700 bg-emerald-50 rounded-lg px-3 py-2">
+              {interpretation}
+            </p>
+          )}
         </section>
 
         {/* 4. Project activity */}
