@@ -1,20 +1,5 @@
 import { supabase } from "@/lib/supabase";
 
-function generateStory(primaryProject: any): string {
-  if (!primaryProject || !primaryProject.has_building_project) {
-    return "No building permit is on record for this parcel. Only administrative or support permits have been filed.";
-  }
-  const momentum = primaryProject.project_momentum_label;
-  const type = (primaryProject.primary_project_label || primaryProject.primary_project_type || "building permit").toLowerCase();
-  switch (momentum) {
-    case "Awaiting Issuance": return `A ${type} has been filed but not yet issued by the city. Construction cannot begin until the permit is issued.`;
-    case "Active": return `A ${type} is active and construction is underway on this parcel.`;
-    case "Completed": return `A ${type} was filed and the project has been completed and delivered.`;
-    case "Status unclear": return `A ${type} is on record but recent activity signals are limited. Status will sharpen as more data becomes available.`;
-    default: return `A ${type} is on record for this parcel.`;
-  }
-}
-
 function formatAPN(apn: string): string {
   if (apn.length === 10) return `${apn.slice(0, 3)}-${apn.slice(3, 6)}-${apn.slice(6, 8)}-${apn.slice(8, 10)}`;
   return apn;
@@ -34,14 +19,129 @@ function getStatusBadge(primaryProject: any, pageData: any) {
   return { label: "No recent activity", bg: "bg-slate-100", text: "text-slate-600" };
 }
 
-function getMomentumDescription(momentum: string | null): string {
-  switch (momentum) {
-    case "Awaiting Issuance": return "Permit filed, not yet issued.";
-    case "Active": return "Construction underway.";
-    case "Completed": return "Project completed and delivered.";
-    case "Status unclear": return "Activity signals limited.";
-    default: return momentum || "";
+function getWhatsHappeningContent(primaryProject: any) {
+  if (!primaryProject || !primaryProject.has_building_project) {
+    return (
+      <>
+        <p className="font-semibold text-slate-900">No building permit on record.</p>
+        <p className="text-slate-600 mt-1">Only administrative or support permits have been filed.</p>
+      </>
+    );
   }
+  const momentum = primaryProject.project_momentum_label;
+  switch (momentum) {
+    case "Awaiting Issuance":
+      return (
+        <>
+          <p className="font-semibold text-slate-900">Project is in review.</p>
+          <p className="text-slate-600 mt-1">Permit filed, not yet approved.</p>
+          <p className="text-slate-600">Construction cannot begin until approval.</p>
+        </>
+      );
+    case "Active":
+      return (
+        <>
+          <p className="font-semibold text-slate-900">Construction is underway.</p>
+          <p className="text-slate-600 mt-1">Active building permit on file.</p>
+          <p className="text-slate-600">Field activity detected.</p>
+        </>
+      );
+    case "Completed":
+      return (
+        <>
+          <p className="font-semibold text-slate-900">Project completed.</p>
+          <p className="text-slate-600 mt-1">Permit closed.</p>
+          <p className="text-slate-600">Construction finished.</p>
+        </>
+      );
+    default: {
+      const type = (primaryProject.primary_project_label || primaryProject.primary_project_type || "building permit").toLowerCase();
+      return (
+        <>
+          <p className="font-semibold text-slate-900">A {type} is on record.</p>
+          <p className="text-slate-600 mt-1">Activity signals are limited.</p>
+        </>
+      );
+    }
+  }
+}
+
+function fmtMonthYear(dateStr: string): string {
+  return new Date(dateStr).toLocaleDateString("en-US", { month: "long", year: "numeric" });
+}
+
+function getWhatCanBeBuilt(zoneName: string, lotSqft: number, primaryProject: any) {
+  const rsMatch = zoneName?.match(/^RS-1-(\d+)/i);
+  const rmMatch = zoneName?.match(/^RM-(\d+)-(\d+)/i);
+
+  const hasAduSignal = primaryProject?.primary_project_description &&
+    (primaryProject.primary_project_description.match(/\d+.*ADU/i) ||
+     primaryProject.primary_project_description.match(/ADU.*\d+/i));
+
+  if (rsMatch) {
+    const minSfPerUnit = parseInt(rsMatch[1]) * 1000;
+    const baseUnits = Math.floor(lotSqft / minSfPerUnit);
+    const isAduHeavy = hasAduSignal && baseUnits <= 2;
+    return {
+      type: isAduHeavy ? "adu-heavy" : "sfr",
+      baseCapacity: `${baseUnits} unit${baseUnits !== 1 ? "s" : ""}`,
+      zoning: `${zoneName} (single-family)`,
+      density: `1 unit per ${minSfPerUnit.toLocaleString()} SF`,
+      interpretation: isAduHeavy
+        ? "Base zoning allows limited units, but recent permit activity suggests an ADU-driven development strategy."
+        : `${zoneName} zoning allows 1 unit per ${minSfPerUnit.toLocaleString()} SF. This parcel supports ${baseUnits} unit${baseUnits !== 1 ? "s" : ""} based on lot size.`,
+      note: isAduHeavy
+        ? "ADU programs may allow significantly more units than base zoning."
+        : "Additional units may be possible under state ADU law.",
+    };
+  }
+
+  if (rmMatch) {
+    const minSfPerUnit = parseInt(rmMatch[2]) * 1000;
+    const baseUnits = Math.floor(lotSqft / minSfPerUnit);
+    return {
+      type: "multifamily",
+      baseCapacity: `${baseUnits} unit${baseUnits !== 1 ? "s" : ""}`,
+      zoning: `${zoneName} (multifamily)`,
+      density: `1 unit per ${minSfPerUnit.toLocaleString()} SF`,
+      interpretation: `${zoneName} zoning allows 1 unit per ${minSfPerUnit.toLocaleString()} SF. This parcel supports ${baseUnits} unit${baseUnits !== 1 ? "s" : ""} by-right.`,
+      note: "Higher unit counts may be achievable through ADU programs or density bonuses.",
+    };
+  }
+
+  return null;
+}
+
+function parseProposedUnits(description: string | null | undefined): string | null {
+  if (!description) return null;
+
+  // Extract ADU count
+  const aduMatch = description.match(/\((\d+)\)\s*(?:new\s+)?ADU/i) ||
+                   description.match(/(\d+)\s+(?:new\s+)?(?:detached\s+)?ADU/i) ||
+                   description.match(/ADU[s]?\s+[x×]\s*(\d+)/i);
+  const aduCount = aduMatch ? parseInt(aduMatch[1]) : 0;
+
+  // Detect primary unit type
+  const hasSdu = /\bSDU\b/i.test(description);
+  const hasSfr = /\bSFR\b/i.test(description) || /single.family/i.test(description);
+  const hasDwelling = /\bdwelling\b/i.test(description);
+  const primaryUnit = hasSdu ? "1 SDU" : (hasSfr || hasDwelling) ? "1 primary unit" : null;
+
+  if (aduCount > 0 && primaryUnit) {
+    return `${primaryUnit} + ${aduCount} ADU${aduCount !== 1 ? "s" : ""}`;
+  } else if (aduCount > 0) {
+    return `${aduCount} ADU${aduCount !== 1 ? "s" : ""}`;
+  } else if (primaryUnit) {
+    return primaryUnit;
+  }
+
+  // Fallback: check for generic unit count
+  const unitMatch = description.match(/(\d+)\s+(?:new\s+)?(?:residential\s+)?units?/i);
+  if (unitMatch && parseInt(unitMatch[1]) > 1) {
+    return `${unitMatch[1]} units (see permit description)`;
+  }
+
+  return null;
 }
 
 export default async function ParcelPage({ params }: { params: Promise<{ apn: string; slug: string }> }) {
@@ -68,7 +168,6 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
   }
 
   const status = getStatusBadge(primaryProject, data);
-  const story = generateStory(primaryProject);
   const hasNearby = (data.nearby_project_count ?? 0) > 0;
 
   const seen = new Set<string>();
@@ -82,6 +181,8 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
   const supportingPermits = uniquePermits.filter(
     (p: any) => !primaryProject || p.record_number !== primaryProject.primary_project_id
   );
+
+  const buildInfo = getWhatCanBeBuilt(data.zone_name, data.lot_area_sqft, primaryProject);
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -118,21 +219,29 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
           </div>
         </section>
 
-        {/* 2. What's happening */}
+        {/* 2. What can be built */}
         <section className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">What&apos;s happening</h2>
-          <p className="text-slate-700 text-base leading-relaxed">{story}</p>
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">What can be built</h2>
+          {buildInfo ? (
+            <div className="space-y-3">
+              <div>
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-0.5">Base Capacity</p>
+                <p className="text-slate-900 font-semibold text-2xl">{buildInfo.baseCapacity}</p>
+              </div>
+              <p className="text-sm text-slate-600 leading-relaxed">{buildInfo.interpretation}</p>
+              <p className="text-xs text-slate-400 bg-slate-50 rounded-lg px-3 py-2">{buildInfo.note}</p>
+            </div>
+          ) : (
+            <p className="text-sm text-slate-400">See local zoning code for development allowances.</p>
+          )}
         </section>
 
-        {/* 3. Development potential */}
+        {/* 3. What's happening now */}
         <section className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Development potential</h2>
-          <p className="text-sm text-slate-600 leading-relaxed">
-            This parcel is zoned {data.zone_name}{data.zone_family ? ` (${data.zone_family} family)` : ""}. Lot size and zoning together determine the scope of what can be built here.
-          </p>
-          <p className="mt-3 text-xs text-slate-400 bg-slate-50 rounded-lg px-3 py-2">
-            Additional ADU capacity may apply under state ADU law, separate from base zoning allowances.
-          </p>
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">What&apos;s happening now</h2>
+          <div className="text-base leading-relaxed">
+            {getWhatsHappeningContent(primaryProject)}
+          </div>
         </section>
 
         {/* 4. Project activity */}
@@ -145,9 +254,6 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
                 <p className="font-semibold text-slate-900 text-base">
                   {primaryProject.primary_project_label || primaryProject.primary_project_type}
                 </p>
-                {primaryProject.primary_project_description && (
-                  <p className="text-sm text-slate-500 mt-1 leading-relaxed">{primaryProject.primary_project_description}</p>
-                )}
                 <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
                   <span>
                     <span className="text-xs text-slate-400 font-medium mr-1">Permit</span>
@@ -159,18 +265,24 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
                       <span className="text-slate-600">{new Date(primaryProject.primary_project_opened).toLocaleDateString()}</span>
                     </span>
                   )}
-                  {primaryProject.primary_project_issued && (
-                    <span>
-                      <span className="text-xs text-slate-400 font-medium mr-1">Issued</span>
-                      <span className="text-slate-600">{new Date(primaryProject.primary_project_issued).toLocaleDateString()}</span>
+                  <span>
+                    <span className="text-xs text-slate-400 font-medium mr-1">Status</span>
+                    <span className="text-slate-600">
+                      {primaryProject.primary_project_issued
+                        ? `Issued ${new Date(primaryProject.primary_project_issued).toLocaleDateString()}`
+                        : "Not yet issued"}
                     </span>
-                  )}
+                  </span>
                 </div>
-                {primaryProject.project_momentum_label && primaryProject.project_momentum_label !== "N/A" && (
-                  <p className="mt-3 text-sm text-slate-600 font-medium">
-                    {getMomentumDescription(primaryProject.project_momentum_label)}
-                  </p>
-                )}
+                {(() => {
+                  const proposed = parseProposedUnits(primaryProject.primary_project_description);
+                  return proposed ? (
+                    <p className="mt-2 text-sm text-slate-700">
+                      <span className="text-xs text-slate-400 font-medium uppercase tracking-wide mr-1.5">Proposed</span>
+                      {proposed}
+                    </p>
+                  ) : null;
+                })()}
               </div>
             </div>
           </section>
@@ -180,23 +292,23 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
         <section className="bg-white border border-slate-200 rounded-xl p-6">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Signals</h2>
           <ul className="space-y-2 text-sm text-slate-600">
-            {primaryProject?.has_building_project
-              ? <li className="flex gap-2"><span className="text-slate-300">·</span>Building permit on record</li>
+            {primaryProject?.primary_project_opened
+              ? <li className="flex gap-2"><span className="text-slate-300">·</span>Permit filed ({fmtMonthYear(primaryProject.primary_project_opened)})</li>
               : <li className="flex gap-2"><span className="text-slate-300">·</span>No building permit filed</li>
             }
             {primaryProject?.has_building_project && (
               primaryProject?.primary_project_issued
-                ? <li className="flex gap-2"><span className="text-slate-300">·</span>Permit issued by city</li>
-                : <li className="flex gap-2"><span className="text-slate-300">·</span>Permit filed, not yet issued</li>
+                ? <li className="flex gap-2"><span className="text-slate-300">·</span>Permit issued {fmtMonthYear(primaryProject.primary_project_issued)}</li>
+                : <li className="flex gap-2"><span className="text-slate-300">·</span>Permit not yet issued</li>
             )}
             {primaryProject?.project_momentum_label === "Active"
               ? <li className="flex gap-2"><span className="text-slate-300">·</span>Active construction signals detected</li>
-              : <li className="flex gap-2"><span className="text-slate-300">·</span>No confirmed field activity in system</li>
+              : <li className="flex gap-2"><span className="text-slate-300">·</span>No confirmed inspection or field activity</li>
             }
             {primaryProject?.team_flag_active && primaryProject?.team_flag_reason && (
               <li className="flex gap-2 mt-3 pt-3 border-t border-slate-100">
                 <span className="text-slate-300">·</span>
-                <span className="text-xs text-slate-400 italic">Unverified field note: {primaryProject.team_flag_reason}. Not yet confirmed by inspection or imagery signals.</span>
+                <span className="text-xs text-slate-400 italic">Unverified field note: {primaryProject.team_flag_reason}</span>
               </li>
             )}
           </ul>
