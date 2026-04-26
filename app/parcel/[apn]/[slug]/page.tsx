@@ -130,6 +130,20 @@ function getWhatCanBeBuilt(zoneName: string, lotSqft: number, primaryProject: an
   return null;
 }
 
+// Regulatory warning: flag when proposed units likely exceed current ADU allowances
+// Simple heuristic — does NOT attempt to recalculate current capacity
+function shouldShowRegulatoryWarning(proposedUnits: string | null, zoneName: string): boolean {
+  if (!proposedUnits) return false;
+  const isSingleFamily = /^RS-/i.test(zoneName);
+  if (!isSingleFamily) return false;
+  // Extract ADU count from proposed string
+  const aduMatch = proposedUnits.match(/(\d+)\s+ADUs?/i);
+  const aduCount = aduMatch ? parseInt(aduMatch[1]) : 0;
+  // Current CA ADU law on SFR lots: typically 1 ADU + 1 JADU = 2-3 units max
+  // More than 3 ADUs almost certainly reflects prior or special program rules
+  return aduCount > 3;
+}
+
 // Permit type priority: lower number = higher priority
 function permitTypePriority(recordType: string | null | undefined): number {
   const t = (recordType || "").toLowerCase();
@@ -289,13 +303,23 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
                 <p className="text-xs text-slate-400 mt-0.5">{buildInfo.baseDensity}</p>
               </div>
               {/* Potential — only when ADU evidence is high confidence */}
-              {buildInfo.potentialCapacity && (
-                <div className="border-t border-slate-100 pt-4">
-                  <p className="text-xs text-emerald-600 uppercase tracking-wide font-medium mb-0.5">Possible with ADUs</p>
-                  <p className="text-emerald-700 font-semibold text-2xl">{buildInfo.potentialCapacity}</p>
-                  <p className="text-xs text-slate-400 mt-0.5">From submitted permit plans</p>
-                </div>
-              )}
+              {buildInfo.potentialCapacity && (() => {
+                const showWarning = shouldShowRegulatoryWarning(buildInfo.potentialCapacity, data.zone_name);
+                return (
+                  <div className="border-t border-slate-100 pt-4">
+                    <p className="text-xs text-emerald-600 uppercase tracking-wide font-medium mb-0.5">Possible with ADUs</p>
+                    <p className="text-emerald-700 font-semibold text-2xl">{buildInfo.potentialCapacity}</p>
+                    <p className="text-xs text-slate-400 mt-0.5 uppercase tracking-wide font-medium">
+                      Historical proposal — verify under current rules
+                    </p>
+                    {showWarning && (
+                      <p className="mt-2 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
+                        ⚠️ This proposal may reflect prior ADU regulations. Current rules may not allow this configuration.
+                      </p>
+                    )}
+                  </div>
+                );
+              })()}
               <p className="text-sm text-slate-600 leading-relaxed">{buildInfo.interpretation}</p>
               <p className="text-xs text-slate-400 bg-slate-50 rounded-lg px-3 py-2">{buildInfo.note}</p>
             </div>
