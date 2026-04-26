@@ -112,50 +112,74 @@ function getWhatCanBeBuilt(zoneName: string, lotSqft: number, primaryProject: an
   return null;
 }
 
-function parseProposedUnits(descriptions: (string | null | undefined)[]): string | null {
-  let bestAduCount = 0;
-  let bestResult: string | null = null;
+// Permit type priority: lower number = higher priority
+function permitTypePriority(recordType: string | null | undefined): number {
+  const t = (recordType || "").toLowerCase();
+  if (t.includes("combination building")) return 1;
+  if (t.includes("building permit") || t === "building permit") return 2;
+  if (t.includes("grading") || t.includes("structural")) return 3;
+  if (t.includes("plumbing") || t.includes("electrical") || t.includes("mechanical")) return 9;
+  return 5; // everything else
+}
 
-  for (const description of descriptions) {
-    if (!description) continue;
+function extractUnitsFromDescription(description: string): string | null {
+  if (!description) return null;
 
-    // Extract ADU count
-    const aduMatch = description.match(/\((\d+)\)\s*(?:new\s+)?ADU/i) ||
-                     description.match(/(\d+)\s+(?:new\s+)?(?:detached\s+)?ADU/i) ||
-                     description.match(/ADU[s]?\s+[x×]\s*(\d+)/i) ||
-                     description.match(/(\d+)\s+ADU\s+units?/i);
-    const aduCount = aduMatch ? parseInt(aduMatch[1]) : 0;
+  const aduMatch = description.match(/\((\d+)\)\s*(?:new\s+)?ADU/i) ||
+                   description.match(/(\d+)\s+(?:new\s+)?(?:detached\s+)?ADU/i) ||
+                   description.match(/ADU[s]?\s+[x×]\s*(\d+)/i) ||
+                   description.match(/(\d+)\s+ADU\s+units?/i);
+  const aduCount = aduMatch ? parseInt(aduMatch[1]) : 0;
 
-    // Detect primary unit type
-    const hasSdu = /\bSDU\b/i.test(description);
-    const hasSfr = /\bSFR\b/i.test(description) || /single.family/i.test(description);
-    const hasDwelling = /\bdwelling\b/i.test(description);
-    const primaryUnit = hasSdu ? "1 SDU" : (hasSfr || hasDwelling) ? "1 primary unit" : null;
+  const hasSdu = /\bSDU\b/i.test(description);
+  const hasSfr = /\bSFR\b/i.test(description) || /single.family/i.test(description);
+  const hasDwelling = /\bdwelling\b/i.test(description);
+  const primaryUnit = hasSdu ? "1 SDU" : (hasSfr || hasDwelling) ? "1 primary unit" : null;
 
-    let result: string | null = null;
-    if (aduCount > 0 && primaryUnit) {
-      result = `${primaryUnit} + ${aduCount} ADUs`;
-    } else if (aduCount > 0) {
-      result = `${aduCount} ADUs`;
-    } else if (primaryUnit) {
-      result = primaryUnit;
-    } else {
-      const unitMatch = description.match(/(\d+)\s+(?:new\s+)?(?:residential\s+)?units?/i);
-      if (unitMatch && parseInt(unitMatch[1]) > 1) {
-        result = `${unitMatch[1]} units (see permit description)`;
-      }
-    }
+  if (aduCount > 0 && primaryUnit) return `${primaryUnit} + ${aduCount} ADUs`;
+  if (aduCount > 0) return `${aduCount} ADUs`;
+  if (primaryUnit) return primaryUnit;
 
-    // Keep the result with the highest ADU count
-    if (result && aduCount > bestAduCount) {
-      bestAduCount = aduCount;
-      bestResult = result;
-    } else if (result && !bestResult) {
-      bestResult = result;
+  const unitMatch = description.match(/(\d+)\s+(?:new\s+)?(?:residential\s+)?units?/i);
+  if (unitMatch && parseInt(unitMatch[1]) > 1) return `${unitMatch[1]} units (see permit description)`;
+
+  return null;
+}
+
+// Parse proposed units by permit type priority — not by highest count
+function parseProposedUnits(
+  primaryProject: any,
+  permits: any[]
+): string | null {
+  // Build candidate list: primary project first, then all permits, sorted by type priority
+  const candidates: Array<{ priority: number; description: string | null }> = [];
+
+  if (primaryProject?.primary_project_description) {
+    candidates.push({
+      priority: permitTypePriority(primaryProject.primary_project_label),
+      description: primaryProject.primary_project_description,
+    });
+  }
+
+  for (const p of permits) {
+    if (p.description) {
+      candidates.push({
+        priority: permitTypePriority(p.record_type),
+        description: p.description,
+      });
     }
   }
 
-  return bestResult;
+  // Sort by permit type priority (ascending = best first)
+  candidates.sort((a, b) => a.priority - b.priority);
+
+  // Return first result that yields a parseable unit summary
+  for (const c of candidates) {
+    const result = extractUnitsFromDescription(c.description || "");
+    if (result) return result;
+  }
+
+  return null;
 }
 
 export default async function ParcelPage({ params }: { params: Promise<{ apn: string; slug: string }> }) {
@@ -196,12 +220,7 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
     (p: any) => !primaryProject || p.record_number !== primaryProject.primary_project_id
   );
 
-  // Collect all permit descriptions for proposed unit parsing
-  const allDescriptions = [
-    primaryProject?.primary_project_description,
-    ...(permitData || []).map((p: any) => p.description).filter(Boolean),
-  ];
-  const proposedUnits = parseProposedUnits(allDescriptions);
+  const proposedUnits = parseProposedUnits(primaryProject, permitData || []);
   const buildInfo = getWhatCanBeBuilt(data.zone_name, data.lot_area_sqft, primaryProject, proposedUnits);
 
   return (
