@@ -70,29 +70,27 @@ function fmtMonthYear(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString("en-US", { month: "long", year: "numeric" });
 }
 
-function getWhatCanBeBuilt(zoneName: string, lotSqft: number, primaryProject: any) {
+function getWhatCanBeBuilt(zoneName: string, lotSqft: number, primaryProject: any, proposedUnits: string | null) {
   const rsMatch = zoneName?.match(/^RS-1-(\d+)/i);
   const rmMatch = zoneName?.match(/^RM-(\d+)-(\d+)/i);
-
-  const hasAduSignal = primaryProject?.primary_project_description &&
-    (primaryProject.primary_project_description.match(/\d+.*ADU/i) ||
-     primaryProject.primary_project_description.match(/ADU.*\d+/i));
 
   if (rsMatch) {
     const minSfPerUnit = parseInt(rsMatch[1]) * 1000;
     const baseUnits = Math.floor(lotSqft / minSfPerUnit);
-    const isAduHeavy = hasAduSignal && baseUnits <= 2;
+    const hasAduSignal = !!proposedUnits && /ADU/i.test(proposedUnits);
     return {
-      type: isAduHeavy ? "adu-heavy" : "sfr",
+      type: hasAduSignal ? "adu-heavy" : "sfr",
       baseCapacity: `${baseUnits} unit${baseUnits !== 1 ? "s" : ""}`,
-      zoning: `${zoneName} (single-family)`,
-      density: `1 unit per ${minSfPerUnit.toLocaleString()} SF`,
-      interpretation: isAduHeavy
-        ? "Base zoning allows limited units, but recent permit activity suggests an ADU-driven development strategy."
+      baseLabel: zoneName,
+      baseDensity: `${zoneName} → 1 DU / ${minSfPerUnit.toLocaleString()} SF`,
+      interpretation: hasAduSignal
+        ? `Base zoning allows ${baseUnits} unit${baseUnits !== 1 ? "s" : ""} by right. Permit activity shows an ADU-driven development strategy.`
         : `${zoneName} zoning allows 1 unit per ${minSfPerUnit.toLocaleString()} SF. This parcel supports ${baseUnits} unit${baseUnits !== 1 ? "s" : ""} based on lot size.`,
-      note: isAduHeavy
+      note: hasAduSignal
         ? "ADU programs may allow significantly more units than base zoning."
         : "Additional units may be possible under state ADU law.",
+      potentialCapacity: hasAduSignal ? proposedUnits : null,
+      potentialNote: hasAduSignal ? "Based on permit activity" : null,
     };
   }
 
@@ -102,46 +100,62 @@ function getWhatCanBeBuilt(zoneName: string, lotSqft: number, primaryProject: an
     return {
       type: "multifamily",
       baseCapacity: `${baseUnits} unit${baseUnits !== 1 ? "s" : ""}`,
-      zoning: `${zoneName} (multifamily)`,
-      density: `1 unit per ${minSfPerUnit.toLocaleString()} SF`,
+      baseLabel: zoneName,
+      baseDensity: `${zoneName} → 1 DU / ${minSfPerUnit.toLocaleString()} SF`,
       interpretation: `${zoneName} zoning allows 1 unit per ${minSfPerUnit.toLocaleString()} SF. This parcel supports ${baseUnits} unit${baseUnits !== 1 ? "s" : ""} by-right.`,
       note: "Higher unit counts may be achievable through ADU programs or density bonuses.",
+      potentialCapacity: null,
+      potentialNote: null,
     };
   }
 
   return null;
 }
 
-function parseProposedUnits(description: string | null | undefined): string | null {
-  if (!description) return null;
+function parseProposedUnits(descriptions: (string | null | undefined)[]): string | null {
+  let bestAduCount = 0;
+  let bestResult: string | null = null;
 
-  // Extract ADU count
-  const aduMatch = description.match(/\((\d+)\)\s*(?:new\s+)?ADU/i) ||
-                   description.match(/(\d+)\s+(?:new\s+)?(?:detached\s+)?ADU/i) ||
-                   description.match(/ADU[s]?\s+[x×]\s*(\d+)/i);
-  const aduCount = aduMatch ? parseInt(aduMatch[1]) : 0;
+  for (const description of descriptions) {
+    if (!description) continue;
 
-  // Detect primary unit type
-  const hasSdu = /\bSDU\b/i.test(description);
-  const hasSfr = /\bSFR\b/i.test(description) || /single.family/i.test(description);
-  const hasDwelling = /\bdwelling\b/i.test(description);
-  const primaryUnit = hasSdu ? "1 SDU" : (hasSfr || hasDwelling) ? "1 primary unit" : null;
+    // Extract ADU count
+    const aduMatch = description.match(/\((\d+)\)\s*(?:new\s+)?ADU/i) ||
+                     description.match(/(\d+)\s+(?:new\s+)?(?:detached\s+)?ADU/i) ||
+                     description.match(/ADU[s]?\s+[x×]\s*(\d+)/i) ||
+                     description.match(/(\d+)\s+ADU\s+units?/i);
+    const aduCount = aduMatch ? parseInt(aduMatch[1]) : 0;
 
-  if (aduCount > 0 && primaryUnit) {
-    return `${primaryUnit} + ${aduCount} ADU${aduCount !== 1 ? "s" : ""}`;
-  } else if (aduCount > 0) {
-    return `${aduCount} ADU${aduCount !== 1 ? "s" : ""}`;
-  } else if (primaryUnit) {
-    return primaryUnit;
+    // Detect primary unit type
+    const hasSdu = /\bSDU\b/i.test(description);
+    const hasSfr = /\bSFR\b/i.test(description) || /single.family/i.test(description);
+    const hasDwelling = /\bdwelling\b/i.test(description);
+    const primaryUnit = hasSdu ? "1 SDU" : (hasSfr || hasDwelling) ? "1 primary unit" : null;
+
+    let result: string | null = null;
+    if (aduCount > 0 && primaryUnit) {
+      result = `${primaryUnit} + ${aduCount} ADUs`;
+    } else if (aduCount > 0) {
+      result = `${aduCount} ADUs`;
+    } else if (primaryUnit) {
+      result = primaryUnit;
+    } else {
+      const unitMatch = description.match(/(\d+)\s+(?:new\s+)?(?:residential\s+)?units?/i);
+      if (unitMatch && parseInt(unitMatch[1]) > 1) {
+        result = `${unitMatch[1]} units (see permit description)`;
+      }
+    }
+
+    // Keep the result with the highest ADU count
+    if (result && aduCount > bestAduCount) {
+      bestAduCount = aduCount;
+      bestResult = result;
+    } else if (result && !bestResult) {
+      bestResult = result;
+    }
   }
 
-  // Fallback: check for generic unit count
-  const unitMatch = description.match(/(\d+)\s+(?:new\s+)?(?:residential\s+)?units?/i);
-  if (unitMatch && parseInt(unitMatch[1]) > 1) {
-    return `${unitMatch[1]} units (see permit description)`;
-  }
-
-  return null;
+  return bestResult;
 }
 
 export default async function ParcelPage({ params }: { params: Promise<{ apn: string; slug: string }> }) {
@@ -182,7 +196,13 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
     (p: any) => !primaryProject || p.record_number !== primaryProject.primary_project_id
   );
 
-  const buildInfo = getWhatCanBeBuilt(data.zone_name, data.lot_area_sqft, primaryProject);
+  // Collect all permit descriptions for proposed unit parsing
+  const allDescriptions = [
+    primaryProject?.primary_project_description,
+    ...(permitData || []).map((p: any) => p.description).filter(Boolean),
+  ];
+  const proposedUnits = parseProposedUnits(allDescriptions);
+  const buildInfo = getWhatCanBeBuilt(data.zone_name, data.lot_area_sqft, primaryProject, proposedUnits);
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -223,11 +243,21 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
         <section className="bg-white border border-slate-200 rounded-xl p-6">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">What can be built</h2>
           {buildInfo ? (
-            <div className="space-y-3">
+            <div className="space-y-4">
+              {/* Base zoning */}
               <div>
-                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-0.5">Base Capacity</p>
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-0.5">Base (Zoning)</p>
                 <p className="text-slate-900 font-semibold text-2xl">{buildInfo.baseCapacity}</p>
+                <p className="text-xs text-slate-400 mt-0.5">{buildInfo.baseDensity}</p>
               </div>
+              {/* Potential — only when ADU evidence is high confidence */}
+              {buildInfo.potentialCapacity && (
+                <div className="border-t border-slate-100 pt-4">
+                  <p className="text-xs text-emerald-600 uppercase tracking-wide font-medium mb-0.5">Potential (ADU Program)</p>
+                  <p className="text-emerald-700 font-semibold text-2xl">{buildInfo.potentialCapacity}</p>
+                  <p className="text-xs text-slate-400 mt-0.5">{buildInfo.potentialNote}</p>
+                </div>
+              )}
               <p className="text-sm text-slate-600 leading-relaxed">{buildInfo.interpretation}</p>
               <p className="text-xs text-slate-400 bg-slate-50 rounded-lg px-3 py-2">{buildInfo.note}</p>
             </div>
@@ -274,15 +304,12 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
                     </span>
                   </span>
                 </div>
-                {(() => {
-                  const proposed = parseProposedUnits(primaryProject.primary_project_description);
-                  return proposed ? (
-                    <p className="mt-2 text-sm text-slate-700">
-                      <span className="text-xs text-slate-400 font-medium uppercase tracking-wide mr-1.5">Proposed</span>
-                      {proposed}
-                    </p>
-                  ) : null;
-                })()}
+                {proposedUnits && (
+                  <p className="mt-2 text-sm text-slate-700">
+                    <span className="text-xs text-slate-400 font-medium uppercase tracking-wide mr-1.5">Proposed</span>
+                    {proposedUnits}
+                  </p>
+                )}
               </div>
             </div>
           </section>
