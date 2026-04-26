@@ -88,6 +88,13 @@ function fmtMonthYear(dateStr: string): string {
   return new Date(dateStr).toLocaleDateString("en-US", { month: "long", year: "numeric" });
 }
 
+// TruLot Regulatory Doctrine — enforced here
+// Tier 1A: fully deterministic + constraint-complete → show numbers cleanly
+// Tier 1B: deterministic but incomplete inputs → show number + warning
+// Tier 2: conditional/overlay-driven → flags ONLY, no unit counts
+// NEVER aggregate across tiers. Each program stands alone.
+// Source: 99_Brooks/brain/companies/TruLot-Regulatory-Doctrine.md
+
 // SD ADU Home Density Bonus cap — Single Dwelling Unit Zones
 // Source: SD IB-400 Section C table (lot area ≥ 10,000 SF → max 6 ADUs/JADUs)
 function sdAduCap(lotSqft: number): { maxAduJadu: number; totalMax: number; label: string } {
@@ -344,6 +351,7 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
               })()}
               <p className="text-sm text-slate-600 leading-relaxed">{buildInfo.interpretation}</p>
               <p className="text-xs text-slate-400 bg-slate-50 rounded-lg px-3 py-2">{buildInfo.note}</p>
+              <p className="text-xs text-slate-300 mt-1">Verified capacity shown separately from potential upside. Numbers are source-backed.</p>
             </div>
           ) : (
             <p className="text-sm text-slate-400">See local zoning code for development allowances.</p>
