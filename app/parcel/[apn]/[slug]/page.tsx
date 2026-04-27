@@ -19,6 +19,89 @@ function getStatusBadge(primaryProject: any, pageData: any) {
   return { label: "No recent activity", bg: "bg-slate-100", text: "text-slate-600" };
 }
 
+// Infer existing structure from permit history — heuristic only
+// Never state unit count as fact without assessor data
+function getExistingStructure(permits: any[]): {
+  label: string;
+  units: string;
+  additionalUnits: string;
+  recentActivity: string | null;
+} {
+  const hasAduPermit = permits.some((p: any) =>
+    /ADU|accessory dwelling|addition|conversion/i.test(p.record_type || '') ||
+    /ADU|accessory dwelling/i.test(p.description || '')
+  );
+  const hasPvPermit = permits.some((p: any) =>
+    /photovoltaic|solar|PV/i.test(p.record_type || '')
+  );
+  const hasExpansion = permits.some((p: any) =>
+    /addition|expansion|conversion/i.test(p.record_type || '')
+  );
+
+  const recentYear = permits.length > 0
+    ? new Date(permits[0].opened_date || '').getFullYear() || null
+    : null;
+
+  let units: string;
+  let additionalUnits: string;
+
+  if (hasAduPermit) {
+    units = 'Likely 1 primary unit (inferred from permit history)';
+    additionalUnits = 'Additional unit likely (ADU or conversion permit detected)';
+  } else if (hasExpansion) {
+    units = 'Likely 1 unit (inferred from permit history)';
+    additionalUnits = 'Expansion activity detected — additional unit possible';
+  } else {
+    units = 'Likely 1 unit (no ADU or expansion permits detected)';
+    additionalUnits = 'None detected';
+  }
+
+  let recentActivity: string | null = null;
+  if (hasPvPermit && recentYear) {
+    recentActivity = `Solar installation detected (${recentYear}) — non-housing improvement`;
+  } else if (permits.length > 0 && recentYear) {
+    recentActivity = `Recent permit activity (${recentYear})`;
+  }
+
+  return { label: 'Permit-based inference only', units, additionalUnits, recentActivity };
+}
+
+// Underbuilt signal — directional only, conservative phrasing required
+function getUnderbuiltSignal(
+  permits: any[],
+  buildInfo: ReturnType<typeof getWhatCanBeBuilt> | null
+): { level: 'high' | 'moderate' | 'low' | 'unknown'; reasoning: string[]; verify: string[] } | null {
+  if (!buildInfo) return null;
+
+  const hasAduPermit = permits.some((p: any) =>
+    /ADU|accessory dwelling/i.test(p.record_type || '') ||
+    /ADU|accessory dwelling/i.test(p.description || '')
+  );
+
+  const potentialMax = buildInfo.currentCapacity
+    ? parseInt(buildInfo.currentCapacity.replace(/\D/g, '')) || 0
+    : 0;
+
+  if (potentialMax === 0) return null;
+
+  const reasoning: string[] = [];
+  const verify: string[] = ['ADU Bonus program eligibility', 'Overlay and site constraints'];
+
+  if (hasAduPermit) {
+    reasoning.push('ADU permit detected — some density may already be added');
+    return { level: 'low', reasoning, verify };
+  }
+
+  reasoning.push('Likely 1 unit inferred from permit history');
+  reasoning.push(`Lot size may support conditional upside (${buildInfo.currentCapacity})`);
+  reasoning.push('No ADU or density expansion permits detected');
+
+  if (potentialMax >= 6) {
+    return { level: 'moderate', reasoning, verify };
+  }
+  return { level: 'low', reasoning, verify };
+}
+
 function getInterpretation(primaryProject: any, proposedUnits: string | null): string | null {
   if (!primaryProject?.has_building_project) return null;
   const momentum = primaryProject.project_momentum_label;
@@ -276,6 +359,8 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
   const proposedUnits = parseProposedUnits(primaryProject, permitData || []);
   const buildInfo = getWhatCanBeBuilt(data.zone_name, data.lot_area_sqft, primaryProject, proposedUnits);
   const interpretation = getInterpretation(primaryProject, proposedUnits);
+  const existingStructure = getExistingStructure(uniquePermits);
+  const underbuiltSignal = getUnderbuiltSignal(uniquePermits, buildInfo);
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -389,9 +474,64 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
           )}
         </section>
 
-        {/* 3. What's happening now */}
+        {/* 3. Existing Structure */}
         <section className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">What&apos;s happening now</h2>
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Existing structure</h2>
+          <div className="space-y-3">
+            <div>
+              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Primary residence</p>
+              <p className="text-slate-700 font-medium text-base">{existingStructure.units}</p>
+            </div>
+            <div>
+              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Additional units</p>
+              <p className="text-slate-600 text-sm">{existingStructure.additionalUnits}</p>
+            </div>
+            {existingStructure.recentActivity && (
+              <div>
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Recent improvements</p>
+                <p className="text-slate-500 text-sm">{existingStructure.recentActivity}</p>
+              </div>
+            )}
+            <p className="text-xs text-slate-300 pt-1">Inferred from permit history only. No assessor data yet — verify before relying on this.</p>
+          </div>
+        </section>
+
+        {/* 3b. Underbuilt Signal */}
+        {underbuiltSignal && underbuiltSignal.level !== 'low' && (
+          <section className="bg-white border border-slate-200 rounded-xl p-6">
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Underbuilt signal</h2>
+            <div className="space-y-3">
+              <div className="flex items-center gap-2">
+                <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold ${
+                  underbuiltSignal.level === 'high' ? 'bg-amber-50 text-amber-700' :
+                  underbuiltSignal.level === 'moderate' ? 'bg-yellow-50 text-yellow-700' :
+                  'bg-slate-100 text-slate-500'
+                }`}>{underbuiltSignal.level === 'moderate' ? 'Moderate' : underbuiltSignal.level === 'high' ? 'High' : 'Unknown'}</span>
+              </div>
+              <p className="text-sm text-slate-600">This parcel may be underbuilt based on available records.</p>
+              <div>
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Why</p>
+                <ul className="space-y-1">
+                  {underbuiltSignal.reasoning.map((r, i) => (
+                    <li key={i} className="flex gap-2 text-sm text-slate-500"><span className="text-slate-300">·</span>{r}</li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Still verify</p>
+                <ul className="space-y-1">
+                  {underbuiltSignal.verify.map((v, i) => (
+                    <li key={i} className="flex gap-2 text-sm text-slate-500"><span className="text-slate-300">·</span>{v}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* 3c. Permit status */}
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Permit status</h2>
           <div className="text-base leading-relaxed">
             {getWhatsHappeningContent(primaryProject)}
           </div>
