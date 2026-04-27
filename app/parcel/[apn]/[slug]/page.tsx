@@ -316,31 +316,46 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
         <section className="bg-white border border-slate-200 rounded-xl p-6">
           <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">What can be built</h2>
           {buildInfo ? (
-            <div className="space-y-4">
-              {/* Base zoning */}
+            <div className="space-y-5">
+
+              {/* BASELINE CAPACITY — Source-backed (Tier 1A) */}
               <div>
-                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-0.5">Base (Zoning)</p>
-                <p className="text-slate-900 font-semibold text-2xl">{buildInfo.baseCapacity}</p>
-                <p className="text-xs text-slate-400 mt-0.5">{buildInfo.baseDensity}</p>
+                <div className="flex items-center gap-2 mb-1">
+                  <p className="text-xs text-slate-400 uppercase tracking-wide font-semibold">Baseline Capacity</p>
+                  <span className="text-xs text-emerald-600 font-medium">🟢 Source-backed</span>
+                </div>
+                <p className="text-slate-900 font-bold text-2xl">{buildInfo.baseCapacity}</p>
+                <p className="text-sm text-slate-500 mt-1">{buildInfo.baseDensity} — RS zoning allows 1 DU + standard ADU allowances</p>
               </div>
-              {/* Current Program Capacity — deterministic SD ADU rule */}
+
+              {/* POTENTIAL UPSIDE — Conditional (Tier 1B) */}
               {buildInfo.currentCapacity && (
                 <div className="border-t border-slate-100 pt-4">
-                  <p className="text-xs text-emerald-600 uppercase tracking-wide font-medium mb-0.5">Current Program (ADU)</p>
-                  <p className="text-emerald-700 font-semibold text-2xl">{buildInfo.currentCapacity}</p>
-                  <p className="text-xs text-slate-400 mt-0.5">{buildInfo.currentDetail}</p>
+                  <div className="flex items-center gap-2 mb-1">
+                    <p className="text-xs text-amber-600 uppercase tracking-wide font-semibold">Potential Upside</p>
+                    <span className="text-xs text-amber-500 font-medium">🟡 Conditional</span>
+                  </div>
+                  <p className="text-amber-800 font-bold text-2xl">{buildInfo.currentCapacity} <span className="text-base font-normal text-amber-600">(if eligible)</span></p>
+                  <p className="text-sm text-slate-500 mt-1">{buildInfo.currentDetail}</p>
+                  <div className="mt-2 space-y-1">
+                    <p className="text-xs text-amber-700">Requires ADU Bonus Program compliance</p>
+                    <p className="text-xs text-amber-700">Subject to site and overlay constraints</p>
+                    <p className="text-xs text-amber-700">Not guaranteed buildable yield</p>
+                  </div>
                 </div>
               )}
-              {/* Historical Proposal — only when permit evidence exists */}
+
+              {/* HISTORICAL PROPOSAL — from permit plans */}
               {buildInfo.potentialCapacity && (() => {
                 const showWarning = shouldShowRegulatoryWarning(buildInfo.potentialCapacity, data.zone_name);
                 return (
                   <div className="border-t border-slate-100 pt-4">
-                    <p className="text-xs text-slate-500 uppercase tracking-wide font-medium mb-0.5">Historical Proposal</p>
-                    <p className="text-slate-700 font-semibold text-2xl">{buildInfo.potentialCapacity}</p>
-                    <p className="text-xs text-slate-400 mt-0.5 uppercase tracking-wide font-medium">
-                      From submitted permit plans — verify under current rules
-                    </p>
+                    <div className="flex items-center gap-2 mb-1">
+                      <p className="text-xs text-slate-400 uppercase tracking-wide font-semibold">Historical Proposal</p>
+                      <span className="text-xs text-slate-400 font-medium">⚪️ Verify</span>
+                    </div>
+                    <p className="text-slate-600 font-bold text-2xl">{buildInfo.potentialCapacity}</p>
+                    <p className="text-xs text-slate-400 mt-1">From submitted permit plans — verify under current rules</p>
                     {showWarning && (
                       <p className="mt-2 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
                         ⚠️ This proposal may reflect prior ADU regulations. Current rules may not allow this configuration.
@@ -349,9 +364,25 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
                   </div>
                 );
               })()}
-              <p className="text-sm text-slate-600 leading-relaxed">{buildInfo.interpretation}</p>
-              <p className="text-xs text-slate-400 bg-slate-50 rounded-lg px-3 py-2">{buildInfo.note}</p>
-              <p className="text-xs text-slate-300 mt-1">Verified capacity shown separately from potential upside. Numbers are source-backed.</p>
+
+              {/* WHAT COULD LIMIT THIS — always show */}
+              <div className="border-t border-slate-100 pt-4">
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-semibold mb-2">What could limit this</p>
+                <ul className="space-y-1 text-sm text-slate-500">
+                  <li className="flex gap-2"><span className="text-slate-300">·</span>Coastal Overlay Zone — {data.zone_name?.toLowerCase().includes('coastal') ? 'may apply' : <span className="text-slate-400">unknown</span>}</li>
+                  <li className="flex gap-2"><span className="text-slate-300">·</span>Environmentally Sensitive Lands (ESL) — <span className="text-slate-400">not yet verified</span></li>
+                  <li className="flex gap-2"><span className="text-slate-300">·</span>FAR / lot coverage limits — <span className="text-slate-400">not yet verified</span></li>
+                  <li className="flex gap-2"><span className="text-slate-300">·</span>Fire access / VHFHSZ — <span className="text-slate-400">not yet verified</span></li>
+                </ul>
+              </div>
+
+              {/* SOURCE — non-negotiable */}
+              <div className="border-t border-slate-100 pt-3">
+                <p className="text-xs text-slate-400">
+                  Source: <a href="https://www.sandiego.gov/development-services/forms-publications/information-bulletins/400" target="_blank" rel="noopener noreferrer" className="underline hover:text-slate-600">City of San Diego Information Bulletin 400 (IB-400)</a>
+                </p>
+              </div>
+
             </div>
           ) : (
             <p className="text-sm text-slate-400">See local zoning code for development allowances.</p>
