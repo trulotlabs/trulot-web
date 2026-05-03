@@ -5,6 +5,23 @@ function formatAPN(apn: string): string {
   return apn;
 }
 
+function getNeighborhoodFromZip(zip: string | null): string | null {
+  if (!zip) return null;
+  const zipMap: Record<string, string> = {
+    "92101": "Downtown", "92102": "South Park / Golden Hill", "92103": "Mission Hills / Hillcrest",
+    "92104": "North Park", "92105": "City Heights", "92106": "Point Loma",
+    "92107": "Ocean Beach", "92108": "Mission Valley", "92109": "Pacific Beach",
+    "92110": "Old Town", "92111": "Linda Vista", "92113": "Barrio Logan",
+    "92114": "Encanto", "92115": "College Area", "92116": "Normal Heights",
+    "92117": "Clairemont", "92119": "San Carlos", "92120": "Allied Gardens",
+    "92121": "Sorrento Valley", "92122": "University City", "92123": "Serra Mesa",
+    "92124": "Tierrasanta", "92126": "Mira Mesa", "92127": "Rancho Bernardo",
+    "92128": "Rancho Bernardo", "92129": "Penasquitos", "92130": "Carmel Valley",
+    "92131": "Scripps Ranch", "92139": "Paradise Hills", "92154": "Otay Ranch"
+  };
+  return zipMap[zip] || zip;
+}
+
 function getStatusBadge(primaryProject: any, pageData: any) {
   if (primaryProject) {
     switch (primaryProject.project_momentum_label) {
@@ -16,7 +33,7 @@ function getStatusBadge(primaryProject: any, pageData: any) {
   }
   if (pageData?.has_nearby_active_project) return { label: "Active nearby", bg: "bg-emerald-50", text: "text-emerald-700" };
   if (pageData?.has_nearby_completed_project) return { label: "Recently built nearby", bg: "bg-blue-50", text: "text-blue-700" };
-  return { label: "No recent activity", bg: "bg-slate-100", text: "text-slate-600" };
+  return { label: "No current activity", bg: "bg-slate-100", text: "text-slate-600" };
 }
 
 // Infer existing structure from permit history — heuristic only
@@ -118,53 +135,6 @@ function getInterpretation(primaryProject: any, proposedUnits: string | null): s
   if (momentum === 'Active') return 'Construction is actively underway on this parcel.';
   if (momentum === 'Completed') return 'A development project on this parcel has been completed.';
   return null;
-}
-
-function getWhatsHappeningContent(primaryProject: any) {
-  if (!primaryProject || !primaryProject.has_building_project) {
-    return (
-      <>
-        <p className="font-semibold text-slate-900">No building permit on record.</p>
-        <p className="text-slate-600 mt-1">Only administrative or support permits have been filed.</p>
-      </>
-    );
-  }
-  const momentum = primaryProject.project_momentum_label;
-  switch (momentum) {
-    case "Awaiting Issuance":
-      return (
-        <>
-          <p className="font-semibold text-slate-900">Project is in review.</p>
-          <p className="text-slate-600 mt-1">Permit filed, not yet approved.</p>
-          <p className="text-slate-600">Construction cannot begin until approval.</p>
-        </>
-      );
-    case "Active":
-      return (
-        <>
-          <p className="font-semibold text-slate-900">Construction is underway.</p>
-          <p className="text-slate-600 mt-1">Active building permit on file.</p>
-          <p className="text-slate-600">Field activity detected.</p>
-        </>
-      );
-    case "Completed":
-      return (
-        <>
-          <p className="font-semibold text-slate-900">Project completed.</p>
-          <p className="text-slate-600 mt-1">Permit closed.</p>
-          <p className="text-slate-600">Construction finished.</p>
-        </>
-      );
-    default: {
-      const type = (primaryProject.primary_project_label || primaryProject.primary_project_type || "building permit").toLowerCase();
-      return (
-        <>
-          <p className="font-semibold text-slate-900">A {type} is on record.</p>
-          <p className="text-slate-600 mt-1">Activity signals are limited.</p>
-        </>
-      );
-    }
-  }
 }
 
 function fmtMonthYear(dateStr: string): string {
@@ -318,12 +288,196 @@ function parseProposedUnits(
   return null;
 }
 
+// Returns the best available proposed scope description from permit data
+// Fixes 639 67th St bug: primary permit may describe retaining walls ("per separate permit")
+// while the real ADU/unit scope lives in a sibling permit
+function getProposedScope(
+  primaryProject: any,
+  permits: any[]
+): { text: string; source: string; isRelated: boolean } | null {
+  const primary = primaryProject?.primary_project_description ?? '';
+
+  // Check if the primary description is vague or deferred
+  const isVague =
+    primary.length < 100 ||
+    /per separate permit/i.test(primary) ||
+    /retaining wall/i.test(primary) ||
+    /associated with.*existing/i.test(primary);
+
+  if (primary && !isVague) {
+    return { text: primary, source: primaryProject.primary_project_id, isRelated: false };
+  }
+
+  // Scan sibling permits for a richer description
+  const richer = [...permits]
+    .filter(p => p.description && p.description.length > primary.length)
+    .sort((a, b) => (b.description?.length ?? 0) - (a.description?.length ?? 0))
+    .find(p => /ADU|units?|construction|building|residential|multifamily|dwelling/i.test(p.description ?? ''));
+
+  if (richer) {
+    return { text: richer.description, source: richer.record_id || richer.record_number, isRelated: true };
+  }
+
+  if (primary) {
+    return { text: primary, source: primaryProject.primary_project_id, isRelated: false };
+  }
+
+  return null;
+}
+
+// Sprint 1 Feature Functions
+
+// Build permit tree using parent_record_id relationships
+function buildPermitTree(permits: any[]) {
+  const tree: any[] = [];
+  const permitMap = new Map(permits.map(p => [p.record_number, p]));
+
+  permits.forEach(permit => {
+    if (!permit.parent_record_id || !permitMap.has(permit.parent_record_id)) {
+      tree.push({ ...permit, children: [] });
+    }
+  });
+
+  permits.forEach(permit => {
+    if (permit.parent_record_id && permitMap.has(permit.parent_record_id)) {
+      const parent = tree.find(p => p.record_number === permit.parent_record_id);
+      if (parent) {
+        parent.children.push(permit);
+      }
+    }
+  });
+
+  return tree.slice(0, 15);
+}
+
+// Calculate time-to-permit metrics
+function calculateTimeToPermit(permits: any[]) {
+  const closedPermits = permits.filter(p =>
+    p.opened_date && p.issued_date &&
+    (p.status?.toLowerCase().includes('finaled') || p.status?.toLowerCase().includes('closed') || p.issued_date)
+  );
+
+  if (closedPermits.length === 0) return null;
+
+  const days = closedPermits.map(p => {
+    const opened = new Date(p.opened_date);
+    const issued = new Date(p.issued_date);
+    return Math.round((issued.getTime() - opened.getTime()) / (1000 * 60 * 60 * 24));
+  }).filter(d => d > 0 && d < 3650); // Filter out invalid dates
+
+  if (days.length === 0) return null;
+
+  const avgDays = Math.round(days.reduce((a, b) => a + b, 0) / days.length);
+  let rating: 'Easy' | 'Moderate' | 'Complex';
+
+  if (avgDays < 60) rating = 'Easy';
+  else if (avgDays <= 200) rating = 'Moderate';
+  else rating = 'Complex';
+
+  return { avgDays, rating, count: days.length };
+}
+
+// Get top active developers in submarket
+function getActiveDevelopers(permits: any[], currentApn: string) {
+  const activePermits = permits.filter(p =>
+    p.record_type?.toLowerCase().includes('combination building') &&
+    (p.status?.toLowerCase().includes('issued') || p.status?.toLowerCase().includes('active')) &&
+    p.apn_norm !== currentApn
+  );
+
+  const builderCounts = new Map<string, number>();
+
+  activePermits.forEach(p => {
+    const name = p.applicant_name || p.contractor_name || 'Unknown';
+    if (name && name !== 'Unknown' && name.trim().length > 0) {
+      builderCounts.set(name, (builderCounts.get(name) || 0) + 1);
+    }
+  });
+
+  return Array.from(builderCounts.entries())
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 5);
+}
+
+// Get comparable permitted projects
+function getComparableProjects(permits: any[], currentApn: string) {
+  return permits.filter(p =>
+    p.record_type?.toLowerCase().includes('combination building') &&
+    (p.status?.toLowerCase().includes('issued') || p.status?.toLowerCase().includes('finaled')) &&
+    p.apn_norm !== currentApn &&
+    p.address
+  ).slice(0, 8);
+}
+
+function getTenSecondStory(
+  primaryProject: any,
+  buildInfo: ReturnType<typeof getWhatCanBeBuilt> | null,
+  proposedUnits: string | null,
+  _data: any
+): string {
+  if (primaryProject?.has_building_project) {
+    const momentum = primaryProject.project_momentum_label;
+    let story = '';
+    if (momentum === 'Active') {
+      story = `${proposedUnits || 'Development'} actively under construction.`;
+    } else if (momentum === 'Awaiting Issuance') {
+      story = `Development permit filed for ${proposedUnits || 'new project'}, pending city approval.`;
+    } else if (momentum === 'Completed') {
+      story = `Development project (${proposedUnits || 'unknown scope'}) has been completed.`;
+    } else {
+      story = 'A building permit is on file — current status unclear.';
+    }
+    if (buildInfo?.currentCapacity) {
+      story += ` ADU program may allow up to ${buildInfo.currentCapacity} if eligible.`;
+    }
+    return story;
+  }
+  if (buildInfo) {
+    return `No current development activity. Zoning allows ${buildInfo.baseCapacity} by right.`;
+  }
+  return 'No current development activity detected.';
+}
+
 export default async function ParcelPage({ params }: { params: Promise<{ apn: string; slug: string }> }) {
   const { apn } = await params;
 
   const { data, error } = await supabase.from("parcel_page_api_v2").select("*").eq("apn_norm", apn).single();
   const { data: primaryProject } = await supabase.from("parcel_primary_project_v1").select("*").eq("apn_norm", apn).maybeSingle();
   const { data: permitData } = await supabase.from("parcel_permit_terminal_v2").select("*").eq("apn_norm", apn).order("opened_date", { ascending: false });
+
+  // Sprint 1 feature queries
+  const zipCode = data?.zip_code;
+  const { data: submarketPermits } = zipCode
+    ? await supabase.from("parcel_permit_terminal_v2").select("*").eq("zip_code", zipCode).order("opened_date", { ascending: false }).limit(200)
+    : { data: null };
+
+  // Sprint 2: Fetch nearby parcels from PostGIS edge function
+  let nearbyParcels: any[] = [];
+  let nearbyError: string | null = null;
+  try {
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    if (supabaseUrl) {
+      const response = await fetch(
+        `${supabaseUrl}/functions/v1/nearby-parcels?apn=${apn}&radius_ft=2640`,
+        {
+          headers: {
+            'Authorization': `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY}`,
+          },
+        }
+      );
+      if (response.ok) {
+        const result = await response.json();
+        nearbyParcels = result.nearby_parcels || [];
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        nearbyError = errorData.error || 'Failed to fetch nearby parcels';
+      }
+    }
+  } catch (err) {
+    console.error('Error fetching nearby parcels:', err);
+    nearbyError = 'Edge function not available';
+  }
 
   if (error || !data) {
     return (
@@ -341,8 +495,20 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
     );
   }
 
-  const status = getStatusBadge(primaryProject, data);
-  const hasNearby = (data.nearby_project_count ?? 0) > 0;
+  // Use live nearby data if available to determine status
+  const hasNearbyActive = nearbyParcels.some(p => p.project_state === 'Active');
+  const hasNearbyCompleted = nearbyParcels.some(p => p.project_state === 'Completed');
+
+  // Enhance status badge with PostGIS data
+  const status = (() => {
+    const baseStatus = getStatusBadge(primaryProject, data);
+    // Override with live PostGIS data if available and more accurate
+    if (!primaryProject && nearbyParcels.length > 0) {
+      if (hasNearbyActive) return { label: "Active nearby", bg: "bg-emerald-50", text: "text-emerald-700" };
+      if (hasNearbyCompleted) return { label: "Recently built nearby", bg: "bg-blue-50", text: "text-blue-700" };
+    }
+    return baseStatus;
+  })();
 
   const seen = new Set<string>();
   const uniquePermits = (permitData || []).filter((p: any) => {
@@ -351,16 +517,43 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
     seen.add(key);
     return true;
   });
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const supportingPermits = uniquePermits.filter(
     (p: any) => !primaryProject || p.record_number !== primaryProject.primary_project_id
   );
 
   const proposedUnits = parseProposedUnits(primaryProject, permitData || []);
+  const proposedScope = getProposedScope(primaryProject, permitData || []);
   const buildInfo = getWhatCanBeBuilt(data.zone_name, data.lot_area_sqft, primaryProject, proposedUnits);
   const interpretation = getInterpretation(primaryProject, proposedUnits);
   const existingStructure = getExistingStructure(uniquePermits);
   const underbuiltSignal = getUnderbuiltSignal(uniquePermits, buildInfo);
+
+  // Sprint 1 feature data
+  const neighborhood = getNeighborhoodFromZip(data.zip_code);
+  const timeToPermit = calculateTimeToPermit(uniquePermits);
+  const activeDevelopers = submarketPermits ? getActiveDevelopers(submarketPermits, apn) : [];
+  const comparableProjects = submarketPermits ? getComparableProjects(submarketPermits, apn) : [];
+
+  // Derived counts — prefer live PostGIS data, fall back to static
+  const nearbyCount = nearbyParcels.length > 0 ? nearbyParcels.length : (data.nearby_project_count ?? 0);
+  const nearbyActiveCount = nearbyParcels.length > 0
+    ? nearbyParcels.filter((p: any) => p.project_state === 'Active').length
+    : (data.nearby_active_count ?? 0);
+  const nearbyCompletedCount = nearbyParcels.length > 0
+    ? nearbyParcels.filter((p: any) => p.project_state === 'Completed').length
+    : (data.nearby_completed_count ?? 0);
+  const nearbyStalled = nearbyParcels.length > 0
+    ? nearbyParcels.filter((p: any) => p.project_state === 'Awaiting Issuance').length
+    : (data.nearby_stalled_count ?? 0);
+  const nearbyStrength = nearbyCount >= 5 ? 'High' : nearbyCount >= 2 ? 'Medium' : nearbyCount >= 1 ? 'Low' : null;
+  const isRsZone = !!data.zone_name?.match(/^RS-1-(\d+)/i);
+  const tenSecondStory = getTenSecondStory(primaryProject, buildInfo, proposedUnits, data);
+  const hasAnySignal = data.lot_area_sqft > 10000 || isRsZone || nearbyStrength !== null
+    || data.absentee_owner === true || data.has_nearby_active_project === true
+    || comparableProjects.length >= 3;
+
+  // Suppress unused-var lint on fmtMonthYear — kept for backward compat
+  void fmtMonthYear;
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -381,13 +574,13 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
               {status.label}
             </span>
           </div>
-          <div className="mt-4 grid grid-cols-3 gap-4 text-sm border-t border-slate-100 pt-4">
+          <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm border-t border-slate-100 pt-4">
             <div>
               <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-0.5">APN</p>
-              <p className="text-slate-700 font-medium">{formatAPN(apn)}</p>
+              <p className="text-slate-700 font-mono text-xs">{formatAPN(apn)}</p>
             </div>
             <div>
-              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-0.5">Lot</p>
+              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-0.5">Lot size</p>
               <p className="text-slate-700 font-medium">{Math.round(data.lot_area_sqft).toLocaleString()} SF / {data.lot_area_acres} ac</p>
             </div>
             <div>
@@ -397,76 +590,292 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
           </div>
         </section>
 
-        {/* 2. What can be built */}
+        {/* 2. 10-Second Story */}
         <section className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">What can be built</h2>
+          <p className="text-lg font-medium text-slate-900">{tenSecondStory}</p>
+          <ul className="mt-4 space-y-2">
+            {primaryProject?.project_momentum_label === 'Active' && (
+              <li className="flex gap-2 text-sm text-slate-600">
+                <span className="text-emerald-500 shrink-0">·</span>Construction active
+              </li>
+            )}
+            {buildInfo?.currentCapacity && (
+              <li className="flex gap-2 text-sm text-slate-600">
+                <span className="text-amber-500 shrink-0">·</span>ADU upside detected — conditional on eligibility
+              </li>
+            )}
+            {data.absentee_owner === true && (
+              <li className="flex gap-2 text-sm text-slate-600">
+                <span className="text-amber-500 shrink-0">·</span>Absentee owner
+              </li>
+            )}
+            {underbuiltSignal && underbuiltSignal.level !== 'low' && (
+              <li className="flex gap-2 text-sm text-slate-600">
+                <span className="text-amber-500 shrink-0">·</span>Likely underbuilt relative to zoning allowances
+              </li>
+            )}
+            {nearbyCount > 0 && (
+              <li className="flex gap-2 text-sm text-slate-600">
+                <span className="text-slate-400 shrink-0">·</span>
+                {nearbyCount} development project{nearbyCount !== 1 ? 's' : ''} within ½ mile
+              </li>
+            )}
+          </ul>
+        </section>
+
+        {/* 3. Opportunity Signals */}
+        {hasAnySignal && (
+          <section className="bg-white border border-slate-200 rounded-xl p-6">
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Signals</h2>
+            <div className="flex flex-wrap gap-2">
+              {data.lot_area_sqft > 10000 && (
+                <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">Large lot</span>
+              )}
+              {isRsZone && (
+                <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">ADU eligible</span>
+              )}
+              {nearbyStrength && (
+                <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${
+                  nearbyStrength === 'High' ? 'bg-emerald-50 text-emerald-700' :
+                  nearbyStrength === 'Medium' ? 'bg-amber-50 text-amber-700' :
+                  'bg-slate-100 text-slate-600'
+                }`}>Nearby activity: {nearbyStrength}</span>
+              )}
+              {data.absentee_owner === true && (
+                <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">Absentee owner</span>
+              )}
+              {data.has_nearby_active_project === true && (
+                <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">TPA</span>
+              )}
+              {comparableProjects.length >= 3 && (
+                <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Comparable projects nearby</span>
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* 4. Reality Layer — What's Happening Now */}
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">What&apos;s Happening Now</h2>
+          {primaryProject?.has_building_project ? (
+            <div className="space-y-4">
+              <div className="flex items-start justify-between gap-3 flex-wrap">
+                <div>
+                  <p className="font-semibold text-slate-900 text-base">
+                    {primaryProject.primary_project_label || primaryProject.primary_project_type}
+                  </p>
+                  <p className="font-mono text-xs text-slate-400 mt-0.5">{primaryProject.primary_project_id}</p>
+                </div>
+                <span className={`shrink-0 inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${status.bg} ${status.text}`}>
+                  {status.label}
+                </span>
+              </div>
+
+              <div>
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Proposed scope</p>
+                {proposedScope ? (
+                  <div>
+                    <p className="text-slate-700 text-sm">{proposedScope.text}</p>
+                    <p className="text-xs text-slate-400 font-mono mt-1">Source: {proposedScope.source}</p>
+                    {proposedScope.isRelated && (
+                      <p className="text-xs text-amber-600 mt-1">⚠ Scope from related permit — primary permit description is limited. Verify with city records.</p>
+                    )}
+                  </div>
+                ) : (
+                  <p className="text-sm text-slate-400">No proposed scope detected in permit description.</p>
+                )}
+              </div>
+
+              <div className="border-t border-slate-100 pt-3">
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-2">Timeline</p>
+                <div className="flex items-start gap-3 text-sm flex-wrap">
+                  <div>
+                    <p className="text-xs text-slate-400 mb-0.5">Filed</p>
+                    <p className="text-slate-700 font-medium">
+                      {primaryProject.primary_project_opened
+                        ? new Date(primaryProject.primary_project_opened).toLocaleDateString()
+                        : 'Unknown'}
+                    </p>
+                  </div>
+                  <span className="text-slate-300 mt-4">→</span>
+                  <div>
+                    <p className="text-xs text-slate-400 mb-0.5">Issued</p>
+                    <p className={primaryProject.primary_project_issued ? 'text-slate-700 font-medium' : 'text-amber-600'}>
+                      {primaryProject.primary_project_issued
+                        ? new Date(primaryProject.primary_project_issued).toLocaleDateString()
+                        : 'Pending'}
+                    </p>
+                  </div>
+                  <span className="text-slate-300 mt-4">→</span>
+                  <div>
+                    <p className="text-xs text-slate-400 mb-0.5">Field Activity</p>
+                    <p className={primaryProject.project_momentum_label === 'Active' ? 'text-emerald-600 font-medium' : 'text-slate-400'}>
+                      {primaryProject.project_momentum_label === 'Active' ? 'Active' : 'None detected'}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {interpretation && (
+                <p className="text-sm text-emerald-700 bg-emerald-50 rounded-lg px-3 py-2">{interpretation}</p>
+              )}
+            </div>
+          ) : (
+            <p className="text-slate-500 text-sm">No building permit on file.</p>
+          )}
+        </section>
+
+        {/* 5. Nearby Development */}
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <div className="flex items-center justify-between gap-3 mb-4">
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400">Nearby Development</h2>
+            {nearbyStrength && (
+              <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${
+                nearbyStrength === 'High' ? 'bg-emerald-50 text-emerald-700' :
+                nearbyStrength === 'Medium' ? 'bg-amber-50 text-amber-700' :
+                'bg-slate-100 text-slate-600'
+              }`}>{nearbyStrength}</span>
+            )}
+          </div>
+
+          {nearbyCount > 0 ? (
+            <>
+              <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+                <div>
+                  <span className="text-2xl font-bold text-slate-900">{nearbyCount}</span>
+                  <span className="text-slate-500 ml-1.5">nearby projects</span>
+                </div>
+                {nearbyActiveCount > 0 && (
+                  <div>
+                    <span className="text-lg font-bold text-emerald-700">{nearbyActiveCount}</span>
+                    <span className="text-slate-500 ml-1.5">active</span>
+                  </div>
+                )}
+                {nearbyCompletedCount > 0 && (
+                  <div>
+                    <span className="text-lg font-bold text-blue-700">{nearbyCompletedCount}</span>
+                    <span className="text-slate-500 ml-1.5">completed</span>
+                  </div>
+                )}
+                {nearbyStalled > 0 && (
+                  <div>
+                    <span className="text-lg font-bold text-slate-500">{nearbyStalled}</span>
+                    <span className="text-slate-500 ml-1.5">stalled</span>
+                  </div>
+                )}
+              </div>
+
+              {(data.nearest_completed_distance_ft || nearbyParcels.find((p: any) => p.project_state === 'Completed')) && (
+                <p className="mt-3 text-xs text-slate-400">
+                  Nearest completed:{' '}
+                  {data.nearest_completed_distance_ft
+                    ? `${Math.round(data.nearest_completed_distance_ft)} ft away`
+                    : `${nearbyParcels.find((p: any) => p.project_state === 'Completed')?.distance_ft?.toLocaleString()} ft away`
+                  }
+                </p>
+              )}
+
+              {nearbyError && (
+                <p className="mt-2 text-xs text-amber-600 bg-amber-50 px-2 py-1 rounded">
+                  Live nearby data unavailable ({nearbyError}) — showing static counts
+                </p>
+              )}
+
+              {nearbyParcels.length > 0 && (
+                <details className="mt-4 group">
+                  <summary className="cursor-pointer text-sm font-medium text-emerald-700 hover:text-emerald-800 list-none flex items-center gap-2">
+                    <span className="inline-block transition-transform group-open:rotate-90">▶</span>
+                    Show nearby projects
+                  </summary>
+                  <div className="mt-3 space-y-2 pl-5">
+                    {nearbyParcels.map((project: any, idx: number) => (
+                      <div key={idx} className="border-l-2 border-slate-200 pl-3 py-1">
+                        <p className="text-sm font-medium text-slate-700">{project.address}</p>
+                        <div className="flex gap-3 mt-1 text-xs">
+                          <span className={`font-medium ${
+                            project.project_state === 'Active' ? 'text-emerald-600' :
+                            project.project_state === 'Completed' ? 'text-blue-600' :
+                            project.project_state === 'Awaiting Issuance' ? 'text-amber-600' :
+                            'text-slate-500'
+                          }`}>
+                            {project.project_state || 'Unknown status'}
+                          </span>
+                          <span className="text-slate-400">
+                            {project.distance_ft?.toLocaleString()} ft away
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </details>
+              )}
+            </>
+          ) : (
+            <p className="text-sm text-slate-400">No nearby development projects detected within ½ mile.</p>
+          )}
+        </section>
+
+        {/* 6. Potential Layer — What Could Be Built */}
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">What Could Be Built</h2>
           {buildInfo ? (
             <div className="space-y-5">
 
-              {/* BASELINE CAPACITY — Source-backed (Tier 1A) */}
+              {/* Baseline — source-backed */}
               <div>
                 <div className="flex items-center gap-2 mb-1">
-                  <p className="text-xs text-slate-400 uppercase tracking-wide font-semibold">Baseline Capacity</p>
-                  <span className="text-xs text-emerald-600 font-medium">🟢 Source-backed</span>
+                  <p className="text-xs text-slate-400 uppercase tracking-wide font-semibold">Baseline</p>
+                  <span className="px-2 py-0.5 rounded text-xs font-medium bg-emerald-50 text-emerald-700">Source-backed</span>
                 </div>
                 <p className="text-slate-900 font-bold text-2xl">{buildInfo.baseCapacity}</p>
-                <p className="text-sm text-slate-500 mt-1">{buildInfo.baseDensity} — RS zoning allows 1 DU + standard ADU allowances</p>
+                <p className="text-sm text-slate-500 mt-1">{buildInfo.baseDensity}</p>
+                <p className="text-xs text-slate-400 mt-0.5">Zone: {buildInfo.baseLabel}</p>
               </div>
 
-              {/* POTENTIAL UPSIDE — Conditional (Tier 1B) */}
+              {/* ADU program upside — conditional */}
               {buildInfo.currentCapacity && (
                 <div className="border-t border-slate-100 pt-4">
                   <div className="flex items-center gap-2 mb-1">
-                    <p className="text-xs text-amber-600 uppercase tracking-wide font-semibold">Potential Upside</p>
-                    <span className="text-xs text-amber-500 font-medium">🟡 Conditional</span>
+                    <p className="text-xs text-amber-600 uppercase tracking-wide font-semibold">ADU Program Upside</p>
+                    <span className="px-2 py-0.5 rounded text-xs font-medium bg-amber-50 text-amber-700">Conditional — requires verification</span>
                   </div>
-                  <p className="text-amber-800 font-bold text-2xl">{buildInfo.currentCapacity} <span className="text-base font-normal text-amber-600">(if eligible)</span></p>
+                  <p className="text-amber-800 font-bold text-2xl">{buildInfo.currentCapacity}</p>
                   <p className="text-sm text-slate-500 mt-1">{buildInfo.currentDetail}</p>
-                  <div className="mt-2 space-y-1">
-                    <p className="text-xs text-amber-700">Requires ADU Bonus Program compliance</p>
-                    <p className="text-xs text-amber-700">Subject to site and overlay constraints</p>
-                    <p className="text-xs text-amber-700">Not guaranteed buildable yield</p>
-                  </div>
+                  <ul className="mt-2 space-y-1">
+                    <li className="text-xs text-amber-700">· Requires ADU Bonus Program compliance</li>
+                    <li className="text-xs text-amber-700">· Subject to site constraints</li>
+                    <li className="text-xs text-amber-700">· Not guaranteed</li>
+                  </ul>
+                  <p className="mt-2 text-xs text-slate-400">
+                    Source:{' '}
+                    <a
+                      href="https://www.sandiego.gov/development-services/forms-publications/information-bulletins/400"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-slate-600"
+                    >
+                      SD IB-400
+                    </a>
+                  </p>
                 </div>
               )}
 
-              {/* HISTORICAL PROPOSAL — from permit plans */}
+              {/* Historical proposal */}
               {buildInfo.potentialCapacity && (() => {
                 const showWarning = shouldShowRegulatoryWarning(buildInfo.potentialCapacity, data.zone_name);
                 return (
                   <div className="border-t border-slate-100 pt-4">
-                    <div className="flex items-center gap-2 mb-1">
-                      <p className="text-xs text-slate-400 uppercase tracking-wide font-semibold">Historical Proposal</p>
-                      <span className="text-xs text-slate-400 font-medium">⚪️ Verify</span>
-                    </div>
-                    <p className="text-slate-600 font-bold text-2xl">{buildInfo.potentialCapacity}</p>
-                    <p className="text-xs text-slate-400 mt-1">From submitted permit plans — verify under current rules</p>
+                    <p className="text-xs text-slate-400 uppercase tracking-wide font-semibold mb-1">Historical Proposal</p>
+                    <p className="text-slate-600 font-bold text-xl">{buildInfo.potentialCapacity}</p>
+                    <p className="text-xs text-slate-400 mt-1">Historical proposal — verify under current rules</p>
                     {showWarning && (
                       <p className="mt-2 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2">
-                        ⚠️ This proposal may reflect prior ADU regulations. Current rules may not allow this configuration.
+                        This proposal may reflect prior ADU regulations. Current rules may not allow this configuration.
                       </p>
                     )}
                   </div>
                 );
               })()}
-
-              {/* WHAT COULD LIMIT THIS — always show */}
-              <div className="border-t border-slate-100 pt-4">
-                <p className="text-xs text-slate-400 uppercase tracking-wide font-semibold mb-2">What could limit this</p>
-                <ul className="space-y-1 text-sm text-slate-500">
-                  <li className="flex gap-2"><span className="text-slate-300">·</span>Coastal Overlay Zone — {data.zone_name?.toLowerCase().includes('coastal') ? 'may apply' : <span className="text-slate-400">unknown</span>}</li>
-                  <li className="flex gap-2"><span className="text-slate-300">·</span>Environmentally Sensitive Lands (ESL) — <span className="text-slate-400">not yet verified</span></li>
-                  <li className="flex gap-2"><span className="text-slate-300">·</span>FAR / lot coverage limits — <span className="text-slate-400">not yet verified</span></li>
-                  <li className="flex gap-2"><span className="text-slate-300">·</span>Fire access / VHFHSZ — <span className="text-slate-400">not yet verified</span></li>
-                </ul>
-              </div>
-
-              {/* SOURCE — non-negotiable */}
-              <div className="border-t border-slate-100 pt-3">
-                <p className="text-xs text-slate-400">
-                  Source: <a href="https://www.sandiego.gov/development-services/forms-publications/information-bulletins/400" target="_blank" rel="noopener noreferrer" className="underline hover:text-slate-600">City of San Diego Information Bulletin 400 (IB-400)</a>
-                </p>
-              </div>
 
             </div>
           ) : (
@@ -474,16 +883,50 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
           )}
         </section>
 
-        {/* 3. Existing Structure */}
+        {/* 7. Constraints & Unknowns (collapsed by default) */}
         <section className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Existing structure</h2>
+          <details>
+            <summary className="cursor-pointer flex items-center justify-between">
+              <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400">Constraints &amp; Unknowns</h2>
+              <span className="text-xs text-slate-400 ml-2">▶</span>
+            </summary>
+            <div className="mt-4 space-y-2">
+              <div className="flex gap-2 text-sm">
+                <span className="text-slate-300 shrink-0">·</span>
+                <span className="text-slate-500">
+                  Coastal Overlay:{' '}
+                  {data.zone_name?.toLowerCase().includes('coastal')
+                    ? <span className="text-amber-600">May apply — verify</span>
+                    : <span className="text-slate-400">Unknown — not verified</span>
+                  }
+                </span>
+              </div>
+              <div className="flex gap-2 text-sm">
+                <span className="text-slate-300 shrink-0">·</span>
+                <span className="text-slate-400">ESL (Environmentally Sensitive Lands): Not verified</span>
+              </div>
+              <div className="flex gap-2 text-sm">
+                <span className="text-slate-300 shrink-0">·</span>
+                <span className="text-slate-400">FAR / lot coverage: Not verified</span>
+              </div>
+              <div className="flex gap-2 text-sm">
+                <span className="text-slate-300 shrink-0">·</span>
+                <span className="text-slate-400">Fire / VHFHSZ: Not verified</span>
+              </div>
+            </div>
+          </details>
+        </section>
+
+        {/* 8. Property Profile */}
+        <section className="bg-white border border-slate-200 rounded-xl p-6">
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Property Profile</h2>
           <div className="space-y-3">
             <div>
-              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Primary residence</p>
-              <p className="text-slate-700 font-medium text-base">{existingStructure.units}</p>
+              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Existing units (permit-based inference)</p>
+              <p className="text-slate-700">{existingStructure.units}</p>
             </div>
             <div>
-              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Additional units</p>
+              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">ADU / conversion evidence</p>
               <p className="text-slate-600 text-sm">{existingStructure.additionalUnits}</p>
             </div>
             {existingStructure.recentActivity && (
@@ -492,161 +935,150 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
                 <p className="text-slate-500 text-sm">{existingStructure.recentActivity}</p>
               </div>
             )}
-            <p className="text-xs text-slate-300 pt-1">Inferred from permit history only. No assessor data yet — verify before relying on this.</p>
+            {underbuiltSignal && underbuiltSignal.level !== 'low' && (
+              <div className="border-t border-slate-100 pt-3">
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Underbuilt signal</p>
+                <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${
+                  underbuiltSignal.level === 'high' ? 'bg-amber-50 text-amber-700' : 'bg-yellow-50 text-yellow-700'
+                }`}>{underbuiltSignal.level === 'moderate' ? 'Moderate' : 'High'}</span>
+                <ul className="mt-2 space-y-1">
+                  {underbuiltSignal.reasoning.map((r, i) => (
+                    <li key={i} className="flex gap-2 text-xs text-slate-500">
+                      <span className="text-slate-300 shrink-0">·</span>{r}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+            <p className="text-xs text-slate-300 pt-1 border-t border-slate-100">
+              Assessor data not yet available — verify before relying on this.
+            </p>
           </div>
         </section>
 
-        {/* 3b. Underbuilt Signal */}
-        {underbuiltSignal && underbuiltSignal.level !== 'low' && (
+        {/* 9. Permit History (collapsed by default) */}
+        {supportingPermits.length > 0 && (
           <section className="bg-white border border-slate-200 rounded-xl p-6">
-            <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Underbuilt signal</h2>
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-semibold ${
-                  underbuiltSignal.level === 'high' ? 'bg-amber-50 text-amber-700' :
-                  underbuiltSignal.level === 'moderate' ? 'bg-yellow-50 text-yellow-700' :
-                  'bg-slate-100 text-slate-500'
-                }`}>{underbuiltSignal.level === 'moderate' ? 'Moderate' : underbuiltSignal.level === 'high' ? 'High' : 'Unknown'}</span>
+            <details>
+              <summary className="cursor-pointer flex items-center justify-between">
+                <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+                  Permit History ({supportingPermits.length})
+                </h2>
+                <span className="text-xs text-slate-400 ml-2">▶</span>
+              </summary>
+              <div className="mt-4 space-y-3">
+                {buildPermitTree(supportingPermits).map((permit: any, idx: number) => (
+                  <div key={idx}>
+                    <div className="flex items-start gap-3">
+                      <div className="flex-1">
+                        <p className="font-medium text-slate-900 text-sm">{permit.record_number}</p>
+                        <p className="text-xs text-slate-500 mt-0.5">{permit.record_type}</p>
+                        {permit.description && (
+                          <p className="text-xs text-slate-600 mt-1">
+                            {permit.description.slice(0, 120)}{permit.description.length > 120 ? '...' : ''}
+                          </p>
+                        )}
+                        <div className="mt-1 flex gap-3 text-xs text-slate-400">
+                          {permit.status && <span>Status: {permit.status}</span>}
+                          {permit.opened_date && <span>Filed: {new Date(permit.opened_date).toLocaleDateString()}</span>}
+                        </div>
+                      </div>
+                    </div>
+                    {permit.children && permit.children.length > 0 && (
+                      <div className="ml-6 mt-2 space-y-2 border-l-2 border-slate-200 pl-4">
+                        {permit.children.map((child: any, cidx: number) => (
+                          <div key={cidx}>
+                            <p className="font-medium text-slate-700 text-xs">{child.record_number}</p>
+                            <p className="text-xs text-slate-500">{child.record_type}</p>
+                            {child.status && <span className="text-xs text-slate-400">Status: {child.status}</span>}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
               </div>
-              <p className="text-sm text-slate-600">This parcel may be underbuilt based on available records.</p>
-              <div>
-                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Why</p>
-                <ul className="space-y-1">
-                  {underbuiltSignal.reasoning.map((r, i) => (
-                    <li key={i} className="flex gap-2 text-sm text-slate-500"><span className="text-slate-300">·</span>{r}</li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Still verify</p>
-                <ul className="space-y-1">
-                  {underbuiltSignal.verify.map((v, i) => (
-                    <li key={i} className="flex gap-2 text-sm text-slate-500"><span className="text-slate-300">·</span>{v}</li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            </details>
           </section>
         )}
 
-        {/* 3c. Permit status */}
+        {/* 10. Entitlement Complexity */}
         <section className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-3">Permit status</h2>
-          <div className="text-base leading-relaxed">
-            {getWhatsHappeningContent(primaryProject)}
-          </div>
-          {interpretation && (
-            <p className="mt-4 text-sm font-medium text-emerald-700 bg-emerald-50 rounded-lg px-3 py-2">
-              {interpretation}
-            </p>
+          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Entitlement complexity</h2>
+          {timeToPermit ? (
+            <div className="space-y-3">
+              <div className="flex items-baseline gap-3">
+                <span className="text-2xl font-bold text-slate-900">{timeToPermit.avgDays} days</span>
+                <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold ${
+                  timeToPermit.rating === 'Easy' ? 'bg-emerald-50 text-emerald-700' :
+                  timeToPermit.rating === 'Moderate' ? 'bg-amber-50 text-amber-700' :
+                  'bg-red-50 text-red-700'
+                }`}>{timeToPermit.rating}</span>
+              </div>
+              <p className="text-sm text-slate-600">
+                Average time from filing to issuance for this parcel (based on {timeToPermit.count} closed permit{timeToPermit.count !== 1 ? 's' : ''})
+              </p>
+              <div className="border-t border-slate-100 pt-3 mt-3">
+                <p className="text-xs text-slate-400 mb-1">San Diego benchmark</p>
+                <p className="text-sm text-slate-600">Combination Building Permit: <span className="font-semibold">183 days avg</span> (146 days median)</p>
+              </div>
+            </div>
+          ) : (
+            <div className="space-y-2">
+              <p className="text-sm text-slate-600">No closed permits available to calculate processing time.</p>
+              <div className="border-t border-slate-100 pt-3 mt-3">
+                <p className="text-xs text-slate-400 mb-1">San Diego benchmark</p>
+                <p className="text-sm text-slate-600">Combination Building Permit: <span className="font-semibold">183 days avg</span> (146 days median)</p>
+              </div>
+            </div>
           )}
         </section>
 
-        {/* 4. Project activity */}
-        {primaryProject && (
+        {/* 11. Active Developers Nearby */}
+        {activeDevelopers.length >= 3 && (
           <section className="bg-white border border-slate-200 rounded-xl p-6">
-            <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Project activity</h2>
-            <div className="flex items-start gap-3">
-              <span className="mt-0.5 text-lg">{primaryProject.has_building_project ? "🏗" : "📄"}</span>
-              <div className="flex-1">
-                <p className="font-semibold text-slate-900 text-base">
-                  {primaryProject.primary_project_label || primaryProject.primary_project_type}
-                </p>
-                <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm">
-                  <span>
-                    <span className="text-xs text-slate-400 font-medium mr-1">Permit</span>
-                    <span className="text-slate-600 font-mono text-xs">{primaryProject.primary_project_id}</span>
-                  </span>
-                  {primaryProject.primary_project_opened && (
-                    <span>
-                      <span className="text-xs text-slate-400 font-medium mr-1">Filed</span>
-                      <span className="text-slate-600">{new Date(primaryProject.primary_project_opened).toLocaleDateString()}</span>
-                    </span>
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Active developers nearby</h2>
+            <p className="text-xs text-slate-500 mb-4">Most active in {neighborhood || data.zip_code}</p>
+            <div className="space-y-2">
+              {activeDevelopers.map((dev, idx) => (
+                <div key={idx} className="flex items-baseline justify-between">
+                  <span className="text-sm text-slate-700">{dev.name}</span>
+                  <span className="text-sm font-semibold text-slate-900">{dev.count} active permit{dev.count !== 1 ? 's' : ''}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* 12. What Actually Gets Built Here */}
+        {comparableProjects.length >= 3 && (
+          <section className="bg-white border border-slate-200 rounded-xl p-6">
+            <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">What actually gets built here</h2>
+            <p className="text-xs text-slate-500 mb-4">
+              Based on {comparableProjects.length} comparable permitted project{comparableProjects.length !== 1 ? 's' : ''} in {neighborhood || data.zip_code}
+            </p>
+            <div className="space-y-3">
+              {comparableProjects.map((project, idx) => (
+                <div key={idx} className="border-l-2 border-slate-200 pl-3">
+                  <p className="text-sm font-medium text-slate-700">{project.address}</p>
+                  {project.description && (
+                    <p className="text-xs text-slate-500 mt-1">
+                      {project.description.slice(0, 100)}{project.description.length > 100 ? '...' : ''}
+                    </p>
                   )}
-                  <span>
-                    <span className="text-xs text-slate-400 font-medium mr-1">Status</span>
-                    <span className="text-slate-600">
-                      {primaryProject.primary_project_issued
-                        ? `Issued ${new Date(primaryProject.primary_project_issued).toLocaleDateString()}`
-                        : "Not yet issued"}
-                    </span>
-                  </span>
+                  {project.issued_date && (
+                    <p className="text-xs text-slate-400 mt-1">Issued: {new Date(project.issued_date).toLocaleDateString()}</p>
+                  )}
                 </div>
-                {proposedUnits && (
-                  <p className="mt-2 text-sm text-slate-700">
-                    <span className="text-xs text-slate-400 font-medium uppercase tracking-wide mr-1.5">Proposed</span>
-                    {proposedUnits}
-                  </p>
-                )}
-              </div>
+              ))}
             </div>
           </section>
         )}
 
-        {/* 5. Signals */}
-        <section className="bg-white border border-slate-200 rounded-xl p-6">
-          <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Signals</h2>
-          <ul className="space-y-2 text-sm text-slate-600">
-            {primaryProject?.primary_project_opened
-              ? <li className="flex gap-2"><span className="text-slate-300">·</span>Permit filed ({fmtMonthYear(primaryProject.primary_project_opened)})</li>
-              : <li className="flex gap-2"><span className="text-slate-300">·</span>No building permit filed</li>
-            }
-            {primaryProject?.has_building_project && (
-              primaryProject?.primary_project_issued
-                ? <li className="flex gap-2"><span className="text-slate-300">·</span>Permit issued {fmtMonthYear(primaryProject.primary_project_issued)}</li>
-                : <li className="flex gap-2"><span className="text-slate-300">·</span>Permit not yet issued</li>
-            )}
-            {primaryProject?.project_momentum_label === "Active"
-              ? <li className="flex gap-2"><span className="text-slate-300">·</span>Active construction signals detected</li>
-              : <li className="flex gap-2"><span className="text-slate-300">·</span>No confirmed inspection or field activity</li>
-            }
-            {primaryProject?.team_flag_active && primaryProject?.team_flag_reason && (
-              <li className="flex gap-2 mt-3 pt-3 border-t border-slate-100">
-                <span className="text-slate-300">·</span>
-                <span className="text-xs text-slate-400 italic">Unverified field note: {primaryProject.team_flag_reason}</span>
-              </li>
-            )}
-          </ul>
-        </section>
-
-        {/* 6. Nearby development */}
-        {hasNearby && (
-          <section className="bg-white border border-slate-200 rounded-xl p-6">
-            <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Nearby development</h2>
-            <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
-              <div>
-                <span className="text-2xl font-bold text-slate-900">{data.nearby_project_count ?? 0}</span>
-                <span className="text-slate-500 ml-1.5">nearby projects</span>
-              </div>
-              {(data.nearby_completed_count ?? 0) > 0 && (
-                <div>
-                  <span className="text-lg font-bold text-blue-700">{data.nearby_completed_count}</span>
-                  <span className="text-slate-500 ml-1.5">completed</span>
-                </div>
-              )}
-              {(data.nearby_active_count ?? 0) > 0 && (
-                <div>
-                  <span className="text-lg font-bold text-emerald-700">{data.nearby_active_count}</span>
-                  <span className="text-slate-500 ml-1.5">active</span>
-                </div>
-              )}
-              {(data.nearby_stalled_count ?? 0) > 0 && (
-                <div>
-                  <span className="text-lg font-bold text-slate-500">{data.nearby_stalled_count}</span>
-                  <span className="text-slate-500 ml-1.5">stalled</span>
-                </div>
-              )}
-            </div>
-            {data.nearest_completed_distance_ft && (
-              <p className="mt-3 text-xs text-slate-400">Nearest completed project: {Math.round(data.nearest_completed_distance_ft)} ft away</p>
-            )}
-          </section>
-        )}
-
-        {/* 7. CTA */}
+        {/* 13. CTA */}
         <section className="bg-emerald-700 rounded-xl p-6 text-center">
-          <h2 className="text-white font-semibold">Get alerts when this parcel changes</h2>
-          <p className="text-emerald-200 text-sm mt-1 mb-5">Permit filings, status changes, new entitlements &mdash; delivered to you.</p>
+          <h2 className="text-white font-semibold">Track this parcel</h2>
+          <p className="text-emerald-200 text-sm mt-1 mb-5">Get alerts when permits, status, or entitlement signals change.</p>
           <div className="flex flex-col sm:flex-row gap-2 max-w-sm mx-auto">
             <input
               type="email"
