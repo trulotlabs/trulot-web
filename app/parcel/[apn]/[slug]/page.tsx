@@ -447,7 +447,8 @@ function getTenSecondStory(
       story = 'A building permit is on file — current status unclear.';
     }
     if (buildInfo?.currentCapacity) {
-      story += ` ADU program may allow up to ${buildInfo.currentCapacity} if eligible.`;
+      const capNum = buildInfo.currentCapacity.replace(/^Up to /i, '');
+      story += ` ADU program may allow up to ${capNum} if eligible.`;
     }
     return story;
   }
