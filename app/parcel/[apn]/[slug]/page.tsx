@@ -22,18 +22,36 @@ function getNeighborhoodFromZip(zip: string | null): string | null {
   return zipMap[zip] || zip;
 }
 
-function getStatusBadge(primaryProject: any, pageData: any) {
-  if (primaryProject) {
-    switch (primaryProject.project_momentum_label) {
-      case "Active": return { label: "Active", bg: "bg-emerald-50", text: "text-emerald-700" };
-      case "Completed": return { label: "Completed", bg: "bg-blue-50", text: "text-blue-700" };
-      case "Awaiting Issuance": return { label: "In Review", bg: "bg-amber-50", text: "text-amber-700" };
-      case "Status unclear": return { label: "Status unclear", bg: "bg-slate-100", text: "text-slate-600" };
-    }
+function normalizeStatus(momentumLabel: string | null | undefined): {
+  label: "IN REVIEW" | "ISSUED" | "INSPECTION" | "COMPLETE" | "ACTIVE" | "UNKNOWN";
+  color: "amber" | "emerald" | "blue" | "slate";
+} {
+  switch (momentumLabel) {
+    case "Awaiting Issuance": return { label: "IN REVIEW",  color: "amber" };
+    case "Active":            return { label: "ACTIVE",     color: "emerald" };
+    case "Completed":         return { label: "COMPLETE",   color: "blue" };
+    case "Status unclear":    return { label: "UNKNOWN",    color: "slate" };
+    default:                  return { label: "UNKNOWN",    color: "slate" };
   }
-  if (pageData?.has_nearby_active_project) return { label: "Active nearby", bg: "bg-emerald-50", text: "text-emerald-700" };
-  if (pageData?.has_nearby_completed_project) return { label: "Recently built nearby", bg: "bg-blue-50", text: "text-blue-700" };
-  return { label: "No current activity", bg: "bg-slate-100", text: "text-slate-600" };
+}
+
+function normalizeRawPermitStatus(rawStatus: string | null | undefined): string {
+  const s = (rawStatus || "").toLowerCase().trim();
+  if (s === "opened") return "IN REVIEW";
+  if (s === "issued") return "ISSUED";
+  if (s.includes("inspection")) return "INSPECTION";
+  if (s === "closed" || s === "finaled") return "COMPLETE";
+  if (s === "expired") return "EXPIRED";
+  return rawStatus || "Unknown";
+}
+
+function statusClasses(color: "amber" | "emerald" | "blue" | "slate"): { bg: string; text: string } {
+  switch (color) {
+    case "amber":   return { bg: "bg-amber-50",  text: "text-amber-700" };
+    case "emerald": return { bg: "bg-emerald-50", text: "text-emerald-700" };
+    case "blue":    return { bg: "bg-blue-50",   text: "text-blue-700" };
+    default:        return { bg: "bg-slate-100", text: "text-slate-600" };
+  }
 }
 
 // Infer existing structure from permit history — heuristic only
@@ -63,13 +81,13 @@ function getExistingStructure(permits: any[]): {
   let additionalUnits: string;
 
   if (hasAduPermit) {
-    units = 'Likely 1 primary unit (inferred from permit history)';
-    additionalUnits = 'Additional unit likely (ADU or conversion permit detected)';
+    units = '1 unit (inferred)';
+    additionalUnits = 'ADU/conversion permit on record';
   } else if (hasExpansion) {
-    units = 'Likely 1 unit (inferred from permit history)';
-    additionalUnits = 'Expansion activity detected — additional unit possible';
+    units = '1 unit (inferred from permits)';
+    additionalUnits = 'Expansion permit on record';
   } else {
-    units = 'Likely 1 unit (no ADU or expansion permits detected)';
+    units = '1 unit (inferred)';
     additionalUnits = 'None detected';
   }
 
@@ -109,7 +127,7 @@ function getUnderbuiltSignal(
     return { level: 'low', reasoning, verify };
   }
 
-  reasoning.push('Likely 1 unit inferred from permit history');
+  reasoning.push('1 unit (inferred from permits)');
   reasoning.push(`Lot size may support conditional upside (${buildInfo.currentCapacity})`);
   reasoning.push('No ADU or density expansion permits detected');
 
@@ -168,16 +186,16 @@ function getWhatCanBeBuilt(zoneName: string, lotSqft: number, primaryProject: an
 
     // Current program capacity: always show for RS zones (deterministic SD rule)
     const currentCapacity = `Up to ${aduCap.totalMax} units`;
-    const currentDetail = `${aduCap.label} (SD ADU program — lot ${lotSqft >= 10000 ? '> 10,000' : lotSqft > 8000 ? '8,001–10,000' : '≤ 8,000'} SF)`;
+    const currentDetail = `1 SDU + up to ${aduCap.maxAduJadu} ADU/JADU (SD IB-400)`;
 
     return {
       type: hasAduSignal ? "adu-heavy" : "sfr",
       baseCapacity: `${baseUnits} unit${baseUnits !== 1 ? "s" : ""}`,
       baseLabel: zoneName,
-      baseDensity: `${zoneName} → 1 DU / ${minSfPerUnit.toLocaleString()} SF`,
+      baseDensity: `${zoneName} → 1 DU / ${minSfPerUnit.toLocaleString()} SF + ADU`,
       currentCapacity,
       currentDetail,
-      interpretation: `Base zoning allows ${baseUnits} unit${baseUnits !== 1 ? "s" : ""} by right. The SD ADU program may allow up to ${aduCap.totalMax} total units on this lot.`,
+      interpretation: `${zoneName}: ${baseUnits} unit${baseUnits !== 1 ? "s" : ""} base. Up to ${aduCap.totalMax} total with ADU program.`,
       note: "ADU capacity is based on lot size per SD IB-400. Verify current eligibility with the city.",
       potentialCapacity: hasAduSignal ? proposedUnits : null,
       potentialNote: hasAduSignal ? "From submitted permit plans" : null,
@@ -501,8 +519,8 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
 
   // Enhance status badge with PostGIS data
   const status = (() => {
-    const baseStatus = getStatusBadge(primaryProject, data);
-    // Override with live PostGIS data if available and more accurate
+    const ns = normalizeStatus(primaryProject?.project_momentum_label);
+    const baseStatus = { label: ns.label, ...statusClasses(ns.color) };
     if (!primaryProject && nearbyParcels.length > 0) {
       if (hasNearbyActive) return { label: "Active nearby", bg: "bg-emerald-50", text: "text-emerald-700" };
       if (hasNearbyCompleted) return { label: "Recently built nearby", bg: "bg-blue-50", text: "text-blue-700" };
@@ -545,12 +563,20 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
   const nearbyStalled = nearbyParcels.length > 0
     ? nearbyParcels.filter((p: any) => p.project_state === 'Awaiting Issuance').length
     : (data.nearby_stalled_count ?? 0);
-  const nearbyStrength = nearbyCount >= 5 ? 'High' : nearbyCount >= 2 ? 'Medium' : nearbyCount >= 1 ? 'Low' : null;
+  const nearbyStrength = nearbyCount >= 5 ? 'High' : nearbyCount >= 2 ? 'Moderate' : nearbyCount >= 1 ? 'Low' : null;
   const isRsZone = !!data.zone_name?.match(/^RS-1-(\d+)/i);
   const tenSecondStory = getTenSecondStory(primaryProject, buildInfo, proposedUnits, data);
   const hasAnySignal = data.lot_area_sqft > 10000 || isRsZone || nearbyStrength !== null
     || data.absentee_owner === true || data.has_nearby_active_project === true
     || comparableProjects.length >= 3;
+  const hasVhfhszInPermits = uniquePermits.some((p: any) =>
+    /VHFSZ|VHFHSZ/i.test(p.description || '') || /VHFSZ|VHFHSZ/i.test(p.record_type || '')
+  );
+  const primaryPermitRecord = uniquePermits.find((p: any) => p.record_number === primaryProject?.primary_project_id);
+  const allPermitsSorted = [
+    ...(primaryPermitRecord ? [primaryPermitRecord] : []),
+    ...uniquePermits.filter((p: any) => p.record_number !== primaryProject?.primary_project_id),
+  ];
 
   // Suppress unused-var lint on fmtMonthYear — kept for backward compat
   void fmtMonthYear;
@@ -632,14 +658,14 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
                 <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">Large lot</span>
               )}
               {isRsZone && (
-                <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">ADU eligible</span>
+                <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700">ADU eligible (RS)</span>
               )}
               {nearbyStrength && (
                 <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${
                   nearbyStrength === 'High' ? 'bg-emerald-50 text-emerald-700' :
-                  nearbyStrength === 'Medium' ? 'bg-amber-50 text-amber-700' :
+                  nearbyStrength === 'Moderate' ? 'bg-amber-50 text-amber-700' :
                   'bg-slate-100 text-slate-600'
-                }`}>Nearby activity: {nearbyStrength}</span>
+                }`}>{nearbyCount === 1 ? '1 nearby project' : `${nearbyCount} nearby projects`}</span>
               )}
               {data.absentee_owner === true && (
                 <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">Absentee owner</span>
@@ -648,7 +674,7 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
                 <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-700">TPA</span>
               )}
               {comparableProjects.length >= 3 && (
-                <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">Comparable projects nearby</span>
+                <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 text-slate-600">{comparableProjects.length} comparable projects</span>
               )}
             </div>
           </section>
@@ -678,11 +704,11 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
                     <p className="text-slate-700 text-sm">{proposedScope.text}</p>
                     <p className="text-xs text-slate-400 font-mono mt-1">Source: {proposedScope.source}</p>
                     {proposedScope.isRelated && (
-                      <p className="text-xs text-amber-600 mt-1">⚠ Scope from related permit — primary permit description is limited. Verify with city records.</p>
+                      <span className="inline-block mt-1 px-2 py-0.5 rounded text-xs font-medium bg-amber-50 text-amber-700">From related permit — verify</span>
                     )}
                   </div>
                 ) : (
-                  <p className="text-sm text-slate-400">No proposed scope detected in permit description.</p>
+                  <p className="text-sm text-slate-400">Scope unknown</p>
                 )}
               </div>
 
@@ -732,7 +758,7 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
             {nearbyStrength && (
               <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${
                 nearbyStrength === 'High' ? 'bg-emerald-50 text-emerald-700' :
-                nearbyStrength === 'Medium' ? 'bg-amber-50 text-amber-700' :
+                nearbyStrength === 'Moderate' ? 'bg-amber-50 text-amber-700' :
                 'bg-slate-100 text-slate-600'
               }`}>{nearbyStrength}</span>
             )}
@@ -887,7 +913,7 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
         <section className="bg-white border border-slate-200 rounded-xl p-6">
           <details>
             <summary className="cursor-pointer flex items-center justify-between">
-              <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400">Constraints &amp; Unknowns</h2>
+              <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400">Constraints &amp; Unknowns — 4 unknown / unverified</h2>
               <span className="text-xs text-slate-400 ml-2">▶</span>
             </summary>
             <div className="mt-4 space-y-2">
@@ -897,21 +923,27 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
                   Coastal Overlay:{' '}
                   {data.zone_name?.toLowerCase().includes('coastal')
                     ? <span className="text-amber-600">May apply — verify</span>
-                    : <span className="text-slate-400">Unknown — not verified</span>
+                    : <span className="text-slate-400">Unknown</span>
                   }
                 </span>
               </div>
               <div className="flex gap-2 text-sm">
                 <span className="text-slate-300 shrink-0">·</span>
-                <span className="text-slate-400">ESL (Environmentally Sensitive Lands): Not verified</span>
+                <span className="text-slate-400">ESL (Environmentally Sensitive Lands): Unknown</span>
               </div>
               <div className="flex gap-2 text-sm">
                 <span className="text-slate-300 shrink-0">·</span>
-                <span className="text-slate-400">FAR / lot coverage: Not verified</span>
+                <span className="text-slate-400">FAR / lot coverage: Verification required</span>
               </div>
               <div className="flex gap-2 text-sm">
                 <span className="text-slate-300 shrink-0">·</span>
-                <span className="text-slate-400">Fire / VHFHSZ: Not verified</span>
+                <span className="text-slate-500">
+                  Fire / VHFHSZ:{' '}
+                  {hasVhfhszInPermits
+                    ? <span className="text-amber-600">Detected in permit</span>
+                    : <span className="text-slate-400">Unknown</span>
+                  }
+                </span>
               </div>
             </div>
           </details>
@@ -922,13 +954,53 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
           <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Property Profile</h2>
           <div className="space-y-3">
             <div>
-              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Existing units (permit-based inference)</p>
-              <p className="text-slate-700">{existingStructure.units}</p>
+              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1 flex items-center gap-2">
+                Unit count
+                {(data.unitqty != null && data.unitqty !== 0)
+                  ? <span className="px-1.5 py-0.5 rounded text-xs bg-emerald-50 text-emerald-700">Source-backed</span>
+                  : <span className="px-1.5 py-0.5 rounded text-xs bg-slate-100 text-slate-500">Inferred</span>
+                }
+              </p>
+              <p className="text-slate-700">
+                {(data.unitqty != null && data.unitqty !== 0)
+                  ? `${data.unitqty} unit${data.unitqty !== 1 ? 's' : ''}`
+                  : existingStructure.units
+                }
+              </p>
             </div>
-            <div>
-              <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">ADU / conversion evidence</p>
-              <p className="text-slate-600 text-sm">{existingStructure.additionalUnits}</p>
-            </div>
+            {data.total_lvg_area != null && (
+              <div>
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1 flex items-center gap-2">
+                  Living area
+                  <span className="px-1.5 py-0.5 rounded text-xs bg-emerald-50 text-emerald-700">Source-backed</span>
+                </p>
+                <p className="text-slate-700">{Math.round(data.total_lvg_area).toLocaleString()} SF</p>
+              </div>
+            )}
+            {data.year_effective != null && (
+              <div>
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1 flex items-center gap-2">
+                  Year built
+                  <span className="px-1.5 py-0.5 rounded text-xs bg-emerald-50 text-emerald-700">Source-backed</span>
+                </p>
+                <p className="text-slate-700">{data.year_effective}</p>
+              </div>
+            )}
+            {data.bedrooms != null && data.baths != null && (
+              <div>
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1 flex items-center gap-2">
+                  Bedrooms / Baths
+                  <span className="px-1.5 py-0.5 rounded text-xs bg-emerald-50 text-emerald-700">Source-backed</span>
+                </p>
+                <p className="text-slate-700">{data.bedrooms} bd / {data.baths} ba</p>
+              </div>
+            )}
+            {(data.unitqty == null || data.unitqty === 0) && (
+              <div>
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">ADU / conversion evidence</p>
+                <p className="text-slate-600 text-sm">{existingStructure.additionalUnits}</p>
+              </div>
+            )}
             {existingStructure.recentActivity && (
               <div>
                 <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Recent improvements</p>
@@ -937,7 +1009,10 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
             )}
             {underbuiltSignal && underbuiltSignal.level !== 'low' && (
               <div className="border-t border-slate-100 pt-3">
-                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1">Underbuilt signal</p>
+                <p className="text-xs text-slate-400 uppercase tracking-wide font-medium mb-1 flex items-center gap-2">
+                  Underbuilt signal
+                  <span className="px-1.5 py-0.5 rounded text-xs bg-slate-100 text-slate-500">Inferred</span>
+                </p>
                 <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold ${
                   underbuiltSignal.level === 'high' ? 'bg-amber-50 text-amber-700' : 'bg-yellow-50 text-yellow-700'
                 }`}>{underbuiltSignal.level === 'moderate' ? 'Moderate' : 'High'}</span>
@@ -950,53 +1025,63 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
                 </ul>
               </div>
             )}
-            <p className="text-xs text-slate-300 pt-1 border-t border-slate-100">
-              Assessor data not yet available — verify before relying on this.
-            </p>
+            {(data.unitqty == null || data.unitqty === 0) && (
+              <p className="text-xs text-slate-300 pt-1 border-t border-slate-100">
+                Assessor data: not loaded
+              </p>
+            )}
           </div>
         </section>
 
         {/* 9. Permit History (collapsed by default) */}
-        {supportingPermits.length > 0 && (
+        {allPermitsSorted.length > 0 && (
           <section className="bg-white border border-slate-200 rounded-xl p-6">
             <details>
               <summary className="cursor-pointer flex items-center justify-between">
                 <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400">
-                  Permit History ({supportingPermits.length})
+                  Permit History ({allPermitsSorted.length})
                 </h2>
                 <span className="text-xs text-slate-400 ml-2">▶</span>
               </summary>
               <div className="mt-4 space-y-3">
-                {buildPermitTree(supportingPermits).map((permit: any, idx: number) => (
-                  <div key={idx}>
-                    <div className="flex items-start gap-3">
-                      <div className="flex-1">
-                        <p className="font-medium text-slate-900 text-sm">{permit.record_number}</p>
-                        <p className="text-xs text-slate-500 mt-0.5">{permit.record_type}</p>
-                        {permit.description && (
-                          <p className="text-xs text-slate-600 mt-1">
-                            {permit.description.slice(0, 120)}{permit.description.length > 120 ? '...' : ''}
-                          </p>
-                        )}
-                        <div className="mt-1 flex gap-3 text-xs text-slate-400">
-                          {permit.status && <span>Status: {permit.status}</span>}
-                          {permit.opened_date && <span>Filed: {new Date(permit.opened_date).toLocaleDateString()}</span>}
+                {allPermitsSorted.map((permit: any, idx: number) => {
+                  const isPrimary = permit.record_number === primaryProject?.primary_project_id;
+                  const normStatus = normalizeRawPermitStatus(permit.status);
+                  const sc = (() => {
+                    switch (normStatus) {
+                      case "IN REVIEW":  return { bg: "bg-amber-50",  text: "text-amber-700" };
+                      case "ISSUED":     return { bg: "bg-emerald-50", text: "text-emerald-700" };
+                      case "INSPECTION": return { bg: "bg-blue-50",   text: "text-blue-700" };
+                      case "COMPLETE":   return { bg: "bg-blue-50",   text: "text-blue-700" };
+                      case "EXPIRED":    return { bg: "bg-slate-100", text: "text-slate-400" };
+                      default:           return { bg: "bg-slate-100", text: "text-slate-500" };
+                    }
+                  })();
+                  return (
+                    <div key={idx} className={isPrimary ? "border border-emerald-200 rounded-lg p-3 bg-emerald-50/30" : ""}>
+                      <div className="flex items-start gap-3 flex-wrap">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <p className="font-mono text-xs text-slate-700 font-semibold">{permit.record_number}</p>
+                            {isPrimary && <span className="px-1.5 py-0.5 rounded text-xs bg-emerald-100 text-emerald-800 font-medium">Primary</span>}
+                          </div>
+                          <p className="text-xs text-slate-500 mt-0.5">{permit.record_type}</p>
+                          {permit.description && (
+                            <p className="text-xs text-slate-600 mt-1">
+                              {permit.description.length > 80 ? permit.description.slice(0, 80) + '…' : permit.description}
+                            </p>
+                          )}
+                          {permit.opened_date && (
+                            <p className="text-xs text-slate-400 mt-1">Filed: {new Date(permit.opened_date).toLocaleDateString()}</p>
+                          )}
                         </div>
+                        <span className={`shrink-0 inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold ${sc.bg} ${sc.text}`}>
+                          {normStatus}
+                        </span>
                       </div>
                     </div>
-                    {permit.children && permit.children.length > 0 && (
-                      <div className="ml-6 mt-2 space-y-2 border-l-2 border-slate-200 pl-4">
-                        {permit.children.map((child: any, cidx: number) => (
-                          <div key={cidx}>
-                            <p className="font-medium text-slate-700 text-xs">{child.record_number}</p>
-                            <p className="text-xs text-slate-500">{child.record_type}</p>
-                            {child.status && <span className="text-xs text-slate-400">Status: {child.status}</span>}
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </details>
           </section>
