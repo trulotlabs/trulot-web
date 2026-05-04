@@ -1,6 +1,7 @@
 "use client";
 
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import type { FormEvent, ReactNode } from "react";
 
 type Job = {
   id?: string;
@@ -35,7 +36,7 @@ function getStage(job: Job): string {
 
 function parcelHref(job: Job): string | null {
   if (job.parcel_url) return job.parcel_url;
-  if (job.apn) return job.slug ? `/parcel/${job.apn}/${job.slug}` : `/parcel/${job.apn}`;
+  if (job.apn) return `/parcel/${job.apn}/${job.slug ?? "parcel"}`;
   return null;
 }
 
@@ -145,22 +146,24 @@ export default function JobsPage() {
           {groupedJobs.map(([group, rows]) => (
             <div key={group} className="space-y-2">
               <h2 className="border-b border-slate-300 pb-1 text-[13px] font-bold uppercase leading-5 text-slate-700">{group}</h2>
-              <div className="divide-y divide-slate-200 border-y border-slate-200 bg-white">
-                {rows.map((job, index) => {
-                  const href = parcelHref(job);
-                  const address = getAddress(job);
-                  return (
-                    <div key={job.id ?? `${group}-${index}`} className="grid min-h-11 grid-cols-[minmax(220px,1.4fr)_150px_100px_110px_minmax(240px,1.2fr)] items-center gap-3 px-3 py-2 text-[14px] leading-5">
-                      <div className="min-w-0 font-bold text-slate-950">
-                        {href ? <a className="hover:underline" href={href}>{address}</a> : address}
+              <div className="overflow-x-auto border-y border-slate-200 bg-white">
+                <div className="min-w-[920px] divide-y divide-slate-200">
+                  {rows.map((job, index) => {
+                    const href = parcelHref(job);
+                    const address = getAddress(job);
+                    return (
+                      <div key={job.id ?? `${group}-${index}`} className="grid min-h-11 grid-cols-[minmax(220px,1.4fr)_150px_100px_110px_minmax(240px,1.2fr)] items-center gap-3 px-3 py-2 text-[14px] leading-5">
+                        <div className="min-w-0 font-bold text-slate-950">
+                          {href ? <a className="hover:underline" href={href}>{address}</a> : address}
+                        </div>
+                        <div className="text-slate-700">{job.role ?? "Unassigned"}</div>
+                        <Badge value={getStage(job)} />
+                        <Badge value={job.timing} />
+                        <div className="min-w-0 text-slate-700">{job.reason}</div>
                       </div>
-                      <div className="text-slate-700">{job.role ?? "Unassigned"}</div>
-                      <Badge value={getStage(job)} />
-                      <Badge value={job.timing} />
-                      <div className="min-w-0 text-slate-700">{job.reason}</div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
             </div>
           ))}
@@ -227,7 +230,7 @@ function Filter({ label, value, options, onChange }: { label: string; value: str
   );
 }
 
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
+function Field({ label, children }: { label: string; children: ReactNode }) {
   return (
     <label className="block">
       <span className="mb-1 block text-[12px] font-bold uppercase leading-5 text-slate-500">{label}</span>
