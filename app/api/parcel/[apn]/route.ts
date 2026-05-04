@@ -364,7 +364,85 @@ export async function GET(_req: Request, { params }: { params: Promise<{ apn: st
   };
 
   // ── Final response ─────────────────────────────────────────────────────────
-  const result: ParcelPageData & { development_stage: string; jobs_to_engage?: unknown[] } = {
+  // ── Jobs to Engage ────────────────────────────────────────────────────────────
+  const ROLE_TAGS: { pattern: RegExp; tags: string[] }[] = [
+    { pattern: /civil/i,               tags: ["civil"] },
+    { pattern: /grading/i,             tags: ["grading", "civil"] },
+    { pattern: /retaining wall/i,      tags: ["retaining_wall", "civil", "grading"] },
+    { pattern: /utility/i,             tags: ["utility"] },
+    { pattern: /framing/i,             tags: ["framing"] },
+    { pattern: /structural/i,          tags: ["framing", "foundation"] },
+    { pattern: /foundation/i,          tags: ["foundation"] },
+    { pattern: /MEP/i,                 tags: ["mep", "electrical", "mechanical", "plumbing"] },
+    { pattern: /traffic/i,             tags: ["traffic_control"] },
+    { pattern: /entitlement/i,         tags: ["entitlement"] },
+    { pattern: /acquisition|salvage/i, tags: ["acquisition"] },
+    { pattern: /vertical.*pipeline/i,  tags: ["framing", "mep", "foundation"] },
+  ];
+
+  function tagsForRole(role: string): string[] {
+    const tags = new Set<string>();
+    for (const { pattern, tags: t } of ROLE_TAGS) {
+      if (pattern.test(role)) t.forEach((tag) => tags.add(tag));
+    }
+    return Array.from(tags);
+  }
+
+  const jobLocation = {
+    address: p.address ?? "",
+    lat: p.lat ?? null,
+    lng: p.lng ?? null,
+    submarket: p.situs_community ?? p.situs_zip ?? null,
+  };
+
+  // Derive jobs from stage + permit type
+  const primaryLabel = pp?.primary_project_label ?? "";
+  const primaryDesc = pp?.primary_project_description ?? "";
+  const isComboBp = /combination building/i.test(primaryLabel);
+  const hasRetainingWall = /retaining wall/i.test(primaryDesc);
+  const hasMDU = /MDU|26 ADU|multiple.*unit/i.test(primaryDesc);
+  const hasScopeChange = /scope change/i.test(primaryDesc);
+  const lotSqftForJobs = p.lot_area_sqft ?? 0;
+
+  const rawJobs = (() => {
+    const jobs: { role: string; timing: "now" | "near-term" | "future"; reason: string; confidence: "source-backed" | "inferred" | "conditional" | "unknown" }[] = [];
+    if (stage === "ACTIVE" || stage === "SCALING") {
+      if (isComboBp || hasRetainingWall) {
+        jobs.push({ role: "Civil / Grading", timing: "now", reason: hasRetainingWall ? "Active permit — retaining walls in inspection phase" : "Active combination permit — site work underway", confidence: "source-backed" });
+      }
+      if (isComboBp) {
+        jobs.push({ role: "Structural / Framing", timing: hasMDU || hasScopeChange ? "near-term" : "now", reason: hasMDU ? "Multi-unit scope — structural follows site prep" : "Active building permit — framing phase", confidence: hasMDU ? "inferred" : "source-backed" });
+        jobs.push({ role: "MEP (Electrical, Mechanical, Plumbing)", timing: hasMDU ? "near-term" : "now", reason: "Combination permit includes MEP scope", confidence: "source-backed" });
+      }
+    }
+    if (stage === "SCALING") {
+      jobs.push({ role: "Vertical Construction (future pipeline)", timing: "near-term", reason: hasMDU ? "MDU development cluster in review — larger construction to follow" : "Scope change — expanded project in pipeline", confidence: "conditional" });
+      if (hasMDU && lotSqftForJobs > 15000) {
+        jobs.push({ role: "Structural / Foundation (multi-unit)", timing: "near-term", reason: "Multi-unit scope + large lot — foundation/basement work follows grading", confidence: "conditional" });
+      }
+    }
+    if (stage === "EARLY") {
+      jobs.push({ role: "Entitlement / Investor Tracking", timing: "near-term", reason: "Permit in review — project has not broken ground", confidence: "inferred" });
+    }
+    if (stage === "STALLED") {
+      jobs.push({ role: "Acquisition / Salvage", timing: "near-term", reason: "Project stalled — entitlement may be salvageable", confidence: "inferred" });
+    }
+    return jobs;
+  })();
+
+  const jobs_to_engage = rawJobs
+    .filter((j) => j.confidence !== "unknown" && j.timing !== "future")
+    .map((j) => ({
+      role: j.role,
+      reason: j.reason,
+      timing: j.timing,
+      confidence: j.confidence,
+      location: jobLocation,
+      alert_tags: tagsForRole(j.role),
+    }));
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const result: any = {
     development_stage: stage,
     parcel: parcelSummary,
     readout: {
@@ -472,5 +550,5 @@ export async function GET(_req: Request, { params }: { params: Promise<{ apn: st
     },
   };
 
-  return Response.json(result);
+  return Response.json({ ...result, jobs_to_engage });
 }

@@ -7,6 +7,57 @@ const supabase = createClient(
 
 type Timing = "now" | "near-term" | "future";
 type Confidence = "source-backed" | "inferred" | "conditional" | "unknown";
+type AlertTag =
+  | "civil"
+  | "grading"
+  | "retaining_wall"
+  | "utility"
+  | "framing"
+  | "foundation"
+  | "mep"
+  | "electrical"
+  | "mechanical"
+  | "plumbing"
+  | "traffic_control"
+  | "entitlement"
+  | "acquisition"
+  | "investor";
+
+// Canonical tag map: role keyword → tags
+const ROLE_TAGS: { pattern: RegExp; tags: AlertTag[] }[] = [
+  { pattern: /civil/i,               tags: ["civil"] },
+  { pattern: /grading/i,             tags: ["grading", "civil"] },
+  { pattern: /retaining wall/i,      tags: ["retaining_wall", "civil", "grading"] },
+  { pattern: /earthwork/i,           tags: ["civil", "grading"] },
+  { pattern: /utility/i,             tags: ["utility"] },
+  { pattern: /framing/i,             tags: ["framing"] },
+  { pattern: /structural/i,          tags: ["framing", "foundation"] },
+  { pattern: /foundation/i,          tags: ["foundation"] },
+  { pattern: /MEP/i,                 tags: ["mep", "electrical", "mechanical", "plumbing"] },
+  { pattern: /electrical/i,          tags: ["electrical", "mep"] },
+  { pattern: /mechanical/i,          tags: ["mechanical", "mep"] },
+  { pattern: /plumbing/i,            tags: ["plumbing", "mep"] },
+  { pattern: /traffic/i,             tags: ["traffic_control"] },
+  { pattern: /entitlement/i,         tags: ["entitlement"] },
+  { pattern: /acquisition|salvage/i, tags: ["acquisition"] },
+  { pattern: /investor/i,            tags: ["investor", "entitlement"] },
+  { pattern: /vertical.*pipeline/i,  tags: ["framing", "mep", "foundation"] },
+];
+
+function tagsForRole(role: string): AlertTag[] {
+  const tags = new Set<AlertTag>();
+  for (const { pattern, tags: t } of ROLE_TAGS) {
+    if (pattern.test(role)) t.forEach((tag) => tags.add(tag));
+  }
+  return Array.from(tags);
+}
+
+interface JobLocation {
+  address: string;
+  lat: number | null;
+  lng: number | null;
+  submarket: string | null;
+}
 
 interface JobEntry {
   address: string;
@@ -17,6 +68,8 @@ interface JobEntry {
   reason: string;
   confidence: Confidence;
   priority_score: number;
+  location: JobLocation;
+  alert_tags: AlertTag[];
 }
 
 interface JobGroup {
@@ -205,12 +258,21 @@ export async function GET(req: Request) {
   const activeApns = projRes.data.map((r) => r.apn_norm);
   const parcelRes = await supabase
     .from("parcel_page_api_v2")
-    .select("apn_norm, address, lot_area_sqft, nearby_project_count, absentee_owner")
+    .select("apn_norm, address, lot_area_sqft, nearby_project_count, absentee_owner, lat, lng, situs_zip, situs_community")
     .in("apn_norm", activeApns)
     .not("address", "is", null);
 
   // Build parcel lookup map
-  const parcelMap = new Map<string, { address: string; lot_area_sqft: number; nearby_project_count: number; absentee_owner: boolean | null }>(
+  const parcelMap = new Map<string, {
+    address: string;
+    lot_area_sqft: number;
+    nearby_project_count: number;
+    absentee_owner: boolean | null;
+    lat: number | null;
+    lng: number | null;
+    situs_zip: string | null;
+    situs_community: string | null;
+  }>(
     (parcelRes.data ?? []).map((p) => [p.apn_norm, p])
   );
 
@@ -266,6 +328,13 @@ export async function GET(req: Request) {
         reason: job.reason,
         confidence: job.confidence,
         priority_score: score,
+        location: {
+          address: parcel.address,
+          lat: parcel.lat ?? null,
+          lng: parcel.lng ?? null,
+          submarket: parcel.situs_community ?? parcel.situs_zip ?? null,
+        },
+        alert_tags: tagsForRole(job.role),
       });
     }
   }
