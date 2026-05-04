@@ -428,6 +428,59 @@ function getComparableProjects(permits: any[], currentApn: string) {
   ).slice(0, 8);
 }
 
+// Development Stage — headline signal
+// EARLY → ACTIVE → SCALING → STALLED
+function getDevelopmentStage(
+  primaryProject: any,
+  permits: any[],
+  daysInactive: number | null
+): { stage: 'EARLY' | 'ACTIVE' | 'SCALING' | 'STALLED'; reason: string } {
+  const hasBuilding = primaryProject?.has_building_project;
+  const momentum = primaryProject?.project_momentum_label;
+  const days = daysInactive ?? primaryProject?.primary_project_days_since_activity ?? 0;
+
+  // STALLED — permit on file but no movement
+  if (hasBuilding && (
+    momentum === 'Status unclear' ||
+    (days > 180 && momentum !== 'Active' && momentum !== 'Awaiting Issuance')
+  )) {
+    return { stage: 'STALLED', reason: `No meaningful activity for ${days} days` };
+  }
+
+  // EARLY — project intent on record, nothing issued yet
+  if (!hasBuilding || momentum === 'Awaiting Issuance') {
+    return { stage: 'EARLY', reason: 'Permit filed — not yet issued' };
+  }
+
+  // SCALING — active construction + expansion cluster behind it
+  const openedBuildingPermits = permits.filter(p =>
+    /building permit|combination building/i.test(p.record_type || '') &&
+    /opened|in.?review/i.test(p.status || '')
+  );
+  const hasScopeChange = permits.some(p =>
+    /scope change/i.test(p.description || '') ||
+    /scope change/i.test(p.project_scope || '')
+  );
+  const hasExpansionCluster = openedBuildingPermits.length >= 2;
+
+  if (momentum === 'Active' && (hasExpansionCluster || hasScopeChange)) {
+    const reason = hasScopeChange
+      ? 'Active construction + scope change on record'
+      : `Active construction + ${openedBuildingPermits.length} additional building permits in pipeline`;
+    return { stage: 'SCALING', reason };
+  }
+
+  // ACTIVE — standard single-project build
+  if (momentum === 'Active' || momentum === 'Completed') {
+    return {
+      stage: momentum === 'Completed' ? 'ACTIVE' : 'ACTIVE',
+      reason: momentum === 'Completed' ? 'Project completed' : 'Active construction underway'
+    };
+  }
+
+  return { stage: 'EARLY', reason: 'Status unclear' };
+}
+
 function getTenSecondStory(
   primaryProject: any,
   buildInfo: ReturnType<typeof getWhatCanBeBuilt> | null,
@@ -567,6 +620,7 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
   const nearbyStrength = nearbyCount >= 5 ? 'High' : nearbyCount >= 2 ? 'Moderate' : nearbyCount >= 1 ? 'Low' : null;
   const isRsZone = !!data.zone_name?.match(/^RS-1-(\d+)/i);
   const tenSecondStory = getTenSecondStory(primaryProject, buildInfo, proposedUnits, data);
+  const devStage = getDevelopmentStage(primaryProject, uniquePermits, primaryProject?.primary_project_days_since_activity ?? null);
   const hasAnySignal = data.lot_area_sqft > 10000 || isRsZone || nearbyStrength !== null
     || data.absentee_owner === true || data.has_nearby_active_project === true
     || comparableProjects.length >= 3;
@@ -597,9 +651,20 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
               <h1 className="text-2xl font-bold text-slate-900">{data.address}</h1>
               <p className="text-slate-500 text-sm mt-0.5">{data.city}, {data.state}</p>
             </div>
-            <span className={`shrink-0 inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium ${status.bg} ${status.text}`}>
-              {status.label}
-            </span>
+            <div className="flex flex-col items-end gap-2">
+              {/* Development Stage — headline signal */}
+              <span className={`shrink-0 inline-flex items-center px-3 py-1.5 rounded-full text-sm font-bold tracking-wide ${
+                devStage.stage === 'SCALING'  ? 'bg-violet-50 text-violet-700' :
+                devStage.stage === 'ACTIVE'   ? 'bg-emerald-50 text-emerald-700' :
+                devStage.stage === 'STALLED'  ? 'bg-red-50 text-red-600' :
+                                                'bg-amber-50 text-amber-700'
+              }`}>
+                {devStage.stage}
+              </span>
+              <span className={`shrink-0 inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium ${status.bg} ${status.text}`}>
+                {status.label}
+              </span>
+            </div>
           </div>
           <div className="mt-4 grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm border-t border-slate-100 pt-4">
             <div>
