@@ -99,6 +99,9 @@ type ParcelPageData = {
   confidence?: Record<string, string>;
 };
 
+type PermitTreeData = NonNullable<NonNullable<ParcelPageData["project"]>["permit_tree"]>;
+type ProposedProjectData = NonNullable<NonNullable<ParcelPageData["project"]>["proposed_project"]>;
+
 function text(value: unknown): string | null {
   if (value === null || value === undefined || value === "") return null;
   return String(value);
@@ -211,7 +214,7 @@ function PermitTreeNode({ node }: { node: PermitNode }) {
   );
 }
 
-function PermitTree({ tree }: { tree?: ParcelPageData["project"]["permit_tree"] }) {
+function PermitTree({ tree }: { tree?: PermitTreeData }) {
   const building = tree?.building ?? [];
   const related = tree?.related_records ?? [];
   const execution = tree?.execution ?? [];
@@ -254,7 +257,7 @@ async function getParcelData(apn: string): Promise<ParcelPageData | null> {
   return res.json();
 }
 
-function hasProposedProject(project?: ParcelPageData["project"]["proposed_project"]): boolean {
+function hasProposedProject(project?: ProposedProjectData): boolean {
   if (!project?.scope) return false;
   return !/^no proposed/i.test(project.scope) && project.scope.toLowerCase() !== "none";
 }
