@@ -65,8 +65,23 @@ function num(value: unknown): number {
 
 /** Safe integer from possibly-padded assessor string ("03" → 3, "00" → null) */
 function assessorInt(value: unknown): number | null {
-  const n = num(value);
-  return n > 0 ? Math.round(n) : null;
+  if (typeof value === "string") {
+    const n = parseInt(value, 10);
+    return Number.isFinite(n) && n > 0 ? n : null;
+  }
+  if (typeof value === "number" && Number.isFinite(value) && value > 0) return Math.round(value);
+  return null;
+}
+
+/**
+ * Assessor baths encoding: stored as integer × 10 (e.g. "010" = 1 bath, "015" = 1.5 baths).
+ * Returns null if 0 or unparseable — never show "0 baths".
+ */
+function assessorBaths(value: unknown): number | null {
+  const raw = typeof value === "string" ? parseInt(value, 10) : typeof value === "number" ? Math.round(value) : 0;
+  if (!Number.isFinite(raw) || raw === 0) return null;
+  const decoded = Math.round(raw / 10 * 2) / 2; // round to nearest 0.5
+  return decoded > 0 ? decoded : null;
 }
 
 /**
@@ -454,7 +469,9 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
         sfr_units: sfrUnits,
         building_count: buildingCount,
         confidence: "conditional" as ConfidenceLevel,
+        // v1.3: source = specific permit ID that carries this scope
         source: str(aduScopePermit.record_id) || str(aduScopePermit.record_number),
+        source_type: str(aduScopePermit.record_type) || undefined,
         note: "Stated project intent from related permit — NOT an approved building project. Verify with city records before treating as current reality.",
         related_permit: {
           permit_number: str(aduScopePermit.record_id) || str(aduScopePermit.record_number),
@@ -505,7 +522,7 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
 
   // ── Structure — null-safe ──────────────────────────────────────────────────
   const beds = assessorInt(parcel.bedrooms);
-  const baths = assessorInt(parcel.baths);
+  const baths = assessorBaths(parcel.baths);
   const yearBuilt = normalizeYear(parcel.year_effective);
   const livingArea = num(parcel.total_lvg_area);
   const unitCount = assessorInt(parcel.unitqty);
@@ -514,8 +531,9 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
     unit_count: unitCount ?? 0,
     living_area: livingArea > 0 ? `${Math.round(livingArea).toLocaleString()} SF` : "Unknown",
     year_built: yearBuilt ?? "Unknown",
-    bedrooms: beds ?? 0,
-    bathrooms: baths ?? 0,
+    // null-safe: never return 0 — UI must hide missing beds/baths entirely
+    bedrooms: beds,
+    bathrooms: baths,
     land_value: num(parcel.asr_land),
     improvement_value: num(parcel.asr_impr),
     total_assessed_value: num(parcel.asr_total),
@@ -590,8 +608,20 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
       apn: formatApn(apn),
       lot_size: lotSqft > 0 ? `${Math.round(lotSqft).toLocaleString()} SF / ${parcel.lot_area_acres} ac` : "Unknown",
       zoning: zoneName || "Unknown",
-      status: str(primaryProject?.project_momentum_label) || "Unknown",
+      // v1.3: status = normalized stage label (ACTIVE/STALLED/COMPLETE), not raw momentum label
+      status: stage === "ACTIVE" || stage === "SCALING" ? "ACTIVE"
+        : stage === "STALLED" ? "STALLED"
+        : stage === "COMPLETE" ? "COMPLETE"
+        : stage === "EARLY" ? "EARLY"
+        : "INACTIVE",
       community: str(parcel.situs_community) || undefined,
+      // v1.3 canonical: geo object + lot_size_sf (number)
+      // Legacy fields kept until Codex UI migrates to v1.3 field names
+      geo: {
+        lat: typeof parcel.lat === "number" ? parcel.lat : null,
+        lng: typeof parcel.lng === "number" ? parcel.lng : null,
+      },
+      lot_size_sf: Math.round(lotSqft) || null,
       latitude: typeof parcel.lat === "number" ? parcel.lat : undefined,
       longitude: typeof parcel.lng === "number" ? parcel.lng : undefined,
     },
@@ -623,9 +653,16 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
       },
       permit_tree: { building: buildingPermits, related_records: relatedRecords, execution },
       timeline: {
-        filed: str(primaryProject?.primary_project_opened),
-        issued: str(primaryProject?.primary_project_issued),
-        field_activity: stage === "ACTIVE" || stage === "SCALING" ? "Active" : "None detected",
+        filed: str(primaryProject?.primary_project_opened) || null,
+        issued: str(primaryProject?.primary_project_issued) || null,
+        last_activity: str(primaryProject?.primary_project_last_activity) || null,
+        // field_activity: string for UI display; field_activity_confidence for badge
+        field_activity: execution.length > 0
+          ? "Active — inspection/execution permit on file"
+          : stage === "ACTIVE" || stage === "SCALING"
+          ? "Active (stage signal)"
+          : "None detected",
+        field_activity_confidence: (execution.length > 0 ? "source-backed" : "inferred") as ConfidenceLevel,
       },
     },
     capacity: {

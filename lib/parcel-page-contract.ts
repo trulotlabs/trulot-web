@@ -13,8 +13,11 @@ export interface ParcelSummary {
   full_address?: string;
   apn: string;
   lot_size: string;
+  // v1.3 canonical header fields
+  lot_size_sf?: number | null;           // raw SF number (UI formats)
+  geo?: { lat: number | null; lng: number | null }; // canonical; lat/lng kept for compat
   zoning: string;
-  status?: string;
+  status?: string;                        // v1.3: ACTIVE | STALLED | COMPLETE | EARLY | INACTIVE
   community?: string;
   latitude?: number;
   longitude?: number;
@@ -47,6 +50,8 @@ export interface ProposedProject extends ConfidenceRecord {
   adu_units: number;
   sfr_units: number;
   building_count: number;
+  source?: string;        // v1.3: permit ID carrying this scope
+  source_type?: string;
   related_permit: PermitRecord;
 }
 
@@ -65,9 +70,12 @@ export interface PermitTree {
 }
 
 export interface ProjectTimeline {
-  filed: string;
-  issued: string;
+  filed: string | null;
+  issued: string | null;
+  last_activity?: string | null;
   field_activity: string;
+  // v1.3: confidence on field_activity — Codex should read this to badge the field
+  field_activity_confidence?: ConfidenceLevel;
 }
 
 export interface ParcelProject {
@@ -125,8 +133,9 @@ export interface ParcelStructure extends ConfidenceRecord {
   unit_count: number;
   living_area: string;
   year_built: string;
-  bedrooms: number;
-  bathrooms: number;
+  // v1.3: null-safe — never show 0; UI must hide if null
+  bedrooms: number | null;
+  bathrooms: number | null;
   land_value: number;
   improvement_value: number;
   total_assessed_value: number;
