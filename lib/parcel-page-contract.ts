@@ -10,6 +10,7 @@ export interface ConfidenceRecord {
 
 export interface ParcelSummary {
   address: string;
+  full_address?: string;
   apn: string;
   lot_size: string;
   zoning: string;
@@ -74,6 +75,15 @@ export interface ParcelProject {
   proposed_project: ProposedProject;
   permit_tree: PermitTree;
   timeline: ProjectTimeline;
+}
+
+export interface OpportunityLayer {
+  development_stage: string;
+  interpretation: string;
+  jobs_to_engage: string[];
+  key_triggers: string[];
+  potential_opportunities?: string[];
+  watch_next?: string[];
 }
 
 export interface CapacityItem extends ConfidenceRecord {
@@ -151,9 +161,11 @@ export interface ParcelConstraints {
 export type ConfidenceLegend = Record<ConfidenceLevel, string>;
 
 export interface ParcelPageData {
+  development_stage?: string;
   parcel: ParcelSummary;
   readout: ParcelReadout;
   project: ParcelProject;
+  opportunity_layer?: OpportunityLayer;
   capacity: ParcelCapacity;
   signals: ParcelSignals;
   context: ParcelContext;
