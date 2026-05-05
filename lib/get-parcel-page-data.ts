@@ -25,6 +25,8 @@ type JobToEngage = {
 
 export type ParcelPageResult = ParcelPageData & {
   development_stage: string;
+  stale_days: number;
+  stale_flag: "none" | "watch" | "stale" | "severe";
   full_address?: string;
   conflict?: { type: string; detail: string };
   opportunity_layer?: {
@@ -86,15 +88,39 @@ function assessorBaths(value: unknown): number | null {
 
 /**
  * Normalize year from assessor 2-digit string.
- * "76" → "~1976", "02" → "~2002", "00" → null (unknown)
+ *
+ * Rule: if raw 2-digit value > current year's 2-digit shorthand → definitely 1900s.
+ * If raw <= current 2-digit year → ambiguous (could be 1910 or 2010) → return null.
+ * Never return a plausible-but-wrong year.
+ *
+ * Examples (2026 as current year, currentShort = 26):
+ *   "50" → n=50 > 26 → ~1950  ✓
+ *   "42" → n=42 > 26 → ~1942  ✓
+ *   "25" → n=25 ≤ 26 → null   (1925 or 2025 — ambiguous)
+ *   "10" → n=10 ≤ 26 → null   (1910 or 2010 — ambiguous)
+ *   "00" → null               ✓
  */
 function normalizeYear(raw: unknown): string | null {
   const s = str(raw).trim();
   if (!s || s === "0" || s === "00") return null;
   const n = parseInt(s, 10);
   if (!Number.isFinite(n) || n === 0) return null;
-  const year = n < 30 ? 2000 + n : n < 100 ? 1900 + n : n;
-  return year > 1800 && year <= new Date().getFullYear() + 1 ? `~${year}` : null;
+
+  // Full 4-digit year provided
+  if (n > 100) {
+    const currentYear = new Date().getFullYear();
+    return n > 1800 && n <= currentYear ? `~${n}` : null;
+  }
+
+  // 2-digit year: use current year's short form as the boundary
+  const currentShort = new Date().getFullYear() % 100;
+  if (n > currentShort) {
+    // Unambiguously 1900s
+    return `~${1900 + n}`;
+  }
+
+  // n ≤ currentShort: genuinely ambiguous — return null rather than guess
+  return null;
 }
 
 function normalizePermitStatus(raw: unknown): PermitLifecycleStatus {
@@ -139,13 +165,70 @@ function resolvePrimaryScope(description: unknown): string {
 // ─── ADU / proposed project parsing ──────────────────────────────────────────
 
 function findAduScopePermit(permits: RawRow[]): RawRow | undefined {
-  // Must match a specific ADU count — not just the word "ADU"
-  return permits.find((p) => /\d+\s+ADU/i.test(str(p.description)));
+  // Must reference at least one ADU (any variant)
+  return permits.find((p) => /\bADU[s']?\b/i.test(str(p.description)));
 }
 
+/**
+ * ADU count extractor — handles the full range of permit description formats:
+ *
+ * Priority 1: explicit total statement ("for a total of 12 ADUs") — always wins
+ * Priority 2: classified ADU types (by right + moderate + bonus) — always additive
+ * Priority 3: flexible token scan — number (w/ optional parens) + up to 5 words + ADU variant
+ *
+ * Multi-reference cases (no explicit total, no classified types):
+ *   same number repeated → return that number
+ *   different numbers → return max (conservative)
+ */
 function extractAduCount(description: string): number {
-  const match = description.match(/(\d+)\s+ADU/i);
-  return match ? Number(match[1]) : 0;
+  const text = description.replace(/\n/g, " ");
+
+  // 1. Explicit total wins
+  const totalPatterns: RegExp[] = [
+    /for\s+a\s+total\s+(?:for|of)\s+\(?\s*(\d+)\s*\)?\s+ADU/i,
+    /total\s+(?:of\s+)?\(?\s*(\d+)\s*\)?\s+ADU/i,
+    /\(?\s*(\d+)\s*\)?\s+ADU[s']?\s+(?:in\s+)?total\b/i,
+    /totaling\s+\(?\s*(\d+)\s*\)?\s+ADU/i,
+  ];
+  for (const p of totalPatterns) {
+    const m = text.match(p);
+    if (m) return parseInt(m[1], 10);
+  }
+
+  // 2. Classified ADU types (always additive — these are distinct program categories)
+  const byRight = text.match(/\(?\s*(\d+)\s*\)?\s+ADU[s']?\s+by\s+right/i);
+  const moderate = text.match(/\(?\s*(\d+)\s*\)?\s+moderate\s+ADU[s']?/i);
+  const bonus = text.match(/\(?\s*(\d+)\s*\)?\s+bonus\s+ADU[s']?/i);
+  if (byRight || moderate || bonus) {
+    return (byRight ? parseInt(byRight[1], 10) : 0) +
+           (moderate ? parseInt(moderate[1], 10) : 0) +
+           (bonus ? parseInt(bonus[1], 10) : 0);
+  }
+
+  // 3. Flexible token scan: number (possibly in parens) + up to 5 tokens + ADU variant
+  const tokens = text.split(/\s+/);
+  const counts: number[] = [];
+  for (let i = 0; i < tokens.length; i++) {
+    const tok = tokens[i].replace(/[.,;:!?]$/, "");
+    const numMatch = tok.match(/^\(?\s*(\d+)\s*\)?$/);
+    if (!numMatch) continue;
+    const n = parseInt(numMatch[1], 10);
+    if (n === 0 || n >= 500) continue;
+    // Look forward up to 5 tokens for an ADU variant
+    for (let j = i + 1; j < Math.min(i + 6, tokens.length); j++) {
+      const t = tokens[j].replace(/[.,;:!?]$/, "");
+      if (/^ADU[s']*$/i.test(t)) { // handles ADU, ADUs, ADU's, ADUs'
+        counts.push(n);
+        break;
+      }
+    }
+  }
+
+  if (counts.length === 0) return 0;
+  if (counts.length === 1) return counts[0];
+  const unique = [...new Set(counts)];
+  if (unique.length === 1) return unique[0]; // same number repeated
+  return Math.max(...counts); // multiple different counts — conservative max
 }
 
 function extractSfrCount(description: string): number {
@@ -154,17 +237,33 @@ function extractSfrCount(description: string): number {
   return /\bSFR\b|single.?family/i.test(description) ? 1 : 0;
 }
 
+/**
+ * Building count extractor.
+ * Handles: "(7) buildings", "8 new ... buildings" (flexible gap), sums grouped patterns.
+ */
 function extractBuildingCount(description: string): number {
-  // Match patterns like "(7) buildings" or "7 buildings"
-  const grouped = description.match(/\((\d+)\)[^.;,]*buildings?/gi);
-  if (grouped) {
-    return grouped.reduce((sum, m) => {
-      const n = m.match(/\((\d+)\)/);
-      return sum + (n ? Number(n[1]) : 0);
-    }, 0);
+  const text = description;
+
+  // Pattern: (N) + up to 40 chars + "buildings"
+  const grouped = [...text.matchAll(/\((\d+)\)[^.;,]{0,40}buildings?/gi)];
+  if (grouped.length > 0) {
+    return grouped.reduce((sum, m) => sum + parseInt(m[1], 10), 0);
   }
-  const direct = description.match(/\b(\d+)\s+buildings?/i);
-  return direct ? Number(direct[1]) : 0;
+
+  // Flexible: standalone number + up to 5 tokens + "buildings"
+  const tokens = text.split(/\s+/);
+  for (let i = 0; i < tokens.length; i++) {
+    const numMatch = tokens[i].match(/^(\d+)$/);
+    if (!numMatch) continue;
+    const n = parseInt(numMatch[1], 10);
+    if (n === 0 || n > 100) continue;
+    for (let j = i + 1; j < Math.min(i + 6, tokens.length); j++) {
+      if (/^buildings?$/i.test(tokens[j].replace(/[.,;:!?]$/, ""))) {
+        return n;
+      }
+    }
+  }
+  return 0;
 }
 
 // ─── Stage derivation ─────────────────────────────────────────────────────────
@@ -409,8 +508,14 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
   const primaryProject = (projectRes.data as RawRow | null) ?? null;
   const permits = (permitsRes.data ?? []) as RawRow[];
 
-  // ── Stage ──────────────────────────────────────────────────────────────────
+  // ── Stage + stale signal (parallel — does NOT override stage) ───────────────
   const stage = getDevelopmentStage(primaryProject, permits);
+  const staleDays = Math.round(num(primaryProject?.primary_project_days_since_activity));
+  const staleFlag: "none" | "watch" | "stale" | "severe" =
+    staleDays >= 730 ? "severe" :
+    staleDays >= 365 ? "stale" :
+    staleDays >= 180 ? "watch" :
+    "none";
 
   // ── Lot / zoning ───────────────────────────────────────────────────────────
   const lotSqft = num(parcel.lot_area_sqft);
@@ -420,17 +525,25 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
   const isRs = !!rsMatch;
   const isRm = !!rmMatch;
 
-  let baselineUnits = 1;
-  let capacityBasis = `${zoneName || "Unknown zone"} — zoning capacity not calculated`;
+  // Fix 4: If lot < zoning minimum → baseline = 0 (non-conforming). Never default to 1.
+  let baselineUnits = 0;
+  let capacityBasis = `${zoneName || "Unknown zone"} — capacity not calculated`;
+  let capacityConfidence: ConfidenceLevel = "unknown";
 
   if (rsMatch) {
     const minSf = Number(rsMatch[1]) * 1000;
-    baselineUnits = Math.max(1, Math.floor(lotSqft / minSf));
-    capacityBasis = `${zoneName} → 1 DU / ${minSf.toLocaleString()} SF`;
+    baselineUnits = Math.floor(lotSqft / minSf); // 0 if lot < minimum (non-conforming)
+    capacityBasis = baselineUnits === 0
+      ? `${zoneName} → 1 DU / ${minSf.toLocaleString()} SF — lot undersized (${Math.round(lotSqft).toLocaleString()} SF < ${minSf.toLocaleString()} SF min)`
+      : `${zoneName} → 1 DU / ${minSf.toLocaleString()} SF`;
+    capacityConfidence = "source-backed";
   } else if (rmMatch) {
     const minSf = Number(rmMatch[2]) * 1000;
-    baselineUnits = Math.max(1, Math.floor(lotSqft / minSf));
-    capacityBasis = `${zoneName} → 1 DU / ${minSf.toLocaleString()} SF`;
+    baselineUnits = Math.floor(lotSqft / minSf);
+    capacityBasis = baselineUnits === 0
+      ? `${zoneName} → 1 DU / ${minSf.toLocaleString()} SF — lot undersized (${Math.round(lotSqft).toLocaleString()} SF)`
+      : `${zoneName} → 1 DU / ${minSf.toLocaleString()} SF`;
+    capacityConfidence = "source-backed";
   }
 
   const aduCap = sdAduCap(lotSqft);
@@ -546,7 +659,8 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
   // ── Constraints: flags only, no unit math, unknown if not verified ─────────
   const hasVhfhsz = /VHFSZ|VHFHSZ|fire hazard/i.test(str(primaryProject?.primary_project_description)) ||
     permits.some((p) => /VHFSZ|VHFHSZ|fire hazard/i.test(str(p.description)));
-  const hasHistoric = permits.some((p) => /historic determination/i.test(str(p.description)));
+  const hasHistoric = /historic determination/i.test(str(primaryProject?.primary_project_description)) ||
+    permits.some((p) => /historic determination/i.test(str(p.description)));
 
   const constraints = {
     overlays: {
@@ -600,6 +714,8 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
 
   return {
     development_stage: stage,
+    stale_days: staleDays,
+    stale_flag: staleFlag,
     full_address: fullAddr,
     ...(conflict ? { conflict } : {}),
     parcel: {
@@ -668,8 +784,10 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
     capacity: {
       baseline_units: {
         units: baselineUnits,
-        basis: `${capacityBasis} + standard ADU allowances`,
-        confidence: (isRs || isRm) ? "source-backed" : "unknown",
+        basis: baselineUnits === 0 && (isRs || isRm)
+          ? capacityBasis  // already includes "undersized" note
+          : `${capacityBasis}${(isRs || isRm) ? " + standard ADU allowances" : ""}`,
+        confidence: capacityConfidence,
         source: "SDMC",
       },
       adu_upside_units: (isRs || isRm)
