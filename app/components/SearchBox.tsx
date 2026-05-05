@@ -105,7 +105,7 @@ export default function SearchBox() {
           {results.map((r) => (
             <a
               key={r.apn_norm}
-              href={`/parcel/${r.apn_norm}/${r.slug}`}
+              href={`/parcel/${r.apn_norm}`}
               className="flex items-center justify-between gap-3 px-4 py-3 hover:bg-slate-50 transition-colors"
             >
               <div className="min-w-0">
