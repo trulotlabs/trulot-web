@@ -217,8 +217,8 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
         {data.constraints ? (
           <Section title="Constraints & Overlays" quiet>
             <div className="grid gap-5 lg:grid-cols-2">
-              <ConstraintGroup title="Overlay Programs" items={data.constraints.overlays} />
-              <ConstraintGroup title="Site / Regulatory Constraints" items={data.constraints.regulatory} />
+              <ConstraintGroup title="Overlay Programs" items={data.constraints.overlays as unknown as Record<string, { status?: string; confidence?: string }>} />
+              <ConstraintGroup title="Site / Regulatory Constraints" items={data.constraints.regulatory as unknown as Record<string, { status?: string; confidence?: string }>} />
             </div>
           </Section>
         ) : null}
