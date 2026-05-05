@@ -1,4 +1,4 @@
-import { headers } from "next/headers";
+import { getParcelPageData } from "../../../../lib/get-parcel-page-data";
 import type { ReactNode } from "react";
 
 export const dynamic = "force-dynamic";
@@ -248,13 +248,8 @@ function TreeGroup({ title, nodes }: { title: string; nodes: PermitNode[] }) {
 }
 
 async function getParcelData(apn: string): Promise<ParcelPageData | null> {
-  const h = await headers();
-  const host = h.get("x-forwarded-host") ?? h.get("host");
-  if (!host) return null;
-  const protocol = h.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
-  const res = await fetch(`${protocol}://${host}/api/parcel/${apn}`, { cache: "no-store" });
-  if (!res.ok) return null;
-  return res.json();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return getParcelPageData(apn) as any;
 }
 
 function hasProposedProject(project?: ProposedProjectData): boolean {
