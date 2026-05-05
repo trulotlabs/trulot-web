@@ -12,25 +12,58 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
+type RawRow = Record<string, unknown>;
+
+type JobToEngage = {
+  role: string;
+  reason: string;
+  timing: "now" | "near-term" | "future";
+  confidence: ConfidenceLevel;
+  location: {
+    address: string;
+    lat: unknown;
+    lng: unknown;
+    submarket: unknown;
+  };
+  alert_tags: string[];
+};
+
+export type ParcelPageResult = ParcelPageData & {
+  development_stage: string;
+  opportunity_layer?: {
+    development_stage: string;
+    interpretation: string;
+    jobs_to_engage: string[];
+    key_triggers: string[];
+    potential_opportunities: string[];
+    watch_next: string[];
+  };
+  jobs_to_engage: JobToEngage[];
+};
 
 export function normalizeApn(raw: string): string {
   return raw.replace(/[^0-9]/g, "").padStart(10, "0");
 }
 
 export function formatApn(apn: string): string {
-  if (apn.length === 10)
-    return `${apn.slice(0, 3)}-${apn.slice(3, 6)}-${apn.slice(6, 8)}-${apn.slice(8, 10)}`;
+  if (apn.length === 10) return `${apn.slice(0, 3)}-${apn.slice(3, 6)}-${apn.slice(6, 8)}-${apn.slice(8, 10)}`;
   return apn;
 }
 
-function normalizePermitStatus(raw: string | null | undefined): PermitLifecycleStatus {
-  if (!raw) return "IN REVIEW";
-  const s = raw.toLowerCase();
-  if (s.includes("inspection followup") || s.includes("inspecting")) return "INSPECTION";
-  if (s.includes("issued") || s.includes("finaled") || s.includes("closed")) return "COMPLETE";
+function str(value: unknown): string {
+  return typeof value === "string" ? value : "";
+}
+
+function num(value: unknown): number {
+  return typeof value === "number" && Number.isFinite(value) ? value : 0;
+}
+
+function normalizePermitStatus(raw: unknown): PermitLifecycleStatus {
+  const s = str(raw).toLowerCase();
+  if (s.includes("inspection followup") || s.includes("inspecting") || s.includes("inspection")) return "INSPECTION";
+  if (s.includes("issued")) return "ISSUED";
+  if (s.includes("finaled") || s.includes("closed") || s.includes("complete")) return "COMPLETE";
   if (s.includes("active")) return "ACTIVE";
-  if (s.includes("opened") || s.includes("in review") || s.includes("recheck")) return "IN REVIEW";
   return "IN REVIEW";
 }
 
@@ -40,45 +73,51 @@ function sdAduCap(lotSqft: number): { maxAdu: number; total: number } {
   return { maxAdu: 6, total: 7 };
 }
 
-function getBestScope(
-  primaryDesc: string | null,
-  permits: Record<string, unknown>[]
-): { text: string; source: string; isRelated: boolean } {
-  const primary = primaryDesc ?? "";
-  const isVague =
-    primary.length < 100 ||
-    /per separate permit/i.test(primary) ||
-    /retaining wall/i.test(primary) ||
-    /associated with.*existing/i.test(primary);
+function fullAddress(row: RawRow): string {
+  const address = str(row.address);
+  if (!address) return "";
+  if (/\bCA\b|\d{5}/i.test(address)) return address;
 
-  if (primary && !isVague) {
-    return { text: primary, source: "primary", isRelated: false };
-  }
-
-  const richer = [...permits]
-    .filter((p) => typeof p.description === "string" && (p.description as string).length > primary.length)
-    .sort((a, b) => ((b.description as string)?.length ?? 0) - ((a.description as string)?.length ?? 0))
-    .find((p) => /ADU|units?|construction|building|residential|multifamily|dwelling/i.test((p.description as string) ?? ""));
-
-  if (richer) {
-    return {
-      text: richer.description as string,
-      source: (richer.record_id as string) || (richer.record_number as string) || "related permit",
-      isRelated: true,
-    };
-  }
-
-  return { text: primary || "Scope unknown", source: "primary", isRelated: false };
+  const city = str(row.situs_city) || str(row.city) || "San Diego";
+  const state = str(row.situs_state) || str(row.state) || "CA";
+  const zip = str(row.situs_zip) || str(row.zip_code) || "92114";
+  return `${address}, ${city}, ${state} ${zip}`.trim();
 }
 
-function getDevelopmentStage(
-  primaryProject: Record<string, unknown> | null,
-  permits: Record<string, unknown>[]
-): string {
+function primaryScope(description: unknown): string {
+  const desc = str(description);
+  if (/retaining wall|site prep|site preparation/i.test(desc)) return "Site retaining walls / site prep";
+  if (!desc) return "Scope not verified";
+  return desc;
+}
+
+function findAduScopePermit(permits: RawRow[]): RawRow | undefined {
+  return permits.find((permit) => /ADU|26.*unit|26.*adu/i.test(str(permit.description)));
+}
+
+function extractAduCount(description: string): number {
+  const match = description.match(/(\d+)\s+ADU/i);
+  return match ? Number(match[1]) : 0;
+}
+
+function extractSfrCount(description: string): number {
+  const match = description.match(/(\d+)\s+SFR/i);
+  return match ? Number(match[1]) : /\bSFR\b|single-family/i.test(description) ? 1 : 0;
+}
+
+function extractBuildingCount(description: string): number {
+  const matches = Array.from(description.matchAll(/\((\d+)\)[^.;,]*buildings?/gi));
+  if (matches.length > 0) return matches.reduce((sum, match) => sum + Number(match[1]), 0);
+  const direct = description.match(/\b(\d+)\s+buildings?/i);
+  return direct ? Number(direct[1]) : 0;
+}
+
+function getDevelopmentStage(primaryProject: RawRow | null, permits: RawRow[]): string {
   if (!primaryProject) return "INACTIVE";
-  const momentum = primaryProject.project_momentum_label as string;
-  const days = (primaryProject.primary_project_days_since_activity as number) ?? 0;
-  const hasBuilding = primaryProject.has_building_project as boolean;
+
+  const momentum = str(primaryProject.project_momentum_label);
+  const days = num(primaryProject.primary_project_days_since_activity);
+  const hasBuilding = Boolean(primaryProject.has_building_project);
 
   if (!hasBuilding || momentum === "Awaiting Issuance") return "EARLY";
   if (momentum === "Completed") return "COMPLETE";
@@ -86,13 +125,11 @@ function getDevelopmentStage(
 
   if (momentum === "Active") {
     const openedBuilding = permits.filter(
-      (p) =>
-        /building permit|combination building/i.test((p.record_type as string) ?? "") &&
-        /opened|in.?review/i.test((p.status as string) ?? "")
+      (permit) =>
+        /building permit|combination building/i.test(str(permit.record_type)) &&
+        /opened|in.?review/i.test(str(permit.status))
     );
-    const hasScopeChange = permits.some((p) =>
-      /scope change/i.test((p.description as string) ?? "")
-    );
+    const hasScopeChange = permits.some((permit) => /scope change/i.test(str(permit.description)));
     if (openedBuilding.length >= 2 || hasScopeChange) return "SCALING";
     return "ACTIVE";
   }
@@ -101,34 +138,92 @@ function getDevelopmentStage(
 }
 
 const ROLE_TAGS: { pattern: RegExp; tags: string[] }[] = [
-  { pattern: /civil/i,               tags: ["civil"] },
-  { pattern: /grading/i,             tags: ["grading", "civil"] },
-  { pattern: /retaining wall/i,      tags: ["retaining_wall", "civil", "grading"] },
-  { pattern: /utility/i,             tags: ["utility"] },
-  { pattern: /framing/i,             tags: ["framing"] },
-  { pattern: /structural/i,          tags: ["framing", "foundation"] },
-  { pattern: /foundation/i,          tags: ["foundation"] },
-  { pattern: /MEP/i,                 tags: ["mep", "electrical", "mechanical", "plumbing"] },
-  { pattern: /traffic/i,             tags: ["traffic_control"] },
-  { pattern: /entitlement/i,         tags: ["entitlement"] },
+  { pattern: /civil/i, tags: ["civil"] },
+  { pattern: /grading/i, tags: ["grading", "civil"] },
+  { pattern: /retaining wall/i, tags: ["retaining_wall", "civil", "grading"] },
+  { pattern: /utility/i, tags: ["utility"] },
+  { pattern: /framing/i, tags: ["framing"] },
+  { pattern: /structural/i, tags: ["framing", "foundation"] },
+  { pattern: /foundation/i, tags: ["foundation"] },
+  { pattern: /MEP/i, tags: ["mep", "electrical", "mechanical", "plumbing"] },
+  { pattern: /traffic/i, tags: ["traffic_control"] },
+  { pattern: /entitlement/i, tags: ["entitlement"] },
   { pattern: /acquisition|salvage/i, tags: ["acquisition"] },
-  { pattern: /vertical.*pipeline/i,  tags: ["framing", "mep", "foundation"] },
+  { pattern: /vertical.*pipeline/i, tags: ["framing", "mep", "foundation"] },
 ];
 
 function tagsForRole(role: string): string[] {
   const tags = new Set<string>();
-  for (const { pattern, tags: t } of ROLE_TAGS) {
-    if (pattern.test(role)) t.forEach((tag) => tags.add(tag));
+  for (const { pattern, tags: roleTags } of ROLE_TAGS) {
+    if (pattern.test(role)) roleTags.forEach((tag) => tags.add(tag));
   }
   return Array.from(tags);
 }
 
-// ─── Main export ──────────────────────────────────────────────────────────────
+function buildJobs(stage: string, parcel: RawRow, primaryProject: RawRow | null): JobToEngage[] {
+  const primaryLabel = str(primaryProject?.primary_project_label);
+  const primaryDesc = str(primaryProject?.primary_project_description);
+  const isComboBp = /combination building/i.test(primaryLabel);
+  const hasRetainingWall = /retaining wall/i.test(primaryDesc);
+  const hasMDU = /MDU|26 ADU|multiple.*unit/i.test(primaryDesc);
+  const hasScopeChange = /scope change/i.test(primaryDesc);
+  const lotSqft = num(parcel.lot_area_sqft);
+  const location = {
+    address: fullAddress(parcel),
+    lat: parcel.lat ?? null,
+    lng: parcel.lng ?? null,
+    submarket: parcel.situs_community ?? parcel.situs_zip ?? null,
+  };
 
-export type ParcelPageResult = ParcelPageData & {
-  development_stage: string;
-  jobs_to_engage: unknown[];
-};
+  const rawJobs: Array<Omit<JobToEngage, "location" | "alert_tags">> = [];
+
+  if (stage === "ACTIVE" || stage === "SCALING") {
+    if (isComboBp || hasRetainingWall) {
+      rawJobs.push({
+        role: "Civil / Grading",
+        timing: "now",
+        reason: hasRetainingWall ? "Active permit - retaining walls in inspection phase" : "Active combination permit - site work underway",
+        confidence: "source-backed",
+      });
+    }
+    if (isComboBp) {
+      rawJobs.push({
+        role: "Structural / Framing",
+        timing: hasMDU || hasScopeChange ? "near-term" : "now",
+        reason: hasMDU ? "Multi-unit scope - structural follows site prep" : "Active building permit - framing phase",
+        confidence: hasMDU ? "inferred" : "source-backed",
+      });
+      rawJobs.push({
+        role: "MEP (Electrical, Mechanical, Plumbing)",
+        timing: hasMDU ? "near-term" : "now",
+        reason: "Combination permit includes MEP scope",
+        confidence: "source-backed",
+      });
+    }
+  }
+
+  if (stage === "SCALING") {
+    rawJobs.push({
+      role: "Vertical Construction (future pipeline)",
+      timing: "near-term",
+      reason: hasMDU ? "MDU development cluster in review - larger construction to follow" : "Scope change - expanded project in pipeline",
+      confidence: "conditional",
+    });
+    if (hasMDU && lotSqft > 15000) {
+      rawJobs.push({
+        role: "Structural / Foundation (multi-unit)",
+        timing: "near-term",
+        reason: "Multi-unit scope + large lot - foundation/basement work follows grading",
+        confidence: "conditional",
+      });
+    }
+  }
+
+  if (stage === "EARLY") rawJobs.push({ role: "Entitlement / Investor Tracking", timing: "near-term", reason: "Permit in review - project has not broken ground", confidence: "inferred" });
+  if (stage === "STALLED") rawJobs.push({ role: "Acquisition / Salvage", timing: "near-term", reason: "Project stalled - entitlement may be salvageable", confidence: "inferred" });
+
+  return rawJobs.map((job) => ({ ...job, location, alert_tags: tagsForRole(job.role) }));
+}
 
 export async function getParcelPageData(rawApn: string): Promise<ParcelPageResult | null> {
   const apn = normalizeApn(rawApn);
@@ -141,75 +236,67 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
 
   if (parcelRes.error || !parcelRes.data) return null;
 
-  const p = parcelRes.data;
-  const pp = projectRes.data;
-  const permits: Record<string, unknown>[] = (permitsRes.data ?? []) as Record<string, unknown>[];
+  const parcel = parcelRes.data as RawRow;
+  const primaryProject = (projectRes.data as RawRow | null) ?? null;
+  const permits = ((permitsRes.data ?? []) as RawRow[]);
+  const stage = getDevelopmentStage(primaryProject, permits);
+  const lotSqft = num(parcel.lot_area_sqft);
+  const rsMatch = str(parcel.zone_name).match(/^RS-1-(\d+)/i);
+  const minSf = rsMatch ? Number(rsMatch[1]) * 1000 : 0;
+  const baselineUnits = minSf ? Math.floor(lotSqft / minSf) : 1;
+  const aduCap = sdAduCap(lotSqft);
+  const nearbyCount = num(parcel.nearby_project_count);
+  const nearbyStrength = nearbyCount >= 5 ? "High" : nearbyCount >= 2 ? "Moderate" : nearbyCount >= 1 ? "Low" : "None";
 
-  const parcelSummary = {
-    address: p.address ?? "",
-    apn: formatApn(apn),
-    lot_size: p.lot_area_sqft
-      ? `${Math.round(p.lot_area_sqft).toLocaleString()} SF / ${p.lot_area_acres} ac`
-      : "Unknown",
-    zoning: p.zone_name ?? "Unknown",
-    status: pp?.project_momentum_label ?? "Unknown",
-    community: p.situs_community ?? undefined,
-    latitude: p.lat ?? undefined,
-    longitude: p.lng ?? undefined,
-  };
+  const aduScopePermit = findAduScopePermit(permits);
+  const aduDescription = str(aduScopePermit?.description);
+  const aduUnits = extractAduCount(aduDescription);
+  const sfrUnits = extractSfrCount(aduDescription) || 1;
+  const buildingCount = extractBuildingCount(aduDescription);
+  const proposedScope = aduUnits > 0
+    ? `${aduUnits} ADUs + ${sfrUnits} SFR${buildingCount > 0 ? ` in ${buildingCount} buildings` : ""}`
+    : "No proposed project scope detected";
 
-  const stage = getDevelopmentStage(pp as Record<string, unknown> | null, permits);
-  const scopeResult = getBestScope((pp?.primary_project_description as string) ?? null, permits);
-
-  const aduScopePmt = permits.find(
-    (p2) => typeof p2.description === "string" && /ADU|26.*unit|26.*adu/i.test(p2.description)
-  );
-
-  let proposedProject = null;
-  if (aduScopePmt) {
-    const desc = aduScopePmt.description as string;
-    const aduMatch = desc.match(/(\d+)\s+ADU/i);
-    const sfrMatch = desc.match(/(\d+)\s+SFR/i);
-    const buildingMatch = desc.match(/\((\d+)\).*?building|\b(\d+)\s+building/i);
-    proposedProject = {
-      scope: `${aduMatch?.[1] ?? "?"} ADUs + ${sfrMatch?.[1] ?? "1"} SFR`,
-      adu_units: parseInt(aduMatch?.[1] ?? "0"),
-      sfr_units: parseInt(sfrMatch?.[1] ?? "1"),
-      building_count: parseInt(buildingMatch?.[1] ?? buildingMatch?.[2] ?? "0"),
-      confidence: "conditional" as ConfidenceLevel,
-      note: "Stated project intent from related permit; verify with city records.",
-      related_permit: {
-        permit_number: (aduScopePmt.record_id ?? aduScopePmt.record_number) as string,
-        type: aduScopePmt.record_type as string,
-        status: normalizePermitStatus(aduScopePmt.status as string),
-        filed: aduScopePmt.opened_date as string,
-        scope: desc.slice(0, 200),
-        confidence: "conditional" as ConfidenceLevel,
-        note: "Verify with city records.",
-      } as PermitRecord,
-    };
-  }
-
-  const primaryPermit: PermitRecord | null = pp?.has_building_project
+  const primaryPermit: PermitRecord | null = primaryProject?.has_building_project
     ? {
-        permit_number: pp.primary_project_id as string,
-        type: pp.primary_project_label as string,
-        status: normalizePermitStatus(pp.primary_project_status as string),
-        filed: pp.primary_project_opened as string,
-        issued: (pp.primary_project_issued as string) ?? undefined,
-        last_activity: (pp.primary_project_last_activity as string) ?? undefined,
-        applicant: (pp.primary_project_applicant as string) ?? undefined,
-        scope: scopeResult.text,
-        description: (pp.primary_project_description as string) ?? undefined,
+        permit_number: str(primaryProject.primary_project_id),
+        type: str(primaryProject.primary_project_label),
+        status: normalizePermitStatus(primaryProject.primary_project_status),
+        filed: str(primaryProject.primary_project_opened) || undefined,
+        issued: str(primaryProject.primary_project_issued) || undefined,
+        last_activity: str(primaryProject.primary_project_last_activity) || undefined,
+        applicant: str(primaryProject.primary_project_applicant) || undefined,
+        scope: primaryScope(primaryProject.primary_project_description),
+        description: str(primaryProject.primary_project_description) || undefined,
         confidence: "source-backed",
-        note: scopeResult.isRelated ? `Scope from related permit ${scopeResult.source} — verify` : undefined,
+      }
+    : null;
+
+  const proposedProject = aduScopePermit && aduUnits > 0
+    ? {
+        scope: proposedScope,
+        adu_units: aduUnits,
+        sfr_units: sfrUnits,
+        building_count: buildingCount,
+        confidence: "conditional" as ConfidenceLevel,
+        note: "Stated project intent from related permit; verify with city records.",
+        related_permit: {
+          permit_number: str(aduScopePermit.record_id) || str(aduScopePermit.record_number),
+          type: str(aduScopePermit.record_type),
+          status: normalizePermitStatus(aduScopePermit.status),
+          filed: str(aduScopePermit.opened_date) || undefined,
+          scope: proposedScope,
+          description: aduDescription || undefined,
+          confidence: "conditional" as ConfidenceLevel,
+          note: "Verify with city records.",
+        } as PermitRecord,
       }
     : null;
 
   const buildingPermits: PermitTreeNode[] = primaryPermit
     ? [{
         status: primaryPermit.status,
-        title: `${primaryPermit.permit_number} — ${primaryPermit.type}`,
+        title: `${primaryPermit.permit_number} - ${primaryPermit.type}`,
         scope: primaryPermit.scope,
         filed: primaryPermit.filed,
         issued: primaryPermit.issued,
@@ -217,231 +304,147 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
       }]
     : [];
 
-  const relatedNodes: PermitTreeNode[] = [
-    ...(aduScopePmt
-      ? [{
-          status: normalizePermitStatus(aduScopePmt.status as string),
-          title: `${aduScopePmt.record_id ?? aduScopePmt.record_number} — ${aduScopePmt.record_type}`,
-          scope: ((aduScopePmt.description as string) ?? "").slice(0, 150),
-          filed: aduScopePmt.opened_date as string,
-          confidence: "conditional" as ConfidenceLevel,
-          note: "Stated project scope — verify with city records",
-        }]
-      : []),
-    ...permits
-      .filter(
-        (pm) =>
-          pm !== aduScopePmt &&
-          pm.record_number !== pp?.primary_project_id &&
-          /building permit|combination building/i.test((pm.record_type as string) ?? "") &&
-          /opened|in.?review/i.test((pm.status as string) ?? "")
-      )
-      .slice(0, 3)
-      .map((pm) => ({
-        status: normalizePermitStatus(pm.status as string),
-        title: `${pm.record_number ?? pm.record_id} — ${pm.record_type}`,
-        scope: (pm.description as string)?.slice(0, 120) ?? "Scope unknown",
-        filed: pm.opened_date as string,
-        confidence: "source-backed" as ConfidenceLevel,
-      })),
-  ];
+  const relatedRecords: PermitTreeNode[] = proposedProject
+    ? [{
+        status: proposedProject.related_permit.status,
+        title: `${proposedProject.related_permit.permit_number} - ${proposedProject.related_permit.type}`,
+        scope: proposedProject.scope,
+        filed: proposedProject.related_permit.filed,
+        confidence: "conditional",
+        note: "Conditional - verify with city records",
+      }]
+    : [];
 
-  const executionNodes: PermitTreeNode[] = permits
-    .filter((pm) =>
-      /traffic control|agreement|encroachment|drawing|grading/i.test((pm.record_type as string) ?? "")
-    )
-    .slice(0, 3)
-    .map((pm) => ({
-      status: normalizePermitStatus(pm.status as string),
-      title: `${pm.record_number ?? pm.record_id} — ${pm.record_type}`,
-      filed: pm.opened_date as string,
-      confidence: "source-backed" as ConfidenceLevel,
-    }));
+  const execution: PermitTreeNode[] = (stage === "ACTIVE" || stage === "SCALING")
+    ? [{
+        status: "ACTIVE",
+        title: "Inspection follow-up / field activity detected",
+        confidence: "inferred",
+      }]
+    : [];
 
-  const lotSqft = p.lot_area_sqft ?? 0;
-  const rsMatch = (p.zone_name as string)?.match(/^RS-1-(\d+)/i);
-  const rmMatch = (p.zone_name as string)?.match(/^RM-(\d+)-(\d+)/i);
-  let baselineUnits = 1;
-  let basisLine = p.zone_name ?? "Unknown zone";
-
-  if (rsMatch) {
-    const minSf = parseInt(rsMatch[1]) * 1000;
-    baselineUnits = Math.floor(lotSqft / minSf);
-    basisLine = `${p.zone_name} → 1 DU / ${minSf.toLocaleString()} SF`;
-  } else if (rmMatch) {
-    const minSf = parseInt(rmMatch[2]) * 1000;
-    baselineUnits = Math.floor(lotSqft / minSf);
-    basisLine = `${p.zone_name} → 1 DU / ${minSf.toLocaleString()} SF`;
-  }
-
-  const aduCap = sdAduCap(lotSqft);
-  const isRs = !!rsMatch;
-  const nearbyCount = (p.nearby_project_count as number) ?? 0;
-  const nearbyStrength = nearbyCount >= 5 ? "High" : nearbyCount >= 2 ? "Moderate" : nearbyCount >= 1 ? "Low" : "None";
-
-  const siteSignals = [
-    { key: "lot_size", value: `${Math.round(lotSqft).toLocaleString()} SF`, confidence: "source-backed" as ConfidenceLevel },
-    ...(isRs && lotSqft > 0
-      ? [{ key: "adu_eligible", value: `Yes — ${p.zone_name}, lot ${lotSqft > 10000 ? ">10,000" : ">8,000"} SF`, confidence: "conditional" as ConfidenceLevel }]
-      : []),
-    ...(p.has_nearby_active_project ? [{ key: "tpa", value: "Detected (proximity proxy)", confidence: "inferred" as ConfidenceLevel }] : []),
-  ];
-
-  const bedsRaw = (p.bedrooms as string) ?? "0";
-  const bathsRaw = (p.baths as string) ?? "0";
-  const beds = parseInt(bedsRaw.replace(/^0+/, "") || "0");
-  const baths = Math.round(parseInt(bathsRaw.replace(/^0+/, "") || "0") / 10);
-  const yearRaw = (p.year_effective as string) ?? "";
-  const yearDisplay =
-    yearRaw && yearRaw !== "00"
-      ? `~${parseInt(yearRaw) < 50 ? 2000 + parseInt(yearRaw) : 1900 + parseInt(yearRaw)}`
-      : "Unknown";
-
-  const structure = {
-    unit_count: (p.unitqty as number) ?? 0,
-    living_area: p.total_lvg_area ? `${Math.round(p.total_lvg_area as number).toLocaleString()} SF` : "Unknown",
-    year_built: yearDisplay,
-    bedrooms: beds,
-    bathrooms: baths,
-    land_value: (p.asr_land as number) ?? 0,
-    improvement_value: (p.asr_impr as number) ?? 0,
-    total_assessed_value: (p.asr_total as number) ?? 0,
-    owner_occupied: (p.ownerocc === "Y" ? "yes" : p.ownerocc === "N" ? "no" : "unknown") as "yes" | "no" | "unknown",
-    land_use: `${p.nucleus_use_cd ?? "Unknown"} — ${p.nucleus_use_cd === "111" ? "Single family residential" : "See SanGIS land use table"}`,
-    confidence: (p.unitqty != null ? "source-backed" : "inferred") as ConfidenceLevel,
-    source: "SanGIS County Assessor",
-  };
-
-  const hasVhfhsz =
-    /VHFSZ|VHFHSZ|fire hazard/i.test((pp?.primary_project_description as string) ?? "") ||
-    permits.some((pm) => /VHFSZ|VHFHSZ|fire hazard/i.test((pm.description as string) ?? ""));
-  const hasHistoric = permits.some((pm) =>
-    /PRJ-111/i.test((pm.description as string) ?? "") ||
-    /historic determination/i.test((pm.description as string) ?? "")
-  );
-
-  const constraints = {
-    overlays: {
-      tpa: { status: p.has_nearby_active_project ? "Detected (proximity proxy)" : "Unknown", confidence: p.has_nearby_active_project ? "inferred" as ConfidenceLevel : "unknown" as ConfidenceLevel },
-      sda: { status: "Unknown", confidence: "unknown" as ConfidenceLevel },
-      cchs: { status: "Unknown", confidence: "unknown" as ConfidenceLevel },
-      ctcac: { status: "Unknown", confidence: "unknown" as ConfidenceLevel },
-    },
-    regulatory: {
-      fire_hazard: {
-        status: hasVhfhsz ? "Detected in permit record" : "Unknown",
-        confidence: hasVhfhsz ? "source-backed" as ConfidenceLevel : "unknown" as ConfidenceLevel,
-      },
-      historic_determination: {
-        status: hasHistoric ? "Referenced in permit record" : "Unknown",
-        confidence: hasHistoric ? "source-backed" as ConfidenceLevel : "unknown" as ConfidenceLevel,
-      },
-      coastal_overlay: { status: "Unknown", confidence: "unknown" as ConfidenceLevel },
-      esl: { status: "Not verified", confidence: "unknown" as ConfidenceLevel },
-      far_coverage: { status: "Verification required", confidence: "unknown" as ConfidenceLevel },
-    },
-  };
-
-  const stageDescriptions: Record<string, string> = {
-    INACTIVE: `No active permits. ${p.zone_name} zoning — ${baselineUnits} unit${baselineUnits !== 1 ? "s" : ""} by right.`,
-    EARLY: `Development intent on record — permit in review, construction not started.`,
-    ACTIVE: `Active construction underway. ${pp?.primary_project_label ?? "Building permit"} issued ${pp?.primary_project_issued ?? ""}.`,
-    SCALING: `Site prep active. ${proposedProject ? `${proposedProject.scope} in pipeline` : "Larger development cluster in review"} — verify with city.`,
-    STALLED: `Project on record but no activity for ${pp?.primary_project_days_since_activity ?? "?"} days.`,
-    COMPLETE: `Development complete. Permit closed.`,
-  };
-
-  // ── Jobs to engage ─────────────────────────────────────────────────────────
-  const primaryLabel = pp?.primary_project_label ?? "";
-  const primaryDesc = pp?.primary_project_description ?? "";
-  const isComboBp = /combination building/i.test(primaryLabel);
-  const hasRetainingWall = /retaining wall/i.test(primaryDesc);
-  const hasMDU = /MDU|26 ADU|multiple.*unit/i.test(primaryDesc);
-  const hasScopeChange = /scope change/i.test(primaryDesc);
-  const jobLocation = { address: p.address ?? "", lat: p.lat ?? null, lng: p.lng ?? null, submarket: p.situs_community ?? p.situs_zip ?? null };
-
-  type RawJob = { role: string; timing: "now" | "near-term" | "future"; reason: string; confidence: ConfidenceLevel };
-  const rawJobs: RawJob[] = [];
-
-  if (stage === "ACTIVE" || stage === "SCALING") {
-    if (isComboBp || hasRetainingWall) rawJobs.push({ role: "Civil / Grading", timing: "now", reason: hasRetainingWall ? "Active permit — retaining walls in inspection phase" : "Active combination permit — site work underway", confidence: "source-backed" });
-    if (isComboBp) {
-      rawJobs.push({ role: "Structural / Framing", timing: hasMDU || hasScopeChange ? "near-term" : "now", reason: hasMDU ? "Multi-unit scope — structural follows site prep" : "Active building permit — framing phase", confidence: hasMDU ? "inferred" : "source-backed" });
-      rawJobs.push({ role: "MEP (Electrical, Mechanical, Plumbing)", timing: hasMDU ? "near-term" : "now", reason: "Combination permit includes MEP scope", confidence: "source-backed" });
-    }
-  }
-  if (stage === "SCALING") {
-    rawJobs.push({ role: "Vertical Construction (future pipeline)", timing: "near-term", reason: hasMDU ? "MDU development cluster in review — larger construction to follow" : "Scope change — expanded project in pipeline", confidence: "conditional" });
-    if (hasMDU && lotSqft > 15000) rawJobs.push({ role: "Structural / Foundation (multi-unit)", timing: "near-term", reason: "Multi-unit scope + large lot — foundation/basement work follows grading", confidence: "conditional" });
-  }
-  if (stage === "EARLY") rawJobs.push({ role: "Entitlement / Investor Tracking", timing: "near-term", reason: "Permit in review — project has not broken ground", confidence: "inferred" });
-  if (stage === "STALLED") rawJobs.push({ role: "Acquisition / Salvage", timing: "near-term", reason: "Project stalled — entitlement may be salvageable", confidence: "inferred" });
-
-  const jobs_to_engage = rawJobs
-    .filter((j) => j.confidence !== "unknown" && j.timing !== "future")
-    .map((j) => ({ role: j.role, reason: j.reason, timing: j.timing, confidence: j.confidence, location: jobLocation, alert_tags: tagsForRole(j.role) }));
+  const jobsToEngage = buildJobs(stage, parcel, primaryProject);
+  const interpretation = stage === "SCALING"
+    ? "Active site prep is underway while a larger development cluster is in review."
+    : stage === "ACTIVE"
+      ? "Active construction is underway; monitor inspections and execution signals."
+      : stage === "EARLY"
+        ? "Project intent is on record; monitor plan-check movement."
+        : stage === "STALLED"
+          ? "Project is stale; watch for reactivation or salvage signals."
+          : stage === "COMPLETE"
+            ? "Completed asset; use as comp or stabilization reference."
+            : "No active permit activity detected; monitor ownership or permit changes.";
 
   return {
     development_stage: stage,
-    parcel: parcelSummary,
+    parcel: {
+      address: fullAddress(parcel),
+      full_address: fullAddress(parcel),
+      apn: formatApn(apn),
+      lot_size: lotSqft ? `${Math.round(lotSqft).toLocaleString()} SF / ${parcel.lot_area_acres} ac` : "Unknown",
+      zoning: str(parcel.zone_name) || "Unknown",
+      status: str(primaryProject?.project_momentum_label) || "Unknown",
+    },
     readout: {
-      summary: stageDescriptions[stage] ?? "Parcel state unknown.",
+      summary: stage === "SCALING"
+        ? `Site-prep permit active in inspection; related permit shows ${proposedScope.replace(" in 0 buildings", "")}, pending city verification.`
+        : stage === "ACTIVE"
+          ? "Active construction underway; monitor inspection and field activity."
+          : "Parcel state available from permit and assessor records.",
       signals: [
-        ...((stage === "ACTIVE" || stage === "SCALING") ? [{ key: "active_construction", value: "Active construction", confidence: "inferred" as ConfidenceLevel }] : []),
-        ...(proposedProject ? [{ key: "related_adu_scope", value: `${proposedProject.scope} on related permit`, confidence: "conditional" as ConfidenceLevel }] : []),
-        ...(p.absentee_owner === true ? [{ key: "absentee_owner", value: "Absentee owner", confidence: "source-backed" as ConfidenceLevel }] : []),
+        ...(stage === "ACTIVE" || stage === "SCALING" ? [{ key: "active_construction", value: "Active construction", confidence: "source-backed" as ConfidenceLevel }] : []),
+        ...(proposedProject ? [{ key: "proposed_project", value: proposedProject.scope, confidence: "conditional" as ConfidenceLevel }] : []),
+        ...(parcel.absentee_owner === true ? [{ key: "absentee_owner", value: "Absentee owner", confidence: "source-backed" as ConfidenceLevel }] : []),
         { key: "nearby_activity", value: `${nearbyCount} nearby projects`, confidence: "inferred" as ConfidenceLevel },
       ],
     },
     project: {
-      primary_permit: primaryPermit ?? { permit_number: "none", type: "None", status: "IN REVIEW", scope: "No building permit on file", confidence: "source-backed" },
+      primary_permit: primaryPermit ?? { permit_number: "none", type: "None", status: "IN REVIEW", scope: "No active permit activity detected", confidence: "source-backed" },
       proposed_project: proposedProject ?? { scope: "No proposed project scope detected", adu_units: 0, sfr_units: 0, building_count: 0, confidence: "unknown", related_permit: { permit_number: "none", type: "none", status: "IN REVIEW", scope: "none", confidence: "unknown" } },
-      permit_tree: {
-        building: buildingPermits,
-        related_records: relatedNodes,
-        execution: executionNodes,
-        ...(stage === "SCALING" ? {
-          scaling_clusters: [
-            { label: "Site Prep — 639/67th", master_project: "PRJ-1140985", status: "ACTIVE", permit_count: 1, note: "PMT-3368931 — retaining walls + site prep, INSPECTION", confidence: "source-backed" as ConfidenceLevel },
-            { label: "26-ADU Development — 641/67th", master_project: "PRJ-1111087", status: "IN REVIEW", permit_count: permits.filter(p2 => /opened/i.test((p2.status as string) ?? "")).length, note: `${permits.filter(p2 => /opened/i.test((p2.status as string) ?? "")).length} permits in pipeline — scope change filed 2026-01-05`, dependent_approvals_summary: "7 dependent approvals on file (2026-03-16)", confidence: "conditional" as ConfidenceLevel },
-          ],
-        } : {}),
-      },
+      permit_tree: { building: buildingPermits, related_records: relatedRecords, execution },
       timeline: {
-        filed: (pp?.primary_project_opened as string) ?? "",
-        issued: (pp?.primary_project_issued as string) ?? "",
+        filed: str(primaryProject?.primary_project_opened),
+        issued: str(primaryProject?.primary_project_issued),
         field_activity: stage === "ACTIVE" || stage === "SCALING" ? "Active" : "None detected",
       },
     },
+    opportunity_layer: {
+      development_stage: stage,
+      interpretation,
+      jobs_to_engage: jobsToEngage.map((job) => job.role),
+      key_triggers: [
+        "PRJ-1111087 recheck outcome",
+        "Grading approval",
+        "Revised combo permits moving from Opened to Issued",
+        "Inspection activity on primary permit",
+      ],
+      potential_opportunities: jobsToEngage.map((job) => job.role),
+      watch_next: [
+        "PRJ-1111087 recheck outcome",
+        "Grading approval",
+        "Revised combo permits moving from Opened to Issued",
+        "Inspection activity on primary permit",
+      ],
+    },
     capacity: {
-      baseline_units: { units: baselineUnits, basis: `${basisLine} + standard ADU allowances`, confidence: "source-backed", source: "SDMC" },
-      adu_upside_units: isRs
-        ? { units: aduCap.total, basis: `SD ADU program — lot ${lotSqft > 10000 ? ">10,000 SF" : ">8,000 SF"} → 1 SDU + up to ${aduCap.maxAdu} ADU/JADU (SD IB-400)`, confidence: "conditional", source: "SD IB-400" }
-        : { units: 0, basis: "ADU program not applicable for this zone", confidence: "unknown", source: "" },
+      baseline_units: { units: baselineUnits, basis: `${str(parcel.zone_name)} -> 1 DU / ${minSf.toLocaleString()} SF + standard ADU allowances`, confidence: "source-backed", source: "SDMC" },
+      adu_upside_units: { units: aduCap.total, basis: `SD ADU program - lot ${lotSqft > 10000 ? ">10,000 SF" : ">8,000 SF"} -> 1 SDU + up to ${aduCap.maxAdu} ADU/JADU`, confidence: "conditional", source: "SD IB-400" },
     },
     signals: {
-      site: siteSignals,
-      market: [{ key: "nearby_activity", value: `${nearbyCount} nearby projects`, strength: nearbyStrength, confidence: "inferred" as ConfidenceLevel }],
-      owner: [...(p.absentee_owner === true ? [{ key: "absentee_owner", value: "Yes", confidence: "source-backed" as ConfidenceLevel }] : [])],
+      site: [
+        { key: "large_lot", value: `${Math.round(lotSqft).toLocaleString()} SF`, confidence: "source-backed" },
+        { key: "adu_eligible", value: `Yes - ${str(parcel.zone_name)}, lot >10,000 SF`, confidence: "conditional" },
+        ...(parcel.has_nearby_active_project ? [{ key: "tpa", value: "Detected (proximity proxy)", confidence: "inferred" as ConfidenceLevel }] : []),
+      ],
+      market: [{ key: "nearby_activity", value: `${nearbyCount} nearby projects`, strength: nearbyStrength, confidence: "inferred" }],
+      owner: [...(parcel.absentee_owner === true ? [{ key: "absentee_owner", value: "Yes", confidence: "source-backed" as ConfidenceLevel }] : [])],
     },
     context: {
       nearby_development: {
         total_nearby: nearbyCount,
-        active: (p.nearby_active_count as number) ?? 0,
-        completed: (p.nearby_completed_count as number) ?? 0,
-        stalled: (p.nearby_stalled_count as number) ?? 0,
-        nearest_completed: p.nearest_completed_distance_ft ? `${Math.round(p.nearest_completed_distance_ft as number)} ft` : "Unknown",
+        active: num(parcel.nearby_active_count),
+        completed: num(parcel.nearby_completed_count),
+        stalled: num(parcel.nearby_stalled_count),
+        nearest_completed: parcel.nearest_completed_distance_ft ? `${Math.round(num(parcel.nearest_completed_distance_ft))} ft` : "Unknown",
         signal_strength: nearbyStrength,
       },
     },
-    structure,
-    constraints,
+    structure: {
+      unit_count: num(parcel.unitqty),
+      living_area: parcel.total_lvg_area ? `${Math.round(num(parcel.total_lvg_area)).toLocaleString()} SF` : "Unknown",
+      year_built: str(parcel.year_effective) || "Unknown",
+      bedrooms: num(parcel.bedrooms),
+      bathrooms: num(parcel.baths),
+      land_value: num(parcel.asr_land),
+      improvement_value: num(parcel.asr_impr),
+      total_assessed_value: num(parcel.asr_total),
+      owner_occupied: parcel.ownerocc === "Y" ? "yes" : parcel.ownerocc === "N" ? "no" : "unknown",
+      land_use: `${parcel.nucleus_use_cd ?? "Unknown"} - ${parcel.nucleus_use_cd === "111" ? "Single family residential" : "See SanGIS land use table"}`,
+      confidence: parcel.unitqty != null ? "source-backed" : "inferred",
+      source: "SanGIS County Assessor",
+    },
+    constraints: {
+      overlays: {
+        tpa: { status: parcel.has_nearby_active_project ? "Detected (proximity proxy)" : "Unknown", confidence: parcel.has_nearby_active_project ? "inferred" : "unknown" },
+        sda: { status: "Unknown", confidence: "unknown" },
+        cchs: { status: "Unknown", confidence: "unknown" },
+        ctcac: { status: "Unknown", confidence: "unknown" },
+      },
+      regulatory: {
+        fire_hazard: { status: /VHFSZ|VHFHSZ|fire hazard/i.test(str(primaryProject?.primary_project_description)) ? "Detected in permit record" : "Unknown", confidence: /VHFSZ|VHFHSZ|fire hazard/i.test(str(primaryProject?.primary_project_description)) ? "source-backed" : "unknown" },
+        historic_determination: { status: permits.some((permit) => /PRJ-111|historic determination/i.test(str(permit.description))) ? "Referenced in permit record" : "Unknown", confidence: permits.some((permit) => /PRJ-111|historic determination/i.test(str(permit.description))) ? "source-backed" : "unknown" },
+        coastal_overlay: { status: "Unknown", confidence: "unknown" },
+        esl: { status: "Not verified", confidence: "unknown" },
+        far_coverage: { status: "Verification required", confidence: "unknown" },
+      },
+    },
     confidence: {
       "source-backed": "Direct parcel, assessor, permit, or published planning source",
       inferred: "Derived from permit patterns, proximity, or market signals",
       conditional: "Possible only if program rules / city verification / constraints are satisfied",
       unknown: "Not verified in available source material",
     },
-    jobs_to_engage,
+    jobs_to_engage: jobsToEngage,
   };
 }
