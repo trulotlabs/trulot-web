@@ -21,11 +21,11 @@ export default function Home() {
         {/* Example nudge */}
         <p className="mt-6 text-xs text-slate-400">
           Try{' '}
-          <a href="/parcel/5442140600/639-67th-st" className="text-emerald-600 hover:underline">
+          <a href="/parcel/5442140600" className="text-emerald-600 hover:underline">
             639 67th St
           </a>
           {' '}or{' '}
-          <a href="/parcel/5432020900/830-60th-st" className="text-emerald-600 hover:underline">
+          <a href="/parcel/5432020900" className="text-emerald-600 hover:underline">
             830 60th St
           </a>
         </p>
