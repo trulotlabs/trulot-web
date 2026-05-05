@@ -77,7 +77,7 @@ export default function JobsPage() {
     fetch(`/api/jobs-feed?${params.toString()}`, { signal: controller.signal })
       .then((res) => (res.ok ? res.json() : Promise.reject(new Error("Unable to load jobs"))))
       .then((payload) => {
-        const rows = Array.isArray(payload) ? payload : payload.jobs ?? payload.data ?? [];
+        const rows = Array.isArray(payload) ? payload : payload.jobs_flat ?? payload.jobs ?? payload.data ?? [];
         setJobs(rows);
       })
       .catch((error) => {
