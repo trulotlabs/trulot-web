@@ -35,8 +35,8 @@ function getStage(job: Job): string {
 }
 
 function parcelHref(job: Job): string | null {
-  if (job.parcel_url) return job.parcel_url;
-  if (job.apn) return `/parcel/${job.apn}/${job.slug ?? "parcel"}`;
+  if (job.apn) return `/parcel/${job.apn}`;
+  if (job.parcel_url) return job.parcel_url.replace(/\/parcel\/([^/]+)\/.+$/, "/parcel/$1");
   return null;
 }
 
