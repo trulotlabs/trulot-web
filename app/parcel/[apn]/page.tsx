@@ -33,17 +33,21 @@ function labelize(key: string): string {
 
 function badgeClasses(tone?: string): string {
   const value = String(tone ?? "unknown").toLowerCase();
-  if (value === "source-backed" || value === "active" || value === "inspection" || value === "issued") return "bg-emerald-50 text-emerald-700 border-emerald-200";
-  if (value === "conditional" || value === "early" || value === "in review") return "bg-amber-50 text-amber-700 border-amber-200";
-  if (value === "inferred" || value === "complete") return "bg-slate-100 text-slate-600 border-slate-200";
-  if (value === "scaling") return "bg-violet-50 text-violet-700 border-violet-200";
-  if (value === "stalled") return "bg-red-50 text-red-700 border-red-200";
-  return "bg-slate-100 text-slate-500 border-slate-200";
+  if (value === "source-backed") return "border-emerald-200 bg-emerald-50 text-emerald-700";
+  if (value === "inferred") return "border-slate-300 bg-slate-100 text-slate-600";
+  if (value === "conditional") return "border-amber-200 bg-amber-50 text-amber-700";
+  if (value === "unknown") return "border-slate-200 bg-slate-50 text-slate-500";
+  if (value === "active" || value === "inspection" || value === "issued") return "border-emerald-200 bg-emerald-50 text-emerald-700";
+  if (value === "early" || value === "in review") return "border-amber-200 bg-amber-50 text-amber-700";
+  if (value === "complete") return "border-slate-300 bg-slate-100 text-slate-600";
+  if (value === "scaling") return "border-violet-200 bg-violet-50 text-violet-700";
+  if (value === "stalled") return "border-red-50 bg-red-50 text-red-700";
+  return "border-slate-200 bg-slate-50 text-slate-500";
 }
 
 function Badge({ children, tone }: { children: ReactNode; tone?: string }) {
   if (!children) return null;
-  return <span className={`inline-flex shrink-0 items-center rounded border px-2 py-0.5 text-[12px] font-semibold uppercase leading-5 ${badgeClasses(tone ?? String(children))}`}>{children}</span>;
+  return <span className={`inline-flex shrink-0 items-center rounded border px-1.5 py-0 text-[12px] font-semibold uppercase leading-5 ${badgeClasses(tone ?? String(children))}`}>{children}</span>;
 }
 
 function Section({ title, status, children, quiet = false }: { title: string; status?: RowStatus; children: ReactNode; quiet?: boolean }) {
@@ -223,13 +227,7 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
           </Section>
         ) : null}
 
-        {data.confidence ? (
-          <Section title="Source / Confidence" quiet>
-            <div className="grid gap-x-8 lg:grid-cols-2">
-              {Object.entries(data.confidence).map(([key, value]) => <DataRow key={key} label={labelize(key)} value={value} status={key} />)}
-            </div>
-          </Section>
-        ) : null}
+        <ConfidenceLegend confidence={data.confidence} />
       </main>
     </div>
   );
@@ -296,6 +294,28 @@ function ConstraintGroup({ title, items }: { title: string; items?: Record<strin
       <div className="mb-2 text-[12px] font-bold uppercase leading-5 text-slate-500">{title}</div>
       {rows.map(([key, item]) => <DataRow key={key} label={labelize(key)} value={item.status} status={item.confidence} />)}
     </div>
+  );
+}
+
+function ConfidenceLegend({ confidence }: { confidence?: Record<string, string> }) {
+  const entries = Object.entries(confidence ?? {});
+  if (entries.length === 0) return null;
+
+  return (
+    <details className="border-t border-slate-200 pt-3">
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-[13px] font-bold uppercase leading-5 text-slate-600 marker:hidden">
+        <span>Source / Confidence</span>
+        <span className="text-[12px] font-bold normal-case text-slate-500">Legend</span>
+      </summary>
+      <div className="mt-3 space-y-1.5 border border-slate-200 bg-white p-3">
+        {entries.map(([key, value]) => (
+          <div className="grid grid-cols-[120px_minmax(0,1fr)] items-start gap-3" key={key}>
+            <Badge tone={key}>{labelize(key)}</Badge>
+            <div className="text-[12px] leading-5 text-slate-600">{value}</div>
+          </div>
+        ))}
+      </div>
+    </details>
   );
 }
 
