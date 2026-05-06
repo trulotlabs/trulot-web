@@ -6,6 +6,7 @@ import type {
   PermitRecord,
   PermitTreeNode,
 } from "./parcel-page-contract";
+import { inferPhase, type PhaseResult } from "./infer-phase";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -27,6 +28,7 @@ export type ParcelPageResult = ParcelPageData & {
   development_stage: string;
   stale_days: number;
   stale_flag: "none" | "watch" | "stale" | "severe";
+  phase_result: PhaseResult;
   full_address?: string;
   conflict?: { type: string; detail: string };
   opportunity_layer?: {
@@ -691,6 +693,9 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
   // ── Opportunity layer — real data only ─────────────────────────────────────
   const opportunityLayer = buildOpportunityLayer(stage, primaryProject, permits, nearbyCount, proposedProject);
 
+  // ── Phase inference ──────────────────────────────────────────────────────
+  const phaseResult = inferPhase(primaryProject, permits);
+
   // ── Jobs to engage ─────────────────────────────────────────────────────────
   const jobsToEngage = buildJobs(stage, parcel, primaryProject);
 
@@ -716,6 +721,7 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
     development_stage: stage,
     stale_days: staleDays,
     stale_flag: staleFlag,
+    phase_result: phaseResult,
     full_address: fullAddr,
     ...(conflict ? { conflict } : {}),
     parcel: {
