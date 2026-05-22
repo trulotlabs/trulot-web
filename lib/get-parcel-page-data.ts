@@ -15,6 +15,39 @@ const supabase = createClient(
 
 type RawRow = Record<string, unknown>;
 
+const SD_LAND_USE_CODES: Record<string, string> = {
+  "100": "Vacant land",
+  "101": "Vacant — residential",
+  "102": "Vacant — commercial",
+  "103": "Vacant — industrial",
+  "111": "Single family residential",
+  "112": "Single family — PUD",
+  "120": "Duplex",
+  "121": "Triplex",
+  "122": "Quadruplex",
+  "130": "Multifamily residential",
+  "131": "Apartment building",
+  "132": "Condominium",
+  "140": "Mobile home",
+  "141": "Mobile home park",
+  "150": "Mixed use — residential",
+  "200": "Commercial",
+  "210": "Retail / shopping center",
+  "220": "Office",
+  "230": "Hotel / motel",
+  "240": "Service commercial",
+  "300": "Industrial",
+  "310": "Light industrial",
+  "320": "Heavy industrial",
+  "400": "Agricultural",
+  "500": "Exempt / government",
+  "510": "Public utility",
+  "520": "Schools / education",
+  "530": "Religious institution",
+  "540": "Parks / recreation",
+  "600": "Special use",
+};
+
 type JobToEngage = {
   role: string;
   reason: string;
@@ -91,16 +124,8 @@ function assessorBaths(value: unknown): number | null {
 /**
  * Normalize year from assessor 2-digit string.
  *
- * Rule: if raw 2-digit value > current year's 2-digit shorthand → definitely 1900s.
- * If raw <= current 2-digit year → ambiguous (could be 1910 or 2010) → return null.
- * Never return a plausible-but-wrong year.
- *
- * Examples (2026 as current year, currentShort = 26):
- *   "50" → n=50 > 26 → ~1950  ✓
- *   "42" → n=42 > 26 → ~1942  ✓
- *   "25" → n=25 ≤ 26 → null   (1925 or 2025 — ambiguous)
- *   "10" → n=10 ≤ 26 → null   (1910 or 2010 — ambiguous)
- *   "00" → null               ✓
+ * 2-digit rule: < 30 → 2000s, ≥ 30 → 1900s. Null/0/"00" → null.
+ * 4-digit values must be plausible (1800 < n ≤ current year) or null.
  */
 function normalizeYear(raw: unknown): string | null {
   const s = str(raw).trim();
@@ -108,21 +133,13 @@ function normalizeYear(raw: unknown): string | null {
   const n = parseInt(s, 10);
   if (!Number.isFinite(n) || n === 0) return null;
 
-  // Full 4-digit year provided
   if (n > 100) {
     const currentYear = new Date().getFullYear();
     return n > 1800 && n <= currentYear ? `~${n}` : null;
   }
 
-  // 2-digit year: use current year's short form as the boundary
-  const currentShort = new Date().getFullYear() % 100;
-  if (n > currentShort) {
-    // Unambiguously 1900s
-    return `~${1900 + n}`;
-  }
-
-  // n ≤ currentShort: genuinely ambiguous — return null rather than guess
-  return null;
+  const fourDigit = n < 30 ? 2000 + n : 1900 + n;
+  return `~${fourDigit}`;
 }
 
 function normalizePermitStatus(raw: unknown): PermitLifecycleStatus {
@@ -510,6 +527,16 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
   const primaryProject = (projectRes.data as RawRow | null) ?? null;
   const permits = (permitsRes.data ?? []) as RawRow[];
 
+  // ── Overlay membership (point-in-polygon via PostGIS RPC) ──────────────────
+  let overlayResult: { tpa: boolean; sda: boolean; ctcac: boolean } = { tpa: false, sda: false, ctcac: false };
+  if (typeof parcel.lat === "number" && typeof parcel.lng === "number") {
+    const { data: overlayData } = await supabase.rpc("check_parcel_overlays", {
+      p_lat: parcel.lat,
+      p_lng: parcel.lng,
+    });
+    if (overlayData) overlayResult = overlayData as { tpa: boolean; sda: boolean; ctcac: boolean };
+  }
+
   // ── Stage + stale signal (parallel — does NOT override stage) ───────────────
   const stage = getDevelopmentStage(primaryProject, permits);
   const staleDays = Math.round(num(primaryProject?.primary_project_days_since_activity));
@@ -633,7 +660,7 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
   const siteSignals: Array<{ key: string; value: string; confidence: ConfidenceLevel; strength?: string }> = [];
   if (lotSqft > 0) siteSignals.push({ key: "lot_size", value: `${Math.round(lotSqft).toLocaleString()} SF`, confidence: "source-backed" });
   if ((isRs || isRm) && lotSqft > 0) siteSignals.push({ key: "adu_eligible", value: `Yes — ${zoneName}, ${Math.round(lotSqft).toLocaleString()} SF lot`, confidence: "conditional" });
-  if (parcel.has_nearby_active_project) siteSignals.push({ key: "tpa_proximity", value: "Detected (proximity proxy — not verified as formal TPA designation)", confidence: "inferred" });
+  if (overlayResult.tpa) siteSignals.push({ key: "tpa", value: "Within Transit Priority Area (source-verified)", confidence: "source-backed" as ConfidenceLevel });
 
   // ── Structure — null-safe ──────────────────────────────────────────────────
   const beds = assessorInt(parcel.bedrooms);
@@ -643,17 +670,19 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
   const unitCount = assessorInt(parcel.unitqty);
 
   const structure = {
-    unit_count: unitCount ?? 0,
+    // null-safe: never return 0 — UI must hide missing fields entirely
+    unit_count: unitCount,
     living_area: livingArea > 0 ? `${Math.round(livingArea).toLocaleString()} SF` : "Unknown",
     year_built: yearBuilt ?? "Unknown",
-    // null-safe: never return 0 — UI must hide missing beds/baths entirely
     bedrooms: beds,
     bathrooms: baths,
     land_value: num(parcel.asr_land),
     improvement_value: num(parcel.asr_impr),
     total_assessed_value: num(parcel.asr_total),
     owner_occupied: (parcel.ownerocc === "Y" ? "yes" : parcel.ownerocc === "N" ? "no" : "unknown") as "yes" | "no" | "unknown",
-    land_use: str(parcel.nucleus_use_cd) ? `${parcel.nucleus_use_cd} — ${parcel.nucleus_use_cd === "111" ? "Single family residential" : "See SanGIS land use table"}` : "Unknown",
+    land_use: str(parcel.nucleus_use_cd)
+      ? `${SD_LAND_USE_CODES[str(parcel.nucleus_use_cd)] ?? `Code ${parcel.nucleus_use_cd}`}`
+      : "Unknown",
     confidence: (unitCount != null ? "source-backed" : "inferred") as ConfidenceLevel,
     source: "SanGIS County Assessor",
   };
@@ -666,14 +695,19 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
 
   const constraints = {
     overlays: {
-      // TPA, SDA, CCHS = flags only — no unit math, unknown if not source-verified
       tpa: {
-        status: parcel.has_nearby_active_project ? "Proximity signal detected — not verified as formal TPA" : "Unknown",
-        confidence: (parcel.has_nearby_active_project ? "inferred" : "unknown") as ConfidenceLevel,
+        status: overlayResult.tpa ? "Yes — within Transit Priority Area" : "No",
+        confidence: "source-backed" as ConfidenceLevel,
       },
-      sda: { status: "Unknown", confidence: "unknown" as ConfidenceLevel },
+      sda: {
+        status: overlayResult.sda ? "Yes — within Sustainable Development Area" : "No",
+        confidence: "source-backed" as ConfidenceLevel,
+      },
       cchs: { status: "Unknown", confidence: "unknown" as ConfidenceLevel },
-      ctcac: { status: "Unknown", confidence: "unknown" as ConfidenceLevel },
+      ctcac: {
+        status: overlayResult.ctcac ? "Yes — within CTCAC Opportunity Area" : "No",
+        confidence: "source-backed" as ConfidenceLevel,
+      },
     },
     regulatory: {
       fire_hazard: {

@@ -130,10 +130,10 @@ export interface ParcelContext {
 }
 
 export interface ParcelStructure extends ConfidenceRecord {
-  unit_count: number;
+  // v1.3: null-safe — never show 0; UI must hide if null
+  unit_count: number | null;
   living_area: string;
   year_built: string;
-  // v1.3: null-safe — never show 0; UI must hide if null
   bedrooms: number | null;
   bathrooms: number | null;
   land_value: number;
