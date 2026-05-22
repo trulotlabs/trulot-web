@@ -527,16 +527,6 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
   const primaryProject = (projectRes.data as RawRow | null) ?? null;
   const permits = (permitsRes.data ?? []) as RawRow[];
 
-  // ── Overlay membership (point-in-polygon via PostGIS RPC) ──────────────────
-  let overlayResult: { tpa: boolean; sda: boolean; ctcac: boolean } = { tpa: false, sda: false, ctcac: false };
-  if (typeof parcel.lat === "number" && typeof parcel.lng === "number") {
-    const { data: overlayData } = await supabase.rpc("check_parcel_overlays", {
-      p_lat: parcel.lat,
-      p_lng: parcel.lng,
-    });
-    if (overlayData) overlayResult = overlayData as { tpa: boolean; sda: boolean; ctcac: boolean };
-  }
-
   // ── Stage + stale signal (parallel — does NOT override stage) ───────────────
   const stage = getDevelopmentStage(primaryProject, permits);
   const staleDays = Math.round(num(primaryProject?.primary_project_days_since_activity));
@@ -660,7 +650,6 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
   const siteSignals: Array<{ key: string; value: string; confidence: ConfidenceLevel; strength?: string }> = [];
   if (lotSqft > 0) siteSignals.push({ key: "lot_size", value: `${Math.round(lotSqft).toLocaleString()} SF`, confidence: "source-backed" });
   if ((isRs || isRm) && lotSqft > 0) siteSignals.push({ key: "adu_eligible", value: `Yes — ${zoneName}, ${Math.round(lotSqft).toLocaleString()} SF lot`, confidence: "conditional" });
-  if (overlayResult.tpa) siteSignals.push({ key: "tpa", value: "Within Transit Priority Area (source-verified)", confidence: "source-backed" as ConfidenceLevel });
 
   // ── Structure — null-safe ──────────────────────────────────────────────────
   const beds = assessorInt(parcel.bedrooms);
@@ -695,19 +684,10 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
 
   const constraints = {
     overlays: {
-      tpa: {
-        status: overlayResult.tpa ? "Yes — within Transit Priority Area" : "No",
-        confidence: "source-backed" as ConfidenceLevel,
-      },
-      sda: {
-        status: overlayResult.sda ? "Yes — within Sustainable Development Area" : "No",
-        confidence: "source-backed" as ConfidenceLevel,
-      },
+      tpa: { status: "Unknown", confidence: "unknown" as ConfidenceLevel },
+      sda: { status: "Unknown", confidence: "unknown" as ConfidenceLevel },
       cchs: { status: "Unknown", confidence: "unknown" as ConfidenceLevel },
-      ctcac: {
-        status: overlayResult.ctcac ? "Yes — within CTCAC Opportunity Area" : "No",
-        confidence: "source-backed" as ConfidenceLevel,
-      },
+      ctcac: { status: "Unknown", confidence: "unknown" as ConfidenceLevel },
     },
     regulatory: {
       fire_hazard: {
