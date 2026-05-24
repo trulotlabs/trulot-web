@@ -143,6 +143,7 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
   const nextChecks   = deriveNextChecks(data);
   const primaryCheck = nextChecks[0] ?? null;
   const uncertainty  = deriveUncertainty(data);
+  const cap          = data.capacity;
 
   // Stage headline — concise, no hedge words for deterministic states
   const stageHeadline: Record<string, string> = {
@@ -162,19 +163,36 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
     `APN ${parcel.apn}`,
   ].filter(Boolean).join("  ·  ");
 
-  // Capacity callout for parcels without a proposed project (suppress for COMPLETE)
-  const cap = data.capacity;
-  const capacityCallout = !proposed && stage !== "COMPLETE" && cap?.baseline_units ? {
-    text: [
-      cap.baseline_units.units > 0
-        ? `${cap.baseline_units.units} unit${cap.baseline_units.units !== 1 ? "s" : ""} by right`
-        : null,
-      cap.adu_upside_units?.units > 0
-        ? `up to ${cap.adu_upside_units.units} units with ADU program`
-        : null,
-    ].filter(Boolean).join("  ·  "),
-    note: "Capacity estimate — subject to program eligibility and SDMC verification",
-  } : null;
+  // Parcel identity inline — compressed single line
+  const identityLine = [
+    text(data.structure.land_use),
+    data.structure.year_built ? `~${data.structure.year_built}` : null,
+    text(data.structure.living_area),
+    (data.structure.bedrooms != null || data.structure.bathrooms != null)
+      ? `${data.structure.bedrooms ?? "?"}bd / ${data.structure.bathrooms ?? "?"}ba`
+      : null,
+    data.structure.unit_count != null
+      ? `${data.structure.unit_count} unit${data.structure.unit_count !== 1 ? "s" : ""}`
+      : null,
+  ].filter(Boolean).join(" · ");
+
+  // Underbuilt signal
+  const unitCount    = data.structure.unit_count ?? 0;
+  const baselineUnits = cap?.baseline_units?.units ?? 0;
+  const isUnderbuilt  = baselineUnits > 1 && unitCount > 0 && unitCount < baselineUnits;
+  const underbuiltNote = isUnderbuilt
+    ? `${unitCount} unit${unitCount !== 1 ? "s" : ""} on site — zoning allows up to ${baselineUnits}`
+    : null;
+
+  // Capacity inline (shown when no underbuilt signal and no proposed project)
+  const capacityInline = cap?.baseline_units ? [
+    cap.baseline_units.units > 0
+      ? `${cap.baseline_units.units} unit${cap.baseline_units.units !== 1 ? "s" : ""} by right`
+      : null,
+    cap.adu_upside_units?.units > 0
+      ? `up to ${cap.adu_upside_units.units} with ADU program`
+      : null,
+  ].filter(Boolean).join(" · ") : null;
 
   // Nearby prose
   const nearbyHeadline = !nearby?.total_nearby || nearby.signal_strength === "None" ? null
@@ -223,11 +241,14 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
     ? "Proposed — conditional, not yet city-approved"
     : "Inferred from permit description — verify with permit office";
 
+  // Show development section when there is permit activity or a non-INACTIVE stage
+  const showDevelopmentSection = hasPermit || stage !== "INACTIVE";
+
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
 
       {/* ════════════════════════════════════════════════════════════
-          NARRATIVE LAYER — 5-second comprehension
+          NARRATIVE LAYER — parcel understanding first
       ════════════════════════════════════════════════════════════ */}
       <div className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-[1100px] px-6 py-9">
@@ -241,74 +262,222 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
               {stage}
             </span>
           </div>
-          <p className="mb-7 text-[12px] tracking-wide text-slate-400">{metaLine}</p>
+          <p className="mb-5 text-[12px] tracking-wide text-slate-400">{metaLine}</p>
 
-          {/* Stage headline */}
-          <p className="mb-2 text-[19px] font-semibold leading-snug text-slate-900">
-            {stageHeadline[stage] ?? "Status unknown"}
-          </p>
+          {/* Parcel identity — what is this parcel */}
+          {identityLine ? (
+            <p className="mb-3 text-[14px] text-slate-700">{identityLine}</p>
+          ) : null}
 
-          {/* Story prose — readout summary + interpretation */}
-          <div className="mb-5 max-w-[680px] space-y-2">
-            {data.readout?.summary ? (
-              <p className="text-[15px] leading-relaxed text-slate-700">{data.readout.summary}</p>
-            ) : null}
-            {data.opportunity_layer?.interpretation &&
-             !data.opportunity_layer.interpretation.toLowerCase().startsWith(
-               (data.readout?.summary ?? "").toLowerCase().slice(0, 40)
-             ) &&
-             !(data.readout?.summary ?? "").toLowerCase().includes(
-               data.opportunity_layer.interpretation.toLowerCase().slice(0, 40)
-             ) ? (
-              <p className="text-[14px] leading-relaxed text-slate-500">
-                {data.opportunity_layer.interpretation}
-              </p>
-            ) : null}
-          </div>
-
-          {/* Proposed scope callout — the single most important development fact */}
-          {proposed ? (
-            <div className={`my-5 border-l-[3px] ${proposedBorder} pl-4 py-1`}>
-              <p className="text-[16px] font-semibold leading-snug text-slate-900">{proposed.scope}</p>
-              {proposed.note ? (
-                <p className="mt-0.5 text-[12px] text-slate-400">{proposed.note}</p>
+          {/* Nearby development — area context */}
+          {nearbyProse ? (
+            <p className="mb-3 text-[13px] text-slate-500">
+              {nearbyHeadline ? (
+                <span className="font-medium text-slate-700">{nearbyHeadline} — </span>
               ) : null}
-              <p className="mt-1 text-[12px] text-slate-400">{proposedNote}</p>
-            </div>
-          ) : capacityCallout?.text ? (
-            <div className="my-5 border-l-[3px] border-slate-200 pl-4 py-1">
-              <p className="text-[15px] font-semibold text-slate-700">{capacityCallout.text}</p>
-              <p className="mt-1 text-[12px] text-slate-400">{capacityCallout.note}</p>
-            </div>
+              {nearbyProse}
+            </p>
           ) : null}
 
-          {/* Uncertainty — one line, muted */}
-          {uncertainty ? (
-            <p className="mb-4 text-[13px] text-slate-400">{uncertainty}</p>
+          {/* Capacity / underbuilt signal — is it potentially underbuilt */}
+          {underbuiltNote ? (
+            <p className="mb-3 text-[13px] text-slate-500">{underbuiltNote}</p>
+          ) : capacityInline && !proposed ? (
+            <p className="mb-3 text-[13px] text-slate-500">
+              {capacityInline}
+              <span className="text-slate-400"> — estimated, subject to verification</span>
+            </p>
           ) : null}
 
-          {/* Primary next check */}
-          {primaryCheck ? (
-            <div className="flex items-baseline gap-2 border-t border-slate-100 pt-3">
-              <span className="shrink-0 text-[11px] font-bold uppercase tracking-widest text-slate-300">
-                Next check
-              </span>
-              <span className="text-[13px] text-slate-600">{primaryCheck}</span>
-            </div>
+          {/* Development state — follows parcel understanding */}
+          {showDevelopmentSection ? (
+            <>
+              <div className="my-6 border-t border-slate-100" />
+
+              {/* Stage headline */}
+              <p className="mb-2 text-[19px] font-semibold leading-snug text-slate-900">
+                {stageHeadline[stage] ?? "Status unknown"}
+              </p>
+
+              {/* Story prose — readout summary + interpretation */}
+              <div className="mb-5 max-w-[680px] space-y-2">
+                {data.readout?.summary ? (
+                  <p className="text-[15px] leading-relaxed text-slate-700">{data.readout.summary}</p>
+                ) : null}
+                {data.opportunity_layer?.interpretation &&
+                 !data.opportunity_layer.interpretation.toLowerCase().startsWith(
+                   (data.readout?.summary ?? "").toLowerCase().slice(0, 40)
+                 ) &&
+                 !(data.readout?.summary ?? "").toLowerCase().includes(
+                   data.opportunity_layer.interpretation.toLowerCase().slice(0, 40)
+                 ) ? (
+                  <p className="text-[14px] leading-relaxed text-slate-500">
+                    {data.opportunity_layer.interpretation}
+                  </p>
+                ) : null}
+              </div>
+
+              {/* Proposed scope callout — the single most important development fact */}
+              {proposed ? (
+                <div className={`my-5 border-l-[3px] ${proposedBorder} pl-4 py-1`}>
+                  <p className="text-[16px] font-semibold leading-snug text-slate-900">{proposed.scope}</p>
+                  {proposed.note ? (
+                    <p className="mt-0.5 text-[12px] text-slate-400">{proposed.note}</p>
+                  ) : null}
+                  <p className="mt-1 text-[12px] text-slate-400">{proposedNote}</p>
+                </div>
+              ) : null}
+
+              {/* Uncertainty — one line, muted */}
+              {uncertainty ? (
+                <p className="mb-4 text-[13px] text-slate-400">{uncertainty}</p>
+              ) : null}
+
+              {/* Primary next check */}
+              {primaryCheck ? (
+                <div className="flex items-baseline gap-2 border-t border-slate-100 pt-3">
+                  <span className="shrink-0 text-[11px] font-bold uppercase tracking-widest text-slate-300">
+                    Next check
+                  </span>
+                  <span className="text-[13px] text-slate-600">{primaryCheck}</span>
+                </div>
+              ) : null}
+            </>
           ) : null}
 
         </div>
       </div>
 
       {/* ════════════════════════════════════════════════════════════
-          EVIDENCE LAYER — parcel record + development record
+          EVIDENCE LAYER — development record (conditional on permit)
       ════════════════════════════════════════════════════════════ */}
-      <div className="mx-auto max-w-[1100px] px-6 py-9">
-        <div className="grid items-start gap-x-14 gap-y-9 lg:grid-cols-2">
+      {hasPermit ? (
+        <div className="mx-auto max-w-[1100px] px-6 py-9">
+          <div className="max-w-[680px]">
+            <SectionLabel>Development record</SectionLabel>
 
-          {/* LEFT — Parcel facts */}
-          <div className="space-y-7">
+            {/* Milestones */}
+            {(timeline?.filed || timeline?.issued) ? (
+              <div className="mb-5">
+                <MilestoneRow label="Filed"    value={timeline.filed} />
+                <MilestoneRow label="Issued"   value={timeline.issued} />
+                {timeline.field_activity && !/none detected/i.test(timeline.field_activity) ? (
+                  <MilestoneRow label="Activity" value={timeline.field_activity} />
+                ) : null}
+                {data.phase_result && data.phase_result.phase !== "UNKNOWN" ? (
+                  <MilestoneRow
+                    label="Phase"
+                    value={
+                      `${data.phase_result.phase_label}` +
+                      (data.phase_result.confidence !== "HIGH"
+                        ? ` — ${data.phase_result.confidence.toLowerCase()} confidence`
+                        : "")
+                    }
+                  />
+                ) : null}
+              </div>
+            ) : null}
 
+            {/* Primary permit */}
+            <div className="mb-5">
+              <div className="mb-1 flex flex-wrap items-center gap-2">
+                {primary?.status ? (
+                  <span className={`inline-flex items-center rounded border px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide ${permitStatusClass(primary.status)}`}>
+                    {primary.status}
+                  </span>
+                ) : null}
+                <span className="text-[13px] font-semibold text-slate-700">
+                  {primary?.type ?? "Permit"}
+                </span>
+                <span className="text-[11px] text-slate-400">{primary?.permit_number}</span>
+              </div>
+              {primary?.scope && !/scope not on file/i.test(primary.scope) ? (
+                <p className="mb-1 text-[13px] leading-5 text-slate-700">{primary.scope}</p>
+              ) : (
+                <p className="mb-1 text-[13px] text-slate-400">No scope description on record.</p>
+              )}
+              {primary?.applicant ? (
+                <p className="text-[12px] text-slate-400">{primary.applicant}</p>
+              ) : null}
+            </div>
+
+            {/* Related permits */}
+            {relatedNodes.length > 0 ? (
+              <div className="mb-5 border-t border-slate-100 pt-4">
+                <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-slate-400">Related</p>
+                <div className="space-y-3">
+                  {relatedNodes.map((node, i) => (
+                    <div key={i} className="flex items-start gap-2">
+                      {node.status ? (
+                        <span className={`mt-0.5 inline-flex shrink-0 items-center rounded border px-1.5 py-0.5 text-[10px] font-bold uppercase ${permitStatusClass(node.status)}`}>
+                          {node.status}
+                        </span>
+                      ) : null}
+                      <div className="min-w-0">
+                        <p className="text-[12px] font-semibold text-slate-600">{node.title}</p>
+                        {node.scope && !/scope not on file/i.test(node.scope) ? (
+                          <p className="text-[12px] leading-5 text-slate-500">{node.scope}</p>
+                        ) : null}
+                        {node.note ? (
+                          <p className="text-[11px] text-slate-400">{node.note}</p>
+                        ) : null}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+
+            {/* Trades */}
+            {data.phase_result?.trades_needed_now?.length ? (
+              <p className="mb-1 text-[13px] text-slate-500">
+                <span className="text-slate-400">Trades now: </span>
+                {data.phase_result.trades_needed_now.join(" · ")}
+              </p>
+            ) : null}
+            {data.phase_result?.trades_needed_next?.length ? (
+              <p className="mb-4 text-[13px] text-slate-500">
+                <span className="text-slate-400">Trades next: </span>
+                {data.phase_result.trades_needed_next.join(" · ")}
+              </p>
+            ) : null}
+
+            {/* Engage roles */}
+            {jobs.length > 0 ? (
+              <p className="mb-4 text-[13px] text-slate-500">
+                <span className="text-slate-400">Engage: </span>
+                {jobs.slice(0, 3).map(j => j.role).join(" · ")}
+                {jobs.length > 3 ? <span className="text-slate-300"> +{jobs.length - 3} more</span> : null}
+              </p>
+            ) : null}
+
+            {/* Additional investigation items */}
+            {nextChecks.slice(1).length > 0 ? (
+              <div className="mt-5 border-t border-slate-100 pt-4">
+                <SectionLabel>Investigation items</SectionLabel>
+                <ul className="space-y-2">
+                  {nextChecks.slice(1).map((item, i) => (
+                    <li key={i} className="flex gap-2 text-[13px] text-slate-600">
+                      <span className="shrink-0 text-slate-300">→</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+        </div>
+      ) : null}
+
+      {/* ════════════════════════════════════════════════════════════
+          REFERENCE LAYER — structure, zoning, valuation, constraints
+      ════════════════════════════════════════════════════════════ */}
+      <div className="border-t border-slate-200 bg-white">
+        <div className="mx-auto max-w-[1100px] px-6 py-7">
+
+          <div className="grid gap-x-14 gap-y-6 lg:grid-cols-3">
+
+            {/* Structure */}
             <div>
               <SectionLabel>Structure</SectionLabel>
               <FactLine label="Land use"    value={text(data.structure.land_use)} />
@@ -328,6 +497,7 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
               />
             </div>
 
+            {/* Zoning & capacity */}
             <div>
               <SectionLabel>Zoning & capacity</SectionLabel>
               <FactLine label="Zone" value={text(parcel.zoning)} />
@@ -347,6 +517,7 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
               ) : null}
             </div>
 
+            {/* Valuation */}
             <div>
               <SectionLabel>Valuation</SectionLabel>
               <FactLine label="Assessed"    value={money(data.structure.total_assessed_value)} />
@@ -364,152 +535,9 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
 
           </div>
 
-          {/* RIGHT — Development record */}
-          <div>
-            <SectionLabel>Development record</SectionLabel>
-
-            {hasPermit ? (
-              <>
-                {/* Milestones */}
-                {(timeline?.filed || timeline?.issued) ? (
-                  <div className="mb-5">
-                    <MilestoneRow label="Filed"   value={timeline.filed} />
-                    <MilestoneRow label="Issued"  value={timeline.issued} />
-                    {timeline.field_activity && !/none detected/i.test(timeline.field_activity) ? (
-                      <MilestoneRow label="Activity" value={timeline.field_activity} />
-                    ) : null}
-                    {data.phase_result && data.phase_result.phase !== "UNKNOWN" ? (
-                      <MilestoneRow
-                        label="Phase"
-                        value={
-                          `${data.phase_result.phase_label}` +
-                          (data.phase_result.confidence !== "HIGH"
-                            ? ` — ${data.phase_result.confidence.toLowerCase()} confidence`
-                            : "")
-                        }
-                      />
-                    ) : null}
-                  </div>
-                ) : null}
-
-                {/* Primary permit */}
-                <div className="mb-5">
-                  <div className="mb-1 flex flex-wrap items-center gap-2">
-                    {primary?.status ? (
-                      <span className={`inline-flex items-center rounded border px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide ${permitStatusClass(primary.status)}`}>
-                        {primary.status}
-                      </span>
-                    ) : null}
-                    <span className="text-[13px] font-semibold text-slate-700">
-                      {primary?.type ?? "Permit"}
-                    </span>
-                    <span className="text-[11px] text-slate-400">{primary?.permit_number}</span>
-                  </div>
-                  {primary?.scope && !/scope not on file/i.test(primary.scope) ? (
-                    <p className="mb-1 text-[13px] leading-5 text-slate-700">{primary.scope}</p>
-                  ) : (
-                    <p className="mb-1 text-[13px] text-slate-400">No scope description on record.</p>
-                  )}
-                  {primary?.applicant ? (
-                    <p className="text-[12px] text-slate-400">{primary.applicant}</p>
-                  ) : null}
-                </div>
-
-                {/* Related permits */}
-                {relatedNodes.length > 0 ? (
-                  <div className="mb-5 border-t border-slate-100 pt-4">
-                    <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-slate-400">Related</p>
-                    <div className="space-y-3">
-                      {relatedNodes.map((node, i) => (
-                        <div key={i} className="flex items-start gap-2">
-                          {node.status ? (
-                            <span className={`mt-0.5 inline-flex shrink-0 items-center rounded border px-1.5 py-0.5 text-[10px] font-bold uppercase ${permitStatusClass(node.status)}`}>
-                              {node.status}
-                            </span>
-                          ) : null}
-                          <div className="min-w-0">
-                            <p className="text-[12px] font-semibold text-slate-600">{node.title}</p>
-                            {node.scope && !/scope not on file/i.test(node.scope) ? (
-                              <p className="text-[12px] leading-5 text-slate-500">{node.scope}</p>
-                            ) : null}
-                            {node.note ? (
-                              <p className="text-[11px] text-slate-400">{node.note}</p>
-                            ) : null}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                ) : null}
-
-                {/* Trades */}
-                {data.phase_result?.trades_needed_now?.length ? (
-                  <p className="mb-1 text-[13px] text-slate-500">
-                    <span className="text-slate-400">Trades now: </span>
-                    {data.phase_result.trades_needed_now.join(" · ")}
-                  </p>
-                ) : null}
-                {data.phase_result?.trades_needed_next?.length ? (
-                  <p className="mb-4 text-[13px] text-slate-500">
-                    <span className="text-slate-400">Trades next: </span>
-                    {data.phase_result.trades_needed_next.join(" · ")}
-                  </p>
-                ) : null}
-
-                {/* Engage roles */}
-                {jobs.length > 0 ? (
-                  <p className="mb-4 text-[13px] text-slate-500">
-                    <span className="text-slate-400">Engage: </span>
-                    {jobs.slice(0, 3).map(j => j.role).join(" · ")}
-                    {jobs.length > 3 ? <span className="text-slate-300"> +{jobs.length - 3} more</span> : null}
-                  </p>
-                ) : null}
-
-                {/* Additional investigation items */}
-                {nextChecks.slice(1).length > 0 ? (
-                  <div className="mt-5 border-t border-slate-100 pt-4">
-                    <SectionLabel>Investigation items</SectionLabel>
-                    <ul className="space-y-2">
-                      {nextChecks.slice(1).map((item, i) => (
-                        <li key={i} className="flex gap-2 text-[13px] text-slate-600">
-                          <span className="shrink-0 text-slate-300">→</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ) : null}
-              </>
-            ) : (
-              <>
-                <p className="mb-5 text-[13px] text-slate-400">
-                  No building permits on file. Verify in Accela before underwriting.
-                </p>
-                {nextChecks.length > 0 ? (
-                  <ul className="space-y-2">
-                    {nextChecks.map((item, i) => (
-                      <li key={i} className="flex gap-2 text-[13px] text-slate-600">
-                        <span className="shrink-0 text-slate-300">→</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-              </>
-            )}
-          </div>
-        </div>
-      </div>
-
-      {/* ════════════════════════════════════════════════════════════
-          REFERENCE LAYER — constraints, market context, footnote
-      ════════════════════════════════════════════════════════════ */}
-      <div className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-[1100px] space-y-5 px-6 py-7">
-
           {/* Constraints — horizontal, muted */}
           {constraints.length > 0 ? (
-            <div>
+            <div className="mt-6 border-t border-slate-100 pt-5">
               <p className="mb-2 text-[11px] font-bold uppercase tracking-widest text-slate-400">
                 Constraints & overlays
               </p>
@@ -524,18 +552,8 @@ export default async function ParcelPage({ params }: { params: Promise<{ apn: st
             </div>
           ) : null}
 
-          {/* Nearby — prose only */}
-          {nearbyProse ? (
-            <div>
-              <p className="mb-1 text-[11px] font-bold uppercase tracking-widest text-slate-400">
-                Nearby development{nearbyHeadline ? ` — ${nearbyHeadline}` : ""}
-              </p>
-              <p className="text-[13px] text-slate-600">{nearbyProse}</p>
-            </div>
-          ) : null}
-
           {/* Confidence footnote */}
-          <p className="border-t border-slate-100 pt-4 text-[11px] leading-5 text-slate-400">
+          <p className="mt-5 border-t border-slate-100 pt-4 text-[11px] leading-5 text-slate-400">
             Data from parcel assessor, permit records, and proximity analysis.
             Interpretive claims derived from permit patterns. Conditional claims subject to program
             verification. Not a substitute for title review or city consultation.
