@@ -48,7 +48,7 @@ const SD_LAND_USE_CODES: Record<string, string> = {
   "600": "Special use",
 };
 
-type JobToEngage = {
+export type JobToEngage = {
   role: string;
   reason: string;
   timing: "now" | "near-term" | "future";
@@ -161,7 +161,30 @@ function buildFullAddress(row: RawRow): string {
   return [address, `${city}, ${state}`, zip].filter(Boolean).join(", ").replace(/,\s*,/g, ",").trim();
 }
 
+// ─── Date helpers ─────────────────────────────────────────────────────────────
+
+function daysSinceDate(dateStr: string): number {
+  if (!dateStr) return 9999;
+  const d = new Date(dateStr);
+  return isNaN(d.getTime()) ? 9999 : Math.floor((Date.now() - d.getTime()) / 86_400_000);
+}
+
 // ─── Scope resolution ─────────────────────────────────────────────────────────
+
+/**
+ * Strip amendment metadata artifacts from permit scope text.
+ * Removes patterns like "** Scope Change 12/1/2025 **" and the
+ * leading "Scope change — " prefix that wraps them.
+ * Preserves actual project description content.
+ */
+function stripScopeAmendmentArtifacts(raw: string): string {
+  return raw
+    // Remove "** Scope Change MM/DD/YYYY **" or "**SCOPE CHANGE (6/12/2024)**"
+    .replace(/\*{1,2}\s*scope change\s*[\(\[\/]?[\d\/\-]+[\)\]]?\s*\*{1,2}/gi, "")
+    // Remove leading "Scope change — " wrapper
+    .replace(/^scope change\s*[—–\-]\s*/i, "")
+    .trim();
+}
 
 /**
  * Primary permit scope = what the primary permit actually is.
@@ -169,15 +192,16 @@ function buildFullAddress(row: RawRow): string {
  * Truncates to a clean statement without hallucinating intent.
  */
 function resolvePrimaryScope(description: unknown): string {
-  const desc = str(description).trim();
-  if (!desc) return "Scope not on file";
+  const raw = str(description).trim();
+  if (!raw) return "Scope not on file";
 
-  // Recognize specific known scope patterns and normalize to clean label
+  const wasAmendment = /scope change/i.test(raw);
+  // Strip amendment metadata — preserve actual project description
+  const desc = wasAmendment ? (stripScopeAmendmentArtifacts(raw) || raw) : raw;
+
   if (/retaining wall|site prep|site preparation/i.test(desc)) return "Site retaining walls / site prep";
-  if (/scope change/i.test(desc)) return `Scope change — ${desc.slice(0, 120)}`;
   if (/grading/i.test(desc) && !/ADU|units?/i.test(desc)) return `Grading — ${desc.slice(0, 100)}`;
 
-  // Return first 200 chars of actual description — no substitution
   return desc.length > 200 ? `${desc.slice(0, 200)}…` : desc;
 }
 
@@ -199,8 +223,18 @@ function findAduScopePermit(permits: RawRow[]): RawRow | undefined {
  *   same number repeated → return that number
  *   different numbers → return max (conservative)
  */
+function normalizeWordNumerals(s: string): string {
+  const map: Record<string, string> = {
+    one: "1", two: "2", three: "3", four: "4", five: "5",
+    six: "6", seven: "7", eight: "8", nine: "9", ten: "10",
+    eleven: "11", twelve: "12",
+  };
+  return s.replace(/\b(one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)\b/gi,
+    (m) => map[m.toLowerCase()] ?? m);
+}
+
 function extractAduCount(description: string): number {
-  const text = description.replace(/\n/g, " ");
+  const text = normalizeWordNumerals(description.replace(/\n/g, " "));
 
   // 1. Explicit total wins
   const totalPatterns: RegExp[] = [
@@ -243,7 +277,27 @@ function extractAduCount(description: string): number {
     }
   }
 
-  if (counts.length === 0) return 0;
+  if (counts.length === 0) {
+    // Fallback 1: duplex buildings — "8 new 2-story duplex buildings" → 16 units
+    const duplexBldg = text.match(/(\d+)\s+(?:new\s+)?(?:\d+-story\s+)?duplex\s+buildings?/i);
+    if (duplexBldg) return parseInt(duplexBldg[1], 10) * 2;
+
+    // Fallback 2: plain duplex count — "4 duplexes" → 8 units (not "duplex main" which is a unit type label)
+    const duplexCount = text.match(/(\d+)\s+(?:new\s+)?duplexes?\b(?!\s+main)/i);
+    if (duplexCount) return parseInt(duplexCount[1], 10) * 2;
+
+    // Fallback 3: conversion + detached additive pattern
+    // "conversion of SDU to 2 units ... new detached two-unit" → 2 + 2 = 4
+    const convM = text.match(/conversion[^.;\n]{0,80}to\s+(\d+)\s+units?/i);
+    const detM  = text.match(/new\s+detached[^.;\n]{0,50}(?:(\d+)-unit|(\d+)\s+units?)/i);
+    if (convM || detM) {
+      const c = convM ? parseInt(convM[1], 10) : 0;
+      const d = detM  ? parseInt(detM[1] ?? detM[2] ?? "0", 10) : 0;
+      if (c + d > 0) return c + d;
+    }
+
+    return 0;
+  }
   if (counts.length === 1) return counts[0];
   const unique = [...new Set(counts)];
   if (unique.length === 1) return unique[0]; // same number repeated
@@ -289,13 +343,45 @@ function extractBuildingCount(description: string): number {
 
 function getDevelopmentStage(primaryProject: RawRow | null, permits: RawRow[]): string {
   if (!primaryProject) return "INACTIVE";
-  const momentum = str(primaryProject.project_momentum_label);
-  const days = num(primaryProject.primary_project_days_since_activity);
+  const momentum    = str(primaryProject.project_momentum_label);
+  const days        = num(primaryProject.primary_project_days_since_activity);
   const hasBuilding = Boolean(primaryProject.has_building_project);
+  const primaryStatus  = str(primaryProject.primary_project_status).toLowerCase();
+  const primaryIssued  = str(primaryProject.primary_project_issued);
 
   if (!hasBuilding || momentum === "Awaiting Issuance") return "EARLY";
   if (momentum === "Completed") return "COMPLETE";
-  if (momentum === "Status unclear" || (days > 180 && momentum !== "Active")) return "STALLED";
+
+  if (momentum === "Status unclear" || (days > 180 && momentum !== "Active")) {
+    // Before declaring STALLED: check for active construction signals that
+    // the primary-project view doesn't capture (sub-permit activity).
+    //
+    // Rule A: Primary permit is at inspection AND was issued within 12 months →
+    //         construction is underway; the activity gap is in the permit record,
+    //         not necessarily on-site.
+    const issuedDaysAgo = daysSinceDate(primaryIssued);
+    // Use normalizePermitStatus for robustness — raw status field format varies by view
+    const primaryNormStatus = normalizePermitStatus(primaryStatus);
+    // Also check permit terminal for any building permit at inspection (sub-permit view
+    // may have a more current status than the primary-project summary view)
+    const hasInspectionBuilding = primaryNormStatus === "INSPECTION" ||
+      permits.some((p) =>
+        /building permit|combination building/i.test(str(p.record_type)) &&
+        normalizePermitStatus(p.status) === "INSPECTION"
+      );
+    if (hasInspectionBuilding && issuedDaysAgo < 365) return "ACTIVE";
+
+    // Rule B: An execution or encroachment permit (AGR / agreement / grading)
+    //         is present and was opened within 12 months → project pulse confirmed.
+    const hasRecentExecution = permits.some((p) => {
+      if (!/agreement|encroachment|grading/i.test(str(p.record_type))) return false;
+      if (!/issued|active|inspection/i.test(str(p.status))) return false;
+      return daysSinceDate(str(p.opened_date)) < 365;
+    });
+    if (hasRecentExecution) return "ACTIVE";
+
+    return "STALLED";
+  }
 
   if (momentum === "Active") {
     const openedBuilding = permits.filter(
@@ -541,10 +627,13 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
   const zoneName = str(parcel.zone_name);
   const rsMatch = zoneName.match(/^RS-1-(\d+)/i);
   const rmMatch = zoneName.match(/^RM-(\d+)-(\d+)/i);
+  // RX zones (e.g. RX-1-1) — SD non-standard; apply RM-style DU/SF rule, confidence inferred
+  const rxMatch = zoneName.match(/^RX-(\d+)-(\d+)/i);
   const isRs = !!rsMatch;
   const isRm = !!rmMatch;
+  const isRx = !!rxMatch;
 
-  // Fix 4: If lot < zoning minimum → baseline = 0 (non-conforming). Never default to 1.
+  // If lot < zoning minimum → baseline = 0 (non-conforming). Never default to 1.
   let baselineUnits = 0;
   let capacityBasis = `${zoneName || "Unknown zone"} — capacity not calculated`;
   let capacityConfidence: ConfidenceLevel = "unknown";
@@ -563,6 +652,15 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
       ? `${zoneName} → 1 DU / ${minSf.toLocaleString()} SF — lot undersized (${Math.round(lotSqft).toLocaleString()} SF)`
       : `${zoneName} → 1 DU / ${minSf.toLocaleString()} SF`;
     capacityConfidence = "source-backed";
+  } else if (rxMatch) {
+    // RX is not a standard SD zone designation — apply RM-equivalent parsing.
+    // Capacity is inferred; verify against SDMC for this specific parcel.
+    const minSf = Number(rxMatch[2]) * 1000;
+    baselineUnits = Math.floor(lotSqft / minSf);
+    capacityBasis = baselineUnits === 0
+      ? `${zoneName} → est. 1 DU / ${minSf.toLocaleString()} SF — lot undersized (${Math.round(lotSqft).toLocaleString()} SF) — verify with SDMC`
+      : `${zoneName} → est. 1 DU / ${minSf.toLocaleString()} SF — verify with SDMC`;
+    capacityConfidence = "inferred";
   }
 
   const aduCap = sdAduCap(lotSqft);
@@ -594,9 +692,19 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
     : null;
 
   // ── Proposed project (separate from primary — never merge) ─────────────────
+  // Determine scope label: use "units (duplex)" or "units (conversion)" when the
+  // count was derived from non-ADU fallback patterns, not the explicit ADU keyword.
+  const isDuplexDerived     = aduUnits > 0 && !/\bADU[s']?\b/i.test(aduDescription) && /duplex buildings?/i.test(aduDescription);
+  const isConversionDerived = aduUnits > 0 && !/\bADU[s']?\b/i.test(aduDescription) && /conversion[^.;]+to\s+\d+\s+units?/i.test(aduDescription);
+  const proposedScopeLabel  = isDuplexDerived
+    ? `${aduUnits} units (duplex)${buildingCount > 0 ? ` in ${buildingCount} buildings` : ""}`
+    : isConversionDerived
+    ? `${aduUnits} units (conversion + detached)${buildingCount > 0 ? ` in ${buildingCount} buildings` : ""}`
+    : `${aduUnits} ADUs + ${sfrUnits} SFR${buildingCount > 0 ? ` in ${buildingCount} buildings` : ""}`;
+
   const proposedProject = aduScopePermit && aduUnits > 0
     ? {
-        scope: `${aduUnits} ADUs + ${sfrUnits} SFR${buildingCount > 0 ? ` in ${buildingCount} buildings` : ""}`,
+        scope: proposedScopeLabel,
         adu_units: aduUnits,
         sfr_units: sfrUnits,
         building_count: buildingCount,
@@ -649,7 +757,7 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
   // ── Site signals — only what applies ──────────────────────────────────────
   const siteSignals: Array<{ key: string; value: string; confidence: ConfidenceLevel; strength?: string }> = [];
   if (lotSqft > 0) siteSignals.push({ key: "lot_size", value: `${Math.round(lotSqft).toLocaleString()} SF`, confidence: "source-backed" });
-  if ((isRs || isRm) && lotSqft > 0) siteSignals.push({ key: "adu_eligible", value: `Yes — ${zoneName}, ${Math.round(lotSqft).toLocaleString()} SF lot`, confidence: "conditional" });
+  if ((isRs || isRm || isRx) && lotSqft > 0) siteSignals.push({ key: "adu_eligible", value: `Yes — ${zoneName}, ${Math.round(lotSqft).toLocaleString()} SF lot`, confidence: "conditional" });
 
   // ── Structure — null-safe ──────────────────────────────────────────────────
   const beds = assessorInt(parcel.bedrooms);
@@ -767,7 +875,7 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
         ...(stage === "ACTIVE" || stage === "SCALING" ? [{ key: "active_construction", value: "Active", confidence: "source-backed" as ConfidenceLevel }] : []),
         ...(conflict ? [{ key: "scope_conflict", value: "Primary permit ≠ proposed scope — see conflict note", confidence: "source-backed" as ConfidenceLevel }] : []),
         ...(proposedProject ? [{ key: "proposed_project", value: proposedProject.scope, confidence: "conditional" as ConfidenceLevel }] : []),
-        ...(parcel.absentee_owner === true ? [{ key: "absentee_owner", value: "Yes", confidence: "source-backed" as ConfidenceLevel }] : []),
+        ...(parcel.absentee_owner === true ? [{ key: "absentee_owner", value: "Absentee owner", confidence: "source-backed" as ConfidenceLevel }] : []),
         ...(nearbyCount > 0 ? [{ key: "nearby_activity", value: `${nearbyCount} nearby projects (${nearbyStrength})`, confidence: "inferred" as ConfidenceLevel }] : []),
       ],
     },
@@ -804,13 +912,13 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
     capacity: {
       baseline_units: {
         units: baselineUnits,
-        basis: baselineUnits === 0 && (isRs || isRm)
+        basis: baselineUnits === 0 && (isRs || isRm || isRx)
           ? capacityBasis  // already includes "undersized" note
-          : `${capacityBasis}${(isRs || isRm) ? " + standard ADU allowances" : ""}`,
+          : `${capacityBasis}${(isRs || isRm || isRx) ? " + standard ADU allowances" : ""}`,
         confidence: capacityConfidence,
         source: "SDMC",
       },
-      adu_upside_units: (isRs || isRm)
+      adu_upside_units: (isRs || isRm || isRx)
         ? {
             units: aduCap.total,
             basis: `SD ADU program — lot ${lotSqft > 10000 ? ">10,000 SF" : ">8,000 SF"} → 1 SDU + up to ${aduCap.maxAdu} ADU/JADU (SD IB-400)`,

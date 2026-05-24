@@ -181,9 +181,12 @@ function buildResult(
   primaryProject: RawRow | null,
   overrides: Partial<PhaseResult> = {}
 ): PhaseResult {
-  const lastActivity = str(primaryProject?.primary_project_last_activity) ||
-                       str(primaryProject?.primary_project_issued) ||
-                       str(primaryProject?.primary_project_opened) || null;
+  // Allow callers to override last_activity_date (e.g. use issuance date instead of filed date).
+  // Recompute days_in_phase and stall from whatever date is resolved.
+  const defaultActivity = str(primaryProject?.primary_project_last_activity) ||
+                          str(primaryProject?.primary_project_issued) ||
+                          str(primaryProject?.primary_project_opened) || null;
+  const lastActivity = ("last_activity_date" in overrides ? overrides.last_activity_date : defaultActivity) ?? defaultActivity;
   const daysInPhase = lastActivity ? daysSince(lastActivity) : 0;
   const nextPhase = NEXT_PHASE[phase] ?? null;
   const stallThreshold = STALL_THRESHOLDS[phase];
@@ -359,6 +362,19 @@ export function inferPhase(
     if (openedBuilding.length > 0) s.push({ type: "permit", id: str(openedBuilding[0].record_number), label: `Building permit in plan check: ${str(openedBuilding[0].record_number)}`, confidence: "HIGH" });
     if (/opened|in.?review/i.test(primaryStatus)) s.push({ type: "permit", id: str(primaryProject?.primary_project_id), label: `Primary permit status: ${primaryStatus}`, confidence: "HIGH" });
     return buildResult("ENTITLEMENT", "HIGH", s, primaryProject);
+  }
+
+  // ── INSPECTION — PHASE UNKNOWN ────────────────────────────────────────────
+  // Permit is at inspection but description keywords didn't match any specific phase
+  // (framing, MEP, foundation, etc.). Infer SITE_PREP as the minimum construction
+  // phase — construction is underway, specific phase is unresolvable from description.
+  if (/inspection/i.test(primaryStatus) && (issuedBuilding.length > 0 || primaryIssued)) {
+    const s: Signal[] = [
+      { type: "permit", id: str(primaryProject?.primary_project_id), label: `Primary permit at inspection — phase from description unresolvable`, confidence: "MEDIUM" },
+    ];
+    if (primaryIssued) s.push({ type: "permit", id: str(primaryProject?.primary_project_id), label: `Building permit issued: ${primaryIssued}`, confidence: "HIGH" });
+    // Use issuance date as effective last activity — stall clock runs from issuance, not filed date
+    return buildResult("SITE_PREP", "MEDIUM", s, primaryProject, { last_activity_date: primaryIssued || null });
   }
 
   // ── STALLED ───────────────────────────────────────────────────────────────
