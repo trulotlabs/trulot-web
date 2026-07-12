@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
+import { canonicalParcelPath, canonicalParcelSlug } from '@/lib/parcel-slug';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -45,7 +46,8 @@ export async function GET(req: NextRequest) {
     city: p.city,
     state: p.state,
     zone_name: p.zone_name,
-    slug: p.slug,
+    slug: canonicalParcelSlug(p.apn_norm, p.address),
+    canonical_url: canonicalParcelPath(p.apn_norm, p.address),
     momentum: projectMap[p.apn_norm]?.project_momentum_label ?? null,
     has_building_project: projectMap[p.apn_norm]?.has_building_project ?? false,
   }));

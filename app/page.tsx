@@ -1,4 +1,6 @@
+import Link from "next/link";
 import SearchBox from './components/SearchBox';
+import { canonicalParcelPath } from "@/lib/parcel-slug";
 
 export default function Home() {
   return (
@@ -21,13 +23,13 @@ export default function Home() {
         {/* Example nudge */}
         <p className="mt-6 text-xs text-slate-400">
           Try{' '}
-          <a href="/parcel/5442140600" className="text-emerald-600 hover:underline">
+          <Link href={canonicalParcelPath("5442140600", "639 67th St")} className="text-emerald-600 hover:underline">
             639 67th St
-          </a>
+          </Link>
           {' '}or{' '}
-          <a href="/parcel/5432020900" className="text-emerald-600 hover:underline">
+          <Link href={canonicalParcelPath("5432020900", "830 60th St")} className="text-emerald-600 hover:underline">
             830 60th St
-          </a>
+          </Link>
         </p>
       </main>
 
