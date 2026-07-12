@@ -1,0 +1,274 @@
+name: TruLot Foundation Security Production Migration
+
+on:
+  workflow_dispatch:
+    inputs:
+      git_ref:
+        description: "Branch or commit to deploy"
+        required: true
+        default: "codex/trulot-data-foundation-security-2026-07"
+      expected_commit:
+        description: "Exact commit SHA expected after checkout"
+        required: true
+        default: "3629c9a46cf55b000f4a8c4ab920473271b95b71"
+      production_base_url:
+        description: "Production app base URL for smoke checks"
+        required: true
+        default: "https://trulot-web.vercel.app"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: trulot-foundation-security-production
+  cancel-in-progress: false
+
+jobs:
+  deploy-foundation-security:
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 45
+    env:
+      EXPECTED_PROJECT_REF: qockltdzvjxdlwrpgtsd
+      EXPECTED_REMOTE_BASELINE_SHA256: d7ab94fc6c7eb1b7198efa487019b80ba3d34aa0db9a94712636b4c6f17219cb
+      EXPECTED_ACCESS_MIGRATION_SHA256: 09719bae8d8597dc2450ebb3fbd6446e31c4137981e6011aa85735d7ae3bcfc2
+      EXPECTED_OVERLAY_MIGRATION_SHA256: c4e939ee80ace8b0f14d22f34f846fe3451fef3a723a5b82d737fac80ac52313
+      EXPECTED_ROLLBACK_SHA256: 4ab5c5977be82aad84ff5d16065e52c7ab974c39ee7850d6eb6692bacbb0d300
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      PRODUCTION_PROJECT_ID: ${{ secrets.PRODUCTION_PROJECT_ID }}
+      PRODUCTION_DB_PASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
+    steps:
+      - name: Check out requested ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.git_ref }}
+          fetch-depth: 0
+
+      - name: Confirm checked-out commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual_commit="$(git rev-parse HEAD)"
+          echo "Checked out commit: ${actual_commit}"
+          if [[ "${actual_commit}" != "${{ inputs.expected_commit }}" ]]; then
+            echo "Expected commit ${{ inputs.expected_commit }} but checked out ${actual_commit}."
+            exit 1
+          fi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install repository dependencies
+        run: npm ci
+
+      - name: Set up Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: 2.109.0
+
+      - name: Check required deployment secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ -n "${SUPABASE_ACCESS_TOKEN:-}" ]] || { echo "Missing SUPABASE_ACCESS_TOKEN."; exit 1; }
+          [[ -n "${PRODUCTION_PROJECT_ID:-}" ]] || { echo "Missing PRODUCTION_PROJECT_ID."; exit 1; }
+          [[ -n "${PRODUCTION_DB_PASSWORD:-}" ]] || { echo "Missing PRODUCTION_DB_PASSWORD."; exit 1; }
+          echo "Required deployment secrets are present."
+
+      - name: Confirm production project reference
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${PRODUCTION_PROJECT_ID}" != "${EXPECTED_PROJECT_REF}" ]]; then
+            echo "Refusing to deploy. Expected ${EXPECTED_PROJECT_REF} but got ${PRODUCTION_PROJECT_ID}."
+            exit 1
+          fi
+          echo "Target production project ref confirmed: ${PRODUCTION_PROJECT_ID}"
+
+      - name: Confirm approved migration and rollback file hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          access_sha="$(sha256sum supabase/migrations/20260711_foundation_access_least_privilege.sql | awk '{print $1}')"
+          overlay_sha="$(sha256sum supabase/migrations/20260711_check_parcel_overlays_hardening.sql | awk '{print $1}')"
+          rollback_sha="$(sha256sum supabase/rehearsal/20260711_rollback_access_and_overlay.sql | awk '{print $1}')"
+          [[ "${access_sha}" == "${EXPECTED_ACCESS_MIGRATION_SHA256}" ]] || { echo "Approved access migration hash mismatch."; exit 1; }
+          [[ "${overlay_sha}" == "${EXPECTED_OVERLAY_MIGRATION_SHA256}" ]] || { echo "Approved overlay migration hash mismatch."; exit 1; }
+          [[ "${rollback_sha}" == "${EXPECTED_ROLLBACK_SHA256}" ]] || { echo "Rollback SQL hash mismatch."; exit 1; }
+          echo "Approved migration and rollback artifacts match the rehearsed contents."
+
+      - name: Verify rollback SQL still targets the approved pre-migration state
+        shell: bash
+        run: |
+          set -euo pipefail
+          rg -n "grant all on function public.check_parcel_overlays\\(double precision, double precision\\) to anon, authenticated, service_role;" supabase/rehearsal/20260711_rollback_access_and_overlay.sql
+          rg -n "grant all on table public.tpa_official to anon, authenticated, service_role;" supabase/rehearsal/20260711_rollback_access_and_overlay.sql
+          rg -n "grant all on table public.trulot_permit_linkage_report_v1 to anon, authenticated, service_role;" supabase/rehearsal/20260711_rollback_access_and_overlay.sql
+          echo "Rollback SQL still matches the reviewed broad-grant baseline."
+
+      - name: Show installed Supabase CLI help surface
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase --version
+          supabase --help
+          supabase link --help
+          supabase migration list --help
+          supabase db dump --help
+          supabase db push --help
+          supabase projects api-keys --help
+
+      - name: Prepare isolated production promotion workdir
+        shell: bash
+        run: |
+          set -euo pipefail
+          workdir="${RUNNER_TEMP}/trulot-foundation-prod"
+          mkdir -p "${workdir}/supabase/migrations" "${workdir}/supabase/.temp"
+          cp supabase/migrations/20260522_overlay_lookup.sql "${workdir}/supabase/migrations/"
+          cp supabase/migrations/20260705_permit_linkage_v1.sql "${workdir}/supabase/migrations/"
+          cp supabase/migrations/20260706_permit_linkage_perf_v1.sql "${workdir}/supabase/migrations/"
+          cp supabase/migrations/20260711_foundation_access_least_privilege.sql "${workdir}/supabase/migrations/"
+          cp supabase/migrations/20260711_check_parcel_overlays_hardening.sql "${workdir}/supabase/migrations/"
+          echo "TRULOT_PROMOTION_WORKDIR=${workdir}" >> "${GITHUB_ENV}"
+          echo "Prepared isolated workdir at ${workdir}"
+
+      - name: Link repository root for audit visibility
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase link \
+            --project-ref "${PRODUCTION_PROJECT_ID}" \
+            --password "${PRODUCTION_DB_PASSWORD}" \
+            --yes
+
+      - name: Link isolated workdir to production
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase link \
+            --project-ref "${PRODUCTION_PROJECT_ID}" \
+            --password "${PRODUCTION_DB_PASSWORD}" \
+            --workdir "${TRULOT_PROMOTION_WORKDIR}" \
+            --yes
+          linked_ref="$(cat "${TRULOT_PROMOTION_WORKDIR}/supabase/.temp/project-ref")"
+          [[ "${linked_ref}" == "${EXPECTED_PROJECT_REF}" ]] || { echo "Linked project ref mismatch: ${linked_ref}"; exit 1; }
+          echo "Isolated workdir linked to ${linked_ref}"
+
+      - name: Display root repository migration list
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase migration list --linked --password "${PRODUCTION_DB_PASSWORD}"
+
+      - name: Display isolated deployment-chain migration list
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase migration list --linked --password "${PRODUCTION_DB_PASSWORD}" --workdir "${TRULOT_PROMOTION_WORKDIR}"
+
+      - name: Confirm fresh remote baseline hash before deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          baseline_dump="${RUNNER_TEMP}/trulot-remote-pre-promotion.sql"
+          supabase db dump --linked --password "${PRODUCTION_DB_PASSWORD}" --workdir "${TRULOT_PROMOTION_WORKDIR}" --file "${baseline_dump}"
+          baseline_sha="$(sha256sum "${baseline_dump}" | awk '{print $1}')"
+          echo "Fresh remote baseline SHA-256: ${baseline_sha}"
+          [[ "${baseline_sha}" == "${EXPECTED_REMOTE_BASELINE_SHA256}" ]] || {
+            echo "Remote baseline changed from the approved gate snapshot."
+            exit 1
+          }
+
+      - name: Confirm affected baseline objects are still pre-migration
+        shell: bash
+        run: |
+          set -euo pipefail
+          baseline_dump="${RUNNER_TEMP}/trulot-remote-pre-promotion.sql"
+          rg -n "grant all on function public.check_parcel_overlays\\(double precision, double precision\\) to anon, authenticated, service_role;" "${baseline_dump}"
+          rg -n "grant all on function public.get_opportunity_feed\\(integer, integer, integer\\) to anon, authenticated, service_role;" "${baseline_dump}"
+          rg -n "grant all on function public.update_nearby_activity_v2\\(\\) to anon, authenticated, service_role;" "${baseline_dump}"
+          rg -n "grant all on table public.tpa_official to anon, authenticated, service_role;" "${baseline_dump}"
+          rg -n "grant all on table public.trulot_permit_linkage_report_v1 to anon, authenticated, service_role;" "${baseline_dump}"
+          rg -n "security definer" "${baseline_dump}"
+          rg -n "pt := st_setsrid\\(st_makepoint\\(p_lng, p_lat\\), 4326\\);" "${baseline_dump}"
+          if rg -n "set search_path = public, pg_temp" "${baseline_dump}"; then
+            echo "Baseline already contains hardened search_path unexpectedly."
+            exit 1
+          fi
+
+      - name: Dry-run the authorized migration chain
+        shell: bash
+        run: |
+          set -euo pipefail
+          dry_run_log="${RUNNER_TEMP}/trulot-foundation-dry-run.log"
+          supabase db push --linked --password "${PRODUCTION_DB_PASSWORD}" --workdir "${TRULOT_PROMOTION_WORKDIR}" --dry-run | tee "${dry_run_log}"
+          rg -n "20260711_foundation_access_least_privilege|20260711_check_parcel_overlays_hardening" "${dry_run_log}"
+          if rg -n "20260707_permit_linkage_report_v2" "${dry_run_log}"; then
+            echo "Unauthorized migration 20260707 appeared in the dry run."
+            exit 1
+          fi
+
+      - name: Apply the authorized production migrations
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase db push --linked --password "${PRODUCTION_DB_PASSWORD}" --workdir "${TRULOT_PROMOTION_WORKDIR}"
+
+      - name: Confirm remote migration history after deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          post_log="${RUNNER_TEMP}/trulot-foundation-post-migration-list.log"
+          supabase migration list --linked --password "${PRODUCTION_DB_PASSWORD}" --workdir "${TRULOT_PROMOTION_WORKDIR}" | tee "${post_log}"
+          rg -n "20260711.*20260711" "${post_log}"
+          if rg -n "20260707.*20260707" "${post_log}"; then
+            echo "Unauthorized 20260707 migration appears remotely after deployment."
+            exit 1
+          fi
+
+      - name: Fetch the production anon key without revealing secret keys
+        shell: bash
+        run: |
+          set -euo pipefail
+          api_keys_json="${RUNNER_TEMP}/supabase-api-keys.json"
+          supabase projects api-keys --project-ref "${PRODUCTION_PROJECT_ID}" --output json > "${api_keys_json}"
+          anon_key="$(
+            node -e "
+              const fs = require('node:fs');
+              const keys = JSON.parse(fs.readFileSync(process.argv[1], 'utf8'));
+              const pick = (Array.isArray(keys) ? keys : []).find((entry) => {
+                const fields = Object.values(entry).map((value) => String(value ?? '').toLowerCase()).join(' ');
+                return fields.includes('anon') || fields.includes('publishable');
+              });
+              if (!pick) process.exit(1);
+              const value = pick.api_key ?? pick.key ?? pick.value ?? pick.anon ?? '';
+              if (!value) process.exit(1);
+              process.stdout.write(String(value));
+            " "${api_keys_json}"
+          )"
+          [[ -n "${anon_key}" ]] || { echo "Failed to resolve the production anon key."; exit 1; }
+          {
+            echo "NEXT_PUBLIC_SUPABASE_URL=https://${PRODUCTION_PROJECT_ID}.supabase.co"
+            echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${anon_key}"
+            echo "DATABASE_URL=postgresql://postgres:REDACTED@db.${PRODUCTION_PROJECT_ID}.supabase.co:5432/postgres"
+          } > .env.local
+          {
+            echo "TRULOT_PRODUCTION_DB_URL=postgresql://postgres:${PRODUCTION_DB_PASSWORD}@db.${PRODUCTION_PROJECT_ID}.supabase.co:5432/postgres?sslmode=require"
+            echo "TRULOT_PRODUCTION_BASE_URL=${{ inputs.production_base_url }}"
+          } >> "${GITHUB_ENV}"
+
+      - name: Run post-migration repository QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run qa:data-foundation
+          npm run qa:permit-linkage
+
+      - name: Run production-safe post-migration verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/qa-foundation-production.mjs
