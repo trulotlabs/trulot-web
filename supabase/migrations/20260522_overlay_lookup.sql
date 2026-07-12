@@ -4,7 +4,7 @@ LANGUAGE plpgsql
 SECURITY DEFINER
 AS $$
 DECLARE
-  pt geometry;
+  pt extensions.geometry;
   in_tpa boolean := false;
   in_sda boolean := false;
   in_ctcac boolean := false;
