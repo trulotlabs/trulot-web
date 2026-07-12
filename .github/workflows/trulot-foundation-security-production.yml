@@ -79,7 +79,11 @@ jobs:
           set -euo pipefail
           command -v rg >/dev/null
           command -v psql >/dev/null
-          actual_supabase_version="$(supabase --version | awk '{print $2}')"
+          actual_supabase_version="$(supabase --version | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)"
+          [[ -n "${actual_supabase_version}" ]] || {
+            echo "Unable to determine Supabase CLI version."
+            exit 1
+          }
           [[ "${actual_supabase_version}" == "2.109.0" ]] || {
             echo "Expected Supabase CLI 2.109.0 but found ${actual_supabase_version}."
             exit 1
