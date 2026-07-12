@@ -3,14 +3,6 @@ name: TruLot Foundation Security Production Migration
 on:
   workflow_dispatch:
     inputs:
-      git_ref:
-        description: "Branch or commit to deploy"
-        required: true
-        default: "codex/trulot-data-foundation-security-2026-07"
-      expected_commit:
-        description: "Exact commit SHA expected after checkout"
-        required: true
-        default: "3629c9a46cf55b000f4a8c4ab920473271b95b71"
       production_base_url:
         description: "Production app base URL for smoke checks"
         required: true
@@ -34,14 +26,16 @@ jobs:
       EXPECTED_ACCESS_MIGRATION_SHA256: 09719bae8d8597dc2450ebb3fbd6446e31c4137981e6011aa85735d7ae3bcfc2
       EXPECTED_OVERLAY_MIGRATION_SHA256: c4e939ee80ace8b0f14d22f34f846fe3451fef3a723a5b82d737fac80ac52313
       EXPECTED_ROLLBACK_SHA256: 4ab5c5977be82aad84ff5d16065e52c7ab974c39ee7850d6eb6692bacbb0d300
+      EXPECTED_ACCESS_MIGRATION_VERSION: 20260712032203
+      EXPECTED_OVERLAY_MIGRATION_VERSION: 20260712032216
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
       PRODUCTION_PROJECT_ID: ${{ secrets.PRODUCTION_PROJECT_ID }}
       PRODUCTION_DB_PASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
     steps:
-      - name: Check out requested ref
+      - name: Check out dispatch commit
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.git_ref }}
+          ref: ${{ github.sha }}
           fetch-depth: 0
 
       - name: Confirm checked-out commit
@@ -50,8 +44,8 @@ jobs:
           set -euo pipefail
           actual_commit="$(git rev-parse HEAD)"
           echo "Checked out commit: ${actual_commit}"
-          if [[ "${actual_commit}" != "${{ inputs.expected_commit }}" ]]; then
-            echo "Expected commit ${{ inputs.expected_commit }} but checked out ${actual_commit}."
+          if [[ "${actual_commit}" != "${GITHUB_SHA}" ]]; then
+            echo "Expected dispatch commit ${GITHUB_SHA} but checked out ${actual_commit}."
             exit 1
           fi
 
@@ -119,7 +113,14 @@ jobs:
           supabase migration list --help
           supabase db dump --help
           supabase db push --help
+          supabase db query --help
           supabase projects api-keys --help
+
+      - name: Run foundation QA before any link or apply
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run qa:data-foundation
 
       - name: Prepare isolated production promotion workdir
         shell: bash
@@ -130,19 +131,10 @@ jobs:
           cp supabase/migrations/20260522_overlay_lookup.sql "${workdir}/supabase/migrations/"
           cp supabase/migrations/20260705_permit_linkage_v1.sql "${workdir}/supabase/migrations/"
           cp supabase/migrations/20260706_permit_linkage_perf_v1.sql "${workdir}/supabase/migrations/"
-          cp supabase/migrations/20260711_foundation_access_least_privilege.sql "${workdir}/supabase/migrations/"
-          cp supabase/migrations/20260711_check_parcel_overlays_hardening.sql "${workdir}/supabase/migrations/"
+          cp supabase/migrations/20260712032203_foundation_access_least_privilege.sql "${workdir}/supabase/migrations/"
+          cp supabase/migrations/20260712032216_check_parcel_overlays_hardening.sql "${workdir}/supabase/migrations/"
           echo "TRULOT_PROMOTION_WORKDIR=${workdir}" >> "${GITHUB_ENV}"
           echo "Prepared isolated workdir at ${workdir}"
-
-      - name: Link repository root for audit visibility
-        shell: bash
-        run: |
-          set -euo pipefail
-          supabase link \
-            --project-ref "${PRODUCTION_PROJECT_ID}" \
-            --password "${PRODUCTION_DB_PASSWORD}" \
-            --yes
 
       - name: Link isolated workdir to production
         shell: bash
@@ -157,17 +149,27 @@ jobs:
           [[ "${linked_ref}" == "${EXPECTED_PROJECT_REF}" ]] || { echo "Linked project ref mismatch: ${linked_ref}"; exit 1; }
           echo "Isolated workdir linked to ${linked_ref}"
 
-      - name: Display root repository migration list
+      - name: Confirm dispatch commit contains approved artifacts
         shell: bash
         run: |
           set -euo pipefail
-          supabase migration list --linked --password "${PRODUCTION_DB_PASSWORD}"
+          test -f scripts/qa-foundation-production.mjs
+          test -f supabase/rehearsal/20260711_rollback_access_and_overlay.sql
+          test -f supabase/migrations/20260712032203_foundation_access_least_privilege.sql
+          test -f supabase/migrations/20260712032216_check_parcel_overlays_hardening.sql
 
       - name: Display isolated deployment-chain migration list
         shell: bash
         run: |
           set -euo pipefail
           supabase migration list --linked --password "${PRODUCTION_DB_PASSWORD}" --workdir "${TRULOT_PROMOTION_WORKDIR}"
+
+      - name: Preflight linked SQL connectivity and catalog reads
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase db query --linked "select current_database() as current_database, current_user as current_user;"
+          supabase db query --linked "select count(*) as tracked_objects from pg_proc where proname in ('check_parcel_overlays', 'update_nearby_activity_v2');"
 
       - name: Confirm fresh remote baseline hash before deployment
         shell: bash
@@ -205,11 +207,19 @@ jobs:
           set -euo pipefail
           dry_run_log="${RUNNER_TEMP}/trulot-foundation-dry-run.log"
           supabase db push --linked --password "${PRODUCTION_DB_PASSWORD}" --workdir "${TRULOT_PROMOTION_WORKDIR}" --dry-run | tee "${dry_run_log}"
-          rg -n "20260711_foundation_access_least_privilege|20260711_check_parcel_overlays_hardening" "${dry_run_log}"
+          rg -n "${EXPECTED_ACCESS_MIGRATION_VERSION}_foundation_access_least_privilege" "${dry_run_log}"
+          rg -n "${EXPECTED_OVERLAY_MIGRATION_VERSION}_check_parcel_overlays_hardening" "${dry_run_log}"
           if rg -n "20260707_permit_linkage_report_v2" "${dry_run_log}"; then
             echo "Unauthorized migration 20260707 appeared in the dry run."
             exit 1
           fi
+
+      - name: Repeat linked SQL preflight immediately before apply
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase db query --linked "select current_database() as current_database;"
+          supabase db query --linked "select count(*) as tracked_catalog_rows from pg_class where relname in ('parcel_page_api_v2', 'tpa_official', 'trulot_permit_linkage_report_v1');"
 
       - name: Apply the authorized production migrations
         shell: bash
@@ -223,7 +233,8 @@ jobs:
           set -euo pipefail
           post_log="${RUNNER_TEMP}/trulot-foundation-post-migration-list.log"
           supabase migration list --linked --password "${PRODUCTION_DB_PASSWORD}" --workdir "${TRULOT_PROMOTION_WORKDIR}" | tee "${post_log}"
-          rg -n "20260711.*20260711" "${post_log}"
+          rg -n "${EXPECTED_ACCESS_MIGRATION_VERSION}" "${post_log}"
+          rg -n "${EXPECTED_OVERLAY_MIGRATION_VERSION}" "${post_log}"
           if rg -n "20260707.*20260707" "${post_log}"; then
             echo "Unauthorized 20260707 migration appears remotely after deployment."
             exit 1
@@ -253,10 +264,9 @@ jobs:
           {
             echo "NEXT_PUBLIC_SUPABASE_URL=https://${PRODUCTION_PROJECT_ID}.supabase.co"
             echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${anon_key}"
-            echo "DATABASE_URL=postgresql://postgres:REDACTED@db.${PRODUCTION_PROJECT_ID}.supabase.co:5432/postgres"
           } > .env.local
           {
-            echo "TRULOT_PRODUCTION_DB_URL=postgresql://postgres:${PRODUCTION_DB_PASSWORD}@db.${PRODUCTION_PROJECT_ID}.supabase.co:5432/postgres?sslmode=require"
+            echo "TRULOT_PRODUCTION_VERIFY_MODE=linked"
             echo "TRULOT_PRODUCTION_BASE_URL=${{ inputs.production_base_url }}"
           } >> "${GITHUB_ENV}"
 

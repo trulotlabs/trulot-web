@@ -3,6 +3,8 @@ import fs from "node:fs";
 import path from "node:path";
 
 const repoRoot = process.cwd();
+const accessMigrationPath = "supabase/migrations/20260712032203_foundation_access_least_privilege.sql";
+const overlayMigrationPath = "supabase/migrations/20260712032216_check_parcel_overlays_hardening.sql";
 
 function read(relativePath) {
   return fs.readFileSync(path.join(repoRoot, relativePath), "utf8");
@@ -12,8 +14,33 @@ function requireIncludes(haystack, needle, label) {
   assert.ok(haystack.includes(needle), `${label} is missing: ${needle}`);
 }
 
-const accessMigration = read("supabase/migrations/20260711_foundation_access_least_privilege.sql");
-const overlayMigration = read("supabase/migrations/20260711_check_parcel_overlays_hardening.sql");
+const migrationDir = path.join(repoRoot, "supabase/migrations");
+const migrationFiles = fs
+  .readdirSync(migrationDir)
+  .filter((file) => file.endsWith(".sql"))
+  .sort();
+
+const versionsToFiles = new Map();
+for (const file of migrationFiles) {
+  const match = file.match(/^(\d+)_/);
+  assert.ok(match, `migration filename is missing a numeric version prefix: ${file}`);
+  const version = match[1];
+  const conflicts = versionsToFiles.get(version) ?? [];
+  conflicts.push(file);
+  versionsToFiles.set(version, conflicts);
+}
+
+const duplicateVersions = [...versionsToFiles.entries()].filter(([, files]) => files.length > 1);
+assert.equal(
+  duplicateVersions.length,
+  0,
+  `duplicate migration versions found: ${duplicateVersions
+    .map(([version, files]) => `${version} => ${files.join(", ")}`)
+    .join("; ")}`,
+);
+
+const accessMigration = read(accessMigrationPath);
+const overlayMigration = read(overlayMigrationPath);
 const pageSource = read("app/parcel/san-diego/[slug]/page.tsx");
 const alertsRoute = read("app/api/alerts/subscribe/route.ts");
 const manifests = JSON.parse(read("data/dataset-manifests/2026-07-11-foundation.json"));

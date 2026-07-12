@@ -21,8 +21,8 @@ Expected starting commit: `fa33484`
   - `ccf6e9c`
   - `fa33484`
 - This sprint adds but does not apply:
-  - `20260711_foundation_access_least_privilege.sql`
-  - `20260711_check_parcel_overlays_hardening.sql`
+  - `20260712032203_foundation_access_least_privilege.sql`
+  - `20260712032216_check_parcel_overlays_hardening.sql`
 
 ## Expected migration head
 
@@ -32,8 +32,13 @@ Expected starting commit: `fa33484`
   - `20260706`
 - Local unapplied migrations expected after this sprint:
   - `20260707`
-  - `20260711_foundation_access_least_privilege`
-  - `20260711_check_parcel_overlays_hardening`
+  - `20260712032203_foundation_access_least_privilege`
+  - `20260712032216_check_parcel_overlays_hardening`
+
+## Production apply guard
+
+- Ordinary root-level `supabase db push` remains prohibited while `20260707_permit_linkage_report_v2.sql` is intentionally pending.
+- Production promotion must continue to use the isolated deployment workdir that excludes `20260707`.
 
 ## Dataset version checks
 

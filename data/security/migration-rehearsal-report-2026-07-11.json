@@ -1,26 +1,47 @@
 {
-  "generated_at": "2026-07-12T02:53:50.323Z",
+  "generated_at": "2026-07-12T03:27:49.270Z",
+  "rehearsal_db_url": "postgresql://postgres:postgres@127.0.0.1:54322/trulot_gate_chain",
+  "rehearsal_workdir": "/var/folders/wp/fr_4cv1x4d32sx69lr3jqxt40000gn/T/trulot-foundation-chain-1m5w0E",
+  "baseline_migration_versions": [
+    "20260522",
+    "20260705",
+    "20260706"
+  ],
+  "authorized_migrations": [
+    {
+      "version": "20260712032203",
+      "file": "supabase/migrations/20260712032203_foundation_access_least_privilege.sql"
+    },
+    {
+      "version": "20260712032216",
+      "file": "supabase/migrations/20260712032216_check_parcel_overlays_hardening.sql"
+    }
+  ],
+  "dry_run_output": "Finished supabase db push.\nUsing workdir /var/folders/wp/fr_4cv1x4d32sx69lr3jqxt40000gn/T/trulot-foundation-chain-1m5w0E\nDRY RUN: migrations will *not* be pushed to the database.\nConnecting to local database...\nWould push these migrations:\n • 20260522_overlay_lookup.sql\n • 20260705_permit_linkage_v1.sql\n • 20260706_permit_linkage_perf_v1.sql\n • 20260712032203_foundation_access_least_privilege.sql\n • 20260712032216_check_parcel_overlays_hardening.sql\nA new version of Supabase CLI is available: v2.109.1 (currently installed v2.109.0)\nWe recommend updating regularly for new features and bug fixes: https://supabase.com/docs/guides/cli/getting-started#updating-the-supabase-cli",
+  "post_repair_history": "20260522,20260705,20260706",
+  "applied_history": "20260522,20260705,20260706,20260712032203,20260712032216",
+  "post_rollback_history": "20260522,20260705,20260706,20260712032203,20260712032216",
   "baseline": [
     {
       "label": "baseline anon can read overlay base table",
       "ok": true,
       "expected": "success",
       "actual": "success",
-      "output": "SET\n0\nRESET"
+      "output": "0"
     },
     {
       "label": "baseline anon can read permit linkage report view",
       "ok": true,
       "expected": "success",
       "actual": "success",
-      "output": "SET\n2\nRESET"
+      "output": "2"
     },
     {
       "label": "baseline anon can execute update_nearby_activity_v2",
       "ok": true,
       "expected": "success",
       "actual": "success",
-      "output": "SET\nUpdated 2 parcels\nRESET"
+      "output": "Updated 2 parcels"
     }
   ],
   "after_migration": [
@@ -29,70 +50,70 @@
       "ok": true,
       "expected": "success",
       "actual": "success",
-      "output": "SET\n1234567890\nRESET"
+      "output": "1234567890"
     },
     {
       "label": "anon raw overlay table read removed",
       "ok": true,
       "expected": "failure",
       "actual": "failure",
-      "output": "SET"
+      "output": "ERROR:  permission denied for table tpa_official\nHINT:  Grant the required privileges to the current role with: GRANT SELECT ON public.tpa_official TO anon;"
     },
     {
       "label": "anon writes still denied",
       "ok": true,
       "expected": "failure",
       "actual": "failure",
-      "output": "SET"
+      "output": "ERROR:  permission denied for table parcel_page_api_v2\nHINT:  Grant the required privileges to the current role with: GRANT INSERT ON public.parcel_page_api_v2 TO anon;"
     },
     {
       "label": "anon report view removed",
       "ok": true,
       "expected": "failure",
       "actual": "failure",
-      "output": "SET"
+      "output": "ERROR:  permission denied for view trulot_permit_linkage_report_v1"
     },
     {
       "label": "anon overlay rpc retained",
       "ok": true,
       "expected": "success",
       "actual": "success",
-      "output": "SET\n{\"sda\": true, \"tpa\": true, \"ctcac\": true}\nRESET"
+      "output": "{\"sda\": true, \"tpa\": true, \"ctcac\": true}"
     },
     {
       "label": "anon admin helper execute removed",
       "ok": true,
       "expected": "failure",
       "actual": "failure",
-      "output": "SET"
+      "output": "ERROR:  permission denied for function update_nearby_activity_v2"
     },
     {
       "label": "authenticated parcel read retained",
       "ok": true,
       "expected": "success",
       "actual": "success",
-      "output": "SET\n1234567890\nRESET"
+      "output": "1234567890"
     },
     {
       "label": "authenticated raw overlay table read removed",
       "ok": true,
       "expected": "failure",
       "actual": "failure",
-      "output": "SET"
+      "output": "ERROR:  permission denied for table sda_official\nHINT:  Grant the required privileges to the current role with: GRANT SELECT ON public.sda_official TO authenticated;"
     },
     {
       "label": "service role report view retained",
       "ok": true,
       "expected": "success",
       "actual": "success",
-      "output": "SET\n2\nRESET"
+      "output": "2"
     },
     {
       "label": "service role admin helper retained",
       "ok": true,
       "expected": "success",
       "actual": "success",
-      "output": "SET\nUpdated 2 parcels\nRESET"
+      "output": "Updated 2 parcels"
     },
     {
       "label": "overlay contract unchanged",
@@ -122,21 +143,21 @@
       "ok": true,
       "expected": "success",
       "actual": "success",
-      "output": "SET\n0\nRESET"
+      "output": "0"
     },
     {
       "label": "rollback restores anon report view read",
       "ok": true,
       "expected": "success",
       "actual": "success",
-      "output": "SET\n2\nRESET"
+      "output": "2"
     },
     {
       "label": "rollback restores anon admin helper execute",
       "ok": true,
       "expected": "success",
       "actual": "success",
-      "output": "SET\nUpdated 2 parcels\nRESET"
+      "output": "Updated 2 parcels"
     }
   ]
 }

@@ -1,27 +1,41 @@
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import fs from "node:fs";
+import os from "node:os";
 import path from "node:path";
-
-const dbUrl = process.env.TRULOT_GATE_DB_URL;
-const adminUrl = process.env.TRULOT_GATE_ADMIN_URL ?? dbUrl;
-
-if (!dbUrl || !adminUrl) {
-  console.error("TRULOT_GATE_DB_URL and TRULOT_GATE_ADMIN_URL are required.");
-  process.exit(1);
-}
 
 const repoRoot = process.cwd();
 const reportPath = path.join(repoRoot, "data/security/migration-rehearsal-report-2026-07-11.json");
 
-function psql(url, args) {
-  return execFileSync("psql", [url, ...args], {
+const baselineSeedSql = "supabase/rehearsal/20260711_seed_minimal_data.sql";
+const baselineSubsetSql = "supabase/rehearsal/20260711_remote_public_baseline_subset.sql";
+const rollbackSql = "supabase/rehearsal/20260711_rollback_access_and_overlay.sql";
+const baselineVersions = ["20260522", "20260705", "20260706"];
+const accessMigration = {
+  version: "20260712032203",
+  file: "supabase/migrations/20260712032203_foundation_access_least_privilege.sql",
+};
+const overlayMigration = {
+  version: "20260712032216",
+  file: "supabase/migrations/20260712032216_check_parcel_overlays_hardening.sql",
+};
+const rehearsalDbName = "trulot_gate_chain";
+const clusterDbUrl = "postgresql://postgres:postgres@127.0.0.1:54322/postgres";
+const rehearsalDbUrl = process.env.TRULOT_GATE_DB_URL ?? `postgresql://postgres:postgres@127.0.0.1:54322/${rehearsalDbName}`;
+
+function runCommand(cmd, args, options = {}) {
+  return execFileSync(cmd, args, {
     cwd: repoRoot,
     encoding: "utf8",
     env: {
       ...process.env,
       PGPASSWORD: "postgres",
     },
+    ...options,
   });
+}
+
+function psql(url, args) {
+  return runCommand("psql", [url, ...args]);
 }
 
 function runSqlFile(url, file) {
@@ -29,7 +43,7 @@ function runSqlFile(url, file) {
 }
 
 function runQuery(url, sql) {
-  return psql(url, ["-v", "ON_ERROR_STOP=1", "-At", "-F", "|", "-c", sql]).trim();
+  return psql(url, ["-q", "-v", "ON_ERROR_STOP=1", "-At", "-F", "|", "-c", sql]).trim();
 }
 
 function tryQuery(url, sql) {
@@ -46,6 +60,33 @@ function tryQuery(url, sql) {
   }
 }
 
+function supabase(args, options = {}) {
+  return runCommand("npx", ["supabase", ...args], options);
+}
+
+function supabaseWithOutput(args) {
+  const result = spawnSync("npx", ["supabase", ...args], {
+    cwd: repoRoot,
+    encoding: "utf8",
+    env: {
+      ...process.env,
+      PGPASSWORD: "postgres",
+    },
+  });
+
+  const combinedOutput = `${result.stdout ?? ""}${result.stderr ?? ""}`.trim();
+  if (result.status !== 0) {
+    throw new Error(combinedOutput || `supabase ${args.join(" ")} failed`);
+  }
+
+  return combinedOutput;
+}
+
+function resetDatabase() {
+  psql(clusterDbUrl, ["-c", `drop database if exists ${rehearsalDbName};`]);
+  psql(clusterDbUrl, ["-c", `create database ${rehearsalDbName};`]);
+}
+
 function ensureRoles() {
   const sql = `
 do $$
@@ -56,16 +97,11 @@ begin
   if not exists (select 1 from pg_roles where rolname = 'brain_readonly') then create role brain_readonly nologin; end if;
 end
 $$;`;
-  runQuery(adminUrl, sql);
-}
-
-function resetPublicSchema() {
-  runQuery(dbUrl, "drop schema if exists public cascade; create schema public;");
-  runQuery(dbUrl, "drop schema if exists extensions cascade; create schema extensions;");
+  runQuery(clusterDbUrl, sql);
 }
 
 function roleTest(label, sql, expectOk) {
-  const result = tryQuery(dbUrl, sql);
+  const result = tryQuery(rehearsalDbUrl, sql);
   return {
     label,
     ok: result.ok === expectOk,
@@ -75,10 +111,28 @@ function roleTest(label, sql, expectOk) {
   };
 }
 
+function prepareWorkdir() {
+  const workdir = fs.mkdtempSync(path.join(os.tmpdir(), "trulot-foundation-chain-"));
+  const migrationsDir = path.join(workdir, "supabase", "migrations");
+  fs.mkdirSync(migrationsDir, { recursive: true });
+
+  for (const file of [
+    "supabase/migrations/20260522_overlay_lookup.sql",
+    "supabase/migrations/20260705_permit_linkage_v1.sql",
+    "supabase/migrations/20260706_permit_linkage_perf_v1.sql",
+    accessMigration.file,
+    overlayMigration.file,
+  ]) {
+    fs.copyFileSync(path.join(repoRoot, file), path.join(workdir, file));
+  }
+
+  return workdir;
+}
+
 ensureRoles();
-resetPublicSchema();
-runSqlFile(dbUrl, "supabase/rehearsal/20260711_remote_public_baseline_subset.sql");
-runSqlFile(dbUrl, "supabase/rehearsal/20260711_seed_minimal_data.sql");
+resetDatabase();
+runSqlFile(rehearsalDbUrl, baselineSubsetSql);
+runSqlFile(rehearsalDbUrl, baselineSeedSql);
 
 const baseline = [
   roleTest(
@@ -98,8 +152,48 @@ const baseline = [
   ),
 ];
 
-runSqlFile(dbUrl, "supabase/migrations/20260711_foundation_access_least_privilege.sql");
-runSqlFile(dbUrl, "supabase/migrations/20260711_check_parcel_overlays_hardening.sql");
+const workdir = prepareWorkdir();
+const dryRunOutput = supabaseWithOutput([
+  "db",
+  "push",
+  "--db-url",
+  rehearsalDbUrl,
+  "--workdir",
+  workdir,
+  "--dry-run",
+]);
+
+supabase([
+  "migration",
+  "repair",
+  ...baselineVersions,
+  "--status",
+  "applied",
+  "--db-url",
+  rehearsalDbUrl,
+  "--workdir",
+  workdir,
+]);
+
+const postRepairHistory = runQuery(
+  rehearsalDbUrl,
+  "select string_agg(version, ',' order by version) from supabase_migrations.schema_migrations;",
+);
+
+supabase([
+  "db",
+  "push",
+  "--db-url",
+  rehearsalDbUrl,
+  "--workdir",
+  workdir,
+  "--yes",
+]);
+
+const appliedHistory = runQuery(
+  rehearsalDbUrl,
+  "select string_agg(version, ',' order by version) from supabase_migrations.schema_migrations;",
+);
 
 const afterMigration = [
   roleTest(
@@ -169,7 +263,7 @@ const afterMigration = [
   ),
 ];
 
-runSqlFile(dbUrl, "supabase/rehearsal/20260711_rollback_access_and_overlay.sql");
+runSqlFile(rehearsalDbUrl, rollbackSql);
 
 const afterRollback = [
   roleTest(
@@ -189,8 +283,21 @@ const afterRollback = [
   ),
 ];
 
+const postRollbackHistory = runQuery(
+  rehearsalDbUrl,
+  "select string_agg(version, ',' order by version) from supabase_migrations.schema_migrations;",
+);
+
 const report = {
   generated_at: new Date().toISOString(),
+  rehearsal_db_url: rehearsalDbUrl,
+  rehearsal_workdir: workdir,
+  baseline_migration_versions: baselineVersions,
+  authorized_migrations: [accessMigration, overlayMigration],
+  dry_run_output: dryRunOutput.trim(),
+  post_repair_history: postRepairHistory,
+  applied_history: appliedHistory,
+  post_rollback_history: postRollbackHistory,
   baseline,
   after_migration: afterMigration,
   after_rollback: afterRollback,
@@ -200,6 +307,26 @@ fs.mkdirSync(path.dirname(reportPath), { recursive: true });
 fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
 
 const failed = [...baseline, ...afterMigration, ...afterRollback].filter((item) => !item.ok);
+if (!dryRunOutput.includes(accessMigration.version) || !dryRunOutput.includes(overlayMigration.version)) {
+  console.error(JSON.stringify(report, null, 2));
+  throw new Error("Dry run did not include both authorized migration versions.");
+}
+if (dryRunOutput.includes("20260707_permit_linkage_report_v2")) {
+  console.error(JSON.stringify(report, null, 2));
+  throw new Error("Dry run included unauthorized migration 20260707_permit_linkage_report_v2.");
+}
+if (postRepairHistory !== baselineVersions.join(",")) {
+  console.error(JSON.stringify(report, null, 2));
+  throw new Error(`Baseline repair history mismatch: ${postRepairHistory}`);
+}
+if (appliedHistory !== [...baselineVersions, accessMigration.version, overlayMigration.version].join(",")) {
+  console.error(JSON.stringify(report, null, 2));
+  throw new Error(`Applied migration history mismatch: ${appliedHistory}`);
+}
+if (postRollbackHistory !== appliedHistory) {
+  console.error(JSON.stringify(report, null, 2));
+  throw new Error("Rollback should restore object behavior without mutating migration history.");
+}
 if (failed.length > 0) {
   console.error(JSON.stringify(report, null, 2));
   process.exit(1);

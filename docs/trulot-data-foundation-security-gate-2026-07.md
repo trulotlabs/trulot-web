@@ -200,7 +200,7 @@ Additional remote findings beyond the earlier sprint note:
 
 ## Before/after access diff for pending migrations
 
-### `20260711_foundation_access_least_privilege.sql`
+### `20260712032203_foundation_access_least_privilege.sql`
 
 Access intentionally removed:
 
@@ -231,7 +231,7 @@ Compatibility implications:
 - Any undocumented external consumer of `public.trulot_permit_linkage_report_v1` or `public.get_opportunity_feed(...)` under `anon`/`authenticated` would break.
 - No in-repo consumer for those public paths was found.
 
-### `20260711_check_parcel_overlays_hardening.sql`
+### `20260712032216_check_parcel_overlays_hardening.sql`
 
 Behavior intentionally changed:
 
@@ -319,8 +319,8 @@ Rollback result:
 
 Added but not applied:
 
-- [20260711_foundation_access_least_privilege.sql](/Users/ops/trulot-web/supabase/migrations/20260711_foundation_access_least_privilege.sql)
-- [20260711_check_parcel_overlays_hardening.sql](/Users/ops/trulot-web/supabase/migrations/20260711_check_parcel_overlays_hardening.sql)
+- [20260712032203_foundation_access_least_privilege.sql](/Users/ops/trulot-web/supabase/migrations/20260712032203_foundation_access_least_privilege.sql)
+- [20260712032216_check_parcel_overlays_hardening.sql](/Users/ops/trulot-web/supabase/migrations/20260712032216_check_parcel_overlays_hardening.sql)
 
 Compatibility notes captured inside the SQL:
 
@@ -419,8 +419,8 @@ Compatibility notes captured inside the SQL:
    - `public.trulot_permit_linkage_report_v1`
    - `public.get_opportunity_feed(integer, integer, integer)`
 4. Confirm PITR/backups for the linked project.
-5. Apply `20260711_foundation_access_least_privilege.sql`.
-6. Apply `20260711_check_parcel_overlays_hardening.sql`.
+5. Apply `20260712032203_foundation_access_least_privilege.sql`.
+6. Apply `20260712032216_check_parcel_overlays_hardening.sql`.
 7. Immediately dump the remote schema again.
 8. Re-run:
    - `npm run lint`

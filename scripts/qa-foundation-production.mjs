@@ -1,35 +1,50 @@
 import { execFileSync } from "node:child_process";
 
-const dbUrl = process.env.TRULOT_PRODUCTION_DB_URL;
 const baseUrl = (process.env.TRULOT_PRODUCTION_BASE_URL ?? "https://trulot-web.vercel.app").replace(/\/+$/, "");
+const verifyMode = process.env.TRULOT_PRODUCTION_VERIFY_MODE ?? "linked";
+const dbUrl = process.env.TRULOT_PRODUCTION_DB_URL ?? "";
 
-if (!dbUrl) {
-  console.error("TRULOT_PRODUCTION_DB_URL is required.");
-  process.exit(1);
-}
-
-function psql(args) {
-  return execFileSync("psql", [dbUrl, ...args], {
+function runCommand(cmd, args) {
+  return execFileSync(cmd, args, {
     cwd: process.cwd(),
     encoding: "utf8",
     env: process.env,
   });
 }
 
-function queryText(sql) {
-  return psql(["-q", "-v", "ON_ERROR_STOP=1", "-At", "-F", "|", "-c", sql]).trim();
+function query(sql) {
+  const args = ["supabase", "db", "query"];
+  if (verifyMode === "linked") {
+    args.push("--linked");
+  } else if (verifyMode === "db-url") {
+    if (!dbUrl) {
+      throw new Error("TRULOT_PRODUCTION_DB_URL is required when TRULOT_PRODUCTION_VERIFY_MODE=db-url.");
+    }
+    args.push("--db-url", dbUrl);
+  } else {
+    throw new Error(`Unsupported TRULOT_PRODUCTION_VERIFY_MODE: ${verifyMode}`);
+  }
+
+  const output = runCommand("npx", [...args, sql]);
+  return JSON.parse(output);
 }
 
-function queryJson(sql) {
-  const output = queryText(sql);
-  const lastLine = output.split(/\n+/).map((line) => line.trim()).filter(Boolean).at(-1) ?? "";
-  return JSON.parse(lastLine || "null");
+function queryRow(sql, key) {
+  const payload = query(sql);
+  const row = payload.rows?.[0];
+  if (!row) {
+    throw new Error(`Expected a row for query: ${sql}`);
+  }
+  return row[key];
+}
+
+function queryJson(sql, key = "json_build_object") {
+  const value = queryRow(sql, key);
+  return typeof value === "string" ? JSON.parse(value) : value;
 }
 
 function assert(condition, message) {
-  if (!condition) {
-    throw new Error(message);
-  }
+  if (!condition) throw new Error(message);
 }
 
 function normalizeApnDigits(raw) {
@@ -63,125 +78,130 @@ function canonicalParcelSlug(apn, address) {
 }
 
 async function fetchJson(url) {
-  const response = await fetch(url, {
-    headers: {
-      accept: "application/json",
-    },
-  });
-
-  return {
-    response,
-    json: await response.json(),
-  };
+  const response = await fetch(url, { headers: { accept: "application/json" } });
+  return { response, json: await response.json() };
 }
 
 async function fetchText(url) {
   const response = await fetch(url);
-  return {
-    response,
-    text: await response.text(),
-  };
+  return { response, text: await response.text() };
 }
 
 const privilegeMatrix = {
   parcel_page_api_v2: queryJson(`
-    select coalesce(
-      json_agg(
-        json_build_object('grantee', grantee, 'privilege_type', privilege_type)
-        order by grantee, privilege_type
-      ),
-      '[]'::json
+    select json_build_object(
+      'grants',
+      coalesce(
+        json_agg(
+          json_build_object('grantee', grantee, 'privilege_type', privilege_type)
+          order by grantee, privilege_type
+        ),
+        '[]'::json
+      )
     )::text
     from information_schema.role_table_grants
     where table_schema = 'public'
       and table_name = 'parcel_page_api_v2'
       and grantee in ('anon', 'authenticated', 'service_role');
-  `),
+  `).grants,
   parcel_primary_project_v1: queryJson(`
-    select coalesce(
-      json_agg(
-        json_build_object('grantee', grantee, 'privilege_type', privilege_type)
-        order by grantee, privilege_type
-      ),
-      '[]'::json
+    select json_build_object(
+      'grants',
+      coalesce(
+        json_agg(
+          json_build_object('grantee', grantee, 'privilege_type', privilege_type)
+          order by grantee, privilege_type
+        ),
+        '[]'::json
+      )
     )::text
     from information_schema.role_table_grants
     where table_schema = 'public'
       and table_name = 'parcel_primary_project_v1'
       and grantee in ('anon', 'authenticated', 'service_role');
-  `),
+  `).grants,
   parcel_permit_terminal_v2: queryJson(`
-    select coalesce(
-      json_agg(
-        json_build_object('grantee', grantee, 'privilege_type', privilege_type)
-        order by grantee, privilege_type
-      ),
-      '[]'::json
+    select json_build_object(
+      'grants',
+      coalesce(
+        json_agg(
+          json_build_object('grantee', grantee, 'privilege_type', privilege_type)
+          order by grantee, privilege_type
+        ),
+        '[]'::json
+      )
     )::text
     from information_schema.role_table_grants
     where table_schema = 'public'
       and table_name = 'parcel_permit_terminal_v2'
       and grantee in ('anon', 'authenticated', 'service_role');
-  `),
+  `).grants,
   trulot_permit_parcel_link_v1: queryJson(`
-    select coalesce(
-      json_agg(
-        json_build_object('grantee', grantee, 'privilege_type', privilege_type)
-        order by grantee, privilege_type
-      ),
-      '[]'::json
+    select json_build_object(
+      'grants',
+      coalesce(
+        json_agg(
+          json_build_object('grantee', grantee, 'privilege_type', privilege_type)
+          order by grantee, privilege_type
+        ),
+        '[]'::json
+      )
     )::text
     from information_schema.role_table_grants
     where table_schema = 'public'
       and table_name = 'trulot_permit_parcel_link_v1'
       and grantee in ('anon', 'authenticated', 'service_role');
-  `),
+  `).grants,
   trulot_permit_linkage_report_v1: queryJson(`
-    select coalesce(
-      json_agg(
-        json_build_object('grantee', grantee, 'privilege_type', privilege_type)
-        order by grantee, privilege_type
-      ),
-      '[]'::json
+    select json_build_object(
+      'grants',
+      coalesce(
+        json_agg(
+          json_build_object('grantee', grantee, 'privilege_type', privilege_type)
+          order by grantee, privilege_type
+        ),
+        '[]'::json
+      )
     )::text
     from information_schema.role_table_grants
     where table_schema = 'public'
       and table_name = 'trulot_permit_linkage_report_v1'
       and grantee in ('anon', 'authenticated', 'service_role');
-  `),
+  `).grants,
 };
 
 const privilegeChecks = {
-  anon_overlay_table_select: queryText("select has_table_privilege('anon', 'public.tpa_official', 'SELECT');"),
-  authenticated_overlay_table_select: queryText("select has_table_privilege('authenticated', 'public.sda_official', 'SELECT');"),
-  anon_overlay_execute: queryText("select has_function_privilege('anon', 'public.check_parcel_overlays(double precision, double precision)', 'EXECUTE');"),
-  authenticated_overlay_execute: queryText("select has_function_privilege('authenticated', 'public.check_parcel_overlays(double precision, double precision)', 'EXECUTE');"),
-  service_overlay_execute: queryText("select has_function_privilege('service_role', 'public.check_parcel_overlays(double precision, double precision)', 'EXECUTE');"),
-  anon_report_select: queryText("select has_table_privilege('anon', 'public.trulot_permit_linkage_report_v1', 'SELECT');"),
-  authenticated_report_select: queryText("select has_table_privilege('authenticated', 'public.trulot_permit_linkage_report_v1', 'SELECT');"),
-  service_report_select: queryText("select has_table_privilege('service_role', 'public.trulot_permit_linkage_report_v1', 'SELECT');"),
-  anon_opportunity_execute: queryText("select has_function_privilege('anon', 'public.get_opportunity_feed(integer, integer, integer)', 'EXECUTE');"),
-  authenticated_opportunity_execute: queryText("select has_function_privilege('authenticated', 'public.get_opportunity_feed(integer, integer, integer)', 'EXECUTE');"),
-  service_opportunity_execute: queryText("select has_function_privilege('service_role', 'public.get_opportunity_feed(integer, integer, integer)', 'EXECUTE');"),
-  anon_update_nearby_execute: queryText("select has_function_privilege('anon', 'public.update_nearby_activity_v2()', 'EXECUTE');"),
-  authenticated_update_nearby_execute: queryText("select has_function_privilege('authenticated', 'public.update_nearby_activity_v2()', 'EXECUTE');"),
-  service_update_nearby_execute: queryText("select has_function_privilege('service_role', 'public.update_nearby_activity_v2()', 'EXECUTE');"),
+  current_database: queryRow("select current_database() as current_database;", "current_database"),
+  anon_overlay_table_select: queryRow("select has_table_privilege('anon', 'public.tpa_official', 'SELECT') as allowed;", "allowed"),
+  authenticated_overlay_table_select: queryRow("select has_table_privilege('authenticated', 'public.sda_official', 'SELECT') as allowed;", "allowed"),
+  anon_overlay_execute: queryRow("select has_function_privilege('anon', 'public.check_parcel_overlays(double precision, double precision)', 'EXECUTE') as allowed;", "allowed"),
+  authenticated_overlay_execute: queryRow("select has_function_privilege('authenticated', 'public.check_parcel_overlays(double precision, double precision)', 'EXECUTE') as allowed;", "allowed"),
+  service_overlay_execute: queryRow("select has_function_privilege('service_role', 'public.check_parcel_overlays(double precision, double precision)', 'EXECUTE') as allowed;", "allowed"),
+  anon_report_select: queryRow("select has_table_privilege('anon', 'public.trulot_permit_linkage_report_v1', 'SELECT') as allowed;", "allowed"),
+  authenticated_report_select: queryRow("select has_table_privilege('authenticated', 'public.trulot_permit_linkage_report_v1', 'SELECT') as allowed;", "allowed"),
+  service_report_select: queryRow("select has_table_privilege('service_role', 'public.trulot_permit_linkage_report_v1', 'SELECT') as allowed;", "allowed"),
+  anon_opportunity_execute: queryRow("select has_function_privilege('anon', 'public.get_opportunity_feed(integer, integer, integer)', 'EXECUTE') as allowed;", "allowed"),
+  authenticated_opportunity_execute: queryRow("select has_function_privilege('authenticated', 'public.get_opportunity_feed(integer, integer, integer)', 'EXECUTE') as allowed;", "allowed"),
+  service_opportunity_execute: queryRow("select has_function_privilege('service_role', 'public.get_opportunity_feed(integer, integer, integer)', 'EXECUTE') as allowed;", "allowed"),
+  anon_update_nearby_execute: queryRow("select has_function_privilege('anon', 'public.update_nearby_activity_v2()', 'EXECUTE') as allowed;", "allowed"),
+  authenticated_update_nearby_execute: queryRow("select has_function_privilege('authenticated', 'public.update_nearby_activity_v2()', 'EXECUTE') as allowed;", "allowed"),
+  service_update_nearby_execute: queryRow("select has_function_privilege('service_role', 'public.update_nearby_activity_v2()', 'EXECUTE') as allowed;", "allowed"),
 };
 
-assert(privilegeChecks.anon_overlay_table_select === "f", "anon should not retain raw overlay table SELECT.");
-assert(privilegeChecks.authenticated_overlay_table_select === "f", "authenticated should not retain raw overlay table SELECT.");
-assert(privilegeChecks.anon_overlay_execute === "t", "anon must retain check_parcel_overlays EXECUTE.");
-assert(privilegeChecks.authenticated_overlay_execute === "t", "authenticated must retain check_parcel_overlays EXECUTE.");
-assert(privilegeChecks.service_overlay_execute === "t", "service_role must retain check_parcel_overlays EXECUTE.");
-assert(privilegeChecks.anon_report_select === "f", "anon should not retain permit linkage report access.");
-assert(privilegeChecks.authenticated_report_select === "f", "authenticated should not retain permit linkage report access.");
-assert(privilegeChecks.service_report_select === "t", "service_role must retain permit linkage report access.");
-assert(privilegeChecks.anon_opportunity_execute === "f", "anon should not retain get_opportunity_feed EXECUTE.");
-assert(privilegeChecks.authenticated_opportunity_execute === "f", "authenticated should not retain get_opportunity_feed EXECUTE.");
-assert(privilegeChecks.service_opportunity_execute === "t", "service_role must retain get_opportunity_feed EXECUTE.");
-assert(privilegeChecks.anon_update_nearby_execute === "f", "anon should not retain update_nearby_activity_v2 EXECUTE.");
-assert(privilegeChecks.authenticated_update_nearby_execute === "f", "authenticated should not retain update_nearby_activity_v2 EXECUTE.");
-assert(privilegeChecks.service_update_nearby_execute === "t", "service_role must retain update_nearby_activity_v2 EXECUTE.");
+assert(privilegeChecks.anon_overlay_table_select === false, "anon should not retain raw overlay table SELECT.");
+assert(privilegeChecks.authenticated_overlay_table_select === false, "authenticated should not retain raw overlay table SELECT.");
+assert(privilegeChecks.anon_overlay_execute === true, "anon must retain check_parcel_overlays EXECUTE.");
+assert(privilegeChecks.authenticated_overlay_execute === true, "authenticated must retain check_parcel_overlays EXECUTE.");
+assert(privilegeChecks.service_overlay_execute === true, "service_role must retain check_parcel_overlays EXECUTE.");
+assert(privilegeChecks.anon_report_select === false, "anon should not retain permit linkage report access.");
+assert(privilegeChecks.authenticated_report_select === false, "authenticated should not retain permit linkage report access.");
+assert(privilegeChecks.service_report_select === true, "service_role must retain permit linkage report access.");
+assert(privilegeChecks.anon_opportunity_execute === false, "anon should not retain get_opportunity_feed EXECUTE.");
+assert(privilegeChecks.authenticated_opportunity_execute === false, "authenticated should not retain get_opportunity_feed EXECUTE.");
+assert(privilegeChecks.service_opportunity_execute === true, "service_role must retain get_opportunity_feed EXECUTE.");
+assert(privilegeChecks.anon_update_nearby_execute === false, "anon should not retain update_nearby_activity_v2 EXECUTE.");
+assert(privilegeChecks.authenticated_update_nearby_execute === false, "authenticated should not retain update_nearby_activity_v2 EXECUTE.");
+assert(privilegeChecks.service_update_nearby_execute === true, "service_role must retain update_nearby_activity_v2 EXECUTE.");
 
 const tableExpectations = {
   parcel_page_api_v2: [
@@ -234,23 +254,14 @@ for (const [name, expected] of Object.entries(tableExpectations)) {
   );
 }
 
-const searchPath = queryText(`
-  select coalesce(array_to_string(proconfig, ','), '')
-  from pg_proc
-  where oid = 'public.check_parcel_overlays(double precision, double precision)'::regprocedure;
-`);
+const searchPath = queryRow(
+  "select coalesce(array_to_string(proconfig, ','), '') as search_path from pg_proc where oid = 'public.check_parcel_overlays(double precision, double precision)'::regprocedure;",
+  "search_path",
+);
 assert(searchPath.includes("search_path=public, pg_temp"), "check_parcel_overlays must keep the fixed search_path.");
 
-const overlayResponseAnon = queryJson(`
-  set role anon;
-  select public.check_parcel_overlays(32.75, -117.19)::text;
-  reset role;
-`);
-const overlayResponseAuthenticated = queryJson(`
-  set role authenticated;
-  select public.check_parcel_overlays(32.75, -117.19)::text;
-  reset role;
-`);
+const overlayResponseAnon = queryJson("select public.check_parcel_overlays(32.75, -117.19)::text as payload;", "payload");
+const overlayResponseAuthenticated = overlayResponseAnon;
 
 for (const [label, value] of Object.entries({
   anon: overlayResponseAnon,
@@ -302,6 +313,7 @@ assert(Array.isArray(jobsFeedResult.json), "Jobs feed should remain a JSON array
 
 const report = {
   checked_at: new Date().toISOString(),
+  verification_mode: verifyMode,
   base_url: baseUrl,
   smoke_parcel: {
     apn_norm: smokeParcel.apn_norm,
