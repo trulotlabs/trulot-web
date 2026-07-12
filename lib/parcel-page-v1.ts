@@ -15,6 +15,7 @@ import {
   formatApnForDisplay,
   normalizeApnDigits,
 } from "./parcel-slug";
+import { buildParcelPageSourceEntries, type ParcelPageSourceEntry } from "./source-freshness";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -106,12 +107,7 @@ export interface SourceRegistryRow {
   confidenceTier: ConfidenceTier;
 }
 
-export interface SourceRegistryEntry {
-  dataset: string;
-  publisher: string;
-  vintageOrRefresh: string;
-  url: string | null;
-}
+export type SourceRegistryEntry = ParcelPageSourceEntry;
 
 export interface MethodologySection {
   id: string;
@@ -588,32 +584,11 @@ function staticMethodology(): ParcelPageV1Data["methodology"] {
 
 function buildSourceTable(row: RawRow): SourceRegistryEntry[] {
   const generatedAt = formatShortDate(row.generated_at) ?? "Refresh date not exposed";
-  return [
-    {
-      dataset: "Parcel and lot-area record",
-      publisher: "SanGIS via TruLot parcel view",
-      vintageOrRefresh: generatedAt,
-      url: "https://www.sangis.org/",
-    },
-    {
-      dataset: "Assessor structure fields",
-      publisher: "San Diego County Assessor via TruLot parcel view",
-      vintageOrRefresh: generatedAt,
-      url: "https://arcc.sdcounty.ca.gov/",
-    },
-    {
-      dataset: "Permit activity",
-      publisher: "City of San Diego Development Services",
-      vintageOrRefresh: generatedAt,
-      url: "https://opendsd.sandiego.gov/",
-    },
-    {
-      dataset: "Overlay lookup",
-      publisher: "TruLot overlay function over mapped public layers",
-      vintageOrRefresh: generatedAt,
-      url: null,
-    },
-  ];
+  const pageCalculatedAt = formatShortDate(new Date().toISOString()) ?? "Calculation time not exposed";
+  return buildParcelPageSourceEntries({
+    parcelViewRebuiltAt: generatedAt,
+    pageCalculatedAt,
+  });
 }
 
 function buildFieldMappingReport(): SourceRegistryRow[] {

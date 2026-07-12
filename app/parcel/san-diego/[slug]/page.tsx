@@ -258,7 +258,7 @@ export default async function ParcelPage({
             </p>
             <p className="mt-4 text-[13px] text-slate-500">
               {data.identity.dataRefreshedAt
-                ? `Data last refreshed ${data.identity.dataRefreshedAt}`
+                ? `Parcel view last rebuilt ${data.identity.dataRefreshedAt}`
                 : "Refresh date not available in the current parcel views"}
               <span className="mx-2 text-slate-300">·</span>
               Sources: <a href="#receipts" className="underline decoration-slate-300 underline-offset-2">see receipts</a>
