@@ -1,0 +1,136 @@
+[
+  {
+    "dataset_id": "parcel_base_sangis_v1",
+    "human_readable_name": "Parcel base geometry and situs record",
+    "source_agency_or_publisher": "SanGIS",
+    "source_url_or_acquisition_location": "https://www.sangis.org/",
+    "license_or_use_restriction": "unverified",
+    "jurisdiction": "San Diego County, California, United States",
+    "geography": "Countywide parcel coverage used by the San Diego parcel page path",
+    "source_publication_or_effective_date": "unknown",
+    "acquisition_timestamp": "unknown",
+    "import_timestamp": "unknown",
+    "row_count": "unverified",
+    "checksum": "unverified",
+    "schema_version": "unknown",
+    "importer_version": "unknown",
+    "steward": "unknown",
+    "refresh_cadence": "unknown",
+    "known_limitations": [
+      "Repository does not contain the import pipeline or dataset receipt for this source.",
+      "public.parcel_page_api_v2 is remotely observable but not reproducible from committed migrations."
+    ],
+    "dependent_database_objects": [
+      "public.parcel_page_api_v2",
+      "public.trulot_permit_parcel_link_v1",
+      "public.trulot_permit_linkage_report_v1"
+    ]
+  },
+  {
+    "dataset_id": "assessor_structures_sdcounty_v1",
+    "human_readable_name": "Assessor structure and valuation attributes",
+    "source_agency_or_publisher": "San Diego County Assessor / Recorder / County Clerk",
+    "source_url_or_acquisition_location": "https://arcc.sdcounty.ca.gov/",
+    "license_or_use_restriction": "unverified",
+    "jurisdiction": "San Diego County, California, United States",
+    "geography": "Countywide assessor attributes joined into parcel records",
+    "source_publication_or_effective_date": "unknown",
+    "acquisition_timestamp": "unknown",
+    "import_timestamp": "unknown",
+    "row_count": "unverified",
+    "checksum": "unverified",
+    "schema_version": "unknown",
+    "importer_version": "unknown",
+    "steward": "unknown",
+    "refresh_cadence": "unknown",
+    "known_limitations": [
+      "Current repository only observes downstream columns in public.parcel_page_api_v2.",
+      "The repository does not verify assessor vintage, acquisition timing, or import completion."
+    ],
+    "dependent_database_objects": [
+      "public.parcel_page_api_v2"
+    ]
+  },
+  {
+    "dataset_id": "base_zoning_mapping_v1",
+    "human_readable_name": "Mapped parcel zoning and zoning family fields",
+    "source_agency_or_publisher": "TruLot parcel view over public zoning sources",
+    "source_url_or_acquisition_location": "unknown",
+    "license_or_use_restriction": "unverified",
+    "jurisdiction": "City of San Diego, California, United States",
+    "geography": "Mapped zoning fields exposed on parcel records used by the public parcel page",
+    "source_publication_or_effective_date": "unknown",
+    "acquisition_timestamp": "unknown",
+    "import_timestamp": "unknown",
+    "row_count": "unverified",
+    "checksum": "unverified",
+    "schema_version": "unknown",
+    "importer_version": "unknown",
+    "steward": "unknown",
+    "refresh_cadence": "unknown",
+    "known_limitations": [
+      "Repository does not contain the source zoning import or parcel-to-zone derivation logic.",
+      "Base-zone derivation is remotely observable through public.parcel_page_api_v2 but not rebuilt locally."
+    ],
+    "dependent_database_objects": [
+      "public.parcel_page_api_v2",
+      "public.parcel_primary_project_v1"
+    ]
+  },
+  {
+    "dataset_id": "permit_terminal_city_sd_v2",
+    "human_readable_name": "Permit terminal activity record set",
+    "source_agency_or_publisher": "City of San Diego Development Services",
+    "source_url_or_acquisition_location": "https://opendsd.sandiego.gov/",
+    "license_or_use_restriction": "unverified",
+    "jurisdiction": "City of San Diego, California, United States",
+    "geography": "Permit activity rows used for parcel timelines, search momentum, and nearby precedent summaries",
+    "source_publication_or_effective_date": "unknown",
+    "acquisition_timestamp": "unknown",
+    "import_timestamp": "unknown",
+    "row_count": "unverified",
+    "checksum": "unverified",
+    "schema_version": "unknown",
+    "importer_version": "unknown",
+    "steward": "unknown",
+    "refresh_cadence": "unknown",
+    "known_limitations": [
+      "Permit linkage logic is partly reproducible, but the permit import pipeline and receipt trail are missing from the repository.",
+      "The public parcel page currently depends on both public.parcel_permit_terminal_v2 and public.trulot_permit_parcel_link_v1."
+    ],
+    "dependent_database_objects": [
+      "public.parcel_permit_terminal_v2",
+      "public.parcel_primary_project_v1",
+      "public.trulot_permit_parcel_link_v1",
+      "public.trulot_permit_linkage_report_v1"
+    ]
+  },
+  {
+    "dataset_id": "overlay_layers_tpa_sda_ctcac_v1",
+    "human_readable_name": "Overlay polygons for TPA, SDA, and CTCAC checks",
+    "source_agency_or_publisher": "TruLot overlay lookup over mapped public layers",
+    "source_url_or_acquisition_location": "unknown",
+    "license_or_use_restriction": "unverified",
+    "jurisdiction": "City of San Diego, California, United States",
+    "geography": "Overlay polygons referenced by public.check_parcel_overlays()",
+    "source_publication_or_effective_date": "unknown",
+    "acquisition_timestamp": "unknown",
+    "import_timestamp": "unknown",
+    "row_count": "unverified",
+    "checksum": "unverified",
+    "schema_version": "unknown",
+    "importer_version": "unknown",
+    "steward": "unknown",
+    "refresh_cadence": "unknown",
+    "known_limitations": [
+      "Repository contains the overlay lookup function but not the source-layer acquisition/import process.",
+      "Point-boundary semantics are determined by ST_Contains and therefore exclude points on polygon boundaries."
+    ],
+    "dependent_database_objects": [
+      "public.tpa_official",
+      "public.sda_official",
+      "public.ctcac_gis_v1",
+      "public.check_parcel_overlays(double precision, double precision)"
+    ]
+  }
+]

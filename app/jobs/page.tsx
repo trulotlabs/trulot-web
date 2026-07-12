@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import type { FormEvent, ReactNode } from "react";
+import { canonicalParcelPath } from "@/lib/parcel-slug";
 
 type Job = {
   id?: string;
@@ -35,8 +37,9 @@ function getStage(job: Job): string {
 }
 
 function parcelHref(job: Job): string | null {
-  if (job.apn) return `/parcel/${job.apn}`;
-  if (job.parcel_url) return job.parcel_url.replace(/\/parcel\/([^/]+)\/.+$/, "/parcel/$1");
+  if (job.apn) return canonicalParcelPath(job.apn, getAddress(job));
+  if (job.slug) return `/parcel/san-diego/${job.slug}`;
+  if (job.parcel_url?.includes("/parcel/san-diego/")) return job.parcel_url;
   return null;
 }
 
@@ -73,7 +76,6 @@ export default function JobsPage() {
     if (role) params.set("role", role);
     if (stage) params.set("stage", stage);
 
-    setLoading(true);
     fetch(`/api/jobs-feed?${params.toString()}`, { signal: controller.signal })
       .then((res) => (res.ok ? res.json() : Promise.reject(new Error("Unable to load jobs"))))
       .then((payload) => {
@@ -135,8 +137,14 @@ export default function JobsPage() {
         </header>
 
         <section className="flex flex-wrap gap-3 border-b border-slate-200 pb-4">
-          <Filter label="Role" value={role} options={roleOptions} onChange={setRole} />
-          <Filter label="Stage" value={stage} options={stageOptions} onChange={setStage} />
+          <Filter label="Role" value={role} options={roleOptions} onChange={(value) => {
+            setLoading(true);
+            setRole(value);
+          }} />
+          <Filter label="Stage" value={stage} options={stageOptions} onChange={(value) => {
+            setLoading(true);
+            setStage(value);
+          }} />
           <Filter label="Timing" value={timing} options={timingOptions} onChange={setTiming} />
         </section>
 
@@ -154,7 +162,7 @@ export default function JobsPage() {
                     return (
                       <div key={job.id ?? `${group}-${index}`} className="grid min-h-11 grid-cols-[minmax(220px,1.4fr)_150px_100px_110px_minmax(240px,1.2fr)] items-center gap-3 px-3 py-2 text-[14px] leading-5">
                         <div className="min-w-0 font-bold text-slate-950">
-                          {href ? <a className="hover:underline" href={href}>{address}</a> : address}
+                          {href ? <Link className="hover:underline" href={href}>{address}</Link> : address}
                         </div>
                         <div className="text-slate-700">{job.role ?? "Unassigned"}</div>
                         <Badge value={getStage(job)} />
@@ -189,7 +197,7 @@ export default function JobsPage() {
 
             {alertState === "success" ? (
               <div className="space-y-4">
-                <p className="text-[14px] font-bold leading-5 text-emerald-700">You'll receive new jobs as they appear</p>
+                <p className="text-[14px] font-bold leading-5 text-emerald-700">You&apos;ll receive new jobs as they appear</p>
                 <button className="border border-slate-900 bg-slate-900 px-4 py-2 text-[14px] font-bold text-white" onClick={() => setModalOpen(false)} type="button">Done</button>
               </div>
             ) : (

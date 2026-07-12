@@ -5,6 +5,12 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 );
 
+const ALERTS_SIGNUP_STATUS = {
+  status: "unavailable",
+  reason: "alerts_subscribers backing object is not verifiable in the linked remote schema baseline",
+  disposition: "Future stub isolated pending verified schema history and abuse-control review",
+} as const;
+
 /**
  * POST /api/alerts/subscribe
  *
@@ -41,24 +47,27 @@ export async function POST(req: Request) {
     return Response.json({ error: "Valid email required" }, { status: 400 });
   }
 
-  const { error } = await supabase.from("alerts_subscribers").insert({
-    email: email.trim().toLowerCase(),
-    role: role?.trim() ?? null,
-    location: location?.trim() ?? null,
-  });
+  void supabase;
+  void role;
+  void location;
 
-  if (error) {
-    // Duplicate email is not a hard error — silently succeed
-    if (error.code === "23505") {
-      return Response.json({ success: true, note: "Already subscribed" });
-    }
-    return Response.json({ error: "Failed to subscribe", detail: error.message }, { status: 500 });
-  }
-
-  return Response.json({ success: true });
+  return Response.json(
+    {
+      success: false,
+      error: "Alerts signup is not available in the current verified environment",
+      alerts_status: ALERTS_SIGNUP_STATUS,
+    },
+    { status: 503 },
+  );
 }
 
 // GET not supported
 export async function GET() {
-  return Response.json({ error: "Method not allowed" }, { status: 405 });
+  return Response.json(
+    {
+      error: "Method not allowed",
+      alerts_status: ALERTS_SIGNUP_STATUS,
+    },
+    { status: 405 },
+  );
 }

@@ -1,0 +1,146 @@
+{
+  "captured_at": "2026-07-11",
+  "source_dump": "/private/tmp/trulot-remote-full-baseline-2026-07-11.sql",
+  "schemas_observed": [
+    "brain",
+    "extensions",
+    "public",
+    "vault"
+  ],
+  "storage_dependency_in_repo": false,
+  "current_application_objects": {
+    "public_reads": [
+      "public.parcel_page_api_v2",
+      "public.parcel_primary_project_v1",
+      "public.parcel_permit_terminal_v2",
+      "public.trulot_permit_parcel_link_v1"
+    ],
+    "public_rpcs": [
+      "public.check_parcel_overlays(double precision, double precision)"
+    ],
+    "admin_or_internal_helpers": [
+      "public.trulot_permit_linkage_report_v1",
+      "public.update_nearby_activity_v2()",
+      "public.get_opportunity_feed(integer, integer, integer)"
+    ]
+  },
+  "security_definer_functions": [
+    {
+      "name": "public.check_parcel_overlays(double precision, double precision)",
+      "fixed_search_path": false,
+      "execute_grants": [
+        "anon",
+        "authenticated",
+        "service_role"
+      ]
+    },
+    {
+      "name": "public.get_opportunity_feed(integer, integer, integer)",
+      "fixed_search_path": false,
+      "execute_grants": [
+        "anon",
+        "authenticated",
+        "service_role"
+      ]
+    },
+    {
+      "name": "public.update_nearby_activity_v2()",
+      "fixed_search_path": false,
+      "execute_grants": [
+        "anon",
+        "authenticated",
+        "service_role"
+      ]
+    }
+  ],
+  "rls_enabled_tables_relevant_to_current_app": [
+    "public.parcel_page_api_v2",
+    "public.parcel_permit_terminal_v2",
+    "public.parcel_primary_project_v1",
+    "public.tpa_official",
+    "public.sda_official",
+    "public.ctcac_gis_v1"
+  ],
+  "relevant_policies": [
+    {
+      "object": "public.parcel_page_api_v2",
+      "policy": "public read",
+      "command": "SELECT",
+      "role": "PUBLIC"
+    },
+    {
+      "object": "public.parcel_permit_terminal_v2",
+      "policy": "public read permits",
+      "command": "SELECT",
+      "role": "PUBLIC"
+    },
+    {
+      "object": "public.parcel_primary_project_v1",
+      "policy": "public read primary",
+      "command": "SELECT",
+      "role": "PUBLIC"
+    }
+  ],
+  "relevant_view_owners": [
+    {
+      "object": "public.trulot_permit_parcel_link_v1",
+      "owner": "postgres"
+    },
+    {
+      "object": "public.trulot_permit_linkage_report_v1",
+      "owner": "postgres"
+    }
+  ],
+  "relevant_grants": {
+    "anon": [
+      "ALL on public.parcel_page_api_v2",
+      "ALL on public.parcel_primary_project_v1",
+      "ALL on public.parcel_permit_terminal_v2",
+      "ALL on public.trulot_permit_parcel_link_v1",
+      "ALL on public.trulot_permit_linkage_report_v1",
+      "ALL on public.tpa_official",
+      "ALL on public.sda_official",
+      "ALL on public.ctcac_gis_v1",
+      "ALL on public.check_parcel_overlays(double precision, double precision)",
+      "ALL on public.update_nearby_activity_v2()",
+      "ALL on public.get_opportunity_feed(integer, integer, integer)"
+    ],
+    "authenticated": [
+      "ALL on public.parcel_page_api_v2",
+      "ALL on public.parcel_primary_project_v1",
+      "ALL on public.parcel_permit_terminal_v2",
+      "ALL on public.trulot_permit_parcel_link_v1",
+      "ALL on public.trulot_permit_linkage_report_v1",
+      "ALL on public.tpa_official",
+      "ALL on public.sda_official",
+      "ALL on public.ctcac_gis_v1",
+      "ALL on public.check_parcel_overlays(double precision, double precision)",
+      "ALL on public.update_nearby_activity_v2()",
+      "ALL on public.get_opportunity_feed(integer, integer, integer)"
+    ],
+    "service_role": [
+      "ALL on public.parcel_page_api_v2",
+      "ALL on public.parcel_primary_project_v1",
+      "ALL on public.parcel_permit_terminal_v2",
+      "ALL on public.trulot_permit_parcel_link_v1",
+      "ALL on public.trulot_permit_linkage_report_v1",
+      "ALL on public.tpa_official",
+      "ALL on public.sda_official",
+      "ALL on public.ctcac_gis_v1",
+      "ALL on public.check_parcel_overlays(double precision, double precision)",
+      "ALL on public.update_nearby_activity_v2()",
+      "ALL on public.get_opportunity_feed(integer, integer, integer)"
+    ]
+  },
+  "default_privilege_findings": [
+    "ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA public GRANT ALL ON SEQUENCES TO anon, authenticated, service_role",
+    "ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA public GRANT ALL ON FUNCTIONS TO anon, authenticated, service_role",
+    "ALTER DEFAULT PRIVILEGES FOR ROLE postgres IN SCHEMA public GRANT ALL ON TABLES TO anon, authenticated, service_role"
+  ],
+  "alerts_subscribers_disposition": {
+    "observed_in_remote_dump": false,
+    "observed_in_repo_migrations": false,
+    "observed_runtime_consumer": "app/api/alerts/subscribe/route.ts called by app/jobs/page.tsx",
+    "most_defensible_disposition": "future stub isolated pending verified schema history"
+  }
+}

@@ -9,6 +9,7 @@ type Result = {
   state: string;
   zone_name: string;
   slug: string;
+  canonical_url?: string;
   momentum: string | null;
   has_building_project: boolean;
 };
@@ -105,7 +106,7 @@ export default function SearchBox() {
           {results.map((r) => (
             <a
               key={r.apn_norm}
-              href={`/parcel/${r.apn_norm}`}
+              href={r.canonical_url ?? `/parcel/san-diego/${r.slug}`}
               className="flex items-center justify-between gap-3 px-4 py-3 hover:bg-slate-50 transition-colors"
             >
               <div className="min-w-0">
