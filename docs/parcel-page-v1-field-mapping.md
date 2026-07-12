@@ -21,7 +21,7 @@ This report tracks the Parcel Page V1 adapter fields, the current backend source
 | `facts.sewer` | future sewer adapter | no | Show `Not available in public records` | TODO — sewer adapter | recorded |
 | `snapshot[0]` | `parcel_page_api_v2` lot + use + building fields | yes | Omit sentence if required inputs missing | SanGIS parcel layer + County Assessor | recorded |
 | `snapshot[1]` | `parcel_page_api_v2.zone_name` + `check_parcel_overlays` | yes | Omit sentence if zone unavailable | Mapped base zone + overlay lookup | mapped |
-| `snapshot[2]` | `parcel_permit_terminal_v2` linked through parsed APN helper | yes | Swap to no-permits sentence when no reliable direct permit link exists | City permit record via exact or parsed APN match | recorded |
+| `snapshot[2]` | `trulot_permit_parcel_link_v1` filtered to exact or unambiguous parsed APN matches | yes | Omit sentence when permit records are unavailable; show no-permits sentence only after successful direct-history lookup with zero matches | City permit record via exact or parsed APN match | recorded |
 | `snapshot[3]` | `parcel_page_api_v2` + `parcel_permit_terminal_v2` | yes | Omit sentence if nearby matching unavailable | Same-zone parcel query + permit records | mapped |
 | `zoning.base.code` | `parcel_page_api_v2.zone_name` | yes | Show base-zone unavailable fallback | Mapped base zone | mapped |
 | `zoning.base.plainName` | future curated zoning copy table | no | Show plain-name unavailable state | TODO — curated zoning copy table | mapped |
@@ -33,7 +33,7 @@ This report tracks the Parcel Page V1 adapter fields, the current backend source
 | `zoning.programs.sda` | `check_parcel_overlays(lat,lng)` | yes | Show overlay lookup unavailable state | Overlay lookup function | conditional |
 | `zoning.programs.completeCommunities` | future program rules adapter | no | Show `Eligibility not yet exposed in the current parcel views` | TODO — program rules adapter | conditional |
 | `similarLots.matches[]` | `parcel_page_api_v2` + `parcel_permit_terminal_v2` | yes | Show no-nearby-precedents empty state | Same-zone parcel query + permit records | mapped |
-| `permits.thisParcel[]` | `parcel_permit_terminal_v2` linked through parsed APN helper (`trulot_permit_parcel_link_v1` planned) | yes | Show no-permits empty state when only weak or no linkage is available | City permit record via exact or parsed APN match | recorded |
+| `permits.thisParcel[]` | `trulot_permit_parcel_link_v1` filtered to exact or unambiguous parsed APN matches | yes | Show unavailable or partial state when source lookup fails or ambiguity remains; show no-permits empty state only after successful direct-history lookup with zero matches | City permit record via exact or parsed APN match | recorded |
 | `permits.nearbySummary[]` | `parcel_page_api_v2.nearby_*` | yes | Show section-unavailable fallback | Parcel nearby development summary | mapped |
 | `signals.coverage` | `parcel_page_api_v2.total_lvg_area` + `lot_area_sqft` | yes | Show no-signals empty state | Assessor + parcel area fields | mapped |
 | `signals.overlay` | `check_parcel_overlays(lat,lng)` | yes | Show no-signals empty state | Overlay lookup function | mapped |

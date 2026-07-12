@@ -90,14 +90,14 @@ No production data, migrations, or deployment state were changed in this sprint.
 
 ### `getPublicParcelPage()`
 
-- No in-repo consumers found.
-- `lib/public/get-public-parcel.ts` remains noncanonical and unused.
+- No in-repo consumers found at stabilization time.
+- The duplicate `lib/public/*` adapter family was later removed in the reconciliation sprint after the consumer map confirmed it was unused.
 
 ### Legacy and current contracts
 
 - Legacy: `lib/parcel-page-contract.ts`
 - Canonical current: `lib/parcel-page-v1.ts`
-- Deprecated unused alternative: `lib/public/contract.ts`
+- Deprecated unused alternative at stabilization time: `lib/public/contract.ts`
 
 ## Failure-state contract
 
@@ -170,4 +170,3 @@ Intended direct-history rule:
 - `parsed_apn` is allowed only when the parsed APN candidates collapse to one parcel.
 - Parsed permits naming multiple distinct parcels are excluded from direct history until ambiguity metadata is available.
 - `address_match` is never allowed in direct parcel history.
-
