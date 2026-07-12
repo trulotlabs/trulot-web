@@ -8,6 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "lint:copy": "node scripts/check-copy.mjs",
+    "qa:data-foundation": "node scripts/verify-data-foundation.mjs",
+    "qa:foundation-migrations": "node scripts/rehearse-foundation-migrations.mjs",
     "report:permit-linkage": "node scripts/report-permit-linkage.mjs",
     "qa:permit-linkage": "node scripts/qa-permit-linkage.mjs"
   },

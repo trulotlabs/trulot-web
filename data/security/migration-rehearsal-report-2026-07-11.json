@@ -1,0 +1,142 @@
+{
+  "generated_at": "2026-07-12T02:53:50.323Z",
+  "baseline": [
+    {
+      "label": "baseline anon can read overlay base table",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "SET\n0\nRESET"
+    },
+    {
+      "label": "baseline anon can read permit linkage report view",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "SET\n2\nRESET"
+    },
+    {
+      "label": "baseline anon can execute update_nearby_activity_v2",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "SET\nUpdated 2 parcels\nRESET"
+    }
+  ],
+  "after_migration": [
+    {
+      "label": "anon parcel read retained",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "SET\n1234567890\nRESET"
+    },
+    {
+      "label": "anon raw overlay table read removed",
+      "ok": true,
+      "expected": "failure",
+      "actual": "failure",
+      "output": "SET"
+    },
+    {
+      "label": "anon writes still denied",
+      "ok": true,
+      "expected": "failure",
+      "actual": "failure",
+      "output": "SET"
+    },
+    {
+      "label": "anon report view removed",
+      "ok": true,
+      "expected": "failure",
+      "actual": "failure",
+      "output": "SET"
+    },
+    {
+      "label": "anon overlay rpc retained",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "SET\n{\"sda\": true, \"tpa\": true, \"ctcac\": true}\nRESET"
+    },
+    {
+      "label": "anon admin helper execute removed",
+      "ok": true,
+      "expected": "failure",
+      "actual": "failure",
+      "output": "SET"
+    },
+    {
+      "label": "authenticated parcel read retained",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "SET\n1234567890\nRESET"
+    },
+    {
+      "label": "authenticated raw overlay table read removed",
+      "ok": true,
+      "expected": "failure",
+      "actual": "failure",
+      "output": "SET"
+    },
+    {
+      "label": "service role report view retained",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "SET\n2\nRESET"
+    },
+    {
+      "label": "service role admin helper retained",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "SET\nUpdated 2 parcels\nRESET"
+    },
+    {
+      "label": "overlay contract unchanged",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "{\"sda\": true, \"tpa\": true, \"ctcac\": true}"
+    },
+    {
+      "label": "overlay null inputs fail safely",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "{\"sda\": false, \"tpa\": false, \"ctcac\": false}"
+    },
+    {
+      "label": "overlay function has fixed search_path after migration",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "search_path=public, pg_temp"
+    }
+  ],
+  "after_rollback": [
+    {
+      "label": "rollback restores anon overlay table read",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "SET\n0\nRESET"
+    },
+    {
+      "label": "rollback restores anon report view read",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "SET\n2\nRESET"
+    },
+    {
+      "label": "rollback restores anon admin helper execute",
+      "ok": true,
+      "expected": "success",
+      "actual": "success",
+      "output": "SET\nUpdated 2 parcels\nRESET"
+    }
+  ]
+}
