@@ -40,6 +40,15 @@ Expected starting commit: `fa33484`
 - Ordinary root-level `supabase db push` remains prohibited while `20260707_permit_linkage_report_v2.sql` is intentionally pending.
 - Production promotion must continue to use the isolated deployment workdir that excludes `20260707`.
 
+## Required Secrets
+
+- `SUPABASE_ACCESS_TOKEN`
+- `PRODUCTION_PROJECT_ID`
+- `PRODUCTION_DB_PASSWORD`
+- `PRODUCTION_DB_URL`
+
+`PRODUCTION_DB_URL` should use an IPv4-compatible Supavisor session-pooler connection with a privileged database user that can `SET LOCAL ROLE anon` and `SET LOCAL ROLE authenticated` for read-only verification transactions.
+
 ## Dataset version checks
 
 - Review [2026-07-11-foundation.json](/Users/ops/trulot-web/data/dataset-manifests/2026-07-11-foundation.json)

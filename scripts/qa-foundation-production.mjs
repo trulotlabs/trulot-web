@@ -85,6 +85,14 @@ function psql(sql, { expectFailure = false } = {}) {
   }
 }
 
+function psqlCommand(args) {
+  if (!dbUrl) {
+    throw new Error("TRULOT_PRODUCTION_DB_URL is required for psql verification.");
+  }
+
+  return runCommand("psql", [dbUrl, ...args]);
+}
+
 function roleQuery(role, sql) {
   return psql(`begin; set local role ${role}; ${sql}; rollback;`);
 }
@@ -249,11 +257,28 @@ const queryAdapterPreflight = {
   ),
 };
 
+const psqlPreflight = {
+  version: runCommand("psql", ["--version"]).trim(),
+  connection_identity: (() => {
+    const output = psqlCommand(["-q", "-v", "ON_ERROR_STOP=1", "-At", "-F", "|", "-c", "select current_database(), current_user;"]).trim();
+    const [currentDatabase, currentUser] = output.split("|");
+    assert(currentDatabase, "psql preflight must return current_database().");
+    assert(currentUser, "psql preflight must return current_user.");
+    return {
+      current_database: currentDatabase,
+      current_user: currentUser,
+    };
+  })(),
+  anon_role_switch: roleQuery("anon", "select 1").output,
+  authenticated_role_switch: roleQuery("authenticated", "select 1").output,
+};
+
 if (preflightOnly) {
   const report = {
     checked_at: new Date().toISOString(),
     verification_mode: verifyMode,
     query_adapter_preflight: queryAdapterPreflight,
+    psql_preflight: psqlPreflight,
   };
   console.log(JSON.stringify(report, null, 2));
   process.exit(0);
@@ -404,6 +429,7 @@ const report = {
     apn_norm: smokeParcel.apn_norm,
     slug: smokeSlug,
   },
+  psql_preflight: psqlPreflight,
   privilege_checks: privilegeChecks,
   role_execution_failures: roleExecutionFailures,
   role_execution_success: {

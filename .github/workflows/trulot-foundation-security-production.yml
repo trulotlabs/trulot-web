@@ -172,7 +172,7 @@ jobs:
           set -euo pipefail
           supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" migration list --linked --password "${PRODUCTION_DB_PASSWORD}"
 
-      - name: Preflight linked SQL connectivity and query parsing
+      - name: Preflight linked SQL connectivity and protected psql role switching
         shell: bash
         run: |
           set -euo pipefail
@@ -225,7 +225,7 @@ jobs:
             exit 1
           fi
 
-      - name: Repeat linked SQL preflight immediately before apply
+      - name: Repeat linked SQL and protected psql preflight immediately before apply
         shell: bash
         run: |
           set -euo pipefail
