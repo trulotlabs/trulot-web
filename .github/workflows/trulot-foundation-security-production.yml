@@ -64,6 +64,28 @@ jobs:
         with:
           version: 2.109.0
 
+      - name: Install required runner tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ripgrep postgresql-client
+          rg --version
+          psql --version
+
+      - name: Verify required runner tools and pinned Supabase CLI
+        shell: bash
+        run: |
+          set -euo pipefail
+          command -v rg >/dev/null
+          command -v psql >/dev/null
+          actual_supabase_version="$(supabase --version | awk '{print $2}')"
+          [[ "${actual_supabase_version}" == "2.109.0" ]] || {
+            echo "Expected Supabase CLI 2.109.0 but found ${actual_supabase_version}."
+            exit 1
+          }
+          echo "Required runner tools and pinned Supabase CLI are available."
+
       - name: Check required deployment secrets
         shell: bash
         run: |
