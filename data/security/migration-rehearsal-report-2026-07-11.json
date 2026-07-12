@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-07-12T03:27:49.270Z",
+  "generated_at": "2026-07-12T03:38:53.958Z",
   "rehearsal_db_url": "postgresql://postgres:postgres@127.0.0.1:54322/trulot_gate_chain",
-  "rehearsal_workdir": "/var/folders/wp/fr_4cv1x4d32sx69lr3jqxt40000gn/T/trulot-foundation-chain-1m5w0E",
+  "rehearsal_workdir": "/var/folders/wp/fr_4cv1x4d32sx69lr3jqxt40000gn/T/trulot-foundation-chain-H2H5ti",
   "baseline_migration_versions": [
     "20260522",
     "20260705",
@@ -17,7 +17,7 @@
       "file": "supabase/migrations/20260712032216_check_parcel_overlays_hardening.sql"
     }
   ],
-  "dry_run_output": "Finished supabase db push.\nUsing workdir /var/folders/wp/fr_4cv1x4d32sx69lr3jqxt40000gn/T/trulot-foundation-chain-1m5w0E\nDRY RUN: migrations will *not* be pushed to the database.\nConnecting to local database...\nWould push these migrations:\n • 20260522_overlay_lookup.sql\n • 20260705_permit_linkage_v1.sql\n • 20260706_permit_linkage_perf_v1.sql\n • 20260712032203_foundation_access_least_privilege.sql\n • 20260712032216_check_parcel_overlays_hardening.sql\nA new version of Supabase CLI is available: v2.109.1 (currently installed v2.109.0)\nWe recommend updating regularly for new features and bug fixes: https://supabase.com/docs/guides/cli/getting-started#updating-the-supabase-cli",
+  "dry_run_output": "Finished supabase db push.\nUsing workdir /var/folders/wp/fr_4cv1x4d32sx69lr3jqxt40000gn/T/trulot-foundation-chain-H2H5ti\nDRY RUN: migrations will *not* be pushed to the database.\nConnecting to local database...\nWould push these migrations:\n • 20260522_overlay_lookup.sql\n • 20260705_permit_linkage_v1.sql\n • 20260706_permit_linkage_perf_v1.sql\n • 20260712032203_foundation_access_least_privilege.sql\n • 20260712032216_check_parcel_overlays_hardening.sql\nA new version of Supabase CLI is available: v2.109.1 (currently installed v2.109.0)\nWe recommend updating regularly for new features and bug fixes: https://supabase.com/docs/guides/cli/getting-started#updating-the-supabase-cli",
   "post_repair_history": "20260522,20260705,20260706",
   "applied_history": "20260522,20260705,20260706,20260712032203,20260712032216",
   "post_rollback_history": "20260522,20260705,20260706,20260712032203,20260712032216",
