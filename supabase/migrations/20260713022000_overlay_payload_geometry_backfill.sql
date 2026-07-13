@@ -12,6 +12,8 @@ declare
   payload_type text;
   feature_geometry jsonb;
   wkb_hex text;
+  cleaned_wkb_hex text;
+  bbox_prefixed_wkb_hex text;
 begin
   if payload is null then
     raise exception 'Overlay payload is null.';
@@ -43,7 +45,18 @@ begin
     if wkb_hex is null then
       raise exception 'Overlay payload type RawWKB is missing the wkb field.';
     end if;
-    return extensions.st_setsrid(extensions.st_geomfromwkb(decode(wkb_hex, 'hex')), 4326);
+    cleaned_wkb_hex := regexp_replace(wkb_hex, '^\\x', '');
+
+    begin
+      return extensions.st_setsrid(extensions.st_geomfromwkb(decode(cleaned_wkb_hex, 'hex')), 4326);
+    exception
+      when sqlstate 'XX000' then
+        bbox_prefixed_wkb_hex := substring(cleaned_wkb_hex from 65);
+        if bbox_prefixed_wkb_hex ~ '^(00|01)[0-9A-Fa-f]{8,}$' then
+          return extensions.st_setsrid(extensions.st_geomfromwkb(decode(bbox_prefixed_wkb_hex, 'hex')), 4326);
+        end if;
+        raise exception 'Unsupported RawWKB payload encoding.';
+    end;
   end if;
 
   raise exception 'Unsupported overlay payload type: %', coalesce(payload_type, '(null)');
