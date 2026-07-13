@@ -1,0 +1,111 @@
+name: TruLot Overlay Integrity Triage
+
+on:
+  workflow_dispatch:
+    inputs:
+      production_base_url:
+        description: "Production app base URL for smoke checks"
+        required: true
+        default: "https://trulot-web.vercel.app"
+
+permissions:
+  contents: read
+
+jobs:
+  triage-overlay-integrity:
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 30
+    env:
+      EXPECTED_PROJECT_REF: qockltdzvjxdlwrpgtsd
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      PRODUCTION_PROJECT_ID: ${{ secrets.PRODUCTION_PROJECT_ID }}
+      PRODUCTION_DB_PASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
+      PRODUCTION_DB_URL: ${{ secrets.PRODUCTION_DB_URL }}
+    steps:
+      - name: Check out dispatch commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Confirm checked-out commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual_commit="$(git rev-parse HEAD)"
+          echo "Checked out commit: ${actual_commit}"
+          if [[ "${actual_commit}" != "${GITHUB_SHA}" ]]; then
+            echo "Expected dispatch commit ${GITHUB_SHA} but checked out ${actual_commit}."
+            exit 1
+          fi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Set up Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: 2.109.0
+
+      - name: Install required runner tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends postgresql-client
+          psql --version
+
+      - name: Check required deployment secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ -n "${SUPABASE_ACCESS_TOKEN:-}" ]] || { echo "Missing SUPABASE_ACCESS_TOKEN."; exit 1; }
+          [[ -n "${PRODUCTION_PROJECT_ID:-}" ]] || { echo "Missing PRODUCTION_PROJECT_ID."; exit 1; }
+          [[ -n "${PRODUCTION_DB_PASSWORD:-}" ]] || { echo "Missing PRODUCTION_DB_PASSWORD."; exit 1; }
+          [[ -n "${PRODUCTION_DB_URL:-}" ]] || { echo "Missing PRODUCTION_DB_URL."; exit 1; }
+          echo "Required deployment secrets are present."
+
+      - name: Confirm production project reference
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${PRODUCTION_PROJECT_ID}" != "${EXPECTED_PROJECT_REF}" ]]; then
+            echo "Refusing to inspect. Expected ${EXPECTED_PROJECT_REF} but got ${PRODUCTION_PROJECT_ID}."
+            exit 1
+          fi
+          echo "Target production project ref confirmed: ${PRODUCTION_PROJECT_ID}"
+
+      - name: Prepare isolated inspection workdir
+        shell: bash
+        run: |
+          set -euo pipefail
+          workdir="${RUNNER_TEMP}/trulot-overlay-triage"
+          mkdir -p "${workdir}/supabase/.temp"
+          echo "TRULOT_TRIAGE_WORKDIR=${workdir}" >> "${GITHUB_ENV}"
+
+      - name: Link isolated inspection workdir to production
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase link \
+            --project-ref "${PRODUCTION_PROJECT_ID}" \
+            --password "${PRODUCTION_DB_PASSWORD}" \
+            --workdir "${TRULOT_TRIAGE_WORKDIR}" \
+            --yes
+          linked_ref="$(cat "${TRULOT_TRIAGE_WORKDIR}/supabase/.temp/project-ref")"
+          [[ "${linked_ref}" == "${EXPECTED_PROJECT_REF}" ]] || { echo "Linked project ref mismatch: ${linked_ref}"; exit 1; }
+          echo "Isolated inspection workdir linked to ${linked_ref}"
+
+      - name: Run production-safe overlay integrity triage
+        shell: bash
+        run: |
+          set -euo pipefail
+          TRULOT_SUPABASE_BIN=supabase \
+          TRULOT_PRODUCTION_VERIFY_MODE=linked \
+          TRULOT_PRODUCTION_DB_URL="${PRODUCTION_DB_URL}" \
+          TRULOT_SUPABASE_WORKDIR="${TRULOT_TRIAGE_WORKDIR}" \
+          TRULOT_PRODUCTION_BASE_URL="${{ inputs.production_base_url }}" \
+          node scripts/triage-overlay-integrity.mjs
