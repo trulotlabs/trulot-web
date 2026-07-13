@@ -230,6 +230,14 @@ function buildTableAudit(queryJson, tableName) {
       group by coalesce(feature->'geometry'->>'type', '(missing)')
       order by row_count desc, nested_geometry_type
     ),
+    geojson_json_type_counts as (
+      select
+        coalesce(geojson_json_type, '(null)') as geojson_json_type,
+        count(*)::bigint as row_count
+      from typed
+      group by coalesce(geojson_json_type, '(null)')
+      order by row_count desc, coalesce(geojson_json_type, '(null)')
+    ),
     sample_unexpected_rows as (
       select json_build_object(
         'id', id,
@@ -292,17 +300,7 @@ function buildTableAudit(queryJson, tableName) {
       'row_count', (select count(*)::bigint from base),
       'geojson_null_count', (select count(*)::bigint from typed where geojson is null),
       'geojson_json_type_counts',
-      coalesce((
-        select json_agg(
-          json_build_object(
-            'geojson_json_type', coalesce(geojson_json_type, '(null)'),
-            'row_count', count(*)::bigint
-          )
-          order by count(*) desc, coalesce(geojson_json_type, '(null)')
-        )
-        from typed
-        group by coalesce(geojson_json_type, '(null)')
-      ), '[]'::json),
+      coalesce((select json_agg(geojson_json_type_counts order by row_count desc, geojson_json_type) from geojson_json_type_counts), '[]'::json),
       'geom_null_count', (select count(*)::bigint from typed where geom is null),
       'invalid_geom_count', (select count(*)::bigint from typed where geom is not null and not extensions.st_isvalid(geom)),
       'top_level_type_counts', coalesce((select json_agg(top_level_counts order by row_count desc, top_level_type) from top_level_counts), '[]'::json),
