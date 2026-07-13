@@ -194,6 +194,7 @@ function buildTableAudit(queryJson, tableName) {
         geojson,
         geom,
         jsonb_typeof(geojson) as geojson_json_type,
+        case when jsonb_typeof(geojson) = 'string' then geojson #>> '{}' else null end as geojson_string_value,
         coalesce(geojson->>'type', '(missing)') as top_level_type,
         coalesce(geojson->'geometry'->>'type', '(missing)') as nested_geometry_type,
         case
@@ -230,6 +231,15 @@ function buildTableAudit(queryJson, tableName) {
       group by coalesce(feature->'geometry'->>'type', '(missing)')
       order by row_count desc, nested_geometry_type
     ),
+    decoded_string_type_counts as (
+      select
+        coalesce((geojson_string_value::jsonb)->>'type', '(missing)') as decoded_top_level_type,
+        count(*)::bigint as row_count
+      from typed
+      where geojson_json_type = 'string'
+      group by coalesce((geojson_string_value::jsonb)->>'type', '(missing)')
+      order by row_count desc, coalesce((geojson_string_value::jsonb)->>'type', '(missing)')
+    ),
     geojson_json_type_counts as (
       select
         coalesce(geojson_json_type, '(null)') as geojson_json_type,
@@ -243,6 +253,8 @@ function buildTableAudit(queryJson, tableName) {
         'id', id,
         'source_layer', source_layer,
         'geojson_json_type', geojson_json_type,
+        'decoded_string_prefix', left(coalesce(geojson_string_value, ''), 120),
+        'decoded_string_top_level_type', case when geojson_json_type = 'string' then coalesce((geojson_string_value::jsonb)->>'type', '(missing)') else null end,
         'top_level_type', top_level_type,
         'nested_geometry_type', nested_geometry_type,
         'feature_count', feature_count,
@@ -301,6 +313,8 @@ function buildTableAudit(queryJson, tableName) {
       'geojson_null_count', (select count(*)::bigint from typed where geojson is null),
       'geojson_json_type_counts',
       coalesce((select json_agg(geojson_json_type_counts order by row_count desc, geojson_json_type) from geojson_json_type_counts), '[]'::json),
+      'decoded_string_type_counts',
+      coalesce((select json_agg(decoded_string_type_counts order by row_count desc, decoded_top_level_type) from decoded_string_type_counts), '[]'::json),
       'geom_null_count', (select count(*)::bigint from typed where geom is null),
       'invalid_geom_count', (select count(*)::bigint from typed where geom is not null and not extensions.st_isvalid(geom)),
       'top_level_type_counts', coalesce((select json_agg(top_level_counts order by row_count desc, top_level_type) from top_level_counts), '[]'::json),
