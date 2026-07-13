@@ -32,6 +32,7 @@ try {
     await page.screenshot({ path: `${outputDir}/${name}.png`, fullPage: true });
     receipts.push({ name, path, status: response.status(), consoleErrors, pageErrors });
     assert.equal(pageErrors.length, 0, `${name} raised browser page errors.`);
+    assert.equal(consoleErrors.length, 0, `${name} produced browser console errors.`);
     await page.close();
   }
 } finally {

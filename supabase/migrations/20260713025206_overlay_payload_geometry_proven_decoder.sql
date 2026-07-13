@@ -222,15 +222,18 @@ begin
 
   select exists (
     select 1 from public.tpa_official
-    where geom is not null and extensions.st_contains(geom, pt)
+    where public.tpa_official.geom is not null
+      and extensions.st_contains(public.tpa_official.geom, pt)
   ) into in_tpa;
   select exists (
     select 1 from public.sda_official
-    where geom is not null and extensions.st_contains(geom, pt)
+    where public.sda_official.geom is not null
+      and extensions.st_contains(public.sda_official.geom, pt)
   ) into in_sda;
   select exists (
     select 1 from public.ctcac_gis_v1
-    where geom is not null and extensions.st_contains(geom, pt)
+    where public.ctcac_gis_v1.geom is not null
+      and extensions.st_contains(public.ctcac_gis_v1.geom, pt)
   ) into in_ctcac;
 
   return jsonb_build_object('tpa', in_tpa, 'sda', in_sda, 'ctcac', in_ctcac);

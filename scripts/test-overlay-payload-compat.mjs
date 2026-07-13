@@ -143,6 +143,14 @@ try {
     has_function_privilege('authenticated','public.trulot_overlay_payload_to_geometry(jsonb,text)','execute'),
     has_table_privilege('anon','public.ctcac_gis_v1','select'),
     has_table_privilege('authenticated','public.ctcac_gis_v1','select');`).stdout.trim(), "t|t|t|t|t|f|f|f|f");
+  const deployedDefinition = psql(`select lower(pg_get_functiondef('public.check_parcel_overlays(double precision,double precision)'::regprocedure));`).stdout.trim();
+  for (const qualifiedPredicate of [
+    "public.tpa_official.geom is not null",
+    "public.sda_official.geom is not null",
+    "public.ctcac_gis_v1.geom is not null",
+  ]) {
+    assert(deployedDefinition.includes(qualifiedPredicate), `deployed function definition is missing: ${qualifiedPredicate}`);
+  }
 
   assert.equal(psql(`select extensions.st_contains(public.trulot_overlay_payload_to_geometry(to_jsonb('{"type":"Polygon","coordinates":[[[-117.2,32.74],[-117.18,32.74],[-117.18,32.76],[-117.2,32.76],[-117.2,32.74]]]}'::text),'polygon'),extensions.st_setsrid(extensions.st_makepoint(-117.2,32.75),4326));`).stdout.trim(), "f");
   expectFailure(`select public.trulot_overlay_payload_to_geometry(null,'null-row');`, /payload is null/i);
