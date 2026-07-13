@@ -24,8 +24,9 @@ jobs:
       EXPECTED_PROJECT_REF: qockltdzvjxdlwrpgtsd
       EXPECTED_FOUNDATION_ACCESS_VERSION: 20260712032203
       EXPECTED_FOUNDATION_OVERLAY_VERSION: 20260712032216
-      EXPECTED_REPAIR_MIGRATION_VERSION: 20260713022000
-      EXPECTED_REPAIR_MIGRATION_SHA256: 8b01a119e374fe08fa2b723835a059402ce7e78da46d4ebc02422ea9229f5dde
+      FAILED_REPAIR_MIGRATION_VERSION: 20260713022000
+      EXPECTED_REPAIR_MIGRATION_VERSION: 20260713025206
+      EXPECTED_REPAIR_MIGRATION_SHA256: 5896ca234218477f18320a90a6ed1d4d3381d04b64a607bf66e9c729903270d4
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
       PRODUCTION_PROJECT_ID: ${{ secrets.PRODUCTION_PROJECT_ID }}
       PRODUCTION_DB_PASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
@@ -112,7 +113,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          repair_sha="$(sha256sum supabase/migrations/20260713022000_overlay_payload_geometry_backfill.sql | awk '{print $1}')"
+          [[ ! -e supabase/migrations/20260713022000_overlay_payload_geometry_backfill.sql ]] || {
+            echo "Failed repair migration remains in the active chain."
+            exit 1
+          }
+          repair_sha="$(sha256sum supabase/migrations/20260713025206_overlay_payload_geometry_proven_decoder.sql | awk '{print $1}')"
           [[ "${repair_sha}" == "${EXPECTED_REPAIR_MIGRATION_SHA256}" ]] || {
             echo "Approved overlay repair migration hash mismatch."
             exit 1
@@ -137,6 +142,9 @@ jobs:
           set -euo pipefail
           npm run qa:data-foundation
           npm run qa:foundation-dry-run-parser
+          npx supabase start
+          npm run qa:overlay-payload-compat
+          npx supabase stop --no-backup
 
       - name: Prepare isolated production promotion workdir
         shell: bash
@@ -149,7 +157,7 @@ jobs:
           cp supabase/migrations/20260706_permit_linkage_perf_v1.sql "${workdir}/supabase/migrations/"
           cp supabase/migrations/20260712032203_foundation_access_least_privilege.sql "${workdir}/supabase/migrations/"
           cp supabase/migrations/20260712032216_check_parcel_overlays_hardening.sql "${workdir}/supabase/migrations/"
-          cp supabase/migrations/20260713022000_overlay_payload_geometry_backfill.sql "${workdir}/supabase/migrations/"
+          cp supabase/migrations/20260713025206_overlay_payload_geometry_proven_decoder.sql "${workdir}/supabase/migrations/"
           echo "TRULOT_PROMOTION_WORKDIR=${workdir}" >> "${GITHUB_ENV}"
           echo "TRULOT_SUPABASE_WORKDIR=${workdir}" >> "${GITHUB_ENV}"
           echo "Prepared isolated workdir at ${workdir}"
@@ -187,7 +195,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          history_json="$(supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" --agent no -o json db query --linked "select json_build_object('versions', coalesce((select json_agg(version order by version) from supabase_migrations.schema_migrations where version in ('${EXPECTED_FOUNDATION_ACCESS_VERSION}', '${EXPECTED_FOUNDATION_OVERLAY_VERSION}', '${EXPECTED_REPAIR_MIGRATION_VERSION}')), '[]'::json))::text;")"
+          history_json="$(supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" --agent no -o json db query --linked "select json_build_object('versions', coalesce((select json_agg(version order by version) from supabase_migrations.schema_migrations where version in ('${EXPECTED_FOUNDATION_ACCESS_VERSION}', '${EXPECTED_FOUNDATION_OVERLAY_VERSION}', '${FAILED_REPAIR_MIGRATION_VERSION}', '${EXPECTED_REPAIR_MIGRATION_VERSION}')), '[]'::json))::text;")"
           echo "${history_json}" > "${RUNNER_TEMP}/trulot-overlay-repair-preflight-history.json"
           node -e "
             const fs = require('node:fs');
@@ -201,6 +209,39 @@ jobs:
               process.exit(1);
             }
           " "${RUNNER_TEMP}/trulot-overlay-repair-preflight-history.json"
+
+      - name: Confirm production payload layouts and clean backfill state
+        shell: bash
+        run: |
+          set -euo pipefail
+          receipt="$(psql "${PRODUCTION_DB_URL}" -X -v ON_ERROR_STOP=1 -At -F '|' <<'SQL'
+          with payloads as (
+            select case when jsonb_typeof(geojson)='string'
+              then ((geojson#>>'{}')::jsonb->>'wkb') else geojson->>'wkb' end hex
+            from public.ctcac_gis_v1
+          ), layouts as (
+            select case
+              when hex='010600000000000000' then 'direct'
+              when length(hex)>64 and substring(lower(hex) from 65 for 10)='0106000000' then 'prefixed'
+              else 'unclassified' end layout
+            from payloads
+          )
+          select
+            count(*) filter(where layout='prefixed'),
+            count(*) filter(where layout='direct'),
+            count(*) filter(where layout='unclassified'),
+            (select count(*) from public.tpa_official where geom is not null),
+            (select count(*) from public.sda_official where geom is not null),
+            (select count(*) from public.ctcac_gis_v1 where geom is not null),
+            (to_regprocedure('public.trulot_overlay_payload_to_geometry(jsonb,text)') is not null)::int
+          from layouts;
+          SQL
+          )"
+          [[ "${receipt}" == "11334|3|0|0|0|0|0" ]] || {
+            echo "Production overlay layout/backfill preflight failed: ${receipt}"
+            exit 1
+          }
+          echo "Production layout preflight passed: 11334 prefixed, 3 direct empty, 0 unclassified."
 
       - name: Dry-run the authorized repair migration chain
         shell: bash
@@ -217,8 +258,25 @@ jobs:
           fi
           node scripts/validate-foundation-dry-run.mjs \
             --file "${dry_run_log}" \
-            --expect "20260713022000_overlay_payload_geometry_backfill.sql" \
-            --forbid "20260707_permit_linkage_report_v2.sql,20260712032203_foundation_access_least_privilege.sql,20260712032216_check_parcel_overlays_hardening.sql"
+            --expect "20260713025206_overlay_payload_geometry_proven_decoder.sql" \
+            --forbid "20260707_permit_linkage_report_v2.sql,20260712032203_foundation_access_least_privilege.sql,20260712032216_check_parcel_overlays_hardening.sql,20260713022000_overlay_payload_geometry_backfill.sql"
+
+      - name: Repeat production state gate immediately before apply
+        shell: bash
+        run: |
+          set -euo pipefail
+          receipt="$(psql "${PRODUCTION_DB_URL}" -X -v ON_ERROR_STOP=1 -At -F '|' -c "
+            select
+              (select count(*) from supabase_migrations.schema_migrations where version in ('${EXPECTED_FOUNDATION_ACCESS_VERSION}','${EXPECTED_FOUNDATION_OVERLAY_VERSION}')),
+              (select count(*) from supabase_migrations.schema_migrations where version in ('${FAILED_REPAIR_MIGRATION_VERSION}','${EXPECTED_REPAIR_MIGRATION_VERSION}')),
+              (select count(*) from public.tpa_official where geom is not null),
+              (select count(*) from public.sda_official where geom is not null),
+              (select count(*) from public.ctcac_gis_v1 where geom is not null);")"
+          [[ "${receipt}" == "2|0|0|0|0" ]] || {
+            echo "Immediate pre-apply state gate failed: ${receipt}"
+            exit 1
+          }
+          supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" migration list --linked --password "${PRODUCTION_DB_PASSWORD}"
 
       - name: Apply the authorized production repair migration
         shell: bash
@@ -231,7 +289,11 @@ jobs:
         run: |
           set -euo pipefail
           post_log="${RUNNER_TEMP}/trulot-overlay-repair-post-migration-list.log"
-          supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" migration list --linked --password "${PRODUCTION_DB_PASSWORD}" | tee "${post_log}"
+          set +e
+          supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" migration list --linked --password "${PRODUCTION_DB_PASSWORD}" 2>&1 | tee "${post_log}"
+          list_status="${PIPESTATUS[0]}"
+          set -e
+          [[ "${list_status}" -eq 0 ]] || exit "${list_status}"
           rg -n "${EXPECTED_FOUNDATION_ACCESS_VERSION}" "${post_log}"
           rg -n "${EXPECTED_FOUNDATION_OVERLAY_VERSION}" "${post_log}"
           rg -n "${EXPECTED_REPAIR_MIGRATION_VERSION}" "${post_log}"
@@ -288,6 +350,40 @@ jobs:
             }
           " "${RUNNER_TEMP}/trulot-overlay-repair-db-verify.json"
 
+      - name: Verify geometry, security, and role-scoped RPC invariants
+        shell: bash
+        run: |
+          set -euo pipefail
+          receipt="$(psql "${PRODUCTION_DB_URL}" -X -v ON_ERROR_STOP=1 -At -F '|' <<'SQL'
+          select
+            (select count(*) from public.tpa_official where geom is not null),
+            (select count(*) from public.sda_official where geom is not null),
+            (select count(*) from public.ctcac_gis_v1 where geom is not null),
+            (select count(*) from public.ctcac_gis_v1 where extensions.st_geometrytype(geom)='ST_MultiPolygon'),
+            (select count(*) from public.ctcac_gis_v1 where extensions.st_isvalid(geom)),
+            (select count(*) from public.ctcac_gis_v1 where extensions.st_isempty(geom)),
+            (select count(*) from public.ctcac_gis_v1 where extensions.st_srid(geom)=4326),
+            (select prosecdef::int from pg_proc where oid='public.check_parcel_overlays(double precision,double precision)'::regprocedure),
+            (select (proconfig @> array['search_path=public, pg_temp'])::int from pg_proc where oid='public.check_parcel_overlays(double precision,double precision)'::regprocedure),
+            has_table_privilege('anon','public.ctcac_gis_v1','select')::int,
+            has_table_privilege('authenticated','public.ctcac_gis_v1','select')::int,
+            has_function_privilege('anon','public.trulot_overlay_payload_to_geometry(jsonb,text)','execute')::int,
+            has_function_privilege('authenticated','public.trulot_overlay_payload_to_geometry(jsonb,text)','execute')::int;
+          set role anon;
+          select jsonb_typeof(public.check_parcel_overlays(32.75,-117.19));
+          reset role;
+          set role authenticated;
+          select jsonb_typeof(public.check_parcel_overlays(32.75,-117.19));
+          reset role;
+          SQL
+          )"
+          expected=$'31|10299|11337|11337|11337|3|11337|1|1|0|0|0|0\nobject\nobject'
+          [[ "${receipt}" == "${expected}" ]] || {
+            echo "Post-migration geometry/security/RPC invariant failure: ${receipt}"
+            exit 1
+          }
+          echo "Geometry, least-privilege, and anon/authenticated RPC checks passed."
+
       - name: Fetch the production anon key without revealing secret keys
         shell: bash
         run: |
@@ -333,3 +429,34 @@ jobs:
         run: |
           set -euo pipefail
           node scripts/qa-foundation-production.mjs
+
+      - name: Run production browser acceptance
+        shell: bash
+        run: |
+          set -euo pipefail
+          smoke_apns="$(psql "${PRODUCTION_DB_URL}" -X -v ON_ERROR_STOP=1 -At -c "
+            select string_agg(apn_norm, ',' order by apn_norm)
+            from (select distinct apn_norm from public.parcel_page_api_v2 where apn_norm is not null order by apn_norm limit 3) parcels;")"
+          [[ "$(awk -F',' '{print NF}' <<< "${smoke_apns}")" -eq 3 ]] || {
+            echo "Could not resolve three canonical Parcel Page smoke APNs."
+            exit 1
+          }
+          npx playwright install --with-deps chromium
+          set +e
+          TRULOT_SMOKE_APNS="${smoke_apns}" \
+          TRULOT_BROWSER_OUTPUT_DIR="${RUNNER_TEMP}/overlay-browser-smoke" \
+          npm run qa:overlay-browser-production | tee "${RUNNER_TEMP}/overlay-browser-smoke-receipt.json"
+          browser_status="${PIPESTATUS[0]}"
+          set -e
+          [[ "${browser_status}" -eq 0 ]] || exit "${browser_status}"
+
+      - name: Upload production browser receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: overlay-production-browser-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/overlay-browser-smoke
+            ${{ runner.temp }}/overlay-browser-smoke-receipt.json
+          if-no-files-found: error
+          retention-days: 30
