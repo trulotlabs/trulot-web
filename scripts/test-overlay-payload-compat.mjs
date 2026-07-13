@@ -28,6 +28,8 @@ declare
   payload_type text;
   feature_geometry jsonb;
   wkb_hex text;
+  cleaned_wkb_hex text;
+  bbox_prefixed_wkb_hex text;
 begin
   if payload is null then
     raise exception 'Overlay payload is null.';
@@ -59,7 +61,18 @@ begin
     if wkb_hex is null then
       raise exception 'Overlay payload type RawWKB is missing the wkb field.';
     end if;
-    return extensions.st_setsrid(extensions.st_geomfromwkb(decode(wkb_hex, 'hex')), 4326);
+    cleaned_wkb_hex := regexp_replace(wkb_hex, '^\\\\x', '');
+
+    begin
+      return extensions.st_setsrid(extensions.st_geomfromwkb(decode(cleaned_wkb_hex, 'hex')), 4326);
+    exception
+      when sqlstate 'XX000' then
+        bbox_prefixed_wkb_hex := substring(cleaned_wkb_hex from 65);
+        if bbox_prefixed_wkb_hex ~ '^(00|01)[0-9A-Fa-f]{8,}$' then
+          return extensions.st_setsrid(extensions.st_geomfromwkb(decode(bbox_prefixed_wkb_hex, 'hex')), 4326);
+        end if;
+        raise exception 'Unsupported RawWKB payload encoding.';
+    end;
   end if;
 
   raise exception 'Unsupported overlay payload type: %', coalesce(payload_type, '(null)');
@@ -119,6 +132,31 @@ $function$;
     )::text;
   `);
   assert.equal(rawWkbContains, "true");
+}
+
+{
+  const bboxPrefixedRawWkbContains = withHelper(`
+    with polygon as (
+      select extensions.st_geomfromgeojson('{"type":"Polygon","coordinates":[[[-117.2,32.74],[-117.18,32.74],[-117.18,32.76],[-117.2,32.76],[-117.2,32.74]]]}') as geom
+    ),
+    raw as (
+      select jsonb_build_object(
+        'type', 'RawWKB',
+        'wkb', concat(
+          encode(float8send(-117.2000000000000), 'hex'),
+          encode(float8send(-117.1800000000000), 'hex'),
+          encode(float8send(32.7400000000000), 'hex'),
+          encode(float8send(32.7600000000000), 'hex'),
+          encode(extensions.st_asbinary((select geom from polygon)), 'hex')
+        )
+      ) as payload
+    )
+    select extensions.st_contains(
+      pg_temp.trulot_overlay_payload_to_geometry(to_jsonb((select payload::text from raw))),
+      extensions.st_setsrid(extensions.st_makepoint(-117.19, 32.75), 4326)
+    )::text;
+  `);
+  assert.equal(bboxPrefixedRawWkbContains, "true");
 }
 
 {
