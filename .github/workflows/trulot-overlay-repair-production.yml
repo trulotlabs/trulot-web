@@ -131,13 +131,12 @@ jobs:
           supabase db query --help
           supabase projects api-keys --help
 
-      - name: Run repair QA before any link or apply
+      - name: Run static repair QA before any link or apply
         shell: bash
         run: |
           set -euo pipefail
           npm run qa:data-foundation
-          npm run qa:permit-linkage
-          npm run qa:overlay-payload-compat
+          npm run qa:foundation-dry-run-parser
 
       - name: Prepare isolated production promotion workdir
         shell: bash
