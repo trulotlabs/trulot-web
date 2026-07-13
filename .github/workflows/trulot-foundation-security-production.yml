@@ -236,13 +236,15 @@ jobs:
         run: |
           set -euo pipefail
           dry_run_log="${RUNNER_TEMP}/trulot-foundation-dry-run.log"
-          supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" db push --linked --password "${PRODUCTION_DB_PASSWORD}" --dry-run | tee "${dry_run_log}"
-          rg -n "${EXPECTED_ACCESS_MIGRATION_VERSION}_foundation_access_least_privilege" "${dry_run_log}"
-          rg -n "${EXPECTED_OVERLAY_MIGRATION_VERSION}_check_parcel_overlays_hardening" "${dry_run_log}"
-          if rg -n "20260707_permit_linkage_report_v2" "${dry_run_log}"; then
-            echo "Unauthorized migration 20260707 appeared in the dry run."
-            exit 1
+          set +e
+          supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" db push --linked --password "${PRODUCTION_DB_PASSWORD}" --dry-run 2>&1 | tee "${dry_run_log}"
+          dry_run_status="${PIPESTATUS[0]}"
+          set -e
+          if [[ "${dry_run_status}" -ne 0 ]]; then
+            echo "Supabase migration dry run failed with exit code ${dry_run_status}."
+            exit "${dry_run_status}"
           fi
+          node scripts/validate-foundation-dry-run.mjs --file "${dry_run_log}"
 
       - name: Repeat linked SQL and protected psql preflight immediately before apply
         shell: bash
