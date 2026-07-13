@@ -183,6 +183,169 @@ function canonicalParcelSlug(apn, address) {
   return addressSlug ? `${formattedApn}-${addressSlug}` : `apn-${normalizeApnDigits(apn)}`;
 }
 
+function normalizeFunctionDefinition(definition) {
+  return String(definition ?? "")
+    .toLowerCase()
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function createCheck(label, expected, actual, ok) {
+  return { label, expected, actual, ok };
+}
+
+function collectPreMigrationStateChecks({ queryRow, queryJson, supabaseWorkdir }) {
+  const checks = [];
+  const functionMetadata = queryJson(`
+    select json_build_object(
+      'exists',
+      exists(
+        select 1
+        from pg_proc p
+        join pg_namespace n on n.oid = p.pronamespace
+        where n.nspname = 'public'
+          and p.proname = 'check_parcel_overlays'
+          and p.oid = 'public.check_parcel_overlays(double precision, double precision)'::regprocedure
+      ),
+      'security_definer',
+      coalesce((
+        select p.prosecdef
+        from pg_proc p
+        join pg_namespace n on n.oid = p.pronamespace
+        where n.nspname = 'public'
+          and p.proname = 'check_parcel_overlays'
+          and p.oid = 'public.check_parcel_overlays(double precision, double precision)'::regprocedure
+      ), false),
+      'search_path',
+      coalesce((
+        select array_to_string(p.proconfig, ',')
+        from pg_proc p
+        join pg_namespace n on n.oid = p.pronamespace
+        where n.nspname = 'public'
+          and p.proname = 'check_parcel_overlays'
+          and p.oid = 'public.check_parcel_overlays(double precision, double precision)'::regprocedure
+      ), ''),
+      'definition',
+      coalesce((
+        select pg_get_functiondef(p.oid)
+        from pg_proc p
+        join pg_namespace n on n.oid = p.pronamespace
+        where n.nspname = 'public'
+          and p.proname = 'check_parcel_overlays'
+          and p.oid = 'public.check_parcel_overlays(double precision, double precision)'::regprocedure
+      ), '')
+    )::text;
+  `);
+  const normalizedDefinition = normalizeFunctionDefinition(functionMetadata.definition);
+
+  checks.push(createCheck(
+    "check_parcel_overlays exists",
+    true,
+    functionMetadata.exists,
+    functionMetadata.exists === true,
+  ));
+  checks.push(createCheck(
+    "check_parcel_overlays is security definer",
+    true,
+    functionMetadata.security_definer,
+    functionMetadata.security_definer === true,
+  ));
+  checks.push(createCheck(
+    "check_parcel_overlays is not yet hardened with fixed search_path",
+    "search_path does not include public, pg_temp",
+    functionMetadata.search_path || "(empty)",
+    !String(functionMetadata.search_path || "").includes("search_path=public, pg_temp"),
+  ));
+  checks.push(createCheck(
+    "check_parcel_overlays definition still references overlay tables",
+    "definition references tpa_official and sda_official",
+    normalizedDefinition,
+    normalizedDefinition.includes("tpa_official") && normalizedDefinition.includes("sda_official"),
+  ));
+  checks.push(createCheck(
+    "check_parcel_overlays definition still constructs the spatial point",
+    "definition references st_setsrid(st_makepoint(p_lng, p_lat), 4326)",
+    normalizedDefinition,
+    normalizedDefinition.includes("st_setsrid(st_makepoint(p_lng, p_lat), 4326)"),
+  ));
+
+  const functionPrivileges = {
+    anon_overlay_execute: queryRow("select has_function_privilege('anon', 'public.check_parcel_overlays(double precision, double precision)', 'EXECUTE') as allowed;", "allowed"),
+    authenticated_overlay_execute: queryRow("select has_function_privilege('authenticated', 'public.check_parcel_overlays(double precision, double precision)', 'EXECUTE') as allowed;", "allowed"),
+    service_overlay_execute: queryRow("select has_function_privilege('service_role', 'public.check_parcel_overlays(double precision, double precision)', 'EXECUTE') as allowed;", "allowed"),
+    anon_opportunity_execute: queryRow("select has_function_privilege('anon', 'public.get_opportunity_feed(integer, integer, integer)', 'EXECUTE') as allowed;", "allowed"),
+    authenticated_opportunity_execute: queryRow("select has_function_privilege('authenticated', 'public.get_opportunity_feed(integer, integer, integer)', 'EXECUTE') as allowed;", "allowed"),
+    service_opportunity_execute: queryRow("select has_function_privilege('service_role', 'public.get_opportunity_feed(integer, integer, integer)', 'EXECUTE') as allowed;", "allowed"),
+    anon_update_nearby_execute: queryRow("select has_function_privilege('anon', 'public.update_nearby_activity_v2()', 'EXECUTE') as allowed;", "allowed"),
+    authenticated_update_nearby_execute: queryRow("select has_function_privilege('authenticated', 'public.update_nearby_activity_v2()', 'EXECUTE') as allowed;", "allowed"),
+    service_update_nearby_execute: queryRow("select has_function_privilege('service_role', 'public.update_nearby_activity_v2()', 'EXECUTE') as allowed;", "allowed"),
+  };
+
+  const tablePrivileges = {
+    anon_overlay_table_select: queryRow("select has_table_privilege('anon', 'public.tpa_official', 'SELECT') as allowed;", "allowed"),
+    authenticated_overlay_table_select: queryRow("select has_table_privilege('authenticated', 'public.tpa_official', 'SELECT') as allowed;", "allowed"),
+    anon_report_select: queryRow("select has_table_privilege('anon', 'public.trulot_permit_linkage_report_v1', 'SELECT') as allowed;", "allowed"),
+    authenticated_report_select: queryRow("select has_table_privilege('authenticated', 'public.trulot_permit_linkage_report_v1', 'SELECT') as allowed;", "allowed"),
+    service_report_select: queryRow("select has_table_privilege('service_role', 'public.trulot_permit_linkage_report_v1', 'SELECT') as allowed;", "allowed"),
+  };
+
+  checks.push(createCheck("anon retains pre-migration check_parcel_overlays execute", true, functionPrivileges.anon_overlay_execute, functionPrivileges.anon_overlay_execute === true));
+  checks.push(createCheck("authenticated retains pre-migration check_parcel_overlays execute", true, functionPrivileges.authenticated_overlay_execute, functionPrivileges.authenticated_overlay_execute === true));
+  checks.push(createCheck("service_role retains pre-migration check_parcel_overlays execute", true, functionPrivileges.service_overlay_execute, functionPrivileges.service_overlay_execute === true));
+  checks.push(createCheck("anon still has pre-migration raw overlay table access", true, tablePrivileges.anon_overlay_table_select, tablePrivileges.anon_overlay_table_select === true));
+  checks.push(createCheck("authenticated still has pre-migration raw overlay table access", true, tablePrivileges.authenticated_overlay_table_select, tablePrivileges.authenticated_overlay_table_select === true));
+  checks.push(createCheck("anon still has pre-migration report access", true, tablePrivileges.anon_report_select, tablePrivileges.anon_report_select === true));
+  checks.push(createCheck("authenticated still has pre-migration report access", true, tablePrivileges.authenticated_report_select, tablePrivileges.authenticated_report_select === true));
+  checks.push(createCheck("service_role retains pre-migration report access", true, tablePrivileges.service_report_select, tablePrivileges.service_report_select === true));
+  checks.push(createCheck("anon still has pre-migration update_nearby_activity_v2 execute", true, functionPrivileges.anon_update_nearby_execute, functionPrivileges.anon_update_nearby_execute === true));
+  checks.push(createCheck("authenticated still has pre-migration update_nearby_activity_v2 execute", true, functionPrivileges.authenticated_update_nearby_execute, functionPrivileges.authenticated_update_nearby_execute === true));
+  checks.push(createCheck("service_role retains pre-migration update_nearby_activity_v2 execute", true, functionPrivileges.service_update_nearby_execute, functionPrivileges.service_update_nearby_execute === true));
+  checks.push(createCheck("anon still has pre-migration get_opportunity_feed execute", true, functionPrivileges.anon_opportunity_execute, functionPrivileges.anon_opportunity_execute === true));
+  checks.push(createCheck("authenticated still has pre-migration get_opportunity_feed execute", true, functionPrivileges.authenticated_opportunity_execute, functionPrivileges.authenticated_opportunity_execute === true));
+  checks.push(createCheck("service_role retains pre-migration get_opportunity_feed execute", true, functionPrivileges.service_opportunity_execute, functionPrivileges.service_opportunity_execute === true));
+
+  const migrationState = queryJson(`
+    select json_build_object(
+      'authorized_versions_recorded',
+      coalesce(
+        (
+          select json_agg(version order by version)
+          from supabase_migrations.schema_migrations
+          where version in ('20260712032203', '20260712032216')
+        ),
+        '[]'::json
+      )
+    )::text;
+  `);
+  const recordedVersions = migrationState.authorized_versions_recorded ?? [];
+  checks.push(createCheck(
+    "authorized 20260712 migrations are not yet remotely recorded",
+    "[]",
+    JSON.stringify(recordedVersions),
+    Array.isArray(recordedVersions) && recordedVersions.length === 0,
+  ));
+
+  if (supabaseWorkdir) {
+    const migrationDir = path.join(supabaseWorkdir, "supabase", "migrations");
+    const localMigrationFiles = fs.readdirSync(migrationDir).filter((name) => name.endsWith(".sql")).sort();
+    checks.push(createCheck(
+      "isolated deployment chain excludes 20260707",
+      false,
+      localMigrationFiles.some((name) => name.includes("20260707_permit_linkage_report_v2")),
+      !localMigrationFiles.some((name) => name.includes("20260707_permit_linkage_report_v2")),
+    ));
+  }
+
+  return {
+    checks,
+    functionMetadata: {
+      exists: functionMetadata.exists,
+      security_definer: functionMetadata.security_definer,
+      search_path: functionMetadata.search_path || "",
+    },
+  };
+}
+
 async function fetchJson(url) {
   const response = await fetch(url, { headers: { accept: "application/json" } });
   return { response, json: await response.json() };
@@ -199,6 +362,7 @@ async function main() {
   const dbUrl = process.env.TRULOT_PRODUCTION_DB_URL ?? "";
   const supabaseWorkdir = process.env.TRULOT_SUPABASE_WORKDIR ?? "";
   const preflightOnly = process.argv.includes("--preflight");
+  const verifyPreMigrationState = process.argv.includes("--verify-pre-migration-state");
   const skipHttpSmoke = process.argv.includes("--skip-http-smoke");
   const runCommand = defaultRunCommand;
   const supabaseBin = resolveSupabaseBin();
@@ -346,6 +510,25 @@ async function main() {
       psql_preflight: psqlPreflight,
     };
     console.log(JSON.stringify(report, null, 2));
+    return;
+  }
+
+  if (verifyPreMigrationState) {
+    const preMigrationState = collectPreMigrationStateChecks({
+      queryRow,
+      queryJson,
+      supabaseWorkdir,
+    });
+    const failures = preMigrationState.checks.filter((check) => !check.ok);
+    const report = {
+      checked_at: new Date().toISOString(),
+      verification_mode: verifyMode,
+      pre_migration_state: preMigrationState,
+    };
+    console.log(JSON.stringify(report, null, 2));
+    if (failures.length > 0) {
+      process.exitCode = 1;
+    }
     return;
   }
 
