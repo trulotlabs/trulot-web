@@ -36,6 +36,23 @@ function arraysEqual(left, right) {
   return left.length === right.length && left.every((value, index) => value === right[index]);
 }
 
+function parseListFlag(flagName) {
+  const flagIndex = process.argv.indexOf(flagName);
+  if (flagIndex === -1) {
+    return null;
+  }
+
+  const rawValue = process.argv[flagIndex + 1];
+  if (!rawValue) {
+    throw new Error(`Expected a comma-separated value after ${flagName}.`);
+  }
+
+  return rawValue
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+}
+
 export function validateFoundationDryRunOutput(output, expectedMigrations = AUTHORIZED_FOUNDATION_MIGRATIONS) {
   const cleaned = stripAnsi(output);
   const actualMigrations = extractMigrationBasenames(cleaned);
@@ -62,12 +79,18 @@ export function validateFoundationDryRunOutput(output, expectedMigrations = AUTH
 function main() {
   const fileFlagIndex = process.argv.indexOf("--file");
   if (fileFlagIndex === -1 || !process.argv[fileFlagIndex + 1]) {
-    throw new Error("Usage: node scripts/validate-foundation-dry-run.mjs --file <path>");
+    throw new Error("Usage: node scripts/validate-foundation-dry-run.mjs --file <path> [--expect a.sql,b.sql] [--forbid c.sql,d.sql]");
   }
 
   const filePath = process.argv[fileFlagIndex + 1];
   const output = fs.readFileSync(filePath, "utf8");
-  const result = validateFoundationDryRunOutput(output);
+  const expectedMigrations = parseListFlag("--expect") ?? AUTHORIZED_FOUNDATION_MIGRATIONS;
+  const forbiddenMigrations = parseListFlag("--forbid") ?? FORBIDDEN_MIGRATIONS;
+  const result = validateFoundationDryRunOutput(output, expectedMigrations);
+  const encounteredForbidden = forbiddenMigrations.filter((name) => stripAnsi(output).includes(name));
+  if (encounteredForbidden.length > 0) {
+    throw new Error(`Forbidden migrations appeared in dry-run output.\n${JSON.stringify(encounteredForbidden, null, 2)}`);
+  }
   console.log(JSON.stringify(result, null, 2));
 }
 
