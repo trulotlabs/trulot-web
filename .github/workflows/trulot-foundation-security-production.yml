@@ -225,18 +225,11 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          baseline_dump="${RUNNER_TEMP}/trulot-remote-pre-promotion.sql"
-          rg -n "grant all on function public.check_parcel_overlays\\(double precision, double precision\\) to anon, authenticated, service_role;" "${baseline_dump}"
-          rg -n "grant all on function public.get_opportunity_feed\\(integer, integer, integer\\) to anon, authenticated, service_role;" "${baseline_dump}"
-          rg -n "grant all on function public.update_nearby_activity_v2\\(\\) to anon, authenticated, service_role;" "${baseline_dump}"
-          rg -n "grant all on table public.tpa_official to anon, authenticated, service_role;" "${baseline_dump}"
-          rg -n "grant all on table public.trulot_permit_linkage_report_v1 to anon, authenticated, service_role;" "${baseline_dump}"
-          rg -n "security definer" "${baseline_dump}"
-          rg -n "pt := st_setsrid\\(st_makepoint\\(p_lng, p_lat\\), 4326\\);" "${baseline_dump}"
-          if rg -n "set search_path = public, pg_temp" "${baseline_dump}"; then
-            echo "Baseline already contains hardened search_path unexpectedly."
-            exit 1
-          fi
+          TRULOT_SUPABASE_BIN=supabase \
+          TRULOT_PRODUCTION_VERIFY_MODE=linked \
+          TRULOT_PRODUCTION_DB_URL="${PRODUCTION_DB_URL}" \
+          TRULOT_SUPABASE_WORKDIR="${TRULOT_PROMOTION_WORKDIR}" \
+          node scripts/qa-foundation-production.mjs --verify-pre-migration-state
 
       - name: Dry-run the authorized migration chain
         shell: bash
