@@ -1,0 +1,336 @@
+name: TruLot Overlay Repair Production Migration
+
+on:
+  workflow_dispatch:
+    inputs:
+      production_base_url:
+        description: "Production app base URL for smoke checks"
+        required: true
+        default: "https://trulot-web.vercel.app"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: trulot-overlay-repair-production
+  cancel-in-progress: false
+
+jobs:
+  deploy-overlay-repair:
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 45
+    env:
+      EXPECTED_PROJECT_REF: qockltdzvjxdlwrpgtsd
+      EXPECTED_FOUNDATION_ACCESS_VERSION: 20260712032203
+      EXPECTED_FOUNDATION_OVERLAY_VERSION: 20260712032216
+      EXPECTED_REPAIR_MIGRATION_VERSION: 20260713022000
+      EXPECTED_REPAIR_MIGRATION_SHA256: 85721fd8e65cfdaca7d7aee872ea69403807f7cdef37a67b4d6da0128aee9d02
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      PRODUCTION_PROJECT_ID: ${{ secrets.PRODUCTION_PROJECT_ID }}
+      PRODUCTION_DB_PASSWORD: ${{ secrets.PRODUCTION_DB_PASSWORD }}
+      PRODUCTION_DB_URL: ${{ secrets.PRODUCTION_DB_URL }}
+    steps:
+      - name: Check out dispatch commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Confirm checked-out commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          actual_commit="$(git rev-parse HEAD)"
+          echo "Checked out commit: ${actual_commit}"
+          if [[ "${actual_commit}" != "${GITHUB_SHA}" ]]; then
+            echo "Expected dispatch commit ${GITHUB_SHA} but checked out ${actual_commit}."
+            exit 1
+          fi
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install repository dependencies
+        run: npm ci
+
+      - name: Set up Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: 2.109.0
+
+      - name: Install required runner tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ripgrep postgresql-client
+          rg --version
+          psql --version
+
+      - name: Verify required runner tools and pinned Supabase CLI
+        shell: bash
+        run: |
+          set -euo pipefail
+          command -v rg >/dev/null
+          command -v psql >/dev/null
+          actual_supabase_version="$(supabase --version | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)"
+          [[ -n "${actual_supabase_version}" ]] || {
+            echo "Unable to determine Supabase CLI version."
+            exit 1
+          }
+          [[ "${actual_supabase_version}" == "2.109.0" ]] || {
+            echo "Expected Supabase CLI 2.109.0 but found ${actual_supabase_version}."
+            exit 1
+          }
+          echo "Required runner tools and pinned Supabase CLI are available."
+
+      - name: Check required deployment secrets
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ -n "${SUPABASE_ACCESS_TOKEN:-}" ]] || { echo "Missing SUPABASE_ACCESS_TOKEN."; exit 1; }
+          [[ -n "${PRODUCTION_PROJECT_ID:-}" ]] || { echo "Missing PRODUCTION_PROJECT_ID."; exit 1; }
+          [[ -n "${PRODUCTION_DB_PASSWORD:-}" ]] || { echo "Missing PRODUCTION_DB_PASSWORD."; exit 1; }
+          [[ -n "${PRODUCTION_DB_URL:-}" ]] || { echo "Missing PRODUCTION_DB_URL."; exit 1; }
+          echo "Required deployment secrets are present."
+
+      - name: Confirm production project reference
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${PRODUCTION_PROJECT_ID}" != "${EXPECTED_PROJECT_REF}" ]]; then
+            echo "Refusing to deploy. Expected ${EXPECTED_PROJECT_REF} but got ${PRODUCTION_PROJECT_ID}."
+            exit 1
+          fi
+          echo "Target production project ref confirmed: ${PRODUCTION_PROJECT_ID}"
+
+      - name: Confirm approved repair migration hash
+        shell: bash
+        run: |
+          set -euo pipefail
+          repair_sha="$(sha256sum supabase/migrations/20260713022000_overlay_payload_geometry_backfill.sql | awk '{print $1}')"
+          [[ "${repair_sha}" == "${EXPECTED_REPAIR_MIGRATION_SHA256}" ]] || {
+            echo "Approved overlay repair migration hash mismatch."
+            exit 1
+          }
+          echo "Approved overlay repair migration matches the reviewed contents."
+
+      - name: Show installed Supabase CLI help surface
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase --version
+          supabase link --help
+          supabase migration list --help
+          supabase migration repair --help
+          supabase db push --help
+          supabase db query --help
+          supabase projects api-keys --help
+
+      - name: Run repair QA before any link or apply
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run qa:data-foundation
+          npm run qa:permit-linkage
+          npm run qa:overlay-payload-compat
+
+      - name: Prepare isolated production promotion workdir
+        shell: bash
+        run: |
+          set -euo pipefail
+          workdir="${RUNNER_TEMP}/trulot-overlay-repair-prod"
+          mkdir -p "${workdir}/supabase/migrations" "${workdir}/supabase/.temp"
+          cp supabase/migrations/20260522_overlay_lookup.sql "${workdir}/supabase/migrations/"
+          cp supabase/migrations/20260705_permit_linkage_v1.sql "${workdir}/supabase/migrations/"
+          cp supabase/migrations/20260706_permit_linkage_perf_v1.sql "${workdir}/supabase/migrations/"
+          cp supabase/migrations/20260712032203_foundation_access_least_privilege.sql "${workdir}/supabase/migrations/"
+          cp supabase/migrations/20260712032216_check_parcel_overlays_hardening.sql "${workdir}/supabase/migrations/"
+          cp supabase/migrations/20260713022000_overlay_payload_geometry_backfill.sql "${workdir}/supabase/migrations/"
+          echo "TRULOT_PROMOTION_WORKDIR=${workdir}" >> "${GITHUB_ENV}"
+          echo "TRULOT_SUPABASE_WORKDIR=${workdir}" >> "${GITHUB_ENV}"
+          echo "Prepared isolated workdir at ${workdir}"
+
+      - name: Link isolated workdir to production
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase link \
+            --project-ref "${PRODUCTION_PROJECT_ID}" \
+            --password "${PRODUCTION_DB_PASSWORD}" \
+            --workdir "${TRULOT_PROMOTION_WORKDIR}" \
+            --yes
+          linked_ref="$(cat "${TRULOT_PROMOTION_WORKDIR}/supabase/.temp/project-ref")"
+          [[ "${linked_ref}" == "${EXPECTED_PROJECT_REF}" ]] || { echo "Linked project ref mismatch: ${linked_ref}"; exit 1; }
+          echo "Isolated workdir linked to ${linked_ref}"
+
+      - name: Display isolated deployment-chain migration list
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" migration list --linked --password "${PRODUCTION_DB_PASSWORD}"
+
+      - name: Preflight linked SQL connectivity and protected psql role switching
+        shell: bash
+        run: |
+          set -euo pipefail
+          TRULOT_SUPABASE_BIN=supabase \
+          TRULOT_PRODUCTION_VERIFY_MODE=linked \
+          TRULOT_PRODUCTION_DB_URL="${PRODUCTION_DB_URL}" \
+          TRULOT_SUPABASE_WORKDIR="${TRULOT_PROMOTION_WORKDIR}" \
+          node scripts/qa-foundation-production.mjs --preflight
+
+      - name: Confirm remote production is still in the expected post-foundation state
+        shell: bash
+        run: |
+          set -euo pipefail
+          history_json="$(supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" --agent no -o json db query --linked "select json_build_object('versions', coalesce((select json_agg(version order by version) from supabase_migrations.schema_migrations where version in ('${EXPECTED_FOUNDATION_ACCESS_VERSION}', '${EXPECTED_FOUNDATION_OVERLAY_VERSION}', '${EXPECTED_REPAIR_MIGRATION_VERSION}')), '[]'::json))::text;")"
+          echo "${history_json}" > "${RUNNER_TEMP}/trulot-overlay-repair-preflight-history.json"
+          node -e "
+            const fs = require('node:fs');
+            const payload = JSON.parse(fs.readFileSync(process.argv[1], 'utf8'));
+            const rows = Array.isArray(payload) ? payload : payload.rows;
+            const value = rows?.[0]?.json_build_object ?? rows?.[0]?.jsonb_build_object;
+            const parsed = typeof value === 'string' ? JSON.parse(value) : value;
+            const versions = parsed?.versions ?? [];
+            if (JSON.stringify(versions) !== JSON.stringify(['${EXPECTED_FOUNDATION_ACCESS_VERSION}', '${EXPECTED_FOUNDATION_OVERLAY_VERSION}'])) {
+              console.error('Unexpected pre-apply remote migration state:', JSON.stringify(versions));
+              process.exit(1);
+            }
+          " "${RUNNER_TEMP}/trulot-overlay-repair-preflight-history.json"
+
+      - name: Dry-run the authorized repair migration chain
+        shell: bash
+        run: |
+          set -euo pipefail
+          dry_run_log="${RUNNER_TEMP}/trulot-overlay-repair-dry-run.log"
+          set +e
+          supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" db push --linked --password "${PRODUCTION_DB_PASSWORD}" --dry-run 2>&1 | tee "${dry_run_log}"
+          dry_run_status="${PIPESTATUS[0]}"
+          set -e
+          if [[ "${dry_run_status}" -ne 0 ]]; then
+            echo "Supabase overlay repair dry run failed with exit code ${dry_run_status}."
+            exit "${dry_run_status}"
+          fi
+          node scripts/validate-foundation-dry-run.mjs \
+            --file "${dry_run_log}" \
+            --expect "20260713022000_overlay_payload_geometry_backfill.sql" \
+            --forbid "20260707_permit_linkage_report_v2.sql,20260712032203_foundation_access_least_privilege.sql,20260712032216_check_parcel_overlays_hardening.sql"
+
+      - name: Apply the authorized production repair migration
+        shell: bash
+        run: |
+          set -euo pipefail
+          supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" db push --linked --password "${PRODUCTION_DB_PASSWORD}"
+
+      - name: Confirm remote migration history after deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          post_log="${RUNNER_TEMP}/trulot-overlay-repair-post-migration-list.log"
+          supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" migration list --linked --password "${PRODUCTION_DB_PASSWORD}" | tee "${post_log}"
+          rg -n "${EXPECTED_FOUNDATION_ACCESS_VERSION}" "${post_log}"
+          rg -n "${EXPECTED_FOUNDATION_OVERLAY_VERSION}" "${post_log}"
+          rg -n "${EXPECTED_REPAIR_MIGRATION_VERSION}" "${post_log}"
+          if rg -n "20260707.*20260707" "${post_log}"; then
+            echo "Unauthorized 20260707 migration appears remotely after deployment."
+            exit 1
+          fi
+
+      - name: Verify normalized overlay geometry backfill and repaired function body
+        shell: bash
+        run: |
+          set -euo pipefail
+          verification_json="$(supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" --agent no -o json db query --linked "
+            select json_build_object(
+              'tpa_null_geom_count', (select count(*) from public.tpa_official where geom is null),
+              'sda_null_geom_count', (select count(*) from public.sda_official where geom is null),
+              'ctcac_null_geom_count', (select count(*) from public.ctcac_gis_v1 where geom is null),
+              'search_path', coalesce((select array_to_string(proconfig, ',') from pg_proc where oid = 'public.check_parcel_overlays(double precision, double precision)'::regprocedure), ''),
+              'overlay_result', (select public.check_parcel_overlays(32.75, -117.19)),
+              'function_definition', (select pg_get_functiondef('public.check_parcel_overlays(double precision, double precision)'::regprocedure))
+            )::text;
+          ")"
+          echo "${verification_json}" > "${RUNNER_TEMP}/trulot-overlay-repair-db-verify.json"
+          node -e "
+            const fs = require('node:fs');
+            const payload = JSON.parse(fs.readFileSync(process.argv[1], 'utf8'));
+            const rows = Array.isArray(payload) ? payload : payload.rows;
+            const value = rows?.[0]?.json_build_object ?? rows?.[0]?.jsonb_build_object;
+            const parsed = typeof value === 'string' ? JSON.parse(value) : value;
+            const counts = [
+              parsed?.tpa_null_geom_count,
+              parsed?.sda_null_geom_count,
+              parsed?.ctcac_null_geom_count,
+            ];
+            if (!counts.every((value) => Number(value) === 0)) {
+              console.error('Overlay geometry backfill left null geom values:', JSON.stringify(parsed));
+              process.exit(1);
+            }
+            if (!String(parsed?.search_path ?? '').includes('search_path=public, pg_temp')) {
+              console.error('check_parcel_overlays search_path drifted:', JSON.stringify(parsed?.search_path));
+              process.exit(1);
+            }
+            const overlay = parsed?.overlay_result ?? {};
+            for (const key of ['tpa', 'sda', 'ctcac']) {
+              if (typeof overlay[key] !== 'boolean') {
+                console.error('Overlay result lost boolean contract:', JSON.stringify(parsed));
+                process.exit(1);
+              }
+            }
+            const definition = String(parsed?.function_definition ?? '').toLowerCase();
+            if (!definition.includes('public.tpa_official.geom is not null') || !definition.includes('public.sda_official.geom is not null') || !definition.includes('public.ctcac_gis_v1.geom is not null')) {
+              console.error('check_parcel_overlays is not using normalized geom columns:', JSON.stringify(parsed));
+              process.exit(1);
+            }
+          " "${RUNNER_TEMP}/trulot-overlay-repair-db-verify.json"
+
+      - name: Fetch the production anon key without revealing secret keys
+        shell: bash
+        run: |
+          set -euo pipefail
+          api_keys_json="${RUNNER_TEMP}/supabase-api-keys.json"
+          supabase --workdir "${TRULOT_PROMOTION_WORKDIR}" projects api-keys --project-ref "${PRODUCTION_PROJECT_ID}" --output json > "${api_keys_json}"
+          anon_key="$(
+            node -e "
+              const fs = require('node:fs');
+              const keys = JSON.parse(fs.readFileSync(process.argv[1], 'utf8'));
+              const pick = (Array.isArray(keys) ? keys : []).find((entry) => {
+                const fields = Object.values(entry).map((value) => String(value ?? '').toLowerCase()).join(' ');
+                return fields.includes('anon') || fields.includes('publishable');
+              });
+              if (!pick) process.exit(1);
+              const value = pick.api_key ?? pick.key ?? pick.value ?? pick.anon ?? '';
+              if (!value) process.exit(1);
+              process.stdout.write(String(value));
+            " "${api_keys_json}"
+          )"
+          [[ -n "${anon_key}" ]] || { echo "Failed to resolve the production anon key."; exit 1; }
+          {
+            echo "NEXT_PUBLIC_SUPABASE_URL=https://${PRODUCTION_PROJECT_ID}.supabase.co"
+            echo "NEXT_PUBLIC_SUPABASE_ANON_KEY=${anon_key}"
+          } > .env.local
+          {
+            echo "TRULOT_SUPABASE_BIN=supabase"
+            echo "TRULOT_PRODUCTION_VERIFY_MODE=linked"
+            echo "TRULOT_PRODUCTION_DB_URL=${PRODUCTION_DB_URL}"
+            echo "TRULOT_SUPABASE_WORKDIR=${TRULOT_PROMOTION_WORKDIR}"
+            echo "TRULOT_PRODUCTION_BASE_URL=${{ inputs.production_base_url }}"
+          } >> "${GITHUB_ENV}"
+
+      - name: Run post-migration repository QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm run qa:data-foundation
+          npm run qa:permit-linkage
+
+      - name: Run production-safe post-migration verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/qa-foundation-production.mjs

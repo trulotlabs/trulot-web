@@ -12,6 +12,7 @@
     "qa:foundation-dry-run-parser": "node scripts/test-validate-foundation-dry-run.mjs",
     "qa:foundation-migrations": "node scripts/rehearse-foundation-migrations.mjs",
     "qa:foundation-production-adapter": "node scripts/test-qa-foundation-production-adapter.mjs",
+    "qa:overlay-payload-compat": "node scripts/test-overlay-payload-compat.mjs",
     "report:permit-linkage": "node scripts/report-permit-linkage.mjs",
     "qa:permit-linkage": "node scripts/qa-permit-linkage.mjs"
   },
