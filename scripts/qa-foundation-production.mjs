@@ -177,7 +177,7 @@ function slugifyAddress(address) {
     .replace(/-{2,}/g, "-");
 }
 
-function canonicalParcelSlug(apn, address) {
+export function canonicalParcelSlug(apn, address) {
   const formattedApn = formatApnForDisplay(apn);
   const addressSlug = slugifyAddress(address);
   return addressSlug ? `${formattedApn}-${addressSlug}` : `apn-${normalizeApnDigits(apn)}`;
