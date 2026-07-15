@@ -13,6 +13,7 @@
     "qa:foundation-migrations": "node scripts/rehearse-foundation-migrations.mjs",
     "qa:foundation-production-adapter": "node scripts/test-qa-foundation-production-adapter.mjs",
     "qa:overlay-payload-compat": "node scripts/test-overlay-payload-compat.mjs",
+    "qa:overlay-browser-production": "node scripts/qa-overlay-browser-production.mjs",
     "report:permit-linkage": "node scripts/report-permit-linkage.mjs",
     "qa:permit-linkage": "node scripts/qa-permit-linkage.mjs"
   },
@@ -29,6 +30,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "playwright": "1.55.0",
     "supabase": "^2.109.0",
     "tailwindcss": "^4",
     "typescript": "^5"
