@@ -229,6 +229,14 @@ export default async function ParcelPage({
           </div>
         ) : null}
 
+        <div
+          className="mt-4 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950"
+          data-testid="sda-reconciliation-notice"
+        >
+          <span className="font-medium">SDA source reconciliation pending.</span>{" "}
+          SDA status is temporarily unavailable. Other overlay results remain separate.
+        </div>
+
         {data.pageStatus === "partial" ? (
           <div className="mt-4 rounded border border-sky-200 bg-sky-50 px-4 py-3 text-sm text-sky-950">
             <span className="font-medium">Some sources are temporarily unavailable.</span>{" "}

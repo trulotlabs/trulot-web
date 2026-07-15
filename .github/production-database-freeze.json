@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "mode": "active-freeze",
+  "policyId": "sda-source-reconciliation-freeze",
+  "prohibitedMigrationVersions": [
+    "20260713022000",
+    "20260713025206"
+  ],
+  "prohibitedWorkflowPaths": [
+    ".github/workflows/trulot-overlay-integrity-triage.yml",
+    ".github/workflows/trulot-overlay-repair-production.yml"
+  ],
+  "productionEnvironments": [
+    "production"
+  ],
+  "unfreezeRequirements": [
+    "private SDA recovery acceptance criteria approved",
+    "separately reviewed code change replaces this active-freeze policy and guard behavior"
+  ]
+}
