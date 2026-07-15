@@ -1,9 +1,10 @@
 import assert from "node:assert/strict";
 import { execFileSync, spawnSync } from "node:child_process";
 
-const ADMIN_URL = "postgresql://postgres:postgres@127.0.0.1:54322/postgres";
+const POSTGRES_PORT = process.env.TRULOT_REHEARSAL_POSTGRES_PORT ?? "54322";
+const ADMIN_URL = `postgresql://postgres:postgres@127.0.0.1:${POSTGRES_PORT}/postgres`;
 const DB_NAME = "trulot_overlay_rehearsal";
-const DB_URL = `postgresql://postgres:postgres@127.0.0.1:54322/${DB_NAME}`;
+const DB_URL = `postgresql://postgres:postgres@127.0.0.1:${POSTGRES_PORT}/${DB_NAME}`;
 const MIGRATION = "supabase/migrations/20260713025206_overlay_payload_geometry_proven_decoder.sql";
 
 // Non-sensitive production-derived metadata: every observed prefixed payload
