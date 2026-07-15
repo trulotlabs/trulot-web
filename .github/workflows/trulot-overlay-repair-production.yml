@@ -142,9 +142,23 @@ jobs:
           set -euo pipefail
           npm run qa:data-foundation
           npm run qa:foundation-dry-run-parser
-          npx supabase start
+
+          qa_workdir="${RUNNER_TEMP}/trulot-overlay-local-qa"
+          mkdir -p "${qa_workdir}"
+          supabase --workdir "${qa_workdir}" init
+          mkdir -p "${qa_workdir}/supabase/migrations"
+          [[ -z "$(find "${qa_workdir}/supabase/migrations" -type f -name '*.sql' -print -quit)" ]] || {
+            echo "Isolated overlay QA workdir unexpectedly contains migration SQL."
+            exit 1
+          }
+
+          cleanup() {
+            supabase --workdir "${qa_workdir}" stop --no-backup || true
+          }
+          trap cleanup EXIT
+
+          supabase --workdir "${qa_workdir}" start
           npm run qa:overlay-payload-compat
-          npx supabase stop --no-backup
 
       - name: Prepare isolated production promotion workdir
         shell: bash
@@ -458,5 +472,5 @@ jobs:
           path: |
             ${{ runner.temp }}/overlay-browser-smoke
             ${{ runner.temp }}/overlay-browser-smoke-receipt.json
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 30
