@@ -1,0 +1,21 @@
+name: TruLot Production Database Freeze Guard
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  verify-freeze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out candidate commit
+        uses: actions/checkout@v4
+
+      - name: Verify authoritative freeze policy and repository paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          node scripts/test-production-database-freeze.mjs

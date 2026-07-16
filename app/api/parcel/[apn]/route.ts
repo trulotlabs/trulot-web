@@ -1,4 +1,5 @@
 import { normalizeApn, getParcelPageData } from "../../../../lib/get-parcel-page-data";
+import { publicSdaApiStatus, SDA_RECONCILIATION_LABEL } from "../../../../lib/sda-source-reconciliation";
 
 function unavailableCapacityItem(basis: string) {
   return {
@@ -21,6 +22,20 @@ export async function GET(_req: Request, { params }: { params: Promise<{ apn: st
 
   const quarantined = {
     ...data,
+    constraints: {
+      ...data.constraints,
+      overlays: {
+        ...data.constraints.overlays,
+        sda: {
+          status: SDA_RECONCILIATION_LABEL,
+          confidence: "unknown" as const,
+          source: "City of San Diego SDA source",
+        },
+      },
+    },
+    source_reconciliation: {
+      sda: publicSdaApiStatus(),
+    },
     capacity: {
       baseline_units: unavailableCapacityItem(
         "Unavailable in legacy API. Use the canonical Parcel Page route while the reviewed truth engine is being established.",

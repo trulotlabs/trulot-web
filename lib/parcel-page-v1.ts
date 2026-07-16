@@ -15,6 +15,14 @@ import {
   formatApnForDisplay,
   normalizeApnDigits,
 } from "./parcel-slug";
+import {
+  applySdaReconciliationPolicy,
+  canUseSdaForRegulatoryConclusion,
+  formatUnaffectedOverlaySummary,
+  SDA_RECONCILIATION_LABEL,
+  SDA_RECONCILIATION_MESSAGE,
+  type SdaReconciliationStatus,
+} from "./sda-source-reconciliation";
 import { buildParcelPageSourceEntries, type ParcelPageSourceEntry } from "./source-freshness";
 
 const supabase = createClient(
@@ -23,6 +31,12 @@ const supabase = createClient(
 );
 
 type RawRow = Record<string, unknown>;
+type OverlayFlags = {
+  tpa: boolean;
+  ctcac: boolean;
+  unavailable: boolean;
+  sda: SdaReconciliationStatus;
+};
 
 export type ConfidenceTier = "recorded" | "mapped" | "conditional";
 
@@ -52,6 +66,7 @@ export interface ParcelPageSourceStatus {
   parcel: SourceStatus;
   permits: SourceStatus;
   overlays: SourceStatus;
+  sda: SdaReconciliationStatus;
   similarLots: SourceStatus;
 }
 
@@ -307,6 +322,7 @@ function emptySourceStatus(): ParcelPageSourceStatus {
     parcel: defaultSourceStatus(),
     permits: defaultSourceStatus(),
     overlays: defaultSourceStatus(),
+    sda: applySdaReconciliationPolicy(null),
     similarLots: defaultSourceStatus(),
   };
 }
@@ -458,7 +474,7 @@ function normalizePermitStatus(raw: unknown): string | null {
     .join(" ");
 }
 
-function buildSignalFacts(row: RawRow, overlays: Record<string, boolean>): SignalFact[] {
+function buildSignalFacts(row: RawRow, overlays: Pick<OverlayFlags, "tpa">): SignalFact[] {
   const lotArea = num(row.lot_area_sqft);
   const livingArea = num(row.total_lvg_area);
   const signals: SignalFact[] = [];
@@ -504,10 +520,13 @@ function buildSignalFacts(row: RawRow, overlays: Record<string, boolean>): Signa
 async function getOverlayFlags(
   lat: number | null,
   lng: number | null,
-): Promise<{ flags: Record<string, boolean>; status: SourceStatus }> {
+): Promise<{
+  flags: OverlayFlags;
+  status: SourceStatus;
+}> {
   if (lat === null || lng === null) {
     return {
-      flags: { tpa: false, sda: false, ctcac: false, unavailable: true },
+      flags: { tpa: false, ctcac: false, unavailable: true, sda: applySdaReconciliationPolicy(null) },
       status: buildSourceStatus("source_unavailable", {
         safeErrorCode: "missing_input",
         publicMessage: "Overlay lookup is unavailable because parcel coordinates are missing.",
@@ -517,7 +536,7 @@ async function getOverlayFlags(
   const { data, error } = await supabase.rpc("check_parcel_overlays", { p_lat: lat, p_lng: lng });
   if (error || !data) {
     return {
-      flags: { tpa: false, sda: false, ctcac: false, unavailable: true },
+      flags: { tpa: false, ctcac: false, unavailable: true, sda: applySdaReconciliationPolicy(null) },
       status: buildSourceStatus("source_unavailable", {
         safeErrorCode: mapSafeSourceErrorCode(error),
         publicMessage: "Overlay lookup is temporarily unavailable.",
@@ -526,14 +545,14 @@ async function getOverlayFlags(
   }
   const flags = {
     tpa: Boolean(data.tpa),
-    sda: Boolean(data.sda),
     ctcac: Boolean(data.ctcac),
     unavailable: false,
+    sda: applySdaReconciliationPolicy(typeof data.sda === "boolean" ? data.sda : null),
   };
   return {
     flags,
-    status: buildSourceStatus(flags.tpa || flags.sda || flags.ctcac ? "found" : "not_found", {
-      publicMessage: flags.tpa || flags.sda || flags.ctcac ? null : "No tracked overlays were returned by the current lookup.",
+    status: buildSourceStatus(flags.tpa || flags.ctcac ? "found" : "not_found", {
+      publicMessage: flags.tpa || flags.ctcac ? null : "No TPA or CTCAC overlay was returned by the current lookup.",
     }),
   };
 }
@@ -830,6 +849,7 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
   const lng = num(parcelRow.lng);
   const overlaysResult = await getOverlayFlags(lat, lng);
   const overlays = overlaysResult.flags;
+  const sdaRegulatoryConclusionAllowed = canUseSdaForRegulatoryConclusion(overlays.sda);
   const similarLotsResult = await fetchSimilarLots(parcelRow);
   const similarLots = similarLotsResult.similarLots;
   const permits = permitsResult.rows;
@@ -849,19 +869,15 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     }),
     permits: permitsResult.status,
     overlays: overlaysResult.status,
+    sda: overlays.sda,
     similarLots: similarLotsResult.status,
   };
   const pageStatus: Exclude<CanonicalResultState, "invalid_request"> = [sourceStatus.permits, sourceStatus.overlays, sourceStatus.similarLots].some(
     (item) => item.status === "source_unavailable" || item.status === "partial",
-  )
+  ) || sourceStatus.sda.state === "source_reconciliation_pending"
     ? "partial"
     : "found";
 
-  const overlayNames = [
-    overlays.tpa ? "Transit Priority Area" : null,
-    overlays.sda ? "Sustainable Development Area" : null,
-    overlays.ctcac ? "CTCAC mapped area" : null,
-  ].filter(Boolean) as string[];
   const linkedDirectPermits = permits
     .map((permit) => ({
       permit,
@@ -927,7 +943,11 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     {
       label: "Overlays",
       fact: {
-        value: overlays.unavailable ? null : overlayNames.length > 0 ? overlayNames.join(", ") : "No mapped overlays found in the current lookup",
+        value: formatUnaffectedOverlaySummary({
+          tpa: overlays.tpa,
+          ctcac: overlays.ctcac,
+          lookupUnavailable: overlays.unavailable,
+        }),
         sourceLabel: "check_parcel_overlays(lat,lng)",
         confidenceTier: "mapped",
         nullBehavior: "Show “Overlay lookup unavailable”.",
@@ -980,11 +1000,11 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     });
   }
   if (zoneName) {
-    const overlayText = overlays.unavailable
-      ? "Overlay context is not available from the current lookup."
-      : overlayNames.length > 0
-      ? `Mapped overlays include ${overlayNames.join(" and ")}.`
-      : "No mapped overlays were returned by the current lookup.";
+    const overlayText = formatUnaffectedOverlaySummary({
+      tpa: overlays.tpa,
+      ctcac: overlays.ctcac,
+      lookupUnavailable: overlays.unavailable,
+    });
     snapshot.push({
       value: `The parcel is mapped to base zone ${zoneName}. ${overlayText}`,
       sourceLabel: "Mapped base zone + overlay lookup",
@@ -1048,14 +1068,10 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     },
     {
       name: "Sustainable Development Area",
-      value: overlays.unavailable
-        ? null
-        : overlays.sda
-        ? "Applies per mapped overlay"
-        : "Does not appear to apply — parcel is outside the current mapped SDA overlay",
-      sourceLabel: "check_parcel_overlays(lat,lng)",
+      value: `${SDA_RECONCILIATION_LABEL} — ${SDA_RECONCILIATION_MESSAGE}`,
+      sourceLabel: "City of San Diego SDA source",
       confidenceTier: "conditional",
-      nullBehavior: "Show “Overlay lookup unavailable”.",
+      nullBehavior: "Always show the reconciliation-pending state until the source is approved.",
     },
     {
       name: "Complete Communities / other bonus programs",
@@ -1077,12 +1093,14 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
       nullBehavior: "Show cautious zoning fallback copy.",
     },
     {
-      value: overlays.unavailable
-        ? "Overlay context is unavailable in the current lookup, so this page does not make a program statement from overlays alone."
-        : overlayNames.length > 0
-        ? `Overlay context is mapped, but any program effect remains conditional on project specifics and city review.`
-        : "No mapped overlays were returned by the current lookup, and program rows remain conditional where the backend does not yet expose a verified eligibility result.",
-      sourceLabel: overlays.unavailable ? "Overlay lookup unavailable" : "Overlay lookup + program adapters",
+      value: `${formatUnaffectedOverlaySummary({
+        tpa: overlays.tpa,
+        ctcac: overlays.ctcac,
+        lookupUnavailable: overlays.unavailable,
+      })} ${sdaRegulatoryConclusionAllowed
+        ? "SDA may be used in reviewed regulatory conclusions."
+        : "SDA is not used for a regulatory or capacity conclusion while reconciliation is pending."}`,
+      sourceLabel: overlays.unavailable ? "Overlay lookup unavailable + SDA source control" : "Overlay lookup + SDA source control",
       confidenceTier: "conditional",
       nullBehavior: "Show cautious interpretation fallback copy.",
     },
