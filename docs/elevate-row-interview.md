@@ -2,17 +2,18 @@
 
 ## Purpose
 
-This private pilot interviews Cesar about the right-of-way opportunities Elevate wants TruLot to surface. The approved `Elevate Buy Box v0.1` becomes the deterministic screening input for an initial manual batch of 20–30 opportunities.
+This private pilot calibrates which public permit and project signals Elevate wants TruLot to surface. It assumes San Diego County, any project size, and broad public ROW scope. The approved `Elevate Signal Calibration Summary v0.1` guides an initial manual batch of 5–10 real leads.
 
 The feature is intentionally separate from TruLot’s parcel intelligence and production data paths.
 
 ## Architecture
 
 - `app/elevate/interview/[token]` is a dynamic, noindex/nofollow server route. It compares the URL token to `ELEVATE_INTERVIEW_TOKEN` before rendering any interview UI.
-- `app/api/elevate/interview` revalidates the token, validates and limits the transcript, applies an in-memory request limit, and returns only schema-validated turns.
-- `lib/elevate-interview` contains the Zod schemas, private prompt, approved pilot context, token validation, and deterministic mock interview.
+- The application owns a fixed four-step sequence: valuable signals, actionable evidence, obvious noise, and first-batch delivery. The model cannot select the next step or set progress.
+- `app/api/elevate/interview` revalidates the token, validates the structured state, applies an in-memory request limit, and returns only a schema-validated acknowledgement or one same-step clarification.
+- `lib/elevate-interview` contains the Zod schemas, deterministic summary builder, signal options, private prompt, token validation, and mock responses.
 - The official OpenAI JavaScript SDK calls the Responses API only from the server route. `OPENAI_MODEL` is runtime-configurable; no model is a hidden code dependency.
-- Interview state is saved in browser local storage under a token-derived SHA-256 key. The token, API key, and private prompt are not stored there.
+- Interview state is saved under a token-derived SHA-256 v3 key. The token, API key, and private prompt are not stored there. Older questionnaire sessions are intentionally not imported.
 - Approval, Markdown/JSON downloads, clipboard actions, and the `mailto:` handoff happen in the browser.
 
 The OpenAI request uses strict structured output, `store: false`, and a privacy-preserving safety identifier. The application resends the visible transcript on each turn and does not depend on server-side conversation storage.
@@ -55,7 +56,7 @@ Set:
 ELEVATE_INTERVIEW_MOCK=true
 ```
 
-Mock mode needs no OpenAI key. It uses a short deterministic path that exercises suggested replies, progress, review, correction, approval, downloads, clipboard actions, email handoff, and restart. A mock label is visible only outside production.
+Mock mode needs no OpenAI key. It exercises the same four-step controls, progress, review, correction, approval, downloads, clipboard actions, email handoff, and restart used in real mode.
 
 ### Real OpenAI mode
 
@@ -96,14 +97,14 @@ npm run qa:production-freeze
 npm run test:e2e:elevate
 ```
 
-The Playwright suite covers invalid and valid links, the opening prompt, suggested replies, progress, refresh/resume, final review, correction, approval, Markdown and JSON downloads, copy, email link, restart confirmation, and phone-width overflow.
+The Playwright suite runs in desktop and mobile Chromium and covers invalid and valid links, deterministic sequence, attempted model jumps, signal classification, unresolved handling, refresh/resume, review, correction, approval, Markdown/JSON downloads, clipboard actions, email handoff, restart, console errors, framework overlays, and phone-width overflow.
 
 ## Security and data boundaries
 
 - Invalid or missing tokens do not render the interview or call its API.
 - The API validates the token independently and returns neutral, non-sensitive errors.
 - Request bodies, per-message size, transcript length, total characters, and request rate are bounded.
-- Model output is validated against the complete Zod contract before it reaches the UI.
+- Model output is validated against a narrow Zod contract before it reaches the UI. Structured selections remain authoritative.
 - The API key, server environment, and full interviewer prompt stay server-only.
 - `store: false` is explicitly set on Responses API requests.
 - No Supabase migration, production database object, database write, or production-freeze exception is used.

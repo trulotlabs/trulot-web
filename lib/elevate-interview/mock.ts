@@ -9,7 +9,7 @@ export function getMockSectionResponse(
 ): SectionCoachResponse {
   return {
     acknowledgement: `${sectionTitle(activeSection)} saved.`,
-    assistantMessage: `${sectionTitle(activeSection)} is complete. Your selections are preserved exactly for the final buy box.`,
+    assistantMessage: `${sectionTitle(activeSection)} is complete. Your selections are preserved exactly for the signal calibration summary.`,
     requiresClarification: false,
     clarificationQuestion: null,
     unresolvedIssue: null,

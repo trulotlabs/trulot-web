@@ -1,7 +1,13 @@
 "use client";
 
 import type { Classification } from "@/lib/elevate-interview/schema";
-import { CLASSIFICATION_LABELS } from "@/lib/elevate-interview/structured";
+
+const DEFAULT_LABELS: Record<Classification, string> = {
+  core: "Core",
+  selective: "Selective",
+  excluded: "Excluded",
+  unassigned: "Unassigned",
+};
 
 const CLASSIFICATIONS: Classification[] = [
   "core",
@@ -16,12 +22,14 @@ export function StructuredClassifier({
   values,
   onChange,
   testId,
+  labels = DEFAULT_LABELS,
 }: {
   label: string;
   options: ReadonlyArray<{ id: string; label: string }>;
   values: Record<string, Classification>;
   onChange: (id: string, value: Classification) => void;
   testId: string;
+  labels?: Record<Classification, string>;
 }) {
   const grouped = Object.fromEntries(
     CLASSIFICATIONS.map((classification) => [
@@ -80,7 +88,7 @@ export function StructuredClassifier({
                         onChange={() => onChange(option.id, classification)}
                         className="sr-only"
                       />
-                      {CLASSIFICATION_LABELS[classification]}
+                      {labels[classification]}
                     </label>
                   );
                 })}
@@ -100,7 +108,7 @@ export function StructuredClassifier({
           {CLASSIFICATIONS.map((classification) => (
             <div key={classification}>
               <p className="font-mono text-[10px] tracking-[0.14em] text-white/40 uppercase">
-                {CLASSIFICATION_LABELS[classification]}
+                {labels[classification]}
               </p>
               <p
                 className="mt-1 text-xs leading-5 text-white/65"

@@ -6,14 +6,14 @@ import {
   sectionCoachResponseSchema,
   sectionStatusSchema,
   structuredInterviewAnswersSchema,
-  type ElevateBuyBox,
   type InterviewSectionId,
   type SectionStatus,
+  type SignalCalibrationSummary,
   type StructuredInterviewAnswers,
   type TranscriptMessage,
 } from "@/lib/elevate-interview/schema";
 import {
-  buildElevateBuyBox,
+  buildSignalCalibrationSummary,
   createInitialAnswers,
   createInitialSectionStatus,
   INTERVIEW_SECTIONS,
@@ -23,15 +23,13 @@ import {
 import { InterviewSectionForm } from "./InterviewSectionForm";
 
 type ActiveView = InterviewSectionId | "review";
-
 type Clarification = {
   section: InterviewSectionId;
   question: string;
   answer: string;
 };
-
 type SavedInterview = {
-  version: 2;
+  version: 3;
   activeView: ActiveView;
   answers: StructuredInterviewAnswers;
   sectionStatus: Record<InterviewSectionId, SectionStatus>;
@@ -44,182 +42,105 @@ type SavedInterview = {
 };
 
 const OPENING_MESSAGE =
-  "Welcome, Cesar. This short onboarding will define Elevate’s first ROW opportunity buy box. The eight sections use structured controls, and you can skip, revise, or leave items unresolved. TruLot will preserve exactly what you select.";
+  "Welcome, Cesar. TruLot already assumes San Diego County, any project size, and broad ROW scope. Four short steps will calibrate which public permit and project signals are worth sending, then produce the first 5–10 real leads for feedback.";
 
 const buttonClass =
-  "rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white transition hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52] disabled:opacity-40";
+  "rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white transition hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52]";
 
 function newClarificationCounts() {
   return Object.fromEntries(
-    INTERVIEW_SECTIONS.map((section) => [section.id, 0]),
+    INTERVIEW_SECTIONS.map(({ id }) => [id, 0]),
   ) as Record<InterviewSectionId, number>;
-}
-
-function formatMoney(value: number | null) {
-  if (value === null) return "Not provided";
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(value);
 }
 
 function list(items: string[]) {
   return items.length ? items.join(", ") : "None selected";
 }
 
-function sectionAnswerText(
+function answerText(
   section: InterviewSectionId,
-  buyBox: ElevateBuyBox,
+  summary: SignalCalibrationSummary,
 ) {
-  switch (section) {
-    case "service_area":
-      return `Core: ${list(buyBox.serviceGeography.coreMarkets)}. Selective: ${list(buyBox.serviceGeography.selectiveMarkets)}. Excluded: ${list(buyBox.serviceGeography.excludedMarkets)}.`;
-    case "scopes":
-      return `Core: ${list(buyBox.scopes.core)}. Selective: ${list(buyBox.scopes.selective)}. Excluded: ${list(buyBox.scopes.excluded)}. Unresolved: ${list(buyBox.scopes.unresolved)}.`;
-    case "economics":
-      return `Ordinary minimum: ${formatMoney(buyBox.economics.ordinaryMinimumContractValue)}. Preferred range: ${formatMoney(buyBox.economics.preferredContractValueMin)} to ${formatMoney(buyBox.economics.preferredContractValueMax)}. Exceptions: ${list(buyBox.economics.strategicExceptions)}.`;
-    case "customers":
-      return `Core: ${list(buyBox.customerTypes.core)}. Selective: ${list(buyBox.customerTypes.selective)}. Excluded: ${list(buyBox.customerTypes.excluded)}.`;
-    case "contacts":
-      return buyBox.contactPreference.useBestAvailable
-        ? "Use the best available named contact."
-        : `Primary: ${buyBox.contactPreference.primary ?? "Not provided"}. Secondary: ${buyBox.contactPreference.secondary ?? "Not provided"}.`;
-    case "timing":
-      return `Earliest useful: ${buyBox.timing.earliestUsefulStage ?? "Not provided"}. Ideal: ${list(buyBox.timing.idealOutreachStages)}. Too late: ${buyBox.timing.tooLateStage ?? "Not provided"}.`;
-    case "disqualifiers":
-      return `Suppress: ${list(buyBox.screeningRules.suppress)}. Conditional: ${list(buyBox.screeningRules.conditional)}. Allow: ${list(buyBox.screeningRules.allow)}.`;
-    case "capacity_examples":
-      return `Review capacity: ${buyBox.capacity.leadsReviewablePerWeekday ?? "Not provided"} per weekday. Outreach capacity: ${buyBox.capacity.outreachActionsPerWeekday ?? "Not provided"} per weekday.`;
+  if (section === "signals") {
+    return `Send now: ${list(summary.signalPriority.sendNow)}. Supporting: ${list(summary.signalPriority.supporting)}. Ignore: ${list(summary.signalPriority.ignore)}.`;
   }
+  if (section === "evidence") {
+    return `Actionable evidence: ${list(summary.actionableEvidence)}.`;
+  }
+  if (section === "noise") {
+    return `Suppress: ${list(summary.suppressions)}.`;
+  }
+  return `First batch: ${summary.delivery.firstBatchSize ?? "not selected"} leads. Timing: ${summary.delivery.deliverySpeed ?? "not selected"}.`;
 }
 
-function conciseSummary(buyBox: ElevateBuyBox) {
+function plainSummary(summary: SignalCalibrationSummary) {
   return [
-    "Elevate Buy Box v0.1",
-    `Status: ${buyBox.approvedByCesar ? "Approved" : "Draft"}`,
-    `Core markets: ${list(buyBox.serviceGeography.coreMarkets)}`,
-    `Core scopes: ${list(buyBox.scopes.core)}`,
-    `Selective scopes: ${list(buyBox.scopes.selective)}`,
-    `Ordinary minimum: ${formatMoney(buyBox.economics.ordinaryMinimumContractValue)}`,
-    `Preferred range: ${formatMoney(buyBox.economics.preferredContractValueMin)}–${formatMoney(buyBox.economics.preferredContractValueMax)}`,
-    `Preferred customers: ${list(buyBox.preferredCustomerTypes)}`,
-    `Ideal outreach: ${list(buyBox.timing.idealOutreachStages)}`,
-    `Suppress: ${list(buyBox.screeningRules.suppress)}`,
-    `Daily capacity: review ${buyBox.capacity.leadsReviewablePerWeekday ?? "not provided"}; outreach ${buyBox.capacity.outreachActionsPerWeekday ?? "not provided"}`,
-    `Unresolved: ${list(buyBox.unresolvedQuestions)}`,
-    buyBox.approvedAt ? `Approved by Cesar at ${buyBox.approvedAt}` : "",
+    summary.title,
+    `Status: ${summary.approvedByCesar ? "Approved" : "Draft"}`,
+    "Assumptions: San Diego County; any project size; broad public ROW scope",
+    `Send now: ${list(summary.signalPriority.sendNow)}`,
+    `Supporting evidence signals: ${list(summary.signalPriority.supporting)}`,
+    `Ignore: ${list(summary.signalPriority.ignore)}`,
+    `Actionable evidence: ${list(summary.actionableEvidence)}`,
+    `Suppress: ${list(summary.suppressions)}`,
+    `First batch: ${summary.delivery.firstBatchSize ?? "not selected"} real leads`,
+    `Delivery: ${summary.delivery.deliverySpeed ?? "not selected"}`,
+    `Unresolved: ${list(summary.unresolvedQuestions)}`,
+    summary.approvedAt ? `Approved by Cesar at ${summary.approvedAt}` : "",
   ]
     .filter(Boolean)
     .join("\n");
 }
 
 function markdownPacket(
-  buyBox: ElevateBuyBox,
+  summary: SignalCalibrationSummary,
   transcript: TranscriptMessage[],
 ) {
   const bullets = (items: string[]) =>
     items.length ? items.map((item) => `- ${item}`).join("\n") : "- None";
-  return `# Elevate Buy Box v0.1
+  return `# Elevate Signal Calibration Summary
 
 - **Participant:** Cesar
-- **Company:** Elevate
-- **Status:** ${buyBox.approvedByCesar ? "Approved" : "Draft"}
-- **Approved at:** ${buyBox.approvedAt ?? "Not approved"}
-- **Confidence:** ${buyBox.confidence}
+- **Status:** ${summary.approvedByCesar ? "Approved" : "Draft"}
+- **Approved at:** ${summary.approvedAt ?? "Not approved"}
 
-## Service area
+## Assumptions
 
-**Core**
-${bullets(buyBox.serviceGeography.coreMarkets)}
+- San Diego County
+- Any project size
+- Broad public right-of-way scope
 
-**Selective**
-${bullets(buyBox.serviceGeography.selectiveMarkets)}
+## Send now
+${bullets(summary.signalPriority.sendNow)}
 
-**Excluded**
-${bullets(buyBox.serviceGeography.excludedMarkets)}
+## Supporting signals
+${bullets(summary.signalPriority.supporting)}
 
-**Mobilization note:** ${buyBox.serviceGeography.mobilizationNotes ?? "None"}
+## Ignore
+${bullets(summary.signalPriority.ignore)}
 
-## Desired ROW scopes
+## Actionable evidence
+${bullets(summary.actionableEvidence)}
 
-**Core**
-${bullets(buyBox.scopes.core)}
+## Suppress obvious noise
+${bullets(summary.suppressions)}
 
-**Selective**
-${bullets(buyBox.scopes.selective)}
+## First calibration batch
 
-**Excluded**
-${bullets(buyBox.scopes.excluded)}
-
-**Unresolved**
-${bullets(buyBox.scopes.unresolved)}
-
-## Project economics
-
-- Ordinary minimum: ${formatMoney(buyBox.economics.ordinaryMinimumContractValue)}
-- Preferred range: ${formatMoney(buyBox.economics.preferredContractValueMin)}–${formatMoney(buyBox.economics.preferredContractValueMax)}
-- Obvious exceptions: ${list(buyBox.economics.strategicExceptions)}
-
-## Preferred customer types
-
-**Core**
-${bullets(buyBox.customerTypes.core)}
-
-**Selective**
-${bullets(buyBox.customerTypes.selective)}
-
-**Excluded**
-${bullets(buyBox.customerTypes.excluded)}
-
-## Contact preference
-
-- Primary: ${buyBox.contactPreference.primary ?? "Not provided"}
-- Secondary: ${buyBox.contactPreference.secondary ?? "Not provided"}
-- Use best available: ${buyBox.contactPreference.useBestAvailable ? "Yes" : "No"}
-
-## Lead timing
-
-- Earliest useful: ${buyBox.timing.earliestUsefulStage ?? "Not provided"}
-- Ideal: ${list(buyBox.timing.idealOutreachStages)}
-- Too late: ${buyBox.timing.tooLateStage ?? "Not provided"}
-
-## Screening rules
-
-**Suppress**
-${bullets(buyBox.screeningRules.suppress)}
-
-**Conditional**
-${bullets(buyBox.screeningRules.conditional)}
-
-**Allow**
-${bullets(buyBox.screeningRules.allow)}
-
-## Pursuit capacity
-
-- Leads reviewable per weekday: ${buyBox.capacity.leadsReviewablePerWeekday ?? "Not provided"}
-- Outreach actions per weekday: ${buyBox.capacity.outreachActionsPerWeekday ?? "Not provided"}
-- Follow-up owner: ${buyBox.capacity.followUpOwner ?? "Not provided"}
-- Expected response time: ${buyBox.capacity.expectedResponseTime ?? "Not provided"}
-
-## Good-fit examples
-${bullets(buyBox.goodFitExamples)}
-
-## Bad-fit examples
-${bullets(buyBox.badFitExamples)}
+- Size: ${summary.delivery.firstBatchSize ?? "Not selected"} real leads
+- Timing: ${summary.delivery.deliverySpeed ?? "Not selected"}
+- Feedback owner: ${summary.delivery.feedbackOwner ?? "Not specified"}
 
 ## Unresolved
-${bullets(buyBox.unresolvedQuestions)}
+${bullets(summary.unresolvedQuestions)}
 
-## Interview notes
-
-${transcript.length ? transcript.map((message) => `- **${message.role === "assistant" ? "TruLot" : "Cesar"} (${message.section ? sectionTitle(message.section) : "Interview"}):** ${message.content}`).join("\n") : "- None"}
+## Clarification notes
+${transcript.length ? transcript.map((message) => `- **${message.role === "assistant" ? "TruLot" : "Cesar"}:** ${message.content}`).join("\n") : "- None"}
 `;
 }
 
-function downloadFile(filename: string, content: string, type: string) {
-  const blob = new Blob([content], { type });
-  const href = URL.createObjectURL(blob);
+function download(filename: string, content: string, type: string) {
+  const href = URL.createObjectURL(new Blob([content], { type }));
   const anchor = document.createElement("a");
   anchor.href = href;
   anchor.download = filename;
@@ -244,159 +165,10 @@ async function copyText(value: string) {
   }
 }
 
-function SummaryCard({
-  section,
-  status,
-  buyBox,
-  onEdit,
-}: {
-  section: InterviewSectionId;
-  status: SectionStatus;
-  buyBox: ElevateBuyBox;
-  onEdit?: () => void;
-}) {
-  return (
-    <article
-      className="rounded-2xl border border-white/[0.08] bg-black/10 p-4"
-      data-testid={`summary-${section}`}
-    >
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <div className="flex flex-wrap items-center gap-2">
-            <h3 className="text-sm font-semibold text-white">
-              {sectionTitle(section)}
-            </h3>
-            <span className="rounded-full border border-white/10 px-2 py-0.5 font-mono text-[9px] tracking-wider text-white/45 uppercase">
-              {status}
-            </span>
-          </div>
-          <p className="mt-2 text-sm leading-6 text-white/58">
-            {status === "skipped"
-              ? "Skipped for now."
-              : sectionAnswerText(section, buyBox)}
-          </p>
-        </div>
-        {onEdit && (
-          <button
-            type="button"
-            onClick={onEdit}
-            className="shrink-0 text-xs font-semibold text-[#e8c79e] underline decoration-[#d89a52]/40 underline-offset-4"
-          >
-            Edit
-          </button>
-        )}
-      </div>
-    </article>
-  );
-}
-
-function ApprovedActions({
-  buyBox,
-  transcript,
-  resultsEmail,
-}: {
-  buyBox: ElevateBuyBox;
-  transcript: TranscriptMessage[];
-  resultsEmail: string;
-}) {
-  const [copied, setCopied] = useState<"summary" | "transcript" | null>(null);
-  const summary = conciseSummary(buyBox);
-  const markdown = markdownPacket(buyBox, transcript);
-  const emailHref = resultsEmail
-    ? `mailto:${encodeURIComponent(resultsEmail)}?subject=${encodeURIComponent("Approved Elevate Buy Box v0.1")}&body=${encodeURIComponent(summary)}`
-    : null;
-  const copy = async (kind: "summary" | "transcript", value: string) => {
-    await copyText(value);
-    setCopied(kind);
-    window.setTimeout(() => setCopied(null), 1600);
-  };
-
-  return (
-    <section
-      className="mt-8 rounded-3xl border border-emerald-300/20 bg-emerald-200/[0.06] p-6 sm:p-8"
-      data-testid="approved-actions"
-    >
-      <p className="font-mono text-xs tracking-[0.16em] text-emerald-200 uppercase">
-        ✓ Approved
-      </p>
-      <h2 className="mt-2 text-2xl font-semibold">
-        Elevate’s buy box is ready.
-      </h2>
-      <p className="mt-2 text-sm leading-6 text-white/55">
-        Download the complete pilot record or send Brian the concise approved
-        summary.
-      </p>
-      <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        <button
-          type="button"
-          onClick={() =>
-            downloadFile("elevate-buy-box-v0.1.md", markdown, "text/markdown")
-          }
-          className={buttonClass}
-        >
-          Download Markdown
-        </button>
-        <button
-          type="button"
-          onClick={() =>
-            downloadFile(
-              "elevate-buy-box-v0.1.json",
-              JSON.stringify({ buyBox, transcript }, null, 2),
-              "application/json",
-            )
-          }
-          className={buttonClass}
-        >
-          Download JSON
-        </button>
-        <button
-          type="button"
-          onClick={() => void copy("summary", summary)}
-          className={buttonClass}
-        >
-          {copied === "summary" ? "Summary copied" : "Copy summary"}
-        </button>
-        <button
-          type="button"
-          onClick={() =>
-            void copy(
-              "transcript",
-              transcript
-                .map(
-                  (message) =>
-                    `${message.role === "assistant" ? "TruLot" : "Cesar"}: ${message.content}`,
-                )
-                .join("\n\n"),
-            )
-          }
-          className={buttonClass}
-        >
-          {copied === "transcript"
-            ? "Transcript copied"
-            : "Copy full transcript"}
-        </button>
-        {emailHref ? (
-          <a
-            href={emailHref}
-            data-testid="email-summary"
-            className="rounded-xl bg-[#d89a52] px-4 py-3 text-center text-sm font-semibold text-[#17120c] transition hover:bg-[#e4aa69] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4f1e8]"
-          >
-            Email summary to Brian
-          </a>
-        ) : (
-          <span className="rounded-xl border border-white/10 px-4 py-3 text-center text-sm text-white/35">
-            Results email not configured
-          </span>
-        )}
-      </div>
-    </section>
-  );
-}
-
-function restoreSavedInterview(raw: string): SavedInterview | null {
+function restore(raw: string): SavedInterview | null {
   try {
     const parsed = JSON.parse(raw) as Partial<SavedInterview>;
-    if (parsed.version !== 2) return null;
+    if (parsed.version !== 3) return null;
     const answers = structuredInterviewAnswersSchema.safeParse(parsed.answers);
     if (!answers.success || !parsed.sectionStatus) return null;
     const sectionStatus = Object.fromEntries(
@@ -410,16 +182,9 @@ function restoreSavedInterview(raw: string): SavedInterview | null {
         ? "review"
         : interviewSectionIdSchema.safeParse(parsed.activeView).success
           ? (parsed.activeView as InterviewSectionId)
-          : "service_area";
-    const clarification =
-      parsed.clarification &&
-      interviewSectionIdSchema.safeParse(parsed.clarification.section).success &&
-      typeof parsed.clarification.question === "string" &&
-      typeof parsed.clarification.answer === "string"
-        ? parsed.clarification
-        : null;
+          : "signals";
     return {
-      version: 2,
+      version: 3,
       activeView,
       answers: answers.data,
       sectionStatus,
@@ -429,7 +194,11 @@ function restoreSavedInterview(raw: string): SavedInterview | null {
           Math.min(1, Math.max(0, parsed.clarificationCounts?.[id] ?? 0)),
         ]),
       ) as Record<InterviewSectionId, number>,
-      clarification,
+      clarification:
+        parsed.clarification &&
+        interviewSectionIdSchema.safeParse(parsed.clarification.section).success
+          ? parsed.clarification
+          : null,
       transcript: Array.isArray(parsed.transcript)
         ? parsed.transcript.filter(
             (message): message is TranscriptMessage =>
@@ -453,6 +222,147 @@ function restoreSavedInterview(raw: string): SavedInterview | null {
   }
 }
 
+function ReviewCard({
+  section,
+  status,
+  summary,
+  onEdit,
+}: {
+  section: InterviewSectionId;
+  status: SectionStatus;
+  summary: SignalCalibrationSummary;
+  onEdit: () => void;
+}) {
+  return (
+    <article
+      className="rounded-2xl border border-white/[0.08] bg-black/10 p-4"
+      data-testid={`summary-${section}`}
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <div className="flex flex-wrap items-center gap-2">
+            <h3 className="text-sm font-semibold">{sectionTitle(section)}</h3>
+            <span className="rounded-full border border-white/10 px-2 py-0.5 font-mono text-[9px] text-white/45 uppercase">
+              {status}
+            </span>
+          </div>
+          <p className="mt-2 text-sm leading-6 text-white/58">
+            {status === "skipped" ? "Skipped for now." : answerText(section, summary)}
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={onEdit}
+          className="shrink-0 text-xs font-semibold text-[#e8c79e] underline underline-offset-4"
+        >
+          Edit
+        </button>
+      </div>
+    </article>
+  );
+}
+
+function ApprovedActions({
+  summary,
+  transcript,
+  resultsEmail,
+}: {
+  summary: SignalCalibrationSummary;
+  transcript: TranscriptMessage[];
+  resultsEmail: string;
+}) {
+  const [copied, setCopied] = useState<string | null>(null);
+  const plain = plainSummary(summary);
+  const markdown = markdownPacket(summary, transcript);
+  const emailHref = resultsEmail
+    ? `mailto:${encodeURIComponent(resultsEmail)}?subject=${encodeURIComponent("Approved Elevate Signal Calibration Summary")}&body=${encodeURIComponent(plain)}`
+    : null;
+  const copy = async (kind: string, value: string) => {
+    await copyText(value);
+    setCopied(kind);
+    window.setTimeout(() => setCopied(null), 1500);
+  };
+  return (
+    <section
+      className="mt-8 rounded-3xl border border-emerald-300/20 bg-emerald-200/[0.06] p-6 sm:p-8"
+      data-testid="approved-actions"
+    >
+      <p className="font-mono text-xs tracking-[0.16em] text-emerald-200 uppercase">
+        ✓ Approved
+      </p>
+      <h2 className="mt-2 text-2xl font-semibold">
+        Elevate’s signal calibration is ready.
+      </h2>
+      <p className="mt-2 text-sm text-white/55">
+        TruLot can now assemble the first 5–10 real leads for feedback.
+      </p>
+      <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <button
+          type="button"
+          className={buttonClass}
+          onClick={() =>
+            download(
+              "elevate-signal-calibration.md",
+              markdown,
+              "text/markdown",
+            )
+          }
+        >
+          Download Markdown
+        </button>
+        <button
+          type="button"
+          className={buttonClass}
+          onClick={() =>
+            download(
+              "elevate-signal-calibration.json",
+              JSON.stringify({ summary, transcript }, null, 2),
+              "application/json",
+            )
+          }
+        >
+          Download JSON
+        </button>
+        <button
+          type="button"
+          className={buttonClass}
+          onClick={() => void copy("summary", plain)}
+        >
+          {copied === "summary" ? "Summary copied" : "Copy summary"}
+        </button>
+        <button
+          type="button"
+          className={buttonClass}
+          onClick={() =>
+            void copy(
+              "transcript",
+              transcript
+                .map(
+                  ({ role, content }) =>
+                    `${role === "assistant" ? "TruLot" : "Cesar"}: ${content}`,
+                )
+                .join("\n\n"),
+            )
+          }
+        >
+          {copied === "transcript"
+            ? "Transcript copied"
+            : "Copy clarification notes"}
+        </button>
+        {emailHref && (
+          <a
+            href={emailHref}
+            data-testid="email-summary"
+            className="rounded-xl bg-[#d89a52] px-4 py-3 text-center text-sm font-semibold text-[#17120c]"
+          >
+            Email summary to Brian
+          </a>
+        )}
+      </div>
+    </section>
+  );
+}
+
 export function ElevateInterview({
   token,
   resultsEmail,
@@ -463,22 +373,17 @@ export function ElevateInterview({
   showMockLabel: boolean;
 }) {
   const [answers, setAnswers] = useState(createInitialAnswers);
-  const [sectionStatus, setSectionStatus] = useState(
-    createInitialSectionStatus,
-  );
-  const [activeView, setActiveView] = useState<ActiveView>("service_area");
+  const [statuses, setStatuses] = useState(createInitialSectionStatus);
+  const [activeView, setActiveView] = useState<ActiveView>("signals");
   const [clarificationCounts, setClarificationCounts] = useState(
     newClarificationCounts,
   );
-  const [clarification, setClarification] = useState<Clarification | null>(
-    null,
-  );
+  const [clarification, setClarification] = useState<Clarification | null>(null);
   const [transcript, setTranscript] = useState<TranscriptMessage[]>([
     { role: "assistant", content: OPENING_MESSAGE },
   ]);
   const [approvedAt, setApprovedAt] = useState<string | null>(null);
   const [editReturnToReview, setEditReturnToReview] = useState(false);
-  const [showEditPrompt, setShowEditPrompt] = useState(false);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [storageKey, setStorageKey] = useState<string | null>(null);
@@ -493,7 +398,7 @@ export function ElevateInterview({
         const suffix = Array.from(new Uint8Array(hash).slice(0, 12))
           .map((byte) => byte.toString(16).padStart(2, "0"))
           .join("");
-        setStorageKey(`trulot:elevate-interview:v2:${suffix}`);
+        setStorageKey(`trulot:elevate-signal-calibration:v3:${suffix}`);
       });
     return () => {
       active = false;
@@ -503,16 +408,16 @@ export function ElevateInterview({
   useEffect(() => {
     if (!storageKey) return;
     const raw = localStorage.getItem(storageKey);
-    const restored = raw ? restoreSavedInterview(raw) : null;
-    if (restored) {
-      setAnswers(restored.answers);
-      setSectionStatus(restored.sectionStatus);
-      setActiveView(restored.activeView);
-      setClarificationCounts(restored.clarificationCounts);
-      setClarification(restored.clarification);
-      setTranscript(restored.transcript);
-      setApprovedAt(restored.approvedAt);
-      setEditReturnToReview(restored.editReturnToReview);
+    const saved = raw ? restore(raw) : null;
+    if (saved) {
+      setAnswers(saved.answers);
+      setStatuses(saved.sectionStatus);
+      setActiveView(saved.activeView);
+      setClarificationCounts(saved.clarificationCounts);
+      setClarification(saved.clarification);
+      setTranscript(saved.transcript);
+      setApprovedAt(saved.approvedAt);
+      setEditReturnToReview(saved.editReturnToReview);
     } else if (raw) {
       localStorage.removeItem(storageKey);
     }
@@ -522,10 +427,10 @@ export function ElevateInterview({
   useEffect(() => {
     if (!storageKey || !hydrated) return;
     const saved: SavedInterview = {
-      version: 2,
+      version: 3,
       activeView,
       answers,
-      sectionStatus,
+      sectionStatus: statuses,
       clarificationCounts,
       clarification,
       transcript,
@@ -542,20 +447,19 @@ export function ElevateInterview({
     clarificationCounts,
     editReturnToReview,
     hydrated,
-    sectionStatus,
+    statuses,
     storageKey,
     transcript,
   ]);
 
-  const buyBox = useMemo(
-    () => buildElevateBuyBox(answers, sectionStatus, { approvedAt }),
-    [answers, approvedAt, sectionStatus],
+  const summary = useMemo(
+    () => buildSignalCalibrationSummary(answers, statuses, { approvedAt }),
+    [answers, approvedAt, statuses],
   );
-  const completeCount = INTERVIEW_SECTIONS.filter(
-    ({ id }) => sectionStatus[id] !== "pending",
+  const completed = INTERVIEW_SECTIONS.filter(
+    ({ id }) => statuses[id] !== "pending",
   ).length;
-  const progressPercent =
-    activeView === "review" ? 100 : Math.round((completeCount / 8) * 100);
+  const progress = activeView === "review" ? 100 : completed * 25;
 
   const advance = useCallback(
     (section: InterviewSectionId) => {
@@ -570,7 +474,7 @@ export function ElevateInterview({
     [editReturnToReview],
   );
 
-  const requestCoach = useCallback(
+  const coach = useCallback(
     async (
       section: InterviewSectionId,
       status: SectionStatus,
@@ -578,17 +482,16 @@ export function ElevateInterview({
     ) => {
       setPending(true);
       setError(null);
-      const sectionBuyBox = buildElevateBuyBox(answers, {
-        ...sectionStatus,
+      const submittedSummary = buildSignalCalibrationSummary(answers, {
+        ...statuses,
         [section]: status,
       });
-      const submitted: TranscriptMessage = {
+      const userMessage: TranscriptMessage = {
         role: "user",
         section,
-        content:
-          clarificationAnswer?.trim() || sectionAnswerText(section, sectionBuyBox),
+        content: clarificationAnswer?.trim() || answerText(section, submittedSummary),
       };
-      const nextTranscript = [...transcript, submitted].slice(-50);
+      const nextTranscript = [...transcript, userMessage].slice(-30);
       try {
         const response = await fetch("/api/elevate/interview", {
           method: "POST",
@@ -604,40 +507,36 @@ export function ElevateInterview({
             clarificationAnswer,
           }),
         });
-        const payload = sectionCoachResponseSchema.safeParse(
+        const parsed = sectionCoachResponseSchema.safeParse(
           await response.json(),
         );
-        if (!response.ok || !payload.success) {
-          throw new Error("This section could not be saved. Please try again.");
-        }
-        const assistantMessage: TranscriptMessage = {
-          role: "assistant",
-          section,
-          content: payload.data.assistantMessage,
-        };
-        setTranscript([...nextTranscript, assistantMessage]);
+        if (!response.ok || !parsed.success) throw new Error();
+        setTranscript([
+          ...nextTranscript,
+          {
+            role: "assistant",
+            section,
+            content: parsed.data.assistantMessage,
+          },
+        ]);
         if (
-          payload.data.requiresClarification &&
-          payload.data.clarificationQuestion &&
+          parsed.data.requiresClarification &&
+          parsed.data.clarificationQuestion &&
           clarificationCounts[section] === 0 &&
           !clarificationAnswer
         ) {
           setClarificationCounts((counts) => ({ ...counts, [section]: 1 }));
           setClarification({
             section,
-            question: payload.data.clarificationQuestion,
+            question: parsed.data.clarificationQuestion,
             answer: "",
           });
         } else {
-          setSectionStatus((statuses) => ({ ...statuses, [section]: status }));
+          setStatuses((current) => ({ ...current, [section]: status }));
           advance(section);
         }
-      } catch (caught) {
-        setError(
-          caught instanceof Error
-            ? caught.message
-            : "This section could not be saved. Please try again.",
-        );
+      } catch {
+        setError("This step could not be saved. Your choices are still here.");
       } finally {
         setPending(false);
       }
@@ -646,25 +545,17 @@ export function ElevateInterview({
       advance,
       answers,
       clarificationCounts,
-      sectionStatus,
+      statuses,
       token,
       transcript,
     ],
   );
 
-  const continueSection = (status: SectionStatus) => {
+  const skip = () => {
     if (activeView === "review") return;
-    void requestCoach(activeView, status, null);
-  };
-
-  const skipSection = () => {
-    if (activeView === "review") return;
-    setSectionStatus((statuses) => ({
-      ...statuses,
-      [activeView]: "skipped",
-    }));
-    setTranscript((messages) => [
-      ...messages,
+    setStatuses((current) => ({ ...current, [activeView]: "skipped" }));
+    setTranscript((current) => [
+      ...current,
       {
         role: "user",
         section: activeView,
@@ -674,35 +565,7 @@ export function ElevateInterview({
     advance(activeView);
   };
 
-  const sendClarification = () => {
-    if (!clarification?.answer.trim()) return;
-    void requestCoach(
-      clarification.section,
-      sectionStatus[clarification.section] === "unresolved"
-        ? "unresolved"
-        : "completed",
-      clarification.answer,
-    );
-  };
-
-  const leaveClarificationUnresolved = () => {
-    if (!clarification) return;
-    setSectionStatus((statuses) => ({
-      ...statuses,
-      [clarification.section]: "unresolved",
-    }));
-    setTranscript((messages) => [
-      ...messages,
-      {
-        role: "user",
-        section: clarification.section,
-        content: "Clarification left unresolved for review.",
-      },
-    ]);
-    advance(clarification.section);
-  };
-
-  const editSection = (section: InterviewSectionId) => {
+  const edit = (section: InterviewSectionId) => {
     setApprovedAt(null);
     setClarification(null);
     setEditReturnToReview(true);
@@ -711,17 +574,12 @@ export function ElevateInterview({
   };
 
   const restart = () => {
-    if (
-      !window.confirm(
-        "Restart the interview? This clears the saved v0.1 answers and approval on this device.",
-      )
-    ) {
+    if (!window.confirm("Restart signal calibration and clear this device?"))
       return;
-    }
     if (storageKey) localStorage.removeItem(storageKey);
     setAnswers(createInitialAnswers());
-    setSectionStatus(createInitialSectionStatus());
-    setActiveView("service_area");
+    setStatuses(createInitialSectionStatus());
+    setActiveView("signals");
     setClarificationCounts(newClarificationCounts());
     setClarification(null);
     setTranscript([{ role: "assistant", content: OPENING_MESSAGE }]);
@@ -737,39 +595,22 @@ export function ElevateInterview({
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#0c1117] text-[#f4f1e8]">
-      <div
-        className="pointer-events-none fixed inset-0 opacity-70"
-        aria-hidden="true"
-      >
-        <div className="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-[#1f3b45]/20 blur-3xl" />
-        <div className="absolute top-1/3 right-0 h-80 w-80 rounded-full bg-[#d89a52]/[0.07] blur-3xl" />
-      </div>
-
-      <header className="relative border-b border-white/[0.08]">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-5 sm:px-8">
-          <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#d89a52]/50 bg-[#d89a52]/10 font-mono text-sm font-bold text-[#d89a52]">
-              E
-            </span>
-            <div>
-              <p className="text-sm font-semibold tracking-[0.04em]">
-                Elevate × TruLot
-              </p>
-              <p className="text-[11px] text-white/40">
-                Private revenue-lead pilot
-              </p>
-            </div>
+      <header className="border-b border-white/[0.08]">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
+          <div>
+            <p className="text-sm font-semibold">Elevate × TruLot</p>
+            <p className="text-[11px] text-white/40">Private signal calibration</p>
           </div>
           <div className="flex items-center gap-3">
             {showMockLabel && (
-              <span className="rounded-full border border-sky-300/20 bg-sky-300/10 px-3 py-1 font-mono text-[10px] tracking-wider text-sky-200 uppercase">
+              <span className="rounded-full border border-sky-300/20 px-3 py-1 text-[10px] text-sky-200 uppercase">
                 Mock mode
               </span>
             )}
             <button
               type="button"
               onClick={restart}
-              className="text-xs font-medium text-white/45 transition hover:text-white/80 focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d89a52]"
+              className="text-xs text-white/45 hover:text-white"
             >
               Restart
             </button>
@@ -777,53 +618,45 @@ export function ElevateInterview({
         </div>
       </header>
 
-      <div className="relative mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-14">
-        <div className="mb-8 max-w-3xl">
-          <p className="mb-4 flex items-center gap-3 font-mono text-xs tracking-[0.18em] text-[#d89a52] uppercase">
-            <span className="h-px w-8 bg-[#d89a52]" aria-hidden="true" />
-            Prepared specifically for Cesar and Elevate
-          </p>
-          <h1 className="text-4xl leading-[1.05] font-semibold tracking-[-0.045em] sm:text-5xl lg:text-6xl">
-            ROW Revenue
-            <br />
-            Opportunity Interview
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/55 sm:text-lg">
-            Eight focused sections define the first 20–30 opportunities. Most
-            answers are one-click classifications, and you can edit every section
-            before approval.
-          </p>
-        </div>
+      <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
+        <p className="font-mono text-xs tracking-[0.16em] text-[#d89a52] uppercase">
+          5–8 minute calibration
+        </p>
+        <h1 className="mt-3 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+          Elevate Signal Calibration
+        </h1>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-white/55">
+          Tell TruLot which public project signals are valuable. We will use the
+          result to put 5–10 real San Diego ROW leads in Cesar’s hands quickly.
+        </p>
 
-        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_19rem]">
-          <section className="min-w-0 rounded-3xl border border-white/[0.09] bg-[#111922]/95 shadow-2xl shadow-black/25">
-            <div className="border-b border-white/[0.08] px-5 py-4 sm:px-7">
+        <div className="mt-8 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_18rem]">
+          <section className="rounded-3xl border border-white/[0.09] bg-[#111922]">
+            <div className="border-b border-white/[0.08] p-5 sm:px-7">
               <div className="flex items-center justify-between gap-4">
                 <div>
                   <h2 className="text-sm font-semibold">
                     {activeSection?.title ?? "Review and approve"}
                   </h2>
                   <p className="mt-1 text-xs text-white/40">
-                    {hydrated
-                      ? "Saved on this device"
-                      : "Restoring saved interview…"}
+                    {hydrated ? "Saved on this device" : "Restoring…"}
                   </p>
                 </div>
                 <span className="font-mono text-xs text-[#d89a52]">
-                  {progressPercent}% defined
+                  {progress}% complete
                 </span>
               </div>
               <div
                 className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/[0.07]"
                 role="progressbar"
-                aria-label="Interview progress"
+                aria-label="Calibration progress"
                 aria-valuemin={0}
                 aria-valuemax={100}
-                aria-valuenow={progressPercent}
+                aria-valuenow={progress}
               >
                 <div
-                  className="h-full rounded-full bg-[linear-gradient(90deg,#b87333,#e7b674)] transition-[width] duration-500"
-                  style={{ width: `${progressPercent}%` }}
+                  className="h-full bg-[#d89a52] transition-[width]"
+                  style={{ width: `${progress}%` }}
                 />
               </div>
             </div>
@@ -832,12 +665,12 @@ export function ElevateInterview({
               {activeSection && (
                 <>
                   <div>
-                    <p className="font-mono text-[10px] tracking-[0.16em] text-[#d89a52] uppercase">
-                      Section{" "}
+                    <p className="font-mono text-[10px] tracking-wider text-[#d89a52] uppercase">
+                      Step{" "}
                       {INTERVIEW_SECTIONS.findIndex(
-                        ({ id }) => id === activeView,
+                        ({ id }) => id === activeSection.id,
                       ) + 1}{" "}
-                      of 8
+                      of 4
                     </p>
                     <p className="mt-2 text-sm leading-6 text-white/50">
                       {activeSection.description}
@@ -848,20 +681,11 @@ export function ElevateInterview({
                       className="rounded-2xl border border-[#d89a52]/25 bg-[#d89a52]/[0.06] p-5"
                       data-testid="clarification"
                     >
-                      <p className="font-mono text-[10px] tracking-wider text-[#e8c79e] uppercase">
-                        One clarification
-                      </p>
-                      <p className="mt-2 text-sm leading-6 text-white/75">
+                      <p className="text-sm leading-6 text-white/75">
                         {clarification.question}
                       </p>
-                      <label
-                        htmlFor="clarification-answer"
-                        className="mt-4 block text-sm text-white/60"
-                      >
-                        Your answer
-                      </label>
                       <textarea
-                        id="clarification-answer"
+                        aria-label="Clarification answer"
                         value={clarification.answer}
                         onChange={(event) =>
                           setClarification({
@@ -870,26 +694,35 @@ export function ElevateInterview({
                           })
                         }
                         rows={4}
-                        maxLength={4000}
-                        className="mt-2 max-h-56 min-h-28 w-full resize-y rounded-xl border border-white/10 bg-[#0c1117] px-3 py-2.5 text-sm text-white outline-none placeholder:text-white/25 focus:border-[#d89a52]/65"
-                        placeholder="Add only the detail that resolves this point."
+                        className="mt-3 max-h-48 min-h-28 w-full resize-y rounded-xl border border-white/10 bg-[#0c1117] p-3 text-sm"
                       />
-                      <div className="mt-4 flex flex-wrap justify-between gap-3">
+                      <div className="mt-3 flex justify-between gap-3">
                         <button
                           type="button"
-                          disabled={pending}
-                          onClick={leaveClarificationUnresolved}
-                          className="px-2 py-2 text-sm text-white/45"
+                          onClick={() => {
+                            setStatuses((current) => ({
+                              ...current,
+                              [clarification.section]: "unresolved",
+                            }));
+                            advance(clarification.section);
+                          }}
+                          className="text-sm text-white/45"
                         >
-                          Continue with unresolved
+                          Leave unresolved
                         </button>
                         <button
                           type="button"
                           disabled={!clarification.answer.trim() || pending}
-                          onClick={sendClarification}
+                          onClick={() =>
+                            void coach(
+                              clarification.section,
+                              "completed",
+                              clarification.answer,
+                            )
+                          }
                           className="rounded-xl bg-[#d89a52] px-5 py-3 text-sm font-semibold text-[#17120c] disabled:opacity-40"
                         >
-                          {pending ? "Saving…" : "Send"}
+                          Send
                         </button>
                       </div>
                     </div>
@@ -898,85 +731,56 @@ export function ElevateInterview({
                       section={activeSection.id}
                       answers={answers}
                       onChange={setAnswers}
-                      onContinue={continueSection}
-                      onSkip={skipSection}
+                      onContinue={(status) =>
+                        void coach(activeSection.id, status, null)
+                      }
+                      onSkip={skip}
                       pending={pending}
                     />
                   )}
                   {error && (
-                    <div
-                      className="rounded-xl border border-red-300/20 bg-red-300/[0.06] px-4 py-3 text-sm text-red-100"
-                      role="alert"
-                    >
+                    <p className="rounded-xl border border-red-300/20 p-3 text-sm text-red-100">
                       {error}
-                    </div>
+                    </p>
                   )}
                 </>
               )}
 
               {activeView === "review" && (
                 <div data-testid="review">
-                  <div className="mb-5">
-                    <p className="font-mono text-[10px] tracking-[0.16em] text-[#d89a52] uppercase">
-                      Elevate Buy Box v0.1
-                    </p>
-                    <h2 className="mt-2 text-2xl font-semibold">
-                      Review the exact selections.
-                    </h2>
-                    <p className="mt-2 text-sm leading-6 text-white/50">
-                      Edit any section without losing later answers. Approval
-                      records this version for the first manual opportunity
-                      batch.
-                    </p>
+                  <p className="font-mono text-[10px] tracking-wider text-[#d89a52] uppercase">
+                    Elevate Signal Calibration Summary
+                  </p>
+                  <h2 className="mt-2 text-2xl font-semibold">
+                    Ready for the first real leads.
+                  </h2>
+                  <div className="mt-5 rounded-2xl border border-[#d89a52]/20 p-4 text-sm text-white/65">
+                    <strong className="text-white">Assumptions:</strong> San Diego
+                    County · Any project size · Broad public ROW scope
                   </div>
-                  <div className="space-y-3">
+                  <div className="mt-4 space-y-3">
                     {INTERVIEW_SECTIONS.map(({ id }) => (
-                      <SummaryCard
+                      <ReviewCard
                         key={id}
                         section={id}
-                        status={sectionStatus[id]}
-                        buyBox={buyBox}
-                        onEdit={() => editSection(id)}
+                        status={statuses[id]}
+                        summary={summary}
+                        onEdit={() => edit(id)}
                       />
                     ))}
                   </div>
-                  {buyBox.unresolvedQuestions.length > 0 && (
-                    <div className="mt-5 rounded-2xl border border-amber-300/20 bg-amber-200/[0.05] p-4">
-                      <h3 className="text-sm font-semibold text-amber-100">
-                        Visible unresolved items
-                      </h3>
-                      <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-amber-100/70">
-                        {buyBox.unresolvedQuestions.map((question) => (
-                          <li key={question}>{question}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
                   {!approvedAt ? (
                     <div className="mt-6 grid gap-3 sm:grid-cols-2">
-                      <button
-                        type="button"
-                        onClick={() => setShowEditPrompt(true)}
-                        className={buttonClass}
-                      >
-                        I need to correct something
+                      <button type="button" className={buttonClass}>
+                        Use Edit to correct something
                       </button>
                       <button
                         type="button"
                         onClick={() => setApprovedAt(new Date().toISOString())}
-                        className="rounded-xl bg-[#d89a52] px-5 py-3.5 text-sm font-semibold text-[#17120c] transition hover:bg-[#e4aa69] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4f1e8]"
+                        className="rounded-xl bg-[#d89a52] px-5 py-3 text-sm font-semibold text-[#17120c]"
                       >
                         That looks right
                       </button>
-                      {showEditPrompt && (
-                        <p
-                          className="text-sm leading-6 text-[#e8c79e] sm:col-span-2"
-                          role="status"
-                        >
-                          Choose Edit on the section you want to correct. All
-                          other answers will stay in place.
-                        </p>
-                      )}
                     </div>
                   ) : (
                     <p className="mt-5 text-sm text-emerald-200">
@@ -989,22 +793,21 @@ export function ElevateInterview({
           </section>
 
           <aside className="rounded-3xl border border-white/[0.08] bg-white/[0.035] p-6 lg:sticky lg:top-6">
-            <p className="font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">
-              First 20–30 opportunities
+            <p className="font-mono text-[10px] text-white/35 uppercase">
+              Short calibration
             </p>
-            <h2 className="mt-2 text-lg font-semibold">Interview sequence</h2>
-            <ol className="mt-5 space-y-3">
+            <ol className="mt-4 space-y-3">
               {INTERVIEW_SECTIONS.map((section, index) => {
-                const status = sectionStatus[section.id];
+                const status = statuses[section.id];
                 const current = activeView === section.id;
                 return (
                   <li
                     key={section.id}
-                    className="flex items-center gap-3 text-sm"
                     aria-current={current ? "step" : undefined}
+                    className="flex items-center gap-3 text-sm"
                   >
                     <span
-                      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-[10px] ${
+                      className={`flex h-6 w-6 items-center justify-center rounded-full border text-[10px] ${
                         status !== "pending"
                           ? "border-[#d89a52] bg-[#d89a52] text-[#17120c]"
                           : current
@@ -1014,11 +817,7 @@ export function ElevateInterview({
                     >
                       {status !== "pending" ? "✓" : index + 1}
                     </span>
-                    <span
-                      className={
-                        current ? "font-medium text-white" : "text-white/50"
-                      }
-                    >
+                    <span className={current ? "text-white" : "text-white/50"}>
                       {section.shortTitle}
                       {status === "skipped" ? " · skipped" : ""}
                       {status === "unresolved" ? " · unresolved" : ""}
@@ -1027,26 +826,21 @@ export function ElevateInterview({
                 );
               })}
             </ol>
-            <div className="mt-6 border-t border-white/[0.08] pt-5 text-xs leading-5 text-white/35">
-              Progress stays on this device and is isolated to this private
-              invite. Older freeform-session data is intentionally not loaded
-              into the revised interview.
-            </div>
+            <p className="mt-6 border-t border-white/[0.08] pt-5 text-xs leading-5 text-white/35">
+              Progress is stored only on this device under a private,
+              token-derived key. Older questionnaire sessions are not imported.
+            </p>
           </aside>
         </div>
 
         {activeView === "review" && approvedAt && (
           <ApprovedActions
-            buyBox={buyBox}
+            summary={summary}
             transcript={transcript}
             resultsEmail={resultsEmail}
           />
         )}
       </div>
-
-      <footer className="relative border-t border-white/[0.07] px-5 py-6 text-center text-[11px] text-white/25">
-        Elevate × TruLot · Private ROW revenue-opportunity pilot
-      </footer>
     </main>
   );
 }
