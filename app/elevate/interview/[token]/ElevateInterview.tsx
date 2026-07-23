@@ -1,210 +1,146 @@
 "use client";
 
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  type KeyboardEvent,
-} from "react";
-import type {
-  ElevateBuyBox,
-  InterviewTurn,
-  TranscriptMessage,
+  interviewSectionIdSchema,
+  sectionCoachResponseSchema,
+  sectionStatusSchema,
+  structuredInterviewAnswersSchema,
+  type InterviewSectionId,
+  type SectionStatus,
+  type SignalCalibrationSummary,
+  type StructuredInterviewAnswers,
+  type TranscriptMessage,
 } from "@/lib/elevate-interview/schema";
+import {
+  buildSignalCalibrationSummary,
+  createInitialAnswers,
+  createInitialSectionStatus,
+  INTERVIEW_SECTIONS,
+  nextSection,
+  sectionTitle,
+} from "@/lib/elevate-interview/structured";
+import { InterviewSectionForm } from "./InterviewSectionForm";
 
-const OPENING_MESSAGE =
-  "Hi Cesar — Brian and TruLot are building a system to identify construction projects that may need Elevate’s right-of-way capabilities.\n\nThis discussion will help us define exactly which opportunities are worth putting in front of you, when they become actionable, and who you would want to contact.\n\nI’ll ask one focused question at a time, and I may ask follow-ups where the details affect lead quality. At the end, I’ll summarize Elevate’s proposed opportunity buy box for your approval.\n\nLet’s start with geography: where will Elevate actively pursue work today?";
-
-const INITIAL_TURN: InterviewTurn = {
-  assistantMessage: OPENING_MESSAGE,
-  questionKey: "geography",
-  suggestedReplies: [
-    "San Diego County",
-    "San Diego plus nearby counties",
-    "I’ll describe our service area",
-  ],
-  progressPercent: 8,
-  status: "interviewing",
-  coveredTopics: [],
-  unresolvedTopics: [
-    "geography",
-    "scopes",
-    "economics",
-    "customers",
-    "timing",
-    "capacity",
-    "examples",
-  ],
-  potentialContradictions: [],
-  buyBoxDraft: null,
+type ActiveView = InterviewSectionId | "review";
+type Clarification = {
+  section: InterviewSectionId;
+  question: string;
+  answer: string;
 };
-
 type SavedInterview = {
-  version: 1;
+  version: 3;
+  activeView: ActiveView;
+  answers: StructuredInterviewAnswers;
+  sectionStatus: Record<InterviewSectionId, SectionStatus>;
+  clarificationCounts: Record<InterviewSectionId, number>;
+  clarification: Clarification | null;
   transcript: TranscriptMessage[];
-  currentTurn: InterviewTurn;
+  approvedAt: string | null;
+  editReturnToReview: boolean;
   updatedAt: string;
 };
 
-const TOPICS = [
-  "Service area",
-  "Desired ROW scopes",
-  "Ideal project size",
-  "Preferred customers",
-  "Best outreach timing",
-  "Disqualifiers",
-  "Pursuit capacity",
-];
+const OPENING_MESSAGE =
+  "Welcome, Cesar. TruLot already assumes San Diego County, any project size, and broad ROW scope. Four short steps will calibrate which public permit and project signals are worth sending, then produce the first 5–10 real leads for feedback.";
 
-function formatMoney(value: number | null) {
-  if (value === null) return "Not yet provided";
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  }).format(value);
+const buttonClass =
+  "rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white transition hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52]";
+
+function newClarificationCounts() {
+  return Object.fromEntries(
+    INTERVIEW_SECTIONS.map(({ id }) => [id, 0]),
+  ) as Record<InterviewSectionId, number>;
 }
 
-function listOrPending(items: string[]) {
-  return items.length ? items.join(", ") : "Not yet provided";
+function list(items: string[]) {
+  return items.length ? items.join(", ") : "None selected";
 }
 
-function conciseSummary(buyBox: ElevateBuyBox) {
+function answerText(
+  section: InterviewSectionId,
+  summary: SignalCalibrationSummary,
+) {
+  if (section === "signals") {
+    return `Send now: ${list(summary.signalPriority.sendNow)}. Supporting: ${list(summary.signalPriority.supporting)}. Ignore: ${list(summary.signalPriority.ignore)}.`;
+  }
+  if (section === "evidence") {
+    return `Actionable evidence: ${list(summary.actionableEvidence)}.`;
+  }
+  if (section === "noise") {
+    return `Suppress: ${list(summary.suppressions)}.`;
+  }
+  return `First batch: ${summary.delivery.firstBatchSize ?? "not selected"} leads. Timing: ${summary.delivery.deliverySpeed ?? "not selected"}.`;
+}
+
+function plainSummary(summary: SignalCalibrationSummary) {
   return [
-    "Elevate Buy Box v0.1",
-    `Prepared for ${buyBox.participantName} at ${buyBox.companyName}`,
-    "",
-    `Core markets: ${listOrPending(buyBox.serviceGeography.coreMarkets)}`,
-    `Core scopes: ${listOrPending(buyBox.scopes.core)}`,
-    `Selective scopes: ${listOrPending(buyBox.scopes.selective)}`,
-    `Ordinary minimum: ${formatMoney(buyBox.economics.ordinaryMinimumContractValue)}`,
-    `Preferred range: ${formatMoney(buyBox.economics.preferredContractValueMin)}–${formatMoney(buyBox.economics.preferredContractValueMax)}`,
-    `Preferred customers: ${listOrPending(buyBox.preferredCustomerTypes)}`,
-    `Ideal outreach: ${buyBox.timing.idealOutreachStage ?? "Not yet provided"}`,
-    `Hard disqualifiers: ${listOrPending(buyBox.disqualifiers)}`,
-    `Daily capacity: review ${buyBox.capacity.leadsReviewablePerWeekday ?? "?"}; outreach ${buyBox.capacity.outreachActionsPerWeekday ?? "?"}`,
-    `Unresolved: ${listOrPending(buyBox.unresolvedQuestions)}`,
-    "",
-    buyBox.approvedByCesar
-      ? `Approved by Cesar at ${buyBox.approvedAt}`
-      : "Draft — awaiting Cesar’s approval",
-  ].join("\n");
+    summary.title,
+    `Status: ${summary.approvedByCesar ? "Approved" : "Draft"}`,
+    "Assumptions: San Diego County; any project size; broad public ROW scope",
+    `Send now: ${list(summary.signalPriority.sendNow)}`,
+    `Supporting evidence signals: ${list(summary.signalPriority.supporting)}`,
+    `Ignore: ${list(summary.signalPriority.ignore)}`,
+    `Actionable evidence: ${list(summary.actionableEvidence)}`,
+    `Suppress: ${list(summary.suppressions)}`,
+    `First batch: ${summary.delivery.firstBatchSize ?? "not selected"} real leads`,
+    `Delivery: ${summary.delivery.deliverySpeed ?? "not selected"}`,
+    `Unresolved: ${list(summary.unresolvedQuestions)}`,
+    summary.approvedAt ? `Approved by Cesar at ${summary.approvedAt}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
 }
 
-function markdownPacket(buyBox: ElevateBuyBox, transcript: TranscriptMessage[]) {
+function markdownPacket(
+  summary: SignalCalibrationSummary,
+  transcript: TranscriptMessage[],
+) {
   const bullets = (items: string[]) =>
-    items.length ? items.map((item) => `- ${item}`).join("\n") : "- Not yet provided";
+    items.length ? items.map((item) => `- ${item}`).join("\n") : "- None";
+  return `# Elevate Signal Calibration Summary
 
-  return `# Elevate Buy Box v0.1
+- **Participant:** Cesar
+- **Status:** ${summary.approvedByCesar ? "Approved" : "Draft"}
+- **Approved at:** ${summary.approvedAt ?? "Not approved"}
 
-- **Participant:** ${buyBox.participantName}
-- **Company:** ${buyBox.companyName}
-- **Status:** ${buyBox.approvedByCesar ? "Approved by Cesar" : "Draft"}
-- **Approved at:** ${buyBox.approvedAt ?? "Not approved"}
-- **Confidence:** ${buyBox.confidence}
+## Assumptions
 
-## Service geography
+- San Diego County
+- Any project size
+- Broad public right-of-way scope
 
-### Core markets
-${bullets(buyBox.serviceGeography.coreMarkets)}
+## Send now
+${bullets(summary.signalPriority.sendNow)}
 
-### Selective markets
-${bullets(buyBox.serviceGeography.selectiveMarkets)}
+## Supporting signals
+${bullets(summary.signalPriority.supporting)}
 
-### Excluded markets
-${bullets(buyBox.serviceGeography.excludedMarkets)}
+## Ignore
+${bullets(summary.signalPriority.ignore)}
 
-**Mobilization notes:** ${buyBox.serviceGeography.mobilizationNotes ?? "None provided"}
+## Actionable evidence
+${bullets(summary.actionableEvidence)}
 
-## ROW scopes
+## Suppress obvious noise
+${bullets(summary.suppressions)}
 
-### Core
-${bullets(buyBox.scopes.core)}
+## First calibration batch
 
-### Selective
-${bullets(buyBox.scopes.selective)}
+- Size: ${summary.delivery.firstBatchSize ?? "Not selected"} real leads
+- Timing: ${summary.delivery.deliverySpeed ?? "Not selected"}
+- Feedback owner: ${summary.delivery.feedbackOwner ?? "Not specified"}
 
-### Excluded
-${bullets(buyBox.scopes.excluded)}
+## Unresolved
+${bullets(summary.unresolvedQuestions)}
 
-**Notes:** ${buyBox.scopes.notes ?? "None provided"}
-
-## Economics
-
-- Ordinary minimum contract value: ${formatMoney(buyBox.economics.ordinaryMinimumContractValue)}
-- Preferred contract value: ${formatMoney(buyBox.economics.preferredContractValueMin)}–${formatMoney(buyBox.economics.preferredContractValueMax)}
-- Minimum gross profit: ${formatMoney(buyBox.economics.minimumGrossProfit)}
-
-### Strategic exceptions
-${bullets(buyBox.economics.strategicExceptions)}
-
-## Project and customer fit
-
-**Preferred project types**
-${bullets(buyBox.preferredProjectTypes)}
-
-**Excluded project types**
-${bullets(buyBox.excludedProjectTypes)}
-
-**Preferred customer types**
-${bullets(buyBox.preferredCustomerTypes)}
-
-**Target accounts**
-${bullets(buyBox.targetAccounts)}
-
-**Existing customers / suppress**
-${bullets(buyBox.existingCustomers)}
-
-**Do not contact**
-${bullets(buyBox.doNotContactAccounts)}
-
-**Preferred contact roles**
-${bullets(buyBox.preferredContactRoles)}
-
-## Timing
-
-- Earliest useful stage: ${buyBox.timing.earliestUsefulStage ?? "Not yet provided"}
-- Ideal outreach stage: ${buyBox.timing.idealOutreachStage ?? "Not yet provided"}
-- Too-late stage: ${buyBox.timing.tooLateStage ?? "Not yet provided"}
-- Notes: ${buyBox.timing.timingNotes ?? "None provided"}
-
-## Disqualifiers
-${bullets(buyBox.disqualifiers)}
-
-## Pursuit capacity
-
-- Leads reviewable per weekday: ${buyBox.capacity.leadsReviewablePerWeekday ?? "Not yet provided"}
-- Outreach actions per weekday: ${buyBox.capacity.outreachActionsPerWeekday ?? "Not yet provided"}
-- Follow-up owner: ${buyBox.capacity.followUpOwner ?? "Not yet provided"}
-- Expected response time: ${buyBox.capacity.expectedResponseTime ?? "Not yet provided"}
-
-## Examples
-
-**Good fit**
-${bullets(buyBox.goodFitExamples)}
-
-**Bad fit**
-${bullets(buyBox.badFitExamples)}
-
-## Unresolved questions
-${bullets(buyBox.unresolvedQuestions)}
-
-## Full interview transcript
-
-${transcript
-  .map(
-    (message) =>
-      `### ${message.role === "assistant" ? "TruLot interviewer" : "Cesar"}\n\n${message.content}`,
-  )
-  .join("\n\n")}
+## Clarification notes
+${transcript.length ? transcript.map((message) => `- **${message.role === "assistant" ? "TruLot" : "Cesar"}:** ${message.content}`).join("\n") : "- None"}
 `;
 }
 
-function downloadFile(filename: string, content: string, type: string) {
-  const blob = new Blob([content], { type });
-  const href = URL.createObjectURL(blob);
+function download(filename: string, content: string, type: string) {
+  const href = URL.createObjectURL(new Blob([content], { type }));
   const anchor = document.createElement("a");
   anchor.href = href;
   anchor.download = filename;
@@ -217,7 +153,6 @@ function downloadFile(filename: string, content: string, type: string) {
 async function copyText(value: string) {
   try {
     await navigator.clipboard.writeText(value);
-    return;
   } catch {
     const textarea = document.createElement("textarea");
     textarea.value = value;
@@ -230,236 +165,198 @@ async function copyText(value: string) {
   }
 }
 
-function DetailRow({
-  label,
-  value,
-}: {
-  label: string;
-  value: string | number | null;
-}) {
-  return (
-    <div className="grid gap-1 border-b border-white/[0.07] py-3 last:border-0 sm:grid-cols-[11rem_1fr]">
-      <dt className="text-xs font-medium tracking-[0.08em] text-white/45 uppercase">{label}</dt>
-      <dd className="text-sm leading-6 text-[#f4f1e8]">
-        {value === null || value === "" ? "Not yet provided" : value}
-      </dd>
-    </div>
-  );
+function restore(raw: string): SavedInterview | null {
+  try {
+    const parsed = JSON.parse(raw) as Partial<SavedInterview>;
+    if (parsed.version !== 3) return null;
+    const answers = structuredInterviewAnswersSchema.safeParse(parsed.answers);
+    if (!answers.success || !parsed.sectionStatus) return null;
+    const sectionStatus = Object.fromEntries(
+      INTERVIEW_SECTIONS.map(({ id }) => {
+        const status = sectionStatusSchema.safeParse(parsed.sectionStatus?.[id]);
+        return [id, status.success ? status.data : "pending"];
+      }),
+    ) as Record<InterviewSectionId, SectionStatus>;
+    const activeView =
+      parsed.activeView === "review"
+        ? "review"
+        : interviewSectionIdSchema.safeParse(parsed.activeView).success
+          ? (parsed.activeView as InterviewSectionId)
+          : "signals";
+    return {
+      version: 3,
+      activeView,
+      answers: answers.data,
+      sectionStatus,
+      clarificationCounts: Object.fromEntries(
+        INTERVIEW_SECTIONS.map(({ id }) => [
+          id,
+          Math.min(1, Math.max(0, parsed.clarificationCounts?.[id] ?? 0)),
+        ]),
+      ) as Record<InterviewSectionId, number>,
+      clarification:
+        parsed.clarification &&
+        interviewSectionIdSchema.safeParse(parsed.clarification.section).success
+          ? parsed.clarification
+          : null,
+      transcript: Array.isArray(parsed.transcript)
+        ? parsed.transcript.filter(
+            (message): message is TranscriptMessage =>
+              Boolean(
+                message &&
+                  (message.role === "assistant" || message.role === "user") &&
+                  typeof message.content === "string",
+              ),
+          )
+        : [],
+      approvedAt:
+        typeof parsed.approvedAt === "string" ? parsed.approvedAt : null,
+      editReturnToReview: Boolean(parsed.editReturnToReview),
+      updatedAt:
+        typeof parsed.updatedAt === "string"
+          ? parsed.updatedAt
+          : new Date().toISOString(),
+    };
+  } catch {
+    return null;
+  }
 }
 
-function BuyBoxReview({
-  buyBox,
-  contradictions,
-  onApprove,
-  onCorrect,
+function ReviewCard({
+  section,
+  status,
+  summary,
+  onEdit,
 }: {
-  buyBox: ElevateBuyBox;
-  contradictions: InterviewTurn["potentialContradictions"];
-  onApprove: () => void;
-  onCorrect: () => void;
+  section: InterviewSectionId;
+  status: SectionStatus;
+  summary: SignalCalibrationSummary;
+  onEdit: () => void;
 }) {
   return (
-    <section
-      aria-labelledby="buy-box-title"
-      className="mt-8 overflow-hidden rounded-3xl border border-[#d89a52]/30 bg-[#111922] shadow-2xl shadow-black/20"
-      data-testid="buy-box-review"
+    <article
+      className="rounded-2xl border border-white/[0.08] bg-black/10 p-4"
+      data-testid={`summary-${section}`}
     >
-      <div className="border-b border-white/10 bg-[linear-gradient(120deg,rgba(216,154,82,0.18),transparent_55%)] p-6 sm:p-8">
-        <p className="font-mono text-xs tracking-[0.2em] text-[#d89a52] uppercase">Draft for review</p>
-        <h2 id="buy-box-title" className="mt-2 text-2xl font-semibold tracking-[-0.025em]">
-          Elevate Buy Box v0.1
-        </h2>
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-white/55">
-          This is the proposed filter TruLot will use for the first manual batch of Elevate
-          opportunities. Missing answers remain visible instead of being guessed.
-        </p>
-      </div>
-
-      <div className="grid gap-5 p-5 sm:p-8 lg:grid-cols-2">
-        <div className="rounded-2xl border border-white/[0.08] bg-black/10 p-5">
-          <h3 className="mb-2 text-sm font-semibold text-[#d89a52]">Market & scope</h3>
-          <dl>
-            <DetailRow label="Core markets" value={listOrPending(buyBox.serviceGeography.coreMarkets)} />
-            <DetailRow label="Selective markets" value={listOrPending(buyBox.serviceGeography.selectiveMarkets)} />
-            <DetailRow label="Core scopes" value={listOrPending(buyBox.scopes.core)} />
-            <DetailRow label="Selective scopes" value={listOrPending(buyBox.scopes.selective)} />
-            <DetailRow label="Excluded scopes" value={listOrPending(buyBox.scopes.excluded)} />
-          </dl>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <div className="flex flex-wrap items-center gap-2">
+            <h3 className="text-sm font-semibold">{sectionTitle(section)}</h3>
+            <span className="rounded-full border border-white/10 px-2 py-0.5 font-mono text-[9px] text-white/45 uppercase">
+              {status}
+            </span>
+          </div>
+          <p className="mt-2 text-sm leading-6 text-white/58">
+            {status === "skipped" ? "Skipped for now." : answerText(section, summary)}
+          </p>
         </div>
-
-        <div className="rounded-2xl border border-white/[0.08] bg-black/10 p-5">
-          <h3 className="mb-2 text-sm font-semibold text-[#d89a52]">Economics & capacity</h3>
-          <dl>
-            <DetailRow label="Ordinary minimum" value={formatMoney(buyBox.economics.ordinaryMinimumContractValue)} />
-            <DetailRow
-              label="Preferred range"
-              value={`${formatMoney(buyBox.economics.preferredContractValueMin)}–${formatMoney(buyBox.economics.preferredContractValueMax)}`}
-            />
-            <DetailRow label="Minimum gross profit" value={formatMoney(buyBox.economics.minimumGrossProfit)} />
-            <DetailRow label="Leads / weekday" value={buyBox.capacity.leadsReviewablePerWeekday} />
-            <DetailRow label="Outreach / weekday" value={buyBox.capacity.outreachActionsPerWeekday} />
-          </dl>
-        </div>
-
-        <div className="rounded-2xl border border-white/[0.08] bg-black/10 p-5">
-          <h3 className="mb-2 text-sm font-semibold text-[#d89a52]">Customers & timing</h3>
-          <dl>
-            <DetailRow label="Customer types" value={listOrPending(buyBox.preferredCustomerTypes)} />
-            <DetailRow label="Target accounts" value={listOrPending(buyBox.targetAccounts)} />
-            <DetailRow label="Contact roles" value={listOrPending(buyBox.preferredContactRoles)} />
-            <DetailRow label="Earliest signal" value={buyBox.timing.earliestUsefulStage} />
-            <DetailRow label="Ideal outreach" value={buyBox.timing.idealOutreachStage} />
-            <DetailRow label="Too late" value={buyBox.timing.tooLateStage} />
-          </dl>
-        </div>
-
-        <div className="rounded-2xl border border-white/[0.08] bg-black/10 p-5">
-          <h3 className="mb-2 text-sm font-semibold text-[#d89a52]">Screening rules</h3>
-          <dl>
-            <DetailRow label="Project types" value={listOrPending(buyBox.preferredProjectTypes)} />
-            <DetailRow label="Disqualifiers" value={listOrPending(buyBox.disqualifiers)} />
-            <DetailRow label="Strategic exceptions" value={listOrPending(buyBox.economics.strategicExceptions)} />
-            <DetailRow label="Good-fit example" value={listOrPending(buyBox.goodFitExamples)} />
-            <DetailRow label="Bad-fit example" value={listOrPending(buyBox.badFitExamples)} />
-          </dl>
-        </div>
-      </div>
-
-      {(buyBox.unresolvedQuestions.length > 0 || contradictions.length > 0) && (
-        <div className="mx-5 mb-5 rounded-2xl border border-amber-300/20 bg-amber-200/[0.05] p-5 sm:mx-8 sm:mb-8">
-          <h3 className="text-sm font-semibold text-amber-200">Open items</h3>
-          <ul className="mt-3 space-y-2 text-sm leading-6 text-white/65">
-            {buyBox.unresolvedQuestions.map((question) => (
-              <li key={question} className="flex gap-2">
-                <span className="text-[#d89a52]" aria-hidden="true">—</span>
-                {question}
-              </li>
-            ))}
-            {contradictions.map((contradiction) => (
-              <li key={`${contradiction.topic}-${contradiction.explanation}`} className="flex gap-2">
-                <span className="text-[#d89a52]" aria-hidden="true">—</span>
-                <span>
-                  <strong className="font-medium text-white/80">{contradiction.topic}:</strong>{" "}
-                  {contradiction.explanation}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      <div className="flex flex-col gap-3 border-t border-white/10 bg-black/10 p-5 sm:flex-row sm:items-center sm:justify-end sm:p-8">
         <button
           type="button"
-          onClick={onCorrect}
-          className="rounded-xl border border-white/15 px-5 py-3 text-sm font-medium text-white/75 transition hover:border-white/30 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52]"
+          onClick={onEdit}
+          className="shrink-0 text-xs font-semibold text-[#e8c79e] underline underline-offset-4"
         >
-          I need to correct something
-        </button>
-        <button
-          type="button"
-          onClick={onApprove}
-          className="rounded-xl bg-[#d89a52] px-5 py-3 text-sm font-semibold text-[#17120c] transition hover:bg-[#e4aa69] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4f1e8]"
-        >
-          That looks right
+          Edit
         </button>
       </div>
-    </section>
+    </article>
   );
 }
 
 function ApprovedActions({
-  buyBox,
+  summary,
   transcript,
   resultsEmail,
 }: {
-  buyBox: ElevateBuyBox;
+  summary: SignalCalibrationSummary;
   transcript: TranscriptMessage[];
   resultsEmail: string;
 }) {
   const [copied, setCopied] = useState<string | null>(null);
-  const summary = useMemo(() => conciseSummary(buyBox), [buyBox]);
-  const markdown = useMemo(() => markdownPacket(buyBox, transcript), [buyBox, transcript]);
-
-  const copy = async (label: string, value: string) => {
-    await copyText(value);
-    setCopied(label);
-    window.setTimeout(() => setCopied(null), 1800);
-  };
-
+  const plain = plainSummary(summary);
+  const markdown = markdownPacket(summary, transcript);
   const emailHref = resultsEmail
-    ? `mailto:${encodeURIComponent(resultsEmail)}?subject=${encodeURIComponent("Elevate Buy Box v0.1 — Cesar Interview Complete")}&body=${encodeURIComponent(`${summary}\n\nPlease attach the downloaded full Markdown or JSON packet if Brian needs the complete transcript.`)}`
-    : "";
-
+    ? `mailto:${encodeURIComponent(resultsEmail)}?subject=${encodeURIComponent("Approved Elevate Signal Calibration Summary")}&body=${encodeURIComponent(plain)}`
+    : null;
+  const copy = async (kind: string, value: string) => {
+    await copyText(value);
+    setCopied(kind);
+    window.setTimeout(() => setCopied(null), 1500);
+  };
   return (
-    <section className="mt-8 rounded-3xl border border-emerald-300/20 bg-emerald-200/[0.06] p-6 sm:p-8" data-testid="approved-actions">
-      <div className="flex items-start gap-4">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-300 text-lg text-[#082017]" aria-hidden="true">
-          ✓
-        </div>
-        <div>
-          <p className="font-mono text-xs tracking-[0.18em] text-emerald-300 uppercase">Approved</p>
-          <h2 className="mt-1 text-2xl font-semibold tracking-[-0.02em]">Elevate’s buy box is ready.</h2>
-          <p className="mt-2 text-sm leading-6 text-white/60">
-            Download the complete pilot record or send Brian the concise approved summary.
-          </p>
-        </div>
-      </div>
-
+    <section
+      className="mt-8 rounded-3xl border border-emerald-300/20 bg-emerald-200/[0.06] p-6 sm:p-8"
+      data-testid="approved-actions"
+    >
+      <p className="font-mono text-xs tracking-[0.16em] text-emerald-200 uppercase">
+        ✓ Approved
+      </p>
+      <h2 className="mt-2 text-2xl font-semibold">
+        Elevate’s signal calibration is ready.
+      </h2>
+      <p className="mt-2 text-sm text-white/55">
+        TruLot can now assemble the first 5–10 real leads for feedback.
+      </p>
       <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <button
           type="button"
-          onClick={() => downloadFile("elevate-buy-box-v0.1.md", markdown, "text/markdown")}
-          className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium transition hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52]"
+          className={buttonClass}
+          onClick={() =>
+            download(
+              "elevate-signal-calibration.md",
+              markdown,
+              "text/markdown",
+            )
+          }
         >
           Download Markdown
         </button>
         <button
           type="button"
+          className={buttonClass}
           onClick={() =>
-            downloadFile(
-              "elevate-buy-box-v0.1.json",
-              JSON.stringify({ buyBox, transcript }, null, 2),
+            download(
+              "elevate-signal-calibration.json",
+              JSON.stringify({ summary, transcript }, null, 2),
               "application/json",
             )
           }
-          className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium transition hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52]"
         >
           Download JSON
         </button>
         <button
           type="button"
-          onClick={() => copy("summary", summary)}
-          className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium transition hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52]"
+          className={buttonClass}
+          onClick={() => void copy("summary", plain)}
         >
           {copied === "summary" ? "Summary copied" : "Copy summary"}
         </button>
         <button
           type="button"
+          className={buttonClass}
           onClick={() =>
-            copy(
+            void copy(
               "transcript",
               transcript
-                .map((message) => `${message.role === "assistant" ? "TruLot" : "Cesar"}:\n${message.content}`)
+                .map(
+                  ({ role, content }) =>
+                    `${role === "assistant" ? "TruLot" : "Cesar"}: ${content}`,
+                )
                 .join("\n\n"),
             )
           }
-          className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium transition hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52]"
         >
-          {copied === "transcript" ? "Transcript copied" : "Copy full transcript"}
+          {copied === "transcript"
+            ? "Transcript copied"
+            : "Copy clarification notes"}
         </button>
-        {emailHref ? (
+        {emailHref && (
           <a
             href={emailHref}
             data-testid="email-summary"
-            className="rounded-xl bg-[#d89a52] px-4 py-3 text-center text-sm font-semibold text-[#17120c] transition hover:bg-[#e4aa69] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4f1e8]"
+            className="rounded-xl bg-[#d89a52] px-4 py-3 text-center text-sm font-semibold text-[#17120c]"
           >
             Email summary to Brian
           </a>
-        ) : (
-          <span className="rounded-xl border border-white/10 px-4 py-3 text-center text-sm text-white/35">
-            Results email not configured
-          </span>
         )}
       </div>
     </section>
@@ -475,17 +372,22 @@ export function ElevateInterview({
   resultsEmail: string;
   showMockLabel: boolean;
 }) {
+  const [answers, setAnswers] = useState(createInitialAnswers);
+  const [statuses, setStatuses] = useState(createInitialSectionStatus);
+  const [activeView, setActiveView] = useState<ActiveView>("signals");
+  const [clarificationCounts, setClarificationCounts] = useState(
+    newClarificationCounts,
+  );
+  const [clarification, setClarification] = useState<Clarification | null>(null);
   const [transcript, setTranscript] = useState<TranscriptMessage[]>([
     { role: "assistant", content: OPENING_MESSAGE },
   ]);
-  const [currentTurn, setCurrentTurn] = useState<InterviewTurn>(INITIAL_TURN);
-  const [composer, setComposer] = useState("");
-  const [pendingMessage, setPendingMessage] = useState<string | null>(null);
+  const [approvedAt, setApprovedAt] = useState<string | null>(null);
+  const [editReturnToReview, setEditReturnToReview] = useState(false);
+  const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [storageKey, setStorageKey] = useState<string | null>(null);
   const [hydrated, setHydrated] = useState(false);
-  const transcriptRef = useRef<HTMLDivElement>(null);
-  const shouldAutoScroll = useRef(true);
 
   useEffect(() => {
     let active = true;
@@ -496,7 +398,7 @@ export function ElevateInterview({
         const suffix = Array.from(new Uint8Array(hash).slice(0, 12))
           .map((byte) => byte.toString(16).padStart(2, "0"))
           .join("");
-        setStorageKey(`trulot:elevate-interview:v1:${suffix}`);
+        setStorageKey(`trulot:elevate-signal-calibration:v3:${suffix}`);
       });
     return () => {
       active = false;
@@ -505,68 +407,91 @@ export function ElevateInterview({
 
   useEffect(() => {
     if (!storageKey) return;
-    try {
-      const raw = localStorage.getItem(storageKey);
-      if (raw) {
-        const saved = JSON.parse(raw) as SavedInterview;
-        if (
-          saved.version === 1 &&
-          Array.isArray(saved.transcript) &&
-          saved.transcript.length > 0 &&
-          saved.currentTurn &&
-          typeof saved.currentTurn.assistantMessage === "string"
-        ) {
-          setTranscript(saved.transcript);
-          setCurrentTurn(saved.currentTurn);
-        }
-      }
-    } catch {
+    const raw = localStorage.getItem(storageKey);
+    const saved = raw ? restore(raw) : null;
+    if (saved) {
+      setAnswers(saved.answers);
+      setStatuses(saved.sectionStatus);
+      setActiveView(saved.activeView);
+      setClarificationCounts(saved.clarificationCounts);
+      setClarification(saved.clarification);
+      setTranscript(saved.transcript);
+      setApprovedAt(saved.approvedAt);
+      setEditReturnToReview(saved.editReturnToReview);
+    } else if (raw) {
       localStorage.removeItem(storageKey);
-    } finally {
-      setHydrated(true);
     }
+    setHydrated(true);
   }, [storageKey]);
 
   useEffect(() => {
     if (!storageKey || !hydrated) return;
     const saved: SavedInterview = {
-      version: 1,
+      version: 3,
+      activeView,
+      answers,
+      sectionStatus: statuses,
+      clarificationCounts,
+      clarification,
       transcript,
-      currentTurn,
+      approvedAt,
+      editReturnToReview,
       updatedAt: new Date().toISOString(),
     };
     localStorage.setItem(storageKey, JSON.stringify(saved));
-  }, [currentTurn, hydrated, storageKey, transcript]);
+  }, [
+    activeView,
+    answers,
+    approvedAt,
+    clarification,
+    clarificationCounts,
+    editReturnToReview,
+    hydrated,
+    statuses,
+    storageKey,
+    transcript,
+  ]);
 
-  useEffect(() => {
-    if (shouldAutoScroll.current) {
-      transcriptRef.current?.scrollTo({
-        top: transcriptRef.current.scrollHeight,
-        behavior: "smooth",
-      });
-    }
-  }, [pendingMessage, transcript]);
+  const summary = useMemo(
+    () => buildSignalCalibrationSummary(answers, statuses, { approvedAt }),
+    [answers, approvedAt, statuses],
+  );
+  const completed = INTERVIEW_SECTIONS.filter(
+    ({ id }) => statuses[id] !== "pending",
+  ).length;
+  const progress = activeView === "review" ? 100 : completed * 25;
 
-  const handleTranscriptScroll = () => {
-    const element = transcriptRef.current;
-    if (!element) return;
-    shouldAutoScroll.current =
-      element.scrollHeight - element.scrollTop - element.clientHeight < 120;
-  };
+  const advance = useCallback(
+    (section: InterviewSectionId) => {
+      setClarification(null);
+      if (editReturnToReview) {
+        setEditReturnToReview(false);
+        setActiveView("review");
+      } else {
+        setActiveView(nextSection(section));
+      }
+    },
+    [editReturnToReview],
+  );
 
-  const send = useCallback(
-    async (message: string) => {
-      const cleanMessage = message.trim();
-      if (!cleanMessage || pendingMessage || currentTurn.status === "approved") return;
-
+  const coach = useCallback(
+    async (
+      section: InterviewSectionId,
+      status: SectionStatus,
+      clarificationAnswer: string | null,
+    ) => {
+      setPending(true);
       setError(null);
-      setPendingMessage(cleanMessage);
-      shouldAutoScroll.current = true;
-      const nextTranscript: TranscriptMessage[] = [
-        ...transcript,
-        { role: "user", content: cleanMessage },
-      ];
-
+      const submittedSummary = buildSignalCalibrationSummary(answers, {
+        ...statuses,
+        [section]: status,
+      });
+      const userMessage: TranscriptMessage = {
+        role: "user",
+        section,
+        content: clarificationAnswer?.trim() || answerText(section, submittedSummary),
+      };
+      const nextTranscript = [...transcript, userMessage].slice(-30);
       try {
         const response = await fetch("/api/elevate/interview", {
           method: "POST",
@@ -574,109 +499,118 @@ export function ElevateInterview({
             "content-type": "application/json",
             "x-elevate-interview-token": token,
           },
-          body: JSON.stringify({ transcript: nextTranscript }),
+          body: JSON.stringify({
+            activeSection: section,
+            answers,
+            transcript: nextTranscript,
+            clarificationAlreadyAsked: clarificationCounts[section] > 0,
+            clarificationAnswer,
+          }),
         });
-        const data = (await response.json()) as InterviewTurn | { error?: string };
-        if (!response.ok || !("assistantMessage" in data)) {
-          throw new Error("error" in data && data.error ? data.error : "Please try again.");
-        }
-
+        const parsed = sectionCoachResponseSchema.safeParse(
+          await response.json(),
+        );
+        if (!response.ok || !parsed.success) throw new Error();
         setTranscript([
           ...nextTranscript,
-          { role: "assistant", content: data.assistantMessage },
+          {
+            role: "assistant",
+            section,
+            content: parsed.data.assistantMessage,
+          },
         ]);
-        setCurrentTurn(data);
-        setComposer("");
-      } catch (caught) {
-        setError(caught instanceof Error ? caught.message : "Please try again.");
+        if (
+          parsed.data.requiresClarification &&
+          parsed.data.clarificationQuestion &&
+          clarificationCounts[section] === 0 &&
+          !clarificationAnswer
+        ) {
+          setClarificationCounts((counts) => ({ ...counts, [section]: 1 }));
+          setClarification({
+            section,
+            question: parsed.data.clarificationQuestion,
+            answer: "",
+          });
+        } else {
+          setStatuses((current) => ({ ...current, [section]: status }));
+          advance(section);
+        }
+      } catch {
+        setError("This step could not be saved. Your choices are still here.");
       } finally {
-        setPendingMessage(null);
+        setPending(false);
       }
     },
-    [currentTurn.status, pendingMessage, token, transcript],
+    [
+      advance,
+      answers,
+      clarificationCounts,
+      statuses,
+      token,
+      transcript,
+    ],
   );
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
-    if (event.key === "Enter" && !event.shiftKey) {
-      event.preventDefault();
-      void send(composer);
-    }
-  };
-
-  const approve = () => {
-    if (!currentTurn.buyBoxDraft) return;
-    const approvedAt = new Date().toISOString();
-    setCurrentTurn({
-      ...currentTurn,
-      status: "approved",
-      buyBoxDraft: {
-        ...currentTurn.buyBoxDraft,
-        approvedByCesar: true,
-        approvedAt,
+  const skip = () => {
+    if (activeView === "review") return;
+    setStatuses((current) => ({ ...current, [activeView]: "skipped" }));
+    setTranscript((current) => [
+      ...current,
+      {
+        role: "user",
+        section: activeView,
+        content: `${sectionTitle(activeView)} skipped for now.`,
       },
-    });
+    ]);
+    advance(activeView);
   };
 
-  const correct = () => {
-    const correctionPrompt =
-      "Absolutely. Tell me what needs to change, and I’ll revise the buy box without losing the rest of your answers.";
-    setTranscript((messages) => [
-      ...messages,
-      { role: "assistant", content: correctionPrompt },
-    ]);
-    setCurrentTurn((turn) => ({
-      ...turn,
-      assistantMessage: correctionPrompt,
-      questionKey: "draft_correction",
-      status: "interviewing",
-      suggestedReplies: [],
-      progressPercent: 96,
-    }));
-    window.setTimeout(() => document.getElementById("elevate-response")?.focus(), 0);
+  const edit = (section: InterviewSectionId) => {
+    setApprovedAt(null);
+    setClarification(null);
+    setEditReturnToReview(true);
+    setActiveView(section);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const restart = () => {
-    if (!window.confirm("Restart the interview? This clears the saved transcript and draft on this device.")) {
+    if (!window.confirm("Restart signal calibration and clear this device?"))
       return;
-    }
     if (storageKey) localStorage.removeItem(storageKey);
+    setAnswers(createInitialAnswers());
+    setStatuses(createInitialSectionStatus());
+    setActiveView("signals");
+    setClarificationCounts(newClarificationCounts());
+    setClarification(null);
     setTranscript([{ role: "assistant", content: OPENING_MESSAGE }]);
-    setCurrentTurn(INITIAL_TURN);
-    setComposer("");
+    setApprovedAt(null);
+    setEditReturnToReview(false);
     setError(null);
   };
 
-  const lastUpdated = hydrated ? "Saved on this device" : "Restoring saved interview…";
-  const draft = currentTurn.buyBoxDraft;
+  const activeSection =
+    activeView === "review"
+      ? null
+      : INTERVIEW_SECTIONS.find(({ id }) => id === activeView) ?? null;
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#0c1117] text-[#f4f1e8]">
-      <div className="pointer-events-none fixed inset-0 opacity-70" aria-hidden="true">
-        <div className="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-[#1f3b45]/20 blur-3xl" />
-        <div className="absolute top-1/3 right-0 h-80 w-80 rounded-full bg-[#d89a52]/[0.07] blur-3xl" />
-      </div>
-
-      <header className="relative border-b border-white/[0.08]">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-5 sm:px-8">
-          <div className="flex items-center gap-3">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-[#d89a52]/50 bg-[#d89a52]/10 font-mono text-sm font-bold text-[#d89a52]">
-              E
-            </span>
-            <div>
-              <p className="text-sm font-semibold tracking-[0.04em]">Elevate × TruLot</p>
-              <p className="text-[11px] text-white/40">Private revenue-lead pilot</p>
-            </div>
+      <header className="border-b border-white/[0.08]">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5 sm:px-8">
+          <div>
+            <p className="text-sm font-semibold">Elevate × TruLot</p>
+            <p className="text-[11px] text-white/40">Private signal calibration</p>
           </div>
           <div className="flex items-center gap-3">
             {showMockLabel && (
-              <span className="rounded-full border border-sky-300/20 bg-sky-300/10 px-3 py-1 font-mono text-[10px] tracking-wider text-sky-200 uppercase">
+              <span className="rounded-full border border-sky-300/20 px-3 py-1 text-[10px] text-sky-200 uppercase">
                 Mock mode
               </span>
             )}
             <button
               type="button"
               onClick={restart}
-              className="text-xs font-medium text-white/45 transition hover:text-white/80 focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d89a52]"
+              className="text-xs text-white/45 hover:text-white"
             >
               Restart
             </button>
@@ -684,218 +618,229 @@ export function ElevateInterview({
         </div>
       </header>
 
-      <div className="relative mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-14">
-        <div className="mb-10 max-w-3xl">
-          <p className="mb-4 flex items-center gap-3 font-mono text-xs tracking-[0.18em] text-[#d89a52] uppercase">
-            <span className="h-px w-8 bg-[#d89a52]" aria-hidden="true" />
-            Prepared specifically for Cesar and Elevate
-          </p>
-          <h1 className="text-4xl leading-[1.05] font-semibold tracking-[-0.045em] sm:text-5xl lg:text-6xl">
-            ROW Revenue
-            <br />
-            Opportunity Interview
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/55 sm:text-lg">
-            Define the projects worth pursuing, the moment they become actionable, and the
-            relationships that can turn public signals into won work.
-          </p>
-        </div>
+      <div className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
+        <p className="font-mono text-xs tracking-[0.16em] text-[#d89a52] uppercase">
+          5–8 minute calibration
+        </p>
+        <h1 className="mt-3 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+          Elevate Signal Calibration
+        </h1>
+        <p className="mt-4 max-w-2xl text-base leading-7 text-white/55">
+          Tell TruLot which public project signals are valuable. We will use the
+          result to put 5–10 real San Diego ROW leads in Cesar’s hands quickly.
+        </p>
 
-        <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_19rem]">
-          <section className="min-w-0 overflow-hidden rounded-3xl border border-white/[0.09] bg-[#111922]/95 shadow-2xl shadow-black/25">
-            <div className="border-b border-white/[0.08] px-5 py-4 sm:px-7">
+        <div className="mt-8 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_18rem]">
+          <section className="rounded-3xl border border-white/[0.09] bg-[#111922]">
+            <div className="border-b border-white/[0.08] p-5 sm:px-7">
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-sm font-semibold">Opportunity interview</h2>
-                  <p className="mt-1 text-xs text-white/40">{lastUpdated}</p>
+                  <h2 className="text-sm font-semibold">
+                    {activeSection?.title ?? "Review and approve"}
+                  </h2>
+                  <p className="mt-1 text-xs text-white/40">
+                    {hydrated ? "Saved on this device" : "Restoring…"}
+                  </p>
                 </div>
                 <span className="font-mono text-xs text-[#d89a52]">
-                  {currentTurn.progressPercent}% defined
+                  {progress}% complete
                 </span>
               </div>
               <div
                 className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/[0.07]"
                 role="progressbar"
-                aria-label="Interview progress"
+                aria-label="Calibration progress"
                 aria-valuemin={0}
                 aria-valuemax={100}
-                aria-valuenow={currentTurn.progressPercent}
+                aria-valuenow={progress}
               >
                 <div
-                  className="h-full rounded-full bg-[linear-gradient(90deg,#b87333,#e7b674)] transition-[width] duration-500"
-                  style={{ width: `${currentTurn.progressPercent}%` }}
+                  className="h-full bg-[#d89a52] transition-[width]"
+                  style={{ width: `${progress}%` }}
                 />
               </div>
             </div>
 
-            <div
-              ref={transcriptRef}
-              onScroll={handleTranscriptScroll}
-              className="max-h-[36rem] min-h-[26rem] space-y-6 overflow-y-auto px-5 py-6 sm:px-7"
-              aria-live="polite"
-              data-testid="transcript"
-            >
-              {transcript.map((message, index) => (
-                <div
-                  key={`${message.role}-${index}`}
-                  className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
-                >
-                  <div
-                    className={
-                      message.role === "user"
-                        ? "max-w-[88%] rounded-2xl rounded-br-md bg-[#d89a52] px-4 py-3 text-sm leading-6 text-[#17120c] sm:max-w-[75%]"
-                        : "max-w-[92%] border-l-2 border-[#d89a52]/60 pl-4 text-[15px] leading-7 text-white/72 sm:max-w-[82%]"
-                    }
-                  >
-                    {message.content.split("\n").map((line, lineIndex) => (
-                      <span key={lineIndex}>
-                        {line}
-                        {lineIndex < message.content.split("\n").length - 1 && <br />}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-
-              {pendingMessage && (
+            <div className="space-y-5 p-5 sm:p-7">
+              {activeSection && (
                 <>
-                  <div className="flex justify-end">
-                    <div className="max-w-[88%] rounded-2xl rounded-br-md bg-[#d89a52]/70 px-4 py-3 text-sm leading-6 text-[#17120c]">
-                      {pendingMessage}
+                  <div>
+                    <p className="font-mono text-[10px] tracking-wider text-[#d89a52] uppercase">
+                      Step{" "}
+                      {INTERVIEW_SECTIONS.findIndex(
+                        ({ id }) => id === activeSection.id,
+                      ) + 1}{" "}
+                      of 4
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-white/50">
+                      {activeSection.description}
+                    </p>
+                  </div>
+                  {clarification ? (
+                    <div
+                      className="rounded-2xl border border-[#d89a52]/25 bg-[#d89a52]/[0.06] p-5"
+                      data-testid="clarification"
+                    >
+                      <p className="text-sm leading-6 text-white/75">
+                        {clarification.question}
+                      </p>
+                      <textarea
+                        aria-label="Clarification answer"
+                        value={clarification.answer}
+                        onChange={(event) =>
+                          setClarification({
+                            ...clarification,
+                            answer: event.target.value,
+                          })
+                        }
+                        rows={4}
+                        className="mt-3 max-h-48 min-h-28 w-full resize-y rounded-xl border border-white/10 bg-[#0c1117] p-3 text-sm"
+                      />
+                      <div className="mt-3 flex justify-between gap-3">
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setStatuses((current) => ({
+                              ...current,
+                              [clarification.section]: "unresolved",
+                            }));
+                            advance(clarification.section);
+                          }}
+                          className="text-sm text-white/45"
+                        >
+                          Leave unresolved
+                        </button>
+                        <button
+                          type="button"
+                          disabled={!clarification.answer.trim() || pending}
+                          onClick={() =>
+                            void coach(
+                              clarification.section,
+                              "completed",
+                              clarification.answer,
+                            )
+                          }
+                          className="rounded-xl bg-[#d89a52] px-5 py-3 text-sm font-semibold text-[#17120c] disabled:opacity-40"
+                        >
+                          Send
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-2 pl-4 text-xs text-white/35" role="status">
-                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#d89a52]" />
-                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#d89a52] [animation-delay:150ms]" />
-                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#d89a52] [animation-delay:300ms]" />
-                    <span className="ml-1">Shaping the next question…</span>
-                  </div>
+                  ) : (
+                    <InterviewSectionForm
+                      section={activeSection.id}
+                      answers={answers}
+                      onChange={setAnswers}
+                      onContinue={(status) =>
+                        void coach(activeSection.id, status, null)
+                      }
+                      onSkip={skip}
+                      pending={pending}
+                    />
+                  )}
+                  {error && (
+                    <p className="rounded-xl border border-red-300/20 p-3 text-sm text-red-100">
+                      {error}
+                    </p>
+                  )}
                 </>
               )}
-            </div>
 
-            {currentTurn.status === "interviewing" && (
-              <div className="border-t border-white/[0.08] bg-black/10 p-4 sm:p-6">
-                {currentTurn.suggestedReplies.length > 0 && (
-                  <div className="mb-4 flex flex-wrap gap-2" aria-label="Suggested responses">
-                    {currentTurn.suggestedReplies.map((reply) => (
-                      <button
-                        key={reply}
-                        type="button"
-                        onClick={() => void send(reply)}
-                        disabled={Boolean(pendingMessage)}
-                        className="rounded-full border border-[#d89a52]/25 bg-[#d89a52]/[0.07] px-3.5 py-2 text-left text-xs leading-5 text-[#e8c79e] transition hover:border-[#d89a52]/55 hover:bg-[#d89a52]/[0.12] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52] disabled:cursor-not-allowed disabled:opacity-40"
-                      >
-                        {reply}
-                      </button>
+              {activeView === "review" && (
+                <div data-testid="review">
+                  <p className="font-mono text-[10px] tracking-wider text-[#d89a52] uppercase">
+                    Elevate Signal Calibration Summary
+                  </p>
+                  <h2 className="mt-2 text-2xl font-semibold">
+                    Ready for the first real leads.
+                  </h2>
+                  <div className="mt-5 rounded-2xl border border-[#d89a52]/20 p-4 text-sm text-white/65">
+                    <strong className="text-white">Assumptions:</strong> San Diego
+                    County · Any project size · Broad public ROW scope
+                  </div>
+                  <div className="mt-4 space-y-3">
+                    {INTERVIEW_SECTIONS.map(({ id }) => (
+                      <ReviewCard
+                        key={id}
+                        section={id}
+                        status={statuses[id]}
+                        summary={summary}
+                        onEdit={() => edit(id)}
+                      />
                     ))}
                   </div>
-                )}
-
-                <label htmlFor="elevate-response" className="sr-only">
-                  Your response
-                </label>
-                <div className="rounded-2xl border border-white/[0.11] bg-[#0c1117] p-2 focus-within:border-[#d89a52]/60 focus-within:ring-2 focus-within:ring-[#d89a52]/10">
-                  <textarea
-                    id="elevate-response"
-                    value={composer}
-                    onChange={(event) => setComposer(event.target.value)}
-                    onKeyDown={handleKeyDown}
-                    disabled={Boolean(pendingMessage)}
-                    rows={3}
-                    maxLength={4000}
-                    placeholder="Share what’s true for Elevate…"
-                    className="block w-full resize-none bg-transparent px-3 py-2 text-sm leading-6 text-white outline-none placeholder:text-white/25 disabled:opacity-60"
-                  />
-                  <div className="flex items-end justify-between gap-4 px-2 pb-1">
-                    <span className="text-[10px] text-white/28">Enter to send · Shift+Enter for a new line</span>
-                    <button
-                      type="button"
-                      onClick={() => void send(composer)}
-                      disabled={!composer.trim() || Boolean(pendingMessage)}
-                      className="inline-flex h-10 items-center gap-2 rounded-xl bg-[#d89a52] px-4 text-sm font-semibold text-[#17120c] transition hover:bg-[#e4aa69] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4f1e8] disabled:cursor-not-allowed disabled:opacity-35"
-                    >
-                      Send
-                      <span aria-hidden="true">↗</span>
-                    </button>
-                  </div>
+                  {!approvedAt ? (
+                    <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                      <button type="button" className={buttonClass}>
+                        Use Edit to correct something
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setApprovedAt(new Date().toISOString())}
+                        className="rounded-xl bg-[#d89a52] px-5 py-3 text-sm font-semibold text-[#17120c]"
+                      >
+                        That looks right
+                      </button>
+                    </div>
+                  ) : (
+                    <p className="mt-5 text-sm text-emerald-200">
+                      ✓ Approved by Cesar
+                    </p>
+                  )}
                 </div>
-
-                {error && (
-                  <div className="mt-3 flex items-center justify-between gap-4 rounded-xl border border-red-300/20 bg-red-300/[0.06] px-4 py-3 text-xs text-red-100" role="alert">
-                    <span>{error}</span>
-                    <button
-                      type="button"
-                      onClick={() => void send(composer)}
-                      className="shrink-0 font-semibold underline decoration-red-200/40 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-200"
-                    >
-                      Retry
-                    </button>
-                  </div>
-                )}
-
-                <p className="mt-3 text-[11px] leading-5 text-white/30">
-                  Please don’t include passwords, private financial-account information, or
-                  anything you wouldn’t want included in the pilot record.
-                </p>
-              </div>
-            )}
+              )}
+            </div>
           </section>
 
           <aside className="rounded-3xl border border-white/[0.08] bg-white/[0.035] p-6 lg:sticky lg:top-6">
-            <p className="font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">
-              First 20–30 opportunities
+            <p className="font-mono text-[10px] text-white/35 uppercase">
+              Short calibration
             </p>
-            <h2 className="mt-2 text-lg font-semibold">What we’re defining</h2>
-            <ul className="mt-5 space-y-3">
-              {TOPICS.map((topic) => {
-                const normalized = topic.toLowerCase();
-                const covered = currentTurn.coveredTopics.some(
-                  (coveredTopic) =>
-                    normalized.includes(coveredTopic.toLowerCase()) ||
-                    coveredTopic.toLowerCase().includes(normalized.split(" ")[0]),
-                );
+            <ol className="mt-4 space-y-3">
+              {INTERVIEW_SECTIONS.map((section, index) => {
+                const status = statuses[section.id];
+                const current = activeView === section.id;
                 return (
-                  <li key={topic} className="flex items-center gap-3 text-sm text-white/55">
+                  <li
+                    key={section.id}
+                    aria-current={current ? "step" : undefined}
+                    className="flex items-center gap-3 text-sm"
+                  >
                     <span
-                      className={`flex h-5 w-5 items-center justify-center rounded-full border text-[10px] ${
-                        covered
+                      className={`flex h-6 w-6 items-center justify-center rounded-full border text-[10px] ${
+                        status !== "pending"
                           ? "border-[#d89a52] bg-[#d89a52] text-[#17120c]"
-                          : "border-white/15 text-transparent"
+                          : current
+                            ? "border-[#d89a52] text-[#e8c79e]"
+                            : "border-white/15 text-white/30"
                       }`}
-                      aria-hidden="true"
                     >
-                      ✓
+                      {status !== "pending" ? "✓" : index + 1}
                     </span>
-                    <span className={covered ? "text-white/80" : ""}>{topic}</span>
+                    <span className={current ? "text-white" : "text-white/50"}>
+                      {section.shortTitle}
+                      {status === "skipped" ? " · skipped" : ""}
+                      {status === "unresolved" ? " · unresolved" : ""}
+                    </span>
                   </li>
                 );
               })}
-            </ul>
-            <div className="mt-6 border-t border-white/[0.08] pt-5 text-xs leading-5 text-white/35">
-              Your progress is stored only in this browser. Return with this private link to
-              continue.
-            </div>
+            </ol>
+            <p className="mt-6 border-t border-white/[0.08] pt-5 text-xs leading-5 text-white/35">
+              Progress is stored only on this device under a private,
+              token-derived key. Older questionnaire sessions are not imported.
+            </p>
           </aside>
         </div>
 
-        {currentTurn.status === "ready_for_review" && draft && (
-          <BuyBoxReview
-            buyBox={draft}
-            contradictions={currentTurn.potentialContradictions}
-            onApprove={approve}
-            onCorrect={correct}
+        {activeView === "review" && approvedAt && (
+          <ApprovedActions
+            summary={summary}
+            transcript={transcript}
+            resultsEmail={resultsEmail}
           />
         )}
-
-        {currentTurn.status === "approved" && draft && (
-          <ApprovedActions buyBox={draft} transcript={transcript} resultsEmail={resultsEmail} />
-        )}
       </div>
-
-      <footer className="relative border-t border-white/[0.07] px-5 py-6 text-center text-[11px] text-white/25">
-        Elevate × TruLot · Private ROW revenue-opportunity pilot
-      </footer>
     </main>
   );
 }

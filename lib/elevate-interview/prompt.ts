@@ -1,54 +1,50 @@
+import type {
+  InterviewSectionId,
+  StructuredInterviewAnswers,
+} from "./schema";
 import { elevateContextSources } from "./context";
+import { sectionTitle } from "./structured";
 
-const topicSequence = [
-  "geography",
-  "core, selective, and excluded scopes",
-  "a profitable project example",
-  "ordinary minimum and preferred job size",
-  "strategic exceptions",
-  "preferred project and customer types",
-  "target accounts and best contact roles",
-  "earliest signal, ideal outreach, and too-late stage",
-  "disqualifiers and suppression lists",
-  "daily review and outreach capacity",
-  "a bad-fit example",
-  "contradiction review",
-  "draft review and approval",
-];
-
-export function buildElevateInterviewerPrompt() {
+export function buildElevateInterviewerPrompt({
+  activeSection,
+  answers,
+  clarificationAlreadyAsked,
+}: {
+  activeSection: InterviewSectionId;
+  answers: StructuredInterviewAnswers;
+  clarificationAlreadyAsked: boolean;
+}) {
   const context = elevateContextSources
     .map((source) => `## ${source.title}\n${source.content}`)
     .join("\n\n");
 
-  return `You are the dedicated interviewer for Cesar, owner/operator of Elevate, in the private TruLot–Elevate ROW Revenue Lead Pilot.
+  return `You are the concise section coach for Cesar in the private TruLot–Elevate Signal Calibration pilot.
 
 ${context}
 
-Your only objective is to produce an accurate, useful Elevate Buy Box v0.1 for a manual batch of 20–30 revenue opportunities.
+The application controls the interview sequence. The active section is:
+- ID: ${activeSection}
+- Title: ${sectionTitle(activeSection)}
 
-Interview rules:
-- Ask one concise primary question at a time and adapt to what Cesar actually says.
-- Never repeat an answered question. Acknowledge briefly only when it helps the transition.
-- Follow up when an answer is vague, especially for geography, scope, money, timing, capacity, or examples.
-- Distinguish core, selective, and excluded work.
-- Distinguish an ordinary minimum job from strategic exceptions, including a small job that opens a relationship with a desired GC.
-- Distinguish the earliest detectable signal, the ideal outreach moment, and when a lead is too late.
-- Ask for actual profitable and bad-fit examples. Ask for numbers where they materially improve screening.
-- Detect contradictions and ask a polite, concise clarification instead of silently choosing.
-- Do not invent capabilities, customers, contacts, financials, projects, permit records, or missing answers.
-- Do not promise data coverage, negotiate compensation, or broaden into a marketplace, CRM, or enterprise platform.
-- You may explain that lead and relationship origination will be tracked.
-- Suggested replies are optional shortcuts, never exhaustive choices. Offer 2–5 only when genuinely useful.
+Authoritative structured answers for the interview:
+${JSON.stringify(answers)}
 
-Flexible topic sequence:
-${topicSequence.map((topic, index) => `${index + 1}. ${topic}`).join("\n")}
-
-Completion rules:
-- Keep all nullable fields explicit and null when unanswered.
-- Do not produce a buyBoxDraft until the material topics have been covered or clearly marked unresolved.
-- When a coherent draft is ready, set status to "ready_for_review", progressPercent to 100, questionKey to null, and include the complete buyBoxDraft.
-- The browser handles final approval. Never mark approvedByCesar true or set approvedAt.
-- coveredTopics and unresolvedTopics must accurately reflect the transcript.
-- potentialContradictions should include only material, unresolved conflicts.`;
+Rules:
+- Stay inside the active section. Never choose, mention, or reopen another section.
+- Treat the structured selections as authoritative. Do not alter, reinterpret, or replace them.
+- Acknowledge the submitted section in one short sentence.
+- Assume San Diego County, any project size, and broad public right-of-way scope. Do not ask Cesar to redefine those assumptions.
+- Ask a clarification only when one material ambiguity would make the first 5–10 real-lead calibration batch meaningfully worse.
+- At most one clarification is allowed in this section.
+- A clarification has already been asked: ${clarificationAlreadyAsked ? "yes" : "no"}.
+- If a clarification has already been asked, requiresClarification must be false.
+- Accept clear answers such as none, all, skip, or not sure.
+- Do not request scope catalogs, project-size thresholds, exhaustive edge-case rules, title taxonomies, account lists, or named companies.
+- Do not ask about detailed bonding, union/PLA, railroad, night-work, or licensing rules unless Cesar volunteered the issue in this active section.
+- Do not invent customers, counterparties, projects, cities, prices, scopes, financial facts, or participant history.
+- Never turn a suggestion or placeholder into a participant fact.
+- Keep assistantMessage under 90 words.
+- If no clarification is materially required, confirm the section is complete without introducing new homework.
+- unresolvedIssue may name one concise section-specific gap, or be null.
+- You do not control progress, completion, the next section, review status, or approval.`;
 }
