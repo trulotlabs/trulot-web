@@ -2,10 +2,10 @@ import OpenAI from "openai";
 import { zodTextFormat } from "openai/helpers/zod";
 import { createHash } from "node:crypto";
 import { buildElevateInterviewerPrompt } from "@/lib/elevate-interview/prompt";
-import { getMockInterviewTurn } from "@/lib/elevate-interview/mock";
+import { getMockSectionResponse } from "@/lib/elevate-interview/mock";
 import {
   interviewRequestSchema,
-  interviewTurnSchema,
+  sectionCoachResponseSchema,
 } from "@/lib/elevate-interview/schema";
 import { isValidElevateToken } from "@/lib/elevate-interview/security";
 
@@ -59,10 +59,11 @@ export async function POST(request: Request) {
     );
   }
 
-  const totalCharacters = parsed.data.transcript.reduce(
-    (total, message) => total + message.content.length,
-    0,
-  );
+  const totalCharacters =
+    parsed.data.transcript.reduce(
+      (total, message) => total + message.content.length,
+      0,
+    ) + (parsed.data.clarificationAnswer?.length ?? 0);
   if (totalCharacters > 40_000) {
     return Response.json(
       { error: "This interview has reached its length limit. Please export the current record." },
@@ -71,7 +72,7 @@ export async function POST(request: Request) {
   }
 
   if (process.env.ELEVATE_INTERVIEW_MOCK === "true") {
-    return Response.json(getMockInterviewTurn(parsed.data.transcript));
+    return Response.json(getMockSectionResponse(parsed.data.activeSection));
   }
 
   const apiKey = process.env.OPENAI_API_KEY;
@@ -92,13 +93,24 @@ export async function POST(request: Request) {
         .update(`elevate:${interviewToken}`)
         .digest("hex")
         .slice(0, 64),
-      instructions: buildElevateInterviewerPrompt(),
-      input: parsed.data.transcript.map((message) => ({
-        role: message.role,
-        content: message.content,
-      })),
+      instructions: buildElevateInterviewerPrompt({
+        activeSection: parsed.data.activeSection,
+        answers: parsed.data.answers,
+        clarificationAlreadyAsked: parsed.data.clarificationAlreadyAsked,
+      }),
+      input: [
+        {
+          role: "user",
+          content: parsed.data.clarificationAnswer
+            ? `Cesar answered the one permitted clarification: ${parsed.data.clarificationAnswer}`
+            : `Cesar submitted the structured ${parsed.data.activeSection} section. Review only that section.`,
+        },
+      ],
       text: {
-        format: zodTextFormat(interviewTurnSchema, "elevate_interview_turn"),
+        format: zodTextFormat(
+          sectionCoachResponseSchema,
+          "elevate_section_coach_response",
+        ),
       },
     });
 
@@ -109,7 +121,20 @@ export async function POST(request: Request) {
       );
     }
 
-    return Response.json(interviewTurnSchema.parse(response.output_parsed));
+    const parsedResponse = sectionCoachResponseSchema.parse(
+      response.output_parsed,
+    );
+    if (
+      parsed.data.clarificationAlreadyAsked &&
+      parsedResponse.requiresClarification
+    ) {
+      return Response.json({
+        ...parsedResponse,
+        requiresClarification: false,
+        clarificationQuestion: null,
+      });
+    }
+    return Response.json(parsedResponse);
   } catch (error) {
     console.error(
       "Elevate interview request failed:",

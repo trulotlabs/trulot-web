@@ -1,65 +1,62 @@
 "use client";
 
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-  type KeyboardEvent,
-} from "react";
-import type {
-  ElevateBuyBox,
-  InterviewTurn,
-  TranscriptMessage,
+  interviewSectionIdSchema,
+  sectionCoachResponseSchema,
+  sectionStatusSchema,
+  structuredInterviewAnswersSchema,
+  type ElevateBuyBox,
+  type InterviewSectionId,
+  type SectionStatus,
+  type StructuredInterviewAnswers,
+  type TranscriptMessage,
 } from "@/lib/elevate-interview/schema";
+import {
+  buildElevateBuyBox,
+  createInitialAnswers,
+  createInitialSectionStatus,
+  INTERVIEW_SECTIONS,
+  nextSection,
+  sectionTitle,
+} from "@/lib/elevate-interview/structured";
+import { InterviewSectionForm } from "./InterviewSectionForm";
 
-const OPENING_MESSAGE =
-  "Hi Cesar — Brian and TruLot are building a system to identify construction projects that may need Elevate’s right-of-way capabilities.\n\nThis discussion will help us define exactly which opportunities are worth putting in front of you, when they become actionable, and who you would want to contact.\n\nI’ll ask one focused question at a time, and I may ask follow-ups where the details affect lead quality. At the end, I’ll summarize Elevate’s proposed opportunity buy box for your approval.\n\nLet’s start with geography: where will Elevate actively pursue work today?";
+type ActiveView = InterviewSectionId | "review";
 
-const INITIAL_TURN: InterviewTurn = {
-  assistantMessage: OPENING_MESSAGE,
-  questionKey: "geography",
-  suggestedReplies: [
-    "San Diego County",
-    "San Diego plus nearby counties",
-    "I’ll describe our service area",
-  ],
-  progressPercent: 8,
-  status: "interviewing",
-  coveredTopics: [],
-  unresolvedTopics: [
-    "geography",
-    "scopes",
-    "economics",
-    "customers",
-    "timing",
-    "capacity",
-    "examples",
-  ],
-  potentialContradictions: [],
-  buyBoxDraft: null,
+type Clarification = {
+  section: InterviewSectionId;
+  question: string;
+  answer: string;
 };
 
 type SavedInterview = {
-  version: 1;
+  version: 2;
+  activeView: ActiveView;
+  answers: StructuredInterviewAnswers;
+  sectionStatus: Record<InterviewSectionId, SectionStatus>;
+  clarificationCounts: Record<InterviewSectionId, number>;
+  clarification: Clarification | null;
   transcript: TranscriptMessage[];
-  currentTurn: InterviewTurn;
+  approvedAt: string | null;
+  editReturnToReview: boolean;
   updatedAt: string;
 };
 
-const TOPICS = [
-  "Service area",
-  "Desired ROW scopes",
-  "Ideal project size",
-  "Preferred customers",
-  "Best outreach timing",
-  "Disqualifiers",
-  "Pursuit capacity",
-];
+const OPENING_MESSAGE =
+  "Welcome, Cesar. This short onboarding will define Elevate’s first ROW opportunity buy box. The eight sections use structured controls, and you can skip, revise, or leave items unresolved. TruLot will preserve exactly what you select.";
+
+const buttonClass =
+  "rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium text-white transition hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52] disabled:opacity-40";
+
+function newClarificationCounts() {
+  return Object.fromEntries(
+    INTERVIEW_SECTIONS.map((section) => [section.id, 0]),
+  ) as Record<InterviewSectionId, number>;
+}
 
 function formatMoney(value: number | null) {
-  if (value === null) return "Not yet provided";
+  if (value === null) return "Not provided";
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -67,138 +64,156 @@ function formatMoney(value: number | null) {
   }).format(value);
 }
 
-function listOrPending(items: string[]) {
-  return items.length ? items.join(", ") : "Not yet provided";
+function list(items: string[]) {
+  return items.length ? items.join(", ") : "None selected";
+}
+
+function sectionAnswerText(
+  section: InterviewSectionId,
+  buyBox: ElevateBuyBox,
+) {
+  switch (section) {
+    case "service_area":
+      return `Core: ${list(buyBox.serviceGeography.coreMarkets)}. Selective: ${list(buyBox.serviceGeography.selectiveMarkets)}. Excluded: ${list(buyBox.serviceGeography.excludedMarkets)}.`;
+    case "scopes":
+      return `Core: ${list(buyBox.scopes.core)}. Selective: ${list(buyBox.scopes.selective)}. Excluded: ${list(buyBox.scopes.excluded)}. Unresolved: ${list(buyBox.scopes.unresolved)}.`;
+    case "economics":
+      return `Ordinary minimum: ${formatMoney(buyBox.economics.ordinaryMinimumContractValue)}. Preferred range: ${formatMoney(buyBox.economics.preferredContractValueMin)} to ${formatMoney(buyBox.economics.preferredContractValueMax)}. Exceptions: ${list(buyBox.economics.strategicExceptions)}.`;
+    case "customers":
+      return `Core: ${list(buyBox.customerTypes.core)}. Selective: ${list(buyBox.customerTypes.selective)}. Excluded: ${list(buyBox.customerTypes.excluded)}.`;
+    case "contacts":
+      return buyBox.contactPreference.useBestAvailable
+        ? "Use the best available named contact."
+        : `Primary: ${buyBox.contactPreference.primary ?? "Not provided"}. Secondary: ${buyBox.contactPreference.secondary ?? "Not provided"}.`;
+    case "timing":
+      return `Earliest useful: ${buyBox.timing.earliestUsefulStage ?? "Not provided"}. Ideal: ${list(buyBox.timing.idealOutreachStages)}. Too late: ${buyBox.timing.tooLateStage ?? "Not provided"}.`;
+    case "disqualifiers":
+      return `Suppress: ${list(buyBox.screeningRules.suppress)}. Conditional: ${list(buyBox.screeningRules.conditional)}. Allow: ${list(buyBox.screeningRules.allow)}.`;
+    case "capacity_examples":
+      return `Review capacity: ${buyBox.capacity.leadsReviewablePerWeekday ?? "Not provided"} per weekday. Outreach capacity: ${buyBox.capacity.outreachActionsPerWeekday ?? "Not provided"} per weekday.`;
+  }
 }
 
 function conciseSummary(buyBox: ElevateBuyBox) {
   return [
     "Elevate Buy Box v0.1",
-    `Prepared for ${buyBox.participantName} at ${buyBox.companyName}`,
-    "",
-    `Core markets: ${listOrPending(buyBox.serviceGeography.coreMarkets)}`,
-    `Core scopes: ${listOrPending(buyBox.scopes.core)}`,
-    `Selective scopes: ${listOrPending(buyBox.scopes.selective)}`,
+    `Status: ${buyBox.approvedByCesar ? "Approved" : "Draft"}`,
+    `Core markets: ${list(buyBox.serviceGeography.coreMarkets)}`,
+    `Core scopes: ${list(buyBox.scopes.core)}`,
+    `Selective scopes: ${list(buyBox.scopes.selective)}`,
     `Ordinary minimum: ${formatMoney(buyBox.economics.ordinaryMinimumContractValue)}`,
     `Preferred range: ${formatMoney(buyBox.economics.preferredContractValueMin)}–${formatMoney(buyBox.economics.preferredContractValueMax)}`,
-    `Preferred customers: ${listOrPending(buyBox.preferredCustomerTypes)}`,
-    `Ideal outreach: ${buyBox.timing.idealOutreachStage ?? "Not yet provided"}`,
-    `Hard disqualifiers: ${listOrPending(buyBox.disqualifiers)}`,
-    `Daily capacity: review ${buyBox.capacity.leadsReviewablePerWeekday ?? "?"}; outreach ${buyBox.capacity.outreachActionsPerWeekday ?? "?"}`,
-    `Unresolved: ${listOrPending(buyBox.unresolvedQuestions)}`,
-    "",
-    buyBox.approvedByCesar
-      ? `Approved by Cesar at ${buyBox.approvedAt}`
-      : "Draft — awaiting Cesar’s approval",
-  ].join("\n");
+    `Preferred customers: ${list(buyBox.preferredCustomerTypes)}`,
+    `Ideal outreach: ${list(buyBox.timing.idealOutreachStages)}`,
+    `Suppress: ${list(buyBox.screeningRules.suppress)}`,
+    `Daily capacity: review ${buyBox.capacity.leadsReviewablePerWeekday ?? "not provided"}; outreach ${buyBox.capacity.outreachActionsPerWeekday ?? "not provided"}`,
+    `Unresolved: ${list(buyBox.unresolvedQuestions)}`,
+    buyBox.approvedAt ? `Approved by Cesar at ${buyBox.approvedAt}` : "",
+  ]
+    .filter(Boolean)
+    .join("\n");
 }
 
-function markdownPacket(buyBox: ElevateBuyBox, transcript: TranscriptMessage[]) {
+function markdownPacket(
+  buyBox: ElevateBuyBox,
+  transcript: TranscriptMessage[],
+) {
   const bullets = (items: string[]) =>
-    items.length ? items.map((item) => `- ${item}`).join("\n") : "- Not yet provided";
-
+    items.length ? items.map((item) => `- ${item}`).join("\n") : "- None";
   return `# Elevate Buy Box v0.1
 
-- **Participant:** ${buyBox.participantName}
-- **Company:** ${buyBox.companyName}
-- **Status:** ${buyBox.approvedByCesar ? "Approved by Cesar" : "Draft"}
+- **Participant:** Cesar
+- **Company:** Elevate
+- **Status:** ${buyBox.approvedByCesar ? "Approved" : "Draft"}
 - **Approved at:** ${buyBox.approvedAt ?? "Not approved"}
 - **Confidence:** ${buyBox.confidence}
 
-## Service geography
+## Service area
 
-### Core markets
+**Core**
 ${bullets(buyBox.serviceGeography.coreMarkets)}
 
-### Selective markets
+**Selective**
 ${bullets(buyBox.serviceGeography.selectiveMarkets)}
 
-### Excluded markets
+**Excluded**
 ${bullets(buyBox.serviceGeography.excludedMarkets)}
 
-**Mobilization notes:** ${buyBox.serviceGeography.mobilizationNotes ?? "None provided"}
+**Mobilization note:** ${buyBox.serviceGeography.mobilizationNotes ?? "None"}
 
-## ROW scopes
+## Desired ROW scopes
 
-### Core
+**Core**
 ${bullets(buyBox.scopes.core)}
 
-### Selective
+**Selective**
 ${bullets(buyBox.scopes.selective)}
 
-### Excluded
+**Excluded**
 ${bullets(buyBox.scopes.excluded)}
 
-**Notes:** ${buyBox.scopes.notes ?? "None provided"}
+**Unresolved**
+${bullets(buyBox.scopes.unresolved)}
 
-## Economics
+## Project economics
 
-- Ordinary minimum contract value: ${formatMoney(buyBox.economics.ordinaryMinimumContractValue)}
-- Preferred contract value: ${formatMoney(buyBox.economics.preferredContractValueMin)}–${formatMoney(buyBox.economics.preferredContractValueMax)}
-- Minimum gross profit: ${formatMoney(buyBox.economics.minimumGrossProfit)}
+- Ordinary minimum: ${formatMoney(buyBox.economics.ordinaryMinimumContractValue)}
+- Preferred range: ${formatMoney(buyBox.economics.preferredContractValueMin)}–${formatMoney(buyBox.economics.preferredContractValueMax)}
+- Obvious exceptions: ${list(buyBox.economics.strategicExceptions)}
 
-### Strategic exceptions
-${bullets(buyBox.economics.strategicExceptions)}
+## Preferred customer types
 
-## Project and customer fit
+**Core**
+${bullets(buyBox.customerTypes.core)}
 
-**Preferred project types**
-${bullets(buyBox.preferredProjectTypes)}
+**Selective**
+${bullets(buyBox.customerTypes.selective)}
 
-**Excluded project types**
-${bullets(buyBox.excludedProjectTypes)}
+**Excluded**
+${bullets(buyBox.customerTypes.excluded)}
 
-**Preferred customer types**
-${bullets(buyBox.preferredCustomerTypes)}
+## Contact preference
 
-**Target accounts**
-${bullets(buyBox.targetAccounts)}
+- Primary: ${buyBox.contactPreference.primary ?? "Not provided"}
+- Secondary: ${buyBox.contactPreference.secondary ?? "Not provided"}
+- Use best available: ${buyBox.contactPreference.useBestAvailable ? "Yes" : "No"}
 
-**Existing customers / suppress**
-${bullets(buyBox.existingCustomers)}
+## Lead timing
 
-**Do not contact**
-${bullets(buyBox.doNotContactAccounts)}
+- Earliest useful: ${buyBox.timing.earliestUsefulStage ?? "Not provided"}
+- Ideal: ${list(buyBox.timing.idealOutreachStages)}
+- Too late: ${buyBox.timing.tooLateStage ?? "Not provided"}
 
-**Preferred contact roles**
-${bullets(buyBox.preferredContactRoles)}
+## Screening rules
 
-## Timing
+**Suppress**
+${bullets(buyBox.screeningRules.suppress)}
 
-- Earliest useful stage: ${buyBox.timing.earliestUsefulStage ?? "Not yet provided"}
-- Ideal outreach stage: ${buyBox.timing.idealOutreachStage ?? "Not yet provided"}
-- Too-late stage: ${buyBox.timing.tooLateStage ?? "Not yet provided"}
-- Notes: ${buyBox.timing.timingNotes ?? "None provided"}
+**Conditional**
+${bullets(buyBox.screeningRules.conditional)}
 
-## Disqualifiers
-${bullets(buyBox.disqualifiers)}
+**Allow**
+${bullets(buyBox.screeningRules.allow)}
 
 ## Pursuit capacity
 
-- Leads reviewable per weekday: ${buyBox.capacity.leadsReviewablePerWeekday ?? "Not yet provided"}
-- Outreach actions per weekday: ${buyBox.capacity.outreachActionsPerWeekday ?? "Not yet provided"}
-- Follow-up owner: ${buyBox.capacity.followUpOwner ?? "Not yet provided"}
-- Expected response time: ${buyBox.capacity.expectedResponseTime ?? "Not yet provided"}
+- Leads reviewable per weekday: ${buyBox.capacity.leadsReviewablePerWeekday ?? "Not provided"}
+- Outreach actions per weekday: ${buyBox.capacity.outreachActionsPerWeekday ?? "Not provided"}
+- Follow-up owner: ${buyBox.capacity.followUpOwner ?? "Not provided"}
+- Expected response time: ${buyBox.capacity.expectedResponseTime ?? "Not provided"}
 
-## Examples
-
-**Good fit**
+## Good-fit examples
 ${bullets(buyBox.goodFitExamples)}
 
-**Bad fit**
+## Bad-fit examples
 ${bullets(buyBox.badFitExamples)}
 
-## Unresolved questions
+## Unresolved
 ${bullets(buyBox.unresolvedQuestions)}
 
-## Full interview transcript
+## Interview notes
 
-${transcript
-  .map(
-    (message) =>
-      `### ${message.role === "assistant" ? "TruLot interviewer" : "Cesar"}\n\n${message.content}`,
-  )
-  .join("\n\n")}
+${transcript.length ? transcript.map((message) => `- **${message.role === "assistant" ? "TruLot" : "Cesar"} (${message.section ? sectionTitle(message.section) : "Interview"}):** ${message.content}`).join("\n") : "- None"}
 `;
 }
 
@@ -217,7 +232,6 @@ function downloadFile(filename: string, content: string, type: string) {
 async function copyText(value: string) {
   try {
     await navigator.clipboard.writeText(value);
-    return;
   } catch {
     const textarea = document.createElement("textarea");
     textarea.value = value;
@@ -230,141 +244,49 @@ async function copyText(value: string) {
   }
 }
 
-function DetailRow({
-  label,
-  value,
-}: {
-  label: string;
-  value: string | number | null;
-}) {
-  return (
-    <div className="grid gap-1 border-b border-white/[0.07] py-3 last:border-0 sm:grid-cols-[11rem_1fr]">
-      <dt className="text-xs font-medium tracking-[0.08em] text-white/45 uppercase">{label}</dt>
-      <dd className="text-sm leading-6 text-[#f4f1e8]">
-        {value === null || value === "" ? "Not yet provided" : value}
-      </dd>
-    </div>
-  );
-}
-
-function BuyBoxReview({
+function SummaryCard({
+  section,
+  status,
   buyBox,
-  contradictions,
-  onApprove,
-  onCorrect,
+  onEdit,
 }: {
+  section: InterviewSectionId;
+  status: SectionStatus;
   buyBox: ElevateBuyBox;
-  contradictions: InterviewTurn["potentialContradictions"];
-  onApprove: () => void;
-  onCorrect: () => void;
+  onEdit?: () => void;
 }) {
   return (
-    <section
-      aria-labelledby="buy-box-title"
-      className="mt-8 overflow-hidden rounded-3xl border border-[#d89a52]/30 bg-[#111922] shadow-2xl shadow-black/20"
-      data-testid="buy-box-review"
+    <article
+      className="rounded-2xl border border-white/[0.08] bg-black/10 p-4"
+      data-testid={`summary-${section}`}
     >
-      <div className="border-b border-white/10 bg-[linear-gradient(120deg,rgba(216,154,82,0.18),transparent_55%)] p-6 sm:p-8">
-        <p className="font-mono text-xs tracking-[0.2em] text-[#d89a52] uppercase">Draft for review</p>
-        <h2 id="buy-box-title" className="mt-2 text-2xl font-semibold tracking-[-0.025em]">
-          Elevate Buy Box v0.1
-        </h2>
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-white/55">
-          This is the proposed filter TruLot will use for the first manual batch of Elevate
-          opportunities. Missing answers remain visible instead of being guessed.
-        </p>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <div className="flex flex-wrap items-center gap-2">
+            <h3 className="text-sm font-semibold text-white">
+              {sectionTitle(section)}
+            </h3>
+            <span className="rounded-full border border-white/10 px-2 py-0.5 font-mono text-[9px] tracking-wider text-white/45 uppercase">
+              {status}
+            </span>
+          </div>
+          <p className="mt-2 text-sm leading-6 text-white/58">
+            {status === "skipped"
+              ? "Skipped for now."
+              : sectionAnswerText(section, buyBox)}
+          </p>
+        </div>
+        {onEdit && (
+          <button
+            type="button"
+            onClick={onEdit}
+            className="shrink-0 text-xs font-semibold text-[#e8c79e] underline decoration-[#d89a52]/40 underline-offset-4"
+          >
+            Edit
+          </button>
+        )}
       </div>
-
-      <div className="grid gap-5 p-5 sm:p-8 lg:grid-cols-2">
-        <div className="rounded-2xl border border-white/[0.08] bg-black/10 p-5">
-          <h3 className="mb-2 text-sm font-semibold text-[#d89a52]">Market & scope</h3>
-          <dl>
-            <DetailRow label="Core markets" value={listOrPending(buyBox.serviceGeography.coreMarkets)} />
-            <DetailRow label="Selective markets" value={listOrPending(buyBox.serviceGeography.selectiveMarkets)} />
-            <DetailRow label="Core scopes" value={listOrPending(buyBox.scopes.core)} />
-            <DetailRow label="Selective scopes" value={listOrPending(buyBox.scopes.selective)} />
-            <DetailRow label="Excluded scopes" value={listOrPending(buyBox.scopes.excluded)} />
-          </dl>
-        </div>
-
-        <div className="rounded-2xl border border-white/[0.08] bg-black/10 p-5">
-          <h3 className="mb-2 text-sm font-semibold text-[#d89a52]">Economics & capacity</h3>
-          <dl>
-            <DetailRow label="Ordinary minimum" value={formatMoney(buyBox.economics.ordinaryMinimumContractValue)} />
-            <DetailRow
-              label="Preferred range"
-              value={`${formatMoney(buyBox.economics.preferredContractValueMin)}–${formatMoney(buyBox.economics.preferredContractValueMax)}`}
-            />
-            <DetailRow label="Minimum gross profit" value={formatMoney(buyBox.economics.minimumGrossProfit)} />
-            <DetailRow label="Leads / weekday" value={buyBox.capacity.leadsReviewablePerWeekday} />
-            <DetailRow label="Outreach / weekday" value={buyBox.capacity.outreachActionsPerWeekday} />
-          </dl>
-        </div>
-
-        <div className="rounded-2xl border border-white/[0.08] bg-black/10 p-5">
-          <h3 className="mb-2 text-sm font-semibold text-[#d89a52]">Customers & timing</h3>
-          <dl>
-            <DetailRow label="Customer types" value={listOrPending(buyBox.preferredCustomerTypes)} />
-            <DetailRow label="Target accounts" value={listOrPending(buyBox.targetAccounts)} />
-            <DetailRow label="Contact roles" value={listOrPending(buyBox.preferredContactRoles)} />
-            <DetailRow label="Earliest signal" value={buyBox.timing.earliestUsefulStage} />
-            <DetailRow label="Ideal outreach" value={buyBox.timing.idealOutreachStage} />
-            <DetailRow label="Too late" value={buyBox.timing.tooLateStage} />
-          </dl>
-        </div>
-
-        <div className="rounded-2xl border border-white/[0.08] bg-black/10 p-5">
-          <h3 className="mb-2 text-sm font-semibold text-[#d89a52]">Screening rules</h3>
-          <dl>
-            <DetailRow label="Project types" value={listOrPending(buyBox.preferredProjectTypes)} />
-            <DetailRow label="Disqualifiers" value={listOrPending(buyBox.disqualifiers)} />
-            <DetailRow label="Strategic exceptions" value={listOrPending(buyBox.economics.strategicExceptions)} />
-            <DetailRow label="Good-fit example" value={listOrPending(buyBox.goodFitExamples)} />
-            <DetailRow label="Bad-fit example" value={listOrPending(buyBox.badFitExamples)} />
-          </dl>
-        </div>
-      </div>
-
-      {(buyBox.unresolvedQuestions.length > 0 || contradictions.length > 0) && (
-        <div className="mx-5 mb-5 rounded-2xl border border-amber-300/20 bg-amber-200/[0.05] p-5 sm:mx-8 sm:mb-8">
-          <h3 className="text-sm font-semibold text-amber-200">Open items</h3>
-          <ul className="mt-3 space-y-2 text-sm leading-6 text-white/65">
-            {buyBox.unresolvedQuestions.map((question) => (
-              <li key={question} className="flex gap-2">
-                <span className="text-[#d89a52]" aria-hidden="true">—</span>
-                {question}
-              </li>
-            ))}
-            {contradictions.map((contradiction) => (
-              <li key={`${contradiction.topic}-${contradiction.explanation}`} className="flex gap-2">
-                <span className="text-[#d89a52]" aria-hidden="true">—</span>
-                <span>
-                  <strong className="font-medium text-white/80">{contradiction.topic}:</strong>{" "}
-                  {contradiction.explanation}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-
-      <div className="flex flex-col gap-3 border-t border-white/10 bg-black/10 p-5 sm:flex-row sm:items-center sm:justify-end sm:p-8">
-        <button
-          type="button"
-          onClick={onCorrect}
-          className="rounded-xl border border-white/15 px-5 py-3 text-sm font-medium text-white/75 transition hover:border-white/30 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52]"
-        >
-          I need to correct something
-        </button>
-        <button
-          type="button"
-          onClick={onApprove}
-          className="rounded-xl bg-[#d89a52] px-5 py-3 text-sm font-semibold text-[#17120c] transition hover:bg-[#e4aa69] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4f1e8]"
-        >
-          That looks right
-        </button>
-      </div>
-    </section>
+    </article>
   );
 }
 
@@ -377,40 +299,40 @@ function ApprovedActions({
   transcript: TranscriptMessage[];
   resultsEmail: string;
 }) {
-  const [copied, setCopied] = useState<string | null>(null);
-  const summary = useMemo(() => conciseSummary(buyBox), [buyBox]);
-  const markdown = useMemo(() => markdownPacket(buyBox, transcript), [buyBox, transcript]);
-
-  const copy = async (label: string, value: string) => {
+  const [copied, setCopied] = useState<"summary" | "transcript" | null>(null);
+  const summary = conciseSummary(buyBox);
+  const markdown = markdownPacket(buyBox, transcript);
+  const emailHref = resultsEmail
+    ? `mailto:${encodeURIComponent(resultsEmail)}?subject=${encodeURIComponent("Approved Elevate Buy Box v0.1")}&body=${encodeURIComponent(summary)}`
+    : null;
+  const copy = async (kind: "summary" | "transcript", value: string) => {
     await copyText(value);
-    setCopied(label);
-    window.setTimeout(() => setCopied(null), 1800);
+    setCopied(kind);
+    window.setTimeout(() => setCopied(null), 1600);
   };
 
-  const emailHref = resultsEmail
-    ? `mailto:${encodeURIComponent(resultsEmail)}?subject=${encodeURIComponent("Elevate Buy Box v0.1 — Cesar Interview Complete")}&body=${encodeURIComponent(`${summary}\n\nPlease attach the downloaded full Markdown or JSON packet if Brian needs the complete transcript.`)}`
-    : "";
-
   return (
-    <section className="mt-8 rounded-3xl border border-emerald-300/20 bg-emerald-200/[0.06] p-6 sm:p-8" data-testid="approved-actions">
-      <div className="flex items-start gap-4">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-300 text-lg text-[#082017]" aria-hidden="true">
-          ✓
-        </div>
-        <div>
-          <p className="font-mono text-xs tracking-[0.18em] text-emerald-300 uppercase">Approved</p>
-          <h2 className="mt-1 text-2xl font-semibold tracking-[-0.02em]">Elevate’s buy box is ready.</h2>
-          <p className="mt-2 text-sm leading-6 text-white/60">
-            Download the complete pilot record or send Brian the concise approved summary.
-          </p>
-        </div>
-      </div>
-
+    <section
+      className="mt-8 rounded-3xl border border-emerald-300/20 bg-emerald-200/[0.06] p-6 sm:p-8"
+      data-testid="approved-actions"
+    >
+      <p className="font-mono text-xs tracking-[0.16em] text-emerald-200 uppercase">
+        ✓ Approved
+      </p>
+      <h2 className="mt-2 text-2xl font-semibold">
+        Elevate’s buy box is ready.
+      </h2>
+      <p className="mt-2 text-sm leading-6 text-white/55">
+        Download the complete pilot record or send Brian the concise approved
+        summary.
+      </p>
       <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         <button
           type="button"
-          onClick={() => downloadFile("elevate-buy-box-v0.1.md", markdown, "text/markdown")}
-          className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium transition hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52]"
+          onClick={() =>
+            downloadFile("elevate-buy-box-v0.1.md", markdown, "text/markdown")
+          }
+          className={buttonClass}
         >
           Download Markdown
         </button>
@@ -423,30 +345,35 @@ function ApprovedActions({
               "application/json",
             )
           }
-          className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium transition hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52]"
+          className={buttonClass}
         >
           Download JSON
         </button>
         <button
           type="button"
-          onClick={() => copy("summary", summary)}
-          className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium transition hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52]"
+          onClick={() => void copy("summary", summary)}
+          className={buttonClass}
         >
           {copied === "summary" ? "Summary copied" : "Copy summary"}
         </button>
         <button
           type="button"
           onClick={() =>
-            copy(
+            void copy(
               "transcript",
               transcript
-                .map((message) => `${message.role === "assistant" ? "TruLot" : "Cesar"}:\n${message.content}`)
+                .map(
+                  (message) =>
+                    `${message.role === "assistant" ? "TruLot" : "Cesar"}: ${message.content}`,
+                )
                 .join("\n\n"),
             )
           }
-          className="rounded-xl border border-white/15 bg-white/[0.04] px-4 py-3 text-sm font-medium transition hover:bg-white/[0.08] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52]"
+          className={buttonClass}
         >
-          {copied === "transcript" ? "Transcript copied" : "Copy full transcript"}
+          {copied === "transcript"
+            ? "Transcript copied"
+            : "Copy full transcript"}
         </button>
         {emailHref ? (
           <a
@@ -466,6 +393,66 @@ function ApprovedActions({
   );
 }
 
+function restoreSavedInterview(raw: string): SavedInterview | null {
+  try {
+    const parsed = JSON.parse(raw) as Partial<SavedInterview>;
+    if (parsed.version !== 2) return null;
+    const answers = structuredInterviewAnswersSchema.safeParse(parsed.answers);
+    if (!answers.success || !parsed.sectionStatus) return null;
+    const sectionStatus = Object.fromEntries(
+      INTERVIEW_SECTIONS.map(({ id }) => {
+        const status = sectionStatusSchema.safeParse(parsed.sectionStatus?.[id]);
+        return [id, status.success ? status.data : "pending"];
+      }),
+    ) as Record<InterviewSectionId, SectionStatus>;
+    const activeView =
+      parsed.activeView === "review"
+        ? "review"
+        : interviewSectionIdSchema.safeParse(parsed.activeView).success
+          ? (parsed.activeView as InterviewSectionId)
+          : "service_area";
+    const clarification =
+      parsed.clarification &&
+      interviewSectionIdSchema.safeParse(parsed.clarification.section).success &&
+      typeof parsed.clarification.question === "string" &&
+      typeof parsed.clarification.answer === "string"
+        ? parsed.clarification
+        : null;
+    return {
+      version: 2,
+      activeView,
+      answers: answers.data,
+      sectionStatus,
+      clarificationCounts: Object.fromEntries(
+        INTERVIEW_SECTIONS.map(({ id }) => [
+          id,
+          Math.min(1, Math.max(0, parsed.clarificationCounts?.[id] ?? 0)),
+        ]),
+      ) as Record<InterviewSectionId, number>,
+      clarification,
+      transcript: Array.isArray(parsed.transcript)
+        ? parsed.transcript.filter(
+            (message): message is TranscriptMessage =>
+              Boolean(
+                message &&
+                  (message.role === "assistant" || message.role === "user") &&
+                  typeof message.content === "string",
+              ),
+          )
+        : [],
+      approvedAt:
+        typeof parsed.approvedAt === "string" ? parsed.approvedAt : null,
+      editReturnToReview: Boolean(parsed.editReturnToReview),
+      updatedAt:
+        typeof parsed.updatedAt === "string"
+          ? parsed.updatedAt
+          : new Date().toISOString(),
+    };
+  } catch {
+    return null;
+  }
+}
+
 export function ElevateInterview({
   token,
   resultsEmail,
@@ -475,17 +462,27 @@ export function ElevateInterview({
   resultsEmail: string;
   showMockLabel: boolean;
 }) {
+  const [answers, setAnswers] = useState(createInitialAnswers);
+  const [sectionStatus, setSectionStatus] = useState(
+    createInitialSectionStatus,
+  );
+  const [activeView, setActiveView] = useState<ActiveView>("service_area");
+  const [clarificationCounts, setClarificationCounts] = useState(
+    newClarificationCounts,
+  );
+  const [clarification, setClarification] = useState<Clarification | null>(
+    null,
+  );
   const [transcript, setTranscript] = useState<TranscriptMessage[]>([
     { role: "assistant", content: OPENING_MESSAGE },
   ]);
-  const [currentTurn, setCurrentTurn] = useState<InterviewTurn>(INITIAL_TURN);
-  const [composer, setComposer] = useState("");
-  const [pendingMessage, setPendingMessage] = useState<string | null>(null);
+  const [approvedAt, setApprovedAt] = useState<string | null>(null);
+  const [editReturnToReview, setEditReturnToReview] = useState(false);
+  const [showEditPrompt, setShowEditPrompt] = useState(false);
+  const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [storageKey, setStorageKey] = useState<string | null>(null);
   const [hydrated, setHydrated] = useState(false);
-  const transcriptRef = useRef<HTMLDivElement>(null);
-  const shouldAutoScroll = useRef(true);
 
   useEffect(() => {
     let active = true;
@@ -496,7 +493,7 @@ export function ElevateInterview({
         const suffix = Array.from(new Uint8Array(hash).slice(0, 12))
           .map((byte) => byte.toString(16).padStart(2, "0"))
           .join("");
-        setStorageKey(`trulot:elevate-interview:v1:${suffix}`);
+        setStorageKey(`trulot:elevate-interview:v2:${suffix}`);
       });
     return () => {
       active = false;
@@ -505,68 +502,93 @@ export function ElevateInterview({
 
   useEffect(() => {
     if (!storageKey) return;
-    try {
-      const raw = localStorage.getItem(storageKey);
-      if (raw) {
-        const saved = JSON.parse(raw) as SavedInterview;
-        if (
-          saved.version === 1 &&
-          Array.isArray(saved.transcript) &&
-          saved.transcript.length > 0 &&
-          saved.currentTurn &&
-          typeof saved.currentTurn.assistantMessage === "string"
-        ) {
-          setTranscript(saved.transcript);
-          setCurrentTurn(saved.currentTurn);
-        }
-      }
-    } catch {
+    const raw = localStorage.getItem(storageKey);
+    const restored = raw ? restoreSavedInterview(raw) : null;
+    if (restored) {
+      setAnswers(restored.answers);
+      setSectionStatus(restored.sectionStatus);
+      setActiveView(restored.activeView);
+      setClarificationCounts(restored.clarificationCounts);
+      setClarification(restored.clarification);
+      setTranscript(restored.transcript);
+      setApprovedAt(restored.approvedAt);
+      setEditReturnToReview(restored.editReturnToReview);
+    } else if (raw) {
       localStorage.removeItem(storageKey);
-    } finally {
-      setHydrated(true);
     }
+    setHydrated(true);
   }, [storageKey]);
 
   useEffect(() => {
     if (!storageKey || !hydrated) return;
     const saved: SavedInterview = {
-      version: 1,
+      version: 2,
+      activeView,
+      answers,
+      sectionStatus,
+      clarificationCounts,
+      clarification,
       transcript,
-      currentTurn,
+      approvedAt,
+      editReturnToReview,
       updatedAt: new Date().toISOString(),
     };
     localStorage.setItem(storageKey, JSON.stringify(saved));
-  }, [currentTurn, hydrated, storageKey, transcript]);
+  }, [
+    activeView,
+    answers,
+    approvedAt,
+    clarification,
+    clarificationCounts,
+    editReturnToReview,
+    hydrated,
+    sectionStatus,
+    storageKey,
+    transcript,
+  ]);
 
-  useEffect(() => {
-    if (shouldAutoScroll.current) {
-      transcriptRef.current?.scrollTo({
-        top: transcriptRef.current.scrollHeight,
-        behavior: "smooth",
-      });
-    }
-  }, [pendingMessage, transcript]);
+  const buyBox = useMemo(
+    () => buildElevateBuyBox(answers, sectionStatus, { approvedAt }),
+    [answers, approvedAt, sectionStatus],
+  );
+  const completeCount = INTERVIEW_SECTIONS.filter(
+    ({ id }) => sectionStatus[id] !== "pending",
+  ).length;
+  const progressPercent =
+    activeView === "review" ? 100 : Math.round((completeCount / 8) * 100);
 
-  const handleTranscriptScroll = () => {
-    const element = transcriptRef.current;
-    if (!element) return;
-    shouldAutoScroll.current =
-      element.scrollHeight - element.scrollTop - element.clientHeight < 120;
-  };
+  const advance = useCallback(
+    (section: InterviewSectionId) => {
+      setClarification(null);
+      if (editReturnToReview) {
+        setEditReturnToReview(false);
+        setActiveView("review");
+      } else {
+        setActiveView(nextSection(section));
+      }
+    },
+    [editReturnToReview],
+  );
 
-  const send = useCallback(
-    async (message: string) => {
-      const cleanMessage = message.trim();
-      if (!cleanMessage || pendingMessage || currentTurn.status === "approved") return;
-
+  const requestCoach = useCallback(
+    async (
+      section: InterviewSectionId,
+      status: SectionStatus,
+      clarificationAnswer: string | null,
+    ) => {
+      setPending(true);
       setError(null);
-      setPendingMessage(cleanMessage);
-      shouldAutoScroll.current = true;
-      const nextTranscript: TranscriptMessage[] = [
-        ...transcript,
-        { role: "user", content: cleanMessage },
-      ];
-
+      const sectionBuyBox = buildElevateBuyBox(answers, {
+        ...sectionStatus,
+        [section]: status,
+      });
+      const submitted: TranscriptMessage = {
+        role: "user",
+        section,
+        content:
+          clarificationAnswer?.trim() || sectionAnswerText(section, sectionBuyBox),
+      };
+      const nextTranscript = [...transcript, submitted].slice(-50);
       try {
         const response = await fetch("/api/elevate/interview", {
           method: "POST",
@@ -574,84 +596,151 @@ export function ElevateInterview({
             "content-type": "application/json",
             "x-elevate-interview-token": token,
           },
-          body: JSON.stringify({ transcript: nextTranscript }),
+          body: JSON.stringify({
+            activeSection: section,
+            answers,
+            transcript: nextTranscript,
+            clarificationAlreadyAsked: clarificationCounts[section] > 0,
+            clarificationAnswer,
+          }),
         });
-        const data = (await response.json()) as InterviewTurn | { error?: string };
-        if (!response.ok || !("assistantMessage" in data)) {
-          throw new Error("error" in data && data.error ? data.error : "Please try again.");
+        const payload = sectionCoachResponseSchema.safeParse(
+          await response.json(),
+        );
+        if (!response.ok || !payload.success) {
+          throw new Error("This section could not be saved. Please try again.");
         }
-
-        setTranscript([
-          ...nextTranscript,
-          { role: "assistant", content: data.assistantMessage },
-        ]);
-        setCurrentTurn(data);
-        setComposer("");
+        const assistantMessage: TranscriptMessage = {
+          role: "assistant",
+          section,
+          content: payload.data.assistantMessage,
+        };
+        setTranscript([...nextTranscript, assistantMessage]);
+        if (
+          payload.data.requiresClarification &&
+          payload.data.clarificationQuestion &&
+          clarificationCounts[section] === 0 &&
+          !clarificationAnswer
+        ) {
+          setClarificationCounts((counts) => ({ ...counts, [section]: 1 }));
+          setClarification({
+            section,
+            question: payload.data.clarificationQuestion,
+            answer: "",
+          });
+        } else {
+          setSectionStatus((statuses) => ({ ...statuses, [section]: status }));
+          advance(section);
+        }
       } catch (caught) {
-        setError(caught instanceof Error ? caught.message : "Please try again.");
+        setError(
+          caught instanceof Error
+            ? caught.message
+            : "This section could not be saved. Please try again.",
+        );
       } finally {
-        setPendingMessage(null);
+        setPending(false);
       }
     },
-    [currentTurn.status, pendingMessage, token, transcript],
+    [
+      advance,
+      answers,
+      clarificationCounts,
+      sectionStatus,
+      token,
+      transcript,
+    ],
   );
 
-  const handleKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
-    if (event.key === "Enter" && !event.shiftKey) {
-      event.preventDefault();
-      void send(composer);
-    }
+  const continueSection = (status: SectionStatus) => {
+    if (activeView === "review") return;
+    void requestCoach(activeView, status, null);
   };
 
-  const approve = () => {
-    if (!currentTurn.buyBoxDraft) return;
-    const approvedAt = new Date().toISOString();
-    setCurrentTurn({
-      ...currentTurn,
-      status: "approved",
-      buyBoxDraft: {
-        ...currentTurn.buyBoxDraft,
-        approvedByCesar: true,
-        approvedAt,
-      },
-    });
-  };
-
-  const correct = () => {
-    const correctionPrompt =
-      "Absolutely. Tell me what needs to change, and I’ll revise the buy box without losing the rest of your answers.";
+  const skipSection = () => {
+    if (activeView === "review") return;
+    setSectionStatus((statuses) => ({
+      ...statuses,
+      [activeView]: "skipped",
+    }));
     setTranscript((messages) => [
       ...messages,
-      { role: "assistant", content: correctionPrompt },
+      {
+        role: "user",
+        section: activeView,
+        content: `${sectionTitle(activeView)} skipped for now.`,
+      },
     ]);
-    setCurrentTurn((turn) => ({
-      ...turn,
-      assistantMessage: correctionPrompt,
-      questionKey: "draft_correction",
-      status: "interviewing",
-      suggestedReplies: [],
-      progressPercent: 96,
+    advance(activeView);
+  };
+
+  const sendClarification = () => {
+    if (!clarification?.answer.trim()) return;
+    void requestCoach(
+      clarification.section,
+      sectionStatus[clarification.section] === "unresolved"
+        ? "unresolved"
+        : "completed",
+      clarification.answer,
+    );
+  };
+
+  const leaveClarificationUnresolved = () => {
+    if (!clarification) return;
+    setSectionStatus((statuses) => ({
+      ...statuses,
+      [clarification.section]: "unresolved",
     }));
-    window.setTimeout(() => document.getElementById("elevate-response")?.focus(), 0);
+    setTranscript((messages) => [
+      ...messages,
+      {
+        role: "user",
+        section: clarification.section,
+        content: "Clarification left unresolved for review.",
+      },
+    ]);
+    advance(clarification.section);
+  };
+
+  const editSection = (section: InterviewSectionId) => {
+    setApprovedAt(null);
+    setClarification(null);
+    setEditReturnToReview(true);
+    setActiveView(section);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const restart = () => {
-    if (!window.confirm("Restart the interview? This clears the saved transcript and draft on this device.")) {
+    if (
+      !window.confirm(
+        "Restart the interview? This clears the saved v0.1 answers and approval on this device.",
+      )
+    ) {
       return;
     }
     if (storageKey) localStorage.removeItem(storageKey);
+    setAnswers(createInitialAnswers());
+    setSectionStatus(createInitialSectionStatus());
+    setActiveView("service_area");
+    setClarificationCounts(newClarificationCounts());
+    setClarification(null);
     setTranscript([{ role: "assistant", content: OPENING_MESSAGE }]);
-    setCurrentTurn(INITIAL_TURN);
-    setComposer("");
+    setApprovedAt(null);
+    setEditReturnToReview(false);
     setError(null);
   };
 
-  const lastUpdated = hydrated ? "Saved on this device" : "Restoring saved interview…";
-  const draft = currentTurn.buyBoxDraft;
+  const activeSection =
+    activeView === "review"
+      ? null
+      : INTERVIEW_SECTIONS.find(({ id }) => id === activeView) ?? null;
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#0c1117] text-[#f4f1e8]">
-      <div className="pointer-events-none fixed inset-0 opacity-70" aria-hidden="true">
+      <div
+        className="pointer-events-none fixed inset-0 opacity-70"
+        aria-hidden="true"
+      >
         <div className="absolute top-0 left-1/4 h-96 w-96 rounded-full bg-[#1f3b45]/20 blur-3xl" />
         <div className="absolute top-1/3 right-0 h-80 w-80 rounded-full bg-[#d89a52]/[0.07] blur-3xl" />
       </div>
@@ -663,8 +752,12 @@ export function ElevateInterview({
               E
             </span>
             <div>
-              <p className="text-sm font-semibold tracking-[0.04em]">Elevate × TruLot</p>
-              <p className="text-[11px] text-white/40">Private revenue-lead pilot</p>
+              <p className="text-sm font-semibold tracking-[0.04em]">
+                Elevate × TruLot
+              </p>
+              <p className="text-[11px] text-white/40">
+                Private revenue-lead pilot
+              </p>
             </div>
           </div>
           <div className="flex items-center gap-3">
@@ -685,7 +778,7 @@ export function ElevateInterview({
       </header>
 
       <div className="relative mx-auto max-w-7xl px-5 py-10 sm:px-8 sm:py-14">
-        <div className="mb-10 max-w-3xl">
+        <div className="mb-8 max-w-3xl">
           <p className="mb-4 flex items-center gap-3 font-mono text-xs tracking-[0.18em] text-[#d89a52] uppercase">
             <span className="h-px w-8 bg-[#d89a52]" aria-hidden="true" />
             Prepared specifically for Cesar and Elevate
@@ -696,21 +789,28 @@ export function ElevateInterview({
             Opportunity Interview
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-white/55 sm:text-lg">
-            Define the projects worth pursuing, the moment they become actionable, and the
-            relationships that can turn public signals into won work.
+            Eight focused sections define the first 20–30 opportunities. Most
+            answers are one-click classifications, and you can edit every section
+            before approval.
           </p>
         </div>
 
         <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_19rem]">
-          <section className="min-w-0 overflow-hidden rounded-3xl border border-white/[0.09] bg-[#111922]/95 shadow-2xl shadow-black/25">
+          <section className="min-w-0 rounded-3xl border border-white/[0.09] bg-[#111922]/95 shadow-2xl shadow-black/25">
             <div className="border-b border-white/[0.08] px-5 py-4 sm:px-7">
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <h2 className="text-sm font-semibold">Opportunity interview</h2>
-                  <p className="mt-1 text-xs text-white/40">{lastUpdated}</p>
+                  <h2 className="text-sm font-semibold">
+                    {activeSection?.title ?? "Review and approve"}
+                  </h2>
+                  <p className="mt-1 text-xs text-white/40">
+                    {hydrated
+                      ? "Saved on this device"
+                      : "Restoring saved interview…"}
+                  </p>
                 </div>
                 <span className="font-mono text-xs text-[#d89a52]">
-                  {currentTurn.progressPercent}% defined
+                  {progressPercent}% defined
                 </span>
               </div>
               <div
@@ -719,177 +819,228 @@ export function ElevateInterview({
                 aria-label="Interview progress"
                 aria-valuemin={0}
                 aria-valuemax={100}
-                aria-valuenow={currentTurn.progressPercent}
+                aria-valuenow={progressPercent}
               >
                 <div
                   className="h-full rounded-full bg-[linear-gradient(90deg,#b87333,#e7b674)] transition-[width] duration-500"
-                  style={{ width: `${currentTurn.progressPercent}%` }}
+                  style={{ width: `${progressPercent}%` }}
                 />
               </div>
             </div>
 
-            <div
-              ref={transcriptRef}
-              onScroll={handleTranscriptScroll}
-              className="max-h-[36rem] min-h-[26rem] space-y-6 overflow-y-auto px-5 py-6 sm:px-7"
-              aria-live="polite"
-              data-testid="transcript"
-            >
-              {transcript.map((message, index) => (
-                <div
-                  key={`${message.role}-${index}`}
-                  className={`flex ${message.role === "user" ? "justify-end" : "justify-start"}`}
-                >
-                  <div
-                    className={
-                      message.role === "user"
-                        ? "max-w-[88%] rounded-2xl rounded-br-md bg-[#d89a52] px-4 py-3 text-sm leading-6 text-[#17120c] sm:max-w-[75%]"
-                        : "max-w-[92%] border-l-2 border-[#d89a52]/60 pl-4 text-[15px] leading-7 text-white/72 sm:max-w-[82%]"
-                    }
-                  >
-                    {message.content.split("\n").map((line, lineIndex) => (
-                      <span key={lineIndex}>
-                        {line}
-                        {lineIndex < message.content.split("\n").length - 1 && <br />}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              ))}
-
-              {pendingMessage && (
+            <div className="space-y-5 p-5 sm:p-7">
+              {activeSection && (
                 <>
-                  <div className="flex justify-end">
-                    <div className="max-w-[88%] rounded-2xl rounded-br-md bg-[#d89a52]/70 px-4 py-3 text-sm leading-6 text-[#17120c]">
-                      {pendingMessage}
+                  <div>
+                    <p className="font-mono text-[10px] tracking-[0.16em] text-[#d89a52] uppercase">
+                      Section{" "}
+                      {INTERVIEW_SECTIONS.findIndex(
+                        ({ id }) => id === activeView,
+                      ) + 1}{" "}
+                      of 8
+                    </p>
+                    <p className="mt-2 text-sm leading-6 text-white/50">
+                      {activeSection.description}
+                    </p>
+                  </div>
+                  {clarification ? (
+                    <div
+                      className="rounded-2xl border border-[#d89a52]/25 bg-[#d89a52]/[0.06] p-5"
+                      data-testid="clarification"
+                    >
+                      <p className="font-mono text-[10px] tracking-wider text-[#e8c79e] uppercase">
+                        One clarification
+                      </p>
+                      <p className="mt-2 text-sm leading-6 text-white/75">
+                        {clarification.question}
+                      </p>
+                      <label
+                        htmlFor="clarification-answer"
+                        className="mt-4 block text-sm text-white/60"
+                      >
+                        Your answer
+                      </label>
+                      <textarea
+                        id="clarification-answer"
+                        value={clarification.answer}
+                        onChange={(event) =>
+                          setClarification({
+                            ...clarification,
+                            answer: event.target.value,
+                          })
+                        }
+                        rows={4}
+                        maxLength={4000}
+                        className="mt-2 max-h-56 min-h-28 w-full resize-y rounded-xl border border-white/10 bg-[#0c1117] px-3 py-2.5 text-sm text-white outline-none placeholder:text-white/25 focus:border-[#d89a52]/65"
+                        placeholder="Add only the detail that resolves this point."
+                      />
+                      <div className="mt-4 flex flex-wrap justify-between gap-3">
+                        <button
+                          type="button"
+                          disabled={pending}
+                          onClick={leaveClarificationUnresolved}
+                          className="px-2 py-2 text-sm text-white/45"
+                        >
+                          Continue with unresolved
+                        </button>
+                        <button
+                          type="button"
+                          disabled={!clarification.answer.trim() || pending}
+                          onClick={sendClarification}
+                          className="rounded-xl bg-[#d89a52] px-5 py-3 text-sm font-semibold text-[#17120c] disabled:opacity-40"
+                        >
+                          {pending ? "Saving…" : "Send"}
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-center gap-2 pl-4 text-xs text-white/35" role="status">
-                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#d89a52]" />
-                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#d89a52] [animation-delay:150ms]" />
-                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#d89a52] [animation-delay:300ms]" />
-                    <span className="ml-1">Shaping the next question…</span>
-                  </div>
+                  ) : (
+                    <InterviewSectionForm
+                      section={activeSection.id}
+                      answers={answers}
+                      onChange={setAnswers}
+                      onContinue={continueSection}
+                      onSkip={skipSection}
+                      pending={pending}
+                    />
+                  )}
+                  {error && (
+                    <div
+                      className="rounded-xl border border-red-300/20 bg-red-300/[0.06] px-4 py-3 text-sm text-red-100"
+                      role="alert"
+                    >
+                      {error}
+                    </div>
+                  )}
                 </>
               )}
-            </div>
 
-            {currentTurn.status === "interviewing" && (
-              <div className="border-t border-white/[0.08] bg-black/10 p-4 sm:p-6">
-                {currentTurn.suggestedReplies.length > 0 && (
-                  <div className="mb-4 flex flex-wrap gap-2" aria-label="Suggested responses">
-                    {currentTurn.suggestedReplies.map((reply) => (
-                      <button
-                        key={reply}
-                        type="button"
-                        onClick={() => void send(reply)}
-                        disabled={Boolean(pendingMessage)}
-                        className="rounded-full border border-[#d89a52]/25 bg-[#d89a52]/[0.07] px-3.5 py-2 text-left text-xs leading-5 text-[#e8c79e] transition hover:border-[#d89a52]/55 hover:bg-[#d89a52]/[0.12] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d89a52] disabled:cursor-not-allowed disabled:opacity-40"
-                      >
-                        {reply}
-                      </button>
+              {activeView === "review" && (
+                <div data-testid="review">
+                  <div className="mb-5">
+                    <p className="font-mono text-[10px] tracking-[0.16em] text-[#d89a52] uppercase">
+                      Elevate Buy Box v0.1
+                    </p>
+                    <h2 className="mt-2 text-2xl font-semibold">
+                      Review the exact selections.
+                    </h2>
+                    <p className="mt-2 text-sm leading-6 text-white/50">
+                      Edit any section without losing later answers. Approval
+                      records this version for the first manual opportunity
+                      batch.
+                    </p>
+                  </div>
+                  <div className="space-y-3">
+                    {INTERVIEW_SECTIONS.map(({ id }) => (
+                      <SummaryCard
+                        key={id}
+                        section={id}
+                        status={sectionStatus[id]}
+                        buyBox={buyBox}
+                        onEdit={() => editSection(id)}
+                      />
                     ))}
                   </div>
-                )}
-
-                <label htmlFor="elevate-response" className="sr-only">
-                  Your response
-                </label>
-                <div className="rounded-2xl border border-white/[0.11] bg-[#0c1117] p-2 focus-within:border-[#d89a52]/60 focus-within:ring-2 focus-within:ring-[#d89a52]/10">
-                  <textarea
-                    id="elevate-response"
-                    value={composer}
-                    onChange={(event) => setComposer(event.target.value)}
-                    onKeyDown={handleKeyDown}
-                    disabled={Boolean(pendingMessage)}
-                    rows={3}
-                    maxLength={4000}
-                    placeholder="Share what’s true for Elevate…"
-                    className="block w-full resize-none bg-transparent px-3 py-2 text-sm leading-6 text-white outline-none placeholder:text-white/25 disabled:opacity-60"
-                  />
-                  <div className="flex items-end justify-between gap-4 px-2 pb-1">
-                    <span className="text-[10px] text-white/28">Enter to send · Shift+Enter for a new line</span>
-                    <button
-                      type="button"
-                      onClick={() => void send(composer)}
-                      disabled={!composer.trim() || Boolean(pendingMessage)}
-                      className="inline-flex h-10 items-center gap-2 rounded-xl bg-[#d89a52] px-4 text-sm font-semibold text-[#17120c] transition hover:bg-[#e4aa69] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4f1e8] disabled:cursor-not-allowed disabled:opacity-35"
-                    >
-                      Send
-                      <span aria-hidden="true">↗</span>
-                    </button>
-                  </div>
+                  {buyBox.unresolvedQuestions.length > 0 && (
+                    <div className="mt-5 rounded-2xl border border-amber-300/20 bg-amber-200/[0.05] p-4">
+                      <h3 className="text-sm font-semibold text-amber-100">
+                        Visible unresolved items
+                      </h3>
+                      <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-amber-100/70">
+                        {buyBox.unresolvedQuestions.map((question) => (
+                          <li key={question}>{question}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  {!approvedAt ? (
+                    <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                      <button
+                        type="button"
+                        onClick={() => setShowEditPrompt(true)}
+                        className={buttonClass}
+                      >
+                        I need to correct something
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setApprovedAt(new Date().toISOString())}
+                        className="rounded-xl bg-[#d89a52] px-5 py-3.5 text-sm font-semibold text-[#17120c] transition hover:bg-[#e4aa69] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f4f1e8]"
+                      >
+                        That looks right
+                      </button>
+                      {showEditPrompt && (
+                        <p
+                          className="text-sm leading-6 text-[#e8c79e] sm:col-span-2"
+                          role="status"
+                        >
+                          Choose Edit on the section you want to correct. All
+                          other answers will stay in place.
+                        </p>
+                      )}
+                    </div>
+                  ) : (
+                    <p className="mt-5 text-sm text-emerald-200">
+                      ✓ Approved by Cesar
+                    </p>
+                  )}
                 </div>
-
-                {error && (
-                  <div className="mt-3 flex items-center justify-between gap-4 rounded-xl border border-red-300/20 bg-red-300/[0.06] px-4 py-3 text-xs text-red-100" role="alert">
-                    <span>{error}</span>
-                    <button
-                      type="button"
-                      onClick={() => void send(composer)}
-                      className="shrink-0 font-semibold underline decoration-red-200/40 underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-200"
-                    >
-                      Retry
-                    </button>
-                  </div>
-                )}
-
-                <p className="mt-3 text-[11px] leading-5 text-white/30">
-                  Please don’t include passwords, private financial-account information, or
-                  anything you wouldn’t want included in the pilot record.
-                </p>
-              </div>
-            )}
+              )}
+            </div>
           </section>
 
           <aside className="rounded-3xl border border-white/[0.08] bg-white/[0.035] p-6 lg:sticky lg:top-6">
             <p className="font-mono text-[10px] tracking-[0.18em] text-white/35 uppercase">
               First 20–30 opportunities
             </p>
-            <h2 className="mt-2 text-lg font-semibold">What we’re defining</h2>
-            <ul className="mt-5 space-y-3">
-              {TOPICS.map((topic) => {
-                const normalized = topic.toLowerCase();
-                const covered = currentTurn.coveredTopics.some(
-                  (coveredTopic) =>
-                    normalized.includes(coveredTopic.toLowerCase()) ||
-                    coveredTopic.toLowerCase().includes(normalized.split(" ")[0]),
-                );
+            <h2 className="mt-2 text-lg font-semibold">Interview sequence</h2>
+            <ol className="mt-5 space-y-3">
+              {INTERVIEW_SECTIONS.map((section, index) => {
+                const status = sectionStatus[section.id];
+                const current = activeView === section.id;
                 return (
-                  <li key={topic} className="flex items-center gap-3 text-sm text-white/55">
+                  <li
+                    key={section.id}
+                    className="flex items-center gap-3 text-sm"
+                    aria-current={current ? "step" : undefined}
+                  >
                     <span
-                      className={`flex h-5 w-5 items-center justify-center rounded-full border text-[10px] ${
-                        covered
+                      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-[10px] ${
+                        status !== "pending"
                           ? "border-[#d89a52] bg-[#d89a52] text-[#17120c]"
-                          : "border-white/15 text-transparent"
+                          : current
+                            ? "border-[#d89a52] text-[#e8c79e]"
+                            : "border-white/15 text-white/30"
                       }`}
-                      aria-hidden="true"
                     >
-                      ✓
+                      {status !== "pending" ? "✓" : index + 1}
                     </span>
-                    <span className={covered ? "text-white/80" : ""}>{topic}</span>
+                    <span
+                      className={
+                        current ? "font-medium text-white" : "text-white/50"
+                      }
+                    >
+                      {section.shortTitle}
+                      {status === "skipped" ? " · skipped" : ""}
+                      {status === "unresolved" ? " · unresolved" : ""}
+                    </span>
                   </li>
                 );
               })}
-            </ul>
+            </ol>
             <div className="mt-6 border-t border-white/[0.08] pt-5 text-xs leading-5 text-white/35">
-              Your progress is stored only in this browser. Return with this private link to
-              continue.
+              Progress stays on this device and is isolated to this private
+              invite. Older freeform-session data is intentionally not loaded
+              into the revised interview.
             </div>
           </aside>
         </div>
 
-        {currentTurn.status === "ready_for_review" && draft && (
-          <BuyBoxReview
-            buyBox={draft}
-            contradictions={currentTurn.potentialContradictions}
-            onApprove={approve}
-            onCorrect={correct}
+        {activeView === "review" && approvedAt && (
+          <ApprovedActions
+            buyBox={buyBox}
+            transcript={transcript}
+            resultsEmail={resultsEmail}
           />
-        )}
-
-        {currentTurn.status === "approved" && draft && (
-          <ApprovedActions buyBox={draft} transcript={transcript} resultsEmail={resultsEmail} />
         )}
       </div>
 
