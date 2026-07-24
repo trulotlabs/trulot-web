@@ -18,6 +18,23 @@ import {
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+const EMAIL_PATTERN = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi;
+const PHONE_PATTERN =
+  /(?:\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}\b/g;
+const OUTREACH_SIGNATURE = "\n\nThank you,\nCesar\nElevate";
+
+function safeElevateEmailBody(value: string) {
+  const signatureIndex = value.search(
+    /\n\s*(?:thank you,?\s*\n)?\s*cesar\b/i,
+  );
+  const content = (signatureIndex >= 0 ? value.slice(0, signatureIndex) : value)
+    .replace(EMAIL_PATTERN, "")
+    .replace(PHONE_PATTERN, "")
+    .replace(/\s*[•|]\s*\(?optional\)?/gi, "")
+    .trim();
+  return `${content.slice(0, 4000 - OUTREACH_SIGNATURE.length)}${OUTREACH_SIGNATURE}`;
+}
+
 function sanitizedEnrichmentError(error: unknown) {
   if (error instanceof OpenAI.APIError) {
     return {
@@ -103,9 +120,13 @@ export async function POST(request: Request) {
       },
     });
     if (!response.output_parsed) return neutralApiError();
-    return Response.json(
-      enrichmentResultSchema.parse(response.output_parsed),
-    );
+    const validated = enrichmentResultSchema.parse(response.output_parsed);
+    return Response.json({
+      ...validated,
+      revisedDraftEmailBody: safeElevateEmailBody(
+        validated.revisedDraftEmailBody,
+      ),
+    });
   } catch (error) {
     console.error("Elevate contact enrichment failed:", sanitizedEnrichmentError(error));
     return neutralApiError();
