@@ -1,4 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
+import { elevatePilotBatchFixture } from "./tests/fixtures/elevate-pilot-batch";
 
 export default defineConfig({
   testDir: "./tests/e2e",
@@ -30,7 +31,8 @@ export default defineConfig({
       ...process.env,
       ELEVATE_INTERVIEW_TOKEN: "elevate-playwright-token",
       ELEVATE_INTERVIEW_MOCK: "true",
-      NEXT_PUBLIC_ELEVATE_RESULTS_EMAIL: "results@example.test",
+      ELEVATE_PILOT_BATCH_JSON: JSON.stringify(elevatePilotBatchFixture),
+      ELEVATE_RESULTS_EMAIL: "results@example.test",
     },
   },
 });

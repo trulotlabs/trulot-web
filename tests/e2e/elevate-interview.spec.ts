@@ -1,247 +1,251 @@
 import { expect, test, type Page } from "@playwright/test";
 
-const interviewUrl = "/elevate/interview/elevate-playwright-token";
+const reviewUrl = "/elevate/interview/elevate-playwright-token";
 test.setTimeout(60_000);
 
-async function currentStep(page: Page, name: string) {
-  await expect(
-    page.getByRole("listitem").filter({ hasText: name }),
-  ).toHaveAttribute("aria-current", "step");
-  await expect(page.locator('[aria-current="step"]')).toHaveCount(1);
-}
-
-async function continueStep(page: Page) {
-  await page.getByRole("button", { name: "Continue", exact: true }).click();
-}
-
-async function classify(
+async function chooseDecision(
   page: Page,
-  signal: string,
-  value: "Send now" | "Supporting" | "Ignore",
+  decision: "Call now" | "Call later" | "Pass" | "Already known",
+  reason: string,
 ) {
   await page
-    .getByRole("radiogroup", { name: `${signal} classification` })
-    .getByRole("radio", { name: value })
+    .getByRole("radio", { name: decision, exact: true })
+    .check({ force: true });
+  await page
+    .getByRole("radio", { name: reason, exact: true })
     .check({ force: true });
 }
 
-async function completeFlow(page: Page) {
-  await classify(page, "ROW / encroachment permit applied", "Supporting");
-  await classify(page, "ROW / encroachment permit approved", "Send now");
-  await classify(
-    page,
-    "Traffic-control permit applied or approved",
-    "Supporting",
-  );
-  await classify(page, "Utility service or lateral application", "Send now");
-  await classify(
-    page,
-    "Plan-check corrections identify frontage or ROW work",
-    "Send now",
-  );
-  await classify(
-    page,
-    "Building permit conditions require public improvements",
-    "Send now",
-  );
-  await classify(
-    page,
-    "Plans visibly show sidewalk, curb, ADA, trenching, or restoration scope",
-    "Send now",
-  );
-  await classify(
-    page,
-    "GC, estimator, or permit applicant identified",
-    "Supporting",
-  );
-  await continueStep(page);
-
-  await page
-    .getByRole("checkbox", {
-      name: "ROW scope is visible in plans, corrections, or conditions",
-    })
-    .check();
-  await page
-    .getByRole("checkbox", {
-      name: "A responsible applicant, GC, or estimator is named",
-    })
-    .check();
-  await page
-    .getByRole("checkbox", {
-      name: "Project address and parcel are reconciled",
-    })
-    .check();
-  await continueStep(page);
-
-  await page
-    .getByRole("checkbox", {
-      name: "Private on-site work only; no public ROW impact",
-    })
-    .check();
-  await page
-    .getByRole("checkbox", {
-      name: "Completed, expired, withdrawn, or cancelled work",
-    })
-    .check();
-  await page
-    .getByRole("checkbox", {
-      name: "Duplicate records for the same project and signal",
-    })
-    .check();
-  await continueStep(page);
-
-  await page.getByRole("radio", { name: "5 real leads" }).check();
-  await page
-    .getByRole("radio", { name: "As soon as the first five are ready" })
-    .check();
-  await page
-    .getByText("Feedback owner, if known")
-    .locator("input")
-    .fill("Cesar");
-  await continueStep(page);
+async function saveAndNext(page: Page) {
+  await page.getByRole("button", { name: "Save and Next" }).click();
 }
 
-test("invalid token remains neutral and invokes no interview API", async ({
+test("invalid token is denied neutrally without calling private APIs", async ({
   page,
 }) => {
-  let requests = 0;
+  const privateRequests: string[] = [];
   page.on("request", (request) => {
-    if (request.url().includes("/api/elevate/interview")) requests += 1;
+    if (request.url().includes("/api/elevate/")) {
+      privateRequests.push(request.url());
+    }
   });
+
   await page.goto("/elevate/interview/not-the-token");
+
   await expect(
     page.getByRole("heading", { name: "This link isn’t available." }),
   ).toBeVisible();
-  await expect(page.getByText("Signal Calibration")).toHaveCount(0);
-  expect(requests).toBe(0);
+  await expect(page.getByText("ROW Opportunity Review")).toHaveCount(0);
+  expect(privateRequests).toEqual([]);
 });
 
-test("uses a strict four-step app-controlled sequence and ignores model jumps", async ({
+test("loads five fictional leads with navigation and experiment disclosures", async ({
   page,
 }) => {
-  await page.route("**/api/elevate/interview", (route) =>
-    route.fulfill({
-      status: 200,
-      contentType: "application/json",
-      body: JSON.stringify({
-        acknowledgement: "Saved.",
-        assistantMessage: "Jump to delivery.",
-        requiresClarification: false,
-        clarificationQuestion: null,
-        unresolvedIssue: null,
-        activeSection: "delivery",
-        progressPercent: 99,
-      }),
-    }),
-  );
-  await page.goto(interviewUrl);
-  await currentStep(page, "Signals");
-  await expect(page.getByText("Step 1 of 4")).toBeVisible();
-  await expect(page.getByText("San Diego County")).toBeVisible();
-  await expect(page.getByText("any project size", { exact: false })).toBeVisible();
-  await page.getByRole("button", { name: "Skip for now" }).click();
-  await currentStep(page, "Evidence");
-  await expect(page.getByRole("progressbar")).toHaveAttribute(
-    "aria-valuenow",
-    "25",
-  );
-});
+  await page.goto(reviewUrl);
 
-test("classifies signals, requires explicit continue, and resumes exactly", async ({
-  page,
-}) => {
-  await page.goto(interviewUrl);
-  await expect(page.getByTestId("signal-classifier").getByRole("radiogroup")).toHaveCount(8);
-  await classify(page, "ROW / encroachment permit approved", "Send now");
-  await expect(page.getByTestId("signal-classifier-summary-core")).toContainText(
-    "ROW / encroachment permit approved",
-  );
-  await expect(page.getByTestId("section-signals")).toBeVisible();
-  await page.reload();
+  await expect(
+    page.getByRole("heading", { name: "ROW Opportunity Review" }),
+  ).toBeVisible();
   await expect(
     page
-      .getByRole("radiogroup", {
-        name: "ROW / encroachment permit approved classification",
-      })
-      .getByRole("radio", { name: "Send now" }),
-  ).toBeChecked();
-  await continueStep(page);
-  await expect(page.getByTestId("unresolved-warning")).toBeVisible();
+      .getByRole("navigation", { name: "Pilot opportunities" })
+      .getByRole("button"),
+  ).toHaveCount(5);
+  await expect(page.getByText("Four are considered actionable")).toBeVisible();
+  await expect(page.getByText("Mock mode")).toBeVisible();
+  await expect(page.getByText("Project", { exact: true })).toBeVisible();
+  await expect(page.getByText("ROW scope", { exact: true })).toBeVisible();
+  await expect(page.getByText("Contact", { exact: true })).toBeVisible();
+
+  await page.getByRole("button", { name: /404 Example Avenue/ }).click();
+  await expect(page.getByTestId("obvious-control")).toContainText(
+    "procurement may already be assigned",
+  );
+
+  await page.getByRole("button", { name: /505 Example Avenue/ }).click();
+  await expect(page.getByTestId("routing-experiment")).toContainText(
+    "contact route is indirect",
+  );
+  await expect(page.getByTestId("routing-experiment")).toContainText(
+    "Do not treat this lead as equally call-ready",
+  );
+});
+
+test("supports all four decisions, structured reasons, notes, save, and resume", async ({
+  page,
+}) => {
+  await page.goto(reviewUrl);
+
+  await chooseDecision(page, "Call now", "Scope looks real");
   await page
-    .getByRole("button", { name: "Continue with unresolved items" })
-    .click();
-  await currentStep(page, "Evidence");
+    .getByLabel("What did TruLot get right or wrong?")
+    .fill("The timing signal is useful.");
+  await saveAndNext(page);
+
+  await chooseDecision(page, "Call later", "Waiting for permit milestone");
+  await saveAndNext(page);
+
+  await chooseDecision(page, "Pass", "No useful contact");
+  await saveAndNext(page);
+
+  await chooseDecision(page, "Already known", "Already tracking");
+  await saveAndNext(page);
+
+  await expect(page.getByRole("progressbar")).toHaveAttribute(
+    "aria-valuenow",
+    "80",
+  );
+  await page.reload();
+  await expect(page.getByRole("button", { name: /404 Example Avenue/ }))
+    .toContainText("Saved");
+  await page.getByRole("button", { name: /101 Example Avenue/ }).click();
+  await expect(
+    page.getByRole("radio", { name: "Call now", exact: true }),
+  ).toBeChecked();
+  await expect(
+    page.getByRole("radio", { name: "Scope looks real", exact: true }),
+  ).toBeChecked();
+  await expect(
+    page.getByLabel("What did TruLot get right or wrong?"),
+  ).toHaveValue("The timing signal is useful.");
+
   const storage = await page.evaluate(() => Object.entries(localStorage));
   expect(storage).toHaveLength(1);
   expect(storage[0][0]).toMatch(
-    /^trulot:elevate-signal-calibration:v3:/,
+    /^trulot:elevate-opportunity-review:v1:/,
   );
-  expect(storage[0][1]).not.toContain("elevate-playwright-token");
+  expect(storage[0][0]).not.toContain("elevate-playwright-token");
 });
 
-test("completes review, correction, approval, exports, clipboard, email, refresh, and restart", async ({
+test("supports lead chat, mock enrichment, editable outreach, and outcomes", async ({
   page,
 }) => {
   const consoleErrors: string[] = [];
   page.on("console", (message) => {
     if (message.type() === "error") consoleErrors.push(message.text());
   });
-  await page.goto(interviewUrl);
-  await completeFlow(page);
-  await expect(page.getByTestId("review")).toBeVisible();
-  await expect(page.locator('[data-testid^="summary-"]')).toHaveCount(4);
-  await expect(page.getByText("Elevate Signal Calibration Summary")).toBeVisible();
-  await expect(page.getByTestId("summary-signals")).toContainText(
-    "ROW / encroachment permit approved",
-  );
-  await expect(page.getByTestId("summary-delivery")).toContainText(
-    "5 leads",
-  );
+  await page.goto(reviewUrl);
+  await chooseDecision(page, "Call now", "Contact route looks usable");
 
   await page
-    .getByTestId("summary-delivery")
-    .getByRole("button", { name: "Edit" })
+    .getByRole("button", { name: "Discuss this lead with TruLot" })
     .click();
-  await page.getByRole("radio", { name: "10 real leads" }).check();
-  await continueStep(page);
-  await expect(page.getByTestId("summary-delivery")).toContainText("10 leads");
-  await expect(page.getByTestId("summary-signals")).toContainText(
-    "ROW / encroachment permit approved",
+  await page.getByLabel("Question").fill("Who should I call?");
+  await page.getByRole("button", { name: "Ask about this lead" }).click();
+  await expect(page.getByTestId("lead-chat")).toContainText(
+    "Fictional Builder 1",
+  );
+  await expect(page.getByTestId("lead-chat")).toContainText(
+    "currently verified route",
   );
 
-  await page.getByRole("button", { name: "That looks right" }).click();
-  await expect(page.getByTestId("approved-actions")).toBeVisible();
-  const markdown = page.waitForEvent("download");
-  await page.getByRole("button", { name: "Download Markdown" }).click();
-  expect((await markdown).suggestedFilename()).toBe(
-    "elevate-signal-calibration.md",
+  await page.getByRole("button", { name: "Find a better contact" }).click();
+  await expect(page.getByTestId("enrichment-result")).toBeVisible();
+  await expect(page.getByTestId("enrichment-result")).toContainText(
+    "Probable Routing Contact",
   );
-  const json = page.waitForEvent("download");
-  await page.getByRole("button", { name: "Download JSON" }).click();
-  expect((await json).suggestedFilename()).toBe(
-    "elevate-signal-calibration.json",
+  await expect(page.getByTestId("enrichment-result")).toContainText(
+    "Relationship: Medium",
   );
-  await page.getByRole("button", { name: "Copy summary" }).click();
-  await expect(page.getByRole("button", { name: "Summary copied" })).toBeVisible();
-  await page.getByRole("button", { name: "Copy clarification notes" }).click();
-  await expect(
-    page.getByRole("button", { name: "Transcript copied" }),
-  ).toBeVisible();
-  await expect(page.getByTestId("email-summary")).toHaveAttribute(
+  await expect(page.getByTestId("enrichment-result")).toContainText(
+    "Routing: Medium",
+  );
+  await page
+    .getByRole("button", { name: "Use enriched outreach draft" })
+    .click();
+
+  const subject = page.getByLabel("Email subject");
+  await subject.fill("Edited fictional ROW subject");
+  const body = page.getByLabel("Email body");
+  await body.fill("Edited fictional email body.");
+  const opener = page.getByLabel("Suggested call opener");
+  await opener.fill("Edited fictional call opener.");
+
+  await page.getByRole("button", { name: "Copy subject" }).click();
+  await expect(page.getByRole("button", { name: "Subject copied" })).toBeVisible();
+  await page.getByRole("button", { name: "Copy email" }).click();
+  await expect(page.getByRole("button", { name: "Email copied" })).toBeVisible();
+  await page.getByRole("button", { name: "Copy call opener" }).click();
+  await expect(page.getByRole("button", { name: "Opener copied" })).toBeVisible();
+  await expect(page.getByTestId("outreach-mailto")).toHaveAttribute(
     "href",
-    /^mailto:results%40example\.test/,
+    /^mailto:routing-1%40example\.test\?subject=Edited%20fictional%20ROW%20subject/,
   );
+
+  await page.getByRole("button", { name: "Mark contacted" }).click();
+  await expect(page.getByTestId("outcome-tracking")).toBeVisible();
+  await page.getByLabel("Current outcome").selectOption("row_scope_confirmed");
+  await page
+    .getByLabel("Estimated opportunity value")
+    .fill("$25,000 test estimate");
+  await page.getByLabel("Follow-up date").fill("2026-08-01");
+  await page.getByLabel("Outcome notes").fill("Fictional outcome note.");
   await page.reload();
-  await expect(page.getByTestId("approved-actions")).toBeVisible();
-  page.once("dialog", (dialog) => dialog.accept());
-  await page.getByRole("button", { name: "Restart" }).click();
-  await expect(page.getByTestId("section-signals")).toBeVisible();
+  await expect(page.getByLabel("Current outcome")).toHaveValue(
+    "row_scope_confirmed",
+  );
+  await expect(page.getByLabel("Email subject")).toHaveValue(
+    "Edited fictional ROW subject",
+  );
   expect(consoleErrors).toEqual([]);
 });
 
-test("is usable without overflow or framework errors on phone", async ({ page }) => {
-  await page.setViewportSize({ width: 375, height: 812 });
-  await page.goto(interviewUrl);
+test("exports review, builds Brian mailto, and restarts with confirmation", async ({
+  page,
+}) => {
+  await page.goto(reviewUrl);
+  await chooseDecision(page, "Pass", "Wrong timing");
+  await page.getByRole("button", { name: "Save and Next" }).click();
+
+  const markdownDownload = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Download Markdown" }).click();
+  expect((await markdownDownload).suggestedFilename()).toBe(
+    "elevate-opportunity-review.md",
+  );
+
+  const jsonDownload = page.waitForEvent("download");
+  await page.getByRole("button", { name: "Download JSON" }).click();
+  expect((await jsonDownload).suggestedFilename()).toBe(
+    "elevate-opportunity-review.json",
+  );
+
+  await page.getByRole("button", { name: "Copy concise summary" }).click();
+  await expect(page.getByRole("button", { name: "Review copied" })).toBeVisible();
+  await expect(page.getByTestId("email-review-summary")).toHaveAttribute(
+    "href",
+    /^mailto:results%40example\.test/,
+  );
+
+  page.once("dialog", (dialog) => dialog.accept());
+  await page.getByRole("button", { name: "Restart" }).click();
+  await expect(page.getByRole("progressbar")).toHaveAttribute(
+    "aria-valuenow",
+    "0",
+  );
+  await expect(
+    page.getByRole("radio", { name: "Pass", exact: true }),
+  ).not.toBeChecked();
+});
+
+test("has keyboard access, no framework errors, and no horizontal overflow", async ({
+  page,
+}) => {
+  const consoleErrors: string[] = [];
+  page.on("console", (message) => {
+    if (message.type() === "error") consoleErrors.push(message.text());
+  });
+  await page.goto(reviewUrl);
+
+  await page.keyboard.press("Tab");
+  await expect(page.getByRole("button", { name: "Restart" })).toBeFocused();
+  await page.keyboard.press("Tab");
+  await expect(page.getByRole("button", { name: /101 Example Avenue/ }))
+    .toBeFocused();
+  await page.keyboard.press("Enter");
+  await expect(page.getByRole("heading", { name: "101 Example Avenue" }))
+    .toBeVisible();
+
   const dimensions = await page.evaluate(() => ({
     body: document.body.scrollWidth,
     viewport: document.documentElement.clientWidth,
@@ -253,5 +257,5 @@ test("is usable without overflow or framework errors on phone", async ({ page })
   }));
   expect(dimensions.body).toBeLessThanOrEqual(dimensions.viewport);
   expect(dimensions.overlay).toBe(false);
-  await expect(page.getByRole("button", { name: "Continue" })).toBeVisible();
+  expect(consoleErrors).toEqual([]);
 });
