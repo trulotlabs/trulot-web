@@ -72,7 +72,11 @@ export default async function ElevateOpportunityReviewPage({
     <OpportunityReview
       token={token}
       leads={batch.leads}
-      resultsEmail={process.env.ELEVATE_RESULTS_EMAIL ?? ""}
+      resultsEmail={
+        process.env.NEXT_PUBLIC_ELEVATE_RESULTS_EMAIL ??
+        process.env.ELEVATE_RESULTS_EMAIL ??
+        ""
+      }
       showMockLabel={
         process.env.NODE_ENV !== "production" &&
         process.env.ELEVATE_INTERVIEW_MOCK === "true"
