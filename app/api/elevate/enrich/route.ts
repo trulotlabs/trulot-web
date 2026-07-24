@@ -4,6 +4,7 @@ import { findPilotLead } from "@/lib/elevate-review/batch";
 import { mockEnrichment } from "@/lib/elevate-review/mock";
 import { buildContactEnrichmentPrompt } from "@/lib/elevate-review/prompts";
 import {
+  enrichmentModelResultSchema,
   enrichmentRequestSchema,
   enrichmentResultSchema,
 } from "@/lib/elevate-review/schema";
@@ -96,7 +97,7 @@ export async function POST(request: Request) {
       include: ["web_search_call.action.sources"],
       text: {
         format: zodTextFormat(
-          enrichmentResultSchema,
+          enrichmentModelResultSchema,
           "elevate_contact_enrichment",
         ),
       },

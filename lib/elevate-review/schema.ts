@@ -172,6 +172,16 @@ export const enrichmentResultSchema = z.object({
 });
 export type EnrichmentResult = z.infer<typeof enrichmentResultSchema>;
 
+const modelSourceSchema = sourceSchema.extend({
+  // The Responses API structured-output subset does not accept JSON Schema's
+  // URI format. The authoritative schema above validates the URL afterward.
+  url: z.string().min(1).max(1000),
+});
+
+export const enrichmentModelResultSchema = enrichmentResultSchema.extend({
+  sources: z.array(modelSourceSchema).min(1).max(12),
+});
+
 export const chatResponseSchema = z.object({
   answer: z.string().min(1).max(2200),
   sourceIndexes: z.array(z.number().int().min(0).max(19)).max(8),
