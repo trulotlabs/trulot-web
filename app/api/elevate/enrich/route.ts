@@ -17,6 +17,41 @@ import {
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
+function sanitizedEnrichmentError(error: unknown) {
+  if (error instanceof OpenAI.APIError) {
+    return {
+      name: error.name,
+      status: error.status,
+      code: error.code ?? null,
+      type: error.type ?? null,
+      param: error.param ?? null,
+    };
+  }
+  if (
+    error &&
+    typeof error === "object" &&
+    "issues" in error &&
+    Array.isArray(error.issues)
+  ) {
+    return {
+      name: "SchemaValidationError",
+      issuePaths: error.issues
+        .slice(0, 8)
+        .map((issue) =>
+          issue &&
+          typeof issue === "object" &&
+          "path" in issue &&
+          Array.isArray(issue.path)
+            ? issue.path.join(".")
+            : "unknown",
+        ),
+    };
+  }
+  return {
+    name: error instanceof Error ? error.name : "UnknownError",
+  };
+}
+
 export async function POST(request: Request) {
   const token = request.headers.get("x-elevate-interview-token") ?? "";
   if (!authorizeElevateRequest(request)) {
@@ -71,10 +106,7 @@ export async function POST(request: Request) {
       enrichmentResultSchema.parse(response.output_parsed),
     );
   } catch (error) {
-    console.error(
-      "Elevate contact enrichment failed:",
-      error instanceof Error ? error.name : "UnknownError",
-    );
+    console.error("Elevate contact enrichment failed:", sanitizedEnrichmentError(error));
     return neutralApiError();
   }
 }
