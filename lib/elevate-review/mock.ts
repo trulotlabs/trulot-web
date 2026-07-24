@@ -11,6 +11,7 @@ export function mockChatAnswer(lead: PilotLead, question: string) {
   };
 }
 export function mockEnrichment(lead: PilotLead) {
+  const supportedScope = lead.likelyScopes[0] ?? "right-of-way work";
   return {
     primaryContact: lead.primaryContact,
     backupContact: lead.backupContact,
@@ -19,9 +20,15 @@ export function mockEnrichment(lead: PilotLead) {
       "Mock enrichment preserves the verified packet and does not perform public web search.",
       ...lead.risksAndCaveats.slice(0, 2),
     ],
-    revisedCallOpener: lead.suggestedCallOpener,
+    revisedCallOpener: `Hi, this is Cesar with Elevate. I’m reaching out regarding the active project at ${lead.address}. Has the ${supportedScope.toLowerCase()} package been assigned? Could you route me to the GC, project manager, or person handling that work?`,
     revisedDraftEmailSubject: lead.draftEmailSubject,
-    revisedDraftEmailBody: lead.draftEmailBody,
+    revisedDraftEmailBody: `Hello,
+
+I’m reaching out regarding the active project at ${lead.address}. The public permit record includes ${supportedScope.toLowerCase()}. Has that package been assigned? Could you route me to the GC, project manager, or person handling that work?
+
+Thank you,
+Cesar
+Elevate`,
     verifiedAt: "2026-07-23",
   };
 }

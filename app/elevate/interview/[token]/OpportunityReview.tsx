@@ -2,6 +2,11 @@
 
 import { useEffect, useMemo, useState } from "react";
 import {
+  buildCompletedReviewExport,
+  markdownCompletedReview,
+} from "@/lib/elevate-review/export";
+import { validateFollowUpDate } from "@/lib/elevate-review/dates";
+import {
   chatResponseSchema,
   enrichmentResultSchema,
   savedReviewSchema,
@@ -15,6 +20,7 @@ import {
   type SavedLeadReview,
   type SavedReview,
 } from "@/lib/elevate-review/schema";
+import { FollowUpDateField } from "./FollowUpDateField";
 
 const DECISIONS: ReadonlyArray<{ value: LeadDecision; label: string }> = [
   { value: "call_now", label: "Call now" },
@@ -95,7 +101,8 @@ function experimentLabel(lead: PilotLead) {
 function createLeadReview(lead: PilotLead): SavedLeadReview {
   return {
     decision: null,
-    reason: "",
+    reasons: [],
+    otherReason: "",
     notes: "",
     saved: false,
     chatTranscript: [],
@@ -107,7 +114,8 @@ function createLeadReview(lead: PilotLead): SavedLeadReview {
     outcome: null,
     outcomeNotes: "",
     estimatedOpportunityValue: "",
-    followUpDate: "",
+    followUpDate: null,
+    enrichedOutreachAdopted: false,
     updatedAt: new Date().toISOString(),
   };
 }
@@ -129,7 +137,7 @@ function restoreSavedReview(raw: string, leads: PilotBatch): SavedReview | null 
       const saved = parsed.data.reviews[lead.leadId];
       if (saved) reviews[lead.leadId] = saved;
     }
-    return { ...parsed.data, reviews };
+    return { ...parsed.data, version: 2, reviews };
   } catch {
     return null;
   }
@@ -169,37 +177,12 @@ function conciseSummary(
     "Elevate ROW Opportunity Review",
     ...leads.map((lead) => {
       const review = reviews[lead.leadId];
-      return `${lead.address}: ${review?.decision ? humanize(review.decision) : "Not reviewed"}${review?.reason ? ` — ${review.reason}` : ""}`;
+      const reasons = review?.reasons.length
+        ? ` — ${review.reasons.join("; ")}`
+        : "";
+      return `${lead.address}: ${review?.decision ? humanize(review.decision) : "Not reviewed"}${reasons}`;
     }),
   ].join("\n");
-}
-
-function markdownReview(
-  leads: PilotBatch,
-  reviews: Record<string, SavedLeadReview>,
-) {
-  return `# Elevate ROW Opportunity Review
-
-Generated: ${new Date().toISOString()}
-
-${leads
-  .map((lead) => {
-    const review = reviews[lead.leadId];
-    return `## ${lead.address}
-
-- **Project:** ${lead.projectDescription}
-- **Experiment:** ${experimentLabel(lead)}
-- **Decision:** ${review?.decision ? humanize(review.decision) : "Not reviewed"}
-- **Reason:** ${review?.reason || "Not provided"}
-- **Notes:** ${review?.notes || "None"}
-- **Contacted:** ${review?.contacted ? "Yes" : "No"}
-- **Outcome:** ${review?.outcome ? humanize(review.outcome) : "Not recorded"}
-- **Outcome notes:** ${review?.outcomeNotes || "None"}
-- **Estimated value:** ${review?.estimatedOpportunityValue || "Not provided"}
-- **Follow-up:** ${review?.followUpDate || "Not scheduled"}
-`;
-  })
-  .join("\n")}`;
 }
 
 function ContactCard({
@@ -319,12 +302,21 @@ export function OpportunityReview({
   const [chatPending, setChatPending] = useState(false);
   const [enrichmentPending, setEnrichmentPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [decisionNotice, setDecisionNotice] = useState<string | null>(null);
 
   const activeIndex = leads.findIndex((lead) => lead.leadId === activeLeadId);
   const lead = leads[activeIndex] ?? leads[0];
   const review = reviews[lead.leadId] ?? createLeadReview(lead);
   const savedCount = leads.filter((item) => reviews[item.leadId]?.saved).length;
   const progress = Math.round((savedCount / leads.length) * 100);
+  const reviewComplete = savedCount === leads.length;
+  const completionCounts = DECISIONS.map((decision) => ({
+    ...decision,
+    count: leads.filter((item) => {
+      const itemReview = reviews[item.leadId];
+      return itemReview?.saved && itemReview.decision === decision.value;
+    }).length,
+  }));
 
   useEffect(() => {
     let active = true;
@@ -358,7 +350,7 @@ export function OpportunityReview({
   useEffect(() => {
     if (!storageKey || !hydrated) return;
     const saved: SavedReview = {
-      version: 1,
+      version: 2,
       activeLeadId,
       reviews,
       updatedAt: new Date().toISOString(),
@@ -370,6 +362,7 @@ export function OpportunityReview({
     setChatOpen(false);
     setChatQuestion("");
     setError(null);
+    setDecisionNotice(null);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [activeLeadId]);
 
@@ -390,9 +383,53 @@ export function OpportunityReview({
     window.setTimeout(() => setCopied(null), 1400);
   };
 
+  const changeDecision = (decision: LeadDecision) => {
+    const changed = review.decision !== null && review.decision !== decision;
+    updateReview({
+      decision,
+      reasons: changed ? [] : review.reasons,
+      otherReason: changed ? "" : review.otherReason,
+      followUpDate:
+        changed && !review.contacted ? null : review.followUpDate,
+      saved: false,
+    });
+    setDecisionNotice(
+      changed
+        ? "Decision changed. Previous reasons and decision-specific follow-up details were cleared."
+        : null,
+    );
+  };
+
+  const toggleReason = (reason: string, selected: boolean) => {
+    setReviews((current) => {
+      const currentReview =
+        current[lead.leadId] ?? createLeadReview(lead);
+      return {
+        ...current,
+        [lead.leadId]: {
+          ...currentReview,
+          reasons: selected
+            ? Array.from(new Set([...currentReview.reasons, reason]))
+            : currentReview.reasons.filter((item) => item !== reason),
+          otherReason:
+            reason === "Other" && !selected
+              ? ""
+              : currentReview.otherReason,
+          saved: false,
+          updatedAt: new Date().toISOString(),
+        },
+      };
+    });
+  };
+
   const saveAndNext = () => {
-    if (!review.decision || !review.reason) {
-      setError("Choose a decision and reason before saving.");
+    if (!review.decision) {
+      setError("Choose a primary decision before saving.");
+      return;
+    }
+    const dateError = validateFollowUpDate(review.followUpDate);
+    if (dateError) {
+      setError(`Follow-up date: ${dateError}`);
       return;
     }
     updateReview({ saved: true });
@@ -483,6 +520,7 @@ export function OpportunityReview({
       editedCallOpener: enrichment.revisedCallOpener,
       editedEmailSubject: enrichment.revisedDraftEmailSubject,
       editedEmailBody: enrichment.revisedDraftEmailBody,
+      enrichedOutreachAdopted: true,
     });
   };
 
@@ -500,6 +538,22 @@ export function OpportunityReview({
   const resultsHref = resultsEmail
     ? `mailto:${encodeURIComponent(resultsEmail)}?subject=${encodeURIComponent("Elevate ROW Opportunity Review")}&body=${encodeURIComponent(summary)}`
     : null;
+
+  const exportReview = (format: "markdown" | "json") => {
+    try {
+      const payload = buildCompletedReviewExport(leads, reviews);
+      download(
+        `elevate-opportunity-review.${format === "markdown" ? "md" : "json"}`,
+        format === "markdown"
+          ? markdownCompletedReview(payload)
+          : JSON.stringify(payload, null, 2),
+        format === "markdown" ? "text/markdown" : "application/json",
+      );
+      setError(null);
+    } catch {
+      setError("The review record could not be validated for export.");
+    }
+  };
 
   const restart = () => {
     if (!window.confirm("Restart the opportunity review and clear this device?"))
@@ -568,6 +622,87 @@ export function OpportunityReview({
             />
           </div>
         </div>
+
+        {reviewComplete && (
+          <section
+            className="mt-6 rounded-3xl border border-emerald-300/25 bg-emerald-200/[0.06] p-5 sm:p-7"
+            data-testid="review-complete"
+          >
+            <p className="text-[11px] font-semibold tracking-[0.14em] text-emerald-200 uppercase">
+              Review complete
+            </p>
+            <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
+              <div>
+                <h2 className="text-2xl font-semibold">5 of 5 decisions saved</h2>
+                <dl className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/60">
+                  {completionCounts.map((decision) => (
+                    <div
+                      key={decision.value}
+                      className="flex gap-2"
+                      data-testid={`decision-count-${decision.value}`}
+                    >
+                      <dt>{decision.label}</dt>
+                      <dd
+                        className="font-mono text-emerald-200"
+                        aria-label={`${decision.label} count`}
+                      >
+                        {decision.count}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+              <button
+                type="button"
+                onClick={() =>
+                  document
+                    .querySelector('[data-testid="lead-card"]')
+                    ?.scrollIntoView({ behavior: "smooth", block: "start" })
+                }
+                className={buttonClass}
+              >
+                Continue editing
+              </button>
+            </div>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+              <button
+                type="button"
+                onClick={() => exportReview("markdown")}
+                className={buttonClass}
+              >
+                Download Markdown
+              </button>
+              <button
+                type="button"
+                onClick={() => exportReview("json")}
+                className={buttonClass}
+              >
+                Download JSON
+              </button>
+              <button
+                type="button"
+                onClick={() => void copy("review", summary)}
+                className={buttonClass}
+              >
+                {copied === "review" ? "Review copied" : "Copy concise summary"}
+              </button>
+              {resultsHref && (
+                <a
+                  href={resultsHref}
+                  data-testid="email-review-summary-top"
+                  className="rounded-xl bg-[#d89a52] px-4 py-3 text-center text-sm font-semibold text-[#17120c]"
+                >
+                  Email results
+                </a>
+              )}
+            </div>
+            {!resultsHref && (
+              <p className="mt-3 text-xs text-white/35">
+                Downloads and copy are ready for handoff.
+              </p>
+            )}
+          </section>
+        )}
 
         <div className="mt-6 grid items-start gap-6 lg:grid-cols-[15rem_minmax(0,1fr)]">
           <nav
@@ -789,13 +924,7 @@ export function OpportunityReview({
                           name={`decision-${lead.leadId}`}
                           value={decision.value}
                           checked={review.decision === decision.value}
-                          onChange={() =>
-                            updateReview({
-                              decision: decision.value,
-                              reason: "",
-                              saved: false,
-                            })
-                          }
+                          onChange={() => changeDecision(decision.value)}
                           className="sr-only"
                         />
                         {decision.label}
@@ -807,19 +936,26 @@ export function OpportunityReview({
                 {review.decision && (
                   <fieldset className="mt-5">
                     <legend className="text-sm font-semibold">Why?</legend>
+                    <p className="mt-1 text-xs text-white/35">
+                      Select any that apply. Changing the primary decision clears
+                      its reasons so the next choice starts cleanly.
+                    </p>
                     <div className="mt-3 grid gap-2 sm:grid-cols-2">
                       {REASONS[review.decision].map((reason) => (
                         <label
                           key={reason}
-                          className="flex cursor-pointer items-center gap-3 rounded-xl border border-white/[0.08] p-3 text-sm text-white/65"
+                          className={`flex cursor-pointer items-center gap-3 rounded-xl border p-3 text-sm transition ${
+                            review.reasons.includes(reason)
+                              ? "border-[#d89a52] bg-[#d89a52]/10 text-[#f5d3aa]"
+                              : "border-white/[0.08] text-white/65"
+                          }`}
                         >
                           <input
-                            type="radio"
-                            name={`reason-${lead.leadId}`}
+                            type="checkbox"
                             value={reason}
-                            checked={review.reason === reason}
-                            onChange={() =>
-                              updateReview({ reason, saved: false })
+                            checked={review.reasons.includes(reason)}
+                            onChange={(event) =>
+                              toggleReason(reason, event.target.checked)
                             }
                             className="accent-[#d89a52]"
                           />
@@ -827,26 +963,43 @@ export function OpportunityReview({
                         </label>
                       ))}
                     </div>
+                    {review.reasons.includes("Other") && (
+                      <label className="mt-4 block text-sm font-semibold">
+                        Other reason explanation
+                        <input
+                          value={review.otherReason}
+                          onChange={(event) =>
+                            updateReview({
+                              otherReason: event.target.value,
+                              saved: false,
+                            })
+                          }
+                          maxLength={300}
+                          placeholder="Optional short explanation"
+                          className={`${inputClass} mt-2`}
+                        />
+                      </label>
+                    )}
                   </fieldset>
                 )}
 
                 {review.decision === "call_later" &&
-                  review.reason === "Follow up on a specified date" && (
-                    <label className="mt-4 block text-sm">
-                      Follow-up date
-                      <input
-                        type="date"
+                  review.reasons.includes("Follow up on a specified date") && (
+                    <div className="mt-4">
+                      <FollowUpDateField
                         value={review.followUpDate}
-                        onChange={(event) =>
-                          updateReview({
-                            followUpDate: event.target.value,
-                            saved: false,
-                          })
+                        onChange={(followUpDate) =>
+                          updateReview({ followUpDate, saved: false })
                         }
-                        className={`${inputClass} mt-2`}
                       />
-                    </label>
+                    </div>
                   )}
+
+                {decisionNotice && (
+                  <p className="mt-4 text-xs text-amber-100/70" role="status">
+                    {decisionNotice}
+                  </p>
+                )}
 
                 <label className="mt-5 block text-sm font-semibold">
                   What did TruLot get right or wrong?
@@ -1138,17 +1291,21 @@ export function OpportunityReview({
                         className={`${inputClass} mt-2`}
                       />
                     </label>
-                    <label className="text-sm font-semibold">
-                      Follow-up date
-                      <input
-                        type="date"
+                    {review.decision === "call_later" &&
+                    review.reasons.includes(
+                      "Follow up on a specified date",
+                    ) ? (
+                      <p className="text-xs leading-5 text-white/40">
+                        Follow-up timing is set in the decision section above.
+                      </p>
+                    ) : (
+                      <FollowUpDateField
                         value={review.followUpDate}
-                        onChange={(event) =>
-                          updateReview({ followUpDate: event.target.value })
+                        onChange={(followUpDate) =>
+                          updateReview({ followUpDate })
                         }
-                        className={`${inputClass} mt-2`}
                       />
-                    </label>
+                    )}
                     <label className="text-sm font-semibold sm:col-span-2">
                       Outcome notes
                       <textarea
@@ -1176,35 +1333,14 @@ export function OpportunityReview({
           <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <button
               type="button"
-              onClick={() =>
-                download(
-                  "elevate-opportunity-review.md",
-                  markdownReview(leads, reviews),
-                  "text/markdown",
-                )
-              }
+              onClick={() => exportReview("markdown")}
               className={buttonClass}
             >
               Download Markdown
             </button>
             <button
               type="button"
-              onClick={() =>
-                download(
-                  "elevate-opportunity-review.json",
-                  JSON.stringify(
-                    {
-                      version: 1,
-                      generatedAt: new Date().toISOString(),
-                      leads,
-                      reviews,
-                    },
-                    null,
-                    2,
-                  ),
-                  "application/json",
-                )
-              }
+              onClick={() => exportReview("json")}
               className={buttonClass}
             >
               Download JSON
@@ -1224,12 +1360,13 @@ export function OpportunityReview({
               >
                 Email concise summary to Brian
               </a>
-            ) : (
-              <span className={`${buttonClass} text-center opacity-40`}>
-                Results email not configured
-              </span>
-            )}
+            ) : null}
           </div>
+          {!resultsHref && (
+            <p className="mt-3 text-xs text-white/35">
+              Downloads and copy are ready for handoff.
+            </p>
+          )}
         </section>
       </div>
     </main>

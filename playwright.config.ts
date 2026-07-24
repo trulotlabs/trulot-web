@@ -32,7 +32,6 @@ export default defineConfig({
       ELEVATE_INTERVIEW_TOKEN: "elevate-playwright-token",
       ELEVATE_INTERVIEW_MOCK: "true",
       ELEVATE_PILOT_BATCH_JSON: JSON.stringify(elevatePilotBatchFixture),
-      ELEVATE_RESULTS_EMAIL: "results@example.test",
     },
   },
 });

@@ -201,9 +201,24 @@ export const enrichmentRequestSchema = z.object({
   leadId: z.string().min(1).max(80),
 });
 
+export const isoDateSchema = z
+  .string()
+  .regex(/^\d{4}-\d{2}-\d{2}$/)
+  .refine((value) => {
+    const [year, month, day] = value.split("-").map(Number);
+    if (year < 1000 || month < 1 || month > 12 || day < 1) return false;
+    const date = new Date(year, month - 1, day);
+    return (
+      date.getFullYear() === year &&
+      date.getMonth() === month - 1 &&
+      date.getDate() === day
+    );
+  }, "Use a real calendar date in YYYY-MM-DD format.");
+
 export const savedLeadReviewSchema = z.object({
   decision: decisionSchema.nullable(),
-  reason: z.string().max(240),
+  reasons: z.array(z.string().min(1).max(240)).max(12),
+  otherReason: z.string().max(300),
   notes: z.string().max(3000),
   saved: z.boolean(),
   chatTranscript: z.array(chatMessageSchema).max(40),
@@ -215,15 +230,115 @@ export const savedLeadReviewSchema = z.object({
   outcome: outcomeSchema.nullable(),
   outcomeNotes: z.string().max(3000),
   estimatedOpportunityValue: z.string().max(120),
-  followUpDate: z.string().max(40),
+  followUpDate: isoDateSchema.nullable(),
+  enrichedOutreachAdopted: z.boolean(),
   updatedAt: z.string().max(40),
 });
 export type SavedLeadReview = z.infer<typeof savedLeadReviewSchema>;
 
-export const savedReviewSchema = z.object({
-  version: z.literal(1),
+const currentSavedReviewSchema = z.object({
+  version: z.literal(2),
   activeLeadId: z.string().min(1).max(80),
   reviews: z.record(z.string(), savedLeadReviewSchema),
   updatedAt: z.string().max(40),
 });
+
+const legacySavedLeadReviewSchema = savedLeadReviewSchema
+  .omit({
+    reasons: true,
+    otherReason: true,
+    followUpDate: true,
+    enrichedOutreachAdopted: true,
+  })
+  .extend({
+    reason: z.string().max(240),
+    followUpDate: z.string().max(40),
+  });
+
+const legacySavedReviewSchema = z.object({
+  version: z.literal(1),
+  activeLeadId: z.string().min(1).max(80),
+  reviews: z.record(z.string(), legacySavedLeadReviewSchema),
+  updatedAt: z.string().max(40),
+});
+
+export const savedReviewSchema = z.preprocess((value) => {
+  const legacy = legacySavedReviewSchema.safeParse(value);
+  if (!legacy.success) return value;
+  return {
+    version: 2,
+    activeLeadId: legacy.data.activeLeadId,
+    reviews: Object.fromEntries(
+      Object.entries(legacy.data.reviews).map(([leadId, review]) => [
+        leadId,
+        {
+          ...review,
+          reasons: review.reason ? [review.reason] : [],
+          otherReason: "",
+          followUpDate: isoDateSchema.safeParse(review.followUpDate).success
+            ? review.followUpDate
+            : null,
+          enrichedOutreachAdopted: false,
+          reason: undefined,
+        },
+      ]),
+    ),
+    updatedAt: legacy.data.updatedAt,
+  };
+}, currentSavedReviewSchema);
 export type SavedReview = z.infer<typeof savedReviewSchema>;
+
+export const completedLeadReviewExportSchema = z
+  .object({
+    leadId: z.string().min(1).max(80),
+    address: z.string().min(1).max(240),
+    projectDescription: z.string().min(1).max(500),
+    experimentType: experimentTypeSchema,
+    review: z
+      .object({
+        decision: decisionSchema.nullable(),
+        reasons: z.array(z.string().min(1).max(240)).max(12),
+        otherReason: z.string().max(300).nullable(),
+        notes: z.string().max(3000).nullable(),
+        contacted: z.boolean(),
+        outcome: outcomeSchema.nullable(),
+        outcomeNotes: z.string().max(3000).nullable(),
+        estimatedOpportunityValue: z.number().finite().nonnegative().nullable(),
+        followUpDate: isoDateSchema.nullable(),
+      })
+      .strict(),
+    verifiedPacket: z
+      .object({
+        primaryContact: contactSchema,
+        backupContact: contactSchema.nullable(),
+        sourceUrls: z.array(z.string().url().max(1000)).max(20),
+      })
+      .strict(),
+    aiEnrichment: z
+      .object({
+        ran: z.boolean(),
+        primaryContactClassification: contactClassificationSchema.nullable(),
+        backupContactClassification: contactClassificationSchema.nullable(),
+        verifiedAt: z.string().min(1).max(40).nullable(),
+        sourceUrls: z.array(z.string().url().max(1000)).max(12),
+        outreachAdopted: z.boolean(),
+      })
+      .strict(),
+    finalOutreach: z
+      .object({
+        callOpener: z.string().max(1600).nullable(),
+        emailSubject: z.string().max(200).nullable(),
+        emailBody: z.string().max(4000).nullable(),
+      })
+      .strict(),
+  })
+  .strict();
+
+export const completedReviewExportSchema = z
+  .object({
+    schemaVersion: z.literal(1),
+    generatedAt: z.string().datetime(),
+    leads: z.array(completedLeadReviewExportSchema).length(5),
+  })
+  .strict();
+export type CompletedReviewExport = z.infer<typeof completedReviewExportSchema>;

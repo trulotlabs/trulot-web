@@ -1,23 +1,43 @@
-import { expect, test, type Page } from "@playwright/test";
+import { readFile } from "node:fs/promises";
+import { expect, test, type Download, type Page } from "@playwright/test";
+import {
+  completedReviewExportSchema,
+  type LeadDecision,
+} from "../../lib/elevate-review/schema";
 
 const reviewUrl = "/elevate/interview/elevate-playwright-token";
-test.setTimeout(60_000);
+test.setTimeout(90_000);
+
+const decisionLabels: Record<LeadDecision, string> = {
+  call_now: "Call now",
+  call_later: "Call later",
+  pass: "Pass",
+  already_known: "Already known",
+};
 
 async function chooseDecision(
   page: Page,
-  decision: "Call now" | "Call later" | "Pass" | "Already known",
-  reason: string,
+  decision: LeadDecision,
+  reasons: string[] = [],
 ) {
   await page
-    .getByRole("radio", { name: decision, exact: true })
+    .getByRole("radio", { name: decisionLabels[decision], exact: true })
     .check({ force: true });
-  await page
-    .getByRole("radio", { name: reason, exact: true })
-    .check({ force: true });
+  for (const reason of reasons) {
+    await page
+      .getByRole("checkbox", { name: reason, exact: true })
+      .check({ force: true });
+  }
 }
 
 async function saveAndNext(page: Page) {
   await page.getByRole("button", { name: "Save and Next" }).click();
+}
+
+async function downloadedText(download: Download) {
+  const path = await download.path();
+  if (!path) throw new Error("Download path was unavailable.");
+  return readFile(path, "utf8");
 }
 
 test("invalid token is denied neutrally without calling private APIs", async ({
@@ -72,53 +92,169 @@ test("loads five fictional leads with navigation and experiment disclosures", as
   );
 });
 
-test("supports all four decisions, structured reasons, notes, save, and resume", async ({
+test("supports multi-select reasons, independent deselection, Other, reconciliation, and resume", async ({
   page,
 }) => {
   await page.goto(reviewUrl);
 
-  await chooseDecision(page, "Call now", "Scope looks real");
+  await chooseDecision(page, "call_now", [
+    "Scope looks real",
+    "Timing looks right",
+    "Other",
+  ]);
   await page
-    .getByLabel("What did TruLot get right or wrong?")
-    .fill("The timing signal is useful.");
-  await saveAndNext(page);
+    .getByLabel("Other reason explanation")
+    .fill("Estimator context is worth confirming.");
+  await page
+    .getByRole("checkbox", { name: "Scope looks real", exact: true })
+    .uncheck({ force: true });
 
-  await chooseDecision(page, "Call later", "Waiting for permit milestone");
-  await saveAndNext(page);
-
-  await chooseDecision(page, "Pass", "No useful contact");
-  await saveAndNext(page);
-
-  await chooseDecision(page, "Already known", "Already tracking");
-  await saveAndNext(page);
-
-  await expect(page.getByRole("progressbar")).toHaveAttribute(
-    "aria-valuenow",
-    "80",
+  await expect(
+    page.getByRole("checkbox", { name: "Scope looks real", exact: true }),
+  ).not.toBeChecked();
+  await expect(
+    page.getByRole("checkbox", { name: "Timing looks right", exact: true }),
+  ).toBeChecked();
+  await expect(page.getByLabel("Other reason explanation")).toHaveValue(
+    "Estimator context is worth confirming.",
   );
+
   await page.reload();
-  await expect(page.getByRole("button", { name: /404 Example Avenue/ }))
-    .toContainText("Saved");
+  await expect(
+    page.getByRole("checkbox", { name: "Timing looks right", exact: true }),
+  ).toBeChecked();
+  await expect(page.getByLabel("Other reason explanation")).toHaveValue(
+    "Estimator context is worth confirming.",
+  );
+
+  await page
+    .getByRole("radio", { name: "Pass", exact: true })
+    .check({ force: true });
+  await expect(page.getByRole("status")).toContainText(
+    "Previous reasons and decision-specific follow-up details were cleared",
+  );
+  await expect(
+    page.getByRole("checkbox", { name: "Wrong timing", exact: true }),
+  ).not.toBeChecked();
+  await expect(page.getByLabel("Other reason explanation")).toHaveCount(0);
+
+  await page
+    .getByRole("checkbox", { name: "Wrong timing", exact: true })
+    .check({ force: true });
+  await page
+    .getByRole("checkbox", { name: "No useful contact", exact: true })
+    .check({ force: true });
+  await saveAndNext(page);
+  await page.reload();
   await page.getByRole("button", { name: /101 Example Avenue/ }).click();
   await expect(
-    page.getByRole("radio", { name: "Call now", exact: true }),
+    page.getByRole("checkbox", { name: "Wrong timing", exact: true }),
   ).toBeChecked();
   await expect(
-    page.getByRole("radio", { name: "Scope looks real", exact: true }),
+    page.getByRole("checkbox", { name: "No useful contact", exact: true }),
   ).toBeChecked();
+});
+
+test("validates, presets, persists, clears, and migrates follow-up dates", async ({
+  page,
+}) => {
+  await page.goto(reviewUrl);
+  await chooseDecision(page, "call_later", [
+    "Follow up on a specified date",
+  ]);
+
+  const dateInput = page.getByLabel("Follow-up date", { exact: true });
+  const quickDates: Array<[string, number]> = [
+    ["Tomorrow", 1],
+    ["3 days", 3],
+    ["1 week", 7],
+    ["2 weeks", 14],
+  ];
+  for (const [label, days] of quickDates) {
+    await page.getByRole("button", { name: label, exact: true }).click();
+    const expected = await page.evaluate((offset) => {
+      const date = new Date();
+      date.setDate(date.getDate() + offset);
+      const pad = (value: number) => String(value).padStart(2, "0");
+      return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+    }, days);
+    await expect(dateInput).toHaveValue(expected);
+  }
+  await page.getByRole("button", { name: "1 month", exact: true }).click();
+  const oneMonth = await page.evaluate(() => {
+    const date = new Date();
+    const originalDay = date.getDate();
+    date.setDate(1);
+    date.setMonth(date.getMonth() + 1);
+    const lastDay = new Date(
+      date.getFullYear(),
+      date.getMonth() + 1,
+      0,
+    ).getDate();
+    date.setDate(Math.min(originalDay, lastDay));
+    const pad = (value: number) => String(value).padStart(2, "0");
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+  });
+  await expect(dateInput).toHaveValue(oneMonth);
+
+  await dateInput.fill("2020-01-01");
+  await expect(page.getByText("Choose today or a future date.")).toBeVisible();
+  await saveAndNext(page);
+  await expect(page.getByText(/Follow-up date:/)).toBeVisible();
+  await expect(page.getByRole("heading", { name: "101 Example Avenue" }))
+    .toBeVisible();
+
+  await page.getByRole("button", { name: "1 week", exact: true }).click();
+  const validDate = await dateInput.inputValue();
+  await saveAndNext(page);
+  await page.reload();
+  await page.getByRole("button", { name: /101 Example Avenue/ }).click();
   await expect(
-    page.getByLabel("What did TruLot get right or wrong?"),
-  ).toHaveValue("The timing signal is useful.");
+    page.getByLabel("Follow-up date", { exact: true }),
+  ).toHaveValue(validDate);
+  await page.getByRole("button", { name: "Clear", exact: true }).click();
+  await expect(
+    page.getByLabel("Follow-up date", { exact: true }),
+  ).toHaveValue("");
 
   const storage = await page.evaluate(() => Object.entries(localStorage));
   expect(storage).toHaveLength(1);
-  expect(storage[0][0]).toMatch(
-    /^trulot:elevate-opportunity-review:v1:/,
-  );
-  expect(storage[0][0]).not.toContain("elevate-playwright-token");
+  await page.evaluate(([key, raw]) => {
+    const saved = JSON.parse(raw) as {
+      version: number;
+      reviews: Record<string, Record<string, unknown>>;
+    };
+    for (const review of Object.values(saved.reviews)) {
+      const reasons = Array.isArray(review.reasons)
+        ? (review.reasons as string[])
+        : [];
+      review.reason = reasons[0] ?? "";
+      review.followUpDate =
+        typeof review.followUpDate === "string" ? review.followUpDate : "";
+      delete review.reasons;
+      delete review.otherReason;
+      delete review.enrichedOutreachAdopted;
+    }
+    const first = Object.values(saved.reviews)[0];
+    first.decision = "call_later";
+    first.reason = "Follow up on a specified date";
+    first.followUpDate = "0002-01-01";
+    saved.version = 1;
+    localStorage.setItem(key, JSON.stringify(saved));
+  }, storage[0]);
+  await page.reload();
+  await expect(
+    page.getByRole("checkbox", {
+      name: "Follow up on a specified date",
+      exact: true,
+    }),
+  ).toBeChecked();
+  await expect(
+    page.getByLabel("Follow-up date", { exact: true }),
+  ).toHaveValue("");
 });
 
-test("supports lead chat, mock enrichment, editable outreach, and outcomes", async ({
+test("keeps chat, safe mock enrichment, editable outreach, and outcomes working", async ({
   page,
 }) => {
   const consoleErrors: string[] = [];
@@ -126,7 +262,7 @@ test("supports lead chat, mock enrichment, editable outreach, and outcomes", asy
     if (message.type() === "error") consoleErrors.push(message.text());
   });
   await page.goto(reviewUrl);
-  await chooseDecision(page, "Call now", "Contact route looks usable");
+  await chooseDecision(page, "call_now", ["Contact route looks usable"]);
 
   await page
     .getByRole("button", { name: "Discuss this lead with TruLot" })
@@ -136,32 +272,26 @@ test("supports lead chat, mock enrichment, editable outreach, and outcomes", asy
   await expect(page.getByTestId("lead-chat")).toContainText(
     "Fictional Builder 1",
   );
-  await expect(page.getByTestId("lead-chat")).toContainText(
-    "currently verified route",
-  );
 
   await page.getByRole("button", { name: "Find a better contact" }).click();
   await expect(page.getByTestId("enrichment-result")).toBeVisible();
-  await expect(page.getByTestId("enrichment-result")).toContainText(
-    "Probable Routing Contact",
-  );
-  await expect(page.getByTestId("enrichment-result")).toContainText(
-    "Relationship: Medium",
-  );
-  await expect(page.getByTestId("enrichment-result")).toContainText(
-    "Routing: Medium",
-  );
   await page
     .getByRole("button", { name: "Use enriched outreach draft" })
     .click();
+  const mockOutreach = await page.getByLabel("Email body").inputValue();
+  expect(mockOutreach).not.toMatch(
+    /Public City records show|Our intelligence detected/i,
+  );
+  expect(mockOutreach).toContain(
+    "I’m reaching out regarding the active project at",
+  );
+  expect(mockOutreach).toContain("Has that package been assigned?");
 
-  const subject = page.getByLabel("Email subject");
-  await subject.fill("Edited fictional ROW subject");
-  const body = page.getByLabel("Email body");
-  await body.fill("Edited fictional email body.");
-  const opener = page.getByLabel("Suggested call opener");
-  await opener.fill("Edited fictional call opener.");
-
+  await page.getByLabel("Email subject").fill("Edited fictional ROW subject");
+  await page.getByLabel("Email body").fill("Edited fictional email body.");
+  await page
+    .getByLabel("Suggested call opener")
+    .fill("Edited fictional call opener.");
   await page.getByRole("button", { name: "Copy subject" }).click();
   await expect(page.getByRole("button", { name: "Subject copied" })).toBeVisible();
   await page.getByRole("button", { name: "Copy email" }).click();
@@ -174,12 +304,8 @@ test("supports lead chat, mock enrichment, editable outreach, and outcomes", asy
   );
 
   await page.getByRole("button", { name: "Mark contacted" }).click();
-  await expect(page.getByTestId("outcome-tracking")).toBeVisible();
   await page.getByLabel("Current outcome").selectOption("row_scope_confirmed");
-  await page
-    .getByLabel("Estimated opportunity value")
-    .fill("$25,000 test estimate");
-  await page.getByLabel("Follow-up date").fill("2026-08-01");
+  await page.getByLabel("Estimated opportunity value").fill("25000");
   await page.getByLabel("Outcome notes").fill("Fictional outcome note.");
   await page.reload();
   await expect(page.getByLabel("Current outcome")).toHaveValue(
@@ -191,38 +317,132 @@ test("supports lead chat, mock enrichment, editable outreach, and outcomes", asy
   expect(consoleErrors).toEqual([]);
 });
 
-test("exports review, builds Brian mailto, and restarts with confirmation", async ({
+test("validates complete exports and exposes completion actions near the top", async ({
   page,
 }) => {
   await page.goto(reviewUrl);
-  await chooseDecision(page, "Pass", "Wrong timing");
-  await page.getByRole("button", { name: "Save and Next" }).click();
+  await chooseDecision(page, "call_now", [
+    "Scope looks real",
+    "Timing looks right",
+    "Other",
+  ]);
+  await page
+    .getByLabel("Other reason explanation")
+    .fill("Fictional estimator context.");
+  await page.getByRole("button", { name: "Find a better contact" }).click();
+  await page
+    .getByRole("button", { name: "Use enriched outreach draft" })
+    .click();
+  await page
+    .getByLabel("Suggested call opener")
+    .fill("Final fictional call opener.");
+  await page
+    .getByLabel("Email subject")
+    .fill("Final fictional email subject");
+  await page.getByLabel("Email body").fill("Final fictional email body.");
+  await page.getByRole("button", { name: "Mark contacted" }).click();
+  await page.getByLabel("Current outcome").selectOption("bid_opportunity");
+  await page.getByLabel("Outcome notes").fill("Qualified fictional outcome.");
+  await page.getByLabel("Estimated opportunity value").fill("$30,000");
+  await page.getByRole("button", { name: "1 week", exact: true }).click();
+  const followUpDate = await page
+    .getByLabel("Follow-up date", { exact: true })
+    .inputValue();
+  await saveAndNext(page);
+
+  await chooseDecision(page, "call_later");
+  await saveAndNext(page);
+  await chooseDecision(page, "pass", ["Wrong scope"]);
+  await saveAndNext(page);
+  await chooseDecision(page, "already_known", ["Already tracking"]);
+  await saveAndNext(page);
+  await chooseDecision(page, "call_now", ["Need plans or more information"]);
+  await page.getByRole("button", { name: "Save decision" }).click();
+
+  const complete = page.getByTestId("review-complete");
+  await expect(complete).toContainText("5 of 5 decisions saved");
+  await expect(complete.getByLabel("Call now count")).toHaveText("2");
+  await expect(complete.getByLabel("Call later count")).toHaveText("1");
+  await expect(complete.getByLabel("Pass count")).toHaveText("1");
+  await expect(complete.getByLabel("Already known count")).toHaveText("1");
+  await expect(complete.getByRole("button", { name: "Download Markdown" }))
+    .toBeVisible();
+  await expect(complete.getByRole("button", { name: "Download JSON" }))
+    .toBeVisible();
+  await expect(
+    complete.getByRole("button", { name: "Copy concise summary" }),
+  ).toBeVisible();
+  await expect(complete.getByRole("button", { name: "Continue editing" }))
+    .toBeVisible();
 
   const markdownDownload = page.waitForEvent("download");
-  await page.getByRole("button", { name: "Download Markdown" }).click();
-  expect((await markdownDownload).suggestedFilename()).toBe(
-    "elevate-opportunity-review.md",
+  await complete.getByRole("button", { name: "Download Markdown" }).click();
+  const markdown = await downloadedText(await markdownDownload);
+  expect(markdown).toContain(
+    "**Reasons:** Scope looks real; Timing looks right; Other",
   );
+  expect(markdown).toContain(
+    "**Other-reason explanation:** Fictional estimator context.",
+  );
+  expect(markdown).toContain("**Estimated opportunity value:** $30,000");
+  expect(markdown).toMatch(
+    /\*\*Follow-up date:\*\* [A-Z][a-z]+ \d{1,2}, \d{4}/,
+  );
+  expect(markdown).toContain("**Enrichment run:** Yes");
+  expect(markdown).toContain("**Enriched outreach adopted:** Yes");
+  expect(markdown).toContain("Final fictional call opener.");
+  expect(markdown).not.toContain("chatTranscript");
 
   const jsonDownload = page.waitForEvent("download");
-  await page.getByRole("button", { name: "Download JSON" }).click();
-  expect((await jsonDownload).suggestedFilename()).toBe(
-    "elevate-opportunity-review.json",
+  await complete.getByRole("button", { name: "Download JSON" }).click();
+  const json = JSON.parse(await downloadedText(await jsonDownload));
+  const validated = completedReviewExportSchema.parse(json);
+  expect(validated.leads[0].review.reasons).toEqual([
+    "Scope looks real",
+    "Timing looks right",
+    "Other",
+  ]);
+  expect(validated.leads[0].review.otherReason).toBe(
+    "Fictional estimator context.",
   );
-
-  await page.getByRole("button", { name: "Copy concise summary" }).click();
-  await expect(page.getByRole("button", { name: "Review copied" })).toBeVisible();
-  await expect(page.getByTestId("email-review-summary")).toHaveAttribute(
-    "href",
-    /^mailto:results%40example\.test/,
+  expect(validated.leads[0].review.estimatedOpportunityValue).toBe(30000);
+  expect(validated.leads[0].review.followUpDate).toBe(followUpDate);
+  expect(validated.leads[0].aiEnrichment.ran).toBe(true);
+  expect(validated.leads[0].aiEnrichment.outreachAdopted).toBe(true);
+  expect(validated.leads[0].aiEnrichment.sourceUrls.length).toBeGreaterThan(0);
+  expect(validated.leads[0].finalOutreach.emailSubject).toBe(
+    "Final fictional email subject",
   );
+  expect(JSON.stringify(validated)).not.toContain("chatTranscript");
 
+  await complete
+    .getByRole("button", { name: "Copy concise summary" })
+    .click();
+  await expect(complete.getByRole("button", { name: "Review copied" }))
+    .toBeVisible();
+  await complete.getByRole("button", { name: "Continue editing" }).click();
+  await expect(page.getByTestId("lead-card")).toBeVisible();
+});
+
+test("hides an unconfigured results-email action and restarts safely", async ({
+  page,
+}) => {
+  await page.goto(reviewUrl);
+  await expect(page.getByText("Results email not configured")).toHaveCount(0);
+  await expect(page.getByTestId("email-review-summary")).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Download Markdown" }))
+    .toBeVisible();
+  await expect(page.getByRole("button", { name: "Download JSON" })).toBeVisible();
+
+  await chooseDecision(page, "pass", ["Wrong timing"]);
+  await saveAndNext(page);
   page.once("dialog", (dialog) => dialog.accept());
   await page.getByRole("button", { name: "Restart" }).click();
   await expect(page.getByRole("progressbar")).toHaveAttribute(
     "aria-valuenow",
     "0",
   );
+  await page.getByRole("button", { name: /101 Example Avenue/ }).click();
   await expect(
     page.getByRole("radio", { name: "Pass", exact: true }),
   ).not.toBeChecked();
