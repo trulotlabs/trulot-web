@@ -255,28 +255,51 @@ function ContactCard({
   );
 }
 
-function ConfidenceGrid({ lead }: { lead: PilotLead }) {
-  const items = [
+function ConfidenceDetails({ lead }: { lead: PilotLead }) {
+  const primaryItems: ReadonlyArray<readonly [string, string]> = [
     ["Project", lead.projectConfidence],
     ["ROW scope", lead.rowScopeConfidence],
     ["Timing", lead.timingConfidence],
+  ];
+  const secondaryItems: ReadonlyArray<readonly [string, string]> = [
     ["Contact", lead.contactConfidence],
     ["Relationship", lead.primaryContact.relationshipConfidence],
     ["Routing", lead.primaryContact.routingConfidence],
   ];
+
+  const confidenceCard = (
+    [label, value]: readonly [string, string],
+    prominence: "primary" | "secondary",
+  ) => (
+    <div
+      key={label}
+      className={`rounded-xl border border-white/[0.08] bg-black/10 ${
+        prominence === "primary" ? "p-4" : "p-3"
+      }`}
+    >
+      <p className="text-[10px] tracking-wide text-white/35 uppercase">
+        {label}
+      </p>
+      <p
+        className={`mt-1 font-semibold ${
+          prominence === "primary"
+            ? "text-base text-[#f5f1e8]"
+            : "text-sm text-white/65"
+        }`}
+      >
+        {confidenceLabel(value)}
+      </p>
+    </div>
+  );
+
   return (
-    <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
-      {items.map(([label, value]) => (
-        <div
-          key={label}
-          className="rounded-xl border border-white/[0.08] bg-black/10 p-3"
-        >
-          <p className="text-[10px] tracking-wide text-white/35 uppercase">
-            {label}
-          </p>
-          <p className="mt-1 text-sm font-semibold">{confidenceLabel(value)}</p>
-        </div>
-      ))}
+    <div className="space-y-2">
+      <div className="grid gap-2 sm:grid-cols-3">
+        {primaryItems.map((item) => confidenceCard(item, "primary"))}
+      </div>
+      <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
+        {secondaryItems.map((item) => confidenceCard(item, "secondary"))}
+      </div>
     </div>
   );
 }
@@ -303,6 +326,7 @@ export function OpportunityReview({
   const [enrichmentPending, setEnrichmentPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [decisionNotice, setDecisionNotice] = useState<string | null>(null);
+  const [confidenceExpanded, setConfidenceExpanded] = useState(false);
 
   const activeIndex = leads.findIndex((lead) => lead.leadId === activeLeadId);
   const lead = leads[activeIndex] ?? leads[0];
@@ -538,6 +562,7 @@ export function OpportunityReview({
   const resultsHref = resultsEmail
     ? `mailto:${encodeURIComponent(resultsEmail)}?subject=${encodeURIComponent("Elevate ROW Opportunity Review")}&body=${encodeURIComponent(summary)}`
     : null;
+  const confidenceDetailsId = `confidence-details-${lead.leadId}`;
 
   const exportReview = (format: "markdown" | "json") => {
     try {
@@ -561,6 +586,7 @@ export function OpportunityReview({
     if (storageKey) localStorage.removeItem(storageKey);
     setReviews(createReviews(leads));
     setActiveLeadId(leads[0].leadId);
+    setConfidenceExpanded(false);
     setError(null);
   };
 
@@ -794,11 +820,17 @@ export function OpportunityReview({
                 </section>
               )}
 
-              <section>
+              <section data-testid="why-surfaced">
                 <p className="text-[11px] font-semibold tracking-[0.14em] text-[#d89a52] uppercase">
                   Why TruLot surfaced it
                 </p>
                 <p className="mt-2 text-base leading-7">{lead.whyElevateMayCare}</p>
+              </section>
+
+              <section data-testid="trigger-timing">
+                <h3 className="text-lg font-semibold">
+                  Trigger and current timing
+                </h3>
                 <dl className="mt-4 grid gap-3 sm:grid-cols-2">
                   <div className="rounded-2xl border border-white/[0.08] bg-black/10 p-4">
                     <dt className="text-[10px] uppercase text-white/35">Trigger</dt>
@@ -817,7 +849,7 @@ export function OpportunityReview({
                 </dl>
               </section>
 
-              <section>
+              <section data-testid="row-scope">
                 <h3 className="text-lg font-semibold">Likely ROW scope</h3>
                 <ul className="mt-3 grid gap-2 sm:grid-cols-2">
                   {lead.likelyScopes.map((scope) => (
@@ -831,14 +863,7 @@ export function OpportunityReview({
                 </ul>
               </section>
 
-              <section>
-                <h3 className="text-lg font-semibold">Confidence by category</h3>
-                <div className="mt-3">
-                  <ConfidenceGrid lead={lead} />
-                </div>
-              </section>
-
-              <section>
+              <section data-testid="contact-packet">
                 <div className="flex flex-wrap items-end justify-between gap-3">
                   <div>
                     <h3 className="text-lg font-semibold">Verified contact packet</h3>
@@ -853,7 +878,7 @@ export function OpportunityReview({
                 </div>
               </section>
 
-              <section>
+              <section data-testid="risks-caveats">
                 <h3 className="text-lg font-semibold">Risks and caveats</h3>
                 <ul className="mt-3 space-y-2 text-sm leading-6 text-white/58">
                   {lead.risksAndCaveats.map((risk) => (
@@ -865,7 +890,7 @@ export function OpportunityReview({
                 </ul>
               </section>
 
-              <section>
+              <section data-testid="evidence-sources">
                 <h3 className="text-lg font-semibold">Evidence and sources</h3>
                 <div className="mt-3 space-y-3">
                   {lead.evidence.map((item) => (
@@ -905,7 +930,47 @@ export function OpportunityReview({
                 </ul>
               </section>
 
-              <section className="rounded-3xl border border-white/[0.1] bg-[#0c141c] p-5 sm:p-6">
+              <section
+                className="rounded-2xl border border-white/[0.08] bg-black/10"
+                data-testid="confidence-summary"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-4 p-4 sm:p-5">
+                  <div className="min-w-0">
+                    <h3 className="text-sm font-semibold">Confidence</h3>
+                    <p className="mt-1 text-sm leading-6 text-white/50">
+                      {confidenceLabel(lead.projectConfidence)} project signal
+                      {" · "}
+                      {confidenceLabel(lead.rowScopeConfidence)} ROW scope
+                      {" · "}
+                      {confidenceLabel(lead.timingConfidence)} timing
+                      {" · "}
+                      {confidenceLabel(lead.contactConfidence)} contact route
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    aria-expanded={confidenceExpanded}
+                    aria-controls={confidenceDetailsId}
+                    onClick={() => setConfidenceExpanded((expanded) => !expanded)}
+                    className="shrink-0 rounded-lg border border-white/10 px-3 py-2 text-xs font-semibold text-[#e8c79e] transition hover:bg-white/[0.05] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e2a65f]"
+                  >
+                    {confidenceExpanded ? "Collapse" : "Expand"}
+                  </button>
+                </div>
+                <div
+                  id={confidenceDetailsId}
+                  hidden={!confidenceExpanded}
+                  className="border-t border-white/[0.08] p-4 sm:p-5"
+                  data-testid="confidence-details"
+                >
+                  <ConfidenceDetails lead={lead} />
+                </div>
+              </section>
+
+              <section
+                className="rounded-3xl border border-white/[0.1] bg-[#0c141c] p-5 sm:p-6"
+                data-testid="cesar-decision"
+              >
                 <h3 className="text-xl font-semibold">Cesar’s decision</h3>
                 <fieldset className="mt-4">
                   <legend className="sr-only">Primary decision</legend>

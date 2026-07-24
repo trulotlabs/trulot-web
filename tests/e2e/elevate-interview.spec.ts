@@ -74,9 +74,10 @@ test("loads five fictional leads with navigation and experiment disclosures", as
   ).toHaveCount(5);
   await expect(page.getByText("Four are considered actionable")).toBeVisible();
   await expect(page.getByText("Mock mode")).toBeVisible();
-  await expect(page.getByText("Project", { exact: true })).toBeVisible();
-  await expect(page.getByText("ROW scope", { exact: true })).toBeVisible();
-  await expect(page.getByText("Contact", { exact: true })).toBeVisible();
+  await expect(page.getByTestId("confidence-summary")).toContainText(
+    "High project signal",
+  );
+  await expect(page.getByTestId("confidence-details")).toBeHidden();
 
   await page.getByRole("button", { name: /404 Example Avenue/ }).click();
   await expect(page.getByTestId("obvious-control")).toContainText(
@@ -90,6 +91,85 @@ test("loads five fictional leads with navigation and experiment disclosures", as
   await expect(page.getByTestId("routing-experiment")).toContainText(
     "Do not treat this lead as equally call-ready",
   );
+});
+
+test("orders and discloses confidence accessibly without overflow", async ({
+  page,
+}) => {
+  await page.goto(reviewUrl);
+
+  const orderedSections = await page
+    .getByTestId("lead-card")
+    .locator("section[data-testid]")
+    .evaluateAll((sections) =>
+      sections
+        .map((section) => section.getAttribute("data-testid"))
+        .filter((value): value is string =>
+          [
+            "why-surfaced",
+            "trigger-timing",
+            "row-scope",
+            "contact-packet",
+            "risks-caveats",
+            "evidence-sources",
+            "confidence-summary",
+            "cesar-decision",
+          ].includes(value ?? ""),
+        ),
+    );
+  expect(orderedSections).toEqual([
+    "why-surfaced",
+    "trigger-timing",
+    "row-scope",
+    "contact-packet",
+    "risks-caveats",
+    "evidence-sources",
+    "confidence-summary",
+    "cesar-decision",
+  ]);
+
+  const disclosure = page.getByRole("button", { name: "Expand", exact: true });
+  await expect(disclosure).toHaveAttribute("aria-expanded", "false");
+  await expect(disclosure).toHaveAttribute(
+    "aria-controls",
+    /confidence-details-/,
+  );
+  await expect(page.getByTestId("confidence-details")).toBeHidden();
+
+  await disclosure.focus();
+  await page.keyboard.press("Enter");
+  const collapse = page.getByRole("button", { name: "Collapse", exact: true });
+  await expect(collapse).toHaveAttribute("aria-expanded", "true");
+
+  const details = page.getByTestId("confidence-details");
+  for (const category of [
+    "Project",
+    "ROW scope",
+    "Timing",
+    "Contact",
+    "Relationship",
+    "Routing",
+  ]) {
+    await expect(details.getByText(category, { exact: true })).toBeVisible();
+  }
+
+  await page.getByRole("button", { name: /202 Example Avenue/ }).click();
+  await expect(
+    page.getByRole("button", { name: "Collapse", exact: true }),
+  ).toHaveAttribute("aria-expanded", "true");
+
+  await page.getByRole("button", { name: "Collapse", exact: true }).focus();
+  await page.keyboard.press("Space");
+  await expect(
+    page.getByRole("button", { name: "Expand", exact: true }),
+  ).toHaveAttribute("aria-expanded", "false");
+  await expect(page.getByTestId("confidence-details")).toBeHidden();
+
+  const dimensions = await page.evaluate(() => ({
+    body: document.body.scrollWidth,
+    viewport: document.documentElement.clientWidth,
+  }));
+  expect(dimensions.body).toBeLessThanOrEqual(dimensions.viewport);
 });
 
 test("supports multi-select reasons, independent deselection, Other, reconciliation, and resume", async ({
