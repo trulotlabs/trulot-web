@@ -21,9 +21,9 @@ const contact = (company: string, suffix: string) => ({
 });
 
 const experiments = [
-  "proprietary_discovery",
-  "proprietary_discovery",
-  "proprietary_discovery",
+  "small_non_obvious",
+  "small_non_obvious",
+  "medium_opportunity",
   "obvious_control",
   "routing_experiment",
 ] as const;
@@ -74,7 +74,7 @@ export const elevatePilotBatchFixture = experiments.map(
         "Hi, this is Cesar with Elevate. Has the ROW package for this project been assigned, and could you route me to the right person?",
       draftEmailSubject: `ROW package for fictional test project ${number}`,
       draftEmailBody:
-        "Hello,\n\nI’m Cesar with Elevate. Has the ROW package for this project been assigned? If so, would you route me to the correct project contact?\n\nThank you,\nCesar",
+        "Hello,\n\nHas the ROW package for this project been assigned? If so, would you route me to the correct project contact?",
       risksAndCaveats: [
         "This is fictional test data and the project assignment is unverified.",
       ],
@@ -82,3 +82,9 @@ export const elevatePilotBatchFixture = experiments.map(
     };
   },
 );
+
+export const elevatePilotBatchConfigFixture = {
+  batchId: "batch-2-playwright",
+  batchName: "Batch 2 test review",
+  leads: elevatePilotBatchFixture,
+};

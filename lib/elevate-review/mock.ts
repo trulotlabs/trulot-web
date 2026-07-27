@@ -24,11 +24,7 @@ export function mockEnrichment(lead: PilotLead) {
     revisedDraftEmailSubject: lead.draftEmailSubject,
     revisedDraftEmailBody: `Hello,
 
-I’m reaching out regarding the active project at ${lead.address}. The public permit record includes ${supportedScope.toLowerCase()}. Has that package been assigned? Could you route me to the GC, project manager, or person handling that work?
-
-Thank you,
-Cesar
-Elevate`,
+I’m reaching out regarding the active project at ${lead.address}. The public permit record includes ${supportedScope.toLowerCase()}. Has that package been assigned? Could you route me to the GC, project manager, or person handling that work?`,
     verifiedAt: "2026-07-23",
   };
 }

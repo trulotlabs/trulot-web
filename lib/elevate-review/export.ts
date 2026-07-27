@@ -25,12 +25,16 @@ export function canonicalOpportunityValue(value: string) {
 }
 
 export function buildCompletedReviewExport(
+  batchId: string,
+  batchName: string,
   leads: PilotBatch,
   reviews: Record<string, SavedLeadReview>,
   generatedAt = new Date().toISOString(),
 ): CompletedReviewExport {
   return completedReviewExportSchema.parse({
-    schemaVersion: 1,
+    schemaVersion: 2,
+    batchId,
+    batchName,
     generatedAt,
     leads: leads.map((lead) => {
       const review = reviews[lead.leadId];
@@ -106,6 +110,8 @@ function markdownValue(value: string | null) {
 
 export function markdownCompletedReview(payload: CompletedReviewExport) {
   return `# Elevate ROW Opportunity Review
+
+Batch: ${payload.batchName} (${payload.batchId})
 
 Generated: ${new Date(payload.generatedAt).toLocaleString()}
 

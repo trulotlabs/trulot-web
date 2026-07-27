@@ -11,6 +11,8 @@ export const rowRelevanceSchema = z.enum([
 
 export const experimentTypeSchema = z.enum([
   "proprietary_discovery",
+  "small_non_obvious",
+  "medium_opportunity",
   "obvious_control",
   "routing_experiment",
 ]);
@@ -130,6 +132,19 @@ export const pilotBatchSchema = z
   });
 export type PilotBatch = z.infer<typeof pilotBatchSchema>;
 
+export const pilotBatchConfigSchema = z
+  .object({
+    batchId: z
+      .string()
+      .min(1)
+      .max(80)
+      .regex(/^[a-z0-9][a-z0-9_-]*$/),
+    batchName: z.string().min(1).max(120),
+    leads: pilotBatchSchema,
+  })
+  .strict();
+export type PilotBatchConfig = z.infer<typeof pilotBatchConfigSchema>;
+
 export const decisionSchema = z.enum([
   "call_now",
   "call_later",
@@ -140,11 +155,15 @@ export type LeadDecision = z.infer<typeof decisionSchema>;
 
 export const outcomeSchema = z.enum([
   "contacted",
+  "replied",
+  "routed",
   "reached_someone",
   "wrong_contact",
   "existing_relationship",
   "row_scope_confirmed",
+  "plans_requested",
   "plans_received",
+  "bid_requested",
   "bid_opportunity",
   "bid_submitted",
   "won",
@@ -336,7 +355,9 @@ export const completedLeadReviewExportSchema = z
 
 export const completedReviewExportSchema = z
   .object({
-    schemaVersion: z.literal(1),
+    schemaVersion: z.literal(2),
+    batchId: z.string().min(1).max(80),
+    batchName: z.string().min(1).max(120),
     generatedAt: z.string().datetime(),
     leads: z.array(completedLeadReviewExportSchema).length(5),
   })

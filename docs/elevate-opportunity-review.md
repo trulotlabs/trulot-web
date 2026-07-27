@@ -6,14 +6,19 @@ The value is parsed and validated before the authenticated page is rendered.
 Missing or invalid configuration fails closed. Do not place a real batch,
 invite token, participant notes, or contact data in Git.
 
-The value is a JSON array of exactly five lead objects. It must contain exactly
-one `routing_experiment` and one `obvious_control`. This abbreviated,
-fictional example documents the shape; every field shown is required unless its
-value is explicitly nullable:
+For recurring batches, the value is a configuration object with a stable batch
+ID, a visible batch name, and an array of exactly five lead objects. The lead
+array must contain exactly one `routing_experiment` and one `obvious_control`.
+Legacy five-lead arrays remain valid and receive a deterministic fallback batch
+identity. This abbreviated, fictional example documents the preferred shape;
+every field shown is required unless its value is explicitly nullable:
 
 ```json
-[
-  {
+{
+  "batchId": "batch-2",
+  "batchName": "Elevate ROW Lead Batch 2",
+  "leads": [
+    {
     "leadId": "EXAMPLE-001",
     "address": "101 Example Avenue",
     "projectDescription": "Fictional permit test project.",
@@ -69,13 +74,17 @@ value is explicitly nullable:
     "draftEmailSubject": "ROW package question",
     "draftEmailBody": "Please route me to the correct project contact.",
     "risksAndCaveats": ["Procurement status is unverified."],
-    "experimentType": "proprietary_discovery"
-  }
-]
+      "experimentType": "small_non_obvious"
+    }
+  ]
+}
 ```
 
 The strict schemas and full field constraints live in
-`lib/elevate-review/schema.ts`. Browser persistence is token-scoped and local
-to the reviewer’s device. OpenAI requests run only on the server, use the
-Responses API with `store: false`, and return schema-validated output. Contact
-enrichment uses public web search and never sends outreach automatically.
+`lib/elevate-review/schema.ts`. Browser persistence is batch- and token-scoped
+and local to the reviewer’s device, so changing the batch ID cannot restore
+another batch’s decisions. Generated email fields contain body copy only;
+the reviewer’s approved Outlook signature supplies the sender block. OpenAI
+requests run only on the server, use the Responses API with `store: false`,
+and return schema-validated output. Contact enrichment uses public web search
+and never sends outreach automatically.

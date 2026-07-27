@@ -67,6 +67,9 @@ test("loads five fictional leads with navigation and experiment disclosures", as
   await expect(
     page.getByRole("heading", { name: "ROW Opportunity Review" }),
   ).toBeVisible();
+  await expect(page.getByTestId("batch-identity")).toHaveText(
+    "Batch 2 test review · batch-2-playwright",
+  );
   await expect(
     page
       .getByRole("navigation", { name: "Pilot opportunities" })
@@ -91,6 +94,37 @@ test("loads five fictional leads with navigation and experiment disclosures", as
   await expect(page.getByTestId("routing-experiment")).toContainText(
     "Do not treat this lead as equally call-ready",
   );
+});
+
+test("isolates browser state by stable batch identity", async ({ page }) => {
+  await page.goto(reviewUrl);
+  await expect
+    .poll(() => page.evaluate(() => Object.keys(localStorage)))
+    .toHaveLength(1);
+  const currentKey = await page.evaluate(() => Object.keys(localStorage)[0]);
+  expect(currentKey).toContain(
+    "trulot:elevate-opportunity-review:v2:batch-2-playwright:",
+  );
+
+  await page.evaluate((key) => {
+    const raw = localStorage.getItem(key);
+    if (!raw) throw new Error("Expected current batch state.");
+    const stale = JSON.parse(raw) as {
+      reviews: Record<string, { decision: string | null; saved: boolean }>;
+    };
+    stale.reviews["TEST-LEAD-1"].decision = "pass";
+    stale.reviews["TEST-LEAD-1"].saved = true;
+    localStorage.setItem(
+      key.replace("batch-2-playwright", "batch-1-playwright"),
+      JSON.stringify(stale),
+    );
+  }, currentKey);
+
+  await page.reload();
+  await expect(
+    page.getByRole("radio", { name: "Pass", exact: true }),
+  ).not.toBeChecked();
+  expect(await page.evaluate(() => Object.keys(localStorage))).toHaveLength(2);
 });
 
 test("orders and discloses confidence accessibly without overflow", async ({
@@ -343,6 +377,9 @@ test("keeps chat, safe mock enrichment, editable outreach, and outcomes working"
   });
   await page.goto(reviewUrl);
   await chooseDecision(page, "call_now", ["Contact route looks usable"]);
+  await expect(page.getByTestId("signature-notice")).toContainText(
+    "OUTLOOK SIGNATURE SUPPLIES CESAR’S SIGNATURE",
+  );
 
   await page
     .getByRole("button", { name: "Discuss this lead with TruLot" })
@@ -361,6 +398,9 @@ test("keeps chat, safe mock enrichment, editable outreach, and outcomes working"
   const mockOutreach = await page.getByLabel("Email body").inputValue();
   expect(mockOutreach).not.toMatch(
     /Public City records show|Our intelligence detected/i,
+  );
+  expect(mockOutreach).not.toMatch(
+    /\n\s*(?:thank you,?\s*\n)?\s*cesar\s*\n\s*elevate\s*$/i,
   );
   expect(mockOutreach).toContain(
     "I’m reaching out regarding the active project at",
@@ -384,6 +424,16 @@ test("keeps chat, safe mock enrichment, editable outreach, and outcomes working"
   );
 
   await page.getByRole("button", { name: "Mark contacted" }).click();
+  await page.getByLabel("Current outcome").selectOption("replied");
+  await expect(page.getByLabel("Current outcome")).toHaveValue("replied");
+  await page.getByLabel("Current outcome").selectOption("routed");
+  await expect(page.getByLabel("Current outcome")).toHaveValue("routed");
+  await page.getByLabel("Current outcome").selectOption("plans_requested");
+  await expect(page.getByLabel("Current outcome")).toHaveValue(
+    "plans_requested",
+  );
+  await page.getByLabel("Current outcome").selectOption("bid_requested");
+  await expect(page.getByLabel("Current outcome")).toHaveValue("bid_requested");
   await page.getByLabel("Current outcome").selectOption("row_scope_confirmed");
   await page.getByLabel("Estimated opportunity value").fill("25000");
   await page.getByLabel("Outcome notes").fill("Fictional outcome note.");
@@ -459,6 +509,9 @@ test("validates complete exports and exposes completion actions near the top", a
   await complete.getByRole("button", { name: "Download Markdown" }).click();
   const markdown = await downloadedText(await markdownDownload);
   expect(markdown).toContain(
+    "Batch: Batch 2 test review (batch-2-playwright)",
+  );
+  expect(markdown).toContain(
     "**Reasons:** Scope looks real; Timing looks right; Other",
   );
   expect(markdown).toContain(
@@ -477,6 +530,8 @@ test("validates complete exports and exposes completion actions near the top", a
   await complete.getByRole("button", { name: "Download JSON" }).click();
   const json = JSON.parse(await downloadedText(await jsonDownload));
   const validated = completedReviewExportSchema.parse(json);
+  expect(validated.batchId).toBe("batch-2-playwright");
+  expect(validated.batchName).toBe("Batch 2 test review");
   expect(validated.leads[0].review.reasons).toEqual([
     "Scope looks real",
     "Timing looks right",
