@@ -406,6 +406,9 @@ test("keeps chat, safe mock enrichment, editable outreach, and outcomes working"
     "I’m reaching out regarding the active project at",
   );
   expect(mockOutreach).toContain("Has that package been assigned?");
+  const mockOutreachWords = mockOutreach.trim().split(/\s+/).length;
+  expect(mockOutreachWords).toBeGreaterThanOrEqual(70);
+  expect(mockOutreachWords).toBeLessThanOrEqual(130);
 
   await page.getByLabel("Email subject").fill("Edited fictional ROW subject");
   await page.getByLabel("Email body").fill("Edited fictional email body.");

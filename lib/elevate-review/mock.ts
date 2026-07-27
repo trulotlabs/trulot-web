@@ -24,7 +24,7 @@ export function mockEnrichment(lead: PilotLead) {
     revisedDraftEmailSubject: lead.draftEmailSubject,
     revisedDraftEmailBody: `Hello,
 
-I’m reaching out regarding the active project at ${lead.address}. The public permit record includes ${supportedScope.toLowerCase()}. Has that package been assigned? Could you route me to the GC, project manager, or person handling that work?`,
+I’m reaching out regarding the active project at ${lead.address}. The public permit record includes ${supportedScope.toLowerCase()}. Has that package been assigned? If your team is handling it, we can review the available plans and provide ROW pricing. If another contractor, project manager, or estimator owns the work, could you please route this note to the right person? We’re only trying to confirm the current assignment and whether it would be useful to discuss scope, schedule, or a pricing request.`,
     verifiedAt: "2026-07-23",
   };
 }
