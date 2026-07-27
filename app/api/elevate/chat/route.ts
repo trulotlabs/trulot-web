@@ -1,6 +1,7 @@
 import OpenAI from "openai";
 import { zodTextFormat } from "openai/helpers/zod";
 import { findPilotLead } from "@/lib/elevate-review/batch";
+import { classifyLeadChatIntent } from "@/lib/elevate-review/chat-grounding";
 import { mockChatAnswer } from "@/lib/elevate-review/mock";
 import { buildLeadChatPrompt } from "@/lib/elevate-review/prompts";
 import {
@@ -46,6 +47,7 @@ export async function POST(request: Request) {
 
   const lead = findPilotLead(parsed.data.leadId);
   if (!lead) return neutralApiError(503);
+  const intent = classifyLeadChatIntent(parsed.data.question);
 
   if (process.env.ELEVATE_INTERVIEW_MOCK === "true") {
     return Response.json(mockChatAnswer(lead, parsed.data.question));
@@ -61,7 +63,7 @@ export async function POST(request: Request) {
       model,
       store: false,
       safety_identifier: elevateSafetyIdentifier(token),
-      instructions: buildLeadChatPrompt(lead),
+      instructions: buildLeadChatPrompt(lead, intent),
       input: [
         ...parsed.data.transcript.slice(-12).map(({ role, content }) => ({
           role,
@@ -70,6 +72,7 @@ export async function POST(request: Request) {
         {
           role: "user" as const,
           content: [
+            `Current question intent: ${intent}.`,
             `Current decision: ${parsed.data.decision ?? "not selected"}.`,
             `Current notes: ${parsed.data.notes || "none"}.`,
             parsed.data.question,

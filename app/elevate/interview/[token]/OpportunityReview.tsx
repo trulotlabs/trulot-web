@@ -64,11 +64,15 @@ const REASONS: Record<LeadDecision, readonly string[]> = {
 
 const OUTCOMES: ReadonlyArray<{ value: LeadOutcome; label: string }> = [
   { value: "contacted", label: "Contacted" },
+  { value: "replied", label: "Replied" },
+  { value: "routed", label: "Routed" },
   { value: "reached_someone", label: "Reached someone" },
   { value: "wrong_contact", label: "Wrong contact" },
   { value: "existing_relationship", label: "Existing relationship" },
   { value: "row_scope_confirmed", label: "ROW scope confirmed" },
+  { value: "plans_requested", label: "Plans requested" },
   { value: "plans_received", label: "Plans received" },
+  { value: "bid_requested", label: "Bid requested" },
   { value: "bid_opportunity", label: "Bid opportunity" },
   { value: "bid_submitted", label: "Bid submitted" },
   { value: "won", label: "Won" },
@@ -95,6 +99,10 @@ function humanize(value: string) {
 function experimentLabel(lead: PilotLead) {
   if (lead.experimentType === "routing_experiment") return "Routing experiment";
   if (lead.experimentType === "obvious_control") return "Obvious control";
+  if (lead.experimentType === "small_non_obvious")
+    return "Small non-obvious";
+  if (lead.experimentType === "medium_opportunity")
+    return "Medium opportunity";
   return "Proprietary discovery";
 }
 
@@ -170,11 +178,13 @@ async function copyText(value: string) {
 }
 
 function conciseSummary(
+  batchName: string,
+  batchId: string,
   leads: PilotBatch,
   reviews: Record<string, SavedLeadReview>,
 ) {
   return [
-    "Elevate ROW Opportunity Review",
+    `Elevate ROW Opportunity Review — ${batchName} (${batchId})`,
     ...leads.map((lead) => {
       const review = reviews[lead.leadId];
       const reasons = review?.reasons.length
@@ -306,11 +316,15 @@ function ConfidenceDetails({ lead }: { lead: PilotLead }) {
 
 export function OpportunityReview({
   token,
+  batchId,
+  batchName,
   leads,
   resultsEmail,
   showMockLabel,
 }: {
   token: string;
+  batchId: string;
+  batchName: string;
   leads: PilotBatch;
   resultsEmail: string;
   showMockLabel: boolean;
@@ -345,18 +359,20 @@ export function OpportunityReview({
   useEffect(() => {
     let active = true;
     crypto.subtle
-      .digest("SHA-256", new TextEncoder().encode(token))
+      .digest("SHA-256", new TextEncoder().encode(`${token}:${batchId}`))
       .then((hash) => {
         if (!active) return;
         const suffix = Array.from(new Uint8Array(hash).slice(0, 12))
           .map((byte) => byte.toString(16).padStart(2, "0"))
           .join("");
-        setStorageKey(`trulot:elevate-opportunity-review:v1:${suffix}`);
+        setStorageKey(
+          `trulot:elevate-opportunity-review:v2:${batchId}:${suffix}`,
+        );
       });
     return () => {
       active = false;
     };
-  }, [token]);
+  }, [batchId, token]);
 
   useEffect(() => {
     if (!storageKey) return;
@@ -556,19 +572,24 @@ export function OpportunityReview({
     "";
   const outreachHref = `mailto:${encodeURIComponent(emailTarget)}?subject=${encodeURIComponent(review.editedEmailSubject)}&body=${encodeURIComponent(review.editedEmailBody)}`;
   const summary = useMemo(
-    () => conciseSummary(leads, reviews),
-    [leads, reviews],
+    () => conciseSummary(batchName, batchId, leads, reviews),
+    [batchId, batchName, leads, reviews],
   );
   const resultsHref = resultsEmail
-    ? `mailto:${encodeURIComponent(resultsEmail)}?subject=${encodeURIComponent("Elevate ROW Opportunity Review")}&body=${encodeURIComponent(summary)}`
+    ? `mailto:${encodeURIComponent(resultsEmail)}?subject=${encodeURIComponent(`Elevate ROW Opportunity Review — ${batchName}`)}&body=${encodeURIComponent(summary)}`
     : null;
   const confidenceDetailsId = `confidence-details-${lead.leadId}`;
 
   const exportReview = (format: "markdown" | "json") => {
     try {
-      const payload = buildCompletedReviewExport(leads, reviews);
+      const payload = buildCompletedReviewExport(
+        batchId,
+        batchName,
+        leads,
+        reviews,
+      );
       download(
-        `elevate-opportunity-review.${format === "markdown" ? "md" : "json"}`,
+        `elevate-opportunity-review-${batchId}.${format === "markdown" ? "md" : "json"}`,
         format === "markdown"
           ? markdownCompletedReview(payload)
           : JSON.stringify(payload, null, 2),
@@ -616,6 +637,12 @@ export function OpportunityReview({
       </header>
 
       <div className="mx-auto max-w-7xl px-5 py-9 sm:px-8">
+        <p
+          className="font-mono text-xs text-white/40"
+          data-testid="batch-identity"
+        >
+          {batchName} · {batchId}
+        </p>
         <p className="font-mono text-xs tracking-[0.16em] text-[#d89a52] uppercase">
           Prepared specifically for Cesar and Elevate
         </p>
@@ -1239,6 +1266,13 @@ export function OpportunityReview({
                 <h3 className="text-xl font-semibold">Outreach workspace</h3>
                 <p className="mt-2 text-sm text-white/48">
                   Human review is required. Nothing here sends automatically.
+                </p>
+                <p
+                  className="mt-3 rounded-xl border border-amber-200/20 bg-amber-100/[0.04] px-3 py-2 text-xs leading-5 text-amber-50/70"
+                  data-testid="signature-notice"
+                >
+                  OUTLOOK SIGNATURE SUPPLIES CESAR’S SIGNATURE — DO NOT PASTE A
+                  SECOND SIGNATURE
                 </p>
                 <label className="mt-5 block text-sm font-semibold">
                   Suggested call opener

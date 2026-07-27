@@ -71,6 +71,8 @@ export default async function ElevateOpportunityReviewPage({
   return (
     <OpportunityReview
       token={token}
+      batchId={batch.batchId}
+      batchName={batch.batchName}
       leads={batch.leads}
       resultsEmail={
         process.env.NEXT_PUBLIC_ELEVATE_RESULTS_EMAIL ??

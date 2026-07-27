@@ -1,9 +1,27 @@
 import { readFile } from "node:fs/promises";
 import { expect, test, type Download, type Page } from "@playwright/test";
 import {
+  buildLeadContactGrounding,
+  classifyLeadChatIntent,
+} from "../../lib/elevate-review/chat-grounding";
+import {
+  mockChatAnswer,
+  mockEnrichment,
+} from "../../lib/elevate-review/mock";
+import {
+  outreachModeForLead,
+  outreachModeGuidance,
+} from "../../lib/elevate-review/outreach-style";
+import {
+  buildContactEnrichmentPrompt,
+  buildLeadChatPrompt,
+} from "../../lib/elevate-review/prompts";
+import {
   completedReviewExportSchema,
+  enrichmentResultSchema,
   type LeadDecision,
 } from "../../lib/elevate-review/schema";
+import { elevatePilotBatchFixture } from "../fixtures/elevate-pilot-batch";
 
 const reviewUrl = "/elevate/interview/elevate-playwright-token";
 test.setTimeout(90_000);
@@ -40,6 +58,174 @@ async function downloadedText(download: Download) {
   return readFile(path, "utf8");
 }
 
+test("grounds contact, lead-origin, and scope questions with the relevant packet section", () => {
+  const [brokerLead, generalInboxLead, ownerRouteLead] =
+    elevatePilotBatchFixture;
+  const cases = [
+    ["Is this a broker?", "contact_broker"],
+    ["Is this the decision-maker?", "contact_decision_maker"],
+    ["Why are we contacting this person?", "contact_relevance"],
+    ["Who should I ask for?", "contact_routing"],
+    ["Is this phone number verified?", "contact_method_verification"],
+    ["What should I say when I call?", "contact_call_opener"],
+    ["Why did this project become a lead?", "lead_origin"],
+    ["Is the wet tap confirmed?", "scope_certainty"],
+    ["What scope is unresolved?", "scope_unresolved"],
+  ] as const;
+  for (const [question, intent] of cases) {
+    expect(classifyLeadChatIntent(question)).toBe(intent);
+  }
+
+  const broker = mockChatAnswer(brokerLead, "Is this a broker?");
+  expect(broker.answer).toMatch(/^Yes\./);
+  expect(broker.answer).toContain("Morgan Lane");
+  expect(broker.answer).toContain("Fictional Commercial Realty");
+  expect(broker.answer).toContain("broker/contact");
+  expect(broker.answer).toContain("Not a verified construction buyer");
+  expect(broker.answer).toContain("routing contact");
+  expect(broker.answer).toContain("assigned or awarded");
+  expect(broker.sourceIndexes).toEqual([]);
+
+  const decisionMaker = mockChatAnswer(
+    brokerLead,
+    "Is this the decision-maker?",
+  );
+  expect(decisionMaker.answer).toMatch(/^Morgan Lane is not a verified/i);
+  expect(decisionMaker.answer).toContain("routing contact");
+  expect(decisionMaker.answer).not.toMatch(/controls procurement/i);
+
+  const relevance = mockChatAnswer(
+    brokerLead,
+    "Why are we contacting this person?",
+  );
+  expect(relevance.answer).toMatch(/^We are contacting Morgan Lane because/i);
+  expect(relevance.answer).toContain("routing step");
+
+  const routing = mockChatAnswer(brokerLead, "Who should I ask for?");
+  expect(routing.answer).toMatch(/^Ask Morgan Lane/i);
+  expect(routing.answer).toContain("person managing the ROW/frontage package");
+
+  const verification = mockChatAnswer(
+    brokerLead,
+    "Is this phone number verified?",
+  );
+  expect(verification.answer).toMatch(
+    /^The packet explicitly labels this method as verified\./,
+  );
+  expect(verification.answer).not.toMatch(/personal|mobile/i);
+
+  const opener = mockChatAnswer(
+    brokerLead,
+    "What should I say when I call?",
+  );
+  expect(opener.answer).toMatch(/^Use a concise routing opener:/);
+  expect(opener.answer).toContain("Who is managing the ROW/frontage package");
+
+  const origin = mockChatAnswer(
+    brokerLead,
+    "Why did this project become a lead?",
+  );
+  expect(origin.answer).toMatch(/^101 Example Avenue became a lead because/i);
+  expect(origin.answer).toContain("permit milestone");
+  expect(origin.sourceIndexes).toEqual([0]);
+
+  const wetTap = mockChatAnswer(brokerLead, "Is the wet tap confirmed?");
+  expect(wetTap.answer).toMatch(/^No, this scope is not confirmed\./);
+  expect(wetTap.answer).toContain("remains unresolved");
+  expect(wetTap.sourceIndexes).toEqual([]);
+
+  const unresolved = mockChatAnswer(
+    brokerLead,
+    "What scope is unresolved?",
+  );
+  expect(unresolved.answer).toMatch(/^The unresolved scope is:/);
+  expect(unresolved.answer).toContain("wet tap");
+
+  for (const question of cases.slice(0, 6).map(([value]) => value)) {
+    const response = mockChatAnswer(brokerLead, question);
+    expect(response.answer).not.toMatch(
+      /became a lead|surfaced because|permit milestone/i,
+    );
+  }
+
+  const general = buildLeadContactGrounding(generalInboxLead);
+  expect(general.contactName).toBe("No named person in packet");
+  expect(general.contactType).toBe("general company route");
+  expect(general.verifiedBuyerStatus).toContain(
+    "Not a verified construction buyer",
+  );
+
+  const owner = buildLeadContactGrounding(ownerRouteLead);
+  expect(owner.contactName).toBe("Taylor Reed");
+  expect(owner.contactType).toBe("owner-side router");
+  expect(owner.verifiedBuyerStatus).toContain(
+    "Not a verified construction buyer",
+  );
+
+  const prompt = buildLeadChatPrompt(brokerLead, "contact_broker");
+  expect(prompt).toContain('"contactGrounding"');
+  expect(prompt).toContain('"scopeGrounding"');
+  expect(prompt).toContain('"verifiedBuyerStatus"');
+  expect(prompt).toContain('"fallbackRoute"');
+  expect(prompt).toContain("Answer the actual question in the first sentence");
+  expect(prompt).toContain(
+    "Do not recite projectGrounding or permit evidence",
+  );
+});
+
+test("applies Cesar's soft outreach profile with route-check and warm modes", () => {
+  const bodies = elevatePilotBatchFixture.map((lead) => {
+    const result = enrichmentResultSchema.parse(mockEnrichment(lead));
+    const mode = outreachModeForLead(lead);
+    const guidance = outreachModeGuidance(mode);
+    const body = result.revisedDraftEmailBody;
+    const wordCount = body.trim().split(/\s+/).length;
+
+    expect(wordCount).toBeGreaterThanOrEqual(guidance.minimumWords);
+    expect(wordCount).toBeLessThanOrEqual(guidance.maximumWords);
+    expect(body).toMatch(/\bI(?:’m|’d| wanted| work| can)\b/);
+    expect(body).toContain("civil/ROW package");
+    expect(body).toMatch(/review the plans/i);
+    expect(body).toMatch(/provide (?:practical )?pricing/i);
+    expect(body).toContain("final scope and award status remain unconfirmed");
+    expect(body).not.toMatch(
+      /Public City records show|Our intelligence detected|permit monitoring|As an AI|I hope this message finds you well/i,
+    );
+    expect(body).not.toMatch(
+      /\n\s*(?:thank you,?\s*\n)?\s*cesar\b|\n\s*elevate\s*$/i,
+    );
+    if (mode === "concise_route_check") {
+      expect(body).toMatch(/pointing me|routed to|right direction/i);
+    }
+    return body;
+  });
+
+  expect(outreachModeForLead(elevatePilotBatchFixture[0])).toBe(
+    "concise_route_check",
+  );
+  expect(outreachModeForLead(elevatePilotBatchFixture[3])).toBe(
+    "warm_opportunity",
+  );
+  expect(new Set(bodies).size).toBe(bodies.length);
+  const openings = bodies.map(
+    (body) => body.split("\n\n")[1]?.split(".")[0] ?? "",
+  );
+  expect(new Set(openings).size).toBeGreaterThanOrEqual(3);
+
+  const routePrompt = buildContactEnrichmentPrompt(
+    elevatePilotBatchFixture[0],
+  );
+  expect(routePrompt).toContain("soft guidance, not a rigid template");
+  expect(routePrompt).toContain("Concise route-check email, 70-105 words");
+  expect(routePrompt).toContain("hands-on contractor and company president");
+  expect(routePrompt).toContain("Accuracy overrides style");
+
+  const warmPrompt = buildContactEnrichmentPrompt(
+    elevatePilotBatchFixture[3],
+  );
+  expect(warmPrompt).toContain("Warm opportunity email, 105-150 words");
+});
+
 test("invalid token is denied neutrally without calling private APIs", async ({
   page,
 }) => {
@@ -67,6 +253,9 @@ test("loads five fictional leads with navigation and experiment disclosures", as
   await expect(
     page.getByRole("heading", { name: "ROW Opportunity Review" }),
   ).toBeVisible();
+  await expect(page.getByTestId("batch-identity")).toHaveText(
+    "Batch 2 test review · batch-2-playwright",
+  );
   await expect(
     page
       .getByRole("navigation", { name: "Pilot opportunities" })
@@ -91,6 +280,37 @@ test("loads five fictional leads with navigation and experiment disclosures", as
   await expect(page.getByTestId("routing-experiment")).toContainText(
     "Do not treat this lead as equally call-ready",
   );
+});
+
+test("isolates browser state by stable batch identity", async ({ page }) => {
+  await page.goto(reviewUrl);
+  await expect
+    .poll(() => page.evaluate(() => Object.keys(localStorage)))
+    .toHaveLength(1);
+  const currentKey = await page.evaluate(() => Object.keys(localStorage)[0]);
+  expect(currentKey).toContain(
+    "trulot:elevate-opportunity-review:v2:batch-2-playwright:",
+  );
+
+  await page.evaluate((key) => {
+    const raw = localStorage.getItem(key);
+    if (!raw) throw new Error("Expected current batch state.");
+    const stale = JSON.parse(raw) as {
+      reviews: Record<string, { decision: string | null; saved: boolean }>;
+    };
+    stale.reviews["TEST-LEAD-1"].decision = "pass";
+    stale.reviews["TEST-LEAD-1"].saved = true;
+    localStorage.setItem(
+      key.replace("batch-2-playwright", "batch-1-playwright"),
+      JSON.stringify(stale),
+    );
+  }, currentKey);
+
+  await page.reload();
+  await expect(
+    page.getByRole("radio", { name: "Pass", exact: true }),
+  ).not.toBeChecked();
+  expect(await page.evaluate(() => Object.keys(localStorage))).toHaveLength(2);
 });
 
 test("orders and discloses confidence accessibly without overflow", async ({
@@ -343,6 +563,9 @@ test("keeps chat, safe mock enrichment, editable outreach, and outcomes working"
   });
   await page.goto(reviewUrl);
   await chooseDecision(page, "call_now", ["Contact route looks usable"]);
+  await expect(page.getByTestId("signature-notice")).toContainText(
+    "OUTLOOK SIGNATURE SUPPLIES CESAR’S SIGNATURE",
+  );
 
   await page
     .getByRole("button", { name: "Discuss this lead with TruLot" })
@@ -350,7 +573,7 @@ test("keeps chat, safe mock enrichment, editable outreach, and outcomes working"
   await page.getByLabel("Question").fill("Who should I call?");
   await page.getByRole("button", { name: "Ask about this lead" }).click();
   await expect(page.getByTestId("lead-chat")).toContainText(
-    "Fictional Builder 1",
+    "Fictional Commercial Realty",
   );
 
   await page.getByRole("button", { name: "Find a better contact" }).click();
@@ -362,10 +585,16 @@ test("keeps chat, safe mock enrichment, editable outreach, and outcomes working"
   expect(mockOutreach).not.toMatch(
     /Public City records show|Our intelligence detected/i,
   );
-  expect(mockOutreach).toContain(
-    "I’m reaching out regarding the active project at",
+  expect(mockOutreach).not.toMatch(
+    /\n\s*(?:thank you,?\s*\n)?\s*cesar\s*\n\s*elevate\s*$/i,
   );
-  expect(mockOutreach).toContain("Has that package been assigned?");
+  expect(mockOutreach).toMatch(
+    /I wanted to reach out regarding|I’m reaching out about|I’d like to ask about/,
+  );
+  expect(mockOutreach).toContain("Has the civil/ROW package been assigned?");
+  const mockOutreachWords = mockOutreach.trim().split(/\s+/).length;
+  expect(mockOutreachWords).toBeGreaterThanOrEqual(70);
+  expect(mockOutreachWords).toBeLessThanOrEqual(105);
 
   await page.getByLabel("Email subject").fill("Edited fictional ROW subject");
   await page.getByLabel("Email body").fill("Edited fictional email body.");
@@ -380,10 +609,20 @@ test("keeps chat, safe mock enrichment, editable outreach, and outcomes working"
   await expect(page.getByRole("button", { name: "Opener copied" })).toBeVisible();
   await expect(page.getByTestId("outreach-mailto")).toHaveAttribute(
     "href",
-    /^mailto:routing-1%40example\.test\?subject=Edited%20fictional%20ROW%20subject/,
+    /^mailto:morgan\.lane%40example\.test\?subject=Edited%20fictional%20ROW%20subject/,
   );
 
   await page.getByRole("button", { name: "Mark contacted" }).click();
+  await page.getByLabel("Current outcome").selectOption("replied");
+  await expect(page.getByLabel("Current outcome")).toHaveValue("replied");
+  await page.getByLabel("Current outcome").selectOption("routed");
+  await expect(page.getByLabel("Current outcome")).toHaveValue("routed");
+  await page.getByLabel("Current outcome").selectOption("plans_requested");
+  await expect(page.getByLabel("Current outcome")).toHaveValue(
+    "plans_requested",
+  );
+  await page.getByLabel("Current outcome").selectOption("bid_requested");
+  await expect(page.getByLabel("Current outcome")).toHaveValue("bid_requested");
   await page.getByLabel("Current outcome").selectOption("row_scope_confirmed");
   await page.getByLabel("Estimated opportunity value").fill("25000");
   await page.getByLabel("Outcome notes").fill("Fictional outcome note.");
@@ -459,6 +698,9 @@ test("validates complete exports and exposes completion actions near the top", a
   await complete.getByRole("button", { name: "Download Markdown" }).click();
   const markdown = await downloadedText(await markdownDownload);
   expect(markdown).toContain(
+    "Batch: Batch 2 test review (batch-2-playwright)",
+  );
+  expect(markdown).toContain(
     "**Reasons:** Scope looks real; Timing looks right; Other",
   );
   expect(markdown).toContain(
@@ -477,6 +719,8 @@ test("validates complete exports and exposes completion actions near the top", a
   await complete.getByRole("button", { name: "Download JSON" }).click();
   const json = JSON.parse(await downloadedText(await jsonDownload));
   const validated = completedReviewExportSchema.parse(json);
+  expect(validated.batchId).toBe("batch-2-playwright");
+  expect(validated.batchName).toBe("Batch 2 test review");
   expect(validated.leads[0].review.reasons).toEqual([
     "Scope looks real",
     "Timing looks right",
