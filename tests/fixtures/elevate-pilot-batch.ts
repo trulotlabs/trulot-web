@@ -73,7 +73,7 @@ const contacts: Array<{
     primary: {
       name: "Taylor Reed",
       company: "Fictional Owner Group",
-      role: "Owner-side asset manager and project routing contact",
+      role: "Owner/developer representative and project routing contact",
       classification: "probable_routing_contact",
       methods: [
         {

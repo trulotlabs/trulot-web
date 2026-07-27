@@ -119,7 +119,13 @@ function buyerStatus(
 function classifyContactType(contact: Contact) {
   const role = contact.role.toLowerCase();
   if (/\bbroker\b|\brealtor\b/.test(role)) return "broker";
-  if (/\bowner[- ]side\b/.test(role)) return "owner-side router";
+  if (
+    /\bowner(?:[- ]side)?\b|\bdeveloper\b|\basset manager\b|\bproperty representative\b/.test(
+      role,
+    )
+  ) {
+    return "owner-side router";
+  }
   if (/\bgc router\b|\bgeneral contractor router\b/.test(role)) {
     return "GC router";
   }
