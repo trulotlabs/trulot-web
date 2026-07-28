@@ -1,6 +1,6 @@
-import type { PilotLead } from "./schema";
+import type { OutreachMode, PilotLead } from "./schema";
 
-export type OutreachMode = "concise_route_check" | "warm_opportunity";
+export type { OutreachMode } from "./schema";
 
 export function outreachModeForLead(lead: PilotLead): OutreachMode {
   return lead.primaryContact.classification ===

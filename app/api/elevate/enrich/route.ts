@@ -2,11 +2,15 @@ import OpenAI from "openai";
 import { zodTextFormat } from "openai/helpers/zod";
 import { findPilotLead } from "@/lib/elevate-review/batch";
 import { mockEnrichment } from "@/lib/elevate-review/mock";
+import {
+  buildOutreachRepairInput,
+  OUTREACH_FAILURE_MESSAGE,
+  resolveOutreachGeneration,
+} from "@/lib/elevate-review/outreach-reliability";
 import { buildContactEnrichmentPrompt } from "@/lib/elevate-review/prompts";
 import {
   enrichmentModelResultSchema,
   enrichmentRequestSchema,
-  enrichmentResultSchema,
 } from "@/lib/elevate-review/schema";
 import {
   authorizeElevateRequest,
@@ -17,21 +21,6 @@ import {
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-const EMAIL_PATTERN = /\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi;
-const PHONE_PATTERN =
-  /(?:\+?1[\s.-]?)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}\b/g;
-function safeElevateEmailBody(value: string) {
-  const signatureIndex = value.search(
-    /\n\s*(?:thank you,?\s*\n)?\s*cesar\b/i,
-  );
-  const content = (signatureIndex >= 0 ? value.slice(0, signatureIndex) : value)
-    .replace(EMAIL_PATTERN, "")
-    .replace(PHONE_PATTERN, "")
-    .replace(/\s*[•|]\s*\(?optional\)?/gi, "")
-    .trim();
-  return content.slice(0, 4000);
-}
 
 function sanitizedEnrichmentError(error: unknown) {
   if (error instanceof OpenAI.APIError) {
@@ -100,33 +89,57 @@ export async function POST(request: Request) {
   if (!apiKey || !model) return neutralApiError(503);
 
   try {
-    const client = new OpenAI({ apiKey });
-    const response = await client.responses.parse({
-      model,
-      store: false,
-      safety_identifier: elevateSafetyIdentifier(token),
-      instructions: buildContactEnrichmentPrompt(lead),
-      input:
-        "Find the best currently public project contact for this lead and return only schema-supported facts with sources.",
-      tools: [{ type: "web_search" }],
-      include: ["web_search_call.action.sources"],
-      text: {
-        format: zodTextFormat(
-          enrichmentModelResultSchema,
-          "elevate_contact_enrichment",
-        ),
+    const client = new OpenAI({ apiKey, maxRetries: 0, timeout: 60_000 });
+    const resolution = await resolveOutreachGeneration(
+      lead,
+      async ({ repairCategories }) => {
+        const response = await client.responses.parse({
+          model,
+          store: false,
+          max_output_tokens: 5000,
+          safety_identifier: elevateSafetyIdentifier(token),
+          instructions: buildContactEnrichmentPrompt(lead),
+          input: buildOutreachRepairInput(repairCategories),
+          tools: [{ type: "web_search" }],
+          include: ["web_search_call.action.sources"],
+          text: {
+            format: zodTextFormat(
+              enrichmentModelResultSchema,
+              "elevate_contact_enrichment",
+            ),
+          },
+        });
+        if (
+          response.status !== "completed" ||
+          response.incomplete_details ||
+          !response.output_parsed
+        ) {
+          throw new Error("IncompleteResponse");
+        }
+        return response.output_parsed;
       },
-    });
-    if (!response.output_parsed) return neutralApiError();
-    const validated = enrichmentResultSchema.parse(response.output_parsed);
-    return Response.json({
-      ...validated,
-      revisedDraftEmailBody: safeElevateEmailBody(
-        validated.revisedDraftEmailBody,
-      ),
-    });
+    );
+    if (!resolution.ok) {
+      console.warn("Elevate outreach generation rejected:", {
+        categories: resolution.categories,
+      });
+      return Response.json(
+        { error: OUTREACH_FAILURE_MESSAGE },
+        { status: 502 },
+      );
+    }
+    if (resolution.strategy !== "initial") {
+      console.warn("Elevate outreach generation recovered:", {
+        strategy: resolution.strategy,
+        categories: resolution.repairedCategories,
+      });
+    }
+    return Response.json(resolution.result);
   } catch (error) {
     console.error("Elevate contact enrichment failed:", sanitizedEnrichmentError(error));
-    return neutralApiError();
+    return Response.json(
+      { error: OUTREACH_FAILURE_MESSAGE },
+      { status: 502 },
+    );
   }
 }
