@@ -546,10 +546,24 @@ export function OpportunityReview({
       });
       const body: unknown = await response.json();
       const parsed = enrichmentResultSchema.safeParse(body);
-      if (!response.ok || !parsed.success) throw new Error();
+      if (!response.ok || !parsed.success) {
+        const safeError =
+          body &&
+          typeof body === "object" &&
+          "error" in body &&
+          body.error === "Draft generation failed. Please retry."
+            ? body.error
+            : null;
+        throw new Error(safeError ?? "Contact enrichment failed.");
+      }
       updateReview({ enrichment: parsed.data });
-    } catch {
-      setError("Contact enrichment is temporarily unavailable. The verified packet remains unchanged.");
+    } catch (error) {
+      setError(
+        error instanceof Error &&
+          error.message === "Draft generation failed. Please retry."
+          ? error.message
+          : "Contact enrichment is temporarily unavailable. The verified packet remains unchanged.",
+      );
     } finally {
       setEnrichmentPending(false);
     }
@@ -1218,6 +1232,19 @@ export function OpportunityReview({
                     <div className="mt-5" data-testid="enrichment-result">
                       <p className="text-xs font-semibold text-[#e8c79e]">
                         Enrichment result · verified {review.enrichment.verifiedAt}
+                      </p>
+                      <p className="mt-2 text-xs leading-5 text-white/50">
+                        Draft mode:{" "}
+                        {review.enrichment.outreachMode === "warm_opportunity"
+                          ? "warm opportunity"
+                          : "concise route-check"}{" "}
+                        · Contact:{" "}
+                        {review.enrichment.contactClassification.replaceAll(
+                          "_",
+                          " ",
+                        )}{" "}
+                        · Status:{" "}
+                        {review.enrichment.buyerRouterStatus.replaceAll("_", " ")}
                       </p>
                       <div className="mt-3 grid gap-3 xl:grid-cols-2">
                         <ContactCard
