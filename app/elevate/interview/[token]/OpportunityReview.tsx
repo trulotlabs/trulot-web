@@ -2,8 +2,10 @@
 
 import { useEffect, useMemo, useState } from "react";
 import {
+  batchLabelSlug,
   buildCompletedReviewExport,
   markdownCompletedReview,
+  normalizeBatchLabel,
 } from "@/lib/elevate-review/export";
 import { validateFollowUpDate } from "@/lib/elevate-review/dates";
 import {
@@ -13,6 +15,7 @@ import {
   type ChatMessage,
   type Contact,
   type EnrichmentResult,
+  type ExperimentType,
   type LeadDecision,
   type LeadOutcome,
   type PilotBatch,
@@ -96,14 +99,49 @@ function humanize(value: string) {
     .join(" ");
 }
 
+const EXPERIMENT_PRESENTATION: Record<
+  ExperimentType,
+  { label: string; singular: string; plural: string }
+> = {
+  proprietary_discovery: {
+    label: "Proprietary discovery",
+    singular: "proprietary discovery",
+    plural: "proprietary discoveries",
+  },
+  small_non_obvious: {
+    label: "Small non-obvious",
+    singular: "small non-obvious opportunity",
+    plural: "small non-obvious opportunities",
+  },
+  medium_opportunity: {
+    label: "Medium opportunity",
+    singular: "medium opportunity",
+    plural: "medium opportunities",
+  },
+  obvious_control: {
+    label: "Obvious control",
+    singular: "obvious control",
+    plural: "obvious controls",
+  },
+  routing_experiment: {
+    label: "Routing experiment",
+    singular: "routing experiment",
+    plural: "routing experiments",
+  },
+};
+
 function experimentLabel(lead: PilotLead) {
-  if (lead.experimentType === "routing_experiment") return "Routing experiment";
-  if (lead.experimentType === "obvious_control") return "Obvious control";
-  if (lead.experimentType === "small_non_obvious")
-    return "Small non-obvious";
-  if (lead.experimentType === "medium_opportunity")
-    return "Medium opportunity";
-  return "Proprietary discovery";
+  return EXPERIMENT_PRESENTATION[lead.experimentType].label;
+}
+
+function experimentCountSummary(leads: PilotBatch) {
+  const parts = Object.entries(EXPERIMENT_PRESENTATION).map(
+    ([type, presentation]) => {
+      const count = leads.filter((lead) => lead.experimentType === type).length;
+      return `${count} ${count === 1 ? presentation.singular : presentation.plural}`;
+    },
+  );
+  return `${parts.slice(0, -1).join(", ")}, and ${parts.at(-1)}`;
 }
 
 function createLeadReview(lead: PilotLead): SavedLeadReview {
@@ -329,6 +367,7 @@ export function OpportunityReview({
   resultsEmail: string;
   showMockLabel: boolean;
 }) {
+  const normalizedBatchName = normalizeBatchLabel(batchName);
   const [activeLeadId, setActiveLeadId] = useState(leads[0].leadId);
   const [reviews, setReviews] = useState(() => createReviews(leads));
   const [storageKey, setStorageKey] = useState<string | null>(null);
@@ -355,11 +394,21 @@ export function OpportunityReview({
       return itemReview?.saved && itemReview.decision === decision.value;
     }).length,
   }));
+  const experimentSummary = experimentCountSummary(leads);
+  const storageScope = useMemo(
+    () =>
+      JSON.stringify({
+        token,
+        batchId,
+        leadIds: leads.map((item) => item.leadId),
+      }),
+    [batchId, leads, token],
+  );
 
   useEffect(() => {
     let active = true;
     crypto.subtle
-      .digest("SHA-256", new TextEncoder().encode(`${token}:${batchId}`))
+      .digest("SHA-256", new TextEncoder().encode(storageScope))
       .then((hash) => {
         if (!active) return;
         const suffix = Array.from(new Uint8Array(hash).slice(0, 12))
@@ -372,7 +421,7 @@ export function OpportunityReview({
     return () => {
       active = false;
     };
-  }, [batchId, token]);
+  }, [batchId, storageScope]);
 
   useEffect(() => {
     if (!storageKey) return;
@@ -586,11 +635,11 @@ export function OpportunityReview({
     "";
   const outreachHref = `mailto:${encodeURIComponent(emailTarget)}?subject=${encodeURIComponent(review.editedEmailSubject)}&body=${encodeURIComponent(review.editedEmailBody)}`;
   const summary = useMemo(
-    () => conciseSummary(batchName, batchId, leads, reviews),
-    [batchId, batchName, leads, reviews],
+    () => conciseSummary(normalizedBatchName, batchId, leads, reviews),
+    [batchId, leads, normalizedBatchName, reviews],
   );
   const resultsHref = resultsEmail
-    ? `mailto:${encodeURIComponent(resultsEmail)}?subject=${encodeURIComponent(`Elevate ROW Opportunity Review — ${batchName}`)}&body=${encodeURIComponent(summary)}`
+    ? `mailto:${encodeURIComponent(resultsEmail)}?subject=${encodeURIComponent(`Elevate ROW Opportunity Review — ${normalizedBatchName}`)}&body=${encodeURIComponent(summary)}`
     : null;
   const confidenceDetailsId = `confidence-details-${lead.leadId}`;
 
@@ -598,12 +647,12 @@ export function OpportunityReview({
     try {
       const payload = buildCompletedReviewExport(
         batchId,
-        batchName,
+        normalizedBatchName,
         leads,
         reviews,
       );
       download(
-        `elevate-opportunity-review-${batchId}.${format === "markdown" ? "md" : "json"}`,
+        `elevate-opportunity-review-${batchLabelSlug(normalizedBatchName)}-${batchId}.${format === "markdown" ? "md" : "json"}`,
         format === "markdown"
           ? markdownCompletedReview(payload)
           : JSON.stringify(payload, null, 2),
@@ -651,22 +700,28 @@ export function OpportunityReview({
       </header>
 
       <div className="mx-auto max-w-7xl px-5 py-9 sm:px-8">
-        <p
-          className="font-mono text-xs text-white/40"
-          data-testid="batch-identity"
-        >
-          {batchName} · {batchId}
-        </p>
         <p className="font-mono text-xs tracking-[0.16em] text-[#d89a52] uppercase">
           Prepared specifically for Cesar and Elevate
         </p>
-        <h1 className="mt-3 text-4xl font-semibold tracking-[-0.045em] sm:text-5xl">
-          ROW Opportunity Review
-        </h1>
+        <div className="mt-3 flex flex-wrap items-center gap-3">
+          <h1 className="text-4xl font-semibold tracking-[-0.045em] sm:text-5xl">
+            ROW Opportunity Review
+          </h1>
+          <span
+            className="rounded-full border border-[#d89a52]/30 bg-[#d89a52]/10 px-3 py-1 font-mono text-[10px] tracking-[0.08em] text-[#e8c79e] uppercase"
+            data-testid="batch-label"
+          >
+            {normalizedBatchName}
+          </span>
+        </div>
+        <p className="mt-2 font-mono text-[11px] text-white/35" data-testid="batch-id">
+          Batch ID: {batchId}
+        </p>
         <p className="mt-4 max-w-3xl text-base leading-7 text-white/58">
-          TruLot found these projects from public permit and project signals.
-          Four are considered actionable; one is intentionally included as a
-          routing experiment. Your decisions and actual call outcomes will
+          TruLot found {leads.length} {leads.length === 1 ? "project" : "projects"} from
+          public permit and project signals. This batch includes {experimentSummary}.
+          Review each lead’s evidence, timing, and contact route before deciding
+          whether it is actionable. Your decisions and actual call outcomes will
           improve the next batch.
         </p>
 
@@ -700,7 +755,9 @@ export function OpportunityReview({
             </p>
             <div className="mt-2 flex flex-wrap items-end justify-between gap-4">
               <div>
-                <h2 className="text-2xl font-semibold">5 of 5 decisions saved</h2>
+                <h2 className="text-2xl font-semibold">
+                  {savedCount} of {leads.length} decisions saved
+                </h2>
                 <dl className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm text-white/60">
                   {completionCounts.map((decision) => (
                     <div

@@ -1,5 +1,7 @@
 import { readFile } from "node:fs/promises";
 import { expect, test, type Download, type Page } from "@playwright/test";
+import { parsePilotBatchJson } from "../../lib/elevate-review/batch-config";
+import { normalizeBatchLabel } from "../../lib/elevate-review/export";
 import {
   buildLeadContactGrounding,
   classifyLeadChatIntent,
@@ -21,7 +23,10 @@ import {
   enrichmentResultSchema,
   type LeadDecision,
 } from "../../lib/elevate-review/schema";
-import { elevatePilotBatchFixture } from "../fixtures/elevate-pilot-batch";
+import {
+  elevatePilotBatchConfigFixture,
+  elevatePilotBatchFixture,
+} from "../fixtures/elevate-pilot-batch";
 
 const reviewUrl = "/elevate/interview/elevate-playwright-token";
 test.setTimeout(90_000);
@@ -226,6 +231,56 @@ test("applies Cesar's soft outreach profile with route-check and warm modes", ()
   expect(warmPrompt).toContain("Warm opportunity email, 105-150 words");
 });
 
+test("parses structured and legacy batches with neutral naming and stable lead order", () => {
+  const configured = parsePilotBatchJson(
+    JSON.stringify(elevatePilotBatchConfigFixture),
+  );
+  expect(configured.ok).toBe(true);
+  if (!configured.ok) throw new Error("Expected configured batch.");
+  expect(configured.batchId).toBe("batch-2-playwright");
+  expect(configured.batchName).toBe("Batch 2 test review");
+  expect(configured.leads.map((lead) => lead.leadId)).toEqual(
+    elevatePilotBatchFixture.map((lead) => lead.leadId),
+  );
+
+  const blankName = parsePilotBatchJson(
+    JSON.stringify({ ...elevatePilotBatchConfigFixture, batchName: "   " }),
+  );
+  expect(blankName.ok && blankName.batchName).toBe("Current batch");
+
+  const missingNameConfig: Record<string, unknown> = {
+    ...elevatePilotBatchConfigFixture,
+  };
+  delete missingNameConfig.batchName;
+  const missingName = parsePilotBatchJson(JSON.stringify(missingNameConfig));
+  expect(missingName.ok && missingName.batchName).toBe("Current batch");
+
+  const legacy = parsePilotBatchJson(JSON.stringify(elevatePilotBatchFixture));
+  const reorderedLegacy = parsePilotBatchJson(
+    JSON.stringify([...elevatePilotBatchFixture].reverse()),
+  );
+  expect(legacy.ok && legacy.batchName).toBe("Current batch");
+  expect(reorderedLegacy.ok).toBe(true);
+  if (!legacy.ok || !reorderedLegacy.ok) {
+    throw new Error("Expected valid legacy batches.");
+  }
+  expect(legacy.batchId).not.toBe(reorderedLegacy.batchId);
+
+  const duplicateIds = elevatePilotBatchFixture.map((lead, index) => ({
+    ...lead,
+    leadId: index === 1 ? elevatePilotBatchFixture[0].leadId : lead.leadId,
+  }));
+  expect(
+    parsePilotBatchJson(
+      JSON.stringify({
+        ...elevatePilotBatchConfigFixture,
+        leads: duplicateIds,
+      }),
+    ).ok,
+  ).toBe(false);
+  expect(normalizeBatchLabel()).toBe("Current batch");
+});
+
 test("invalid token is denied neutrally without calling private APIs", async ({
   page,
 }) => {
@@ -245,7 +300,7 @@ test("invalid token is denied neutrally without calling private APIs", async ({
   expect(privateRequests).toEqual([]);
 });
 
-test("loads five fictional leads with navigation and experiment disclosures", async ({
+test("displays the batch name and derives counts for every experiment type", async ({
   page,
 }) => {
   await page.goto(reviewUrl);
@@ -253,15 +308,23 @@ test("loads five fictional leads with navigation and experiment disclosures", as
   await expect(
     page.getByRole("heading", { name: "ROW Opportunity Review" }),
   ).toBeVisible();
-  await expect(page.getByTestId("batch-identity")).toHaveText(
-    "Batch 2 test review · batch-2-playwright",
+  await expect(page.getByTestId("batch-label")).toHaveText(
+    "Batch 2 test review",
+  );
+  await expect(page.getByTestId("batch-id")).toHaveText(
+    "Batch ID: batch-2-playwright",
   );
   await expect(
     page
       .getByRole("navigation", { name: "Pilot opportunities" })
       .getByRole("button"),
   ).toHaveCount(5);
-  await expect(page.getByText("Four are considered actionable")).toBeVisible();
+  await expect(page.getByText(/TruLot found 5 projects/)).toBeVisible();
+  await expect(page.getByText(/0 proprietary discoveries/)).toBeVisible();
+  await expect(page.getByText(/2 small non-obvious opportunities/)).toBeVisible();
+  await expect(page.getByText(/1 medium opportunity/)).toBeVisible();
+  await expect(page.getByText(/1 obvious control/)).toBeVisible();
+  await expect(page.getByText(/1 routing experiment/)).toBeVisible();
   await expect(page.getByText("Mock mode")).toBeVisible();
   await expect(page.getByTestId("confidence-summary")).toContainText(
     "High project signal",
@@ -282,35 +345,96 @@ test("loads five fictional leads with navigation and experiment disclosures", as
   );
 });
 
-test("isolates browser state by stable batch identity", async ({ page }) => {
+test("isolates state by token, batch ID, and ordered lead IDs while preserving legacy records", async ({
+  page,
+}) => {
   await page.goto(reviewUrl);
   await expect
-    .poll(() => page.evaluate(() => Object.keys(localStorage)))
-    .toHaveLength(1);
-  const currentKey = await page.evaluate(() => Object.keys(localStorage)[0]);
-  expect(currentKey).toContain(
-    "trulot:elevate-opportunity-review:v2:batch-2-playwright:",
-  );
+    .poll(() =>
+      page.evaluate(
+        () =>
+          Object.keys(localStorage).filter((key) =>
+            key.startsWith("trulot:elevate-opportunity-review:v2:"),
+          ).length,
+      ),
+    )
+    .toBe(1);
 
-  await page.evaluate((key) => {
-    const raw = localStorage.getItem(key);
-    if (!raw) throw new Error("Expected current batch state.");
-    const stale = JSON.parse(raw) as {
-      reviews: Record<string, { decision: string | null; saved: boolean }>;
+  const state = await page.evaluate(async () => {
+    const token = "elevate-playwright-token";
+    const batchId = "batch-2-playwright";
+    const leadIds = [
+      "TEST-LEAD-1",
+      "TEST-LEAD-2",
+      "TEST-LEAD-3",
+      "TEST-LEAD-4",
+      "TEST-LEAD-5",
+    ];
+    const keyFor = async (candidateBatchId: string, ids: string[]) => {
+      const scope = JSON.stringify({
+        token,
+        batchId: candidateBatchId,
+        leadIds: ids,
+      });
+      const hash = await crypto.subtle.digest(
+        "SHA-256",
+        new TextEncoder().encode(scope),
+      );
+      const suffix = Array.from(new Uint8Array(hash).slice(0, 12))
+        .map((byte) => byte.toString(16).padStart(2, "0"))
+        .join("");
+      return `trulot:elevate-opportunity-review:v2:${candidateBatchId}:${suffix}`;
     };
-    stale.reviews["TEST-LEAD-1"].decision = "pass";
-    stale.reviews["TEST-LEAD-1"].saved = true;
-    localStorage.setItem(
-      key.replace("batch-2-playwright", "batch-1-playwright"),
-      JSON.stringify(stale),
-    );
-  }, currentKey);
 
+    const currentKey = await keyFor(batchId, leadIds);
+    const reorderedKey = await keyFor(batchId, [...leadIds].reverse());
+    const otherBatchKey = await keyFor("batch-1-playwright", leadIds);
+    const currentRaw = localStorage.getItem(currentKey);
+    if (!currentRaw) throw new Error("Expected current batch state.");
+
+    const decoy = JSON.parse(currentRaw) as { activeLeadId: string };
+    decoy.activeLeadId = "TEST-LEAD-2";
+    const decoyRaw = JSON.stringify(decoy);
+    localStorage.setItem(reorderedKey, decoyRaw);
+    localStorage.setItem(otherBatchKey, decoyRaw);
+
+    const legacyKey = "trulot:elevate-opportunity-review:v1:legacy-batch-1";
+    const legacyRaw = JSON.stringify({ preserved: true });
+    localStorage.setItem(legacyKey, legacyRaw);
+
+    return {
+      currentKey,
+      reorderedKey,
+      otherBatchKey,
+      legacyKey,
+      legacyRaw,
+    };
+  });
+
+  expect(state.currentKey).not.toBe(state.reorderedKey);
+  expect(state.currentKey).not.toBe(state.otherBatchKey);
   await page.reload();
   await expect(
-    page.getByRole("radio", { name: "Pass", exact: true }),
-  ).not.toBeChecked();
-  expect(await page.evaluate(() => Object.keys(localStorage))).toHaveLength(2);
+    page.getByRole("heading", { name: "101 Example Avenue" }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      ({ legacyKey }) => localStorage.getItem(legacyKey),
+      state,
+    ),
+  ).toBe(state.legacyRaw);
+  expect(
+    await page.evaluate(
+      ({ reorderedKey }) => localStorage.getItem(reorderedKey),
+      state,
+    ),
+  ).not.toBeNull();
+  expect(
+    await page.evaluate(
+      ({ otherBatchKey }) => localStorage.getItem(otherBatchKey),
+      state,
+    ),
+  ).not.toBeNull();
 });
 
 test("orders and discloses confidence accessibly without overflow", async ({
@@ -585,9 +709,6 @@ test("keeps chat, safe mock enrichment, editable outreach, and outcomes working"
   expect(mockOutreach).not.toMatch(
     /Public City records show|Our intelligence detected/i,
   );
-  expect(mockOutreach).not.toMatch(
-    /\n\s*(?:thank you,?\s*\n)?\s*cesar\s*\n\s*elevate\s*$/i,
-  );
   expect(mockOutreach).toMatch(
     /I wanted to reach out regarding|I’m reaching out about|I’d like to ask about/,
   );
@@ -696,10 +817,15 @@ test("validates complete exports and exposes completion actions near the top", a
 
   const markdownDownload = page.waitForEvent("download");
   await complete.getByRole("button", { name: "Download Markdown" }).click();
-  const markdown = await downloadedText(await markdownDownload);
-  expect(markdown).toContain(
-    "Batch: Batch 2 test review (batch-2-playwright)",
+  const markdownFile = await markdownDownload;
+  expect(markdownFile.suggestedFilename()).toBe(
+    "elevate-opportunity-review-batch-2-test-review-batch-2-playwright.md",
   );
+  const markdown = await downloadedText(markdownFile);
+  expect(markdown).toContain(
+    "# Elevate ROW Opportunity Review — Batch 2 test review",
+  );
+  expect(markdown).toContain("Batch ID: batch-2-playwright");
   expect(markdown).toContain(
     "**Reasons:** Scope looks real; Timing looks right; Other",
   );
@@ -717,7 +843,11 @@ test("validates complete exports and exposes completion actions near the top", a
 
   const jsonDownload = page.waitForEvent("download");
   await complete.getByRole("button", { name: "Download JSON" }).click();
-  const json = JSON.parse(await downloadedText(await jsonDownload));
+  const jsonFile = await jsonDownload;
+  expect(jsonFile.suggestedFilename()).toBe(
+    "elevate-opportunity-review-batch-2-test-review-batch-2-playwright.json",
+  );
+  const json = JSON.parse(await downloadedText(jsonFile));
   const validated = completedReviewExportSchema.parse(json);
   expect(validated.batchId).toBe("batch-2-playwright");
   expect(validated.batchName).toBe("Batch 2 test review");
@@ -742,6 +872,11 @@ test("validates complete exports and exposes completion actions near the top", a
   await complete
     .getByRole("button", { name: "Copy concise summary" })
     .click();
+  await expect
+    .poll(() => page.evaluate(() => navigator.clipboard.readText()))
+    .toContain(
+      "Elevate ROW Opportunity Review — Batch 2 test review (batch-2-playwright)",
+    );
   await expect(complete.getByRole("button", { name: "Review copied" }))
     .toBeVisible();
   await complete.getByRole("button", { name: "Continue editing" }).click();

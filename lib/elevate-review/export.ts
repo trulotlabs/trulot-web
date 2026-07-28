@@ -17,6 +17,20 @@ function nullableText(value: string) {
   return trimmed || null;
 }
 
+export function normalizeBatchLabel(value?: string | null) {
+  return value?.replace(/\s+/g, " ").trim().slice(0, 120) || "Current batch";
+}
+
+export function batchLabelSlug(value?: string | null) {
+  const slug = normalizeBatchLabel(value)
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+  return slug || "current-batch";
+}
+
 export function canonicalOpportunityValue(value: string) {
   const normalized = value.trim().replace(/[$,\s]/g, "");
   if (!/^\d+(?:\.\d{1,2})?$/.test(normalized)) return null;
@@ -34,7 +48,7 @@ export function buildCompletedReviewExport(
   return completedReviewExportSchema.parse({
     schemaVersion: 2,
     batchId,
-    batchName,
+    batchName: normalizeBatchLabel(batchName),
     generatedAt,
     leads: leads.map((lead) => {
       const review = reviews[lead.leadId];
@@ -109,9 +123,9 @@ function markdownValue(value: string | null) {
 }
 
 export function markdownCompletedReview(payload: CompletedReviewExport) {
-  return `# Elevate ROW Opportunity Review
+  return `# Elevate ROW Opportunity Review — ${normalizeBatchLabel(payload.batchName)}
 
-Batch: ${payload.batchName} (${payload.batchId})
+Batch ID: ${payload.batchId}
 
 Generated: ${new Date(payload.generatedAt).toLocaleString()}
 

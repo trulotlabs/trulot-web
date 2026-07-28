@@ -7,11 +7,13 @@ Missing or invalid configuration fails closed. Do not place a real batch,
 invite token, participant notes, or contact data in Git.
 
 For recurring batches, the value is a configuration object with a stable batch
-ID, a visible batch name, and an array of exactly five lead objects. The lead
-array must contain exactly one `routing_experiment` and one `obvious_control`.
-Legacy five-lead arrays remain valid and receive a deterministic fallback batch
-identity. This abbreviated, fictional example documents the preferred shape;
-every field shown is required unless its value is explicitly nullable:
+ID, an optional visible batch name, and an array of exactly five lead objects.
+An absent or blank batch name displays as `Current batch`. The lead array must
+contain exactly one `routing_experiment` and one `obvious_control`. Legacy
+five-lead arrays remain valid and receive a deterministic fallback batch
+identity based on their ordered lead IDs. This abbreviated, fictional example
+documents the preferred shape; every field shown is required unless its value
+is explicitly nullable:
 
 ```json
 {
@@ -81,9 +83,10 @@ every field shown is required unless its value is explicitly nullable:
 ```
 
 The strict schemas and full field constraints live in
-`lib/elevate-review/schema.ts`. Browser persistence is batch- and token-scoped
-and local to the reviewer’s device, so changing the batch ID cannot restore
-another batch’s decisions. Generated email fields contain body copy only;
+`lib/elevate-review/schema.ts`. Browser persistence is scoped to the review
+token, stable batch ID, and ordered lead IDs, and remains local to the
+reviewer’s device. Existing legacy records are left untouched. Generated email
+fields contain body copy only;
 the reviewer’s approved Outlook signature supplies the sender block. OpenAI
 requests run only on the server, use the Responses API with `store: false`,
 and return schema-validated output. Contact enrichment uses public web search

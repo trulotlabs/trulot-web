@@ -154,7 +154,7 @@ export const pilotBatchConfigSchema = z
       .min(1)
       .max(80)
       .regex(/^[a-z0-9][a-z0-9_-]*$/),
-    batchName: z.string().min(1).max(120),
+    batchName: z.string().max(120).optional(),
     leads: pilotBatchSchema,
   })
   .strict();
