@@ -155,11 +155,15 @@ export type LeadDecision = z.infer<typeof decisionSchema>;
 
 export const outcomeSchema = z.enum([
   "contacted",
+  "replied",
+  "routed",
   "reached_someone",
   "wrong_contact",
   "existing_relationship",
   "row_scope_confirmed",
+  "plans_requested",
   "plans_received",
+  "bid_requested",
   "bid_opportunity",
   "bid_submitted",
   "won",

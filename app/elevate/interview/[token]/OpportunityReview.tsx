@@ -67,11 +67,15 @@ const REASONS: Record<LeadDecision, readonly string[]> = {
 
 const OUTCOMES: ReadonlyArray<{ value: LeadOutcome; label: string }> = [
   { value: "contacted", label: "Contacted" },
+  { value: "replied", label: "Replied" },
+  { value: "routed", label: "Routed" },
   { value: "reached_someone", label: "Reached someone" },
   { value: "wrong_contact", label: "Wrong contact" },
   { value: "existing_relationship", label: "Existing relationship" },
   { value: "row_scope_confirmed", label: "ROW scope confirmed" },
+  { value: "plans_requested", label: "Plans requested" },
   { value: "plans_received", label: "Plans received" },
+  { value: "bid_requested", label: "Bid requested" },
   { value: "bid_opportunity", label: "Bid opportunity" },
   { value: "bid_submitted", label: "Bid submitted" },
   { value: "won", label: "Won" },
@@ -1319,6 +1323,13 @@ export function OpportunityReview({
                 <h3 className="text-xl font-semibold">Outreach workspace</h3>
                 <p className="mt-2 text-sm text-white/48">
                   Human review is required. Nothing here sends automatically.
+                </p>
+                <p
+                  className="mt-3 rounded-xl border border-amber-200/20 bg-amber-100/[0.04] px-3 py-2 text-xs leading-5 text-amber-50/70"
+                  data-testid="signature-notice"
+                >
+                  OUTLOOK SIGNATURE SUPPLIES CESAR’S SIGNATURE — DO NOT PASTE A
+                  SECOND SIGNATURE
                 </p>
                 <label className="mt-5 block text-sm font-semibold">
                   Suggested call opener

@@ -687,7 +687,9 @@ test("keeps chat, safe mock enrichment, editable outreach, and outcomes working"
   });
   await page.goto(reviewUrl);
   await chooseDecision(page, "call_now", ["Contact route looks usable"]);
-  await expect(page.getByTestId("signature-notice")).toHaveCount(0);
+  await expect(page.getByTestId("signature-notice")).toContainText(
+    "OUTLOOK SIGNATURE SUPPLIES CESAR’S SIGNATURE",
+  );
 
   await page
     .getByRole("button", { name: "Discuss this lead with TruLot" })
@@ -732,6 +734,16 @@ test("keeps chat, safe mock enrichment, editable outreach, and outcomes working"
   );
 
   await page.getByRole("button", { name: "Mark contacted" }).click();
+  await page.getByLabel("Current outcome").selectOption("replied");
+  await expect(page.getByLabel("Current outcome")).toHaveValue("replied");
+  await page.getByLabel("Current outcome").selectOption("routed");
+  await expect(page.getByLabel("Current outcome")).toHaveValue("routed");
+  await page.getByLabel("Current outcome").selectOption("plans_requested");
+  await expect(page.getByLabel("Current outcome")).toHaveValue(
+    "plans_requested",
+  );
+  await page.getByLabel("Current outcome").selectOption("bid_requested");
+  await expect(page.getByLabel("Current outcome")).toHaveValue("bid_requested");
   await page.getByLabel("Current outcome").selectOption("row_scope_confirmed");
   await page.getByLabel("Estimated opportunity value").fill("25000");
   await page.getByLabel("Outcome notes").fill("Fictional outcome note.");
