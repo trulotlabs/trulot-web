@@ -30,6 +30,21 @@ export type ContactClassification = z.infer<
   typeof contactClassificationSchema
 >;
 
+export const outreachModeSchema = z.enum([
+  "concise_route_check",
+  "warm_opportunity",
+]);
+export type OutreachMode = z.infer<typeof outreachModeSchema>;
+
+export const buyerRouterStatusSchema = z.enum([
+  "verified_construction_buyer",
+  "probable_buyer",
+  "routing_contact",
+  "general_company_route",
+  "unverified",
+]);
+export type BuyerRouterStatus = z.infer<typeof buyerRouterStatusSchema>;
+
 export const contactMethodSchema = z.object({
   type: z.enum(["email", "phone", "website"]),
   label: z.string().min(1).max(80),
@@ -179,7 +194,7 @@ export const chatMessageSchema = z.object({
 });
 export type ChatMessage = z.infer<typeof chatMessageSchema>;
 
-export const enrichmentResultSchema = z.object({
+const enrichmentPayloadSchema = z.object({
   primaryContact: contactSchema,
   backupContact: contactSchema.nullable(),
   sources: z.array(sourceSchema).min(1).max(12),
@@ -189,6 +204,13 @@ export const enrichmentResultSchema = z.object({
   revisedDraftEmailBody: z.string().min(1).max(4000),
   verifiedAt: z.string().min(1).max(40),
 });
+
+export const enrichmentResultSchema = enrichmentPayloadSchema.extend({
+  outreachMode: outreachModeSchema,
+  contactClassification: contactClassificationSchema,
+  buyerRouterStatus: buyerRouterStatusSchema,
+  scopeCertaintySafeguards: z.array(z.string().min(1).max(500)).min(1).max(8),
+});
 export type EnrichmentResult = z.infer<typeof enrichmentResultSchema>;
 
 const modelSourceSchema = sourceSchema.extend({
@@ -197,7 +219,7 @@ const modelSourceSchema = sourceSchema.extend({
   url: z.string().min(1).max(1000),
 });
 
-export const enrichmentModelResultSchema = enrichmentResultSchema.extend({
+export const enrichmentModelResultSchema = enrichmentPayloadSchema.extend({
   sources: z.array(modelSourceSchema).min(1).max(12),
 });
 

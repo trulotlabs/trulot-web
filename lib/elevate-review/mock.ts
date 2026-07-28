@@ -5,9 +5,9 @@ import {
   classifyLeadChatIntent,
 } from "./chat-grounding";
 import {
-  outreachModeForLead,
-  outreachModeGuidance,
-} from "./outreach-style";
+  deterministicEnrichmentFallback,
+  finalizeOutreachCandidate,
+} from "./outreach-reliability";
 
 export function mockChatAnswer(lead: PilotLead, question: string) {
   const intent = classifyLeadChatIntent(question);
@@ -89,71 +89,15 @@ export function mockChatAnswer(lead: PilotLead, question: string) {
   };
 }
 
-function mockOutreachVariant(lead: PilotLead) {
-  return [...lead.leadId].reduce((sum, character) => {
-    return sum + character.charCodeAt(0);
-  }, 0) % 3;
-}
-
-function mockOutreachBody(lead: PilotLead) {
-  const mode = outreachModeForLead(lead);
-  const scopes = lead.likelyScopes.slice(0, 2);
-  const scopeText = scopes
-    .map((scope) => scope.toLowerCase())
-    .join(" and ");
-  const projectSignal = `The available project record references ${scopeText}, while final scope and award status remain unconfirmed.`;
-  const variant = mockOutreachVariant(lead);
-
-  if (mode === "warm_opportunity") {
-    const openers = [
-      `Hello,\n\nI wanted to reach out regarding the project at ${lead.address}.`,
-      `Hello,\n\nI’m reaching out about the work planned at ${lead.address}.`,
-      `Hello,\n\nI’d welcome the opportunity to discuss the project at ${lead.address}.`,
-    ];
-    const closers = [
-      "Please send over the plans when you have a chance. Thank you, and I look forward to hearing from you.",
-      "If the package is still being coordinated, I’d appreciate the opportunity to take a look. Thank you for your time.",
-      "I’d be glad to discuss schedule and scope after reviewing the plans. Thank you, and I look forward to connecting.",
-    ];
-    return `${openers[variant]} ${projectSignal} I work directly with Elevate’s field team on civil and right-of-way construction, including frontage restoration and traffic-control coordination. Our crews are accustomed to coordinating access, restoration, and traffic impacts around active sites. Has the civil/ROW package been assigned? I’d appreciate the opportunity to review the plans, confirm the work that is actually required, and provide practical pricing. ${closers[variant]}`;
-  }
-
-  const openers = [
-    `Hello,\n\nI wanted to reach out regarding the project at ${lead.address}.`,
-    `Hello,\n\nI’m reaching out about the planned work at ${lead.address}.`,
-    `Hello,\n\nI’d like to ask about the project at ${lead.address}.`,
-  ];
-  const routingRequests = [
-    "If you’re not handling it, would you mind pointing me to the GC, project manager, or estimator who is?",
-    "If another team owns that work, I’d appreciate being routed to the project manager or estimator handling it.",
-    "If this belongs with someone else, would you mind pointing me in the right direction?",
-  ];
-  return `${openers[variant]} ${projectSignal} I’m a hands-on contractor with Elevate, and our team handles civil and right-of-way construction. Has the civil/ROW package been assigned? I can review the plans and provide pricing for the supported work. ${routingRequests[variant]} Thank you for your help.`;
-}
-
 export function mockEnrichment(lead: PilotLead) {
-  const supportedScope = lead.likelyScopes[0] ?? "right-of-way work";
-  const mode = outreachModeForLead(lead);
-  const guidance = outreachModeGuidance(mode);
-  const revisedDraftEmailBody = mockOutreachBody(lead);
-  const wordCount = revisedDraftEmailBody.trim().split(/\s+/).length;
-  if (
-    wordCount < guidance.minimumWords ||
-    wordCount > guidance.maximumWords
-  ) {
-    throw new Error(`Mock ${guidance.label} does not meet its word range.`);
+  const finalized = finalizeOutreachCandidate(
+    lead,
+    deterministicEnrichmentFallback(lead, "2026-07-23"),
+  );
+  if (!finalized.ok) {
+    throw new Error(
+      `Mock enrichment failed validation: ${finalized.categories.join(",")}`,
+    );
   }
-  return {
-    primaryContact: lead.primaryContact,
-    backupContact: lead.backupContact,
-    sources: lead.sources.slice(0, 3),
-    caveats: [
-      "Mock enrichment preserves the verified packet and does not perform public web search.",
-      ...lead.risksAndCaveats.slice(0, 2),
-    ],
-    revisedCallOpener: `Hi, this is Cesar with Elevate. I’m reaching out regarding the active project at ${lead.address}. Has the ${supportedScope.toLowerCase()} package been assigned? Could you route me to the GC, project manager, or person handling that work?`,
-    revisedDraftEmailSubject: lead.draftEmailSubject,
-    revisedDraftEmailBody,
-    verifiedAt: "2026-07-23",
-  };
+  return finalized.result;
 }
