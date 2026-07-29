@@ -1,6 +1,8 @@
 import type {
+  ChatResponse,
   Contact,
   ContactClassification,
+  PhoneVerification,
   PilotLead,
 } from "./schema";
 
@@ -145,15 +147,68 @@ function classifyContactType(contact: Contact) {
   }
 }
 
+export const phoneVerificationDisplayLabels: Record<
+  PhoneVerification,
+  string
+> = {
+  verified_direct_business_line: "Verified direct business line.",
+  verified_company_main_line:
+    "Verified company main line, not a direct line.",
+  broker_or_leasing_line: "Broker or leasing line.",
+  general_switchboard: "General switchboard.",
+  unverified: "Unverified.",
+};
+
+export function normalizePhoneVerification(
+  label: string,
+): PhoneVerification {
+  const normalized = label.toLowerCase().replace(/\s+/g, " ").trim();
+  if (/\b(?:broker|leasing)\b/.test(normalized)) {
+    return "broker_or_leasing_line";
+  }
+  if (/\bswitchboard\b/.test(normalized)) {
+    return "general_switchboard";
+  }
+  if (
+    /\bverified\b/.test(normalized) &&
+    /\bcompany\b.*\bmain\b|\bmain\b.*\b(?:company|line|phone)\b/.test(normalized)
+  ) {
+    return "verified_company_main_line";
+  }
+  if (/\bverified\b/.test(normalized) && /\bdirect\b/.test(normalized)) {
+    return "verified_direct_business_line";
+  }
+  if (/\bgeneral\b.*\b(?:company|phone|line)\b/.test(normalized)) {
+    return "general_switchboard";
+  }
+  return "unverified";
+}
+
 function contactMethodContext(contact: Contact) {
-  return contact.methods.map((method) => ({
-    type: method.type,
-    label: method.label,
-    value: method.value,
-    verificationStatus: /verified/i.test(method.label)
-      ? "The packet explicitly labels this method as verified."
-      : "The packet publishes this method under the stated label; do not infer ownership or verification beyond that label.",
-  }));
+  return contact.methods.map((method) => {
+    if (method.type === "phone") {
+      const verificationClassification = normalizePhoneVerification(
+        method.label,
+      );
+      return {
+        type: method.type,
+        label: method.label,
+        value: method.value,
+        verificationClassification,
+        verificationStatus:
+          phoneVerificationDisplayLabels[verificationClassification],
+      };
+    }
+    return {
+      type: method.type,
+      label: method.label,
+      value: method.value,
+      verificationClassification: null,
+      verificationStatus: /verified/i.test(method.label)
+        ? "The packet explicitly labels this method as verified."
+        : "The packet publishes this method under the stated label; do not infer ownership or verification beyond that label.",
+    };
+  });
 }
 
 function fallbackRoute(contact: Contact | null) {
@@ -215,6 +270,42 @@ export function buildLeadScopeGrounding(lead: PilotLead) {
       .filter((item) => item.kind === "unresolved")
       .map(({ claim, basis, confidence }) => ({ claim, basis, confidence })),
     cautions: lead.risksAndCaveats,
+  };
+}
+
+export function buildPhoneVerificationAnswer(
+  lead: PilotLead,
+): ChatResponse {
+  const method = lead.primaryContact.methods.find(
+    (candidate) => candidate.type === "phone",
+  );
+  if (!method) {
+    return {
+      answer:
+        "No verified phone number is stored for this contact. Use only the published contact route and do not infer a direct line.",
+      sourceIndexes: [],
+      caveats: lead.primaryContact.caveats.slice(0, 2),
+    };
+  }
+
+  const classification = normalizePhoneVerification(method.label);
+  const display = phoneVerificationDisplayLabels[classification];
+  const contactName = lead.primaryContact.name;
+  const nextAction = contactName
+    ? `Ask for ${contactName} by name or for the person managing the civil/ROW package.`
+    : "Ask for the person managing the civil/ROW package.";
+  const answer =
+    classification === "verified_direct_business_line" ||
+    classification === "verified_company_main_line"
+      ? `Yes. ${display} ${nextAction}`
+      : classification === "unverified"
+        ? `No. ${display} Do not treat it as a direct or verified business line. ${nextAction}`
+        : `${display} It is not a verified direct line to a construction buyer. ${nextAction}`;
+
+  return {
+    answer,
+    sourceIndexes: [],
+    caveats: lead.primaryContact.caveats.slice(0, 2),
   };
 }
 

@@ -1,6 +1,7 @@
 import OpenAI from "openai";
 import { zodTextFormat } from "openai/helpers/zod";
 import { findPilotLead } from "@/lib/elevate-review/batch";
+import { sanitizedElevateDiagnostic } from "@/lib/elevate-review/diagnostics";
 import { mockEnrichment } from "@/lib/elevate-review/mock";
 import {
   buildOutreachRepairInput,
@@ -21,41 +22,6 @@ import {
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-function sanitizedEnrichmentError(error: unknown) {
-  if (error instanceof OpenAI.APIError) {
-    return {
-      name: error.name,
-      status: error.status,
-      code: error.code ?? null,
-      type: error.type ?? null,
-      param: error.param ?? null,
-    };
-  }
-  if (
-    error &&
-    typeof error === "object" &&
-    "issues" in error &&
-    Array.isArray(error.issues)
-  ) {
-    return {
-      name: "SchemaValidationError",
-      issuePaths: error.issues
-        .slice(0, 8)
-        .map((issue) =>
-          issue &&
-          typeof issue === "object" &&
-          "path" in issue &&
-          Array.isArray(issue.path)
-            ? issue.path.join(".")
-            : "unknown",
-        ),
-    };
-  }
-  return {
-    name: error instanceof Error ? error.name : "UnknownError",
-  };
-}
 
 export async function POST(request: Request) {
   const token = request.headers.get("x-elevate-interview-token") ?? "";
@@ -136,7 +102,10 @@ export async function POST(request: Request) {
     }
     return Response.json(resolution.result);
   } catch (error) {
-    console.error("Elevate contact enrichment failed:", sanitizedEnrichmentError(error));
+    console.error(
+      "Elevate contact enrichment failed:",
+      sanitizedElevateDiagnostic(error),
+    );
     return Response.json(
       { error: OUTREACH_FAILURE_MESSAGE },
       { status: 502 },

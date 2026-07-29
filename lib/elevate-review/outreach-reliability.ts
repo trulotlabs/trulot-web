@@ -68,6 +68,15 @@ type GenerateAttempt = (input: {
   repairCategories: OutreachValidationCategory[] | null;
 }) => Promise<unknown>;
 
+type FallbackOptions = {
+  trimOptionalCapability: boolean;
+};
+
+type FallbackFactory = (
+  lead: PilotLead,
+  options?: FallbackOptions,
+) => unknown;
+
 export const OUTREACH_FAILURE_MESSAGE =
   "Draft generation failed. Please retry.";
 
@@ -114,8 +123,12 @@ function meaningfulWords(value: string) {
 
 function scopeSignalMatches(body: string, scope: string) {
   const bodyWords = new Set(meaningfulWords(body));
-  const scopeWords = meaningfulWords(scope);
-  return scopeWords.length > 0 && scopeWords.every((word) => bodyWords.has(word));
+  const scopeWords = meaningfulWords(scope).slice(0, 4);
+  const requiredMatches = Math.min(2, scopeWords.length);
+  return (
+    requiredMatches > 0 &&
+    scopeWords.filter((word) => bodyWords.has(word)).length >= requiredMatches
+  );
 }
 
 export function sanitizeElevateEmailBody(value: string) {
@@ -126,6 +139,16 @@ export function sanitizeElevateEmailBody(value: string) {
     .replace(/\s*[•|]\s*\(?optional\)?/gi, "")
     .trim()
     .slice(0, 4000);
+}
+
+export function hasExplicitRoutingRequest(body: string) {
+  const action =
+    /\b(?:rout(?:e|ed|ing)\s+me|point(?:ing)?\s+me|connect\s+me|direct\s+me|who\s+(?:is|would be)\s+managing|who\s+manages)\b/i;
+  const target =
+    /\b(?:project manager|estimator|owner representative|construction manager|person (?:managing|who manages|responsible for)|team (?:handling|managing))\b/i;
+  return body
+    .split(/(?<=[.!?])\s+/)
+    .some((sentence) => action.test(sentence) && target.test(sentence));
 }
 
 function buyerRouterStatusForClassification(
@@ -221,7 +244,12 @@ export function validateOutreachDraft(
   const matchedScopeSignals = lead.likelyScopes.filter((scope) =>
     scopeSignalMatches(body, scope),
   ).length;
-  if (matchedScopeSignals < requiredScopeSignals) {
+  const hasConservativeSecondaryScope =
+    /\brelated frontage or off-site civil work\b/i.test(body);
+  if (
+    matchedScopeSignals < requiredScopeSignals ||
+    (lead.likelyScopes.length === 1 && !hasConservativeSecondaryScope)
+  ) {
     categories.push("scope_signals_missing");
   }
   if (
@@ -243,9 +271,7 @@ export function validateOutreachDraft(
   }
   if (
     guidance.routingRequired &&
-    !/\b(?:route|routed|routing|point(?:ing)?|connect|direct)\b.{0,100}\b(?:person|contact|manager|estimator|team|direction|handling|handles|managing|manages)\b/i.test(
-      body,
-    )
+    !hasExplicitRoutingRequest(body)
   ) {
     categories.push("routing_request_missing");
   }
@@ -351,58 +377,107 @@ function fallbackVariant(lead: PilotLead) {
   ) % 3;
 }
 
+function compactScopeLabel(scope: string) {
+  const words = scope
+    .replace(/https?:\/\/\S+/gi, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .split(/\s+/)
+    .slice(0, 4);
+  while (
+    words.length > 1 &&
+    /^(?:and|around|at|for|from|of|the|to|with)$/i.test(words.at(-1) ?? "")
+  ) {
+    words.pop();
+  }
+  return words
+    .join(" ")
+    .replace(/[,:;.!?]+$/, "")
+    .toLowerCase();
+}
+
 function fallbackScopeSignal(lead: PilotLead, scope: string) {
   const evidence = lead.evidence.find((item) =>
     scopeSignalMatches(item.claim, scope),
   );
+  const label = compactScopeLabel(scope);
   if (evidence?.kind === "verified_fact") {
-    return `the verified record references ${scope.toLowerCase()}`;
+    return label;
   }
   if (evidence?.kind === "unresolved") {
-    return `${scope.toLowerCase()} remains unresolved`;
+    return `unresolved ${label}`;
   }
-  return `${scope.toLowerCase()} is a supported inference`;
+  return `possible ${label}`;
 }
 
-function fallbackBody(lead: PilotLead, mode: OutreachMode) {
+function fallbackProjectReference(lead: PilotLead) {
+  if (wordCount(lead.address) <= 12 && lead.address.length <= 140) {
+    return lead.address;
+  }
+  return [...lead.projectIdentifiers].sort(
+    (left, right) => wordCount(left) - wordCount(right) || left.length - right.length,
+  )[0];
+}
+
+function joinedScopeSignals(lead: PilotLead) {
   const scopes = lead.likelyScopes
     .slice(0, 2)
     .map((scope) => fallbackScopeSignal(lead, scope));
-  const scopeText =
-    scopes.length === 1 ? scopes[0] : `${scopes[0]} and ${scopes[1]}`;
-  const grounding = `The packet indicates ${scopeText}, while final scope and award status remain unconfirmed.`;
+  if (scopes.length === 1) {
+    scopes.push("possible related frontage or off-site civil work");
+  }
+  return scopes.length === 1
+    ? scopes[0]
+    : `${scopes.slice(0, -1).join(", ")} and ${scopes.at(-1)}`;
+}
+
+function fallbackBody(
+  lead: PilotLead,
+  mode: OutreachMode,
+  options: FallbackOptions,
+) {
+  const projectReference = fallbackProjectReference(lead);
+  const scopeText = joinedScopeSignals(lead);
+  const grounding = `The packet references ${scopeText}; final scope and award status remain unconfirmed.`;
   const variant = fallbackVariant(lead);
 
   if (mode === "warm_opportunity") {
     const openers = [
-      `Hello,\n\nI wanted to reach out regarding the project at ${lead.address}.`,
-      `Hello,\n\nI’m reaching out about the work planned at ${lead.address}.`,
-      `Hello,\n\nI’d welcome the opportunity to discuss the project at ${lead.address}.`,
+      `Hello,\n\nI wanted to reach out regarding the project at ${projectReference}.`,
+      `Hello,\n\nI’m reaching out about the work planned at ${projectReference}.`,
+      `Hello,\n\nI’d welcome the opportunity to discuss the project at ${projectReference}.`,
     ];
     const closers = [
       "Please send over the plans when you have a chance. Thank you, and I look forward to hearing from you.",
       "If the package is still being coordinated, I’d appreciate the opportunity to take a look. Thank you for your time.",
       "I’d be glad to discuss schedule and scope after reviewing the plans. Thank you, and I look forward to connecting.",
     ];
-    return `${openers[variant]} ${grounding} I work directly with Elevate’s field team on civil and right-of-way construction, including frontage restoration and traffic-control coordination. Our crews are accustomed to coordinating access, restoration, and traffic impacts around active sites. Has the civil/ROW package been assigned? I’d appreciate the opportunity to review the plans, confirm the work that is actually required, and provide practical pricing. ${closers[variant]}`;
+    const capability = options.trimOptionalCapability
+      ? "I work directly with Elevate’s civil and right-of-way field team."
+      : "I work directly with Elevate’s field team on civil and right-of-way construction, including frontage restoration and traffic-control coordination. Our crews are accustomed to coordinating access, restoration, and traffic impacts around active sites.";
+    return `${openers[variant]} ${grounding} ${capability} Has the civil/ROW package been assigned? I’d appreciate the opportunity to review the plans, confirm the work that is actually required, and provide practical pricing. ${closers[variant]}`;
   }
 
   const openers = [
-    `Hello,\n\nI wanted to reach out regarding the project at ${lead.address}.`,
-    `Hello,\n\nI’m reaching out about the planned work at ${lead.address}.`,
-    `Hello,\n\nI’d like to ask about the project at ${lead.address}.`,
+    `Hello,\n\nI wanted to reach out regarding the project at ${projectReference}.`,
+    `Hello,\n\nI’m reaching out about the planned work at ${projectReference}.`,
+    `Hello,\n\nI’d like to ask about the project at ${projectReference}.`,
   ];
   const routingRequests = [
-    "If you’re not handling it, would you mind pointing me to the GC, project manager, or estimator who is?",
-    "If another team owns that work, I’d appreciate being routed to the project manager or estimator handling it.",
-    "If this belongs with someone else, would you mind pointing me in the right direction?",
+    "Would you mind routing me to the project manager, estimator, owner representative, or person managing the civil/ROW package?",
+    "Could you connect me with the project manager, estimator, construction manager, or person managing the civil/ROW package?",
+    "Who is managing the civil/ROW package—the project manager, estimator, owner representative, or construction manager?",
   ];
-  return `${openers[variant]} ${grounding} I’m a hands-on contractor with Elevate, and our team handles civil and right-of-way construction. Has the civil/ROW package been assigned? I can review the plans and provide pricing for the supported work. ${routingRequests[variant]} Thank you for your help.`;
+  const capability = options.trimOptionalCapability
+    ? "I’m a hands-on contractor with Elevate."
+    : "I’m a hands-on contractor with Elevate, and our team handles civil and right-of-way construction.";
+  return `${openers[variant]} ${grounding} ${capability} Has the civil/ROW package been assigned? I can review the plans and provide pricing for the supported work. ${routingRequests[variant]} Thank you for your help.`;
 }
 
 export function deterministicEnrichmentFallback(
   lead: PilotLead,
   verifiedAt = new Date().toISOString().slice(0, 10),
+  options: FallbackOptions = { trimOptionalCapability: false },
 ) {
   return {
     primaryContact: lead.primaryContact,
@@ -414,7 +489,11 @@ export function deterministicEnrichmentFallback(
     ],
     revisedCallOpener: lead.suggestedCallOpener,
     revisedDraftEmailSubject: lead.draftEmailSubject,
-    revisedDraftEmailBody: fallbackBody(lead, outreachModeForLead(lead)),
+    revisedDraftEmailBody: fallbackBody(
+      lead,
+      outreachModeForLead(lead),
+      options,
+    ),
     verifiedAt,
   };
 }
@@ -422,7 +501,8 @@ export function deterministicEnrichmentFallback(
 export async function resolveOutreachGeneration(
   lead: PilotLead,
   generate: GenerateAttempt,
-  fallbackFactory: (lead: PilotLead) => unknown = deterministicEnrichmentFallback,
+  fallbackFactory: FallbackFactory = (fallbackLead, options) =>
+    deterministicEnrichmentFallback(fallbackLead, undefined, options),
 ): Promise<OutreachResolution> {
   let categories: OutreachValidationCategory[] = [];
 
@@ -464,7 +544,7 @@ export async function resolveOutreachGeneration(
 
   const fallback = finalizeOutreachCandidate(
     lead,
-    fallbackFactory(lead),
+    fallbackFactory(lead, { trimOptionalCapability: false }),
   );
   if (fallback.ok) {
     return {
@@ -472,6 +552,30 @@ export async function resolveOutreachGeneration(
       result: fallback.result,
       strategy: "fallback",
       repairedCategories: categories,
+    };
+  }
+  if (
+    fallback.categories.length === 1 &&
+    fallback.categories[0] === "body_too_long"
+  ) {
+    const trimmedFallback = finalizeOutreachCandidate(
+      lead,
+      fallbackFactory(lead, { trimOptionalCapability: true }),
+    );
+    if (trimmedFallback.ok) {
+      return {
+        ok: true,
+        result: trimmedFallback.result,
+        strategy: "fallback",
+        repairedCategories: categories,
+      };
+    }
+    return {
+      ok: false,
+      categories: uniqueCategories([
+        ...categories,
+        ...trimmedFallback.categories,
+      ]),
     };
   }
   return {

@@ -1,6 +1,7 @@
 import type { PilotLead } from "./schema";
 import {
   buildLeadContactGrounding,
+  buildPhoneVerificationAnswer,
   buildLeadScopeGrounding,
   classifyLeadChatIntent,
 } from "./chat-grounding";
@@ -14,9 +15,6 @@ export function mockChatAnswer(lead: PilotLead, question: string) {
   const contact = buildLeadContactGrounding(lead);
   const scope = buildLeadScopeGrounding(lead);
   const name = lead.primaryContact.name ?? lead.primaryContact.company;
-  const contactMethod = contact.contactMethods.find((method) =>
-    question.toLowerCase().includes(method.type),
-  );
   let answer: string;
   let sourceIndexes: number[] = [];
 
@@ -37,10 +35,7 @@ export function mockChatAnswer(lead: PilotLead, question: string) {
       answer = `Ask ${name} at ${contact.company} for the person managing the ROW/frontage package, then confirm whether it has been assigned or awarded. ${contact.verifiedBuyerStatus}`;
       break;
     case "contact_method_verification":
-      answer = contactMethod
-        ? `${contactMethod.verificationStatus} The packet lists it as ${contactMethod.label.toLowerCase()} for ${contact.company}, but no stronger ownership claim should be made.`
-        : `The packet does not verify the requested contact method. Use only the published route in the contact packet and do not infer ownership.`;
-      break;
+      return buildPhoneVerificationAnswer(lead);
     case "contact_call_opener":
       answer = `Use a concise routing opener: “${contact.suggestedCallOpener}” Do not imply that ${name} controls procurement unless the contact confirms it.`;
       break;

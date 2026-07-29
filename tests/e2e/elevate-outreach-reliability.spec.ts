@@ -3,6 +3,7 @@ import {
   buildOutreachRepairInput,
   deterministicEnrichmentFallback,
   finalizeOutreachCandidate,
+  hasExplicitRoutingRequest,
   OUTREACH_FAILURE_MESSAGE,
   resolveOutreachGeneration,
   validateOutreachDraft,
@@ -151,27 +152,42 @@ test.describe("server-owned outreach validation", () => {
       expect(
         rejectedCategories(lead, (body) =>
           body.replace(
-            /If .*?(?:\?|\.) (?=Thank you)/,
+            /(?:Would you mind routing|Could you connect|Who is managing)[^?]+\? (?=Thank you)/,
             "Please let me know if there is a convenient time to discuss it. ",
           ),
         ),
       ).toContain("routing_request_missing");
     }
+    expect(
+      hasExplicitRoutingRequest(
+        "Would you mind pointing me in the right direction?",
+      ),
+    ).toBe(false);
+    expect(
+      rejectedCategories(routingLead, (body) =>
+        body.replace(
+          /(?:Would you mind routing|Could you connect|Who is managing)[^?]+\?/,
+          "Would you mind pointing me in the right direction?",
+        ),
+      ),
+    ).toContain("routing_request_missing");
   });
 
   test("rejects absent certainty safeguards and unsupported certainty", () => {
     expect(
       rejectedCategories(routingLead, (body) =>
-        body.replace(
-          "while final scope and award status remain unconfirmed",
-          "and the listed scope is included",
-        ),
+        body
+          .replace(
+            "final scope and award status remain unconfirmed",
+            "and the listed scope is included",
+          )
+          .replace("possible traffic control", "traffic control"),
       ),
     ).toContain("certainty_safeguard_missing");
     expect(
       rejectedCategories(routingLead, (body) =>
         body.replace(
-          "The packet indicates",
+          "The packet references",
           "Permit records confirm",
         ),
       ),
@@ -182,7 +198,7 @@ test.describe("server-owned outreach validation", () => {
     expect(
       rejectedCategories(routingLead, (body) =>
         body.replace(
-          "while final scope and award status remain unconfirmed",
+          "final scope and award status remain unconfirmed",
           "while final scope is unconfirmed and the package remains open",
         ),
       ),
@@ -223,6 +239,101 @@ test.describe("server-owned outreach validation", () => {
           '{"revisedDraftEmailBody":"Hello","primaryContact":{"name":"Test"}}',
       ),
     ).toContain("raw_json_present");
+  });
+});
+
+test.describe("deterministic fallback field normalization", () => {
+  test("handles full and sparse contact metadata without using optional narrative fields", () => {
+    const sparseLead: PilotLead = {
+      ...routingLead,
+      leadId: "SPARSE-ROUTING-FIXTURE",
+      backupContact: null,
+      risksAndCaveats: [],
+      primaryContact: {
+        ...routingLead.primaryContact,
+        name: null,
+        caveats: [],
+        methods: [],
+      },
+    };
+
+    for (const lead of [routingLead, sparseLead]) {
+      const result = finalizeOutreachCandidate(
+        lead,
+        deterministicEnrichmentFallback(lead, "2026-07-28"),
+      );
+      expect(result.ok).toBe(true);
+    }
+  });
+
+  test("ignores long relationship text and compacts long scope descriptions", () => {
+    const longMetadataLead: PilotLead = {
+      ...routingLead,
+      leadId: "LONG-METADATA-FIXTURE",
+      primaryContact: {
+        ...routingLead.primaryContact,
+        role: "Fictional routing relationship ".repeat(6).trim(),
+        caveats: ["Fictional verification narrative ".repeat(12).trim()],
+      },
+      likelyScopes: [
+        "Sidewalk restoration along the fictional frontage with several optional sequencing notes that are not outreach copy",
+        "Traffic control coordination around the fictional access point with extended internal planning detail",
+      ],
+    };
+    const draft = deterministicEnrichmentFallback(
+      longMetadataLead,
+      "2026-07-28",
+    );
+    const result = finalizeOutreachCandidate(longMetadataLead, draft);
+    expect(result.ok).toBe(true);
+    expect(draft.revisedDraftEmailBody).not.toContain(
+      "Fictional routing relationship",
+    );
+    expect(draft.revisedDraftEmailBody).not.toContain(
+      "Fictional verification narrative",
+    );
+  });
+
+  test("adds a conservative second category when only one strong scope exists", () => {
+    const oneScopeLead: PilotLead = {
+      ...routingLead,
+      leadId: "ONE-SCOPE-FIXTURE",
+      likelyScopes: ["Sidewalk restoration"],
+      evidence: routingLead.evidence.filter((item) =>
+        /sidewalk|wet tap/i.test(item.claim),
+      ),
+    };
+    const draft = deterministicEnrichmentFallback(
+      oneScopeLead,
+      "2026-07-28",
+    );
+    expect(draft.revisedDraftEmailBody).toContain(
+      "related frontage or off-site civil work",
+    );
+    expect(finalizeOutreachCandidate(oneScopeLead, draft).ok).toBe(true);
+  });
+
+  test("preserves every required commercial element in a concise fallback", () => {
+    const draft = deterministicEnrichmentFallback(routingLead, "2026-07-28");
+    const body = draft.revisedDraftEmailBody;
+    const result = validateOutreachDraft(
+      routingLead,
+      draft.revisedDraftEmailSubject,
+      body,
+    );
+    expect(result.ok).toBe(true);
+    expect(body).toContain(routingLead.address);
+    expect(body).toMatch(/sidewalk restoration/i);
+    expect(body).toMatch(/traffic control/i);
+    expect(body).toContain("final scope and award status remain unconfirmed");
+    expect(body).toContain("Has the civil/ROW package been assigned?");
+    expect(body).toMatch(/review the plans/i);
+    expect(body).toMatch(/provide pricing/i);
+    expect(hasExplicitRoutingRequest(body)).toBe(true);
+    expect(body).not.toMatch(/\n\s*cesar\b/i);
+    expect(body).not.toMatch(
+      /verified construction buyer|confirmed buyer|controls procurement/i,
+    );
   });
 });
 
@@ -273,6 +384,55 @@ test.describe("one repair attempt and deterministic fallback", () => {
     expect(calls).toBe(2);
     expect(resolution.ok).toBe(true);
     expect(resolution.ok && resolution.strategy).toBe("fallback");
+  });
+
+  test("trims optional fallback capability language once when length is the only defect", async () => {
+    const fallbackCalls: boolean[] = [];
+    const resolution = await resolveOutreachGeneration(
+      routingLead,
+      async () => {
+        throw new Error("incomplete");
+      },
+      (lead, options) => {
+        fallbackCalls.push(Boolean(options?.trimOptionalCapability));
+        const value = deterministicEnrichmentFallback(
+          lead,
+          "2026-07-28",
+          options,
+        );
+        return options?.trimOptionalCapability
+          ? value
+          : {
+              ...value,
+              revisedDraftEmailBody: `${value.revisedDraftEmailBody.slice(0, -1)} Our optional capabilities include ${"extensive site logistics and schedule coordination support ".repeat(5).trim()}.`,
+            };
+      },
+    );
+    expect(fallbackCalls).toEqual([false, true]);
+    expect(resolution.ok).toBe(true);
+    expect(resolution.ok && resolution.strategy).toBe("fallback");
+  });
+
+  test("returns five of five valid fictional routing fallbacks repeatedly", async () => {
+    const allRouting = elevatePilotBatchFixture.map((lead, index) => ({
+      ...lead,
+      leadId: `REPEAT-ROUTING-${index + 1}`,
+      primaryContact: {
+        ...routingLead.primaryContact,
+        company: `Fictional Route ${index + 1}`,
+      },
+      contactClassification: "probable_routing_contact" as const,
+      contactConfidence: "medium" as const,
+    }));
+    for (const lead of allRouting) {
+      for (let attempt = 0; attempt < 5; attempt += 1) {
+        const resolution = await resolveOutreachGeneration(lead, async () => {
+          throw new Error("incomplete");
+        });
+        expect(resolution.ok).toBe(true);
+        expect(resolution.ok && resolution.strategy).toBe("fallback");
+      }
+    }
   });
 
   test("returns explicit non-success when all three stages fail", async () => {
