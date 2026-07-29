@@ -3,6 +3,8 @@ import { expect, test, type Download, type Page } from "@playwright/test";
 import { parsePilotBatchJson } from "../../lib/elevate-review/batch-config";
 import {
   buildMailtoHref,
+  buildValidatedMailtoHref,
+  createCanonicalEmailDraft,
   findVerifiedEmailRoute,
   isLegacyCallDecision,
 } from "../../lib/elevate-review/email-action";
@@ -187,6 +189,36 @@ test("encodes recipient, subject, and body in a standard mailto", () => {
   expect(href).toBe(
     "mailto:route%40example.test?subject=ROW%20%26%20frontage&body=Hello%2C%0A%0AI%E2%80%99d%20like%20to%20review%20the%20plans.",
   );
+});
+
+test("preserves a canonical validated draft through mailto encoding", () => {
+  const lead = elevatePilotBatchFixture[0];
+  const route = findVerifiedEmailRoute(lead);
+  expect(route).not.toBeNull();
+  if (!route) return;
+  const generated = mockEnrichment(lead);
+  const canonical = createCanonicalEmailDraft(lead, route, {
+    subject: `${generated.revisedDraftEmailSubject} + 100% — I’d review`,
+    body: generated.revisedDraftEmailBody,
+    styleMode: generated.outreachMode,
+    contactClassification: generated.contactClassification,
+    buyerRouterStatus: generated.buyerRouterStatus,
+  });
+  expect(canonical).not.toBeNull();
+  if (!canonical) return;
+  const href = buildValidatedMailtoHref(lead, canonical, route.address);
+  expect(href).not.toBeNull();
+  const decoded = new URL(href!);
+  expect(decodeURIComponent(decoded.pathname)).toBe(route.address);
+  expect(decoded.searchParams.get("subject")).toBe(canonical.subject);
+  expect(decoded.searchParams.get("body")).toBe(canonical.body);
+  expect(buildValidatedMailtoHref(lead, canonical, "wrong@example.test")).toBeNull();
+  expect(
+    createCanonicalEmailDraft(lead, route, {
+      ...canonical,
+      body: "Too short",
+    }),
+  ).toBeNull();
 });
 
 test("migrates v2 storage and preserves call decisions without calling them email", () => {

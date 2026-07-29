@@ -1,7 +1,11 @@
 import {
+  type BuyerRouterStatus,
   type Contact,
+  type ContactClassification,
+  type OutreachMode,
   type PilotLead,
 } from "./schema";
+import { validateOutreachDraft } from "./outreach-reliability";
 
 const UNSAFE_EMAIL_LABEL =
   /\b(?:unverified|pattern|inferred|guess(?:ed)?|possible|proposed|likely)\b/i;
@@ -13,6 +17,16 @@ export type VerifiedEmailRoute = {
   label: string;
   contact: Contact;
   routeType: "direct" | "general";
+};
+
+export type CanonicalEmailDraft = {
+  recipient: string;
+  subject: string;
+  body: string;
+  styleMode: OutreachMode;
+  contactClassification: ContactClassification;
+  buyerRouterStatus: BuyerRouterStatus;
+  validationStatus: "validated";
 };
 
 function verifiedEmailFromContact(
@@ -63,6 +77,48 @@ export function buildMailtoHref(
   body: string,
 ) {
   return `mailto:${encodeURIComponent(recipient)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+export function createCanonicalEmailDraft(
+  lead: PilotLead,
+  route: VerifiedEmailRoute | null,
+  draft: Omit<CanonicalEmailDraft, "recipient" | "validationStatus">,
+): CanonicalEmailDraft | null {
+  if (!route?.address) return null;
+  const validation = validateOutreachDraft(lead, draft.subject, draft.body);
+  // A client must never silently normalize, trim, or otherwise alter the draft
+  // that the server accepted. A mismatch means a fresh draft is required.
+  if (!validation.ok || validation.body !== draft.body) return null;
+  return { ...draft, recipient: route.address, validationStatus: "validated" };
+}
+
+export function buildValidatedMailtoHref(
+  lead: PilotLead,
+  draft: CanonicalEmailDraft,
+  expectedRecipient: string,
+): string | null {
+  if (draft.validationStatus !== "validated") return null;
+  const href = buildMailtoHref(draft.recipient, draft.subject, draft.body);
+  try {
+    const decoded = new URL(href);
+    const recipient = decodeURIComponent(decoded.pathname);
+    const subject = decoded.searchParams.get("subject") ?? "";
+    const body = decoded.searchParams.get("body") ?? "";
+    const validation = validateOutreachDraft(lead, subject, body);
+    if (
+      recipient !== draft.recipient ||
+      recipient !== expectedRecipient ||
+      subject !== draft.subject ||
+      body !== draft.body ||
+      !validation.ok ||
+      validation.body !== draft.body
+    ) {
+      return null;
+    }
+    return href;
+  } catch {
+    return null;
+  }
 }
 
 export function isLegacyCallDecision(
