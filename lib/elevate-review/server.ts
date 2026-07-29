@@ -1,6 +1,7 @@
 import "server-only";
 import { createHash } from "node:crypto";
 import { isValidElevateToken } from "@/lib/elevate-interview/security";
+import { neutralElevateErrorPayload } from "@/lib/elevate-review/diagnostics";
 
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_REQUESTS_PER_WINDOW = 30;
@@ -34,8 +35,5 @@ export function elevateSafetyIdentifier(token: string) {
 }
 
 export function neutralApiError(status = 502) {
-  return Response.json(
-    { error: "The private review service had a temporary problem. Your work is still saved." },
-    { status },
-  );
+  return Response.json(neutralElevateErrorPayload(), { status });
 }

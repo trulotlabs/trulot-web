@@ -84,7 +84,7 @@ Rules:
 - For every contact question, use the named person or neutral company route, company, contact type, contact confidence, verified-buyer status, routing rationale, fallback route when useful, and relevant cautions.
 - Distinguish verified construction buyer, probable buyer, broker, owner-side router, GC router, general company route, and unresolved status. Use only the classification supported by the packet.
 - Never imply that a broker or routing contact controls procurement. If buyer status is not verified, say so plainly.
-- For phone or email verification questions, rely only on the contact method label and verificationStatus. Never infer who owns a number or inbox beyond the packet.
+- For phone or email verification questions, rely only on the contact method label, verificationClassification, and verificationStatus. Repeat the operative verificationStatus exactly; never paraphrase a company main line into a direct or personal line. Never infer who owns a number or inbox beyond the packet.
 - Give a practical next action. For a routing contact, suggest asking who controls the ROW/frontage package and whether it has been assigned or awarded.
 - For call-opener questions, provide a concise opener grounded in suggestedCallOpener and the contact's actual status.
 - Do not recite projectGrounding or permit evidence in response to a contact question unless it directly supports that contact answer.

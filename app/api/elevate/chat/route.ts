@@ -1,7 +1,11 @@
 import OpenAI from "openai";
 import { zodTextFormat } from "openai/helpers/zod";
 import { findPilotLead } from "@/lib/elevate-review/batch";
-import { classifyLeadChatIntent } from "@/lib/elevate-review/chat-grounding";
+import { sanitizedElevateDiagnostic } from "@/lib/elevate-review/diagnostics";
+import {
+  buildPhoneVerificationAnswer,
+  classifyLeadChatIntent,
+} from "@/lib/elevate-review/chat-grounding";
 import { mockChatAnswer } from "@/lib/elevate-review/mock";
 import { buildLeadChatPrompt } from "@/lib/elevate-review/prompts";
 import {
@@ -48,6 +52,9 @@ export async function POST(request: Request) {
   const lead = findPilotLead(parsed.data.leadId);
   if (!lead) return neutralApiError(503);
   const intent = classifyLeadChatIntent(parsed.data.question);
+  if (intent === "contact_method_verification") {
+    return Response.json(buildPhoneVerificationAnswer(lead));
+  }
 
   if (process.env.ELEVATE_INTERVIEW_MOCK === "true") {
     return Response.json(mockChatAnswer(lead, parsed.data.question));
@@ -88,7 +95,7 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error(
       "Elevate lead chat failed:",
-      error instanceof Error ? error.name : "UnknownError",
+      sanitizedElevateDiagnostic(error),
     );
     return neutralApiError();
   }

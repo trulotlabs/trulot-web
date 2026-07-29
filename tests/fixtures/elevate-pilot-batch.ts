@@ -14,7 +14,7 @@ const contacts: Array<{
       methods: [
         {
           type: "phone",
-          label: "Verified public company phone",
+          label: "Verified company main line",
           value: "+1-555-0101",
         },
         {
@@ -121,7 +121,7 @@ const contacts: Array<{
         },
         {
           type: "phone",
-          label: "Verified project office phone",
+          label: "Verified direct business line",
           value: "+1-555-0104",
         },
       ],

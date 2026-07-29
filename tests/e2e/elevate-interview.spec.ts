@@ -4,7 +4,10 @@ import { parsePilotBatchJson } from "../../lib/elevate-review/batch-config";
 import { normalizeBatchLabel } from "../../lib/elevate-review/export";
 import {
   buildLeadContactGrounding,
+  buildPhoneVerificationAnswer,
   classifyLeadChatIntent,
+  normalizePhoneVerification,
+  phoneVerificationDisplayLabels,
 } from "../../lib/elevate-review/chat-grounding";
 import {
   mockChatAnswer,
@@ -115,9 +118,14 @@ test("grounds contact, lead-origin, and scope questions with the relevant packet
     "Is this phone number verified?",
   );
   expect(verification.answer).toMatch(
-    /^The packet explicitly labels this method as verified\./,
+    /^Yes\. Verified company main line, not a direct line\./,
   );
-  expect(verification.answer).not.toMatch(/personal|mobile/i);
+  expect(verification.answer).toContain(
+    "Ask for Morgan Lane by name or for the person managing the civil/ROW package.",
+  );
+  expect(verification.answer).not.toMatch(
+    /verified direct|personal|mobile|likely direct/i,
+  );
 
   const opener = mockChatAnswer(
     brokerLead,
@@ -172,9 +180,61 @@ test("grounds contact, lead-origin, and scope questions with the relevant packet
   expect(prompt).toContain('"scopeGrounding"');
   expect(prompt).toContain('"verifiedBuyerStatus"');
   expect(prompt).toContain('"fallbackRoute"');
+  expect(prompt).toContain('"verificationClassification"');
+  expect(prompt).toContain(
+    '"verificationStatus":"Verified company main line, not a direct line."',
+  );
   expect(prompt).toContain("Answer the actual question in the first sentence");
   expect(prompt).toContain(
     "Do not recite projectGrounding or permit evidence",
+  );
+});
+
+test("normalizes and preserves exact phone-verification classifications", () => {
+  expect(normalizePhoneVerification("Verified direct business line")).toBe(
+    "verified_direct_business_line",
+  );
+  expect(normalizePhoneVerification("Verified company main line")).toBe(
+    "verified_company_main_line",
+  );
+  expect(normalizePhoneVerification("Public broker or leasing line")).toBe(
+    "broker_or_leasing_line",
+  );
+  expect(normalizePhoneVerification("General switchboard")).toBe(
+    "general_switchboard",
+  );
+  expect(normalizePhoneVerification("Public project office phone")).toBe(
+    "unverified",
+  );
+  expect(phoneVerificationDisplayLabels.verified_company_main_line).toBe(
+    "Verified company main line, not a direct line.",
+  );
+
+  const directLead = elevatePilotBatchFixture[3];
+  expect(
+    buildPhoneVerificationAnswer(directLead).answer,
+  ).toMatch(/^Yes\. Verified direct business line\./);
+
+  const brokerLineLead = {
+    ...elevatePilotBatchFixture[0],
+    primaryContact: {
+      ...elevatePilotBatchFixture[0].primaryContact,
+      methods: [
+        {
+          type: "phone" as const,
+          label: "Public broker or leasing line",
+          value: "+1-555-0198",
+        },
+      ],
+    },
+  };
+  expect(buildPhoneVerificationAnswer(brokerLineLead).answer).toMatch(
+    /^Broker or leasing line\./,
+  );
+
+  const unverifiedLead = elevatePilotBatchFixture[4];
+  expect(buildPhoneVerificationAnswer(unverifiedLead).answer).toMatch(
+    /^No\. Unverified\./,
   );
 });
 
@@ -200,7 +260,7 @@ test("applies Cesar's soft outreach profile with route-check and warm modes", ()
       /\n\s*(?:thank you,?\s*\n)?\s*cesar\b|\n\s*elevate\s*$/i,
     );
     if (mode === "concise_route_check") {
-      expect(body).toMatch(/pointing me|routed to|right direction/i);
+      expect(body).toMatch(/routing me|connect me|who is managing/i);
     }
     return body;
   });
@@ -698,6 +758,13 @@ test("keeps chat, safe mock enrichment, editable outreach, and outcomes working"
   await page.getByRole("button", { name: "Ask about this lead" }).click();
   await expect(page.getByTestId("lead-chat")).toContainText(
     "Fictional Commercial Realty",
+  );
+  await page
+    .getByLabel("Question")
+    .fill("Is this phone number verified?");
+  await page.getByRole("button", { name: "Ask about this lead" }).click();
+  await expect(page.getByTestId("lead-chat")).toContainText(
+    "Verified company main line, not a direct line.",
   );
 
   await page.getByRole("button", { name: "Find a better contact" }).click();

@@ -45,6 +45,15 @@ export const buyerRouterStatusSchema = z.enum([
 ]);
 export type BuyerRouterStatus = z.infer<typeof buyerRouterStatusSchema>;
 
+export const phoneVerificationSchema = z.enum([
+  "verified_direct_business_line",
+  "verified_company_main_line",
+  "broker_or_leasing_line",
+  "general_switchboard",
+  "unverified",
+]);
+export type PhoneVerification = z.infer<typeof phoneVerificationSchema>;
+
 export const contactMethodSchema = z.object({
   type: z.enum(["email", "phone", "website"]),
   label: z.string().min(1).max(80),
