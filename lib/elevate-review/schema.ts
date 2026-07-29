@@ -170,6 +170,7 @@ export const pilotBatchConfigSchema = z
 export type PilotBatchConfig = z.infer<typeof pilotBatchConfigSchema>;
 
 export const decisionSchema = z.enum([
+  "email_sent",
   "call_now",
   "call_later",
   "pass",
@@ -282,11 +283,20 @@ export const savedLeadReviewSchema = z.object({
   estimatedOpportunityValue: z.string().max(120),
   followUpDate: isoDateSchema.nullable(),
   enrichedOutreachAdopted: z.boolean(),
+  emailDraftOpenedAt: z.string().max(40).nullable().default(null),
+  emailSentConfirmedAt: z.string().max(40).nullable().default(null),
   updatedAt: z.string().max(40),
 });
 export type SavedLeadReview = z.infer<typeof savedLeadReviewSchema>;
 
 const currentSavedReviewSchema = z.object({
+  version: z.literal(3),
+  activeLeadId: z.string().min(1).max(80),
+  reviews: z.record(z.string(), savedLeadReviewSchema),
+  updatedAt: z.string().max(40),
+});
+
+const versionTwoSavedReviewSchema = z.object({
   version: z.literal(2),
   activeLeadId: z.string().min(1).max(80),
   reviews: z.record(z.string(), savedLeadReviewSchema),
@@ -314,27 +324,38 @@ const legacySavedReviewSchema = z.object({
 
 export const savedReviewSchema = z.preprocess((value) => {
   const legacy = legacySavedReviewSchema.safeParse(value);
-  if (!legacy.success) return value;
-  return {
-    version: 2,
-    activeLeadId: legacy.data.activeLeadId,
-    reviews: Object.fromEntries(
-      Object.entries(legacy.data.reviews).map(([leadId, review]) => [
-        leadId,
-        {
-          ...review,
-          reasons: review.reason ? [review.reason] : [],
-          otherReason: "",
-          followUpDate: isoDateSchema.safeParse(review.followUpDate).success
-            ? review.followUpDate
-            : null,
-          enrichedOutreachAdopted: false,
-          reason: undefined,
-        },
-      ]),
-    ),
-    updatedAt: legacy.data.updatedAt,
-  };
+  if (legacy.success) {
+    return {
+      version: 3,
+      activeLeadId: legacy.data.activeLeadId,
+      reviews: Object.fromEntries(
+        Object.entries(legacy.data.reviews).map(([leadId, review]) => [
+          leadId,
+          {
+            ...review,
+            reasons: review.reason ? [review.reason] : [],
+            otherReason: "",
+            followUpDate: isoDateSchema.safeParse(review.followUpDate).success
+              ? review.followUpDate
+              : null,
+            enrichedOutreachAdopted: false,
+            emailDraftOpenedAt: null,
+            emailSentConfirmedAt: null,
+            reason: undefined,
+          },
+        ]),
+      ),
+      updatedAt: legacy.data.updatedAt,
+    };
+  }
+  const versionTwo = versionTwoSavedReviewSchema.safeParse(value);
+  if (versionTwo.success) {
+    return {
+      ...versionTwo.data,
+      version: 3,
+    };
+  }
+  return value;
 }, currentSavedReviewSchema);
 export type SavedReview = z.infer<typeof savedReviewSchema>;
 
@@ -355,6 +376,8 @@ export const completedLeadReviewExportSchema = z
         outcomeNotes: z.string().max(3000).nullable(),
         estimatedOpportunityValue: z.number().finite().nonnegative().nullable(),
         followUpDate: isoDateSchema.nullable(),
+        emailDraftOpenedAt: z.string().datetime().nullable(),
+        emailSentConfirmedAt: z.string().datetime().nullable(),
       })
       .strict(),
     verifiedPacket: z

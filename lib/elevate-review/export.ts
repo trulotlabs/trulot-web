@@ -73,6 +73,8 @@ export function buildCompletedReviewExport(
             ? canonicalOpportunityValue(review.estimatedOpportunityValue)
             : null,
           followUpDate: review?.followUpDate ?? null,
+          emailDraftOpenedAt: review?.emailDraftOpenedAt ?? null,
+          emailSentConfirmedAt: review?.emailSentConfirmedAt ?? null,
         },
         verifiedPacket: {
           primaryContact: lead.primaryContact,
@@ -122,6 +124,10 @@ function markdownValue(value: string | null) {
   return value || "Not provided";
 }
 
+function displayTimestamp(value: string | null) {
+  return value ? new Date(value).toLocaleString() : "Not provided";
+}
+
 export function markdownCompletedReview(payload: CompletedReviewExport) {
   return `# Elevate ROW Opportunity Review — ${normalizeBatchLabel(payload.batchName)}
 
@@ -144,6 +150,8 @@ ${payload.leads
 - **Outcome notes:** ${markdownValue(lead.review.outcomeNotes)}
 - **Estimated opportunity value:** ${displayCurrency(lead.review.estimatedOpportunityValue)}
 - **Follow-up date:** ${displayDate(lead.review.followUpDate)}
+- **Email draft opened:** ${displayTimestamp(lead.review.emailDraftOpenedAt)}
+- **Email sent confirmed:** ${displayTimestamp(lead.review.emailSentConfirmedAt)}
 
 ### Verified packet
 
