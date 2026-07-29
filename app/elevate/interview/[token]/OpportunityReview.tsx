@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   buildMailtoHref,
+  buildValidatedMailtoHref,
+  createCanonicalEmailDraft,
   findVerifiedEmailRoute,
   isLegacyCallDecision,
 } from "@/lib/elevate-review/email-action";
@@ -14,7 +16,6 @@ import {
 } from "@/lib/elevate-review/export";
 import {
   buyerRouterStatusForLead,
-  validateOutreachDraft,
 } from "@/lib/elevate-review/outreach-reliability";
 import {
   chatResponseSchema,
@@ -474,56 +475,46 @@ export function OpportunityReview({
     actionLockRef.current = true;
     setPreparingEmail(true);
     setError(null);
-    let route = emailRoute;
-    let subject = review.editedEmailSubject;
-    let body = review.editedEmailBody;
-    let validation = validateOutreachDraft(lead, subject, body);
     try {
-      if (!validation.ok) {
-        const response = await fetch("/api/elevate/enrich", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-            "x-elevate-interview-token": token,
-          },
-          body: JSON.stringify({ leadId: lead.leadId }),
-        });
-        const responseBody: unknown = await response.json();
-        const parsed = enrichmentResultSchema.safeParse(responseBody);
-        if (!response.ok || !parsed.success) throw new Error();
-        subject = parsed.data.revisedDraftEmailSubject;
-        validation = validateOutreachDraft(
-          lead,
-          subject,
-          parsed.data.revisedDraftEmailBody,
-        );
-        if (!validation.ok) throw new Error();
-        body = validation.body;
-        route =
-          findVerifiedEmailRoute(
-            lead,
-            parsed.data.primaryContact,
-            parsed.data.backupContact,
-          ) ?? route;
-        updateReview(lead.leadId, lead, {
-          enrichment: parsed.data,
-          editedCallOpener: parsed.data.revisedCallOpener,
-          editedEmailSubject: subject,
-          editedEmailBody: body,
-          enrichedOutreachAdopted: true,
-        });
-      } else {
-        body = validation.body;
-      }
+      const response = await fetch("/api/elevate/enrich", {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "x-elevate-interview-token": token,
+        },
+        body: JSON.stringify({ leadId: lead.leadId }),
+      });
+      const responseBody: unknown = await response.json();
+      const parsed = enrichmentResultSchema.safeParse(responseBody);
+      if (!response.ok || !parsed.success) throw new Error();
+      const route = findVerifiedEmailRoute(
+        lead,
+        parsed.data.primaryContact,
+        parsed.data.backupContact,
+      );
+      if (!route) throw new Error();
+      const canonical = createCanonicalEmailDraft(lead, route, {
+        subject: parsed.data.revisedDraftEmailSubject,
+        body: parsed.data.revisedDraftEmailBody,
+        styleMode: parsed.data.outreachMode,
+        contactClassification: parsed.data.contactClassification,
+        buyerRouterStatus: parsed.data.buyerRouterStatus,
+      });
+      if (!canonical) throw new Error();
+      const mailto = buildValidatedMailtoHref(lead, canonical, route.address);
+      if (!mailto) throw new Error();
       const openedAt = new Date().toISOString();
       updateReview(lead.leadId, lead, {
-        editedEmailSubject: subject,
-        editedEmailBody: body,
+        enrichment: parsed.data,
+        editedCallOpener: parsed.data.revisedCallOpener,
+        editedEmailSubject: canonical.subject,
+        editedEmailBody: canonical.body,
+        enrichedOutreachAdopted: true,
         emailDraftOpenedAt: openedAt,
         emailSentConfirmedAt: null,
         saved: false,
       });
-      openMailto(buildMailtoHref(route.address, subject, body));
+      openMailto(mailto);
     } catch {
       setError("We couldn’t prepare the email. Please try again.");
     } finally {
