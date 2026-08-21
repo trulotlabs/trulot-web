@@ -1,41 +1,103 @@
-import Link from "next/link";
-import SearchBox from './components/SearchBox';
-import { canonicalParcelPath } from "@/lib/parcel-slug";
+import type { Metadata } from "next";
+import EarlyAccessForm from "./components/EarlyAccessForm";
+
+const description =
+  "TruLot is building parcel intelligence to help people understand what a property can become before they build, buy, sell, or invest.";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "TruLot | Parcel Intelligence for Property Decisions",
+  },
+  description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "TruLot",
+    title: "Know what a property can become.",
+    description,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Know what a property can become.",
+    description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://trulot.com/#organization",
+      name: "TruLot",
+      url: "https://trulot.com",
+      description,
+      areaServed: {
+        "@type": "City",
+        name: "San Diego",
+      },
+      knowsAbout: [
+        "Parcel intelligence",
+        "Property intelligence",
+        "Real estate development decisions",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://trulot.com/#website",
+      url: "https://trulot.com",
+      name: "TruLot",
+      publisher: {
+        "@id": "https://trulot.com/#organization",
+      },
+    },
+  ],
+};
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
-      <main className="flex-1 flex flex-col items-center justify-center px-4 py-16 text-center">
-        <span className="inline-block text-xs font-semibold tracking-widest uppercase text-emerald-700 mb-4">
-          San Diego · Beta
+    <main className="prelaunch-shell">
+      <div className="parcel-lines" aria-hidden="true" />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
+      <header className="prelaunch-header">
+        <span className="wordmark" aria-label="TruLot">
+          TRULOT
         </span>
-        <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 leading-tight max-w-2xl mb-3">
-          TruLot
-        </h1>
-        <p className="text-lg text-slate-500 max-w-lg mb-10">
-          Parcel intelligence for San Diego developers.<br />
-          Not AI slop — just the truth about every lot.
-        </p>
+      </header>
 
-        {/* Search */}
-        <SearchBox />
+      <section className="prelaunch-content" aria-labelledby="prelaunch-title">
+        <p className="eyebrow">Parcel intelligence</p>
+        <h1 id="prelaunch-title">Know what a property can become.</h1>
 
-        {/* Example nudge */}
-        <p className="mt-6 text-xs text-slate-400">
-          Try{' '}
-          <Link href={canonicalParcelPath("5442140600", "639 67th St")} className="text-emerald-600 hover:underline">
-            639 67th St
-          </Link>
-          {' '}or{' '}
-          <Link href={canonicalParcelPath("5432020900", "830 60th St")} className="text-emerald-600 hover:underline">
-            830 60th St
-          </Link>
-        </p>
-      </main>
+        <div className="prelaunch-copy">
+          <p>
+            TruLot is building a new kind of parcel intelligence — connecting the
+            records, rules, history, and evidence behind a property to help answer
+            the questions that matter before you build, buy, sell, or invest.
+          </p>
+          <p>Every parcel has a story. We&apos;re making it useful.</p>
+        </div>
 
-      <footer className="border-t border-slate-200 py-6 text-center text-xs text-slate-400">
-        © {new Date().getFullYear()} TruLot · Parcel data for San Diego County
+        <EarlyAccessForm />
+      </section>
+
+      <footer className="prelaunch-footer">
+        <span>San Diego</span>
+        <span aria-hidden="true">·</span>
+        <span>Coming first</span>
       </footer>
-    </div>
+    </main>
   );
 }

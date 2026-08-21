@@ -8,3 +8,320 @@
 body {
   font-family: var(--font-geist-sans, Arial, sans-serif);
 }
+
+.prelaunch-shell {
+  --ink: #13251f;
+  --muted: #52645d;
+  --rule: rgba(19, 37, 31, 0.16);
+  --accent: #1d6b50;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  min-height: 100svh;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+  padding: 34px clamp(24px, 5vw, 76px) 28px;
+  background:
+    radial-gradient(circle at 88% 32%, rgba(54, 113, 89, 0.08), transparent 33%),
+    #f3f0e8;
+  color: var(--ink);
+}
+
+.parcel-lines {
+  position: absolute;
+  z-index: -1;
+  top: -12%;
+  right: -8%;
+  width: min(760px, 58vw);
+  height: 92%;
+  transform: rotate(-7deg);
+  opacity: 0.34;
+  background-image:
+    linear-gradient(rgba(29, 107, 80, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 107, 80, 0.12) 1px, transparent 1px),
+    linear-gradient(64deg, transparent 48%, rgba(29, 107, 80, 0.09) 49%, rgba(29, 107, 80, 0.09) 50%, transparent 51%);
+  background-size: 104px 72px, 104px 72px, 208px 144px;
+  mask-image: radial-gradient(ellipse at center, black 10%, transparent 72%);
+}
+
+.prelaunch-header,
+.prelaunch-footer {
+  display: flex;
+  align-items: center;
+}
+
+.wordmark {
+  font-size: 0.8rem;
+  font-weight: 720;
+  letter-spacing: 0.26em;
+}
+
+.prelaunch-content {
+  width: min(100%, 760px);
+  align-self: center;
+  padding: clamp(72px, 11vh, 132px) 0 clamp(64px, 9vh, 108px);
+}
+
+.eyebrow {
+  margin: 0 0 22px;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.prelaunch-content h1 {
+  max-width: 720px;
+  margin: 0;
+  font-size: clamp(3.1rem, 7.2vw, 6.65rem);
+  font-weight: 470;
+  letter-spacing: -0.062em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+.prelaunch-copy {
+  display: grid;
+  gap: 14px;
+  max-width: 650px;
+  margin-top: clamp(38px, 6vw, 62px);
+  color: var(--muted);
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+  line-height: 1.72;
+}
+
+.prelaunch-copy p {
+  margin: 0;
+}
+
+.prelaunch-copy p:last-child {
+  color: var(--ink);
+  font-weight: 540;
+}
+
+.early-access-form {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 22px 18px;
+  max-width: 650px;
+  margin-top: clamp(38px, 6vw, 56px);
+  padding-top: 30px;
+  border-top: 1px solid var(--rule);
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.form-field label {
+  display: flex;
+  justify-content: space-between;
+  color: var(--ink);
+  font-size: 0.73rem;
+  font-weight: 620;
+  letter-spacing: 0.055em;
+}
+
+.form-field label span {
+  color: #78867f;
+  font-size: 0.67rem;
+  font-weight: 480;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid rgba(19, 37, 31, 0.2);
+  border-radius: 2px;
+  outline: 0;
+  background: rgba(255, 255, 255, 0.44);
+  color: var(--ink);
+  font-size: 0.93rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.form-field input {
+  padding: 0 15px;
+}
+
+.form-field textarea {
+  resize: vertical;
+  padding: 14px 15px;
+  line-height: 1.45;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #89948f;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 0 0 3px rgba(29, 107, 80, 0.1);
+}
+
+.early-access-form button {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  width: fit-content;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  padding: 0 21px;
+  background: var(--ink);
+  color: #f8f6f0;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  transition: transform 160ms ease, background 160ms ease;
+}
+
+.early-access-form button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  background: var(--accent);
+}
+
+.early-access-form button:focus-visible {
+  outline: 3px solid rgba(29, 107, 80, 0.24);
+  outline-offset: 3px;
+}
+
+.early-access-form button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.form-message {
+  grid-column: 1 / -1;
+  min-height: 1.2em;
+  margin: -10px 0 0;
+  color: #8a352f;
+  font-size: 0.78rem;
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-success {
+  display: flex;
+  max-width: 650px;
+  align-items: center;
+  gap: 16px;
+  margin-top: clamp(38px, 6vw, 56px);
+  padding-top: 30px;
+  border-top: 1px solid var(--rule);
+}
+
+.form-success-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(29, 107, 80, 0.35);
+  border-radius: 50%;
+  color: var(--accent);
+}
+
+.form-success p,
+.form-success span {
+  margin: 0;
+}
+
+.form-success p {
+  font-size: 0.94rem;
+  font-weight: 620;
+}
+
+.form-success div > span {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.prelaunch-footer {
+  gap: 9px;
+  color: var(--muted);
+  font-size: 0.71rem;
+  font-weight: 560;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 680px) {
+  .prelaunch-shell {
+    padding: 25px 22px 22px;
+  }
+
+  .parcel-lines {
+    top: 4%;
+    right: -44%;
+    width: 120vw;
+    height: 64%;
+    opacity: 0.22;
+  }
+
+  .prelaunch-content {
+    padding: 68px 0 58px;
+  }
+
+  .prelaunch-content h1 {
+    font-size: clamp(3rem, 15vw, 4.7rem);
+    line-height: 0.97;
+  }
+
+  .prelaunch-copy {
+    margin-top: 34px;
+    line-height: 1.62;
+  }
+
+  .early-access-form {
+    grid-template-columns: 1fr;
+    margin-top: 34px;
+  }
+
+  .form-field label {
+    justify-content: flex-start;
+    gap: 8px;
+  }
+
+  .form-field label span {
+    flex: 0 0 auto;
+  }
+
+  .early-access-form button,
+  .form-message {
+    grid-column: auto;
+  }
+
+  .early-access-form button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .form-field input,
+  .form-field textarea,
+  .early-access-form button {
+    transition: none;
+  }
+}

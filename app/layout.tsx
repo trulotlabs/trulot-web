@@ -13,8 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://trulot.com"),
   title: "TruLot",
   description: "Parcel intelligence that tells you what is actually happening",
+  applicationName: "TruLot",
 };
 
 export default function RootLayout({
