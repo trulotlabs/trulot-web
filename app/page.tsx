@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import trulotMark from "@/public/trulot-mark.png";
 import EarlyAccessForm from "./components/EarlyAccessForm";
 
 const description =
@@ -73,6 +75,13 @@ export default function Home() {
 
       <header className="prelaunch-header">
         <span className="wordmark" aria-label="TruLot">
+          <Image
+            className="wordmark-mark"
+            src={trulotMark}
+            alt=""
+            aria-hidden="true"
+            priority
+          />
           TRULOT
         </span>
       </header>
@@ -83,7 +92,7 @@ export default function Home() {
 
         <div className="prelaunch-copy">
           <p>
-            TruLot is building a new kind of parcel intelligence — connecting the
+            TruLot is building a new kind of parcel intelligence, connecting the
             records, rules, history, and evidence behind a property to help answer
             the questions that matter before you build, buy, sell, or invest.
           </p>

@@ -48,7 +48,7 @@ export default function EarlyAccessForm() {
         />
       </div>
 
-      <div className="form-field">
+      <div className="form-field form-field-optional">
         <label htmlFor="property-question">
           What are you trying to learn about a property?
           <span>Optional</span>

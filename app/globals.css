@@ -51,9 +51,18 @@ body {
 }
 
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-size: 0.8rem;
   font-weight: 720;
   letter-spacing: 0.26em;
+}
+
+.wordmark-mark {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
 }
 
 .prelaunch-content {
@@ -103,7 +112,7 @@ body {
 .early-access-form {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
   gap: 22px 18px;
   max-width: 650px;
   margin-top: clamp(38px, 6vw, 56px);
@@ -157,9 +166,30 @@ body {
   line-height: 1.45;
 }
 
+.form-field-optional {
+  gap: 7px;
+}
+
+.form-field-optional label {
+  color: #68776f;
+  font-size: 0.68rem;
+  font-weight: 520;
+}
+
+.form-field-optional textarea {
+  min-height: 48px;
+  border-color: rgba(19, 37, 31, 0.13);
+  background: rgba(255, 255, 255, 0.28);
+  font-size: 0.86rem;
+}
+
 .form-field input::placeholder,
 .form-field textarea::placeholder {
   color: #89948f;
+}
+
+.form-field-optional textarea::placeholder {
+  color: #98a19c;
 }
 
 .form-field input:focus,
