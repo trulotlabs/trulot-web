@@ -246,6 +246,25 @@ body {
   text-transform: uppercase;
 }
 
+@media (min-width: 1200px) {
+  .prelaunch-shell {
+    --page-gutter: clamp(60px, 5vw, 76px);
+    --rail-inset: clamp(48px, 4vw, 64px);
+    grid-template-columns:
+      minmax(var(--page-gutter), 1fr)
+      minmax(0, 1440px)
+      minmax(var(--page-gutter), 1fr);
+    padding-inline: 0;
+  }
+
+  .prelaunch-header,
+  .prelaunch-content,
+  .prelaunch-footer {
+    grid-column: 2;
+    margin-inline-start: var(--rail-inset);
+  }
+}
+
 @media (max-width: 680px) {
   .prelaunch-shell {
     padding: 25px 22px 22px;
