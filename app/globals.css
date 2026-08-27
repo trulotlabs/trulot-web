@@ -219,7 +219,7 @@ body {
   transition: transform 160ms ease, background 160ms ease;
 }
 
-.early-access-form button:hover:not(:disabled) {
+.early-access-form button:hover {
   transform: translateY(-1px);
   background: var(--accent);
 }
@@ -229,63 +229,12 @@ body {
   outline-offset: 3px;
 }
 
-.early-access-form button:disabled {
-  cursor: wait;
-  opacity: 0.68;
-}
-
 .form-message {
   grid-column: 1 / -1;
   min-height: 1.2em;
   margin: -10px 0 0;
-  color: #8a352f;
-  font-size: 0.78rem;
-}
-
-.form-honeypot {
-  position: absolute;
-  left: -10000px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.form-success {
-  display: flex;
-  max-width: 650px;
-  align-items: center;
-  gap: 16px;
-  margin-top: clamp(38px, 6vw, 56px);
-  padding-top: 30px;
-  border-top: 1px solid var(--rule);
-}
-
-.form-success-mark {
-  display: grid;
-  width: 38px;
-  height: 38px;
-  flex: 0 0 auto;
-  place-items: center;
-  border: 1px solid rgba(29, 107, 80, 0.35);
-  border-radius: 50%;
-  color: var(--accent);
-}
-
-.form-success p,
-.form-success span {
-  margin: 0;
-}
-
-.form-success p {
-  font-size: 0.94rem;
-  font-weight: 620;
-}
-
-.form-success div > span {
-  display: block;
-  margin-top: 3px;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
 }
 
 .prelaunch-footer {
