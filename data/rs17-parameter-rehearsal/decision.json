@@ -1,0 +1,8 @@
+{
+  "decision": "RS_1_7_PARAMETER_INTEGRATION_REHEARSAL_PASS",
+  "readiness": "READY_FOR_PARAMETER_DISPLAY_SHADOW_DESIGN",
+  "baseline": "793cbe612191ebaf8cd5bdbca1b876ee2bdd9d2b",
+  "scope": "Offline three RS-1-7 base-zone parameters only",
+  "project_applicability_determined": false,
+  "production_display_authorized": false
+}

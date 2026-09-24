@@ -1,0 +1,343 @@
+{
+  "kind": "SYNTHETIC_OFFLINE_CONTRACT_FIXTURES_NOT_PARCEL_FINDINGS",
+  "cases": [
+    {
+      "id": "approved",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "supported",
+          "reason": "conditional_parameter_catalogue",
+          "rule_ids": [
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:10"
+          ]
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "inside",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unknown",
+          "reason": "operative_context_unresolved",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "unknown-coastal",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unknown",
+          "reason": "operative_context_unresolved",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "historical",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unknown",
+          "reason": "operative_context_unresolved",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "future",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unknown",
+          "reason": "operative_context_unresolved",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "corner",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "supported",
+          "reason": "conditional_parameter_catalogue",
+          "rule_ids": [
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:10"
+          ]
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "non-corner",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "supported",
+          "reason": "conditional_parameter_catalogue",
+          "rule_ids": [
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:10"
+          ]
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "unknown-corner",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "supported",
+          "reason": "conditional_parameter_catalogue",
+          "rule_ids": [
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:10"
+          ]
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "missing-corner",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "supported",
+          "reason": "conditional_parameter_catalogue",
+          "rule_ids": [
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:10"
+          ]
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "different-zone",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RM-1-1",
+          "state": "unknown",
+          "reason": "zone_outside_rehearsal",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "unknown-zone",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "UNZONED",
+          "state": "unknown",
+          "reason": "zone_outside_rehearsal",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "split",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "supported",
+          "reason": "conditional_parameter_catalogue",
+          "rule_ids": [
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+            "sd-residential-2026-09-24-research-v1:RS-1-7:34:10"
+          ]
+        },
+        {
+          "zone": "RM-1-1",
+          "state": "unknown",
+          "reason": "zone_outside_rehearsal",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "source-hash-drift",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unavailable",
+          "reason": "source_or_authority_invalidated",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "source-bytes-drift",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unavailable",
+          "reason": "source_or_authority_invalidated",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "missing-artifact",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unavailable",
+          "reason": "source_or_authority_invalidated",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "height",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unknown",
+          "reason": "excluded_parameter",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "far",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unknown",
+          "reason": "excluded_parameter",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "density",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unknown",
+          "reason": "excluded_parameter",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "missing-application",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unknown",
+          "reason": "operative_context_unresolved",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "unknown-airport",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unknown",
+          "reason": "operative_context_unresolved",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "effective-drift",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unavailable",
+          "reason": "source_or_authority_invalidated",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    },
+    {
+      "id": "certification-drift",
+      "parcel_state": "supported",
+      "zoning_state": "supported",
+      "zones": [
+        {
+          "zone": "RS-1-7",
+          "state": "unavailable",
+          "reason": "source_or_authority_invalidated",
+          "rule_ids": []
+        }
+      ],
+      "project_applicability_determined": false
+    }
+  ]
+}

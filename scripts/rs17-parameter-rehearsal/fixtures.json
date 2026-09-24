@@ -1,0 +1,28 @@
+{
+  "kind": "SYNTHETIC_OFFLINE_CONTRACT_FIXTURES_NOT_PARCEL_FINDINGS",
+  "context": {"evaluation_date":"2026-09-24","coastal_context":"outside","application_context":"new_application","airport_context":"outside_miramar_transition","lot_context":"non_corner"},
+  "cases": [
+    {"id":"approved","zones":["RS-1-7"],"count":3,"state":"supported"},
+    {"id":"inside","context":{"coastal_context":"inside"},"count":0,"state":"unknown"},
+    {"id":"unknown-coastal","context":{"coastal_context":"unknown"},"count":0,"state":"unknown"},
+    {"id":"historical","context":{"evaluation_date":"2025-01-01"},"count":0,"state":"unknown"},
+    {"id":"future","context":{"evaluation_date":"2026-09-25"},"count":0,"state":"unknown"},
+    {"id":"corner","context":{"lot_context":"corner"},"count":3,"state":"supported"},
+    {"id":"non-corner","context":{"lot_context":"non_corner"},"count":3,"state":"supported"},
+    {"id":"unknown-corner","context":{"lot_context":"unknown"},"count":3,"state":"supported"},
+    {"id":"missing-corner","omit":"lot_context","count":3,"state":"supported"},
+    {"id":"different-zone","zones":["RM-1-1"],"count":0,"state":"unknown"},
+    {"id":"unknown-zone","zones":["UNZONED"],"count":0,"state":"unknown"},
+    {"id":"split","zones":["RS-1-7","RM-1-1"],"count":3,"state":"supported"},
+    {"id":"source-hash-drift","drift":"hash","count":0,"state":"unavailable"},
+    {"id":"source-bytes-drift","drift":"bytes","count":0,"state":"unavailable"},
+    {"id":"missing-artifact","drift":"missing","count":0,"state":"unavailable"},
+    {"id":"height","request":["structure_height_max"],"count":0,"state":"unknown"},
+    {"id":"far","request":["floor_area_ratio_max"],"count":0,"state":"unknown"},
+    {"id":"density","request":["density_basis"],"count":0,"state":"unknown"},
+    {"id":"missing-application","omit":"application_context","count":0,"state":"unknown"},
+    {"id":"unknown-airport","context":{"airport_context":"unknown"},"count":0,"state":"unknown"},
+    {"id":"effective-drift","drift":"effective","count":0,"state":"unavailable"},
+    {"id":"certification-drift","drift":"coastal","count":0,"state":"unavailable"}
+  ]
+}

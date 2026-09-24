@@ -1,0 +1,32 @@
+{
+  "reviewer": "rs17_boundary_review independent sub-agent",
+  "decision": "PASS",
+  "scope": "Offline three-parameter rehearsal only; no parcel compliance or production approval",
+  "independent_gate_cases_passed": 22,
+  "resolved_findings": [
+    {
+      "finding": "Full dependency prose exposed excluded frontage and unrelated RX numeric standards",
+      "resolution": "Output now carries dependency reference, canonical SHA256, sections and evaluated=false; broad source prose removed",
+      "verified": true
+    }
+  ],
+  "boundary_checks": {
+    "only_three_approved_records": true,
+    "values_units_provenance_preserved": true,
+    "no_coastal_assumption": true,
+    "unknown_lot_conditions_not_parcel_facts": true,
+    "no_compliance_or_legal_lot_calculation": true,
+    "no_capacity_logic": true,
+    "split_zone_composition_separate": true,
+    "no_runtime_ui_integration": true,
+    "project_applicability_false": true
+  },
+  "reviewed_sha256": {
+    "scripts/rs17-parameter-rehearsal/adapter.ts": "d58bee344766630eb9b2e1ebda508ea1a8bacc5f21de2ac24f0e4cea168cb428",
+    "scripts/rs17-parameter-rehearsal/gate.py": "32cde23ba6f28e713272ea59b49aff6e2ee57c2243aada34e5d56270e390019e"
+  },
+  "limitations": [
+    "Split-zone behavior reviewed statically in TS composition; parent owns integrated golden-fixture execution.",
+    "No live legal-authority update or production query performed."
+  ]
+}
