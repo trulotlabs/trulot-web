@@ -1,0 +1,2757 @@
+{
+  "34:4": {
+    "table": "131-04D",
+    "row_label": "Max permitted density (DU per lot)",
+    "standard_type": "density_basis",
+    "unit": "dwelling_unit_per_lot",
+    "operator": "BASIS",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "34:5": {
+    "table": "131-04D",
+    "row_label": "Min lot area (sf)",
+    "standard_type": "lot_area_min",
+    "unit": "sq_ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0441"
+    ],
+    "conditions": []
+  },
+  "34:7": {
+    "table": "131-04D",
+    "row_label": "Lot width (ft)",
+    "standard_type": "lot_width_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "34:8": {
+    "table": "131-04D",
+    "row_label": "Street frontage (ft)\n[See Section 131.0442(a)]",
+    "standard_type": "street_frontage_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0442",
+      "131.0442(a)"
+    ],
+    "conditions": []
+  },
+  "34:9": {
+    "table": "131-04D",
+    "row_label": "Lot width (corner) (ft)",
+    "standard_type": "corner_lot_width_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": [
+      "corner lot"
+    ]
+  },
+  "34:10": {
+    "table": "131-04D",
+    "row_label": "Lot depth (ft)",
+    "standard_type": "lot_depth_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "34:12": {
+    "table": "131-04D",
+    "row_label": "Min Front setback (ft)",
+    "standard_type": "front_setback",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "34:13": {
+    "table": "131-04D",
+    "row_label": "Min Side setback (ft)",
+    "standard_type": "interior_side_setback",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "34:14": {
+    "table": "131-04D",
+    "row_label": "Min Street side setback (ft)",
+    "standard_type": "street_side_setback_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "34:15": {
+    "table": "131-04D",
+    "row_label": "Min Rear setback (ft)",
+    "standard_type": "rear_setback_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "34:16": {
+    "table": "131-04D",
+    "row_label": "Setback requirements for resubdivided\ncorner lots [See Section 113.0246(f)]",
+    "standard_type": "setback_requirements_for_resubdivided_corner_lots",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "113.0246(f)",
+      "131.0443"
+    ],
+    "conditions": [
+      "corner lot"
+    ]
+  },
+  "34:17": {
+    "table": "131-04D",
+    "row_label": "Max structure height (ft)",
+    "standard_type": "structure_height_max",
+    "unit": "ft",
+    "operator": "MAX",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0444"
+    ],
+    "conditions": []
+  },
+  "35:4": {
+    "table": "131-04D",
+    "row_label": "Lot coverage for sloping lots\n[See Section 131.0445(a)]",
+    "standard_type": "lot_coverage_for_sloping_lots",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0445",
+      "131.0445(a)"
+    ],
+    "conditions": []
+  },
+  "35:5": {
+    "table": "131-04D",
+    "row_label": "Max floor area ratio",
+    "standard_type": "floor_area_ratio_max",
+    "unit": "ratio",
+    "operator": "MAX",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0446"
+    ],
+    "conditions": []
+  },
+  "35:6": {
+    "table": "131-04D",
+    "row_label": "Max paving/ hardscape\n[See Section 131.0447]",
+    "standard_type": "max_paving_hardscape",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0447"
+    ],
+    "conditions": []
+  },
+  "35:7": {
+    "table": "131-04D",
+    "row_label": "Accessory uses and structures\n[See Sections 131.0448 and 141.0307]",
+    "standard_type": "accessory_uses_and_structures",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0448",
+      "141.0307"
+    ],
+    "conditions": []
+  },
+  "35:8": {
+    "table": "131-04D",
+    "row_label": "Garage regulations\n[See Section 131.0449(a)]",
+    "standard_type": "garage_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0449(a)"
+    ],
+    "conditions": []
+  },
+  "35:9": {
+    "table": "131-04D",
+    "row_label": "Building spacing\n[See Section 131.0450]",
+    "standard_type": "building_spacing",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0450"
+    ],
+    "conditions": []
+  },
+  "35:10": {
+    "table": "131-04D",
+    "row_label": "Max third story dimensions\n[See Section 131.0460]",
+    "standard_type": "max_third_story_dimensions",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0460"
+    ],
+    "conditions": []
+  },
+  "35:11": {
+    "table": "131-04D",
+    "row_label": "Architectural projections and\nencroachments\n[See Section 131.0461(a)]",
+    "standard_type": "architectural_projections_and_encroachments",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0461(a)"
+    ],
+    "conditions": []
+  },
+  "35:12": {
+    "table": "131-04D",
+    "row_label": "Supplemental requirements\n[See Section 131.0464(a)]",
+    "standard_type": "supplemental_requirements",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "131.0464(a)"
+    ],
+    "conditions": []
+  },
+  "35:13": {
+    "table": "131-04D",
+    "row_label": "Refuse and Recyclable Material\nStorage [See Section 142.0805]",
+    "standard_type": "refuse_and_recyclable_material_storage",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "142.0805"
+    ],
+    "conditions": []
+  },
+  "35:14": {
+    "table": "131-04D",
+    "row_label": "Visibility Area [See Section 113.0273]",
+    "standard_type": "visibility_area",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "113.0273"
+    ],
+    "conditions": []
+  },
+  "35:15": {
+    "table": "131-04D",
+    "row_label": "Dwelling Unit Protection Regulations\n[See Chapter 14, Article 3, Division 12]",
+    "standard_type": "dwelling_unit_protection_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7"
+    ],
+    "row_references": [
+      "Chapter 14, Article 3, Division 12"
+    ],
+    "conditions": []
+  },
+  "36:4": {
+    "table": "131-04D",
+    "row_label": "Max permitted density (DU per lot)",
+    "standard_type": "density_basis",
+    "unit": "dwelling_unit_per_lot",
+    "operator": "BASIS",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "36:5": {
+    "table": "131-04D",
+    "row_label": "Min lot area (sf)",
+    "standard_type": "lot_area_min",
+    "unit": "sq_ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0441"
+    ],
+    "conditions": []
+  },
+  "36:7": {
+    "table": "131-04D",
+    "row_label": "Lot width (ft)",
+    "standard_type": "lot_width_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "36:8": {
+    "table": "131-04D",
+    "row_label": "street frontage (ft) [See Section\n131.0442(a)]",
+    "standard_type": "street_frontage_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0442",
+      "131.0442(a)"
+    ],
+    "conditions": []
+  },
+  "36:9": {
+    "table": "131-04D",
+    "row_label": "Lot width (corner) (ft)",
+    "standard_type": "corner_lot_width_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": [
+      "corner lot"
+    ]
+  },
+  "36:10": {
+    "table": "131-04D",
+    "row_label": "Lot depth (ft)",
+    "standard_type": "lot_depth_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "36:12": {
+    "table": "131-04D",
+    "row_label": "Min Front setback (ft)",
+    "standard_type": "front_setback",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "36:13": {
+    "table": "131-04D",
+    "row_label": "Min Side setback (ft)",
+    "standard_type": "interior_side_setback",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "36:14": {
+    "table": "131-04D",
+    "row_label": "Min Street side setback (ft)",
+    "standard_type": "street_side_setback_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "36:15": {
+    "table": "131-04D",
+    "row_label": "Min Rear setback (ft)",
+    "standard_type": "rear_setback_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "36:16": {
+    "table": "131-04D",
+    "row_label": "Setback requirements for resubdivided\ncorner lots [See Section 113.0246(f)]",
+    "standard_type": "setback_requirements_for_resubdivided_corner_lots",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "113.0246(f)",
+      "131.0443"
+    ],
+    "conditions": [
+      "corner lot"
+    ]
+  },
+  "36:17": {
+    "table": "131-04D",
+    "row_label": "Max structure height (ft)",
+    "standard_type": "structure_height_max",
+    "unit": "ft",
+    "operator": "MAX",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0444"
+    ],
+    "conditions": []
+  },
+  "36:18": {
+    "table": "131-04D",
+    "row_label": "Lot coverage for sloping lots\n[See Section 131.0445(a)]",
+    "standard_type": "lot_coverage_for_sloping_lots",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0445",
+      "131.0445(a)"
+    ],
+    "conditions": []
+  },
+  "36:19": {
+    "table": "131-04D",
+    "row_label": "Max floor area ratio\n[See Section 131.0446(b)]",
+    "standard_type": "floor_area_ratio_max",
+    "unit": "ratio",
+    "operator": "MAX",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0446",
+      "131.0446(b)"
+    ],
+    "conditions": []
+  },
+  "36:20": {
+    "table": "131-04D",
+    "row_label": "Max paving/ hardscape\n[See Section 131.0447]",
+    "standard_type": "max_paving_hardscape",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0447"
+    ],
+    "conditions": []
+  },
+  "36:21": {
+    "table": "131-04D",
+    "row_label": "Accessory uses and structures\n[See Sections 131.0448 and 141.0307 ]",
+    "standard_type": "accessory_uses_and_structures",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0448",
+      "141.0307"
+    ],
+    "conditions": []
+  },
+  "36:22": {
+    "table": "131-04D",
+    "row_label": "Garage regulations [See Section\n131.0449(a)]",
+    "standard_type": "garage_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0449(a)"
+    ],
+    "conditions": []
+  },
+  "36:23": {
+    "table": "131-04D",
+    "row_label": "Building spacing [See Section 131.0450]",
+    "standard_type": "building_spacing",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0450"
+    ],
+    "conditions": []
+  },
+  "36:24": {
+    "table": "131-04D",
+    "row_label": "Max third story dimensions",
+    "standard_type": "max_third_story_dimensions",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "36:25": {
+    "table": "131-04D",
+    "row_label": "Architectural projections and\nencroachments [See Section 131.0461(a)]",
+    "standard_type": "architectural_projections_and_encroachments",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0461(a)"
+    ],
+    "conditions": []
+  },
+  "36:26": {
+    "table": "131-04D",
+    "row_label": "Supplemental requirements\n[See Section 131.0464(a)]",
+    "standard_type": "supplemental_requirements",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "131.0464(a)"
+    ],
+    "conditions": []
+  },
+  "36:27": {
+    "table": "131-04D",
+    "row_label": "Bedroom regulation(8)",
+    "standard_type": "bedroom_regulation_8",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "36:28": {
+    "table": "131-04D",
+    "row_label": "Refuse and Recyclable Material Storage\n[See Section 142.0805]",
+    "standard_type": "refuse_and_recyclable_material_storage",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "142.0805"
+    ],
+    "conditions": []
+  },
+  "36:29": {
+    "table": "131-04D",
+    "row_label": "Visibility Area [See Section 113.0273]",
+    "standard_type": "visibility_area",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "113.0273"
+    ],
+    "conditions": []
+  },
+  "36:30": {
+    "table": "131-04D",
+    "row_label": "Dwelling Unit Protection Regulations [See\nChapter 14, Article 3, Division 12]",
+    "standard_type": "dwelling_unit_protection_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ],
+    "row_references": [
+      "Chapter 14, Article 3, Division 12"
+    ],
+    "conditions": []
+  },
+  "37:4": {
+    "table": "131-04E",
+    "row_label": "Maximum Permitted Density (DU per lot)",
+    "standard_type": "density_basis",
+    "unit": "dwelling_unit_per_lot",
+    "operator": "BASIS",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "37:5": {
+    "table": "131-04E",
+    "row_label": "Min Lot Area (sf) [See Section 131.0441]",
+    "standard_type": "lot_area_min",
+    "unit": "sq_ft",
+    "operator": "MIN",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0441"
+    ],
+    "conditions": []
+  },
+  "37:7": {
+    "table": "131-04E",
+    "row_label": "Lot width (ft)",
+    "standard_type": "lot_width_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "37:8": {
+    "table": "131-04E",
+    "row_label": "street frontage (ft) [See Section 131.0442(b)]",
+    "standard_type": "street_frontage_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0442",
+      "131.0442(b)"
+    ],
+    "conditions": []
+  },
+  "37:9": {
+    "table": "131-04E",
+    "row_label": "Lot width (corner) (ft)",
+    "standard_type": "corner_lot_width_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": [
+      "corner lot"
+    ]
+  },
+  "37:10": {
+    "table": "131-04E",
+    "row_label": "Lot depth (ft)",
+    "standard_type": "lot_depth_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "37:12": {
+    "table": "131-04E",
+    "row_label": "Min Front setback (ft) [See Section 131.0443(b)(1)]",
+    "standard_type": "front_setback",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0443",
+      "131.0443(b)(1)"
+    ],
+    "conditions": []
+  },
+  "37:13": {
+    "table": "131-04E",
+    "row_label": "Min Side setback (ft) [See Section 131.0443(b)(2)]\nDetached\nAttached",
+    "standard_type": "interior_side_setback",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0443",
+      "131.0443(b)(2)"
+    ],
+    "conditions": []
+  },
+  "37:14": {
+    "table": "131-04E",
+    "row_label": "Min Street Side Setback (ft) [See Section 131.0443(b)(2)]",
+    "standard_type": "street_side_setback_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0443",
+      "131.0443(b)(2)"
+    ],
+    "conditions": []
+  },
+  "37:15": {
+    "table": "131-04E",
+    "row_label": "Min Rear setback (ft) [See Section 131.0443(b)(3)]",
+    "standard_type": "rear_setback_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0443",
+      "131.0443(b)(3)"
+    ],
+    "conditions": []
+  },
+  "38:4": {
+    "table": "131-04E",
+    "row_label": "Max structure height (ft) [See Section 131.0444(c)]",
+    "standard_type": "structure_height_max",
+    "unit": "ft",
+    "operator": "MAX",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0444",
+      "131.0444(c)"
+    ],
+    "conditions": []
+  },
+  "38:5": {
+    "table": "131-04E",
+    "row_label": "Max floor area ratio [See Section 131.0446(c)]",
+    "standard_type": "floor_area_ratio_max",
+    "unit": "ratio",
+    "operator": "MAX",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0446",
+      "131.0446(c)"
+    ],
+    "conditions": []
+  },
+  "38:6": {
+    "table": "131-04E",
+    "row_label": "Accessory uses and structures\n[See Sections 131.0448 and 141.0307]",
+    "standard_type": "accessory_uses_and_structures",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0448",
+      "141.0307"
+    ],
+    "conditions": []
+  },
+  "38:7": {
+    "table": "131-04E",
+    "row_label": "Garage regulations [See Section 131.0449(a)]",
+    "standard_type": "garage_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0449(a)"
+    ],
+    "conditions": []
+  },
+  "38:8": {
+    "table": "131-04E",
+    "row_label": "Building spacing [See Section 131.0450]",
+    "standard_type": "building_spacing",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0450"
+    ],
+    "conditions": []
+  },
+  "38:9": {
+    "table": "131-04E",
+    "row_label": "Architectural projections and encroachments\n[See Section 131.0461(a)]",
+    "standard_type": "architectural_projections_and_encroachments",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0461(a)"
+    ],
+    "conditions": []
+  },
+  "38:10": {
+    "table": "131-04E",
+    "row_label": "Requirements for attached units [See Section 131.0462]",
+    "standard_type": "requirements_for_attached_units",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0462"
+    ],
+    "conditions": []
+  },
+  "38:11": {
+    "table": "131-04E",
+    "row_label": "Roof design variation [See Section 131.0463]",
+    "standard_type": "roof_design_variation",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0463"
+    ],
+    "conditions": []
+  },
+  "38:12": {
+    "table": "131-04E",
+    "row_label": "Supplemental regulations [See Section 131.0464(b)]",
+    "standard_type": "supplemental_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "131.0464(b)"
+    ],
+    "conditions": []
+  },
+  "38:13": {
+    "table": "131-04E",
+    "row_label": "Refuse and Recyclable Material Storage [See Section 142.0805]",
+    "standard_type": "refuse_and_recyclable_material_storage",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "142.0805"
+    ],
+    "conditions": []
+  },
+  "38:14": {
+    "table": "131-04E",
+    "row_label": "Visibility Area [See Section 113.0273]",
+    "standard_type": "visibility_area",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "113.0273"
+    ],
+    "conditions": []
+  },
+  "38:15": {
+    "table": "131-04E",
+    "row_label": "Dwelling Unit Protection Regulations [See Chapter 14, Article 3,\nDivision 12]",
+    "standard_type": "dwelling_unit_protection_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RX-1-1",
+      "RX-1-2"
+    ],
+    "row_references": [
+      "Chapter 14, Article 3, Division 12"
+    ],
+    "conditions": []
+  },
+  "39:4": {
+    "table": "131-04F",
+    "row_label": "Maximum Permitted Density (DU per lot)",
+    "standard_type": "density_basis",
+    "unit": "dwelling_unit_per_lot",
+    "operator": "BASIS",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "39:5": {
+    "table": "131-04F",
+    "row_label": "Min Lot Area (sf) [See Section 131.0441]",
+    "standard_type": "lot_area_min",
+    "unit": "sq_ft",
+    "operator": "MIN",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0441"
+    ],
+    "conditions": []
+  },
+  "39:7": {
+    "table": "131-04F",
+    "row_label": "Lot Width (ft)",
+    "standard_type": "lot_width_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "39:8": {
+    "table": "131-04F",
+    "row_label": "Street Frontage (ft)",
+    "standard_type": "street_frontage_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "39:9": {
+    "table": "131-04F",
+    "row_label": "Lot Width (corner) (ft)",
+    "standard_type": "corner_lot_width_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": [
+      "corner lot"
+    ]
+  },
+  "39:10": {
+    "table": "131-04F",
+    "row_label": "Lot Depth (ft)",
+    "standard_type": "lot_depth_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "39:12": {
+    "table": "131-04F",
+    "row_label": "Min Front Setback (ft)\n[See Section 131.0443(c)(1)]\nMax Front Setback (ft)\n[See Section 131.0443(c)(1)]",
+    "standard_type": "front_setback",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0443",
+      "131.0443(c)(1)"
+    ],
+    "conditions": [
+      "Merged minimum/maximum or minimum/standard row: preserve labeled sequence; do not select a scalar"
+    ]
+  },
+  "39:13": {
+    "table": "131-04F",
+    "row_label": "Side Setback (ft)\n[See Section 131.0443(c)(2)]",
+    "standard_type": "interior_side_setback",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0443",
+      "131.0443(c)(2)"
+    ],
+    "conditions": []
+  },
+  "40:4": {
+    "table": "131-04F",
+    "row_label": "Min Street Side Setback (ft)",
+    "standard_type": "street_side_setback_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "40:5": {
+    "table": "131-04F",
+    "row_label": "Min Rear Setback (ft)",
+    "standard_type": "rear_setback_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "40:7": {
+    "table": "131-04F",
+    "row_label": "1 and 2 story buildings (ft)\nslab floor\nraised floor",
+    "standard_type": "height_1_2_stories",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0444",
+      "131.0444(d)"
+    ],
+    "conditions": [
+      "1 and 2 story buildings (ft) slab floor raised floor"
+    ]
+  },
+  "40:8": {
+    "table": "131-04F",
+    "row_label": "3 story buildings (ft)\nslab floor\nraised floor",
+    "standard_type": "height_3_stories",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0444",
+      "131.0444(d)"
+    ],
+    "conditions": [
+      "3 story buildings (ft) slab floor raised floor"
+    ]
+  },
+  "40:9": {
+    "table": "131-04F",
+    "row_label": "Max Lot Coverage (%)\n[See Section 131.0445(b)]",
+    "standard_type": "lot_coverage_max",
+    "unit": "percent",
+    "operator": "MAX",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0445",
+      "131.0445(b)"
+    ],
+    "conditions": []
+  },
+  "40:11": {
+    "table": "131-04F",
+    "row_label": "1 and 2 story buildings",
+    "standard_type": "far_1_2_stories",
+    "unit": "ratio",
+    "operator": "MAX",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0446",
+      "131.0446(d)"
+    ],
+    "conditions": [
+      "1 and 2 story buildings"
+    ]
+  },
+  "40:12": {
+    "table": "131-04F",
+    "row_label": "3 story buildings",
+    "standard_type": "far_3_stories",
+    "unit": "ratio",
+    "operator": "MAX",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0446",
+      "131.0446(d)"
+    ],
+    "conditions": [
+      "3 story buildings"
+    ]
+  },
+  "40:13": {
+    "table": "131-04F",
+    "row_label": "Accessory uses and structures\n[See Sections 131.0448 and 141.0307]",
+    "standard_type": "accessory_uses_and_structures",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0448",
+      "141.0307"
+    ],
+    "conditions": []
+  },
+  "40:14": {
+    "table": "131-04F",
+    "row_label": "Garage Regulations [See Section 131.0449(b)]",
+    "standard_type": "garage_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0449(b)"
+    ],
+    "conditions": []
+  },
+  "40:15": {
+    "table": "131-04F",
+    "row_label": "Parkway Requirement [See Section 131.0452]",
+    "standard_type": "parkway_requirement",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0452"
+    ],
+    "conditions": []
+  },
+  "40:16": {
+    "table": "131-04F",
+    "row_label": "Architectural Projections and Encroachments\n[See Section 131.0461(b)]",
+    "standard_type": "architectural_projections_and_encroachments",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0461(b)"
+    ],
+    "conditions": []
+  },
+  "40:17": {
+    "table": "131-04F",
+    "row_label": "Supplemental Requirements\n[See Section 131.0464(c)]",
+    "standard_type": "supplemental_requirements",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "131.0464(c)"
+    ],
+    "conditions": []
+  },
+  "40:18": {
+    "table": "131-04F",
+    "row_label": "Refuse and Recyclable Material Storage\n[See Section 142.0805]",
+    "standard_type": "refuse_and_recyclable_material_storage",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "142.0805"
+    ],
+    "conditions": []
+  },
+  "40:19": {
+    "table": "131-04F",
+    "row_label": "Visibility Area [See Section 113.0273]",
+    "standard_type": "visibility_area",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "113.0273"
+    ],
+    "conditions": []
+  },
+  "40:20": {
+    "table": "131-04F",
+    "row_label": "Dwelling Unit Protection Regulations [See\nChapter 14, Article 3, Division 12]",
+    "standard_type": "dwelling_unit_protection_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RT-1-1",
+      "RT-1-2",
+      "RT-1-3",
+      "RT-1-4",
+      "RT-1-5"
+    ],
+    "row_references": [
+      "Chapter 14, Article 3, Division 12"
+    ],
+    "conditions": []
+  },
+  "41:4": {
+    "table": "131-04G",
+    "row_label": "Maximum permitted\ndensity(1),(2) (sf per DU)",
+    "standard_type": "density_basis",
+    "unit": "sq_ft_per_dwelling_unit",
+    "operator": "BASIS",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "41:5": {
+    "table": "131-04G",
+    "row_label": "Min lot area (sf)",
+    "standard_type": "lot_area_min",
+    "unit": "sq_ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0441"
+    ],
+    "conditions": []
+  },
+  "41:7": {
+    "table": "131-04G",
+    "row_label": "Lot width (ft)",
+    "standard_type": "lot_width_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "41:8": {
+    "table": "131-04G",
+    "row_label": "Street frontage (ft)\n[See Section 131.0442(a)]",
+    "standard_type": "street_frontage_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0442",
+      "131.0442(a)"
+    ],
+    "conditions": []
+  },
+  "41:9": {
+    "table": "131-04G",
+    "row_label": "Lot width (corner) (ft)",
+    "standard_type": "corner_lot_width_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": [
+      "corner lot"
+    ]
+  },
+  "41:10": {
+    "table": "131-04G",
+    "row_label": "Lot depth (ft)",
+    "standard_type": "lot_depth_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "41:12": {
+    "table": "131-04G",
+    "row_label": "Min Front setback (ft)\nStd Front Setback (ft)",
+    "standard_type": "front_setback",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": [
+      "Merged minimum/maximum or minimum/standard row: preserve labeled sequence; do not select a scalar"
+    ]
+  },
+  "41:13": {
+    "table": "131-04G",
+    "row_label": "Min Side setback (ft)\nStd Side Setback (ft)",
+    "standard_type": "interior_side_setback",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "41:14": {
+    "table": "131-04G",
+    "row_label": "Min Street side setback(ft)",
+    "standard_type": "street_side_setback_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "41:15": {
+    "table": "131-04G",
+    "row_label": "Min Rear setback (ft)",
+    "standard_type": "rear_setback_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "41:16": {
+    "table": "131-04G",
+    "row_label": "Setback requirements for\nresubdivided corner lots\n[See Section 113.0246(f)]",
+    "standard_type": "setback_requirements_for_resubdivided_corner_lots",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "113.0246(f)",
+      "131.0443"
+    ],
+    "conditions": [
+      "corner lot"
+    ]
+  },
+  "41:17": {
+    "table": "131-04G",
+    "row_label": "Max structure height (ft)",
+    "standard_type": "structure_height_max",
+    "unit": "ft",
+    "operator": "MAX",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0444"
+    ],
+    "conditions": []
+  },
+  "41:18": {
+    "table": "131-04G",
+    "row_label": "Max lot coverage",
+    "standard_type": "max_lot_coverage",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0445"
+    ],
+    "conditions": []
+  },
+  "41:20": {
+    "table": "131-04G",
+    "row_label": "1 to 2 dwelling units",
+    "standard_type": "far_1_2_dwellings",
+    "unit": "ratio",
+    "operator": "MAX",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0446"
+    ],
+    "conditions": [
+      "1 to 2 dwelling units"
+    ]
+  },
+  "41:21": {
+    "table": "131-04G",
+    "row_label": "3 to 7 dwelling units",
+    "standard_type": "far_3_7_dwellings",
+    "unit": "ratio",
+    "operator": "MAX",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0446"
+    ],
+    "conditions": [
+      "3 to 7 dwelling units"
+    ]
+  },
+  "42:4": {
+    "table": "131-04G",
+    "row_label": "8 or more dwelling units",
+    "standard_type": "far_8_plus_dwellings",
+    "unit": "ratio",
+    "operator": "MAX",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0446"
+    ],
+    "conditions": [
+      "8 or more dwelling units"
+    ]
+  },
+  "42:5": {
+    "table": "131-04G",
+    "row_label": "Floor Area Ratio Bonus for\nChild Care [See Section\n131.0446(e)]",
+    "standard_type": "floor_area_ratio_bonus_for_child_care",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0446",
+      "131.0446(e)"
+    ],
+    "conditions": []
+  },
+  "42:6": {
+    "table": "131-04G",
+    "row_label": "Accessory uses and\nstructures\n[See Section 131.0448]",
+    "standard_type": "accessory_uses_and_structures",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0448"
+    ],
+    "conditions": []
+  },
+  "42:7": {
+    "table": "131-04G",
+    "row_label": "Ground-floor Height\n[See Section 131.0451]",
+    "standard_type": "ground_floor_height",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0444",
+      "131.0451"
+    ],
+    "conditions": []
+  },
+  "42:8": {
+    "table": "131-04G",
+    "row_label": "Lot consolidation\nregulations\n[See Section 131.0453(a)]",
+    "standard_type": "lot_consolidation_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0453(a)"
+    ],
+    "conditions": []
+  },
+  "42:9": {
+    "table": "131-04G",
+    "row_label": "Private exterior open\nspace",
+    "standard_type": "private_exterior_open_space",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "42:10": {
+    "table": "131-04G",
+    "row_label": "Common open space\n[See Section 131.0456",
+    "standard_type": "common_open_space",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "131.0456"
+    ],
+    "conditions": []
+  },
+  "42:11": {
+    "table": "131-04G",
+    "row_label": "Architectural projections\nand encroachments",
+    "standard_type": "architectural_projections_and_encroachments",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "42:12": {
+    "table": "131-04G",
+    "row_label": "Supplemental\nrequirements",
+    "standard_type": "supplemental_requirements",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "42:13": {
+    "table": "131-04G",
+    "row_label": "Refuse and Recyclable\nMaterial Storage\n[See Section 142.0805]",
+    "standard_type": "refuse_and_recyclable_material_storage",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "142.0805"
+    ],
+    "conditions": []
+  },
+  "42:14": {
+    "table": "131-04G",
+    "row_label": "Visibility Area\n[See Section 113.0273]",
+    "standard_type": "visibility_area",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "113.0273"
+    ],
+    "conditions": []
+  },
+  "42:15": {
+    "table": "131-04G",
+    "row_label": "Dwelling Unit Protection\nRegulations [See Chapter\n14, Article 3, Division 12]",
+    "standard_type": "dwelling_unit_protection_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-1-1",
+      "RM-1-2",
+      "RM-1-3",
+      "RM-2-4",
+      "RM-2-5",
+      "RM-2-6"
+    ],
+    "row_references": [
+      "Chapter 14, Article 3, Division 12"
+    ],
+    "conditions": []
+  },
+  "43:4": {
+    "table": "131-04G",
+    "row_label": "Maximum permitted\ndensity(1),(2) (sf per DU)",
+    "standard_type": "density_basis",
+    "unit": "sq_ft_per_dwelling_unit",
+    "operator": "BASIS",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "43:5": {
+    "table": "131-04G",
+    "row_label": "Min lot area (sf)",
+    "standard_type": "lot_area_min",
+    "unit": "sq_ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0441"
+    ],
+    "conditions": []
+  },
+  "43:7": {
+    "table": "131-04G",
+    "row_label": "Lot width (ft)",
+    "standard_type": "lot_width_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "43:8": {
+    "table": "131-04G",
+    "row_label": "Street frontage (ft)\n[See Section 131.0442(a)]",
+    "standard_type": "street_frontage_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0442",
+      "131.0442(a)"
+    ],
+    "conditions": []
+  },
+  "43:9": {
+    "table": "131-04G",
+    "row_label": "Lot width (corner) (ft)",
+    "standard_type": "corner_lot_width_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": [
+      "corner lot"
+    ]
+  },
+  "43:10": {
+    "table": "131-04G",
+    "row_label": "Lot depth (ft)",
+    "standard_type": "lot_depth_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0442"
+    ],
+    "conditions": []
+  },
+  "43:12": {
+    "table": "131-04G",
+    "row_label": "Min Front setback (ft)\nStd Front Setback (ft)",
+    "standard_type": "front_setback",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": [
+      "Merged minimum/maximum or minimum/standard row: preserve labeled sequence; do not select a scalar"
+    ]
+  },
+  "43:13": {
+    "table": "131-04G",
+    "row_label": "Min Side setback (ft)\nStd Side Setback (ft)",
+    "standard_type": "interior_side_setback",
+    "unit": "ft",
+    "operator": "CONDITIONAL",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "43:14": {
+    "table": "131-04G",
+    "row_label": "Min Street side\nsetback(ft)",
+    "standard_type": "street_side_setback_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "43:15": {
+    "table": "131-04G",
+    "row_label": "Min Rear setback (ft)",
+    "standard_type": "rear_setback_min",
+    "unit": "ft",
+    "operator": "MIN",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0443"
+    ],
+    "conditions": []
+  },
+  "43:16": {
+    "table": "131-04G",
+    "row_label": "Setback requirements\nfor resubdivided corner\nlots\n[See Section 113.0246(f)]",
+    "standard_type": "setback_requirements_for_resubdivided_corner_lots",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "113.0246(f)",
+      "131.0443"
+    ],
+    "conditions": [
+      "corner lot"
+    ]
+  },
+  "43:17": {
+    "table": "131-04G",
+    "row_label": "Max structure height (ft)",
+    "standard_type": "structure_height_max",
+    "unit": "ft",
+    "operator": "MAX",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0444"
+    ],
+    "conditions": []
+  },
+  "43:18": {
+    "table": "131-04G",
+    "row_label": "Max lot coverage",
+    "standard_type": "max_lot_coverage",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0445"
+    ],
+    "conditions": []
+  },
+  "43:19": {
+    "table": "131-04G",
+    "row_label": "Max floor area ratio",
+    "standard_type": "floor_area_ratio_max",
+    "unit": "ratio",
+    "operator": "MAX",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0446"
+    ],
+    "conditions": []
+  },
+  "43:20": {
+    "table": "131-04G",
+    "row_label": "Floor Area Ratio Bonus\nfor Child Care [See\nSection 131.0446(e)]",
+    "standard_type": "floor_area_ratio_bonus_for_child_care",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0446",
+      "131.0446(e)"
+    ],
+    "conditions": []
+  },
+  "43:21": {
+    "table": "131-04G",
+    "row_label": "Accessory uses and\nstructures\n[See Section 131.0448",
+    "standard_type": "accessory_uses_and_structures",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0448"
+    ],
+    "conditions": []
+  },
+  "43:22": {
+    "table": "131-04G",
+    "row_label": "Ground-floor Height\n[See Section 131.0451]",
+    "standard_type": "ground_floor_height",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0444",
+      "131.0451"
+    ],
+    "conditions": []
+  },
+  "43:23": {
+    "table": "131-04G",
+    "row_label": "Lot consolidation\nregulations",
+    "standard_type": "lot_consolidation_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "44:4": {
+    "table": "131-04G",
+    "row_label": "Private exterior open\nspace",
+    "standard_type": "private_exterior_open_space",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "44:5": {
+    "table": "131-04G",
+    "row_label": "Common open space\n[See Section 131.0456]",
+    "standard_type": "common_open_space",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "131.0456"
+    ],
+    "conditions": []
+  },
+  "44:6": {
+    "table": "131-04G",
+    "row_label": "Architectural\nProjections and\nencroachments",
+    "standard_type": "architectural_projections_and_encroachments",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "44:7": {
+    "table": "131-04G",
+    "row_label": "Supplemental\nrequirements",
+    "standard_type": "supplemental_requirements",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [],
+    "conditions": []
+  },
+  "44:8": {
+    "table": "131-04G",
+    "row_label": "Refuse and Recyclable\nMaterial Storage\n[See Section 142.0805]",
+    "standard_type": "refuse_and_recyclable_material_storage",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "142.0805"
+    ],
+    "conditions": []
+  },
+  "44:9": {
+    "table": "131-04G",
+    "row_label": "Visibility Area\n[See Section 113.0273]",
+    "standard_type": "visibility_area",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "113.0273"
+    ],
+    "conditions": []
+  },
+  "44:10": {
+    "table": "131-04G",
+    "row_label": "Dwelling Unit Protection\nRegulations [See Chapter\n14, Article 3, Division\n12]",
+    "standard_type": "dwelling_unit_protection_regulations",
+    "unit": null,
+    "operator": "REFERENCE",
+    "zones": [
+      "RM-3-7",
+      "RM-3-8",
+      "RM-3-9",
+      "RM-4-10",
+      "RM-4-11",
+      "RM-5-12"
+    ],
+    "row_references": [
+      "Chapter 14, Article 3, Division 12"
+    ],
+    "conditions": []
+  }
+}

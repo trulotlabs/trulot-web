@@ -1,0 +1,22 @@
+{
+  "decision": "RESIDENTIAL_ZONING_STANDARDS_V2_PASS",
+  "readiness": "ZONING_STANDARDS_REQUIRE_FURTHER_REVIEW",
+  "scope": "Citation-backed, versioned, unevaluated residential research representation",
+  "rules": 814,
+  "codified_zones": 33,
+  "observed_residential_zones": 31,
+  "raw_zoning_inventory": 183,
+  "review_states": {
+    "EXTRACTED": 788,
+    "SOURCE_VERIFIED": 19,
+    "INTERPRETATION_REQUIRED": 7
+  },
+  "remaining_gates": [
+    "Complete Coastal composite and verify O-21934 certification",
+    "Source interval typography and orphan footnote interpretation",
+    "Property facts and full dependency evaluation before integration"
+  ],
+  "independent_review_final": "Corrections verified; no critical remaining defect in scoped representation",
+  "baseline_commit": "5ad64b8d5410137156d9d95d450c776f6afb157e",
+  "baseline_tree": "5a3aba9e815787f17fa16ef23702e7da276fc175"
+}

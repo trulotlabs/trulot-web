@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TruLot Residential Base Table Evidence V2",
+  "description": "Unevaluated source representation. Schema validity does not establish applicability or review.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["rule_id", "rule_set_version", "zone_code", "standard_type", "value", "unit", "operator", "conditions", "exceptions", "applicability", "source_section", "source_table", "source_page", "source_text_hash", "source_id", "source_evidence", "effective_date", "effective_date_basis", "derivation_class", "review_state", "unresolved_dependencies", "legal_review"],
+    "properties": {
+      "rule_id": {"type": "string", "minLength": 1},
+      "rule_set_version": {"type": "string", "minLength": 1},
+      "zone_code": {"type": "string", "description": "Exact authoritative column lookup; never a numeric formula input"},
+      "standard_type": {"type": "string"},
+      "value": {
+        "oneOf": [
+          {"type": "object", "required": ["kind", "number"], "properties": {"kind": {"const": "number"}, "number": {"type": "number"}}},
+          {"type": "object", "required": ["kind", "text", "targets"], "properties": {"kind": {"const": "reference"}, "text": {"type": "string"}, "targets": {"type": "array", "items": {"type": "string"}}}},
+          {"type": "object", "required": ["kind", "text", "row_labels", "evaluated"], "properties": {"kind": {"const": "source_expression"}, "text": {"type": "string"}, "row_labels": {"type": "string"}, "evaluated": {"const": false}}},
+          {"type": "object", "required": ["kind", "number", "source_symbol"], "properties": {"kind": {"const": "not_specified_in_table"}, "number": {"type": "null"}, "source_symbol": {"enum": ["-", "--", ""]}}}
+        ]
+      },
+      "unit": {"enum": [null, "ft", "sq_ft", "ratio", "percent", "sq_ft_per_dwelling_unit", "dwelling_unit_per_lot"]},
+      "operator": {"enum": ["BASIS", "MIN", "MAX", "CONDITIONAL", "REFERENCE"]},
+      "conditions": {"type": "array", "items": {"type": "string"}},
+      "exceptions": {"type": "array", "items": {"type": "string"}},
+      "applicability": {"type": "object", "required": ["version_profile", "project_applicability_evaluated"], "properties": {"version_profile": {"type": "string"}, "project_applicability_evaluated": {"const": false}}},
+      "source_section": {"const": "131.0431"},
+      "source_table": {"enum": ["131-04D", "131-04E", "131-04F", "131-04G"]},
+      "source_page": {"type": "integer", "minimum": 34, "maximum": 44},
+      "source_text_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+      "source_id": {"const": "residential"},
+      "source_evidence": {"type": "object", "required": ["page_evidence", "table", "row", "column", "row_label", "zone_header", "cell_text", "bbox"]},
+      "effective_date": {"type": ["string", "null"], "description": "Original provision date when established; null here with explicit section-history basis"},
+      "effective_date_basis": {"type": "string"},
+      "derivation_class": {"const": "DETERMINISTIC_TRANSCRIPTION"},
+      "review_state": {"enum": ["EXTRACTED", "SOURCE_VERIFIED", "INTERPRETATION_REQUIRED", "REVIEWED"], "description": "REVIEWED reserved for separately evidenced human/legal review; this resolver refuses it"},
+      "unresolved_dependencies": {"type": "array", "items": {"type": "string"}},
+      "legal_review": {"const": false}
+    }
+  }
+}

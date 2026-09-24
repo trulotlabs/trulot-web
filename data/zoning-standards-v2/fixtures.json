@@ -1,0 +1,39 @@
+{
+  "numeric": [
+    ["RS-1-7", "density_basis", 1, "dwelling_unit_per_lot", 34],
+    ["RS-1-7", "lot_area_min", 5000, "sq_ft", 34],
+    ["RS-1-7", "lot_width_min", 50, "ft", 34],
+    ["RS-1-7", "corner_lot_width_min", 55, "ft", 34],
+    ["RS-1-7", "lot_depth_min", 95, "ft", 34],
+    ["RS-1-7", "front_setback", 15, "ft", 34],
+    ["RS-1-7", "interior_side_setback", 4, "ft", 34],
+    ["RS-1-7", "street_side_setback_min", 5, "ft", 34],
+    ["RS-1-7", "rear_setback_min", 13, "ft", 34],
+    ["RS-1-2", "lot_area_min", 20000, "sq_ft", 34],
+    ["RS-1-8", "structure_height_max", 35, "ft", 36],
+    ["RM-1-1", "density_basis", 3000, "sq_ft_per_dwelling_unit", 41],
+    ["RM-1-1", "lot_area_min", 6000, "sq_ft", 41],
+    ["RM-1-1", "far_1_2_dwellings", 0.75, "ratio", 41],
+    ["RM-1-1", "far_3_7_dwellings", 1, "ratio", 41],
+    ["RM-1-1", "far_8_plus_dwellings", 1.25, "ratio", 42],
+    ["RM-4-11", "density_basis", 200, "sq_ft_per_dwelling_unit", 43],
+    ["RM-4-11", "floor_area_ratio_max", 7.2, "ratio", 43],
+    ["RM-5-12", "density_basis", 1000, "sq_ft_per_dwelling_unit", 43],
+    ["RX-1-1", "density_basis", 1, "dwelling_unit_per_lot", 37],
+    ["RX-1-1", "lot_area_min", 4000, "sq_ft", 37],
+    ["RX-1-2", "floor_area_ratio_max", 0.8, "ratio", 38],
+    ["RT-1-5", "lot_coverage_max", 75, "percent", 40]
+  ],
+  "expressions": [
+    ["RS-1-7", "structure_height_max", "24/30"],
+    ["RX-1-1", "interior_side_setback", "3/0 0"],
+    ["RT-1-5", "front_setback", "5 10"],
+    ["RT-1-5", "height_1_2_stories", "21 25"],
+    ["RM-1-1", "front_setback", "15 20"]
+  ],
+  "split": ["RS-1-7", "RM-1-1"],
+  "unknown": ["RS-1-999", "UNZONED", "rs-1-7", "RM-1-1-extra"],
+  "footnote_case": ["RM-5-12", "density_basis", "131-04G:36"],
+  "version_case": "O-22109 adds 131.0443(i) outside Coastal; inside/unknown must not select it",
+  "historical_case": "O-21934 repealed RS-1-2 footnote 7; its historical exception is not a current outside rule"
+}

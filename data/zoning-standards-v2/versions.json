@@ -1,0 +1,122 @@
+{
+  "rule_set_version": "sd-residential-2026-09-24-research-v1",
+  "verified_as_of": "2026-09-24",
+  "snapshot_document_edition": "7-2026",
+  "scope": "Current outside-Coastal composite source snapshot only; not a historical-law database",
+  "ordinances": [
+    {
+      "ordinance": "O-21836",
+      "adopted_date": "2024-07-22",
+      "outside_effective_date": "2024-10-05",
+      "coastal_effective_date": "2026-09-10",
+      "coastal_state": "EFFECTIVE_IN_COASTAL",
+      "source": [
+        "o21836-strikeout",
+        "ccc2024",
+        "updates"
+      ],
+      "certification": "LCP-6-SAN-24-0038-3; CCC conditional 2026-02-05, City acceptance 2026-07-14, reported certification 2026-09-10",
+      "acceptance_ordinance": "O-22117; modifications to 143.0740/143.0743, outside this extraction",
+      "sections": [
+        "131.0420",
+        "131.0422",
+        "131.0431",
+        "131.0443",
+        "131.0445",
+        "131.0446",
+        "131.0464"
+      ],
+      "superseded_by": {
+        "131.0431": [
+          "O-21934 outside Coastal"
+        ],
+        "131.0422": [
+          "O-22109 outside Coastal"
+        ],
+        "131.0443": [
+          "O-22109 outside Coastal"
+        ]
+      },
+      "note": "July 2026 consolidated editor note is stale for 2024 certification; supersession is provision-specific."
+    },
+    {
+      "ordinance": "O-21934",
+      "adopted_date": "2025-03-25",
+      "outside_effective_date": "2025-04-24",
+      "coastal_effective_date": null,
+      "coastal_state": "UNKNOWN",
+      "sections": [
+        "131.0431(a)"
+      ],
+      "source": [
+        "o21934",
+        "o21934-strikeout",
+        "residential"
+      ],
+      "superseded_by": null,
+      "change": "REPEAL Table 131-04D footnote 7 and its RS-1-2 lot-area marker. It did not add an exception.",
+      "historical_text_state": "SUPERSEDED_OUTSIDE_COASTAL; do not apply as current exception",
+      "note": "Signed recital F and operative table govern; strikeout plain text alone is unsafe. No separate Coastal certification verified."
+    },
+    {
+      "ordinance": "O-22109",
+      "adopted_date": "2026-06-15",
+      "outside_effective_date": "2026-07-15",
+      "coastal_effective_date": null,
+      "coastal_state": "PENDING_COASTAL_CERTIFICATION",
+      "sections": [
+        "131.0422",
+        "131.0443(i)",
+        "131.0448"
+      ],
+      "source": [
+        "o22109",
+        "o22109-strikeout",
+        "residential",
+        "updates"
+      ],
+      "superseded_by": null,
+      "change": "Fire Code Official may require a greater defensible-space buffer; accessory-building clarification and use-table changes. No amendment to 131.0431 tables.",
+      "geographic_exception": "Published MCAS Miramar Airport Influence Area Transition Zone exception; affected item not generalized to all parcels.",
+      "grandfathering": "Section 61: pre-effective applications deemed complete require separate applicability assessment; date alone is insufficient."
+    }
+  ],
+  "profiles": [
+    {
+      "id": "outside-current-snapshot",
+      "coastal_context": "outside",
+      "state": "EFFECTIVE_OUTSIDE_COASTAL",
+      "supported_as_of_dates": [
+        "2026-09-24"
+      ],
+      "rule_set_version": "sd-residential-2026-09-24-research-v1",
+      "source_section": "131.0431 with dependent sections",
+      "components": [
+        "Official 7-2026 codified text",
+        "O-21934 repeal",
+        "O-22109 dependent section changes"
+      ],
+      "effective_date": null,
+      "adopted_date": null,
+      "superseded_by": null,
+      "note": "Composite has multiple enactment dates. It is not enacted wholesale by O-22109."
+    }
+  ],
+  "unavailable_profiles": [
+    {
+      "coastal_context": "inside",
+      "state": "UNKNOWN",
+      "reason": "No fully verified Coastal composite; 2026 pending and 2025 certification unresolved"
+    },
+    {
+      "coastal_context": "unknown",
+      "state": "UNKNOWN",
+      "reason": "Cannot choose outside law for unknown geography"
+    }
+  ],
+  "project_gates": [
+    "new_application",
+    "outside_miramar_transition"
+  ],
+  "freshness_policy": "Only explicitly verified as-of date can resolve. Reacquisition, metadata review, and new review decision required for later dates."
+}

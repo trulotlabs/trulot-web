@@ -1,0 +1,32 @@
+{
+  "original_checkout": "/Users/ops/trulot-web",
+  "before": {
+    "branch": "codex/elevate-row-interview\n",
+    "head": "8d82378e5b6a3cb2aba1153b96f025bc71a78d16\n",
+    "status": " M supabase/functions/nearby-parcels/index.ts\n?? docs/sda-source-of-record-recovery-discovery-architecture-2026-07-15.md\n?? supabase/.temp/\n",
+    "untracked": "docs/sda-source-of-record-recovery-discovery-architecture-2026-07-15.md\nsupabase/.temp/cli-latest\nsupabase/.temp/gotrue-version\nsupabase/.temp/linked-project.json\nsupabase/.temp/pooler-url\nsupabase/.temp/postgres-version\nsupabase/.temp/project-ref\nsupabase/.temp/rest-version\nsupabase/.temp/storage-migration\nsupabase/.temp/storage-version\n"
+  },
+  "after": {
+    "branch": "codex/elevate-row-interview\n",
+    "head": "8d82378e5b6a3cb2aba1153b96f025bc71a78d16\n",
+    "status": " M supabase/functions/nearby-parcels/index.ts\n?? docs/sda-source-of-record-recovery-discovery-architecture-2026-07-15.md\n?? supabase/.temp/\n",
+    "untracked": "docs/sda-source-of-record-recovery-discovery-architecture-2026-07-15.md\nsupabase/.temp/cli-latest\nsupabase/.temp/gotrue-version\nsupabase/.temp/linked-project.json\nsupabase/.temp/pooler-url\nsupabase/.temp/postgres-version\nsupabase/.temp/project-ref\nsupabase/.temp/rest-version\nsupabase/.temp/storage-migration\nsupabase/.temp/storage-version\n"
+  },
+  "compared": [
+    "branch",
+    "HEAD",
+    "short status",
+    "unstaged binary diff",
+    "staged binary diff",
+    "untracked file list",
+    "tracked and nonignored untracked file SHA-256 values"
+  ],
+  "file_hash_count": 57,
+  "byte_for_byte_logically_unchanged": true,
+  "ignored_files_in_scope": false,
+  "production_mutation": false,
+  "runtime_parcel_v1_change": false,
+  "capacity_logic_added": false,
+  "deploy": false,
+  "push": false
+}

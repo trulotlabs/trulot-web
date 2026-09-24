@@ -1,0 +1,149 @@
+{
+  "commands": [
+    {
+      "command": "python3 scripts/base-zoning-v2/test.py",
+      "exit_code": 0,
+      "seconds": 0.05,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_base-zoning-v2_test.py.log"
+    },
+    {
+      "command": "python3 scripts/zoning-serving-v2/test.py",
+      "exit_code": 0,
+      "seconds": 0.03,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_zoning-serving-v2_test.py.log"
+    },
+    {
+      "command": "python3 scripts/test-sangis-acquisition-stream.py",
+      "exit_code": 0,
+      "seconds": 0.32,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_test-sangis-acquisition-stream.py.log"
+    },
+    {
+      "command": "python3 scripts/test-sangis-acquirer.py",
+      "exit_code": 0,
+      "seconds": 0.13,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_test-sangis-acquirer.py.log"
+    },
+    {
+      "command": "node scripts/base-zoning-v2/test-adapter.mjs",
+      "exit_code": 0,
+      "seconds": 0.3,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_base-zoning-v2_test-adapter.mjs.log"
+    },
+    {
+      "command": "node scripts/zoning-serving-v2/test-adapter.mjs",
+      "exit_code": 0,
+      "seconds": 0.32,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_zoning-serving-v2_test-adapter.mjs.log"
+    },
+    {
+      "command": "node scripts/parcel-serving-v2/test-adapter.mjs",
+      "exit_code": 0,
+      "seconds": 0.32,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_parcel-serving-v2_test-adapter.mjs.log"
+    },
+    {
+      "command": "node scripts/test-parcel-base-v2-receipt.mjs",
+      "exit_code": 0,
+      "seconds": 0.11,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_test-parcel-base-v2-receipt.mjs.log"
+    },
+    {
+      "command": "node scripts/test-parcel-base-v2-source.mjs",
+      "exit_code": 0,
+      "seconds": 1.93,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_test-parcel-base-v2-source.mjs.log"
+    },
+    {
+      "command": "node scripts/test-sangis-acquisition.mjs",
+      "exit_code": 0,
+      "seconds": 0.07,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_test-sangis-acquisition.mjs.log"
+    },
+    {
+      "command": "node scripts/test-parcel-truth.mjs",
+      "exit_code": 0,
+      "seconds": 1.0,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_test-parcel-truth.mjs.log"
+    },
+    {
+      "command": "node scripts/test-overlay-response.mjs",
+      "exit_code": 0,
+      "seconds": 1.86,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_test-overlay-response.mjs.log"
+    },
+    {
+      "command": "node scripts/test-sda-source-reconciliation.mjs",
+      "exit_code": 0,
+      "seconds": 0.23,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_test-sda-source-reconciliation.mjs.log"
+    },
+    {
+      "command": "node scripts/verify-parcel-foundation.mjs",
+      "exit_code": 0,
+      "seconds": 0.25,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_verify-parcel-foundation.mjs.log"
+    },
+    {
+      "command": "node scripts/test-parcel-foundation.mjs",
+      "exit_code": 0,
+      "seconds": 0.28,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_test-parcel-foundation.mjs.log"
+    },
+    {
+      "command": "node scripts/verify-data-foundation.mjs",
+      "exit_code": 0,
+      "seconds": 0.03,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_verify-data-foundation.mjs.log"
+    },
+    {
+      "command": "node scripts/test-production-database-freeze.mjs",
+      "exit_code": 0,
+      "seconds": 0.56,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_test-production-database-freeze.mjs.log"
+    },
+    {
+      "command": "node scripts/test-validate-foundation-dry-run.mjs",
+      "exit_code": 0,
+      "seconds": 0.17,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_test-validate-foundation-dry-run.mjs.log"
+    },
+    {
+      "command": "node scripts/test-qa-foundation-production-adapter.mjs",
+      "exit_code": 0,
+      "seconds": 0.04,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_test-qa-foundation-production-adapter.mjs.log"
+    },
+    {
+      "command": "node scripts/parcel-identity-shadow/test.mjs",
+      "exit_code": 0,
+      "seconds": 0.49,
+      "log": "/private/tmp/trulot-packet12-regression-logs/scripts_parcel-identity-shadow_test.mjs.log"
+    },
+    {
+      "command": "npm run lint",
+      "exit_code": 1,
+      "seconds": 3.12,
+      "log": "/private/tmp/trulot-packet12-regression-logs/lint.log"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/zoning-standards-v2/test.py",
+      "exit_code": 0,
+      "tests": 35,
+      "log": "/private/tmp/trulot-packet12-tests.log"
+    },
+    {
+      "command": "node_modules/.bin/tsc --noEmit --incremental false",
+      "exit_code": 0
+    },
+    {
+      "command": "python3 scripts/zoning-standards-v2/check-source-version.py /private/tmp/trulot-packet12-sources --observation data/zoning-standards-v2/source-version-observation.json",
+      "exit_code": 0,
+      "state": "PINNED_ACQUISITION_VERIFIED"
+    }
+  ],
+  "safe_regression_suites_passed": 20,
+  "new_tests_passed": 35,
+  "lint_limitation": "Unchanged baseline nearby-parcels/index.ts:125:67 no-explicit-any; six baseline warnings. No JS/TS edits.",
+  "network_or_database_tests_run": false
+}

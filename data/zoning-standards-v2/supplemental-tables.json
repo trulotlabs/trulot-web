@@ -1,0 +1,207 @@
+{
+  "131-04H": {
+    "source_section": "131.0444(b)",
+    "page_evidence": "residential:62",
+    "rows": [
+      [
+        "Lot Width:",
+        "Angle of Plane ¹"
+      ],
+      [
+        "Less than 75 feet",
+        "45 degrees"
+      ],
+      [
+        "75 feet to 150 feet",
+        "30 degrees"
+      ],
+      [
+        "Greater than 150 feet",
+        "Not Applicable"
+      ]
+    ],
+    "evaluated": false,
+    "exceptions": [
+      "131-04H:1"
+    ],
+    "review_state": "EXTRACTED",
+    "issues": []
+  },
+  "131-04I": {
+    "source_section": "131.0445(c)",
+    "page_evidence": "residential:65",
+    "rows": [
+      [
+        "Stories or Structure Height",
+        "Maximum Lot Coverage"
+      ],
+      [
+        "1-4 stories or 48 feet",
+        "50/60%"
+      ],
+      [
+        "5 stories or 60 feet",
+        "37%"
+      ],
+      [
+        "6 stories or 72 feet",
+        "32%"
+      ],
+      [
+        "7 stories or 84 feet",
+        "28%"
+      ],
+      [
+        "8 stories or 96 feet",
+        "25%"
+      ],
+      [
+        "9 stories or 108 feet",
+        "23%"
+      ],
+      [
+        "More than 10 stories or 120 feet",
+        "21%"
+      ]
+    ],
+    "evaluated": false,
+    "exceptions": [],
+    "review_state": "INTERPRETATION_REQUIRED",
+    "issues": [
+      "Source prints More than 10 stories or 120 feet after 9 stories or 108 feet; exact 10-story and inconsistent story/height conditions are not inferred."
+    ]
+  },
+  "131-04J": {
+    "source_section": "131.0446(a)",
+    "page_evidence": "residential:66",
+    "rows": [
+      [
+        "Lot Area\n(square feet)",
+        "Floor Area Ratio"
+      ],
+      [
+        "3,000 and less",
+        "0.70"
+      ],
+      [
+        "3,001 - 4,000",
+        "0.65"
+      ],
+      [
+        "4.001 - 5,000",
+        "0.60"
+      ],
+      [
+        "5,001 - 6,000",
+        "0.59"
+      ],
+      [
+        "6,001 - 7,000",
+        "0.58"
+      ],
+      [
+        "7,001 - 8,000",
+        "0.57"
+      ],
+      [
+        "8,001 - 9,000",
+        "0.56"
+      ],
+      [
+        "9,001 - 10,000",
+        "0.55"
+      ],
+      [
+        "10,001 - 11,000",
+        "0.54"
+      ],
+      [
+        "11,001 - 12,000",
+        "0.53"
+      ],
+      [
+        "12,001 - 13,000",
+        "0.52"
+      ],
+      [
+        "13,001 - 14,000",
+        "0.51"
+      ],
+      [
+        "14,001 - 15,000",
+        "0.50"
+      ],
+      [
+        "15,001 - 16,000",
+        "0.49"
+      ],
+      [
+        "16,001 - 17,000",
+        "0.48"
+      ],
+      [
+        "17,001 - 18,000",
+        "0.47"
+      ],
+      [
+        "18,001 - 19,000",
+        "0.46"
+      ],
+      [
+        "19,001 and greater",
+        "0.45"
+      ]
+    ],
+    "evaluated": false,
+    "exceptions": [],
+    "review_state": "INTERPRETATION_REQUIRED",
+    "issues": [
+      "Source prints 4.001 - 5,000; no silent decimal-to-thousands correction.",
+      "Discrete printed lot-area intervals leave fractional boundary interpretation unresolved."
+    ]
+  },
+  "131-04K": {
+    "source_section": "131.0446(f)",
+    "page_evidence": "residential:68",
+    "rows": [
+      [
+        "Stories or Structure Height",
+        "Maximum Floor Area Ratio"
+      ],
+      [
+        "1-4 stories or 48 feet",
+        "1.80"
+      ],
+      [
+        "5 stories or 60 feet",
+        "1.85"
+      ],
+      [
+        "6 stories or 72 feet",
+        "1.90"
+      ],
+      [
+        "7 stories or 84 feet",
+        "1.95"
+      ],
+      [
+        "8 stories or 96 feet",
+        "2.00"
+      ],
+      [
+        "9 stories or 108 feet",
+        "2.05"
+      ],
+      [
+        "More than 10 stories or 120 feet",
+        "2.10"
+      ]
+    ],
+    "evaluated": false,
+    "exceptions": [],
+    "review_state": "INTERPRETATION_REQUIRED",
+    "issues": [
+      "Source prints More than 10 stories or 120 feet after 9 stories or 108 feet; exact 10-story and inconsistent story/height conditions are not inferred."
+    ]
+  }
+}

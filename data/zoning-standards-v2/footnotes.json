@@ -1,0 +1,485 @@
+{
+  "131-04D:1": {
+    "number": 1,
+    "table": "131-04D",
+    "text": "For lots where at least one-half of the front 50 feet of the lot depth has a minimum slope gradient of 25 percent, the setback closest to the street frontage may be reduced to a minimum 6 feet.",
+    "source_text_hash": "785cceebb1e3bdaec136a888f138611e27db260af0e5a7a90ec713f5c57acc81",
+    "page_evidence": "residential:37",
+    "references": [],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04D:2": {
+    "number": 2,
+    "table": "131-04D",
+    "text": "See Section 131.0443(a)(4).",
+    "source_text_hash": "ca90021d252762b6481d8fbd8629224936f290dea0319c1db95156447f389bd3",
+    "page_evidence": "residential:37",
+    "references": [
+      "131.0443(a)(4)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04D:3": {
+    "number": 3,
+    "table": "131-04D",
+    "text": "See Section 131.0443(a)(2).",
+    "source_text_hash": "ec372440b6e9d704cc5b51e2c1b050d0c2856884a317e462cf781fe15c62815e",
+    "page_evidence": "residential:37",
+    "references": [
+      "131.0443(a)(2)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04D:4": {
+    "number": 4,
+    "table": "131-04D",
+    "text": "See Section 131.0444(b).",
+    "source_text_hash": "eade8c415a921cbc7700d1aa0a402f0797cb8c130b17ba46095f3ccb19322a49",
+    "page_evidence": "residential:37",
+    "references": [
+      "131.0444(b)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04D:5": {
+    "number": 5,
+    "table": "131-04D",
+    "text": "See Section 131.0446(a).",
+    "source_text_hash": "0f0037f39fdf24d92d03b88441b0c8d9a7210e44d6042c59dffd3e95f1e734b7",
+    "page_evidence": "residential:37",
+    "references": [
+      "131.0446(a)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04D:6": {
+    "number": 6,
+    "table": "131-04D",
+    "text": "See Section 131.0443(a)(3).",
+    "source_text_hash": "6424b8fc5cf9a450a1cfc2bf329faba90618ccc85895bc7607c8bbbde0f8c50d",
+    "page_evidence": "residential:37",
+    "references": [
+      "131.0443(a)(3)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04E:1": {
+    "number": 1,
+    "table": "131-04E",
+    "text": "If a lot abuts an alley, see Section 131.0442(c).",
+    "source_text_hash": "46349e3cba9fee6fad2e825a162d819bbfec76d56138a53a12060c9b9088f475",
+    "page_evidence": "residential:38",
+    "references": [
+      "131.0442(c)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:1": {
+    "number": 1,
+    "table": "131-04G",
+    "text": "One dwelling unit per specified square foot of lot area as determined in accordance with Section 113.0222.",
+    "source_text_hash": "68288727e020059b399ecd9c0fd5ecbbfb218ccdb69649ed9018cf19f5428c5a",
+    "page_evidence": "residential:44",
+    "references": [
+      "113.0222"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:2": {
+    "number": 2,
+    "table": "131-04G",
+    "text": "An exception to the maximum permitted density may be permitted in accordance with Chapter 14, Article 3, Division 7 (Affordable Housing Regulations).",
+    "source_text_hash": "0cf4b2ea5452c9b9fc85574d9249b5456266ff2e5d757489347a23735e5f04cb",
+    "page_evidence": "residential:44",
+    "references": [
+      "Chapter 14, Article 3, Division 7"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:3": {
+    "number": 3,
+    "table": "131-04G",
+    "text": "See Section 131.0443(d)(1).",
+    "source_text_hash": "e498b7946eaf90b74e122bd7a29fd5b78e3e99e6252b1e8482d12247deb6fca9",
+    "page_evidence": "residential:44",
+    "references": [
+      "131.0443(d)(1)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:4": {
+    "number": 4,
+    "table": "131-04G",
+    "text": "See Section 131.0443(d)(2).",
+    "source_text_hash": "668fe4e4a6d6623b565210977f857e6612816a0969c67d0a7a4b7d8bf35f79b0",
+    "page_evidence": "residential:44",
+    "references": [
+      "131.0443(d)(2)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:5": {
+    "number": 5,
+    "table": "131-04G",
+    "text": "See Section 131.0443(d)(3).",
+    "source_text_hash": "54fc71ccfb4d61f83e330155378a61889b7332aa11768696cef7dea02ea537f6",
+    "page_evidence": "residential:44",
+    "references": [
+      "131.0443(d)(3)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:6": {
+    "number": 6,
+    "table": "131-04G",
+    "text": "See Section 131.0443(d)(4).",
+    "source_text_hash": "d103d5f97e4bd5d89a5887eb4daad16596f5748c263af8112cd86eda067549f8",
+    "page_evidence": "residential:44",
+    "references": [
+      "131.0443(d)(4)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:7": {
+    "number": 7,
+    "table": "131-04G",
+    "text": "See Section 131.0443(e)(1).",
+    "source_text_hash": "e1c952528966cc0e07e9b4dbb46b9d6608b1131225f9c86292c03e7b69cf6325",
+    "page_evidence": "residential:44",
+    "references": [
+      "131.0443(e)(1)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:8": {
+    "number": 8,
+    "table": "131-04G",
+    "text": "See Section 131.0443(e)(2).",
+    "source_text_hash": "bb0d22bcf1d2f1fd6ad5dd2dee3b657f1bf3b554ebad469e9ae6595b84b143af",
+    "page_evidence": "residential:44",
+    "references": [
+      "131.0443(e)(2)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:9": {
+    "number": 9,
+    "table": "131-04G",
+    "text": "See Section 131.0443(e)(3).",
+    "source_text_hash": "caba03e40a497663cc2718a5f62b063bf00b3d5e4e3e8a4f225b0c6f4e8e92e2",
+    "page_evidence": "residential:44",
+    "references": [
+      "131.0443(e)(3)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:10": {
+    "number": 10,
+    "table": "131-04G",
+    "text": "See Section 131.0443(e)(4).",
+    "source_text_hash": "d26f65262fe8c96035d0e3bf220749cecd5cf56ead7c258cd835cb6f6f299b44",
+    "page_evidence": "residential:44",
+    "references": [
+      "131.0443(e)(4)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:11": {
+    "number": 11,
+    "table": "131-04G",
+    "text": "See Section 131.0443(f)(1).",
+    "source_text_hash": "62304c2d3db9aef9753602f1add27caf6cd4b724f26a1d7e250eb534742d87fa",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0443(f)(1)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:12": {
+    "number": 12,
+    "table": "131-04G",
+    "text": "See Section 131.0443(f)(2).",
+    "source_text_hash": "60dd17ef11f83494e629dcdedc3ed1dcb92d30014eb42abcb6a3d6a67be88df0",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0443(f)(2)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:13": {
+    "number": 13,
+    "table": "131-04G",
+    "text": "See Section 131.0443(f)(3).",
+    "source_text_hash": "3626dc8b3fd1c43e59559a3f6fa45a8918f4550597eb497e0999ba5c3f945164",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0443(f)(3)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:14": {
+    "number": 14,
+    "table": "131-04G",
+    "text": "See Section 131.0443(g).",
+    "source_text_hash": "62194ee91f6727f7702021e9d587a88fb38b927f3041f35d88097a71af4c426d",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0443(g)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:15": {
+    "number": 15,
+    "table": "131-04G",
+    "text": "See Section 131.0461(a).",
+    "source_text_hash": "94ba6232d07e9c7fa798c64a23ccbaeb4804abe797e4307f2fd63100e75916d3",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0461(a)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:16": {
+    "number": 16,
+    "table": "131-04G",
+    "text": "See Section 131.0461(c).",
+    "source_text_hash": "6bce970f80bb202498c932258c178129ead362494826edd34696a17091f19e0b",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0461(c)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:17": {
+    "number": 17,
+    "table": "131-04G",
+    "text": "See Section 131.0444(e)",
+    "source_text_hash": "59517b640d7be4d6702a2d271ec903d20bb929bb098ef44f605cf494b70264a6",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0444(e)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:18": {
+    "number": 18,
+    "table": "131-04G",
+    "text": "See Section 131.0444(f).",
+    "source_text_hash": "1b37771cbb6a199abd2bc02f2857edbe8f7d012faba92c700f7050dab5caa4da",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0444(f)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:22": {
+    "number": 22,
+    "table": "131-04G",
+    "text": "See Section 131.0455(a).",
+    "source_text_hash": "7f11f5e41f01030017b4aed7a5dd6d4fc86bf35f75d4b44588cb0e3d0f481a1a",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0455(a)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:23": {
+    "number": 23,
+    "table": "131-04G",
+    "text": "See Section 131.0455(b).",
+    "source_text_hash": "fa19025e36484ba6538c59fcbb06c74c99d331ce7ea228deb0a272853312dedb",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0455(b)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:24": {
+    "number": 24,
+    "table": "131-04G",
+    "text": "See Section 131.0455(c).",
+    "source_text_hash": "94dad78dd7c659cf9e0e155b8913e99b0d6dc765f784ec6f7f1ae07c2a57de5d",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0455(c)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:25": {
+    "number": 25,
+    "table": "131-04G",
+    "text": "See Section 131.0455(d).",
+    "source_text_hash": "a336b1b0c28eb886b81f2e64298937b2dca411d2526b7cccc748c35aa44ef4bd",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0455(d)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:26": {
+    "number": 26,
+    "table": "131-04G",
+    "text": "See Section 131.0464(d).",
+    "source_text_hash": "e9bb831922e41b24a7aeedabc069a23869abcc5f4cd5c27ae8f9a8fccdaa18a1",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0464(d)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:27": {
+    "number": 27,
+    "table": "131-04G",
+    "text": "See Section 131.0464(e).",
+    "source_text_hash": "79ba92e4c178fac66b14972c2bd7cf3aedd7d2943e452ffc24faf42f8e654177",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0464(e)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:28": {
+    "number": 28,
+    "table": "131-04G",
+    "text": "See Section 131.0464(f).",
+    "source_text_hash": "21c3018cd03cf58bfc692979e2a33ce74e83387792eea4fb65fb589f68c1c771",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0464(f)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:29": {
+    "number": 29,
+    "table": "131-04G",
+    "text": "With the Peninsula and Ocean Beach community plan areas, the maximum floor area ratio is 0.70.",
+    "source_text_hash": "fecccbbeec97daa9aa24fb387e8b20620ed496936fe957d43f7cb37b38d57689",
+    "page_evidence": "residential:45",
+    "references": [],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:30": {
+    "number": 30,
+    "table": "131-04G",
+    "text": "See Section 131.0443(h)(1).",
+    "source_text_hash": "4e103ce5a9d97bbd644c76f34a52fd8d3b6074e65152994770144053d5b150f2",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0443(h)(1)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:31": {
+    "number": 31,
+    "table": "131-04G",
+    "text": "See Section 131.0443(h)(2).",
+    "source_text_hash": "d136e147330f239150f568ffbaa94761ddb2b470235430ad6eb47772a18ea712",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0443(h)(2)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:32": {
+    "number": 32,
+    "table": "131-04G",
+    "text": "See Section 131.0443(h)(3).",
+    "source_text_hash": "e11839ae726ba07fcc847c1e1a8796c6f90cbee4532226f20973f710f86a1656",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0443(h)(3)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:33": {
+    "number": 33,
+    "table": "131-04G",
+    "text": "See Section 131.0443(h)(4).",
+    "source_text_hash": "35941b776ebda87182b2808acaa237a9db0258d4d1e4e466be35a2a0d730c67d",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0443(h)(4)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:34": {
+    "number": 34,
+    "table": "131-04G",
+    "text": "See Section 131.0445(c).",
+    "source_text_hash": "c8b2302a6d33d4a5a1c732ca2080d9aa59d96dbd03a23d9ab68fd0694db57749",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0445(c)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:35": {
+    "number": 35,
+    "table": "131-04G",
+    "text": "See Section 131.0446(f).",
+    "source_text_hash": "b879858861558e6edc80ef39778eed51af6d5c70f6363f0c5d1740da397a56a9",
+    "page_evidence": "residential:45",
+    "references": [
+      "131.0446(f)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:36": {
+    "number": 36,
+    "table": "131-04G",
+    "text": "Within the La Jolla, Pacific Beach, and Torrey Pines community plan areas, the maximum permitted density is one dwelling unit or two guest rooms for each 1,500 square feet of lot area.",
+    "source_text_hash": "c79d845a6d2295b598fa6094ceb907d1c59b5754dec32e1afe160c4a5cbd27d0",
+    "page_evidence": "residential:45",
+    "references": [],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:37": {
+    "number": 37,
+    "table": "131-04G",
+    "text": "Within the Coastal Height Limit Overlay Zone in the Peninsula Community Plan area, the base zone maximum structure height shall be 30 feet, which shall be determined in accordance with Section 113.0270(a)(4)(D).",
+    "source_text_hash": "9aa203e2e1f813b2079a08c5a6b8acd50d3c14c6d74977937aa5807a9c8248ca",
+    "page_evidence": "residential:45",
+    "references": [
+      "113.0270(a)(4)"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:38": {
+    "number": 38,
+    "table": "131-04G",
+    "text": "With the Peninsula and Ocean Beach community plan areas, the maximum floor area ratio is 1.0.",
+    "source_text_hash": "34ebc7c59afa3a34fb5e58aba14470016504f07aa78e8c34b6bf483044375f2a",
+    "page_evidence": "residential:45",
+    "references": [],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04G:39": {
+    "number": 39,
+    "table": "131-04G",
+    "text": "For development within a historic district or property included on the State Historic Resources Inventory, as defined in Section 5020.1 of the Public Resources Code, or within a site that is designated as a historical resource consistent with Chapter 12, Article 3, Division 2 of the San Diego Municipal Code, the maximum floor area ratio shall not increase.",
+    "source_text_hash": "38bb71fc5354f4e64542f33e186675f855a108ebb3e412b921035c2d9b3ae3ef",
+    "page_evidence": "residential:45",
+    "references": [
+      "Chapter 12, Article 3, Division 2"
+    ],
+    "state": "SOURCE_TEXT"
+  },
+  "131-04D:8": {
+    "number": 8,
+    "table": "131-04D",
+    "text": null,
+    "source_text_hash": null,
+    "page_evidence": "residential:36",
+    "references": [],
+    "state": "MISSING_IN_SOURCE"
+  },
+  "131-04H:1": {
+    "number": 1,
+    "table": "131-04H",
+    "text": "The angled planes are measured from the vertical axis inward.",
+    "source_text_hash": "e4a443d88160b543fb61528be2bffe56ec635d31d0f6f15c8e7c1108e8fcafdf",
+    "page_evidence": "residential:62",
+    "references": [],
+    "state": "SOURCE_TEXT"
+  }
+}

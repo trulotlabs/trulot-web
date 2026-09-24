@@ -1,0 +1,2363 @@
+{
+  "raw_code_count": 183,
+  "family_counts": {
+    "AGRICULTURAL": 3,
+    "COMMERCIAL": 43,
+    "PLANNED_DISTRICT": 83,
+    "MIXED_USE": 6,
+    "INDUSTRIAL": 10,
+    "OPEN_SPACE": 6,
+    "RESIDENTIAL": 31,
+    "UNKNOWN": 1
+  },
+  "observed_residential_codes": [
+    "RM-1-1",
+    "RM-1-2",
+    "RM-1-3",
+    "RM-2-4",
+    "RM-2-5",
+    "RM-2-6",
+    "RM-3-7",
+    "RM-3-8",
+    "RM-3-9",
+    "RM-4-10",
+    "RM-4-11",
+    "RM-5-12",
+    "RS-1-1",
+    "RS-1-10",
+    "RS-1-11",
+    "RS-1-12",
+    "RS-1-13",
+    "RS-1-14",
+    "RS-1-2",
+    "RS-1-3",
+    "RS-1-4",
+    "RS-1-5",
+    "RS-1-6",
+    "RS-1-7",
+    "RS-1-8",
+    "RS-1-9",
+    "RT-1-2",
+    "RT-1-4",
+    "RT-1-5",
+    "RX-1-1",
+    "RX-1-2"
+  ],
+  "codified_residential_codes": [
+    "RM-1-1",
+    "RM-1-2",
+    "RM-1-3",
+    "RM-2-4",
+    "RM-2-5",
+    "RM-2-6",
+    "RM-3-7",
+    "RM-3-8",
+    "RM-3-9",
+    "RM-4-10",
+    "RM-4-11",
+    "RM-5-12",
+    "RS-1-1",
+    "RS-1-10",
+    "RS-1-11",
+    "RS-1-12",
+    "RS-1-13",
+    "RS-1-14",
+    "RS-1-2",
+    "RS-1-3",
+    "RS-1-4",
+    "RS-1-5",
+    "RS-1-6",
+    "RS-1-7",
+    "RS-1-8",
+    "RS-1-9",
+    "RT-1-1",
+    "RT-1-2",
+    "RT-1-3",
+    "RT-1-4",
+    "RT-1-5",
+    "RX-1-1",
+    "RX-1-2"
+  ],
+  "codes": [
+    {
+      "raw_zone_code": "AG-1-1",
+      "family": "AGRICULTURAL",
+      "page_evidence": [
+        "div3:1"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 26,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "AR-1-1",
+      "family": "AGRICULTURAL",
+      "page_evidence": [
+        "div3:2",
+        "div3:19"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 225,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "AR-1-2",
+      "family": "AGRICULTURAL",
+      "page_evidence": [
+        "div3:2",
+        "div3:20"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 42,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-1-1",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:5",
+        "div5:44"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 4,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-1-2",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:5",
+        "div5:44"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-1-3",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:5",
+        "div5:47"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 76,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-2-1",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:5",
+        "div5:44"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 13,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-2-2",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:6",
+        "div5:44"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 4,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-2-3",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:6"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 34,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-2-4",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:6"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 5,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-2-5",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:6"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 9,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-3-10",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:6",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 6,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-3-11",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:7",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 4,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-3-4",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:6",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 21,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-3-5",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:6",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 15,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-3-6",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:6",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 40,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-3-7",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:6",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 14,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-3-8",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:6",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 45,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-3-9",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:6",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 26,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-4-2",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:7",
+        "div5:44"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 17,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-4-3",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:7",
+        "div5:47"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-4-5",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:7",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 31,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-4-6",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:7",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-5-1",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:7",
+        "div5:44"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 5,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-5-2",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:7",
+        "div5:44"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-5-3",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:8",
+        "div5:47"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 7,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-5-4",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:8",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 7,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CC-5-5",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:8",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CCPD-BP",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd6:18"
+      ],
+      "method": "EXPLICIT_DISTRICT_NAME_ALIAS; NO_STANDARDS_INFERRED",
+      "source_features": 3,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CCPD-CORE",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd6:17"
+      ],
+      "method": "EXPLICIT_DISTRICT_NAME_ALIAS; NO_STANDARDS_INFERRED",
+      "source_features": 3,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CCPD-ER",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd6:17"
+      ],
+      "method": "EXPLICIT_DISTRICT_NAME_ALIAS; NO_STANDARDS_INFERRED",
+      "source_features": 11,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CCPD-I",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd6:18"
+      ],
+      "method": "EXPLICIT_DISTRICT_NAME_ALIAS; NO_STANDARDS_INFERRED",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CCPD-MC",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd6:18"
+      ],
+      "method": "EXPLICIT_DISTRICT_NAME_ALIAS; NO_STANDARDS_INFERRED",
+      "source_features": 5,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CCPD-NC",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd6:17"
+      ],
+      "method": "EXPLICIT_DISTRICT_NAME_ALIAS; NO_STANDARDS_INFERRED",
+      "source_features": 8,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CCPD-OS",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd6:18"
+      ],
+      "method": "EXPLICIT_DISTRICT_NAME_ALIAS; NO_STANDARDS_INFERRED",
+      "source_features": 26,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CCPD-PC",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd6:18"
+      ],
+      "method": "EXPLICIT_DISTRICT_NAME_ALIAS; NO_STANDARDS_INFERRED",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CCPD-RE",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd6:18"
+      ],
+      "method": "EXPLICIT_DISTRICT_NAME_ALIAS; NO_STANDARDS_INFERRED",
+      "source_features": 12,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CCPD-T",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd6:18"
+      ],
+      "method": "EXPLICIT_DISTRICT_NAME_ALIAS; NO_STANDARDS_INFERRED",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CN-1-1",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:1"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 3,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CN-1-2",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:1"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 71,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CN-1-3",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:1"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 41,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CN-1-4",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:1"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 23,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CN-1-5",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:2"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 3,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CN-1-6",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:2",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CO-1-1",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:3",
+        "div5:53"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 3,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CO-1-2",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:3",
+        "div5:47"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 46,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CO-2-1",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:3"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 5,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CO-2-2",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:3",
+        "div5:47"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 4,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CO-3-1",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:3",
+        "div5:39"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 5,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CO-3-2",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:3",
+        "div5:47"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CO-3-3",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:4",
+        "div5:53"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 3,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CP-1-1",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:30",
+        "div5:31"
+      ],
+      "method": "EXPLICIT_OFFICIAL_TABLE_HEADER_CROSSWALK",
+      "source_features": 9,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CR-1-1",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:2",
+        "div5:47"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CR-2-1",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:2",
+        "div5:47"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 7,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CSPD-CASS-STREET",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CT-2-3",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 18,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CT-2-4",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 15,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CT-3-3",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 4,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CT-5-4",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 7,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CU-1-1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CU-1-2",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CU-2-3",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 12,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CU-2-4",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 8,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CU-2-5",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CU-3-3",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CU-3-6",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CU-3-7",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CUPD-CU-3-8",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CV-1-1",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:4",
+        "div5:26"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 23,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CV-1-2",
+      "family": "COMMERCIAL",
+      "page_evidence": [
+        "div5:4",
+        "div5:26"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 14,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-EC",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-EP",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 9,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-MC",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd3:18"
+      ],
+      "method": "EXPLICIT_OFFICIAL_SECTION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-MF1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 11,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-MF2",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 4,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-MF3",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 5,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-MF4",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:15"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-MFL",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 4,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-NC",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 4,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-OS",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 26,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-SC",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-SF",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-SF1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 6,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-SF1A",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 6,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-SF2",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 11,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-SF3",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 15,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-SF4",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 4,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-SP",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 4,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-TC",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "CVPD-VC",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "EMX-1",
+      "family": "MIXED_USE",
+      "page_evidence": [
+        "div7:3",
+        "div7:15"
+      ],
+      "method": "EXPLICIT_OFFICIAL_TABLE_HEADER_CROSSWALK",
+      "source_features": 23,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "EMX-2",
+      "family": "MIXED_USE",
+      "page_evidence": [
+        "div7:3",
+        "div7:15"
+      ],
+      "method": "EXPLICIT_OFFICIAL_TABLE_HEADER_CROSSWALK",
+      "source_features": 16,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "EMX-3",
+      "family": "MIXED_USE",
+      "page_evidence": [
+        "div7:3",
+        "div7:15"
+      ],
+      "method": "EXPLICIT_OFFICIAL_TABLE_HEADER_CROSSWALK",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "GQPD-GASLAMP-QTR",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "IBT-1-1",
+      "family": "INDUSTRIAL",
+      "page_evidence": [
+        "div6:22"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 7,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "IH-1-1",
+      "family": "INDUSTRIAL",
+      "page_evidence": [
+        "div6:2",
+        "div6:22"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 10,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "IH-2-1",
+      "family": "INDUSTRIAL",
+      "page_evidence": [
+        "div6:2",
+        "div6:22"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 10,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "IL-1-1",
+      "family": "INDUSTRIAL",
+      "page_evidence": [
+        "div6:2"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "IL-2-1",
+      "family": "INDUSTRIAL",
+      "page_evidence": [
+        "div6:2",
+        "div6:22"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 54,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "IL-3-1",
+      "family": "INDUSTRIAL",
+      "page_evidence": [
+        "div6:2"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 58,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "IP-1-1",
+      "family": "INDUSTRIAL",
+      "page_evidence": [
+        "div6:1",
+        "div6:13"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 15,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "IP-2-1",
+      "family": "INDUSTRIAL",
+      "page_evidence": [
+        "div6:1"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 27,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "IP-3-1",
+      "family": "INDUSTRIAL",
+      "page_evidence": [
+        "div6:1",
+        "div6:16"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "IS-1-1",
+      "family": "INDUSTRIAL",
+      "page_evidence": [
+        "div6:20",
+        "div6:21"
+      ],
+      "method": "EXPLICIT_OFFICIAL_TABLE_HEADER_CROSSWALK",
+      "source_features": 12,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJPD-1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJPD-1A",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJPD-2",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJPD-3",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJPD-4",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 6,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJPD-5",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 5,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJPD-5A",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 3,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJPD-6",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 3,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJPD-6A",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJSPD-CC",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJSPD-MF1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJSPD-MF2",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJSPD-PRF",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJSPD-SF",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJSPD-V",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "LJSPD-YMCA",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:16"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "MBPD-NC-N",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:17"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "MBPD-NC-S",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:17"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 3,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "MBPD-R-N",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:17"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "MBPD-R-S",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:17"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "MBPD-VC-N",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:17"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "MBPD-VC-S",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:17"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "MPD-MARINA",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "zoning-guide-chart:17"
+      ],
+      "method": "EXACT_OFFICIAL_HISTORICAL_NAME_CHART_ORGANIZATION_ONLY",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OC-1-1",
+      "family": "OPEN_SPACE",
+      "page_evidence": [
+        "div2:16",
+        "div2:17"
+      ],
+      "method": "EXPLICIT_OFFICIAL_TABLE_HEADER_CROSSWALK",
+      "source_features": 74,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OF-1-1",
+      "family": "OPEN_SPACE",
+      "page_evidence": [
+        "div2:16",
+        "div2:17"
+      ],
+      "method": "EXPLICIT_OFFICIAL_TABLE_HEADER_CROSSWALK",
+      "source_features": 19,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OP-1-1",
+      "family": "OPEN_SPACE",
+      "page_evidence": [
+        "div2:1"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 198,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OP-2-1",
+      "family": "OPEN_SPACE",
+      "page_evidence": [
+        "div2:1"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 45,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OR-1-1",
+      "family": "OPEN_SPACE",
+      "page_evidence": [
+        "div2:2",
+        "div2:17"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 171,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OR-1-2",
+      "family": "OPEN_SPACE",
+      "page_evidence": [
+        "div2:2",
+        "div2:14"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 15,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTCC-1-1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:30",
+        "pd16:68"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTCC-2-1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:30",
+        "pd16:68"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTCC-2-2",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:30",
+        "pd16:79"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 4,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTCC-2-3",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:30",
+        "pd16:68"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTCC-3-1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:31",
+        "pd16:68"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTCC-3-2",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:31",
+        "pd16:68"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTMCR-1-1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:31"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTMCR-1-2",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:31",
+        "pd16:68"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTMCR-1-3",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:31",
+        "pd16:79"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTOP-1-1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:47",
+        "pd16:48"
+      ],
+      "method": "EXPLICIT_OFFICIAL_TABLE_HEADER_CROSSWALK",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTOP-2-1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:47",
+        "pd16:48"
+      ],
+      "method": "EXPLICIT_OFFICIAL_TABLE_HEADER_CROSSWALK",
+      "source_features": 4,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTRM-1-1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:13"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTRM-2-1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:13"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTRM-2-2",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:13"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "OTRS-1-1",
+      "family": "PLANNED_DISTRICT",
+      "page_evidence": [
+        "pd16:13"
+      ],
+      "method": "EXACT_CODE_IN_OFFICIAL_DIVISION",
+      "source_features": 1,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RM-1-1",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:41",
+        "residential:42"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 270,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RM-1-2",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:41",
+        "residential:42"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 28,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RM-1-3",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:41",
+        "residential:42"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 30,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RM-2-4",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:41",
+        "residential:42"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 16,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RM-2-5",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:41",
+        "residential:42"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 248,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RM-2-6",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:41",
+        "residential:42"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 15,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RM-3-7",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:43",
+        "residential:44"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 134,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RM-3-8",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:43",
+        "residential:44"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 27,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RM-3-9",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:43",
+        "residential:44"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 64,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RM-4-10",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:43",
+        "residential:44"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 59,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RM-4-11",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:43",
+        "residential:44"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 3,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RM-5-12",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:43",
+        "residential:44"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 11,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RMX-1",
+      "family": "MIXED_USE",
+      "page_evidence": [
+        "div7:3",
+        "div7:15"
+      ],
+      "method": "EXPLICIT_OFFICIAL_TABLE_HEADER_CROSSWALK",
+      "source_features": 12,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RMX-2",
+      "family": "MIXED_USE",
+      "page_evidence": [
+        "div7:3",
+        "div7:15"
+      ],
+      "method": "EXPLICIT_OFFICIAL_TABLE_HEADER_CROSSWALK",
+      "source_features": 14,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RMX-3",
+      "family": "MIXED_USE",
+      "page_evidence": [
+        "div7:3",
+        "div7:15"
+      ],
+      "method": "EXPLICIT_OFFICIAL_TABLE_HEADER_CROSSWALK",
+      "source_features": 2,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-1",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:34",
+        "residential:35"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 228,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-10",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:36"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 2,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-11",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:36"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 11,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-12",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:36"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 8,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-13",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:36"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 22,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-14",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:36"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 105,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-2",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:34",
+        "residential:35"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 24,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-3",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:34",
+        "residential:35"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 22,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-4",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:34",
+        "residential:35"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 46,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-5",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:34",
+        "residential:35"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 11,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-6",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:34",
+        "residential:35"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 8,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-7",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:34",
+        "residential:35"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 166,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-8",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:36"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 17,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RS-1-9",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:36"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 4,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RT-1-2",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:39",
+        "residential:40"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 15,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RT-1-4",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:39",
+        "residential:40"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 1,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RT-1-5",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:39",
+        "residential:40"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 2,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RX-1-1",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:37",
+        "residential:38"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 15,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "RX-1-2",
+      "family": "RESIDENTIAL",
+      "page_evidence": [
+        "residential:37",
+        "residential:38"
+      ],
+      "method": "EXACT_CURRENT_TABLE_COLUMN",
+      "source_features": 19,
+      "standards_supported": true,
+      "governing_residential_section": "131.0431",
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    },
+    {
+      "raw_zone_code": "UNZONED",
+      "family": "UNKNOWN",
+      "page_evidence": [],
+      "method": "UNRESOLVED",
+      "source_features": 6,
+      "standards_supported": false,
+      "governing_residential_section": null,
+      "note": "Organizational classification only; no digit-derived standards; unknown is not unregulated"
+    }
+  ]
+}
