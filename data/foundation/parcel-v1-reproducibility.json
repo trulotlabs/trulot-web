@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 1,
+  "evidencePolicy": "unreceipted-baseline-v1",
+  "baselineCommit": "4dd7cfea22f70ed6abd682321dc62db749ae35f2",
+  "objects": [
+    {
+      "name": "parcel_page_api_v2",
+      "expectedType": "table in rehearsal; live type unverified",
+      "scope": "runtime",
+      "definition": "PARTIAL",
+      "population": "NOT_REPRODUCIBLE",
+      "provenance": "PARTIAL",
+      "dependencies": [],
+      "datasets": [
+        "parcel_base_sangis_v1",
+        "assessor_structures_sdcounty_v1",
+        "base_zoning_mapping_v1"
+      ],
+      "evidence": [
+        "supabase/rehearsal/20260711_remote_public_baseline_subset.sql"
+      ],
+      "creationMigrationControlled": false,
+      "gap": "Full core DDL, assessor joins, zoning mapping and all source imports missing. Upstream relation names UNKNOWN."
+    },
+    {
+      "name": "parcel_permit_terminal_v2",
+      "expectedType": "table in rehearsal; live type unverified",
+      "scope": "runtime",
+      "definition": "PARTIAL",
+      "population": "NOT_REPRODUCIBLE",
+      "provenance": "PARTIAL",
+      "dependencies": [],
+      "datasets": [
+        "permit_terminal_city_sd_v2"
+      ],
+      "evidence": [
+        "supabase/rehearsal/20260711_remote_public_baseline_subset.sql"
+      ],
+      "creationMigrationControlled": false,
+      "gap": "Only structural snapshot; terminalization, normalization, source extract and importer missing. Upstream relation names UNKNOWN."
+    },
+    {
+      "name": "trulot_permit_parcel_link_v1",
+      "expectedType": "view",
+      "scope": "runtime",
+      "definition": "REPRODUCIBLE",
+      "population": "PARTIAL",
+      "provenance": "PARTIAL",
+      "dependencies": [
+        "parcel_page_api_v2",
+        "parcel_permit_terminal_v2",
+        "trulot_normalize_apn_digits",
+        "trulot_extract_apn_candidates",
+        "trulot_normalize_address_key"
+      ],
+      "datasets": [
+        "parcel_base_sangis_v1",
+        "permit_terminal_city_sd_v2"
+      ],
+      "evidence": [
+        "supabase/migrations/20260705_permit_linkage_v1.sql",
+        "supabase/migrations/20260706_permit_linkage_perf_v1.sql"
+      ],
+      "creationMigrationControlled": true,
+      "gap": "Deterministic view definition conditional on missing upstream populations; deployment parity not verified."
+    },
+    {
+      "name": "trulot_normalize_apn_digits",
+      "expectedType": "SQL function(text)",
+      "scope": "runtime",
+      "definition": "REPRODUCIBLE",
+      "population": "UNKNOWN",
+      "provenance": "UNKNOWN",
+      "dependencies": [],
+      "datasets": [],
+      "evidence": [
+        "supabase/migrations/20260705_permit_linkage_v1.sql"
+      ],
+      "creationMigrationControlled": true,
+      "gap": "Stateless transform; no stored population or source receipt applies. PostgreSQL built-ins required."
+    },
+    {
+      "name": "trulot_extract_apn_candidates",
+      "expectedType": "SQL function(text)",
+      "scope": "runtime",
+      "definition": "REPRODUCIBLE",
+      "population": "UNKNOWN",
+      "provenance": "UNKNOWN",
+      "dependencies": [],
+      "datasets": [],
+      "evidence": [
+        "supabase/migrations/20260705_permit_linkage_v1.sql"
+      ],
+      "creationMigrationControlled": true,
+      "gap": "Stateless transform; no stored population or source receipt applies. PostgreSQL built-ins required."
+    },
+    {
+      "name": "trulot_normalize_address_key",
+      "expectedType": "SQL function(text)",
+      "scope": "runtime",
+      "definition": "REPRODUCIBLE",
+      "population": "UNKNOWN",
+      "provenance": "UNKNOWN",
+      "dependencies": [],
+      "datasets": [],
+      "evidence": [
+        "supabase/migrations/20260705_permit_linkage_v1.sql"
+      ],
+      "creationMigrationControlled": true,
+      "gap": "Stateless transform; no stored population or source receipt applies. PostgreSQL built-ins required."
+    },
+    {
+      "name": "check_parcel_overlays",
+      "expectedType": "SQL function(double precision,double precision) returning jsonb",
+      "scope": "runtime",
+      "definition": "REPRODUCIBLE",
+      "population": "PARTIAL",
+      "provenance": "UNKNOWN",
+      "dependencies": [
+        "tpa_official",
+        "sda_official",
+        "ctcac_gis_v1",
+        "postgis"
+      ],
+      "datasets": [
+        "overlay_layers_tpa_sda_ctcac_v1"
+      ],
+      "evidence": [
+        "supabase/migrations/20260712032216_check_parcel_overlays_hardening.sql",
+        "supabase/migrations/20260713025206_overlay_payload_geometry_proven_decoder.sql"
+      ],
+      "creationMigrationControlled": true,
+      "gap": "Multiple repository definitions. Latest geom-based migration is PROHIBITED under freeze; live version UNKNOWN. Missing geometry inputs."
+    },
+    {
+      "name": "tpa_official",
+      "expectedType": "table in rehearsal; live type unverified",
+      "scope": "runtime",
+      "definition": "PARTIAL",
+      "population": "NOT_REPRODUCIBLE",
+      "provenance": "UNKNOWN",
+      "dependencies": [
+        "postgis"
+      ],
+      "datasets": [
+        "overlay_layers_tpa_sda_ctcac_v1"
+      ],
+      "evidence": [
+        "supabase/rehearsal/20260711_remote_public_baseline_subset.sql"
+      ],
+      "creationMigrationControlled": false,
+      "gap": "Source layer, source artifact, vintage, receipt and import pipeline missing. SDA additionally source-reconciliation pending."
+    },
+    {
+      "name": "sda_official",
+      "expectedType": "table in rehearsal; live type unverified",
+      "scope": "runtime",
+      "definition": "PARTIAL",
+      "population": "NOT_REPRODUCIBLE",
+      "provenance": "UNKNOWN",
+      "dependencies": [
+        "postgis"
+      ],
+      "datasets": [
+        "overlay_layers_tpa_sda_ctcac_v1"
+      ],
+      "evidence": [
+        "supabase/rehearsal/20260711_remote_public_baseline_subset.sql"
+      ],
+      "creationMigrationControlled": false,
+      "gap": "Source layer, source artifact, vintage, receipt and import pipeline missing. SDA additionally source-reconciliation pending."
+    },
+    {
+      "name": "ctcac_gis_v1",
+      "expectedType": "table in rehearsal; live type unverified",
+      "scope": "runtime",
+      "definition": "PARTIAL",
+      "population": "NOT_REPRODUCIBLE",
+      "provenance": "UNKNOWN",
+      "dependencies": [
+        "postgis"
+      ],
+      "datasets": [
+        "overlay_layers_tpa_sda_ctcac_v1"
+      ],
+      "evidence": [
+        "supabase/rehearsal/20260711_remote_public_baseline_subset.sql"
+      ],
+      "creationMigrationControlled": false,
+      "gap": "Source layer, source artifact, vintage, receipt and import pipeline missing. SDA additionally source-reconciliation pending."
+    },
+    {
+      "name": "postgis",
+      "expectedType": "external extension in extensions schema",
+      "scope": "runtime",
+      "definition": "PARTIAL",
+      "population": "UNKNOWN",
+      "provenance": "UNKNOWN",
+      "dependencies": [],
+      "datasets": [],
+      "evidence": [
+        "supabase/rehearsal/20260711_remote_public_baseline_subset.sql"
+      ],
+      "creationMigrationControlled": false,
+      "gap": "CREATE EXTENSION exists in rehearsal; server extension binaries/version and deployment configuration not pinned. Population not applicable."
+    },
+    {
+      "name": "trulot_overlay_payload_to_geometry",
+      "expectedType": "PL/pgSQL function(jsonb,text)",
+      "scope": "historical-transform",
+      "definition": "REPRODUCIBLE",
+      "population": "UNKNOWN",
+      "provenance": "UNKNOWN",
+      "dependencies": [
+        "postgis"
+      ],
+      "datasets": [
+        "overlay_layers_tpa_sda_ctcac_v1"
+      ],
+      "evidence": [
+        "supabase/migrations/20260713025206_overlay_payload_geometry_proven_decoder.sql"
+      ],
+      "creationMigrationControlled": true,
+      "gap": "Historical geometry transformation in PROHIBITED migration; not a current RPC call dependency. No authority or import receipt proved. Stateless function."
+    },
+    {
+      "name": "parcel_primary_project_v1",
+      "expectedType": "table in rehearsal; live type unverified",
+      "scope": "historical-population",
+      "definition": "PARTIAL",
+      "population": "NOT_REPRODUCIBLE",
+      "provenance": "PARTIAL",
+      "dependencies": [],
+      "datasets": [
+        "base_zoning_mapping_v1",
+        "permit_terminal_city_sd_v2"
+      ],
+      "evidence": [
+        "supabase/rehearsal/20260711_remote_public_baseline_subset.sql"
+      ],
+      "creationMigrationControlled": false,
+      "gap": "Historical input to activity updater; no direct canonical read or proven current population chain. Project derivation and full DDL missing."
+    },
+    {
+      "name": "update_nearby_activity_v2",
+      "expectedType": "PL/pgSQL function()",
+      "scope": "historical-population",
+      "definition": "PARTIAL",
+      "population": "PARTIAL",
+      "provenance": "UNKNOWN",
+      "dependencies": [
+        "parcel_page_api_v2",
+        "parcel_primary_project_v1"
+      ],
+      "datasets": [],
+      "evidence": [
+        "supabase/rehearsal/20260711_remote_public_baseline_subset.sql"
+      ],
+      "creationMigrationControlled": false,
+      "gap": "Rehearsal DML uses APN prefix for counts. Execution history/scheduling and parity with current core fields UNKNOWN. Not called by canonical adapter."
+    }
+  ],
+  "datasets": [
+    {
+      "id": "parcel_base_sangis_v1",
+      "definition": "UNKNOWN",
+      "population": "NOT_REPRODUCIBLE",
+      "provenance": "PARTIAL",
+      "completeness": "UNKNOWN",
+      "sourceArtifact": null,
+      "acquisitionReceipt": null,
+      "importReceipt": null,
+      "gap": "Publisher/description is a manifest assertion, not verified acquisition lineage; no committed source artifact, receipt or complete importer."
+    },
+    {
+      "id": "assessor_structures_sdcounty_v1",
+      "definition": "UNKNOWN",
+      "population": "NOT_REPRODUCIBLE",
+      "provenance": "PARTIAL",
+      "completeness": "UNKNOWN",
+      "sourceArtifact": null,
+      "acquisitionReceipt": null,
+      "importReceipt": null,
+      "gap": "Publisher/description is a manifest assertion, not verified acquisition lineage; no committed source artifact, receipt or complete importer."
+    },
+    {
+      "id": "base_zoning_mapping_v1",
+      "definition": "UNKNOWN",
+      "population": "NOT_REPRODUCIBLE",
+      "provenance": "UNKNOWN",
+      "completeness": "UNKNOWN",
+      "sourceArtifact": null,
+      "acquisitionReceipt": null,
+      "importReceipt": null,
+      "gap": "Publisher/description is a manifest assertion, not verified acquisition lineage; no committed source artifact, receipt or complete importer."
+    },
+    {
+      "id": "permit_terminal_city_sd_v2",
+      "definition": "UNKNOWN",
+      "population": "NOT_REPRODUCIBLE",
+      "provenance": "PARTIAL",
+      "completeness": "UNKNOWN",
+      "sourceArtifact": null,
+      "acquisitionReceipt": null,
+      "importReceipt": null,
+      "gap": "Publisher/description is a manifest assertion, not verified acquisition lineage; no committed source artifact, receipt or complete importer."
+    },
+    {
+      "id": "overlay_layers_tpa_sda_ctcac_v1",
+      "definition": "UNKNOWN",
+      "population": "NOT_REPRODUCIBLE",
+      "provenance": "UNKNOWN",
+      "completeness": "UNKNOWN",
+      "sourceArtifact": null,
+      "acquisitionReceipt": null,
+      "importReceipt": null,
+      "gap": "Publisher/description is a manifest assertion, not verified acquisition lineage; no committed source artifact, receipt or complete importer."
+    }
+  ]
+}
