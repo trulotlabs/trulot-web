@@ -1,0 +1,23 @@
+{
+  "futureSteps": [
+    "add a separately reviewed integrated V2 data-access path",
+    "shadow-read before rendering",
+    "preserve /parcel/san-diego/[slug] behavior",
+    "preserve existing permit and overlay paths",
+    "render raw zoning evidence without standards",
+    "retain legacy fallback during bounded validation",
+    "prevent legacy capacity or eligibility logic from entering zoning truth"
+  ],
+  "nextDependency": {
+    "implementedHere": false,
+    "name": "Zoning Standards V2",
+    "requires": [
+      "authoritative municipal code and development regulations",
+      "versioned section citations",
+      "zone-code-to-rule applicability",
+      "effective-date and amendment lineage",
+      "separate treatment of overlays and programs"
+    ]
+  },
+  "packet11RuntimeWiring": false
+}

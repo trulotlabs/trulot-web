@@ -1,0 +1,178 @@
+{
+  "buildDurationSeconds": 19.342,
+  "engine": "Python sqlite3 in-memory compact rehearsal index",
+  "productionPerformanceClaim": false,
+  "queries": {
+    "apnIdentityAndZoning": {
+      "durationMs": 0.035458,
+      "plan": [
+        [
+          3,
+          0,
+          39,
+          "SEARCH parcel_intelligence USING INDEX sqlite_autoindex_parcel_intelligence_1 (apn=?)"
+        ]
+      ],
+      "rowCount": 1,
+      "rows": [
+        [
+          "5470501600",
+          48354,
+          "740 47TH ST",
+          "25e333b266f0287435cdfcf67ca6aa6c993fd1d2250d6f673cccf3b2e6292468",
+          15099.381337,
+          null,
+          "SINGLE_ZONE",
+          "RM-1-1",
+          "[{\"features\":[{\"intersectedAreaSqFt\":15099.416019294325,\"sourceGeometryState\":\"VALID_SOURCE\",\"sourceObjectId\":1904}],\"intersectedAreaSqFt\":15099.416019294325,\"parcelCoveragePercent\":100.0,\"zoneCode\":\"RM-1-1\"}]"
+        ]
+      ]
+    },
+    "splitZoneLookup": {
+      "durationMs": 0.032417,
+      "plan": [
+        [
+          6,
+          0,
+          46,
+          "SEARCH p USING INDEX sqlite_autoindex_parcel_intelligence_1 (apn=?)"
+        ],
+        [
+          13,
+          0,
+          63,
+          "SEARCH z USING INDEX sqlite_autoindex_parcel_zone_1 (apn=?)"
+        ],
+        [
+          28,
+          0,
+          0,
+          "USE TEMP B-TREE FOR ORDER BY"
+        ]
+      ],
+      "rowCount": 2,
+      "rows": [
+        [
+          "6271001600",
+          "MULTI_ZONE",
+          "OF-1-1",
+          94.75594446144098
+        ],
+        [
+          "6271001600",
+          "MULTI_ZONE",
+          "AR-1-2",
+          5.244055538558022
+        ]
+      ]
+    },
+    "stackedLookup": {
+      "durationMs": 0.062,
+      "plan": [
+        [
+          4,
+          0,
+          61,
+          "SEARCH parcel_intelligence USING INDEX parcel_intelligence_geometry_idx (geometry_sha256=?)"
+        ],
+        [
+          7,
+          0,
+          0,
+          "SCALAR SUBQUERY 1"
+        ],
+        [
+          12,
+          7,
+          39,
+          "SEARCH parcel_intelligence USING INDEX sqlite_autoindex_parcel_intelligence_1 (apn=?)"
+        ],
+        [
+          32,
+          0,
+          0,
+          "USE TEMP B-TREE FOR ORDER BY"
+        ]
+      ],
+      "rowCount": 64,
+      "rows": [
+        [
+          "5891700501",
+          "SINGLE_ZONE",
+          "[{\"features\":[{\"intersectedAreaSqFt\":170671.76438001913,\"sourceGeometryState\":\"VALID_SOURCE\",\"sourceObjectId\":931}],\"intersectedAreaSqFt\":170671.76438001913,\"parcelCoveragePercent\":100.00000000000001,\"zoneCode\":\"RM-2-5\"}]"
+        ],
+        [
+          "5891700502",
+          "SINGLE_ZONE",
+          "[{\"features\":[{\"intersectedAreaSqFt\":170671.76438001913,\"sourceGeometryState\":\"VALID_SOURCE\",\"sourceObjectId\":931}],\"intersectedAreaSqFt\":170671.76438001913,\"parcelCoveragePercent\":100.00000000000001,\"zoneCode\":\"RM-2-5\"}]"
+        ],
+        [
+          "5891700503",
+          "SINGLE_ZONE",
+          "[{\"features\":[{\"intersectedAreaSqFt\":170671.76438001913,\"sourceGeometryState\":\"VALID_SOURCE\",\"sourceObjectId\":931}],\"intersectedAreaSqFt\":170671.76438001913,\"parcelCoveragePercent\":100.00000000000001,\"zoneCode\":\"RM-2-5\"}]"
+        ],
+        [
+          "5891700504",
+          "SINGLE_ZONE",
+          "[{\"features\":[{\"intersectedAreaSqFt\":170671.76438001913,\"sourceGeometryState\":\"VALID_SOURCE\",\"sourceObjectId\":931}],\"intersectedAreaSqFt\":170671.76438001913,\"parcelCoveragePercent\":100.00000000000001,\"zoneCode\":\"RM-2-5\"}]"
+        ],
+        [
+          "5891700505",
+          "SINGLE_ZONE",
+          "[{\"features\":[{\"intersectedAreaSqFt\":170671.76438001913,\"sourceGeometryState\":\"VALID_SOURCE\",\"sourceObjectId\":931}],\"intersectedAreaSqFt\":170671.76438001913,\"parcelCoveragePercent\":100.00000000000001,\"zoneCode\":\"RM-2-5\"}]"
+        ]
+      ]
+    },
+    "unmappedLookup": {
+      "durationMs": 0.064041,
+      "plan": [
+        [
+          5,
+          0,
+          61,
+          "SEARCH parcel_intelligence USING INDEX parcel_intelligence_state_idx (mapping_state=?)"
+        ],
+        [
+          21,
+          0,
+          0,
+          "USE TEMP B-TREE FOR ORDER BY"
+        ]
+      ],
+      "rowCount": 1,
+      "rows": [
+        [
+          "4507900300",
+          "UNMAPPED",
+          "[]"
+        ]
+      ]
+    },
+    "zoneToParcelCount": {
+      "durationMs": 0.321666,
+      "plan": [
+        [
+          6,
+          0,
+          62,
+          "SEARCH parcel_zone USING INDEX parcel_zone_code_idx (zone_code=?)"
+        ]
+      ],
+      "rowCount": 1,
+      "rows": [
+        [
+          3542
+        ]
+      ]
+    }
+  },
+  "rowCount": 393733,
+  "source": "full deterministic integrated NDJSON; geometry represented by identity hash and area in compact query index",
+  "zoningStateCounts": {
+    "BOUNDARY_SLIVER": 1097,
+    "INDETERMINATE": 1641,
+    "MULTI_ZONE": 73064,
+    "SINGLE_ZONE": 317604,
+    "UNMAPPED": 327
+  }
+}

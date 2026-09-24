@@ -5,6 +5,8 @@ No live database inspection or SQL execution was performed for this audit. Histo
 
 Packet 10 update: the legacy `base_zoning_mapping_v1` lineage described below remains unrecoverable, but an independent **City of San Diego Base Zoning V2 rehearsal** now has an authoritative item, immutable receipt, complete raw-code inventory, explicit geometry quarantine/derivation, and deterministic mapping against Parcel Base V2. It is not wired to runtime. See `docs/base-zoning-v2-rehearsal.md`. Parcel identity remains `IDENTITY_REQUIRES_FURTHER_RECONCILIATION`.
 
+Packet 11 update: Parcel Serving V2 and Base Zoning V2 now compose deterministically into an offline `parcel_intelligence_serving_v2` contract with all 393,733 City parcels, source-specific provenance, and unchanged zoning states. This remains unwired from Parcel V1. See `docs/zoning-serving-v2-integration-rehearsal.md`.
+
 ## Canonical dependency map
 
 `app/parcel/san-diego/[slug]/page.tsx` calls `getParcelPageV1Result()` in `lib/parcel-page-v1.ts`. The adapter makes five database call sites over four named objects:
@@ -37,7 +39,7 @@ The separately rehearsed future enrichment path is:
 ```text
 SanGIS Parcel Base V2 + City of San Diego Base Zoning V2
   → deterministic all-intersection parcel-zone mapping
-  → future Parcel Serving enrichment
+  → offline Parcel Intelligence Serving V2 composition
   → Parcel Truth
 ```
 

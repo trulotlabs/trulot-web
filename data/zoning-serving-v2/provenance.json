@@ -1,0 +1,37 @@
+{
+  "baseZoning": {
+    "acquiredAt": "2026-09-24T20:11:39.821623+00:00",
+    "acquisitionId": "zoning-city-sd-20260924T201131Z",
+    "artifactSha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+    "datasetId": "base_zoning_city_sd_v2",
+    "mappingFingerprintSha256": "313aa7ad46747bb97499a113842ac848de8f7357134e0558210692a1913a8ccf",
+    "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+    "publisher": "City of San Diego Planning via SanGIS",
+    "receiptReference": "data/base-zoning-v2/acquisition.json",
+    "sourceItemId": "e99981214e6348de8ddc3674f799c75d",
+    "sourceModifiedAt": "2026-08-10T22:44:01.705000+00:00",
+    "sourceUrl": "https://geo.sandag.org/server/rest/services/Hosted/Zoning_Base_SD/FeatureServer/0"
+  },
+  "flattenedLastUpdated": null,
+  "integration": {
+    "integratedFingerprint": "27b1a362bdae28369cdf7274d1b9842bef07b5970e33c1f9522d68d042e616d8",
+    "mappingReference": "data/base-zoning-v2/mapping-report.json",
+    "methodVersion": "parcel-intelligence-serving-v2-left-join-v1",
+    "parcelReference": "data/parcel-serving-v2/report.json#provenance",
+    "zoningReference": "data/base-zoning-v2/acquisition.json#receipt"
+  },
+  "parcel": {
+    "acquired_at": "2026-09-24T18:43:39.950969+00:00",
+    "acquisition_id": "sangis-20260924T183743Z",
+    "artifact_sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+    "dataset_id": "parcel_base_sangis_v2",
+    "import_identity": "c03f79d9dbf43198bba4be6b82508ace5fbf5c1ec3e57d8ec8310e912955764d",
+    "metadata_sha256": "2a9a213057cd8cb4d64bb851cba9408e7367ca28b92b4731bf7a7c9742dea0b9",
+    "metadata_url": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0/metadata",
+    "publisher": "SanGIS",
+    "receipt_reference": "data/parcel-base-v2/acquisitions/sangis-20260924T183743Z/acquisition.json",
+    "serving_definition_sha256": "4c167a10ca2beca4f899f72773b7b2354bd0f4fc599973a4c137fbe9e415b1fc",
+    "source_temporal_extent": "2026-08-29T00:00:00",
+    "source_url": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0"
+  }
+}

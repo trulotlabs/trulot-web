@@ -1,0 +1,22 @@
+{
+  "decision": "EXACT_MATCH",
+  "identical": {
+    "inputs": true,
+    "integratedFingerprint": true,
+    "integrationMethodVersion": true,
+    "join": true,
+    "output": true,
+    "packet10MappingFingerprint": true,
+    "packet8ApnSetFingerprint": true,
+    "packet8FullRowFingerprint": true,
+    "parcelCount": true,
+    "splitAndSliverFingerprint": true,
+    "stacked": true,
+    "zoneParcelCounts": true,
+    "zoningStateCounts": true
+  },
+  "runDurationsSeconds": [
+    147.557,
+    148.938
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "decision": "ZONING_SERVING_INTEGRATION_REHEARSAL_PASS",
+  "checks": [
+    {"command": "python3 scripts/zoning-serving-v2/test.py", "exitCode": 0, "summary": "24 integrated population, join, fidelity, provenance, boundary, and contract checks"},
+    {"command": "node scripts/zoning-serving-v2/test-adapter.mjs", "exitCode": 0, "summary": "15 integrated Parcel Truth and display checks"},
+    {"command": "two complete integrate.py builds", "exitCode": 0, "summary": "393733 rows; all state/zone counts, APN set, split/sliver values, provenance references, output hash, and integrated fingerprint identical"},
+    {"command": "python3 scripts/zoning-serving-v2/query-rehearsal.py", "exitCode": 0, "summary": "393733-row compact indexed local query rehearsal"},
+    {"command": "python3 scripts/base-zoning-v2/test.py", "exitCode": 0, "summary": "17 Packet 10 checks"},
+    {"command": "node scripts/base-zoning-v2/test-adapter.mjs", "exitCode": 0, "summary": "10 Packet 10 adapter checks"},
+    {"command": "node scripts/test-parcel-base-v2-receipt.mjs", "exitCode": 0, "summary": "23 checks"},
+    {"command": "node scripts/test-parcel-base-v2-source.mjs", "exitCode": 0, "summary": "32 checks"},
+    {"command": "node scripts/test-sangis-acquisition.mjs", "exitCode": 0, "summary": "37 checks"},
+    {"command": "python3 scripts/test-sangis-acquisition-stream.py", "exitCode": 0, "summary": "7 checks"},
+    {"command": "python3 scripts/test-sangis-acquirer.py", "exitCode": 0, "summary": "3 checks"},
+    {"command": "node scripts/parcel-serving-v2/test-adapter.mjs", "exitCode": 0, "summary": "36 checks"},
+    {"command": "node scripts/test-parcel-truth.mjs", "exitCode": 0, "summary": "19 cases"},
+    {"command": "node scripts/test-overlay-response.mjs", "exitCode": 0, "summary": "43 cases"},
+    {"command": "node scripts/test-overlay-payload-compat.mjs", "exitCode": 0, "summary": "local rollback rehearsal passed"},
+    {"command": "node scripts/test-sda-source-reconciliation.mjs", "exitCode": 0, "summary": "6 behavior groups"},
+    {"command": "node scripts/verify-parcel-foundation.mjs", "exitCode": 0},
+    {"command": "node scripts/test-parcel-foundation.mjs", "exitCode": 0, "summary": "25 cases"},
+    {"command": "node scripts/verify-data-foundation.mjs", "exitCode": 0},
+    {"command": "node scripts/test-production-database-freeze.mjs", "exitCode": 0, "summary": "18 cases"},
+    {"command": "node scripts/test-validate-foundation-dry-run.mjs", "exitCode": 0},
+    {"command": "node scripts/test-qa-foundation-production-adapter.mjs", "exitCode": 0},
+    {"command": "NEXT_TELEMETRY_DISABLED=1 next typegen", "exitCode": 0},
+    {"command": "tsc --noEmit --incremental false", "exitCode": 0},
+    {"command": "eslint scripts/zoning-serving-v2/adapter.ts scripts/zoning-serving-v2/test-adapter.mjs", "exitCode": 0},
+    {"command": "git diff --check", "exitCode": 0}
+  ],
+  "globalLint": {
+    "exitCode": 1,
+    "knownUnchangedError": "supabase/functions/nearby-parcels/index.ts:125:67 @typescript-eslint/no-explicit-any",
+    "knownUnchangedWarnings": 6
+  },
+  "executionBoundary": {
+    "productionAccess": false,
+    "fullDatabaseProjection": "read-only SELECT/COPY from guarded Unix-socket-only local PostGIS",
+    "integratedBuild": "deterministic external NDJSON; no database mutation",
+    "runtimeWiring": false
+  }
+}
