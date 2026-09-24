@@ -1,3 +1,5 @@
+import type { CanonicalResultState, SafeSourceErrorCode, SourceStatus, TruthFact } from "./parcel-truth";
+export type { CanonicalResultState, SafeSourceErrorCode, SourceStatus } from "./parcel-truth";
 import { parseOverlayResponse } from "./overlay-response";
 import { createClient } from "@supabase/supabase-js";
 import {
@@ -24,7 +26,7 @@ import {
   SDA_RECONCILIATION_MESSAGE,
   type SdaReconciliationStatus,
 } from "./sda-source-reconciliation";
-import { buildParcelPageSourceEntries, type ParcelPageSourceEntry } from "./source-freshness";
+import { buildTruthProvenance, buildParcelPageSourceEntries, type ParcelPageSourceEntry } from "./source-freshness";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -38,28 +40,6 @@ type OverlayFlags = (
 ) & { sda: SdaReconciliationStatus };
 
 export type ConfidenceTier = "recorded" | "mapped" | "conditional";
-
-export type CanonicalResultState =
-  | "found"
-  | "not_found"
-  | "source_unavailable"
-  | "partial"
-  | "invalid_request";
-
-export type SafeSourceErrorCode =
-  | "query_failed"
-  | "missing_relation"
-  | "permission_denied"
-  | "timeout"
-  | "schema_mismatch"
-  | "missing_input";
-
-export interface SourceStatus {
-  status: CanonicalResultState;
-  freshness: string | null;
-  safeErrorCode: SafeSourceErrorCode | null;
-  publicMessage: string | null;
-}
 
 export interface ParcelPageSourceStatus {
   parcel: SourceStatus;
@@ -191,7 +171,14 @@ export interface ParcelPageV1Data {
   fieldMapping: SourceRegistryRow[];
 }
 
+export interface ParcelTruth {
+  parcel: TruthFact<{ apn: string; address: string | null } | false>;
+  overlays: { tpa: TruthFact<boolean>; ctcac: TruthFact<boolean>; sda: TruthFact<boolean> };
+  permits: TruthFact<PermitFact[]>;
+}
+
 export interface ParcelPageV1Result {
+  truth: ParcelTruth;
   status: CanonicalResultState;
   data: ParcelPageV1Data | null;
   sourceStatus: ParcelPageSourceStatus;
@@ -305,7 +292,8 @@ function daysOld(raw: unknown): number | null {
 
 function defaultSourceStatus(): SourceStatus {
   return {
-    status: "not_found",
+    status: "source_unavailable",
+    sourceState: "not_evaluated",
     freshness: null,
     safeErrorCode: null,
     publicMessage: null,
@@ -332,6 +320,9 @@ function buildSourceStatus(
 ): SourceStatus {
   return {
     status,
+    sourceState: status === "found" || status === "not_found" ? "available"
+      : status === "partial" ? "partial"
+      : status === "invalid_request" ? "not_evaluated" : "source_unavailable",
     freshness: options?.freshness ?? null,
     safeErrorCode: options?.safeErrorCode ?? null,
     publicMessage: options?.publicMessage ?? null,
@@ -403,7 +394,8 @@ async function fetchPermitsForParcel(
     )
     .eq("matched_parcel_apn_norm", parcel.apnNorm)
     .in("linkage_confidence", ["exact_apn", "parsed_apn"])
-    .order("opened_date", { ascending: false });
+    .order("opened_date", { ascending: false })
+    .then(response => response, () => ({ data: null, error: { code: "", message: "Query failed" } }));
 
   if (error) {
     return {
@@ -416,7 +408,22 @@ async function fetchPermitsForParcel(
     };
   }
 
-  const candidateRows = dedupePermitRows((data ?? []) as RawRow[]);
+  // A successful list response must actually be a list of identifiable rows.
+  // Invalid rows cannot be silently discarded into a supported empty history.
+  if (!Array.isArray(data) || data.some(row => !isRecord(row) ||
+      !str(row.record_id || row.record_number) ||
+      !["exact_apn", "parsed_apn"].includes(str(row.linkage_confidence)) ||
+      (row.linkage_confidence === "parsed_apn" && !Array.isArray(row.apn_candidates)))) {
+    return {
+      rows: [],
+      status: buildSourceStatus("source_unavailable", {
+        safeErrorCode: "schema_mismatch",
+        publicMessage: "Permit records are temporarily unavailable.",
+      }),
+      excludedAmbiguousCount: 0,
+    };
+  }
+  const candidateRows = dedupePermitRows(data as RawRow[]);
   const rows = candidateRows.filter((row) => isDirectParcelPermit(parcel.apnNorm, row));
   const excludedAmbiguousCount = candidateRows.length - rows.length;
   const freshness = formatShortDate(rows[0]?.opened_date ?? candidateRows[0]?.opened_date);
@@ -787,10 +794,31 @@ async function fetchSimilarLots(
   };
 }
 
+function isRecord(value: unknown): value is RawRow {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function emptyTruth(status: "not_found" | "source_unavailable" | "invalid_request"): ParcelTruth {
+  const parcelProvenance = buildTruthProvenance("parcel_base_sangis_v1", "parcel_page_api_v2", status === "not_found" ? "Successful core lookup returned no row." : "Core identity has not been established.");
+  const overlayProvenance = buildTruthProvenance("overlay_layers_tpa_sda_ctcac_v1", "check_parcel_overlays", "Overlay source not evaluated.");
+  const unavailableMembership: TruthFact<boolean> = { state: "unavailable", value: null, sourceState: "not_evaluated", derivation: "deterministic_derived", provenance: overlayProvenance };
+  return {
+    parcel: status === "not_found"
+      ? { state: "supported", value: false, sourceState: "available", derivation: "recorded", provenance: parcelProvenance }
+      : { state: "unavailable", value: null, sourceState: status === "invalid_request" ? "not_evaluated" : "source_unavailable", derivation: "recorded", provenance: parcelProvenance },
+    overlays: {
+      tpa: unavailableMembership, ctcac: unavailableMembership,
+      sda: { state: "unknown", value: null, sourceState: "not_evaluated", derivation: "conditional", provenance: { ...overlayProvenance, basis: SDA_RECONCILIATION_MESSAGE } },
+    },
+    permits: { state: "unavailable", value: null, sourceState: "not_evaluated", derivation: "deterministic_derived", provenance: buildTruthProvenance("permit_terminal_city_sd_v2", "trulot_permit_parcel_link_v1", "Permit source not evaluated.") },
+  };
+}
+
 export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV1Result> {
   const rawDigits = rawApnOrSlug.replace(/\D/g, "");
   if (!rawDigits) {
     return {
+      truth: emptyTruth("invalid_request"),
       status: "invalid_request",
       data: null,
       sourceStatus: {
@@ -808,10 +836,12 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     .from("parcel_page_api_v2")
     .select("*")
     .eq("apn_norm", apnNorm)
-    .maybeSingle();
+    .maybeSingle()
+    .then(response => response, () => ({ data: null, error: { code: "", message: "Query failed" } }));
 
   if (parcelError) {
     return {
+      truth: emptyTruth("source_unavailable"),
       status: "source_unavailable",
       data: null,
       sourceStatus: {
@@ -824,8 +854,9 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     };
   }
 
-  if (!parcel) {
+  if (parcel === null) {
     return {
+      truth: emptyTruth("not_found"),
       status: "not_found",
       data: null,
       sourceStatus: {
@@ -837,7 +868,18 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     };
   }
 
-  const parcelRow = parcel as RawRow;
+  if (!isRecord(parcel) || str(parcel.apn_norm) !== apnNorm) {
+    return {
+      truth: emptyTruth("source_unavailable"), status: "source_unavailable", data: null,
+      sourceStatus: {
+        ...emptySourceStatus(),
+        parcel: buildSourceStatus("source_unavailable", {
+          safeErrorCode: "schema_mismatch", publicMessage: "Parcel records are temporarily unavailable.",
+        }),
+      },
+    };
+  }
+  const parcelRow = parcel;
   const address = formatAddress(parcelRow);
   const city = str(parcelRow.city) || "San Diego";
   const state = str(parcelRow.state) || "CA";
@@ -1022,7 +1064,7 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     });
   } else if (sourceStatus.permits.status === "not_found") {
     snapshot.push({
-      value: "City permit records show no permits on file for this parcel in the current digital record set.",
+      value: "No linked permit records were found in the current direct permit-history source.",
       sourceLabel: "City permit linkage audit",
       confidenceTier: "recorded",
       nullBehavior: "Show this sentence when no permit rows are returned.",
@@ -1238,10 +1280,32 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     fieldMapping: buildFieldMappingReport(),
   };
 
+  const overlayProvenance = buildTruthProvenance("overlay_layers_tpa_sda_ctcac_v1", "check_parcel_overlays", "Validated point-overlay RPC response; membership is not regulatory eligibility.", "check_parcel_overlays");
+  function membership(value: boolean | null): TruthFact<boolean> {
+    return value === null
+      ? { state: "unavailable", value: null, sourceState: "source_unavailable", provenance: overlayProvenance, derivation: "deterministic_derived" }
+      : { state: "supported", value, sourceState: "available", provenance: overlayProvenance, derivation: "deterministic_derived" };
+  }
+  const permitProvenance = buildTruthProvenance("permit_terminal_city_sd_v2", "trulot_permit_parcel_link_v1", "Direct linked records in this source only; an empty result is not a claim that no permits exist.", "exact or unambiguous parsed APN linkage");
+  const permitTruth: TruthFact<PermitFact[]> = sourceStatus.permits.sourceState === "source_unavailable"
+    ? { state: "unavailable", value: null, sourceState: "source_unavailable", provenance: permitProvenance, derivation: "deterministic_derived" }
+    : sourceStatus.permits.sourceState === "partial"
+    ? { state: "partial", value: permitFacts, sourceState: "partial", provenance: permitProvenance, derivation: "deterministic_derived" }
+    : { state: "supported", value: permitFacts, sourceState: "available", provenance: permitProvenance, derivation: "deterministic_derived" };
   return {
-    status: pageStatus,
-    data,
-    sourceStatus,
+    status: pageStatus, data, sourceStatus,
+    truth: {
+      parcel: {
+        state: "supported", value: { apn: apnNorm, address: str(parcelRow.address) || null },
+        sourceState: "available", derivation: "recorded",
+        provenance: buildTruthProvenance("parcel_base_sangis_v1", "parcel_page_api_v2", "Parcel identity from a successful core lookup.", null, str(parcelRow.generated_at) || null),
+      },
+      overlays: {
+        tpa: membership(overlays.tpa), ctcac: membership(overlays.ctcac),
+        sda: { state: "unknown", value: null, sourceState: sourceStatus.overlays.sourceState, derivation: "conditional", provenance: { ...overlayProvenance, basis: SDA_RECONCILIATION_MESSAGE, methodology: "SDA source reconciliation policy" } },
+      },
+      permits: permitTruth,
+    },
   };
 }
 

@@ -1,3 +1,4 @@
+import type { FactProvenance } from "./parcel-truth";
 import foundationDatasetManifests from "@/data/dataset-manifests/2026-07-11-foundation.json";
 
 export interface DatasetManifest {
@@ -90,4 +91,22 @@ export function buildParcelPageSourceEntries(
 
 export function getFoundationDatasetManifests(): DatasetManifest[] {
   return manifests;
+}
+
+/** Preserve manifest evidence without treating unknown markers as metadata. */
+export function buildTruthProvenance(
+  datasetId: string, sourceId: string, basis: string,
+  methodology: string | null = null, viewCalculatedAt: string | null = null,
+): FactProvenance {
+  const manifest = manifestById(datasetId);
+  const known = (value: string): string | null =>
+    !value.trim() || ["unknown", "unverified"].includes(value.trim().toLowerCase()) ? null : value;
+  return {
+    sourceId, datasetId, sourceLabel: known(manifest.human_readable_name),
+    publisher: known(manifest.source_agency_or_publisher),
+    sourceUrl: known(manifest.source_url_or_acquisition_location),
+    effectiveAt: known(manifest.source_publication_or_effective_date),
+    retrievedAt: known(manifest.acquisition_timestamp), importedAt: known(manifest.import_timestamp),
+    viewCalculatedAt, methodology, basis,
+  };
 }

@@ -515,8 +515,8 @@ export default async function ParcelPage({
             ) : (
               <div className="mt-3">
                 <EmptyState
-                  title="No permits on record"
-                  body={data.permits.emptyState ?? `No permits are on file for this parcel since ${data.permits.earliestDataYear}.`}
+                  title={result.truth.permits.state === "unavailable" ? "Permit history unavailable" : result.truth.permits.state === "partial" ? "Permit history incomplete" : "No linked permits in this source"}
+                  body={data.permits.emptyState ?? "No linked permit records were found in the current direct permit-history source."}
                 />
               </div>
             )}
