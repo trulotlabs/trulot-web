@@ -1,0 +1,622 @@
+{
+  "fixtureOnly": true,
+  "description": "Invented geometry and attributes; no real parcel records. Fixed examples exercise validation failures.",
+  "sourceProfile": "sandag-parcels-geojson-v1",
+  "sourceCrs": "EPSG:4326",
+  "sourceSchema": [
+    {
+      "name": "objectid",
+      "type": "integer"
+    },
+    {
+      "name": "apn",
+      "type": "string"
+    },
+    {
+      "name": "parcelid",
+      "type": "integer"
+    },
+    {
+      "name": "situs_address",
+      "type": "integer"
+    },
+    {
+      "name": "situs_pre_dir",
+      "type": "string"
+    },
+    {
+      "name": "situs_street",
+      "type": "string"
+    },
+    {
+      "name": "situs_suffix",
+      "type": "string"
+    },
+    {
+      "name": "situs_post_dir",
+      "type": "string"
+    },
+    {
+      "name": "situs_fraction",
+      "type": "string"
+    },
+    {
+      "name": "situs_building",
+      "type": "string"
+    },
+    {
+      "name": "situs_suite",
+      "type": "string"
+    },
+    {
+      "name": "situs_zip",
+      "type": "string"
+    },
+    {
+      "name": "situs_juris",
+      "type": "string"
+    },
+    {
+      "name": "acreage",
+      "type": "number"
+    }
+  ],
+  "declaredFeatureCount": 12,
+  "featureCollection": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 1,
+          "apn": "001-234-56-78",
+          "parcelid": 1,
+          "situs_address": 101,
+          "situs_pre_dir": null,
+          "situs_street": "FIXTURE",
+          "situs_suffix": "ST",
+          "situs_post_dir": null,
+          "situs_fraction": null,
+          "situs_building": null,
+          "situs_suite": null,
+          "situs_zip": "92101",
+          "situs_juris": "SD",
+          "acreage": null
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -117.15,
+                32.72
+              ],
+              [
+                -117.149,
+                32.72
+              ],
+              [
+                -117.149,
+                32.721
+              ],
+              [
+                -117.15,
+                32.721
+              ],
+              [
+                -117.15,
+                32.72
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 2,
+          "apn": "0000000200",
+          "parcelid": 2,
+          "situs_address": null,
+          "situs_pre_dir": null,
+          "situs_street": null,
+          "situs_suffix": "ST",
+          "situs_post_dir": null,
+          "situs_fraction": null,
+          "situs_building": null,
+          "situs_suite": null,
+          "situs_zip": "92101",
+          "situs_juris": "SD",
+          "acreage": null
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -117.15,
+                32.72
+              ],
+              [
+                -117.149,
+                32.72
+              ],
+              [
+                -117.149,
+                32.721
+              ],
+              [
+                -117.15,
+                32.721
+              ],
+              [
+                -117.15,
+                32.72
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 3,
+          "apn": "0000000300",
+          "parcelid": 3,
+          "situs_address": 103,
+          "situs_pre_dir": null,
+          "situs_street": "FIXTURE",
+          "situs_suffix": "ST",
+          "situs_post_dir": null,
+          "situs_fraction": null,
+          "situs_building": null,
+          "situs_suite": null,
+          "situs_zip": "92101",
+          "situs_juris": "SD",
+          "acreage": null
+        },
+        "geometry": {
+          "type": "MultiPolygon",
+          "coordinates": [
+            [
+              [
+                [
+                  -117.15,
+                  32.72
+                ],
+                [
+                  -117.149,
+                  32.72
+                ],
+                [
+                  -117.149,
+                  32.721
+                ],
+                [
+                  -117.15,
+                  32.721
+                ],
+                [
+                  -117.15,
+                  32.72
+                ]
+              ]
+            ],
+            [
+              [
+                [
+                  -117.14,
+                  32.73
+                ],
+                [
+                  -117.139,
+                  32.73
+                ],
+                [
+                  -117.139,
+                  32.730999999999995
+                ],
+                [
+                  -117.14,
+                  32.730999999999995
+                ],
+                [
+                  -117.14,
+                  32.73
+                ]
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 4,
+          "apn": "BAD-APN",
+          "parcelid": 4,
+          "situs_address": 104,
+          "situs_pre_dir": null,
+          "situs_street": "FIXTURE",
+          "situs_suffix": "ST",
+          "situs_post_dir": null,
+          "situs_fraction": null,
+          "situs_building": null,
+          "situs_suite": null,
+          "situs_zip": "92101",
+          "situs_juris": "SD",
+          "acreage": null
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -117.15,
+                32.72
+              ],
+              [
+                -117.149,
+                32.72
+              ],
+              [
+                -117.149,
+                32.721
+              ],
+              [
+                -117.15,
+                32.721
+              ],
+              [
+                -117.15,
+                32.72
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 5,
+          "apn": "1234567800",
+          "parcelid": 5,
+          "situs_address": 105,
+          "situs_pre_dir": null,
+          "situs_street": "FIXTURE",
+          "situs_suffix": "ST",
+          "situs_post_dir": null,
+          "situs_fraction": null,
+          "situs_building": null,
+          "situs_suite": null,
+          "situs_zip": "92101",
+          "situs_juris": "SD",
+          "acreage": null
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -117.15,
+                32.72
+              ],
+              [
+                -117.149,
+                32.72
+              ],
+              [
+                -117.149,
+                32.721
+              ],
+              [
+                -117.15,
+                32.721
+              ],
+              [
+                -117.15,
+                32.72
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 6,
+          "apn": "1234567800",
+          "parcelid": 6,
+          "situs_address": 106,
+          "situs_pre_dir": null,
+          "situs_street": "FIXTURE",
+          "situs_suffix": "ST",
+          "situs_post_dir": null,
+          "situs_fraction": null,
+          "situs_building": null,
+          "situs_suite": null,
+          "situs_zip": "92101",
+          "situs_juris": "SD",
+          "acreage": null
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -117.15,
+                32.72
+              ],
+              [
+                -117.149,
+                32.72
+              ],
+              [
+                -117.149,
+                32.721
+              ],
+              [
+                -117.15,
+                32.721
+              ],
+              [
+                -117.15,
+                32.72
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 7,
+          "apn": "2000000001",
+          "parcelid": 700,
+          "situs_address": 107,
+          "situs_pre_dir": null,
+          "situs_street": "FIXTURE",
+          "situs_suffix": "ST",
+          "situs_post_dir": null,
+          "situs_fraction": null,
+          "situs_building": null,
+          "situs_suite": "6",
+          "situs_zip": "92101",
+          "situs_juris": "SD",
+          "acreage": null
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -117.15,
+                32.72
+              ],
+              [
+                -117.149,
+                32.72
+              ],
+              [
+                -117.149,
+                32.721
+              ],
+              [
+                -117.15,
+                32.721
+              ],
+              [
+                -117.15,
+                32.72
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 8,
+          "apn": "2000000002",
+          "parcelid": 700,
+          "situs_address": 108,
+          "situs_pre_dir": null,
+          "situs_street": "FIXTURE",
+          "situs_suffix": "ST",
+          "situs_post_dir": null,
+          "situs_fraction": null,
+          "situs_building": null,
+          "situs_suite": "7",
+          "situs_zip": "92101",
+          "situs_juris": "SD",
+          "acreage": null
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -117.15,
+                32.72
+              ],
+              [
+                -117.149,
+                32.72
+              ],
+              [
+                -117.149,
+                32.721
+              ],
+              [
+                -117.15,
+                32.721
+              ],
+              [
+                -117.15,
+                32.72
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 9,
+          "apn": "0000000900",
+          "parcelid": 9,
+          "situs_address": 109,
+          "situs_pre_dir": null,
+          "situs_street": "FIXTURE",
+          "situs_suffix": "ST",
+          "situs_post_dir": null,
+          "situs_fraction": null,
+          "situs_building": null,
+          "situs_suite": null,
+          "situs_zip": "92101",
+          "situs_juris": "SD",
+          "acreage": null
+        },
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 10,
+          "apn": "0000001000",
+          "parcelid": 10,
+          "situs_address": 110,
+          "situs_pre_dir": null,
+          "situs_street": "FIXTURE",
+          "situs_suffix": "ST",
+          "situs_post_dir": null,
+          "situs_fraction": null,
+          "situs_building": null,
+          "situs_suite": null,
+          "situs_zip": "92101",
+          "situs_juris": "SD",
+          "acreage": null
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -117.15,
+                32.72
+              ],
+              [
+                -117.14,
+                32.73
+              ],
+              [
+                -117.15,
+                32.73
+              ],
+              [
+                -117.14,
+                32.72
+              ],
+              [
+                -117.15,
+                32.72
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 11,
+          "apn": "0000001100",
+          "parcelid": 11,
+          "situs_address": 111,
+          "situs_pre_dir": null,
+          "situs_street": "FIXTURE",
+          "situs_suffix": "ST",
+          "situs_post_dir": null,
+          "situs_fraction": null,
+          "situs_building": null,
+          "situs_suite": null,
+          "situs_zip": "92101",
+          "situs_juris": "SD",
+          "acreage": null,
+          "unexpected_field": "must not enter base"
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -117.15,
+                32.72
+              ],
+              [
+                -117.149,
+                32.72
+              ],
+              [
+                -117.149,
+                32.721
+              ],
+              [
+                -117.15,
+                32.721
+              ],
+              [
+                -117.15,
+                32.72
+              ]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "objectid": 12,
+          "parcelid": 12,
+          "situs_address": 112,
+          "situs_pre_dir": null,
+          "situs_street": "FIXTURE",
+          "situs_suffix": "ST",
+          "situs_post_dir": null,
+          "situs_fraction": null,
+          "situs_building": null,
+          "situs_suite": null,
+          "situs_zip": "92101",
+          "situs_juris": "SD",
+          "acreage": null
+        },
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -117.15,
+                32.72
+              ],
+              [
+                -117.149,
+                32.72
+              ],
+              [
+                -117.149,
+                32.721
+              ],
+              [
+                -117.15,
+                32.721
+              ],
+              [
+                -117.15,
+                32.72
+              ]
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}

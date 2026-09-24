@@ -1,0 +1,379 @@
+{
+  "kind": "public-metadata-observation-not-dataset-acquisition",
+  "observedAt": "2026-09-24T17:54:48.287098+00:00",
+  "publisher": "SanGIS",
+  "hostingOrganization": "SANDAG",
+  "serviceItemId": "032a5dcf654c4ccbb18711ad8a0ee754",
+  "itemOwner": "SanGIS",
+  "datasetTitle": "Parcels",
+  "metadataTitle": "PARCELS_ALL",
+  "serviceUrl": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0",
+  "metadataUrl": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0/metadata",
+  "catalogUrl": "https://gis-sangis1.hub.arcgis.com/pages/download-data",
+  "itemUrl": "https://geo.sandag.org/portal/sharing/rest/content/items/032a5dcf654c4ccbb18711ad8a0ee754?f=pjson",
+  "nativeCrs": {
+    "wkid": 102646,
+    "epsg": 2230,
+    "name": "NAD83 / California zone 6 (US survey feet)"
+  },
+  "sourceReported": {
+    "warehouseUploadDate": "2026-08-31",
+    "warehouseReportAsOf": "2026-09-01",
+    "warehouseReportUrl": "https://gis.sangis.org/Documents/download/Layer_Update_Report.pdf",
+    "metadataTemporalExtent": "2026-08-29T00:00:00",
+    "metadataTemporalExtentLocator": "metadata/dataIdInfo/dataExt/tempEle/TempExtent/exTemp/TM_Instant/tmPosition",
+    "metadataDate": "20260831",
+    "serviceLastEditEpochMs": 1788361855582,
+    "portalModifiedEpochMs": 1788361860153
+  },
+  "currencyCaution": "Temporal extent is a source assertion, not a completeness guarantee. Warehouse upload, portal modification, metadata date and TruLot acquisition are distinct facts. No parcel dataset acquired.",
+  "termsUrl": "https://gis.sangis.org/sanportal/apps/storymaps/stories/d26146d84e834ff6bcd58e4e620a983a",
+  "termsNote": "Published SanGIS end-user agreement/disclaimer; retain applicable terms. Modified derivatives must not be represented as original SanGIS products. Review full terms before acquisition/publication.",
+  "stackedParcels": true,
+  "parcelIdUnique": false,
+  "propertyCharacteristics": "Service schema exposes assessor/structure fields, while warehouse report labels Parcels No Property Characteristics. Availability/completeness not verified. Excluded from V2 base.",
+  "observedFields": [
+    {
+      "name": "objectid",
+      "type": "esriFieldTypeOID",
+      "nullable": false,
+      "length": 4
+    },
+    {
+      "name": "apn",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 10
+    },
+    {
+      "name": "apn_8",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 8
+    },
+    {
+      "name": "parcelid",
+      "type": "esriFieldTypeInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "fractint",
+      "type": "esriFieldTypeSmallInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "situs_juris",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 2
+    },
+    {
+      "name": "situs_street",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 30
+    },
+    {
+      "name": "situs_suffix",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 4
+    },
+    {
+      "name": "situs_post_dir",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 2
+    },
+    {
+      "name": "situs_pre_dir",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 2
+    },
+    {
+      "name": "situs_address",
+      "type": "esriFieldTypeInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "situs_fraction",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 3
+    },
+    {
+      "name": "situs_building",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 4
+    },
+    {
+      "name": "situs_suite",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 6
+    },
+    {
+      "name": "legldesc",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 65
+    },
+    {
+      "name": "asr_land",
+      "type": "esriFieldTypeInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "asr_impr",
+      "type": "esriFieldTypeInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "asr_total",
+      "type": "esriFieldTypeInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "doctype",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 1
+    },
+    {
+      "name": "docnmbr",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 6
+    },
+    {
+      "name": "docdate",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 8
+    },
+    {
+      "name": "acreage",
+      "type": "esriFieldTypeDouble",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "taxstat",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 1
+    },
+    {
+      "name": "ownerocc",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 1
+    },
+    {
+      "name": "tranum",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 5
+    },
+    {
+      "name": "asr_zone",
+      "type": "esriFieldTypeSmallInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "asr_landuse",
+      "type": "esriFieldTypeSmallInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "unitqty",
+      "type": "esriFieldTypeSmallInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "submap",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 11
+    },
+    {
+      "name": "subname",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 64
+    },
+    {
+      "name": "nucleus_zone_cd",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 2
+    },
+    {
+      "name": "nucleus_use_cd",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 3
+    },
+    {
+      "name": "situs_community",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 28
+    },
+    {
+      "name": "year_effective",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 2
+    },
+    {
+      "name": "total_lvg_area",
+      "type": "esriFieldTypeInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "bedrooms",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 3
+    },
+    {
+      "name": "baths",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 3
+    },
+    {
+      "name": "addition_area",
+      "type": "esriFieldTypeInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "garage_conversion",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 1
+    },
+    {
+      "name": "garage_stalls",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 3
+    },
+    {
+      "name": "carport_stalls",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 3
+    },
+    {
+      "name": "pool",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 1
+    },
+    {
+      "name": "par_view",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 1
+    },
+    {
+      "name": "usable_sq_feet",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 5
+    },
+    {
+      "name": "qual_class_shape",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 5
+    },
+    {
+      "name": "nucleus_situs_from_nbr",
+      "type": "esriFieldTypeInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "nucleus_situs_thru_nbr",
+      "type": "esriFieldTypeInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "nucleus_situs_thru_fractn",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 3
+    },
+    {
+      "name": "situs_zip",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 10
+    },
+    {
+      "name": "x_coord",
+      "type": "esriFieldTypeDouble",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "y_coord",
+      "type": "esriFieldTypeDouble",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "overlay_juris",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 2
+    },
+    {
+      "name": "sub_type",
+      "type": "esriFieldTypeSmallInteger",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "multi",
+      "type": "esriFieldTypeString",
+      "nullable": true,
+      "length": 1
+    },
+    {
+      "name": "SHAPE__Length",
+      "type": "esriFieldTypeDouble",
+      "nullable": true,
+      "length": null
+    },
+    {
+      "name": "SHAPE__Area",
+      "type": "esriFieldTypeDouble",
+      "nullable": true,
+      "length": null
+    }
+  ],
+  "metadataDocumentDigests": {
+    "layer": "aca1e27cddc82ef83cfe9f805cc1178856d9d4cd258d6061f8897a296c159147",
+    "metadata": "2a9a213057cd8cb4d64bb851cba9408e7367ca28b92b4731bf7a7c9742dea0b9",
+    "item": "ae5aee3024dcc14ead64f3e1667f59a49b13495bac23ed712d9edd35c2d03a88"
+  },
+  "digestScope": "Public metadata bytes only; not parcel artifact checksums. Raw documents were inspected in temporary files, not committed source datasets."
+}

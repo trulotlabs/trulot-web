@@ -175,3 +175,13 @@ A separate recovery packet must obtain authoritative source artifacts and exact 
 Offline truth tests (19), overlay tests (43), SDA tests (6 groups), new foundation tests (25), static foundation verification, production-freeze tests (18), dry-run parser fixtures and production-QA adapter fixtures passed. The new evidence gate passed while reporting five missing receipt chains. `next typegen`, `tsc --noEmit --incremental false`, ESLint on the two new scripts and Git whitespace checks passed. No database-dependent tests were run.
 
 Repository `npm run lint` remains failing solely on the pre-existing `supabase/functions/nearby-parcels/index.ts:125:67` `no-explicit-any` error, with six existing warnings. It was not repaired in this packet. No runtime, existing manifest, SQL, migration or package/dependency file changed.
+
+## Parcel Base recovery — Packet 5
+
+Decision: **PARCEL_BASE_V2_REQUIRED**. The bounded repository/local recovery audit found a historical lead in commit `23cbcc4351c4734a980e3303635758537701b51e`: its message names local PostgreSQL `core.parcels`, `core.parcel_nearby_development_summary_v1` and a pending `raw.sd_parcels` re-export, and claims 393,364 serving rows. Its diff contains frontend changes, not the source artifact, importer or serving-lineage validation. Four referenced temporary schema dumps are absent. This does not satisfy the historical-lineage threshold.
+
+The current public SanGIS-owned SANDAG **Parcels** service (metadata title **PARCELS_ALL**, item `032a5dcf654c4ccbb18711ad8a0ee754`) was inspected through public metadata only. Native CRS is EPSG:2230. Ten-digit APNs and nonunique parcel IDs require preserving stacked parcels; taxable acreage is not legal lot area. Warehouse upload, metadata temporal extent and future TruLot acquisition timestamps remain distinct. No parcel source records were acquired.
+
+See [SanGIS Parcel Base V2 recovery and contract](sangis-parcel-base-v2.md) for the evidence table, authoritative links, field crosswalk, strict receipt/import schemas and offline fixture proof. `data/parcel-base-v2/` is explicitly future-contract/synthetic material, separate from active dataset manifests. Its existence does **not** prove historical V1 lineage or upgrade any existing foundation classification. No current adapter, UI or database behavior changed.
+
+Before production import, a separate packet must acquire and preserve a real immutable source snapshot/receipts, validate actual schema/counts/duplicates/geometry, implement and review an isolated importer/destination and separately sourced enrichment joins, and establish serving compatibility under the existing freeze. Packet 5 performs none of those production actions.

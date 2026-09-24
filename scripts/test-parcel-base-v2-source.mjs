@@ -1,0 +1,51 @@
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import path from "node:path";
+import { root, normalizeApn, makeFixtureReceipt, validateFixture, readContract, sha256 } from "./parcel-base-v2.mjs";
+
+const bytes = fs.readFileSync(path.join(root, "data/parcel-base-v2/golden-fixture.json"));
+const fixture = JSON.parse(bytes);
+const receipt = makeFixtureReceipt(bytes);
+const report = validateFixture(bytes, receipt);
+let count = 0;
+function test(name, fn) { fn(); count++; console.log(`PASS ${name}`); }
+function run(mutator, options) {
+  const copy = structuredClone(fixture); mutator(copy);
+  const changed = Buffer.from(JSON.stringify(copy));
+  return validateFixture(changed, makeFixtureReceipt(changed), options);
+}
+const row = (id) => report.accepted.find((r) => r.sourceObjectId === id);
+const rejected = (id) => report.rejected.find((r) => r.sourceObjectId === id);
+test("normal parcel preserves leading zero and full subunit", () => { assert.equal(row(1).apnNorm, "0012345678"); assert.equal(row(1).address, "101 FIXTURE ST"); });
+test("missing situs remains null", () => assert.equal(row(2).address, null));
+test("multipart kept; centroid outside is explicit", () => { assert.equal(row(3).sourceGeometry.type, "MultiPolygon"); assert.equal(row(3).centroidWithin, false); assert.notDeepEqual(row(3).centroid, row(3).pointOnSurface); });
+test("malformed APN rejected", () => assert.ok(rejected(4).reasons.includes("INVALID_APN")));
+test("every duplicate APN quarantined", () => { assert.ok(rejected(5)); assert.ok(rejected(6)); assert.equal(report.counts.duplicateRows, 2); assert.equal(report.counts.merged, 0); });
+test("stacked condos preserved despite repeated polygon identifier", () => { assert.equal(row(7).parcelId, row(8).parcelId); assert.notEqual(row(7).apnNorm, row(8).apnNorm); assert.deepEqual(row(7).sourceGeometry, row(8).sourceGeometry); assert.equal(report.parcelIdDistribution[700], 2); });
+test("null geometry quarantined", () => assert.ok(rejected(9).reasons.includes("NULL_GEOMETRY")));
+test("self-intersection quarantined", () => assert.ok(rejected(10).reasons.includes("INVALID_GEOMETRY")));
+test("unexpected attribute reported and excluded", () => { assert.deepEqual(report.extraFields, [{ index: 10, fields: ["unexpected_field"] }]); assert.equal(Object.hasOwn(row(11), "unexpected_field"), false); });
+test("missing required row field rejected", () => assert.ok(rejected(12).reasons.includes("MISSING_FIELD:apn")));
+test("missing source schema column aborts run", () => assert.throws(() => run((f) => { f.sourceSchema = f.sourceSchema.filter((s) => s.name !== "apn"); }), /Source schema drift/));
+test("APNs never padded, truncated or coerced", () => { for (const invalid of [null, 1234567890, "12345678", "12345678901", "abc1234567890", "123 456 78 90", ""]) assert.equal(normalizeApn(invalid), null); });
+test("input count reconciliation", () => assert.deepEqual(report.counts, { input: 12, accepted: 6, rejected: 6, duplicateRows: 2, merged: 0 }));
+test("declared source count mismatch blocks run", () => assert.throws(() => run((f) => { f.declaredFeatureCount++; }), /row count mismatch/));
+test("wrong input CRS blocks run", () => assert.throws(() => run((f) => { f.sourceCrs = "EPSG:2230"; }), /CRS mismatch/));
+test("invalid jurisdiction quarantined", () => { const out = run((f) => { f.featureCollection.features[0].properties.situs_juris = "XX"; }); assert.ok(out.rejected.find((r) => r.sourceObjectId === 1).reasons.includes("UNKNOWN_JURISDICTION")); });
+test("no assumed city for null jurisdiction", () => { const out = run((f) => { f.featureCollection.features[0].properties.situs_juris = null; }); assert.equal(out.accepted.find((r) => r.sourceObjectId === 1).jurisdiction, null); });
+test("source numeric APN rejected", () => { const out = run((f) => { f.featureCollection.features[0].properties.apn = 1234567890; }); assert.ok(out.rejected.find((r) => r.sourceObjectId === 1).reasons.includes("INVALID_APN")); });
+test("duplicate object IDs quarantined even with distinct APNs", () => { const out = run((f) => { f.featureCollection.features[1].properties.objectid = 1; }); assert.equal(out.accepted.some((r) => r.sourceObjectId === 1), false); assert.equal(out.counts.duplicateRows, 4); });
+test("wrong coordinate order quarantined", () => { const out = run((f) => { const g = f.featureCollection.features[0].geometry; g.coordinates[0] = g.coordinates[0].map(([x,y]) => [y,x]); }); assert.ok(out.rejected.find((r) => r.sourceObjectId === 1).reasons.includes("OUTSIDE_REGIONAL_SANITY_BOUNDS")); });
+test("hole retained and reduces geometric area", () => { const out = run((f) => { f.featureCollection.features[0].geometry.coordinates.push([[-117.1498,32.7202],[-117.1498,32.7208],[-117.1492,32.7208],[-117.1492,32.7202],[-117.1498,32.7202]]); }); const a = out.accepted.find((r) => r.sourceObjectId === 1); assert.ok(a.approxGeometryAreaSqFt < row(1).approxGeometryAreaSqFt); assert.equal(a.sourceGeometry.coordinates.length, 2); });
+test("unclosed ring not silently repaired", () => { const out = run((f) => { f.featureCollection.features[0].geometry.coordinates[0].pop(); }); assert.ok(out.rejected.find((r) => r.sourceObjectId === 1).reasons.includes("UNCLOSED_OR_SHORT_RING")); });
+test("Z coordinates require explicit export handling", () => { const out = run((f) => { f.featureCollection.features[0].geometry.coordinates[0][0].push(0); }); assert.ok(out.rejected.find((r) => r.sourceObjectId === 1)); });
+test("assessor and zoning do not enter parcel base", () => { const out = run((f) => { Object.assign(f.featureCollection.features[0].properties, { bedrooms: 3, nucleus_zone_cd: "R" }); }); const a = out.accepted.find((r) => r.sourceObjectId === 1); assert.equal(a.bedrooms, undefined); assert.equal(a.nucleus_zone_cd, undefined); });
+test("taxable acreage not substituted for geometry area", () => { const out = run((f) => { f.featureCollection.features[0].properties.acreage = 9; }); const a = out.accepted.find((r) => r.sourceObjectId === 1); assert.equal(a.taxableAcreage, 9); assert.equal(a.approxGeometryAreaSqFt, row(1).approxGeometryAreaSqFt); });
+test("fixed golden sample IDs", () => assert.deepEqual(report.sampling.map((s) => s.sourceObjectId), [3,2,11]));
+test("repeated run is byte deterministic", () => assert.deepEqual(validateFixture(bytes, receipt), report));
+test("rejected-row artifact checksum and source linkage", () => { assert.equal(report.rejectedRowsArtifactSha256, sha256(JSON.stringify(report.rejected))); assert.equal(report.acquisitionContentSha256, receipt.contentSha256); });
+test("unapproved toolchain change blocked", () => { const contract = readContract(); contract.toolchain.shapely = "0.0.0"; assert.throws(() => validateFixture(bytes, receipt, { contract }), /toolchain mismatch/); });
+test("invalid import run ID blocked", () => assert.throws(() => validateFixture(bytes, receipt, { importRunId: "../prod" }), /Invalid import run ID/));
+test("full dataset outside fixture limit", () => assert.throws(() => run((f) => { f.featureCollection.features = Array(101).fill(f.featureCollection.features[0]); f.declaredFeatureCount = 101; }), /small offline fixtures/));
+test("artifact cannot falsely declare source readiness", () => { assert.equal(report.fixtureOnly, true); assert.equal(report.productionReady, false); });
+console.log(`Parcel Base V2 source fixture tests passed (${count} cases).`);
