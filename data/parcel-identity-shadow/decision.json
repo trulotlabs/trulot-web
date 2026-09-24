@@ -1,0 +1,45 @@
+{
+  "dualRead": "PARCEL_IDENTITY_DUAL_READ_FAIL",
+  "cutoverDesign": "IDENTITY_REQUIRES_FURTHER_RECONCILIATION",
+  "reason": "No paired legacy rows obtained after three HTTP 522 responses; offline framework and local V2 rebuild passed, but this is not a completed paired comparison.",
+  "v2DefectCandidates": [],
+  "fields": {
+    "apn": {
+      "readiness": "NEEDS_MORE_EVIDENCE",
+      "reason": "Clean V2 identity verified, legacy pairs unavailable."
+    },
+    "parcel_id": {
+      "readiness": "NEEDS_MORE_EVIDENCE",
+      "reason": "Legacy exposure/lineage not established."
+    },
+    "jurisdiction": {
+      "readiness": "NEEDS_MORE_EVIDENCE",
+      "reason": "Clean SD source scope verified, legacy overlap unavailable."
+    },
+    "zip": {
+      "readiness": "NEEDS_MORE_EVIDENCE",
+      "reason": "Raw ZIP+4 retained, legacy comparison unavailable."
+    },
+    "address": {
+      "readiness": "NEEDS_MORE_EVIDENCE",
+      "reason": "Legacy null/unit/address and route compatibility unobserved."
+    },
+    "centroid_and_point_on_surface": {
+      "readiness": "NEEDS_MORE_EVIDENCE",
+      "reason": "Derived points valid; legacy methodology and outliers unavailable."
+    },
+    "geometry_area_sqft": {
+      "readiness": "NEEDS_MORE_EVIDENCE",
+      "reason": "Reproducible derivation; legacy field semantic comparability unknown."
+    },
+    "canonical_slug": {
+      "readiness": "NEEDS_MORE_EVIDENCE",
+      "reason": "Known static null fallback difference; live route-change set unavailable."
+    },
+    "taxable_acreage_as_legacy_lot_area": {
+      "readiness": "NOT_READY",
+      "reason": "Different source meaning; equivalence not established."
+    }
+  },
+  "runtimeCutoverAuthorized": false
+}

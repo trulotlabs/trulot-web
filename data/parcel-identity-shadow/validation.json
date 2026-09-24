@@ -1,0 +1,174 @@
+{
+  "results": [
+    {
+      "command": "node scripts/test-parcel-base-v2-receipt.mjs",
+      "exitCode": 0,
+      "outputSha256": "4279283d1721b8e600ced09cfe2bc2d6d899ccbeae4d7ee6d8b16f2bb1a24e11"
+    },
+    {
+      "command": "node scripts/test-parcel-base-v2-source.mjs",
+      "exitCode": 0,
+      "outputSha256": "e7bc293c647d369ecfe1d113bbf9c619ba734474bf85d30e51918c7b8b22a1ab"
+    },
+    {
+      "command": "node scripts/test-sangis-acquisition.mjs",
+      "exitCode": 0,
+      "outputSha256": "b1af28fd689d236ebee49bda93ecd724b63881a55da753c027d422a5a67e70e6"
+    },
+    {
+      "command": "node scripts/test-parcel-truth.mjs",
+      "exitCode": 0,
+      "outputSha256": "ae1d687f763bc65d23d05281f9e1ae451d34134858a7785b13ac15eb2c290cb5"
+    },
+    {
+      "command": "node scripts/test-overlay-response.mjs",
+      "exitCode": 0,
+      "outputSha256": "b81e58e5be7c01fad87904b00b08f5b6389368f082ce22720b9c54ded2a291c2"
+    },
+    {
+      "command": "node scripts/test-sda-source-reconciliation.mjs",
+      "exitCode": 0,
+      "outputSha256": "f8c1a2036a9310fb60e1a5f1222fa633873380fcbdf16834da28bd175f76ead3"
+    },
+    {
+      "command": "node scripts/verify-parcel-foundation.mjs",
+      "exitCode": 0,
+      "outputSha256": "ed5509612a72345e171095964b4144875a025931604570f7e2deae1f5bb58287"
+    },
+    {
+      "command": "node scripts/test-parcel-foundation.mjs",
+      "exitCode": 0,
+      "outputSha256": "8701321f36cd62d48e20c9022d8798d913f57577d58407eb58b2075f55856c1b"
+    },
+    {
+      "command": "node scripts/verify-data-foundation.mjs",
+      "exitCode": 0,
+      "outputSha256": "7bed268e847a70efcbd9dc43313206c94a9460d934a6049d6dbe54b0ec736b01"
+    },
+    {
+      "command": "node scripts/test-production-database-freeze.mjs",
+      "exitCode": 0,
+      "outputSha256": "adc0e35730be630c30c20e052d5c1cf27fd8a8aed28873c278a5c520e74951f4"
+    },
+    {
+      "command": "node scripts/test-validate-foundation-dry-run.mjs",
+      "exitCode": 0,
+      "outputSha256": "3f21d6be860a2e326854d5c592b625479adbabaee2beced49ac6a6dfdb39673b"
+    },
+    {
+      "command": "node scripts/test-qa-foundation-production-adapter.mjs",
+      "exitCode": 0,
+      "outputSha256": "a7c639863c03797efd65f04fbd8d189ce4cb85822a3523d1ef087f559c7721e4"
+    },
+    {
+      "command": "python3 scripts/test-sangis-acquisition-stream.py",
+      "exitCode": 0,
+      "outputSha256": "83166b089fbcb82fac63f22522fa6ae99bb5e46368cd35d756277fd463dd6346"
+    },
+    {
+      "command": "python3 scripts/test-sangis-acquirer.py",
+      "exitCode": 0,
+      "outputSha256": "7f651a454b7b284efe70fac28605ab5d9c389d39a8b6c9aae1f2193f021e78e2"
+    },
+    {
+      "command": "node scripts/parcel-serving-v2/test-adapter.mjs",
+      "exitCode": 0,
+      "outputSha256": "e80e262cd5dd1834c77ed97c0e68b62b436e3a3f598321b8529d69870251cba9"
+    },
+    {
+      "command": "./node_modules/.bin/next typegen",
+      "exitCode": 0,
+      "outputSha256": "adba4af9194e10e47dda75ff0fd0f8c2b756474896d0eba5612799c527ff372a"
+    },
+    {
+      "command": "./node_modules/.bin/tsc --noEmit --incremental false",
+      "exitCode": 0,
+      "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 1,
+      "outputSha256": "3e0410c71f5577e7709e15ce573a0347a04f16be0d1e897c000958e64b59cce9"
+    },
+    {
+      "command": "node scripts/verify-sangis-acquisition.mjs ACQUISITION",
+      "exitCode": 0,
+      "summary": "37 artifact/metadata hashes verified"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-v2-postgis/import.py BOUNDARY ACQUISITION PASS1 BASE_RUN",
+      "exitCode": 0,
+      "summary": "1088430 accepted;1328 rejected"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-v2-postgis/reconcile.py BOUNDARY PASS1 BASE_RUN",
+      "exitCode": 0,
+      "summary": "base fingerprint matches Packet7"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-v2-postgis/test.py BOUNDARY BASE_RUN",
+      "exitCode": 0,
+      "summary": "20 checks"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-serving-v2/rehearse.py BOUNDARY SERVING1; repeat SERVING2",
+      "exitCode": 0,
+      "summary": "reports equal Packet8"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-serving-v2/test-rebuild.py BOUNDARY SERVING1 SERVING2",
+      "exitCode": 0,
+      "summary": "16 checks"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-identity-shadow/sample.py BOUNDARY SAMPLE1; repeat SAMPLE2",
+      "exitCode": 0,
+      "summary": "576 APNs; byte-identical"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-identity-shadow/test-local.py BOUNDARY SAMPLE1 SAMPLE2 OUTPUT",
+      "exitCode": 0,
+      "summary": "8 checks"
+    },
+    {
+      "command": "node scripts/parcel-identity-shadow/test.mjs",
+      "exitCode": 0,
+      "summary": "21 checks; live collector mocked; report replay byte-identical"
+    },
+    {
+      "command": "./node_modules/.bin/eslint scripts/parcel-identity-shadow/*.mjs",
+      "exitCode": 0,
+      "summary": "no errors or warnings"
+    },
+    {
+      "command": "npm run lint (final)",
+      "exitCode": 1,
+      "summary": "unchanged nearby-parcels index.ts:125:67 no-explicit-any; six existing warnings"
+    },
+    {
+      "command": "git diff --check",
+      "exitCode": 0,
+      "summary": "no whitespace errors"
+    },
+    {
+      "command": "git diff --cached --check",
+      "exitCode": 0,
+      "summary": "complete staged packet diff has no whitespace errors"
+    }
+  ],
+  "paths": {
+    "BOUNDARY": "/private/tmp/trulot-packet7-2ag8sq5x/boundary.json",
+    "ACQUISITION": "/Users/ops/trulot-data/parcel-base-v2/sangis-20260924T183743Z",
+    "PASS1": "/Users/ops/trulot-data/parcel-base-v2/sangis-20260924T183743Z-pass1",
+    "BASE_RUN": "/private/tmp/trulot-packet7-2ag8sq5x/base-run",
+    "SERVING1": "/private/tmp/trulot-packet7-2ag8sq5x/serving1",
+    "SERVING2": "/private/tmp/trulot-packet7-2ag8sq5x/serving2",
+    "SAMPLE1": "/private/tmp/trulot-packet7-2ag8sq5x/sample-final1.json",
+    "SAMPLE2": "/private/tmp/trulot-packet7-2ag8sq5x/sample-final2.json"
+  },
+  "developmentCorrections": [
+    "Renamed initial select.py to sample.py to avoid Python standard-library shadowing.",
+    "Bounded ZIP representatives by five-digit prefix instead of every raw ZIP+4; no legacy reads occurred until the final 576-row sample passed its guard.",
+    "Added automatic two-failure circuit breaker after observed live 522s; final circuit tested offline only."
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "comparisonStatus": "NO_PAIRED_LEGACY_EVIDENCE",
+  "pairedDenominator": 0,
+  "sampleSize": 576,
+  "algorithm": "MD5(trulot-packet9-v1: + APN), APN tie-break; 500 population plus deterministic strata union; numeric quarantine neighbors are not geographic/lineage assertions.",
+  "servingFingerprint": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f",
+  "strata": {
+    "area_largest": 10,
+    "quarantine_numeric_predecessor": 5,
+    "quarantine_numeric_successor": 5,
+    "hash_population_500": 500,
+    "acreage_populated": 20,
+    "centroid_outside": 20,
+    "multipolygon": 20,
+    "zip_representative": 60,
+    "area_smallest": 10,
+    "missing_address": 20,
+    "stacked": 20,
+    "acreage_null": 20,
+    "ordinary": 20,
+    "polygon": 20,
+    "historical_example": 1
+  },
+  "rawZipCount": 531,
+  "zip5Count": 65,
+  "actualCoverage": {
+    "ordinary": 399,
+    "stacked": 177,
+    "missingAddress": 48,
+    "acreageNull": 525,
+    "acreagePopulated": 51,
+    "geometry": {
+      "ST_MultiPolygon": 39,
+      "ST_Polygon": 537
+    },
+    "centroidOutside": 23
+  },
+  "presence": {
+    "BOTH_PRESENT": 0,
+    "V2_ONLY": 0,
+    "LEGACY_ONLY": 0,
+    "LEGACY_UNAVAILABLE": 576,
+    "V2_UNAVAILABLE": 0
+  },
+  "addresses": {
+    "EXACT": 0,
+    "NORMALIZED_EQUIVALENT": 0,
+    "SUBSTANTIVE_DIFFERENCE": 0,
+    "LEGACY_NULL_V2_VALUE": 0,
+    "LEGACY_VALUE_V2_NULL": 0,
+    "BOTH_NULL": 0
+  },
+  "zip": {},
+  "coordinates": {
+    "centroid": {
+      "EFFECTIVELY_EQUAL": 0,
+      "LT_1M": 0,
+      "1_TO_5M": 0,
+      "5_TO_25M": 0,
+      "GT_25M": 0,
+      "LEGACY_NULL": 0
+    },
+    "point_on_surface": {
+      "EFFECTIVELY_EQUAL": 0,
+      "LT_1M": 0,
+      "1_TO_5M": 0,
+      "5_TO_25M": 0,
+      "GT_25M": 0,
+      "LEGACY_NULL": 0
+    }
+  },
+  "area": {
+    "geometry": {
+      "LT_1_PERCENT": 0,
+      "1_TO_5_PERCENT": 0,
+      "5_TO_10_PERCENT": 0,
+      "GT_10_PERCENT": 0,
+      "LEGACY_NULL": 0,
+      "V2_NULL": 0,
+      "BOTH_NULL": 0,
+      "ZERO_REFERENCE": 0
+    },
+    "taxable": {
+      "LT_1_PERCENT": 0,
+      "1_TO_5_PERCENT": 0,
+      "5_TO_10_PERCENT": 0,
+      "GT_10_PERCENT": 0,
+      "LEGACY_NULL": 0,
+      "V2_NULL": 0,
+      "BOTH_NULL": 0,
+      "ZERO_REFERENCE": 0
+    }
+  },
+  "routes": {
+    "none": 0,
+    "redirect-safe": 0,
+    "requires canonical redirect strategy": 0,
+    "unresolved": 0
+  },
+  "discrepancyCounts": {
+    "V2_CORRECTION": 0,
+    "SOURCE_VINTAGE_CHANGE": 0,
+    "LEGACY_ENRICHMENT": 0,
+    "LEGACY_SEMANTICS_UNKNOWN": 0,
+    "V2_DEFECT_CANDIDATE": 0,
+    "UNRESOLVED": 576
+  },
+  "discrepancyFieldCounts": {
+    "presence": 576
+  },
+  "limitations": [
+    "Sample is V2-seeded: cannot estimate legacy-only population or citywide parity. Zero LEGACY_ONLY is by construction.",
+    "Legacy source vintage, coordinate methodology and area lineage remain unknown. Proximity and equality do not establish provenance.",
+    "Parcel ID and jurisdiction are not exposed by the audited legacy subset; no substitute city/name inference.",
+    "Quarantine neighbors are numeric APN neighbors only, not proof of geographic or cadastral relation.",
+    "Multiple bounded GETs are not a transactionally consistent city snapshot. Absence is scoped to anonymous public-reader visibility."
+  ],
+  "historicalReference": {
+    "source": "23cbcc4351c4734a980e3303635758537701b51e:app/page.tsx:39-42",
+    "meaning": "Committed display/link example only, not a legacy database row or current canonical URL observation.",
+    "apn": "5470501600",
+    "legacyDisplay": "740 47th St",
+    "v2Address": "740 47TH ST",
+    "addressComparison": "NORMALIZED_EQUIVALENT",
+    "hypotheticalCurrentRouteComparison": {
+      "currentSlug": "547-050-16-00-740-47th-st",
+      "v2Slug": "547-050-16-00-740-47th-st",
+      "sameApn": true,
+      "classification": "none"
+    }
+  },
+  "representative": {
+    "address": [],
+    "nullAddress": [],
+    "coordinateOutliers": [],
+    "areaOutliers": [],
+    "historical": [
+      {
+        "apn": "5470501600",
+        "legacyState": "unavailable",
+        "v2State": "present",
+        "presence": "LEGACY_UNAVAILABLE",
+        "discrepancies": [
+          {
+            "field": "presence",
+            "classification": "UNRESOLVED",
+            "details": {
+              "legacy": "unavailable",
+              "v2": "present"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

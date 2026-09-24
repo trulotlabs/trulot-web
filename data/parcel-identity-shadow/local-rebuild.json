@@ -1,0 +1,66 @@
+{
+  "checksPassed": 8,
+  "sampleSelectionsByteIdentical": true,
+  "sampleSha256": "f49aebf96daddce72efdfb4d498f956ddc667d801deac082031f29708d881796",
+  "sampleQuerySha256": "6d859953855bfc1e067ec8a530e3132123fe2b06ae70e6c37d5c580a5beb3c60",
+  "fullBaseFingerprint": "8bdf89447fd77bd616a882db15875e8674b999051a1954caf1d4cec8a6c6df45",
+  "fullServingFingerprint": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f",
+  "servingCount": 393733,
+  "baseCount": 1088430,
+  "servingReportExactlyMatchesPacket8AndBothRebuilds": true,
+  "quarantinedSampleApns": 0,
+  "boundary": {
+    "directory": "/private/tmp/trulot-packet7-2ag8sq5x",
+    "socket": "/private/tmp/trulot-packet7-2ag8sq5x/socket",
+    "port": 55477,
+    "database": "trulot_packet7",
+    "user": "ops",
+    "schema": "parcel_v2_rehearsal",
+    "versions": "CREATE EXTENSION\nPostgreSQL 17.9 (Homebrew) on aarch64-apple-darwin25.2.0, compiled by Apple clang version 17.0.0 (clang-1700.6.3.2), 64-bit\nPOSTGIS=\"3.6.3 0\" [EXTENSION] PGSQL=\"170\" GEOS=\"3.14.1-CAPI-1.20.5\" PROJ=\"9.8.1 NETWORK_ENABLED=OFF URL_ENDPOINT=https://cdn.proj.org USER_WRITABLE_DIRECTORY=/tmp/proj DATABASE_PATH=/opt/homebrew/Cellar/proj/9.8.1/share/proj/proj.db\" (compiled against PROJ 9.8.1) LIBXML=\"2.15.2\" LIBJSON=\"0.18\" LIBPROTOBUF=\"1.5.2\" WAGYU=\"0.5.0 (Internal)\"\n\n",
+    "createdFor": "TruLot Packet 7 disposable isolated rehearsal"
+  },
+  "baseImport": {
+    "acquisitionId": "sangis-20260924T183743Z",
+    "artifactSha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+    "reportSha256": "8d6aa8ea2b827e79573ec896ca7edae7fac053967e9ac68f1a06e734f2118ec5",
+    "rowsSha256": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+    "importerSha256": "470174754e75585a85e6a3582fb8e30b535f39e1d1c347b3fa6471422237ac5e",
+    "ddlSha256": "5b76d608ac9d3bb7c2a953fd06b01fbb2dc400704b13b19e45fab0e9cb5063b7",
+    "tool": "Python 3.14.6 CSV over psql COPY; Shapely 2.1.2",
+    "durationSeconds": 183.437,
+    "counts": {
+      "parsed": 1089758,
+      "accepted": 1088430,
+      "missingSitus": 98702,
+      "centroidOutside": 17812,
+      "rejected": 1328
+    },
+    "jurisdiction": {
+      "CB": 89580,
+      "CN": 222864,
+      "CO": 11317,
+      "CV": 71714,
+      "DM": 4793,
+      "EC": 23301,
+      "EN": 23785,
+      "ES": 38824,
+      "IB": 6210,
+      "LG": 7403,
+      "LM": 17391,
+      "NC": 10351,
+      "OC": 64041,
+      "PW": 16606,
+      "SD": 393733,
+      "SM": 28475,
+      "SO": 13107,
+      "ST": 19977,
+      "VS": 24958
+    },
+    "geometry": {
+      "Polygon": 1066526,
+      "MultiPolygon": 21904
+    },
+    "sourceOrderApnFingerprint": "e843974c9ff3436abe24d71e870fec2c0f65b275151ac188f92a80ec57cf6612",
+    "databaseRows": 1088430
+  }
+}
