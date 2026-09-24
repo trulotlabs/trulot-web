@@ -1,3 +1,4 @@
+import { parseOverlayResponse } from "./overlay-response";
 import { createClient } from "@supabase/supabase-js";
 import {
   assertNoForbiddenCopy,
@@ -31,12 +32,10 @@ const supabase = createClient(
 );
 
 type RawRow = Record<string, unknown>;
-type OverlayFlags = {
-  tpa: boolean;
-  ctcac: boolean;
-  unavailable: boolean;
-  sda: SdaReconciliationStatus;
-};
+type OverlayFlags = (
+  | { tpa: boolean; ctcac: boolean; unavailable: false }
+  | { tpa: null; ctcac: null; unavailable: true }
+) & { sda: SdaReconciliationStatus };
 
 export type ConfidenceTier = "recorded" | "mapped" | "conditional";
 
@@ -257,10 +256,6 @@ function formatPermitMonth(raw: unknown): string | null {
 function formatSqFt(value: number | null): string | null {
   if (value === null || value <= 0) return null;
   return `${Math.round(value).toLocaleString()} sq ft`;
-}
-
-function boolish(value: unknown): boolean {
-  return value === true || value === "true" || value === "t" || value === "1";
 }
 
 function formatAddress(row: RawRow): string {
@@ -491,7 +486,7 @@ function buildSignalFacts(row: RawRow, overlays: Pick<OverlayFlags, "tpa">): Sig
     });
   }
 
-  if (boolish(overlays.tpa)) {
+  if (overlays.tpa === true) {
     signals.push({
       title: "Transit Priority Area overlay is mapped here",
       value: "Mapped TPA overlay",
@@ -520,39 +515,43 @@ function buildSignalFacts(row: RawRow, overlays: Pick<OverlayFlags, "tpa">): Sig
 async function getOverlayFlags(
   lat: number | null,
   lng: number | null,
-): Promise<{
-  flags: OverlayFlags;
-  status: SourceStatus;
-}> {
+): Promise<{ flags: OverlayFlags; status: SourceStatus }> {
+  function unavailable(safeErrorCode: SafeSourceErrorCode, publicMessage: string): {
+    flags: OverlayFlags; status: SourceStatus;
+  } {
+    return {
+      flags: { tpa: null, ctcac: null, unavailable: true, sda: applySdaReconciliationPolicy(null) },
+      status: buildSourceStatus("source_unavailable", { safeErrorCode, publicMessage }),
+    };
+  }
   if (lat === null || lng === null) {
-    return {
-      flags: { tpa: false, ctcac: false, unavailable: true, sda: applySdaReconciliationPolicy(null) },
-      status: buildSourceStatus("source_unavailable", {
-        safeErrorCode: "missing_input",
-        publicMessage: "Overlay lookup is unavailable because parcel coordinates are missing.",
-      }),
-    };
+    return unavailable("missing_input", "Overlay lookup is unavailable because parcel coordinates are missing.");
   }
-  const { data, error } = await supabase.rpc("check_parcel_overlays", { p_lat: lat, p_lng: lng });
-  if (error || !data) {
-    return {
-      flags: { tpa: false, ctcac: false, unavailable: true, sda: applySdaReconciliationPolicy(null) },
-      status: buildSourceStatus("source_unavailable", {
-        safeErrorCode: mapSafeSourceErrorCode(error),
-        publicMessage: "Overlay lookup is temporarily unavailable.",
-      }),
-    };
+
+  let response;
+  try {
+    response = await supabase.rpc("check_parcel_overlays", { p_lat: lat, p_lng: lng });
+  } catch {
+    return unavailable("query_failed", "Overlay lookup is temporarily unavailable.");
   }
-  const flags = {
-    tpa: Boolean(data.tpa),
-    ctcac: Boolean(data.ctcac),
+  if (response.error) {
+    return unavailable(mapSafeSourceErrorCode(response.error), "Overlay lookup is temporarily unavailable.");
+  }
+  const parsed = parseOverlayResponse(response.data);
+  if (parsed.status === "source_unavailable") {
+    return unavailable("schema_mismatch", "Overlay lookup is temporarily unavailable.");
+  }
+  const flags: OverlayFlags = {
+    tpa: parsed.data.tpa,
+    ctcac: parsed.data.ctcac,
     unavailable: false,
-    sda: applySdaReconciliationPolicy(typeof data.sda === "boolean" ? data.sda : null),
+    sda: applySdaReconciliationPolicy(parsed.data.sda),
   };
+  const hasOverlay = flags.tpa === true || flags.ctcac === true;
   return {
     flags,
-    status: buildSourceStatus(flags.tpa || flags.ctcac ? "found" : "not_found", {
-      publicMessage: flags.tpa || flags.ctcac ? null : "No TPA or CTCAC overlay was returned by the current lookup.",
+    status: buildSourceStatus(hasOverlay ? "found" : "not_found", {
+      publicMessage: hasOverlay ? null : "No TPA or CTCAC overlay was returned by the current lookup.",
     }),
   };
 }

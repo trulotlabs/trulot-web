@@ -61,7 +61,7 @@ const parcelAdapter = fs.readFileSync(path.join(ROOT, "lib", "parcel-page-v1.ts"
 assert.doesNotMatch(parcelAdapter, /outside the current mapped SDA overlay/);
 assert.match(parcelAdapter, /applySdaReconciliationPolicy/);
 assert.doesNotMatch(parcelAdapter, /applySdaReconciliationPolicy\(Boolean\(data\.sda\)\)/);
-assert.match(parcelAdapter, /typeof data\.sda === "boolean" \? data\.sda : null/);
+assert.match(parcelAdapter, /applySdaReconciliationPolicy\(parsed\.data\.sda\)/);
 const page = fs.readFileSync(path.join(ROOT, "app", "parcel", "san-diego", "[slug]", "page.tsx"), "utf8");
 assert.match(page, /SDA source reconciliation pending/);
 assert.match(page, /SDA status is temporarily unavailable/);

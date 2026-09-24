@@ -41,16 +41,16 @@ export function formatUnaffectedOverlaySummary({
   ctcac,
   lookupUnavailable,
 }: {
-  tpa: boolean;
-  ctcac: boolean;
+  tpa: boolean | null;
+  ctcac: boolean | null;
   lookupUnavailable: boolean;
 }): string {
   const pending = `${SDA_RECONCILIATION_LABEL}.`;
-  if (lookupUnavailable) return `${pending} TPA and CTCAC lookup is also temporarily unavailable.`;
+  if (lookupUnavailable || tpa === null || ctcac === null) return `${pending} TPA and CTCAC lookup is also temporarily unavailable.`;
 
   const names = [
-    tpa ? "Transit Priority Area" : null,
-    ctcac ? "CTCAC mapped area" : null,
+    tpa === true ? "Transit Priority Area" : null,
+    ctcac === true ? "CTCAC mapped area" : null,
   ].filter(Boolean) as string[];
   if (names.length === 0) return `${pending} No TPA or CTCAC overlay was returned by the current lookup.`;
   return `${pending} Other mapped overlays: ${names.join(", ")}.`;
