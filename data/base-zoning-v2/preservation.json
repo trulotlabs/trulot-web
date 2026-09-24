@@ -1,0 +1,23 @@
+{
+  "originalCheckout": "/Users/ops/trulot-web",
+  "beforeAndAfter": {
+    "branch": "codex/elevate-row-interview",
+    "head": "8d82378e5b6a3cb2aba1153b96f025bc71a78d16",
+    "shortStatus": " M supabase/functions/nearby-parcels/index.ts\n?? docs/sda-source-of-record-recovery-discovery-architecture-2026-07-15.md\n?? supabase/.temp/\n"
+  },
+  "exactComparisons": {
+    "branch": true,
+    "head": true,
+    "shortStatus": true,
+    "unstagedDiff": true,
+    "stagedDiff": true,
+    "untrackedInventory": true,
+    "savedFileHashes": true,
+    "savedFileHashCount": 57
+  },
+  "productionMutation": false,
+  "deployment": false,
+  "push": false,
+  "runtimeParcelV1Change": false,
+  "conclusion": "Original checkout remained byte-for-byte logically untouched from Git's perspective."
+}

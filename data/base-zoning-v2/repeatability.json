@@ -1,0 +1,50 @@
+{
+  "decision": "EXACT_MATCH",
+  "identical": {
+    "intersectionExportSha256": true,
+    "mappingFingerprintSha256": true,
+    "mappingOutputSha256": true,
+    "mappingStateCounts": true,
+    "zoneParcelCounts": true
+  },
+  "runs": [
+    {
+      "export": {
+        "compressedBytes": 19938112,
+        "compressedSha256": "ded72029daf9f74a81efb39159f25513c720e8cc80a8fd8c66a757006f991945",
+        "databaseAccess": "read-only SELECT/COPY against guarded disposable Unix-socket cluster",
+        "durationSeconds": 62.684,
+        "mappingGeometryCount": 3706,
+        "parcelCount": 393733,
+        "querySha256": "5d997d2dd857c826e388f4113630845af89449b16aca80ae5226c2c95b241b8a"
+      },
+      "mapping": {
+        "fingerprint": "313aa7ad46747bb97499a113842ac848de8f7357134e0558210692a1913a8ccf",
+        "output": {
+          "byteSize": 25624394,
+          "filename": "parcel-base-zoning-map.ndjson.gz",
+          "sha256": "e90e223b3b06017b95e191aee8ec1de918dbb45abf836c4f209ae1c345cbf088"
+        }
+      }
+    },
+    {
+      "export": {
+        "compressedBytes": 19938112,
+        "compressedSha256": "ded72029daf9f74a81efb39159f25513c720e8cc80a8fd8c66a757006f991945",
+        "databaseAccess": "read-only SELECT/COPY against guarded disposable Unix-socket cluster",
+        "durationSeconds": 63.791,
+        "mappingGeometryCount": 3706,
+        "parcelCount": 393733,
+        "querySha256": "5d997d2dd857c826e388f4113630845af89449b16aca80ae5226c2c95b241b8a"
+      },
+      "mapping": {
+        "fingerprint": "313aa7ad46747bb97499a113842ac848de8f7357134e0558210692a1913a8ccf",
+        "output": {
+          "byteSize": 25624394,
+          "filename": "parcel-base-zoning-map.ndjson.gz",
+          "sha256": "e90e223b3b06017b95e191aee8ec1de918dbb45abf836c4f209ae1c345cbf088"
+        }
+      }
+    }
+  ]
+}

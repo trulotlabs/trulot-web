@@ -1,0 +1,13 @@
+{
+  "applicationTools": {
+    "acquisition": "Python 3.14.6 urllib",
+    "import": "Python 3.14.6; Shapely 2.1.2; pyproj 3.7.2",
+    "validation": "Python 3.14.6; Shapely 2.1.2; GEOS 3.13.1"
+  },
+  "database": "PostgreSQL 17.9; PostGIS 3.6.3; GEOS 3.14.1; PROJ 9.8.1 (network disabled)",
+  "databaseBoundary": "Disposable Packet 7-derived Unix-socket-only local cluster; TCP listener disabled; no production credentials read.",
+  "schemas": {
+    "baseZoning": "base_zoning_v2_rehearsal",
+    "parcelBase": "parcel_v2_rehearsal"
+  }
+}

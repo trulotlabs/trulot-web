@@ -3,6 +3,8 @@
 Repository audit baseline: `4dd7cfea22f70ed6abd682321dc62db749ae35f2`.
 No live database inspection or SQL execution was performed for this audit. Historical reports describe their capture date only. A working production relation, a publisher homepage, and a passing fixture test do not establish source lineage.
 
+Packet 10 update: the legacy `base_zoning_mapping_v1` lineage described below remains unrecoverable, but an independent **City of San Diego Base Zoning V2 rehearsal** now has an authoritative item, immutable receipt, complete raw-code inventory, explicit geometry quarantine/derivation, and deterministic mapping against Parcel Base V2. It is not wired to runtime. See `docs/base-zoning-v2-rehearsal.md`. Parcel identity remains `IDENTITY_REQUIRES_FURTHER_RECONCILIATION`.
+
 ## Canonical dependency map
 
 `app/parcel/san-diego/[slug]/page.tsx` calls `getParcelPageV1Result()` in `lib/parcel-page-v1.ts`. The adapter makes five database call sites over four named objects:
@@ -29,6 +31,17 @@ TPA / SDA / CTCAC [three exact source layers/imports UNKNOWN]
 all sources → source-freshness.ts (five manifest entries)
             → parcel-truth.ts contract → canonical page
 ```
+
+The separately rehearsed future enrichment path is:
+
+```text
+SanGIS Parcel Base V2 + City of San Diego Base Zoning V2
+  → deterministic all-intersection parcel-zone mapping
+  → future Parcel Serving enrichment
+  → Parcel Truth
+```
+
+This path remains rehearsal-only until production promotion and serving integration are separately authorized.
 
 The SQL linkage view uses the core and terminal relations plus all three helper functions; PostgreSQL regular-expression, text and array built-ins are external engine prerequisites. The adapter further selects exact or unambiguous parsed APNs using `lib/permit-linkage.ts`; address-only candidates do not establish direct permit truth. No matching logic changed.
 

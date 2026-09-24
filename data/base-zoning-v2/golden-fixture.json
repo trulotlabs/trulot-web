@@ -1,0 +1,399 @@
+{
+  "cases": {
+    "boundarySliver": {
+      "apn": "2748323700",
+      "distinctZoneCount": 2,
+      "dominantCoveragePercent": 99.99652345945094,
+      "dominantZoneCode": "RS-1-14",
+      "mappingState": "BOUNDARY_SLIVER",
+      "parcelAcquisitionId": "sangis-20260924T183743Z",
+      "parcelSourceObjectId": 313,
+      "repairedSourceFeatureCount": 0,
+      "secondaryCoveragePercent": 0.003476540535083214,
+      "totalCoveredPercent": 99.99999999998602,
+      "zoneEvidence": [
+        {
+          "features": [
+            {
+              "intersectedAreaSqFt": 135871.7467755665,
+              "sourceGeometryState": "VALID_SOURCE",
+              "sourceObjectId": 576
+            },
+            {
+              "intersectedAreaSqFt": 35517.271739257034,
+              "sourceGeometryState": "VALID_SOURCE",
+              "sourceObjectId": 1233
+            }
+          ],
+          "intersectedAreaSqFt": 171389.01851482355,
+          "parcelCoveragePercent": 99.99652345945094,
+          "zoneCode": "RS-1-14"
+        },
+        {
+          "features": [
+            {
+              "intersectedAreaSqFt": 5.958615855045479,
+              "sourceGeometryState": "VALID_SOURCE",
+              "sourceObjectId": 883
+            }
+          ],
+          "intersectedAreaSqFt": 5.958615855045479,
+          "parcelCoveragePercent": 0.003476540535083214,
+          "zoneCode": "RM-1-1"
+        }
+      ]
+    },
+    "indeterminate": {
+      "apn": "4236300300",
+      "distinctZoneCount": 3,
+      "dominantCoveragePercent": 58.3492157536219,
+      "dominantZoneCode": "MBPD-R-N",
+      "mappingState": "INDETERMINATE",
+      "parcelAcquisitionId": "sangis-20260924T183743Z",
+      "parcelSourceObjectId": 418,
+      "repairedSourceFeatureCount": 0,
+      "secondaryCoveragePercent": 34.22880380019928,
+      "totalCoveredPercent": 92.57801955382118,
+      "zoneEvidence": [
+        {
+          "features": [
+            {
+              "intersectedAreaSqFt": 183204.2905125925,
+              "sourceGeometryState": "VALID_SOURCE",
+              "sourceObjectId": 623
+            }
+          ],
+          "intersectedAreaSqFt": 183204.2905125925,
+          "parcelCoveragePercent": 58.3492157536219,
+          "zoneCode": "MBPD-R-N"
+        },
+        {
+          "features": [
+            {
+              "intersectedAreaSqFt": 107088.71735477273,
+              "sourceGeometryState": "VALID_SOURCE",
+              "sourceObjectId": 625
+            }
+          ],
+          "intersectedAreaSqFt": 107088.71735477273,
+          "parcelCoveragePercent": 34.106966906884615,
+          "zoneCode": "MBPD-R-S"
+        },
+        {
+          "features": [
+            {
+              "intersectedAreaSqFt": 382.5422725854761,
+              "sourceGeometryState": "VALID_SOURCE",
+              "sourceObjectId": 664
+            }
+          ],
+          "intersectedAreaSqFt": 382.5422725854761,
+          "parcelCoveragePercent": 0.12183689331466041,
+          "zoneCode": "OP-1-1"
+        }
+      ]
+    },
+    "multiZone": {
+      "apn": "6271001600",
+      "distinctZoneCount": 2,
+      "dominantCoveragePercent": 94.75594446144098,
+      "dominantZoneCode": "OF-1-1",
+      "mappingState": "MULTI_ZONE",
+      "parcelAcquisitionId": "sangis-20260924T183743Z",
+      "parcelSourceObjectId": 8,
+      "repairedSourceFeatureCount": 0,
+      "secondaryCoveragePercent": 5.244055538558022,
+      "totalCoveredPercent": 99.99999999999899,
+      "zoneEvidence": [
+        {
+          "features": [
+            {
+              "intersectedAreaSqFt": 336513.9602930463,
+              "sourceGeometryState": "VALID_SOURCE",
+              "sourceObjectId": 648
+            }
+          ],
+          "intersectedAreaSqFt": 336513.9602930463,
+          "parcelCoveragePercent": 94.75594446144098,
+          "zoneCode": "OF-1-1"
+        },
+        {
+          "features": [
+            {
+              "intersectedAreaSqFt": 18623.611503286233,
+              "sourceGeometryState": "VALID_SOURCE",
+              "sourceObjectId": 230
+            }
+          ],
+          "intersectedAreaSqFt": 18623.611503286233,
+          "parcelCoveragePercent": 5.244055538558022,
+          "zoneCode": "AR-1-2"
+        }
+      ]
+    },
+    "singleZone": {
+      "apn": "6782511200",
+      "distinctZoneCount": 1,
+      "dominantCoveragePercent": 100.00000000000004,
+      "dominantZoneCode": "IP-2-1",
+      "mappingState": "SINGLE_ZONE",
+      "parcelAcquisitionId": "sangis-20260924T183743Z",
+      "parcelSourceObjectId": 3,
+      "repairedSourceFeatureCount": 0,
+      "secondaryCoveragePercent": 0.0,
+      "totalCoveredPercent": 100.00000000000004,
+      "zoneEvidence": [
+        {
+          "features": [
+            {
+              "intersectedAreaSqFt": 142397.9879029563,
+              "sourceGeometryState": "VALID_SOURCE",
+              "sourceObjectId": 591
+            }
+          ],
+          "intersectedAreaSqFt": 142397.9879029563,
+          "parcelCoveragePercent": 100.00000000000004,
+          "zoneCode": "IP-2-1"
+        }
+      ]
+    },
+    "unmapped": {
+      "apn": "7600360300",
+      "distinctZoneCount": 0,
+      "dominantCoveragePercent": null,
+      "dominantZoneCode": null,
+      "mappingState": "UNMAPPED",
+      "parcelAcquisitionId": "sangis-20260924T183743Z",
+      "parcelSourceObjectId": 997,
+      "repairedSourceFeatureCount": 0,
+      "secondaryCoveragePercent": 0.0,
+      "totalCoveredPercent": 0.0,
+      "zoneEvidence": []
+    }
+  },
+  "receipt": {
+    "acquiredAt": "2026-09-24T20:11:39.821623+00:00",
+    "acquisitionId": "zoning-city-sd-20260924T201131Z",
+    "artifactSha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+    "datasetId": "base_zoning_city_sd_v2",
+    "mappingFingerprintSha256": "313aa7ad46747bb97499a113842ac848de8f7357134e0558210692a1913a8ccf",
+    "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+    "publisher": "City of San Diego Planning via SanGIS",
+    "receiptReference": "data/base-zoning-v2/acquisition.json",
+    "sourceItemId": "e99981214e6348de8ddc3674f799c75d",
+    "sourceModifiedAt": "2026-08-10T22:44:01.705000+00:00",
+    "sourceUrl": "https://geo.sandag.org/server/rest/services/Hosted/Zoning_Base_SD/FeatureServer/0"
+  },
+  "specialCases": {
+    "historicallyKnownParcel": {
+      "apn": "5490330700",
+      "distinctZoneCount": 2,
+      "dominantCoveragePercent": 97.66656368505859,
+      "dominantZoneCode": "RM-2-5",
+      "mappingState": "MULTI_ZONE",
+      "parcelAcquisitionId": "sangis-20260924T183743Z",
+      "parcelSourceObjectId": 203048,
+      "repairedSourceFeatureCount": 0,
+      "secondaryCoveragePercent": 2.333436314803491,
+      "totalCoveredPercent": 99.99999999986208,
+      "zoneEvidence": [
+        {
+          "features": [
+            {
+              "intersectedAreaSqFt": 6329.428324977133,
+              "sourceGeometryState": "VALID_SOURCE",
+              "sourceObjectId": 1865
+            }
+          ],
+          "intersectedAreaSqFt": 6329.428324977133,
+          "parcelCoveragePercent": 97.66656368505859,
+          "zoneCode": "RM-2-5"
+        },
+        {
+          "features": [
+            {
+              "intersectedAreaSqFt": 151.22184448992695,
+              "sourceGeometryState": "VALID_SOURCE",
+              "sourceObjectId": 1824
+            }
+          ],
+          "intersectedAreaSqFt": 151.22184448992695,
+          "parcelCoveragePercent": 2.333436314803491,
+          "zoneCode": "RS-1-6"
+        }
+      ]
+    },
+    "multiPolygonParcel": {
+      "mapping": {
+        "apn": "2392600700",
+        "distinctZoneCount": 2,
+        "dominantCoveragePercent": 99.37378378545827,
+        "dominantZoneCode": "AG-1-1",
+        "mappingState": "INDETERMINATE",
+        "parcelAcquisitionId": "sangis-20260924T183743Z",
+        "parcelSourceObjectId": 1053738,
+        "repairedSourceFeatureCount": 0,
+        "secondaryCoveragePercent": 0.187460122827831,
+        "totalCoveredPercent": 99.5612439082861,
+        "zoneEvidence": [
+          {
+            "features": [
+              {
+                "intersectedAreaSqFt": 200031.98403257027,
+                "sourceGeometryState": "VALID_SOURCE",
+                "sourceObjectId": 68
+              },
+              {
+                "intersectedAreaSqFt": 1944034.4144294956,
+                "sourceGeometryState": "VALID_SOURCE",
+                "sourceObjectId": 72
+              },
+              {
+                "intersectedAreaSqFt": 8377757.8862955915,
+                "sourceGeometryState": "VALID_SOURCE",
+                "sourceObjectId": 80
+              }
+            ],
+            "intersectedAreaSqFt": 10521824.284757657,
+            "parcelCoveragePercent": 99.37378378545827,
+            "zoneCode": "AG-1-1"
+          },
+          {
+            "features": [
+              {
+                "intersectedAreaSqFt": 19848.51937460549,
+                "sourceGeometryState": "VALID_SOURCE",
+                "sourceObjectId": 206
+              }
+            ],
+            "intersectedAreaSqFt": 19848.51937460549,
+            "parcelCoveragePercent": 0.187460122827831,
+            "zoneCode": "AR-1-1"
+          }
+        ]
+      },
+      "parcelGeometryType": "MultiPolygon"
+    },
+    "stackedGroup": {
+      "geometrySha256": "cc323b3cd99798f9f0c1a0b81f36f9fb5ff90a6976c9d3b0e3af179a8faf4fa2",
+      "members": [
+        {
+          "apn": "5891700512",
+          "distinctZoneCount": 1,
+          "dominantCoveragePercent": 100.00000000000001,
+          "dominantZoneCode": "RM-2-5",
+          "mappingState": "SINGLE_ZONE",
+          "parcelAcquisitionId": "sangis-20260924T183743Z",
+          "parcelSourceObjectId": 92,
+          "repairedSourceFeatureCount": 0,
+          "secondaryCoveragePercent": 0.0,
+          "totalCoveredPercent": 100.00000000000001,
+          "zoneEvidence": [
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 170671.76438001913,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 931
+                }
+              ],
+              "intersectedAreaSqFt": 170671.76438001913,
+              "parcelCoveragePercent": 100.00000000000001,
+              "zoneCode": "RM-2-5"
+            }
+          ]
+        },
+        {
+          "apn": "5891700513",
+          "distinctZoneCount": 1,
+          "dominantCoveragePercent": 100.00000000000001,
+          "dominantZoneCode": "RM-2-5",
+          "mappingState": "SINGLE_ZONE",
+          "parcelAcquisitionId": "sangis-20260924T183743Z",
+          "parcelSourceObjectId": 93,
+          "repairedSourceFeatureCount": 0,
+          "secondaryCoveragePercent": 0.0,
+          "totalCoveredPercent": 100.00000000000001,
+          "zoneEvidence": [
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 170671.76438001913,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 931
+                }
+              ],
+              "intersectedAreaSqFt": 170671.76438001913,
+              "parcelCoveragePercent": 100.00000000000001,
+              "zoneCode": "RM-2-5"
+            }
+          ]
+        },
+        {
+          "apn": "5891700524",
+          "distinctZoneCount": 1,
+          "dominantCoveragePercent": 100.00000000000001,
+          "dominantZoneCode": "RM-2-5",
+          "mappingState": "SINGLE_ZONE",
+          "parcelAcquisitionId": "sangis-20260924T183743Z",
+          "parcelSourceObjectId": 94,
+          "repairedSourceFeatureCount": 0,
+          "secondaryCoveragePercent": 0.0,
+          "totalCoveredPercent": 100.00000000000001,
+          "zoneEvidence": [
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 170671.76438001913,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 931
+                }
+              ],
+              "intersectedAreaSqFt": 170671.76438001913,
+              "parcelCoveragePercent": 100.00000000000001,
+              "zoneCode": "RM-2-5"
+            }
+          ]
+        }
+      ]
+    },
+    "zoningPolygonAnomaly": {
+      "apn": "5810934600",
+      "distinctZoneCount": 2,
+      "dominantCoveragePercent": 96.40345141277305,
+      "dominantZoneCode": "RS-1-1",
+      "mappingState": "MULTI_ZONE",
+      "parcelAcquisitionId": "sangis-20260924T183743Z",
+      "parcelSourceObjectId": 25,
+      "repairedSourceFeatureCount": 1,
+      "secondaryCoveragePercent": 3.5965485870993357,
+      "totalCoveredPercent": 99.99999999987237,
+      "zoneEvidence": [
+        {
+          "features": [
+            {
+              "intersectedAreaSqFt": 3513.8609204918407,
+              "sourceGeometryState": "VALID_SOURCE",
+              "sourceObjectId": 1126
+            }
+          ],
+          "intersectedAreaSqFt": 3513.8609204918407,
+          "parcelCoveragePercent": 96.40345141277305,
+          "zoneCode": "RS-1-1"
+        },
+        {
+          "features": [
+            {
+              "intersectedAreaSqFt": 131.09252151924562,
+              "sourceGeometryState": "EXPLICIT_MAKE_VALID",
+              "sourceObjectId": 1335
+            }
+          ],
+          "intersectedAreaSqFt": 131.09252151924562,
+          "parcelCoveragePercent": 3.5965485870993357,
+          "zoneCode": "RS-1-7"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1499 @@
+{
+  "acquisitionId": "zoning-city-sd-20260924T201131Z",
+  "artifactSha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+  "counts": {
+    "accepted": 3680,
+    "parsed": 3706,
+    "rejected": 26
+  },
+  "decision": "SOURCE_VALIDATED_WITH_EXPLICIT_QUARANTINE",
+  "distinctObjectIds": 3706,
+  "distinctZoneCodes": 183,
+  "geometryPolicy": "No geometry repair. Invalid source polygons are quarantined; their envelopes scope INDETERMINATE parcels.",
+  "geometryTypes": {
+    "MultiPolygon": 1,
+    "Polygon": 3705
+  },
+  "outputs": {
+    "accepted.ndjson.gz": {
+      "byteSize": 403873,
+      "sha256": "ae6ea7e9e79a90b33c4f8f372060f21341f5c14366b894f16bbc1bc0d344abb5"
+    },
+    "rejected.ndjson.gz": {
+      "byteSize": 3892,
+      "sha256": "6822d0cad5f5cc158ec5ca30ca6aa603d3ca6bb82cc2eb423d05824d0a37d518"
+    }
+  },
+  "rejectionReasons": {
+    "INVALID_GEOMETRY": 26
+  },
+  "sourceOrderIdentityFingerprint": "559598ae4bf70a40356ff357c561b816fd415f0554d0f9761d6eede8fdc5d9a1",
+  "tool": "Python 3.14.6; Shapely 2.1.2; GEOS 3.13.1",
+  "validatedArtifactAcquiredAt": "2026-09-24T20:11:39.821623+00:00",
+  "zoneInventory": [
+    {
+      "acceptedFeatures": 26,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 26,
+      "sourceShapeAreaSqFt": 407409920.61108404,
+      "zoneCode": "AG-1-1"
+    },
+    {
+      "acceptedFeatures": 223,
+      "rejectedFeatures": 2,
+      "sourceDescription": null,
+      "sourceFeatures": 225,
+      "sourceShapeAreaSqFt": 1686678933.337454,
+      "zoneCode": "AR-1-1"
+    },
+    {
+      "acceptedFeatures": 42,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 42,
+      "sourceShapeAreaSqFt": 115383521.07605322,
+      "zoneCode": "AR-1-2"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 728636.0895911163,
+      "zoneCode": "CC-1-1"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 154632.95254930048,
+      "zoneCode": "CC-1-2"
+    },
+    {
+      "acceptedFeatures": 76,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 76,
+      "sourceShapeAreaSqFt": 54300883.15263505,
+      "zoneCode": "CC-1-3"
+    },
+    {
+      "acceptedFeatures": 13,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 13,
+      "sourceShapeAreaSqFt": 5973915.461671583,
+      "zoneCode": "CC-2-1"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 7054296.264862884,
+      "zoneCode": "CC-2-2"
+    },
+    {
+      "acceptedFeatures": 34,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 34,
+      "sourceShapeAreaSqFt": 26094970.53315939,
+      "zoneCode": "CC-2-3"
+    },
+    {
+      "acceptedFeatures": 5,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 5,
+      "sourceShapeAreaSqFt": 1735548.4635409077,
+      "zoneCode": "CC-2-4"
+    },
+    {
+      "acceptedFeatures": 9,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 9,
+      "sourceShapeAreaSqFt": 12073536.559987327,
+      "zoneCode": "CC-2-5"
+    },
+    {
+      "acceptedFeatures": 5,
+      "rejectedFeatures": 1,
+      "sourceDescription": null,
+      "sourceFeatures": 6,
+      "sourceShapeAreaSqFt": 7868826.721679477,
+      "zoneCode": "CC-3-10"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 2205385.1276370166,
+      "zoneCode": "CC-3-11"
+    },
+    {
+      "acceptedFeatures": 21,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 21,
+      "sourceShapeAreaSqFt": 14957947.929924326,
+      "zoneCode": "CC-3-4"
+    },
+    {
+      "acceptedFeatures": 15,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 15,
+      "sourceShapeAreaSqFt": 9319175.491957346,
+      "zoneCode": "CC-3-5"
+    },
+    {
+      "acceptedFeatures": 40,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 40,
+      "sourceShapeAreaSqFt": 27449703.636768818,
+      "zoneCode": "CC-3-6"
+    },
+    {
+      "acceptedFeatures": 14,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 14,
+      "sourceShapeAreaSqFt": 9491606.945996422,
+      "zoneCode": "CC-3-7"
+    },
+    {
+      "acceptedFeatures": 45,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 45,
+      "sourceShapeAreaSqFt": 35598825.48413412,
+      "zoneCode": "CC-3-8"
+    },
+    {
+      "acceptedFeatures": 26,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 26,
+      "sourceShapeAreaSqFt": 19659967.779810708,
+      "zoneCode": "CC-3-9"
+    },
+    {
+      "acceptedFeatures": 17,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 17,
+      "sourceShapeAreaSqFt": 14731185.73524538,
+      "zoneCode": "CC-4-2"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 1144534.360786245,
+      "zoneCode": "CC-4-3"
+    },
+    {
+      "acceptedFeatures": 31,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 31,
+      "sourceShapeAreaSqFt": 6037202.310486792,
+      "zoneCode": "CC-4-5"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 1274249.9965307524,
+      "zoneCode": "CC-4-6"
+    },
+    {
+      "acceptedFeatures": 5,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 5,
+      "sourceShapeAreaSqFt": 435535.994716643,
+      "zoneCode": "CC-5-1"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 963395.6888152525,
+      "zoneCode": "CC-5-2"
+    },
+    {
+      "acceptedFeatures": 7,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 7,
+      "sourceShapeAreaSqFt": 3478461.688943069,
+      "zoneCode": "CC-5-3"
+    },
+    {
+      "acceptedFeatures": 7,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 7,
+      "sourceShapeAreaSqFt": 3416327.2129973546,
+      "zoneCode": "CC-5-4"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 4719386.674716976,
+      "zoneCode": "CC-5-5"
+    },
+    {
+      "acceptedFeatures": 3,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 3,
+      "sourceShapeAreaSqFt": 3161320.8885091203,
+      "zoneCode": "CCPD-BP"
+    },
+    {
+      "acceptedFeatures": 3,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 3,
+      "sourceShapeAreaSqFt": 4934698.837874055,
+      "zoneCode": "CCPD-CORE"
+    },
+    {
+      "acceptedFeatures": 11,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 11,
+      "sourceShapeAreaSqFt": 8354312.613438643,
+      "zoneCode": "CCPD-ER"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 855070.6826970413,
+      "zoneCode": "CCPD-I"
+    },
+    {
+      "acceptedFeatures": 5,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 5,
+      "sourceShapeAreaSqFt": 4758795.317753362,
+      "zoneCode": "CCPD-MC"
+    },
+    {
+      "acceptedFeatures": 8,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 8,
+      "sourceShapeAreaSqFt": 4221654.712236518,
+      "zoneCode": "CCPD-NC"
+    },
+    {
+      "acceptedFeatures": 26,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 26,
+      "sourceShapeAreaSqFt": 2060658.94491392,
+      "zoneCode": "CCPD-OS"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 6078266.140686935,
+      "zoneCode": "CCPD-PC"
+    },
+    {
+      "acceptedFeatures": 12,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 12,
+      "sourceShapeAreaSqFt": 9932949.223283231,
+      "zoneCode": "CCPD-RE"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 721181.1827789057,
+      "zoneCode": "CCPD-T"
+    },
+    {
+      "acceptedFeatures": 3,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 3,
+      "sourceShapeAreaSqFt": 344591.2916222658,
+      "zoneCode": "CN-1-1"
+    },
+    {
+      "acceptedFeatures": 70,
+      "rejectedFeatures": 1,
+      "sourceDescription": null,
+      "sourceFeatures": 71,
+      "sourceShapeAreaSqFt": 10698510.07453369,
+      "zoneCode": "CN-1-2"
+    },
+    {
+      "acceptedFeatures": 41,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 41,
+      "sourceShapeAreaSqFt": 10319142.016190803,
+      "zoneCode": "CN-1-3"
+    },
+    {
+      "acceptedFeatures": 23,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 23,
+      "sourceShapeAreaSqFt": 10256644.30584774,
+      "zoneCode": "CN-1-4"
+    },
+    {
+      "acceptedFeatures": 3,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 3,
+      "sourceShapeAreaSqFt": 2118021.2366312156,
+      "zoneCode": "CN-1-5"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 655839.5832249784,
+      "zoneCode": "CN-1-6"
+    },
+    {
+      "acceptedFeatures": 3,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 3,
+      "sourceShapeAreaSqFt": 1906961.974555461,
+      "zoneCode": "CO-1-1"
+    },
+    {
+      "acceptedFeatures": 46,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 46,
+      "sourceShapeAreaSqFt": 17462874.939101063,
+      "zoneCode": "CO-1-2"
+    },
+    {
+      "acceptedFeatures": 5,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 5,
+      "sourceShapeAreaSqFt": 3987041.3848371427,
+      "zoneCode": "CO-2-1"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 27437138.18866753,
+      "zoneCode": "CO-2-2"
+    },
+    {
+      "acceptedFeatures": 5,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 5,
+      "sourceShapeAreaSqFt": 7928836.857337029,
+      "zoneCode": "CO-3-1"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 1406650.94161129,
+      "zoneCode": "CO-3-2"
+    },
+    {
+      "acceptedFeatures": 3,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 3,
+      "sourceShapeAreaSqFt": 5727120.94205916,
+      "zoneCode": "CO-3-3"
+    },
+    {
+      "acceptedFeatures": 9,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 9,
+      "sourceShapeAreaSqFt": 612313.4927462355,
+      "zoneCode": "CP-1-1"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 9328353.372171372,
+      "zoneCode": "CR-1-1"
+    },
+    {
+      "acceptedFeatures": 7,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 7,
+      "sourceShapeAreaSqFt": 15384802.29874174,
+      "zoneCode": "CR-2-1"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 1185803.073313407,
+      "zoneCode": "CSPD-CASS-STREET"
+    },
+    {
+      "acceptedFeatures": 18,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 18,
+      "sourceShapeAreaSqFt": 2540736.1683203136,
+      "zoneCode": "CUPD-CT-2-3"
+    },
+    {
+      "acceptedFeatures": 15,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 15,
+      "sourceShapeAreaSqFt": 3038780.427178402,
+      "zoneCode": "CUPD-CT-2-4"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 465637.05391471426,
+      "zoneCode": "CUPD-CT-3-3"
+    },
+    {
+      "acceptedFeatures": 7,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 7,
+      "sourceShapeAreaSqFt": 2283983.441266015,
+      "zoneCode": "CUPD-CT-5-4"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 271580.08245875867,
+      "zoneCode": "CUPD-CU-1-1"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 612077.6641731134,
+      "zoneCode": "CUPD-CU-1-2"
+    },
+    {
+      "acceptedFeatures": 12,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 12,
+      "sourceShapeAreaSqFt": 6875448.379266879,
+      "zoneCode": "CUPD-CU-2-3"
+    },
+    {
+      "acceptedFeatures": 8,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 8,
+      "sourceShapeAreaSqFt": 5348399.781803846,
+      "zoneCode": "CUPD-CU-2-4"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 229225.81881329877,
+      "zoneCode": "CUPD-CU-2-5"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 2089255.817658834,
+      "zoneCode": "CUPD-CU-3-3"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 1818397.1466960586,
+      "zoneCode": "CUPD-CU-3-6"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 971043.2106268291,
+      "zoneCode": "CUPD-CU-3-7"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 373770.8613048752,
+      "zoneCode": "CUPD-CU-3-8"
+    },
+    {
+      "acceptedFeatures": 23,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 23,
+      "sourceShapeAreaSqFt": 9946791.389747102,
+      "zoneCode": "CV-1-1"
+    },
+    {
+      "acceptedFeatures": 14,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 14,
+      "sourceShapeAreaSqFt": 7334964.026890359,
+      "zoneCode": "CV-1-2"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 7916784.775813643,
+      "zoneCode": "CVPD-EC"
+    },
+    {
+      "acceptedFeatures": 9,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 9,
+      "sourceShapeAreaSqFt": 14247982.552831242,
+      "zoneCode": "CVPD-EP"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 1223982.2988696261,
+      "zoneCode": "CVPD-MC"
+    },
+    {
+      "acceptedFeatures": 11,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 11,
+      "sourceShapeAreaSqFt": 12564029.345820235,
+      "zoneCode": "CVPD-MF1"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 5756231.844530268,
+      "zoneCode": "CVPD-MF2"
+    },
+    {
+      "acceptedFeatures": 5,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 5,
+      "sourceShapeAreaSqFt": 2292869.5656501115,
+      "zoneCode": "CVPD-MF3"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 1236310.4262442954,
+      "zoneCode": "CVPD-MF4"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 3104070.3176471656,
+      "zoneCode": "CVPD-MFL"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 1777906.896646643,
+      "zoneCode": "CVPD-NC"
+    },
+    {
+      "acceptedFeatures": 26,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 26,
+      "sourceShapeAreaSqFt": 23466048.88048186,
+      "zoneCode": "CVPD-OS"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 1199838.0318575727,
+      "zoneCode": "CVPD-SC"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 1360437.5597177122,
+      "zoneCode": "CVPD-SF"
+    },
+    {
+      "acceptedFeatures": 6,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 6,
+      "sourceShapeAreaSqFt": 19851170.30051583,
+      "zoneCode": "CVPD-SF1"
+    },
+    {
+      "acceptedFeatures": 6,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 6,
+      "sourceShapeAreaSqFt": 9088206.151133502,
+      "zoneCode": "CVPD-SF1A"
+    },
+    {
+      "acceptedFeatures": 10,
+      "rejectedFeatures": 1,
+      "sourceDescription": null,
+      "sourceFeatures": 11,
+      "sourceShapeAreaSqFt": 20516567.642632574,
+      "zoneCode": "CVPD-SF2"
+    },
+    {
+      "acceptedFeatures": 15,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 15,
+      "sourceShapeAreaSqFt": 37167530.42489146,
+      "zoneCode": "CVPD-SF3"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 777234.5929476607,
+      "zoneCode": "CVPD-SF4"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 1787612.230196498,
+      "zoneCode": "CVPD-SP"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 3051148.531116095,
+      "zoneCode": "CVPD-TC"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 1671477.7744300915,
+      "zoneCode": "CVPD-VC"
+    },
+    {
+      "acceptedFeatures": 23,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 23,
+      "sourceShapeAreaSqFt": 43780702.313011594,
+      "zoneCode": "EMX-1"
+    },
+    {
+      "acceptedFeatures": 16,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 16,
+      "sourceShapeAreaSqFt": 38099438.26851119,
+      "zoneCode": "EMX-2"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 6368963.715738571,
+      "zoneCode": "EMX-3"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 1850839.3159149357,
+      "zoneCode": "GQPD-GASLAMP-QTR"
+    },
+    {
+      "acceptedFeatures": 7,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 7,
+      "sourceShapeAreaSqFt": 73334864.59425233,
+      "zoneCode": "IBT-1-1"
+    },
+    {
+      "acceptedFeatures": 10,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 10,
+      "sourceShapeAreaSqFt": 26887112.555182897,
+      "zoneCode": "IH-1-1"
+    },
+    {
+      "acceptedFeatures": 10,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 10,
+      "sourceShapeAreaSqFt": 77508935.44270584,
+      "zoneCode": "IH-2-1"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 442830.6002763859,
+      "zoneCode": "IL-1-1"
+    },
+    {
+      "acceptedFeatures": 52,
+      "rejectedFeatures": 2,
+      "sourceDescription": null,
+      "sourceFeatures": 54,
+      "sourceShapeAreaSqFt": 242423204.9310491,
+      "zoneCode": "IL-2-1"
+    },
+    {
+      "acceptedFeatures": 58,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 58,
+      "sourceShapeAreaSqFt": 128556495.43118508,
+      "zoneCode": "IL-3-1"
+    },
+    {
+      "acceptedFeatures": 15,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 15,
+      "sourceShapeAreaSqFt": 49799455.87626351,
+      "zoneCode": "IP-1-1"
+    },
+    {
+      "acceptedFeatures": 27,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 27,
+      "sourceShapeAreaSqFt": 80522741.51219954,
+      "zoneCode": "IP-2-1"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 2190697.707171195,
+      "zoneCode": "IP-3-1"
+    },
+    {
+      "acceptedFeatures": 12,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 12,
+      "sourceShapeAreaSqFt": 21159841.334533095,
+      "zoneCode": "IS-1-1"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 2221956.425133152,
+      "zoneCode": "LJPD-1"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 603335.4545335083,
+      "zoneCode": "LJPD-1A"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 665377.9923588957,
+      "zoneCode": "LJPD-2"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 831721.4740343867,
+      "zoneCode": "LJPD-3"
+    },
+    {
+      "acceptedFeatures": 6,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 6,
+      "sourceShapeAreaSqFt": 2003065.646782098,
+      "zoneCode": "LJPD-4"
+    },
+    {
+      "acceptedFeatures": 5,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 5,
+      "sourceShapeAreaSqFt": 4162049.6098321686,
+      "zoneCode": "LJPD-5"
+    },
+    {
+      "acceptedFeatures": 3,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 3,
+      "sourceShapeAreaSqFt": 257361.8381943369,
+      "zoneCode": "LJPD-5A"
+    },
+    {
+      "acceptedFeatures": 3,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 3,
+      "sourceShapeAreaSqFt": 496862.31268558773,
+      "zoneCode": "LJPD-6"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 115330.43052181859,
+      "zoneCode": "LJPD-6A"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 245172.1011186249,
+      "zoneCode": "LJSPD-CC"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 266891.08429953293,
+      "zoneCode": "LJSPD-MF1"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 464183.3132313664,
+      "zoneCode": "LJSPD-MF2"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 989116.0110569783,
+      "zoneCode": "LJSPD-PRF"
+    },
+    {
+      "acceptedFeatures": 0,
+      "rejectedFeatures": 1,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 50889533.48173624,
+      "zoneCode": "LJSPD-SF"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 1149247.3336873432,
+      "zoneCode": "LJSPD-V"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 276462.50584310445,
+      "zoneCode": "LJSPD-YMCA"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 433122.07127373974,
+      "zoneCode": "MBPD-NC-N"
+    },
+    {
+      "acceptedFeatures": 3,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 3,
+      "sourceShapeAreaSqFt": 221625.0106821395,
+      "zoneCode": "MBPD-NC-S"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 1404270.8924589953,
+      "zoneCode": "MBPD-R-N"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 5631840.000397812,
+      "zoneCode": "MBPD-R-S"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 568092.9014497126,
+      "zoneCode": "MBPD-VC-N"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 215016.19964201958,
+      "zoneCode": "MBPD-VC-S"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 649165.4125362327,
+      "zoneCode": "MPD-MARINA"
+    },
+    {
+      "acceptedFeatures": 74,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 74,
+      "sourceShapeAreaSqFt": 171531317.4233303,
+      "zoneCode": "OC-1-1"
+    },
+    {
+      "acceptedFeatures": 19,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 19,
+      "sourceShapeAreaSqFt": 165659152.01649866,
+      "zoneCode": "OF-1-1"
+    },
+    {
+      "acceptedFeatures": 197,
+      "rejectedFeatures": 1,
+      "sourceDescription": null,
+      "sourceFeatures": 198,
+      "sourceShapeAreaSqFt": 176461186.01399133,
+      "zoneCode": "OP-1-1"
+    },
+    {
+      "acceptedFeatures": 45,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 45,
+      "sourceShapeAreaSqFt": 121734215.10658963,
+      "zoneCode": "OP-2-1"
+    },
+    {
+      "acceptedFeatures": 170,
+      "rejectedFeatures": 1,
+      "sourceDescription": null,
+      "sourceFeatures": 171,
+      "sourceShapeAreaSqFt": 98846864.47058399,
+      "zoneCode": "OR-1-1"
+    },
+    {
+      "acceptedFeatures": 15,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 15,
+      "sourceShapeAreaSqFt": 25669973.451400235,
+      "zoneCode": "OR-1-2"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 2558595.702496567,
+      "zoneCode": "OTCC-1-1"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 467342.15783966024,
+      "zoneCode": "OTCC-2-1"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 631958.7373068494,
+      "zoneCode": "OTCC-2-2"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 391357.880095798,
+      "zoneCode": "OTCC-2-3"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 817591.6193985682,
+      "zoneCode": "OTCC-3-1"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 170290.51535820367,
+      "zoneCode": "OTCC-3-2"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 104378.04555517535,
+      "zoneCode": "OTMCR-1-1"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 547457.9416893604,
+      "zoneCode": "OTMCR-1-2"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 377914.3666002063,
+      "zoneCode": "OTMCR-1-3"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 1,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 3441994.231787683,
+      "zoneCode": "OTOP-1-1"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 1357996.1223581,
+      "zoneCode": "OTOP-2-1"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 170651.1308121263,
+      "zoneCode": "OTRM-1-1"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 510988.8000979123,
+      "zoneCode": "OTRM-2-1"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 212179.1311932289,
+      "zoneCode": "OTRM-2-2"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 154525.19040801327,
+      "zoneCode": "OTRS-1-1"
+    },
+    {
+      "acceptedFeatures": 267,
+      "rejectedFeatures": 3,
+      "sourceDescription": null,
+      "sourceFeatures": 270,
+      "sourceShapeAreaSqFt": 368452356.2627883,
+      "zoneCode": "RM-1-1"
+    },
+    {
+      "acceptedFeatures": 28,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 28,
+      "sourceShapeAreaSqFt": 22792079.709957454,
+      "zoneCode": "RM-1-2"
+    },
+    {
+      "acceptedFeatures": 30,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 30,
+      "sourceShapeAreaSqFt": 30937970.064350616,
+      "zoneCode": "RM-1-3"
+    },
+    {
+      "acceptedFeatures": 16,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 16,
+      "sourceShapeAreaSqFt": 21406594.278228145,
+      "zoneCode": "RM-2-4"
+    },
+    {
+      "acceptedFeatures": 248,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 248,
+      "sourceShapeAreaSqFt": 223754476.43032587,
+      "zoneCode": "RM-2-5"
+    },
+    {
+      "acceptedFeatures": 15,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 15,
+      "sourceShapeAreaSqFt": 10051690.852907028,
+      "zoneCode": "RM-2-6"
+    },
+    {
+      "acceptedFeatures": 134,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 134,
+      "sourceShapeAreaSqFt": 104936522.05712223,
+      "zoneCode": "RM-3-7"
+    },
+    {
+      "acceptedFeatures": 27,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 27,
+      "sourceShapeAreaSqFt": 15810114.02606387,
+      "zoneCode": "RM-3-8"
+    },
+    {
+      "acceptedFeatures": 63,
+      "rejectedFeatures": 1,
+      "sourceDescription": null,
+      "sourceFeatures": 64,
+      "sourceShapeAreaSqFt": 36332064.94177094,
+      "zoneCode": "RM-3-9"
+    },
+    {
+      "acceptedFeatures": 59,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 59,
+      "sourceShapeAreaSqFt": 29659317.536887303,
+      "zoneCode": "RM-4-10"
+    },
+    {
+      "acceptedFeatures": 3,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 3,
+      "sourceShapeAreaSqFt": 3552209.962640831,
+      "zoneCode": "RM-4-11"
+    },
+    {
+      "acceptedFeatures": 11,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 11,
+      "sourceShapeAreaSqFt": 1579204.5302692715,
+      "zoneCode": "RM-5-12"
+    },
+    {
+      "acceptedFeatures": 12,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 12,
+      "sourceShapeAreaSqFt": 15604929.320815468,
+      "zoneCode": "RMX-1"
+    },
+    {
+      "acceptedFeatures": 14,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 14,
+      "sourceShapeAreaSqFt": 18096940.827813905,
+      "zoneCode": "RMX-2"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 3476105.641639184,
+      "zoneCode": "RMX-3"
+    },
+    {
+      "acceptedFeatures": 228,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 228,
+      "sourceShapeAreaSqFt": 95742260.99256253,
+      "zoneCode": "RS-1-1"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 1645061.8242840753,
+      "zoneCode": "RS-1-10"
+    },
+    {
+      "acceptedFeatures": 11,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 11,
+      "sourceShapeAreaSqFt": 19965559.06464572,
+      "zoneCode": "RS-1-11"
+    },
+    {
+      "acceptedFeatures": 8,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 8,
+      "sourceShapeAreaSqFt": 20404496.825816315,
+      "zoneCode": "RS-1-12"
+    },
+    {
+      "acceptedFeatures": 21,
+      "rejectedFeatures": 1,
+      "sourceDescription": null,
+      "sourceFeatures": 22,
+      "sourceShapeAreaSqFt": 69551003.07687442,
+      "zoneCode": "RS-1-13"
+    },
+    {
+      "acceptedFeatures": 103,
+      "rejectedFeatures": 2,
+      "sourceDescription": null,
+      "sourceFeatures": 105,
+      "sourceShapeAreaSqFt": 721123641.8480382,
+      "zoneCode": "RS-1-14"
+    },
+    {
+      "acceptedFeatures": 23,
+      "rejectedFeatures": 1,
+      "sourceDescription": null,
+      "sourceFeatures": 24,
+      "sourceShapeAreaSqFt": 93990778.73594648,
+      "zoneCode": "RS-1-2"
+    },
+    {
+      "acceptedFeatures": 22,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 22,
+      "sourceShapeAreaSqFt": 11205008.89107305,
+      "zoneCode": "RS-1-3"
+    },
+    {
+      "acceptedFeatures": 46,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 46,
+      "sourceShapeAreaSqFt": 94924072.26416634,
+      "zoneCode": "RS-1-4"
+    },
+    {
+      "acceptedFeatures": 11,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 11,
+      "sourceShapeAreaSqFt": 19145919.539153565,
+      "zoneCode": "RS-1-5"
+    },
+    {
+      "acceptedFeatures": 8,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 8,
+      "sourceShapeAreaSqFt": 40009685.97892923,
+      "zoneCode": "RS-1-6"
+    },
+    {
+      "acceptedFeatures": 159,
+      "rejectedFeatures": 7,
+      "sourceDescription": null,
+      "sourceFeatures": 166,
+      "sourceShapeAreaSqFt": 1425966069.4272366,
+      "zoneCode": "RS-1-7"
+    },
+    {
+      "acceptedFeatures": 17,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 17,
+      "sourceShapeAreaSqFt": 759968002.6029456,
+      "zoneCode": "RS-1-8"
+    },
+    {
+      "acceptedFeatures": 4,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 4,
+      "sourceShapeAreaSqFt": 24581473.18620236,
+      "zoneCode": "RS-1-9"
+    },
+    {
+      "acceptedFeatures": 15,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 15,
+      "sourceShapeAreaSqFt": 11491411.974087996,
+      "zoneCode": "RT-1-2"
+    },
+    {
+      "acceptedFeatures": 1,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 1,
+      "sourceShapeAreaSqFt": 1216979.2491445472,
+      "zoneCode": "RT-1-4"
+    },
+    {
+      "acceptedFeatures": 2,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 2,
+      "sourceShapeAreaSqFt": 989214.2922573861,
+      "zoneCode": "RT-1-5"
+    },
+    {
+      "acceptedFeatures": 15,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 15,
+      "sourceShapeAreaSqFt": 19970778.236459833,
+      "zoneCode": "RX-1-1"
+    },
+    {
+      "acceptedFeatures": 19,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 19,
+      "sourceShapeAreaSqFt": 20618477.717423983,
+      "zoneCode": "RX-1-2"
+    },
+    {
+      "acceptedFeatures": 6,
+      "rejectedFeatures": 0,
+      "sourceDescription": null,
+      "sourceFeatures": 6,
+      "sourceShapeAreaSqFt": 132173748.4546094,
+      "zoneCode": "UNZONED"
+    }
+  ]
+}

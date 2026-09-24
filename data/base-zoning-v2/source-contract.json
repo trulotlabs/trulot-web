@@ -1,0 +1,38 @@
+{
+  "cityPortalUrl": "https://data.sandiego.gov/datasets/gis-zoning/",
+  "dataset": {
+    "artifactCrs": "EPSG:4326",
+    "geometry": "Polygon",
+    "id": "base_zoning_city_sd_v2",
+    "itemId": "e99981214e6348de8ddc3674f799c75d",
+    "layerId": 0,
+    "nativeCrs": "EPSG:2230",
+    "publisher": "City of San Diego Planning via SanGIS",
+    "title": "Zoning_Base_SD",
+    "updateCadence": "weekly"
+  },
+  "fields": {
+    "featureEffectiveDate": "IMP_DATE",
+    "geometryArea": "Shape__Area",
+    "geometryLength": "Shape__Length",
+    "ordinanceNumber": "ORDNUM",
+    "rawZoneCode": "ZONE_NAME",
+    "sourceIdentity": "OBJECTID"
+  },
+  "semantics": {
+    "baseZoning": "Current base-zone designations from the Official Zoning Map and subsequent updates.",
+    "legalMeaning": "No entitlement, standards, density, FAR, height, capacity, or legal conclusion.",
+    "multipleBaseZones": "Preserved whenever area evidence is material; no first-zone selection.",
+    "overlayZones": "Separate and supplemental to base zoning.",
+    "plannedAndCommunityPlanLandUse": "Separate City dataset and concept.",
+    "rawCodes": "ZONE_NAME values are preserved verbatim; the layer provides no description field.",
+    "rightsOfWayAndNonparcelCoverage": "Not explicitly established by authoritative metadata; unresolved."
+  },
+  "sourceDates": {
+    "featureEffectiveDates": "Per-feature imp_date; not a dataset-wide effective date",
+    "portalItemModified": "2026-08-10T22:44:05.100000+00:00",
+    "portalUpdateCadence": "weekly",
+    "serviceModified": "2026-08-10T22:44:01.705000+00:00"
+  },
+  "termsUrl": "https://gis.sangis.org/sanportal/apps/storymaps/stories/d26146d84e834ff6bcd58e4e620a983a"
+}

@@ -1,0 +1,38 @@
+{
+  "acquisitionAggregateSha256": "3291cbdc60f6e5e85d6fb2fe0879efe0e7ea41607f5cfb0857071a6d14e0da7c",
+  "receipt": {
+    "acquiredAt": "2026-09-24T20:11:39.821623+00:00",
+    "acquisitionId": "zoning-city-sd-20260924T201131Z",
+    "acquisitionMethod": "official-complete-download",
+    "artifact": {
+      "byteSize": 19627631,
+      "filename": "Zoning_Base_SD.geojson",
+      "mediaType": "application/geo+json",
+      "sha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6"
+    },
+    "artifactCrs": "EPSG:4326",
+    "cityPortalUrl": "https://data.sandiego.gov/datasets/gis-zoning/",
+    "datasetId": "base_zoning_city_sd_v2",
+    "downloadUrl": "https://geo.sandag.org/server/rest/directories/downloads/Zoning_Base_SD.geojson",
+    "geometryType": "Polygon or MultiPolygon after GeoJSON encoding",
+    "licenseUseNote": "before-item.json licenseInfo applies; derived mapping is not original SanGIS data",
+    "metadataUrl": "https://geo.sandag.org/portal/sharing/rest/content/items/e99981214e6348de8ddc3674f799c75d",
+    "nativeCrs": "EPSG:2230",
+    "publisher": "City of San Diego Planning via SanGIS",
+    "schemaVersion": 1,
+    "sourceFeatureCount": 3706,
+    "sourceItemId": "e99981214e6348de8ddc3674f799c75d",
+    "sourceLayerId": 0,
+    "sourceReported": {
+      "featureEffectiveDates": "Per-feature imp_date; not a dataset-wide effective date",
+      "portalItemModified": "2026-08-10T22:44:05.100000+00:00",
+      "portalUpdateCadence": "weekly",
+      "serviceModified": "2026-08-10T22:44:01.705000+00:00"
+    },
+    "sourceStableAcrossAcquisition": true,
+    "sourceUrl": "https://geo.sandag.org/server/rest/services/Hosted/Zoning_Base_SD/FeatureServer/0",
+    "termsUrl": "https://gis.sangis.org/sanportal/apps/storymaps/stories/d26146d84e834ff6bcd58e4e620a983a",
+    "tool": "Python 3.14.6 urllib"
+  },
+  "retention": "Raw 19,627,631-byte artifact and HTTP evidence remain outside Git in immutable acquisition storage."
+}

@@ -1,0 +1,48 @@
+{
+  "searchScope": {
+    "repository": "reachable refs and current tree",
+    "terms": [
+      "base_zoning_mapping_v1",
+      "Zoning_Base_SD",
+      "zoning GIS and source URLs",
+      "zoning artifacts and receipts",
+      "zoning imports and SQL",
+      "parcel-zone intersection and mixed-zone handling",
+      "normalization and historical parcel examples"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "data/dataset-manifests/2026-07-11-foundation.json",
+      "classification": "ambiguous/unusable",
+      "finding": "Names base_zoning_mapping_v1 but records an unknown source location, unverified checksum, unknown dates, and no importer or mapping method."
+    },
+    {
+      "path": "data/foundation/parcel-v1-reproducibility.json",
+      "classification": "historical note",
+      "finding": "Correctly marks the legacy zoning mapping NOT_REPRODUCIBLE and does not contain source or receipt evidence."
+    },
+    {
+      "path": "docs/san-diego-data-foundation-v1.md",
+      "classification": "historical note",
+      "finding": "Documents the legacy lineage gap and now links the independent V2 rehearsal; it is not an acquisition receipt."
+    },
+    {
+      "path": "b357bf8c711b3d703b0747aa4d2daabe71ba2b41",
+      "classification": "validation evidence",
+      "finding": "Identifies official SanGIS item e99981214e6348de8ddc3674f799c75d, its fields, and bounded historical APN examples. It is trustworthy for source discovery and examples, but it is not a complete artifact, receipt, importer, or serving definition."
+    },
+    {
+      "path": "legacy Parcel V1 displayed zoning fields",
+      "classification": "ambiguous/unusable",
+      "finding": "Displayed values have no recovered source acquisition, parcel-intersection method, mixed-zone semantics, or source-vintage proof and therefore cannot establish authority."
+    }
+  ],
+  "missingHistoricalClasses": [
+    "authoritative source artifact",
+    "acquisition receipt",
+    "importer/transformation",
+    "serving definition"
+  ],
+  "conclusion": "No historical artifact closes legacy base_zoning_mapping_v1 lineage. Base Zoning V2 starts a clean independent chain from the current official source."
+}

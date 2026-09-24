@@ -1,0 +1,19 @@
+{
+  "acceptedRowsSha256": "ae6ea7e9e79a90b33c4f8f372060f21341f5c14366b894f16bbc1bc0d344abb5",
+  "acquisitionId": "zoning-city-sd-20260924T201131Z",
+  "artifactSha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+  "counts": {
+    "cityParcels": 393733,
+    "mappingGeometry": 3706,
+    "rejected": 26,
+    "zoning": 3680
+  },
+  "executedDdlSha256": "c557e5bbf989e139ec5843d882f6b2aae70dff1cfda5cdcd2b2f9ce58da28c38",
+  "finalContractDdlSha256": "29ae92359348b34bae1c517d053291ee28b5b5c1512e8f43edd8f2c74075a3fb",
+  "durationSeconds": 24.371,
+  "importerSha256": "953f8846357df201bad1bb84d3f22b8bf4d91ac8982f31286ddf70f811536fc5",
+  "rejectedRowsSha256": "6822d0cad5f5cc158ec5ca30ca6aa603d3ca6bb82cc2eb423d05824d0a37d518",
+  "postImportContractCorrection": "Renamed the unpopulated map-contract count field from invalid_source_envelope_count to repaired_source_feature_count after explicit mapping derivation was selected; source, quarantine, mapping-geometry, and parcel input tables used by the read-only export were unchanged.",
+  "tool": "Python 3.14.6; Shapely 2.1.2; pyproj 3.7.2",
+  "validationReportSha256": "eacd285f14e6114db82a9a55f43184ca63acc3b520c077992dada2a832eeec19"
+}

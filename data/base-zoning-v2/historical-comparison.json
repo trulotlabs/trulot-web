@@ -1,0 +1,80 @@
+{
+  "comparisons": [
+    {
+      "apn": "5491013900",
+      "currentMappingState": "SINGLE_ZONE",
+      "currentZoneCodes": [
+        "RS-1-6"
+      ],
+      "historicalZoneCode": "RS-1-6",
+      "outcome": "MATCH"
+    },
+    {
+      "apn": "5441922100",
+      "currentMappingState": "MULTI_ZONE",
+      "currentZoneCodes": [
+        "RX-1-1",
+        "RS-1-6"
+      ],
+      "historicalZoneCode": "RX-1-1",
+      "outcome": "LEGACY_SEMANTICS_UNKNOWN"
+    },
+    {
+      "apn": "5480802400",
+      "currentMappingState": "SINGLE_ZONE",
+      "currentZoneCodes": [
+        "RS-1-6"
+      ],
+      "historicalZoneCode": "RS-1-6",
+      "outcome": "MATCH"
+    },
+    {
+      "apn": "3502900301",
+      "currentMappingState": "SINGLE_ZONE",
+      "currentZoneCodes": [
+        "LJPD-5"
+      ],
+      "historicalZoneCode": "LJPD-5",
+      "outcome": "MATCH"
+    },
+    {
+      "apn": "5490330700",
+      "currentMappingState": "MULTI_ZONE",
+      "currentZoneCodes": [
+        "RM-2-5",
+        "RS-1-6"
+      ],
+      "historicalZoneCode": "RM-2-5",
+      "outcome": "LEGACY_SEMANTICS_UNKNOWN"
+    },
+    {
+      "apn": "5442250200",
+      "currentMappingState": "SINGLE_ZONE",
+      "currentZoneCodes": [
+        "RS-1-6"
+      ],
+      "historicalZoneCode": null,
+      "outcome": "LEGACY_SEMANTICS_UNKNOWN"
+    },
+    {
+      "apn": "5432020900",
+      "currentMappingState": "SINGLE_ZONE",
+      "currentZoneCodes": [
+        "RS-1-6"
+      ],
+      "historicalZoneCode": "RS-1-6",
+      "outcome": "MATCH"
+    },
+    {
+      "apn": "5490231300",
+      "currentMappingState": "SINGLE_ZONE",
+      "currentZoneCodes": [
+        "RS-1-6"
+      ],
+      "historicalZoneCode": "RS-1-6",
+      "outcome": "MATCH"
+    }
+  ],
+  "evidenceCommit": "b357bf8",
+  "rule": "A historical single value does not override current area evidence; current multi-zone results remain multi-value."
+}
