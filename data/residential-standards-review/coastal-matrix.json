@@ -1,0 +1,41 @@
+[
+  {
+    "family": "RS dimensions",
+    "zones": "RS-1-1 through RS-1-14",
+    "outside": "Selected base dimension constants only, O21836 composite plus O21934 repeal as applicable;2026-09-24",
+    "inside": "O21836 certified2026-09-10, but O21934 RS1-2 Coastal status unresolved and no complete per-cell equality proof; excluded",
+    "unknown": "FAIL_CLOSED: no cross-version equality approval",
+    "included_count": 42
+  },
+  {
+    "family": "RX dimensions",
+    "zones": "RX-1-1 full3;RX-1-2 depth only",
+    "outside": "Selected base dimension constants only, O21836 composite plus O21934 repeal as applicable;2026-09-24",
+    "inside": "O21836 certified2026-09-10, but O21934 RS1-2 Coastal status unresolved and no complete per-cell equality proof; excluded",
+    "unknown": "FAIL_CLOSED: no cross-version equality approval",
+    "included_count": 4
+  },
+  {
+    "family": "RT dimensions",
+    "zones": "RT-1-1 through RT-1-5",
+    "outside": "Selected base dimension constants only, O21836 composite plus O21934 repeal as applicable;2026-09-24",
+    "inside": "O21836 certified2026-09-10, but O21934 RS1-2 Coastal status unresolved and no complete per-cell equality proof; excluded",
+    "unknown": "FAIL_CLOSED: no cross-version equality approval",
+    "included_count": 15
+  },
+  {
+    "family": "RM dimensions",
+    "zones": "RM-1-1 through RM-5-12 exact12codes",
+    "outside": "Selected base dimension constants only, O21836 composite plus O21934 repeal as applicable;2026-09-24",
+    "inside": "O21836 certified2026-09-10, but O21934 RS1-2 Coastal status unresolved and no complete per-cell equality proof; excluded",
+    "unknown": "FAIL_CLOSED: no cross-version equality approval",
+    "included_count": 36
+  },
+  {
+    "family": "Setbacks/accessory and all other extracted families",
+    "outside": "Source table recorded; governing interpretation/project/version dependencies not closed",
+    "inside": "Use provision-specific timeline;2026pending text cannot be assumed operative",
+    "unknown": "FAIL_CLOSED",
+    "included_count": 0
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "original_checkout": "/Users/ops/trulot-web",
+  "branch": "codex/elevate-row-interview",
+  "head": "8d82378e5b6a3cb2aba1153b96f025bc71a78d16",
+  "before_status": " M supabase/functions/nearby-parcels/index.ts\n?? docs/sda-source-of-record-recovery-discovery-architecture-2026-07-15.md\n?? supabase/.temp/\n",
+  "after_status": " M supabase/functions/nearby-parcels/index.ts\n?? docs/sda-source-of-record-recovery-discovery-architecture-2026-07-15.md\n?? supabase/.temp/\n",
+  "branch_head_status_diffs_untracked_equal": true,
+  "tracked_and_nonignored_untracked_hashes_equal": true,
+  "hash_count": 57,
+  "before_snapshot_sha256": "fcc71d6bcbc89254c48f3020727255430d6526949bff4eeda07434a0d898c722",
+  "after_snapshot_sha256": "fcc71d6bcbc89254c48f3020727255430d6526949bff4eeda07434a0d898c722",
+  "runtime_changes": false,
+  "database_mutation": false,
+  "capacity_calculation": false,
+  "deploy": false,
+  "push": false
+}

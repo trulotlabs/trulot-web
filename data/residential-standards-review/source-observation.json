@@ -1,0 +1,147 @@
+{
+  "verified_as_of": "2026-09-24",
+  "authority_inventory_reviewed_as_of": "2026-09-24",
+  "authority_inventory_scope": "Selected97base parameters only; official history/corrected ordinances/update and certification chain; no online watcher",
+  "sources": {
+    "residential": {
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+      "sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9"
+    },
+    "measurement": {
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf",
+      "sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345"
+    },
+    "definitions": {
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division01.pdf",
+      "sha256": "7a2234c4b02089867be21002036235c7eba2abebd60fa2ef0413a60b00a652ae"
+    },
+    "o21836-strikeout": {
+      "url": "https://docs.sandiego.gov/municode_strikeout_ord/O-21836-SO.pdf",
+      "sha256": "2f9bbdac685280f658c03611fbdc21b0b3e6396fa92518735a6de5604ced6028"
+    },
+    "o21934": {
+      "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2025/O-21934.pdf",
+      "sha256": "162f93058df3a250846da3bc6d7ac6a74e900a7ae0bf649be51da278e7da86b6"
+    },
+    "o21934-strikeout": {
+      "url": "https://docs.sandiego.gov/municode_strikeout_ord/O-21934-SO.pdf",
+      "sha256": "b7a58860824caad6cfdfc59b3fe41639b7ab72d2171925a51e798b65e56760e0"
+    },
+    "o22109": {
+      "url": "https://www.sandiego.gov/sites/default/files/2026-07/o-22109-1.pdf",
+      "sha256": "ed7c48fb1d182777615c9223353bc26e78f9cd058916e6d462557c5ea0e9a677"
+    },
+    "o22109-strikeout": {
+      "url": "https://docs.sandiego.gov/municode_strikeout_ord/O-22109-SO.pdf",
+      "sha256": "b4f1125d64c9a20752e8eb2ddd247b7f1543e43248a899ffc74409b36dc5714e"
+    },
+    "ccc2024": {
+      "url": "https://documents.coastal.ca.gov/reports/2026/9/Th11/Th11-9-2026-report.pdf",
+      "sha256": "84d6d93c188f50b1b3b57a4dc76d65dcd2a85b6ca8fa593e568dfe3a485a74aa"
+    },
+    "updates": {
+      "url": "https://www.sandiego.gov/planning/work/land-development-code/updates",
+      "sha256": "515b1b59cc863100cad9d547b9b28fc09b426338f3e465168ccd17f441660c25"
+    },
+    "o21836": {
+      "url": "https://www.sandiego.gov/sites/default/files/2024-11/o-21836.pdf",
+      "sha256": "2ab750ff80f2d1aaf860e625d9d640e5b06c027aabf31d3dd7636b8411a00d48"
+    },
+    "o21618so": {
+      "url": "https://docs.sandiego.gov/municode_strikeout_ord/O-21618-SO.pdf",
+      "sha256": "be1e2c4cc38f4c0c8608f208533cc9fb78c130a102446207d3501b441fc6ce8a"
+    },
+    "o21164so": {
+      "url": "https://docs.sandiego.gov/municode_strikeout_ord/O-21164-SO.pdf",
+      "sha256": "06ffa6c0fc5ffd055ac3d23fc98d1d68949f34219876429270eb88fdf78eab62"
+    },
+    "o21905": {
+      "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2024/O-21905.pdf",
+      "sha256": "efd1378381159851339b8f26fccb8a1a58a25b99cfc31029218cad874df7f7ff"
+    },
+    "history13": {
+      "url": "https://docs.sandiego.gov/municode_history/Chpt%2013%20History%20Tables.pdf",
+      "sha256": "f03b14d1c501d9998a37869cef49304bd5ee8435bdf240c389e9b4cbeedcd996"
+    },
+    "o21618": {
+      "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2023/O-21618.pdf",
+      "sha256": "a3b3bdbbc9a3d780f099e4404a2c13d82341c73db8abddb23476da988f9ef467"
+    },
+    "ccc2022": {
+      "url": "https://documents.coastal.ca.gov/reports/2025/2/Th19/Th19-2-2025-report.pdf",
+      "sha256": "a16ddec2a4d47d06f862a0efab24de37f252e3882d22a703ae310d4df1ce0e36"
+    }
+  },
+  "effective_metadata": [
+    {
+      "ordinance": "O-21618",
+      "update_name": "2022 LDC update",
+      "adopted_final": "2023-03-07",
+      "outside_from": "2023-05-06",
+      "coastal_from": "2025-02-06",
+      "primary_evidence": [
+        "o21618:1,92-93",
+        "history13:27",
+        "o21905:14",
+        "ccc2022:99-100"
+      ],
+      "note": "Coastal conditional approval2024-08-08; City acceptance2024-12-18 byO21905; certification reported2025-02-06. Airport conditions prevent blanket parcel applicability."
+    },
+    {
+      "ordinance": "O-21836",
+      "update_name": "2024 LDC update",
+      "adopted_final": "2024-07-22",
+      "outside_from": "2024-10-05",
+      "coastal_from": "2026-09-10",
+      "primary_evidence": [
+        "o21836:corrected clean text",
+        "ccc2024:8-14"
+      ],
+      "note": "Conditional certification2026-02-05; City acceptance2026-07-14 O22117 modifies1430740/1430743. July2026 pending-editor note superseded by later certification evidence."
+    },
+    {
+      "ordinance": "O-21934",
+      "adopted_final": "2025-03-25",
+      "outside_from": "2025-04-24",
+      "coastal_from": null,
+      "coastal_state": "UNVERIFIED",
+      "primary_evidence": [
+        "o21934:3-6"
+      ],
+      "note": "RS1-2 footnote7 repeal only; do not restore deleted text outside. No Coastal certification proof located."
+    },
+    {
+      "ordinance": "O-22109",
+      "adopted_final": "2026-06-15",
+      "outside_from": "2026-07-15",
+      "coastal_from": null,
+      "coastal_state": "PENDING",
+      "primary_evidence": [
+        "o22109:1,193-195"
+      ],
+      "note": "Dependent1310443(i)/1310448 and1310422 changes; not1310431/1310442. New applications only; airport exception. Anticipated2028 is not law."
+    }
+  ],
+  "coastal_certification": {
+    "O21618": "CERTIFIED2025-02-06",
+    "O21836": "CERTIFIED2026-09-10",
+    "O21934": "UNVERIFIED",
+    "O22109": "PENDING"
+  },
+  "required_sections": [
+    "131.0430",
+    "131.0431",
+    "131.0442",
+    "113.0237",
+    "113.0243"
+  ],
+  "required_tables": [
+    "131-04D",
+    "131-04E",
+    "131-04F",
+    "131-04G"
+  ],
+  "new_conflicting_authority": [],
+  "unavailable_authority_sources": [],
+  "unreviewed_new_authority": []
+}

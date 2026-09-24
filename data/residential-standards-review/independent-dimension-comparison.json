@@ -1,0 +1,787 @@
+{
+  "scope": "current official base-table dimensional constants only; does not decide project applicability",
+  "method": "Independent manual transcription of pdftotext -layout official residential PDF pages34,36,37,39,41,43 into explicit zone matrix; no zone-digit inference. Compared to Packet12 JSON only afterward.",
+  "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+  "checks": [
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:7",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:7",
+      "independent_expected": 80,
+      "actual": 80.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:7",
+      "independent_expected": 75,
+      "actual": 75.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:7",
+      "independent_expected": 65,
+      "actual": 65.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:7",
+      "independent_expected": 60,
+      "actual": 60.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:7",
+      "independent_expected": 60,
+      "actual": 60.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+      "independent_expected": 50,
+      "actual": 50.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:9",
+      "independent_expected": 110,
+      "actual": 110.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:9",
+      "independent_expected": 85,
+      "actual": 85.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:9",
+      "independent_expected": 80,
+      "actual": 80.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:9",
+      "independent_expected": 70,
+      "actual": 70.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:9",
+      "independent_expected": 65,
+      "actual": 65.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:9",
+      "independent_expected": 65,
+      "actual": 65.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+      "independent_expected": 55,
+      "actual": 55.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:10",
+      "independent_expected": 95,
+      "actual": 95.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:10",
+      "independent_expected": 95,
+      "actual": 95.0,
+      "unit": "ft",
+      "source_page": 34,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:7",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:7",
+      "independent_expected": 80,
+      "actual": 80.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:7",
+      "independent_expected": 75,
+      "actual": 75.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:7",
+      "independent_expected": 65,
+      "actual": 65.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:7",
+      "independent_expected": 60,
+      "actual": 60.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:7",
+      "independent_expected": 60,
+      "actual": 60.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:7",
+      "independent_expected": 50,
+      "actual": 50.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:9",
+      "independent_expected": 110,
+      "actual": 110.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:9",
+      "independent_expected": 85,
+      "actual": 85.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:9",
+      "independent_expected": 80,
+      "actual": 80.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:9",
+      "independent_expected": 70,
+      "actual": 70.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:9",
+      "independent_expected": 65,
+      "actual": 65.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:9",
+      "independent_expected": 65,
+      "actual": 65.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:9",
+      "independent_expected": 55,
+      "actual": 55.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:10",
+      "independent_expected": 95,
+      "actual": 95.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:10",
+      "independent_expected": 95,
+      "actual": 95.0,
+      "unit": "ft",
+      "source_page": 36,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:37:7",
+      "independent_expected": 35,
+      "actual": 35.0,
+      "unit": "ft",
+      "source_page": 37,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:37:9",
+      "independent_expected": 35,
+      "actual": 35.0,
+      "unit": "ft",
+      "source_page": 37,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:37:10",
+      "independent_expected": 50,
+      "actual": 50.0,
+      "unit": "ft",
+      "source_page": 37,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-2:37:10",
+      "independent_expected": 50,
+      "actual": 50.0,
+      "unit": "ft",
+      "source_page": 37,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:39:7",
+      "independent_expected": 25,
+      "actual": 25.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:39:7",
+      "independent_expected": 25,
+      "actual": 25.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:39:7",
+      "independent_expected": 25,
+      "actual": 25.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:39:7",
+      "independent_expected": 25,
+      "actual": 25.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:39:7",
+      "independent_expected": 18,
+      "actual": 18.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:39:9",
+      "independent_expected": 25,
+      "actual": 25.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:39:9",
+      "independent_expected": 25,
+      "actual": 25.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:39:9",
+      "independent_expected": 25,
+      "actual": 25.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:39:9",
+      "independent_expected": 25,
+      "actual": 25.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:39:9",
+      "independent_expected": 25,
+      "actual": 25.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:39:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:39:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:39:10",
+      "independent_expected": 90,
+      "actual": 90.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:39:10",
+      "independent_expected": 80,
+      "actual": 80.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:39:10",
+      "independent_expected": 80,
+      "actual": 80.0,
+      "unit": "ft",
+      "source_page": 39,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:7",
+      "independent_expected": 50,
+      "actual": 50.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:7",
+      "independent_expected": 50,
+      "actual": 50.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:7",
+      "independent_expected": 50,
+      "actual": 50.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:7",
+      "independent_expected": 50,
+      "actual": 50.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:7",
+      "independent_expected": 50,
+      "actual": 50.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:7",
+      "independent_expected": 50,
+      "actual": 50.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:9",
+      "independent_expected": 55,
+      "actual": 55.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:9",
+      "independent_expected": 55,
+      "actual": 55.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:9",
+      "independent_expected": 55,
+      "actual": 55.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:9",
+      "independent_expected": 55,
+      "actual": 55.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:9",
+      "independent_expected": 55,
+      "actual": 55.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:9",
+      "independent_expected": 55,
+      "actual": 55.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:10",
+      "independent_expected": 90,
+      "actual": 90.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:10",
+      "independent_expected": 90,
+      "actual": 90.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:10",
+      "independent_expected": 90,
+      "actual": 90.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:10",
+      "independent_expected": 90,
+      "actual": 90.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:10",
+      "independent_expected": 90,
+      "actual": 90.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:10",
+      "independent_expected": 90,
+      "actual": 90.0,
+      "unit": "ft",
+      "source_page": 41,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:7",
+      "independent_expected": 70,
+      "actual": 70.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:7",
+      "independent_expected": 70,
+      "actual": 70.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:7",
+      "independent_expected": 70,
+      "actual": 70.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:7",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:7",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:7",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:9",
+      "independent_expected": 75,
+      "actual": 75.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:9",
+      "independent_expected": 75,
+      "actual": 75.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:9",
+      "independent_expected": 75,
+      "actual": 75.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:9",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:9",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:9",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:10",
+      "independent_expected": 100,
+      "actual": 100.0,
+      "unit": "ft",
+      "source_page": 43,
+      "pass": true
+    }
+  ],
+  "summary": {
+    "count": 97,
+    "passed": 97
+  }
+}

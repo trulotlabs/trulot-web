@@ -1,0 +1,23 @@
+{
+  "decision": "RESIDENTIAL_STANDARDS_REVIEW_CLOSURE_PASS",
+  "scope": "97 base-table parameters only; no project applicability approval",
+  "baseline_commit": "9638397c263d63841351f05c21aa6e561ad874db",
+  "baseline_tree": "4728e2207ef412493e18e63c778318bab9a5e487",
+  "no_runtime_integration": true,
+  "orphan_outcome": "ORPHAN_FOOTNOTE_UNRESOLVED",
+  "readiness": "READY_FOR_STANDARDS_INTEGRATION_REHEARSAL",
+  "safe_count": 97,
+  "excluded_count": 717,
+  "conditions": "Outside Coastal on2026-09-24;new_application;outside_miramar_transition;explicit lot context;BASE_TABLE_PARAMETERS_ONLY;actual source hashes and full reviewed authority observation required",
+  "acceptance": {
+    "explicit_subset": true,
+    "independent_source_verified": true,
+    "included_version_resolved": true,
+    "no_included_orphan": true,
+    "coastal_explicit": true,
+    "unknown_coastal_closed": true,
+    "interpretive_excluded": true,
+    "drift_invalidates": true,
+    "rs17_unresolved_excluded": true
+  }
+}

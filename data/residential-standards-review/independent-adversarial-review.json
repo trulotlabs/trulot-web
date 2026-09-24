@@ -1,0 +1,396 @@
+{
+  "reviewer": "closure_adversarial_review",
+  "independent_of": "closure_authority_review and parent extraction implementation",
+  "review_basis": [
+    "current pinned residential PDF pp34-35 visual/text",
+    "full dependency records",
+    "current measurement PDF sections113.0237/113.0243; primary URL independently opened",
+    "97 candidate cells inspected against raw evidence and footnotes"
+  ],
+  "findings": [
+    {
+      "id": "AR1",
+      "severity": "required contract restriction",
+      "finding": "113.0237(b) legal lots may be used despite failing minimum dimensions. A base parameter cannot be represented as an effective parcel requirement."
+    },
+    {
+      "id": "AR2",
+      "severity": "required dependency",
+      "finding": "113.0243 defines geometric measurement; irregular lots use average first50ft width and consolidatedlots use premises width. Do not compare arbitrary GISbbox widths to50/55ft."
+    },
+    {
+      "id": "AR3",
+      "severity": "required condition",
+      "finding": "Corner-width condition must remain explicit and cannot be discarded by subset export."
+    }
+  ],
+  "rs_1_7_rules": [
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:4",
+      "standard_type": "density_basis",
+      "source_literal_without_note": "1",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "Base single-unit density only; cannot infer total development capacity or exception programs."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:5",
+      "standard_type": "lot_area_min",
+      "source_literal_without_note": "5,000",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "Base 5,000-square-foot table value confirmed. Section 113.0237 legal-lot exemption prevents a parcel-threshold conclusion. Section 131.0441 alley-area credit applies to RX/RT and is NOT applicable to RS-1-7. Lot area remains excluded from the bounded dimension-only subset."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+      "standard_type": "lot_width_min",
+      "source_literal_without_note": "50",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "BASE_TABLE_PARAMETER_ONLY",
+      "adversarial_finding": "Base parameter confirmed;113.0237 exemption and113.0243 measurement remain project gates."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:8",
+      "standard_type": "street_frontage_min",
+      "source_literal_without_note": "50",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "131.0442(a) curving/turnaround reduction; exclude until geometric predicate modeled."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+      "standard_type": "corner_lot_width_min",
+      "source_literal_without_note": "55",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "BASE_TABLE_PARAMETER_ONLY",
+      "adversarial_finding": "Base corner parameter confirmed; corner condition mandatory;113.0237/113.0243 project gates."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:10",
+      "standard_type": "lot_depth_min",
+      "source_literal_without_note": "95",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "BASE_TABLE_PARAMETER_ONLY",
+      "adversarial_finding": "Base parameter confirmed;113.0237 exemption and113.0243 measurement remain project gates."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:12",
+      "standard_type": "front_setback",
+      "source_literal_without_note": "15",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "Footnote1 slope exception and131.0443(a)(1) cul-de-sac exception; exclude."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:13",
+      "standard_type": "interior_side_setback",
+      "source_literal_without_note": "4",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "Footnote2 references131.0443(a)(4), including narrow-lot rule; exclude."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:14",
+      "standard_type": "street_side_setback_min",
+      "source_literal_without_note": "5",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "Footnote2 references131.0443(a)(4); exclude."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:15",
+      "standard_type": "rear_setback_min",
+      "source_literal_without_note": "13",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "Footnote3 references131.0443(a)(2); depth-dependent exception; source141-04D typo unresolved; exclude."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:16",
+      "standard_type": "setback_requirements_for_resubdivided_corner_lots",
+      "source_literal_without_note": "applies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "113.0246(f) property-line identification; no numeric setback derived."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:17",
+      "standard_type": "structure_height_max",
+      "source_literal_without_note": "24/30",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "Slash expression retained;131.0444 envelope/width/yard context; never scalar30."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:4",
+      "standard_type": "lot_coverage_for_sloping_lots",
+      "source_literal_without_note": "applies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "131.0445(a) applies50% only if more than50% premises steep hillsides; source pointer is not evaluated boolean."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:5",
+      "standard_type": "floor_area_ratio_max",
+      "source_literal_without_note": "varies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "131.0446(a), tableJ source4.001 punctuation and fractional boundaries unresolved; exclude."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:6",
+      "standard_type": "max_paving_hardscape",
+      "source_literal_without_note": "applies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "131.0447 yard-specific60% and vehicle-related conditions; not resolved numeric."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:7",
+      "standard_type": "accessory_uses_and_structures",
+      "source_literal_without_note": "applies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "131.0448/141.0307; 2026 operative version and project conditions require separate resolution."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:8",
+      "standard_type": "garage_regulations",
+      "source_literal_without_note": "applies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "131.0449(a) embankment conditions, not universal garage standard."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:9",
+      "standard_type": "building_spacing",
+      "source_literal_without_note": "applies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "131.0450 has6ft dwellings/3ft nonhabitable accessory distinction; pointer not resolved numeric."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:10",
+      "standard_type": "max_third_story_dimensions",
+      "source_literal_without_note": "applies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "131.046070%width;depth50%or100%maxwidth whichever greater; not evaluated."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:11",
+      "standard_type": "architectural_projections_and_encroachments",
+      "source_literal_without_note": "applies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "131.0461(a) multiple geometry and visibility predicates; not blanket permission."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:12",
+      "standard_type": "supplemental_requirements",
+      "source_literal_without_note": "applies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "131.0464(a) manufactured-home predicates; pointer not unconditional boolean."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:13",
+      "standard_type": "refuse_and_recyclable_material_storage",
+      "source_literal_without_note": "applies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "142.0805 outside captured residential operative text; source pointer only."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:14",
+      "standard_type": "visibility_area",
+      "source_literal_without_note": "applies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "113.0273 geometry dependency; not evaluated."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:15",
+      "standard_type": "dwelling_unit_protection_regulations",
+      "source_literal_without_note": "applies",
+      "transcription": "CONFIRMED_TRANSCRIPTION",
+      "normalization_correction": null,
+      "applicability": "UNRESOLVED_APPLICABILITY_EXCLUDED",
+      "adversarial_finding": "Chapter14Article3Division12 dependency; no project conclusion."
+    }
+  ],
+  "counts": {
+    "rs17_reviewed": 24,
+    "confirmed_transcription": 24,
+    "corrected": 0,
+    "base_parameter_candidates": 3,
+    "unresolved_applicability_excluded": 21
+  },
+  "subset_assessment": "97 bounded base-table parameters are eligible for offline rehearsal under exact dated context and sealed evidence; no findings remain blocking this narrow contract.",
+  "corrections_to_review": [
+    "Initial RE scope concern withdrawn: RE appeared in historical O21618 text, not current consolidated residential division.33 current RS/RX/RT/RM codes remain intended scope.",
+    "RS-1-7 lot-area finding corrected: section 131.0441 alley-area credit concerns RX/RT, not RS-1-7; legal-lot dependency remains relevant."
+  ],
+  "actual_gate_attacks": [
+    {
+      "case": "positive",
+      "state": "BASE_TABLE_PARAMETER",
+      "returned_rules": 1
+    },
+    {
+      "case": "missing source-observation",
+      "state": "INVALIDATED",
+      "returned_rules": 0
+    },
+    {
+      "case": "missing dimension-dependencies",
+      "state": "INVALIDATED",
+      "returned_rules": 0
+    },
+    {
+      "case": "missing timeline",
+      "state": "INVALIDATED",
+      "returned_rules": 0
+    },
+    {
+      "case": "missing residential_standards_v2_integration_safe",
+      "state": "INVALIDATED",
+      "returned_rules": 0
+    },
+    {
+      "case": "tamper subset",
+      "state": "INVALIDATED",
+      "returned_rules": 0
+    },
+    {
+      "case": "zone:rs-1-7",
+      "state": "EXCLUDED",
+      "returned_rules": 0
+    },
+    {
+      "case": "zone:['RS-1-7', 'RM-1-1']",
+      "state": "EXCLUDED",
+      "returned_rules": 0
+    },
+    {
+      "case": "as_of:2026-09-25",
+      "state": "APPLICABILITY_UNRESOLVED",
+      "returned_rules": 0
+    },
+    {
+      "case": "standard:density_basis",
+      "state": "EXCLUDED",
+      "returned_rules": 0
+    },
+    {
+      "case": "coastal_context:inside",
+      "state": "APPLICABILITY_UNRESOLVED",
+      "returned_rules": 0
+    },
+    {
+      "case": "scope:PROJECT_APPLICABLE",
+      "state": "APPLICABILITY_UNRESOLVED",
+      "returned_rules": 0
+    },
+    {
+      "case": "source_paths:{}",
+      "state": "INVALIDATED",
+      "returned_rules": 0
+    },
+    {
+      "case": "lot_context:unknown",
+      "state": "APPLICABILITY_UNRESOLVED",
+      "returned_rules": 0
+    },
+    {
+      "case": "omitted conflict observation",
+      "state": "INVALIDATED",
+      "returned_rules": 0
+    },
+    {
+      "case": "RX-1-2:lot_width_min",
+      "state": "EXCLUDED",
+      "values": []
+    },
+    {
+      "case": "RX-1-2:corner_lot_width_min",
+      "state": "EXCLUDED",
+      "values": []
+    },
+    {
+      "case": "RX-1-2:lot_depth_min",
+      "state": "BASE_TABLE_PARAMETER",
+      "values": [
+        50.0
+      ]
+    },
+    {
+      "case": "RS-1-7:lot_width_min",
+      "state": "BASE_TABLE_PARAMETER",
+      "values": [
+        50.0
+      ]
+    },
+    {
+      "case": "RS-1-7:corner_lot_width_min",
+      "state": "BASE_TABLE_PARAMETER",
+      "values": [
+        55.0
+      ]
+    },
+    {
+      "case": "RS-1-7:lot_depth_min",
+      "state": "BASE_TABLE_PARAMETER",
+      "values": [
+        95.0
+      ]
+    },
+    {
+      "case": "removed corner condition",
+      "state": "INVALIDATED",
+      "returned_rules": 0
+    },
+    {
+      "case": "changed actual source file",
+      "state": "INVALIDATED",
+      "returned_rules": 0
+    }
+  ],
+  "resolved_findings": [
+    "Explicit113.0237/113.0243 sourcepage evidence added; selector forbids project scope.",
+    "Cornerpredicate enforced; mutation caught by reviewed artifactseal.",
+    "Sourcepaths now mandatory and every public artifact rehashed atselection.",
+    "Missing ormalformed sealed bundle returnsINVALIDATED before source traversal.",
+    "Exact97standardfamilies and RXexceptions asserted in audit."
+  ],
+  "decision": "PASS_FOR_BOUNDED_BASE_TABLE_PARAMETER_REHEARSAL_ONLY",
+  "remaining_limitations": [
+    "No legal applicability clearance for an actualparcel.",
+    "No liveauthoritymonitor; observed authorityinventory only2026-09-24.",
+    "Inside/unknownCoastal and everyhistorical/future selection excluded.",
+    "Orphan and unclosed717rules excluded."
+  ]
+}

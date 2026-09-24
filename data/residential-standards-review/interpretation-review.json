@@ -1,0 +1,110 @@
+{
+  "outcome": "ORPHAN_FOOTNOTE_UNRESOLVED",
+  "historical_resolution": "O21164SO p27 added six-bedroom text and changedRS1-8..14 cells to dashes. O21836SO p43 deletes footnote8. Current heading still8. Historical text is not operative authority to restore a limit.",
+  "sources": [
+    "o21164so:27",
+    "o21836-strikeout:43",
+    "o21836:44",
+    "residential:36-37"
+  ],
+  "records": [
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:27",
+      "source_provision": "131.0431 Table131-04D p36 bedroom row27",
+      "classification": "REMAINS_INTERPRETIVE",
+      "source_value": {
+        "kind": "not_specified_in_table",
+        "number": null,
+        "source_symbol": "-"
+      },
+      "numeric_or_boolean_effect": "Current cell is dash, no numeric value. Inferring applicability or reviving a repealed numeric bedroom cap would alter a standard. Neither is permitted.",
+      "mechanical_representation": "Dash plus dangling marker may be transcribed; no deterministic substantive rule.",
+      "human_resolution_needed": true,
+      "integration_safe": false
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:27",
+      "source_provision": "131.0431 Table131-04D p36 bedroom row27",
+      "classification": "REMAINS_INTERPRETIVE",
+      "source_value": {
+        "kind": "not_specified_in_table",
+        "number": null,
+        "source_symbol": "-"
+      },
+      "numeric_or_boolean_effect": "Current cell is dash, no numeric value. Inferring applicability or reviving a repealed numeric bedroom cap would alter a standard. Neither is permitted.",
+      "mechanical_representation": "Dash plus dangling marker may be transcribed; no deterministic substantive rule.",
+      "human_resolution_needed": true,
+      "integration_safe": false
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:27",
+      "source_provision": "131.0431 Table131-04D p36 bedroom row27",
+      "classification": "REMAINS_INTERPRETIVE",
+      "source_value": {
+        "kind": "not_specified_in_table",
+        "number": null,
+        "source_symbol": "-"
+      },
+      "numeric_or_boolean_effect": "Current cell is dash, no numeric value. Inferring applicability or reviving a repealed numeric bedroom cap would alter a standard. Neither is permitted.",
+      "mechanical_representation": "Dash plus dangling marker may be transcribed; no deterministic substantive rule.",
+      "human_resolution_needed": true,
+      "integration_safe": false
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:27",
+      "source_provision": "131.0431 Table131-04D p36 bedroom row27",
+      "classification": "REMAINS_INTERPRETIVE",
+      "source_value": {
+        "kind": "not_specified_in_table",
+        "number": null,
+        "source_symbol": "-"
+      },
+      "numeric_or_boolean_effect": "Current cell is dash, no numeric value. Inferring applicability or reviving a repealed numeric bedroom cap would alter a standard. Neither is permitted.",
+      "mechanical_representation": "Dash plus dangling marker may be transcribed; no deterministic substantive rule.",
+      "human_resolution_needed": true,
+      "integration_safe": false
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:27",
+      "source_provision": "131.0431 Table131-04D p36 bedroom row27",
+      "classification": "REMAINS_INTERPRETIVE",
+      "source_value": {
+        "kind": "not_specified_in_table",
+        "number": null,
+        "source_symbol": "-"
+      },
+      "numeric_or_boolean_effect": "Current cell is dash, no numeric value. Inferring applicability or reviving a repealed numeric bedroom cap would alter a standard. Neither is permitted.",
+      "mechanical_representation": "Dash plus dangling marker may be transcribed; no deterministic substantive rule.",
+      "human_resolution_needed": true,
+      "integration_safe": false
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:27",
+      "source_provision": "131.0431 Table131-04D p36 bedroom row27",
+      "classification": "REMAINS_INTERPRETIVE",
+      "source_value": {
+        "kind": "not_specified_in_table",
+        "number": null,
+        "source_symbol": "-"
+      },
+      "numeric_or_boolean_effect": "Current cell is dash, no numeric value. Inferring applicability or reviving a repealed numeric bedroom cap would alter a standard. Neither is permitted.",
+      "mechanical_representation": "Dash plus dangling marker may be transcribed; no deterministic substantive rule.",
+      "human_resolution_needed": true,
+      "integration_safe": false
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:27",
+      "source_provision": "131.0431 Table131-04D p36 bedroom row27",
+      "classification": "REMAINS_INTERPRETIVE",
+      "source_value": {
+        "kind": "not_specified_in_table",
+        "number": null,
+        "source_symbol": "-"
+      },
+      "numeric_or_boolean_effect": "Current cell is dash, no numeric value. Inferring applicability or reviving a repealed numeric bedroom cap would alter a standard. Neither is permitted.",
+      "mechanical_representation": "Dash plus dangling marker may be transcribed; no deterministic substantive rule.",
+      "human_resolution_needed": true,
+      "integration_safe": false
+    }
+  ]
+}

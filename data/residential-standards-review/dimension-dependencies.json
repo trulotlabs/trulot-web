@@ -1,0 +1,120 @@
+{
+  "scope": "BASE_TABLE_PARAMETERS_ONLY",
+  "governing_sections": {
+    "131.0430": {
+      "title": "Development Regulations of Residential Zones",
+      "page_evidence": [
+        "residential:33"
+      ],
+      "text_lines": [
+        "§131.0430      Development Regulations of Residential Zones",
+        "               (a)    Within the residential zones, no structure or improvement shall be constructed,",
+        "                      established, or altered, nor shall any premises be used unless the premises",
+        "                      complies with the regulations and standards in this division and with any",
+        "                      applicable development regulations in Chapter 13, Article 2 (Overlay Zones)",
+        "                      and Chapter 14 (General and Supplemental Regulations).",
+        "               (b)    A Neighborhood Development Permit or Site Development Permit is required",
+        "                      for the types of development identified in Table 143-03A.",
+        "",
+        "               (c)    The regulations in this division apply to all development in the residential base",
+        "                      zones whether or not a permit or other approval is required except where",
+        "                      specifically identified.",
+        "               (Added 12-9-1997 by O-18451 N.S)",
+        "               (Amended 10-18-1999 by O-18691 N.S.; effective 1-1-2000.)",
+        ""
+      ],
+      "evaluated": false,
+      "review_state": "SOURCE_TEXT_ONLY",
+      "source_text_hash": "c9a58e0ff477ec22bcfb7e2a697dd94a523af9e15e3dabf975cdc62d20c22651"
+    },
+    "131.0442": {
+      "title": "Minimum Lot Dimensions in Residential Zones",
+      "page_evidence": [
+        "residential:47",
+        "residential:48"
+      ],
+      "text_lines": [
+        "§131.0442      Minimum Lot Dimensions in Residential Zones",
+        "               (a)    Exception to Street Frontage in the RS and RM Zones",
+        "",
+        "                      The minimum street frontage for any lot in the RS and RM zones that fronts",
+        "                      principally on a turnaround or curving street with a centerline radius of less",
+        "                      than 100 feet, is 60 percent of the street frontage specified for the zone in",
+        "                      which the lot is located as shown in Diagram 131-04A.",
+        "",
+        "",
+        "                                         Diagram 131-04A",
+        "                                   Lot Frontage on Curving Street",
+        "",
+        "",
+        "",
+        "",
+        "                                                  Frontage",
+        "                           Radius less            (60% of zone",
+        "                           than 100'              requirement)",
+        "",
+        "",
+        "",
+        "",
+        "                                                                                           Ch.   Art.   Div.",
+        "                                                                                           13     1      4     47",
+        "San Diego Municipal Code                                                                      Chapter 13: Zones",
+        "(7-2026)",
+        "",
+        "",
+        "",
+        "                     (b)    Exception to Minimum Street Frontage in the RX Zones",
+        "                            The minimum street frontage is 28.5 feet for any lot in the RX zones that",
+        "                            fronts principally on a turnaround or curving street with a centerline radius of",
+        "                            less than 100 feet.",
+        "",
+        "                     (c)    Minimum Lot Dimensions in the RX-1-2 Zone",
+        "                            Where a lot in the RX-1-2 zone abuts an alley and access is taken from the",
+        "                            alley, the indicated minimum lot dimensions are as follows:",
+        "                            Lot Width            25 feet",
+        "                            Street Frontage      25 feet",
+        "                            Lot Width (corner) 25 feet",
+        "                     (Added 12-9-1997 by O-18451 N.S.; effective 1-1-2000.)",
+        "                     (Amended 7-22-2024 by O-21836 N.S.; effective 10-5-2024.)",
+        "",
+        "                     [Editors Note: Amendments as adopted by O-21836 N.S. will not apply within the",
+        "                     Coastal Overlay Zone until the California Coastal Commission certifies it as a Local",
+        "                     Coastal Program Amendment.",
+        "                     Click the link to view the Strikeout Ordinance highlighting changes to prior language",
+        "                     http://docs.sandiego.gov/municode_strikeout_ord/O-21836-SO.pdf ]",
+        ""
+      ],
+      "evaluated": false,
+      "review_state": "SOURCE_TEXT_ONLY",
+      "source_text_hash": "5076f2dc01cafd3ed52a5846947dc6c55efb228ae3fc7b09dede3d0e88ebaad5"
+    }
+  },
+  "measurement_evidence": [
+    {
+      "source": "measurement",
+      "page": 2,
+      "text": " \nSan Diego Municipal Code \nChapter 11: Land Development Procedures \n(7-2026) \n \nCh. Art. Div. \n \n11 \n3 \n2 \n2 \n \n \nTable 113-02A \nRules for Calculation and Measurement \n \nLand Development \nTerm or Concept \nSection \nAttic \n113.0210 \nBuilding envelope \n113.0213 \nBuilding facade \n113.0216 \nCoastal bluff edge \n113.0219 \nDensity \n113.0222 \nDistance Between Uses \n113.0225 \nExisting Grade \n113.0228 \nGross floor area \n113.0234 \nLot \n113.0237 \nLot coverage \n113.0240 \nLot Depth and Width \n113.0243 \nProperty line \n113.0246 \nSetback line \n113.0249 \nSetbacks \n \n113.0252 \nSign copy area \n113.0255 \nSign face \n113.0258 \nStory \n113.0261 \nStreet wall \n113.0264 \nStreet wall line \n113.0267 \nStructure height \n113.0270 \nVisibility area \n113.0273 \nYards \n113.0276 \n(Added 12-9-1997 by O-18451 N.S.; effective 1-1-2000.) \n(Amended 6-18-2013 by O-20261 N.S.; effective 7-19-2013.) \n"
+    },
+    {
+      "source": "measurement",
+      "page": 23,
+      "text": "San Diego Municipal Code \nChapter 11: Land Development Procedures \n(7-2026) \n \nCh. Art. Div. \n \n11 \n3 \n2 \n23 \n \n \n§113.0237 \nDetermining a Lot \n(a) \nA lot is legal for purposes of development if it meets any one of the following \ncriteria: \n(1) \nThe lot is an individual parcel designated with a number or letter on a \nfinal map or parcel map recorded with the County Recorder, a record \nof survey map approved by resolution of the City Council and \nrecorded with the County Recorder after December 5, 1954, or a \ndivision plat approved by and filed with the Development Services \nDepartment; or \n \n(2) \nThe lot has been officially determined as a suitable building site or \napproved for development under the Land Development Code; or \n(3) \nThe lot was created before March 4, 1972 as a result of a boundary \nadjustment between two adjoining lot owners wherein the land was \ntaken from one parcel and added to the adjoining parcel and no new \nlots were thereby created; or \n(4) \nThe lot was created before March 4, 1972, held as a separate parcel by \na subsequent purchaser, and has at least 15 feet of street frontage or \nother legal access to a dedicated street as approved by the City \nEngineer; or  \n \n(5) \nThe lot was held as a separate legal parcel upon annexation to the City \nof San Diego; or  \n(6) \nThe lot consists of two or more parcels held by the same record owner \nthat otherwise meet the requirements of Section 113.0237(a)(1), that \nare tied together through a recorded Lot Tie Agreement between the \nrecord owner and the City in accordance with Section 129.0120. \n \n(b) \nAny lot or parcel that does not comply with the minimum lot area or required \nlot dimensions may nevertheless be used in compliance with the applicable \nzone if the lot is a legal lot as determined by Section 113.0237(a). \n \n(c) \nA Certificate of Compliance may be requested in accordance with Section \n125.0210 to certify that a lot is legal for development. \n(Added 12-9-1997 by O-18451 N.S.; effective 1-1-2000.) \n(Amended 11-13-2008 by O-19801 N.S.; effective 12-13-2008.) \n(Amended 6-18-2013 by O-20261 N.S.; effective 7-19-2013.) \n"
+    },
+    {
+      "source": "measurement",
+      "page": 25,
+      "text": "San Diego Municipal Code \nChapter 11: Land Development Procedures \n(7-2026) \n \nCh. Art. Div. \n \n11 \n3 \n2 \n25 \n \n \n§113.0243 \nMeasuring Lot Depth and Lot Width \n(a) \nLot depth is measured along an imaginary straight line drawn from the \nmidpoint of the front property line of the lot to the midpoint of the rear \nproperty line. \n(b) \nLot width is measured along an imaginary straight line drawn at right angles \nto the lot depth line, between the side lot lines at the point midway between \nthe front and rear property lines.  Diagram 113-02Y illustrates how to \nmeasure lot depth and width. \n \n \nDiagram 113-02Y \nLot Depth and Width \n \nLot width line\nLot depth\nline\n60'\n50'\n25'\n120'\nSTREET\n(Midpoint of\nfront property line)\n(Midpoint of\nlot depth line)\n \n(c) \nLot Width for Residential Lots \n(1) \nFor irregularly shaped lots, such as pie shaped lots, the lot width is \ndetermined by calculating the average lot width for the first 50 feet of \nlot depth. \n(2) \nFor consolidated lots, the lot width is equivalent to the total width of \nthe premises after the consolidation. \n(Added 12-9-1997 by O-18451 N.S.; effective 1-1-2000.) \n(Amended 11-13-2008 by O-19801 N.S.; effective 12-13-2008.) \n \n \n \n \n \n"
+    }
+  ],
+  "required_explicit_sections": [
+    "113.0237",
+    "113.0243"
+  ],
+  "limitations": [
+    "113.0237(b): legal lots can be used despite minimum area/dimension noncompliance; base constants are not lot legality tests.",
+    "113.0243: width/irregular/consolidated-lot measurement must not be replaced by bounding box; no measurement performed here.",
+    "131.0442(a/b) frontage excluded;131.0442(c) RX1-2 alley width/corner excluded.",
+    "Overlay/general regulations, entitlements, deviations and project conditions remain outside this parameter-only contract.",
+    "Corner width requires explicit corner lot context; no project compliance output."
+  ]
+}

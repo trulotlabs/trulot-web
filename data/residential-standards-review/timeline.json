@@ -1,0 +1,140 @@
+{
+  "interval_convention": "inclusive from, exclusive to; null to is unresolved future supersession, never permission for future use; gate supports only2026-09-24",
+  "events": [
+    {
+      "ordinance": "O-21618",
+      "update_name": "2022 LDC update",
+      "adopted_final": "2023-03-07",
+      "outside_from": "2023-05-06",
+      "coastal_from": "2025-02-06",
+      "primary_evidence": [
+        "o21618:1,92-93",
+        "history13:27",
+        "o21905:14",
+        "ccc2022:99-100"
+      ],
+      "note": "Coastal conditional approval2024-08-08; City acceptance2024-12-18 byO21905; certification reported2025-02-06. Airport conditions prevent blanket parcel applicability."
+    },
+    {
+      "ordinance": "O-21836",
+      "update_name": "2024 LDC update",
+      "adopted_final": "2024-07-22",
+      "outside_from": "2024-10-05",
+      "coastal_from": "2026-09-10",
+      "primary_evidence": [
+        "o21836:corrected clean text",
+        "ccc2024:8-14"
+      ],
+      "note": "Conditional certification2026-02-05; City acceptance2026-07-14 O22117 modifies1430740/1430743. July2026 pending-editor note superseded by later certification evidence."
+    },
+    {
+      "ordinance": "O-21934",
+      "adopted_final": "2025-03-25",
+      "outside_from": "2025-04-24",
+      "coastal_from": null,
+      "coastal_state": "UNVERIFIED",
+      "primary_evidence": [
+        "o21934:3-6"
+      ],
+      "note": "RS1-2 footnote7 repeal only; do not restore deleted text outside. No Coastal certification proof located."
+    },
+    {
+      "ordinance": "O-22109",
+      "adopted_final": "2026-06-15",
+      "outside_from": "2026-07-15",
+      "coastal_from": null,
+      "coastal_state": "PENDING",
+      "primary_evidence": [
+        "o22109:1,193-195"
+      ],
+      "note": "Dependent1310443(i)/1310448 and1310422 changes; not1310431/1310442. New applications only; airport exception. Anticipated2028 is not law."
+    }
+  ],
+  "family_intervals": [
+    {
+      "family": "1310431 base tables: amendments, not reconstructed historical rule data",
+      "context": "outside",
+      "intervals": [
+        {
+          "from": "2023-05-06",
+          "to": "2024-10-05",
+          "version": "O21618 composite",
+          "rehearsal_supported": false
+        },
+        {
+          "from": "2024-10-05",
+          "to": "2025-04-24",
+          "version": "O21836 corrected composite",
+          "rehearsal_supported": false
+        },
+        {
+          "from": "2025-04-24",
+          "to": null,
+          "version": "O21836 composite plus O21934 RS1-2 repeal; remaining tables unaffected by O21934",
+          "rehearsal_supported": "selected dimensions on2026-09-24 only"
+        }
+      ]
+    },
+    {
+      "family": "1310442 dimension exception section",
+      "context": "outside",
+      "intervals": [
+        {
+          "from": "2024-10-05",
+          "to": null,
+          "version": "O21836; b/c unchanged",
+          "rehearsal_supported": "selected nonexception constants only"
+        }
+      ]
+    },
+    {
+      "family": "1310443/1310448 dependent setback/accessory text",
+      "context": "outside",
+      "intervals": [
+        {
+          "from": "2024-10-05",
+          "to": "2026-07-15",
+          "version": "preO22109 composite",
+          "rehearsal_supported": false
+        },
+        {
+          "from": "2026-07-15",
+          "to": null,
+          "version": "O22109 composite subject to project/airport conditions",
+          "rehearsal_supported": false
+        }
+      ]
+    },
+    {
+      "family": "1310431 tables/1310442",
+      "context": "inside",
+      "intervals": [
+        {
+          "from": "2025-02-06",
+          "to": "2026-09-10",
+          "version": "O21618 certified plus O21905 modifications; older unrelated amendments require provision audit",
+          "rehearsal_supported": false
+        },
+        {
+          "from": "2026-09-10",
+          "to": null,
+          "version": "O21836 certified; O21934 Coastal repeal unresolved for RS1-2",
+          "rehearsal_supported": false
+        }
+      ]
+    },
+    {
+      "family": "1310443/1310448",
+      "context": "inside",
+      "intervals": [
+        {
+          "from": "2026-09-10",
+          "to": null,
+          "version": "O21836 certified composite, NOT O22109 pending text",
+          "rehearsal_supported": false
+        }
+      ]
+    }
+  ],
+  "unsupported": "Before listed boundaries, historical composites not reconstructed. Unknown Coastal never selects a version. Different provision families are intentionally separate; no whole-chapter continuity claim."
+}

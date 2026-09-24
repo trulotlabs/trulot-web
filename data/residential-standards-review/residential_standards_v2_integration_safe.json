@@ -1,0 +1,2976 @@
+[
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:7",
+    "zone_code": "RS-1-1",
+    "standard_type": "lot_width_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 7,
+      "column": 2,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-1",
+      "cell_text": "100",
+      "bbox": [
+        287.84428547619046,
+        286.49,
+        327.95285026315787,
+        301.13
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:7",
+    "zone_code": "RS-1-2",
+    "standard_type": "lot_width_min",
+    "value": 80.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 7,
+      "column": 3,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-2",
+      "cell_text": "80",
+      "bbox": [
+        327.95285026315787,
+        286.49,
+        363.00052684210533,
+        301.13
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:7",
+    "zone_code": "RS-1-3",
+    "standard_type": "lot_width_min",
+    "value": 75.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 7,
+      "column": 4,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-3",
+      "cell_text": "75",
+      "bbox": [
+        363.00052684210533,
+        286.49,
+        399.00052684210533,
+        301.13
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:7",
+    "zone_code": "RS-1-4",
+    "standard_type": "lot_width_min",
+    "value": 65.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 7,
+      "column": 5,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-4",
+      "cell_text": "65",
+      "bbox": [
+        399.00052684210533,
+        286.49,
+        435.0005268421053,
+        301.13
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:7",
+    "zone_code": "RS-1-5",
+    "standard_type": "lot_width_min",
+    "value": 60.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 7,
+      "column": 6,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-5",
+      "cell_text": "60",
+      "bbox": [
+        435.0005268421053,
+        286.49,
+        471.0303681578947,
+        301.13
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:7",
+    "zone_code": "RS-1-6",
+    "standard_type": "lot_width_min",
+    "value": 60.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 7,
+      "column": 7,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-6",
+      "cell_text": "60",
+      "bbox": [
+        471.0303681578947,
+        286.49,
+        507.03052605263156,
+        301.13
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+    "zone_code": "RS-1-7",
+    "standard_type": "lot_width_min",
+    "value": 50.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 7,
+      "column": 8,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-7",
+      "cell_text": "50",
+      "bbox": [
+        507.03052605263156,
+        286.49,
+        548.3000146153845,
+        301.13
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:9",
+    "zone_code": "RS-1-1",
+    "standard_type": "corner_lot_width_min",
+    "value": 110.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 9,
+      "column": 2,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-1",
+      "cell_text": "110",
+      "bbox": [
+        287.84428547619046,
+        329.45,
+        327.95285026315787,
+        343.96999999999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:9",
+    "zone_code": "RS-1-2",
+    "standard_type": "corner_lot_width_min",
+    "value": 85.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 9,
+      "column": 3,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-2",
+      "cell_text": "85",
+      "bbox": [
+        327.95285026315787,
+        329.45,
+        363.00052684210533,
+        343.96999999999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:9",
+    "zone_code": "RS-1-3",
+    "standard_type": "corner_lot_width_min",
+    "value": 80.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 9,
+      "column": 4,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-3",
+      "cell_text": "80",
+      "bbox": [
+        363.00052684210533,
+        329.45,
+        399.00052684210533,
+        343.96999999999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:9",
+    "zone_code": "RS-1-4",
+    "standard_type": "corner_lot_width_min",
+    "value": 70.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 9,
+      "column": 5,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-4",
+      "cell_text": "70",
+      "bbox": [
+        399.00052684210533,
+        329.45,
+        435.0005268421053,
+        343.96999999999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:9",
+    "zone_code": "RS-1-5",
+    "standard_type": "corner_lot_width_min",
+    "value": 65.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 9,
+      "column": 6,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-5",
+      "cell_text": "65",
+      "bbox": [
+        435.0005268421053,
+        329.45,
+        471.0303681578947,
+        343.96999999999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:9",
+    "zone_code": "RS-1-6",
+    "standard_type": "corner_lot_width_min",
+    "value": 65.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 9,
+      "column": 7,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-6",
+      "cell_text": "65",
+      "bbox": [
+        471.0303681578947,
+        329.45,
+        507.03052605263156,
+        343.96999999999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+    "zone_code": "RS-1-7",
+    "standard_type": "corner_lot_width_min",
+    "value": 55.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 9,
+      "column": 8,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-7",
+      "cell_text": "55",
+      "bbox": [
+        507.03052605263156,
+        329.45,
+        548.3000146153845,
+        343.96999999999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:10",
+    "zone_code": "RS-1-1",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 10,
+      "column": 2,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-1",
+      "cell_text": "100",
+      "bbox": [
+        287.84428547619046,
+        343.96999999999997,
+        327.95285026315787,
+        358.49
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:10",
+    "zone_code": "RS-1-2",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 10,
+      "column": 3,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-2",
+      "cell_text": "100",
+      "bbox": [
+        327.95285026315787,
+        343.96999999999997,
+        363.00052684210533,
+        358.49
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:10",
+    "zone_code": "RS-1-3",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 10,
+      "column": 4,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-3",
+      "cell_text": "100",
+      "bbox": [
+        363.00052684210533,
+        343.96999999999997,
+        399.00052684210533,
+        358.49
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:10",
+    "zone_code": "RS-1-4",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 10,
+      "column": 5,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-4",
+      "cell_text": "100",
+      "bbox": [
+        399.00052684210533,
+        343.96999999999997,
+        435.0005268421053,
+        358.49
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:10",
+    "zone_code": "RS-1-5",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 10,
+      "column": 6,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-5",
+      "cell_text": "100",
+      "bbox": [
+        435.0005268421053,
+        343.96999999999997,
+        471.0303681578947,
+        358.49
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:10",
+    "zone_code": "RS-1-6",
+    "standard_type": "lot_depth_min",
+    "value": 95.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 10,
+      "column": 7,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-6",
+      "cell_text": "95",
+      "bbox": [
+        471.0303681578947,
+        343.96999999999997,
+        507.03052605263156,
+        358.49
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:10",
+    "zone_code": "RS-1-7",
+    "standard_type": "lot_depth_min",
+    "value": 95.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:34",
+      "table": "131-04D",
+      "row": 10,
+      "column": 8,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-7",
+      "cell_text": "95",
+      "bbox": [
+        507.03052605263156,
+        343.96999999999997,
+        548.3000146153845,
+        358.49
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:7",
+    "zone_code": "RS-1-8",
+    "standard_type": "lot_width_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 7,
+      "column": 2,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-8",
+      "cell_text": "100",
+      "bbox": [
+        249.19899984848482,
+        240.38,
+        297.0831037931034,
+        252.62
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:7",
+    "zone_code": "RS-1-9",
+    "standard_type": "lot_width_min",
+    "value": 80.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 7,
+      "column": 3,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-9",
+      "cell_text": "80",
+      "bbox": [
+        297.0831037931034,
+        240.38,
+        342.1031722413793,
+        252.62
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:7",
+    "zone_code": "RS-1-10",
+    "standard_type": "lot_width_min",
+    "value": 75.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 7,
+      "column": 4,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-10",
+      "cell_text": "75",
+      "bbox": [
+        342.1031722413793,
+        240.38,
+        387.10310327586205,
+        252.62
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:7",
+    "zone_code": "RS-1-11",
+    "standard_type": "lot_width_min",
+    "value": 65.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 7,
+      "column": 5,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-11",
+      "cell_text": "65",
+      "bbox": [
+        387.10310327586205,
+        240.38,
+        441.10310327586205,
+        252.62
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:7",
+    "zone_code": "RS-1-12",
+    "standard_type": "lot_width_min",
+    "value": 60.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 7,
+      "column": 6,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-12",
+      "cell_text": "60",
+      "bbox": [
+        441.10310327586205,
+        240.38,
+        486.13300034482756,
+        252.62
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:7",
+    "zone_code": "RS-1-13",
+    "standard_type": "lot_width_min",
+    "value": 60.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 7,
+      "column": 7,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-13",
+      "cell_text": "60",
+      "bbox": [
+        486.13300034482756,
+        240.38,
+        531.1330893103449,
+        252.62
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:7",
+    "zone_code": "RS-1-14",
+    "standard_type": "lot_width_min",
+    "value": 50.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 7,
+      "column": 8,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RS-1-14",
+      "cell_text": "50",
+      "bbox": [
+        531.1330893103449,
+        240.38,
+        576.0944467692308,
+        252.62
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:9",
+    "zone_code": "RS-1-8",
+    "standard_type": "corner_lot_width_min",
+    "value": 110.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 9,
+      "column": 2,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-8",
+      "cell_text": "110",
+      "bbox": [
+        249.19899984848482,
+        276.40999999999997,
+        297.0831037931034,
+        288.65
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:9",
+    "zone_code": "RS-1-9",
+    "standard_type": "corner_lot_width_min",
+    "value": 85.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 9,
+      "column": 3,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-9",
+      "cell_text": "85",
+      "bbox": [
+        297.0831037931034,
+        276.40999999999997,
+        342.1031722413793,
+        288.65
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:9",
+    "zone_code": "RS-1-10",
+    "standard_type": "corner_lot_width_min",
+    "value": 80.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 9,
+      "column": 4,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-10",
+      "cell_text": "80",
+      "bbox": [
+        342.1031722413793,
+        276.40999999999997,
+        387.10310327586205,
+        288.65
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:9",
+    "zone_code": "RS-1-11",
+    "standard_type": "corner_lot_width_min",
+    "value": 70.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 9,
+      "column": 5,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-11",
+      "cell_text": "70",
+      "bbox": [
+        387.10310327586205,
+        276.40999999999997,
+        441.10310327586205,
+        288.65
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:9",
+    "zone_code": "RS-1-12",
+    "standard_type": "corner_lot_width_min",
+    "value": 65.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 9,
+      "column": 6,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-12",
+      "cell_text": "65",
+      "bbox": [
+        441.10310327586205,
+        276.40999999999997,
+        486.13300034482756,
+        288.65
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:9",
+    "zone_code": "RS-1-13",
+    "standard_type": "corner_lot_width_min",
+    "value": 65.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 9,
+      "column": 7,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-13",
+      "cell_text": "65",
+      "bbox": [
+        486.13300034482756,
+        276.40999999999997,
+        531.1330893103449,
+        288.65
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:9",
+    "zone_code": "RS-1-14",
+    "standard_type": "corner_lot_width_min",
+    "value": 55.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 9,
+      "column": 8,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RS-1-14",
+      "cell_text": "55",
+      "bbox": [
+        531.1330893103449,
+        276.40999999999997,
+        576.0944467692308,
+        288.65
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:10",
+    "zone_code": "RS-1-8",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 10,
+      "column": 2,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-8",
+      "cell_text": "100",
+      "bbox": [
+        249.19899984848482,
+        288.65,
+        297.0831037931034,
+        300.89
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:10",
+    "zone_code": "RS-1-9",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 10,
+      "column": 3,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-9",
+      "cell_text": "100",
+      "bbox": [
+        297.0831037931034,
+        288.65,
+        342.1031722413793,
+        300.89
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:10",
+    "zone_code": "RS-1-10",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 10,
+      "column": 4,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-10",
+      "cell_text": "100",
+      "bbox": [
+        342.1031722413793,
+        288.65,
+        387.10310327586205,
+        300.89
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:10",
+    "zone_code": "RS-1-11",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 10,
+      "column": 5,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-11",
+      "cell_text": "100",
+      "bbox": [
+        387.10310327586205,
+        288.65,
+        441.10310327586205,
+        300.89
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:10",
+    "zone_code": "RS-1-12",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 10,
+      "column": 6,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-12",
+      "cell_text": "100",
+      "bbox": [
+        441.10310327586205,
+        288.65,
+        486.13300034482756,
+        300.89
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:10",
+    "zone_code": "RS-1-13",
+    "standard_type": "lot_depth_min",
+    "value": 95.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 10,
+      "column": 7,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-13",
+      "cell_text": "95",
+      "bbox": [
+        486.13300034482756,
+        288.65,
+        531.1330893103449,
+        300.89
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:10",
+    "zone_code": "RS-1-14",
+    "standard_type": "lot_depth_min",
+    "value": 95.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:36",
+      "table": "131-04D",
+      "row": 10,
+      "column": 8,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RS-1-14",
+      "cell_text": "95",
+      "bbox": [
+        531.1330893103449,
+        288.65,
+        576.0944467692308,
+        300.89
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:37:7",
+    "zone_code": "RX-1-1",
+    "standard_type": "lot_width_min",
+    "value": 35.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:37",
+      "table": "131-04E",
+      "row": 7,
+      "column": 2,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RX-1-1",
+      "cell_text": "35",
+      "bbox": [
+        401.4137496875,
+        489.67000499999995,
+        476.68428535714287,
+        510.42999000000003
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:37:9",
+    "zone_code": "RX-1-1",
+    "standard_type": "corner_lot_width_min",
+    "value": 35.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:37",
+      "table": "131-04E",
+      "row": 9,
+      "column": 2,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RX-1-1",
+      "cell_text": "35",
+      "bbox": [
+        401.4137496875,
+        531.1899900000001,
+        476.68428535714287,
+        551.9499900000001
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:37:10",
+    "zone_code": "RX-1-1",
+    "standard_type": "lot_depth_min",
+    "value": 50.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:37",
+      "table": "131-04E",
+      "row": 10,
+      "column": 2,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RX-1-1",
+      "cell_text": "50",
+      "bbox": [
+        401.4137496875,
+        551.9499900000001,
+        476.68428535714287,
+        572.7099900000001
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-2:37:10",
+    "zone_code": "RX-1-2",
+    "standard_type": "lot_depth_min",
+    "value": 50.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:37",
+      "table": "131-04E",
+      "row": 10,
+      "column": 3,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RX-1-2",
+      "cell_text": "50",
+      "bbox": [
+        476.68428535714287,
+        551.9499900000001,
+        556.24001,
+        572.7099900000001
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:39:7",
+    "zone_code": "RT-1-1",
+    "standard_type": "lot_width_min",
+    "value": 25.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 7,
+      "column": 2,
+      "row_label": "Lot Width (ft)",
+      "zone_header": "RT-1-1",
+      "cell_text": "25",
+      "bbox": [
+        314.2731565789474,
+        318.34999999999997,
+        360.12156999999996,
+        338.99000000000007
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:39:7",
+    "zone_code": "RT-1-2",
+    "standard_type": "lot_width_min",
+    "value": 25.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 7,
+      "column": 3,
+      "row_label": "Lot Width (ft)",
+      "zone_header": "RT-1-2",
+      "cell_text": "25",
+      "bbox": [
+        360.12156999999996,
+        318.34999999999997,
+        400.6814271428571,
+        338.99000000000007
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:39:7",
+    "zone_code": "RT-1-3",
+    "standard_type": "lot_width_min",
+    "value": 25.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 7,
+      "column": 4,
+      "row_label": "Lot Width (ft)",
+      "zone_header": "RT-1-3",
+      "cell_text": "25",
+      "bbox": [
+        400.6814271428571,
+        318.34999999999997,
+        445.6814271428571,
+        338.99000000000007
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:39:7",
+    "zone_code": "RT-1-4",
+    "standard_type": "lot_width_min",
+    "value": 25.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 7,
+      "column": 5,
+      "row_label": "Lot Width (ft)",
+      "zone_header": "RT-1-4",
+      "cell_text": "25",
+      "bbox": [
+        445.6814271428571,
+        318.34999999999997,
+        495.1855085714286,
+        338.99000000000007
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:39:7",
+    "zone_code": "RT-1-5",
+    "standard_type": "lot_width_min",
+    "value": 18.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 7,
+      "column": 6,
+      "row_label": "Lot Width (ft)",
+      "zone_header": "RT-1-5",
+      "cell_text": "18",
+      "bbox": [
+        495.1855085714286,
+        318.34999999999997,
+        544.6470075675676,
+        338.99000000000007
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:39:9",
+    "zone_code": "RT-1-1",
+    "standard_type": "corner_lot_width_min",
+    "value": 25.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 9,
+      "column": 2,
+      "row_label": "Lot Width (corner) (ft)",
+      "zone_header": "RT-1-1",
+      "cell_text": "25",
+      "bbox": [
+        314.2731565789474,
+        359.63000000000005,
+        360.12156999999996,
+        380.32999
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:39:9",
+    "zone_code": "RT-1-2",
+    "standard_type": "corner_lot_width_min",
+    "value": 25.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 9,
+      "column": 3,
+      "row_label": "Lot Width (corner) (ft)",
+      "zone_header": "RT-1-2",
+      "cell_text": "25",
+      "bbox": [
+        360.12156999999996,
+        359.63000000000005,
+        400.6814271428571,
+        380.32999
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:39:9",
+    "zone_code": "RT-1-3",
+    "standard_type": "corner_lot_width_min",
+    "value": 25.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 9,
+      "column": 4,
+      "row_label": "Lot Width (corner) (ft)",
+      "zone_header": "RT-1-3",
+      "cell_text": "25",
+      "bbox": [
+        400.6814271428571,
+        359.63000000000005,
+        445.6814271428571,
+        380.32999
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:39:9",
+    "zone_code": "RT-1-4",
+    "standard_type": "corner_lot_width_min",
+    "value": 25.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 9,
+      "column": 5,
+      "row_label": "Lot Width (corner) (ft)",
+      "zone_header": "RT-1-4",
+      "cell_text": "25",
+      "bbox": [
+        445.6814271428571,
+        359.63000000000005,
+        495.1855085714286,
+        380.32999
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:39:9",
+    "zone_code": "RT-1-5",
+    "standard_type": "corner_lot_width_min",
+    "value": 25.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 9,
+      "column": 6,
+      "row_label": "Lot Width (corner) (ft)",
+      "zone_header": "RT-1-5",
+      "cell_text": "25",
+      "bbox": [
+        495.1855085714286,
+        359.63000000000005,
+        544.6470075675676,
+        380.32999
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:39:10",
+    "zone_code": "RT-1-1",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 10,
+      "column": 2,
+      "row_label": "Lot Depth (ft)",
+      "zone_header": "RT-1-1",
+      "cell_text": "100",
+      "bbox": [
+        314.2731565789474,
+        380.32999,
+        360.12156999999996,
+        401.21000499999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:39:10",
+    "zone_code": "RT-1-2",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 10,
+      "column": 3,
+      "row_label": "Lot Depth (ft)",
+      "zone_header": "RT-1-2",
+      "cell_text": "100",
+      "bbox": [
+        360.12156999999996,
+        380.32999,
+        400.6814271428571,
+        401.21000499999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:39:10",
+    "zone_code": "RT-1-3",
+    "standard_type": "lot_depth_min",
+    "value": 90.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 10,
+      "column": 4,
+      "row_label": "Lot Depth (ft)",
+      "zone_header": "RT-1-3",
+      "cell_text": "90",
+      "bbox": [
+        400.6814271428571,
+        380.32999,
+        445.6814271428571,
+        401.21000499999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:39:10",
+    "zone_code": "RT-1-4",
+    "standard_type": "lot_depth_min",
+    "value": 80.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 10,
+      "column": 5,
+      "row_label": "Lot Depth (ft)",
+      "zone_header": "RT-1-4",
+      "cell_text": "80",
+      "bbox": [
+        445.6814271428571,
+        380.32999,
+        495.1855085714286,
+        401.21000499999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:39:10",
+    "zone_code": "RT-1-5",
+    "standard_type": "lot_depth_min",
+    "value": 80.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:39",
+      "table": "131-04F",
+      "row": 10,
+      "column": 6,
+      "row_label": "Lot Depth (ft)",
+      "zone_header": "RT-1-5",
+      "cell_text": "80",
+      "bbox": [
+        495.1855085714286,
+        380.32999,
+        544.6470075675676,
+        401.21000499999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:7",
+    "zone_code": "RM-1-1",
+    "standard_type": "lot_width_min",
+    "value": 50.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 7,
+      "column": 2,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RM-1-1",
+      "cell_text": "50",
+      "bbox": [
+        186.33928982142857,
+        334.01000500000004,
+        244.59237895833334,
+        353.63000000000005
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:7",
+    "zone_code": "RM-1-2",
+    "standard_type": "lot_width_min",
+    "value": 50.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 7,
+      "column": 3,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RM-1-2",
+      "cell_text": "50",
+      "bbox": [
+        244.59237895833334,
+        334.01000500000004,
+        305.67249854166664,
+        353.63000000000005
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:7",
+    "zone_code": "RM-1-3",
+    "standard_type": "lot_width_min",
+    "value": 50.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 7,
+      "column": 4,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RM-1-3",
+      "cell_text": "50",
+      "bbox": [
+        305.67249854166664,
+        334.01000500000004,
+        367.612581875,
+        353.63000000000005
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:7",
+    "zone_code": "RM-2-4",
+    "standard_type": "lot_width_min",
+    "value": 50.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 7,
+      "column": 5,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RM-2-4",
+      "cell_text": "50",
+      "bbox": [
+        367.612581875,
+        334.01000500000004,
+        424.97249854166665,
+        353.63000000000005
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:7",
+    "zone_code": "RM-2-5",
+    "standard_type": "lot_width_min",
+    "value": 50.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 7,
+      "column": 6,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RM-2-5",
+      "cell_text": "50",
+      "bbox": [
+        424.97249854166665,
+        334.01000500000004,
+        485.5070824,
+        353.63000000000005
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:7",
+    "zone_code": "RM-2-6",
+    "standard_type": "lot_width_min",
+    "value": 50.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 7,
+      "column": 7,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RM-2-6",
+      "cell_text": "50",
+      "bbox": [
+        485.5070824,
+        334.01000500000004,
+        547.3736929824562,
+        353.63000000000005
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:9",
+    "zone_code": "RM-1-1",
+    "standard_type": "corner_lot_width_min",
+    "value": 55.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 9,
+      "column": 2,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RM-1-1",
+      "cell_text": "55",
+      "bbox": [
+        186.33928982142857,
+        385.78999999999996,
+        244.59237895833334,
+        405.23
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:9",
+    "zone_code": "RM-1-2",
+    "standard_type": "corner_lot_width_min",
+    "value": 55.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 9,
+      "column": 3,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RM-1-2",
+      "cell_text": "55",
+      "bbox": [
+        244.59237895833334,
+        385.78999999999996,
+        305.67249854166664,
+        405.23
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:9",
+    "zone_code": "RM-1-3",
+    "standard_type": "corner_lot_width_min",
+    "value": 55.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 9,
+      "column": 4,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RM-1-3",
+      "cell_text": "55",
+      "bbox": [
+        305.67249854166664,
+        385.78999999999996,
+        367.612581875,
+        405.23
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:9",
+    "zone_code": "RM-2-4",
+    "standard_type": "corner_lot_width_min",
+    "value": 55.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 9,
+      "column": 5,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RM-2-4",
+      "cell_text": "55",
+      "bbox": [
+        367.612581875,
+        385.78999999999996,
+        424.97249854166665,
+        405.23
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:9",
+    "zone_code": "RM-2-5",
+    "standard_type": "corner_lot_width_min",
+    "value": 55.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 9,
+      "column": 6,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RM-2-5",
+      "cell_text": "55",
+      "bbox": [
+        424.97249854166665,
+        385.78999999999996,
+        485.5070824,
+        405.23
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:9",
+    "zone_code": "RM-2-6",
+    "standard_type": "corner_lot_width_min",
+    "value": 55.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 9,
+      "column": 7,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RM-2-6",
+      "cell_text": "55",
+      "bbox": [
+        485.5070824,
+        385.78999999999996,
+        547.3736929824562,
+        405.23
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:10",
+    "zone_code": "RM-1-1",
+    "standard_type": "lot_depth_min",
+    "value": 90.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 10,
+      "column": 2,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RM-1-1",
+      "cell_text": "90",
+      "bbox": [
+        186.33928982142857,
+        405.23,
+        244.59237895833334,
+        424.78999999999996
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:10",
+    "zone_code": "RM-1-2",
+    "standard_type": "lot_depth_min",
+    "value": 90.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 10,
+      "column": 3,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RM-1-2",
+      "cell_text": "90",
+      "bbox": [
+        244.59237895833334,
+        405.23,
+        305.67249854166664,
+        424.78999999999996
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:10",
+    "zone_code": "RM-1-3",
+    "standard_type": "lot_depth_min",
+    "value": 90.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 10,
+      "column": 4,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RM-1-3",
+      "cell_text": "90",
+      "bbox": [
+        305.67249854166664,
+        405.23,
+        367.612581875,
+        424.78999999999996
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:10",
+    "zone_code": "RM-2-4",
+    "standard_type": "lot_depth_min",
+    "value": 90.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 10,
+      "column": 5,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RM-2-4",
+      "cell_text": "90",
+      "bbox": [
+        367.612581875,
+        405.23,
+        424.97249854166665,
+        424.78999999999996
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:10",
+    "zone_code": "RM-2-5",
+    "standard_type": "lot_depth_min",
+    "value": 90.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 10,
+      "column": 6,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RM-2-5",
+      "cell_text": "90",
+      "bbox": [
+        424.97249854166665,
+        405.23,
+        485.5070824,
+        424.78999999999996
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:10",
+    "zone_code": "RM-2-6",
+    "standard_type": "lot_depth_min",
+    "value": 90.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:41",
+      "table": "131-04G",
+      "row": 10,
+      "column": 7,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RM-2-6",
+      "cell_text": "90",
+      "bbox": [
+        485.5070824,
+        405.23,
+        547.3736929824562,
+        424.78999999999996
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:7",
+    "zone_code": "RM-3-7",
+    "standard_type": "lot_width_min",
+    "value": 70.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 7,
+      "column": 2,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RM-3-7",
+      "cell_text": "70",
+      "bbox": [
+        180.0476876923077,
+        260.50999999999993,
+        242.48259545454547,
+        276.71
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:7",
+    "zone_code": "RM-3-8",
+    "standard_type": "lot_width_min",
+    "value": 70.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 7,
+      "column": 3,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RM-3-8",
+      "cell_text": "70",
+      "bbox": [
+        242.48259545454547,
+        260.50999999999993,
+        301.28272272727276,
+        276.71
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:7",
+    "zone_code": "RM-3-9",
+    "standard_type": "lot_width_min",
+    "value": 70.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 7,
+      "column": 4,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RM-3-9",
+      "cell_text": "70",
+      "bbox": [
+        301.28272272727276,
+        260.50999999999993,
+        362.50281363636367,
+        276.71
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:7",
+    "zone_code": "RM-4-10",
+    "standard_type": "lot_width_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 7,
+      "column": 5,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RM-4-10",
+      "cell_text": "100",
+      "bbox": [
+        362.50281363636367,
+        260.50999999999993,
+        421.5427227272727,
+        276.71
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:7",
+    "zone_code": "RM-4-11",
+    "standard_type": "lot_width_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 7,
+      "column": 6,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RM-4-11",
+      "cell_text": "100",
+      "bbox": [
+        421.5427227272727,
+        260.50999999999993,
+        483.6059517391305,
+        276.71
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:7",
+    "zone_code": "RM-5-12",
+    "standard_type": "lot_width_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 7,
+      "column": 7,
+      "row_label": "Lot width (ft)",
+      "zone_header": "RM-5-12",
+      "cell_text": "100",
+      "bbox": [
+        483.6059517391305,
+        260.50999999999993,
+        547.8083461818181,
+        276.71
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:9",
+    "zone_code": "RM-3-7",
+    "standard_type": "corner_lot_width_min",
+    "value": 75.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 9,
+      "column": 2,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RM-3-7",
+      "cell_text": "75",
+      "bbox": [
+        180.0476876923077,
+        305.63000000000005,
+        242.48259545454547,
+        321.82998499999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:9",
+    "zone_code": "RM-3-8",
+    "standard_type": "corner_lot_width_min",
+    "value": 75.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 9,
+      "column": 3,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RM-3-8",
+      "cell_text": "75",
+      "bbox": [
+        242.48259545454547,
+        305.63000000000005,
+        301.28272272727276,
+        321.82998499999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:9",
+    "zone_code": "RM-3-9",
+    "standard_type": "corner_lot_width_min",
+    "value": 75.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 9,
+      "column": 4,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RM-3-9",
+      "cell_text": "75",
+      "bbox": [
+        301.28272272727276,
+        305.63000000000005,
+        362.50281363636367,
+        321.82998499999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:9",
+    "zone_code": "RM-4-10",
+    "standard_type": "corner_lot_width_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 9,
+      "column": 5,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RM-4-10",
+      "cell_text": "100",
+      "bbox": [
+        362.50281363636367,
+        305.63000000000005,
+        421.5427227272727,
+        321.82998499999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:9",
+    "zone_code": "RM-4-11",
+    "standard_type": "corner_lot_width_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 9,
+      "column": 6,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RM-4-11",
+      "cell_text": "100",
+      "bbox": [
+        421.5427227272727,
+        305.63000000000005,
+        483.6059517391305,
+        321.82998499999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:9",
+    "zone_code": "RM-5-12",
+    "standard_type": "corner_lot_width_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [
+      "corner lot"
+    ],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 9,
+      "column": 7,
+      "row_label": "Lot width (corner) (ft)",
+      "zone_header": "RM-5-12",
+      "cell_text": "100",
+      "bbox": [
+        483.6059517391305,
+        305.63000000000005,
+        547.8083461818181,
+        321.82998499999997
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:10",
+    "zone_code": "RM-3-7",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 10,
+      "column": 2,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RM-3-7",
+      "cell_text": "100",
+      "bbox": [
+        180.0476876923077,
+        321.82998499999997,
+        242.48259545454547,
+        338.03000000000003
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:10",
+    "zone_code": "RM-3-8",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 10,
+      "column": 3,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RM-3-8",
+      "cell_text": "100",
+      "bbox": [
+        242.48259545454547,
+        321.82998499999997,
+        301.28272272727276,
+        338.03000000000003
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:10",
+    "zone_code": "RM-3-9",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 10,
+      "column": 4,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RM-3-9",
+      "cell_text": "100",
+      "bbox": [
+        301.28272272727276,
+        321.82998499999997,
+        362.50281363636367,
+        338.03000000000003
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:10",
+    "zone_code": "RM-4-10",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 10,
+      "column": 5,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RM-4-10",
+      "cell_text": "100",
+      "bbox": [
+        362.50281363636367,
+        321.82998499999997,
+        421.5427227272727,
+        338.03000000000003
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:10",
+    "zone_code": "RM-4-11",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 10,
+      "column": 6,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RM-4-11",
+      "cell_text": "100",
+      "bbox": [
+        421.5427227272727,
+        321.82998499999997,
+        483.6059517391305,
+        338.03000000000003
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  },
+  {
+    "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:10",
+    "zone_code": "RM-5-12",
+    "standard_type": "lot_depth_min",
+    "value": 100.0,
+    "unit": "ft",
+    "operator": "MIN",
+    "conditions": [],
+    "scope": "BASE_TABLE_PARAMETERS_ONLY",
+    "review_state": "SOURCE_VERIFIED",
+    "version_profile": "outside-2026-09-24-reviewed-dimensions",
+    "source_evidence": {
+      "page_evidence": "residential:43",
+      "table": "131-04G",
+      "row": 10,
+      "column": 7,
+      "row_label": "Lot depth (ft)",
+      "zone_header": "RM-5-12",
+      "cell_text": "100",
+      "bbox": [
+        483.6059517391305,
+        321.82998499999997,
+        547.8083461818181,
+        338.03000000000003
+      ]
+    },
+    "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+    "dependency_record": "dimension-dependencies.json",
+    "authority_review": "authority-review.json"
+  }
+]

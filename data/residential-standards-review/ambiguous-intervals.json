@@ -1,0 +1,68 @@
+[
+  {
+    "rule_section": "2022 update Coastal boundary",
+    "prior": "Certification chain omitted",
+    "resolution": "O21905 memo and CCCreport99–100 establish2025-02-06",
+    "evidence": [
+      "o21905:14",
+      "ccc2022:99-100"
+    ],
+    "integration_safe": "Historical boundary resolved; historical rule replay unsupported"
+  },
+  {
+    "rule_section": "2024 update Coastal boundary",
+    "prior": "July2026 code editor note says pending",
+    "resolution": "Later certification report and City effective-date entry establish2026-09-10",
+    "evidence": [
+      "ccc2024:8-14",
+      "updates"
+    ],
+    "integration_safe": "Boundary resolved; inside composite still excluded"
+  },
+  {
+    "rule_section": "RS1-2 footnote7 / dimensions",
+    "prior": "Strikeout plain text can appear to add exception; Coastal unknown",
+    "resolution": "Signed repeal operative outside2025-04-24; Coastal certification not established",
+    "evidence": [
+      "o21934:3-6"
+    ],
+    "integration_safe": "Only selected outside dimensions"
+  },
+  {
+    "rule_section": "Table13104J FAR ranges",
+    "prior": "4.001–5,000 and fractional gaps",
+    "resolution": "UNRESOLVED; no correction authority found",
+    "evidence": [
+      "residential:66"
+    ],
+    "integration_safe": false
+  },
+  {
+    "rule_section": "Table13104I/13104K",
+    "prior": "9stories108ft then more than10stories120ft; inconsistentheight/story alternatives",
+    "resolution": "UNRESOLVED; no inferred10story rule",
+    "evidence": [
+      "residential:65",
+      "residential:68"
+    ],
+    "integration_safe": false
+  },
+  {
+    "rule_section": "1310443(a)(2)(A)",
+    "prior": "Table14104D reference possibly erroneous",
+    "resolution": "UNRESOLVED; source typo not repaired by inference",
+    "evidence": [
+      "residential:49"
+    ],
+    "integration_safe": false
+  },
+  {
+    "rule_section": "2026 dependent sections",
+    "prior": "Coastal pending / grandfathering / airport exception",
+    "resolution": "Outside conditionally effective2026-07-15; pending Coastal; no historical/project applicability fallback",
+    "evidence": [
+      "o22109:193-195"
+    ],
+    "integration_safe": false
+  }
+]

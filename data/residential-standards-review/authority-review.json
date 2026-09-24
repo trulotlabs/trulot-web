@@ -1,0 +1,213 @@
+{
+  "review_id": "residential-review-closure-2026-09-24",
+  "authority_order": [
+    "City Clerk official Municipal Code",
+    "Adopted/corrected ordinance operative text; amendments override superseded codification",
+    "CCC certification and City acceptance/implementation",
+    "Planning effective-date materials corroborating primary instruments",
+    "Official explanatory guidance",
+    "TruLot transcription: no independent authority"
+  ],
+  "scope": "BASE_TABLE_PARAMETERS_ONLY",
+  "coverage": "33 codified RS/RX/RT/RM base zones represented in Packet12; planned districts and other zoning families excluded",
+  "approved_rule_ids": [
+    "sd-residential-2026-09-24-research-v1:RS-1-1:34:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-2:34:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-3:34:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-4:34:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-5:34:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-6:34:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-1:34:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-2:34:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-3:34:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-4:34:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-5:34:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-6:34:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-1:34:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-2:34:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-3:34:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-4:34:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-5:34:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-6:34:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-7:34:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-8:36:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-9:36:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-10:36:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-11:36:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-12:36:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-13:36:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-14:36:7",
+    "sd-residential-2026-09-24-research-v1:RS-1-8:36:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-9:36:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-10:36:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-11:36:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-12:36:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-13:36:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-14:36:9",
+    "sd-residential-2026-09-24-research-v1:RS-1-8:36:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-9:36:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-10:36:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-11:36:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-12:36:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-13:36:10",
+    "sd-residential-2026-09-24-research-v1:RS-1-14:36:10",
+    "sd-residential-2026-09-24-research-v1:RX-1-1:37:7",
+    "sd-residential-2026-09-24-research-v1:RX-1-1:37:9",
+    "sd-residential-2026-09-24-research-v1:RX-1-1:37:10",
+    "sd-residential-2026-09-24-research-v1:RX-1-2:37:10",
+    "sd-residential-2026-09-24-research-v1:RT-1-1:39:7",
+    "sd-residential-2026-09-24-research-v1:RT-1-2:39:7",
+    "sd-residential-2026-09-24-research-v1:RT-1-3:39:7",
+    "sd-residential-2026-09-24-research-v1:RT-1-4:39:7",
+    "sd-residential-2026-09-24-research-v1:RT-1-5:39:7",
+    "sd-residential-2026-09-24-research-v1:RT-1-1:39:9",
+    "sd-residential-2026-09-24-research-v1:RT-1-2:39:9",
+    "sd-residential-2026-09-24-research-v1:RT-1-3:39:9",
+    "sd-residential-2026-09-24-research-v1:RT-1-4:39:9",
+    "sd-residential-2026-09-24-research-v1:RT-1-5:39:9",
+    "sd-residential-2026-09-24-research-v1:RT-1-1:39:10",
+    "sd-residential-2026-09-24-research-v1:RT-1-2:39:10",
+    "sd-residential-2026-09-24-research-v1:RT-1-3:39:10",
+    "sd-residential-2026-09-24-research-v1:RT-1-4:39:10",
+    "sd-residential-2026-09-24-research-v1:RT-1-5:39:10",
+    "sd-residential-2026-09-24-research-v1:RM-1-1:41:7",
+    "sd-residential-2026-09-24-research-v1:RM-1-2:41:7",
+    "sd-residential-2026-09-24-research-v1:RM-1-3:41:7",
+    "sd-residential-2026-09-24-research-v1:RM-2-4:41:7",
+    "sd-residential-2026-09-24-research-v1:RM-2-5:41:7",
+    "sd-residential-2026-09-24-research-v1:RM-2-6:41:7",
+    "sd-residential-2026-09-24-research-v1:RM-1-1:41:9",
+    "sd-residential-2026-09-24-research-v1:RM-1-2:41:9",
+    "sd-residential-2026-09-24-research-v1:RM-1-3:41:9",
+    "sd-residential-2026-09-24-research-v1:RM-2-4:41:9",
+    "sd-residential-2026-09-24-research-v1:RM-2-5:41:9",
+    "sd-residential-2026-09-24-research-v1:RM-2-6:41:9",
+    "sd-residential-2026-09-24-research-v1:RM-1-1:41:10",
+    "sd-residential-2026-09-24-research-v1:RM-1-2:41:10",
+    "sd-residential-2026-09-24-research-v1:RM-1-3:41:10",
+    "sd-residential-2026-09-24-research-v1:RM-2-4:41:10",
+    "sd-residential-2026-09-24-research-v1:RM-2-5:41:10",
+    "sd-residential-2026-09-24-research-v1:RM-2-6:41:10",
+    "sd-residential-2026-09-24-research-v1:RM-3-7:43:7",
+    "sd-residential-2026-09-24-research-v1:RM-3-8:43:7",
+    "sd-residential-2026-09-24-research-v1:RM-3-9:43:7",
+    "sd-residential-2026-09-24-research-v1:RM-4-10:43:7",
+    "sd-residential-2026-09-24-research-v1:RM-4-11:43:7",
+    "sd-residential-2026-09-24-research-v1:RM-5-12:43:7",
+    "sd-residential-2026-09-24-research-v1:RM-3-7:43:9",
+    "sd-residential-2026-09-24-research-v1:RM-3-8:43:9",
+    "sd-residential-2026-09-24-research-v1:RM-3-9:43:9",
+    "sd-residential-2026-09-24-research-v1:RM-4-10:43:9",
+    "sd-residential-2026-09-24-research-v1:RM-4-11:43:9",
+    "sd-residential-2026-09-24-research-v1:RM-5-12:43:9",
+    "sd-residential-2026-09-24-research-v1:RM-3-7:43:10",
+    "sd-residential-2026-09-24-research-v1:RM-3-8:43:10",
+    "sd-residential-2026-09-24-research-v1:RM-3-9:43:10",
+    "sd-residential-2026-09-24-research-v1:RM-4-10:43:10",
+    "sd-residential-2026-09-24-research-v1:RM-4-11:43:10",
+    "sd-residential-2026-09-24-research-v1:RM-5-12:43:10"
+  ],
+  "review_basis": "Explicit 97-coordinate independent value/unit matrix plus current-code and legislative authority review; selection is not a consequence of parser success.",
+  "applicability": {
+    "coastal_context": "outside",
+    "as_of": "2026-09-24",
+    "application_context": "new_application",
+    "airport_context": "outside_miramar_transition",
+    "lot_context_required": true,
+    "project_applicability_determined": false
+  },
+  "dimension_authority_chain": [
+    {
+      "source": "residential",
+      "pages": [
+        33,
+        34,
+        36,
+        37,
+        39,
+        41,
+        43,
+        47,
+        48
+      ],
+      "finding": "Current official table constants and governing1310430/1310442; feet units explicit."
+    },
+    {
+      "source": "o21618",
+      "pages": [
+        1,
+        92,
+        93
+      ],
+      "finding": "Signed final passage March7 2023; conditional effectiveness. Strikeout18\u201320 changes other residential fields; historical values are not loaded by the rehearsal gate."
+    },
+    {
+      "source": "o21836",
+      "printed_pages": [
+        44,
+        45,
+        46
+      ],
+      "finding": "Corrected clean ordinance preserves dimensional rows, changes1310442(a) frontage; signed current text and no-change clauses checked independently."
+    },
+    {
+      "source": "o21934",
+      "pages": [
+        4,
+        5,
+        6
+      ],
+      "finding": "Outside repeal of RS1-2 footnote7 removes geographically limited substitution of RS1-7 dimensions. This establishes80/85/100 outside; Coastal remains blocked."
+    },
+    {
+      "source": "o22109",
+      "pages": [
+        1,
+        193,
+        194,
+        195
+      ],
+      "finding": "Rendered signed title lists residential1310422/1310443/1310448 only and measurement1130222/1130234, not dimension sections. Effective/grandfathering/overlap clauses retained. No assertion of full211page strikeout equivalence."
+    }
+  ],
+  "corrections": [
+    {
+      "id": "O21836-CORCOPY2",
+      "source": "o21836",
+      "physical_pages": [
+        159,
+        160,
+        161
+      ],
+      "memo_date": "2024-10-07",
+      "finding": "Parking Table14205C bicycle reference9 corrected to5; does not change selected1310431 dimensions. Corrected adopted text outranks flattened strikeout."
+    },
+    {
+      "id": "O21905-CORCOPY2",
+      "source": "o21905",
+      "physical_pages": [
+        14,
+        15
+      ],
+      "memo_date": "2025-02-25",
+      "finding": "Commercial Table13105B footnote20\u219222;1431310(a)(4)(A) sentence\u2192(B). Outside1431310 usesO21836; Coastal usesO21905/O21843 at memo date. No dimension amendment; do not generalize this conflict resolution to whole chapter."
+    },
+    {
+      "id": "O22109-overlap",
+      "source": "o22109",
+      "physical_pages": [
+        194,
+        195
+      ],
+      "finding": "Section62 coordinates overlapping O22031/O22042/O22049/O22050/O22076/O22080 and prospective2026-109/120; selected1310431/1310442 not amended by this ordinance. Other families not cleared by this review."
+    }
+  ],
+  "unresolved_sources_policy": "No explanatory-only rule admitted. No absence-of-conflict conclusion outside the specific selected dimensions and dated observation.",
+  "reviewers": [
+    "Parent source/glyph audit",
+    "closure_authority_review independent legislative and97-coordinate matrix",
+    "closure_adversarial_review independent24-rule RS1-7 and gate attacks"
+  ]
+}
