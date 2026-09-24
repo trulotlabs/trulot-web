@@ -1,0 +1,12 @@
+{
+  "baseline": "0e25cca4dd70d0b4e41b729f716ddc58fe99fbe6",
+  "decision": "RS_1_7_PARAMETER_DISPLAY_SHADOW_PASS",
+  "next_state": "READY_FOR_BOUNDED_STANDARDS_RUNTIME_SHADOW",
+  "scope": "Offline design and static semantic/state verification only; not production display authorization.",
+  "visual_verification": "Browser rendering, mobile clipping and keyboard interaction remain unverified.",
+  "production_runtime_changed": false,
+  "compliance_calculated": false,
+  "capacity_calculated": false,
+  "pushed": false,
+  "deployed": false
+}

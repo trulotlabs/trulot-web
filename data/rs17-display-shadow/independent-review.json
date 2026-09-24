@@ -1,0 +1,33 @@
+{
+  "review": "Independent RS-1-7 display shadow UX/trust review",
+  "decision": "PASS_WITH_VISUAL_VERIFICATION_LIMITATION",
+  "scope": "Read-only source, generated HTML, approved records, and semantic copy review; no browser rendering or screenshots inspected.",
+  "question": "Could a reasonable user interpret this screen as a parcel compliance or buildability determination?",
+  "answer": "The source and generated HTML communicate base-zone parameters, explicitly deny a parcel determination before all values, retain the corner condition, and present no compliance or capacity verdict. No outstanding semantic/copy blocker identified.",
+  "findings": [
+    {
+      "severity": "blocking_before_revision",
+      "issue": "Golden page scaffolds originally asserted RS-1-7 zoning even when zoning or parcel identity was unavailable or indeterminate.",
+      "resolution": "Revised scaffold derives its zoning label from consumer truth; regenerated unavailable, unmapped, indeterminate and absent-parcel pages each display Base zoning unavailable or unresolved.",
+      "status": "resolved"
+    }
+  ],
+  "checks": {
+    "three_approved_parameters_only": true,
+    "minimum_supported_by_MIN_operator": true,
+    "qualifier_before_values": true,
+    "corner_condition_visible": true,
+    "unknown_corner_preserves_both_widths": true,
+    "unsupported_contexts_have_no_values": true,
+    "provenance_native_details_disclosure": true,
+    "hashes_and_rule_ids_not_primary": true,
+    "split_zones_separate": true,
+    "no_new_compliance_capacity_claim": true,
+    "no_app_or_lib_import_references": true
+  },
+  "limits": [
+    "Browser file preview was blocked by tool policy. Visual rendering, clipping, mobile readability and keyboard interaction were not independently verified. Static CSS and semantic HTML checks do not substitute for browser verification.",
+    "This decision covers an isolated offline design only; it authorizes neither production display nor parcel compliance interpretation."
+  ],
+  "recommended_regression": "Assert generated scaffold zoning labels contain no RS-1-7 for unavailable, unmapped, indeterminate, and parcel-unavailable scenarios."
+}

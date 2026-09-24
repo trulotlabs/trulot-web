@@ -1,0 +1,526 @@
+{
+  "kind": "OFFLINE_SYNTHETIC_DISPLAY_FIXTURES",
+  "states": [
+    {
+      "id": "supported",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [
+          {
+            "zoneCode": "RS-1-7",
+            "message": "Source verified · Conditional · Parcel applicability not yet determined",
+            "rows": [
+              {
+                "label": "Minimum lot width",
+                "value": 50,
+                "unit": "ft",
+                "condition": "Base-zone table parameter",
+                "sourceStatus": "Source verified",
+                "reviewState": "SOURCE_VERIFIED",
+                "applicabilityState": "Parcel applicability not yet determined",
+                "project_applicability_determined": false,
+                "citation": {
+                  "publisher": "City of San Diego",
+                  "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "section": "131.0431",
+                  "table": "131-04D",
+                  "page": 34,
+                  "evidenceReference": "residential:34",
+                  "ruleReference": "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+                  "version": "outside-2026-09-24-reviewed-dimensions",
+                  "context": "Reviewed for September 24, 2026; outside Coastal; new application; outside the Miramar transition exception. Lot context supplied: non-corner. Both width parameters are retained; no parcel threshold selected.",
+                  "acquiredAt": "2026-09-24T22:05:06.304999+00:00",
+                  "artifactHash": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+                  "dependencyReference": "data/residential-standards-review/dimension-dependencies.json"
+                }
+              },
+              {
+                "label": "Minimum corner-lot width",
+                "value": 55,
+                "unit": "ft",
+                "condition": "Corner-lot condition; no parcel determination",
+                "sourceStatus": "Source verified",
+                "reviewState": "SOURCE_VERIFIED",
+                "applicabilityState": "Parcel applicability not yet determined",
+                "project_applicability_determined": false,
+                "citation": {
+                  "publisher": "City of San Diego",
+                  "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "section": "131.0431",
+                  "table": "131-04D",
+                  "page": 34,
+                  "evidenceReference": "residential:34",
+                  "ruleReference": "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+                  "version": "outside-2026-09-24-reviewed-dimensions",
+                  "context": "Reviewed for September 24, 2026; outside Coastal; new application; outside the Miramar transition exception. Lot context supplied: non-corner. Both width parameters are retained; no parcel threshold selected.",
+                  "acquiredAt": "2026-09-24T22:05:06.304999+00:00",
+                  "artifactHash": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+                  "dependencyReference": "data/residential-standards-review/dimension-dependencies.json"
+                }
+              },
+              {
+                "label": "Minimum lot depth",
+                "value": 95,
+                "unit": "ft",
+                "condition": "Base-zone table parameter",
+                "sourceStatus": "Source verified",
+                "reviewState": "SOURCE_VERIFIED",
+                "applicabilityState": "Parcel applicability not yet determined",
+                "project_applicability_determined": false,
+                "citation": {
+                  "publisher": "City of San Diego",
+                  "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "section": "131.0431",
+                  "table": "131-04D",
+                  "page": 34,
+                  "evidenceReference": "residential:34",
+                  "ruleReference": "sd-residential-2026-09-24-research-v1:RS-1-7:34:10",
+                  "version": "outside-2026-09-24-reviewed-dimensions",
+                  "context": "Reviewed for September 24, 2026; outside Coastal; new application; outside the Miramar transition exception. Lot context supplied: non-corner. Both width parameters are retained; no parcel threshold selected.",
+                  "acquiredAt": "2026-09-24T22:05:06.304999+00:00",
+                  "artifactHash": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+                  "dependencyReference": "data/residential-standards-review/dimension-dependencies.json"
+                }
+              }
+            ]
+          }
+        ],
+        "message": ""
+      }
+    },
+    {
+      "id": "unknown-corner",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [
+          {
+            "zoneCode": "RS-1-7",
+            "message": "Source verified · Conditional · Parcel applicability not yet determined",
+            "rows": [
+              {
+                "label": "Minimum lot width",
+                "value": 50,
+                "unit": "ft",
+                "condition": "Base-zone table parameter",
+                "sourceStatus": "Source verified",
+                "reviewState": "SOURCE_VERIFIED",
+                "applicabilityState": "Parcel applicability not yet determined",
+                "project_applicability_determined": false,
+                "citation": {
+                  "publisher": "City of San Diego",
+                  "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "section": "131.0431",
+                  "table": "131-04D",
+                  "page": 34,
+                  "evidenceReference": "residential:34",
+                  "ruleReference": "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+                  "version": "outside-2026-09-24-reviewed-dimensions",
+                  "context": "Reviewed for September 24, 2026; outside Coastal; new application; outside the Miramar transition exception. Lot context supplied: unknown. Both width parameters are retained; no parcel threshold selected.",
+                  "acquiredAt": "2026-09-24T22:05:06.304999+00:00",
+                  "artifactHash": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+                  "dependencyReference": "data/residential-standards-review/dimension-dependencies.json"
+                }
+              },
+              {
+                "label": "Minimum corner-lot width",
+                "value": 55,
+                "unit": "ft",
+                "condition": "Corner-lot condition; no parcel determination",
+                "sourceStatus": "Source verified",
+                "reviewState": "SOURCE_VERIFIED",
+                "applicabilityState": "Parcel applicability not yet determined",
+                "project_applicability_determined": false,
+                "citation": {
+                  "publisher": "City of San Diego",
+                  "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "section": "131.0431",
+                  "table": "131-04D",
+                  "page": 34,
+                  "evidenceReference": "residential:34",
+                  "ruleReference": "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+                  "version": "outside-2026-09-24-reviewed-dimensions",
+                  "context": "Reviewed for September 24, 2026; outside Coastal; new application; outside the Miramar transition exception. Lot context supplied: unknown. Both width parameters are retained; no parcel threshold selected.",
+                  "acquiredAt": "2026-09-24T22:05:06.304999+00:00",
+                  "artifactHash": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+                  "dependencyReference": "data/residential-standards-review/dimension-dependencies.json"
+                }
+              },
+              {
+                "label": "Minimum lot depth",
+                "value": 95,
+                "unit": "ft",
+                "condition": "Base-zone table parameter",
+                "sourceStatus": "Source verified",
+                "reviewState": "SOURCE_VERIFIED",
+                "applicabilityState": "Parcel applicability not yet determined",
+                "project_applicability_determined": false,
+                "citation": {
+                  "publisher": "City of San Diego",
+                  "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "section": "131.0431",
+                  "table": "131-04D",
+                  "page": 34,
+                  "evidenceReference": "residential:34",
+                  "ruleReference": "sd-residential-2026-09-24-research-v1:RS-1-7:34:10",
+                  "version": "outside-2026-09-24-reviewed-dimensions",
+                  "context": "Reviewed for September 24, 2026; outside Coastal; new application; outside the Miramar transition exception. Lot context supplied: unknown. Both width parameters are retained; no parcel threshold selected.",
+                  "acquiredAt": "2026-09-24T22:05:06.304999+00:00",
+                  "artifactHash": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+                  "dependencyReference": "data/residential-standards-review/dimension-dependencies.json"
+                }
+              }
+            ]
+          }
+        ],
+        "message": ""
+      }
+    },
+    {
+      "id": "corner",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [
+          {
+            "zoneCode": "RS-1-7",
+            "message": "Source verified · Conditional · Parcel applicability not yet determined",
+            "rows": [
+              {
+                "label": "Minimum lot width",
+                "value": 50,
+                "unit": "ft",
+                "condition": "Base-zone table parameter",
+                "sourceStatus": "Source verified",
+                "reviewState": "SOURCE_VERIFIED",
+                "applicabilityState": "Parcel applicability not yet determined",
+                "project_applicability_determined": false,
+                "citation": {
+                  "publisher": "City of San Diego",
+                  "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "section": "131.0431",
+                  "table": "131-04D",
+                  "page": 34,
+                  "evidenceReference": "residential:34",
+                  "ruleReference": "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+                  "version": "outside-2026-09-24-reviewed-dimensions",
+                  "context": "Reviewed for September 24, 2026; outside Coastal; new application; outside the Miramar transition exception. Lot context supplied: corner. Both width parameters are retained; no parcel threshold selected.",
+                  "acquiredAt": "2026-09-24T22:05:06.304999+00:00",
+                  "artifactHash": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+                  "dependencyReference": "data/residential-standards-review/dimension-dependencies.json"
+                }
+              },
+              {
+                "label": "Minimum corner-lot width",
+                "value": 55,
+                "unit": "ft",
+                "condition": "Corner-lot condition; no parcel determination",
+                "sourceStatus": "Source verified",
+                "reviewState": "SOURCE_VERIFIED",
+                "applicabilityState": "Parcel applicability not yet determined",
+                "project_applicability_determined": false,
+                "citation": {
+                  "publisher": "City of San Diego",
+                  "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "section": "131.0431",
+                  "table": "131-04D",
+                  "page": 34,
+                  "evidenceReference": "residential:34",
+                  "ruleReference": "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+                  "version": "outside-2026-09-24-reviewed-dimensions",
+                  "context": "Reviewed for September 24, 2026; outside Coastal; new application; outside the Miramar transition exception. Lot context supplied: corner. Both width parameters are retained; no parcel threshold selected.",
+                  "acquiredAt": "2026-09-24T22:05:06.304999+00:00",
+                  "artifactHash": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+                  "dependencyReference": "data/residential-standards-review/dimension-dependencies.json"
+                }
+              },
+              {
+                "label": "Minimum lot depth",
+                "value": 95,
+                "unit": "ft",
+                "condition": "Base-zone table parameter",
+                "sourceStatus": "Source verified",
+                "reviewState": "SOURCE_VERIFIED",
+                "applicabilityState": "Parcel applicability not yet determined",
+                "project_applicability_determined": false,
+                "citation": {
+                  "publisher": "City of San Diego",
+                  "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "section": "131.0431",
+                  "table": "131-04D",
+                  "page": 34,
+                  "evidenceReference": "residential:34",
+                  "ruleReference": "sd-residential-2026-09-24-research-v1:RS-1-7:34:10",
+                  "version": "outside-2026-09-24-reviewed-dimensions",
+                  "context": "Reviewed for September 24, 2026; outside Coastal; new application; outside the Miramar transition exception. Lot context supplied: corner. Both width parameters are retained; no parcel threshold selected.",
+                  "acquiredAt": "2026-09-24T22:05:06.304999+00:00",
+                  "artifactHash": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+                  "dependencyReference": "data/residential-standards-review/dimension-dependencies.json"
+                }
+              }
+            ]
+          }
+        ],
+        "message": ""
+      }
+    },
+    {
+      "id": "unknown-coastal",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [
+          {
+            "zoneCode": "RS-1-7",
+            "message": "The applicable rule version has not been resolved for this context. Parameters are not shown.",
+            "rows": []
+          }
+        ],
+        "message": ""
+      }
+    },
+    {
+      "id": "inside-coastal",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [
+          {
+            "zoneCode": "RS-1-7",
+            "message": "The applicable rule version has not been resolved for this context. Parameters are not shown.",
+            "rows": []
+          }
+        ],
+        "message": ""
+      }
+    },
+    {
+      "id": "source-drift",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [
+          {
+            "zoneCode": "RS-1-7",
+            "message": "Source evidence is unavailable or requires renewed verification. Parameters are not shown.",
+            "rows": []
+          }
+        ],
+        "message": ""
+      }
+    },
+    {
+      "id": "zoning-unavailable",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [],
+        "message": "Base zoning is unavailable or unresolved. Parameters have not been evaluated."
+      }
+    },
+    {
+      "id": "zoning-unmapped",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [],
+        "message": "Base zoning is unavailable or unresolved. Parameters have not been evaluated."
+      }
+    },
+    {
+      "id": "zoning-indeterminate",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [],
+        "message": "Base zoning is unavailable or unresolved. Parameters have not been evaluated."
+      }
+    },
+    {
+      "id": "split",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [
+          {
+            "zoneCode": "RM-1-1",
+            "message": "Parameters for this zone are not included in this shadow preview.",
+            "rows": []
+          },
+          {
+            "zoneCode": "RS-1-7",
+            "message": "Source verified · Conditional · Parcel applicability not yet determined",
+            "rows": [
+              {
+                "label": "Minimum lot width",
+                "value": 50,
+                "unit": "ft",
+                "condition": "Base-zone table parameter",
+                "sourceStatus": "Source verified",
+                "reviewState": "SOURCE_VERIFIED",
+                "applicabilityState": "Parcel applicability not yet determined",
+                "project_applicability_determined": false,
+                "citation": {
+                  "publisher": "City of San Diego",
+                  "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "section": "131.0431",
+                  "table": "131-04D",
+                  "page": 34,
+                  "evidenceReference": "residential:34",
+                  "ruleReference": "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+                  "version": "outside-2026-09-24-reviewed-dimensions",
+                  "context": "Reviewed for September 24, 2026; outside Coastal; new application; outside the Miramar transition exception. Lot context supplied: non-corner. Both width parameters are retained; no parcel threshold selected.",
+                  "acquiredAt": "2026-09-24T22:05:06.304999+00:00",
+                  "artifactHash": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+                  "dependencyReference": "data/residential-standards-review/dimension-dependencies.json"
+                }
+              },
+              {
+                "label": "Minimum corner-lot width",
+                "value": 55,
+                "unit": "ft",
+                "condition": "Corner-lot condition; no parcel determination",
+                "sourceStatus": "Source verified",
+                "reviewState": "SOURCE_VERIFIED",
+                "applicabilityState": "Parcel applicability not yet determined",
+                "project_applicability_determined": false,
+                "citation": {
+                  "publisher": "City of San Diego",
+                  "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "section": "131.0431",
+                  "table": "131-04D",
+                  "page": 34,
+                  "evidenceReference": "residential:34",
+                  "ruleReference": "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+                  "version": "outside-2026-09-24-reviewed-dimensions",
+                  "context": "Reviewed for September 24, 2026; outside Coastal; new application; outside the Miramar transition exception. Lot context supplied: non-corner. Both width parameters are retained; no parcel threshold selected.",
+                  "acquiredAt": "2026-09-24T22:05:06.304999+00:00",
+                  "artifactHash": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+                  "dependencyReference": "data/residential-standards-review/dimension-dependencies.json"
+                }
+              },
+              {
+                "label": "Minimum lot depth",
+                "value": 95,
+                "unit": "ft",
+                "condition": "Base-zone table parameter",
+                "sourceStatus": "Source verified",
+                "reviewState": "SOURCE_VERIFIED",
+                "applicabilityState": "Parcel applicability not yet determined",
+                "project_applicability_determined": false,
+                "citation": {
+                  "publisher": "City of San Diego",
+                  "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "section": "131.0431",
+                  "table": "131-04D",
+                  "page": 34,
+                  "evidenceReference": "residential:34",
+                  "ruleReference": "sd-residential-2026-09-24-research-v1:RS-1-7:34:10",
+                  "version": "outside-2026-09-24-reviewed-dimensions",
+                  "context": "Reviewed for September 24, 2026; outside Coastal; new application; outside the Miramar transition exception. Lot context supplied: non-corner. Both width parameters are retained; no parcel threshold selected.",
+                  "acquiredAt": "2026-09-24T22:05:06.304999+00:00",
+                  "artifactHash": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+                  "dependencyReference": "data/residential-standards-review/dimension-dependencies.json"
+                }
+              }
+            ]
+          }
+        ],
+        "message": ""
+      }
+    },
+    {
+      "id": "other-residential",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [
+          {
+            "zoneCode": "RM-1-1",
+            "message": "Parameters for this zone are not included in this shadow preview.",
+            "rows": []
+          }
+        ],
+        "message": ""
+      }
+    },
+    {
+      "id": "unknown-zone",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [
+          {
+            "zoneCode": "UNZONED",
+            "message": "Parameters for this zone are not included in this shadow preview.",
+            "rows": []
+          }
+        ],
+        "message": ""
+      }
+    },
+    {
+      "id": "parcel-unavailable",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [],
+        "message": "Parcel identity is unavailable. Base-zone parameters have not been evaluated."
+      }
+    },
+    {
+      "id": "unsupported-date",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [
+          {
+            "zoneCode": "RS-1-7",
+            "message": "The applicable rule version has not been resolved for this context. Parameters are not shown.",
+            "rows": []
+          }
+        ],
+        "message": ""
+      }
+    },
+    {
+      "id": "missing-application",
+      "model": {
+        "title": "Base zoning standards",
+        "qualifier": "These are source-verified base-zone parameters. TruLot has not determined whether this parcel satisfies them or whether additional regulations apply.",
+        "project_applicability_determined": false,
+        "groups": [
+          {
+            "zoneCode": "RS-1-7",
+            "message": "The applicable rule version has not been resolved for this context. Parameters are not shown.",
+            "rows": []
+          }
+        ],
+        "message": ""
+      }
+    }
+  ],
+  "checks": {
+    "golden_states": 15,
+    "excluded_records": 21,
+    "mutations": 4,
+    "deterministic_order": true,
+    "current_information_preserved_byte_for_byte": true,
+    "insertion_before_programs": true
+  }
+}
