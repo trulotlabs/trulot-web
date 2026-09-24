@@ -1,0 +1,78 @@
+{
+  "count": {
+    "rows": 393733,
+    "apns": 393733,
+    "source_ids": 393733,
+    "parcel_ids": 272940,
+    "null_address": 14846,
+    "null_acreage": 374698,
+    "invalid_geometry": 0,
+    "point_outside": 0
+  },
+  "stacks": {
+    "parcel_id": {
+      "groups": 5446,
+      "rows": 126239
+    },
+    "geometry_sha256": {
+      "groups": 5446,
+      "rows": 126239
+    }
+  },
+  "scope": "situs_juris = 'SD'",
+  "sourceIdsExactlyMatchScopedBase": true,
+  "apnSetFingerprint": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+  "fullRowFingerprint": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f",
+  "provenance": {
+    "acquisition_id": "sangis-20260924T183743Z",
+    "dataset_id": "parcel_base_sangis_v2",
+    "acquired_at": "2026-09-24T18:43:39.950969+00:00",
+    "publisher": "SanGIS",
+    "source_url": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0",
+    "metadata_url": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0/metadata",
+    "source_temporal_extent": "2026-08-29T00:00:00",
+    "artifact_sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+    "metadata_sha256": "2a9a213057cd8cb4d64bb851cba9408e7367ca28b92b4731bf7a7c9742dea0b9",
+    "receipt_reference": "data/parcel-base-v2/acquisitions/sangis-20260924T183743Z/acquisition.json",
+    "import_identity": "c03f79d9dbf43198bba4be6b82508ace5fbf5c1ec3e57d8ec8310e912955764d",
+    "serving_definition_sha256": "4c167a10ca2beca4f899f72773b7b2354bd0f4fc599973a4c137fbe9e415b1fc"
+  },
+  "importIdentityInputs": {
+    "lineage": {
+      "acquisition_id": "sangis-20260924T183743Z",
+      "artifact_sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+      "report_sha256": "8d6aa8ea2b827e79573ec896ca7edae7fac053967e9ac68f1a06e734f2118ec5",
+      "normalized_rows_sha256": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+      "source_count": 1089758,
+      "accepted_count": 1088430,
+      "rejected_count": 1328,
+      "native_crs": "EPSG:2230",
+      "artifact_crs": "EPSG:4326"
+    },
+    "importerSha256": "470174754e75585a85e6a3582fb8e30b535f39e1d1c347b3fa6471422237ac5e",
+    "ddlSha256": "5b76d608ac9d3bb7c2a953fd06b01fbb2dc400704b13b19e45fab0e9cb5063b7"
+  },
+  "area": {
+    "null_acreage": 374698,
+    "zero_acreage": 0,
+    "positive_acreage": 19035,
+    "within_one_sqft": 32,
+    "within_one_percent": 9262,
+    "over_ten_percent": 1534,
+    "ratio_p05_p50_p95": [
+      0.920250954790135,
+      0.9999227573890921,
+      1.0900715266272865
+    ]
+  },
+  "address": {
+    "missing_or_nonpositive_number": 14846,
+    "missing_street": 4441,
+    "suite_present": 86740,
+    "building_present": 0,
+    "fabricated_address": 0
+  },
+  "quarantinedApns": 5,
+  "countywideBaseUnchanged": true,
+  "productionReady": false
+}

@@ -1,0 +1,23 @@
+{
+  "historicalSnapshotAvailable": false,
+  "excludedSyntheticFixture": "supabase/rehearsal/20260711_seed_minimal_data.sql contains invented 123 Main St rows; not historical population evidence.",
+  "example": {
+    "commit": "23cbcc4351c4734a980e3303635758537701b51e",
+    "path": "app/page.tsx",
+    "apn": "5470501600",
+    "legacyDisplayAddress": "740 47th St",
+    "v2Address": "740 47TH ST",
+    "apnMatch": true,
+    "addressMatchIgnoringCase": true,
+    "classification": "Matched committed example; display casing follows deterministic V2 source composition."
+  },
+  "comparisons": {
+    "apnPopulation": "Unresolved: no trustworthy historical APN set. Historical count 393364 versus current 393733 remains +369, not forced equal.",
+    "parcelIds": "Unresolved: historical source parcel IDs not available.",
+    "lotArea": "Unresolved: no historical value with clean lineage for the example. V2 uses explicitly derived geometry area.",
+    "coordinates": "Unresolved: no trustworthy historical coordinates for comparison.",
+    "enrichments": "Legacy-only zoning/assessor/permit/project/activity fields are deferred, not copied.",
+    "sourceVintage": "No specific difference is attributed to source vintage without evidence.",
+    "candidateV2Defects": "None identified in bounded rehearsal; full legacy parity is not claimed."
+  }
+}

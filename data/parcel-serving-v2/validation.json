@@ -1,0 +1,132 @@
+[
+  {
+    "command": "node scripts/test-parcel-base-v2-receipt.mjs",
+    "exitCode": 0,
+    "summary": [
+      "Parcel Base V2 receipt tests passed (23 cases)."
+    ]
+  },
+  {
+    "command": "node scripts/test-parcel-base-v2-source.mjs",
+    "exitCode": 0,
+    "summary": [
+      "Parcel Base V2 source fixture tests passed (32 cases)."
+    ]
+  },
+  {
+    "command": "node scripts/test-sangis-acquisition.mjs",
+    "exitCode": 0,
+    "summary": [
+      "37 total acquisition regression checks passed."
+    ]
+  },
+  {
+    "command": "node scripts/test-parcel-truth.mjs",
+    "exitCode": 0,
+    "summary": [
+      "Parcel truth regressions passed: 19 cases."
+    ]
+  },
+  {
+    "command": "node scripts/test-overlay-response.mjs",
+    "exitCode": 0,
+    "summary": [
+      "Overlay parser, adapter and rendered-page regressions passed: 43 cases."
+    ]
+  },
+  {
+    "command": "node scripts/test-sda-source-reconciliation.mjs",
+    "exitCode": 0,
+    "summary": [
+      "{\"result\":\"SDA reconciliation behavior tests passed\",\"cases\":[\"positive database observation remains non-authoritative\",\"negative database observation is not ordinary false\",\"missing observation remains pending\",\"derived regulatory conclusion is blocked\",\"TPA and CTCAC remain independently truthful\",\"public API and page wording are explicit\"]}"
+    ]
+  },
+  {
+    "command": "node scripts/verify-parcel-foundation.mjs",
+    "exitCode": 0,
+    "summary": [
+      "PASS means explicit, consistent inventory; it does not mean reproducible data or verified production state."
+    ]
+  },
+  {
+    "command": "node scripts/test-parcel-foundation.mjs",
+    "exitCode": 0,
+    "summary": [
+      "Parcel foundation acceptance tests passed (25 cases). No database or network access."
+    ]
+  },
+  {
+    "command": "node scripts/verify-data-foundation.mjs",
+    "exitCode": 0,
+    "summary": [
+      "Data-foundation verification checks passed."
+    ]
+  },
+  {
+    "command": "node scripts/test-production-database-freeze.mjs",
+    "exitCode": 0,
+    "summary": [
+      "{\"result\":\"production database freeze guard tests passed\",\"cases\":18,\"prohibitedMigrations\":[\"20260713022000\",\"20260713025206\"],\"prohibitedWorkflows\":2,\"repositoryAudit\":\"passed\",\"hardeningFixtures\":\"passed\",\"nonProductionValidation\":\"allowed\"}"
+    ]
+  },
+  {
+    "command": "node scripts/test-validate-foundation-dry-run.mjs",
+    "exitCode": 0,
+    "summary": [
+      "foundation dry-run validator tests passed"
+    ]
+  },
+  {
+    "command": "node scripts/test-qa-foundation-production-adapter.mjs",
+    "exitCode": 0,
+    "summary": [
+      "qa-foundation-production adapter tests passed"
+    ]
+  },
+  {
+    "command": "node scripts/parcel-serving-v2/test-adapter.mjs",
+    "exitCode": 0,
+    "checks": 36
+  },
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-serving-v2/test-rebuild.py BOUNDARY SERVING1 SERVING2",
+    "exitCode": 0,
+    "checks": 16
+  },
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-v2-postgis/test.py BOUNDARY BASE_RUN",
+    "exitCode": 0,
+    "checks": 20
+  },
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/test-sangis-acquisition-stream.py",
+    "exitCode": 0,
+    "groups": 7
+  },
+  {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/test-sangis-acquirer.py",
+    "exitCode": 0,
+    "groups": 3
+  },
+  {
+    "command": "NEXT_TELEMETRY_DISABLED=1 ./node_modules/.bin/next typegen",
+    "exitCode": 0
+  },
+  {
+    "command": "./node_modules/.bin/tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  {
+    "command": "./node_modules/.bin/eslint scripts/parcel-serving-v2/adapter.ts scripts/parcel-serving-v2/test-adapter.mjs",
+    "exitCode": 0
+  },
+  {
+    "command": "npm run lint",
+    "exitCode": 1,
+    "knownUnchangedFailure": "supabase/functions/nearby-parcels/index.ts:125:67 no-explicit-any; six pre-existing warnings"
+  },
+  {
+    "command": "git diff --check and staged whitespace check",
+    "exitCode": 0
+  }
+]

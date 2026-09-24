@@ -1,0 +1,11 @@
+{
+  "servingObjectsDroppedAndRecreated": true,
+  "reportsByteIdentical": true,
+  "adapterFixturesByteIdentical": true,
+  "reportSha256": "d6f904b668de1a7c5fd9ec483fef5c7acf39f54bc7cecc5f68b33bad627ad9ff",
+  "fixtureSha256": "5634f61aa49d4effdaee88535e4c944a3e9329992218f1e11925d83b1e056fff",
+  "apnSetFingerprint": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+  "fullRowFingerprint": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f",
+  "sameProvenance": true,
+  "decision": "PARCEL_SERVING_V2_REHEARSAL_PASS"
+}

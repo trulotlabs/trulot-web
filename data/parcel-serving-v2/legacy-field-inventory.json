@@ -1,0 +1,324 @@
+{
+  "basis": [
+    "lib/parcel-page-v1.ts",
+    "supabase/rehearsal/20260711_remote_public_baseline_subset.sql"
+  ],
+  "limitations": "Committed DDL is a historical subset, not a complete live schema. Dynamic row field reads/fallbacks are expectations, not proof columns or lineage exist. Permit-row fields excluded from parcel-column inventory.",
+  "fields": [
+    {
+      "legacyField": "address",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Verified Parcel Base V2 acquisition/normalizer or authoritative jurisdiction metadata",
+      "cleanLineageAvailable": "Clean replacement available; historical population lineage remains unproven",
+      "v2Action": "INCLUDE",
+      "v2Meaning": "Packet 5 situs composition; null preserved"
+    },
+    {
+      "legacyField": "apn_norm",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Verified Parcel Base V2 acquisition/normalizer or authoritative jurisdiction metadata",
+      "cleanLineageAvailable": "Clean replacement available; historical population lineage remains unproven",
+      "v2Action": "INCLUDE",
+      "v2Meaning": "canonical APN from Packet 6 strict normalization"
+    },
+    {
+      "legacyField": "base_zone",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Independent zoning dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "city",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Verified Parcel Base V2 acquisition/normalizer or authoritative jurisdiction metadata",
+      "cleanLineageAvailable": "Clean replacement available; historical population lineage remains unproven",
+      "v2Action": "INCLUDE",
+      "v2Meaning": "authoritative SD situs-jurisdiction code; no guessed city field"
+    },
+    {
+      "legacyField": "docdate",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Recorder sales dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "generated_at",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Legacy expression/fallback; exact upstream not recovered",
+      "cleanLineageAvailable": "No historical lineage proof",
+      "v2Action": "RETIRE",
+      "v2Meaning": "replace ambiguous refresh time with separate acquisition/source/import-definition provenance"
+    },
+    {
+      "legacyField": "geom",
+      "usedByParcelV1": false,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Verified Parcel Base V2 acquisition/normalizer or authoritative jurisdiction metadata",
+      "cleanLineageAvailable": "Clean replacement available; historical population lineage remains unproven",
+      "v2Action": "INCLUDE",
+      "v2Meaning": "original exported WGS84 polygon; legacy Point meaning not inherited"
+    },
+    {
+      "legacyField": "has_nearby_active_project",
+      "usedByParcelV1": false,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Projects/permits/activity aggregates dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "last_sale_date",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Recorder sales dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "lat",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Verified Parcel Base V2 acquisition/normalizer or authoritative jurisdiction metadata",
+      "cleanLineageAvailable": "Clean replacement available; historical population lineage remains unproven",
+      "v2Action": "INCLUDE",
+      "v2Meaning": "explicit centroid/point-on-surface longitude/latitude"
+    },
+    {
+      "legacyField": "lng",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Verified Parcel Base V2 acquisition/normalizer or authoritative jurisdiction metadata",
+      "cleanLineageAvailable": "Clean replacement available; historical population lineage remains unproven",
+      "v2Action": "INCLUDE",
+      "v2Meaning": "explicit centroid/point-on-surface longitude/latitude"
+    },
+    {
+      "legacyField": "lot_area_sqft",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Verified Parcel Base V2 acquisition/normalizer or authoritative jurisdiction metadata",
+      "cleanLineageAvailable": "Clean replacement available; historical population lineage remains unproven",
+      "v2Action": "INCLUDE",
+      "v2Meaning": "replace ambiguous field with approximate_geometry_area_sqft; derived, not legacy lineage"
+    },
+    {
+      "legacyField": "nearby_active_count",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Projects/permits/activity aggregates dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "nearby_completed_count",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Projects/permits/activity aggregates dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "nearby_project_count",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Projects/permits/activity aggregates dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "neighborhood",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Community-plan/neighborhood geography dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "nucleus_use_cd",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Assessor/ownership dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "owner_category",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Assessor/ownership dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "owner_type",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Assessor/ownership dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "owner_type_category",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Assessor/ownership dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "ownerocc",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Assessor/ownership dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "sale_date",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Recorder sales dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "sewer",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Exact upstream unknown; field name is not provenance",
+      "cleanLineageAvailable": "No",
+      "v2Action": "UNKNOWN",
+      "v2Meaning": "Exclude; recover utility source/meaning before design"
+    },
+    {
+      "legacyField": "sewer_type",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Exact upstream unknown; field name is not provenance",
+      "cleanLineageAvailable": "No",
+      "v2Action": "UNKNOWN",
+      "v2Meaning": "Exclude; recover utility source/meaning before design"
+    },
+    {
+      "legacyField": "situs_community",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Community-plan/neighborhood geography dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "situs_zip",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Verified Parcel Base V2 acquisition/normalizer or authoritative jurisdiction metadata",
+      "cleanLineageAvailable": "Clean replacement available; historical population lineage remains unproven",
+      "v2Action": "INCLUDE",
+      "v2Meaning": "recorded situs ZIP"
+    },
+    {
+      "legacyField": "slug",
+      "usedByParcelV1": false,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Legacy expression/fallback; exact upstream not recovered",
+      "cleanLineageAvailable": "No historical lineage proof",
+      "v2Action": "RETIRE",
+      "v2Meaning": "compute canonical route from strict APN plus nullable composed address"
+    },
+    {
+      "legacyField": "state",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Legacy expression/fallback; exact upstream not recovered",
+      "cleanLineageAvailable": "No historical lineage proof",
+      "v2Action": "RETIRE",
+      "v2Meaning": "omit legacy fallback constant from parcel fact model"
+    },
+    {
+      "legacyField": "status_label",
+      "usedByParcelV1": false,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Projects/permits/activity aggregates dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "total_lvg_area",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Assessor/ownership dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "year_effective",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Assessor/ownership dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "zip",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Legacy expression/fallback; exact upstream not recovered",
+      "cleanLineageAvailable": "No historical lineage proof",
+      "v2Action": "RETIRE",
+      "v2Meaning": "use only known situs_zip"
+    },
+    {
+      "legacyField": "zip_code",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": false,
+      "knownSource": "Legacy expression/fallback; exact upstream not recovered",
+      "cleanLineageAvailable": "No historical lineage proof",
+      "v2Action": "RETIRE",
+      "v2Meaning": "use only known situs_zip"
+    },
+    {
+      "legacyField": "zone_family",
+      "usedByParcelV1": false,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Independent zoning dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    },
+    {
+      "legacyField": "zone_name",
+      "usedByParcelV1": true,
+      "inCommittedLegacyDdlSubset": true,
+      "knownSource": "Independent zoning dependency indicated by current usage; exact lineage unproven",
+      "cleanLineageAvailable": "No",
+      "v2Action": "DEFER",
+      "v2Meaning": "Exclude until independent dataset acquisition/import/join lineage is proven"
+    }
+  ]
+}
