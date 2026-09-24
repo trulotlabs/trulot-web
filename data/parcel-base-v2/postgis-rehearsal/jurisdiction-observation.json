@@ -1,0 +1,115 @@
+{
+  "acquisitionId": "sangis-20260924T183743Z",
+  "sourceUrl": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0/metadata",
+  "sourceMetadataSha256": "2a9a213057cd8cb4d64bb851cba9408e7367ca28b92b4731bf7a7c9742dea0b9",
+  "capturedEvidenceFragmentSha256": "02243837311c55c6e307f356fc124406bdb1e80a6502536743ed389b8e966520",
+  "field": "situs_juris",
+  "fieldDefinition": "Situs Jurisdiction.  Jurisidction in which the property is located.  Field updated weekly by query script from Tax Rate Area (TRA) number in Assessor's Master Property Record (MPR) file.  The TRA consists of a 6 digit number.  The first two digits are used to determine the jurisdiction code according to the following table:\n\nTRA:  CODE:  DESCRIPTION\n09:  CB:  Carlsbad\nNULL:  CN:  County of San Diego\n02:  CO:  Coronado\n01:  CV:  Chula Vista\n11:  DM:  Del Mar\n03:  EC:  El Cajon\n19:  EN:  Encinitas\n04:  ES:  Escondido\n14:  IB:  Imperial Beach\n15:  LG:  Lemon Grove\n05:  LM:  La Mesa\n06:  NC:  National City\n07:  OC:  Oceanside\n17:  PW:  Poway\n08:  SD:  City of San Diego\n13:  SM:  San Marcos\n18:  SO:  Solana Beach\n16:  ST:  Santee\n12:  VS:  Vista",
+  "definitionSource": "SanGIS",
+  "restCodedValueDomain": null,
+  "mappingSource": "SanGIS XML attribute definition table, not a REST coded-value domain",
+  "values": [
+    {
+      "taxRateAreaPrefix": "09",
+      "code": "CB",
+      "name": "Carlsbad"
+    },
+    {
+      "taxRateAreaPrefix": null,
+      "code": "CN",
+      "name": "County of San Diego"
+    },
+    {
+      "taxRateAreaPrefix": "02",
+      "code": "CO",
+      "name": "Coronado"
+    },
+    {
+      "taxRateAreaPrefix": "01",
+      "code": "CV",
+      "name": "Chula Vista"
+    },
+    {
+      "taxRateAreaPrefix": "11",
+      "code": "DM",
+      "name": "Del Mar"
+    },
+    {
+      "taxRateAreaPrefix": "03",
+      "code": "EC",
+      "name": "El Cajon"
+    },
+    {
+      "taxRateAreaPrefix": "19",
+      "code": "EN",
+      "name": "Encinitas"
+    },
+    {
+      "taxRateAreaPrefix": "04",
+      "code": "ES",
+      "name": "Escondido"
+    },
+    {
+      "taxRateAreaPrefix": "14",
+      "code": "IB",
+      "name": "Imperial Beach"
+    },
+    {
+      "taxRateAreaPrefix": "15",
+      "code": "LG",
+      "name": "Lemon Grove"
+    },
+    {
+      "taxRateAreaPrefix": "05",
+      "code": "LM",
+      "name": "La Mesa"
+    },
+    {
+      "taxRateAreaPrefix": "06",
+      "code": "NC",
+      "name": "National City"
+    },
+    {
+      "taxRateAreaPrefix": "07",
+      "code": "OC",
+      "name": "Oceanside"
+    },
+    {
+      "taxRateAreaPrefix": "17",
+      "code": "PW",
+      "name": "Poway"
+    },
+    {
+      "taxRateAreaPrefix": "08",
+      "code": "SD",
+      "name": "City of San Diego"
+    },
+    {
+      "taxRateAreaPrefix": "13",
+      "code": "SM",
+      "name": "San Marcos"
+    },
+    {
+      "taxRateAreaPrefix": "18",
+      "code": "SO",
+      "name": "Solana Beach"
+    },
+    {
+      "taxRateAreaPrefix": "16",
+      "code": "ST",
+      "name": "Santee"
+    },
+    {
+      "taxRateAreaPrefix": "12",
+      "code": "VS",
+      "name": "Vista"
+    }
+  ],
+  "cityScopeRule": "situs_juris = 'SD'",
+  "countyCode": "CN",
+  "nullPolicy": "Null situs_juris remains unknown. NULL TRA prefix in the source table does not authorize filling null situs_juris with CN.",
+  "overlayJurisdictionDefinition": "Overlay Jurisdiction.\nField calculated from spatial overlay of parcel centroid with JUR_MUNICIPAL Feature Class.\n\nCode; Jurisdiction\nCB; Carlsbad\nCN; Unincorporated\nCO; Coronado\nCV; Chula Vista\nDM; Del Mar\nEC; El Cajon\nEN; Encinitas\nES; Escondido\nIB; Imperial Beach\nLG; Lemon Grove\nLM; La Mesa\nNC; National City\nOC; Oceanside\nPW; Poway\nSD; San Diego\nSM; San Marcos\nSO; Solana Beach\nST; Santee\nVS; Vista",
+  "spatialComparisonPerformed": false,
+  "spatialComparisonReason": "No independently verified municipal-boundary geometry exists in the bounded local evidence.",
+  "fragmentFormatting": "Extracted attribute elements; trailing layout whitespace removed. Original full metadata bytes remain unchanged in the immutable acquisition."
+}

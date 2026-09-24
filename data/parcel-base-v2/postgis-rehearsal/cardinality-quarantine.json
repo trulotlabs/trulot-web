@@ -1,0 +1,13 @@
+{
+  "population": "Accepted base plus quarantine rows with exact 10-digit raw APNs",
+  "databaseResult": {
+    "groups": 5,
+    "rows": 10,
+    "groupsWithMultipleSourceObjectIds": 5
+  },
+  "query": "WITH identified AS (\nSELECT source_object_id,apn_norm FROM parcel_v2_rehearsal.parcel_base_sangis_v2\nUNION ALL SELECT source_object_id,apn_raw FROM parcel_v2_rehearsal.rejection WHERE apn_raw ~ '^[0-9]{10}$'\n), repeated AS (SELECT apn_norm,count(*) n,count(DISTINCT source_object_id) ids FROM identified GROUP BY apn_norm HAVING count(*)>1)\nSELECT json_build_object('groups',count(*),'rows',sum(n),'groupsWithMultipleSourceObjectIds',count(*) FILTER(WHERE ids>1)) FROM repeated",
+  "acceptedDuplicateApnGroups": 0,
+  "rawDuplicateGroupsWithIdenticalGeometry": 2,
+  "rawDuplicateGroupsWithDifferentGeometry": 3,
+  "geometryEvidence": "rejection-review.json from checksum-verified raw artifact, not repaired/quarantine geometry imported into the base"
+}

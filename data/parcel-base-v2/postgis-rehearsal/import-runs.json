@@ -1,0 +1,97 @@
+{
+  "runs": [
+    {
+      "acquisitionId": "sangis-20260924T183743Z",
+      "artifactSha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+      "reportSha256": "8d6aa8ea2b827e79573ec896ca7edae7fac053967e9ac68f1a06e734f2118ec5",
+      "rowsSha256": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+      "importerSha256": "470174754e75585a85e6a3582fb8e30b535f39e1d1c347b3fa6471422237ac5e",
+      "ddlSha256": "5b76d608ac9d3bb7c2a953fd06b01fbb2dc400704b13b19e45fab0e9cb5063b7",
+      "tool": "Python 3.14.6 CSV over psql COPY; Shapely 2.1.2",
+      "durationSeconds": 178.168,
+      "counts": {
+        "parsed": 1089758,
+        "accepted": 1088430,
+        "missingSitus": 98702,
+        "centroidOutside": 17812,
+        "rejected": 1328
+      },
+      "jurisdiction": {
+        "CB": 89580,
+        "CN": 222864,
+        "CO": 11317,
+        "CV": 71714,
+        "DM": 4793,
+        "EC": 23301,
+        "EN": 23785,
+        "ES": 38824,
+        "IB": 6210,
+        "LG": 7403,
+        "LM": 17391,
+        "NC": 10351,
+        "OC": 64041,
+        "PW": 16606,
+        "SD": 393733,
+        "SM": 28475,
+        "SO": 13107,
+        "ST": 19977,
+        "VS": 24958
+      },
+      "geometry": {
+        "Polygon": 1066526,
+        "MultiPolygon": 21904
+      },
+      "sourceOrderApnFingerprint": "e843974c9ff3436abe24d71e870fec2c0f65b275151ac188f92a80ec57cf6612",
+      "databaseRows": 1088430
+    },
+    {
+      "acquisitionId": "sangis-20260924T183743Z",
+      "artifactSha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+      "reportSha256": "8d6aa8ea2b827e79573ec896ca7edae7fac053967e9ac68f1a06e734f2118ec5",
+      "rowsSha256": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+      "importerSha256": "470174754e75585a85e6a3582fb8e30b535f39e1d1c347b3fa6471422237ac5e",
+      "ddlSha256": "5b76d608ac9d3bb7c2a953fd06b01fbb2dc400704b13b19e45fab0e9cb5063b7",
+      "tool": "Python 3.14.6 CSV over psql COPY; Shapely 2.1.2",
+      "durationSeconds": 179.772,
+      "counts": {
+        "parsed": 1089758,
+        "accepted": 1088430,
+        "missingSitus": 98702,
+        "centroidOutside": 17812,
+        "rejected": 1328
+      },
+      "jurisdiction": {
+        "CB": 89580,
+        "CN": 222864,
+        "CO": 11317,
+        "CV": 71714,
+        "DM": 4793,
+        "EC": 23301,
+        "EN": 23785,
+        "ES": 38824,
+        "IB": 6210,
+        "LG": 7403,
+        "LM": 17391,
+        "NC": 10351,
+        "OC": 64041,
+        "PW": 16606,
+        "SD": 393733,
+        "SM": 28475,
+        "SO": 13107,
+        "ST": 19977,
+        "VS": 24958
+      },
+      "geometry": {
+        "Polygon": 1066526,
+        "MultiPolygon": 21904
+      },
+      "sourceOrderApnFingerprint": "e843974c9ff3436abe24d71e870fec2c0f65b275151ac188f92a80ec57cf6612",
+      "databaseRows": 1088430
+    }
+  ],
+  "directories": [
+    "/private/tmp/trulot-packet7-l_dqtez0/run1",
+    "/private/tmp/trulot-packet7-l_dqtez0/run2"
+  ],
+  "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-v2-postgis/import.py BOUNDARY_JSON ACQUISITION_DIR PACKET6_PASS1_DIR NEW_RUN_DIR"
+}

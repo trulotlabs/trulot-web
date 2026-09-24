@@ -126,7 +126,7 @@ actual versioned SanGIS artifact + acquisition receipt
 
 Before any production import: obtain separate authorization; retain exact source/export/metadata/terms bytes and checksums; settle consistent-snapshot/pagination/versioning; validate actual selected field schema/types/nulls, Z and CRS conversion; inspect duplicate/APN/stacked distribution; approve row quarantine/reconciliation and jurisdiction scope; recover or define full isolated destination DDL and deterministic importer; independently verify source counts, samples and geometry accuracy; review enrichment join cardinality and serving compatibility; establish an isolated staging/recovery procedure under the existing production freeze. The fixture-only harness is not a bulk loader or permission to import.
 
-No new V2 entry is placed in the live V1 manifest registry. Packet 6 retains a real V2 source artifact and offline validation outputs, but no V2 database or serving dataset exists yet. V1 classifications remain unchanged. Public source identity and a future contract are not evidence of V1 population reproducibility.
+No new V2 entry is placed in the live V1 manifest registry. Packet 6 retains a real V2 source artifact and offline validation outputs, and Packet 7 subsequently proves an isolated local PostGIS import; no production V2 base or serving dataset exists. V1 classifications remain unchanged. Public source identity and a future contract are not evidence of V1 population reproducibility.
 
 ## Packet 5 acceptance results
 
@@ -141,3 +141,9 @@ The [complete report](sangis-parcel-acquisition-rehearsal.md) records acquisitio
 The export API requests `replicaSR=4326` and has no `returnZ` argument. Receipt `request.returnZ=null` now explicitly represents that absence; `true` remains forbidden and synthetic receipts still require `false`. Metadata-only receipt validation is factored out so a 3.9 GB artifact can be hashed and parsed in a bounded stream. Property normalization, APN rules, duplicate quarantine, geometry validation, stacking policy and production boundaries are unchanged. The contract's `FUTURE_CONTRACT_ONLY`/`productionReady=false` status remains a serving/import boundary, not a denial of the separately documented source acquisition.
 
 REAL_SANGIS_ACQUISITION_REHEARSAL_PASS
+
+## Packet 7: isolated database import and scope
+
+The [PostGIS rehearsal report](parcel-base-v2-postgis-rehearsal.md) records a countywide accepted base of 1,088,430 rows, with 1,328 exclusions retained in separate audit. The authoritative SanGIS XML defines `SD` as City of San Diego; the current accepted `situs_juris='SD'` subset contains 393,733 APNs, including 126,239 stacked rows. Preserve the countywide base and apply city product scope downstream. The historical 393,364-row claim is only partially explained; its exact filter and the remaining 369-row delta are unproven.
+
+Acquisition-scoped source object ID is the rehearsal primary key. Canonical APN remains a nonunique indexed business identifier, because accepted-only uniqueness follows deliberate quarantine of five repeated-APN source groups. No stacked APNs are deduplicated. Serving/enrichment design and production readiness remain separate; no V1 relation or historical classification changes.

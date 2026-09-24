@@ -1,0 +1,18 @@
+{
+  "schemaDroppedAndRecreated": true,
+  "sameImmutableArtifact": true,
+  "reconciliationReportsByteIdentical": true,
+  "reconciliationSha256": "502c62ed889475284ad1799b277f0c963cb8d43dfeb69e78041efd264a8ed652",
+  "fullDatabaseRowFingerprint": "8bdf89447fd77bd616a882db15875e8674b999051a1954caf1d4cec8a6c6df45",
+  "allImportedRowsComparedByOrderedSerialization": true,
+  "sameCounts": true,
+  "sameJurisdictions": true,
+  "sameKeysAndStacks": true,
+  "sameSamples": true,
+  "importerAndDdlHashesIdentical": true,
+  "durationsSeconds": [
+    178.168,
+    179.772
+  ],
+  "decision": "PARCEL_BASE_V2_DB_REHEARSAL_PASS"
+}

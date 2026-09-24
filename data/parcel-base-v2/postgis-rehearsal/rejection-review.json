@@ -1,0 +1,117 @@
+{
+  "acquisitionId": "sangis-20260924T183743Z",
+  "rejectedRows": 1328,
+  "reasonCombinations": {
+    "INVALID_GEOMETRY": 301,
+    "INVALID_APN": 1004,
+    "INVALID_APN + INVALID_GEOMETRY": 12,
+    "DUPLICATE_APN_OR_OBJECTID": 10,
+    "UNCLOSED_OR_SHORT_RING": 1
+  },
+  "nullApnEvidence": {
+    "apnNull": 1016,
+    "situsJurisNull": 1016,
+    "situsAddressNull": 1016
+  },
+  "geometryValidityReasons": {
+    "Ring Self-intersection": 169,
+    "Self-intersection": 144,
+    "Too few points in geometry component": 1
+  },
+  "ringDetails": [
+    {
+      "sourceObjectId": 821650,
+      "rings": [
+        {
+          "positions": 3,
+          "closed": true
+        },
+        {
+          "positions": 18,
+          "closed": true
+        }
+      ],
+      "geosValidity": "Too few points in geometry component"
+    }
+  ],
+  "duplicateApnGroups": {
+    "943e359367b88a489514d3ca1e059f629681a127badb80977d9d61801ef49832": [
+      {
+        "sourceObjectId": 664941,
+        "parcelId": 743711,
+        "geometrySha256": "f22514624631d25cb1240430715d839b18ab5a32f84d0b14965428c72df6025c",
+        "jurisdiction": "ST"
+      },
+      {
+        "sourceObjectId": 664942,
+        "parcelId": 743711,
+        "geometrySha256": "f22514624631d25cb1240430715d839b18ab5a32f84d0b14965428c72df6025c",
+        "jurisdiction": "ST"
+      }
+    ],
+    "3bb92a63d4f2e401124591bd4d350620c6a0b95d2f87a3273eccecf9bd85f44b": [
+      {
+        "sourceObjectId": 845155,
+        "parcelId": 5105627,
+        "geometrySha256": "94563d5760043d4069671d870c0ccdcaf39b177b5229680b3a5e2b81a07cb9a5",
+        "jurisdiction": "CN"
+      },
+      {
+        "sourceObjectId": 1087342,
+        "parcelId": 10018248,
+        "geometrySha256": "8a79ccccde7fe6761b70c7b404db42d0b71e5809fd625a58ac498fc2ae71587f",
+        "jurisdiction": "CN"
+      }
+    ],
+    "0db4471be802ef630b7b942577751d58f274d8a8f4c9a2cb294f34b70505a73f": [
+      {
+        "sourceObjectId": 1013044,
+        "parcelId": 5313736,
+        "geometrySha256": "6eb173b15a367a08a1160ad43e74ee023d2a13d5bfe491fd9ffec39760c04b20",
+        "jurisdiction": "SD"
+      },
+      {
+        "sourceObjectId": 1089066,
+        "parcelId": 10019683,
+        "geometrySha256": "6dfbf83c93e6fbd0e4bd05427549fedc79e408708efc7d6b7c44d9a3c1ba9c16",
+        "jurisdiction": "SD"
+      }
+    ],
+    "aea666c7b464ab1cbe8327da0657a297385f43a1463c7570c7f48f5b37bb91eb": [
+      {
+        "sourceObjectId": 1050623,
+        "parcelId": 5371232,
+        "geometrySha256": "fde92bfd841def4850925283a5bf9386b8d5f8994b835e0c9d4c21594751b611",
+        "jurisdiction": "CV"
+      },
+      {
+        "sourceObjectId": 1050624,
+        "parcelId": 5371232,
+        "geometrySha256": "fde92bfd841def4850925283a5bf9386b8d5f8994b835e0c9d4c21594751b611",
+        "jurisdiction": "CV"
+      }
+    ],
+    "f89385450840b453e227e068e35321aca4145cd9eaf894b7d62580cf7e7e4a26": [
+      {
+        "sourceObjectId": 1086830,
+        "parcelId": 10016271,
+        "geometrySha256": "75e627892cfd94d9aec697dccbd00bb64ccc686812f3fa922edd31b18385a35a",
+        "jurisdiction": "CV"
+      },
+      {
+        "sourceObjectId": 1086844,
+        "parcelId": 10016288,
+        "geometrySha256": "daf5456790675782c5a8e0ec7d3fa9ffa3dde09029ddf5b4b9d066f62f4ae96f",
+        "jurisdiction": "CV"
+      }
+    ]
+  },
+  "automaticRepairPerformed": false,
+  "acceptedPopulationChanged": false,
+  "interpretation": {
+    "INVALID_APN": "All 1,016 are source-null APNs, not malformed numeric strings. Their precise source purpose is unproven; unsupported by the explicit APN-bearing base contract, not evidence of padding/normalizer failure.",
+    "INVALID_GEOMETRY": "Raw source geometry fails GEOS validity; retained quarantine, no repair. Domain/survey correctness cannot be inferred.",
+    "UNCLOSED_OR_SHORT_RING": "Original ring structure fails explicit contract; raw ring statistics recorded, no autoclosing.",
+    "DUPLICATE_APN_OR_OBJECTID": "Ten rows in repeated-APN groups. Source identity remains distinct. Could be legitimate multi-row representation; resolving APN business identity needs separate adjudication. Existing quarantine is intentional, not silent deduplication."
+  }
+}

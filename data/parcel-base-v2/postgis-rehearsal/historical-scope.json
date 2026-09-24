@@ -1,0 +1,35 @@
+{
+  "decision": "HISTORICAL_SCOPE_PARTIALLY_EXPLAINED",
+  "historicalEvidence": {
+    "commit": "23cbcc4351c4734a980e3303635758537701b51e",
+    "commitMessage": "Ship parcel_page_api_v2 \u2014 393K real parcels + 11 Waypoint projects\n\nBackend:\n- Migrated from stale 25K parcel_page_api_v1 \u2192 fresh 393,364 rows in parcel_page_api_v2\n- Clean contract: apn_norm PK, address, zone_name, lot_area_sqft, nearby_active/completed/stalled_count, nearest_active_distance_ft, has_nearby_active_project, page_title, meta_description, status_label, slug\n- Source: Mac Studio Postgres 17 (core.parcels + core.parcel_nearby_development_summary_v1) pushed via service_role key\n- Row counts verified: 393,364 on Supabase, 0 failures\n\nFrontend:\n- /parcel/[apn]/[slug] queries parcel_page_api_v2\n- Removed Narrative vs Reality section (not in V1 doctrine, no data)\n- Replaced Development Potential placeholder with real Nearby Development Activity (Total/Active/Completed/Stalled counts + nearest-distance)\n- Project State uses engine-derived has_nearby_active_project / has_nearby_completed_project (not inference over permits)\n- sitemap.ts now iterates v2\n- Homepage example parcel: 740 47th St (Brian's 13-ADU project, Active nearby)\n\nAll 11 Waypoint projects have addresses, slugs, and correct status labels.\nRemaining 393,353 parcels render with APN as title (addresses pending raw.sd_parcels re-export).\n\n",
+    "claimDate": "2026-04-19",
+    "claimedServingRows": 393364,
+    "namedSources": [
+      "core.parcels",
+      "core.parcel_nearby_development_summary_v1"
+    ],
+    "historicalFilterRecovered": false,
+    "historicalSourceArtifactRecovered": false,
+    "exampleApn": "5470501600",
+    "exampleEvidence": "app/page.tsx at historical commit, link /parcel/5470501600/740-47th-st"
+  },
+  "currentSourceCityRows": 393806,
+  "currentAcceptedCityRows": 393733,
+  "cityRejected": {
+    "rows": 73,
+    "INVALID_GEOMETRY": 71,
+    "DUPLICATE_APN_OR_OBJECTID": 2
+  },
+  "acceptedMinusHistorical": 369,
+  "rawMinusHistorical": 442,
+  "currentExampleMembership": {
+    "sourceObjectId": 2985,
+    "apn": "5470501600",
+    "situsJuris": "SD"
+  },
+  "supportedConclusion": "Authoritative City of San Diego situs-jurisdiction scope yields a similar population, and the historical example remains in that scope. Exact prior filter/population cannot be reconstructed from preserved evidence.",
+  "unexplainedDelta": "369 accepted current rows above historical claim. A source-vintage change, previous import behavior or different representation could explain it, but none is proven by an exact historical artifact/importer.",
+  "scopeRecommendation": "Preserve accepted countywide base; apply situs_juris = 'SD' downstream for a City of San Diego product. This is an authoritative current jurisdiction rule, not a recovered historical filter.",
+  "boundaryComparison": "Skipped: no independently verified local municipal boundary geometry; source overlay_juris is not used as a substitute or imported enrichment."
+}

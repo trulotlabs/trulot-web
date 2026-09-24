@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<jurisdictionEvidence><attr>
+
+                <attrlabl Sync="TRUE">SITUS_JURIS</attrlabl>
+
+                <attalias Sync="TRUE">SITUS_JURIS</attalias>
+
+                <attrtype Sync="TRUE">String</attrtype>
+
+                <attwidth Sync="TRUE">2</attwidth>
+
+                <atprecis Sync="TRUE">0</atprecis>
+
+                <attscale Sync="TRUE">0</attscale>
+
+                <attrdef>Situs Jurisdiction.  Jurisidction in which the property is located.  Field updated weekly by query script from Tax Rate Area (TRA) number in Assessor's Master Property Record (MPR) file.  The TRA consists of a 6 digit number.  The first two digits are used to determine the jurisdiction code according to the following table:
+
+TRA:  CODE:  DESCRIPTION
+09:  CB:  Carlsbad
+NULL:  CN:  County of San Diego
+02:  CO:  Coronado
+01:  CV:  Chula Vista
+11:  DM:  Del Mar
+03:  EC:  El Cajon
+19:  EN:  Encinitas
+04:  ES:  Escondido
+14:  IB:  Imperial Beach
+15:  LG:  Lemon Grove
+05:  LM:  La Mesa
+06:  NC:  National City
+07:  OC:  Oceanside
+17:  PW:  Poway
+08:  SD:  City of San Diego
+13:  SM:  San Marcos
+18:  SO:  Solana Beach
+16:  ST:  Santee
+12:  VS:  Vista</attrdef>
+
+                <attrdefs>SanGIS</attrdefs>
+
+            </attr>
+
+            <attr>
+
+                <attrlabl Sync="TRUE">OVERLAY_JURIS</attrlabl>
+
+                <attalias Sync="TRUE">OVERLAY_JURIS</attalias>
+
+                <attrtype Sync="TRUE">String</attrtype>
+
+                <attwidth Sync="TRUE">2</attwidth>
+
+                <atprecis Sync="TRUE">0</atprecis>
+
+                <attscale Sync="TRUE">0</attscale>
+
+                <attrdef>Overlay Jurisdiction.
+Field calculated from spatial overlay of parcel centroid with JUR_MUNICIPAL Feature Class.
+
+Code; Jurisdiction
+CB; Carlsbad
+CN; Unincorporated
+CO; Coronado
+CV; Chula Vista
+DM; Del Mar
+EC; El Cajon
+EN; Encinitas
+ES; Escondido
+IB; Imperial Beach
+LG; Lemon Grove
+LM; La Mesa
+NC; National City
+OC; Oceanside
+PW; Poway
+SD; San Diego
+SM; San Marcos
+SO; Solana Beach
+ST; Santee
+VS; Vista</attrdef>
+
+                <attrdefs>SanGIS</attrdefs>
+
+            </attr>
+
+            </jurisdictionEvidence>

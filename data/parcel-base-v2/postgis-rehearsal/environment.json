@@ -1,0 +1,15 @@
+{
+  "directory": "/private/tmp/trulot-packet7-l_dqtez0",
+  "socket": "/private/tmp/trulot-packet7-l_dqtez0/socket",
+  "port": 55477,
+  "database": "trulot_packet7",
+  "user": "ops",
+  "schema": "parcel_v2_rehearsal",
+  "versions": "CREATE EXTENSION\nPostgreSQL 17.9 (Homebrew) on aarch64-apple-darwin25.2.0, compiled by Apple clang version 17.0.0 (clang-1700.6.3.2), 64-bit\nPOSTGIS=\"3.6.3 0\" [EXTENSION] PGSQL=\"170\" GEOS=\"3.14.1-CAPI-1.20.5\" PROJ=\"9.8.1 NETWORK_ENABLED=OFF URL_ENDPOINT=https://cdn.proj.org USER_WRITABLE_DIRECTORY=/Users/ops/Library/Application Support/proj DATABASE_PATH=/opt/homebrew/Cellar/proj/9.8.1/share/proj/proj.db\" (compiled against PROJ 9.8.1) LIBXML=\"2.15.2\" LIBJSON=\"0.18\" LIBPROTOBUF=\"1.5.2\" WAGYU=\"0.5.0 (Internal)\"\n\n",
+  "createdFor": "TruLot Packet 7 disposable isolated rehearsal",
+  "status": "STOPPED_AFTER_SUCCESSFUL_REHEARSAL",
+  "tcpListener": false,
+  "schemaRebuiltTwice": true,
+  "largeFilesCommitted": false,
+  "disposal": "Cluster is stopped. Remove only the dedicated directory after retaining any desired evidence; immutable source acquisition is separate."
+}
