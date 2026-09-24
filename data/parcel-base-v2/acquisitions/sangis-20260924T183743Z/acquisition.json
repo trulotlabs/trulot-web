@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "acquisitionId": "sangis-20260924T183743Z",
+  "artifactPathIdentifier": "/Users/ops/trulot-data/parcel-base-v2/sangis-20260924T183743Z",
+  "receipt": {
+    "schemaVersion": 1,
+    "datasetId": "parcel_base_sangis_v2",
+    "evidenceKind": "acquired-source",
+    "publisher": "SanGIS",
+    "sourceUrl": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0",
+    "metadataUrl": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0/metadata",
+    "acquiredAt": "2026-09-24T18:43:39.950969+00:00",
+    "sourceReported": {
+      "warehouseUpload": {
+        "value": "2026-08-31",
+        "evidenceUrl": "https://gis.sangis.org/Documents/download/Layer_Update_Report.pdf"
+      },
+      "serviceModified": {
+        "value": "2026-09-02T15:10:55.582000+00:00",
+        "evidenceUrl": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0"
+      },
+      "currency": {
+        "value": "2026-08-29T00:00:00",
+        "basis": "metadata-temporal-extent",
+        "evidenceUrl": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0/metadata",
+        "fieldLocator": "metadata/dataIdInfo/dataExt/tempEle/TempExtent/exTemp/TM_Instant/tmPosition"
+      }
+    },
+    "metadataContentSha256": "2a9a213057cd8cb4d64bb851cba9408e7367ca28b92b4731bf7a7c9742dea0b9",
+    "contentSha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+    "byteSize": 3936218739,
+    "originalFilename": "_ags_GeoJson_EB07F5BCE8A34D208D2A6A7801151FB3.geojson",
+    "mediaType": "application/geo+json",
+    "acquisitionMethod": "public-service-export",
+    "licenseUseNote": "SanGIS published EULA in captured before-item.json licenseInfo; derived products must not be represented as original SanGIS data. Terms reference https://gis.sangis.org/sanportal/apps/storymaps/stories/d26146d84e834ff6bcd58e4e620a983a",
+    "operatorToolVersion": "Python 3.14.6 urllib; packet6-start-export.py and packet6-download.py archived with hashes",
+    "nativeSourceCrs": "EPSG:2230",
+    "artifactCrs": "EPSG:4326",
+    "request": {
+      "outSR": 4326,
+      "returnZ": null,
+      "scope": "countywide-snapshot"
+    }
+  },
+  "sourceFeatureCount": 1089758,
+  "methodRationale": "No authoritative standalone downloadable archive was linked to the verified item. Supported full service export uses syncModel=none, layers=0, queryOption=all, useGeometry=false, includeRelated=false; no row/spatial filter or pagination.",
+  "sourceItemId": "032a5dcf654c4ccbb18711ad8a0ee754",
+  "sourceLayerId": 0,
+  "exportRequest": {
+    "acquisitionId": "sangis-20260924T183743Z",
+    "startedAt": "2026-09-24T18:37:43.885989+00:00",
+    "url": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/createReplica",
+    "method": "POST",
+    "parameters": {
+      "f": "json",
+      "replicaName": "sangis-20260924T183743Z",
+      "layers": "0",
+      "layerQueries": "{\"0\":{\"queryOption\":\"all\",\"useGeometry\":false,\"includeRelated\":false}}",
+      "syncModel": "none",
+      "dataFormat": "geojson",
+      "replicaSR": "4326",
+      "transportType": "esriTransportTypeURL",
+      "returnAttachments": "false",
+      "async": "true"
+    }
+  },
+  "exportResult": {
+    "path": "_ags_GeoJson_EB07F5BCE8A34D208D2A6A7801151FB3.geojson",
+    "downloadUrl": "https://geo.sandag.org/server/rest/directories/arcgisjobs/system/synctools_gpserver/jc19229f9226742b5a10190e52cf33700/scratch/_ags_GeoJson_EB07F5BCE8A34D208D2A6A7801151FB3.geojson",
+    "byteSize": 3936218739,
+    "sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+    "acquiredAt": "2026-09-24T18:43:39.950969+00:00",
+    "http": {
+      "Date": "Thu, 24 Sep 2026 18:42:52 GMT",
+      "Content-Type": "application/octet-stream",
+      "Content-Length": "3936218739",
+      "Connection": "close",
+      "Content-Security-Policy": "script-src 'self';",
+      "X-Content-Type-Options": "nosniff",
+      "Vary": "Origin",
+      "Cache-Control": "max-age=86400",
+      "Server": "",
+      "ETag": "\"1a0d4b9f977\"",
+      "Accept-Ranges": "bytes"
+    }
+  },
+  "requestSemantics": "receipt.request.outSR is requested via replicaSR=4326; returnZ=null means this export API has no such argument. Every row still must pass Packet 5 two-dimensional validation.",
+  "sourceStableAcrossExport": true,
+  "files": [
+    {
+      "path": "_ags_GeoJson_EB07F5BCE8A34D208D2A6A7801151FB3.geojson",
+      "byteSize": 3936218739,
+      "sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544"
+    },
+    {
+      "path": "after-count.json",
+      "byteSize": 17,
+      "sha256": "ada0c46b9366367b252c73507e69f5bab3f793a30916c34389a57242a307b7c4"
+    },
+    {
+      "path": "after-layer.json",
+      "byteSize": 28294,
+      "sha256": "aca1e27cddc82ef83cfe9f805cc1178856d9d4cd258d6061f8897a296c159147"
+    },
+    {
+      "path": "before-count.json",
+      "byteSize": 17,
+      "sha256": "ada0c46b9366367b252c73507e69f5bab3f793a30916c34389a57242a307b7c4"
+    },
+    {
+      "path": "before-item.json",
+      "byteSize": 16171,
+      "sha256": "8adc7e80fdc3b90a83557e814b8b149f530bdcc69d05bb349b8833698b30eb1b"
+    },
+    {
+      "path": "before-layer.json",
+      "byteSize": 28294,
+      "sha256": "aca1e27cddc82ef83cfe9f805cc1178856d9d4cd258d6061f8897a296c159147"
+    },
+    {
+      "path": "before-metadata.xml",
+      "byteSize": 119297,
+      "sha256": "2a9a213057cd8cb4d64bb851cba9408e7367ca28b92b4731bf7a7c9742dea0b9"
+    },
+    {
+      "path": "before-related.json",
+      "byteSize": 106,
+      "sha256": "5c4e124a215cbf05c5a25d3f16297031a26bc9855a48140c3ae0f6aae53e58bf"
+    },
+    {
+      "path": "before-service.json",
+      "byteSize": 9151,
+      "sha256": "99c9852eef57dcb086743524ac289cf0f27d10bf0539da832b224a3cf7f4e1ee"
+    },
+    {
+      "path": "download.json",
+      "byteSize": 833,
+      "sha256": "0948039ae62e0ec6f40b72da3ade36719557cbc1ceb5540844d66cb9594ae938"
+    },
+    {
+      "path": "executed-discover.py",
+      "byteSize": 1666,
+      "sha256": "7d67773f4a32c161c17b2aa1fcbf6b03b67903717dbe2069e650e30f7c8d96b3"
+    },
+    {
+      "path": "executed-download.py",
+      "byteSize": 2253,
+      "sha256": "8b5b554e8676bd6d7738c195df63e7523b9734fe0b1c68a087f42ec2fa5520de"
+    },
+    {
+      "path": "executed-start-export.py",
+      "byteSize": 1847,
+      "sha256": "e3ed88eff7887d4f2ee233dc2c11d6c100ff9f73ec286b453b99f085231dc432"
+    },
+    {
+      "path": "export-http.json",
+      "byteSize": 549,
+      "sha256": "319db498eda7dc8b1a9e272546465ed27062f7e04a3f7622a722d9740cdefc7b"
+    },
+    {
+      "path": "export-request.json",
+      "byteSize": 606,
+      "sha256": "2f3a22ef7f1a439bb19fc4fd15e811b355f55909178bbfa1af3bd7e9043f2dad"
+    },
+    {
+      "path": "export-response.json",
+      "byteSize": 127,
+      "sha256": "cacefabb097466e9a81c94b95aba513a5d8a16e76a0e19e8b73c8b689cbcff63"
+    },
+    {
+      "path": "export-status-000.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-001.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-002.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-003.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-004.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-005.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-006.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-007.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-008.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-009.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-010.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-011.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-012.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-013.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-014.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-015.json",
+      "byteSize": 191,
+      "sha256": "c482e5a7a4af62e57d5bfe2cc84c337432c6078560fe7a1bc3c7d6a7cb7f38d0"
+    },
+    {
+      "path": "export-status-016.json",
+      "byteSize": 203,
+      "sha256": "3dd7c8fcdbf486e36a76d80e85fa3b1fb21d0311c40e2cf3b4b0ece604ba0012"
+    },
+    {
+      "path": "export-status-017.json",
+      "byteSize": 402,
+      "sha256": "2722736d80877a616e7a97a1cf7daa46bd9bfe49ae9e959c588773dc0679809f"
+    },
+    {
+      "path": "source-objectids-http.json",
+      "byteSize": 812,
+      "sha256": "599c6dda80352a1077b7fbc83b476ab375421c383b3cdc77f97f3614eb8e8cc8"
+    },
+    {
+      "path": "source-objectids.json",
+      "byteSize": 7607036,
+      "sha256": "4a07b8e1815efb654cfba25c96f4a7f1483f811eb26470b659f83ea733a0b198"
+    },
+    {
+      "path": "warehouse-layer-updates.pdf",
+      "byteSize": 309143,
+      "sha256": "149b41c0f1bebd22283b2a1e66dd643c6d99fceb7db64434a7f5d0c902cec0ae"
+    }
+  ],
+  "aggregateSha256": "8d4dd54fb20ae25dd3fbdccaa8adec0fab1f6e74ff3164b3027204085491a420",
+  "aggregateHashRule": "SHA256 UTF-8 JSON of files sorted by path; sort_keys=True and separators=(comma,colon); each entry contains path,byteSize,sha256."
+}

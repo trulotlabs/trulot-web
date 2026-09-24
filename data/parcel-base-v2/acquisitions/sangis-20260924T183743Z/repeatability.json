@@ -1,0 +1,38 @@
+{
+  "acquisitionId": "sangis-20260924T183743Z",
+  "sourceArtifact": {
+    "sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+    "byteSize": 3936218739
+  },
+  "independentPassDirectories": [
+    "/Users/ops/trulot-data/parcel-base-v2/sangis-20260924T183743Z-pass1",
+    "/Users/ops/trulot-data/parcel-base-v2/sangis-20260924T183743Z-pass2"
+  ],
+  "reportsByteIdentical": true,
+  "reportHash": {
+    "sha256": "8d6aa8ea2b827e79573ec896ca7edae7fac053967e9ac68f1a06e734f2118ec5",
+    "byteSize": 47181
+  },
+  "rowOutputsByteIdentical": true,
+  "outputHashes": {
+    "rows.ndjson.gz": {
+      "sha256": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+      "byteSize": 106114287
+    },
+    "rejected.ndjson.gz": {
+      "sha256": "f04e55fa5b60a5fce7112495cbd6c0981ae8c47d431a16a5524c515f27e50522",
+      "byteSize": 135091
+    }
+  },
+  "compared": [
+    "input count",
+    "accepted",
+    "rejected",
+    "duplicates",
+    "geometry",
+    "stacked distributions",
+    "deterministic samples",
+    "all normalized row bytes"
+  ],
+  "decision": "REAL_SANGIS_ACQUISITION_REHEARSAL_PASS"
+}

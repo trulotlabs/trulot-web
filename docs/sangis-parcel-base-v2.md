@@ -1,6 +1,6 @@
 # SanGIS parcel base: recovery decision and V2 contract
 
-Packet 5 baseline: `5bea2257c46ba6290b197c93f59061093c68caeb` on `codex/trulot-parcel-v1-hardening`. Public metadata observed September 24, 2026; precise observation time and document digests are in `data/parcel-base-v2/source-observation.json`. This is metadata research and an offline fixture proof, not acquisition of SanGIS parcel records.
+Packet 5 baseline: `5bea2257c46ba6290b197c93f59061093c68caeb` on `codex/trulot-parcel-v1-hardening`. Public metadata observed September 24, 2026; precise observation time and document digests are in `data/parcel-base-v2/source-observation.json`. Packet 5 was metadata research and an offline fixture proof. Packet 6 subsequently acquired and twice validated a complete real snapshot; see [the acquisition rehearsal](sangis-parcel-acquisition-rehearsal.md).
 
 ## Decision
 
@@ -126,10 +126,18 @@ actual versioned SanGIS artifact + acquisition receipt
 
 Before any production import: obtain separate authorization; retain exact source/export/metadata/terms bytes and checksums; settle consistent-snapshot/pagination/versioning; validate actual selected field schema/types/nulls, Z and CRS conversion; inspect duplicate/APN/stacked distribution; approve row quarantine/reconciliation and jurisdiction scope; recover or define full isolated destination DDL and deterministic importer; independently verify source counts, samples and geometry accuracy; review enrichment join cardinality and serving compatibility; establish an isolated staging/recovery procedure under the existing production freeze. The fixture-only harness is not a bulk loader or permission to import.
 
-No new V2 entry is placed in the live V1 manifest registry: no V2 dataset exists yet. V1 classifications remain unchanged. Public source identity and a future contract are not evidence of V1 population reproducibility.
+No new V2 entry is placed in the live V1 manifest registry. Packet 6 retains a real V2 source artifact and offline validation outputs, but no V2 database or serving dataset exists yet. V1 classifications remain unchanged. Public source identity and a future contract are not evidence of V1 population reproducibility.
 
 ## Packet 5 acceptance results
 
 The 23 receipt tests and 32 parcel-source tests pass. Existing Parcel Truth (19), overlay (43), SDA (6 groups), foundation (25), production-freeze (18), static foundation verification, dry-run parser fixtures and production-QA adapter fixtures pass. `next typegen`, `tsc --noEmit --incremental false`, ESLint over the three new JavaScript files and Git whitespace checks pass. The Python helper is exercised by the geometry fixture tests.
 
 Global `npm run lint` retains the pre-existing `supabase/functions/nearby-parcels/index.ts:125:67` `no-explicit-any` error and six existing warnings. No existing runtime, migration, SQL, manifest or package/dependency file changed. Original checkout preservation was checked against Git branch/HEAD/status/diffs/untracked files and all 57 tracked/nonignored file hashes.
+
+## Packet 6: real acquisition rehearsal
+
+The [complete report](sangis-parcel-acquisition-rehearsal.md) records acquisition `sangis-20260924T183743Z`: 1,089,758 source/acquired/parsed features, 1,088,430 accepted, 1,328 quarantined, zero merged. Two independent complete runs produced byte-identical reports and compressed row artifacts. The receipt, source metadata inventory, aggregate report, source-wide stack audit, first-three and representative samples, and repeatability evidence are under `data/parcel-base-v2/acquisitions/sangis-20260924T183743Z/`. Large raw and derived files remain outside Git.
+
+The export API requests `replicaSR=4326` and has no `returnZ` argument. Receipt `request.returnZ=null` now explicitly represents that absence; `true` remains forbidden and synthetic receipts still require `false`. Metadata-only receipt validation is factored out so a 3.9 GB artifact can be hashed and parsed in a bounded stream. Property normalization, APN rules, duplicate quarantine, geometry validation, stacking policy and production boundaries are unchanged. The contract's `FUTURE_CONTRACT_ONLY`/`productionReady=false` status remains a serving/import boundary, not a denial of the separately documented source acquisition.
+
+REAL_SANGIS_ACQUISITION_REHEARSAL_PASS

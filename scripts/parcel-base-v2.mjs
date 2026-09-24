@@ -34,13 +34,11 @@ export const receiptSchema = z.object({
   acquisitionMethod: z.enum(["generated-fixture", "public-service-export"]),
   licenseUseNote: text, operatorToolVersion: text,
   nativeSourceCrs: z.literal("EPSG:2230"), artifactCrs: z.literal("EPSG:4326"),
-  request: z.object({ outSR: z.literal(4326), returnZ: z.literal(false), scope: z.enum(["synthetic", "countywide-snapshot"]) }).strict(),
+  request: z.object({ outSR: z.literal(4326), returnZ: z.union([z.literal(false), z.null()]), scope: z.enum(["synthetic", "countywide-snapshot"]) }).strict(),
 }).strict();
 
-export function validateReceipt(receipt, bytes, { metadataBytes = null, allowSynthetic = false } = {}) {
+export function validateReceiptMetadata(receipt, { metadataBytes = null } = {}) {
   const parsed = receiptSchema.parse(receipt);
-  assert.equal(parsed.byteSize, bytes.length, "Receipt byte size mismatch");
-  assert.equal(parsed.contentSha256, sha256(bytes), "Receipt content checksum mismatch");
   assert.equal(parsed.metadataUrl, `${sourceUrl}/metadata`, "Unexpected metadata source");
   const currency = parsed.sourceReported.currency;
   assert.equal(currency.value === null, currency.basis === "unknown", "Currency needs explicit source temporal-extent evidence or unknown");
@@ -61,6 +59,14 @@ export function validateReceipt(receipt, bytes, { metadataBytes = null, allowSyn
   } else {
     assert.equal(currency.fieldLocator, null, "Unknown currency has no asserted locator");
   }
+  return parsed;
+}
+
+export function validateReceipt(receipt, bytes, { metadataBytes = null, allowSynthetic = false } = {}) {
+  const parsed = validateReceiptMetadata(receipt, { metadataBytes });
+  assert.equal(parsed.byteSize, bytes.length, "Receipt byte size mismatch");
+  assert.equal(parsed.contentSha256, sha256(bytes), "Receipt content checksum mismatch");
+  const knownDates = Object.values(parsed.sourceReported).filter((v) => v.value !== null);
   const artifact = JSON.parse(bytes.toString("utf8"));
   if (parsed.evidenceKind === "synthetic-fixture") {
     assert.ok(allowSynthetic && artifact.fixtureOnly === true, "Synthetic receipt cannot establish a real acquisition");
@@ -68,6 +74,7 @@ export function validateReceipt(receipt, bytes, { metadataBytes = null, allowSyn
     assert.equal(parsed.sourceUrl, "urn:trulot:fixture:parcel-base-v2");
     assert.equal(parsed.acquisitionMethod, "generated-fixture");
     assert.equal(parsed.request.scope, "synthetic");
+    assert.equal(parsed.request.returnZ, false, "Fixture profile requires explicit returnZ=false");
     assert.equal(knownDates.length, 0, "Synthetic receipt must not assert source currency");
   } else {
     assert.notEqual(artifact.fixtureOnly, true, "Fixture cannot be relabeled as acquired source");
