@@ -36,15 +36,18 @@ export default function SearchBox() {
   const [results, setResults] = useState<Result[]>([]);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
+  const [sourceUnavailable, setSourceUnavailable] = useState(false);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const search = useCallback(async (q: string) => {
     if (q.trim().length < 3) {
       setResults([]);
       setSearched(false);
+      setSourceUnavailable(false);
       return;
     }
     setLoading(true);
+    setSourceUnavailable(false);
     try {
       const res = await fetch(`/api/search?q=${encodeURIComponent(q.trim())}`, {
         redirect: 'follow',
@@ -55,6 +58,8 @@ export default function SearchBox() {
       setSearched(true);
     } catch {
       setResults([]);
+      setSearched(false);
+      setSourceUnavailable(true);
     } finally {
       setLoading(false);
     }
@@ -99,6 +104,10 @@ export default function SearchBox() {
 
       {!loading && searched && results.length === 0 && (
         <div className="mt-3 text-sm text-slate-400 text-center">No parcels found. Try a street name or partial address.</div>
+      )}
+
+      {!loading && sourceUnavailable && (
+        <div className="mt-3 text-sm text-amber-700 text-center">Parcel search is temporarily unavailable. Please try again shortly.</div>
       )}
 
       {!loading && results.length > 0 && (

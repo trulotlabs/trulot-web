@@ -7,6 +7,7 @@ import type {
   PermitTreeNode,
 } from "./parcel-page-contract";
 import { inferPhase, type PhaseResult } from "./infer-phase";
+import { classifyParcelRecordQuery } from "./parcel-source-semantics";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -598,18 +599,26 @@ function sdAduCap(lotSqft: number): { maxAdu: number; total: number } {
 
 // ─── Main export ──────────────────────────────────────────────────────────────
 
-export async function getParcelPageData(rawApn: string): Promise<ParcelPageResult | null> {
+export type LegacyParcelPageLookupResult =
+  | { status: "found"; data: ParcelPageResult }
+  | { status: "not_found"; data: null }
+  | { status: "source_unavailable"; data: null };
+
+export async function getParcelPageDataResult(rawApn: string): Promise<LegacyParcelPageLookupResult> {
   const apn = normalizeApn(rawApn);
 
   const [parcelRes, projectRes, permitsRes] = await Promise.all([
-    supabase.from("parcel_page_api_v2").select("*").eq("apn_norm", apn).single(),
+    supabase.from("parcel_page_api_v2").select("*").eq("apn_norm", apn).maybeSingle(),
     supabase.from("parcel_primary_project_v1").select("*").eq("apn_norm", apn).maybeSingle(),
     supabase.from("parcel_permit_terminal_v2").select("*").eq("apn_norm", apn).order("opened_date", { ascending: false }),
   ]);
 
-  if (parcelRes.error || !parcelRes.data) return null;
+  const parcelQuery = classifyParcelRecordQuery(parcelRes.data, parcelRes.error);
+  if (parcelQuery.status !== "found") {
+    return { status: parcelQuery.status, data: null };
+  }
 
-  const parcel = parcelRes.data as RawRow;
+  const parcel = parcelQuery.data as RawRow;
   const primaryProject = (projectRes.data as RawRow | null) ?? null;
   const permits = (permitsRes.data ?? []) as RawRow[];
 
@@ -840,6 +849,8 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
   const fullAddr = buildFullAddress(parcel);
 
   return {
+    status: "found",
+    data: {
     development_stage: stage,
     stale_days: staleDays,
     stale_flag: staleFlag,
@@ -962,6 +973,11 @@ export async function getParcelPageData(rawApn: string): Promise<ParcelPageResul
       conditional: "Possible only if program rules / city verification / constraints are satisfied",
       unknown: "Not verified in available source material",
     },
-    jobs_to_engage: jobsToEngage,
+      jobs_to_engage: jobsToEngage,
+    },
   };
+}
+
+export async function getParcelPageData(rawApn: string): Promise<ParcelPageResult | null> {
+  return (await getParcelPageDataResult(rawApn)).data;
 }

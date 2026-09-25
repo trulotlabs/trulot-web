@@ -1,4 +1,4 @@
-import { normalizeApn, getParcelPageData } from "../../../../lib/get-parcel-page-data";
+import { normalizeApn, getParcelPageDataResult } from "../../../../lib/get-parcel-page-data";
 import { publicSdaApiStatus, SDA_RECONCILIATION_LABEL } from "../../../../lib/sda-source-reconciliation";
 
 function unavailableCapacityItem(basis: string) {
@@ -15,10 +15,17 @@ export async function GET(_req: Request, { params }: { params: Promise<{ apn: st
   const { apn: rawApn } = await params;
   const apn = normalizeApn(rawApn);
 
-  const data = await getParcelPageData(rawApn);
-  if (!data) {
+  const result = await getParcelPageDataResult(rawApn);
+  if (result.status === "source_unavailable") {
+    return Response.json(
+      { error: "Parcel source unavailable", status: "source_unavailable", apn },
+      { status: 503, headers: { "Cache-Control": "no-store" } },
+    );
+  }
+  if (result.status === "not_found") {
     return Response.json({ error: "Parcel not found", apn }, { status: 404 });
   }
+  const data = result.data;
 
   const quarantined = {
     ...data,

@@ -1,6 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 import { canonicalParcelPath, canonicalParcelSlug } from '@/lib/parcel-slug';
+import { classifyParcelSearchQuery } from '@/lib/parcel-source-semantics';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -28,8 +29,20 @@ export async function GET(req: NextRequest) {
     query = query.ilike('address', `%${q}%`);
   }
 
-  const { data: parcels, error } = await query;
-  if (error || !parcels?.length) return NextResponse.json({ results: [] });
+  const { data, error } = await query;
+  const parcelQuery = classifyParcelSearchQuery(data, error);
+  if (parcelQuery.status === 'source_unavailable') {
+    return NextResponse.json(
+      {
+        results: [],
+        status: 'source_unavailable',
+        error: 'Parcel search is temporarily unavailable.',
+      },
+      { status: parcelQuery.httpStatus, headers: { 'Cache-Control': 'no-store' } },
+    );
+  }
+  if (parcelQuery.status === 'not_found') return NextResponse.json({ results: [] });
+  const parcels = parcelQuery.rows;
 
   // Fetch momentum labels for the matched APNs
   const apns = parcels.map((p) => p.apn_norm);
