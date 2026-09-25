@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "materializationId": "operator-supplied-immutable-materialization-id",
+  "artifacts": {
+    "parcelAcquisition": "/secure/materialization/parcel/acquisition.json",
+    "parcelRaw": "/secure/materialization/parcel/source.geojson",
+    "parcelReport": "/secure/materialization/parcel/report.json",
+    "parcelRows": "/secure/materialization/parcel/rows.ndjson.gz",
+    "parcelQuarantine": "/secure/materialization/parcel/rejected.ndjson.gz",
+    "zoningAcquisition": "/secure/materialization/zoning/acquisition.json",
+    "zoningRaw": "/secure/materialization/zoning/Zoning_Base_SD.geojson",
+    "zoningReport": "/secure/materialization/zoning/report.json",
+    "zoningRows": "/secure/materialization/zoning/accepted.ndjson.gz",
+    "zoningQuarantine": "/secure/materialization/zoning/rejected.ndjson.gz",
+    "parcelZoneMapping": "/secure/materialization/integration/parcel-base-zoning-map.ndjson.gz",
+    "integratedReference": "/secure/materialization/integration/parcel-intelligence-serving-v2.ndjson.gz"
+  }
+}

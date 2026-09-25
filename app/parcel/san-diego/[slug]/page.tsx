@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { after } from "next/server";
 import type { ReactNode } from "react";
 import {
   getParcelPageV1Result,
@@ -8,6 +9,7 @@ import {
   type SourcedFact,
 } from "@/lib/parcel-page-v1";
 import { extractApnFromSlug } from "@/lib/parcel-slug";
+import { parcelServingV2ShadowEnabled, runParcelServingV2Shadow } from "@/lib/parcel-serving-v2-shadow";
 import { verifiedStandardsEnabled } from "@/lib/rs17-shadow-gate";
 
 const BASE_URL = "https://trulot-web.vercel.app";
@@ -166,6 +168,10 @@ export default async function ParcelPage({
     );
   }
   const data = result.data;
+
+  if (parcelServingV2ShadowEnabled()) {
+    after(() => runParcelServingV2Shadow(slug, result));
+  }
 
   if (slug !== data.canonicalSlug) {
     redirect(data.canonicalPath);

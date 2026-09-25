@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 1,
+  "parcelAcquisitionId": "sangis-20260924T183743Z",
+  "zoningAcquisitionId": "zoning-city-sd-20260924T201131Z",
+  "integrationMethodVersion": "parcel-intelligence-serving-v2-left-join-v1",
+  "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+  "artifacts": {
+    "parcelAcquisition": "3a4b63a100ef3e703bc0bb940e30c0b9df80d419585b93b9a246cfa08769eb0c",
+    "parcelRaw": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+    "parcelReport": "8d6aa8ea2b827e79573ec896ca7edae7fac053967e9ac68f1a06e734f2118ec5",
+    "parcelRows": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+    "parcelQuarantine": "f04e55fa5b60a5fce7112495cbd6c0981ae8c47d431a16a5524c515f27e50522",
+    "zoningAcquisition": "550967526a963c21af720e58aafd6d001a5b6e26da1f1012e5cc083a844afea5",
+    "zoningRaw": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+    "zoningReport": "eacd285f14e6114db82a9a55f43184ca63acc3b520c077992dada2a832eeec19",
+    "zoningRows": "ae6ea7e9e79a90b33c4f8f372060f21341f5c14366b894f16bbc1bc0d344abb5",
+    "zoningQuarantine": "6822d0cad5f5cc158ec5ca30ca6aa603d3ca6bb82cc2eb423d05824d0a37d518",
+    "parcelZoneMapping": "e90e223b3b06017b95e191aee8ec1de918dbb45abf836c4f209ae1c345cbf088",
+    "integratedReference": "e3fa496fa742a784c520a5baa608ae2431987eb7988b6dcade8e2bb1bdada6e9"
+  },
+  "counts": {
+    "parcelSource": 1089758,
+    "parcelAccepted": 1088430,
+    "parcelQuarantine": 1328,
+    "cityParcels": 393733,
+    "cityDistinctApns": 393733,
+    "zoningSource": 3706,
+    "zoningAccepted": 3680,
+    "zoningQuarantine": 26,
+    "zoningMapping": 393733,
+    "integrated": 393733
+  },
+  "zoningStateCounts": {
+    "BOUNDARY_SLIVER": 1097,
+    "INDETERMINATE": 1641,
+    "MULTI_ZONE": 73064,
+    "SINGLE_ZONE": 317604,
+    "UNMAPPED": 327
+  },
+  "fingerprints": {
+    "parcelApnSet": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+    "parcelFullRow": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f",
+    "parcelZoneMapping": "313aa7ad46747bb97499a113842ac848de8f7357134e0558210692a1913a8ccf",
+    "integrated": "27b1a362bdae28369cdf7274d1b9842bef07b5970e33c1f9522d68d042e616d8"
+  }
+}

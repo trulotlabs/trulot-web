@@ -53,5 +53,10 @@ for (const fields of [{ situs_address: null }, { situs_address: 0 }, { situs_str
 }
 await test("malformed situs components rejected by original contract", () => assert.ok(normalizeProperties({ ...properties, situs_address: "not-number" }, readContract()).errors.includes("FIELD_TYPE:situs_address")));
 await test("suite/building retained separately without invented unit address", () => { const r = normalizeProperties({ ...properties, situs_suite: "UNIT 7", situs_building: "B" }, readContract()); assert.equal(r.row.situsComponents.situs_suite,"UNIT 7"); assert.ok(!r.row.address.includes("UNIT 7")); });
-await test("adapter remains unwired from canonical runtime", () => { for (const f of ["lib/parcel-page-v1.ts","app/parcel/san-diego/[slug]/page.tsx"]) assert.doesNotMatch(fs.readFileSync(path.join(root,f),"utf8"),/parcel-serving-v2|parcel_serving_v2/); });
+await test("offline rehearsal adapter remains outside canonical data loading", () => {
+  assert.doesNotMatch(fs.readFileSync(path.join(root,"lib/parcel-page-v1.ts"),"utf8"),/scripts\/parcel-serving-v2\/adapter|parcel_serving_rehearsal/);
+  const page = fs.readFileSync(path.join(root,"app/parcel/san-diego/[slug]/page.tsx"),"utf8");
+  assert.doesNotMatch(page,/scripts\/parcel-serving-v2\/adapter|parcel_serving_rehearsal/);
+  assert.match(page,/runParcelServingV2Shadow/);
+});
 console.log(`${checks} Parcel Serving V2 adapter checks passed.`);

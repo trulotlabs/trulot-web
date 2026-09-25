@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "decision": "PARCEL_SERVING_V2_PRODUCTION_SHADOW_FOUNDATION_PASS",
+  "environment": {
+    "isolation": "two independent Unix-socket-only disposable PostgreSQL clusters; no TCP listener",
+    "postgres": "17.9",
+    "postgis": "3.6.3",
+    "productionConnected": false
+  },
+  "sealedInputs": {
+    "parcelAcquisitionId": "sangis-20260924T183743Z",
+    "zoningAcquisitionId": "zoning-city-sd-20260924T201131Z",
+    "artifactHashesVerifiedBeforeDatabaseConnection": true
+  },
+  "builds": [
+    {
+      "name": "build-1",
+      "boundary": "/private/tmp/trulot-packet7-i1802o8s/boundary.json",
+      "importRunId": "63cb827c-3a7c-5e77-9faf-1eebe130e583",
+      "loadedFromZero": true,
+      "validationResumedWithoutReimport": false,
+      "selectedOnlyAfterValidation": true,
+      "servedRows": 393733
+    },
+    {
+      "name": "build-2",
+      "boundary": "/private/tmp/trulot-packet7-reus880m/boundary.json",
+      "importRunId": "63cb827c-3a7c-5e77-9faf-1eebe130e583",
+      "loadedFromZero": true,
+      "validationResumedWithoutReimport": false,
+      "selectedOnlyAfterValidation": true,
+      "servedRows": 393733
+    }
+  ],
+  "counts": {
+    "parcelAccepted": 1088430,
+    "parcelQuarantine": 1328,
+    "cityParcels": 393733,
+    "cityDistinctApns": 393733,
+    "zoningAccepted": 3680,
+    "zoningQuarantine": 26,
+    "zoningMappingGeometry": 3706,
+    "zoningMapping": 393733,
+    "duplicateServedApns": 0,
+    "missingParcelRows": 0,
+    "missingZoningRows": 0,
+    "zoningStateCounts": {
+      "BOUNDARY_SLIVER": 1097,
+      "INDETERMINATE": 1641,
+      "MULTI_ZONE": 73064,
+      "SINGLE_ZONE": 317604,
+      "UNMAPPED": 327
+    }
+  },
+  "fingerprints": {
+    "parcelApnSet": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+    "parcelFullRow": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f",
+    "parcelZoneMapping": "313aa7ad46747bb97499a113842ac848de8f7357134e0558210692a1913a8ccf",
+    "integrated": "27b1a362bdae28369cdf7274d1b9842bef07b5970e33c1f9522d68d042e616d8"
+  },
+  "repeatability": {
+    "artifactHashesIdentical": true,
+    "migrationSha256Identical": true,
+    "importerSha256Identical": true,
+    "countsIdentical": true,
+    "zoningStateCountsIdentical": true,
+    "fingerprintsIdentical": true,
+    "servedRowsIdentical": true
+  },
+  "implementationIdentities": {
+    "migrationSha256": "4b06c79737f2c6592cf37869ea4a1c1dde7dfe75834ac15730f25c261cc54220",
+    "importerSha256": "06599108a6e1061268420b564e1496a741df5467459f5173b6c53ae1a6caadfa"
+  },
+  "adapter": {
+    "realDatabaseRowRead": true,
+    "contractChecks": 15,
+    "result": "PASS"
+  },
+  "preAcceptanceCorrections": [
+    "The sealed 327 UNMAPPED rows omit zoningAcquisitionId; the importer now permits null only for UNMAPPED, fingerprints the original mapping, and assigns acquisition context only to the serving representation.",
+    "The integrated fingerprint reader now permits geometry fields larger than Python's default CSV field-size limit; the loaded candidate remained unselected until validation resumed and passed."
+  ],
+  "productionMutation": false,
+  "publicCutover": false
+}
