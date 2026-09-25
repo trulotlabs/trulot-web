@@ -26,11 +26,20 @@ const parameterSchema = z.object({
   project_applicability_determined: z.literal(false), unresolved_dependencies: z.array(z.string()),
 }).passthrough();
 export type Parameter = z.infer<typeof parameterSchema>;
-export interface StandardsByZone {
+const residentialParameterSchema = parameterSchema.extend({ zone_code: z.string(), source_section: z.string() });
+export type ResidentialParameter = z.infer<typeof residentialParameterSchema>;
+export interface ResidentialStandardsByZone {
   zoneCode: string;
   reason: string;
-  parameters: Array<TruthFact<Parameter>>;
+  parameters: Array<TruthFact<ResidentialParameter>>;
   state: "supported" | "unknown" | "unavailable";
+}
+export interface StandardsByZone extends ResidentialStandardsByZone { parameters: Array<TruthFact<Parameter>> }
+export interface ResidentialRehearsalResult {
+  parcelIntelligence: IntegratedResult;
+  standards: ResidentialStandardsByZone[];
+  project_applicability_determined: false;
+  display: { title: string; qualifier: string; zones: ResidentialStandardsByZone[] };
 }
 export interface RehearsalResult {
   parcelIntelligence: IntegratedResult;
@@ -42,15 +51,26 @@ export interface AuthorityInput { observation: unknown; sourcePaths: Record<stri
 
 export function consumeParameters(zoneCode: string, context: ResolutionContext, authority: AuthorityInput,
   requestedParameters?: string[]): StandardsByZone {
+  return consume(zoneCode, context, authority, false, requestedParameters) as StandardsByZone;
+}
+
+export function consumeResidentialParameters(zoneCode: string, context: ResolutionContext, authority: AuthorityInput,
+  requestedRuleIds?: string[]): ResidentialStandardsByZone {
+  return consume(zoneCode, context, authority, true, requestedRuleIds);
+}
+
+function consume(zoneCode: string, context: ResolutionContext, authority: AuthorityInput,
+  residential: boolean, requested?: string[]): ResidentialStandardsByZone {
   try {
     const output = execFileSync("python3", [path.resolve(process.cwd(), "scripts/rs17-parameter-rehearsal/gate.py")], {
       input: JSON.stringify({ context: { ...context, zone_code: zoneCode }, observation: authority.observation,
-        source_paths: authority.sourcePaths, ...(requestedParameters ? { requested_parameters: requestedParameters } : {}) }),
+        source_paths: authority.sourcePaths, mode: residential ? "residential" : "rs17",
+        ...(requested ? { [residential ? "requested_rule_ids" : "requested_parameters"]: requested } : {}) }),
       env: { ...process.env, PYTHONDONTWRITEBYTECODE: "1" }, encoding: "utf8", maxBuffer: 2_000_000,
     });
     const result = z.object({ state: z.enum(["supported", "unknown", "unavailable"]), reason: z.string(),
-      parameters: z.array(parameterSchema) }).parse(JSON.parse(output));
-    const parameters: Array<TruthFact<Parameter>> = result.parameters.map(value => {
+      parameters: z.array(residential ? residentialParameterSchema : parameterSchema) }).parse(JSON.parse(output));
+    const parameters: Array<TruthFact<ResidentialParameter>> = result.parameters.map(value => {
       const provenance: FactProvenance = {
         sourceId: "residential", datasetId: value.rule_set_version,
         sourceLabel: "San Diego Municipal Code residential base-zone table",
@@ -66,6 +86,19 @@ export function consumeParameters(zoneCode: string, context: ResolutionContext, 
   } catch {
     return { zoneCode, state: "unavailable", reason: "evidence_bridge_unavailable", parameters: [] };
   }
+}
+
+export async function rehearseResidentialParameters(input: string,
+  parcelQuery: (apn: string) => Promise<unknown>, zoningQuery: (apn: string) => Promise<unknown>,
+  context: ResolutionContext, authority: AuthorityInput, requestedRuleIds?: string[]): Promise<ResidentialRehearsalResult> {
+  const parcelIntelligence = await lookupParcelIntelligenceV2(input, parcelQuery, zoningQuery);
+  const { parcel, baseZoning } = parcelIntelligence.truth;
+  const zones = parcel.state === "supported" && parcel.value && baseZoning.state === "supported"
+    ? baseZoning.value.zones : [];
+  const standards = zones.map(zone => consumeResidentialParameters(zone, context, authority, requestedRuleIds));
+  return { parcelIntelligence, standards, project_applicability_determined: false,
+    display: { title: "Verified base-zone parameters", zones: standards,
+      qualifier: "Only reviewed parameters are shown. Additional regulations may apply. Parcel-specific compliance has not been determined." } };
 }
 
 export async function rehearseParcelParameters(input: string,

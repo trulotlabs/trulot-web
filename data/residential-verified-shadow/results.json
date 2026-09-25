@@ -1,0 +1,365 @@
+{
+  "safe": 97,
+  "excluded": 717,
+  "exercised": 97,
+  "coveragePercent": 100,
+  "states": [
+    {
+      "id": "RM-1-1",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-1-1:41:7",
+        "sd-residential-2026-09-24-research-v1:RM-1-1:41:9",
+        "sd-residential-2026-09-24-research-v1:RM-1-1:41:10"
+      ]
+    },
+    {
+      "id": "RM-1-2",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-1-2:41:7",
+        "sd-residential-2026-09-24-research-v1:RM-1-2:41:9",
+        "sd-residential-2026-09-24-research-v1:RM-1-2:41:10"
+      ]
+    },
+    {
+      "id": "RM-1-3",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-1-3:41:7",
+        "sd-residential-2026-09-24-research-v1:RM-1-3:41:9",
+        "sd-residential-2026-09-24-research-v1:RM-1-3:41:10"
+      ]
+    },
+    {
+      "id": "RM-2-4",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-2-4:41:7",
+        "sd-residential-2026-09-24-research-v1:RM-2-4:41:9",
+        "sd-residential-2026-09-24-research-v1:RM-2-4:41:10"
+      ]
+    },
+    {
+      "id": "RM-2-5",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-2-5:41:7",
+        "sd-residential-2026-09-24-research-v1:RM-2-5:41:9",
+        "sd-residential-2026-09-24-research-v1:RM-2-5:41:10"
+      ]
+    },
+    {
+      "id": "RM-2-6",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-2-6:41:7",
+        "sd-residential-2026-09-24-research-v1:RM-2-6:41:9",
+        "sd-residential-2026-09-24-research-v1:RM-2-6:41:10"
+      ]
+    },
+    {
+      "id": "RM-3-7",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-3-7:43:7",
+        "sd-residential-2026-09-24-research-v1:RM-3-7:43:9",
+        "sd-residential-2026-09-24-research-v1:RM-3-7:43:10"
+      ]
+    },
+    {
+      "id": "RM-3-8",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-3-8:43:7",
+        "sd-residential-2026-09-24-research-v1:RM-3-8:43:9",
+        "sd-residential-2026-09-24-research-v1:RM-3-8:43:10"
+      ]
+    },
+    {
+      "id": "RM-3-9",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-3-9:43:7",
+        "sd-residential-2026-09-24-research-v1:RM-3-9:43:9",
+        "sd-residential-2026-09-24-research-v1:RM-3-9:43:10"
+      ]
+    },
+    {
+      "id": "RM-4-10",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-4-10:43:7",
+        "sd-residential-2026-09-24-research-v1:RM-4-10:43:9",
+        "sd-residential-2026-09-24-research-v1:RM-4-10:43:10"
+      ]
+    },
+    {
+      "id": "RM-4-11",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-4-11:43:7",
+        "sd-residential-2026-09-24-research-v1:RM-4-11:43:9",
+        "sd-residential-2026-09-24-research-v1:RM-4-11:43:10"
+      ]
+    },
+    {
+      "id": "RM-5-12",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-5-12:43:7",
+        "sd-residential-2026-09-24-research-v1:RM-5-12:43:9",
+        "sd-residential-2026-09-24-research-v1:RM-5-12:43:10"
+      ]
+    },
+    {
+      "id": "RS-1-1",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-1:34:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-1:34:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-1:34:10"
+      ]
+    },
+    {
+      "id": "RS-1-10",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-10:36:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-10:36:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-10:36:10"
+      ]
+    },
+    {
+      "id": "RS-1-11",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-11:36:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-11:36:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-11:36:10"
+      ]
+    },
+    {
+      "id": "RS-1-12",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-12:36:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-12:36:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-12:36:10"
+      ]
+    },
+    {
+      "id": "RS-1-13",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-13:36:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-13:36:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-13:36:10"
+      ]
+    },
+    {
+      "id": "RS-1-14",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-14:36:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-14:36:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-14:36:10"
+      ]
+    },
+    {
+      "id": "RS-1-2",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-2:34:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-2:34:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-2:34:10"
+      ]
+    },
+    {
+      "id": "RS-1-3",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-3:34:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-3:34:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-3:34:10"
+      ]
+    },
+    {
+      "id": "RS-1-4",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-4:34:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-4:34:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-4:34:10"
+      ]
+    },
+    {
+      "id": "RS-1-5",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-5:34:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-5:34:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-5:34:10"
+      ]
+    },
+    {
+      "id": "RS-1-6",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-6:34:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-6:34:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-6:34:10"
+      ]
+    },
+    {
+      "id": "RS-1-7",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-7:34:10"
+      ]
+    },
+    {
+      "id": "RS-1-8",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-8:36:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-8:36:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-8:36:10"
+      ]
+    },
+    {
+      "id": "RS-1-9",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RS-1-9:36:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-9:36:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-9:36:10"
+      ]
+    },
+    {
+      "id": "RT-1-1",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RT-1-1:39:7",
+        "sd-residential-2026-09-24-research-v1:RT-1-1:39:9",
+        "sd-residential-2026-09-24-research-v1:RT-1-1:39:10"
+      ]
+    },
+    {
+      "id": "RT-1-2",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RT-1-2:39:7",
+        "sd-residential-2026-09-24-research-v1:RT-1-2:39:9",
+        "sd-residential-2026-09-24-research-v1:RT-1-2:39:10"
+      ]
+    },
+    {
+      "id": "RT-1-3",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RT-1-3:39:7",
+        "sd-residential-2026-09-24-research-v1:RT-1-3:39:9",
+        "sd-residential-2026-09-24-research-v1:RT-1-3:39:10"
+      ]
+    },
+    {
+      "id": "RT-1-4",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RT-1-4:39:7",
+        "sd-residential-2026-09-24-research-v1:RT-1-4:39:9",
+        "sd-residential-2026-09-24-research-v1:RT-1-4:39:10"
+      ]
+    },
+    {
+      "id": "RT-1-5",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RT-1-5:39:7",
+        "sd-residential-2026-09-24-research-v1:RT-1-5:39:9",
+        "sd-residential-2026-09-24-research-v1:RT-1-5:39:10"
+      ]
+    },
+    {
+      "id": "RX-1-1",
+      "rows": 3,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RX-1-1:37:7",
+        "sd-residential-2026-09-24-research-v1:RX-1-1:37:9",
+        "sd-residential-2026-09-24-research-v1:RX-1-1:37:10"
+      ]
+    },
+    {
+      "id": "RX-1-2",
+      "rows": 1,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RX-1-2:37:10"
+      ]
+    },
+    {
+      "id": "split",
+      "rows": 6,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RM-1-1:41:7",
+        "sd-residential-2026-09-24-research-v1:RM-1-1:41:9",
+        "sd-residential-2026-09-24-research-v1:RM-1-1:41:10",
+        "sd-residential-2026-09-24-research-v1:RS-1-7:34:7",
+        "sd-residential-2026-09-24-research-v1:RS-1-7:34:9",
+        "sd-residential-2026-09-24-research-v1:RS-1-7:34:10"
+      ]
+    },
+    {
+      "id": "split-one-approved",
+      "rows": 1,
+      "ruleIds": [
+        "sd-residential-2026-09-24-research-v1:RX-1-2:37:10"
+      ]
+    },
+    {
+      "id": "zero-safe-synthetic",
+      "rows": 0,
+      "ruleIds": []
+    },
+    {
+      "id": "unknown-zone",
+      "rows": 0,
+      "ruleIds": []
+    },
+    {
+      "id": "unmapped",
+      "rows": 0,
+      "ruleIds": []
+    },
+    {
+      "id": "indeterminate",
+      "rows": 0,
+      "ruleIds": []
+    },
+    {
+      "id": "unknown-coastal",
+      "rows": 0,
+      "ruleIds": []
+    },
+    {
+      "id": "inside-coastal",
+      "rows": 0,
+      "ruleIds": []
+    },
+    {
+      "id": "source-drift",
+      "rows": 0,
+      "ruleIds": []
+    },
+    {
+      "id": "parcel-unavailable",
+      "rows": 0,
+      "ruleIds": []
+    }
+  ],
+  "metadataMutations": 24,
+  "runtimeAllZones": true,
+  "offMatchesPacket15": true
+}

@@ -386,7 +386,7 @@ export default async function ParcelPage({
             {standardsShadow ? (
               <div data-testid="rs17-runtime-shadow" className="col-span-full rounded border-2 border-amber-400 bg-amber-50 p-4 [&_h2]:text-lg [&_h2]:font-semibold [&_h3]:mt-4 [&_h3]:font-semibold [&_p]:my-3 [&_table]:w-full [&_th]:text-left [&_th]:p-2 [&_td]:p-2 [&_td]:align-top [&_summary]:cursor-pointer [&_summary]:py-3 [&_a]:underline [&_code]:break-all [&_details]:border-t [&_details]:border-amber-200">
                 <p className="font-semibold">Local standards shadow — review only, not production display</p>
-                <p className="text-sm">Uses explicitly supplied local evidence and context. No parcel compliance or development capacity determination.</p>
+                <p className="text-sm">Zone groups follow explicitly supplied local zoning evidence and context; the existing parcel record remains separate. No parcel compliance or development capacity determination.</p>
                 <div dangerouslySetInnerHTML={{ __html: standardsShadow }} />
               </div>
             ) : null}

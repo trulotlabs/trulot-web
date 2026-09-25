@@ -1,0 +1,69 @@
+{
+  "route": "/parcel/san-diego/[slug]",
+  "backend": "loopback-only in-memory fixture API; actual Next.js page/loader",
+  "desktop_zones": [
+    "RS-1-7",
+    "RM-1-1",
+    "RT-1-1",
+    "RX-1-2"
+  ],
+  "desktop_rendering": "PASS",
+  "mobile": {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "split_zones": [
+      "RS-1-7",
+      "RM-1-1"
+    ],
+    "page_client_scroll_width": [
+      390,
+      390
+    ],
+    "shadow_client_scroll_width": [
+      346,
+      346
+    ],
+    "expanded_deep_provenance_client_scroll_width": [
+      346,
+      346
+    ],
+    "labels_values_conditions": "PASS",
+    "qualifier": "PASS",
+    "zone_grouping": "PASS",
+    "partial_split": [
+      "RX-1-2",
+      "UNKNOWN"
+    ]
+  },
+  "keyboard": {
+    "tab_reaches_summary": true,
+    "focus_visible": true,
+    "outline": "solid 2px",
+    "enter_expand_collapse": true,
+    "headings": [
+      "h2 zoning",
+      "h3 verified parameters",
+      "h4 zone",
+      "h5 category"
+    ]
+  },
+  "unknown_coastal": "No values; unresolved context explanation",
+  "shadow_off": {
+    "elements": 0,
+    "existing_placeholder": 1,
+    "baseline_byte_equality": "PASS automated test"
+  },
+  "console": {
+    "early_interaction": "One hydration warning involving injected HTML; exact timing cause unproven",
+    "settled_reloads_and_keyboard": "No additional warning observed",
+    "fresh_unknown_coastal_and_off_sessions": []
+  },
+  "limitations": [
+    "No claim of all pre-hydration interaction timing coverage",
+    "Two inspection-tool timeouts recovered using accessibility state; successful overflow measurements preceded timeouts"
+  ],
+  "viewport_reset": true,
+  "servers_stopped": true
+}

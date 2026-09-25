@@ -20,28 +20,44 @@ def resolve(request):
         return {'state': 'unavailable', 'reason': 'source_or_authority_invalidated', 'parameters': []}
     if context.get('lot_context', 'unknown') not in ['corner', 'non_corner', 'unknown']:
         return {'state': 'unknown', 'reason': 'invalid_lot_context', 'parameters': []}
-    if context.get('zone_code') != 'RS-1-7':
+    mode = request.get('mode', 'rs17')
+    if mode not in ['rs17', 'residential']:
+        return {'state': 'unknown', 'reason': 'unsupported_consumer_mode', 'parameters': []}
+    if mode == 'rs17' and context.get('zone_code') != 'RS-1-7':
         return {'state': 'unknown', 'reason': 'zone_outside_rehearsal', 'parameters': []}
-    wanted = request.get('requested_parameters', list(IDS))
-    if not isinstance(wanted, list) or not wanted or any(p not in IDS for p in wanted):
-        return {'state': 'unknown', 'reason': 'excluded_parameter', 'parameters': []}
+    sealed = bundle['residential_standards_v2_integration_safe']
+    approved = {r['rule_id']: r for r in sealed if r['zone_code'] == context.get('zone_code')}
+    if mode == 'residential':
+        wanted_ids = request.get('requested_rule_ids', list(approved))
+        if not isinstance(wanted_ids, list) or not wanted_ids or any(not isinstance(p, str) or p not in approved for p in wanted_ids):
+            return {'state': 'unknown', 'reason': 'excluded_or_unreviewed_rule', 'parameters': []}
+        selected = [approved[p] for p in sorted(set(wanted_ids))]
+    else:
+        wanted = request.get('requested_parameters', list(IDS))
+        if not isinstance(wanted, list) or not wanted or any(p not in IDS for p in wanted):
+            return {'state': 'unknown', 'reason': 'excluded_parameter', 'parameters': []}
+        selected = [approved[f'sd-residential-2026-09-24-research-v1:RS-1-7:34:{IDS[name]}'] for name in dict.fromkeys(wanted)]
     raw = {r['rule_id']: r for r in json.loads((ROOT / 'data/zoning-standards-v2/rules.json').read_text())}
     source = json.loads((ROOT / 'data/zoning-standards-v2/sources.json').read_text())['sources']['residential']
     parameters = []
-    for name in dict.fromkeys(wanted):
+    for expected_record in selected:
+        name = expected_record['standard_type']
         # Enumerate a source-rule condition, NOT an assertion about the parcel.
         # The user authorized conditional alternatives for unknown lot context.
         condition_branch = 'corner' if name == 'corner_lot_width_min' else 'non_corner'
-        result = review.select(bundle, zone='RS-1-7', standard=name,
+        result = review.select(bundle, zone=context.get('zone_code'), standard=name,
             as_of=context.get('evaluation_date'), coastal_context=context.get('coastal_context'),
             application_context=context.get('application_context'), airport_context=context.get('airport_context'),
             scope='BASE_TABLE_PARAMETERS_ONLY', observation=request.get('observation'),
             lot_context=condition_branch, source_paths=paths)
         if result['state'] != 'BASE_TABLE_PARAMETER':
             return {'state': 'unknown', 'reason': 'operative_context_unresolved', 'parameters': []}
-        r = result['rules'][0]
-        expected = f'sd-residential-2026-09-24-research-v1:RS-1-7:34:{IDS[name]}'
-        if r['rule_id'] != expected or r['unit'] != 'ft' or r['review_state'] != 'SOURCE_VERIFIED':
+        matched = [r for r in result['rules'] if r == expected_record]
+        if len(matched) != 1:
+            return {'state': 'unavailable', 'reason': 'unexpected_approved_record', 'parameters': []}
+        r = matched[0]
+        expected = expected_record['rule_id']
+        if r['unit'] != 'ft' or r['operator'] != 'MIN' or r['review_state'] != 'SOURCE_VERIFIED':
             return {'state': 'unavailable', 'reason': 'unexpected_approved_record', 'parameters': []}
         parameters.append({**r, 'rule_set_version': raw[expected]['rule_set_version'],
             'source_section': raw[expected]['source_section'], 'source': source,
