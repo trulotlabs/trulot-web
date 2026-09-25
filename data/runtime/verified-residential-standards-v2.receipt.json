@@ -1,0 +1,15 @@
+{
+  "bundleCanonicalSha256": "023c530ce824fc6d59156b39a39ef2cc677ac44a36a574ccb466bf04099df659",
+  "recordCount": 213,
+  "recordIdsFingerprint": "ae63136e2c3e1566d7b0111604eb82168a8bbbb4c2ae520dcb4bb8b641b53124",
+  "releaseVersion": "verified-residential-standards-v2-2026-09-24",
+  "reviewDecisionIdentity": {
+    "approvedBaselineCount": 97,
+    "approvedPacket17Count": 116,
+    "baselineReviewSealSha256": "a08b55a38342616121a075ccf9011d305da12b4dd78050a101163ab5030ee982",
+    "packet17DecisionSha256": "03b9951eb3791041b0df4e0d6b44175cb6f0d426fc8308b61349a228a6be1c83",
+    "packet17ReviewSealSha256": "2fce1a979c6ff38d5fb0989da929028a55aa453154bb3c45e033068df36f22aa"
+  },
+  "schemaVersion": "verified-residential-standards-runtime-receipt/v1",
+  "sourceEvidenceManifestFingerprint": "c225779da9eeb18c225185049c733ac62a420f31643137d75c7f096ea4901b11"
+}

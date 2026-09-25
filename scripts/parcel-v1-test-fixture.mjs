@@ -73,18 +73,19 @@ export function fixture(payload, options = {}) {
     function localRequire(id) {
       if (id === "@/lib/rs17-runtime-shadow" && options.shadowRenderer) return { renderRs17RuntimeShadow: options.shadowRenderer };
       if (id === "@supabase/supabase-js") return { createClient: () => client };
+      if (id.startsWith("node:")) return require(id);
       if (id === "react/jsx-runtime") return require(id);
       if (id === "next/link") return function FixtureLink({ children, ...props }) { return React.createElement("a", props, children); };
       if (id === "next/navigation") return {
         notFound() { throw new Error("Unexpected parcel 404"); },
         redirect() { throw new Error("Unexpected redirect"); },
       };
-      assert.ok(id.startsWith("./") || id.startsWith("@/"), `Unexpected import: ${id}`);
+      assert.ok(id.startsWith("./") || id.startsWith("../") || id.startsWith("@/"), `Unexpected import: ${id}`);
       const target = id.startsWith("@/") ? path.join(root, id.slice(2)) : path.resolve(path.dirname(filename), id);
       return load(path.extname(target) ? target : `${target}.ts`);
     }
     vm.runInNewContext(code, {
-      module: loadedModule, exports: loadedModule.exports, require: localRequire, process: { env: options.env ?? {} },
+      module: loadedModule, exports: loadedModule.exports, require: localRequire, process: { env: options.env ?? {} }, Buffer, performance,
     }, { filename });
     return loadedModule.exports;
   }

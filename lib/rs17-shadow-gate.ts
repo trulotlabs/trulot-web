@@ -1,5 +1,43 @@
+import releaseControlJson from "../data/runtime/verified-standards-release.json";
+import { VERIFIED_STANDARDS_RELEASE_VERSION } from "./verified-standards-runtime-seal";
+
 /** Server-only opt-in. Unknown environments fail closed; never use NEXT_PUBLIC. */
 export type VerifiedStandardsMode = "local" | "staging";
+
+export interface VerifiedStandardsReleaseControl {
+  schemaVersion: "verified-standards-release-control/v1";
+  state: "off" | "cohort";
+  releaseVersion: string;
+  cohortVersion: string | null;
+}
+
+export interface VerifiedStandardsProductionProof {
+  bundleValid: boolean;
+  cohortValid: boolean;
+  cohortMember: boolean;
+  supportedParcel: boolean;
+  zoningSupported: boolean;
+  applicabilityValid: boolean;
+}
+
+export const verifiedStandardsReleaseControl = releaseControlJson as VerifiedStandardsReleaseControl;
+
+/**
+ * Pure release-control rehearsal. The active gate below still denies every
+ * production request until a separately reviewed cohort is committed and
+ * wired in a later packet.
+ */
+export function productionVerifiedStandardsAuthorized(
+  env: NodeJS.ProcessEnv,
+  control: VerifiedStandardsReleaseControl,
+  proof: VerifiedStandardsProductionProof,
+): boolean {
+  return env.VERCEL === "1" && env.VERCEL_ENV === "production" &&
+    control.schemaVersion === "verified-standards-release-control/v1" &&
+    control.state === "cohort" && Boolean(control.cohortVersion) &&
+    control.releaseVersion === VERIFIED_STANDARDS_RELEASE_VERSION &&
+    Object.values(proof).every(value => value === true);
+}
 
 export function verifiedStandardsMode(env: NodeJS.ProcessEnv = process.env): VerifiedStandardsMode | null {
   // Deployment-tier denial is evaluated first. Preview builds also use

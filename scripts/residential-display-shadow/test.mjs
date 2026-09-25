@@ -122,20 +122,19 @@ const provenanceAttack=structuredClone(goodByZone.get('RS-1-7'));delete provenan
 assert.equal(residentialPresentation(provenanceAttack).groups[0].sections.length,0);mutations++;
 
 // Actual runtime, hard gate, and authorized baseline parity.
-const saved={...process.env},temp=fs.mkdtempSync(path.join(os.tmpdir(),'expanded-residential-runtime-')),inputFile=path.join(temp,'input.json');
+const saved={...process.env},temp=fs.mkdtempSync(path.join(os.tmpdir(),'expanded-residential-runtime-'));
 let stagingMs=0,stagingHtml='';
 try{
- Object.assign(process.env,{NODE_ENV:'test',TRULOT_RS17_STANDARDS_SHADOW:'1',TRULOT_RS17_SHADOW_INPUT:inputFile});delete process.env.CI;delete process.env.VERCEL;
+ Object.assign(process.env,{NODE_ENV:'test',TRULOT_RS17_STANDARDS_SHADOW:'1'});delete process.env.CI;delete process.env.VERCEL;
  for(const zone of allZones){
-  fs.writeFileSync(inputFile,JSON.stringify(inputFor([zone])));const f=fixture({tpa:false,ctcac:false},{parcelFields:{zone_name:zone,base_zone:zone}});
+  const f=fixture({tpa:false,ctcac:false},{parcelFields:{zone_name:zone,base_zone:zone}});
   const current=await f.load(path.join(root,'lib/parcel-page-v1.ts')).getParcelPageV1Result('3113333800');
   const html=await renderRs17RuntimeShadow(current);assert.equal(html,renderResidentialDisplay(goodByZone.get(zone)),zone);
  }
  const f=fixture({tpa:false,ctcac:false});const current=await f.load(path.join(root,'lib/parcel-page-v1.ts')).getParcelPageV1Result('3113333800');
- fs.writeFileSync(inputFile,JSON.stringify(inputFor(['RS-1-7','RM-1-1'])));const split=await renderRs17RuntimeShadow(current);assert.ok(split.includes('RS-1-7')&&split.includes('RM-1-1'));
  for(const key of ['TRULOT_RS17_STANDARDS_SHADOW','TRULOT_RS17_SHADOW_INPUT'])delete process.env[key];
  Object.assign(process.env,{NODE_ENV:'production',VERCEL:'1',VERCEL_ENV:'preview',TRULOT_VERIFIED_STANDARDS_RELEASE:'1',
-  TRULOT_VERIFIED_STANDARDS_RELEASE_ENV:'staging',TRULOT_VERIFIED_STANDARDS_STAGING_APPROVED:'1',TRULOT_VERIFIED_STANDARDS_INPUT:inputFile});
+  TRULOT_VERIFIED_STANDARDS_RELEASE_ENV:'staging',TRULOT_VERIFIED_STANDARDS_STAGING_APPROVED:'1'});
  const stagingStart=performance.now();stagingHtml=await renderRs17RuntimeShadow(current);stagingMs=performance.now()-stagingStart;
  assert.ok(stagingHtml.includes('Verified base-zone standards'));assert.ok(Buffer.byteLength(stagingHtml,'utf8')<250_000);
  for(const env of [{NODE_ENV:'production'},{NODE_ENV:'production',TRULOT_RS17_STANDARDS_SHADOW:'1'},{NODE_ENV:'development',TRULOT_RS17_STANDARDS_SHADOW:'0'},{NODE_ENV:'test',TRULOT_RS17_STANDARDS_SHADOW:'1',CI:'1'},{NODE_ENV:'development',TRULOT_RS17_STANDARDS_SHADOW:'1',VERCEL:'1'}]){
@@ -143,7 +142,7 @@ try{
   Object.assign(process.env,{NODE_ENV:'development',TRULOT_RS17_STANDARDS_SHADOW:'0'});Object.assign(process.env,env);assert.equal(await renderRs17RuntimeShadow(current),null,JSON.stringify(env));
  }
  Object.assign(process.env,{NODE_ENV:'production',VERCEL:'1',VERCEL_ENV:'production',TRULOT_VERIFIED_STANDARDS_RELEASE:'1',
-  TRULOT_VERIFIED_STANDARDS_RELEASE_ENV:'staging',TRULOT_VERIFIED_STANDARDS_STAGING_APPROVED:'1',TRULOT_VERIFIED_STANDARDS_INPUT:inputFile});
+  TRULOT_VERIFIED_STANDARDS_RELEASE_ENV:'staging',TRULOT_VERIFIED_STANDARDS_STAGING_APPROVED:'1'});
  assert.equal(await renderRs17RuntimeShadow(current),null,'production deployment target must remain off');
  const priorFile=path.join(temp,'page.tsx');fs.writeFileSync(priorFile,execFileSync('git',['show','c66eeb3a78dc21b9467e69d2ecbae67ad13f682b:app/parcel/san-diego/[slug]/page.tsx'],{cwd:root}));
  const before=renderToStaticMarkup(await f.load(priorFile).default({params:Promise.resolve({slug:current.data.canonicalSlug})}));

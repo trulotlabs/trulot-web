@@ -56,32 +56,20 @@ const added=(await page(on,()=>marker)).html;
 assert.ok(added.includes(marker));assert.ok(added.indexOf(marker)<added.indexOf('Current programs &amp; overlays'));
 assert.equal((await page(on,()=>null)).html,baseline.html);
 assert.equal((await page(on,()=>{throw Error('local dependency unavailable');})).html,baseline.html);
-const dir=fs.mkdtempSync(path.join(os.tmpdir(),'rs17-runtime-')),filename=path.join(dir,'input.json');
-const source=JSON.parse(fs.readFileSync(path.join(root,'data/zoning-serving-v2/golden-fixture.json'))).cases.singleZone;
-const input={apn:'3113333800',parcelResponse:source.parcelResponse,zoningResponse:source.zoningResponse,
- context:{evaluation_date:'2026-09-24',coastal_context:'outside',application_context:'new_application',airport_context:'outside_miramar_transition',lot_context:'unknown'},
- authority:{observation:JSON.parse(fs.readFileSync(path.join(root,'data/high-value-residential-review/authority-observation.json'))),sourcePaths:JSON.parse(fs.readFileSync(process.argv[2]))}};
-input.parcelResponse.rows.forEach(r=>r.apn_norm=input.apn);input.zoningResponse.row.apn=input.apn;input.zoningResponse.row.dominantZoneCode='RS-1-7';input.zoningResponse.row.zoneEvidence.forEach(r=>r.zoneCode='RS-1-7');
-const saved={...process.env};Object.assign(process.env,on,{TRULOT_RS17_SHADOW_INPUT:filename});delete process.env.CI;delete process.env.VERCEL;
-const write=value=>fs.writeFileSync(filename,JSON.stringify(value));
+const saved={...process.env};Object.assign(process.env,on);delete process.env.CI;delete process.env.VERCEL;
 try{
- write(input);const html=await renderRs17RuntimeShadow(baseline.result);
+ const html=await renderRs17RuntimeShadow(baseline.result);
  assert.ok(html?.includes('50 ft')&&html.includes('55 ft')&&html.includes('95 ft'));
  assert.ok(html.includes("corner-lot branch; corner status is unresolved"));
- for(const key of ['TRULOT_RS17_STANDARDS_SHADOW','TRULOT_RS17_SHADOW_INPUT'])delete process.env[key];
- Object.assign(process.env,staging,{TRULOT_VERIFIED_STANDARDS_INPUT:filename});
+ delete process.env.TRULOT_RS17_STANDARDS_SHADOW;
+ Object.assign(process.env,staging);
  assert.ok((await renderRs17RuntimeShadow(baseline.result))?.includes('Verified base-zone standards'));
  process.env.VERCEL_ENV='production';assert.equal(await renderRs17RuntimeShadow(baseline.result),null);
  delete process.env.VERCEL;delete process.env.VERCEL_ENV;delete process.env.TRULOT_VERIFIED_STANDARDS_RELEASE;
  delete process.env.TRULOT_VERIFIED_STANDARDS_RELEASE_ENV;delete process.env.TRULOT_VERIFIED_STANDARDS_STAGING_APPROVED;
- delete process.env.TRULOT_VERIFIED_STANDARDS_INPUT;Object.assign(process.env,on,{TRULOT_RS17_SHADOW_INPUT:filename});
+ Object.assign(process.env,on);
  process.env.NODE_ENV='production';assert.equal(await renderRs17RuntimeShadow(baseline.result),null);process.env.NODE_ENV='test';
- for(const mutate of [x=>x.apn='0000000000',x=>x.context.coastal_context='unknown',x=>x.authority.observation.sources.residential.sha256='drift',x=>x.zoningResponse.row.mappingState='INDETERMINATE']){
-  const changed=structuredClone(input);mutate(changed);write(changed);assert.ok(!(await renderRs17RuntimeShadow(baseline.result))?.includes('50 ft'));
- }
- write(input);const absent=structuredClone(baseline.result);absent.truth.parcel.state='unavailable';assert.equal(await renderRs17RuntimeShadow(absent),null);
- fs.writeFileSync(filename,'bad JSON');assert.equal(await renderRs17RuntimeShadow(baseline.result),null);
- delete process.env.TRULOT_RS17_SHADOW_INPUT;assert.equal(await renderRs17RuntimeShadow(baseline.result),null);
- if(process.argv[3]){fs.mkdirSync(process.argv[3],{recursive:true});fs.writeFileSync(path.join(process.argv[3],'input.json'),JSON.stringify(input,null,2));}
-}finally{for(const k of Object.keys(process.env))if(!(k in saved))delete process.env[k];Object.assign(process.env,saved);fs.rmSync(dir,{recursive:true});}
-console.log(`PASS ${matrix} local gate combinations, approved staging, production denial, unchanged disabled page, placement, real approved consumer, context/drift/identity failures`);
+ const absent=structuredClone(baseline.result);absent.truth.parcel.state='unavailable';assert.equal(await renderRs17RuntimeShadow(absent),null);
+ if(process.argv[3]){fs.mkdirSync(process.argv[3],{recursive:true});fs.writeFileSync(path.join(process.argv[3],'receipt.json'),fs.readFileSync(path.join(root,'data/runtime/verified-residential-standards-v2.receipt.json')));}
+}finally{for(const k of Object.keys(process.env))if(!(k in saved))delete process.env[k];Object.assign(process.env,saved);}
+console.log(`PASS ${matrix} local gate combinations, approved staging, production denial, unchanged disabled page, placement, compiled approved consumer, identity failure`);
