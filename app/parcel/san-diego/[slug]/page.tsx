@@ -8,6 +8,7 @@ import {
   type SourcedFact,
 } from "@/lib/parcel-page-v1";
 import { extractApnFromSlug } from "@/lib/parcel-slug";
+import { rs17ShadowEnabled } from "@/lib/rs17-shadow-gate";
 
 const BASE_URL = "https://trulot-web.vercel.app";
 const NULL_PUBLIC_RECORD = "Not available in public records";
@@ -168,6 +169,15 @@ export default async function ParcelPage({
 
   if (slug !== data.canonicalSlug) {
     redirect(data.canonicalPath);
+  }
+
+  let standardsShadow: string | null = null;
+  if (rs17ShadowEnabled()) {
+    try {
+      standardsShadow = await (await import("@/lib/rs17-runtime-shadow")).renderRs17RuntimeShadow(result);
+    } catch {
+      // A missing local preview dependency must leave the existing page intact.
+    }
   }
 
   const pageTitle = `${data.identity.address}, ${data.identity.city}, ${data.identity.state}${data.identity.zip ? ` ${data.identity.zip}` : ""}`;
@@ -372,6 +382,14 @@ export default async function ParcelPage({
                 )}
               </div>
             </div>
+
+            {standardsShadow ? (
+              <div data-testid="rs17-runtime-shadow" className="col-span-full rounded border-2 border-amber-400 bg-amber-50 p-4 [&_h2]:text-lg [&_h2]:font-semibold [&_h3]:mt-4 [&_h3]:font-semibold [&_p]:my-3 [&_table]:w-full [&_th]:text-left [&_th]:p-2 [&_td]:p-2 [&_td]:align-top [&_summary]:cursor-pointer [&_summary]:py-3 [&_a]:underline [&_code]:break-all [&_details]:border-t [&_details]:border-amber-200">
+                <p className="font-semibold">Local standards shadow — review only, not production display</p>
+                <p className="text-sm">Uses explicitly supplied local evidence and context. No parcel compliance or development capacity determination.</p>
+                <div dangerouslySetInnerHTML={{ __html: standardsShadow }} />
+              </div>
+            ) : null}
 
             <div className="rounded border border-slate-200 bg-white p-4">
               <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-800">

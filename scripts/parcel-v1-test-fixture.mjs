@@ -71,6 +71,7 @@ export function fixture(payload, options = {}) {
       fileName: filename,
     }).outputText;
     function localRequire(id) {
+      if (id === "@/lib/rs17-runtime-shadow" && options.shadowRenderer) return { renderRs17RuntimeShadow: options.shadowRenderer };
       if (id === "@supabase/supabase-js") return { createClient: () => client };
       if (id === "react/jsx-runtime") return require(id);
       if (id === "next/link") return function FixtureLink({ children, ...props }) { return React.createElement("a", props, children); };
@@ -83,7 +84,7 @@ export function fixture(payload, options = {}) {
       return load(path.extname(target) ? target : `${target}.ts`);
     }
     vm.runInNewContext(code, {
-      module: loadedModule, exports: loadedModule.exports, require: localRequire, process: { env: {} },
+      module: loadedModule, exports: loadedModule.exports, require: localRequire, process: { env: options.env ?? {} },
     }, { filename });
     return loadedModule.exports;
   }

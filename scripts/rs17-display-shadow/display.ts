@@ -1,4 +1,4 @@
-// Fixture-only presentation. No production route imports this module.
+// Approved presentation shared by fixtures and the opt-in local runtime shadow.
 import approved from "../../data/residential-standards-review/residential_standards_v2_integration_safe.json";
 import type { RehearsalResult } from "../rs17-parameter-rehearsal/adapter";
 

@@ -1,4 +1,4 @@
-// Offline only. No product runtime imports this composer; no measurement inputs.
+// Local rehearsal composer; also used behind the hard-disabled runtime shadow gate.
 import { execFileSync } from "node:child_process";
 import * as path from "node:path";
 import { z } from "zod";
@@ -43,7 +43,7 @@ export interface AuthorityInput { observation: unknown; sourcePaths: Record<stri
 export function consumeParameters(zoneCode: string, context: ResolutionContext, authority: AuthorityInput,
   requestedParameters?: string[]): StandardsByZone {
   try {
-    const output = execFileSync("python3", [path.join(__dirname, "gate.py")], {
+    const output = execFileSync("python3", [path.resolve(process.cwd(), "scripts/rs17-parameter-rehearsal/gate.py")], {
       input: JSON.stringify({ context: { ...context, zone_code: zoneCode }, observation: authority.observation,
         source_paths: authority.sourcePaths, ...(requestedParameters ? { requested_parameters: requestedParameters } : {}) }),
       env: { ...process.env, PYTHONDONTWRITEBYTECODE: "1" }, encoding: "utf8", maxBuffer: 2_000_000,
