@@ -16,7 +16,7 @@ function load(file){
  vm.runInNewContext(code,{module:loadedModule,exports:loadedModule.exports,process,require:id=>id.startsWith('.')?load(path.resolve(path.dirname(file),id+(path.extname(id)?'':'.ts'))):require(id)});
  return loadedModule.exports;
 }
-const {rs17ShadowEnabled}=load(path.join(root,'lib/rs17-shadow-gate.ts'));
+const {rs17ShadowEnabled,verifiedStandardsMode}=load(path.join(root,'lib/rs17-shadow-gate.ts'));
 const {renderRs17RuntimeShadow}=load(path.join(root,'lib/rs17-runtime-shadow.ts'));
 const pageFile=path.join(root,'app/parcel/san-diego/[slug]/page.tsx');
 async function page(env={},shadowRenderer=()=>{throw Error('Shadow consumer must not run');}){
@@ -41,6 +41,15 @@ for(const node of [undefined,'production','development','test','staging'])for(co
  if(!enabled){const rendered=await page(env);assert.equal(rendered.html,baseline.html);assert.equal(rendered.calls,0);}
 }
 for(const host of ['VERCEL','CI'])assert.equal(rs17ShadowEnabled({NODE_ENV:'development',TRULOT_RS17_STANDARDS_SHADOW:'1',[host]:'1'}),false);
+const staging={NODE_ENV:'production',VERCEL:'1',VERCEL_ENV:'preview',TRULOT_VERIFIED_STANDARDS_RELEASE:'1',
+ TRULOT_VERIFIED_STANDARDS_RELEASE_ENV:'staging',TRULOT_VERIFIED_STANDARDS_STAGING_APPROVED:'1'};
+assert.equal(verifiedStandardsMode(staging),'staging');
+for(const changed of [
+ {...staging,VERCEL_ENV:'production'}, {...staging,TRULOT_DEPLOYMENT_ENV:'production'},
+ {...staging,TRULOT_VERIFIED_STANDARDS_RELEASE:'0'}, {...staging,TRULOT_VERIFIED_STANDARDS_RELEASE_ENV:'production'},
+ {...staging,TRULOT_VERIFIED_STANDARDS_STAGING_APPROVED:'0'}, {...staging,VERCEL:'0'},
+ {NODE_ENV:'production',TRULOT_RS17_STANDARDS_SHADOW:'1'},
+])assert.equal(verifiedStandardsMode(changed),null,JSON.stringify(changed));
 const on={NODE_ENV:'test',TRULOT_RS17_STANDARDS_SHADOW:'1'};
 const marker='<section>Local insertion</section>';
 const added=(await page(on,()=>marker)).html;
@@ -59,6 +68,13 @@ try{
  write(input);const html=await renderRs17RuntimeShadow(baseline.result);
  assert.ok(html?.includes('50 ft')&&html.includes('55 ft')&&html.includes('95 ft'));
  assert.ok(html.includes("corner-lot branch; corner status is unresolved"));
+ for(const key of ['TRULOT_RS17_STANDARDS_SHADOW','TRULOT_RS17_SHADOW_INPUT'])delete process.env[key];
+ Object.assign(process.env,staging,{TRULOT_VERIFIED_STANDARDS_INPUT:filename});
+ assert.ok((await renderRs17RuntimeShadow(baseline.result))?.includes('Verified base-zone standards'));
+ process.env.VERCEL_ENV='production';assert.equal(await renderRs17RuntimeShadow(baseline.result),null);
+ delete process.env.VERCEL;delete process.env.VERCEL_ENV;delete process.env.TRULOT_VERIFIED_STANDARDS_RELEASE;
+ delete process.env.TRULOT_VERIFIED_STANDARDS_RELEASE_ENV;delete process.env.TRULOT_VERIFIED_STANDARDS_STAGING_APPROVED;
+ delete process.env.TRULOT_VERIFIED_STANDARDS_INPUT;Object.assign(process.env,on,{TRULOT_RS17_SHADOW_INPUT:filename});
  process.env.NODE_ENV='production';assert.equal(await renderRs17RuntimeShadow(baseline.result),null);process.env.NODE_ENV='test';
  for(const mutate of [x=>x.apn='0000000000',x=>x.context.coastal_context='unknown',x=>x.authority.observation.sources.residential.sha256='drift',x=>x.zoningResponse.row.mappingState='INDETERMINATE']){
   const changed=structuredClone(input);mutate(changed);write(changed);assert.ok(!(await renderRs17RuntimeShadow(baseline.result))?.includes('50 ft'));
@@ -68,4 +84,4 @@ try{
  delete process.env.TRULOT_RS17_SHADOW_INPUT;assert.equal(await renderRs17RuntimeShadow(baseline.result),null);
  if(process.argv[3]){fs.mkdirSync(process.argv[3],{recursive:true});fs.writeFileSync(path.join(process.argv[3],'input.json'),JSON.stringify(input,null,2));}
 }finally{for(const k of Object.keys(process.env))if(!(k in saved))delete process.env[k];Object.assign(process.env,saved);fs.rmSync(dir,{recursive:true});}
-console.log(`PASS ${matrix} gate combinations, hosting guards, unchanged disabled page, placement, real approved consumer, context/drift/identity failures`);
+console.log(`PASS ${matrix} local gate combinations, approved staging, production denial, unchanged disabled page, placement, real approved consumer, context/drift/identity failures`);

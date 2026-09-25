@@ -38,10 +38,12 @@ function inputFor(zones){
 }
 const named=[
  {id:'rs-1-7-expanded',zones:['RS-1-7']},{id:'rs-approved-far',zones:['RS-1-8']},
- {id:'rs-conditional-coverage',zones:['RS-1-1']},{id:'rm-density-area',zones:['RM-1-1']},
+ {id:'rs-conditional-height',zones:['RS-1-7']},{id:'rs-conditional-coverage',zones:['RS-1-1']},{id:'rm-density-area',zones:['RM-1-1']},
  {id:'rt-density-area',zones:['RT-1-1']},{id:'rx-1-1',zones:['RX-1-1']},{id:'rx-1-2',zones:['RX-1-2']},
  {id:'split-rs-rm',zones:['RS-1-7','RM-1-1']},{id:'source-drift',zones:['RS-1-7'],drift:true},
  {id:'unknown-coastal',zones:['RS-1-7'],coastal:'unknown'},{id:'inside-coastal',zones:['RS-1-7'],coastal:'inside'},
+ {id:'unmapped-zoning',zones:['RS-1-7'],mapping:'UNMAPPED'},{id:'indeterminate-zoning',zones:['RS-1-7'],mapping:'INDETERMINATE'},
+ {id:'null-address',zones:['RS-1-7'],nullAddress:true},
  {id:'missing-predicate',zones:['RS-1-7'],attack:'missing-predicate'},
  {id:'excluded-far-attempt',zones:['RS-1-7'],attack:'excluded-far'},
  {id:'excluded-rear-setback-attempt',zones:['RS-1-7'],attack:'excluded-rear'},
@@ -52,6 +54,8 @@ const allCases=[...allZones.map(zone=>({id:`all-${zone}`,zones:[zone]})),...name
 const goodByZone=new Map(),seen=new Set(),results=[];
 for(const c of allCases){
  const input=inputFor(c.zones);if(c.coastal)input.context.coastal_context=c.coastal;
+ if(c.mapping){const row=input.zoningResponse.row;row.mappingState=c.mapping;if(c.mapping==='UNMAPPED')Object.assign(row,{dominantZoneCode:null,zoneEvidence:[],distinctZoneCount:0,totalCoveredPercent:0,dominantCoveragePercent:null,secondaryCoveragePercent:0});}
+ if(c.nullAddress)input.parcelResponse.rows.forEach(row=>row.address=null);
  if(c.drift)input.authority.observation.sources.residential.sha256='drift';
  const result=await rehearseExpandedResidentialParameters(input.apn,async()=>{if(c.parcelUnavailable)throw Error('fixture');return input.parcelResponse;},async()=>input.zoningResponse,input.context,input.authority);
  let model=residentialPresentation(result),html=renderResidentialDisplay(result);
@@ -63,8 +67,10 @@ for(const c of allCases){
   model=residentialPresentation(attack);html=renderResidentialDisplay(attack);
  }
  const rows=model.groups.flatMap(g=>g.sections.flatMap(s=>s.rows));
- const expected=c.coastal||c.drift||c.parcelUnavailable||c.attack?0:safe.filter(r=>c.zones.includes(r.zone_code)).length;
+ const expected=c.coastal||c.drift||c.parcelUnavailable||c.attack||c.mapping?0:safe.filter(r=>c.zones.includes(r.zone_code)).length;
  assert.equal(rows.length,expected,c.id);assert.ok(html.includes(coverageQualifier));
+ assert.ok(html.includes('Verified base-zone standards'));
+ assert.doesNotMatch(html,/\/Users\/|TRULOT_|source_paths|local-fixture-not-a-credential/i);
  assert.doesNotMatch(html,/maximum units|units allowed|buildable units|can build|qualifies|compliant|meets requirement|development potential/i);
  for(const item of rows){seen.add(item.rule.rule_id);assert.ok(html.includes(item.rule.rule_id)&&html.includes(item.rule.sealed_record_sha256));assert.equal(item.rule.display_safe,true);assert.equal(item.rule.parcel_application_safe,false);}
  if(c.zones.length>1&&!c.attack){assert.equal(model.groups.length,c.zones.length);for(const g of model.groups)assert.ok(g.sections.flatMap(s=>s.rows).every(r=>r.rule.zone_code===g.zone));}
@@ -117,6 +123,7 @@ assert.equal(residentialPresentation(provenanceAttack).groups[0].sections.length
 
 // Actual runtime, hard gate, and authorized baseline parity.
 const saved={...process.env},temp=fs.mkdtempSync(path.join(os.tmpdir(),'expanded-residential-runtime-')),inputFile=path.join(temp,'input.json');
+let stagingMs=0,stagingHtml='';
 try{
  Object.assign(process.env,{NODE_ENV:'test',TRULOT_RS17_STANDARDS_SHADOW:'1',TRULOT_RS17_SHADOW_INPUT:inputFile});delete process.env.CI;delete process.env.VERCEL;
  for(const zone of allZones){
@@ -126,9 +133,18 @@ try{
  }
  const f=fixture({tpa:false,ctcac:false});const current=await f.load(path.join(root,'lib/parcel-page-v1.ts')).getParcelPageV1Result('3113333800');
  fs.writeFileSync(inputFile,JSON.stringify(inputFor(['RS-1-7','RM-1-1'])));const split=await renderRs17RuntimeShadow(current);assert.ok(split.includes('RS-1-7')&&split.includes('RM-1-1'));
+ for(const key of ['TRULOT_RS17_STANDARDS_SHADOW','TRULOT_RS17_SHADOW_INPUT'])delete process.env[key];
+ Object.assign(process.env,{NODE_ENV:'production',VERCEL:'1',VERCEL_ENV:'preview',TRULOT_VERIFIED_STANDARDS_RELEASE:'1',
+  TRULOT_VERIFIED_STANDARDS_RELEASE_ENV:'staging',TRULOT_VERIFIED_STANDARDS_STAGING_APPROVED:'1',TRULOT_VERIFIED_STANDARDS_INPUT:inputFile});
+ const stagingStart=performance.now();stagingHtml=await renderRs17RuntimeShadow(current);stagingMs=performance.now()-stagingStart;
+ assert.ok(stagingHtml.includes('Verified base-zone standards'));assert.ok(Buffer.byteLength(stagingHtml,'utf8')<250_000);
  for(const env of [{NODE_ENV:'production'},{NODE_ENV:'production',TRULOT_RS17_STANDARDS_SHADOW:'1'},{NODE_ENV:'development',TRULOT_RS17_STANDARDS_SHADOW:'0'},{NODE_ENV:'test',TRULOT_RS17_STANDARDS_SHADOW:'1',CI:'1'},{NODE_ENV:'development',TRULOT_RS17_STANDARDS_SHADOW:'1',VERCEL:'1'}]){
-  Object.assign(process.env,{NODE_ENV:'development',TRULOT_RS17_STANDARDS_SHADOW:'0'});delete process.env.CI;delete process.env.VERCEL;Object.assign(process.env,env);assert.equal(await renderRs17RuntimeShadow(current),null,JSON.stringify(env));
+  for(const key of Object.keys(process.env))if(key.startsWith('TRULOT_VERIFIED_STANDARDS_')||['CI','VERCEL','VERCEL_ENV','TRULOT_DEPLOYMENT_ENV'].includes(key))delete process.env[key];
+  Object.assign(process.env,{NODE_ENV:'development',TRULOT_RS17_STANDARDS_SHADOW:'0'});Object.assign(process.env,env);assert.equal(await renderRs17RuntimeShadow(current),null,JSON.stringify(env));
  }
+ Object.assign(process.env,{NODE_ENV:'production',VERCEL:'1',VERCEL_ENV:'production',TRULOT_VERIFIED_STANDARDS_RELEASE:'1',
+  TRULOT_VERIFIED_STANDARDS_RELEASE_ENV:'staging',TRULOT_VERIFIED_STANDARDS_STAGING_APPROVED:'1',TRULOT_VERIFIED_STANDARDS_INPUT:inputFile});
+ assert.equal(await renderRs17RuntimeShadow(current),null,'production deployment target must remain off');
  const priorFile=path.join(temp,'page.tsx');fs.writeFileSync(priorFile,execFileSync('git',['show','c66eeb3a78dc21b9467e69d2ecbae67ad13f682b:app/parcel/san-diego/[slug]/page.tsx'],{cwd:root}));
  const before=renderToStaticMarkup(await f.load(priorFile).default({params:Promise.resolve({slug:current.data.canonicalSlug})}));
  const after=renderToStaticMarkup(await f.load(path.join(root,'app/parcel/san-diego/[slug]/page.tsx')).default({params:Promise.resolve({slug:current.data.canonicalSlug})}));assert.equal(after,before);
@@ -136,5 +152,7 @@ try{
 
 fs.writeFileSync(path.join(output,'results.json'),JSON.stringify({result:'PASS',sealed:213,prior:97,new:116,familyCounts,zones:allZones.length,seen:seen.size,
  goldenFixtures:named.map(c=>c.id),remainingCandidatesRejected:201,otherCorpusRejected:601,metadataMutations:mutations,
- densityCapacityConversion:false,splitIndependent:true,productionAlwaysOff:true,gateOffMatchesAuthorizedBaseline:true,states:results},null,2));
+ densityCapacityConversion:false,splitIndependent:true,productionAlwaysOff:true,approvedStagingEnabled:true,
+ stagingRenderMilliseconds:Number(stagingMs.toFixed(2)),stagingHtmlBytes:Buffer.byteLength(stagingHtml,'utf8'),
+ gateOffMatchesAuthorizedBaseline:true,states:results},null,2));
 console.log(`PASS expanded213 through consumer/display/runtime; 201 remaining candidates, 601 other corpus records, ${mutations} mutation attacks, split, production gate, baseline parity`);

@@ -25,7 +25,7 @@ const sections: Array<{ title: string; families: Family[] }> = [
   { title: "Building envelope", families: ["height", "far", "lot_coverage"] },
 ];
 
-export const coverageQualifier = "Only verified display-safe standards are shown. Some governing standards are still unavailable. Conditions depend on parcel-specific facts that TruLot has not determined. TruLot has not determined compliance, and these values do not represent total development capacity.";
+export const coverageQualifier = "Only reviewed base-zone standards are shown. Additional rules may apply, and parcel-specific conditions remain unresolved. TruLot has not determined compliance or development capacity.";
 export const residentialSource = "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf";
 
 export interface ResidentialDisplayRow {
@@ -158,7 +158,7 @@ function row(rule: Rule): ResidentialDisplayRow {
 }
 
 export function residentialPresentation(result: ExpandedResidentialRehearsalResult): ResidentialDisplayModel {
-  const model: ResidentialDisplayModel = { title: "Verified residential standards — local review",
+  const model: ResidentialDisplayModel = { title: "Verified base-zone standards",
     qualifier: coverageQualifier, project_applicability_determined: false, groups: [], message: "" };
   const { parcel, baseZoning } = result.parcelIntelligence.truth;
   if (result.membership !== "EXPANDED_213" || result.display_safe !== true || result.parcel_application_safe !== false ||

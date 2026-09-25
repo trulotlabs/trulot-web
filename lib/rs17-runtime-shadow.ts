@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import { isAbsolute } from "node:path";
 import { z } from "zod";
 import type { ParcelPageV1Result } from "./parcel-page-v1";
-import { rs17ShadowEnabled } from "./rs17-shadow-gate";
+import { verifiedStandardsMode } from "./rs17-shadow-gate";
 import { rehearseExpandedResidentialParameters } from "../scripts/rs17-parameter-rehearsal/adapter";
 import { renderResidentialDisplay } from "../scripts/residential-display-shadow/display";
 
@@ -23,11 +23,14 @@ const inputSchema = z.object({
 
 export async function renderRs17RuntimeShadow(result: ParcelPageV1Result): Promise<string | null> {
   // Defense in depth: callers cannot bypass the gate by importing this module.
-  if (!rs17ShadowEnabled()) return null;
+  const mode = verifiedStandardsMode();
+  if (!mode) return null;
   const parcel = result.truth.parcel;
   if (!result.data || parcel.state !== "supported" || !parcel.value ||
       !result.data.zoning.baseCode.value) return null;
-  const filename = process.env.TRULOT_RS17_SHADOW_INPUT;
+  const filename = mode === "staging"
+    ? process.env.TRULOT_VERIFIED_STANDARDS_INPUT
+    : process.env.TRULOT_RS17_SHADOW_INPUT;
   if (!filename || !isAbsolute(filename)) return null;
   try {
     const input = inputSchema.parse(JSON.parse(readFileSync(filename, "utf8")));
