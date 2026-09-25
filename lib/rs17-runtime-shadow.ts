@@ -3,7 +3,7 @@ import { isAbsolute } from "node:path";
 import { z } from "zod";
 import type { ParcelPageV1Result } from "./parcel-page-v1";
 import { rs17ShadowEnabled } from "./rs17-shadow-gate";
-import { rehearseResidentialParameters } from "../scripts/rs17-parameter-rehearsal/adapter";
+import { rehearseExpandedResidentialParameters } from "../scripts/rs17-parameter-rehearsal/adapter";
 import { renderResidentialDisplay } from "../scripts/residential-display-shadow/display";
 
 // Explicit local inputs only. No lookup, inferred context, persisted user flag,
@@ -32,7 +32,7 @@ export async function renderRs17RuntimeShadow(result: ParcelPageV1Result): Promi
   try {
     const input = inputSchema.parse(JSON.parse(readFileSync(filename, "utf8")));
     if (input.apn !== parcel.value.apn.replace(/\D/g, "")) return null;
-    const safe = await rehearseResidentialParameters(input.apn,
+    const safe = await rehearseExpandedResidentialParameters(input.apn,
       async () => input.parcelResponse, async () => input.zoningResponse,
       input.context, input.authority);
     const zoning = safe.parcelIntelligence.truth.baseZoning;

@@ -51,14 +51,14 @@ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'rs17-runtime-')),filename=path.j
 const source=JSON.parse(fs.readFileSync(path.join(root,'data/zoning-serving-v2/golden-fixture.json'))).cases.singleZone;
 const input={apn:'3113333800',parcelResponse:source.parcelResponse,zoningResponse:source.zoningResponse,
  context:{evaluation_date:'2026-09-24',coastal_context:'outside',application_context:'new_application',airport_context:'outside_miramar_transition',lot_context:'unknown'},
- authority:{observation:JSON.parse(fs.readFileSync(path.join(root,'data/residential-standards-review/source-observation.json'))),sourcePaths:JSON.parse(fs.readFileSync(process.argv[2]))}};
+ authority:{observation:JSON.parse(fs.readFileSync(path.join(root,'data/high-value-residential-review/authority-observation.json'))),sourcePaths:JSON.parse(fs.readFileSync(process.argv[2]))}};
 input.parcelResponse.rows.forEach(r=>r.apn_norm=input.apn);input.zoningResponse.row.apn=input.apn;input.zoningResponse.row.dominantZoneCode='RS-1-7';input.zoningResponse.row.zoneEvidence.forEach(r=>r.zoneCode='RS-1-7');
 const saved={...process.env};Object.assign(process.env,on,{TRULOT_RS17_SHADOW_INPUT:filename});delete process.env.CI;delete process.env.VERCEL;
 const write=value=>fs.writeFileSync(filename,JSON.stringify(value));
 try{
  write(input);const html=await renderRs17RuntimeShadow(baseline.result);
  assert.ok(html?.includes('50 ft')&&html.includes('55 ft')&&html.includes('95 ft'));
- assert.ok(html.includes('Corner-lot condition; no parcel determination'));
+ assert.ok(html.includes("corner-lot branch; corner status is unresolved"));
  process.env.NODE_ENV='production';assert.equal(await renderRs17RuntimeShadow(baseline.result),null);process.env.NODE_ENV='test';
  for(const mutate of [x=>x.apn='0000000000',x=>x.context.coastal_context='unknown',x=>x.authority.observation.sources.residential.sha256='drift',x=>x.zoningResponse.row.mappingState='INDETERMINATE']){
   const changed=structuredClone(input);mutate(changed);write(changed);assert.ok(!(await renderRs17RuntimeShadow(baseline.result))?.includes('50 ft'));
