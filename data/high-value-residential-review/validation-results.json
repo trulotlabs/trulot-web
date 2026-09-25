@@ -1,0 +1,213 @@
+{
+  "packet": "17",
+  "result": "PASS_WITH_EXISTING_UNRELATED_LINT_DEBT",
+  "new_suite": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/high-value-residential-review/test.py /private/tmp/trulot-closure-parent/source-paths.json",
+    "exit_code": 0,
+    "tests": 21,
+    "final_seal_replay": "PASS"
+  },
+  "independent_adversarial_checks": 78,
+  "prior_standards_and_typescript": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 node scripts/test-rs17-runtime-shadow.mjs /private/tmp/trulot-closure-parent/source-paths.json",
+      "exit_code": 0,
+      "result": "PASS 20 gate combinations, hosting guards, unchanged disabled page, placement, real approved consumer, context/drift/identity failures\n"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 node scripts/rs17-parameter-rehearsal/test.mjs /private/tmp/trulot-closure-parent/source-paths.json",
+      "exit_code": 0,
+      "result": "PASS missing-corner\nPASS different-zone\nPASS unknown-zone\nPASS split\nPASS source-hash-drift\nPASS source-bytes-drift\nPASS missing-artifact\nPASS height\nPASS far\nPASS density\nPASS missing-application\nPASS unknown-airport\nPASS effective-drift\nPASS certification-drift\nPASS 22 golden fixtures, 21 excluded records, parcel-absence isolation, geometry-area independence; no standards compliance output\n"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 node scripts/rs17-display-shadow/test.mjs /private/tmp/trulot-closure-parent/source-paths.json /private/tmp/high-value-packet14-validation",
+      "exit_code": 0,
+      "result": "PASS split\nPASS other-residential\nPASS unknown-zone\nPASS parcel-unavailable\nPASS unsupported-date\nPASS missing-application\nPASS 21 excluded injections;4 evidence mutations;stable order;byte-preserving current/shadow comparison\n"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/residential-display-shadow/test-consumer.py /private/tmp/trulot-closure-parent/source-paths.json",
+      "exit_code": 0,
+      "result": "PASS: all97 safe records,33zones,717 excluded injections,5 invalid selections,6 state mutations;36.39seconds"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 node scripts/residential-display-shadow/test.mjs /private/tmp/trulot-closure-parent/source-paths.json /private/tmp/high-value-packet16-validation",
+      "exit_code": 0,
+      "result": "PASS RM-2-5\nPASS RM-2-6\nPASS RM-3-7\nPASS RM-3-8\nPASS RM-3-9\nPASS RM-4-10\nPASS RM-4-11\nPASS RM-5-12\nPASS RS-1-1\nPASS RS-1-10\nPASS RS-1-11\nPASS RS-1-12\nPASS RS-1-13\nPASS RS-1-14\nPASS RS-1-2\nPASS RS-1-3\nPASS RS-1-4\nPASS RS-1-5\nPASS RS-1-6\nPASS RS-1-7\nPASS RS-1-8\nPASS RS-1-9\nPASS RT-1-1\nPASS RT-1-2\nPASS RT-1-3\nPASS RT-1-4\nPASS RT-1-5\nPASS RX-1-1\nPASS RX-1-2\nPASS split\nPASS split-one-approved\nPASS zero-safe-synthetic\nPASS unknown-zone\nPASS unmapped\nPASS indeterminate\nPASS unknown-coastal\nPASS inside-coastal\nPASS source-drift\nPASS parcel-unavailable\nPASS all97 through consumer/display/runtime, all717 renderer injections, 24 metadata/state mutations, order, split and baseline\n"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/residential-standards-review/test.py /private/tmp/trulot-closure-parent/source-paths.json",
+      "exit_code": 0,
+      "result": "ok\ntest_application_and_airport_unknown (__main__.ClosureTests.test_application_and_airport_unknown) ... ok\ntest_changed_hash_metadata (__main__.ClosureTests.test_changed_hash_metadata) ... ok\ntest_coastal_and_unknown (__main__.ClosureTests.test_coastal_and_unknown) ... ok\ntest_coastal_certification_changed (__main__.ClosureTests.test_coastal_certification_changed) ... ok\ntest_conflicting_or_unreviewed_new_authority (__main__.ClosureTests.test_conflicting_or_unreviewed_new_authority) ... ok\ntest_corner_predicate (__main__.ClosureTests.test_corner_predicate) ... ok\ntest_corrected_ordinance_not_flat_strikeout (__main__.ClosureTests.test_corrected_ordinance_not_flat_strikeout) ... ok\ntest_date_not_snapshot (__main__.ClosureTests.test_date_not_snapshot) ... ok\ntest_dependency_deletion (__main__.ClosureTests.test_dependency_deletion) ... ok\ntest_digit_reordering_is_not_character_bag_equality (__main__.ClosureTests.test_digit_reordering_is_not_character_bag_equality) ... ok\ntest_effective_metadata_changed (__main__.ClosureTests.test_effective_metadata_changed) ... ok\ntest_exact97_scope (__main__.ClosureTests.test_exact97_scope) ... ok\ntest_half_open_version_boundaries (__main__.ClosureTests.test_half_open_version_boundaries) ... ok\ntest_hash_only_observation_rejected (__main__.ClosureTests.test_hash_only_observation_rejected) ... ok\ntest_interpretive_excluded (__main__.ClosureTests.test_interpretive_excluded) ... ok\ntest_malformed_bundle_fails_closed_without_exception (__main__.ClosureTests.test_malformed_bundle_fails_closed_without_exception) ... ok\ntest_no_project_scope (__main__.ClosureTests.test_no_project_scope) ... ok\ntest_no_zone_alias_or_union (__main__.ClosureTests.test_no_zone_alias_or_union) ... ok\ntest_orphan_all7_excluded (__main__.ClosureTests.test_orphan_all7_excluded) ... ok\ntest_positive_parameter_not_project_decision (__main__.ClosureTests.test_positive_parameter_not_project_decision) ... ok\ntest_rs17_replay_all24_and_subset3 (__main__.ClosureTests.test_rs17_replay_all24_and_subset3) ... ok\ntest_seal_and_actual_public_artifacts (__main__.ClosureTests.test_seal_and_actual_public_artifacts) ... ok\ntest_sections_or_tables_disappeared (__main__.ClosureTests.test_sections_or_tables_disappeared) ... ok\ntest_timeline_nonoverlap_and_pending (__main__.ClosureTests.test_timeline_nonoverlap_and_pending) ... ok\ntest_unsafe_addition_or_corner_condition_deletion (__main__.ClosureTests.test_unsafe_addition_or_corner_condition_deletion) ... ok\ntest_wrong_column_rejected (__main__.ClosureTests.test_wrong_column_rejected) ... ok\ntest_wrong_unit_rejected (__main__.ClosureTests.test_wrong_unit_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 29 tests in 4.106s\n\nOK\n<sys>:0: DeprecationWarning: builtin type swigvarlink has no __module__ attribute\n"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/zoning-standards-v2/test.py",
+      "exit_code": 0,
+      "result": "ok\ntest_missing_source_footnote_quarantined (__main__.Standards.test_missing_source_footnote_quarantined) ... ok\ntest_no_capacity_api (__main__.Standards.test_no_capacity_api) ... ok\ntest_no_digit_density_in_resolver (__main__.Standards.test_no_digit_density_in_resolver) ... ok\ntest_old_version_refused (__main__.Standards.test_old_version_refused) ... ok\ntest_outside_snapshot (__main__.Standards.test_outside_snapshot) ... ok\ntest_overlapping_applicability (__main__.Standards.test_overlapping_applicability) ... ok\ntest_rs_height_is_not_flat_30 (__main__.Standards.test_rs_height_is_not_flat_30) ... ok\ntest_source_registry_tampering (__main__.Standards.test_source_registry_tampering) ... ok\ntest_split_separate (__main__.Standards.test_split_separate) ... ok\ntest_supplemental_and_dependency_tampering (__main__.Standards.test_supplemental_and_dependency_tampering) ... ok\ntest_unknown_coastal_refused (__main__.Standards.test_unknown_coastal_refused) ... ok\ntest_unknown_zone_and_no_prefix_fallback (__main__.Standards.test_unknown_zone_and_no_prefix_fallback) ... ok\ntest_version_sources (__main__.Standards.test_version_sources) ... ok\ntest_whole_sections_retained (__main__.Standards.test_whole_sections_retained) ... ok\n\n----------------------------------------------------------------------\nRan 35 tests in 1.600s\n\nOK\n"
+    },
+    {
+      "command": "node_modules/.bin/tsc --noEmit --incremental false",
+      "exit_code": 0,
+      "result": ""
+    }
+  ],
+  "foundational_regressions": [
+    {
+      "command": "python3 scripts/base-zoning-v2/test.py",
+      "exit_code": 0,
+      "seconds": 0.06,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_base-zoning-v2_test.py.log"
+    },
+    {
+      "command": "python3 scripts/zoning-serving-v2/test.py",
+      "exit_code": 0,
+      "seconds": 0.03,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_zoning-serving-v2_test.py.log"
+    },
+    {
+      "command": "python3 scripts/test-sangis-acquisition-stream.py",
+      "exit_code": 0,
+      "seconds": 0.42,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_test-sangis-acquisition-stream.py.log"
+    },
+    {
+      "command": "python3 scripts/test-sangis-acquirer.py",
+      "exit_code": 0,
+      "seconds": 0.14,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_test-sangis-acquirer.py.log"
+    },
+    {
+      "command": "node scripts/base-zoning-v2/test-adapter.mjs",
+      "exit_code": 0,
+      "seconds": 0.28,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_base-zoning-v2_test-adapter.mjs.log"
+    },
+    {
+      "command": "node scripts/zoning-serving-v2/test-adapter.mjs",
+      "exit_code": 0,
+      "seconds": 0.33,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_zoning-serving-v2_test-adapter.mjs.log"
+    },
+    {
+      "command": "node scripts/parcel-serving-v2/test-adapter.mjs",
+      "exit_code": 0,
+      "seconds": 0.32,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_parcel-serving-v2_test-adapter.mjs.log"
+    },
+    {
+      "command": "node scripts/test-parcel-base-v2-receipt.mjs",
+      "exit_code": 0,
+      "seconds": 0.11,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_test-parcel-base-v2-receipt.mjs.log"
+    },
+    {
+      "command": "node scripts/test-parcel-base-v2-source.mjs",
+      "exit_code": 0,
+      "seconds": 2.05,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_test-parcel-base-v2-source.mjs.log"
+    },
+    {
+      "command": "node scripts/test-sangis-acquisition.mjs",
+      "exit_code": 0,
+      "seconds": 0.07,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_test-sangis-acquisition.mjs.log"
+    },
+    {
+      "command": "node scripts/test-parcel-truth.mjs",
+      "exit_code": 0,
+      "seconds": 1.09,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_test-parcel-truth.mjs.log"
+    },
+    {
+      "command": "node scripts/test-overlay-response.mjs",
+      "exit_code": 0,
+      "seconds": 2.02,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_test-overlay-response.mjs.log"
+    },
+    {
+      "command": "node scripts/test-sda-source-reconciliation.mjs",
+      "exit_code": 0,
+      "seconds": 0.25,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_test-sda-source-reconciliation.mjs.log"
+    },
+    {
+      "command": "node scripts/verify-parcel-foundation.mjs",
+      "exit_code": 0,
+      "seconds": 0.25,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_verify-parcel-foundation.mjs.log"
+    },
+    {
+      "command": "node scripts/test-parcel-foundation.mjs",
+      "exit_code": 0,
+      "seconds": 0.3,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_test-parcel-foundation.mjs.log"
+    },
+    {
+      "command": "node scripts/verify-data-foundation.mjs",
+      "exit_code": 0,
+      "seconds": 0.03,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_verify-data-foundation.mjs.log"
+    },
+    {
+      "command": "node scripts/test-production-database-freeze.mjs",
+      "exit_code": 0,
+      "seconds": 0.59,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_test-production-database-freeze.mjs.log"
+    },
+    {
+      "command": "node scripts/test-validate-foundation-dry-run.mjs",
+      "exit_code": 0,
+      "seconds": 0.17,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_test-validate-foundation-dry-run.mjs.log"
+    },
+    {
+      "command": "node scripts/test-qa-foundation-production-adapter.mjs",
+      "exit_code": 0,
+      "seconds": 0.03,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_test-qa-foundation-production-adapter.mjs.log"
+    },
+    {
+      "command": "node scripts/parcel-identity-shadow/test.mjs",
+      "exit_code": 0,
+      "seconds": 0.5,
+      "log": "/private/tmp/trulot-high-value-regression-logs/scripts_parcel-identity-shadow_test.mjs.log"
+    },
+    {
+      "command": "npm run lint",
+      "exit_code": 1,
+      "seconds": 3.43,
+      "log": "/private/tmp/trulot-high-value-regression-logs/lint.log"
+    }
+  ],
+  "lint": {
+    "exit_code": 1,
+    "errors": 3,
+    "warnings": 6,
+    "changed_file_findings": 0,
+    "output": "\n> trulot-web@0.1.0 lint\n> eslint\n\n\n/Users/ops/trulot-web-parcel/app/api/jobs-feed/route.ts\n  114:9  warning  'isEarlyReview' is assigned a value but never used  @typescript-eslint/no-unused-vars\n\n/Users/ops/trulot-web-parcel/lib/infer-phase.ts\n  163:10  warning  'descSignal' is defined but never used             @typescript-eslint/no-unused-vars\n  227:9   warning  'signals' is assigned a value but never used       @typescript-eslint/no-unused-vars\n  237:9   warning  'primaryLabel' is assigned a value but never used  @typescript-eslint/no-unused-vars\n  261:9   warning  'isDemoDesc' is assigned a value but never used    @typescript-eslint/no-unused-vars\n\n/Users/ops/trulot-web-parcel/scripts/rs17-display-shadow/test.mjs\n  14:2  error  Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable  @next/next/no-assign-module-variable\n\n/Users/ops/trulot-web-parcel/scripts/rs17-parameter-rehearsal/test.mjs\n  15:3  error  Do not assign to the variable `module`. See: https://nextjs.org/docs/messages/no-assign-module-variable  @next/next/no-assign-module-variable\n\n/Users/ops/trulot-web-parcel/scripts/triage-overlay-integrity.mjs\n  76:10  warning  'parseRowsOutput' is defined but never used  @typescript-eslint/no-unused-vars\n\n/Users/ops/trulot-web-parcel/supabase/functions/nearby-parcels/index.ts\n  125:67  error  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any\n\n✖ 9 problems (3 errors, 6 warnings)\n\n"
+  },
+  "assembly": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/high-value-residential-review/assemble.py",
+    "result": "PASS"
+  },
+  "preservation": {
+    "unchanged": true,
+    "branch": "codex/elevate-row-interview",
+    "head": "8d82378e5b6a3cb2aba1153b96f025bc71a78d16",
+    "file_hash_count": 57,
+    "before_status": " M supabase/functions/nearby-parcels/index.ts\n?? docs/sda-source-of-record-recovery-discovery-architecture-2026-07-15.md\n?? supabase/.temp/\n",
+    "after_status": " M supabase/functions/nearby-parcels/index.ts\n?? docs/sda-source-of-record-recovery-discovery-architecture-2026-07-15.md\n?? supabase/.temp/\n",
+    "snapshot_sha256": "ab581e7410e399d05158847f66016d5c7e3c5b15740f68be23f2afb64b3be5f6"
+  },
+  "safety": {
+    "runtime_changed": false,
+    "public_display_enabled": false,
+    "prior_approval_modified": false,
+    "production_configuration_changed": false,
+    "database_accessed": false,
+    "capacity_calculated": false,
+    "compliance_calculated": false,
+    "deployed": false,
+    "pushed": false
+  },
+  "note": "Source manifest contains local paths to17 pinned public artifacts. No credentials/network needed. Existing consumer still rejects717 records, including this offline proposal, until separately authorized runtime work."
+}

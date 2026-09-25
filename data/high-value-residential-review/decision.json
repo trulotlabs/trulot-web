@@ -1,0 +1,3260 @@
+{
+  "baseline_head": "ea25454ffafafe40d3ab564e5b12c03ddd884ad2",
+  "scope": {
+    "as_of": "2026-09-24",
+    "coastal_context": "outside",
+    "application_context": "new_application",
+    "airport_context": "outside_miramar_transition",
+    "scope": "CONDITIONAL_BASE_ZONE_PARAMETERS_ONLY"
+  },
+  "approved_new_rule_ids": [
+    "sd-residential-2026-09-24-research-v1:RM-1-1:41:4",
+    "sd-residential-2026-09-24-research-v1:RM-1-1:41:5",
+    "sd-residential-2026-09-24-research-v1:RM-1-2:41:4",
+    "sd-residential-2026-09-24-research-v1:RM-1-2:41:5",
+    "sd-residential-2026-09-24-research-v1:RM-1-3:41:4",
+    "sd-residential-2026-09-24-research-v1:RM-1-3:41:5",
+    "sd-residential-2026-09-24-research-v1:RM-2-4:41:4",
+    "sd-residential-2026-09-24-research-v1:RM-2-4:41:5",
+    "sd-residential-2026-09-24-research-v1:RM-2-5:41:4",
+    "sd-residential-2026-09-24-research-v1:RM-2-5:41:5",
+    "sd-residential-2026-09-24-research-v1:RM-2-6:41:4",
+    "sd-residential-2026-09-24-research-v1:RM-2-6:41:5",
+    "sd-residential-2026-09-24-research-v1:RM-3-7:43:4",
+    "sd-residential-2026-09-24-research-v1:RM-3-7:43:5",
+    "sd-residential-2026-09-24-research-v1:RM-3-8:43:4",
+    "sd-residential-2026-09-24-research-v1:RM-3-8:43:5",
+    "sd-residential-2026-09-24-research-v1:RM-3-9:43:4",
+    "sd-residential-2026-09-24-research-v1:RM-3-9:43:5",
+    "sd-residential-2026-09-24-research-v1:RM-4-10:43:4",
+    "sd-residential-2026-09-24-research-v1:RM-4-10:43:5",
+    "sd-residential-2026-09-24-research-v1:RM-4-11:43:4",
+    "sd-residential-2026-09-24-research-v1:RM-4-11:43:5",
+    "sd-residential-2026-09-24-research-v1:RM-5-12:43:4",
+    "sd-residential-2026-09-24-research-v1:RM-5-12:43:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-10:36:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-10:36:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-10:36:19",
+    "sd-residential-2026-09-24-research-v1:RS-1-10:36:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-10:36:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-11:36:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-11:36:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-11:36:19",
+    "sd-residential-2026-09-24-research-v1:RS-1-11:36:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-11:36:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-12:36:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-12:36:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-12:36:19",
+    "sd-residential-2026-09-24-research-v1:RS-1-12:36:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-12:36:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-13:36:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-13:36:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-13:36:19",
+    "sd-residential-2026-09-24-research-v1:RS-1-13:36:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-13:36:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-14:36:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-14:36:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-14:36:19",
+    "sd-residential-2026-09-24-research-v1:RS-1-14:36:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-14:36:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-1:34:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-1:34:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-1:34:17",
+    "sd-residential-2026-09-24-research-v1:RS-1-1:34:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-1:34:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-1:35:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-1:35:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-2:34:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-2:34:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-2:34:17",
+    "sd-residential-2026-09-24-research-v1:RS-1-2:34:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-2:34:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-2:35:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-3:34:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-3:34:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-3:34:17",
+    "sd-residential-2026-09-24-research-v1:RS-1-3:34:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-3:34:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-3:35:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-4:34:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-4:34:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-4:34:17",
+    "sd-residential-2026-09-24-research-v1:RS-1-4:34:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-4:34:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-4:35:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-5:34:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-5:34:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-5:34:17",
+    "sd-residential-2026-09-24-research-v1:RS-1-5:34:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-5:34:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-5:35:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-6:34:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-6:34:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-6:34:17",
+    "sd-residential-2026-09-24-research-v1:RS-1-6:34:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-6:34:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-6:35:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-7:34:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-7:34:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-7:34:17",
+    "sd-residential-2026-09-24-research-v1:RS-1-7:34:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-7:34:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-7:35:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-8:36:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-8:36:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-8:36:19",
+    "sd-residential-2026-09-24-research-v1:RS-1-8:36:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-8:36:5",
+    "sd-residential-2026-09-24-research-v1:RS-1-9:36:12",
+    "sd-residential-2026-09-24-research-v1:RS-1-9:36:13",
+    "sd-residential-2026-09-24-research-v1:RS-1-9:36:19",
+    "sd-residential-2026-09-24-research-v1:RS-1-9:36:4",
+    "sd-residential-2026-09-24-research-v1:RS-1-9:36:5",
+    "sd-residential-2026-09-24-research-v1:RT-1-1:39:4",
+    "sd-residential-2026-09-24-research-v1:RT-1-1:39:5",
+    "sd-residential-2026-09-24-research-v1:RT-1-2:39:4",
+    "sd-residential-2026-09-24-research-v1:RT-1-2:39:5",
+    "sd-residential-2026-09-24-research-v1:RT-1-3:39:4",
+    "sd-residential-2026-09-24-research-v1:RT-1-3:39:5",
+    "sd-residential-2026-09-24-research-v1:RT-1-4:39:4",
+    "sd-residential-2026-09-24-research-v1:RT-1-4:39:5",
+    "sd-residential-2026-09-24-research-v1:RT-1-5:39:4",
+    "sd-residential-2026-09-24-research-v1:RT-1-5:39:5",
+    "sd-residential-2026-09-24-research-v1:RX-1-1:37:4",
+    "sd-residential-2026-09-24-research-v1:RX-1-1:37:5",
+    "sd-residential-2026-09-24-research-v1:RX-1-2:37:4",
+    "sd-residential-2026-09-24-research-v1:RX-1-2:37:5"
+  ],
+  "candidate_decisions": [
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:4",
+      "zone_code": "RS-1-1",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:4",
+      "zone_code": "RS-1-2",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:4",
+      "zone_code": "RS-1-3",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:4",
+      "zone_code": "RS-1-4",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:4",
+      "zone_code": "RS-1-5",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:4",
+      "zone_code": "RS-1-6",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:4",
+      "zone_code": "RS-1-7",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:5",
+      "zone_code": "RS-1-1",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:5",
+      "zone_code": "RS-1-2",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:5",
+      "zone_code": "RS-1-3",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:5",
+      "zone_code": "RS-1-4",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:5",
+      "zone_code": "RS-1-5",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:5",
+      "zone_code": "RS-1-6",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:5",
+      "zone_code": "RS-1-7",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:12",
+      "zone_code": "RS-1-1",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:12",
+      "zone_code": "RS-1-2",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:12",
+      "zone_code": "RS-1-3",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:12",
+      "zone_code": "RS-1-4",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:12",
+      "zone_code": "RS-1-5",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:12",
+      "zone_code": "RS-1-6",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:12",
+      "zone_code": "RS-1-7",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:13",
+      "zone_code": "RS-1-1",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:13",
+      "zone_code": "RS-1-2",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:13",
+      "zone_code": "RS-1-3",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:13",
+      "zone_code": "RS-1-4",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:13",
+      "zone_code": "RS-1-5",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:13",
+      "zone_code": "RS-1-6",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:13",
+      "zone_code": "RS-1-7",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:14",
+      "zone_code": "RS-1-1",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:14",
+      "zone_code": "RS-1-2",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:14",
+      "zone_code": "RS-1-3",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:14",
+      "zone_code": "RS-1-4",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:14",
+      "zone_code": "RS-1-5",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:14",
+      "zone_code": "RS-1-6",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:14",
+      "zone_code": "RS-1-7",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:15",
+      "zone_code": "RS-1-1",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "REAR_TABLE_141_04D_DEFECT",
+      "reason": "Section 131.0443(a)(2)(A), current page 48 and corrected adopted O-21836 page 47, references Table 141-04D. The later adopted source retains the defect; depth, alley and parking clauses do not correct it. No authoritative correction established.",
+      "blocker_category": "source-defect",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:15",
+      "zone_code": "RS-1-2",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "REAR_TABLE_141_04D_DEFECT",
+      "reason": "Section 131.0443(a)(2)(A), current page 48 and corrected adopted O-21836 page 47, references Table 141-04D. The later adopted source retains the defect; depth, alley and parking clauses do not correct it. No authoritative correction established.",
+      "blocker_category": "source-defect",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:15",
+      "zone_code": "RS-1-3",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "REAR_TABLE_141_04D_DEFECT",
+      "reason": "Section 131.0443(a)(2)(A), current page 48 and corrected adopted O-21836 page 47, references Table 141-04D. The later adopted source retains the defect; depth, alley and parking clauses do not correct it. No authoritative correction established.",
+      "blocker_category": "source-defect",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:15",
+      "zone_code": "RS-1-4",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "REAR_TABLE_141_04D_DEFECT",
+      "reason": "Section 131.0443(a)(2)(A), current page 48 and corrected adopted O-21836 page 47, references Table 141-04D. The later adopted source retains the defect; depth, alley and parking clauses do not correct it. No authoritative correction established.",
+      "blocker_category": "source-defect",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:15",
+      "zone_code": "RS-1-5",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "REAR_TABLE_141_04D_DEFECT",
+      "reason": "Section 131.0443(a)(2)(A), current page 48 and corrected adopted O-21836 page 47, references Table 141-04D. The later adopted source retains the defect; depth, alley and parking clauses do not correct it. No authoritative correction established.",
+      "blocker_category": "source-defect",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:15",
+      "zone_code": "RS-1-6",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "REAR_TABLE_141_04D_DEFECT",
+      "reason": "Section 131.0443(a)(2)(A), current page 48 and corrected adopted O-21836 page 47, references Table 141-04D. The later adopted source retains the defect; depth, alley and parking clauses do not correct it. No authoritative correction established.",
+      "blocker_category": "source-defect",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:15",
+      "zone_code": "RS-1-7",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "REAR_TABLE_141_04D_DEFECT",
+      "reason": "Section 131.0443(a)(2)(A), current page 48 and corrected adopted O-21836 page 47, references Table 141-04D. The later adopted source retains the defect; depth, alley and parking clauses do not correct it. No authoritative correction established.",
+      "blocker_category": "source-defect",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:34:17",
+      "zone_code": "RS-1-1",
+      "family": "height",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:34:17",
+      "zone_code": "RS-1-2",
+      "family": "height",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:34:17",
+      "zone_code": "RS-1-3",
+      "family": "height",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:34:17",
+      "zone_code": "RS-1-4",
+      "family": "height",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:34:17",
+      "zone_code": "RS-1-5",
+      "family": "height",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:34:17",
+      "zone_code": "RS-1-6",
+      "family": "height",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:17",
+      "zone_code": "RS-1-7",
+      "family": "height",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:35:4",
+      "zone_code": "RS-1-1",
+      "family": "lot_coverage",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:35:4",
+      "zone_code": "RS-1-2",
+      "family": "lot_coverage",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:35:4",
+      "zone_code": "RS-1-3",
+      "family": "lot_coverage",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:35:4",
+      "zone_code": "RS-1-4",
+      "family": "lot_coverage",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:35:4",
+      "zone_code": "RS-1-5",
+      "family": "lot_coverage",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:35:4",
+      "zone_code": "RS-1-6",
+      "family": "lot_coverage",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:4",
+      "zone_code": "RS-1-7",
+      "family": "lot_coverage",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-1:35:5",
+      "zone_code": "RS-1-1",
+      "family": "far",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-2:35:5",
+      "zone_code": "RS-1-2",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "TABLE_J_PUNCTUATION_OVERLAP_AND_FRACTIONAL_INTERVAL_GAPS_UNRESOLVED",
+      "blocker_category": "source_defect"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-3:35:5",
+      "zone_code": "RS-1-3",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "TABLE_J_PUNCTUATION_OVERLAP_AND_FRACTIONAL_INTERVAL_GAPS_UNRESOLVED",
+      "blocker_category": "source_defect"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-4:35:5",
+      "zone_code": "RS-1-4",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "TABLE_J_PUNCTUATION_OVERLAP_AND_FRACTIONAL_INTERVAL_GAPS_UNRESOLVED",
+      "blocker_category": "source_defect"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-5:35:5",
+      "zone_code": "RS-1-5",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "TABLE_J_PUNCTUATION_OVERLAP_AND_FRACTIONAL_INTERVAL_GAPS_UNRESOLVED",
+      "blocker_category": "source_defect"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-6:35:5",
+      "zone_code": "RS-1-6",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "TABLE_J_PUNCTUATION_OVERLAP_AND_FRACTIONAL_INTERVAL_GAPS_UNRESOLVED",
+      "blocker_category": "source_defect"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:5",
+      "zone_code": "RS-1-7",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "TABLE_J_PUNCTUATION_OVERLAP_AND_FRACTIONAL_INTERVAL_GAPS_UNRESOLVED",
+      "blocker_category": "source_defect"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:4",
+      "zone_code": "RS-1-8",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:4",
+      "zone_code": "RS-1-9",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:4",
+      "zone_code": "RS-1-10",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:4",
+      "zone_code": "RS-1-11",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:4",
+      "zone_code": "RS-1-12",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:4",
+      "zone_code": "RS-1-13",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:4",
+      "zone_code": "RS-1-14",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:5",
+      "zone_code": "RS-1-8",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:5",
+      "zone_code": "RS-1-9",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:5",
+      "zone_code": "RS-1-10",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:5",
+      "zone_code": "RS-1-11",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:5",
+      "zone_code": "RS-1-12",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:5",
+      "zone_code": "RS-1-13",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:5",
+      "zone_code": "RS-1-14",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:12",
+      "zone_code": "RS-1-8",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:12",
+      "zone_code": "RS-1-9",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:12",
+      "zone_code": "RS-1-10",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:12",
+      "zone_code": "RS-1-11",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:12",
+      "zone_code": "RS-1-12",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:12",
+      "zone_code": "RS-1-13",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:12",
+      "zone_code": "RS-1-14",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:13",
+      "zone_code": "RS-1-8",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:13",
+      "zone_code": "RS-1-9",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:13",
+      "zone_code": "RS-1-10",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:13",
+      "zone_code": "RS-1-11",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:13",
+      "zone_code": "RS-1-12",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:13",
+      "zone_code": "RS-1-13",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:13",
+      "zone_code": "RS-1-14",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:14",
+      "zone_code": "RS-1-8",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:14",
+      "zone_code": "RS-1-9",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:14",
+      "zone_code": "RS-1-10",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:14",
+      "zone_code": "RS-1-11",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:14",
+      "zone_code": "RS-1-12",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:14",
+      "zone_code": "RS-1-13",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:14",
+      "zone_code": "RS-1-14",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:15",
+      "zone_code": "RS-1-8",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_ALLEY_REAR_EXPRESSION_REVIEW_INCOMPLETE",
+      "reason": "Table base 10 ft; section 131.0443(a)(3), page 51, permits 4 ft for lots served by alley access. This bounded review did not independently close the separate alley-access expression, alley access/line treatment and full scope. A promising mechanical candidate, not inherently interpretive.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:15",
+      "zone_code": "RS-1-9",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_ALLEY_REAR_EXPRESSION_REVIEW_INCOMPLETE",
+      "reason": "Table base 10 ft; section 131.0443(a)(3), page 51, permits 4 ft for lots served by alley access. This bounded review did not independently close the separate alley-access expression, alley access/line treatment and full scope. A promising mechanical candidate, not inherently interpretive.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:15",
+      "zone_code": "RS-1-10",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_ALLEY_REAR_EXPRESSION_REVIEW_INCOMPLETE",
+      "reason": "Table base 10 ft; section 131.0443(a)(3), page 51, permits 4 ft for lots served by alley access. This bounded review did not independently close the separate alley-access expression, alley access/line treatment and full scope. A promising mechanical candidate, not inherently interpretive.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:15",
+      "zone_code": "RS-1-11",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_ALLEY_REAR_EXPRESSION_REVIEW_INCOMPLETE",
+      "reason": "Table base 10 ft; section 131.0443(a)(3), page 51, permits 4 ft for lots served by alley access. This bounded review did not independently close the separate alley-access expression, alley access/line treatment and full scope. A promising mechanical candidate, not inherently interpretive.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:15",
+      "zone_code": "RS-1-12",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_ALLEY_REAR_EXPRESSION_REVIEW_INCOMPLETE",
+      "reason": "Table base 10 ft; section 131.0443(a)(3), page 51, permits 4 ft for lots served by alley access. This bounded review did not independently close the separate alley-access expression, alley access/line treatment and full scope. A promising mechanical candidate, not inherently interpretive.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:15",
+      "zone_code": "RS-1-13",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_ALLEY_REAR_EXPRESSION_REVIEW_INCOMPLETE",
+      "reason": "Table base 10 ft; section 131.0443(a)(3), page 51, permits 4 ft for lots served by alley access. This bounded review did not independently close the separate alley-access expression, alley access/line treatment and full scope. A promising mechanical candidate, not inherently interpretive.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:15",
+      "zone_code": "RS-1-14",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_ALLEY_REAR_EXPRESSION_REVIEW_INCOMPLETE",
+      "reason": "Table base 10 ft; section 131.0443(a)(3), page 51, permits 4 ft for lots served by alley access. This bounded review did not independently close the separate alley-access expression, alley access/line treatment and full scope. A promising mechanical candidate, not inherently interpretive.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 36
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:17",
+      "zone_code": "RS-1-8",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:17",
+      "zone_code": "RS-1-9",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:17",
+      "zone_code": "RS-1-10",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:17",
+      "zone_code": "RS-1-11",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:17",
+      "zone_code": "RS-1-12",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:17",
+      "zone_code": "RS-1-13",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:17",
+      "zone_code": "RS-1-14",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:18",
+      "zone_code": "RS-1-8",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:18",
+      "zone_code": "RS-1-9",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:18",
+      "zone_code": "RS-1-10",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:18",
+      "zone_code": "RS-1-11",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:18",
+      "zone_code": "RS-1-12",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:18",
+      "zone_code": "RS-1-13",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:18",
+      "zone_code": "RS-1-14",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-8:36:19",
+      "zone_code": "RS-1-8",
+      "family": "far",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-9:36:19",
+      "zone_code": "RS-1-9",
+      "family": "far",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-10:36:19",
+      "zone_code": "RS-1-10",
+      "family": "far",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-11:36:19",
+      "zone_code": "RS-1-11",
+      "family": "far",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-12:36:19",
+      "zone_code": "RS-1-12",
+      "family": "far",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-13:36:19",
+      "zone_code": "RS-1-13",
+      "family": "far",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-14:36:19",
+      "zone_code": "RS-1-14",
+      "family": "far",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:37:4",
+      "zone_code": "RX-1-1",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-2:37:4",
+      "zone_code": "RX-1-2",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:37:5",
+      "zone_code": "RX-1-1",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-2:37:5",
+      "zone_code": "RX-1-2",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:37:12",
+      "zone_code": "RX-1-1",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RX_FRONT_PROJECT_ALLOCATION_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(b)(1), pages 51-52, requires a project-wide mix of 10/15/20 ft front setbacks for developments exceeding four units: at least 25 percent in each category, no more than 40 percent in any category, with easement/permit establishment. The dedicated structured project-allocation expression was not reviewed for promotion.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04E",
+      "source_page": 37
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-2:37:12",
+      "zone_code": "RX-1-2",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RX_FRONT_PROJECT_ALLOCATION_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(b)(1), pages 51-52, requires a project-wide mix of 10/15/20 ft front setbacks for developments exceeding four units: at least 25 percent in each category, no more than 40 percent in any category, with easement/permit establishment. The dedicated structured project-allocation expression was not reviewed for promotion.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04E",
+      "source_page": 37
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:37:13",
+      "zone_code": "RX-1-1",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RX_ATTACHED_DETACHED_SIDE_EXPRESSION_INCOMPLETE",
+      "reason": "The stacked table 3/0 and 0 requires attached/detached branches, lot-width clamps, adjacent RX zoning, one-side-only permission, building separation and offset/wall-construction requirements under section 131.0443(b)(2), pages 52-53. No flattened scalar admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04E",
+      "source_page": 37
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-2:37:13",
+      "zone_code": "RX-1-2",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RX_ATTACHED_DETACHED_SIDE_EXPRESSION_INCOMPLETE",
+      "reason": "The stacked table 3/0 and 0 requires attached/detached branches, lot-width clamps, adjacent RX zoning, one-side-only permission, building separation and offset/wall-construction requirements under section 131.0443(b)(2), pages 52-53. No flattened scalar admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04E",
+      "source_page": 37
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:37:14",
+      "zone_code": "RX-1-1",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RX_STREET_SIDE_BRANCH_REVIEW_INCOMPLETE",
+      "reason": "Detached/attached side and street-side conditions in section 131.0443(b)(2), pages 52-53, require a separate complete expression and legal line selection. The 3 ft cell is not a blanket unconditional value.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04E",
+      "source_page": 37
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-2:37:14",
+      "zone_code": "RX-1-2",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RX_STREET_SIDE_BRANCH_REVIEW_INCOMPLETE",
+      "reason": "Detached/attached side and street-side conditions in section 131.0443(b)(2), pages 52-53, require a separate complete expression and legal line selection. The 3 ft cell is not a blanket unconditional value.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04E",
+      "source_page": 37
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:37:15",
+      "zone_code": "RX-1-1",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RX_ALLEY_REAR_EXPRESSION_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(b)(3), page 53, gives 10 ft or 4 ft if alley access exists. This bounded RS front/interior review did not promote the separate expression; applicability and measurement dependencies remain.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04E",
+      "source_page": 37
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-2:37:15",
+      "zone_code": "RX-1-2",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RX_ALLEY_REAR_EXPRESSION_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(b)(3), page 53, gives 10 ft or 4 ft if alley access exists. This bounded RS front/interior review did not promote the separate expression; applicability and measurement dependencies remain.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04E",
+      "source_page": 37
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:38:4",
+      "zone_code": "RX-1-1",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-2:38:4",
+      "zone_code": "RX-1-2",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-1:38:5",
+      "zone_code": "RX-1-1",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RX-1-2:38:5",
+      "zone_code": "RX-1-2",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:39:4",
+      "zone_code": "RT-1-1",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:39:4",
+      "zone_code": "RT-1-2",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:39:4",
+      "zone_code": "RT-1-3",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:39:4",
+      "zone_code": "RT-1-4",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:39:4",
+      "zone_code": "RT-1-5",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:39:5",
+      "zone_code": "RT-1-1",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:39:5",
+      "zone_code": "RT-1-2",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:39:5",
+      "zone_code": "RT-1-3",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:39:5",
+      "zone_code": "RT-1-4",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:39:5",
+      "zone_code": "RT-1-5",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:39:12",
+      "zone_code": "RT-1-1",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_FRONT_FACADE_SUPPLEMENTAL_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(c)(1), page 53, has 10 percent of lot depth, 5-15 ft bounds, a facade-within-1-ft requirement, and optional 50 percent facade encroachment requiring sections 131.0461(b) and 131.0464(c). The dedicated range/facade/supplemental expression was not promoted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 39
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:39:12",
+      "zone_code": "RT-1-2",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_FRONT_FACADE_SUPPLEMENTAL_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(c)(1), page 53, has 10 percent of lot depth, 5-15 ft bounds, a facade-within-1-ft requirement, and optional 50 percent facade encroachment requiring sections 131.0461(b) and 131.0464(c). The dedicated range/facade/supplemental expression was not promoted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 39
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:39:12",
+      "zone_code": "RT-1-3",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_FRONT_FACADE_SUPPLEMENTAL_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(c)(1), page 53, has 10 percent of lot depth, 5-15 ft bounds, a facade-within-1-ft requirement, and optional 50 percent facade encroachment requiring sections 131.0461(b) and 131.0464(c). The dedicated range/facade/supplemental expression was not promoted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 39
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:39:12",
+      "zone_code": "RT-1-4",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_FRONT_FACADE_SUPPLEMENTAL_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(c)(1), page 53, has 10 percent of lot depth, 5-15 ft bounds, a facade-within-1-ft requirement, and optional 50 percent facade encroachment requiring sections 131.0461(b) and 131.0464(c). The dedicated range/facade/supplemental expression was not promoted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 39
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:39:12",
+      "zone_code": "RT-1-5",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_1_5_FRONT_MAX_TABLE_TEXT_CONFLICT",
+      "reason": "Table 131-04F gives a maximum front setback of 10 ft, while section 131.0443(c)(1), page 53, bounds its formula at 15 ft. No authoritative resolution of this apparent table/text conflict was established; preserve both and fail closed.",
+      "blocker_category": "source-defect",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 39
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:39:13",
+      "zone_code": "RT-1-1",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_ZERO_SIDE_EXCEPTIONS_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(c)(2), page 54, combines a zero-side rule, 6-by-10-ft lightwells/courts, independent wall construction, a 3 ft adjacent non-RT exception and 5 ft opening separation. No flat zero admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 39
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:39:13",
+      "zone_code": "RT-1-2",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_ZERO_SIDE_EXCEPTIONS_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(c)(2), page 54, combines a zero-side rule, 6-by-10-ft lightwells/courts, independent wall construction, a 3 ft adjacent non-RT exception and 5 ft opening separation. No flat zero admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 39
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:39:13",
+      "zone_code": "RT-1-3",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_ZERO_SIDE_EXCEPTIONS_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(c)(2), page 54, combines a zero-side rule, 6-by-10-ft lightwells/courts, independent wall construction, a 3 ft adjacent non-RT exception and 5 ft opening separation. No flat zero admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 39
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:39:13",
+      "zone_code": "RT-1-4",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_ZERO_SIDE_EXCEPTIONS_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(c)(2), page 54, combines a zero-side rule, 6-by-10-ft lightwells/courts, independent wall construction, a 3 ft adjacent non-RT exception and 5 ft opening separation. No flat zero admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 39
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:39:13",
+      "zone_code": "RT-1-5",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_ZERO_SIDE_EXCEPTIONS_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(c)(2), page 54, combines a zero-side rule, 6-by-10-ft lightwells/courts, independent wall construction, a 3 ft adjacent non-RT exception and 5 ft opening separation. No flat zero admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 39
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:40:4",
+      "zone_code": "RT-1-1",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_STREET_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04F page 40 gives base street-side 5 ft and rear 3 ft. These are promising mechanical candidates, but RT encroachment, supplemental, garage and complete measurement profiles were not independently assembled in this bounded review. No claim of intrinsic ambiguity.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 40
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:40:4",
+      "zone_code": "RT-1-2",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_STREET_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04F page 40 gives base street-side 5 ft and rear 3 ft. These are promising mechanical candidates, but RT encroachment, supplemental, garage and complete measurement profiles were not independently assembled in this bounded review. No claim of intrinsic ambiguity.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 40
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:40:4",
+      "zone_code": "RT-1-3",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_STREET_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04F page 40 gives base street-side 5 ft and rear 3 ft. These are promising mechanical candidates, but RT encroachment, supplemental, garage and complete measurement profiles were not independently assembled in this bounded review. No claim of intrinsic ambiguity.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 40
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:40:4",
+      "zone_code": "RT-1-4",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_STREET_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04F page 40 gives base street-side 5 ft and rear 3 ft. These are promising mechanical candidates, but RT encroachment, supplemental, garage and complete measurement profiles were not independently assembled in this bounded review. No claim of intrinsic ambiguity.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 40
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:40:4",
+      "zone_code": "RT-1-5",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_STREET_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04F page 40 gives base street-side 5 ft and rear 3 ft. These are promising mechanical candidates, but RT encroachment, supplemental, garage and complete measurement profiles were not independently assembled in this bounded review. No claim of intrinsic ambiguity.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 40
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:40:5",
+      "zone_code": "RT-1-1",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_STREET_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04F page 40 gives base street-side 5 ft and rear 3 ft. These are promising mechanical candidates, but RT encroachment, supplemental, garage and complete measurement profiles were not independently assembled in this bounded review. No claim of intrinsic ambiguity.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 40
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:40:5",
+      "zone_code": "RT-1-2",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_STREET_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04F page 40 gives base street-side 5 ft and rear 3 ft. These are promising mechanical candidates, but RT encroachment, supplemental, garage and complete measurement profiles were not independently assembled in this bounded review. No claim of intrinsic ambiguity.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 40
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:40:5",
+      "zone_code": "RT-1-3",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_STREET_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04F page 40 gives base street-side 5 ft and rear 3 ft. These are promising mechanical candidates, but RT encroachment, supplemental, garage and complete measurement profiles were not independently assembled in this bounded review. No claim of intrinsic ambiguity.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 40
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:40:5",
+      "zone_code": "RT-1-4",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_STREET_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04F page 40 gives base street-side 5 ft and rear 3 ft. These are promising mechanical candidates, but RT encroachment, supplemental, garage and complete measurement profiles were not independently assembled in this bounded review. No claim of intrinsic ambiguity.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 40
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:40:5",
+      "zone_code": "RT-1-5",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RT_STREET_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04F page 40 gives base street-side 5 ft and rear 3 ft. These are promising mechanical candidates, but RT encroachment, supplemental, garage and complete measurement profiles were not independently assembled in this bounded review. No claim of intrinsic ambiguity.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04F",
+      "source_page": 40
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:40:7",
+      "zone_code": "RT-1-1",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:40:7",
+      "zone_code": "RT-1-2",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:40:7",
+      "zone_code": "RT-1-3",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:40:7",
+      "zone_code": "RT-1-4",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:40:7",
+      "zone_code": "RT-1-5",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:40:8",
+      "zone_code": "RT-1-1",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:40:8",
+      "zone_code": "RT-1-2",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:40:8",
+      "zone_code": "RT-1-3",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:40:8",
+      "zone_code": "RT-1-4",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:40:8",
+      "zone_code": "RT-1-5",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:40:9",
+      "zone_code": "RT-1-1",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:40:9",
+      "zone_code": "RT-1-2",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:40:9",
+      "zone_code": "RT-1-3",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:40:9",
+      "zone_code": "RT-1-4",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:40:9",
+      "zone_code": "RT-1-5",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:40:11",
+      "zone_code": "RT-1-1",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:40:11",
+      "zone_code": "RT-1-2",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:40:11",
+      "zone_code": "RT-1-3",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:40:11",
+      "zone_code": "RT-1-4",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:40:11",
+      "zone_code": "RT-1-5",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-1:40:12",
+      "zone_code": "RT-1-1",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-2:40:12",
+      "zone_code": "RT-1-2",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-3:40:12",
+      "zone_code": "RT-1-3",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-4:40:12",
+      "zone_code": "RT-1-4",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RT-1-5:40:12",
+      "zone_code": "RT-1-5",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:4",
+      "zone_code": "RM-1-1",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:4",
+      "zone_code": "RM-1-2",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:4",
+      "zone_code": "RM-1-3",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:4",
+      "zone_code": "RM-2-4",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:4",
+      "zone_code": "RM-2-5",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:4",
+      "zone_code": "RM-2-6",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:5",
+      "zone_code": "RM-1-1",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:5",
+      "zone_code": "RM-1-2",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:5",
+      "zone_code": "RM-1-3",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:5",
+      "zone_code": "RM-2-4",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:5",
+      "zone_code": "RM-2-5",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:5",
+      "zone_code": "RM-2-6",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:12",
+      "zone_code": "RM-1-1",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_FRONT_LAYOUT_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(1) and (e)(1), pages 55 and 57, distribute minimum 15 ft versus standard 20 ft over building-envelope width, allow a floor-by-floor option, and provide curved-street 10/5 ft alternatives. The conditional layout expression was not admitted by this bounded review.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:12",
+      "zone_code": "RM-1-2",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_FRONT_LAYOUT_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(1) and (e)(1), pages 55 and 57, distribute minimum 15 ft versus standard 20 ft over building-envelope width, allow a floor-by-floor option, and provide curved-street 10/5 ft alternatives. The conditional layout expression was not admitted by this bounded review.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:12",
+      "zone_code": "RM-1-3",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_FRONT_LAYOUT_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(1) and (e)(1), pages 55 and 57, distribute minimum 15 ft versus standard 20 ft over building-envelope width, allow a floor-by-floor option, and provide curved-street 10/5 ft alternatives. The conditional layout expression was not admitted by this bounded review.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:12",
+      "zone_code": "RM-2-4",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_FRONT_LAYOUT_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(1) and (e)(1), pages 55 and 57, distribute minimum 15 ft versus standard 20 ft over building-envelope width, allow a floor-by-floor option, and provide curved-street 10/5 ft alternatives. The conditional layout expression was not admitted by this bounded review.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:12",
+      "zone_code": "RM-2-5",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_FRONT_LAYOUT_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(1) and (e)(1), pages 55 and 57, distribute minimum 15 ft versus standard 20 ft over building-envelope width, allow a floor-by-floor option, and provide curved-street 10/5 ft alternatives. The conditional layout expression was not admitted by this bounded review.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:12",
+      "zone_code": "RM-2-6",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_FRONT_LAYOUT_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(1) and (e)(1), pages 55 and 57, distribute minimum 15 ft versus standard 20 ft over building-envelope width, allow a floor-by-floor option, and provide curved-street 10/5 ft alternatives. The conditional layout expression was not admitted by this bounded review.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:13",
+      "zone_code": "RM-1-1",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_SIDE_ALLOCATION_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(d)(2), page 56, includes 5 ft versus 8 ft or 10 percent width asymmetric length allocation, narrow-premises exceptions and a retained-existing-building allowance. The expression cannot be flattened to 5/8.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:13",
+      "zone_code": "RM-1-2",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_SIDE_ALLOCATION_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(d)(2), page 56, includes 5 ft versus 8 ft or 10 percent width asymmetric length allocation, narrow-premises exceptions and a retained-existing-building allowance. The expression cannot be flattened to 5/8.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:13",
+      "zone_code": "RM-1-3",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_SIDE_ALLOCATION_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(d)(2), page 56, includes 5 ft versus 8 ft or 10 percent width asymmetric length allocation, narrow-premises exceptions and a retained-existing-building allowance. The expression cannot be flattened to 5/8.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:13",
+      "zone_code": "RM-2-4",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_2_SIDE_WIDTH_BRANCH_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(e)(2), page 57, uses the greater of 5 ft and 10 percent width, 4 ft at 40-50 ft width, and a below-40-ft reduction with 3 ft floor. Exact branch/operator review was not completed for promotion.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:13",
+      "zone_code": "RM-2-5",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_2_SIDE_WIDTH_BRANCH_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(e)(2), page 57, uses the greater of 5 ft and 10 percent width, 4 ft at 40-50 ft width, and a below-40-ft reduction with 3 ft floor. Exact branch/operator review was not completed for promotion.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:13",
+      "zone_code": "RM-2-6",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_2_SIDE_WIDTH_BRANCH_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(e)(2), page 57, uses the greater of 5 ft and 10 percent width, 4 ft at 40-50 ft width, and a below-40-ft reduction with 3 ft floor. Exact branch/operator review was not completed for promotion.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:14",
+      "zone_code": "RM-1-1",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_STREET_SIDE_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(3) and (e)(3), page 57, use the greater of 10 ft and 10 percent premises width, with an additional RM-2-series 50 percent facade encroachment option. No universal 10 ft scalar admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:14",
+      "zone_code": "RM-1-2",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_STREET_SIDE_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(3) and (e)(3), page 57, use the greater of 10 ft and 10 percent premises width, with an additional RM-2-series 50 percent facade encroachment option. No universal 10 ft scalar admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:14",
+      "zone_code": "RM-1-3",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_STREET_SIDE_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(3) and (e)(3), page 57, use the greater of 10 ft and 10 percent premises width, with an additional RM-2-series 50 percent facade encroachment option. No universal 10 ft scalar admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:14",
+      "zone_code": "RM-2-4",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_STREET_SIDE_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(3) and (e)(3), page 57, use the greater of 10 ft and 10 percent premises width, with an additional RM-2-series 50 percent facade encroachment option. No universal 10 ft scalar admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:14",
+      "zone_code": "RM-2-5",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_STREET_SIDE_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(3) and (e)(3), page 57, use the greater of 10 ft and 10 percent premises width, with an additional RM-2-series 50 percent facade encroachment option. No universal 10 ft scalar admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:14",
+      "zone_code": "RM-2-6",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_STREET_SIDE_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(3) and (e)(3), page 57, use the greater of 10 ft and 10 percent premises width, with an additional RM-2-series 50 percent facade encroachment option. No universal 10 ft scalar admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:15",
+      "zone_code": "RM-1-1",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_ALLEY_REAR_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(4) and (e)(4), pages 57-58, combine table 15 ft with possible half-alley credit capped at 10 ft and a 5 ft on-site floor. No permission or alley width inferred; separate expression review is needed.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:15",
+      "zone_code": "RM-1-2",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_ALLEY_REAR_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(4) and (e)(4), pages 57-58, combine table 15 ft with possible half-alley credit capped at 10 ft and a 5 ft on-site floor. No permission or alley width inferred; separate expression review is needed.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:15",
+      "zone_code": "RM-1-3",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_ALLEY_REAR_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(4) and (e)(4), pages 57-58, combine table 15 ft with possible half-alley credit capped at 10 ft and a 5 ft on-site floor. No permission or alley width inferred; separate expression review is needed.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:15",
+      "zone_code": "RM-2-4",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_ALLEY_REAR_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(4) and (e)(4), pages 57-58, combine table 15 ft with possible half-alley credit capped at 10 ft and a 5 ft on-site floor. No permission or alley width inferred; separate expression review is needed.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:15",
+      "zone_code": "RM-2-5",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_ALLEY_REAR_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(4) and (e)(4), pages 57-58, combine table 15 ft with possible half-alley credit capped at 10 ft and a 5 ft on-site floor. No permission or alley width inferred; separate expression review is needed.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:15",
+      "zone_code": "RM-2-6",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_1_2_ALLEY_REAR_EXPRESSION_INCOMPLETE",
+      "reason": "Sections 131.0443(d)(4) and (e)(4), pages 57-58, combine table 15 ft with possible half-alley credit capped at 10 ft and a 5 ft on-site floor. No permission or alley width inferred; separate expression review is needed.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 41
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:17",
+      "zone_code": "RM-1-1",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:17",
+      "zone_code": "RM-1-2",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:17",
+      "zone_code": "RM-1-3",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:17",
+      "zone_code": "RM-2-4",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:17",
+      "zone_code": "RM-2-5",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:17",
+      "zone_code": "RM-2-6",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:18",
+      "zone_code": "RM-1-1",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:18",
+      "zone_code": "RM-1-2",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:18",
+      "zone_code": "RM-1-3",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:18",
+      "zone_code": "RM-2-4",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:18",
+      "zone_code": "RM-2-5",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:18",
+      "zone_code": "RM-2-6",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:20",
+      "zone_code": "RM-1-1",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:20",
+      "zone_code": "RM-1-2",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:20",
+      "zone_code": "RM-1-3",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:20",
+      "zone_code": "RM-2-4",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:20",
+      "zone_code": "RM-2-5",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:20",
+      "zone_code": "RM-2-6",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:41:21",
+      "zone_code": "RM-1-1",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "HISTORIC_RESOURCE_NO_INCREASE_BASELINE_NOT_RESOLVED",
+      "blocker_category": "genuinely_interpretive"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:41:21",
+      "zone_code": "RM-1-2",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:41:21",
+      "zone_code": "RM-1-3",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:41:21",
+      "zone_code": "RM-2-4",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:41:21",
+      "zone_code": "RM-2-5",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:41:21",
+      "zone_code": "RM-2-6",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-1:42:4",
+      "zone_code": "RM-1-1",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "HISTORIC_RESOURCE_NO_INCREASE_BASELINE_NOT_RESOLVED",
+      "blocker_category": "genuinely_interpretive"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-2:42:4",
+      "zone_code": "RM-1-2",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-1-3:42:4",
+      "zone_code": "RM-1-3",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "HISTORIC_RESOURCE_NO_INCREASE_BASELINE_NOT_RESOLVED",
+      "blocker_category": "genuinely_interpretive"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-4:42:4",
+      "zone_code": "RM-2-4",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "HISTORIC_RESOURCE_NO_INCREASE_BASELINE_NOT_RESOLVED",
+      "blocker_category": "genuinely_interpretive"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-5:42:4",
+      "zone_code": "RM-2-5",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-2-6:42:4",
+      "zone_code": "RM-2-6",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:4",
+      "zone_code": "RM-3-7",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:4",
+      "zone_code": "RM-3-8",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:4",
+      "zone_code": "RM-3-9",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:4",
+      "zone_code": "RM-4-10",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:4",
+      "zone_code": "RM-4-11",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:4",
+      "zone_code": "RM-5-12",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:5",
+      "zone_code": "RM-3-7",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:5",
+      "zone_code": "RM-3-8",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:5",
+      "zone_code": "RM-3-9",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:5",
+      "zone_code": "RM-4-10",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:5",
+      "zone_code": "RM-4-11",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:5",
+      "zone_code": "RM-5-12",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:12",
+      "zone_code": "RM-3-7",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_3_FRONT_LAYOUT_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(f)(1), page 58, combines 10/20 ft facade-width allocation with curved-street alternatives. The conditional expression was not assembled for promotion.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:12",
+      "zone_code": "RM-3-8",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_3_FRONT_LAYOUT_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(f)(1), page 58, combines 10/20 ft facade-width allocation with curved-street alternatives. The conditional expression was not assembled for promotion.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:12",
+      "zone_code": "RM-3-9",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_3_FRONT_LAYOUT_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(f)(1), page 58, combines 10/20 ft facade-width allocation with curved-street alternatives. The conditional expression was not assembled for promotion.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:12",
+      "zone_code": "RM-4-10",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_4_DIRECTIONAL_ADJACENT_ZONE_DEPENDENCIES",
+      "reason": "Section 131.0443(g), page 60, requires two contiguous northerly/easterly yards at 15 ft, and side/rear yards must match a more restrictive adjacent residential zone. Directional, neighboring-zone and recursive source completeness were not established.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:12",
+      "zone_code": "RM-4-11",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_4_DIRECTIONAL_ADJACENT_ZONE_DEPENDENCIES",
+      "reason": "Section 131.0443(g), page 60, requires two contiguous northerly/easterly yards at 15 ft, and side/rear yards must match a more restrictive adjacent residential zone. Directional, neighboring-zone and recursive source completeness were not established.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:12",
+      "zone_code": "RM-5-12",
+      "family": "front_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_5_FRONT_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(h)(1), page 60, gives table 15 ft with a 10 ft turnaround/curved-street alternative. The full profile was not assembled for promotion.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:13",
+      "zone_code": "RM-3-7",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_3_SIDE_ENCROACHMENT_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(f)(2), pages 58-59, uses the greater of 5 ft and 10 percent premises width and optional zero-side encroachment with 50 percent length, 30 ft segment, 6 ft separation and dwelling-unit access constraints. No flat 5 ft admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:13",
+      "zone_code": "RM-3-8",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_3_SIDE_ENCROACHMENT_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(f)(2), pages 58-59, uses the greater of 5 ft and 10 percent premises width and optional zero-side encroachment with 50 percent length, 30 ft segment, 6 ft separation and dwelling-unit access constraints. No flat 5 ft admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:13",
+      "zone_code": "RM-3-9",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_3_SIDE_ENCROACHMENT_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(f)(2), pages 58-59, uses the greater of 5 ft and 10 percent premises width and optional zero-side encroachment with 50 percent length, 30 ft segment, 6 ft separation and dwelling-unit access constraints. No flat 5 ft admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:13",
+      "zone_code": "RM-4-10",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_4_DIRECTIONAL_ADJACENT_ZONE_DEPENDENCIES",
+      "reason": "Section 131.0443(g), page 60, requires two contiguous northerly/easterly yards at 15 ft, and side/rear yards must match a more restrictive adjacent residential zone. Directional, neighboring-zone and recursive source completeness were not established.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:13",
+      "zone_code": "RM-4-11",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_4_DIRECTIONAL_ADJACENT_ZONE_DEPENDENCIES",
+      "reason": "Section 131.0443(g), page 60, requires two contiguous northerly/easterly yards at 15 ft, and side/rear yards must match a more restrictive adjacent residential zone. Directional, neighboring-zone and recursive source completeness were not established.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:13",
+      "zone_code": "RM-5-12",
+      "family": "interior_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_5_HEIGHT_INCREMENT_FRACTION_UNRESOLVED",
+      "reason": "Sections 131.0443(h)(2) and (h)(4), pages 60-61, add 3 ft for each 12 ft of structure height above 24 ft to base interior 4 ft/rear 15 ft. Fractional-height-step treatment was not mechanically established; no floor, ceiling or continuous calculation invented.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:14",
+      "zone_code": "RM-3-7",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_3_STREET_SIDE_ENCROACHMENT_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(f)(3), page 59, uses the greater of 10 ft and 10 percent premises width and an optional 5 ft encroachment for up to 50 percent of the facade. No flat 10 ft admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:14",
+      "zone_code": "RM-3-8",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_3_STREET_SIDE_ENCROACHMENT_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(f)(3), page 59, uses the greater of 10 ft and 10 percent premises width and an optional 5 ft encroachment for up to 50 percent of the facade. No flat 10 ft admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:14",
+      "zone_code": "RM-3-9",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_3_STREET_SIDE_ENCROACHMENT_EXPRESSION_INCOMPLETE",
+      "reason": "Section 131.0443(f)(3), page 59, uses the greater of 10 ft and 10 percent premises width and an optional 5 ft encroachment for up to 50 percent of the facade. No flat 10 ft admitted.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:14",
+      "zone_code": "RM-4-10",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_4_DIRECTIONAL_ADJACENT_ZONE_DEPENDENCIES",
+      "reason": "Section 131.0443(g), page 60, requires two contiguous northerly/easterly yards at 15 ft, and side/rear yards must match a more restrictive adjacent residential zone. Directional, neighboring-zone and recursive source completeness were not established.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:14",
+      "zone_code": "RM-4-11",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_4_DIRECTIONAL_ADJACENT_ZONE_DEPENDENCIES",
+      "reason": "Section 131.0443(g), page 60, requires two contiguous northerly/easterly yards at 15 ft, and side/rear yards must match a more restrictive adjacent residential zone. Directional, neighboring-zone and recursive source completeness were not established.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:14",
+      "zone_code": "RM-5-12",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_5_STREET_WIDTH_RANGE_REVIEW_INCOMPLETE",
+      "reason": "Section 131.0443(h)(3), pages 60-61, gives table 10 ft and width-conditioned 9/8/7/6/5 ft alternatives. Full structured range/profile review was not admitted here.",
+      "blocker_category": "mechanical",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:15",
+      "zone_code": "RM-3-7",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_3_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04G page 43 rear 5 ft cells are promising mechanical candidates. RM projection/encroachment and the full application profile were not independently closed by this bounded review.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:15",
+      "zone_code": "RM-3-8",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_3_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04G page 43 rear 5 ft cells are promising mechanical candidates. RM projection/encroachment and the full application profile were not independently closed by this bounded review.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:15",
+      "zone_code": "RM-3-9",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_3_REAR_PROFILE_REVIEW_INCOMPLETE",
+      "reason": "Table 131-04G page 43 rear 5 ft cells are promising mechanical candidates. RM projection/encroachment and the full application profile were not independently closed by this bounded review.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:15",
+      "zone_code": "RM-4-10",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_4_DIRECTIONAL_ADJACENT_ZONE_DEPENDENCIES",
+      "reason": "Section 131.0443(g), page 60, requires two contiguous northerly/easterly yards at 15 ft, and side/rear yards must match a more restrictive adjacent residential zone. Directional, neighboring-zone and recursive source completeness were not established.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:15",
+      "zone_code": "RM-4-11",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_4_DIRECTIONAL_ADJACENT_ZONE_DEPENDENCIES",
+      "reason": "Section 131.0443(g), page 60, requires two contiguous northerly/easterly yards at 15 ft, and side/rear yards must match a more restrictive adjacent residential zone. Directional, neighboring-zone and recursive source completeness were not established.",
+      "blocker_category": "applicability",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:15",
+      "zone_code": "RM-5-12",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RM_5_HEIGHT_INCREMENT_FRACTION_UNRESOLVED",
+      "reason": "Sections 131.0443(h)(2) and (h)(4), pages 60-61, add 3 ft for each 12 ft of structure height above 24 ft to base interior 4 ft/rear 15 ft. Fractional-height-step treatment was not mechanically established; no floor, ceiling or continuous calculation invented.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04G",
+      "source_page": 43
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:17",
+      "zone_code": "RM-3-7",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:17",
+      "zone_code": "RM-3-8",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:17",
+      "zone_code": "RM-3-9",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:17",
+      "zone_code": "RM-4-10",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:17",
+      "zone_code": "RM-4-11",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:17",
+      "zone_code": "RM-5-12",
+      "family": "height",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:18",
+      "zone_code": "RM-3-7",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:18",
+      "zone_code": "RM-3-8",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:18",
+      "zone_code": "RM-3-9",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:18",
+      "zone_code": "RM-4-10",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:18",
+      "zone_code": "RM-4-11",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "NO_SCALAR_IN_TABLE_DASH_IS_NOT_ZERO_OR_UNLIMITED",
+      "blocker_category": "applicability"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:18",
+      "zone_code": "RM-5-12",
+      "family": "lot_coverage",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "STORY_HEIGHT_ALTERNATIVE_CONFLICT_AND_TEN_STORY_INTERVAL_UNRESOLVED",
+      "blocker_category": "source_defect"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-7:43:19",
+      "zone_code": "RM-3-7",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-8:43:19",
+      "zone_code": "RM-3-8",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-3-9:43:19",
+      "zone_code": "RM-3-9",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-10:43:19",
+      "zone_code": "RM-4-10",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-4-11:43:19",
+      "zone_code": "RM-4-11",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "MECHANICS_IDENTIFIED_BUT_NOT_ADMITTED_IN_THIS_CONSERVATIVE_PASS",
+      "blocker_category": "review_scope"
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RM-5-12:43:19",
+      "zone_code": "RM-5-12",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "STORY_HEIGHT_ALTERNATIVE_CONFLICT_AND_TEN_STORY_INTERVAL_UNRESOLVED",
+      "blocker_category": "source_defect"
+    }
+  ],
+  "metrics": {
+    "before_safe_records": 97,
+    "after_proposed_safe_records": 213,
+    "new_display_safe_records": 116,
+    "candidate_records": 317,
+    "candidate_promoted_fraction": "116/317",
+    "candidate_promoted_percent": 36.59,
+    "before_zones": 33,
+    "after_zones": 33,
+    "before_record_families": {
+      "lot_width_min": 32,
+      "corner_lot_width_min": 32,
+      "lot_depth_min": 33
+    },
+    "new_records_per_family": {
+      "density": 33,
+      "far": 8,
+      "front_setback": 14,
+      "height": 7,
+      "interior_side_setback": 14,
+      "lot_area": 33,
+      "lot_coverage": 7
+    },
+    "zone_families": {
+      "RS-1-1": [
+        "density",
+        "far",
+        "front_setback",
+        "height",
+        "interior_side_setback",
+        "lot_area",
+        "lot_coverage"
+      ],
+      "RS-1-2": [
+        "density",
+        "front_setback",
+        "height",
+        "interior_side_setback",
+        "lot_area",
+        "lot_coverage"
+      ],
+      "RS-1-3": [
+        "density",
+        "front_setback",
+        "height",
+        "interior_side_setback",
+        "lot_area",
+        "lot_coverage"
+      ],
+      "RS-1-4": [
+        "density",
+        "front_setback",
+        "height",
+        "interior_side_setback",
+        "lot_area",
+        "lot_coverage"
+      ],
+      "RS-1-5": [
+        "density",
+        "front_setback",
+        "height",
+        "interior_side_setback",
+        "lot_area",
+        "lot_coverage"
+      ],
+      "RS-1-6": [
+        "density",
+        "front_setback",
+        "height",
+        "interior_side_setback",
+        "lot_area",
+        "lot_coverage"
+      ],
+      "RS-1-7": [
+        "density",
+        "front_setback",
+        "height",
+        "interior_side_setback",
+        "lot_area",
+        "lot_coverage"
+      ],
+      "RS-1-8": [
+        "density",
+        "far",
+        "front_setback",
+        "interior_side_setback",
+        "lot_area"
+      ],
+      "RS-1-9": [
+        "density",
+        "far",
+        "front_setback",
+        "interior_side_setback",
+        "lot_area"
+      ],
+      "RS-1-10": [
+        "density",
+        "far",
+        "front_setback",
+        "interior_side_setback",
+        "lot_area"
+      ],
+      "RS-1-11": [
+        "density",
+        "far",
+        "front_setback",
+        "interior_side_setback",
+        "lot_area"
+      ],
+      "RS-1-12": [
+        "density",
+        "far",
+        "front_setback",
+        "interior_side_setback",
+        "lot_area"
+      ],
+      "RS-1-13": [
+        "density",
+        "far",
+        "front_setback",
+        "interior_side_setback",
+        "lot_area"
+      ],
+      "RS-1-14": [
+        "density",
+        "far",
+        "front_setback",
+        "interior_side_setback",
+        "lot_area"
+      ],
+      "RX-1-1": [
+        "density",
+        "lot_area"
+      ],
+      "RX-1-2": [
+        "density",
+        "lot_area"
+      ],
+      "RT-1-1": [
+        "density",
+        "lot_area"
+      ],
+      "RT-1-2": [
+        "density",
+        "lot_area"
+      ],
+      "RT-1-3": [
+        "density",
+        "lot_area"
+      ],
+      "RT-1-4": [
+        "density",
+        "lot_area"
+      ],
+      "RT-1-5": [
+        "density",
+        "lot_area"
+      ],
+      "RM-1-1": [
+        "density",
+        "lot_area"
+      ],
+      "RM-1-2": [
+        "density",
+        "lot_area"
+      ],
+      "RM-1-3": [
+        "density",
+        "lot_area"
+      ],
+      "RM-2-4": [
+        "density",
+        "lot_area"
+      ],
+      "RM-2-5": [
+        "density",
+        "lot_area"
+      ],
+      "RM-2-6": [
+        "density",
+        "lot_area"
+      ],
+      "RM-3-7": [
+        "density",
+        "lot_area"
+      ],
+      "RM-3-8": [
+        "density",
+        "lot_area"
+      ],
+      "RM-3-9": [
+        "density",
+        "lot_area"
+      ],
+      "RM-4-10": [
+        "density",
+        "lot_area"
+      ],
+      "RM-4-11": [
+        "density",
+        "lot_area"
+      ],
+      "RM-5-12": [
+        "density",
+        "lot_area"
+      ]
+    },
+    "zone_category_counts_nonexclusive": {
+      "dimensions_only": 0,
+      "dimensions_plus_density": 33,
+      "dimensions_plus_setbacks": 14,
+      "dimensions_plus_height": 7,
+      "dimensions_plus_far": 8,
+      "broader_verified_set_density_lot_area_and_another_priority": 14
+    },
+    "parcel_application_safe_records_new": 0
+  },
+  "rs17_closure": [
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:4",
+      "zone_code": "RS-1-7",
+      "family": "density",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:5",
+      "zone_code": "RS-1-7",
+      "family": "lot_area",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:12",
+      "zone_code": "RS-1-7",
+      "family": "front_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:13",
+      "zone_code": "RS-1-7",
+      "family": "interior_side_setback",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:14",
+      "zone_code": "RS-1-7",
+      "family": "street_side_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "RS_EACH_SIDE_STREET_SIDE_SCOPE_UNRESOLVED",
+      "reason": "Section 131.0443(a)(4)(A) says each side setback; whether its narrow-width clause replaces the street-side table row was not adjudicated. Reallocated street sides also have a 10 ft floor under (B)(iii). Bare table scalars are incomplete.",
+      "blocker_category": "genuinely interpretive",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:15",
+      "zone_code": "RS-1-7",
+      "family": "rear_setback",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "REAR_TABLE_141_04D_DEFECT",
+      "reason": "Section 131.0443(a)(2)(A), current page 48 and corrected adopted O-21836 page 47, references Table 141-04D. The later adopted source retains the defect; depth, alley and parking clauses do not correct it. No authoritative correction established.",
+      "blocker_category": "source-defect",
+      "source_section": "131.0431",
+      "source_table": "131-04D",
+      "source_page": 34
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:17",
+      "zone_code": "RS-1-7",
+      "family": "height",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:4",
+      "zone_code": "RS-1-7",
+      "family": "lot_coverage",
+      "decision": "DISPLAY_SAFE_PARAMETER",
+      "reason": "Reviewed conditional expression in proposed-safe-subset; parcel selection unresolved."
+    },
+    {
+      "rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:35:5",
+      "zone_code": "RS-1-7",
+      "family": "far",
+      "decision": "REMAINS_EXCLUDED",
+      "reason_code": "TABLE_J_PUNCTUATION_OVERLAP_AND_FRACTIONAL_INTERVAL_GAPS_UNRESOLVED",
+      "blocker_category": "source_defect"
+    }
+  ],
+  "runtime_and_public_display_change_authorized": false
+}

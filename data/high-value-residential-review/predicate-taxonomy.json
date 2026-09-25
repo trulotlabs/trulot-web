@@ -1,0 +1,260 @@
+{
+  "selection_policy": "Every property predicate remains UNRESOLVED; no inferred facts or application-safe output.",
+  "predicates": {
+    "LEGAL_LOT_STATUS": "Legal lot criteria and documentary determination under §113.0237(a); never inferred from parcel size.",
+    "LOT_AREA": "Legally relevant lot/premises area, not supplied or measured here.",
+    "MULTI_ZONE_PREMISES": "Whether premises spans zones and the legally relevant area in each zone.",
+    "DEVELOPMENT_USE_CLASS": "Single/multiple dwelling development or visitor accommodation; no use authorization inferred.",
+    "COMMUNITY_PLAN_AREA": "Whether La Jolla, Pacific Beach or Torrey Pines footnote36 applies.",
+    "ALLEY_SERVICE_AND_GEOMETRY": "Whether served by an abutting alley, width and credit area; no geometry inferred.",
+    "SUBDIVISION_OR_EXISTING_LOT": "Proposed subdivision versus existing legal lot; no subdivision permission inferred.",
+    "OTHER_REGULATORY_CONTROLS": "Overlays, supplemental rules, permits, grandfathering, and special programs not determined.",
+    "REQUIRED_DEDICATION": "Whether street/alley dedication is required under142.0610 and verified pre-dedication regulatory lines; no line or area is inferred.",
+    "coastal_context": {
+      "type": "enum",
+      "values": [
+        "outside",
+        "inside",
+        "unknown"
+      ],
+      "purpose": "Version gate; no outside inference from missing data"
+    },
+    "application_complete_date": {
+      "type": "date_or_unknown",
+      "purpose": "O-22109 section61 prior-complete-application protection"
+    },
+    "airport_transition_context": {
+      "type": "enum",
+      "values": [
+        "outside_miramar_transition",
+        "inside_miramar_transition",
+        "unknown"
+      ],
+      "purpose": "Conservative operative-profile gate"
+    },
+    "property_line_roles": {
+      "type": "structured_survey_fact",
+      "purpose": "Legal front/interior/street-side/rear classification, including corner/double-fronted/triangular geometry"
+    },
+    "lot_width_ft": {
+      "type": "nonnegative_number_or_unknown",
+      "purpose": "113.0243 measured lot width; never table minimum substituted for measured width"
+    },
+    "cul_de_sac_frontage_portion": {
+      "type": "boolean_or_unknown",
+      "purpose": "Whether the relevant portion of the lot fronts a cul-de-sac"
+    },
+    "front_50ft_fraction_at_least_25pct_slope": {
+      "type": "fraction_or_unknown",
+      "purpose": "Table131-04D footnote1 test: at least0.5 of front50ft lot depth has minimum25%gradient"
+    },
+    "setback_is_closest_to_street_frontage": {
+      "type": "boolean_or_unknown",
+      "purpose": "Identifies the setback eligible for Table131-04D footnote1"
+    },
+    "side_reallocation_elected": {
+      "type": "boolean_or_unknown",
+      "purpose": "131.0443(a)(4)(B) is an optional reallocation; never presume election"
+    },
+    "proposed_side_setback_dimensions_ft": {
+      "type": "array_of_dimensions_and_legal_line_roles_or_unknown",
+      "purpose": "Combined-dimension constraint under side reallocation; distinguishes interior and street-side floors"
+    },
+    "fire_official_defensible_space_buffer": {
+      "type": "requirement_or_unknown",
+      "state": "UNRESOLVED",
+      "default_value": null,
+      "meaning": "Whether Fire Code Official requires a greater defensible-space buffer under131.0443(i); unknown does not mean no added buffer. No actual setback line is selected.",
+      "source": [
+        "residential:61",
+        "o22109:29"
+      ]
+    },
+    "alley_property_line_special_mapping": {
+      "type": "boolean_or_unknown",
+      "state": "UNRESOLVED",
+      "default_value": null,
+      "meaning": "O-21836 clean p14 omits codified 113.0246(e)(1)-(3) and Diagram 113-02CC without a no-change clause. No deletion or retention interpretation is made."
+    },
+    "required_street_or_alley_dedication": {
+      "type": "boolean_or_unknown",
+      "state": "UNRESOLVED",
+      "default_value": null,
+      "meaning": "Whether street/alley dedication is required under142.0610 remains unresolved. Height setback-line scope excludes that context because the separate setback sentence is defective. FAR retains only the independently verified opening density/GFA pre-dedication sentence, conditional on this predicate."
+    },
+    "completely_underground_structure": {
+      "type": "boolean_or_unknown",
+      "state": "UNRESOLVED",
+      "default_value": null,
+      "meaning": "113.0252(b) underground exemption cites 113.0461; no substituted reference or exemption is promoted."
+    },
+    "resubdivided_corner_lot": {
+      "type": "boolean_or_unknown",
+      "state": "UNRESOLVED",
+      "default_value": null,
+      "meaning": "113.0246(f) retains original front/street-side setbacks and remaps other lines to interior-side; historical geometry is outside this proposed profile, not presumed absent."
+    },
+    "document_modified_setback": {
+      "type": "boolean_or_unknown",
+      "state": "UNRESOLVED",
+      "default_value": null,
+      "meaning": "113.0249(b)-(c) ordinance, approved subdivision, survey or division plat can control; the document-specific line is not determined here."
+    },
+    "existing_primary_structure_addition": {
+      "type": "boolean_or_unknown",
+      "state": "UNRESOLVED",
+      "default_value": null,
+      "meaning": "113.0249(d) and 131.0443(a)(4)(B)(i) require established side setbacks to continue in additions; no existing legal line is determined here."
+    },
+    "accessory_structure_standard": {
+      "type": "boolean_or_unknown",
+      "state": "UNRESOLVED",
+      "default_value": null,
+      "meaning": "131.0448/141.0307 and program-specific standards are not certified by this primary-building parameter."
+    },
+    "projection_or_encroachment": {
+      "type": "boolean_or_unknown",
+      "state": "UNRESOLVED",
+      "default_value": null,
+      "meaning": "131.0461(a) permits specified projections/encroachments subject to element-specific conditions; this profile describes the base setback, not those permissions."
+    },
+    "special_program_or_overlay_modification": {
+      "type": "boolean_or_unknown",
+      "state": "UNRESOLVED",
+      "default_value": null,
+      "meaning": "131.0430(a) preserves Chapter13 Article2 and Chapter14 controls; this profile establishes no overlay waiver, exception, incentive, or compliance outcome."
+    },
+    "corner_lot_status": {
+      "type": "boolean_or_unknown",
+      "purpose": "Interior-side proposals are scoped to non-corner lots, so the standard lot-width threshold is not silently selected over the separate corner-width row."
+    },
+    "LEGAL_LOT_AND_PREMISES_GEOMETRY": {
+      "type": "geometry_and_legal_status",
+      "source": [
+        "measurement:23",
+        "measurement:26 opening GFA dedication sentence only"
+      ],
+      "meaning": "Unresolved legal lot/premises and regulatory geometry inputs; no assessor geometry presumed controlling. This predicate does not certify any disputed property-line mapping chain.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    },
+    "MEASURED_RESIDENTIAL_LOT_WIDTH_FT": {
+      "type": "number",
+      "unit": "feet",
+      "source": [
+        "measurement:25"
+      ],
+      "meaning": "Width measured under 113.0243, including irregular/consolidated-lot rules.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    },
+    "APPLICABLE_REQUIRED_YARD_AND_SETBACK": {
+      "type": "enum_and_geometry",
+      "source": [
+        "residential:62",
+        "measurement:26-28 sections113.0246(a)-(d) only",
+        "measurement:30-31 sections113.0249(a),113.0252(a),(c) only"
+      ],
+      "meaning": "Unresolved applicable required side/front/street-side yard and setback line within the expressly bounded ordinary above-grade primary-building context. No actual line is selected; disputed mappings and special contexts remain excluded by named unresolved predicates.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    },
+    "MAXIMUM_STRUCTURE_HEIGHT_EXCEEDS_27_FT": {
+      "type": "boolean",
+      "source": [
+        "residential:62"
+      ],
+      "meaning": "The express 131.0444(c) condition for front/street-side angled planes; no value selected.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    },
+    "EXISTING_AND_PROPOSED_GRADE": {
+      "type": "survey_geometry",
+      "source": [
+        "measurement:8-9",
+        "measurement:38-45"
+      ],
+      "meaning": "Lower of existing/proposed grade plus footprint/adjacent grade and special measurement circumstances.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    },
+    "STRUCTURE_AND_APPURTENANCE_CHARACTERISTICS": {
+      "type": "project_geometry",
+      "source": [
+        "measurement:38-45",
+        "residential:80-88"
+      ],
+      "meaning": "Structure, separation, subterranean areas, pool and proposed projection/encroachment characteristics.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    },
+    "OVERLAY_AND_SUPPLEMENTAL_APPLICABILITY": {
+      "type": "regulatory_context",
+      "source": [
+        "residential:33"
+      ],
+      "meaning": "Applicable Chapter 13 Article 2 and Chapter 14 regulations; outside Coastal does not mean no other overlays.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    },
+    "PREMISES_STEEP_HILLSIDE_AREA_FRACTION": {
+      "type": "number",
+      "unit": "fraction",
+      "source": [
+        "residential:65",
+        "definitions:27"
+      ],
+      "meaning": "Fraction of premises that meets complete steep-hillsides definition, not merely average slope.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    },
+    "NATURAL_GRADIENT_AND_ELEVATION_DIFFERENTIAL": {
+      "type": "survey_geometry",
+      "source": [
+        "definitions:27"
+      ],
+      "meaning": "Steep hillsides: gradient >=25% AND elevation differential >=50ft, OR gradient >=200% AND differential >=10ft.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    },
+    "LOT_COVERAGE_FOOTPRINT_AND_EXCLUSIONS": {
+      "type": "project_geometry",
+      "source": [
+        "measurement:24"
+      ],
+      "meaning": "Footprint measured at outer walls/supports; each 113.0240(a)-(e) exclusion remains subject to its conditions.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    },
+    "GROSS_FLOOR_AREA_ELEMENTS": {
+      "type": "project_geometry",
+      "source": [
+        "measurement:10-22"
+      ],
+      "meaning": "Included/excluded floor elements and type of development under 113.0234; not assessor building area.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    },
+    "TOTAL_PREMISES_AREA_SQFT": {
+      "type": "number",
+      "unit": "square_feet",
+      "source": [
+        "definitions:10",
+        "measurement:26 opening density/GFA pre-dedication sentence only"
+      ],
+      "meaning": "Unresolved regulatory total premises area. Any required-dedication dependency is confined to the exact opening density/GFA sentence of113.0246; no broader line-mapping or setback-dedication interpretation is certified.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    },
+    "GARAGE_FLOOR_AREA_SQFT": {
+      "type": "number",
+      "unit": "square_feet",
+      "source": [
+        "residential:67"
+      ],
+      "meaning": "Garage area relevant to up-to-400-sf exclusion; no area assumed.",
+      "state": "UNRESOLVED",
+      "default_value": null
+    }
+  }
+}
