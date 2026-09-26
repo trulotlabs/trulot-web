@@ -21,6 +21,7 @@ Parcel-only production execution uses a distinct gate and never selects a snapsh
 from __future__ import annotations
 
 import argparse
+import contextlib
 import csv
 import datetime as dt
 import gzip
@@ -102,17 +103,83 @@ def source_date(value: object) -> str | None:
 
 
 class Target:
-    def __init__(self, command: list[str], label: str, environment: dict[str, str] | None = None):
+    def __init__(self, command: list[str], label: str, environment: dict[str, str] | None = None, secret: str | None = None):
         self.command = command
         self.label = label
         self.environment = ENV if environment is None else environment
+        self.secret = secret
+
+    def redact(self, value: str) -> str:
+        return value.replace(self.secret, "<redacted-database-uri>") if self.secret else value
+
+    def append_log(self, log: pathlib.Path, value: str) -> None:
+        with log.open("a") as output:
+            output.write(self.redact(value))
 
     def sql(self, statement: str) -> str:
-        return subprocess.check_output(self.command + ["-Atc", statement], env=self.environment, text=True).strip()
+        try:
+            result = subprocess.run(
+                self.command + ["-Atc", statement],
+                env=self.environment,
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+            )
+        except OSError:
+            raise RuntimeError(f"{self.label} SQL query could not start") from None
+        if result.returncode != 0:
+            raise RuntimeError(f"{self.label} SQL query failed") from None
+        return result.stdout.strip()
 
     def run(self, statement: str, log: pathlib.Path) -> None:
-        with log.open("a") as output:
-            subprocess.run(self.command, input=statement, text=True, check=True, env=self.environment, stdout=output, stderr=output)
+        try:
+            result = subprocess.run(
+                self.command,
+                input=statement,
+                text=True,
+                env=self.environment,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+            )
+        except OSError:
+            raise RuntimeError(f"{self.label} SQL execution could not start") from None
+        self.append_log(log, result.stdout)
+        if result.returncode != 0:
+            raise RuntimeError(f"{self.label} SQL execution failed") from None
+
+    @contextlib.contextmanager
+    def stream(self, log: pathlib.Path):
+        try:
+            process = subprocess.Popen(
+                self.command,
+                stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True,
+                env=self.environment,
+            )
+        except OSError:
+            raise RuntimeError(f"{self.label} streaming SQL could not start") from None
+        failed = False
+        try:
+            yield process
+        except BaseException:
+            failed = True
+            if process.poll() is None:
+                process.terminate()
+            raise
+        finally:
+            if process.stdin is not None and not process.stdin.closed:
+                try:
+                    process.stdin.close()
+                except BrokenPipeError:
+                    pass
+            assert process.stdout is not None
+            captured = process.stdout.read()
+            returncode = process.wait()
+            self.append_log(log, captured)
+            if not failed and returncode != 0:
+                raise RuntimeError(f"{self.label} streaming SQL failed") from None
 
 
 def expected_for_mode(mode: str) -> dict:
@@ -155,7 +222,12 @@ def target_from_args(args: argparse.Namespace) -> Target:
     if not dsn:
         raise ValueError(f"Missing database URL environment variable: {args.database_url_env}")
     validate_production_dsn(dsn, expected_for_mode(args.mode))
-    return Target([PSQL, "-X", "-v", "ON_ERROR_STOP=1"], "separately-authorized-production", {**ENV, "PGDATABASE": dsn})
+    return Target(
+        [PSQL, "-X", "-v", "ON_ERROR_STOP=1", "--dbname", dsn],
+        "separately-authorized-production",
+        {**ENV},
+        secret=dsn,
+    )
 
 
 def verify_target_database(target: Target, expected: dict) -> None:
@@ -216,7 +288,7 @@ def verify_receipts(paths: dict[str, pathlib.Path]) -> tuple[dict, dict, dict, d
 
 def stream_fingerprint(target: Target, query: str, error: str) -> str:
     digest = hashlib.sha256()
-    process = subprocess.Popen(target.command + ["-c", query], stdout=subprocess.PIPE, env=target.environment)
+    process = subprocess.Popen(target.command + ["-c", query], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, env=target.environment)
     assert process.stdout is not None
     while chunk := process.stdout.read(1024 * 1024):
         digest.update(chunk)
@@ -266,7 +338,7 @@ def integrated_fingerprint(target: Target) -> str:
         and z.zoning_acquisition_id='{EXPECTED['zoningAcquisitionId']}'
       order by p.acquisition_id,p.source_object_id
     ) to stdout with (format csv, delimiter E'\\t', null '\\N')"""
-    process = subprocess.Popen(target.command + ["-c", query], stdout=subprocess.PIPE, env=target.environment, text=True)
+    process = subprocess.Popen(target.command + ["-c", query], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, env=target.environment, text=True)
     assert process.stdout is not None
     reader = csv.reader(process.stdout, delimiter="\t")
     digest = hashlib.sha256()
@@ -536,16 +608,14 @@ def load_integrated_data(target: Target, paths: dict[str, pathlib.Path], materia
     apply_migrations(target, log_path)
     require_empty_foundation(target)
 
-    log_stream = log_path.open("a")
-    process = subprocess.Popen(target.command, stdin=subprocess.PIPE, stdout=log_stream, stderr=subprocess.STDOUT, text=True, env=target.environment)
-    assert process.stdin is not None
-    writer = csv.writer(process.stdin, lineterminator="\n")
     zoning_counts = Counter()
     mapping_states = Counter()
     mapping_fingerprint = hashlib.sha256()
     native_transform = pyproj.Transformer.from_crs(4326, 2230, always_xy=True).transform
 
-    try:
+    with target.stream(log_path) as process:
+        assert process.stdin is not None
+        writer = csv.writer(process.stdin, lineterminator="\n")
         process.stdin.write("begin;\n")
         process.stdin.write("copy trulot_v2.import_run (import_run_id,importer_version,started_at,completed_at,status,materialization_id,parcel_acquisition_id,zoning_acquisition_id,source_artifacts,observed_counts,observed_fingerprints,failure_reason,run_kind) from stdin with (format csv, null '\\N');\n")
         csv_row(writer, [import_run_id, importer_version, started_at, None, "LOADING", materialization_id,
@@ -631,15 +701,6 @@ def load_integrated_data(target: Target, paths: dict[str, pathlib.Path], materia
                                  entry["distinctZoneCount"], entry["repairedSourceFeatureCount"], canonical(entry["zoneEvidence"]), canonical(serving_entry)])
         process.stdin.write("\\.\ncommit;\n")
         process.stdin.close()
-        if process.wait() != 0:
-            raise RuntimeError("V2 import transaction failed; inspect psql.log")
-    except BaseException:
-        if process.poll() is None:
-            process.terminate()
-            process.wait()
-        raise
-    finally:
-        log_stream.close()
 
     if parcel_counts != Counter({"source": EXPECTED["counts"]["parcelSource"], "accepted": EXPECTED["counts"]["parcelAccepted"], "quarantine": EXPECTED["counts"]["parcelQuarantine"]}):
         raise ValueError("Parcel import stream counts changed")
@@ -666,11 +727,9 @@ def load_parcel_only_data(target: Target, paths: dict[str, pathlib.Path], materi
     apply_migrations(target, log_path)
     require_empty_foundation(target)
 
-    log_stream = log_path.open("a")
-    process = subprocess.Popen(target.command, stdin=subprocess.PIPE, stdout=log_stream, stderr=subprocess.STDOUT, text=True, env=target.environment)
-    assert process.stdin is not None
-    writer = csv.writer(process.stdin, lineterminator="\n")
-    try:
+    with target.stream(log_path) as process:
+        assert process.stdin is not None
+        writer = csv.writer(process.stdin, lineterminator="\n")
         process.stdin.write("begin;\n")
         process.stdin.write("copy trulot_v2.import_run (import_run_id,importer_version,started_at,completed_at,status,materialization_id,parcel_acquisition_id,zoning_acquisition_id,source_artifacts,observed_counts,observed_fingerprints,failure_reason,run_kind) from stdin with (format csv, null '\\N');\n")
         csv_row(writer, [import_run_id, importer_version, started_at, None, "LOADING", materialization_id,
@@ -678,15 +737,6 @@ def load_parcel_only_data(target: Target, paths: dict[str, pathlib.Path], materi
         parcel_counts = write_parcel_data(process, writer, paths, artifact_hashes, parcel_acquisition, parcel_report)
         process.stdin.write("\\.\ncommit;\n")
         process.stdin.close()
-        if process.wait() != 0:
-            raise RuntimeError("Parcel-only import transaction failed; inspect psql.log")
-    except BaseException:
-        if process.poll() is None:
-            process.terminate()
-            process.wait()
-        raise
-    finally:
-        log_stream.close()
 
     required = Counter({
         "source": expected["counts"]["parcelSource"],
