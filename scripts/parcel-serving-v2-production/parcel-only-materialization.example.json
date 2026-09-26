@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "materializationId": "operator-supplied-immutable-parcel-materialization-id",
+  "artifacts": {
+    "parcelAcquisition": "/secure/materialization/parcel/acquisition.json",
+    "parcelRaw": "/secure/materialization/parcel/source.geojson",
+    "parcelReport": "/secure/materialization/parcel/report.json",
+    "parcelRows": "/secure/materialization/parcel/rows.ndjson.gz",
+    "parcelQuarantine": "/secure/materialization/parcel/rejected.ndjson.gz"
+  }
+}

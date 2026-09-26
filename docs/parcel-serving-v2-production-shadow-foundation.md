@@ -4,7 +4,7 @@ Status: repository foundation only. Public Parcel V1 remains authoritative. No p
 
 ## Sealed inputs
 
-The importer accepts a manifest of operator-materialized files. Paths are supplied at execution time and are never embedded in the importer. Every file must match `scripts/parcel-serving-v2-production/expected.json` before a database connection is used.
+The importer accepts a manifest of operator-materialized files. Paths are supplied at execution time and are never embedded in the importer. Integrated mode must match `scripts/parcel-serving-v2-production/expected.json`; parcel-only mode must match the smaller `parcel-only-expected.json`. On the production path, every supplied artifact is hashed before the first database query.
 
 | Identity | Sealed value |
 | --- | --- |
@@ -40,7 +40,13 @@ The migration never reads or changes `public.parcel_page_api_v2` or another lega
 
 ## Import and reconciliation
 
-The importer verifies all artifact SHA-256 values before connecting. It then independently verifies acquisition receipts, normalized counts, raw-to-normalized source identity, parcel geometry hashes, zoning geometry hashes, the bounded explicit make-valid policy, mapping cardinality and mapping fingerprint.
+The default `integrated` mode retains the original combined load. It requires every parcel, zoning, mapping and integrated-reference artifact, validates the integrated evidence, then selects the candidate. Packet 6A adds the explicit `--mode parcel-only` stage for parcel acquisition and validation only. Its manifest inventory contains exactly the five parcel artifacts, so zoning or mapping input is rejected rather than ignored.
+
+Parcel-only mode writes only `import_run`, `parcel_acquisition`, `parcel_base_sangis_v2` and `parcel_quarantine`. It validates the loaded acquisition directly, never inserts `selected_snapshot`, and requires all zoning and mapping tables to remain empty. The existing serving views still join `selected_snapshot`, so an unselected parcel acquisition returns zero rows through both views.
+
+Migration `20260925223612_parcel_only_import_run_stage.sql` adds an explicit `run_kind`. Existing rows default to `INTEGRATED`. A `PARCEL_ONLY` run requires a null zoning acquisition; an `INTEGRATED` run requires a non-null zoning acquisition. A composite foreign key makes `selected_snapshot` reference only the matching integrated run and acquisition pair.
+
+The importer verifies all artifact SHA-256 values before the first production database query. It then independently verifies acquisition receipts, normalized counts, raw-to-normalized source identity, parcel geometry hashes, zoning geometry hashes, the bounded explicit make-valid policy, mapping cardinality and mapping fingerprint.
 
 Data is copied in one transaction. A loaded candidate remains unselected until these database observations pass:
 
@@ -58,7 +64,9 @@ Data is copied in one transaction. A loaded candidate remains unselected until t
 
 Only after every gate passes does a second transaction insert `selected_snapshot` and mark the import `VALIDATED`. A failed candidate therefore cannot appear in either serving view.
 
-Production execution requires a separately authorized database URL held in an environment variable plus both `--authorize-production-load` and `TRULOT_V2_PRODUCTION_LOAD_AUTHORIZED=1`. This packet did not exercise that path.
+Integrated production execution requires a separately authorized database URL held in an environment variable plus both `--authorize-production-load` and `TRULOT_V2_PRODUCTION_LOAD_AUTHORIZED=1`. Parcel-only production execution instead requires `--authorize-production-load` and the narrower `TRULOT_V2_PARCEL_LOAD_AUTHORIZED=1`. Both modes validate the sealed project ref and database name before connecting. Credentials alone never authorize a load.
+
+On a production target, the importer verifies that the complete foundation object set already exists and refuses a partial or absent foundation. It does not rerun the foundation migration. The staging migration is applied only when its `run_kind` column is absent, then its four constraints are verified. Disposable local rehearsals may bootstrap the foundation before applying the staging migration.
 
 ## Security
 

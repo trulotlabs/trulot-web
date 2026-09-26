@@ -1,5 +1,7 @@
 {
   "schemaVersion": 1,
+  "productionProjectRef": "qockltdzvjxdlwrpgtsd",
+  "productionDatabase": "postgres",
   "parcelAcquisitionId": "sangis-20260924T183743Z",
   "zoningAcquisitionId": "zoning-city-sd-20260924T201131Z",
   "integrationMethodVersion": "parcel-intelligence-serving-v2-left-join-v1",

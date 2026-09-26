@@ -214,6 +214,29 @@ await test("migration remains isolated and public route uses post-response shado
   assert.match(page, /after\(\(\) => runParcelServingV2Shadow/);
 });
 
+await test("parcel-only staging preserves integrated selection and private access", () => {
+  const migration = fs.readFileSync(path.join(root, "supabase/migrations/20260925223612_parcel_only_import_run_stage.sql"), "utf8");
+  assert.match(migration, /run_kind text not null default 'INTEGRATED'/i);
+  assert.match(migration, /run_kind = 'PARCEL_ONLY' and zoning_acquisition_id is null/i);
+  assert.match(migration, /run_kind = 'INTEGRATED' and zoning_acquisition_id is not null/i);
+  assert.match(migration, /selected_snapshot_integrated_run_fkey/i);
+  assert.match(migration, /import_run_kind text not null default 'INTEGRATED'[\s\S]*check \(import_run_kind = 'INTEGRATED'\)/i);
+  assert.doesNotMatch(migration, /\b(?:grant|create policy|alter table public\.|drop table|drop view|truncate)\b/i);
+});
+
+await test("parcel-only importer is separately gated and cannot accept integrated artifacts", () => {
+  const importer = fs.readFileSync(path.join(root, "scripts/parcel-serving-v2-production/import.py"), "utf8");
+  const expected = JSON.parse(fs.readFileSync(path.join(root, "scripts/parcel-serving-v2-production/parcel-only-expected.json"), "utf8"));
+  assert.match(importer, /TRULOT_V2_PARCEL_LOAD_AUTHORIZED/);
+  assert.match(importer, /TRULOT_V2_PRODUCTION_LOAD_AUTHORIZED/);
+  assert.match(importer, /choices=\("integrated", "parcel-only"\)/);
+  assert.deepEqual(Object.keys(expected.artifacts).sort(), ["parcelAcquisition", "parcelQuarantine", "parcelRaw", "parcelReport", "parcelRows"]);
+  assert.equal(expected.productionProjectRef, "qockltdzvjxdlwrpgtsd");
+  assert.equal(expected.productionDatabase, "postgres");
+  assert.equal(expected.counts.parcelAccepted, 1088430);
+  assert.equal(expected.fingerprints.countywideFullRow, "8bdf89447fd77bd616a882db15875e8674b999051a1954caf1d4cec8a6c6df45");
+});
+
 if (process.argv[2]) {
   await test("real rehearsal serving row satisfies the production adapter", async () => {
     const row = JSON.parse(fs.readFileSync(process.argv[2], "utf8"));

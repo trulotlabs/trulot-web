@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "decision": "PARCEL_ONLY_PRODUCTION_IMPORT_PATH_SEALED",
+  "environment": {
+    "isolation": "disposable Unix-socket-only PostgreSQL/PostGIS clusters; no TCP listener",
+    "productionConnected": false
+  },
+  "parcelOnly": {
+    "checksPassed": 28,
+    "acquisitionId": "sangis-20260924T183743Z",
+    "runKind": "PARCEL_ONLY",
+    "runStatus": "VALIDATED",
+    "zoningAcquisitionId": null,
+    "counts": {
+      "source": 1089758,
+      "accepted": 1088430,
+      "quarantine": 1328,
+      "cityParcels": 393733,
+      "cityDistinctApns": 393733,
+      "orphanAccepted": 0,
+      "orphanQuarantine": 0,
+      "zoningRows": 0,
+      "mappingRows": 0,
+      "selectedSnapshots": 0,
+      "servedRows": 0
+    },
+    "fingerprints": {
+      "countywideFullRow": "8bdf89447fd77bd616a882db15875e8674b999051a1954caf1d4cec8a6c6df45",
+      "cityApnSet": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+      "cityFullRow": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f"
+    },
+    "candidateValidationWithoutSelection": true,
+    "replayRefusedWithoutDuplicateLoad": true,
+    "prohibitedWriteCountsRemainZero": true
+  },
+  "migration": {
+    "freshInstallPassed": true,
+    "foundationUpgradePassed": true,
+    "productionFoundationDdlRerunPrevented": true,
+    "constraintsVerified": 4,
+    "rlsTables": 10,
+    "publicAnonAuthenticatedGrants": 0
+  },
+  "integratedRegression": {
+    "decision": "PARCEL_SERVING_V2_PRODUCTION_SHADOW_IMPORT_PASS",
+    "parcelAccepted": 1088430,
+    "parcelQuarantine": 1328,
+    "zoningAccepted": 3680,
+    "zoningQuarantine": 26,
+    "zoningMappingGeometry": 3706,
+    "zoningMapping": 393733,
+    "servedRows": 393733,
+    "runKind": "INTEGRATED",
+    "selectedSnapshotRows": 1,
+    "selectedRunKind": "INTEGRATED",
+    "fingerprints": {
+      "parcelApnSet": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+      "parcelFullRow": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f",
+      "parcelZoneMapping": "313aa7ad46747bb97499a113842ac848de8f7357134e0558210692a1913a8ccf",
+      "integrated": "27b1a362bdae28369cdf7274d1b9842bef07b5970e33c1f9522d68d042e616d8"
+    }
+  },
+  "implementationIdentities": {
+    "importerSha256": "505a62841d7a3a1bbe3d889cd17f0c36576d7a91a7d6443769948da00386c939",
+    "foundationMigrationSha256": "4b06c79737f2c6592cf37869ea4a1c1dde7dfe75834ac15730f25c261cc54220",
+    "stagingMigrationSha256": "2b25de2d8c5a2bd91e9bb4144a5bff2084232d31ce2e496ed56e73d2055782d5"
+  },
+  "productionMutation": false,
+  "snapshotSelectedInParcelOnlyMode": false,
+  "publicCutover": false
+}

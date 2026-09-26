@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "productionProjectRef": "qockltdzvjxdlwrpgtsd",
+  "productionDatabase": "postgres",
+  "parcelAcquisitionId": "sangis-20260924T183743Z",
+  "artifacts": {
+    "parcelAcquisition": "3a4b63a100ef3e703bc0bb940e30c0b9df80d419585b93b9a246cfa08769eb0c",
+    "parcelRaw": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+    "parcelReport": "8d6aa8ea2b827e79573ec896ca7edae7fac053967e9ac68f1a06e734f2118ec5",
+    "parcelRows": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+    "parcelQuarantine": "f04e55fa5b60a5fce7112495cbd6c0981ae8c47d431a16a5524c515f27e50522"
+  },
+  "counts": {
+    "parcelSource": 1089758,
+    "parcelAccepted": 1088430,
+    "parcelQuarantine": 1328,
+    "cityParcels": 393733,
+    "cityDistinctApns": 393733
+  },
+  "fingerprints": {
+    "countywideFullRow": "8bdf89447fd77bd616a882db15875e8674b999051a1954caf1d4cec8a6c6df45",
+    "cityApnSet": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+    "cityFullRow": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f"
+  }
+}
