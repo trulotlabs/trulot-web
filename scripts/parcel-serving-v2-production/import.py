@@ -70,6 +70,7 @@ FOUNDATION_RELATIONS = (
 PSQL = "/opt/homebrew/bin/psql"
 BULK_IMPORT_STATEMENT_TIMEOUT = "30min"
 VALIDATION_STATEMENT_TIMEOUT = "30min"
+FINGERPRINT_EXTRA_FLOAT_DIGITS = 1
 ENV = {key: os.environ[key] for key in ("PATH", "LANG", "LC_ALL", "TMPDIR") if key in os.environ}
 csv.field_size_limit(sys.maxsize)
 
@@ -100,6 +101,12 @@ def begin_bulk_import(process: subprocess.Popen) -> None:
 
 def bounded_validation_statement(statement: str) -> str:
     return f"set statement_timeout = '{VALIDATION_STATEMENT_TIMEOUT}';\n{statement}"
+
+
+def bounded_fingerprint_statement(statement: str) -> str:
+    return bounded_validation_statement(
+        f"set extra_float_digits = {FINGERPRINT_EXTRA_FLOAT_DIGITS};\n{statement}"
+    )
 
 
 def ewkb(geometry: shapely.Geometry, srid: int) -> str:
@@ -302,7 +309,7 @@ def verify_receipts(paths: dict[str, pathlib.Path]) -> tuple[dict, dict, dict, d
 def stream_fingerprint(target: Target, query: str, error: str) -> str:
     digest = hashlib.sha256()
     process = subprocess.Popen(
-        target.command + ["-q", "-c", bounded_validation_statement(query)],
+        target.command + ["-q", "-c", bounded_fingerprint_statement(query)],
         stdout=subprocess.PIPE,
         stderr=subprocess.DEVNULL,
         env=target.environment,
@@ -357,7 +364,7 @@ def integrated_fingerprint(target: Target) -> str:
       order by p.acquisition_id,p.source_object_id
     ) to stdout with (format csv, delimiter E'\\t', null '\\N')"""
     process = subprocess.Popen(
-        target.command + ["-q", "-c", bounded_validation_statement(query)],
+        target.command + ["-q", "-c", bounded_fingerprint_statement(query)],
         stdout=subprocess.PIPE,
         stderr=subprocess.DEVNULL,
         env=target.environment,

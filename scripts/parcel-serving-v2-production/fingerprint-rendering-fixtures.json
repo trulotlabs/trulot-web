@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "setting": "extra_float_digits=1",
+  "cases": [
+    {
+      "input": "0.97",
+      "exactFloatLiteral": "0.9700000000000001",
+      "postgres17_6Default": "0.97",
+      "canonical": "0.9700000000000001",
+      "postgres17_9Compatible": "0.9700000000000001"
+    },
+    {
+      "input": "1.41",
+      "exactFloatLiteral": "1.4100000000000001",
+      "postgres17_6Default": "1.41",
+      "canonical": "1.4100000000000001",
+      "postgres17_9Compatible": "1.4100000000000001"
+    },
+    {
+      "input": "4.56",
+      "exactFloatLiteral": "4.5600000000000005",
+      "postgres17_6Default": "4.56",
+      "canonical": "4.5600000000000005",
+      "postgres17_9Compatible": "4.5600000000000005"
+    }
+  ]
+}

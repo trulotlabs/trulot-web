@@ -45,6 +45,7 @@ def main() -> None:
     source = pathlib.Path(IMPORTER.__file__).read_text()
     test("bulk-load timeout contract is exactly 30min", IMPORTER.BULK_IMPORT_STATEMENT_TIMEOUT == "30min")
     test("post-commit validation timeout contract is exactly 30min", IMPORTER.VALIDATION_STATEMENT_TIMEOUT == "30min")
+    test("fingerprint float rendering contract is exactly one extra digit", IMPORTER.FINGERPRINT_EXTRA_FLOAT_DIGITS == 1)
     test(
         "parcel-only and integrated loaders share the transaction timeout boundary",
         source.count("begin_bulk_import(process)") == 2,
@@ -166,8 +167,17 @@ def main() -> None:
     test(
         "count and fingerprint validation share the bounded connection contract",
         "validation=True" in inspect.getsource(IMPORTER.query_counts)
-        and "bounded_validation_statement" in inspect.getsource(IMPORTER.stream_fingerprint)
-        and "bounded_validation_statement" in inspect.getsource(IMPORTER.integrated_fingerprint),
+        and "bounded_fingerprint_statement" in inspect.getsource(IMPORTER.stream_fingerprint)
+        and "bounded_fingerprint_statement" in inspect.getsource(IMPORTER.integrated_fingerprint),
+    )
+    test(
+        "fingerprint rendering is session-scoped and precedes each fingerprint query",
+        IMPORTER.bounded_fingerprint_statement("select 1")
+        == "set statement_timeout = '30min';\nset extra_float_digits = 1;\nselect 1",
+    )
+    test(
+        "general validation does not inherit the fingerprint rendering override",
+        "extra_float_digits" not in IMPORTER.bounded_validation_statement("select 1"),
     )
     main_source = inspect.getsource(IMPORTER.main)
     test(
