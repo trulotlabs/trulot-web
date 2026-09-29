@@ -50,6 +50,8 @@ The importer verifies all artifact SHA-256 values before the first production da
 
 Data is copied in one transaction. A loaded candidate remains unselected until these database observations pass:
 
+The bulk transaction and post-commit validation have separate bounded timeout contracts. Bulk COPY uses transaction-local `SET LOCAL statement_timeout = '30min'`. Count reconciliation and streamed fingerprints prepend session-only `SET statement_timeout = '30min'` in each validation `psql` subprocess, including `--validate-only` and `--resume-validation`. Neither contract changes database- or role-level settings, and neither disables timeouts.
+
 - accepted parcel rows `1,088,430`;
 - parcel quarantine rows `1,328`;
 - City parcel rows and distinct APNs `393,733`;

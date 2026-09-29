@@ -1,4 +1,4 @@
-"""Verify the sealed bulk-import timeout in a disposable local PostGIS cluster.
+"""Verify the sealed bulk-import and post-commit validation timeouts.
 
 Usage: python3 test-timeout.py BOUNDARY
 """
@@ -44,6 +44,7 @@ def main() -> None:
 
     source = pathlib.Path(IMPORTER.__file__).read_text()
     test("bulk-load timeout contract is exactly 30min", IMPORTER.BULK_IMPORT_STATEMENT_TIMEOUT == "30min")
+    test("post-commit validation timeout contract is exactly 30min", IMPORTER.VALIDATION_STATEMENT_TIMEOUT == "30min")
     test(
         "parcel-only and integrated loaders share the transaction timeout boundary",
         source.count("begin_bulk_import(process)") == 2,
@@ -120,6 +121,34 @@ def main() -> None:
         and bounded_values[0] == bounded_values[2],
     )
 
+    short_target = IMPORTER.Target(
+        psql,
+        "short-default-validation-test",
+        {**ENV, "PGOPTIONS": "-c statement_timeout=1ms"},
+    )
+    try:
+        short_target.sql("select pg_sleep(0.05)")
+    except RuntimeError:
+        short_canceled = True
+    else:
+        short_canceled = False
+    test("default short validation timeout cancels an expensive query", short_canceled)
+
+    bounded_value = short_target.sql(
+        "select pg_sleep(0.05); select current_setting('statement_timeout')",
+        validation=True,
+    )
+    test("sealed validation timeout allows the same query", bounded_value == "30min")
+    test(
+        "validation timeout applies only to its psql connection",
+        short_target.sql("select current_setting('statement_timeout')") == "1ms",
+    )
+    baseline_target = IMPORTER.Target(psql, "baseline-timeout-test", ENV)
+    test(
+        "subsequent session defaults remain unchanged",
+        baseline_target.sql("select current_setting('statement_timeout')") not in {"30min", "1ms"},
+    )
+
     lowered = source.lower()
     test("importer never alters database timeout configuration", "alter database" not in lowered)
     test("importer never alters role timeout configuration", "alter role" not in lowered)
@@ -131,9 +160,21 @@ def main() -> None:
         ),
     )
     test(
-        "validation-only does not inherit the bulk transaction timeout",
-        "begin_bulk_import" not in inspect.getsource(IMPORTER.validate_parcel_only_candidate)
-        and "begin_bulk_import" not in inspect.getsource(IMPORTER.matching_import_run),
+        "parcel-only count validation uses the separate validation timeout",
+        "validation=True" in inspect.getsource(IMPORTER.query_parcel_only_counts),
+    )
+    test(
+        "count and fingerprint validation share the bounded connection contract",
+        "validation=True" in inspect.getsource(IMPORTER.query_counts)
+        and "bounded_validation_statement" in inspect.getsource(IMPORTER.stream_fingerprint)
+        and "bounded_validation_statement" in inspect.getsource(IMPORTER.integrated_fingerprint),
+    )
+    main_source = inspect.getsource(IMPORTER.main)
+    test(
+        "validate-only and resume-validation share the sealed validation path",
+        "validate-only" in main_source
+        and "resume-validation" in main_source
+        and main_source.count("validate_parcel_only_candidate(target, import_run_id)") == 1,
     )
 
     production_args = SimpleNamespace(
@@ -153,11 +194,11 @@ def main() -> None:
     test("production authorization gate remains required", authorization_rejected)
 
     test(
-        "timeout contract does not add a production CLI override",
+        "timeout contracts do not add a production CLI override",
         "statement-timeout" not in source and "timeout" not in inspect.getsource(IMPORTER.target_from_args),
     )
 
-    print(f"{checks} bulk-import timeout checks passed.")
+    print(f"{checks} bulk-import and validation-timeout checks passed.")
 
 
 if __name__ == "__main__":

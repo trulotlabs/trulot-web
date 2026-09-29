@@ -69,6 +69,7 @@ FOUNDATION_RELATIONS = (
 )
 PSQL = "/opt/homebrew/bin/psql"
 BULK_IMPORT_STATEMENT_TIMEOUT = "30min"
+VALIDATION_STATEMENT_TIMEOUT = "30min"
 ENV = {key: os.environ[key] for key in ("PATH", "LANG", "LC_ALL", "TMPDIR") if key in os.environ}
 csv.field_size_limit(sys.maxsize)
 
@@ -97,6 +98,10 @@ def begin_bulk_import(process: subprocess.Popen) -> None:
     process.stdin.write(f"set local statement_timeout = '{BULK_IMPORT_STATEMENT_TIMEOUT}';\n")
 
 
+def bounded_validation_statement(statement: str) -> str:
+    return f"set statement_timeout = '{VALIDATION_STATEMENT_TIMEOUT}';\n{statement}"
+
+
 def ewkb(geometry: shapely.Geometry, srid: int) -> str:
     return shapely.set_srid(geometry, srid).wkb_hex
 
@@ -123,10 +128,11 @@ class Target:
         with log.open("a") as output:
             output.write(self.redact(value))
 
-    def sql(self, statement: str) -> str:
+    def sql(self, statement: str, *, validation: bool = False) -> str:
+        command = self.command + (["-qAtc", bounded_validation_statement(statement)] if validation else ["-Atc", statement])
         try:
             result = subprocess.run(
-                self.command + ["-Atc", statement],
+                command,
                 env=self.environment,
                 text=True,
                 stdout=subprocess.PIPE,
@@ -138,11 +144,11 @@ class Target:
             raise RuntimeError(f"{self.label} SQL query failed") from None
         return result.stdout.strip()
 
-    def run(self, statement: str, log: pathlib.Path) -> None:
+    def run(self, statement: str, log: pathlib.Path, *, validation: bool = False) -> None:
         try:
             result = subprocess.run(
-                self.command,
-                input=statement,
+                self.command + (["-q"] if validation else []),
+                input=bounded_validation_statement(statement) if validation else statement,
                 text=True,
                 env=self.environment,
                 stdout=subprocess.PIPE,
@@ -295,7 +301,12 @@ def verify_receipts(paths: dict[str, pathlib.Path]) -> tuple[dict, dict, dict, d
 
 def stream_fingerprint(target: Target, query: str, error: str) -> str:
     digest = hashlib.sha256()
-    process = subprocess.Popen(target.command + ["-c", query], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, env=target.environment)
+    process = subprocess.Popen(
+        target.command + ["-q", "-c", bounded_validation_statement(query)],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        env=target.environment,
+    )
     assert process.stdout is not None
     while chunk := process.stdout.read(1024 * 1024):
         digest.update(chunk)
@@ -345,7 +356,13 @@ def integrated_fingerprint(target: Target) -> str:
         and z.zoning_acquisition_id='{EXPECTED['zoningAcquisitionId']}'
       order by p.acquisition_id,p.source_object_id
     ) to stdout with (format csv, delimiter E'\\t', null '\\N')"""
-    process = subprocess.Popen(target.command + ["-c", query], stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, env=target.environment, text=True)
+    process = subprocess.Popen(
+        target.command + ["-q", "-c", bounded_validation_statement(query)],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        env=target.environment,
+        text=True,
+    )
     assert process.stdout is not None
     reader = csv.reader(process.stdout, delimiter="\t")
     digest = hashlib.sha256()
@@ -407,7 +424,7 @@ def query_counts(target: Target) -> dict[str, object]:
         'missingZoningRows',(select count(*) from trulot_v2.parcel_base_sangis_v2 p left join trulot_v2.parcel_zone_mapping_v2 z on z.parcel_acquisition_id=p.acquisition_id and z.parcel_source_object_id=p.source_object_id where p.situs_juris='SD' and z.parcel_source_object_id is null),
         'zoningStateCounts',(select json_object_agg(mapping_state,n) from (select mapping_state,count(*) n from trulot_v2.parcel_zone_mapping_v2 group by mapping_state order by mapping_state) s)
       )
-    """)
+    """, validation=True)
     return json.loads(raw)
 
 
@@ -432,7 +449,7 @@ def query_parcel_only_counts(target: Target, acquisition_id: str, import_run_id:
         'mappingRows',(select count(*) from trulot_v2.parcel_zone_mapping_v2),
         'selectedSnapshots',(select count(*) from trulot_v2.selected_snapshot)
       )
-    """)
+    """, validation=True)
     return json.loads(raw)
 
 
@@ -821,7 +838,7 @@ def main() -> None:
               commit;
               analyze trulot_v2.parcel_base_sangis_v2;
             """
-            target.run(final_sql, output / "psql.log")
+            target.run(final_sql, output / "psql.log", validation=True)
         terminal_state = target.sql(
             "select concat_ws('|',status,run_kind,coalesce(zoning_acquisition_id,'NULL')) "
             f"from trulot_v2.import_run where import_run_id='{import_run_id}'"
@@ -840,7 +857,13 @@ def main() -> None:
             "decision": "PARCEL_ONLY_V2_IMPORT_PASS",
             "target": target.label,
             "mode": args.mode,
-            "operation": "validate-only" if args.validate_only else "load-and-validate",
+            "operation": (
+                "validate-only"
+                if args.validate_only
+                else "resume-validation"
+                if args.resume_validation
+                else "load-and-validate"
+            ),
             "importRunId": import_run_id,
             "materializationId": materialization_id,
             "importerVersion": sha256(pathlib.Path(__file__)),
