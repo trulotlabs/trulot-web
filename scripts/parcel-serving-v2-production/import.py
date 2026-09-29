@@ -68,6 +68,7 @@ FOUNDATION_RELATIONS = (
     "parcel_intelligence_serving_v2",
 )
 PSQL = "/opt/homebrew/bin/psql"
+BULK_IMPORT_STATEMENT_TIMEOUT = "30min"
 ENV = {key: os.environ[key] for key in ("PATH", "LANG", "LC_ALL", "TMPDIR") if key in os.environ}
 csv.field_size_limit(sys.maxsize)
 
@@ -88,6 +89,12 @@ def canonical(value: object) -> str:
 
 def csv_row(writer: csv.writer, values: list[object]) -> None:
     writer.writerow(["\\N" if value is None else value for value in values])
+
+
+def begin_bulk_import(process: subprocess.Popen) -> None:
+    assert process.stdin is not None
+    process.stdin.write("begin;\n")
+    process.stdin.write(f"set local statement_timeout = '{BULK_IMPORT_STATEMENT_TIMEOUT}';\n")
 
 
 def ewkb(geometry: shapely.Geometry, srid: int) -> str:
@@ -616,7 +623,7 @@ def load_integrated_data(target: Target, paths: dict[str, pathlib.Path], materia
     with target.stream(log_path) as process:
         assert process.stdin is not None
         writer = csv.writer(process.stdin, lineterminator="\n")
-        process.stdin.write("begin;\n")
+        begin_bulk_import(process)
         process.stdin.write("copy trulot_v2.import_run (import_run_id,importer_version,started_at,completed_at,status,materialization_id,parcel_acquisition_id,zoning_acquisition_id,source_artifacts,observed_counts,observed_fingerprints,failure_reason,run_kind) from stdin with (format csv, null '\\N');\n")
         csv_row(writer, [import_run_id, importer_version, started_at, None, "LOADING", materialization_id,
                          EXPECTED["parcelAcquisitionId"], EXPECTED["zoningAcquisitionId"], canonical(artifact_hashes), "{}", "{}", None, "INTEGRATED"])
@@ -730,7 +737,7 @@ def load_parcel_only_data(target: Target, paths: dict[str, pathlib.Path], materi
     with target.stream(log_path) as process:
         assert process.stdin is not None
         writer = csv.writer(process.stdin, lineterminator="\n")
-        process.stdin.write("begin;\n")
+        begin_bulk_import(process)
         process.stdin.write("copy trulot_v2.import_run (import_run_id,importer_version,started_at,completed_at,status,materialization_id,parcel_acquisition_id,zoning_acquisition_id,source_artifacts,observed_counts,observed_fingerprints,failure_reason,run_kind) from stdin with (format csv, null '\\N');\n")
         csv_row(writer, [import_run_id, importer_version, started_at, None, "LOADING", materialization_id,
                          expected["parcelAcquisitionId"], None, canonical(artifact_hashes), "{}", "{}", None, "PARCEL_ONLY"])
