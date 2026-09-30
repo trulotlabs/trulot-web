@@ -1,0 +1,4925 @@
+{
+  "bridge": {
+    "additions": {
+      "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED": 87,
+      "STACKED_OR_REPEATED_PARCEL_ID": 457
+    },
+    "balance": 0,
+    "removals": {
+      "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED": 97,
+      "SAME_PARCEL_ID_APN_REPLACEMENT_PATTERN": 6,
+      "V2_QUARANTINE_EXCLUSION": 72
+    },
+    "v1": 393364,
+    "v2": 393733
+  },
+  "casebook": [
+    {
+      "apn": "3064242800",
+      "case": "V2-only stacked APN",
+      "confidence": "HIGH",
+      "explanation": "Current SanGIS preserves a distinct APN in an identical-geometry repeated parcel-ID group.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "IMPROVED_IDENTITY",
+      "v1": null,
+      "v2": {
+        "address": null,
+        "approximateGeometryAreaSqFt": 55639.900899,
+        "centroid": [
+          -117.152292673,
+          32.954093248
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "a878956a4ba6bace5fdd619709e456ec78fd9260607328e0bbad7c8269241064",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 9013101,
+        "present": true,
+        "taxableAcreage": null
+      }
+    },
+    {
+      "apn": "3080420101",
+      "case": "V2-only stacked APN",
+      "confidence": "HIGH",
+      "explanation": "Current SanGIS preserves a unit APN sharing parcel ID 10013234 and geometry with sibling units.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "IMPROVED_IDENTITY",
+      "v1": null,
+      "v2": {
+        "address": "11325 CAMINITO RODAR",
+        "approximateGeometryAreaSqFt": 34984.827647,
+        "centroid": [
+          -117.170237554,
+          32.924803156
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "429f022e87b7b286e740139d97c8f66efad0abd0042dd0d4fac5497849769368",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 10013234,
+        "present": true,
+        "taxableAcreage": null
+      }
+    },
+    {
+      "apn": "3080420102",
+      "case": "V2-only stacked APN",
+      "confidence": "HIGH",
+      "explanation": "Current SanGIS preserves a second unit APN sharing the same parcel ID and geometry.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "IMPROVED_IDENTITY",
+      "v1": null,
+      "v2": {
+        "address": "11319 CAMINITO RODAR",
+        "approximateGeometryAreaSqFt": 34984.827647,
+        "centroid": [
+          -117.170237554,
+          32.924803156
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "429f022e87b7b286e740139d97c8f66efad0abd0042dd0d4fac5497849769368",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 10013234,
+        "present": true,
+        "taxableAcreage": null
+      }
+    },
+    {
+      "apn": "3003725200",
+      "case": "V2-only unresolved",
+      "confidence": "MEDIUM",
+      "explanation": "Current source contains the APN; historical evidence does not prove whether it is a new parcel or a V1 omission.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "NEEDS_REVIEW",
+      "v1": null,
+      "v2": {
+        "address": "13601 NOGALES DR",
+        "approximateGeometryAreaSqFt": 8987.34744,
+        "centroid": [
+          -117.255074483,
+          32.945698563
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "aec282ab9564552e8736340805513fb711b9b7ab8b503a2e073eef30dc8df3a3",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 10019355,
+        "present": true,
+        "taxableAcreage": null
+      }
+    },
+    {
+      "apn": "3013101500",
+      "case": "V2-only unresolved",
+      "confidence": "MEDIUM",
+      "explanation": "Current source contains the APN; historical evidence does not prove whether it is a new parcel or a V1 omission.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "NEEDS_REVIEW",
+      "v1": null,
+      "v2": {
+        "address": "13591 NOGALES DR",
+        "approximateGeometryAreaSqFt": 59418.125681,
+        "centroid": [
+          -117.255043496,
+          32.945026224
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "6a5b9d28ac2886a2458498efccc57ba257d9185ac41cc907658ab16531729fbf",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 10019058,
+        "present": true,
+        "taxableAcreage": 1.36
+      }
+    },
+    {
+      "apn": "2672905400",
+      "case": "V1-only quarantine",
+      "confidence": "HIGH",
+      "explanation": "The current-source row was quarantined for invalid geometry, so V2 would not serve the V1 APN.",
+      "quarantineReasons": [
+        [
+          "INVALID_GEOMETRY"
+        ]
+      ],
+      "userVisibleImpact": "POTENTIAL_REGRESSION",
+      "v1": {
+        "address": null,
+        "city": null,
+        "lotAreaSqFt": 1371.37676831,
+        "parcelId": "5251858",
+        "present": true,
+        "slug": "apn-2672905400"
+      },
+      "v2": null
+    },
+    {
+      "apn": "2673626100",
+      "case": "V1-only quarantine",
+      "confidence": "HIGH",
+      "explanation": "The current-source row was quarantined for invalid geometry, so V2 would not serve the V1 APN.",
+      "quarantineReasons": [
+        [
+          "INVALID_GEOMETRY"
+        ]
+      ],
+      "userVisibleImpact": "POTENTIAL_REGRESSION",
+      "v1": {
+        "address": null,
+        "city": null,
+        "lotAreaSqFt": 15264.3160281,
+        "parcelId": "5252717",
+        "present": true,
+        "slug": "apn-2673626100"
+      },
+      "v2": null
+    },
+    {
+      "apn": "2748821301",
+      "case": "V1-only quarantine stack",
+      "confidence": "HIGH",
+      "explanation": "The current-source stacked row was quarantined for invalid geometry.",
+      "quarantineReasons": [
+        [
+          "INVALID_GEOMETRY"
+        ]
+      ],
+      "userVisibleImpact": "POTENTIAL_REGRESSION",
+      "v1": {
+        "address": null,
+        "city": null,
+        "lotAreaSqFt": 280519.7038,
+        "parcelId": "725541",
+        "present": true,
+        "slug": "apn-2748821301"
+      },
+      "v2": null
+    },
+    {
+      "apn": "3080420100",
+      "case": "V1-only replacement pattern",
+      "confidence": "MEDIUM",
+      "explanation": "The same parcel-ID family has current APNs 3080420101-0104; legal split/retirement history is not proven.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "POTENTIAL_REGRESSION",
+      "v1": {
+        "address": null,
+        "city": null,
+        "lotAreaSqFt": 34996.8684839,
+        "parcelId": "10013234",
+        "present": true,
+        "slug": "apn-3080420100"
+      },
+      "v2": null
+    },
+    {
+      "apn": "3003725000",
+      "case": "V1-only unresolved",
+      "confidence": "LOW",
+      "explanation": "Absent from current accepted SanGIS and quarantine; retirement, replacement, filter, or omission remains unresolved.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "POTENTIAL_REGRESSION",
+      "v1": {
+        "address": null,
+        "city": null,
+        "lotAreaSqFt": 7018.64548079,
+        "parcelId": "321103",
+        "present": true,
+        "slug": "apn-3003725000"
+      },
+      "v2": null
+    },
+    {
+      "apn": "2410902500",
+      "case": "Shared normalized address",
+      "confidence": "HIGH",
+      "explanation": "Same APN; live V1 title case and V2 uppercase normalize to the same address.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "NO_MATERIAL_USER_IMPACT",
+      "v1": {
+        "address": "15500 San Pasqual Valley Rd",
+        "city": "Oceanside Escondido",
+        "lotAreaSqFt": 12128006.9561,
+        "parcelId": "5415014",
+        "present": true,
+        "slug": "apn-2410902500"
+      },
+      "v2": {
+        "address": "15500 SAN PASQUAL VALLEY RD",
+        "approximateGeometryAreaSqFt": 12128009.611535,
+        "centroid": [
+          -117.004540924,
+          33.098575338
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "f7ff8ec204e0dc6bfc9abccb92af0c2a8e53c2e08c91100df1c25174a9c54d14",
+        "geometryType": "MultiPolygon",
+        "jurisdiction": "SD",
+        "parcelId": 5415014,
+        "present": true,
+        "taxableAcreage": 260.3
+      }
+    },
+    {
+      "apn": "2410902900",
+      "case": "Shared normalized address",
+      "confidence": "HIGH",
+      "explanation": "Same APN; live V1 title case and V2 uppercase normalize to the same address.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "NO_MATERIAL_USER_IMPACT",
+      "v1": {
+        "address": "14895 San Pasqual Valley Rd",
+        "city": "Oceanside Escondido",
+        "lotAreaSqFt": 55050.993159,
+        "parcelId": "754160",
+        "present": true,
+        "slug": "apn-2410902900"
+      },
+      "v2": {
+        "address": "14895 SAN PASQUAL VALLEY RD",
+        "approximateGeometryAreaSqFt": 55050.966925,
+        "centroid": [
+          -117.01522647,
+          33.098402146
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "7070a22b1fcb181cfbfd9fe61a999a5869fc12eeb09188f5f1c5b69cba5e29ef",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 754160,
+        "present": true,
+        "taxableAcreage": 1.29
+      }
+    },
+    {
+      "apn": "2672311800",
+      "case": "Shared address difference",
+      "confidence": "MEDIUM",
+      "explanation": "V1 uses Wayne Hl while current SanGIS uses WAYNE HLS; suffix semantics need source review.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "NEEDS_REVIEW",
+      "v1": {
+        "address": "16052 Wayne Hl",
+        "city": null,
+        "lotAreaSqFt": 4604.38342694,
+        "parcelId": "5251601",
+        "present": true,
+        "slug": "apn-2672311800"
+      },
+      "v2": {
+        "address": "16052 WAYNE HLS",
+        "approximateGeometryAreaSqFt": 4604.170256,
+        "centroid": [
+          -117.141508819,
+          33.020580021
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "fd825b04bb48b92f99aa74f3ae535234e7bae08beb3ee35679d6df0d1cd5c128",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 5251601,
+        "present": true,
+        "taxableAcreage": null
+      }
+    },
+    {
+      "apn": "2672312000",
+      "case": "Shared address difference",
+      "confidence": "MEDIUM",
+      "explanation": "V1 uses Wayne Hl while current SanGIS uses WAYNE HILL.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "NEEDS_REVIEW",
+      "v1": {
+        "address": "16064 Wayne Hl",
+        "city": null,
+        "lotAreaSqFt": 4304.94242589,
+        "parcelId": "5251599",
+        "present": true,
+        "slug": "apn-2672312000"
+      },
+      "v2": {
+        "address": "16064 WAYNE HILL",
+        "approximateGeometryAreaSqFt": 4304.943521,
+        "centroid": [
+          -117.141511567,
+          33.02080931
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "27e758bc97f0965f34128c1cab015a6ba4a09af54e5943f14a34d637ec668555",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 5251599,
+        "present": true,
+        "taxableAcreage": null
+      }
+    },
+    {
+      "apn": "3010702900",
+      "case": "V2 address improvement",
+      "confidence": "HIGH",
+      "explanation": "Same APN; live V1 address is missing and V2 supplies 12957 VIA LATINA.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "IMPROVED_IDENTITY",
+      "v1": {
+        "address": null,
+        "city": null,
+        "lotAreaSqFt": 9325.93446542,
+        "parcelId": "11280",
+        "present": true,
+        "slug": "apn-3010702900"
+      },
+      "v2": {
+        "address": "12957 VIA LATINA",
+        "approximateGeometryAreaSqFt": 9325.951658,
+        "centroid": [
+          -117.247568436,
+          32.93545384
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "83f0f5f08d072f2040f98b9e88aef5ec5eceed92fc18b4009e60ed1e7ee3a67f",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 11280,
+        "present": true,
+        "taxableAcreage": null
+      }
+    },
+    {
+      "apn": "3052614900",
+      "case": "V2 address improvement",
+      "confidence": "HIGH",
+      "explanation": "Same APN; live V1 address is missing and V2 supplies 13551 RANCHO SANTA FE FARMS RD.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "IMPROVED_IDENTITY",
+      "v1": {
+        "address": null,
+        "city": null,
+        "lotAreaSqFt": 124247.265681,
+        "parcelId": "5326168",
+        "present": true,
+        "slug": "apn-3052614900"
+      },
+      "v2": {
+        "address": "13551 RANCHO SANTA FE FARMS RD",
+        "approximateGeometryAreaSqFt": 124307.814531,
+        "centroid": [
+          -117.176693561,
+          32.963912363
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "fd7cf5c3d20c725b136270eeadaa5e9e647233efa688aa8b8d7480a29f8dd802",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 5326168,
+        "present": true,
+        "taxableAcreage": 2.62
+      }
+    },
+    {
+      "apn": "2410603700",
+      "case": "V2 missing address",
+      "confidence": "HIGH",
+      "explanation": "Same APN; live V1 has 0 Rockwood Rd while the current SanGIS situs address is null.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "POTENTIAL_REGRESSION",
+      "v1": {
+        "address": "0 Rockwood Rd",
+        "city": "Oceanside Escondido",
+        "lotAreaSqFt": 1974107.2976,
+        "parcelId": "1571508",
+        "present": true,
+        "slug": "apn-2410603700"
+      },
+      "v2": {
+        "address": null,
+        "approximateGeometryAreaSqFt": 1974107.857323,
+        "centroid": [
+          -117.014833344,
+          33.110311733
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "bf99377c14275f8cca60bf47ae00a59f208f8ad08c2c1cabef291e87833830c4",
+        "geometryType": "MultiPolygon",
+        "jurisdiction": "SD",
+        "parcelId": 1571508,
+        "present": true,
+        "taxableAcreage": 43.76
+      }
+    },
+    {
+      "apn": "2410603800",
+      "case": "V2 missing address",
+      "confidence": "HIGH",
+      "explanation": "Same APN; live V1 has 0 Rockwood Rd while the current SanGIS situs address is null.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "POTENTIAL_REGRESSION",
+      "v1": {
+        "address": "0 Rockwood Rd",
+        "city": "Oceanside Escondido",
+        "lotAreaSqFt": 1137208.15146,
+        "parcelId": "1571507",
+        "present": true,
+        "slug": "apn-2410603800"
+      },
+      "v2": {
+        "address": null,
+        "approximateGeometryAreaSqFt": 1137208.606228,
+        "centroid": [
+          -117.01218276,
+          33.109958023
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "296f3799b2d884dab2b102bb19930ab8b382f7f1e4e7b6506d17d6256e923666",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 1571507,
+        "present": true,
+        "taxableAcreage": 26.17
+      }
+    },
+    {
+      "apn": "2392600700",
+      "case": "Shared missing address and locality mismatch",
+      "confidence": "HIGH",
+      "explanation": "Both addresses are null; V1 city says Oceanside Escondido while authoritative V2 situs jurisdiction is SD, proving V1 city is locality metadata.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "NO_MATERIAL_USER_IMPACT",
+      "v1": {
+        "address": null,
+        "city": "Oceanside Escondido",
+        "lotAreaSqFt": 10588117.9459,
+        "parcelId": "5356634",
+        "present": true,
+        "slug": "apn-2392600700"
+      },
+      "v2": {
+        "address": null,
+        "approximateGeometryAreaSqFt": 10588120.373922,
+        "centroid": [
+          -117.031162348,
+          33.079574683
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "839bd35133ec51fc6799789ddae8207735a45f697563c4800cdaedf22826ff61",
+        "geometryType": "MultiPolygon",
+        "jurisdiction": "SD",
+        "parcelId": 5356634,
+        "present": true,
+        "taxableAcreage": 241.34
+      }
+    },
+    {
+      "apn": "4375706100",
+      "case": "Historical geometry/centroid change",
+      "confidence": "MEDIUM",
+      "explanation": "Historical V1 geometry centroid differs from current V2 by about 519 ft and geometry area is about 4.61x larger in V1.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "NEEDS_REVIEW",
+      "v1": {
+        "address": null,
+        "city": null,
+        "lotAreaSqFt": 19322.0227856,
+        "parcelId": "11942",
+        "present": true,
+        "slug": "apn-4375706100"
+      },
+      "v2": {
+        "address": null,
+        "approximateGeometryAreaSqFt": 19322.275934,
+        "centroid": [
+          -117.168032742,
+          32.771499544
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "150de84097133749a22e0897b6e87be390328f6a1d9791587206cc69511f6ea9",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 10018056,
+        "present": true,
+        "taxableAcreage": null
+      }
+    },
+    {
+      "apn": "3487300501",
+      "case": "Historical geometry/centroid change",
+      "confidence": "MEDIUM",
+      "explanation": "Historical V1 geometry centroid differs from current V2 by about 259 ft; current geometry area is about 1.86x V1.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "NEEDS_REVIEW",
+      "v1": {
+        "address": null,
+        "city": null,
+        "lotAreaSqFt": 64861.4504876,
+        "parcelId": "464613",
+        "present": true,
+        "slug": "apn-3487300501"
+      },
+      "v2": {
+        "address": "4215 CAMINO TICINO",
+        "approximateGeometryAreaSqFt": 120733.553612,
+        "centroid": [
+          -117.216154968,
+          32.861004924
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "c07702e4fa5dd340fda2e3b9f93eb3e771a8d0db4df46df25a57527ed84e454d",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 464561,
+        "present": true,
+        "taxableAcreage": null
+      }
+    },
+    {
+      "apn": "4781101148",
+      "case": "Shared repeated parcel identity",
+      "confidence": "HIGH",
+      "explanation": "Shared APN belongs to a repeated parcel-ID/identical-geometry group; repetition is retained rather than collapsed.",
+      "quarantineReasons": [],
+      "userVisibleImpact": "NO_MATERIAL_USER_IMPACT",
+      "v1": {
+        "address": null,
+        "city": null,
+        "lotAreaSqFt": 134229.733838,
+        "parcelId": "719446",
+        "present": true,
+        "slug": "apn-4781101148"
+      },
+      "v2": {
+        "address": "6556 COLLEGE GROVE DR",
+        "approximateGeometryAreaSqFt": 151806.069516,
+        "centroid": [
+          -117.056872993,
+          32.742657004
+        ],
+        "centroidWithin": true,
+        "geometrySha256": "c12fe3565e1d240ccac8a05ce8fbb7c9614047c33493e9c3e89eb2eb41f29599",
+        "geometryType": "Polygon",
+        "jurisdiction": "SD",
+        "parcelId": 719446,
+        "present": true,
+        "taxableAcreage": null
+      }
+    }
+  ],
+  "decision": "PARCEL_V2_IDENTITY_PARITY_NOT_PROVEN",
+  "evidenceBoundary": {
+    "offlineInputs": "exact V1 APN export, historical V1 parcel lineage, sealed V2 accepted/quarantine artifacts",
+    "productionQueries": "read-only SELECTs through Supabase SQL editor",
+    "warning": "The local V1 export is used for APN identity and lineage only; live production queries are authoritative for V1 address and coordinate aggregates."
+  },
+  "geometryCaseSource": "Historical V1 lineage geometry was decoded in EPSG:2230 and compared offline with sealed V2 geometry; live stored-coordinate aggregate remains the authoritative 393,189-row diagnostic.",
+  "normalization": {
+    "acceptedNonTenDigitV2": 0,
+    "punctuationOnlyDifferences": 0,
+    "v1RawExactCanonical": 393364,
+    "v2RawExactCanonical": 393733
+  },
+  "parcelIds": {
+    "DIFFERENT": 334,
+    "EXACT": 392855
+  },
+  "preservation": {
+    "deployment": false,
+    "mappingsCreated": false,
+    "parcelV1Changed": false,
+    "productionMutation": false,
+    "push": false,
+    "shadowReadsEnabled": false,
+    "v2Selected": false,
+    "zoningLoaded": false
+  },
+  "production": {
+    "mappingRows": 0,
+    "projectRef": "qockltdzvjxdlwrpgtsd",
+    "selectedSnapshots": 0,
+    "servingRows": 0,
+    "v1ApnSha256": "70a7bd054178b27d2e1df309bb6f3ab752f243f9deb692b8001eae6291e69c9f",
+    "v1DistinctApns": 393364,
+    "v1InvalidApns": 0,
+    "v1Rows": 393364,
+    "v1Table": "public.parcel_page_api_v2",
+    "v2AcquisitionId": "sangis-20260924T183743Z",
+    "v2ApnSha256": "3d9f9b91b3fc32ffee71b5dbb1fb43c0c3e853afb1ebc24e6db434c77e79e22c",
+    "v2DistinctApnsCity": 393733,
+    "v2RowsCity": 393733,
+    "v2RunId": "724ff836-eedc-594e-93c5-c80a63de65f7",
+    "v2RunKind": "PARCEL_ONLY",
+    "v2RunStatus": "VALIDATED",
+    "zoningRows": 0
+  },
+  "quarantine": {
+    "allRows": 1328,
+    "cityRows": 73,
+    "distinctApnsInV1": 72,
+    "reasons": {
+      "DUPLICATE_APN_OR_OBJECTID": 10,
+      "INVALID_APN": 1016,
+      "INVALID_GEOMETRY": 313,
+      "UNCLOSED_OR_SHORT_RING": 1
+    }
+  },
+  "quarantineDetail": {
+    "allRows": 1328,
+    "cityRows": 73,
+    "cityRowsWhoseApnOccursInV1": 73,
+    "distinctCityApnsInV1": 72,
+    "reasonOccurrencesAll": {
+      "DUPLICATE_APN_OR_OBJECTID": 10,
+      "INVALID_APN": 1016,
+      "INVALID_GEOMETRY": 313,
+      "UNCLOSED_OR_SHORT_RING": 1
+    },
+    "reasonOccurrencesCity": {
+      "DUPLICATE_APN_OR_OBJECTID": 2,
+      "INVALID_GEOMETRY": 71
+    }
+  },
+  "remainingQuestions": [
+    "Authoritative historical parcel-split/consolidation records for the 97 unresolved V1-only and 87 unresolved V2-only APNs.",
+    "Disposition policy for 72 V1 APNs excluded by V2 quarantine.",
+    "Source-backed explanation for 334 same-APN parcel-ID changes.",
+    "Review of 10,175 V2-missing addresses and 96,745 materially different addresses.",
+    "Parcel-level review of the 3,889 live stored-centroid shifts over 250 ft."
+  ],
+  "schemaVersion": 1,
+  "sets": {
+    "intersection": 393189,
+    "v1ApnSha256": "70a7bd054178b27d2e1df309bb6f3ab752f243f9deb692b8001eae6291e69c9f",
+    "v1Distinct": 393364,
+    "v1Only": 175,
+    "v1OnlyApns": [
+      "2672905400",
+      "2673626100",
+      "2673642400",
+      "2748821301",
+      "2748821302",
+      "2748821303",
+      "2748821304",
+      "2748821305",
+      "2748821306",
+      "2748821307",
+      "2748821308",
+      "2748821309",
+      "2748821310",
+      "2748821311",
+      "2748821312",
+      "2748821313",
+      "2748821314",
+      "2748821315",
+      "2748821316",
+      "2748821317",
+      "2748821318",
+      "2748821319",
+      "2748821320",
+      "2748821321",
+      "2748821322",
+      "2748821323",
+      "2748821324",
+      "2748821325",
+      "2748821326",
+      "2748821327",
+      "2748821328",
+      "2748821329",
+      "2748821330",
+      "2748821331",
+      "2748821332",
+      "2748821333",
+      "2748821334",
+      "2748821335",
+      "2748821336",
+      "2748821337",
+      "2748821338",
+      "2748821339",
+      "2748821340",
+      "2748821341",
+      "2748821342",
+      "2748821343",
+      "2748821344",
+      "2748821345",
+      "2748821346",
+      "2748821347",
+      "2748821348",
+      "2748821349",
+      "2748821350",
+      "3003725000",
+      "3013101200",
+      "3052103800",
+      "3052640100",
+      "3064242900",
+      "3070712900",
+      "3080420100",
+      "3080420200",
+      "3082923900",
+      "3082932600",
+      "3113206800",
+      "3113206900",
+      "3113207000",
+      "3113207100",
+      "3113207200",
+      "3113207300",
+      "3113207400",
+      "3113207500",
+      "3113207600",
+      "3113207700",
+      "3137014600",
+      "3433003200",
+      "3442703400",
+      "3451203800",
+      "3451203900",
+      "3451204000",
+      "3451204200",
+      "3451204300",
+      "3451204400",
+      "3500701000",
+      "3500701100",
+      "3512501700",
+      "3512502200",
+      "3512502500",
+      "3660520900",
+      "3660521400",
+      "3660532900",
+      "3660533100",
+      "3660533300",
+      "3660545800",
+      "3660546300",
+      "3660905200",
+      "3660905800",
+      "3660906000",
+      "3660906200",
+      "3660906300",
+      "3660906400",
+      "3660906500",
+      "3660906900",
+      "3660907000",
+      "3660907100",
+      "3660907200",
+      "3660907300",
+      "3660907400",
+      "3660907500",
+      "3660907800",
+      "3660908300",
+      "3660908500",
+      "3660908600",
+      "3660908700",
+      "3660909000",
+      "3660927700",
+      "3660928000",
+      "3660934700",
+      "3660944800",
+      "3691705600",
+      "4152621300",
+      "4163820700",
+      "4256800900",
+      "4256801100",
+      "4265716400",
+      "4315410600",
+      "4332701500",
+      "4332701600",
+      "4332701700",
+      "4332703500",
+      "4366111469",
+      "4366111470",
+      "4437620500",
+      "4437620800",
+      "4437620900",
+      "4437621000",
+      "4440602300",
+      "4480333200",
+      "4498003500",
+      "4504801400",
+      "4563333300",
+      "4634201000",
+      "4656536000",
+      "4670511100",
+      "4670511400",
+      "4670511600",
+      "4722900200",
+      "5351360100",
+      "5353471900",
+      "5430731700",
+      "5453012000",
+      "5482421700",
+      "5494201200",
+      "5810400200",
+      "5863522800",
+      "5863614300",
+      "5863618100",
+      "5863825600",
+      "6303213100",
+      "6303213200",
+      "6340327100",
+      "6670302600",
+      "6691900500",
+      "7600300100",
+      "7601073300",
+      "7601073400",
+      "7601073600",
+      "7601073700",
+      "7601074000",
+      "7601075500",
+      "7602148200",
+      "7602178700",
+      "7602178900",
+      "7602264300",
+      "7602269500",
+      "7602421300"
+    ],
+    "v2ApnSha256": "3d9f9b91b3fc32ffee71b5dbb1fb43c0c3e853afb1ebc24e6db434c77e79e22c",
+    "v2Distinct": 393733,
+    "v2Only": 544,
+    "v2OnlyApns": [
+      "3003725200",
+      "3013101500",
+      "3050410400",
+      "3052640500",
+      "3052640600",
+      "3063806000",
+      "3064202100",
+      "3064242800",
+      "3080420101",
+      "3080420102",
+      "3080420103",
+      "3080420104",
+      "3080420201",
+      "3080420202",
+      "3080420203",
+      "3080420204",
+      "3080420700",
+      "3080420800",
+      "3150206200",
+      "3150206300",
+      "3413924300",
+      "3413924400",
+      "3414901000",
+      "3415000500",
+      "3415000600",
+      "3415100500",
+      "3433005200",
+      "3433005300",
+      "3512502700",
+      "3512502800",
+      "3512502900",
+      "3512503000",
+      "3512503100",
+      "3512503200",
+      "3512503300",
+      "3512503400",
+      "3560814100",
+      "3560814200",
+      "3560814300",
+      "3660522700",
+      "3660536300",
+      "3660546600",
+      "3660909200",
+      "3660909300",
+      "3660909500",
+      "3660909600",
+      "3660928300",
+      "3691707500",
+      "3691707600",
+      "3711207600",
+      "4152623000",
+      "4152623100",
+      "4163822100",
+      "4163822200",
+      "4256801300",
+      "4315411000",
+      "4315411100",
+      "4332704500",
+      "4332704600",
+      "4332704700",
+      "4332704800",
+      "4332704900",
+      "4366111471",
+      "4366112401",
+      "4366112402",
+      "4366112403",
+      "4366112404",
+      "4366112405",
+      "4366112406",
+      "4366112407",
+      "4366112408",
+      "4366112409",
+      "4366112410",
+      "4366112411",
+      "4366112412",
+      "4366112413",
+      "4366112414",
+      "4366112415",
+      "4366112416",
+      "4366112417",
+      "4366112418",
+      "4366112419",
+      "4366112420",
+      "4366112421",
+      "4366112422",
+      "4366112423",
+      "4366112424",
+      "4366112425",
+      "4366112426",
+      "4366112427",
+      "4366112428",
+      "4366112429",
+      "4366112430",
+      "4366112431",
+      "4366112432",
+      "4366112433",
+      "4366112434",
+      "4366112435",
+      "4366112436",
+      "4366112437",
+      "4366112438",
+      "4366112439",
+      "4366112440",
+      "4366112441",
+      "4366112442",
+      "4366112443",
+      "4366112444",
+      "4366112445",
+      "4366112446",
+      "4366112447",
+      "4366112448",
+      "4366112449",
+      "4366112450",
+      "4366112451",
+      "4366112452",
+      "4366112453",
+      "4366112454",
+      "4366112455",
+      "4366112456",
+      "4366112457",
+      "4366112458",
+      "4366112459",
+      "4366112460",
+      "4366112461",
+      "4366112462",
+      "4366112463",
+      "4366112464",
+      "4366112465",
+      "4366112466",
+      "4366112467",
+      "4366112468",
+      "4376702100",
+      "4376702200",
+      "4437621100",
+      "4437621200",
+      "4440602600",
+      "4440602800",
+      "4492512400",
+      "4504801600",
+      "4504801700",
+      "4547723100",
+      "4563333700",
+      "4634201300",
+      "4634201400",
+      "4670511700",
+      "5322311900",
+      "5333920901",
+      "5333920902",
+      "5333920903",
+      "5333920904",
+      "5333920905",
+      "5333920906",
+      "5333920907",
+      "5333920908",
+      "5333920909",
+      "5333920910",
+      "5333920911",
+      "5333920912",
+      "5333920913",
+      "5333920914",
+      "5333920915",
+      "5333920916",
+      "5333920917",
+      "5333920918",
+      "5333920919",
+      "5333920920",
+      "5333920921",
+      "5333920922",
+      "5333920923",
+      "5333920924",
+      "5333920925",
+      "5333920926",
+      "5333920927",
+      "5333920928",
+      "5333920929",
+      "5333920930",
+      "5333920931",
+      "5333920932",
+      "5333920933",
+      "5333920934",
+      "5333920935",
+      "5333920936",
+      "5333920937",
+      "5333920938",
+      "5333920939",
+      "5333920940",
+      "5333920941",
+      "5333920942",
+      "5333920943",
+      "5333920944",
+      "5333920945",
+      "5333920946",
+      "5333920947",
+      "5333920948",
+      "5333920949",
+      "5333920950",
+      "5333920951",
+      "5333920952",
+      "5333920953",
+      "5333920954",
+      "5333920955",
+      "5333920956",
+      "5333920957",
+      "5333920958",
+      "5333920959",
+      "5333920960",
+      "5333920961",
+      "5333920962",
+      "5333920963",
+      "5333920964",
+      "5333920965",
+      "5333920966",
+      "5333920967",
+      "5333920968",
+      "5333920969",
+      "5333920970",
+      "5333920971",
+      "5333920972",
+      "5333920973",
+      "5333920974",
+      "5333920975",
+      "5333920976",
+      "5333920977",
+      "5333920978",
+      "5333920979",
+      "5333920980",
+      "5333920981",
+      "5333920982",
+      "5333920983",
+      "5333920984",
+      "5333920985",
+      "5333920986",
+      "5333920987",
+      "5333920988",
+      "5333920989",
+      "5333920990",
+      "5333921001",
+      "5333921002",
+      "5333921003",
+      "5333921004",
+      "5333921005",
+      "5333921006",
+      "5333921007",
+      "5333921008",
+      "5333921009",
+      "5333921010",
+      "5333921011",
+      "5333921012",
+      "5333921013",
+      "5333921014",
+      "5333921015",
+      "5333921016",
+      "5333921017",
+      "5333921018",
+      "5333921019",
+      "5333921020",
+      "5333921021",
+      "5333921022",
+      "5333921023",
+      "5333921024",
+      "5333921025",
+      "5333921026",
+      "5333921027",
+      "5333921028",
+      "5333921029",
+      "5333921030",
+      "5333921031",
+      "5333921032",
+      "5333921033",
+      "5333921034",
+      "5333921035",
+      "5333921036",
+      "5333921037",
+      "5333921038",
+      "5333921039",
+      "5333921040",
+      "5333921041",
+      "5333921042",
+      "5333921043",
+      "5333921044",
+      "5333921045",
+      "5333921046",
+      "5333921047",
+      "5333921048",
+      "5333921049",
+      "5333921050",
+      "5333921051",
+      "5333921052",
+      "5333921053",
+      "5333921054",
+      "5333921055",
+      "5333921056",
+      "5333921057",
+      "5333921058",
+      "5333921059",
+      "5333921060",
+      "5333921061",
+      "5333921062",
+      "5333921063",
+      "5333921064",
+      "5333921065",
+      "5333921066",
+      "5333921067",
+      "5333921068",
+      "5333921069",
+      "5333921070",
+      "5333921071",
+      "5333921072",
+      "5333921073",
+      "5333921074",
+      "5333921075",
+      "5333921076",
+      "5333921077",
+      "5333921078",
+      "5333921079",
+      "5333921080",
+      "5333921081",
+      "5333921082",
+      "5333921083",
+      "5333921084",
+      "5333921085",
+      "5333921086",
+      "5333921087",
+      "5333921088",
+      "5333921089",
+      "5333921090",
+      "5333921091",
+      "5333921101",
+      "5333921102",
+      "5333921103",
+      "5333921104",
+      "5333921105",
+      "5333921106",
+      "5333921107",
+      "5333921108",
+      "5333921109",
+      "5333921110",
+      "5333921111",
+      "5333921112",
+      "5333921113",
+      "5333921114",
+      "5333921115",
+      "5333921116",
+      "5333921117",
+      "5333921118",
+      "5333921200",
+      "5351360101",
+      "5351360700",
+      "5353471901",
+      "5353471902",
+      "5353471903",
+      "5353471904",
+      "5353471905",
+      "5353471906",
+      "5353471907",
+      "5353471908",
+      "5430733700",
+      "5430733800",
+      "5453014000",
+      "5453014100",
+      "5453014200",
+      "5453014300",
+      "5453014400",
+      "5485360100",
+      "5485360200",
+      "5485360300",
+      "5485360400",
+      "5485360500",
+      "5485360600",
+      "5485360700",
+      "5485360800",
+      "5485360900",
+      "5485361000",
+      "5485361100",
+      "5485361200",
+      "5485361300",
+      "5485361400",
+      "5485361500",
+      "5485361600",
+      "5485361700",
+      "5485361800",
+      "5485361900",
+      "5485362000",
+      "6670809400",
+      "6786907500",
+      "6787001201",
+      "6787001202",
+      "6787001203",
+      "6787001204",
+      "6787001205",
+      "6787001206",
+      "6787001207",
+      "6787001208",
+      "6787001209",
+      "6787001210",
+      "6787001211",
+      "6787001212",
+      "6787001301",
+      "6787001302",
+      "6787001303",
+      "6787001304",
+      "6787001305",
+      "6787001306",
+      "6787001307",
+      "6787001401",
+      "6787001402",
+      "6787001403",
+      "6787001404",
+      "6787001405",
+      "6787001406",
+      "6787001407",
+      "6787001408",
+      "6787001501",
+      "6787001502",
+      "6787001503",
+      "6787001504",
+      "6787001505",
+      "6787001506",
+      "6787001507",
+      "6787001508",
+      "6787001509",
+      "6787001510",
+      "6787001511",
+      "6787001512",
+      "6787001601",
+      "6787001602",
+      "6787001603",
+      "6787001604",
+      "6787001605",
+      "6787001606",
+      "6787001607",
+      "6787001608",
+      "6787001609",
+      "6787001610",
+      "6787001611",
+      "6787001612",
+      "6787001701",
+      "6787001702",
+      "6787001703",
+      "6787001704",
+      "6787001705",
+      "6787001706",
+      "6787001801",
+      "6787001802",
+      "6787001803",
+      "6787001804",
+      "6787001805",
+      "6787001806",
+      "6787001901",
+      "6787001902",
+      "6787001903",
+      "6787001904",
+      "6787001905",
+      "6787001906",
+      "6787002001",
+      "6787002002",
+      "6787002003",
+      "6787002004",
+      "6787002005",
+      "6787002006",
+      "6787002101",
+      "6787002102",
+      "6787002103",
+      "6787002104",
+      "6787002105",
+      "6787002106",
+      "7600012500",
+      "7600074400",
+      "7600104800",
+      "7600135500",
+      "7600573600",
+      "7601035100",
+      "7601039300",
+      "7601039400",
+      "7601039500",
+      "7601039701",
+      "7601039702",
+      "7601039703",
+      "7601039705",
+      "7601039706",
+      "7601039708",
+      "7601039709",
+      "7601039710",
+      "7601039800",
+      "7601039900",
+      "7601056501",
+      "7601056502",
+      "7601070101",
+      "7601430700",
+      "7601466000",
+      "7601467100",
+      "7602135400",
+      "7602149906",
+      "7602167600",
+      "7602167701",
+      "7602273600",
+      "7602282901",
+      "7602283400",
+      "7602284800",
+      "7602285800",
+      "7602286800",
+      "7602287400",
+      "7602287500",
+      "7602287600",
+      "7602287700",
+      "7602288101",
+      "7602288800",
+      "7602289200",
+      "7602289300",
+      "7602289400",
+      "7602289500",
+      "7602289900",
+      "7602337700",
+      "7602338300",
+      "7602338301",
+      "7602338302",
+      "7602338303",
+      "7602338304",
+      "7602420100",
+      "7602443900",
+      "7602443901",
+      "7602451400",
+      "7602452200",
+      "7602454400",
+      "7602457700",
+      "7602472700",
+      "7602472800",
+      "7602493700",
+      "7602493800",
+      "7602511800",
+      "7602532200",
+      "7602532300",
+      "7602532400",
+      "7602532500",
+      "7602570400",
+      "7602570500",
+      "7602570600",
+      "7602574501",
+      "7602575101",
+      "7602577601",
+      "7602578001",
+      "7602578002",
+      "7602579103",
+      "7602889700"
+    ]
+  },
+  "sharedFieldComparison": {
+    "addresses": {
+      "BOTH_MISSING": 4579,
+      "EXACT_RAW": 0,
+      "MATERIAL_DIFFERENCE": 96745,
+      "NORMALIZED_MATCH": 281404,
+      "V1_MISSING_V2_PRESENT": 286,
+      "V1_PRESENT_V2_MISSING": 10175
+    },
+    "centroidDistanceDiagnosticFeet": {
+      "10_TO_50": 94013,
+      "1_TO_10": 268376,
+      "50_TO_250": 26134,
+      "GT_250": 3889,
+      "LT_1": 777,
+      "average": 19.4492017851543,
+      "maximum": 4561.24999563648
+    },
+    "geometryAreaVsV1LotArea": {
+      "1_TO_5_PERCENT": 227,
+      "5_TO_10_PERCENT": 76,
+      "GT_10_PERCENT": 89,
+      "LT_1_PERCENT": 392797,
+      "ORDER_OF_MAGNITUDE": 0
+    },
+    "geometryPresence": {
+      "v1HistoricalLineageGeomPresent": 393364,
+      "v1ServingGeomPresent": 0,
+      "v2GeomPresent": 393189
+    },
+    "interpretation": "V1 lot_area_sqft, V2 taxable_acreage, and V2 approximate_geometry_area_sqft have different semantics and are diagnostic only.",
+    "parcelIds": {
+      "DIFFERENT": 334,
+      "EXACT": 392855,
+      "V1_MISSING": 0
+    },
+    "sharedApns": 393189,
+    "taxableAcreageVsV1LotArea": {
+      "1_TO_5_PERCENT": 6235,
+      "5_TO_10_PERCENT": 1958,
+      "GT_10_PERCENT": 1572,
+      "LT_1_PERCENT": 9229,
+      "ORDER_OF_MAGNITUDE": 191,
+      "V2_NULL": 374195
+    },
+    "v1CityValues": {
+      "Mountain Empire": 1,
+      "Oceanside Escondido": 107,
+      "Ramona": 7,
+      "San Diego": 393073,
+      "Valley Center": 1
+    }
+  },
+  "stacks": {
+    "apns": 126239,
+    "apnsPresentInV1": 125782,
+    "groups": 5446,
+    "groupsNotFullyRepresentedInV1": 50,
+    "v2OnlyApns": 457
+  },
+  "userVisibleImpactPrimaryPartition": {
+    "IMPROVED_IDENTITY": 743,
+    "NEEDS_REVIEW": 96832,
+    "NO_MATERIAL_USER_IMPACT": 285983,
+    "POTENTIAL_REGRESSION": 10350,
+    "diagnosticFlagsAreOverlapping": {
+      "centroidOver250Feet": 3889,
+      "geometryAreaOver10Percent": 89,
+      "parcelIdChanged": 334
+    },
+    "scope": "393,908 APNs in the V1/V2 union; presence then address is the primary mutually exclusive classifier"
+  },
+  "v1Only": [
+    {
+      "apn": "2672905400",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2673626100",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2673642400",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821301",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821302",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821303",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821304",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821305",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821306",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821307",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821308",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821309",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821310",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821311",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821312",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821313",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821314",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821315",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821316",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821317",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821318",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821319",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821320",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821321",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821322",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821323",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821324",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821325",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821326",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821327",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821328",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821329",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821330",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821331",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821332",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821333",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821334",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821335",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821336",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821337",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821338",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821339",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821340",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821341",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821342",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821343",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821344",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821345",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821346",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821347",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821348",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821349",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "2748821350",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "3003725000",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3013101200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3052103800",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "3052640100",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3064242900",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "3070712900",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "3080420100",
+      "category": "SAME_PARCEL_ID_APN_REPLACEMENT_PATTERN"
+    },
+    {
+      "apn": "3080420200",
+      "category": "SAME_PARCEL_ID_APN_REPLACEMENT_PATTERN"
+    },
+    {
+      "apn": "3082923900",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "3082932600",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "3113206800",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3113206900",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3113207000",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3113207100",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3113207200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3113207300",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3113207400",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3113207500",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3113207600",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3113207700",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3137014600",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "3433003200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3442703400",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "3451203800",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3451203900",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3451204000",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3451204200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3451204300",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3451204400",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3500701000",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3500701100",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3512501700",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3512502200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3512502500",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660520900",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660521400",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660532900",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660533100",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660533300",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660545800",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660546300",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660905200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660905800",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660906000",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660906200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660906300",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660906400",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660906500",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660906900",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660907000",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660907100",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660907200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660907300",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660907400",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660907500",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660907800",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660908300",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660908500",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660908600",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660908700",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660909000",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660927700",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660928000",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660934700",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3660944800",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "3691705600",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4152621300",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4163820700",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4256800900",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4256801100",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4265716400",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "4315410600",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4332701500",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4332701600",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4332701700",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4332703500",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4366111469",
+      "category": "SAME_PARCEL_ID_APN_REPLACEMENT_PATTERN"
+    },
+    {
+      "apn": "4366111470",
+      "category": "SAME_PARCEL_ID_APN_REPLACEMENT_PATTERN"
+    },
+    {
+      "apn": "4437620500",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4437620800",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4437620900",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4437621000",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4440602300",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4480333200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4498003500",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "4504801400",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4563333300",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4634201000",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4656536000",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "4670511100",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4670511400",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4670511600",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "4722900200",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "5351360100",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "5353471900",
+      "category": "SAME_PARCEL_ID_APN_REPLACEMENT_PATTERN"
+    },
+    {
+      "apn": "5430731700",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "5453012000",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "5482421700",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "5494201200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "5810400200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "5863522800",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "5863614300",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "5863618100",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "5863825600",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "6303213100",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "6303213200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "6340327100",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "6670302600",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "6691900500",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "7600300100",
+      "category": "V2_QUARANTINE_EXCLUSION"
+    },
+    {
+      "apn": "7601073300",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "7601073400",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "7601073600",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "7601073700",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "7601074000",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "7601075500",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "7602148200",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "7602178700",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "7602178900",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "7602264300",
+      "category": "SAME_PARCEL_ID_APN_REPLACEMENT_PATTERN"
+    },
+    {
+      "apn": "7602269500",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    },
+    {
+      "apn": "7602421300",
+      "category": "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED"
+    }
+  ],
+  "v1OnlyCategories": {
+    "RETIRED_STALE_OR_JURISDICTION_DIFFERENCE_UNRESOLVED": 97,
+    "SAME_PARCEL_ID_APN_REPLACEMENT_PATTERN": 6,
+    "V2_QUARANTINE_EXCLUSION": 72
+  },
+  "v2Only": [
+    {
+      "apn": "3003725200",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019355
+    },
+    {
+      "apn": "3013101500",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019058
+    },
+    {
+      "apn": "3050410400",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019333
+    },
+    {
+      "apn": "3052640500",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019334
+    },
+    {
+      "apn": "3052640600",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019332
+    },
+    {
+      "apn": "3063806000",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 5226001
+    },
+    {
+      "apn": "3064202100",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018708
+    },
+    {
+      "apn": "3064242800",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 9013101
+    },
+    {
+      "apn": "3080420101",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10013234
+    },
+    {
+      "apn": "3080420102",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10013234
+    },
+    {
+      "apn": "3080420103",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10013234
+    },
+    {
+      "apn": "3080420104",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10013234
+    },
+    {
+      "apn": "3080420201",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10013233
+    },
+    {
+      "apn": "3080420202",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10013233
+    },
+    {
+      "apn": "3080420203",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10013233
+    },
+    {
+      "apn": "3080420204",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10013233
+    },
+    {
+      "apn": "3080420700",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10013233
+    },
+    {
+      "apn": "3080420800",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10013234
+    },
+    {
+      "apn": "3150206200",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10012351
+    },
+    {
+      "apn": "3150206300",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10012351
+    },
+    {
+      "apn": "3413924300",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018704
+    },
+    {
+      "apn": "3413924400",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018703
+    },
+    {
+      "apn": "3414901000",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 9015171
+    },
+    {
+      "apn": "3415000500",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 9015231
+    },
+    {
+      "apn": "3415000600",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 9015239
+    },
+    {
+      "apn": "3415100500",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 9015291
+    },
+    {
+      "apn": "3433005200",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018793
+    },
+    {
+      "apn": "3433005300",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018794
+    },
+    {
+      "apn": "3512502700",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019008
+    },
+    {
+      "apn": "3512502800",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019009
+    },
+    {
+      "apn": "3512502900",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019012
+    },
+    {
+      "apn": "3512503000",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019014
+    },
+    {
+      "apn": "3512503100",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019013
+    },
+    {
+      "apn": "3512503200",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019017
+    },
+    {
+      "apn": "3512503300",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019019
+    },
+    {
+      "apn": "3512503400",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019018
+    },
+    {
+      "apn": "3560814100",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018712
+    },
+    {
+      "apn": "3560814200",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018714
+    },
+    {
+      "apn": "3560814300",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018709
+    },
+    {
+      "apn": "3660522700",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019508
+    },
+    {
+      "apn": "3660536300",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019404
+    },
+    {
+      "apn": "3660546600",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019400
+    },
+    {
+      "apn": "3660909200",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019407
+    },
+    {
+      "apn": "3660909300",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019410
+    },
+    {
+      "apn": "3660909500",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019412
+    },
+    {
+      "apn": "3660909600",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019413
+    },
+    {
+      "apn": "3660928300",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019415
+    },
+    {
+      "apn": "3691707500",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018915
+    },
+    {
+      "apn": "3691707600",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018916
+    },
+    {
+      "apn": "3711207600",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018847
+    },
+    {
+      "apn": "4152623000",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019286
+    },
+    {
+      "apn": "4152623100",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019285
+    },
+    {
+      "apn": "4163822100",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019049
+    },
+    {
+      "apn": "4163822200",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019050
+    },
+    {
+      "apn": "4256801300",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019205
+    },
+    {
+      "apn": "4315411000",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019036
+    },
+    {
+      "apn": "4315411100",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019037
+    },
+    {
+      "apn": "4332704500",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019356
+    },
+    {
+      "apn": "4332704600",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019357
+    },
+    {
+      "apn": "4332704700",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019358
+    },
+    {
+      "apn": "4332704800",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019359
+    },
+    {
+      "apn": "4332704900",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019361
+    },
+    {
+      "apn": "4366111471",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 199963
+    },
+    {
+      "apn": "4366112401",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112402",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112403",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112404",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112405",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112406",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112407",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112408",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112409",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112410",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112411",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112412",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112413",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112414",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112415",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112416",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112417",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112418",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112419",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112420",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112421",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112422",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112423",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112424",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112425",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112426",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112427",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112428",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112429",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112430",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112431",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112432",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112433",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112434",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112435",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112436",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112437",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112438",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112439",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112440",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112441",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112442",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112443",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112444",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112445",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112446",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112447",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112448",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112449",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112450",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112451",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112452",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112453",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112454",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112455",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112456",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112457",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112458",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112459",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112460",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112461",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112462",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112463",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112464",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112465",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112466",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112467",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4366112468",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5426936
+    },
+    {
+      "apn": "4376702100",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018420
+    },
+    {
+      "apn": "4376702200",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018419
+    },
+    {
+      "apn": "4437621100",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019467
+    },
+    {
+      "apn": "4437621200",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019466
+    },
+    {
+      "apn": "4440602600",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019297
+    },
+    {
+      "apn": "4440602800",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019573
+    },
+    {
+      "apn": "4492512400",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004317
+    },
+    {
+      "apn": "4504801600",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019223
+    },
+    {
+      "apn": "4504801700",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019222
+    },
+    {
+      "apn": "4547723100",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10014440
+    },
+    {
+      "apn": "4563333700",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019519
+    },
+    {
+      "apn": "4634201300",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10020523
+    },
+    {
+      "apn": "4634201400",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10020524
+    },
+    {
+      "apn": "4670511700",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019170
+    },
+    {
+      "apn": "5322311900",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10019044
+    },
+    {
+      "apn": "5333920901",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920902",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920903",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920904",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920905",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920906",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920907",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920908",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920909",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920910",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920911",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920912",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920913",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920914",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920915",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920916",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920917",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920918",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920919",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920920",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920921",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920922",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920923",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920924",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920925",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920926",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920927",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920928",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920929",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920930",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920931",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920932",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920933",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920934",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920935",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920936",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920937",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920938",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920939",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920940",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920941",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920942",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920943",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920944",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920945",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920946",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920947",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920948",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920949",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920950",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920951",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920952",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920953",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920954",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920955",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920956",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920957",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920958",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920959",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920960",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920961",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920962",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920963",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920964",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920965",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920966",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920967",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920968",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920969",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920970",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920971",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920972",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920973",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920974",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920975",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920976",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920977",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920978",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920979",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920980",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920981",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920982",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920983",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920984",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920985",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920986",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920987",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920988",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920989",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333920990",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921001",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921002",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921003",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921004",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921005",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921006",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921007",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921008",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921009",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921010",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921011",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921012",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921013",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921014",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921015",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921016",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921017",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921018",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921019",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921020",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921021",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921022",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921023",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921024",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921025",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921026",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921027",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921028",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921029",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921030",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921031",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921032",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921033",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921034",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921035",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921036",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921037",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921038",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921039",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921040",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921041",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921042",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921043",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921044",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921045",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921046",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921047",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921048",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921049",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921050",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921051",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921052",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921053",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921054",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921055",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921056",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921057",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921058",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921059",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921060",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921061",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921062",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921063",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921064",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921065",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921066",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921067",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921068",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921069",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921070",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921071",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921072",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921073",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921074",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921075",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921076",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921077",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921078",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921079",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921080",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921081",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921082",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921083",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921084",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921085",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921086",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921087",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921088",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921089",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921090",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921091",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921101",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921102",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921103",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921104",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921105",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921106",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921107",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921108",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921109",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921110",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921111",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921112",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921113",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921114",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921115",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921116",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921117",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921118",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5333921200",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 73720
+    },
+    {
+      "apn": "5351360101",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10019468
+    },
+    {
+      "apn": "5351360700",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10019468
+    },
+    {
+      "apn": "5353471901",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 1544959
+    },
+    {
+      "apn": "5353471902",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 1544959
+    },
+    {
+      "apn": "5353471903",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 1544959
+    },
+    {
+      "apn": "5353471904",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 1544959
+    },
+    {
+      "apn": "5353471905",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 1544959
+    },
+    {
+      "apn": "5353471906",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 1544959
+    },
+    {
+      "apn": "5353471907",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 1544959
+    },
+    {
+      "apn": "5353471908",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 1544959
+    },
+    {
+      "apn": "5430733700",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10020513
+    },
+    {
+      "apn": "5430733800",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10020514
+    },
+    {
+      "apn": "5453014000",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10020016
+    },
+    {
+      "apn": "5453014100",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10020017
+    },
+    {
+      "apn": "5453014200",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10020018
+    },
+    {
+      "apn": "5453014300",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10020019
+    },
+    {
+      "apn": "5453014400",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10020015
+    },
+    {
+      "apn": "5485360100",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018889
+    },
+    {
+      "apn": "5485360200",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018891
+    },
+    {
+      "apn": "5485360300",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018892
+    },
+    {
+      "apn": "5485360400",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018894
+    },
+    {
+      "apn": "5485360500",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018896
+    },
+    {
+      "apn": "5485360600",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018898
+    },
+    {
+      "apn": "5485360700",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018900
+    },
+    {
+      "apn": "5485360800",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018903
+    },
+    {
+      "apn": "5485360900",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018905
+    },
+    {
+      "apn": "5485361000",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018907
+    },
+    {
+      "apn": "5485361100",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018888
+    },
+    {
+      "apn": "5485361200",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018890
+    },
+    {
+      "apn": "5485361300",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018893
+    },
+    {
+      "apn": "5485361400",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018895
+    },
+    {
+      "apn": "5485361500",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018897
+    },
+    {
+      "apn": "5485361600",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018899
+    },
+    {
+      "apn": "5485361700",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018902
+    },
+    {
+      "apn": "5485361800",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018904
+    },
+    {
+      "apn": "5485361900",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018906
+    },
+    {
+      "apn": "5485362000",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 10018901
+    },
+    {
+      "apn": "6670809400",
+      "category": "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED",
+      "parcelId": 5428360
+    },
+    {
+      "apn": "6786907500",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5335869
+    },
+    {
+      "apn": "6787001201",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001202",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001203",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001204",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001205",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001206",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001207",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001208",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001209",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001210",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001211",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001212",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001301",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001302",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001303",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001304",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001305",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001306",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001307",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001401",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001402",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001403",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001404",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001405",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001406",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001407",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001408",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001501",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001502",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001503",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001504",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001505",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001506",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001507",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001508",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001509",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001510",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001511",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001512",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001601",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001602",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001603",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001604",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001605",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001606",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001607",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001608",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001609",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001610",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001611",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001612",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001701",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001702",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001703",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001704",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001705",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001706",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001801",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001802",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001803",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001804",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001805",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001806",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001901",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001902",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001903",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001904",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001905",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787001906",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787002001",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787002002",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787002003",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787002004",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787002005",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787002006",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787002101",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787002102",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787002103",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787002104",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787002105",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "6787002106",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5352220
+    },
+    {
+      "apn": "7600012500",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5336500
+    },
+    {
+      "apn": "7600074400",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5348736
+    },
+    {
+      "apn": "7600104800",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5347793
+    },
+    {
+      "apn": "7600135500",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5348748
+    },
+    {
+      "apn": "7600573600",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 2362584
+    },
+    {
+      "apn": "7601035100",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039300",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039400",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039500",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039701",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039702",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039703",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039705",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039706",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039708",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039709",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039710",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039800",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601039900",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7601056501",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 188227
+    },
+    {
+      "apn": "7601056502",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 726935
+    },
+    {
+      "apn": "7601070101",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10794
+    },
+    {
+      "apn": "7601430700",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10016010
+    },
+    {
+      "apn": "7601466000",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5883
+    },
+    {
+      "apn": "7601467100",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5883
+    },
+    {
+      "apn": "7602135400",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 1545566
+    },
+    {
+      "apn": "7602149906",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5348431
+    },
+    {
+      "apn": "7602167600",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10007858
+    },
+    {
+      "apn": "7602167701",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 130466
+    },
+    {
+      "apn": "7602273600",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 1574107
+    },
+    {
+      "apn": "7602282901",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 7447
+    },
+    {
+      "apn": "7602283400",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602284800",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602285800",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602286800",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602287400",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602287500",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602287600",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602287700",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602288101",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5396372
+    },
+    {
+      "apn": "7602288800",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602289200",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602289300",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602289400",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602289500",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602289900",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602337700",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5312004
+    },
+    {
+      "apn": "7602338300",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5312004
+    },
+    {
+      "apn": "7602338301",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5312004
+    },
+    {
+      "apn": "7602338302",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5312004
+    },
+    {
+      "apn": "7602338303",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5312004
+    },
+    {
+      "apn": "7602338304",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5312004
+    },
+    {
+      "apn": "7602420100",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 8410
+    },
+    {
+      "apn": "7602443900",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5387298
+    },
+    {
+      "apn": "7602443901",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5387298
+    },
+    {
+      "apn": "7602451400",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5406570
+    },
+    {
+      "apn": "7602452200",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10007858
+    },
+    {
+      "apn": "7602454400",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10007858
+    },
+    {
+      "apn": "7602457700",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 11159
+    },
+    {
+      "apn": "7602472700",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 30282
+    },
+    {
+      "apn": "7602472800",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 80267
+    },
+    {
+      "apn": "7602493700",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 722829
+    },
+    {
+      "apn": "7602493800",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 3873
+    },
+    {
+      "apn": "7602511800",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5883
+    },
+    {
+      "apn": "7602532200",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5373114
+    },
+    {
+      "apn": "7602532300",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5373114
+    },
+    {
+      "apn": "7602532400",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5112464
+    },
+    {
+      "apn": "7602532500",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 276310
+    },
+    {
+      "apn": "7602570400",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602570500",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602570600",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602574501",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 334069
+    },
+    {
+      "apn": "7602575101",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 5876
+    },
+    {
+      "apn": "7602577601",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 532432
+    },
+    {
+      "apn": "7602578001",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602578002",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    },
+    {
+      "apn": "7602579103",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 718830
+    },
+    {
+      "apn": "7602889700",
+      "category": "STACKED_OR_REPEATED_PARCEL_ID",
+      "parcelId": 10004183
+    }
+  ],
+  "v2OnlyCategories": {
+    "CURRENT_SOURCE_ADDITION_OR_HISTORICAL_V1_OMISSION_UNRESOLVED": 87,
+    "STACKED_OR_REPEATED_PARCEL_ID": 457
+  }
+}
