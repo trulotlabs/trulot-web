@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "adapter_contract": "PASS",
+  "truth_state_rendering": "PASS",
+  "split_zone_rendering": "PASS",
+  "coastal_rendering": "PASS",
+  "conditional_standards": "PASS",
+  "structure_semantics": "PASS",
+  "accessibility_static": "PASS",
+  "representative_fixtures": 10,
+  "source_fixture_count": 30,
+  "production_runtime_wired": false
+}

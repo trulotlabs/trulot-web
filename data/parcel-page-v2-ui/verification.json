@@ -1,0 +1,23 @@
+{
+  "result": "PASS",
+  "commands": [
+    {"command": "node scripts/parcel-page-v2-ui/build.mjs", "result": "PASS", "detail": "10 representative static renderings"},
+    {"command": "node scripts/parcel-page-v2-ui/test.mjs", "result": "PASS", "detail": "adapter, truth-state, split-zone, Coastal, condition, structure semantics, and static accessibility"},
+    {"command": "node scripts/parcel-page-v2-ui/capture.mjs", "result": "PASS", "detail": "30 browser checks; 10 cases x mobile/tablet/desktop; 6 canonical screenshots"},
+    {"command": "npx tsc --noEmit --incremental false", "result": "PASS"},
+    {"command": "npx eslint scripts/parcel-page-v2-ui", "result": "PASS", "detail": "0 errors, 0 warnings"},
+    {"command": "python3 scripts/parcel-intelligence-v2/test.py", "result": "PASS", "detail": "31 existing Packet 18 tests"},
+    {"command": "git diff --check", "result": "PASS"}
+  ],
+  "manual_visual_review": {
+    "canonical_mobile": "PASS",
+    "canonical_desktop": "PASS",
+    "five_second_test": "PASS",
+    "expert_test": "PASS",
+    "observed_nonblocking_limitations": [
+      "Evidence-rich pages have substantial mobile scroll depth.",
+      "Static review pages do not include a parcel map or production navigation."
+    ]
+  },
+  "agent_browser_cli": "unavailable; existing Playwright Chromium dependency used as the bounded browser fallback"
+}

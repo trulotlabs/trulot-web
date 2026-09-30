@@ -1,0 +1,256 @@
+{
+  "result": "PASS",
+  "browser": "Playwright Chromium fallback (agent-browser CLI unavailable in this checkout)",
+  "cases": 10,
+  "viewports": [
+    "mobile 390x844",
+    "tablet 820x1180",
+    "desktop 1440x1000"
+  ],
+  "checks": 30,
+  "failures": [],
+  "canonical": [
+    {
+      "apn": "6341302200",
+      "case": "outside-coastal-rs-1-7",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "title": "1456 27TH ST",
+      "headings": [
+        "What applies here",
+        "Base development standards",
+        "Existing property facts",
+        "What we don’t know yet",
+        "Next investigation",
+        "Development capacity",
+        "Evidence / How TruLot knows"
+      ],
+      "horizontal_overflow": false,
+      "keyboard_summary_focus": true,
+      "disclosure_opened": true,
+      "status_has_text": true,
+      "console_errors": [],
+      "screenshot": "data/parcel-page-v2-ui/screenshots/6341302200-mobile.png"
+    },
+    {
+      "apn": "6341302200",
+      "case": "outside-coastal-rs-1-7",
+      "viewport": {
+        "name": "tablet",
+        "width": 820,
+        "height": 1180
+      },
+      "title": "1456 27TH ST",
+      "headings": [
+        "What applies here",
+        "Base development standards",
+        "Existing property facts",
+        "What we don’t know yet",
+        "Next investigation",
+        "Development capacity",
+        "Evidence / How TruLot knows"
+      ],
+      "horizontal_overflow": false,
+      "keyboard_summary_focus": true,
+      "disclosure_opened": true,
+      "status_has_text": true,
+      "console_errors": [],
+      "screenshot": null
+    },
+    {
+      "apn": "6341302200",
+      "case": "outside-coastal-rs-1-7",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "title": "1456 27TH ST",
+      "headings": [
+        "What applies here",
+        "Base development standards",
+        "Existing property facts",
+        "What we don’t know yet",
+        "Next investigation",
+        "Development capacity",
+        "Evidence / How TruLot knows"
+      ],
+      "horizontal_overflow": false,
+      "keyboard_summary_focus": true,
+      "disclosure_opened": true,
+      "status_has_text": true,
+      "console_errors": [],
+      "screenshot": "data/parcel-page-v2-ui/screenshots/6341302200-desktop.png"
+    },
+    {
+      "apn": "3506320400",
+      "case": "inside-coastal-rs-1-7",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "title": "7553 CABRILLO AVE",
+      "headings": [
+        "What applies here",
+        "Base development standards",
+        "Existing property facts",
+        "What we don’t know yet",
+        "Next investigation",
+        "Development capacity",
+        "Evidence / How TruLot knows"
+      ],
+      "horizontal_overflow": false,
+      "keyboard_summary_focus": true,
+      "disclosure_opened": true,
+      "status_has_text": true,
+      "console_errors": [],
+      "screenshot": "data/parcel-page-v2-ui/screenshots/3506320400-mobile.png"
+    },
+    {
+      "apn": "3506320400",
+      "case": "inside-coastal-rs-1-7",
+      "viewport": {
+        "name": "tablet",
+        "width": 820,
+        "height": 1180
+      },
+      "title": "7553 CABRILLO AVE",
+      "headings": [
+        "What applies here",
+        "Base development standards",
+        "Existing property facts",
+        "What we don’t know yet",
+        "Next investigation",
+        "Development capacity",
+        "Evidence / How TruLot knows"
+      ],
+      "horizontal_overflow": false,
+      "keyboard_summary_focus": true,
+      "disclosure_opened": true,
+      "status_has_text": true,
+      "console_errors": [],
+      "screenshot": null
+    },
+    {
+      "apn": "3506320400",
+      "case": "inside-coastal-rs-1-7",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "title": "7553 CABRILLO AVE",
+      "headings": [
+        "What applies here",
+        "Base development standards",
+        "Existing property facts",
+        "What we don’t know yet",
+        "Next investigation",
+        "Development capacity",
+        "Evidence / How TruLot knows"
+      ],
+      "horizontal_overflow": false,
+      "keyboard_summary_focus": true,
+      "disclosure_opened": true,
+      "status_has_text": true,
+      "console_errors": [],
+      "screenshot": "data/parcel-page-v2-ui/screenshots/3506320400-desktop.png"
+    },
+    {
+      "apn": "4304211000",
+      "case": "split-rs-and-non-rs",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "title": "4927 WHITEHAVEN WAY",
+      "headings": [
+        "What applies here",
+        "Base development standards",
+        "Existing property facts",
+        "What we don’t know yet",
+        "Next investigation",
+        "Development capacity",
+        "Evidence / How TruLot knows"
+      ],
+      "horizontal_overflow": false,
+      "keyboard_summary_focus": true,
+      "disclosure_opened": true,
+      "status_has_text": true,
+      "console_errors": [],
+      "screenshot": "data/parcel-page-v2-ui/screenshots/4304211000-mobile.png"
+    },
+    {
+      "apn": "4304211000",
+      "case": "split-rs-and-non-rs",
+      "viewport": {
+        "name": "tablet",
+        "width": 820,
+        "height": 1180
+      },
+      "title": "4927 WHITEHAVEN WAY",
+      "headings": [
+        "What applies here",
+        "Base development standards",
+        "Existing property facts",
+        "What we don’t know yet",
+        "Next investigation",
+        "Development capacity",
+        "Evidence / How TruLot knows"
+      ],
+      "horizontal_overflow": false,
+      "keyboard_summary_focus": true,
+      "disclosure_opened": true,
+      "status_has_text": true,
+      "console_errors": [],
+      "screenshot": null
+    },
+    {
+      "apn": "4304211000",
+      "case": "split-rs-and-non-rs",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 1000
+      },
+      "title": "4927 WHITEHAVEN WAY",
+      "headings": [
+        "What applies here",
+        "Base development standards",
+        "Existing property facts",
+        "What we don’t know yet",
+        "Next investigation",
+        "Development capacity",
+        "Evidence / How TruLot knows"
+      ],
+      "horizontal_overflow": false,
+      "keyboard_summary_focus": true,
+      "disclosure_opened": true,
+      "status_has_text": true,
+      "console_errors": [],
+      "screenshot": "data/parcel-page-v2-ui/screenshots/4304211000-desktop.png"
+    }
+  ],
+  "five_second_test": {
+    "property": true,
+    "zoning": true,
+    "coastal_state": true,
+    "standards": true,
+    "obvious_uncertainty": true
+  },
+  "expert_test": {
+    "source_and_version": true,
+    "condition_disclosure": true,
+    "split_zone_evidence": true,
+    "provenance": true
+  },
+  "deficiencies": [
+    "The complete evidence-rich page has substantial mobile scroll depth; identity and regulatory orientation remain above the fold.",
+    "The static review artifact has no parcel map or production navigation; both belong to a later bounded runtime-integration decision."
+  ]
+}

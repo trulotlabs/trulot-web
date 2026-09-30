@@ -1,0 +1,2994 @@
+{
+  "adapter_version": "parcel-page-v2-ui-adapter-2026-09-30-v0",
+  "model_count": 10,
+  "models": [
+    {
+      "apn": "6341302200",
+      "case": "outside-coastal-rs-1-7",
+      "model": {
+        "adapterVersion": "parcel-page-v2-ui-adapter-2026-09-30-v0",
+        "sourceContractVersion": "parcel-intelligence-v2-2026-09-30-v1",
+        "asOf": "2026-09-30",
+        "sourceFingerprint": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+        "header": {
+          "title": "1456 27TH ST",
+          "address": "1456 27TH ST",
+          "apn": "6341302200",
+          "jurisdiction": "City of San Diego",
+          "identityState": "supported",
+          "identityLabel": "Recorded"
+        },
+        "orientation": {
+          "zoningLabel": "Single-zone mapping",
+          "zoningState": "supported",
+          "zones": [
+            {
+              "code": "RS-1-7",
+              "coverage": "100%",
+              "role": "single"
+            }
+          ],
+          "coastalLabel": "Outside Coastal Overlay Zone",
+          "coastalState": "supported",
+          "standardsVersion": "sd-rs-base-standards-2026-09-30-v0",
+          "standardsVersionState": "supported"
+        },
+        "standardsGroups": [
+          {
+            "zoneCode": "RS-1-7",
+            "coverage": "100%",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "standards": [
+              {
+                "label": "Minimum lot area",
+                "value": "5,000 sq ft",
+                "state": "supported",
+                "stateLabel": "Recorded",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "Unresolved dependencies: 131.0431"
+                ]
+              },
+              {
+                "label": "Minimum lot width",
+                "value": "50 ft",
+                "state": "supported",
+                "stateLabel": "Recorded",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "Unresolved dependencies: 131.0442"
+                ]
+              },
+              {
+                "label": "Minimum corner-lot width",
+                "value": "55 ft — if corner lot",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "Applies only when the lot is a corner lot.",
+                  "Unresolved dependencies: 131.0442"
+                ]
+              },
+              {
+                "label": "Minimum lot depth",
+                "value": "95 ft",
+                "state": "supported",
+                "stateLabel": "Recorded",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "Unresolved dependencies: 131.0442"
+                ]
+              },
+              {
+                "label": "Minimum front setback",
+                "value": "15 ft",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "For lots where at least one-half of the front 50 feet of the lot depth has a minimum slope gradient of 25 percent, the setback closest to the street frontage may be reduced to a minimum 6 feet.",
+                  "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+                  "Outside Coastal, section 131.0443(i) permits the Fire Code Official to require a greater defensible-space buffer.",
+                  "Referenced exceptions: 131-04D:1",
+                  "Unresolved dependencies: 131.0443(a)(1), 131.0443(i), 131-04D:1"
+                ]
+              },
+              {
+                "label": "Minimum interior-side setback",
+                "value": "4 ft",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "See Section 131.0443(a)(4).",
+                  "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+                  "Outside Coastal, section 131.0443(i) permits the Fire Code Official to require a greater defensible-space buffer.",
+                  "Referenced exceptions: 131-04D:2",
+                  "Unresolved dependencies: 131.0443(a)(4), 131.0443(i), 131-04D:2"
+                ]
+              },
+              {
+                "label": "Minimum street-side setback",
+                "value": "5 ft",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "See Section 131.0443(a)(4).",
+                  "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+                  "Outside Coastal, section 131.0443(i) permits the Fire Code Official to require a greater defensible-space buffer.",
+                  "Referenced exceptions: 131-04D:2",
+                  "Unresolved dependencies: 131.0443(a)(4), 131.0443(i), 131-04D:2"
+                ]
+              },
+              {
+                "label": "Minimum rear setback",
+                "value": "13 ft",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "See Section 131.0443(a)(2).",
+                  "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+                  "Outside Coastal, section 131.0443(i) permits the Fire Code Official to require a greater defensible-space buffer.",
+                  "Referenced exceptions: 131-04D:3",
+                  "Unresolved dependencies: 131.0443(a)(2), 131.0443(a)(3), 131.0443(i), 131-04D:3"
+                ]
+              },
+              {
+                "label": "Maximum structure height",
+                "value": "24/30 ft — condition-dependent",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "See Section 131.0444(b).",
+                  "Section 131.0444 and Table 131-04H angled-building-envelope rules remain unevaluated.",
+                  "Referenced exceptions: 131-04D:4",
+                  "Unresolved dependencies: 131.0444, 131-04H, 131-04D:4"
+                ]
+              },
+              {
+                "label": "Density basis",
+                "value": "1 dwelling unit per lot",
+                "state": "supported",
+                "stateLabel": "Recorded",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "One dwelling unit per lot is a base-table basis, not a project-level capacity conclusion.",
+                  "Unresolved dependencies: 131.0431"
+                ]
+              },
+              {
+                "label": "Maximum floor-area ratio",
+                "value": "Varies — additional rule conditions apply",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 34",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "See Section 131.0446(a).",
+                  "The source says varies; section 131.0446(a) and Table 131-04J require lot-area and steep-hillside facts.",
+                  "Referenced exceptions: 131-04D:5",
+                  "Unresolved dependencies: 131.0446, 131-04D:5"
+                ]
+              }
+            ]
+          }
+        ],
+        "propertyFacts": [
+          {
+            "label": "Existing dwelling units",
+            "value": "1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "County assessor record",
+            "detail": "Parcel-level assessment fact; not a building-level record. A source zero is unresolved and is not evidence of a vacant parcel. Does not describe proposed units or legal entitlement."
+          },
+          {
+            "label": "Living area",
+            "value": "988 sq ft",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "County assessor living-area field",
+            "detail": "Living area is not gross floor area, building footprint, or assessed improvement area. Not approved as a FAR numerator. A source zero or limit value is unresolved and is not evidence of no structure."
+          },
+          {
+            "label": "Approximate parcel geometry area",
+            "value": "21,841 sq ft",
+            "state": "supported",
+            "stateLabel": "Derived geometry",
+            "source": "Parcel geometry",
+            "detail": "Approximate GIS geometry area; this is not a legal-lot-area determination."
+          },
+          {
+            "label": "Taxable acreage",
+            "value": "0.51 acres",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "County assessor record",
+            "detail": "Taxable acreage does not establish Code-defined legal lot area."
+          },
+          {
+            "label": "Building outline evidence — 2017 imagery",
+            "value": "1,059 sq ft outline",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "City/SANDAG historical building outlines",
+            "detail": "Historical plan-view outline evidence; it does not establish current completeness, living area, gross floor area, or compliance."
+          },
+          {
+            "label": "Building outline evidence — 2017 imagery",
+            "value": "2,352 sq ft outline",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "City/SANDAG historical building outlines",
+            "detail": "Historical plan-view outline evidence; it does not establish current completeness, living area, gross floor area, or compliance."
+          }
+        ],
+        "unknowns": [
+          {
+            "label": "Legal lot width",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LEGAL_LOT_WIDTH"
+          },
+          {
+            "label": "Legal lot depth",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Corner-lot status",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Front lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+          },
+          {
+            "label": "Gross floor area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "OBTAIN_GROSS_FLOOR_AREA"
+          },
+          {
+            "label": "Conditional standards",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Conditional source rules are returned unevaluated.",
+            "source": "Parcel RS Standards Runtime V0"
+          },
+          {
+            "label": "Interior-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+          },
+          {
+            "label": "Legal street frontage",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Rear lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+          }
+        ],
+        "investigations": [
+          {
+            "action": "OBTAIN_GROSS_FLOOR_AREA",
+            "title": "Obtain Code-defined gross floor area",
+            "reason": "A sourced FAR rule exists while Code-defined gross floor area is unavailable.",
+            "blockedConclusion": "FAR_UTILIZATION",
+            "requiredEvidence": "Code-defined gross-floor-area measurement and legal lot-area denominator."
+          },
+          {
+            "action": "VERIFY_LEGAL_LOT_WIDTH",
+            "title": "Verify legal lot width",
+            "reason": "A sourced minimum-width rule exists while legal parcel width is unknown.",
+            "blockedConclusion": "LOT_WIDTH_COMPLIANCE",
+            "requiredEvidence": "Authoritative survey or legally established lot-line measurement."
+          },
+          {
+            "action": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "title": "Verify legal lot-line designations",
+            "reason": "Setback rules require front, side, street-side, and rear lot-line roles.",
+            "blockedConclusion": "SETBACK_COMPLIANCE",
+            "requiredEvidence": "Authoritative survey and Code-defined lot-line designations."
+          }
+        ],
+        "evidence": [
+          {
+            "layer": "Parcel V2",
+            "source": "parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz",
+            "version": "parcel-base-v2",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+            "recordFingerprint": "e5b9bcc5464497818f8736b2c53eb2ee5cacc9660310322181023b633eab7ecc"
+          },
+          {
+            "layer": "Base Zoning V2",
+            "source": "base-zoning-v2/parcel-base-zoning-map.ndjson.gz",
+            "version": "base-zoning-city-sd-v2-area-coverage-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "134e8992015f4554d2b2cd3dd8a5c8a8f6e64c0353ed3790cee7deb04f6ae395",
+            "recordFingerprint": "56ff295bb34046b281d3eb35de7829e687b6b66c2beda6a5c5cf3568c9e1e8d3"
+          },
+          {
+            "layer": "Coastal Context V0",
+            "source": "data/coastal-context-v0/fixture-results.json",
+            "version": "coastal-context-city-sd-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "798c38d538b75b716bcc3a8ad8c5b31c0456c7bcf3880ef583299cd5bf3d49c8",
+            "recordFingerprint": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334"
+          },
+          {
+            "layer": "RS Parcel Condition Inputs V0",
+            "source": "data/rs-parcel-condition-inputs-v0/fixture-results.json",
+            "version": "rs-parcel-condition-inputs-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "ec246dffc27638db5131fd50cca84fe870ac4285c7c1a8c0b3d63a5b4ea4e8c1",
+            "recordFingerprint": "Not available"
+          },
+          {
+            "layer": "Structure Facts V0",
+            "source": "data/structure-facts-v0/fixture-results.json",
+            "version": "structure-facts-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "9496932b1009a149d53c95decc3e3603f112d579b9df127af5bd3b26305d1666",
+            "recordFingerprint": "6961f963c9672c596be391fe845c8edc2547314a00427e197600aedf4de39a1f"
+          },
+          {
+            "layer": "Parcel RS Standards Runtime V0",
+            "source": "data/parcel-rs-standards-runtime-v0",
+            "version": "parcel-rs-standards-runtime-2026-09-30-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "7047062bb93fe6a1b222e033e1259445ed7afda74c1302c8d24529e1630b096e",
+            "recordFingerprint": "4e38994c7243dc446bc7a07fba568fa1deaf5dbc521abc1296e22ba4fc10d77d"
+          }
+        ],
+        "capacity": {
+          "state": "not_evaluated",
+          "label": "Not evaluated yet",
+          "explanation": "TruLot has not evaluated parcel compliance or development capacity. Legal lot dimensions, rule conditions, and other project facts must be established first."
+        },
+        "safeguards": {
+          "parcelComplianceEvaluated": false,
+          "developmentCapacityCalculated": false,
+          "standardsBlended": false,
+          "productionRuntimeWired": false
+        }
+      }
+    },
+    {
+      "apn": "3506320400",
+      "case": "inside-coastal-rs-1-7",
+      "model": {
+        "adapterVersion": "parcel-page-v2-ui-adapter-2026-09-30-v0",
+        "sourceContractVersion": "parcel-intelligence-v2-2026-09-30-v1",
+        "asOf": "2026-09-30",
+        "sourceFingerprint": "5ab9ab87853af1816bc7e0389c1882f3430d93426ba47076f34e7e4f08a83967",
+        "header": {
+          "title": "7553 CABRILLO AVE",
+          "address": "7553 CABRILLO AVE",
+          "apn": "3506320400",
+          "jurisdiction": "City of San Diego",
+          "identityState": "supported",
+          "identityLabel": "Recorded"
+        },
+        "orientation": {
+          "zoningLabel": "Single-zone mapping",
+          "zoningState": "supported",
+          "zones": [
+            {
+              "code": "RS-1-7",
+              "coverage": "100%",
+              "role": "single"
+            }
+          ],
+          "coastalLabel": "Inside Coastal Overlay Zone",
+          "coastalState": "supported",
+          "standardsVersion": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+          "standardsVersionState": "supported"
+        },
+        "standardsGroups": [
+          {
+            "zoneCode": "RS-1-7",
+            "coverage": "100%",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "standards": [
+              {
+                "label": "Minimum lot area",
+                "value": "5,000 sq ft",
+                "state": "supported",
+                "stateLabel": "Recorded",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                "conditions": [
+                  "Unresolved dependencies: 131.0431"
+                ]
+              },
+              {
+                "label": "Minimum lot width",
+                "value": "50 ft",
+                "state": "supported",
+                "stateLabel": "Recorded",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                "conditions": [
+                  "Unresolved dependencies: 131.0442"
+                ]
+              },
+              {
+                "label": "Minimum corner-lot width",
+                "value": "55 ft — if corner lot",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                "conditions": [
+                  "Applies only when the lot is a corner lot.",
+                  "Unresolved dependencies: 131.0442"
+                ]
+              },
+              {
+                "label": "Minimum lot depth",
+                "value": "95 ft",
+                "state": "supported",
+                "stateLabel": "Recorded",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                "conditions": [
+                  "Unresolved dependencies: 131.0442"
+                ]
+              },
+              {
+                "label": "Minimum front setback",
+                "value": "15 ft",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                "conditions": [
+                  "For lots where at least one-half of the front 50 feet of the lot depth has a minimum slope gradient of 25 percent, the setback closest to the street frontage may be reduced to a minimum 6 feet.",
+                  "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+                  "Referenced exceptions: 131-04D:1",
+                  "Unresolved dependencies: 131.0443(a)(1), 131-04D:1"
+                ]
+              },
+              {
+                "label": "Minimum interior-side setback",
+                "value": "4 ft",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                "conditions": [
+                  "See Section 131.0443(a)(4).",
+                  "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+                  "Referenced exceptions: 131-04D:2",
+                  "Unresolved dependencies: 131.0443(a)(4), 131-04D:2"
+                ]
+              },
+              {
+                "label": "Minimum street-side setback",
+                "value": "5 ft",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                "conditions": [
+                  "See Section 131.0443(a)(4).",
+                  "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+                  "Referenced exceptions: 131-04D:2",
+                  "Unresolved dependencies: 131.0443(a)(4), 131-04D:2"
+                ]
+              },
+              {
+                "label": "Minimum rear setback",
+                "value": "13 ft",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                "conditions": [
+                  "See Section 131.0443(a)(2).",
+                  "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+                  "Referenced exceptions: 131-04D:3",
+                  "Unresolved dependencies: 131.0443(a)(2), 131.0443(a)(3), 131-04D:3"
+                ]
+              },
+              {
+                "label": "Maximum structure height",
+                "value": "24/30 ft — condition-dependent",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                "conditions": [
+                  "See Section 131.0444(b).",
+                  "Section 131.0444 and Table 131-04H angled-building-envelope rules remain unevaluated.",
+                  "Referenced exceptions: 131-04D:4",
+                  "Unresolved dependencies: 131.0444, 131-04H, 131-04D:4"
+                ]
+              },
+              {
+                "label": "Density basis",
+                "value": "1 dwelling unit per lot",
+                "state": "supported",
+                "stateLabel": "Recorded",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                "conditions": [
+                  "One dwelling unit per lot is a base-table basis, not a project-level capacity conclusion.",
+                  "Unresolved dependencies: 131.0431"
+                ]
+              },
+              {
+                "label": "Maximum floor-area ratio",
+                "value": "Varies — additional rule conditions apply",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 34",
+                "detail": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                "conditions": [
+                  "See Section 131.0446(a).",
+                  "The source says varies; section 131.0446(a) and Table 131-04J require lot-area and steep-hillside facts.",
+                  "Referenced exceptions: 131-04D:5",
+                  "Unresolved dependencies: 131.0446, 131-04D:5"
+                ]
+              }
+            ]
+          }
+        ],
+        "propertyFacts": [
+          {
+            "label": "Existing dwelling units",
+            "value": "1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "County assessor record",
+            "detail": "Parcel-level assessment fact; not a building-level record. A source zero is unresolved and is not evidence of a vacant parcel. Does not describe proposed units or legal entitlement."
+          },
+          {
+            "label": "Living area",
+            "value": "1,610 sq ft",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "County assessor living-area field",
+            "detail": "Living area is not gross floor area, building footprint, or assessed improvement area. Not approved as a FAR numerator. A source zero or limit value is unresolved and is not evidence of no structure."
+          },
+          {
+            "label": "Approximate parcel geometry area",
+            "value": "9,138 sq ft",
+            "state": "supported",
+            "stateLabel": "Derived geometry",
+            "source": "Parcel geometry",
+            "detail": "Approximate GIS geometry area; this is not a legal-lot-area determination."
+          },
+          {
+            "label": "Building outline evidence — 2017 imagery",
+            "value": "2,331 sq ft outline",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "City/SANDAG historical building outlines",
+            "detail": "Historical plan-view outline evidence; it does not establish current completeness, living area, gross floor area, or compliance."
+          },
+          {
+            "label": "Building outline evidence — 2017 imagery",
+            "value": "150 sq ft outline",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "City/SANDAG historical building outlines",
+            "detail": "Historical plan-view outline evidence; it does not establish current completeness, living area, gross floor area, or compliance."
+          }
+        ],
+        "unknowns": [
+          {
+            "label": "Legal lot width",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LEGAL_LOT_WIDTH"
+          },
+          {
+            "label": "Legal lot depth",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Corner-lot status",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Front lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate legal front lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+          },
+          {
+            "label": "Gross floor area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "OBTAIN_GROSS_FLOOR_AREA"
+          },
+          {
+            "label": "Conditional standards",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Conditional source rules are returned unevaluated.",
+            "source": "Parcel RS Standards Runtime V0"
+          },
+          {
+            "label": "Interior-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate interior side lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+          },
+          {
+            "label": "Legal street frontage",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative frontage or right-of-way relationship is present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Rear lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate rear lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+          }
+        ],
+        "investigations": [
+          {
+            "action": "OBTAIN_GROSS_FLOOR_AREA",
+            "title": "Obtain Code-defined gross floor area",
+            "reason": "A sourced FAR rule exists while Code-defined gross floor area is unavailable.",
+            "blockedConclusion": "FAR_UTILIZATION",
+            "requiredEvidence": "Code-defined gross-floor-area measurement and legal lot-area denominator."
+          },
+          {
+            "action": "VERIFY_LEGAL_LOT_WIDTH",
+            "title": "Verify legal lot width",
+            "reason": "A sourced minimum-width rule exists while legal parcel width is unknown.",
+            "blockedConclusion": "LOT_WIDTH_COMPLIANCE",
+            "requiredEvidence": "Authoritative survey or legally established lot-line measurement."
+          },
+          {
+            "action": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "title": "Verify legal lot-line designations",
+            "reason": "Setback rules require front, side, street-side, and rear lot-line roles.",
+            "blockedConclusion": "SETBACK_COMPLIANCE",
+            "requiredEvidence": "Authoritative survey and Code-defined lot-line designations."
+          }
+        ],
+        "evidence": [
+          {
+            "layer": "Parcel V2",
+            "source": "parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz",
+            "version": "parcel-base-v2",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+            "recordFingerprint": "36cff01cfaa870dde44e6e102ef5b44b2fa3917e50a3e90dc429ab7bf1bbdbfb"
+          },
+          {
+            "layer": "Base Zoning V2",
+            "source": "base-zoning-v2/parcel-base-zoning-map.ndjson.gz",
+            "version": "base-zoning-city-sd-v2-area-coverage-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "134e8992015f4554d2b2cd3dd8a5c8a8f6e64c0353ed3790cee7deb04f6ae395",
+            "recordFingerprint": "8d66df36b98562081758a8bfab4cdd5156516697822380335ba8af08543e8879"
+          },
+          {
+            "layer": "Coastal Context V0",
+            "source": "data/coastal-context-v0/fixture-results.json",
+            "version": "coastal-context-city-sd-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "798c38d538b75b716bcc3a8ad8c5b31c0456c7bcf3880ef583299cd5bf3d49c8",
+            "recordFingerprint": "07027f4e8416cc13346f57af5927d4c1f7608b66ff447b5fd1ce1cae9a8a3099"
+          },
+          {
+            "layer": "RS Parcel Condition Inputs V0",
+            "source": "data/rs-parcel-condition-inputs-v0/fixture-results.json",
+            "version": "rs-parcel-condition-inputs-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "ec246dffc27638db5131fd50cca84fe870ac4285c7c1a8c0b3d63a5b4ea4e8c1",
+            "recordFingerprint": "696c9358b41e81e278b1587b1049ede10ca0b864b6be91966211c388df2e2a6c"
+          },
+          {
+            "layer": "Structure Facts V0",
+            "source": "data/structure-facts-v0/fixture-results.json",
+            "version": "structure-facts-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "9496932b1009a149d53c95decc3e3603f112d579b9df127af5bd3b26305d1666",
+            "recordFingerprint": "279ff8264c9f42af27ca62ba28c12fc6274f501ebc927691b2161738ecaef9d5"
+          },
+          {
+            "layer": "Parcel RS Standards Runtime V0",
+            "source": "data/parcel-rs-standards-runtime-v0",
+            "version": "parcel-rs-standards-runtime-2026-09-30-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "25702a7cf0fc7ec9f5738cdef59bc1bfdd20005ddcf1a3096e57f58fa6eeaeec",
+            "recordFingerprint": "524682ed5a607a8ea78669743257cb27e41ad5f09193aa794967123913d5b6f7"
+          }
+        ],
+        "capacity": {
+          "state": "not_evaluated",
+          "label": "Not evaluated yet",
+          "explanation": "TruLot has not evaluated parcel compliance or development capacity. Legal lot dimensions, rule conditions, and other project facts must be established first."
+        },
+        "safeguards": {
+          "parcelComplianceEvaluated": false,
+          "developmentCapacityCalculated": false,
+          "standardsBlended": false,
+          "productionRuntimeWired": false
+        }
+      }
+    },
+    {
+      "apn": "4304211000",
+      "case": "split-rs-and-non-rs",
+      "model": {
+        "adapterVersion": "parcel-page-v2-ui-adapter-2026-09-30-v0",
+        "sourceContractVersion": "parcel-intelligence-v2-2026-09-30-v1",
+        "asOf": "2026-09-30",
+        "sourceFingerprint": "0814a7d54119a3c82b479392f550d562ac677037766d8353b4cf095bd9f66c4b",
+        "header": {
+          "title": "4927 WHITEHAVEN WAY",
+          "address": "4927 WHITEHAVEN WAY",
+          "apn": "4304211000",
+          "jurisdiction": "City of San Diego",
+          "identityState": "supported",
+          "identityLabel": "Recorded"
+        },
+        "orientation": {
+          "zoningLabel": "Split-zone parcel",
+          "zoningState": "review",
+          "zones": [
+            {
+              "code": "RS-1-7",
+              "coverage": "64.3%",
+              "role": "material"
+            },
+            {
+              "code": "OR-1-1",
+              "coverage": "35.7%",
+              "role": "material"
+            }
+          ],
+          "coastalLabel": "Outside Coastal Overlay Zone",
+          "coastalState": "supported",
+          "standardsVersion": "sd-rs-base-standards-2026-09-30-v0",
+          "standardsVersionState": "supported"
+        },
+        "standardsGroups": [
+          {
+            "zoneCode": "RS-1-7",
+            "coverage": "64.3%",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "standards": [
+              {
+                "label": "Minimum lot area",
+                "value": "5,000 sq ft",
+                "state": "supported",
+                "stateLabel": "Recorded",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "Unresolved dependencies: 131.0431"
+                ]
+              },
+              {
+                "label": "Minimum lot width",
+                "value": "50 ft",
+                "state": "supported",
+                "stateLabel": "Recorded",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "Unresolved dependencies: 131.0442"
+                ]
+              },
+              {
+                "label": "Minimum corner-lot width",
+                "value": "55 ft — if corner lot",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "Applies only when the lot is a corner lot.",
+                  "Unresolved dependencies: 131.0442"
+                ]
+              },
+              {
+                "label": "Minimum lot depth",
+                "value": "95 ft",
+                "state": "supported",
+                "stateLabel": "Recorded",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "Unresolved dependencies: 131.0442"
+                ]
+              },
+              {
+                "label": "Minimum front setback",
+                "value": "15 ft",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "For lots where at least one-half of the front 50 feet of the lot depth has a minimum slope gradient of 25 percent, the setback closest to the street frontage may be reduced to a minimum 6 feet.",
+                  "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+                  "Outside Coastal, section 131.0443(i) permits the Fire Code Official to require a greater defensible-space buffer.",
+                  "Referenced exceptions: 131-04D:1",
+                  "Unresolved dependencies: 131.0443(a)(1), 131.0443(i), 131-04D:1"
+                ]
+              },
+              {
+                "label": "Minimum interior-side setback",
+                "value": "4 ft",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "See Section 131.0443(a)(4).",
+                  "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+                  "Outside Coastal, section 131.0443(i) permits the Fire Code Official to require a greater defensible-space buffer.",
+                  "Referenced exceptions: 131-04D:2",
+                  "Unresolved dependencies: 131.0443(a)(4), 131.0443(i), 131-04D:2"
+                ]
+              },
+              {
+                "label": "Minimum street-side setback",
+                "value": "5 ft",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "See Section 131.0443(a)(4).",
+                  "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+                  "Outside Coastal, section 131.0443(i) permits the Fire Code Official to require a greater defensible-space buffer.",
+                  "Referenced exceptions: 131-04D:2",
+                  "Unresolved dependencies: 131.0443(a)(4), 131.0443(i), 131-04D:2"
+                ]
+              },
+              {
+                "label": "Minimum rear setback",
+                "value": "13 ft",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "See Section 131.0443(a)(2).",
+                  "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+                  "Outside Coastal, section 131.0443(i) permits the Fire Code Official to require a greater defensible-space buffer.",
+                  "Referenced exceptions: 131-04D:3",
+                  "Unresolved dependencies: 131.0443(a)(2), 131.0443(a)(3), 131.0443(i), 131-04D:3"
+                ]
+              },
+              {
+                "label": "Maximum structure height",
+                "value": "24/30 ft — condition-dependent",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "See Section 131.0444(b).",
+                  "Section 131.0444 and Table 131-04H angled-building-envelope rules remain unevaluated.",
+                  "Referenced exceptions: 131-04D:4",
+                  "Unresolved dependencies: 131.0444, 131-04H, 131-04D:4"
+                ]
+              },
+              {
+                "label": "Density basis",
+                "value": "1 dwelling unit per lot",
+                "state": "supported",
+                "stateLabel": "Recorded",
+                "source": "131.0431(a) · 131-04D · p. 33",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "One dwelling unit per lot is a base-table basis, not a project-level capacity conclusion.",
+                  "Unresolved dependencies: 131.0431"
+                ]
+              },
+              {
+                "label": "Maximum floor-area ratio",
+                "value": "Varies — additional rule conditions apply",
+                "state": "conditional",
+                "stateLabel": "Conditional",
+                "source": "131.0431(a) · 131-04D · p. 34",
+                "detail": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+                "conditions": [
+                  "See Section 131.0446(a).",
+                  "The source says varies; section 131.0446(a) and Table 131-04J require lot-area and steep-hillside facts.",
+                  "Referenced exceptions: 131-04D:5",
+                  "Unresolved dependencies: 131.0446, 131-04D:5"
+                ]
+              }
+            ]
+          },
+          {
+            "zoneCode": "OR-1-1",
+            "coverage": "35.7%",
+            "state": "not_applicable",
+            "stateLabel": "Standards outside this RS adapter",
+            "explanation": "This zone remains visible, but its standards are outside the sealed RS base-standards resolver.",
+            "standards": []
+          }
+        ],
+        "propertyFacts": [
+          {
+            "label": "Existing dwelling units",
+            "value": "1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "County assessor record",
+            "detail": "Parcel-level assessment fact; not a building-level record. A source zero is unresolved and is not evidence of a vacant parcel. Does not describe proposed units or legal entitlement."
+          },
+          {
+            "label": "Living area",
+            "value": "2,893 sq ft",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "County assessor living-area field",
+            "detail": "Living area is not gross floor area, building footprint, or assessed improvement area. Not approved as a FAR numerator. A source zero or limit value is unresolved and is not evidence of no structure."
+          },
+          {
+            "label": "Approximate parcel geometry area",
+            "value": "17,147 sq ft",
+            "state": "supported",
+            "stateLabel": "Derived geometry",
+            "source": "Parcel geometry",
+            "detail": "Approximate GIS geometry area; this is not a legal-lot-area determination."
+          },
+          {
+            "label": "Building outline evidence — 2017 imagery",
+            "value": "2,904 sq ft outline",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "City/SANDAG historical building outlines",
+            "detail": "Historical plan-view outline evidence; it does not establish current completeness, living area, gross floor area, or compliance."
+          }
+        ],
+        "unknowns": [
+          {
+            "label": "Split-zone applicability",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Every material zone is preserved separately; no blended standard is selected.",
+            "source": "Base Zoning V2",
+            "linkedAction": "REVIEW_SPLIT_ZONE_GEOMETRY"
+          },
+          {
+            "label": "Non-RS base standards",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Non-RS zoning is preserved as evidence and is outside this resolver.",
+            "source": "Parcel RS Standards Runtime V0",
+            "linkedAction": "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+          },
+          {
+            "label": "Legal lot width",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LEGAL_LOT_WIDTH"
+          },
+          {
+            "label": "Legal lot depth",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Corner-lot status",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Front lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate legal front lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+          },
+          {
+            "label": "Gross floor area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "OBTAIN_GROSS_FLOOR_AREA"
+          },
+          {
+            "label": "Conditional standards",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Conditional source rules are returned unevaluated.",
+            "source": "Parcel RS Standards Runtime V0"
+          },
+          {
+            "label": "Interior-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate interior side lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+          }
+        ],
+        "investigations": [
+          {
+            "action": "OBTAIN_GROSS_FLOOR_AREA",
+            "title": "Obtain Code-defined gross floor area",
+            "reason": "A sourced FAR rule exists while Code-defined gross floor area is unavailable.",
+            "blockedConclusion": "FAR_UTILIZATION",
+            "requiredEvidence": "Code-defined gross-floor-area measurement and legal lot-area denominator."
+          },
+          {
+            "action": "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+            "title": "Research standards for the unsupported zone",
+            "reason": "One or more mapped zones are outside the RS V0 rule set.",
+            "blockedConclusion": "BASE_STANDARDS_FOR_UNSUPPORTED_ZONE",
+            "requiredEvidence": "Sealed source-backed standards contract for each unsupported zone."
+          },
+          {
+            "action": "REVIEW_SPLIT_ZONE_GEOMETRY",
+            "title": "Review the split-zone geometry",
+            "reason": "Multiple material zones intersect the parcel.",
+            "blockedConclusion": "PARCEL_WIDE_PRIMARY_STANDARD",
+            "requiredEvidence": "Authoritative zoning map and parcel-specific split-zone geometry review."
+          },
+          {
+            "action": "VERIFY_LEGAL_LOT_WIDTH",
+            "title": "Verify legal lot width",
+            "reason": "A sourced minimum-width rule exists while legal parcel width is unknown.",
+            "blockedConclusion": "LOT_WIDTH_COMPLIANCE",
+            "requiredEvidence": "Authoritative survey or legally established lot-line measurement."
+          },
+          {
+            "action": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "title": "Verify legal lot-line designations",
+            "reason": "Setback rules require front, side, street-side, and rear lot-line roles.",
+            "blockedConclusion": "SETBACK_COMPLIANCE",
+            "requiredEvidence": "Authoritative survey and Code-defined lot-line designations."
+          }
+        ],
+        "evidence": [
+          {
+            "layer": "Parcel V2",
+            "source": "parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz",
+            "version": "parcel-base-v2",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+            "recordFingerprint": "f4ba937d887d5a1947b9ca1cf5c9e984b81bfdcda07a9de3f659932008629b95"
+          },
+          {
+            "layer": "Base Zoning V2",
+            "source": "base-zoning-v2/parcel-base-zoning-map.ndjson.gz",
+            "version": "base-zoning-city-sd-v2-area-coverage-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "134e8992015f4554d2b2cd3dd8a5c8a8f6e64c0353ed3790cee7deb04f6ae395",
+            "recordFingerprint": "4eb5c805c12ba947495e7702c9223a0b7d3a1651a9d90abbc4bbab473e376a60"
+          },
+          {
+            "layer": "Coastal Context V0",
+            "source": "data/coastal-context-v0/fixture-results.json",
+            "version": "coastal-context-city-sd-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "798c38d538b75b716bcc3a8ad8c5b31c0456c7bcf3880ef583299cd5bf3d49c8",
+            "recordFingerprint": "b8fd698b08d81f2b200188af476110d60b06da98106e12c43efa9a9b6c464c68"
+          },
+          {
+            "layer": "RS Parcel Condition Inputs V0",
+            "source": "data/rs-parcel-condition-inputs-v0/fixture-results.json",
+            "version": "rs-parcel-condition-inputs-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "ec246dffc27638db5131fd50cca84fe870ac4285c7c1a8c0b3d63a5b4ea4e8c1",
+            "recordFingerprint": "e9a55e0b91a3f1c4fe3b1c326d37783b3ff2686f03f0dcc810432e6bc2f860e6"
+          },
+          {
+            "layer": "Structure Facts V0",
+            "source": "data/structure-facts-v0/fixture-results.json",
+            "version": "structure-facts-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "9496932b1009a149d53c95decc3e3603f112d579b9df127af5bd3b26305d1666",
+            "recordFingerprint": "99221693ad75ae6de0cba7bc24dc1cb334018d1b08f87c8dd4fd515f522b24bf"
+          },
+          {
+            "layer": "Parcel RS Standards Runtime V0",
+            "source": "data/parcel-rs-standards-runtime-v0",
+            "version": "parcel-rs-standards-runtime-2026-09-30-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "7047062bb93fe6a1b222e033e1259445ed7afda74c1302c8d24529e1630b096e",
+            "recordFingerprint": "59d87f4a65b11616535cba0a5ce77514f9d97c309fd5115548496ba1a48d69df"
+          }
+        ],
+        "capacity": {
+          "state": "not_evaluated",
+          "label": "Not evaluated yet",
+          "explanation": "TruLot has not evaluated parcel compliance or development capacity. Legal lot dimensions, rule conditions, and other project facts must be established first."
+        },
+        "safeguards": {
+          "parcelComplianceEvaluated": false,
+          "developmentCapacityCalculated": false,
+          "standardsBlended": false,
+          "productionRuntimeWired": false
+        }
+      }
+    },
+    {
+      "apn": "4303410600",
+      "case": "ambiguous-zoning",
+      "model": {
+        "adapterVersion": "parcel-page-v2-ui-adapter-2026-09-30-v0",
+        "sourceContractVersion": "parcel-intelligence-v2-2026-09-30-v1",
+        "asOf": "2026-09-30",
+        "sourceFingerprint": "b0beff190ccedeec76c1f8ecae66e6b1486ac68077b362edd11317528acdf908",
+        "header": {
+          "title": "2112 ERIE ST",
+          "address": "2112 ERIE ST",
+          "apn": "4303410600",
+          "jurisdiction": "City of San Diego",
+          "identityState": "supported",
+          "identityLabel": "Recorded"
+        },
+        "orientation": {
+          "zoningLabel": "Zoning requires review",
+          "zoningState": "review",
+          "zones": [
+            {
+              "code": "RS-1-7",
+              "coverage": "97.7%",
+              "role": "candidate"
+            },
+            {
+              "code": "CC-3-9",
+              "coverage": "2.4%",
+              "role": "candidate"
+            }
+          ],
+          "coastalLabel": "Outside Coastal Overlay Zone",
+          "coastalState": "supported",
+          "standardsVersion": "Not available until zoning is resolved",
+          "standardsVersionState": "unknown"
+        },
+        "standardsGroups": [
+          {
+            "zoneCode": "RS-1-7",
+            "coverage": "97.7%",
+            "state": "review",
+            "stateLabel": "Review required",
+            "explanation": "Candidate zoning evidence is preserved; no definitive standards set is selected.",
+            "standards": []
+          },
+          {
+            "zoneCode": "CC-3-9",
+            "coverage": "2.4%",
+            "state": "review",
+            "stateLabel": "Review required",
+            "explanation": "Candidate zoning evidence is preserved; no definitive standards set is selected.",
+            "standards": []
+          }
+        ],
+        "propertyFacts": [
+          {
+            "label": "Existing dwelling units",
+            "value": "1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "County assessor record",
+            "detail": "Parcel-level assessment fact; not a building-level record. A source zero is unresolved and is not evidence of a vacant parcel. Does not describe proposed units or legal entitlement."
+          },
+          {
+            "label": "Living area",
+            "value": "800 sq ft",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "County assessor living-area field",
+            "detail": "Living area is not gross floor area, building footprint, or assessed improvement area. Not approved as a FAR numerator. A source zero or limit value is unresolved and is not evidence of no structure."
+          },
+          {
+            "label": "Approximate parcel geometry area",
+            "value": "6,987 sq ft",
+            "state": "supported",
+            "stateLabel": "Derived geometry",
+            "source": "Parcel geometry",
+            "detail": "Approximate GIS geometry area; this is not a legal-lot-area determination."
+          },
+          {
+            "label": "Building outline evidence — 2017 imagery",
+            "value": "1,341 sq ft outline",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "City/SANDAG historical building outlines",
+            "detail": "Historical plan-view outline evidence; it does not establish current completeness, living area, gross floor area, or compliance."
+          }
+        ],
+        "unknowns": [
+          {
+            "label": "Base zoning",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Candidate zoning evidence is preserved; no definitive standards set is selected.",
+            "source": "Parcel RS Standards Runtime V0",
+            "linkedAction": "VERIFY_BASE_ZONING_MAPPING"
+          },
+          {
+            "label": "Legal lot width",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot depth",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Corner-lot status",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Front lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate legal front lot lines.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Gross floor area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Interior-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate interior side lot lines.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal street frontage",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative frontage or right-of-way relationship is present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Rear lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate rear lot lines.",
+            "source": "RS Parcel Condition Inputs V0"
+          }
+        ],
+        "investigations": [
+          {
+            "action": "VERIFY_BASE_ZONING_MAPPING",
+            "title": "Verify the base-zoning mapping",
+            "reason": "Base zoning is unavailable or unresolved.",
+            "blockedConclusion": "BASE_STANDARDS",
+            "requiredEvidence": "Authoritative parcel-specific base-zoning determination."
+          }
+        ],
+        "evidence": [
+          {
+            "layer": "Parcel V2",
+            "source": "parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz",
+            "version": "parcel-base-v2",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+            "recordFingerprint": "90f6aa9d007db7dd6622de3a228187f0ad60f959ab92eb963765c32e17e67e0c"
+          },
+          {
+            "layer": "Base Zoning V2",
+            "source": "base-zoning-v2/parcel-base-zoning-map.ndjson.gz",
+            "version": "base-zoning-city-sd-v2-area-coverage-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "134e8992015f4554d2b2cd3dd8a5c8a8f6e64c0353ed3790cee7deb04f6ae395",
+            "recordFingerprint": "33b37cabe1a22ddb6ea0a72abf98e2a9e8753df56d453ae74b6cd5a711d27c25"
+          },
+          {
+            "layer": "Coastal Context V0",
+            "source": "data/coastal-context-v0/fixture-results.json",
+            "version": "coastal-context-city-sd-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "798c38d538b75b716bcc3a8ad8c5b31c0456c7bcf3880ef583299cd5bf3d49c8",
+            "recordFingerprint": "1d6918eef156a7ec52d927c086f5547f9943b708dee05350aa2464e42a3bae84"
+          },
+          {
+            "layer": "RS Parcel Condition Inputs V0",
+            "source": "data/rs-parcel-condition-inputs-v0/fixture-results.json",
+            "version": "rs-parcel-condition-inputs-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "ec246dffc27638db5131fd50cca84fe870ac4285c7c1a8c0b3d63a5b4ea4e8c1",
+            "recordFingerprint": "208dd03d4d03e8ea20b33ed8b3a43405518f9cffd761b2a272755ba17b2cfc77"
+          },
+          {
+            "layer": "Structure Facts V0",
+            "source": "data/structure-facts-v0/fixture-results.json",
+            "version": "structure-facts-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "9496932b1009a149d53c95decc3e3603f112d579b9df127af5bd3b26305d1666",
+            "recordFingerprint": "d054b250feaf7793df92a467ef51d16145091fc5dcd42b7180bf890a6b3c32ed"
+          },
+          {
+            "layer": "Parcel RS Standards Runtime V0",
+            "source": "data/parcel-rs-standards-runtime-v0",
+            "version": "parcel-rs-standards-runtime-2026-09-30-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "Not available",
+            "recordFingerprint": "e9330d1d95858d6a7bca6fb7c6bba51dc99d3cd17caa4f56bb5f088ffc5bad0a"
+          }
+        ],
+        "capacity": {
+          "state": "not_evaluated",
+          "label": "Not evaluated yet",
+          "explanation": "TruLot has not evaluated parcel compliance or development capacity. Legal lot dimensions, rule conditions, and other project facts must be established first."
+        },
+        "safeguards": {
+          "parcelComplianceEvaluated": false,
+          "developmentCapacityCalculated": false,
+          "standardsBlended": false,
+          "productionRuntimeWired": false
+        }
+      }
+    },
+    {
+      "apn": "7600360300",
+      "case": "unmapped-and-source-zero",
+      "model": {
+        "adapterVersion": "parcel-page-v2-ui-adapter-2026-09-30-v0",
+        "sourceContractVersion": "parcel-intelligence-v2-2026-09-30-v1",
+        "asOf": "2026-09-30",
+        "sourceFingerprint": "d57adc83e3a7887e06111fe88dbb5d8e0b2f0949511bbdc35412a3fafab86b36",
+        "header": {
+          "title": "2688 MISSION BAY DR",
+          "address": "2688 MISSION BAY DR",
+          "apn": "7600360300",
+          "jurisdiction": "City of San Diego",
+          "identityState": "supported",
+          "identityLabel": "Recorded"
+        },
+        "orientation": {
+          "zoningLabel": "Base zoning not yet mapped",
+          "zoningState": "unknown",
+          "zones": [],
+          "coastalLabel": "Inside Coastal Overlay Zone",
+          "coastalState": "supported",
+          "standardsVersion": "Not available until zoning is resolved",
+          "standardsVersionState": "unknown"
+        },
+        "standardsGroups": [
+          {
+            "zoneCode": "Base zone unresolved",
+            "coverage": null,
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "explanation": "No definitive base-zone standards can be selected.",
+            "standards": []
+          }
+        ],
+        "propertyFacts": [
+          {
+            "label": "Existing dwelling units",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "source": "County assessor record",
+            "detail": "Parcel-level assessment fact; not a building-level record. A source zero is unresolved and is not evidence of a vacant parcel. Does not describe proposed units or legal entitlement."
+          },
+          {
+            "label": "Living area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "source": "County assessor living-area field",
+            "detail": "Living area is not gross floor area, building footprint, or assessed improvement area. Not approved as a FAR numerator. A source zero or limit value is unresolved and is not evidence of no structure."
+          },
+          {
+            "label": "Approximate parcel geometry area",
+            "value": "92,859 sq ft",
+            "state": "supported",
+            "stateLabel": "Derived geometry",
+            "source": "Parcel geometry",
+            "detail": "Approximate GIS geometry area; this is not a legal-lot-area determination."
+          },
+          {
+            "label": "Building outline evidence — 2017 imagery",
+            "value": "6,175 sq ft outline",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "City/SANDAG historical building outlines",
+            "detail": "Historical plan-view outline evidence; it does not establish current completeness, living area, gross floor area, or compliance."
+          }
+        ],
+        "unknowns": [
+          {
+            "label": "Base zoning",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No definitive base-zone standards can be selected.",
+            "source": "Parcel RS Standards Runtime V0",
+            "linkedAction": "VERIFY_BASE_ZONING_MAPPING"
+          },
+          {
+            "label": "Legal lot width",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot depth",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Corner-lot status",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Front lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate legal front lot lines.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Gross floor area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Existing dwelling units",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "A positive assessor unit count is not available.",
+            "source": "Structure Facts V0",
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+          },
+          {
+            "label": "Assessor living area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "A positive valid assessor living-area value is not available.",
+            "source": "Structure Facts V0",
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+          },
+          {
+            "label": "Interior-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate interior side lot lines.",
+            "source": "RS Parcel Condition Inputs V0"
+          }
+        ],
+        "investigations": [
+          {
+            "action": "VERIFY_BASE_ZONING_MAPPING",
+            "title": "Verify the base-zoning mapping",
+            "reason": "Base zoning is unavailable or unresolved.",
+            "blockedConclusion": "BASE_STANDARDS",
+            "requiredEvidence": "Authoritative parcel-specific base-zoning determination."
+          },
+          {
+            "action": "VERIFY_EXISTING_UNIT_COUNT",
+            "title": "Verify the existing dwelling-unit count",
+            "reason": "A positive recorded unit count is unavailable.",
+            "blockedConclusion": "EXISTING_UNIT_COUNT",
+            "requiredEvidence": "Current authoritative building or assessor record with explicit dwelling-unit semantics."
+          }
+        ],
+        "evidence": [
+          {
+            "layer": "Parcel V2",
+            "source": "parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz",
+            "version": "parcel-base-v2",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+            "recordFingerprint": "2959a533d8e314719620ae1e7b96f2f8de0468cf51af346e3e8ccea6080ef00b"
+          },
+          {
+            "layer": "Base Zoning V2",
+            "source": "base-zoning-v2/parcel-base-zoning-map.ndjson.gz",
+            "version": "base-zoning-city-sd-v2-area-coverage-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "134e8992015f4554d2b2cd3dd8a5c8a8f6e64c0353ed3790cee7deb04f6ae395",
+            "recordFingerprint": "1f75bd834ec7006a9110ffb2f10d15b4b3f29e0229c106ebf42f58ec703a5aad"
+          },
+          {
+            "layer": "Coastal Context V0",
+            "source": "data/coastal-context-v0/fixture-results.json",
+            "version": "coastal-context-city-sd-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "798c38d538b75b716bcc3a8ad8c5b31c0456c7bcf3880ef583299cd5bf3d49c8",
+            "recordFingerprint": "120b2818baa838ac4e2beb0306e8919a811b2f30a8af25a14bba021694f5977b"
+          },
+          {
+            "layer": "RS Parcel Condition Inputs V0",
+            "source": "data/rs-parcel-condition-inputs-v0/fixture-results.json",
+            "version": "rs-parcel-condition-inputs-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "ec246dffc27638db5131fd50cca84fe870ac4285c7c1a8c0b3d63a5b4ea4e8c1",
+            "recordFingerprint": "8cfbbbbccad2f3bb62c1db087b1839d0b50aa99f3d7b3d810a30a78fd2b7104f"
+          },
+          {
+            "layer": "Structure Facts V0",
+            "source": "data/structure-facts-v0/fixture-results.json",
+            "version": "structure-facts-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "9496932b1009a149d53c95decc3e3603f112d579b9df127af5bd3b26305d1666",
+            "recordFingerprint": "cfef38eb63842584d7ac1e221c7567ef870f12c28be0c532ef2476c32037672b"
+          },
+          {
+            "layer": "Parcel RS Standards Runtime V0",
+            "source": "data/parcel-rs-standards-runtime-v0",
+            "version": "parcel-rs-standards-runtime-2026-09-30-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "Not available",
+            "recordFingerprint": "0296431f3d9e48cff51f020a610d3bf7fc9e4abe0c3114c8a047c8944abd4d58"
+          }
+        ],
+        "capacity": {
+          "state": "not_evaluated",
+          "label": "Not evaluated yet",
+          "explanation": "TruLot has not evaluated parcel compliance or development capacity. Legal lot dimensions, rule conditions, and other project facts must be established first."
+        },
+        "safeguards": {
+          "parcelComplianceEvaluated": false,
+          "developmentCapacityCalculated": false,
+          "standardsBlended": false,
+          "productionRuntimeWired": false
+        }
+      }
+    },
+    {
+      "apn": "3082980200",
+      "case": "coastal-boundary",
+      "model": {
+        "adapterVersion": "parcel-page-v2-ui-adapter-2026-09-30-v0",
+        "sourceContractVersion": "parcel-intelligence-v2-2026-09-30-v1",
+        "asOf": "2026-09-30",
+        "sourceFingerprint": "43a4e0c863f75e4367033477af61f9e167f5e196c8c4a01b7fb8d79ef6df5462",
+        "header": {
+          "title": "Parcel 3082980200",
+          "address": null,
+          "apn": "3082980200",
+          "jurisdiction": "City of San Diego",
+          "identityState": "supported",
+          "identityLabel": "Recorded"
+        },
+        "orientation": {
+          "zoningLabel": "Single-zone mapping",
+          "zoningState": "supported",
+          "zones": [
+            {
+              "code": "AR-1-1",
+              "coverage": "100%",
+              "role": "single"
+            }
+          ],
+          "coastalLabel": "Coastal applicability requires review",
+          "coastalState": "review",
+          "standardsVersion": "Not selected — Coastal applicability unresolved",
+          "standardsVersionState": "review"
+        },
+        "standardsGroups": [
+          {
+            "zoneCode": "AR-1-1",
+            "coverage": "100%",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "explanation": "Boundary-ambiguous or unresolved Coastal context cannot select a definitive standards version.",
+            "standards": []
+          }
+        ],
+        "propertyFacts": [
+          {
+            "label": "Existing dwelling units",
+            "value": "Source currently unavailable",
+            "state": "unavailable",
+            "stateLabel": "Source currently unavailable",
+            "source": "County assessor record",
+            "detail": "Structure Facts V0 output is unavailable for this fixture."
+          },
+          {
+            "label": "Living area",
+            "value": "Source currently unavailable",
+            "state": "unavailable",
+            "stateLabel": "Source currently unavailable",
+            "source": "County assessor living-area field",
+            "detail": "Structure Facts V0 output is unavailable for this fixture."
+          },
+          {
+            "label": "Approximate parcel geometry area",
+            "value": "1,403 sq ft",
+            "state": "supported",
+            "stateLabel": "Derived geometry",
+            "source": "Parcel geometry",
+            "detail": "Approximate GIS geometry area; this is not a legal-lot-area determination."
+          }
+        ],
+        "unknowns": [
+          {
+            "label": "Coastal applicability",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Boundary-ambiguous or unresolved Coastal context cannot select a definitive standards version.",
+            "source": "Parcel RS Standards Runtime V0",
+            "linkedAction": "VERIFY_COASTAL_APPLICABILITY"
+          },
+          {
+            "label": "Legal lot width",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot depth",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Corner-lot status",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Front lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Gross floor area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Existing dwelling units",
+            "value": "Source currently unavailable",
+            "state": "unavailable",
+            "stateLabel": "Source currently unavailable",
+            "detail": "A positive assessor unit count is not available.",
+            "source": "Structure Facts V0",
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+          },
+          {
+            "label": "Assessor living area",
+            "value": "Source currently unavailable",
+            "state": "unavailable",
+            "stateLabel": "Source currently unavailable",
+            "detail": "A positive valid assessor living-area value is not available.",
+            "source": "Structure Facts V0",
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+          },
+          {
+            "label": "Situs address",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No normalized situs address is present.",
+            "source": "Parcel V2",
+            "linkedAction": "VERIFY_PARCEL_SITUS"
+          }
+        ],
+        "investigations": [
+          {
+            "action": "VERIFY_COASTAL_APPLICABILITY",
+            "title": "Verify Coastal applicability",
+            "reason": "Coastal boundary evidence cannot select a legal standards version.",
+            "blockedConclusion": "RS_STANDARDS_VERSION",
+            "requiredEvidence": "Authoritative parcel-specific Coastal applicability determination."
+          },
+          {
+            "action": "VERIFY_EXISTING_UNIT_COUNT",
+            "title": "Verify the existing dwelling-unit count",
+            "reason": "A positive recorded unit count is unavailable.",
+            "blockedConclusion": "EXISTING_UNIT_COUNT",
+            "requiredEvidence": "Current authoritative building or assessor record with explicit dwelling-unit semantics."
+          },
+          {
+            "action": "VERIFY_PARCEL_SITUS",
+            "title": "Verify the parcel situs address",
+            "reason": "The parcel has no normalized situs address.",
+            "blockedConclusion": "DISPLAY_ADDRESS",
+            "requiredEvidence": "Authoritative parcel situs record."
+          }
+        ],
+        "evidence": [
+          {
+            "layer": "Parcel V2",
+            "source": "parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz",
+            "version": "parcel-base-v2",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+            "recordFingerprint": "ef96db9b059ad7ed2492854498ecf4471005593018aac3e2d9d1352709ae5bb7"
+          },
+          {
+            "layer": "Base Zoning V2",
+            "source": "base-zoning-v2/parcel-base-zoning-map.ndjson.gz",
+            "version": "base-zoning-city-sd-v2-area-coverage-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "134e8992015f4554d2b2cd3dd8a5c8a8f6e64c0353ed3790cee7deb04f6ae395",
+            "recordFingerprint": "bfed16688b85e1e9f63594e124b615b302045db1da23016c8d4e70529be7c3e1"
+          },
+          {
+            "layer": "Coastal Context V0",
+            "source": "data/coastal-context-v0/fixture-results.json",
+            "version": "coastal-context-city-sd-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "798c38d538b75b716bcc3a8ad8c5b31c0456c7bcf3880ef583299cd5bf3d49c8",
+            "recordFingerprint": "2612962ce08961f0bc37dceb16d0652e52083a0569d503c6b0d3cdd907c07bbe"
+          },
+          {
+            "layer": "RS Parcel Condition Inputs V0",
+            "source": "data/rs-parcel-condition-inputs-v0/fixture-results.json",
+            "version": "rs-parcel-condition-inputs-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "ec246dffc27638db5131fd50cca84fe870ac4285c7c1a8c0b3d63a5b4ea4e8c1",
+            "recordFingerprint": "Not available"
+          },
+          {
+            "layer": "Structure Facts V0",
+            "source": "data/structure-facts-v0/fixture-results.json",
+            "version": "structure-facts-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "9496932b1009a149d53c95decc3e3603f112d579b9df127af5bd3b26305d1666",
+            "recordFingerprint": "Not available"
+          },
+          {
+            "layer": "Parcel RS Standards Runtime V0",
+            "source": "data/parcel-rs-standards-runtime-v0",
+            "version": "parcel-rs-standards-runtime-2026-09-30-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "Not available",
+            "recordFingerprint": "1cfb0153d98049c6a52982e13aebff43636122981da5f7265ec70a3d66cb75f6"
+          }
+        ],
+        "capacity": {
+          "state": "not_evaluated",
+          "label": "Not evaluated yet",
+          "explanation": "TruLot has not evaluated parcel compliance or development capacity. Legal lot dimensions, rule conditions, and other project facts must be established first."
+        },
+        "safeguards": {
+          "parcelComplianceEvaluated": false,
+          "developmentCapacityCalculated": false,
+          "standardsBlended": false,
+          "productionRuntimeWired": false
+        }
+      }
+    },
+    {
+      "apn": "6782511200",
+      "case": "non-rs-and-missing-address",
+      "model": {
+        "adapterVersion": "parcel-page-v2-ui-adapter-2026-09-30-v0",
+        "sourceContractVersion": "parcel-intelligence-v2-2026-09-30-v1",
+        "asOf": "2026-09-30",
+        "sourceFingerprint": "be28fe192d5a7eaf7aeb5d39e10f28b296111849d00e012b6a8500444981d56a",
+        "header": {
+          "title": "Parcel 6782511200",
+          "address": null,
+          "apn": "6782511200",
+          "jurisdiction": "City of San Diego",
+          "identityState": "supported",
+          "identityLabel": "Recorded"
+        },
+        "orientation": {
+          "zoningLabel": "Single-zone mapping",
+          "zoningState": "supported",
+          "zones": [
+            {
+              "code": "IP-2-1",
+              "coverage": "100%",
+              "role": "single"
+            }
+          ],
+          "coastalLabel": "Outside Coastal Overlay Zone",
+          "coastalState": "supported",
+          "standardsVersion": "sd-rs-base-standards-2026-09-30-v0",
+          "standardsVersionState": "supported"
+        },
+        "standardsGroups": [
+          {
+            "zoneCode": "IP-2-1",
+            "coverage": "100%",
+            "state": "not_applicable",
+            "stateLabel": "Standards outside this RS adapter",
+            "explanation": "This zone remains visible, but its standards are outside the sealed RS base-standards resolver.",
+            "standards": []
+          }
+        ],
+        "propertyFacts": [
+          {
+            "label": "Existing dwelling units",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "source": "County assessor record",
+            "detail": "Parcel-level assessment fact; not a building-level record. A source zero is unresolved and is not evidence of a vacant parcel. Does not describe proposed units or legal entitlement."
+          },
+          {
+            "label": "Living area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "source": "County assessor living-area field",
+            "detail": "Living area is not gross floor area, building footprint, or assessed improvement area. Not approved as a FAR numerator. A source zero or limit value is unresolved and is not evidence of no structure."
+          },
+          {
+            "label": "Approximate parcel geometry area",
+            "value": "142,398 sq ft",
+            "state": "supported",
+            "stateLabel": "Derived geometry",
+            "source": "Parcel geometry",
+            "detail": "Approximate GIS geometry area; this is not a legal-lot-area determination."
+          },
+          {
+            "label": "Taxable acreage",
+            "value": "3.24 acres",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "County assessor record",
+            "detail": "Taxable acreage does not establish Code-defined legal lot area."
+          }
+        ],
+        "unknowns": [
+          {
+            "label": "Non-RS base standards",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Non-RS zoning is preserved as evidence and is outside this resolver.",
+            "source": "Parcel RS Standards Runtime V0",
+            "linkedAction": "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+          },
+          {
+            "label": "Legal lot width",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot depth",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Corner-lot status",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Front lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate legal front lot lines.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Gross floor area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Existing dwelling units",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "A positive assessor unit count is not available.",
+            "source": "Structure Facts V0",
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+          },
+          {
+            "label": "Assessor living area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "A positive valid assessor living-area value is not available.",
+            "source": "Structure Facts V0",
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+          },
+          {
+            "label": "Situs address",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No normalized situs address is present.",
+            "source": "Parcel V2",
+            "linkedAction": "VERIFY_PARCEL_SITUS"
+          }
+        ],
+        "investigations": [
+          {
+            "action": "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+            "title": "Research standards for the unsupported zone",
+            "reason": "One or more mapped zones are outside the RS V0 rule set.",
+            "blockedConclusion": "BASE_STANDARDS_FOR_UNSUPPORTED_ZONE",
+            "requiredEvidence": "Sealed source-backed standards contract for each unsupported zone."
+          },
+          {
+            "action": "VERIFY_EXISTING_UNIT_COUNT",
+            "title": "Verify the existing dwelling-unit count",
+            "reason": "A positive recorded unit count is unavailable.",
+            "blockedConclusion": "EXISTING_UNIT_COUNT",
+            "requiredEvidence": "Current authoritative building or assessor record with explicit dwelling-unit semantics."
+          },
+          {
+            "action": "VERIFY_PARCEL_SITUS",
+            "title": "Verify the parcel situs address",
+            "reason": "The parcel has no normalized situs address.",
+            "blockedConclusion": "DISPLAY_ADDRESS",
+            "requiredEvidence": "Authoritative parcel situs record."
+          }
+        ],
+        "evidence": [
+          {
+            "layer": "Parcel V2",
+            "source": "parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz",
+            "version": "parcel-base-v2",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+            "recordFingerprint": "d0c1ccad45c2e1e49cd0dd845be190036c31951da908276780102dc210cf03f0"
+          },
+          {
+            "layer": "Base Zoning V2",
+            "source": "base-zoning-v2/parcel-base-zoning-map.ndjson.gz",
+            "version": "base-zoning-city-sd-v2-area-coverage-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "134e8992015f4554d2b2cd3dd8a5c8a8f6e64c0353ed3790cee7deb04f6ae395",
+            "recordFingerprint": "afcd6a607bf093a76896f7f26e5c74a9c8324cdc36e62565089d0eb307ad307b"
+          },
+          {
+            "layer": "Coastal Context V0",
+            "source": "data/coastal-context-v0/fixture-results.json",
+            "version": "coastal-context-city-sd-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "798c38d538b75b716bcc3a8ad8c5b31c0456c7bcf3880ef583299cd5bf3d49c8",
+            "recordFingerprint": "6d8c17b8f449b32dfea2bef3283f4c55bee0e63cd36d2621afcb217fa04b5a66"
+          },
+          {
+            "layer": "RS Parcel Condition Inputs V0",
+            "source": "data/rs-parcel-condition-inputs-v0/fixture-results.json",
+            "version": "rs-parcel-condition-inputs-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "ec246dffc27638db5131fd50cca84fe870ac4285c7c1a8c0b3d63a5b4ea4e8c1",
+            "recordFingerprint": "4e537a32e5bbb567ad6b4a468e6a2249a0d6a954624d89c058b7bb63415d8e47"
+          },
+          {
+            "layer": "Structure Facts V0",
+            "source": "data/structure-facts-v0/fixture-results.json",
+            "version": "structure-facts-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "9496932b1009a149d53c95decc3e3603f112d579b9df127af5bd3b26305d1666",
+            "recordFingerprint": "184fbbcbb027ff37b7ff6eb5ad345a0a1d2f9fe19031a8e1935c0413fa5172ff"
+          },
+          {
+            "layer": "Parcel RS Standards Runtime V0",
+            "source": "data/parcel-rs-standards-runtime-v0",
+            "version": "parcel-rs-standards-runtime-2026-09-30-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "7047062bb93fe6a1b222e033e1259445ed7afda74c1302c8d24529e1630b096e",
+            "recordFingerprint": "a678ae5325802498d37cdf06ead33307bf38a8b85924f92ec99e3f53b86a50e3"
+          }
+        ],
+        "capacity": {
+          "state": "not_evaluated",
+          "label": "Not evaluated yet",
+          "explanation": "TruLot has not evaluated parcel compliance or development capacity. Legal lot dimensions, rule conditions, and other project facts must be established first."
+        },
+        "safeguards": {
+          "parcelComplianceEvaluated": false,
+          "developmentCapacityCalculated": false,
+          "standardsBlended": false,
+          "productionRuntimeWired": false
+        }
+      }
+    },
+    {
+      "apn": "7600300100",
+      "case": "source-unavailable",
+      "model": {
+        "adapterVersion": "parcel-page-v2-ui-adapter-2026-09-30-v0",
+        "sourceContractVersion": "parcel-intelligence-v2-2026-09-30-v1",
+        "asOf": "2026-09-30",
+        "sourceFingerprint": "af34cde9fb69ebbceee42c3b61336a2632a698db764dd764b07a1acabcd0f404",
+        "header": {
+          "title": "998 W MISSION BAY DR",
+          "address": "998 W MISSION BAY DR",
+          "apn": "7600300100",
+          "jurisdiction": "City of San Diego",
+          "identityState": "supported",
+          "identityLabel": "Recorded"
+        },
+        "orientation": {
+          "zoningLabel": "Zoning source currently unavailable",
+          "zoningState": "unavailable",
+          "zones": [],
+          "coastalLabel": "Coastal source currently unavailable",
+          "coastalState": "unavailable",
+          "standardsVersion": "Not available until zoning is resolved",
+          "standardsVersionState": "unknown"
+        },
+        "standardsGroups": [
+          {
+            "zoneCode": "Base zone unresolved",
+            "coverage": null,
+            "state": "unavailable",
+            "stateLabel": "Source currently unavailable",
+            "explanation": "Identity or zoning input is unavailable.",
+            "standards": []
+          }
+        ],
+        "propertyFacts": [
+          {
+            "label": "Existing dwelling units",
+            "value": "Source currently unavailable",
+            "state": "unavailable",
+            "stateLabel": "Source currently unavailable",
+            "source": "County assessor record",
+            "detail": "Structure Facts V0 output is unavailable for this fixture."
+          },
+          {
+            "label": "Living area",
+            "value": "Source currently unavailable",
+            "state": "unavailable",
+            "stateLabel": "Source currently unavailable",
+            "source": "County assessor living-area field",
+            "detail": "Structure Facts V0 output is unavailable for this fixture."
+          },
+          {
+            "label": "Approximate parcel geometry area",
+            "value": "330,149 sq ft",
+            "state": "supported",
+            "stateLabel": "Derived geometry",
+            "source": "Parcel geometry",
+            "detail": "Approximate GIS geometry area; this is not a legal-lot-area determination."
+          },
+          {
+            "label": "Taxable acreage",
+            "value": "15.5 acres",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "County assessor record",
+            "detail": "Taxable acreage does not establish Code-defined legal lot area."
+          }
+        ],
+        "unknowns": [
+          {
+            "label": "Legal lot width",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot depth",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Corner-lot status",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Front lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Gross floor area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Existing dwelling units",
+            "value": "Source currently unavailable",
+            "state": "unavailable",
+            "stateLabel": "Source currently unavailable",
+            "detail": "A positive assessor unit count is not available.",
+            "source": "Structure Facts V0",
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+          },
+          {
+            "label": "Assessor living area",
+            "value": "Source currently unavailable",
+            "state": "unavailable",
+            "stateLabel": "Source currently unavailable",
+            "detail": "A positive valid assessor living-area value is not available.",
+            "source": "Structure Facts V0",
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+          },
+          {
+            "label": "base zoning source unavailable",
+            "value": "Source currently unavailable",
+            "state": "unavailable",
+            "stateLabel": "Source currently unavailable",
+            "detail": "Base Zoning V2 source is unavailable.",
+            "source": "Base Zoning V2",
+            "linkedAction": "VERIFY_BASE_ZONING_MAPPING"
+          },
+          {
+            "label": "coastal source unavailable",
+            "value": "Source currently unavailable",
+            "state": "unavailable",
+            "stateLabel": "Source currently unavailable",
+            "detail": "Coastal Context V0 source is unavailable.",
+            "source": "Coastal Context V0"
+          }
+        ],
+        "investigations": [
+          {
+            "action": "VERIFY_BASE_ZONING_MAPPING",
+            "title": "Verify the base-zoning mapping",
+            "reason": "Base zoning is unavailable or unresolved.",
+            "blockedConclusion": "BASE_STANDARDS",
+            "requiredEvidence": "Authoritative parcel-specific base-zoning determination."
+          },
+          {
+            "action": "VERIFY_EXISTING_UNIT_COUNT",
+            "title": "Verify the existing dwelling-unit count",
+            "reason": "A positive recorded unit count is unavailable.",
+            "blockedConclusion": "EXISTING_UNIT_COUNT",
+            "requiredEvidence": "Current authoritative building or assessor record with explicit dwelling-unit semantics."
+          }
+        ],
+        "evidence": [
+          {
+            "layer": "Parcel V2",
+            "source": "parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz",
+            "version": "parcel-base-v2",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+            "recordFingerprint": "96bafdef7d8045c4e10255e27309b16ec6509dd329b8699f81428369db95ac7b"
+          },
+          {
+            "layer": "Base Zoning V2",
+            "source": "base-zoning-v2/parcel-base-zoning-map.ndjson.gz",
+            "version": "base-zoning-city-sd-v2-area-coverage-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "134e8992015f4554d2b2cd3dd8a5c8a8f6e64c0353ed3790cee7deb04f6ae395",
+            "recordFingerprint": "Not available"
+          },
+          {
+            "layer": "Coastal Context V0",
+            "source": "data/coastal-context-v0/fixture-results.json",
+            "version": "coastal-context-city-sd-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "798c38d538b75b716bcc3a8ad8c5b31c0456c7bcf3880ef583299cd5bf3d49c8",
+            "recordFingerprint": "af0fd2d1def13113b6f09ca51fb191f811d82ad9633b8fa0b34e640304923dbe"
+          },
+          {
+            "layer": "RS Parcel Condition Inputs V0",
+            "source": "data/rs-parcel-condition-inputs-v0/fixture-results.json",
+            "version": "rs-parcel-condition-inputs-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "ec246dffc27638db5131fd50cca84fe870ac4285c7c1a8c0b3d63a5b4ea4e8c1",
+            "recordFingerprint": "Not available"
+          },
+          {
+            "layer": "Structure Facts V0",
+            "source": "data/structure-facts-v0/fixture-results.json",
+            "version": "structure-facts-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "9496932b1009a149d53c95decc3e3603f112d579b9df127af5bd3b26305d1666",
+            "recordFingerprint": "Not available"
+          },
+          {
+            "layer": "Parcel RS Standards Runtime V0",
+            "source": "data/parcel-rs-standards-runtime-v0",
+            "version": "parcel-rs-standards-runtime-2026-09-30-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "Not available",
+            "recordFingerprint": "Not available"
+          }
+        ],
+        "capacity": {
+          "state": "not_evaluated",
+          "label": "Not evaluated yet",
+          "explanation": "TruLot has not evaluated parcel compliance or development capacity. Legal lot dimensions, rule conditions, and other project facts must be established first."
+        },
+        "safeguards": {
+          "parcelComplianceEvaluated": false,
+          "developmentCapacityCalculated": false,
+          "standardsBlended": false,
+          "productionRuntimeWired": false
+        }
+      }
+    },
+    {
+      "apn": "3031701800",
+      "case": "missing-address",
+      "model": {
+        "adapterVersion": "parcel-page-v2-ui-adapter-2026-09-30-v0",
+        "sourceContractVersion": "parcel-intelligence-v2-2026-09-30-v1",
+        "asOf": "2026-09-30",
+        "sourceFingerprint": "b2b63a731cf7be5bf9664a3714eaf9d77c1e7529930393d7a7071c744cf0cc10",
+        "header": {
+          "title": "Parcel 3031701800",
+          "address": null,
+          "apn": "3031701800",
+          "jurisdiction": "City of San Diego",
+          "identityState": "supported",
+          "identityLabel": "Recorded"
+        },
+        "orientation": {
+          "zoningLabel": "Single-zone mapping",
+          "zoningState": "supported",
+          "zones": [
+            {
+              "code": "AR-1-1",
+              "coverage": "100%",
+              "role": "single"
+            }
+          ],
+          "coastalLabel": "Outside Coastal Overlay Zone",
+          "coastalState": "supported",
+          "standardsVersion": "sd-rs-base-standards-2026-09-30-v0",
+          "standardsVersionState": "supported"
+        },
+        "standardsGroups": [
+          {
+            "zoneCode": "AR-1-1",
+            "coverage": "100%",
+            "state": "not_applicable",
+            "stateLabel": "Standards outside this RS adapter",
+            "explanation": "This zone remains visible, but its standards are outside the sealed RS base-standards resolver.",
+            "standards": []
+          }
+        ],
+        "propertyFacts": [
+          {
+            "label": "Existing dwelling units",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "source": "County assessor record",
+            "detail": "Parcel-level assessment fact; not a building-level record. A source zero is unresolved and is not evidence of a vacant parcel. Does not describe proposed units or legal entitlement."
+          },
+          {
+            "label": "Living area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "source": "County assessor living-area field",
+            "detail": "Living area is not gross floor area, building footprint, or assessed improvement area. Not approved as a FAR numerator. A source zero or limit value is unresolved and is not evidence of no structure."
+          },
+          {
+            "label": "Approximate parcel geometry area",
+            "value": "9 sq ft",
+            "state": "supported",
+            "stateLabel": "Derived geometry",
+            "source": "Parcel geometry",
+            "detail": "Approximate GIS geometry area; this is not a legal-lot-area determination."
+          }
+        ],
+        "unknowns": [
+          {
+            "label": "Non-RS base standards",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Non-RS zoning is preserved as evidence and is outside this resolver.",
+            "source": "Parcel RS Standards Runtime V0",
+            "linkedAction": "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+          },
+          {
+            "label": "Legal lot width",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot depth",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Corner-lot status",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Front lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate legal front lot lines.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Gross floor area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Existing dwelling units",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "A positive assessor unit count is not available.",
+            "source": "Structure Facts V0",
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+          },
+          {
+            "label": "Assessor living area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "A positive valid assessor living-area value is not available.",
+            "source": "Structure Facts V0",
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+          },
+          {
+            "label": "Situs address",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No normalized situs address is present.",
+            "source": "Parcel V2",
+            "linkedAction": "VERIFY_PARCEL_SITUS"
+          }
+        ],
+        "investigations": [
+          {
+            "action": "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+            "title": "Research standards for the unsupported zone",
+            "reason": "One or more mapped zones are outside the RS V0 rule set.",
+            "blockedConclusion": "BASE_STANDARDS_FOR_UNSUPPORTED_ZONE",
+            "requiredEvidence": "Sealed source-backed standards contract for each unsupported zone."
+          },
+          {
+            "action": "VERIFY_EXISTING_UNIT_COUNT",
+            "title": "Verify the existing dwelling-unit count",
+            "reason": "A positive recorded unit count is unavailable.",
+            "blockedConclusion": "EXISTING_UNIT_COUNT",
+            "requiredEvidence": "Current authoritative building or assessor record with explicit dwelling-unit semantics."
+          },
+          {
+            "action": "VERIFY_PARCEL_SITUS",
+            "title": "Verify the parcel situs address",
+            "reason": "The parcel has no normalized situs address.",
+            "blockedConclusion": "DISPLAY_ADDRESS",
+            "requiredEvidence": "Authoritative parcel situs record."
+          }
+        ],
+        "evidence": [
+          {
+            "layer": "Parcel V2",
+            "source": "parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz",
+            "version": "parcel-base-v2",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+            "recordFingerprint": "2feb5dbe552b6992157cd212ec5bed85afd3875685d1cd51905729974c4cb467"
+          },
+          {
+            "layer": "Base Zoning V2",
+            "source": "base-zoning-v2/parcel-base-zoning-map.ndjson.gz",
+            "version": "base-zoning-city-sd-v2-area-coverage-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "134e8992015f4554d2b2cd3dd8a5c8a8f6e64c0353ed3790cee7deb04f6ae395",
+            "recordFingerprint": "cc4ed4df79495d63fe423e4311badaba981b89f0ca6463e2aa46da15d968bf0e"
+          },
+          {
+            "layer": "Coastal Context V0",
+            "source": "data/coastal-context-v0/fixture-results.json",
+            "version": "coastal-context-city-sd-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "798c38d538b75b716bcc3a8ad8c5b31c0456c7bcf3880ef583299cd5bf3d49c8",
+            "recordFingerprint": "321e5fdc20b5015b49a228ac21c3eafbcc7ba6b4fff6f0e553e8e5b8ad1af958"
+          },
+          {
+            "layer": "RS Parcel Condition Inputs V0",
+            "source": "data/rs-parcel-condition-inputs-v0/fixture-results.json",
+            "version": "rs-parcel-condition-inputs-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "ec246dffc27638db5131fd50cca84fe870ac4285c7c1a8c0b3d63a5b4ea4e8c1",
+            "recordFingerprint": "6f3efab9afe48dc2146abc61a19a6482e420a02d9558be2ef57b9e1ba00f793d"
+          },
+          {
+            "layer": "Structure Facts V0",
+            "source": "data/structure-facts-v0/fixture-results.json",
+            "version": "structure-facts-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "9496932b1009a149d53c95decc3e3603f112d579b9df127af5bd3b26305d1666",
+            "recordFingerprint": "1fabca161193699e996919ee31100fcaebd13eac1791b77a87efb32ff84cad87"
+          },
+          {
+            "layer": "Parcel RS Standards Runtime V0",
+            "source": "data/parcel-rs-standards-runtime-v0",
+            "version": "parcel-rs-standards-runtime-2026-09-30-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "7047062bb93fe6a1b222e033e1259445ed7afda74c1302c8d24529e1630b096e",
+            "recordFingerprint": "3c7873eb7c5b54ad25a1ee8b1e6621af57b9cc1e822be125bd0b64b356332867"
+          }
+        ],
+        "capacity": {
+          "state": "not_evaluated",
+          "label": "Not evaluated yet",
+          "explanation": "TruLot has not evaluated parcel compliance or development capacity. Legal lot dimensions, rule conditions, and other project facts must be established first."
+        },
+        "safeguards": {
+          "parcelComplianceEvaluated": false,
+          "developmentCapacityCalculated": false,
+          "standardsBlended": false,
+          "productionRuntimeWired": false
+        }
+      }
+    },
+    {
+      "apn": "2421001000",
+      "case": "structure-zero-unknown",
+      "model": {
+        "adapterVersion": "parcel-page-v2-ui-adapter-2026-09-30-v0",
+        "sourceContractVersion": "parcel-intelligence-v2-2026-09-30-v1",
+        "asOf": "2026-09-30",
+        "sourceFingerprint": "b20dbc6e9452cfe06dc38a0defc58018a6fac557797ffaf42c899cbd6882ad65",
+        "header": {
+          "title": "Parcel 2421001000",
+          "address": null,
+          "apn": "2421001000",
+          "jurisdiction": "City of San Diego",
+          "identityState": "supported",
+          "identityLabel": "Recorded"
+        },
+        "orientation": {
+          "zoningLabel": "Split-zone parcel",
+          "zoningState": "review",
+          "zones": [
+            {
+              "code": "AG-1-1",
+              "coverage": "83.9%",
+              "role": "material"
+            },
+            {
+              "code": "AR-1-1",
+              "coverage": "16.1%",
+              "role": "material"
+            }
+          ],
+          "coastalLabel": "Outside Coastal Overlay Zone",
+          "coastalState": "supported",
+          "standardsVersion": "sd-rs-base-standards-2026-09-30-v0",
+          "standardsVersionState": "supported"
+        },
+        "standardsGroups": [
+          {
+            "zoneCode": "AG-1-1",
+            "coverage": "83.9%",
+            "state": "not_applicable",
+            "stateLabel": "Standards outside this RS adapter",
+            "explanation": "This zone remains visible, but its standards are outside the sealed RS base-standards resolver.",
+            "standards": []
+          },
+          {
+            "zoneCode": "AR-1-1",
+            "coverage": "16.1%",
+            "state": "not_applicable",
+            "stateLabel": "Standards outside this RS adapter",
+            "explanation": "This zone remains visible, but its standards are outside the sealed RS base-standards resolver.",
+            "standards": []
+          }
+        ],
+        "propertyFacts": [
+          {
+            "label": "Existing dwelling units",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "source": "County assessor record",
+            "detail": "Parcel-level assessment fact; not a building-level record. A source zero is unresolved and is not evidence of a vacant parcel. Does not describe proposed units or legal entitlement."
+          },
+          {
+            "label": "Living area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "source": "County assessor living-area field",
+            "detail": "Living area is not gross floor area, building footprint, or assessed improvement area. Not approved as a FAR numerator. A source zero or limit value is unresolved and is not evidence of no structure."
+          },
+          {
+            "label": "Approximate parcel geometry area",
+            "value": "54,948,373 sq ft",
+            "state": "supported",
+            "stateLabel": "Derived geometry",
+            "source": "Parcel geometry",
+            "detail": "Approximate GIS geometry area; this is not a legal-lot-area determination."
+          },
+          {
+            "label": "Taxable acreage",
+            "value": "1,261.93 acres",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "source": "County assessor record",
+            "detail": "Taxable acreage does not establish Code-defined legal lot area."
+          }
+        ],
+        "unknowns": [
+          {
+            "label": "Split-zone applicability",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Every material zone is preserved separately; no blended standard is selected.",
+            "source": "Base Zoning V2",
+            "linkedAction": "REVIEW_SPLIT_ZONE_GEOMETRY"
+          },
+          {
+            "label": "Non-RS base standards",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Non-RS zoning is preserved as evidence and is outside this resolver.",
+            "source": "Parcel RS Standards Runtime V0",
+            "linkedAction": "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+          },
+          {
+            "label": "Legal lot width",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot depth",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Legal lot area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Corner-lot status",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Front lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate legal front lot lines.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Gross floor area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
+            "source": "RS Parcel Condition Inputs V0"
+          },
+          {
+            "label": "Existing dwelling units",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "A positive assessor unit count is not available.",
+            "source": "Structure Facts V0",
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+          },
+          {
+            "label": "Assessor living area",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "A positive valid assessor living-area value is not available.",
+            "source": "Structure Facts V0",
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+          }
+        ],
+        "investigations": [
+          {
+            "action": "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+            "title": "Research standards for the unsupported zone",
+            "reason": "One or more mapped zones are outside the RS V0 rule set.",
+            "blockedConclusion": "BASE_STANDARDS_FOR_UNSUPPORTED_ZONE",
+            "requiredEvidence": "Sealed source-backed standards contract for each unsupported zone."
+          },
+          {
+            "action": "REVIEW_SPLIT_ZONE_GEOMETRY",
+            "title": "Review the split-zone geometry",
+            "reason": "Multiple material zones intersect the parcel.",
+            "blockedConclusion": "PARCEL_WIDE_PRIMARY_STANDARD",
+            "requiredEvidence": "Authoritative zoning map and parcel-specific split-zone geometry review."
+          },
+          {
+            "action": "VERIFY_EXISTING_UNIT_COUNT",
+            "title": "Verify the existing dwelling-unit count",
+            "reason": "A positive recorded unit count is unavailable.",
+            "blockedConclusion": "EXISTING_UNIT_COUNT",
+            "requiredEvidence": "Current authoritative building or assessor record with explicit dwelling-unit semantics."
+          },
+          {
+            "action": "VERIFY_PARCEL_SITUS",
+            "title": "Verify the parcel situs address",
+            "reason": "The parcel has no normalized situs address.",
+            "blockedConclusion": "DISPLAY_ADDRESS",
+            "requiredEvidence": "Authoritative parcel situs record."
+          }
+        ],
+        "evidence": [
+          {
+            "layer": "Parcel V2",
+            "source": "parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz",
+            "version": "parcel-base-v2",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+            "recordFingerprint": "0ece93de15c56d2f42f9b004151ced9351557737f934998b32ba11e5644a3c58"
+          },
+          {
+            "layer": "Base Zoning V2",
+            "source": "base-zoning-v2/parcel-base-zoning-map.ndjson.gz",
+            "version": "base-zoning-city-sd-v2-area-coverage-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "134e8992015f4554d2b2cd3dd8a5c8a8f6e64c0353ed3790cee7deb04f6ae395",
+            "recordFingerprint": "aa0591e80a189c1b3962d3ff0e6347c4432379708f44c6afea7f15c7321ba691"
+          },
+          {
+            "layer": "Coastal Context V0",
+            "source": "data/coastal-context-v0/fixture-results.json",
+            "version": "coastal-context-city-sd-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "798c38d538b75b716bcc3a8ad8c5b31c0456c7bcf3880ef583299cd5bf3d49c8",
+            "recordFingerprint": "aecf1d2bed5ca3d68b381396b5a610493ea9e6c1713051e4432a58c247f8fb48"
+          },
+          {
+            "layer": "RS Parcel Condition Inputs V0",
+            "source": "data/rs-parcel-condition-inputs-v0/fixture-results.json",
+            "version": "rs-parcel-condition-inputs-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "ec246dffc27638db5131fd50cca84fe870ac4285c7c1a8c0b3d63a5b4ea4e8c1",
+            "recordFingerprint": "123bc4d714ec7481ee1166e301454a696fa99a111efe80a652526b193d71b8b4"
+          },
+          {
+            "layer": "Structure Facts V0",
+            "source": "data/structure-facts-v0/fixture-results.json",
+            "version": "structure-facts-2026-09-30-v0",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "9496932b1009a149d53c95decc3e3603f112d579b9df127af5bd3b26305d1666",
+            "recordFingerprint": "809a4f47b7ec80bb062d8430319bb02e24dc1d6ecd01107d1ce1269674e6006c"
+          },
+          {
+            "layer": "Parcel RS Standards Runtime V0",
+            "source": "data/parcel-rs-standards-runtime-v0",
+            "version": "parcel-rs-standards-runtime-2026-09-30-v1",
+            "state": "supported",
+            "stateLabel": "Recorded",
+            "artifactFingerprint": "7047062bb93fe6a1b222e033e1259445ed7afda74c1302c8d24529e1630b096e",
+            "recordFingerprint": "859670ab523f727b120a57e56447782592ff11cb87fe327f12907e824bc2cd01"
+          }
+        ],
+        "capacity": {
+          "state": "not_evaluated",
+          "label": "Not evaluated yet",
+          "explanation": "TruLot has not evaluated parcel compliance or development capacity. Legal lot dimensions, rule conditions, and other project facts must be established first."
+        },
+        "safeguards": {
+          "parcelComplianceEvaluated": false,
+          "developmentCapacityCalculated": false,
+          "standardsBlended": false,
+          "productionRuntimeWired": false
+        }
+      }
+    }
+  ]
+}

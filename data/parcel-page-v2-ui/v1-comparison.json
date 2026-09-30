@@ -1,0 +1,38 @@
+{
+  "comparison_type": "structured_static_review",
+  "v1_surface_inspected": "app/parcel/san-diego/[slug]/page.tsx",
+  "v1_modified": false,
+  "dimensions": [
+    {
+      "dimension": "clarity",
+      "v1": "Broad parcel report with map, facts, zoning, programs, permits, signals, and methodology on one production page.",
+      "v2": "Outcome-first order: identity, regulatory orientation, standards, facts, unknowns, next investigation, then evidence."
+    },
+    {
+      "dimension": "zoning truth",
+      "v1": "Zoning presentation is optimized around the current Parcel V1 response and optional standards shadow.",
+      "v2": "Every material zone and coverage share is retained; split-zone standards are grouped independently and never blended."
+    },
+    {
+      "dimension": "uncertainty",
+      "v1": "Partial and stale states are reported, while detailed Parcel Intelligence V2 gaps are not the organizing model.",
+      "v2": "Unknown, unavailable, conditional, mapping-review, and not-applicable states have explicit text and calm visual treatment."
+    },
+    {
+      "dimension": "provenance",
+      "v1": "Receipts and methodology are available later in the page.",
+      "v2": "Concise source labels sit with facts; source layer, version, derivation, limitations, and optional hashes use nested disclosure."
+    },
+    {
+      "dimension": "standards usefulness",
+      "v1": "Verified standards appear only through the existing bounded shadow contract.",
+      "v2": "High-value base standards are grouped by zone and preserve exact conditions without a compliance conclusion."
+    },
+    {
+      "dimension": "mobile usability",
+      "v1": "Responsive production page includes wide, information-dense areas and maps.",
+      "v2": "Single-column mobile flow prioritizes identity, zoning, standards, unknowns, and actions with no core horizontal table."
+    }
+  ],
+  "conclusion": "The V2 adapter improves truth-state clarity and inspectability for the Packet 18 contract while remaining a static review artifact; it does not replace or modify Parcel V1."
+}

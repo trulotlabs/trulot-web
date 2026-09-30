@@ -1,0 +1,35 @@
+{
+  "adapter_version": "parcel-page-v2-ui-adapter-2026-09-30-v0",
+  "purpose": "Presentation-only adapter over a sealed ParcelIntelligenceV2 result.",
+  "inputs": [
+    "ParcelIntelligenceV2"
+  ],
+  "output_sections": [
+    "header",
+    "orientation",
+    "standardsGroups",
+    "propertyFacts",
+    "unknowns",
+    "investigations",
+    "evidence",
+    "capacity",
+    "safeguards"
+  ],
+  "allowed_operations": [
+    "group",
+    "format units",
+    "shorten source labels",
+    "generate deterministic wording from structured states"
+  ],
+  "prohibited_operations": [
+    "recompute regulatory rules",
+    "convert UNKNOWN to false or zero",
+    "select a split zone",
+    "infer Coastal state",
+    "create compliance conclusions",
+    "flatten conditional standards",
+    "calculate development capacity",
+    "wire production runtime"
+  ],
+  "production_runtime_wired": false
+}

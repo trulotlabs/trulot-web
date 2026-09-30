@@ -1,0 +1,12 @@
+{
+  "production_access": false,
+  "packet_11_state": "frozen",
+  "production_zoning_loaded": false,
+  "selected_snapshot_changed": false,
+  "parcel_v1_modified": false,
+  "production_route_switched": false,
+  "compliance_calculated": false,
+  "capacity_calculated": false,
+  "deployed": false,
+  "pushed": false
+}
