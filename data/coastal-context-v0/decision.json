@@ -1,0 +1,23 @@
+{
+  "city_parcel_count": 393733,
+  "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+  "decision": "COASTAL_CONTEXT_V0_READY",
+  "development_capacity_calculated": false,
+  "duplicate_apns": 0,
+  "fixture_count": 30,
+  "inside_coastal_rs_supported": false,
+  "orphan_parcel_references": 0,
+  "packet13_feed_ready": true,
+  "parcel_compliance_evaluated": false,
+  "parcel_v1_modified": false,
+  "production_access": false,
+  "runtime_production_wiring": false,
+  "state_counts": {
+    "APPLICABILITY_UNRESOLVED": 0,
+    "BOUNDARY_AMBIGUOUS": 1530,
+    "INSIDE_COASTAL": 46455,
+    "OUTSIDE_COASTAL": 345748,
+    "SOURCE_UNAVAILABLE": 0
+  },
+  "unique_apns": 393733
+}

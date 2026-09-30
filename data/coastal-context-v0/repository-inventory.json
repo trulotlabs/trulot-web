@@ -1,0 +1,45 @@
+{
+  "artifacts": [
+    {
+      "classification": "derived data",
+      "finding": "Outside profile supported; inside and unknown applicability unresolved; O-21934 unverified and O-22109 pending inside Coastal.",
+      "path": "data/rs-base-standards-v0/versions.json"
+    },
+    {
+      "classification": "derived data",
+      "finding": "Prior review matrix, not parcel geography.",
+      "path": "data/residential-standards-review/coastal-matrix.json"
+    },
+    {
+      "classification": "historical note",
+      "finding": "Ordinance/version chronology, not parcel geography.",
+      "path": "data/residential-standards-review/timeline.json"
+    },
+    {
+      "classification": "historical note",
+      "finding": "Prior standards research, not an overlay artifact.",
+      "path": "data/high-value-residential-review/authority-observation.json"
+    },
+    {
+      "classification": "obsolete",
+      "finding": "Superseded standards-source observation for current Packet 12 decisions.",
+      "path": "data/zoning-standards-v2/source-version-observation.json"
+    },
+    {
+      "classification": "unresolved",
+      "finding": "Canonical V1 exposes TPA, CTCAC, and SDA only; no Coastal applicability fact.",
+      "path": "lib/parcel-page-v1.ts"
+    },
+    {
+      "classification": "unresolved",
+      "finding": "Observed source attribute is not selected as Coastal authority and is not used in mapping.",
+      "path": "Parcel V2 raw field overlay_juris"
+    },
+    {
+      "classification": "authoritative source",
+      "finding": "Selected current geography for this packet.",
+      "path": "Official City Coastal Overlay Zone layer 2"
+    }
+  ],
+  "search_scope": "Tracked repository at baseline f88bbdf16a92fc7ce57aea304ccc0352b0064138"
+}

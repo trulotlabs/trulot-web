@@ -1,0 +1,985 @@
+{
+  "fixture_count": 30,
+  "fixtures": [
+    {
+      "apn": "3506320400",
+      "coverage_tags": [
+        "ordinary_rs_1_7",
+        "packet14_real_fixture"
+      ],
+      "id": "p14-ordinary-rs-1-7",
+      "mapping_evidence": {
+        "apn": "3506320400",
+        "coastal_area_share_percent": 100.0,
+        "coastal_area_sqft": 9138.360059,
+        "coastal_source_object_ids": [
+          3
+        ],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 0.0,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 9138.360059,
+        "parcel_geometry_sha256": "43c9fa9fe84d317f2036db248f0dda84a4c3eb288052cb309a9f89c078bbca8c",
+        "parcel_id": 107112,
+        "parcel_source_object_id": 66264,
+        "point_on_surface_inside": true,
+        "raw_geometry_valid": true,
+        "state": "INSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 107112,
+        "parcel_source_object_id": 66264
+      },
+      "zoning_context": {
+        "coverage_percent": 100.0,
+        "mapping_state": "SINGLE_ZONE",
+        "method": "base-zoning-city-sd-v2-area-coverage-v1",
+        "source_feature_ids": [
+          1374
+        ],
+        "zone_code": "RS-1-7",
+        "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"
+      }
+    },
+    {
+      "apn": "3031701800",
+      "coverage_tags": [
+        "missing_situs",
+        "packet14_real_fixture",
+        "small_geometry"
+      ],
+      "id": "p14-smallest-geometry",
+      "mapping_evidence": {
+        "apn": "3031701800",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 8.548198,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 8.548198,
+        "parcel_geometry_sha256": "3673fc32aed2850d17bd3ee1309dc5efda7bb03ed9be63ae12336c537d16cb6e",
+        "parcel_id": 5382142,
+        "parcel_source_object_id": 1052286,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 5382142,
+        "parcel_source_object_id": 1052286
+      }
+    },
+    {
+      "apn": "2421001000",
+      "coverage_tags": [
+        "large_geometry",
+        "missing_situs",
+        "multipolygon",
+        "packet14_real_fixture",
+        "stacked",
+        "taxable_acreage"
+      ],
+      "id": "p14-largest-geometry",
+      "mapping_evidence": {
+        "apn": "2421001000",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 54948372.53094,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 54948372.53094,
+        "parcel_geometry_sha256": "3309f6247b32d7c70386ff2b2645d2cb3f399fad3fb725a056e764aa418f3d05",
+        "parcel_id": 716530,
+        "parcel_source_object_id": 653853,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 3,
+        "geometry_type": "MultiPolygon",
+        "parcel_id": 716530,
+        "parcel_source_object_id": 653853
+      }
+    },
+    {
+      "apn": "2748323700",
+      "coverage_tags": [
+        "boundary_sliver",
+        "centroid_outside",
+        "irregular_polygon",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "id": "p14-boundary-sliver",
+      "mapping_evidence": {
+        "apn": "2748323700",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 171394.658452,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 171394.658452,
+        "parcel_geometry_sha256": "fa2325effbc3919afffd78c88a281887bf08ee1d487411c7bad7c648deb71bb8",
+        "parcel_id": 13550,
+        "parcel_source_object_id": 313,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 13550,
+        "parcel_source_object_id": 313
+      }
+    },
+    {
+      "apn": "2392600700",
+      "coverage_tags": [
+        "ambiguous_zoning",
+        "large_geometry",
+        "multipolygon",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "id": "p14-multipolygon",
+      "mapping_evidence": {
+        "apn": "2392600700",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 10588120.373922,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 10588120.373922,
+        "parcel_geometry_sha256": "839bd35133ec51fc6799789ddae8207735a45f697563c4800cdaedf22826ff61",
+        "parcel_id": 5356634,
+        "parcel_source_object_id": 1053738,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 3,
+        "geometry_type": "MultiPolygon",
+        "parcel_id": 5356634,
+        "parcel_source_object_id": 1053738
+      }
+    },
+    {
+      "apn": "5891700512",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "repeated_geometry",
+        "stacked"
+      ],
+      "id": "p14-stacked-a",
+      "mapping_evidence": {
+        "apn": "5891700512",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 170671.407301,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 170671.407301,
+        "parcel_geometry_sha256": "cc323b3cd99798f9f0c1a0b81f36f9fb5ff90a6976c9d3b0e3af179a8faf4fa2",
+        "parcel_id": 13410,
+        "parcel_source_object_id": 92,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 13410,
+        "parcel_source_object_id": 92
+      }
+    },
+    {
+      "apn": "5891700513",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "repeated_geometry",
+        "stacked"
+      ],
+      "id": "p14-stacked-b",
+      "mapping_evidence": {
+        "apn": "5891700513",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 170671.407301,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 170671.407301,
+        "parcel_geometry_sha256": "cc323b3cd99798f9f0c1a0b81f36f9fb5ff90a6976c9d3b0e3af179a8faf4fa2",
+        "parcel_id": 13410,
+        "parcel_source_object_id": 93,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 13410,
+        "parcel_source_object_id": 93
+      }
+    },
+    {
+      "apn": "6782511200",
+      "coverage_tags": [
+        "missing_situs",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "id": "p14-missing-situs-taxable",
+      "mapping_evidence": {
+        "apn": "6782511200",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 142397.733717,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 142397.733717,
+        "parcel_geometry_sha256": "fcc7b3a6a4322900f57ebe5eeebf883b517647b04073fa5ab71666b574438e0d",
+        "parcel_id": 13238,
+        "parcel_source_object_id": 3,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 13238,
+        "parcel_source_object_id": 3
+      }
+    },
+    {
+      "apn": "3013101500",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "rs_plus_rs",
+        "split_zone"
+      ],
+      "id": "p14-split-rs-rs",
+      "mapping_evidence": {
+        "apn": "3013101500",
+        "coastal_area_share_percent": 100.0,
+        "coastal_area_sqft": 59418.125681,
+        "coastal_source_object_ids": [
+          5
+        ],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 0.0,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 59418.125681,
+        "parcel_geometry_sha256": "6a5b9d28ac2886a2458498efccc57ba257d9185ac41cc907658ab16531729fbf",
+        "parcel_id": 10019058,
+        "parcel_source_object_id": 1085923,
+        "point_on_surface_inside": true,
+        "raw_geometry_valid": true,
+        "state": "INSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 10019058,
+        "parcel_source_object_id": 1085923
+      }
+    },
+    {
+      "apn": "4304211000",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "rs_plus_non_rs",
+        "split_zone"
+      ],
+      "id": "p14-split-rs-non-rs",
+      "mapping_evidence": {
+        "apn": "4304211000",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 17147.189256,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 17147.189256,
+        "parcel_geometry_sha256": "45f028d203c44762368c380d84bf4f4bdc20a953f9bd7068487e497c8875a711",
+        "parcel_id": 420904,
+        "parcel_source_object_id": 352049,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 420904,
+        "parcel_source_object_id": 352049
+      }
+    },
+    {
+      "apn": "4303410600",
+      "coverage_tags": [
+        "ambiguous_zoning",
+        "packet14_real_fixture"
+      ],
+      "id": "p14-ambiguous-rs",
+      "mapping_evidence": {
+        "apn": "4303410600",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 6986.610848,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 6986.610848,
+        "parcel_geometry_sha256": "ba609f6b43207f57e2a86c524c35a0c0917eef6a6f2586e874cd8c8f311b3553",
+        "parcel_id": 183066,
+        "parcel_source_object_id": 188361,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 183066,
+        "parcel_source_object_id": 188361
+      }
+    },
+    {
+      "apn": "7600360300",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "taxable_acreage_missing",
+        "unmapped"
+      ],
+      "id": "p14-unmapped",
+      "mapping_evidence": {
+        "apn": "7600360300",
+        "coastal_area_share_percent": 100.0,
+        "coastal_area_sqft": 92859.273936,
+        "coastal_source_object_ids": [
+          1,
+          6
+        ],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 0.0,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 92859.273936,
+        "parcel_geometry_sha256": "44830519481c45bbfbc92f100f7f2d719ef60aad3779fbd4547127828efee786",
+        "parcel_id": 14436,
+        "parcel_source_object_id": 997,
+        "point_on_surface_inside": true,
+        "raw_geometry_valid": true,
+        "state": "INSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 14436,
+        "parcel_source_object_id": 997
+      }
+    },
+    {
+      "apn": "4236300300",
+      "coverage_tags": [
+        "ambiguous_zoning",
+        "centroid_outside",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "id": "p14-indeterminate-centroid-outside",
+      "mapping_evidence": {
+        "apn": "4236300300",
+        "coastal_area_share_percent": 99.915059572,
+        "coastal_area_sqft": 313711.629332,
+        "coastal_source_object_ids": [
+          1
+        ],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 266.694533,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 313978.323865,
+        "parcel_geometry_sha256": "a87cb0c72df57f50370b5e340659daca5f019581abb7a4833fb04c183dae286d",
+        "parcel_id": 13656,
+        "parcel_source_object_id": 418,
+        "point_on_surface_inside": true,
+        "raw_geometry_valid": true,
+        "state": "BOUNDARY_AMBIGUOUS"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 13656,
+        "parcel_source_object_id": 418
+      }
+    },
+    {
+      "apn": "5470501600",
+      "coverage_tags": [
+        "ordinary",
+        "packet14_real_fixture",
+        "taxable_acreage_missing"
+      ],
+      "id": "p14-ordinary-taxable-null",
+      "mapping_evidence": {
+        "apn": "5470501600",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 15099.381337,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 15099.381337,
+        "parcel_geometry_sha256": "25e333b266f0287435cdfcf67ca6aa6c993fd1d2250d6f673cccf3b2e6292468",
+        "parcel_id": 48354,
+        "parcel_source_object_id": 2985,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 48354,
+        "parcel_source_object_id": 2985
+      }
+    },
+    {
+      "apn": "5810934600",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "small_geometry",
+        "source_geometry_derivative",
+        "split_zone"
+      ],
+      "id": "p14-explicit-geometry-derivative",
+      "mapping_evidence": {
+        "apn": "5810934600",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 3644.945157,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 3644.945157,
+        "parcel_geometry_sha256": "21e5984b2abb1382217dec9e8efbfb0dba6dff9cfdf6d6d6dd5c5d56276ffae9",
+        "parcel_id": 13273,
+        "parcel_source_object_id": 25,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 13273,
+        "parcel_source_object_id": 25
+      }
+    },
+    {
+      "apn": "5490330700",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "split_zone",
+        "taxable_acreage_missing"
+      ],
+      "id": "p14-historical-known-split",
+      "mapping_evidence": {
+        "apn": "5490330700",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 6480.635462,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 6480.635462,
+        "parcel_geometry_sha256": "c6d587fd51394a99125d790cec077912e6c758910f524b03702da175ba8ef1bc",
+        "parcel_id": 246607,
+        "parcel_source_object_id": 203048,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 246607,
+        "parcel_source_object_id": 203048
+      }
+    },
+    {
+      "apn": "6271001600",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "split_zone",
+        "taxable_acreage"
+      ],
+      "id": "p14-multi-zone-non-rs",
+      "mapping_evidence": {
+        "apn": "6271001600",
+        "coastal_area_share_percent": 100.0,
+        "coastal_area_sqft": 355136.99968,
+        "coastal_source_object_ids": [
+          6
+        ],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 0.0,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 355136.99968,
+        "parcel_geometry_sha256": "bcd3926edb802a2f3d4b70ef5f8b8a67abbb05edc226c796b58adc381d87491b",
+        "parcel_id": 13248,
+        "parcel_source_object_id": 8,
+        "point_on_surface_inside": true,
+        "raw_geometry_valid": true,
+        "state": "INSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 13248,
+        "parcel_source_object_id": 8
+      }
+    },
+    {
+      "apn": "2725300831",
+      "coverage_tags": [
+        "centroid_outside",
+        "multipolygon",
+        "packet14_real_fixture",
+        "taxable_acreage_missing"
+      ],
+      "id": "p14-multipolygon-centroid-outside",
+      "mapping_evidence": {
+        "apn": "2725300831",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 209625.647166,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 209625.647166,
+        "parcel_geometry_sha256": "0087b37aec554dbf1eedf9f00eddf399b6e8a39eb684dd5d08bd08514bba2cc3",
+        "parcel_id": 568195,
+        "parcel_source_object_id": 490897,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 2,
+        "geometry_type": "MultiPolygon",
+        "parcel_id": 568195,
+        "parcel_source_object_id": 490897
+      }
+    },
+    {
+      "apn": "2748402401",
+      "coverage_tags": [
+        "centroid_outside",
+        "packet14_real_fixture",
+        "polygon",
+        "taxable_acreage"
+      ],
+      "id": "p14-polygon-centroid-outside",
+      "mapping_evidence": {
+        "apn": "2748402401",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 26131.672061,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 26131.672061,
+        "parcel_geometry_sha256": "4e93ec7f32ae02ef8b5c6b2be158064102e0eac86d093c18aca8e289ff77ac94",
+        "parcel_id": 730178,
+        "parcel_source_object_id": 667040,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 730178,
+        "parcel_source_object_id": 667040
+      }
+    },
+    {
+      "apn": "2673600300",
+      "coverage_tags": [
+        "ordinary",
+        "packet14_real_fixture",
+        "small_geometry",
+        "taxable_acreage_missing"
+      ],
+      "id": "p14-small-addressed",
+      "mapping_evidence": {
+        "apn": "2673600300",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 3680.055779,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 3680.055779,
+        "parcel_geometry_sha256": "a762d9234be521ecd4f72f5cd0a5fe68f47ce3b630ac9410de3b0ae0ede26a45",
+        "parcel_id": 5252872,
+        "parcel_source_object_id": 970579,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 5252872,
+        "parcel_source_object_id": 970579
+      }
+    },
+    {
+      "apn": "2723200100",
+      "coverage_tags": [
+        "ordinary",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "id": "p14-acreage-one",
+      "mapping_evidence": {
+        "apn": "2723200100",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 43417.538719,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 43417.538719,
+        "parcel_geometry_sha256": "1564649346de46e9b5a4b7987af0d29d26c1a35d1303c2d8d45608f04b6c9202",
+        "parcel_id": 520490,
+        "parcel_source_object_id": 448707,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 520490,
+        "parcel_source_object_id": 448707
+      }
+    },
+    {
+      "apn": "2760400100",
+      "coverage_tags": [
+        "large_geometry",
+        "missing_situs",
+        "multipolygon",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "id": "p14-missing-situs-large",
+      "mapping_evidence": {
+        "apn": "2760400100",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 5088650.514182,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 5088650.514182,
+        "parcel_geometry_sha256": "f43746f9cf5b61d0200b91ddcac6139c74368b51856e65deae5ab08c67aa725d",
+        "parcel_id": 5217011,
+        "parcel_source_object_id": 898621,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 2,
+        "geometry_type": "MultiPolygon",
+        "parcel_id": 5217011,
+        "parcel_source_object_id": 898621
+      }
+    },
+    {
+      "apn": "5333641301",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "repeated_geometry",
+        "stacked"
+      ],
+      "id": "p14-stacked-serving-a",
+      "mapping_evidence": {
+        "apn": "5333641301",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 60214.745592,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 60214.745592,
+        "parcel_geometry_sha256": "5171921b8ed3b1e7c9baed8d347dddd29847535a77b79685f9a98583ab917184",
+        "parcel_id": 170,
+        "parcel_source_object_id": 8731,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 170,
+        "parcel_source_object_id": 8731
+      }
+    },
+    {
+      "apn": "5333641302",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "repeated_geometry",
+        "stacked"
+      ],
+      "id": "p14-stacked-serving-b",
+      "mapping_evidence": {
+        "apn": "5333641302",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 60214.745592,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 60214.745592,
+        "parcel_geometry_sha256": "5171921b8ed3b1e7c9baed8d347dddd29847535a77b79685f9a98583ab917184",
+        "parcel_id": 170,
+        "parcel_source_object_id": 8732,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 170,
+        "parcel_source_object_id": 8732
+      }
+    },
+    {
+      "apn": "3527702600",
+      "coverage_tags": [
+        "boundary_crossing",
+        "tiny_boundary_contact",
+        "boundary_sliver"
+      ],
+      "id": "boundary-tiny-contact",
+      "mapping_evidence": {
+        "apn": "3527702600",
+        "coastal_area_share_percent": 2e-09,
+        "coastal_area_sqft": 2e-06,
+        "coastal_source_object_ids": [
+          5
+        ],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 80098.549215,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 80098.549217,
+        "parcel_geometry_sha256": "cc5117e634c32ff1723bdeb17823c4b61c455cb8fa8d964a64ace85fa90ea2d6",
+        "parcel_id": 5408638,
+        "parcel_source_object_id": 1062664,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "BOUNDARY_AMBIGUOUS"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 5408638,
+        "parcel_source_object_id": 1062664
+      }
+    },
+    {
+      "apn": "3082980200",
+      "coverage_tags": [
+        "boundary_crossing",
+        "balanced_area_share"
+      ],
+      "id": "boundary-balanced",
+      "mapping_evidence": {
+        "apn": "3082980200",
+        "coastal_area_share_percent": 50.147046646,
+        "coastal_area_sqft": 703.612037,
+        "coastal_source_object_ids": [
+          5
+        ],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 699.485621,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 1403.097658,
+        "parcel_geometry_sha256": "a6932f9d288465c89d5c1767ed84d37979a874b9d19bd35cc4cb4a35c382610d",
+        "parcel_id": 5278157,
+        "parcel_source_object_id": 1002671,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "BOUNDARY_AMBIGUOUS"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 5278157,
+        "parcel_source_object_id": 1002671
+      }
+    },
+    {
+      "apn": "3515710700",
+      "coverage_tags": [
+        "boundary_crossing",
+        "mostly_inside"
+      ],
+      "id": "boundary-mostly-inside",
+      "mapping_evidence": {
+        "apn": "3515710700",
+        "coastal_area_share_percent": 99.999999972,
+        "coastal_area_sqft": 30228.902057,
+        "coastal_source_object_ids": [
+          2
+        ],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 9e-06,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 30228.902065,
+        "parcel_geometry_sha256": "8670fba3206f9fd8cf5b09e8887138e31b8b8c7bd58d37c57fa87e9d4bd70f0d",
+        "parcel_id": 111315,
+        "parcel_source_object_id": 121686,
+        "point_on_surface_inside": true,
+        "raw_geometry_valid": true,
+        "state": "BOUNDARY_AMBIGUOUS"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 111315,
+        "parcel_source_object_id": 121686
+      }
+    },
+    {
+      "apn": "6271000900",
+      "coverage_tags": [
+        "inside",
+        "c1028_control",
+        "permit_subtype_not_inferred"
+      ],
+      "id": "c1028-bella-mar-control",
+      "mapping_evidence": {
+        "apn": "6271000900",
+        "coastal_area_share_percent": 100.0,
+        "coastal_area_sqft": 631799.317513,
+        "coastal_source_object_ids": [
+          6
+        ],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 0.0,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 631799.317513,
+        "parcel_geometry_sha256": "248f55733a627b100ac4803a4a4add5cb428f4f8ee274868912851910e758008",
+        "parcel_id": 234078,
+        "parcel_source_object_id": 217198,
+        "point_on_surface_inside": true,
+        "raw_geometry_valid": true,
+        "state": "INSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 234078,
+        "parcel_source_object_id": 217198
+      }
+    },
+    {
+      "apn": "6341302200",
+      "coverage_tags": [
+        "outside",
+        "rs_parcel",
+        "rs_1_7",
+        "packet13_resolves"
+      ],
+      "id": "outside-rs-1-7",
+      "mapping_evidence": {
+        "apn": "6341302200",
+        "coastal_area_share_percent": 0.0,
+        "coastal_area_sqft": 0.0,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": 21841.412194,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": 21841.412194,
+        "parcel_geometry_sha256": "3cda3f101571d027e172d7eb281041711dbb63680b6fc3fee21bbaa31ef5b5ff",
+        "parcel_id": 716690,
+        "parcel_source_object_id": 654272,
+        "point_on_surface_inside": false,
+        "raw_geometry_valid": true,
+        "state": "OUTSIDE_COASTAL"
+      },
+      "parcel_geometry": {
+        "geometry_parts": 1,
+        "geometry_type": "Polygon",
+        "parcel_id": 716690,
+        "parcel_source_object_id": 654272
+      },
+      "zoning_context": {
+        "coverage_percent": 100.0,
+        "mapping_state": "SINGLE_ZONE",
+        "method": "base-zoning-city-sd-v2-area-coverage-v1",
+        "source_feature_ids": [
+          1324
+        ],
+        "zone_code": "RS-1-7",
+        "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"
+      }
+    },
+    {
+      "apn": "7600300100",
+      "coverage_tags": [
+        "packet8_identity_exception",
+        "missing_geometry",
+        "source_unavailable"
+      ],
+      "id": "packet8-identity-exception",
+      "mapping_evidence": {
+        "apn": "7600300100",
+        "coastal_area_share_percent": null,
+        "coastal_area_sqft": null,
+        "coastal_source_object_ids": [],
+        "mapping_method": "coastal-overlay-union-positive-area-v1",
+        "outside_area_sqft": null,
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "parcel_area_sqft": null,
+        "parcel_geometry_sha256": null,
+        "parcel_id": null,
+        "parcel_source_object_id": null,
+        "point_on_surface_inside": null,
+        "raw_geometry_valid": false,
+        "state": "SOURCE_UNAVAILABLE"
+      },
+      "parcel_geometry": {
+        "geometry_parts": null,
+        "geometry_type": null,
+        "parcel_id": null,
+        "parcel_source_object_id": null
+      }
+    }
+  ]
+}

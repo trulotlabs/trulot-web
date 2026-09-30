@@ -1,0 +1,49 @@
+{
+  "distinct_concepts": [
+    {
+      "concept": "Coastal Overlay Zone",
+      "included": true,
+      "role": "GOVERNS_RS_APPLICABILITY_CONTEXT"
+    },
+    {
+      "concept": "Permit jurisdiction subtypes",
+      "examples": [
+        "CST-PMT",
+        "CST-APP",
+        "N-APP-1",
+        "N-APP-2",
+        "DEF-CER",
+        "CSTZB"
+      ],
+      "included": false,
+      "role": "PRESERVED_SEPARATELY"
+    },
+    {
+      "concept": "Coastal Height Limitation Overlay Zone",
+      "included": false,
+      "role": "SEPARATE_HEIGHT_OVERLAY"
+    },
+    {
+      "concept": "California Coastal Commission Coastal Zone",
+      "included": false,
+      "role": "BROADER_REFERENCE_GEOGRAPHY"
+    },
+    {
+      "concept": "Coastal Commission appeal area",
+      "included": false,
+      "role": "SEPARATE_APPEAL_FACT"
+    },
+    {
+      "concept": "Local Coastal Program certification status",
+      "included": false,
+      "role": "SEPARATE_LEGAL_STATUS"
+    }
+  ],
+  "governing_context": {
+    "authority": "SDMC §132.0402 plus the official City layer",
+    "boolean_reduction": "Only parcel-wide outside or parcel-wide inside may reduce to a resolved context; positive-area presence on both sides remains ambiguous.",
+    "concept": "CITY_COASTAL_OVERLAY_ZONE_UNION",
+    "purpose": "RS standards version selection"
+  },
+  "source_selection": "The City layer is the smallest official geography aligned to §132.0402 and the City LDC publication’s inside/outside Coastal version distinction."
+}

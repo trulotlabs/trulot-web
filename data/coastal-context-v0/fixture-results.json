@@ -1,0 +1,1117 @@
+{
+  "canonical_output_sha256": "325e6862d0df17535fd52ab40b6ced1b64cc50db1c86e3df0022c804852d1140",
+  "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+  "fixture_count": 30,
+  "results": [
+    {
+      "coverage_tags": [
+        "ordinary_rs_1_7",
+        "packet14_real_fixture"
+      ],
+      "id": "p14-ordinary-rs-1-7",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 100.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "INSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [
+            3
+          ],
+          "source_state": "available",
+          "state": "supported",
+          "value": "inside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "c86c559dbe2e33f33dcbfce737cc46921d2653b2738ea1ea27807ad47180b750",
+        "packet13_bridge": {
+          "coastal_context": "inside_coastal",
+          "source_state": "available",
+          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+        },
+        "parcel": {
+          "apn": "3506320400",
+          "geometry_sha256": "43c9fa9fe84d317f2036db248f0dda84a4c3eb288052cb309a9f89c078bbca8c",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 66264
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "missing_situs",
+        "packet14_real_fixture",
+        "small_geometry"
+      ],
+      "id": "p14-smallest-geometry",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "321e5fdc20b5015b49a228ac21c3eafbcc7ba6b4fff6f0e553e8e5b8ad1af958",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "3031701800",
+          "geometry_sha256": "3673fc32aed2850d17bd3ee1309dc5efda7bb03ed9be63ae12336c537d16cb6e",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 1052286
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "large_geometry",
+        "missing_situs",
+        "multipolygon",
+        "packet14_real_fixture",
+        "stacked",
+        "taxable_acreage"
+      ],
+      "id": "p14-largest-geometry",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "aecf1d2bed5ca3d68b381396b5a610493ea9e6c1713051e4432a58c247f8fb48",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "2421001000",
+          "geometry_sha256": "3309f6247b32d7c70386ff2b2645d2cb3f399fad3fb725a056e764aa418f3d05",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 653853
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "boundary_sliver",
+        "centroid_outside",
+        "irregular_polygon",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "id": "p14-boundary-sliver",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "9d31745ac3afd5a443bde68e6e8bb91abf1daf88c7445a7b1aabf0c1df6e7fe1",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "2748323700",
+          "geometry_sha256": "fa2325effbc3919afffd78c88a281887bf08ee1d487411c7bad7c648deb71bb8",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 313
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "ambiguous_zoning",
+        "large_geometry",
+        "multipolygon",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "id": "p14-multipolygon",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "6f23486896cb5789155c0e93200490506a70779559d223227797bea06a107203",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "2392600700",
+          "geometry_sha256": "839bd35133ec51fc6799789ddae8207735a45f697563c4800cdaedf22826ff61",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 1053738
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "repeated_geometry",
+        "stacked"
+      ],
+      "id": "p14-stacked-a",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "d4172e30e85618a7192b4a107983827178d0b455d8338bb5043ab57d71a7d879",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "5891700512",
+          "geometry_sha256": "cc323b3cd99798f9f0c1a0b81f36f9fb5ff90a6976c9d3b0e3af179a8faf4fa2",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 92
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "repeated_geometry",
+        "stacked"
+      ],
+      "id": "p14-stacked-b",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "ae5a6d07c92df1e501e07bdd3fa761736ebd98d3e5659da8778fe871cd6ac886",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "5891700513",
+          "geometry_sha256": "cc323b3cd99798f9f0c1a0b81f36f9fb5ff90a6976c9d3b0e3af179a8faf4fa2",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 93
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "missing_situs",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "id": "p14-missing-situs-taxable",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "6d8c17b8f449b32dfea2bef3283f4c55bee0e63cd36d2621afcb217fa04b5a66",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "6782511200",
+          "geometry_sha256": "fcc7b3a6a4322900f57ebe5eeebf883b517647b04073fa5ab71666b574438e0d",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 3
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "rs_plus_rs",
+        "split_zone"
+      ],
+      "id": "p14-split-rs-rs",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 100.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "INSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [
+            5
+          ],
+          "source_state": "available",
+          "state": "supported",
+          "value": "inside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "1eb7179a050d92edc056436be01dcd83031f62a1b258922060aacbb4d0992452",
+        "packet13_bridge": {
+          "coastal_context": "inside_coastal",
+          "source_state": "available",
+          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+        },
+        "parcel": {
+          "apn": "3013101500",
+          "geometry_sha256": "6a5b9d28ac2886a2458498efccc57ba257d9185ac41cc907658ab16531729fbf",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 1085923
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "rs_plus_non_rs",
+        "split_zone"
+      ],
+      "id": "p14-split-rs-non-rs",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "b8fd698b08d81f2b200188af476110d60b06da98106e12c43efa9a9b6c464c68",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "4304211000",
+          "geometry_sha256": "45f028d203c44762368c380d84bf4f4bdc20a953f9bd7068487e497c8875a711",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 352049
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "ambiguous_zoning",
+        "packet14_real_fixture"
+      ],
+      "id": "p14-ambiguous-rs",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "1d6918eef156a7ec52d927c086f5547f9943b708dee05350aa2464e42a3bae84",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "4303410600",
+          "geometry_sha256": "ba609f6b43207f57e2a86c524c35a0c0917eef6a6f2586e874cd8c8f311b3553",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 188361
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "taxable_acreage_missing",
+        "unmapped"
+      ],
+      "id": "p14-unmapped",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 100.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "INSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [
+            1,
+            6
+          ],
+          "source_state": "available",
+          "state": "supported",
+          "value": "inside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "93967a8a3b23fd597810a6f4880211561f268741bde1d08a1a119f867a737cd4",
+        "packet13_bridge": {
+          "coastal_context": "inside_coastal",
+          "source_state": "available",
+          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+        },
+        "parcel": {
+          "apn": "7600360300",
+          "geometry_sha256": "44830519481c45bbfbc92f100f7f2d719ef60aad3779fbd4547127828efee786",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 997
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "ambiguous_zoning",
+        "centroid_outside",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "id": "p14-indeterminate-centroid-outside",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 99.915059572,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "BOUNDARY_AMBIGUOUS",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [
+            1
+          ],
+          "source_state": "available",
+          "state": "partial",
+          "value": null
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "5527e1e8571a0e94e2549d7340281cff7ed1ca47c0a6d65ebcaa815cac8c79bd",
+        "packet13_bridge": {
+          "coastal_context": "unknown",
+          "source_state": "available",
+          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+        },
+        "parcel": {
+          "apn": "4236300300",
+          "geometry_sha256": "a87cb0c72df57f50370b5e340659daca5f019581abb7a4833fb04c183dae286d",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 418
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "ordinary",
+        "packet14_real_fixture",
+        "taxable_acreage_missing"
+      ],
+      "id": "p14-ordinary-taxable-null",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "13a915bb89bb2ad3d35d90fa8ebab69ac9e091dcbc59fc8e8df932979ab2a3e5",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "5470501600",
+          "geometry_sha256": "25e333b266f0287435cdfcf67ca6aa6c993fd1d2250d6f673cccf3b2e6292468",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 2985
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "small_geometry",
+        "source_geometry_derivative",
+        "split_zone"
+      ],
+      "id": "p14-explicit-geometry-derivative",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "0744c70eb31999f87c0cea1bd4688b01921a85d55b99dbe06aabaad18f8a0483",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "5810934600",
+          "geometry_sha256": "21e5984b2abb1382217dec9e8efbfb0dba6dff9cfdf6d6d6dd5c5d56276ffae9",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 25
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "split_zone",
+        "taxable_acreage_missing"
+      ],
+      "id": "p14-historical-known-split",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "671003a348eab46cbec88531afc39169d23f7b8b3817d176fe804a946b2ca73c",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "5490330700",
+          "geometry_sha256": "c6d587fd51394a99125d790cec077912e6c758910f524b03702da175ba8ef1bc",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 203048
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "split_zone",
+        "taxable_acreage"
+      ],
+      "id": "p14-multi-zone-non-rs",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 100.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "INSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [
+            6
+          ],
+          "source_state": "available",
+          "state": "supported",
+          "value": "inside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "48d06942e6fdffc3449aed05c882400fcb69a545a4b3abc134e9cd3a1b6c15cd",
+        "packet13_bridge": {
+          "coastal_context": "inside_coastal",
+          "source_state": "available",
+          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+        },
+        "parcel": {
+          "apn": "6271001600",
+          "geometry_sha256": "bcd3926edb802a2f3d4b70ef5f8b8a67abbb05edc226c796b58adc381d87491b",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 8
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "centroid_outside",
+        "multipolygon",
+        "packet14_real_fixture",
+        "taxable_acreage_missing"
+      ],
+      "id": "p14-multipolygon-centroid-outside",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "115744689581ccb2e9bb51ff1ccb64a7b90b84252e9eef45c29d654f57cdd02b",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "2725300831",
+          "geometry_sha256": "0087b37aec554dbf1eedf9f00eddf399b6e8a39eb684dd5d08bd08514bba2cc3",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 490897
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "centroid_outside",
+        "packet14_real_fixture",
+        "polygon",
+        "taxable_acreage"
+      ],
+      "id": "p14-polygon-centroid-outside",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "139cbe9b7234b2260a52f306d65b21bf79ab7e9319a806eee757f8c3121b8f64",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "2748402401",
+          "geometry_sha256": "4e93ec7f32ae02ef8b5c6b2be158064102e0eac86d093c18aca8e289ff77ac94",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 667040
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "ordinary",
+        "packet14_real_fixture",
+        "small_geometry",
+        "taxable_acreage_missing"
+      ],
+      "id": "p14-small-addressed",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "124f436ff1bb6c78db4bc4c6b03d56ba72fa5fe805bc50d6050cb7064cda0a15",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "2673600300",
+          "geometry_sha256": "a762d9234be521ecd4f72f5cd0a5fe68f47ce3b630ac9410de3b0ae0ede26a45",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 970579
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "ordinary",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "id": "p14-acreage-one",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "e81c674b02bc02037d478f5375ad40ad6afd429cc1d90b598b6d4a49e4801e88",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "2723200100",
+          "geometry_sha256": "1564649346de46e9b5a4b7987af0d29d26c1a35d1303c2d8d45608f04b6c9202",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 448707
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "large_geometry",
+        "missing_situs",
+        "multipolygon",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "id": "p14-missing-situs-large",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "78b1bec23346cf9b12763aca9983395a0ff2ab360af4ce45adb7790ab37d180e",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "2760400100",
+          "geometry_sha256": "f43746f9cf5b61d0200b91ddcac6139c74368b51856e65deae5ab08c67aa725d",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 898621
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "repeated_geometry",
+        "stacked"
+      ],
+      "id": "p14-stacked-serving-a",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "b90f967d92052c57f9e64e8df56830cb1cbbd3b25982e4ebe5b6847efde97350",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "5333641301",
+          "geometry_sha256": "5171921b8ed3b1e7c9baed8d347dddd29847535a77b79685f9a98583ab917184",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 8731
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "repeated_geometry",
+        "stacked"
+      ],
+      "id": "p14-stacked-serving-b",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "01c348c66973558bd087ab60aff6de357ad09c86d92e613871d16057bfdf369e",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "5333641302",
+          "geometry_sha256": "5171921b8ed3b1e7c9baed8d347dddd29847535a77b79685f9a98583ab917184",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 8732
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "boundary_crossing",
+        "tiny_boundary_contact",
+        "boundary_sliver"
+      ],
+      "id": "boundary-tiny-contact",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 2e-09,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "BOUNDARY_AMBIGUOUS",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [
+            5
+          ],
+          "source_state": "available",
+          "state": "partial",
+          "value": null
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "a5438df8c11d9ed5bf43d249f8ede723f60c225f2009989c191f8e3b9edb6f1f",
+        "packet13_bridge": {
+          "coastal_context": "unknown",
+          "source_state": "available",
+          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+        },
+        "parcel": {
+          "apn": "3527702600",
+          "geometry_sha256": "cc5117e634c32ff1723bdeb17823c4b61c455cb8fa8d964a64ace85fa90ea2d6",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 1062664
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "boundary_crossing",
+        "balanced_area_share"
+      ],
+      "id": "boundary-balanced",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 50.147046646,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "BOUNDARY_AMBIGUOUS",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [
+            5
+          ],
+          "source_state": "available",
+          "state": "partial",
+          "value": null
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "2612962ce08961f0bc37dceb16d0652e52083a0569d503c6b0d3cdd907c07bbe",
+        "packet13_bridge": {
+          "coastal_context": "unknown",
+          "source_state": "available",
+          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+        },
+        "parcel": {
+          "apn": "3082980200",
+          "geometry_sha256": "a6932f9d288465c89d5c1767ed84d37979a874b9d19bd35cc4cb4a35c382610d",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 1002671
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "boundary_crossing",
+        "mostly_inside"
+      ],
+      "id": "boundary-mostly-inside",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 99.999999972,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "BOUNDARY_AMBIGUOUS",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [
+            2
+          ],
+          "source_state": "available",
+          "state": "partial",
+          "value": null
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "16b433d3d8e308f61c67fc0e4a6288ac63329e85484d6ae1030b807d57a2f139",
+        "packet13_bridge": {
+          "coastal_context": "unknown",
+          "source_state": "available",
+          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+        },
+        "parcel": {
+          "apn": "3515710700",
+          "geometry_sha256": "8670fba3206f9fd8cf5b09e8887138e31b8b8c7bd58d37c57fa87e9d4bd70f0d",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 121686
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "inside",
+        "c1028_control",
+        "permit_subtype_not_inferred"
+      ],
+      "id": "c1028-bella-mar-control",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 100.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "INSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [
+            6
+          ],
+          "source_state": "available",
+          "state": "supported",
+          "value": "inside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "dfae952bf707e928fd8ba1b6496b16446eb59e558b780f328b7b27a450513c8e",
+        "packet13_bridge": {
+          "coastal_context": "inside_coastal",
+          "source_state": "available",
+          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+        },
+        "parcel": {
+          "apn": "6271000900",
+          "geometry_sha256": "248f55733a627b100ac4803a4a4add5cb428f4f8ee274868912851910e758008",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 217198
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "outside",
+        "rs_parcel",
+        "rs_1_7",
+        "packet13_resolves"
+      ],
+      "id": "outside-rs-1-7",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": 0.0,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "OUTSIDE_COASTAL",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "available",
+          "state": "supported",
+          "value": "outside_coastal"
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334",
+        "packet13_bridge": {
+          "coastal_context": "outside_coastal",
+          "source_state": "available",
+          "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"
+        },
+        "parcel": {
+          "apn": "6341302200",
+          "geometry_sha256": "3cda3f101571d027e172d7eb281041711dbb63680b6fc3fee21bbaa31ef5b5ff",
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": 654272
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    },
+    {
+      "coverage_tags": [
+        "packet8_identity_exception",
+        "missing_geometry",
+        "source_unavailable"
+      ],
+      "id": "packet8-identity-exception",
+      "result": {
+        "coastal_context": {
+          "coastal_area_share_percent": null,
+          "derivation_class": "deterministic_derived",
+          "evidence_state": "SOURCE_UNAVAILABLE",
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "source_feature_ids": [],
+          "source_state": "source_unavailable",
+          "state": "unavailable",
+          "value": null
+        },
+        "contract_version": "coastal-context-city-sd-2026-09-30-v0",
+        "development_capacity_calculated": false,
+        "fingerprint_sha256": "af0fd2d1def13113b6f09ca51fb191f811d82ad9633b8fa0b34e640304923dbe",
+        "packet13_bridge": {
+          "coastal_context": "unknown",
+          "source_state": "source_unavailable",
+          "standards_resolution": "SOURCE_UNAVAILABLE"
+        },
+        "parcel": {
+          "apn": "7600300100",
+          "geometry_sha256": null,
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "source_object_id": null
+        },
+        "parcel_compliance_evaluated": false,
+        "permit_jurisdiction_inferred": false
+      }
+    }
+  ]
+}

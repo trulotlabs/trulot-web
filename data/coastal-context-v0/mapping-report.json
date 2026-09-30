@@ -1,0 +1,39 @@
+{
+  "accepted_city_membership_artifact": "/Users/ops/trulot-data/parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz",
+  "city_parcels": 393733,
+  "coastal_acquisition_id": "coastal-city-sd-20260930T143055Z",
+  "doctrine": {
+    "APPLICABILITY_UNRESOLVED": "Usable geometry/source exists but legal applicability cannot be reduced.",
+    "BOUNDARY_AMBIGUOUS": "Positive area exists on both sides. No centroid or majority-area override.",
+    "INSIDE_COASTAL": "No outside area above the numeric computation epsilon.",
+    "OUTSIDE_COASTAL": "No positive-area intersection above the numeric computation epsilon.",
+    "SOURCE_UNAVAILABLE": "A required source or accepted parcel geometry is unavailable."
+  },
+  "duplicate_apns": 0,
+  "full_mapping_artifact": "/Users/ops/trulot-data/coastal-context-v0/coastal-city-sd-20260930T143055Z/parcel-coastal-mapping.ndjson",
+  "full_mapping_artifact_byte_size": 200440156,
+  "full_mapping_artifact_sha256": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+  "full_mapping_summary_artifact_sha256": "1fa8b8a51e77e4a6f0e46ac0d33d1142990b254bbfceb4d758250bf6df067fec",
+  "mapping_method_version": "coastal-overlay-union-positive-area-v1",
+  "no_false_coercion": true,
+  "numeric_epsilon_sqft": 1e-06,
+  "orphan_parcel_references": 0,
+  "parcel_acquisition_id": "sangis-20260924T183743Z",
+  "parcel_mapping_sha256": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+  "parcel_source_artifact": "/Users/ops/trulot-data/parcel-base-v2/sangis-20260924T183743Z/_ags_GeoJson_EB07F5BCE8A34D208D2A6A7801151FB3.geojson",
+  "point_on_surface_role": "Diagnostic only; never selects applicability state.",
+  "state_distribution_fingerprint_payload": {
+    "BOUNDARY_AMBIGUOUS": 1530,
+    "INSIDE_COASTAL": 46455,
+    "OUTSIDE_COASTAL": 345748
+  },
+  "state_distribution_sha256": "85ac12ae5c1f8cd5a6b27dd2d41e12cfcbe7b9828d0fc1746a1265b064af3e80",
+  "states": {
+    "APPLICABILITY_UNRESOLVED": 0,
+    "BOUNDARY_AMBIGUOUS": 1530,
+    "INSIDE_COASTAL": 46455,
+    "OUTSIDE_COASTAL": 345748,
+    "SOURCE_UNAVAILABLE": 0
+  },
+  "unique_apns": 393733
+}

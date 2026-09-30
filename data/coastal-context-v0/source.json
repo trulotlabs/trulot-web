@@ -1,0 +1,141 @@
+{
+  "acquisition": {
+    "acquired_at": "2026-09-30T14:30:55Z",
+    "acquisition_id": "coastal-city-sd-20260930T143055Z",
+    "acquisition_method": "ArcGIS REST complete public layer query; no credentials",
+    "arcgis_server_item_guid": "AB9FB309-F326-4B4E-8B26-EC64A3E65C37",
+    "artifact_crs": "EPSG:4326",
+    "artifacts": {
+      "coastal-overlay.geojson": {
+        "byte_size": 3028915,
+        "sha256": "9b7b744247278000123a56965597917cdc560db4de78c539f4876aa09b267f97"
+      },
+      "feature-count.json": {
+        "byte_size": 11,
+        "sha256": "77225c1b889e1a23d33f5e7724a89deba869a0b481aff9fe90736b56532d0542"
+      },
+      "layer-metadata.json": {
+        "byte_size": 6330,
+        "sha256": "611349758e697bd5fcccf7095e8735d19c2738666f4fd14e706e2e30e211af09"
+      },
+      "municipal-code-132.0402.pdf": {
+        "byte_size": 298678,
+        "sha256": "b9bd072953a8ac91f1292a845e7bda689f9fb7263726f0596d2c722c2de227ea",
+        "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art02Division04.pdf"
+      },
+      "ordinance-O-21719.pdf": {
+        "byte_size": 376066,
+        "sha256": "2e4b44da2d30ff46eb641195963de8680ba947ef4492bbc61cec0dae3725372b",
+        "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2023/O-21719.pdf"
+      },
+      "server-iteminfo.json": {
+        "byte_size": 1121,
+        "sha256": "ed45226c5cc729b5825e8ff82281c642619101df24e04100012e76ae70451bb7"
+      },
+      "service-metadata.json": {
+        "byte_size": 6643,
+        "sha256": "0970006bd799835e7cebaa62a50a4416f1ccf622ff5e38c5636eb3f6f9914f54"
+      },
+      "service-metadata.xml": {
+        "byte_size": 2545,
+        "sha256": "68a62e27b3ea484c430c4d40e40243a07c9dd5665bfded7f46dc3715e6a59680"
+      }
+    },
+    "dataset_name": "Coastal Overlay Zone (Permit Jurisdictions)",
+    "feature_count": 9,
+    "geometry_type": "esriGeometryPolygon / GeoJSON Polygon or MultiPolygon",
+    "metadata_url": "https://webmaps.sandiego.gov/arcgis/rest/services/DSD/Zoning_Overlay/MapServer/2?f=pjson",
+    "native_crs": {
+      "latest_wkid": 2230,
+      "name": "NAD 1983 StatePlane California VI FIPS 0406 Feet",
+      "wkid": 102646
+    },
+    "publisher": "City of San Diego Development Services Department",
+    "query_url_redacted_parameters": "https://webmaps.sandiego.gov/arcgis/rest/services/DSD/Zoning_Overlay/MapServer/2/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=geojson",
+    "schema_version": 1,
+    "service_item_id": "16524cd4e8394b338cfc5a028b2584f4",
+    "source_layer_id": 2,
+    "source_reported": {
+      "feature_implementation_dates": [
+        "1988-10-16",
+        "2001-09-17"
+      ],
+      "metadata_created": "2024-01-11",
+      "service_published": "July 2016",
+      "update_cadence": "NOT_PUBLISHED"
+    },
+    "source_url": "https://webmaps.sandiego.gov/arcgis/rest/services/DSD/Zoning_Overlay/MapServer/2"
+  },
+  "legal_basis": {
+    "code_edition": "September 2026",
+    "governing_maps": [
+      {
+        "filed_document": "00-17067-1",
+        "map": "C-730.1",
+        "ordinance": "O-17067"
+      },
+      {
+        "filed_document": "00-18872",
+        "map": "C-908",
+        "ordinance": "O-18872"
+      },
+      {
+        "filed_document": "00-21719",
+        "map": "C-1028",
+        "ordinance": "O-21719"
+      }
+    ],
+    "interpretation": "For RS standards version selection, inside Coastal means positive-area inclusion in the union of the City Coastal Overlay Zone geography. Permit-jurisdiction subtype is preserved separately and is not inferred from this union.",
+    "municipal_code_section": "132.0402",
+    "o_21719_control": "O-21719 describes C-1028 as a revision to C-730.1 Sheet 11 that changes certification/permit-jurisdiction status. The affected Bella Mar control parcel remains inside the live overlay union; this packet does not claim current permit-jurisdiction subtype.",
+    "sources": [
+      {
+        "name": "San Diego Municipal Code Chapter 13 Article 2 Division 4",
+        "sha256": "b9bd072953a8ac91f1292a845e7bda689f9fb7263726f0596d2c722c2de227ea",
+        "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art02Division04.pdf"
+      },
+      {
+        "name": "Ordinance O-21719",
+        "sha256": "2e4b44da2d30ff46eb641195963de8680ba947ef4492bbc61cec0dae3725372b",
+        "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2023/O-21719.pdf"
+      },
+      {
+        "name": "Land Development Code Updates",
+        "role": "Official inside/outside Coastal version-selection publication",
+        "url": "https://www.sandiego.gov/planning/work/land-development-code/updates"
+      }
+    ]
+  },
+  "limitations": [
+    "The service publishes no update cadence; cadence is recorded as NOT_PUBLISHED.",
+    "The live feature attributes name O-17067 and O-18872 but do not attribute C-1028/O-21719.",
+    "ORDNUMPURE is 17064 while ORDNUM is O-17067 for source objects 1-6; both raw fields are retained without correction.",
+    "The union supports RS inside/outside context; it does not establish permit jurisdiction, appealability, certification status, or a Coastal development permit conclusion."
+  ],
+  "normalized_artifacts": {
+    "normalized_source": {
+      "byte_size": 2360631,
+      "crs": "EPSG:2230",
+      "path": "/Users/ops/trulot-data/coastal-context-v0/coastal-city-sd-20260930T143055Z/normalized-source.json",
+      "sha256": "b0ef9fd459e2acffe4aa1f7ae34df4c5ad40ce232a5002bc283a4f2fd6af1e88"
+    },
+    "quarantine": {
+      "byte_size": 2,
+      "path": "/Users/ops/trulot-data/coastal-context-v0/coastal-city-sd-20260930T143055Z/normalization-quarantine.json",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "schema": {
+    "geometry": "Shape",
+    "implementation_date": "IMP_DATE",
+    "label_fields": [
+      "ZONENAME",
+      "ZONE_NAME"
+    ],
+    "ordinance": "ORDNUM",
+    "ordinance_numeric": "ORDNUMPURE",
+    "series": "SERIES_CD",
+    "source_id": "OBJECTID_1"
+  },
+  "schema_version": 1
+}

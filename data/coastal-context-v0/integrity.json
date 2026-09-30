@@ -1,0 +1,21 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "boundary-analysis.json": "6f314285d59b6059cbb36631eeeadd0d08d5f9106ed7a3c44c36fe643b981bc9",
+    "concepts.json": "f55eb45913b8e623479cd95bf3d2c57fb0e2032dd273e57df236e8bf92d2da15",
+    "decision.json": "6945c5118ba5396bcee16bb9bfdfd2a4882e54e65ecee0a4b753fdeaf1c7af51",
+    "fingerprints.json": "80ec797bece7546b792dd811e5818633569bebb24f9df1e1ffd47aae68be8339",
+    "fixture-results.json": "655c17f17b8dd0bf50cb63e53d824f1d67c25f0495af55b02050ea136c6b673d",
+    "fixtures.json": "2f4cb3e21f2c5566c8ce8238bbc82cdf59c148b39c992d0fab0ea556e9de73ab",
+    "inventory.json": "819ffb75f5e5be3342d516d8c800441c999b53544d23cc76078739fe9294bc8d",
+    "mapping-report.json": "5d63f312080540c88bddfa70c48e8ac47638899ba142791c60dcaf810b6f8768",
+    "preservation.json": "f3478fa1d8f4b6b6c7ba9d462b2c14ba7bacbbb4820dcabb6cbfeb4c70b33013",
+    "provenance.json": "2efe48378fc945bb02c9a9d29d88f422881ca2a46c5adeb49104ffcbfbb799f1",
+    "quarantine.json": "a8fb9cb5b95ccef694044ae37661d693330f2bb0390c2308961567d0a623403c",
+    "repository-inventory.json": "a5978d6d4b770653e5e293ad0bffa834bf4bcb53f7c62974245162918904f7c0",
+    "rs-runtime-bridge.json": "5681942b9974983fd2e862edd76a1d0ef611cda730444147b66ce811a32ae85e",
+    "source.json": "3bdc96036ed8cfb9dc3d63bb736f3c71b2c951a6e47bf2e9b0f78082149d31da",
+    "v1-comparison.json": "d286b0ca3247a633006d82e4c9f60437453f0b372631c4c9de8a723f368c45b4",
+    "validation.json": "838c768d96df8ed24ee2da3d7d3583c133b61dabc22bbbdd34b87f14a93fb82e"
+  }
+}

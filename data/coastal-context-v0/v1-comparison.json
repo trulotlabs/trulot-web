@@ -1,0 +1,19 @@
+{
+  "classification_counts": {
+    "MATERIAL_DIFFERENCE": 0,
+    "UNKNOWN": 0,
+    "V1_COASTAL_SIGNAL_MISSING_V2_BOUNDARY": 3,
+    "V1_COASTAL_SIGNAL_MISSING_V2_PRESENT": 573,
+    "V1_PRESENT_V2_ABSENT": 0
+  },
+  "doctrine": "Parcel V1 exposes TPA, CTCAC, and an unresolved SDA signal. Those are not Coastal facts. V1 is comparison evidence only.",
+  "scope": "All 576 APNs in the sealed Parcel Identity Shadow sample.",
+  "v1_authority": false,
+  "v1_coastal_signal": "MISSING",
+  "v2_matches": 576,
+  "v2_state_counts": {
+    "BOUNDARY_AMBIGUOUS": 3,
+    "INSIDE_COASTAL": 66,
+    "OUTSIDE_COASTAL": 507
+  }
+}

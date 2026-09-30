@@ -1,0 +1,56 @@
+{
+  "checks": [
+    {
+      "command": "python3 scripts/coastal-context-v0/acquire.py --verify-dir <sealed-acquisition>",
+      "detail": "9 features; 8 source/legal artifacts",
+      "result": "PASS"
+    },
+    {
+      "command": "python3 scripts/coastal-context-v0/build.py --check",
+      "detail": "exact compact rebuild",
+      "result": "PASS"
+    },
+    {
+      "command": "python3 scripts/coastal-context-v0/test.py",
+      "detail": "13 tests",
+      "result": "PASS"
+    },
+    {
+      "command": "python3 scripts/parcel-rs-standards-runtime-v0/test.py",
+      "detail": "15 tests",
+      "result": "PASS"
+    },
+    {
+      "command": "python3 scripts/rs-base-standards-v0/test.py",
+      "detail": "17 tests",
+      "result": "PASS"
+    },
+    {
+      "command": "python3 scripts/base-zoning-v2/test-packet9.py",
+      "detail": "23 checks",
+      "result": "PASS"
+    },
+    {
+      "command": "node scripts/test-parcel-truth.mjs",
+      "detail": "19 cases",
+      "result": "PASS"
+    },
+    {
+      "command": "npx tsc --noEmit",
+      "result": "PASS"
+    },
+    {
+      "command": "python3 -m py_compile scripts/coastal-context-v0/*.py",
+      "detail": "bytecode directed outside worktree",
+      "result": "PASS"
+    },
+    {
+      "command": "Packet 15 whitespace/final-newline check",
+      "result": "PASS"
+    }
+  ],
+  "network_runtime_tests_run": false,
+  "production_tests_run": false,
+  "result": "PASS",
+  "validated_at": "2026-09-30T14:30:55Z"
+}

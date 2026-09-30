@@ -1,0 +1,17 @@
+{
+  "coastal_acquisition_id": "coastal-city-sd-20260930T143055Z",
+  "mapped_rows_missing_lineage": 0,
+  "mapping_method_version": "coastal-overlay-union-positive-area-v1",
+  "parcel_acquisition_id": "sangis-20260924T183743Z",
+  "permit_jurisdiction_subtype_promoted": false,
+  "required_chain": [
+    "parcel",
+    "parcel acquisition/source object",
+    "Coastal source acquisition",
+    "source feature(s)",
+    "mapping method",
+    "applicability state"
+  ],
+  "source_feature_reference_rule": "Inside and boundary results list every source feature with positive-area intersection above the numeric epsilon; outside results list none.",
+  "source_unavailable_fixture_count": 1
+}

@@ -1,0 +1,74 @@
+{
+  "area_share_percentiles": {
+    "max": 99.999999972,
+    "min": 2e-09,
+    "p01": 0.000462922,
+    "p10": 0.829225988,
+    "p25": 0.829225988,
+    "p50": 22.024469727,
+    "p75": 88.263357452,
+    "p90": 99.83114179,
+    "p99": 99.999958831
+  },
+  "centroid_only_classification_used": false,
+  "count": 1530,
+  "finding": "Every parcel with positive area on both sides remains BOUNDARY_AMBIGUOUS, including numeric slivers. The 0.000001-square-foot epsilon only suppresses floating-point noise; it is not a legal materiality threshold.",
+  "majority_area_classification_used": false,
+  "packet13_resolution": "APPLICABILITY_UNRESOLVED",
+  "representative_cases": {
+    "almost_entirely_inside": {
+      "apn": "3515710700",
+      "coastal_area_share_percent": 99.999999972,
+      "coastal_area_sqft": 30228.902057,
+      "coastal_source_object_ids": [
+        2
+      ],
+      "mapping_method": "coastal-overlay-union-positive-area-v1",
+      "outside_area_sqft": 9e-06,
+      "parcel_acquisition_id": "sangis-20260924T183743Z",
+      "parcel_area_sqft": 30228.902065,
+      "parcel_geometry_sha256": "8670fba3206f9fd8cf5b09e8887138e31b8b8c7bd58d37c57fa87e9d4bd70f0d",
+      "parcel_id": 111315,
+      "parcel_source_object_id": 121686,
+      "point_on_surface_inside": true,
+      "raw_geometry_valid": true,
+      "state": "BOUNDARY_AMBIGUOUS"
+    },
+    "near_half": {
+      "apn": "3082980200",
+      "coastal_area_share_percent": 50.147046646,
+      "coastal_area_sqft": 703.612037,
+      "coastal_source_object_ids": [
+        5
+      ],
+      "mapping_method": "coastal-overlay-union-positive-area-v1",
+      "outside_area_sqft": 699.485621,
+      "parcel_acquisition_id": "sangis-20260924T183743Z",
+      "parcel_area_sqft": 1403.097658,
+      "parcel_geometry_sha256": "a6932f9d288465c89d5c1767ed84d37979a874b9d19bd35cc4cb4a35c382610d",
+      "parcel_id": 5278157,
+      "parcel_source_object_id": 1002671,
+      "point_on_surface_inside": false,
+      "raw_geometry_valid": true,
+      "state": "BOUNDARY_AMBIGUOUS"
+    },
+    "tiny_positive_area": {
+      "apn": "3527702600",
+      "coastal_area_share_percent": 2e-09,
+      "coastal_area_sqft": 2e-06,
+      "coastal_source_object_ids": [
+        5
+      ],
+      "mapping_method": "coastal-overlay-union-positive-area-v1",
+      "outside_area_sqft": 80098.549215,
+      "parcel_acquisition_id": "sangis-20260924T183743Z",
+      "parcel_area_sqft": 80098.549217,
+      "parcel_geometry_sha256": "cc5117e634c32ff1723bdeb17823c4b61c455cb8fa8d964a64ace85fa90ea2d6",
+      "parcel_id": 5408638,
+      "parcel_source_object_id": 1062664,
+      "point_on_surface_inside": false,
+      "raw_geometry_valid": true,
+      "state": "BOUNDARY_AMBIGUOUS"
+    }
+  }
+}

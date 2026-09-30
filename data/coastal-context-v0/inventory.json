@@ -1,0 +1,143 @@
+{
+  "feature_count": 9,
+  "features": [
+    {
+      "geometry_state": "RAW_VALID",
+      "implementation_date_epoch_ms": 593049600000,
+      "normalized_geometry_sha256": "be7c1e1cc3fce1ad0aac52ef24253f9aaf5fe8ac1567c6136f1c112fcefbd370",
+      "normalized_geometry_type": "MultiPolygon",
+      "ordinance": "O-17067 NS",
+      "ordinance_pure": "17064",
+      "raw_geometry_sha256": "507ea2c82968f2a83626bd90dbd61613063abfd616f29c3b74a5ee23465f8a38",
+      "series_code": "NS",
+      "source_geometry_type": "MultiPolygon",
+      "source_object_id": 1,
+      "source_zone_name": "CST-PMT",
+      "zone_name": "CST-PMT"
+    },
+    {
+      "geometry_state": "RAW_VALID",
+      "implementation_date_epoch_ms": 593049600000,
+      "normalized_geometry_sha256": "d344cf1c39fed4e01f343f9ef1d690755647cf3068569fd55b046d0a52320af1",
+      "normalized_geometry_type": "MultiPolygon",
+      "ordinance": "O-17067 NS",
+      "ordinance_pure": "17064",
+      "raw_geometry_sha256": "daeca7a982dad6edca60c9308034efd449417b7fb3317d018f928cf0b32abfe0",
+      "series_code": "NS",
+      "source_geometry_type": "MultiPolygon",
+      "source_object_id": 2,
+      "source_zone_name": "CST-APP",
+      "zone_name": "CST-APP"
+    },
+    {
+      "geometry_state": "RAW_VALID",
+      "implementation_date_epoch_ms": 593049600000,
+      "normalized_geometry_sha256": "5500eea95a9bd373a98597af019855ae3991b5b7725da25aea0835f382d01e55",
+      "normalized_geometry_type": "MultiPolygon",
+      "ordinance": "O-17067 NS",
+      "ordinance_pure": "17064",
+      "raw_geometry_sha256": "abd3ac4f10f6d54b73cf49cf7074557f9040373e6a9f33e965a50d0f18f73284",
+      "series_code": "NS",
+      "source_geometry_type": "MultiPolygon",
+      "source_object_id": 3,
+      "source_zone_name": "N-APP-2",
+      "zone_name": "N-APP-2"
+    },
+    {
+      "geometry_state": "RAW_VALID",
+      "implementation_date_epoch_ms": 593049600000,
+      "normalized_geometry_sha256": "e8e86f2e635ad9711b6654cfe5c9739155d47222a61f94d80fd8b07dda364b92",
+      "normalized_geometry_type": "MultiPolygon",
+      "ordinance": "O-17067 NS",
+      "ordinance_pure": "17064",
+      "raw_geometry_sha256": "e458ee69994b64187b3722701af012b216e4b4d7a5c7d345c341f12623b2f104",
+      "series_code": "NS",
+      "source_geometry_type": "MultiPolygon",
+      "source_object_id": 4,
+      "source_zone_name": "CSTZB",
+      "zone_name": "CSTZB"
+    },
+    {
+      "geometry_state": "RAW_VALID",
+      "implementation_date_epoch_ms": 593049600000,
+      "normalized_geometry_sha256": "823e4a772067c56667d5c547dbc24218d7ccdc1e4fbe89063ba7695ad6b82fbc",
+      "normalized_geometry_type": "MultiPolygon",
+      "ordinance": "O-17067 NS",
+      "ordinance_pure": "17064",
+      "raw_geometry_sha256": "4e8694ba66c6500fe49482a3ccb7cb38f502cbd58d42c6a7e25808329387f5a7",
+      "series_code": "NS",
+      "source_geometry_type": "MultiPolygon",
+      "source_object_id": 5,
+      "source_zone_name": "N-APP-1",
+      "zone_name": "N-APP-1"
+    },
+    {
+      "geometry_state": "MAKE_VALID",
+      "implementation_date_epoch_ms": 593049600000,
+      "normalized_geometry_sha256": "a7226cb10756f93cb807effda0029bdb841bf7401472e1884f20cd04a9c39f33",
+      "normalized_geometry_type": "MultiPolygon",
+      "ordinance": "O-17067 NS",
+      "ordinance_pure": "17064",
+      "raw_geometry_sha256": "17e457f1ed04d2954c9df0875b1a2cb5c08e399437e46cc5065b9268f6cf1862",
+      "series_code": "NS",
+      "source_geometry_type": "MultiPolygon",
+      "source_object_id": 6,
+      "source_zone_name": "DEF-CER",
+      "zone_name": "DEF-CER"
+    },
+    {
+      "geometry_state": "RAW_VALID",
+      "implementation_date_epoch_ms": 1000684800000,
+      "normalized_geometry_sha256": "6b4aa5acfaba7471acea2246eb396b3cb4481f0fe52e15999b653742e367e1d7",
+      "normalized_geometry_type": "Polygon",
+      "ordinance": "O-18872 NS",
+      "ordinance_pure": "18872",
+      "raw_geometry_sha256": "3da80bae8cf2994e76a458e1805ccc80ff849991c0a51adfb81e7213023ff305",
+      "series_code": "NS",
+      "source_geometry_type": "Polygon",
+      "source_object_id": 7,
+      "source_zone_name": "CST-PMT",
+      "zone_name": "CST-PMT"
+    },
+    {
+      "geometry_state": "RAW_VALID",
+      "implementation_date_epoch_ms": 1000684800000,
+      "normalized_geometry_sha256": "1e8545cb68ca2072a5a88ce480e038a048a9cbe363dac774d8e89600fc6d7ac7",
+      "normalized_geometry_type": "Polygon",
+      "ordinance": "O-18872 NS",
+      "ordinance_pure": "18872",
+      "raw_geometry_sha256": "1ada52bcfa79feeec4b287ff9408cc24f3fe96a14dadaa5395a156bd2b0fa790",
+      "series_code": "NS",
+      "source_geometry_type": "Polygon",
+      "source_object_id": 8,
+      "source_zone_name": "N-APP-2",
+      "zone_name": "N-APP-2"
+    },
+    {
+      "geometry_state": "RAW_VALID",
+      "implementation_date_epoch_ms": 1000684800000,
+      "normalized_geometry_sha256": "a040106c09c522ab8c77bb7894e2b45a125df5b3b61d494647cb0b4479ba861d",
+      "normalized_geometry_type": "Polygon",
+      "ordinance": "O-18872 NS",
+      "ordinance_pure": "18872",
+      "raw_geometry_sha256": "a3d99e2e38f3d8b7a43747a59a2f8be976dd91390c348db67f7ef064f4eab3e1",
+      "series_code": "NS",
+      "source_geometry_type": "Polygon",
+      "source_object_id": 9,
+      "source_zone_name": "CST-APP",
+      "zone_name": "CST-APP"
+    }
+  ],
+  "geometry_states": {
+    "MAKE_VALID": 1,
+    "RAW_VALID": 8
+  },
+  "labels": {
+    "CST-APP": 2,
+    "CST-PMT": 2,
+    "CSTZB": 1,
+    "DEF-CER": 1,
+    "N-APP-1": 1,
+    "N-APP-2": 2
+  }
+}
