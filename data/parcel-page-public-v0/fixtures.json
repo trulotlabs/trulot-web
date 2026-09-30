@@ -1,0 +1,88 @@
+{
+  "presentation_version": "public-parcel-page-v0-2026-09-30",
+  "source_contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+  "source_canonical_output_sha256": "597645ff258e4c03760ade98cc9f6aecb1033eae5138b89006955089895b7d22",
+  "representative_count": 8,
+  "fixtures": [
+    {
+      "apn": "6341302200",
+      "case": "verified-outside-coastal",
+      "packet18_fixture_id": "outside-rs-1-7",
+      "source_result_fingerprint": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+      "summary_kind": "verified_residential",
+      "model_sha256": "7ad207b8742850e53435452ed13da73ea6f7d48ad225bd9b0aff371889e90052",
+      "rendering": "data/parcel-page-public-v0/renderings/6341302200-verified-outside-coastal.html",
+      "rendering_sha256": "10c376166de506db0227f2cd0ab34da9373e511928808aa501e81203839c5df5"
+    },
+    {
+      "apn": "3506320400",
+      "case": "verified-inside-coastal",
+      "packet18_fixture_id": "p14-ordinary-rs-1-7",
+      "source_result_fingerprint": "5ab9ab87853af1816bc7e0389c1882f3430d93426ba47076f34e7e4f08a83967",
+      "summary_kind": "verified_residential",
+      "model_sha256": "e8b2fc10d8ef9ccc805b74b0e84d4e13791c0471bd6d1bf437234208e49c8a0a",
+      "rendering": "data/parcel-page-public-v0/renderings/3506320400-verified-inside-coastal.html",
+      "rendering_sha256": "6e934662257c28352e716c401ea3ba9b818852fd42329ba6e170cd378d7cf27b"
+    },
+    {
+      "apn": "4304211000",
+      "case": "split-zone",
+      "packet18_fixture_id": "p14-split-rs-non-rs",
+      "source_result_fingerprint": "0814a7d54119a3c82b479392f550d562ac677037766d8353b4cf095bd9f66c4b",
+      "summary_kind": "split_zone",
+      "model_sha256": "d8a304a00c0a640c69431719d7d32936f8d56dbe0fedb6646672c558f464806d",
+      "rendering": "data/parcel-page-public-v0/renderings/4304211000-split-zone.html",
+      "rendering_sha256": "112bf5fbd969c79cb9b923f9aee07c747c454bc27b04e049e319e931e0cb870b"
+    },
+    {
+      "apn": "4303410600",
+      "case": "ambiguous-zoning",
+      "packet18_fixture_id": "p14-ambiguous-rs",
+      "source_result_fingerprint": "b0beff190ccedeec76c1f8ecae66e6b1486ac68077b362edd11317528acdf908",
+      "summary_kind": "ambiguous_zoning",
+      "model_sha256": "e955c1fe1f61e9c4f05af472ccd99f63f404d417c58499d31436148eff18bf3c",
+      "rendering": "data/parcel-page-public-v0/renderings/4303410600-ambiguous-zoning.html",
+      "rendering_sha256": "cdf4ab1e82741788e8024014ae4d259447e9b7d690663cf7bcd83c68fe46e80f"
+    },
+    {
+      "apn": "3082980200",
+      "case": "coastal-boundary",
+      "packet18_fixture_id": "boundary-balanced",
+      "source_result_fingerprint": "43a4e0c863f75e4367033477af61f9e167f5e196c8c4a01b7fb8d79ef6df5462",
+      "summary_kind": "coastal_review",
+      "model_sha256": "86b9918471fe8e48428d67f225bbe117c3fe9f30bd5be1913547ba45d7471591",
+      "rendering": "data/parcel-page-public-v0/renderings/3082980200-coastal-boundary.html",
+      "rendering_sha256": "7e960cc18fbd177ce72dc5b119d5dd7437e62b0232d99bab862e43898e395968"
+    },
+    {
+      "apn": "7600360300",
+      "case": "unmapped-zoning",
+      "packet18_fixture_id": "p14-unmapped",
+      "source_result_fingerprint": "d57adc83e3a7887e06111fe88dbb5d8e0b2f0949511bbdc35412a3fafab86b36",
+      "summary_kind": "unmapped_zoning",
+      "model_sha256": "88417dfb4d0f705a6d8b62a1754c3775bfa8a7b9e8550f38b5923cf9dccbd0e6",
+      "rendering": "data/parcel-page-public-v0/renderings/7600360300-unmapped-zoning.html",
+      "rendering_sha256": "721cb99a0977445d4bf829dde5cee9535d740cec0aba3c1ace0fb3fe696e0611"
+    },
+    {
+      "apn": "5470501600",
+      "case": "non-rs",
+      "packet18_fixture_id": "p14-ordinary-taxable-null",
+      "source_result_fingerprint": "6feec9eca7c0975257d5a261165accc814d4131a416bb2b8e22e59012f36728a",
+      "summary_kind": "non_rs",
+      "model_sha256": "5d3b6fd4a0aae381c2f003ab3c40e2403ced4866c65546020096b5de347f2249",
+      "rendering": "data/parcel-page-public-v0/renderings/5470501600-non-rs.html",
+      "rendering_sha256": "4862412f445277418f1361b4de132dc0f607429c2d264ec71587978c8cdca9ae"
+    },
+    {
+      "apn": "3031701800",
+      "case": "missing-address",
+      "packet18_fixture_id": "p14-smallest-geometry",
+      "source_result_fingerprint": "b2b63a731cf7be5bf9664a3714eaf9d77c1e7529930393d7a7071c744cf0cc10",
+      "summary_kind": "non_rs",
+      "model_sha256": "01e49d8eaca41bc3197be20ef4df251b0bdcf7fa6d13626a0d2bc16e0e36e226",
+      "rendering": "data/parcel-page-public-v0/renderings/3031701800-missing-address.html",
+      "rendering_sha256": "d4730a2c466692b6a784dfcbea250bda86481c54aecfd4ea693e1b24e9fe5dc2"
+    }
+  ]
+}

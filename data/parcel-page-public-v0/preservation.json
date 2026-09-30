@@ -1,0 +1,13 @@
+{
+  "production_access": false,
+  "packet_11_state_changed": false,
+  "production_zoning_load_performed": false,
+  "selected_snapshot_changed": false,
+  "parcel_v1_files_changed": false,
+  "production_route_switched": false,
+  "expert_preview_changed": false,
+  "compliance_logic_added": false,
+  "capacity_logic_added": false,
+  "deployed": false,
+  "pushed": false
+}

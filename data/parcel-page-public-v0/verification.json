@@ -1,0 +1,43 @@
+{
+  "result": "PASS",
+  "route": "/parcel-public-preview/[apn]",
+  "presentation_version": "public-parcel-page-v0-2026-09-30",
+  "contract": {
+    "visible_core_facts": 4,
+    "summary_generation": "deterministic existing truth-state mapping",
+    "capacity_statement": "Development capacity has not yet been evaluated.",
+    "primary_action": "presentational native disclosure only",
+    "expert_action": "links to unchanged /parcel-v2-preview/[apn]"
+  },
+  "mobile_first_screen": {
+    "viewport": "390x844",
+    "6341302200_primary_action_bottom_px": 613,
+    "3506320400_primary_action_bottom_px": 613,
+    "4304211000_primary_action_bottom_px": 722.1,
+    "result": "PASS"
+  },
+  "browser": {
+    "canonical_checks": 6,
+    "console_errors": 0,
+    "failed_requests": 0,
+    "horizontal_overflow": false,
+    "keyboard_actions": "PASS",
+    "static_vs_integrated": "PASS",
+    "public_visible_text_under_expert_ratio": 0.35,
+    "five_second_test": "PASS",
+    "product_test": "PASS",
+    "trust_test": "PASS"
+  },
+  "checks": [
+    {"command": "node scripts/parcel-page-public-v0/build.mjs", "result": "PASS", "detail": "8 bounded static renderings"},
+    {"command": "node scripts/parcel-page-public-v0/test.mjs", "result": "PASS", "detail": "public contract, state machine, split/Coastal summaries, capacity language, actions, containment"},
+    {"command": "node scripts/parcel-v2-preview/test.mjs", "result": "PASS", "detail": "shared gate and sealed fixture loader"},
+    {"command": "node scripts/parcel-page-v2-ui/test.mjs", "result": "PASS", "detail": "unchanged expert-view regression"},
+    {"command": "node scripts/parcel-page-public-v0/browser.mjs http://127.0.0.1:3000", "result": "PASS", "detail": "6 canonical checks, 5 state cases, unknown APN, accessibility, 7 screenshots"},
+    {"command": "python3 scripts/parcel-intelligence-v2/test.py", "result": "PASS", "detail": "31 Packet 18 contract regressions"},
+    {"command": "npx tsc --noEmit --incremental false", "result": "PASS"},
+    {"command": "npx eslint app/parcel-public-preview/[apn]/page.tsx scripts/parcel-page-public-v0", "result": "PASS"},
+    {"command": "git diff --check", "result": "PASS"}
+  ],
+  "browser_evidence": "data/parcel-page-public-v0/browser-review.json"
+}
