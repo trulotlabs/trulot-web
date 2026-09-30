@@ -1,0 +1,12 @@
+{
+  "capacity_calculated": false,
+  "compliance_evaluated": false,
+  "deployed": false,
+  "packet_11_state": "FROZEN",
+  "parcel_v1_modified": false,
+  "production_accessed": false,
+  "production_runtime_wired": false,
+  "production_zoning_loaded": false,
+  "pushed": false,
+  "selected_snapshot_changed": false
+}

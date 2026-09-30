@@ -1,0 +1,56 @@
+[
+  {
+    "action": "VERIFY_LEGAL_LOT_WIDTH",
+    "blocked_conclusion": "LOT_WIDTH_COMPLIANCE",
+    "required_evidence": "Authoritative survey or legally established lot-line measurement.",
+    "trigger": "lot_width_min rule exists and legal_lot_width_ft is unknown"
+  },
+  {
+    "action": "VERIFY_LOT_LINE_DESIGNATIONS",
+    "blocked_conclusion": "SETBACK_COMPLIANCE",
+    "required_evidence": "Authoritative survey and Code-defined lot-line designations.",
+    "trigger": "any setback rule exists"
+  },
+  {
+    "action": "OBTAIN_GROSS_FLOOR_AREA",
+    "blocked_conclusion": "FAR_UTILIZATION",
+    "required_evidence": "Code-defined GFA and legal lot-area denominator.",
+    "trigger": "floor_area_ratio_max rule exists and gross_floor_area_sqft is unknown"
+  },
+  {
+    "action": "VERIFY_COASTAL_APPLICABILITY",
+    "blocked_conclusion": "RS_STANDARDS_VERSION",
+    "required_evidence": "Authoritative parcel-specific Coastal applicability determination.",
+    "trigger": "Coastal evidence is boundary ambiguous"
+  },
+  {
+    "action": "REVIEW_SPLIT_ZONE_GEOMETRY",
+    "blocked_conclusion": "PARCEL_WIDE_PRIMARY_STANDARD",
+    "required_evidence": "Authoritative zoning map and parcel-specific geometry review.",
+    "trigger": "mapping_state is SPLIT_ZONE"
+  },
+  {
+    "action": "VERIFY_EXISTING_UNIT_COUNT",
+    "blocked_conclusion": "EXISTING_UNIT_COUNT",
+    "required_evidence": "Current authoritative record with dwelling-unit semantics.",
+    "trigger": "positive assessor unit count is unavailable"
+  },
+  {
+    "action": "VERIFY_BASE_ZONING_MAPPING",
+    "blocked_conclusion": "BASE_STANDARDS",
+    "required_evidence": "Authoritative parcel-specific base-zoning determination.",
+    "trigger": "mapping is unmapped, ambiguous, or unavailable"
+  },
+  {
+    "action": "VERIFY_PARCEL_SITUS",
+    "blocked_conclusion": "DISPLAY_ADDRESS",
+    "required_evidence": "Authoritative parcel situs record.",
+    "trigger": "normalized situs address is missing"
+  },
+  {
+    "action": "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+    "blocked_conclusion": "BASE_STANDARDS_FOR_UNSUPPORTED_ZONE",
+    "required_evidence": "Sealed source-backed standards for the unsupported zone.",
+    "trigger": "a mapped zone is outside the sealed RS rule set"
+  }
+]

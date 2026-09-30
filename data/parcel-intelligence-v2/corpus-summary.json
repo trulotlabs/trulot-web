@@ -1,0 +1,716 @@
+{
+  "fixture_count": 30,
+  "results": [
+    {
+      "apn": "3506320400",
+      "coastal_state": "INSIDE_COASTAL",
+      "coverage_tags": [
+        "ordinary_rs_1_7",
+        "packet14_real_fixture"
+      ],
+      "fingerprint_sha256": "680e240c999b2174e646264f888a70ba7a2578f363aa4aea82d2bc7e5bd991e8",
+      "fixture_id": "p14-ordinary-rs-1-7",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "OBTAIN_GROSS_FLOOR_AREA",
+        "VERIFY_LEGAL_LOT_WIDTH",
+        "VERIFY_LOT_LINE_DESIGNATIONS"
+      ],
+      "standards_resolution": "RESOLVED",
+      "state": "SUPPORTED",
+      "structure_state": "supported",
+      "zones": [
+        "RS-1-7"
+      ]
+    },
+    {
+      "apn": "3031701800",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "missing_situs",
+        "packet14_real_fixture",
+        "small_geometry"
+      ],
+      "fingerprint_sha256": "deaf423c6e0a676ec440440a324a648451fee9e7ef5b08a01f4aef57a472d69e",
+      "fixture_id": "p14-smallest-geometry",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+        "VERIFY_EXISTING_UNIT_COUNT",
+        "VERIFY_PARCEL_SITUS"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "SUPPORTED",
+      "structure_state": "partial",
+      "zones": [
+        "AR-1-1"
+      ]
+    },
+    {
+      "apn": "2421001000",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "large_geometry",
+        "missing_situs",
+        "multipolygon",
+        "packet14_real_fixture",
+        "stacked",
+        "taxable_acreage"
+      ],
+      "fingerprint_sha256": "d9e0d70dc6167df1ca65580f11f4f08f80dd66cb41397765928190afeda0105a",
+      "fixture_id": "p14-largest-geometry",
+      "mapping_state": "SPLIT_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+        "REVIEW_SPLIT_ZONE_GEOMETRY",
+        "VERIFY_EXISTING_UNIT_COUNT",
+        "VERIFY_PARCEL_SITUS"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "SUPPORTED",
+      "structure_state": "partial",
+      "zones": [
+        "AG-1-1",
+        "AR-1-1"
+      ]
+    },
+    {
+      "apn": "2748323700",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "boundary_sliver",
+        "centroid_outside",
+        "irregular_polygon",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "fingerprint_sha256": "18b8bbaaef289caeb717dd5d6382ac2b0c072c06e32b748b29ec347b9dfbced4",
+      "fixture_id": "p14-boundary-sliver",
+      "mapping_state": "BOUNDARY_SLIVER",
+      "next_investigations": [
+        "OBTAIN_GROSS_FLOOR_AREA",
+        "VERIFY_EXISTING_UNIT_COUNT",
+        "VERIFY_LEGAL_LOT_WIDTH",
+        "VERIFY_LOT_LINE_DESIGNATIONS",
+        "VERIFY_PARCEL_SITUS"
+      ],
+      "standards_resolution": "RESOLVED",
+      "state": "SUPPORTED",
+      "structure_state": "partial",
+      "zones": [
+        "RS-1-14",
+        "RM-1-1"
+      ]
+    },
+    {
+      "apn": "2392600700",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "ambiguous_zoning",
+        "large_geometry",
+        "multipolygon",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "fingerprint_sha256": "8720f1024c01678740b67d5d2ed1fe718cc455f028fb3e9ca3825adef393f4db",
+      "fixture_id": "p14-multipolygon",
+      "mapping_state": "AMBIGUOUS",
+      "next_investigations": [
+        "VERIFY_BASE_ZONING_MAPPING",
+        "VERIFY_EXISTING_UNIT_COUNT",
+        "VERIFY_PARCEL_SITUS"
+      ],
+      "standards_resolution": "MAPPING_UNRESOLVED",
+      "state": "PARTIAL",
+      "structure_state": "partial",
+      "zones": [
+        "AG-1-1",
+        "AR-1-1"
+      ]
+    },
+    {
+      "apn": "5891700512",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "repeated_geometry",
+        "stacked"
+      ],
+      "fingerprint_sha256": "5f327f6beb45d5dc61fe096c6b6492212988d0182a72ac292422b7dae0bde182",
+      "fixture_id": "p14-stacked-a",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "SUPPORTED",
+      "structure_state": "supported",
+      "zones": [
+        "RM-2-5"
+      ]
+    },
+    {
+      "apn": "5891700513",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "repeated_geometry",
+        "stacked"
+      ],
+      "fingerprint_sha256": "d35c6b6c8b9a66042d02be3f67c7bb74bd3afe004150b714142880df2d8676a9",
+      "fixture_id": "p14-stacked-b",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "SUPPORTED",
+      "structure_state": "supported",
+      "zones": [
+        "RM-2-5"
+      ]
+    },
+    {
+      "apn": "6782511200",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "missing_situs",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "fingerprint_sha256": "588bcb6e07ea508c01d2b01204f97a55ea4ceebd3cfe0033c7ac762e8d4a7ee5",
+      "fixture_id": "p14-missing-situs-taxable",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+        "VERIFY_EXISTING_UNIT_COUNT",
+        "VERIFY_PARCEL_SITUS"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "SUPPORTED",
+      "structure_state": "partial",
+      "zones": [
+        "IP-2-1"
+      ]
+    },
+    {
+      "apn": "3013101500",
+      "coastal_state": "INSIDE_COASTAL",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "rs_plus_rs",
+        "split_zone"
+      ],
+      "fingerprint_sha256": "23bf9f27824b17e37d2472a020879e5e4815b16638c415e3a2a7001fbc13f80f",
+      "fixture_id": "p14-split-rs-rs",
+      "mapping_state": "SPLIT_ZONE",
+      "next_investigations": [
+        "OBTAIN_GROSS_FLOOR_AREA",
+        "REVIEW_SPLIT_ZONE_GEOMETRY",
+        "VERIFY_LEGAL_LOT_WIDTH",
+        "VERIFY_LOT_LINE_DESIGNATIONS"
+      ],
+      "standards_resolution": "RESOLVED",
+      "state": "SUPPORTED",
+      "structure_state": "supported",
+      "zones": [
+        "RS-1-3",
+        "RS-1-6"
+      ]
+    },
+    {
+      "apn": "4304211000",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "rs_plus_non_rs",
+        "split_zone"
+      ],
+      "fingerprint_sha256": "0fbdd3f7e37ea5c6b1d52c81598ffe73cc0eba5311906fe6030a6e9b86b9a0e9",
+      "fixture_id": "p14-split-rs-non-rs",
+      "mapping_state": "SPLIT_ZONE",
+      "next_investigations": [
+        "OBTAIN_GROSS_FLOOR_AREA",
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+        "REVIEW_SPLIT_ZONE_GEOMETRY",
+        "VERIFY_LEGAL_LOT_WIDTH",
+        "VERIFY_LOT_LINE_DESIGNATIONS"
+      ],
+      "standards_resolution": "PARTIAL_RS_RESOLUTION",
+      "state": "PARTIAL",
+      "structure_state": "supported",
+      "zones": [
+        "RS-1-7",
+        "OR-1-1"
+      ]
+    },
+    {
+      "apn": "4303410600",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "ambiguous_zoning",
+        "packet14_real_fixture"
+      ],
+      "fingerprint_sha256": "26ccc23cf0bb594a094ff87df60f7835044bd4aec9aeb58b4dd5a919714de0e9",
+      "fixture_id": "p14-ambiguous-rs",
+      "mapping_state": "AMBIGUOUS",
+      "next_investigations": [
+        "VERIFY_BASE_ZONING_MAPPING"
+      ],
+      "standards_resolution": "MAPPING_UNRESOLVED",
+      "state": "PARTIAL",
+      "structure_state": "supported",
+      "zones": [
+        "RS-1-7",
+        "CC-3-9"
+      ]
+    },
+    {
+      "apn": "7600360300",
+      "coastal_state": "INSIDE_COASTAL",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "taxable_acreage_missing",
+        "unmapped"
+      ],
+      "fingerprint_sha256": "9776243ed0c3cd1ace52b6743c7fc63f5710ca922b4d78c53b83ef8861c7a0fa",
+      "fixture_id": "p14-unmapped",
+      "mapping_state": "UNMAPPED",
+      "next_investigations": [
+        "VERIFY_BASE_ZONING_MAPPING",
+        "VERIFY_EXISTING_UNIT_COUNT"
+      ],
+      "standards_resolution": "MAPPING_UNRESOLVED",
+      "state": "PARTIAL",
+      "structure_state": "supported",
+      "zones": []
+    },
+    {
+      "apn": "4236300300",
+      "coastal_state": "BOUNDARY_AMBIGUOUS",
+      "coverage_tags": [
+        "ambiguous_zoning",
+        "centroid_outside",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "fingerprint_sha256": "1f816c561ec933ecb731aa60d18033331b6df4c4d5a909c06abee9eee797322a",
+      "fixture_id": "p14-indeterminate-centroid-outside",
+      "mapping_state": "AMBIGUOUS",
+      "next_investigations": [
+        "VERIFY_BASE_ZONING_MAPPING",
+        "VERIFY_COASTAL_APPLICABILITY",
+        "VERIFY_EXISTING_UNIT_COUNT",
+        "VERIFY_PARCEL_SITUS"
+      ],
+      "standards_resolution": "APPLICABILITY_UNRESOLVED",
+      "state": "PARTIAL",
+      "structure_state": "partial",
+      "zones": [
+        "MBPD-R-N",
+        "MBPD-R-S",
+        "OP-1-1"
+      ]
+    },
+    {
+      "apn": "5470501600",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "ordinary",
+        "packet14_real_fixture",
+        "taxable_acreage_missing"
+      ],
+      "fingerprint_sha256": "96f25abc9343d472e8ef688bc6c4f83fcefb1f4d50e9630b752eda30ec20ab42",
+      "fixture_id": "p14-ordinary-taxable-null",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "SUPPORTED",
+      "structure_state": "supported",
+      "zones": [
+        "RM-1-1"
+      ]
+    },
+    {
+      "apn": "5810934600",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "small_geometry",
+        "source_geometry_derivative",
+        "split_zone"
+      ],
+      "fingerprint_sha256": "16ab7a06548290e39b2c193352f4b69b5d72e9d4f62d810db493cd54406dc96e",
+      "fixture_id": "p14-explicit-geometry-derivative",
+      "mapping_state": "SPLIT_ZONE",
+      "next_investigations": [
+        "OBTAIN_GROSS_FLOOR_AREA",
+        "REVIEW_SPLIT_ZONE_GEOMETRY",
+        "VERIFY_EXISTING_UNIT_COUNT",
+        "VERIFY_LEGAL_LOT_WIDTH",
+        "VERIFY_LOT_LINE_DESIGNATIONS",
+        "VERIFY_PARCEL_SITUS"
+      ],
+      "standards_resolution": "RESOLVED",
+      "state": "SUPPORTED",
+      "structure_state": "partial",
+      "zones": [
+        "RS-1-1",
+        "RS-1-7"
+      ]
+    },
+    {
+      "apn": "5490330700",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "split_zone",
+        "taxable_acreage_missing"
+      ],
+      "fingerprint_sha256": "c26b5104263caf710f2a34d52c68d3dd9a4fe32bb409e45f75849011cb0cdbd2",
+      "fixture_id": "p14-historical-known-split",
+      "mapping_state": "SPLIT_ZONE",
+      "next_investigations": [
+        "OBTAIN_GROSS_FLOOR_AREA",
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+        "REVIEW_SPLIT_ZONE_GEOMETRY",
+        "VERIFY_LEGAL_LOT_WIDTH",
+        "VERIFY_LOT_LINE_DESIGNATIONS"
+      ],
+      "standards_resolution": "PARTIAL_RS_RESOLUTION",
+      "state": "PARTIAL",
+      "structure_state": "supported",
+      "zones": [
+        "RM-2-5",
+        "RS-1-6"
+      ]
+    },
+    {
+      "apn": "6271001600",
+      "coastal_state": "INSIDE_COASTAL",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "split_zone",
+        "taxable_acreage"
+      ],
+      "fingerprint_sha256": "abe8b35d758d1519cdad26eb9719279ccae6fe5cfe84ca66dcda6014dc2c6416",
+      "fixture_id": "p14-multi-zone-non-rs",
+      "mapping_state": "SPLIT_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+        "REVIEW_SPLIT_ZONE_GEOMETRY",
+        "VERIFY_EXISTING_UNIT_COUNT",
+        "VERIFY_PARCEL_SITUS"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "SUPPORTED",
+      "structure_state": "partial",
+      "zones": [
+        "OF-1-1",
+        "AR-1-2"
+      ]
+    },
+    {
+      "apn": "2725300831",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "centroid_outside",
+        "multipolygon",
+        "packet14_real_fixture",
+        "taxable_acreage_missing"
+      ],
+      "fingerprint_sha256": "a640d76f619e40eaa69768ed384163717c923cd805c3fc8d21c6d81bac5bed32",
+      "fixture_id": "p14-multipolygon-centroid-outside",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "SUPPORTED",
+      "structure_state": "supported",
+      "zones": [
+        "AR-1-2"
+      ]
+    },
+    {
+      "apn": "2748402401",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "centroid_outside",
+        "packet14_real_fixture",
+        "polygon",
+        "taxable_acreage"
+      ],
+      "fingerprint_sha256": "c24678d506e9a438892117565974843be377e90dad49f9c2566ace6dceed0cc8",
+      "fixture_id": "p14-polygon-centroid-outside",
+      "mapping_state": "SPLIT_ZONE",
+      "next_investigations": [
+        "OBTAIN_GROSS_FLOOR_AREA",
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+        "REVIEW_SPLIT_ZONE_GEOMETRY",
+        "VERIFY_LEGAL_LOT_WIDTH",
+        "VERIFY_LOT_LINE_DESIGNATIONS"
+      ],
+      "standards_resolution": "PARTIAL_RS_RESOLUTION",
+      "state": "PARTIAL",
+      "structure_state": "supported",
+      "zones": [
+        "RM-1-1",
+        "RS-1-14"
+      ]
+    },
+    {
+      "apn": "2673600300",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "ordinary",
+        "packet14_real_fixture",
+        "small_geometry",
+        "taxable_acreage_missing"
+      ],
+      "fingerprint_sha256": "83326d45308b8c61174815fee1587e74ce9a2b9ee7e9b3f4786b102eceb5aa2c",
+      "fixture_id": "p14-small-addressed",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "SUPPORTED",
+      "structure_state": "supported",
+      "zones": [
+        "RX-1-2"
+      ]
+    },
+    {
+      "apn": "2723200100",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "ordinary",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "fingerprint_sha256": "7e135c45bffe514f67459c278ff3caab8e6fabb26571f79093ada54b85f7cb0b",
+      "fixture_id": "p14-acreage-one",
+      "mapping_state": "SPLIT_ZONE",
+      "next_investigations": [
+        "OBTAIN_GROSS_FLOOR_AREA",
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+        "REVIEW_SPLIT_ZONE_GEOMETRY",
+        "VERIFY_LEGAL_LOT_WIDTH",
+        "VERIFY_LOT_LINE_DESIGNATIONS"
+      ],
+      "standards_resolution": "PARTIAL_RS_RESOLUTION",
+      "state": "PARTIAL",
+      "structure_state": "supported",
+      "zones": [
+        "AR-1-2",
+        "RS-1-11"
+      ]
+    },
+    {
+      "apn": "2760400100",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "large_geometry",
+        "missing_situs",
+        "multipolygon",
+        "packet14_real_fixture",
+        "taxable_acreage"
+      ],
+      "fingerprint_sha256": "5ff95017ec1cbd24826afaa753aa487b03115f6d7308490045cc820a7e211b80",
+      "fixture_id": "p14-missing-situs-large",
+      "mapping_state": "SPLIT_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+        "REVIEW_SPLIT_ZONE_GEOMETRY",
+        "VERIFY_PARCEL_SITUS"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "SUPPORTED",
+      "structure_state": "supported",
+      "zones": [
+        "AG-1-1",
+        "AR-1-1"
+      ]
+    },
+    {
+      "apn": "5333641301",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "repeated_geometry",
+        "stacked"
+      ],
+      "fingerprint_sha256": "08836370a9bc399ccc85e3b345bd3865a8fff0f854e17f6f129156bb19e3aebb",
+      "fixture_id": "p14-stacked-serving-a",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "SUPPORTED",
+      "structure_state": "supported",
+      "zones": [
+        "CCPD-RE"
+      ]
+    },
+    {
+      "apn": "5333641302",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "packet14_real_fixture",
+        "repeated_geometry",
+        "stacked"
+      ],
+      "fingerprint_sha256": "a32e82ace8df9788d2fb97aeb55ea95d3b74dfb99ca0c0a478cbfce7b4b5df35",
+      "fixture_id": "p14-stacked-serving-b",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "SUPPORTED",
+      "structure_state": "supported",
+      "zones": [
+        "CCPD-RE"
+      ]
+    },
+    {
+      "apn": "3527702600",
+      "coastal_state": "BOUNDARY_AMBIGUOUS",
+      "coverage_tags": [
+        "boundary_crossing",
+        "tiny_boundary_contact",
+        "boundary_sliver"
+      ],
+      "fingerprint_sha256": "f9ee1f48e83496af87c8512aaeb4be0535ac563289d25b263c8905662598a2dc",
+      "fixture_id": "boundary-tiny-contact",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "VERIFY_COASTAL_APPLICABILITY",
+        "VERIFY_EXISTING_UNIT_COUNT",
+        "VERIFY_PARCEL_SITUS"
+      ],
+      "standards_resolution": "APPLICABILITY_UNRESOLVED",
+      "state": "PARTIAL",
+      "structure_state": "unavailable",
+      "zones": [
+        "RS-1-2"
+      ]
+    },
+    {
+      "apn": "3082980200",
+      "coastal_state": "BOUNDARY_AMBIGUOUS",
+      "coverage_tags": [
+        "boundary_crossing",
+        "balanced_area_share"
+      ],
+      "fingerprint_sha256": "3a2d9a6c42ffb4d7cfaba147faab3728061c5bf0012f3194f396bfdf021bd6e6",
+      "fixture_id": "boundary-balanced",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "VERIFY_COASTAL_APPLICABILITY",
+        "VERIFY_EXISTING_UNIT_COUNT",
+        "VERIFY_PARCEL_SITUS"
+      ],
+      "standards_resolution": "APPLICABILITY_UNRESOLVED",
+      "state": "PARTIAL",
+      "structure_state": "unavailable",
+      "zones": [
+        "AR-1-1"
+      ]
+    },
+    {
+      "apn": "3515710700",
+      "coastal_state": "BOUNDARY_AMBIGUOUS",
+      "coverage_tags": [
+        "boundary_crossing",
+        "mostly_inside"
+      ],
+      "fingerprint_sha256": "6d80fd0a1fe6c5b14a4ca04e89283bb697178b93ef825ae376dcd87c45b27edc",
+      "fixture_id": "boundary-mostly-inside",
+      "mapping_state": "AMBIGUOUS",
+      "next_investigations": [
+        "VERIFY_BASE_ZONING_MAPPING",
+        "VERIFY_COASTAL_APPLICABILITY",
+        "VERIFY_EXISTING_UNIT_COUNT"
+      ],
+      "standards_resolution": "APPLICABILITY_UNRESOLVED",
+      "state": "PARTIAL",
+      "structure_state": "unavailable",
+      "zones": [
+        "RS-1-5"
+      ]
+    },
+    {
+      "apn": "6271000900",
+      "coastal_state": "INSIDE_COASTAL",
+      "coverage_tags": [
+        "inside",
+        "c1028_control",
+        "permit_subtype_not_inferred"
+      ],
+      "fingerprint_sha256": "5893f05ed578502dc69e201b8fad0e6bb9465c783e70895de99e483707945a1e",
+      "fixture_id": "c1028-bella-mar-control",
+      "mapping_state": "SPLIT_ZONE",
+      "next_investigations": [
+        "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+        "REVIEW_SPLIT_ZONE_GEOMETRY",
+        "VERIFY_EXISTING_UNIT_COUNT"
+      ],
+      "standards_resolution": "NOT_APPLICABLE",
+      "state": "PARTIAL",
+      "structure_state": "unavailable",
+      "zones": [
+        "AR-1-2",
+        "OF-1-1"
+      ]
+    },
+    {
+      "apn": "6341302200",
+      "coastal_state": "OUTSIDE_COASTAL",
+      "coverage_tags": [
+        "outside",
+        "rs_parcel",
+        "rs_1_7",
+        "packet13_resolves"
+      ],
+      "fingerprint_sha256": "bef3b97e07a628732fe90ce20c9c2170a0ec9b0e472c68ac2a27d1ff967307bc",
+      "fixture_id": "outside-rs-1-7",
+      "mapping_state": "SINGLE_ZONE",
+      "next_investigations": [
+        "OBTAIN_GROSS_FLOOR_AREA",
+        "VERIFY_LEGAL_LOT_WIDTH",
+        "VERIFY_LOT_LINE_DESIGNATIONS"
+      ],
+      "standards_resolution": "RESOLVED",
+      "state": "SUPPORTED",
+      "structure_state": "supported",
+      "zones": [
+        "RS-1-7"
+      ]
+    },
+    {
+      "apn": "7600300100",
+      "coastal_state": "SOURCE_UNAVAILABLE",
+      "coverage_tags": [
+        "packet8_identity_exception",
+        "missing_geometry",
+        "source_unavailable"
+      ],
+      "fingerprint_sha256": "f6cd6ea7ba04dd23dc3ec8db18157b248c94a4f17f27493afff23509d0e4c46b",
+      "fixture_id": "packet8-identity-exception",
+      "mapping_state": "UNAVAILABLE",
+      "next_investigations": [
+        "VERIFY_BASE_ZONING_MAPPING",
+        "VERIFY_EXISTING_UNIT_COUNT"
+      ],
+      "standards_resolution": "IDENTITY_OR_ZONING_UNAVAILABLE",
+      "state": "SOURCE_UNAVAILABLE",
+      "structure_state": "unavailable",
+      "zones": []
+    }
+  ]
+}

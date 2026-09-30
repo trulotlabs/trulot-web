@@ -1,0 +1,19 @@
+{
+  "decision": "PARCEL_INTELLIGENCE_V2_READY_FOR_UI_ADAPTER",
+  "results": [
+    {"command":"PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-intelligence-v2/build.py --check","result":"PASS","detail":"30 fixtures; byte-identical canonical output 597645ff258e4c03760ade98cc9f6aecb1033eae5138b89006955089895b7d22"},
+    {"command":"PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-intelligence-v2/test.py","result":"PASS","detail":"31 composition, truth propagation, split-zone, Coastal, structure, source failure, provenance, deterministic action, and fingerprint tests"},
+    {"command":"PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-rs-standards-runtime-v0/test.py","result":"PASS","detail":"15 Packet 13 tests"},
+    {"command":"node scripts/test-rs17-runtime-shadow.mjs","result":"PASS","detail":"20 gate combinations plus approved staging, production denial, disabled-page equality, placement, consumer, and identity failure"},
+    {"command":"PYTHONDONTWRITEBYTECODE=1 python3 scripts/inside-coastal-rs-standards-v0/test.py","result":"PASS","detail":"11 Packet 16 tests"},
+    {"command":"PYTHONDONTWRITEBYTECODE=1 python3 scripts/structure-facts-v0/test.py","result":"PASS","detail":"10 Packet 17 tests"},
+    {"command":"node scripts/test-parcel-truth.mjs","result":"PASS","detail":"19 Parcel Truth cases"},
+    {"command":"npx tsc --noEmit","result":"PASS"},
+    {"command":"PYTHONPYCACHEPREFIX=/private/tmp/p18pycache python3 -m py_compile scripts/parcel-intelligence-v2/resolver.py scripts/parcel-intelligence-v2/build.py scripts/parcel-intelligence-v2/test.py","result":"PASS"},
+    {"command":"git diff --cached --check","result":"PASS"}
+  ],
+  "notes": [
+    "The older rs17-display-shadow harness requires an external public-source path manifest; Packet 15 containment was verified by its self-contained runtime-shadow regression.",
+    "No production, database, network, browser, deployment, or push operation was used."
+  ]
+}

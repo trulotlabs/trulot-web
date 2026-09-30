@@ -1,0 +1,50 @@
+[
+  {
+    "improvement_or_gap": "Stronger lineage; still needs production adapter.",
+    "parcel_intelligence_v2": "Source/parcel IDs, normalized situs, jurisdiction, geometry availability, acquisition and row fingerprint.",
+    "parcel_v1": "Canonical API row and display-oriented identity.",
+    "user_question": "What property is this?"
+  },
+  {
+    "improvement_or_gap": "Does not collapse split zones.",
+    "parcel_intelligence_v2": "SINGLE, SPLIT, BOUNDARY_SLIVER, UNMAPPED, or AMBIGUOUS with all source features and coverage.",
+    "parcel_v1": "Single display-oriented zone field.",
+    "user_question": "What zoning applies?"
+  },
+  {
+    "improvement_or_gap": "Closed evidence chain.",
+    "parcel_intelligence_v2": "Layer fingerprints, acquisitions, mapping evidence, rule IDs, exact SDMC table cells and source hashes.",
+    "parcel_v1": "Mixed source metadata.",
+    "user_question": "Why believe it?"
+  },
+  {
+    "improvement_or_gap": "Boundary ambiguity fails closed.",
+    "parcel_intelligence_v2": "Explicit inside/outside/boundary/source state controlling a version selector.",
+    "parcel_v1": "Overlay response in the page loader.",
+    "user_question": "Coastal context?"
+  },
+  {
+    "improvement_or_gap": "RS only; non-RS remains unsupported.",
+    "parcel_intelligence_v2": "Separate zone results from sealed outside/inside Coastal RS versions.",
+    "parcel_v1": "No composed source-backed RS standards contract.",
+    "user_question": "What base standards apply?"
+  },
+  {
+    "improvement_or_gap": "No current footprint or GFA.",
+    "parcel_intelligence_v2": "Positive assessor units and living area plus dated historical footprint evidence.",
+    "parcel_v1": "Display-oriented parcel/permit fields.",
+    "user_question": "What existing development is recorded?"
+  },
+  {
+    "improvement_or_gap": "More explicit; no compliance answer.",
+    "parcel_intelligence_v2": "Field-level unknown, unavailable, mapping, applicability, and legal-semantic dependencies.",
+    "parcel_v1": "Typed source statuses at loader boundaries.",
+    "user_question": "What is uncertain?"
+  },
+  {
+    "improvement_or_gap": "Evidence requests only, not project advice.",
+    "parcel_intelligence_v2": "Bounded actions generated from explicit missing facts.",
+    "parcel_v1": "No deterministic regulatory gap engine.",
+    "user_question": "What should be investigated next?"
+  }
+]

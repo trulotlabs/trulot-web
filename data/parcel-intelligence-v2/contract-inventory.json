@@ -1,0 +1,160 @@
+{
+  "duplicates_and_conflicts": [
+    {
+      "field": "APN",
+      "layers": [
+        "Parcel V2",
+        "zoning",
+        "Coastal",
+        "conditions",
+        "structure"
+      ],
+      "resolution": "Parcel V2 identity is canonical; every dependent layer must match it."
+    },
+    {
+      "field": "geometry area",
+      "layers": [
+        "Parcel V2",
+        "conditions",
+        "zoning mapping evidence"
+      ],
+      "resolution": "Expose Parcel V2 approximate area once as a diagnostic property fact; retain zoning intersection areas only inside zone evidence."
+    },
+    {
+      "field": "Coastal context",
+      "layers": [
+        "Coastal Context V0",
+        "Packet 13 request bridge",
+        "Packet 14 legal unknown"
+      ],
+      "resolution": "Coastal Context V0 is authoritative for version selection; Packet 14 unknown describes the absence of Coastal evidence in Parcel V2 alone."
+    },
+    {
+      "field": "existing units",
+      "layers": [
+        "Packet 14 unknown",
+        "Structure Facts V0 assessor fact"
+      ],
+      "resolution": "Structure Facts V0 supersedes the Packet 14 absence only for a positive exact-APN source value; source zero remains unknown."
+    },
+    {
+      "field": "footprint",
+      "layers": [
+        "Packet 14 unknown current footprint",
+        "Structure Facts V0 historical footprint"
+      ],
+      "resolution": "Keep current footprint unknown and expose 2017 footprint only as dated evidence."
+    },
+    {
+      "field": "mapping state naming",
+      "layers": [
+        "Base Zoning detailed state",
+        "Packet 13 canonical state"
+      ],
+      "resolution": "Preserve both mapping_evidence_state and canonical mapping_state."
+    },
+    {
+      "field": "truth vocabulary",
+      "layers": [
+        "Parcel Truth",
+        "Python evidence layers"
+      ],
+      "resolution": "Top state summarizes availability; nested source states remain unchanged and are not cosmetically rewritten."
+    },
+    {
+      "field": "provenance",
+      "layers": [
+        "all"
+      ],
+      "resolution": "Keep each layer fingerprint/acquisition and every standards rule source cell; do not replace with a generic publisher label."
+    }
+  ],
+  "interfaces": [
+    {
+      "interface": "lib/parcel-truth.ts",
+      "layer": "Parcel Truth",
+      "states": [
+        "found",
+        "not_found",
+        "source_unavailable",
+        "partial"
+      ],
+      "used_for": "truth propagation vocabulary; production module unchanged"
+    },
+    {
+      "interface": "sealed normalized/serving record",
+      "layer": "Parcel V2",
+      "states": [
+        "supported",
+        "unavailable"
+      ],
+      "used_for": "APN, source/parcel IDs, situs, jurisdiction, geometry availability, tax acreage, acquisition"
+    },
+    {
+      "interface": "parcel base-zoning mapping row",
+      "layer": "Base Zoning V2",
+      "states": [
+        "SINGLE_ZONE",
+        "BOUNDARY_SLIVER",
+        "MULTI_ZONE",
+        "UNMAPPED",
+        "INDETERMINATE"
+      ],
+      "used_for": "all zone evidence, intersections, source features, coverage, acquisition"
+    },
+    {
+      "interface": "coastal-context-city-sd-2026-09-30-v0",
+      "layer": "Coastal Context V0",
+      "states": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL",
+        "BOUNDARY_AMBIGUOUS",
+        "SOURCE_UNAVAILABLE"
+      ],
+      "used_for": "standards version selection or fail-closed refusal"
+    },
+    {
+      "interface": "inside/outside versions.json profiles",
+      "layer": "RS version selector",
+      "states": [
+        "resolved",
+        "historical unavailable",
+        "future reacquisition required"
+      ],
+      "used_for": "legal version identity"
+    },
+    {
+      "interface": "parcel-rs-standards-runtime-2026-09-30-v1",
+      "layer": "Parcel RS Standards Runtime V0",
+      "states": [
+        "RESOLVED",
+        "PARTIAL_RS_RESOLUTION",
+        "NOT_APPLICABLE",
+        "MAPPING_UNRESOLVED",
+        "APPLICABILITY_UNRESOLVED",
+        "SOURCE_UNAVAILABLE"
+      ],
+      "used_for": "zone-specific source-backed RS rules"
+    },
+    {
+      "interface": "rs-parcel-condition-inputs-2026-09-30-v0",
+      "layer": "RS Parcel Condition Inputs V0",
+      "states": [
+        "supported",
+        "unknown",
+        "unavailable"
+      ],
+      "used_for": "geometry/tax facts, diagnostics, explicit legal unknowns"
+    },
+    {
+      "interface": "structure-facts-2026-09-30-v0",
+      "layer": "Structure Facts V0",
+      "states": [
+        "supported",
+        "unknown",
+        "unavailable"
+      ],
+      "used_for": "positive assessor facts and dated historical footprint evidence"
+    }
+  ]
+}

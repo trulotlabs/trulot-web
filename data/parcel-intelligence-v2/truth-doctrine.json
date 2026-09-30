@@ -1,0 +1,30 @@
+{
+  "propagation_rules": [
+    "Optional structure failure never erases valid identity, zoning, or standards.",
+    "Unresolved zoning blocks definitive standards.",
+    "Coastal boundary ambiguity preserves identity and zoning and refuses version-specific standards.",
+    "Positive assessor values remain recorded facts; zero and sentinel values remain unknown.",
+    "Historical footprints retain date and linkage limitations.",
+    "Diagnostics never become legal dimensions.",
+    "Non-RS zones remain visible and receive no RS rules.",
+    "Split zones retain separate zone results and are never blended."
+  ],
+  "top_state_rules": [
+    {
+      "state": "IDENTITY_UNRESOLVED",
+      "when": "Parcel V2 identity is unavailable; dependent conclusions are not evaluated."
+    },
+    {
+      "state": "SOURCE_UNAVAILABLE",
+      "when": "Identity remains available but zoning, Coastal, and structure sources are all unavailable."
+    },
+    {
+      "state": "PARTIAL",
+      "when": "A material layer is unavailable/unresolved, mapping is unmapped/ambiguous, Coastal applicability is ambiguous, or standards resolve only partially."
+    },
+    {
+      "state": "SUPPORTED",
+      "when": "Identity, zoning, Coastal selection and applicable standards are coherent; explicit legal/measurement unknowns remain visible."
+    }
+  ]
+}

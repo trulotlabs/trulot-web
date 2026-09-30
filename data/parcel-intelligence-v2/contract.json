@@ -1,0 +1,133 @@
+{
+  "canonicalization": "UTF-8 JSON; object keys sorted; compact separators; Unicode preserved; NaN rejected; ordered arrays defined by source or stable rule/action key. SHA-256 covers the object before its fingerprint field.",
+  "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+  "derivation_classes": [
+    "recorded",
+    "deterministic_derived",
+    "conditional",
+    "inferred_diagnostic",
+    "NOT_AVAILABLE"
+  ],
+  "invariants": {
+    "boundary_ambiguity_selects_version": false,
+    "certainty_never_increases": true,
+    "development_capacity_calculated": false,
+    "historical_footprint_is_current": false,
+    "parcel_compliance_evaluated": false,
+    "production_runtime_wired": false,
+    "split_zone_rules_blended": false
+  },
+  "sections": {
+    "answers": [
+      "what_property",
+      "what_zoning",
+      "what_base_standards",
+      "existing_development",
+      "what_is_uncertain",
+      "why",
+      "what_next",
+      "what_can_i_build"
+    ],
+    "base_standards": [
+      "state",
+      "source_state",
+      "resolution_state",
+      "rule_set_version",
+      "zone_results",
+      "provenance",
+      "unresolved_reasons",
+      "fingerprint_sha256"
+    ],
+    "coastal_context": [
+      "state",
+      "source_state",
+      "value",
+      "evidence_state",
+      "coastal_area_share_percent",
+      "source_feature_ids",
+      "mapping_method",
+      "layer_fingerprint_sha256",
+      "provenance"
+    ],
+    "identity": [
+      "state",
+      "source_state",
+      "apn",
+      "source_object_id",
+      "parcel_id",
+      "situs_address",
+      "situs_components",
+      "jurisdiction_code",
+      "geometry_available",
+      "geometry_type",
+      "geometry_sha256",
+      "approximate_geometry_area_sqft",
+      "taxable_acreage",
+      "acquisition_id",
+      "source_row_sha256",
+      "source_artifact_sha256"
+    ],
+    "next_investigation": [
+      "action",
+      "reason",
+      "blocked_conclusion",
+      "required_evidence"
+    ],
+    "presentation": [
+      "property",
+      "base_zoning",
+      "coastal_context",
+      "rules",
+      "legal_lot_width",
+      "existing_dwelling_units",
+      "living_area",
+      "gross_floor_area",
+      "development_capacity"
+    ],
+    "property_facts": [
+      "parcel_conditions",
+      "geometry_diagnostics",
+      "structure"
+    ],
+    "source_layers": [
+      "layer",
+      "contract_version",
+      "artifact_path",
+      "artifact_sha256",
+      "record_fingerprint_sha256"
+    ],
+    "unresolved": [
+      "code",
+      "category",
+      "detail",
+      "blocked_conclusions",
+      "source_layer"
+    ],
+    "zoning": [
+      "state",
+      "source_state",
+      "mapping_state",
+      "mapping_evidence_state",
+      "zone_evidence",
+      "parcel_acquisition_id",
+      "zoning_acquisition_id",
+      "mapping_method_version",
+      "mapping_row_sha256",
+      "provenance"
+    ]
+  },
+  "top_level_state_enum": [
+    "SUPPORTED",
+    "PARTIAL",
+    "SOURCE_UNAVAILABLE",
+    "IDENTITY_UNRESOLVED"
+  ],
+  "truth_states": [
+    "supported",
+    "partial",
+    "unknown",
+    "unavailable",
+    "not_applicable",
+    "not_evaluated"
+  ]
+}

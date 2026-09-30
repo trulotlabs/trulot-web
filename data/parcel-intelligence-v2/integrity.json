@@ -1,0 +1,24 @@
+{
+  "algorithm": "sha256-file-bytes",
+  "artifact_count": 18,
+  "artifacts": {
+    "data/parcel-intelligence-v2/canonical-examples.json": "dcdb7b343d582176ff5e950f05dd1539187dc0cb5039694f55990a31253efebd",
+    "data/parcel-intelligence-v2/contract-inventory.json": "4b328b2773b10dfe847cdb424e150fc1e56b8897f741d663a2d395e8a5854f36",
+    "data/parcel-intelligence-v2/contract.json": "94c880d43e76cf2e59e4e104632663156632d3402df86910a8b2c1e36a9deeb9",
+    "data/parcel-intelligence-v2/corpus-summary.json": "abbfd6ea0d358a4b4c7ffbbff48ad9ad41fc082b8842c90aa196b2e12759f07b",
+    "data/parcel-intelligence-v2/decision.json": "674f1e4ca44f6a3947b53c363b07c2cf73c60e9f40c31d954fab65e3d3dbcd34",
+    "data/parcel-intelligence-v2/fingerprints.json": "96f0ff9bd73beea28d20a3586c3263ef5b503cc6a6d72200f64c2a298494a325",
+    "data/parcel-intelligence-v2/fixture-results.json": "ee8f8aa742e6dc60d57303fd388c870c1bdbc32f097a87f807d962da23b7a85d",
+    "data/parcel-intelligence-v2/fixtures.json": "4ff0773bab905715348c947a3b8a2c65eb8a371ac819e3160e41eaa0f2809d7e",
+    "data/parcel-intelligence-v2/next-investigation-rules.json": "efb80869987d59f40cc615c706ad0fb7a25e917fd78d58cc514d4c8e2add1c9b",
+    "data/parcel-intelligence-v2/preservation.json": "f4268795b6adf1873cbc9fc22f9923ec8976ca81e02ef662e19e8bac2d940d50",
+    "data/parcel-intelligence-v2/truth-doctrine.json": "c3f5191d47a3d90a6b293184dbf1daa8819b4c72812937d7c1fe55ea69a1d3a0",
+    "data/parcel-intelligence-v2/v1-comparison.json": "4c055ad8a3661684b2e566228ace16ebb818d86cd9d8833cf11a7e7356f9ac18",
+    "data/parcel-intelligence-v2/validation.json": "1d165b9b7a39a698700aab056969dc8d065465a002e747b022d57bf756e47886",
+    "docs/parcel-intelligence-v2.md": "1ebcf6185efba8f06ae0c119ac535c86f581641e0f734d37b4b8e8aaf7990ecc",
+    "scripts/parcel-intelligence-v2/README.md": "49552894d409dcf004f4c595384ae8250faa863d18aced84c4688659bdb0e7dd",
+    "scripts/parcel-intelligence-v2/build.py": "ca27c91fe3e49812c9708af97328eec1adecc4ef647ceda1787bfbc69b21e37f",
+    "scripts/parcel-intelligence-v2/resolver.py": "52b3d816bfacbcaede59b276fb38443896edb4e4f939602264afd8f6ced22fd5",
+    "scripts/parcel-intelligence-v2/test.py": "27bf86f6832655b8e0002e9621a077cd4434ce6f4dd0aa327b88f14bd833e204"
+  }
+}

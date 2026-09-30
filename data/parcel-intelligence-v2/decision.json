@@ -1,0 +1,20 @@
+{
+  "decision": "PARCEL_INTELLIGENCE_V2_READY_FOR_UI_ADAPTER",
+  "does_not_authorize": [
+    "production wiring",
+    "snapshot selection",
+    "deployment",
+    "compliance",
+    "capacity",
+    "ADU/JADU",
+    "SB9",
+    "SB79"
+  ],
+  "reasons": [
+    "Thirty real parcel compositions cover required identity, zoning, Coastal, RS, condition, structure and failure states.",
+    "Truth states fail closed and preserve partial facts.",
+    "Every standards rule retains exact sealed lineage.",
+    "Output and investigation ordering are deterministic."
+  ],
+  "scope": "Offline non-production UI adapter readiness only."
+}
