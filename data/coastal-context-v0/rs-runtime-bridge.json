@@ -15,11 +15,11 @@
     "inside_rs_1_7": {
       "apn": "3506320400",
       "coastal_state": "INSIDE_COASTAL",
-      "outcome": "FAIL_CLOSED_NO_COASTAL_RS_STANDARD_SELECTED",
+      "outcome": "INSIDE_COASTAL_RS_V0_MAY_BE_SELECTED; NO_COMPLIANCE",
       "packet13": {
         "coastal_context": "inside_coastal",
         "source_state": "available",
-        "standards_resolution": "APPLICABILITY_UNRESOLVED"
+        "standards_resolution": "MAY_USE_INSIDE_COASTAL_RS_V0"
       },
       "zone_code": "RS-1-7",
       "zoning_state": "SINGLE_ZONE"
@@ -37,7 +37,7 @@
       "zoning_state": "SINGLE_ZONE"
     }
   },
-  "inside_coastal_rules_unlocked": false,
+  "inside_coastal_rules_unlocked": true,
   "mapping": {
     "APPLICABILITY_UNRESOLVED": {
       "coastal_context": "unknown",
@@ -52,7 +52,7 @@
     "INSIDE_COASTAL": {
       "coastal_context": "inside_coastal",
       "source_state": "available",
-      "standards_resolution": "APPLICABILITY_UNRESOLVED"
+      "standards_resolution": "MAY_USE_INSIDE_COASTAL_RS_V0"
     },
     "OUTSIDE_COASTAL": {
       "coastal_context": "outside_coastal",

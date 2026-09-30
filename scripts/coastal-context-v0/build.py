@@ -33,10 +33,10 @@ def build(source_dir=DEFAULT_DATA, output_dir=DEFAULT_DATA):
       'contract_version':resolver.CONTRACT_VERSION,
       'mapping':{s:resolver.packet13_projection(s) for s in sorted(resolver.STATES)},
       'examples':{
-       'inside_rs_1_7':{'apn':'3506320400','zoning_state':'SINGLE_ZONE','zone_code':'RS-1-7','coastal_state':by_apn['3506320400']['coastal_context']['evidence_state'],'packet13':by_apn['3506320400']['packet13_bridge'],'outcome':'FAIL_CLOSED_NO_COASTAL_RS_STANDARD_SELECTED'},
+       'inside_rs_1_7':{'apn':'3506320400','zoning_state':'SINGLE_ZONE','zone_code':'RS-1-7','coastal_state':by_apn['3506320400']['coastal_context']['evidence_state'],'packet13':by_apn['3506320400']['packet13_bridge'],'outcome':'INSIDE_COASTAL_RS_V0_MAY_BE_SELECTED; NO_COMPLIANCE'},
        'outside_rs_1_7':{'apn':'6341302200','zoning_state':'SINGLE_ZONE','zone_code':'RS-1-7','coastal_state':by_apn['6341302200']['coastal_context']['evidence_state'],'packet13':by_apn['6341302200']['packet13_bridge'],'outcome':'OUTSIDE_COASTAL_RS_V0_MAY_BE_SELECTED; NO_COMPLIANCE'},
        'boundary':{'apn':'3082980200','coastal_state':by_apn['3082980200']['coastal_context']['evidence_state'],'packet13':by_apn['3082980200']['packet13_bridge'],'outcome':'FAIL_CLOSED'}},
-      'inside_coastal_rules_unlocked':False,'parcel_compliance_evaluated':False,'development_capacity_calculated':False}
+      'inside_coastal_rules_unlocked':True,'parcel_compliance_evaluated':False,'development_capacity_calculated':False}
     dump(output_dir/'rs-runtime-bridge.json',bridge)
     source=load(source_dir/'source.json'); mapping=load(source_dir/'mapping-report.json'); quarantine=load(source_dir/'quarantine.json')
     fingerprints={
@@ -49,7 +49,7 @@ def build(source_dir=DEFAULT_DATA, output_dir=DEFAULT_DATA):
       'raw_source_artifact_sha256':source['acquisition']['artifacts']['coastal-overlay.geojson']['sha256']}
     dump(output_dir/'fingerprints.json',fingerprints)
     states=mapping['states']
-    decision={'decision':'COASTAL_CONTEXT_V0_READY','contract_version':resolver.CONTRACT_VERSION,'city_parcel_count':mapping['city_parcels'],'state_counts':states,'unique_apns':mapping['unique_apns'],'duplicate_apns':mapping['duplicate_apns'],'orphan_parcel_references':mapping['orphan_parcel_references'],'fixture_count':len(results),'inside_coastal_rs_supported':False,'packet13_feed_ready':True,'parcel_compliance_evaluated':False,'development_capacity_calculated':False,'runtime_production_wiring':False,'parcel_v1_modified':False,'production_access':False}
+    decision={'decision':'COASTAL_CONTEXT_V0_READY','contract_version':resolver.CONTRACT_VERSION,'city_parcel_count':mapping['city_parcels'],'state_counts':states,'unique_apns':mapping['unique_apns'],'duplicate_apns':mapping['duplicate_apns'],'orphan_parcel_references':mapping['orphan_parcel_references'],'fixture_count':len(results),'inside_coastal_rs_supported':True,'inside_coastal_rule_set_version':'sd-rs-base-standards-inside-coastal-2026-09-10-v0','packet13_feed_ready':True,'parcel_compliance_evaluated':False,'development_capacity_calculated':False,'runtime_production_wiring':False,'parcel_v1_modified':False,'production_access':False}
     dump(output_dir/'decision.json',decision)
     names=STATIC+GENERATED[:-1]
     dump(output_dir/'integrity.json',{'algorithm':'sha256','files':{n:sha(output_dir/n) for n in names}})

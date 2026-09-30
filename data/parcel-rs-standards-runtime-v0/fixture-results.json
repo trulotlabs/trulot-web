@@ -1,7 +1,7 @@
 {
-  "canonical_output_sha256": "a1b05b4b046896df266fd11d22fc806ab0455800506dfcad688a772bf313c242",
+  "canonical_output_sha256": "f2e3d91ef4a4ba597415adf34ea9d9e257caaaf4b70a00c676c0e7c53851389f",
   "case_count": 13,
-  "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+  "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
   "results": [
     {
       "name": "single-zone-rs-1-7",
@@ -30,7 +30,7 @@
             }
           ]
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -44,7 +44,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "57d78f53faefa28c4e85b3d0785dc1ea338292d0b5cea14cd8e953e6ec25e740",
+        "fingerprint_sha256": "22ded70150129eb50dc545d9c0e95f074462b97b2b3011940c68aa3470b378b6",
         "parcel": {
           "apn": "3506320400",
           "parcel_acquisition_id": "sangis-20260924T183743Z"
@@ -1399,7 +1399,7 @@
             }
           ]
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -1413,7 +1413,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "4c6acf1ee62b220db24d27c96eb377c1003c7095d31327f59c5cd3332a09f21d",
+        "fingerprint_sha256": "7e63b370cc08ce9066401155fbfa051519af9a2e539d308edd3b136ae646120c",
         "parcel": {
           "apn": "3064202100",
           "parcel_acquisition_id": "sangis-20260924T183743Z"
@@ -2808,7 +2808,7 @@
             }
           ]
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -2822,7 +2822,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "09cd0153589b7789b3966b7018f5d6520567fb2f2e8a8dd20ba2c4e12a0b5eaa",
+        "fingerprint_sha256": "ced96ca0c42c181b6fe7c3c5661e395fa9a31ea0b4a984f7459aa0e474acdc24",
         "parcel": {
           "apn": "2748323700",
           "parcel_acquisition_id": "sangis-20260924T183743Z"
@@ -4221,7 +4221,7 @@
             }
           ]
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -4235,7 +4235,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "abd4914dc36290c91a5bb0db6fa6655181249276895e511104a504e5e91f5f49",
+        "fingerprint_sha256": "6eebbc51bcb3c2f7eabb18675038dbf16bb47630869ecd2a05cd337be0784440",
         "parcel": {
           "apn": "3013101500",
           "parcel_acquisition_id": "sangis-20260924T183743Z"
@@ -6892,7 +6892,7 @@
             }
           ]
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -6906,7 +6906,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "8911e45d23d2c91f68f7c82a1c7b1f25beeb3b4b0b395b502e15ff87e0dfd1f2",
+        "fingerprint_sha256": "be7dce2dd4cae2fcf3e22bac791df276201e27a2e04415f8fe0ee48e7a72b044",
         "parcel": {
           "apn": "4304211000",
           "parcel_acquisition_id": "sangis-20260924T183743Z"
@@ -8272,7 +8272,7 @@
           "state": "unknown",
           "zone_evidence": []
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -8286,7 +8286,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "e8f1bdf0cee1583d44866eb90b093e11ca7b9db565c53e40d53d079b552cb8c4",
+        "fingerprint_sha256": "db79d1449f3ac850833aebc627f814e01a93a776a538fbd299c79f69e812ac2f",
         "parcel": {
           "apn": "7600360300",
           "parcel_acquisition_id": "sangis-20260924T183743Z"
@@ -8349,7 +8349,7 @@
             }
           ]
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -8363,7 +8363,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "b887ddf9cb182b6cac1f966965ff39ebc53684940d642020b80b8ed45d342e6f",
+        "fingerprint_sha256": "f4252978c326b3077d27bf7a04d5aa97283afc382ae444bde1ff379b9f693628",
         "parcel": {
           "apn": "4303410600",
           "parcel_acquisition_id": "sangis-20260924T183743Z"
@@ -8418,7 +8418,7 @@
             }
           ]
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -8432,7 +8432,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "afbe01ed136c4ec4bc416dd3b65187d41630f8dd7b266d543dec6b9f9d383ef1",
+        "fingerprint_sha256": "dc7f7302c29d5d12a97aff020ee6950dc086f49a0b3faa40b80e0b431d77d161",
         "parcel": {
           "apn": "3064242800",
           "parcel_acquisition_id": "sangis-20260924T183743Z"
@@ -8509,7 +8509,7 @@
             }
           ]
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -8523,7 +8523,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "0921a6410d3a46e18bd6bd966fd5be1f41d992af8707438189ba3bf2ae481745",
+        "fingerprint_sha256": "ab3bd340fab738abf2d2f0bd24f599056b86488111b40a8747db624c654ce09b",
         "parcel": {
           "apn": "5310812300",
           "parcel_acquisition_id": "sangis-20260924T183743Z"
@@ -8535,18 +8535,1814 @@
         },
         "standards": {
           "derivation_class": "deterministic_derived",
-          "provenance": null,
-          "resolution_state": "APPLICABILITY_UNRESOLVED",
-          "rule_set_version": null,
+          "provenance": {
+            "source_bundle_sha256": "25702a7cf0fc7ec9f5738cdef59bc1bfdd20005ddcf1a3096e57f58fa6eeaeec",
+            "source_edition": "inside-Coastal composite effective 2026-09-10",
+            "verified_as_of": "2026-09-30",
+            "version_profile": "inside-coastal-2026-09-10-through-2026-09-30"
+          },
+          "resolution_state": "RESOLVED",
+          "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
           "source_state": "available",
-          "state": "unknown",
-          "zone_results": []
+          "state": "supported",
+          "zone_results": [
+            {
+              "derivation_class": "deterministic_derived",
+              "resolution_state": "RESOLVED",
+              "rules": [
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "RECORDED",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MIN",
+                  "provenance_sha256": "ca8b1394ec262eb86bd4b0d164dac4124b0566c39e0540512ec11d853b5a5199",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:33:10",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      507.046,
+                      432.78999999999996,
+                      548.4614997674419,
+                      447.31
+                    ],
+                    "cell_text": "95",
+                    "column": 8,
+                    "page": 33,
+                    "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+                    "row": 10,
+                    "row_label": "Lot depth (ft)",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 33,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "lot_depth_min",
+                  "unit": "ft",
+                  "unresolved_dependencies": [
+                    "131.0442"
+                  ],
+                  "value": {
+                    "kind": "number",
+                    "number": 95.0
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [
+                    "For lots where at least one-half of the front 50 feet of the lot depth has a minimum slope gradient of 25 percent, the setback closest to the street frontage may be reduced to a minimum 6 feet.",
+                    "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback."
+                  ],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [
+                    "131-04D:1"
+                  ],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MIN",
+                  "provenance_sha256": "d3359f58648c5c6db688977034d17e268fcdbb3d610a71cea15ed1f7a50ea5b3",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:33:12",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      507.046,
+                      461.95,
+                      548.4614997674419,
+                      479.46999999999997
+                    ],
+                    "cell_text": "(1)\n15",
+                    "column": 8,
+                    "page": 33,
+                    "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+                    "row": 12,
+                    "row_label": "Min Front setback (ft)",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 33,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "front_setback_min",
+                  "unit": "ft",
+                  "unresolved_dependencies": [
+                    "131.0443(a)(1)",
+                    "131-04D:1"
+                  ],
+                  "value": {
+                    "kind": "number",
+                    "number": 15.0
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [
+                    "See Section 131.0443(a)(4).",
+                    "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback."
+                  ],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [
+                    "131-04D:2"
+                  ],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MIN",
+                  "provenance_sha256": "098c65b346826c88d9239badcd26cc593ba70be279c0665b7af05c58982d883e",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:33:13",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      507.046,
+                      479.46999999999997,
+                      548.4614997674419,
+                      493.990015
+                    ],
+                    "cell_text": "4(2)",
+                    "column": 8,
+                    "page": 33,
+                    "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+                    "row": 13,
+                    "row_label": "Min Side setback (ft)",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 33,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "interior_side_setback_min",
+                  "unit": "ft",
+                  "unresolved_dependencies": [
+                    "131.0443(a)(4)",
+                    "131-04D:2"
+                  ],
+                  "value": {
+                    "kind": "number",
+                    "number": 4.0
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [
+                    "See Section 131.0443(a)(4).",
+                    "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback."
+                  ],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [
+                    "131-04D:2"
+                  ],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MIN",
+                  "provenance_sha256": "c0edc459fc35250cc9e6d895cf6bc771a6b54f240a034959cc09a6f438359ee4",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:33:14",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      507.046,
+                      493.990015,
+                      548.4614997674419,
+                      508.53999999999996
+                    ],
+                    "cell_text": "5(2)",
+                    "column": 8,
+                    "page": 33,
+                    "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+                    "row": 14,
+                    "row_label": "Min Street side setback (ft)",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 33,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "street_side_setback_min",
+                  "unit": "ft",
+                  "unresolved_dependencies": [
+                    "131.0443(a)(4)",
+                    "131-04D:2"
+                  ],
+                  "value": {
+                    "kind": "number",
+                    "number": 5.0
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [
+                    "See Section 131.0443(a)(2).",
+                    "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback."
+                  ],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [
+                    "131-04D:3"
+                  ],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MIN",
+                  "provenance_sha256": "ab0a4cb5615088d443fbeef0c22bdd6c62e2aa10fc526dc9a8869fcdaca30fde",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:33:15",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      507.046,
+                      508.53999999999996,
+                      548.4614997674419,
+                      526.179985
+                    ],
+                    "cell_text": "(3)\n13",
+                    "column": 8,
+                    "page": 33,
+                    "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+                    "row": 15,
+                    "row_label": "Min Rear setback (ft)",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 33,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "rear_setback_min",
+                  "unit": "ft",
+                  "unresolved_dependencies": [
+                    "131.0443(a)(2)",
+                    "131.0443(a)(3)",
+                    "131-04D:3"
+                  ],
+                  "value": {
+                    "kind": "number",
+                    "number": 13.0
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [
+                    "Requires the parcel and subdivision facts in section 113.0246(f)."
+                  ],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "REFERENCE",
+                  "provenance_sha256": "c709aa64501c22f06d6851931509dd8fa1ad4fef64c907761468a12dadf93933",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:33:16",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      507.046,
+                      526.179985,
+                      548.4614997674419,
+                      554.4999849999999
+                    ],
+                    "cell_text": "applies",
+                    "column": 8,
+                    "page": 33,
+                    "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+                    "row": 16,
+                    "row_label": "Setback requirements for resubdivided\ncorner lots [See Section 113.0246(f)]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 33,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "resubdivided_corner_lot_setbacks",
+                  "unit": null,
+                  "unresolved_dependencies": [
+                    "113.0246(f)",
+                    "131.0443"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "113.0246(f)",
+                      "131.0443"
+                    ],
+                    "text": "applies"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [
+                    "See Section 131.0444(b).",
+                    "Section 131.0444 and Table 131-04H angled-building-envelope rules remain unevaluated."
+                  ],
+                  "derivation_class": "NORMALIZED_SOURCE_EXPRESSION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [
+                    "131-04D:4"
+                  ],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MAX",
+                  "provenance_sha256": "59fb7de90472e0897b55f861c24e3a748f640427821f6cf40805c58c24bde384",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:33:17",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      507.046,
+                      554.4999849999999,
+                      548.4614997674419,
+                      582.8199850000001
+                    ],
+                    "cell_text": "(4)\n24/30",
+                    "column": 8,
+                    "page": 33,
+                    "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+                    "row": 17,
+                    "row_label": "Max structure height (ft)",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 33,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "structure_height_max",
+                  "unit": "ft",
+                  "unresolved_dependencies": [
+                    "131.0444",
+                    "131-04H",
+                    "131-04D:4"
+                  ],
+                  "value": {
+                    "evaluated": false,
+                    "kind": "source_expression",
+                    "text": "24/30"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [
+                    "One dwelling unit per lot is a base-table basis, not a project-level capacity conclusion."
+                  ],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "RECORDED",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "BASIS",
+                  "provenance_sha256": "b4ee6ceff3b6cf049fe4a08f9b1ab76315356a88292f1a24d51364a5afd438fb",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:33:4",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      507.046,
+                      317.0795652173913,
+                      548.4614997674419,
+                      332.45
+                    ],
+                    "cell_text": "1",
+                    "column": 8,
+                    "page": 33,
+                    "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+                    "row": 4,
+                    "row_label": "Max permitted density (DU per lot)",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 33,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "density_basis",
+                  "unit": "dwelling_unit_per_lot",
+                  "unresolved_dependencies": [
+                    "131.0431"
+                  ],
+                  "value": {
+                    "kind": "number",
+                    "number": 1.0
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "RECORDED",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MIN",
+                  "provenance_sha256": "050df4b1fb0614abdf23111f2361ae5d2caa427d3378bd35fe38ec55e8c559e8",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:33:5",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      507.046,
+                      332.45,
+                      548.4614997674419,
+                      360.78999999999996
+                    ],
+                    "cell_text": "5,000",
+                    "column": 8,
+                    "page": 33,
+                    "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+                    "row": 5,
+                    "row_label": "Min lot area (sf)",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 33,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "lot_area_min",
+                  "unit": "sq_ft",
+                  "unresolved_dependencies": [
+                    "131.0431"
+                  ],
+                  "value": {
+                    "kind": "number",
+                    "number": 5000.0
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "RECORDED",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MIN",
+                  "provenance_sha256": "461a650cf996a1ac31753c15f7e28c56aed1a9769738769ea66ad1f2cbf35efa",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:33:7",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      507.046,
+                      375.31,
+                      548.4614997674419,
+                      389.95
+                    ],
+                    "cell_text": "50",
+                    "column": 8,
+                    "page": 33,
+                    "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+                    "row": 7,
+                    "row_label": "Lot width (ft)",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 33,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "lot_width_min",
+                  "unit": "ft",
+                  "unresolved_dependencies": [
+                    "131.0442"
+                  ],
+                  "value": {
+                    "kind": "number",
+                    "number": 50.0
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [
+                    "Section 131.0442(a) may reduce frontage to 60 percent on qualifying turnaround or curving streets."
+                  ],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MIN",
+                  "provenance_sha256": "3240881c0ebee1beb3649f77c333aa5a933e9acba24a037eda376186a8180a7b",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:33:8",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      507.046,
+                      389.95,
+                      548.4614997674419,
+                      418.270015
+                    ],
+                    "cell_text": "50",
+                    "column": 8,
+                    "page": 33,
+                    "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+                    "row": 8,
+                    "row_label": "Street frontage (ft)\n[See Section 131.0442(a)]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 33,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "street_frontage_min",
+                  "unit": "ft",
+                  "unresolved_dependencies": [
+                    "131.0442(a)"
+                  ],
+                  "value": {
+                    "kind": "number",
+                    "number": 50.0
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [
+                    "Applies only when the lot is a corner lot."
+                  ],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MIN",
+                  "provenance_sha256": "9fa79442aaae4a11475346bcbf31372f69510d3be97ef456bc6400db92882491",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:33:9",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      507.046,
+                      418.270015,
+                      548.4614997674419,
+                      432.78999999999996
+                    ],
+                    "cell_text": "55",
+                    "column": 8,
+                    "page": 33,
+                    "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+                    "row": 9,
+                    "row_label": "Lot width (corner) (ft)",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 33,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "corner_lot_width_min",
+                  "unit": "ft",
+                  "unresolved_dependencies": [
+                    "131.0442"
+                  ],
+                  "value": {
+                    "kind": "number",
+                    "number": 55.0
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "REFERENCE",
+                  "provenance_sha256": "0de88e1b422971f5d27751b4edf7fdd29a6d780a9013b2adf24d6ba07cf1388f",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:34:10",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      535.9200199999999,
+                      366.909995,
+                      585.1199899999999,
+                      395.11001
+                    ],
+                    "cell_text": "applies",
+                    "column": 8,
+                    "page": 34,
+                    "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+                    "row": 10,
+                    "row_label": "Max third story dimensions\n[See Section 131.0460]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 34,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "third_story_dimensions_max",
+                  "unit": null,
+                  "unresolved_dependencies": [
+                    "131.0460"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "131.0460"
+                    ],
+                    "text": "applies"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "REFERENCE",
+                  "provenance_sha256": "495a07d11fb02b649ed06810e6e0a13041152d020a0935f0c664100d719cc424",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:34:11",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      535.9200199999999,
+                      395.11001,
+                      585.1199899999999,
+                      436.99001
+                    ],
+                    "cell_text": "applies",
+                    "column": 8,
+                    "page": 34,
+                    "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+                    "row": 11,
+                    "row_label": "Architectural projections and\nencroachments\n[See Section 131.0461(a)]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 34,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "architectural_projections_encroachments",
+                  "unit": null,
+                  "unresolved_dependencies": [
+                    "131.0461(a)"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "131.0461(a)"
+                    ],
+                    "text": "applies"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "REFERENCE",
+                  "provenance_sha256": "ba036f5ead1926a0ffc2794a85a3a752fa0f7359d4b26d515a6ed15f18938b4c",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:34:12",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      535.9200199999999,
+                      436.99001,
+                      585.1199899999999,
+                      465.069995
+                    ],
+                    "cell_text": "applies",
+                    "column": 8,
+                    "page": 34,
+                    "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+                    "row": 12,
+                    "row_label": "Supplemental requirements\n[See Section 131.0464(a)]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 34,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "supplemental_requirements",
+                  "unit": null,
+                  "unresolved_dependencies": [
+                    "131.0464(a)"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "131.0464(a)"
+                    ],
+                    "text": "applies"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "REFERENCE",
+                  "provenance_sha256": "e3d9fa0447c7547bc269f8d3ea91a719cb4922411fc791e69b8e19af0c5b1b31",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:34:13",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      535.9200199999999,
+                      465.069995,
+                      585.1199899999999,
+                      498.339995
+                    ],
+                    "cell_text": "applies",
+                    "column": 8,
+                    "page": 34,
+                    "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+                    "row": 13,
+                    "row_label": "Refuse and Recyclable Material\nStorage [See Section 142.0805]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 34,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "refuse_recycling_storage",
+                  "unit": null,
+                  "unresolved_dependencies": [
+                    "142.0805"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "142.0805"
+                    ],
+                    "text": "applies"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "REFERENCE",
+                  "provenance_sha256": "fc50290d1366d0d1ee5c0cbb8dc6e284ec67b14437ce294d48de9d07a9c080d5",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:34:14",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      535.9200199999999,
+                      498.339995,
+                      585.1199899999999,
+                      531.70001
+                    ],
+                    "cell_text": "applies",
+                    "column": 8,
+                    "page": 34,
+                    "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+                    "row": 14,
+                    "row_label": "Visibility Area [See Section 113.0273]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 34,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "visibility_area",
+                  "unit": null,
+                  "unresolved_dependencies": [
+                    "113.0273"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "113.0273"
+                    ],
+                    "text": "applies"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "REFERENCE",
+                  "provenance_sha256": "99a145977c59b1980dccf6a4f0677336e8dc351f7dcc153e46978f5889ff2fb4",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:34:15",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      535.9200199999999,
+                      531.70001,
+                      585.1199899999999,
+                      564.9399800000001
+                    ],
+                    "cell_text": "applies",
+                    "column": 8,
+                    "page": 34,
+                    "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+                    "row": 15,
+                    "row_label": "Dwelling Unit Protection Regulations\n[See Chapter 14, Article 3, Division 12]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 34,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "dwelling_unit_protection",
+                  "unit": null,
+                  "unresolved_dependencies": [
+                    "Chapter 14, Article 3, Division 12"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "Chapter 14, Article 3, Division 12"
+                    ],
+                    "text": "applies"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [
+                    "Section 131.0445(a) applies only where more than 50 percent of the premises contains steep hillsides; the section states 50 percent maximum coverage."
+                  ],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MAX",
+                  "provenance_sha256": "c2c09a08de14b9797b2a07f71c6fdbdfb24ca4c2a9ab77cf1ca39e092fee3b7f",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:34:4",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      535.9200199999999,
+                      198.019995,
+                      585.1199899999999,
+                      226.249995
+                    ],
+                    "cell_text": "applies",
+                    "column": 8,
+                    "page": 34,
+                    "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+                    "row": 4,
+                    "row_label": "Lot coverage for sloping lots\n[See Section 131.0445(a)]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 34,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "lot_coverage_max",
+                  "unit": "percent",
+                  "unresolved_dependencies": [
+                    "131.0445(a)"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "131.0445(a)"
+                    ],
+                    "text": "applies"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [
+                    "See Section 131.0446(a).",
+                    "The source says varies; section 131.0446(a) and Table 131-04J require lot-area and steep-hillside facts."
+                  ],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [
+                    "131-04D:5"
+                  ],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MAX",
+                  "provenance_sha256": "2fec2d05384033bf2c3a56a8c2d141b8edac726db2fdb8f55e7af9e283cd5885",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:34:5",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      535.9200199999999,
+                      226.249995,
+                      585.1199899999999,
+                      254.56999999999994
+                    ],
+                    "cell_text": "(5)\nvaries",
+                    "column": 8,
+                    "page": 34,
+                    "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+                    "row": 5,
+                    "row_label": "Max floor area ratio",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 34,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "floor_area_ratio_max",
+                  "unit": "ratio",
+                  "unresolved_dependencies": [
+                    "131.0446",
+                    "131-04D:5"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "131.0446(a)",
+                      "131-04J"
+                    ],
+                    "text": "varies"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "MAX",
+                  "provenance_sha256": "4feee507ef387464eb72e6fbfb4e6318917f7199e9d87b80c06ceb577941297a",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:34:6",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      535.9200199999999,
+                      254.56999999999994,
+                      585.1199899999999,
+                      282.649995
+                    ],
+                    "cell_text": "applies",
+                    "column": 8,
+                    "page": 34,
+                    "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+                    "row": 6,
+                    "row_label": "Max paving/ hardscape\n[See Section 131.0447]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 34,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "paving_hardscape_max",
+                  "unit": "percent",
+                  "unresolved_dependencies": [
+                    "131.0447"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "131.0447"
+                    ],
+                    "text": "applies"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "REFERENCE",
+                  "provenance_sha256": "2edc718facb68de4f1f25ba2ce085d19ed684a520c0d5de611e58582b129a586",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:34:7",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      535.9200199999999,
+                      282.649995,
+                      585.1199899999999,
+                      310.72999500000003
+                    ],
+                    "cell_text": "applies",
+                    "column": 8,
+                    "page": 34,
+                    "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+                    "row": 7,
+                    "row_label": "Accessory uses and structures\n[See Sections 131.0448 and 141.0307]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 34,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "accessory_uses_structures",
+                  "unit": null,
+                  "unresolved_dependencies": [
+                    "131.0448",
+                    "141.0307"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "131.0448",
+                      "141.0307"
+                    ],
+                    "text": "applies"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "REFERENCE",
+                  "provenance_sha256": "c563df4c19cfca01f528442792bdf65b07d0176f0889d526beba9a812b604c30",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:34:8",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      535.9200199999999,
+                      310.72999500000003,
+                      585.1199899999999,
+                      338.809995
+                    ],
+                    "cell_text": "applies",
+                    "column": 8,
+                    "page": 34,
+                    "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+                    "row": 8,
+                    "row_label": "Garage regulations\n[See Section 131.0449(a)]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 34,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "garage_regulations",
+                  "unit": null,
+                  "unresolved_dependencies": [
+                    "131.0449(a)"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "131.0449(a)"
+                    ],
+                    "text": "applies"
+                  },
+                  "zone_code": "RS-1-7"
+                },
+                {
+                  "condition": [],
+                  "derivation_class": "SOURCE_TRANSCRIPTION",
+                  "effective_date_basis": "O-21836, conditionally certified as LCP-6-SAN-24-0038-3 with modifications accepted in O-22117; City effective-date ledger records inside-Coastal effect on 2026-09-10; O-21934 was separately certified as LCP-6-SAN-25-0037-1 effective 2025-09-21; O-22109 is excluded.",
+                  "effective_from": "2026-09-10",
+                  "effective_to": null,
+                  "exceptions": [],
+                  "fact_state": "CONDITIONAL",
+                  "jurisdiction_variant": "INSIDE_COASTAL",
+                  "legal_basis": {
+                    "city_acceptance_ordinance": "O-22117",
+                    "city_ordinance": "O-21836",
+                    "coastal_action": "CONDITIONALLY_CERTIFIED_2026-02-05",
+                    "coastal_amendment": "LCP-6-SAN-24-0038-3",
+                    "inside_coastal_effective": "2026-09-10",
+                    "o21934": "CERTIFIED_INSIDE_COASTAL_EFFECTIVE_2025-09-21",
+                    "o22109": "PENDING_NOT_EFFECTIVE_INSIDE_COASTAL_AS_OF_2026-09-30",
+                    "source_keys": [
+                      "adopted_updates",
+                      "residential_division_4",
+                      "o21836",
+                      "ccc_2024_ldc",
+                      "o22117",
+                      "o21934",
+                      "ccc_o21934_report",
+                      "ccc_o21934_minutes",
+                      "o22109"
+                    ]
+                  },
+                  "notes": [
+                    "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion.",
+                    "Inside-Coastal version identity and legal basis are retained separately even where the printed value matches outside Coastal."
+                  ],
+                  "operator": "REFERENCE",
+                  "provenance_sha256": "32575400e4c865d8d845fddaf13d411f61fb55aca434f6b6acdcb45252773a5f",
+                  "rule_id": "sd-rs-base-standards-inside-coastal-2026-09-10-v0:RS-1-7:34:9",
+                  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+                  "source_document": "Inside-Coastal composite: O-21836 / LCP-6-SAN-24-0038-3 / O-22117, transcribed against September 2026 Residential Base Zones",
+                  "source_evidence": {
+                    "bbox": [
+                      535.9200199999999,
+                      338.809995,
+                      585.1199899999999,
+                      366.909995
+                    ],
+                    "cell_text": "applies",
+                    "column": 8,
+                    "page": 34,
+                    "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+                    "row": 9,
+                    "row_label": "Building spacing\n[See Section 131.0450]",
+                    "source_edition": "9-2026",
+                    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+                    "zone_header": "RS-1-7"
+                  },
+                  "source_page": 34,
+                  "source_section": "131.0431(a)",
+                  "source_table": "131-04D",
+                  "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+                  "standard_key": "building_spacing",
+                  "unit": null,
+                  "unresolved_dependencies": [
+                    "131.0450"
+                  ],
+                  "value": {
+                    "kind": "reference",
+                    "targets": [
+                      "131.0450"
+                    ],
+                    "text": "applies"
+                  },
+                  "zone_code": "RS-1-7"
+                }
+              ],
+              "source_state": "available",
+              "state": "supported",
+              "zone_code": "RS-1-7",
+              "zone_evidence": {
+                "coverage_percent": 99.99999999999999,
+                "role": "single",
+                "source_feature_ids": [
+                  1920
+                ],
+                "zone_code": "RS-1-7"
+              }
+            }
+          ]
         },
         "standards_blended": false,
         "unresolved_reasons": [
           {
-            "code": "COASTAL_APPLICABILITY_UNRESOLVED",
-            "detail": "Inside-Coastal and unknown-Coastal profiles cannot select the sealed outside-Coastal composite."
+            "code": "CONDITIONAL_RULES_REQUIRE_ADDITIONAL_FACTS",
+            "detail": "Conditional source rules are returned unevaluated."
           }
         ]
       }
@@ -8578,7 +10374,7 @@
             }
           ]
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -8592,7 +10388,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "ab48d88a292f3e4fca7c29d5a8f7d136097991bf66cb448d3ed63b9fcfd5f351",
+        "fingerprint_sha256": "f34f2bddbb0437b10bd47e11c190a8a33fffc52976ef9b4bde50f5b990acdd36",
         "parcel": {
           "apn": "3506320400",
           "parcel_acquisition_id": "sangis-20260924T183743Z"
@@ -8615,7 +10411,7 @@
         "unresolved_reasons": [
           {
             "code": "COASTAL_APPLICABILITY_UNRESOLVED",
-            "detail": "Inside-Coastal and unknown-Coastal profiles cannot select the sealed outside-Coastal composite."
+            "detail": "Boundary-ambiguous or unresolved Coastal context cannot select a definitive standards version."
           }
         ]
       }
@@ -8647,7 +10443,7 @@
             }
           ]
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -8661,7 +10457,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "898a4116c916796213b68af5e82636bececc31ff985c87a34222cf7cd629d86e",
+        "fingerprint_sha256": "3b708cc735f0392cfccf2cfc838965a50e88182450b790fc2b0b6921572f36ae",
         "parcel": {
           "apn": "5310812300",
           "parcel_acquisition_id": "sangis-20260924T183743Z"
@@ -8716,7 +10512,7 @@
             }
           ]
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -8730,7 +10526,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "98cb79453a6347c471866b875b73b54d4e7e5d65033e5349dc8b4d604574d9e6",
+        "fingerprint_sha256": "4cc9d1543e91a35d66a064eac40da8799971d5a0428a9af2ab4dea08bfff6ff6",
         "parcel": {
           "apn": "3164708100",
           "parcel_acquisition_id": "sangis-20260924T183743Z"
@@ -10116,7 +11912,7 @@
             }
           ]
         },
-        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+        "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
         "development_capacity_calculated": false,
         "explicit_exclusions": [
           "ADU_JADU",
@@ -10130,7 +11926,7 @@
           "PARCEL_COMPLIANCE",
           "DEVELOPMENT_CAPACITY"
         ],
-        "fingerprint_sha256": "d9b34229f413c35b27c66f80c607d1b24862cfef4cd0a3888fa7fc649a79b669",
+        "fingerprint_sha256": "a719ad41cb8ee703f53d0d69436967faed9d1221bb912806b477cd65c5a59603",
         "parcel": {
           "apn": "3180703500",
           "parcel_acquisition_id": "sangis-20260924T183743Z"

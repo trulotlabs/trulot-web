@@ -1,6 +1,6 @@
 # Parcel RS standards runtime V0
 
-This is a repository-local, deterministic adapter over Packet 9 Base Zoning V2 evidence and Packet 12 RS standards. It has no network, database, browser, production-runtime, compliance, or capacity behavior.
+This is a repository-local, deterministic adapter over Packet 9 Base Zoning V2 evidence and Packet 12 outside-Coastal and Packet 16 inside-Coastal RS standards. It has no network, database, browser, production-runtime, compliance, or capacity behavior.
 
 ```sh
 python3 scripts/parcel-rs-standards-runtime-v0/build.py

@@ -1,0 +1,138 @@
+{
+  "acquisition_path": "/Users/ops/trulot-data/inside-coastal-rs-standards-v0/inside-coastal-rs-20260930T151730Z",
+  "authority_policy": "City Clerk ordinances and codified text establish enactment and rule text; the California Coastal Commission action establishes conditional certification; the City adopted-update ledger establishes the recorded inside-Coastal effective date.",
+  "retrieved_at": "2026-09-30T15:17:30Z",
+  "sources": {
+    "adopted_updates": {
+      "authority_rank": 1,
+      "publisher": "City of San Diego, City Planning Department",
+      "scope": "Records O-21836 inside-Coastal effective date 2026-09-10 and O-22109 inside-Coastal status Not yet approved.",
+      "sha256": "1df1eac379d7a52e74afc49249e17276afc49fb2f830091f50c1b075f26cbef2",
+      "title": "Adopted Land Development Code Updates",
+      "url": "https://www.sandiego.gov/planning/work/land-development-code/updates"
+    },
+    "ccc_2024_ldc": {
+      "action": "CONDITIONALLY_CERTIFIED_WITH_TWO_SUGGESTED_MODIFICATIONS",
+      "authority_rank": 1,
+      "commission_action": "2026-02-05",
+      "filed": "2024-11-20",
+      "pages": 13,
+      "publisher": "California Coastal Commission",
+      "scope": "Suggested modifications are confined to sections 143.0740 and 143.0743; Division 4 RS standards are not modified.",
+      "sha256": "d7511d36c1492c4148597b6e6e57e5d44aa1925574226a32ebb5ce03f4a43d8b",
+      "title": "LCPA LCP-6-SAN-24-0038-3 (2024 Land Development Code Update)",
+      "url": "https://documents.coastal.ca.gov/reports/2026/2/Th16f/Th16f-2-2026-report.pdf"
+    },
+    "ccc_o21934_minutes": {
+      "action": "CONCURRED_ON_EXPANDED_CONSENT",
+      "authority_rank": 1,
+      "commission_action": "2025-09-11",
+      "pages": 10,
+      "publisher": "California Coastal Commission",
+      "relevant_pages": [
+        7
+      ],
+      "scope": "Records Commission concurrence on LCP-6-SAN-25-0037-1.",
+      "sha256": "a0dccc69867dfff1596f8bcc4b92df525a8941af56d58ddfdd99fdbcbc0f5171",
+      "title": "September 10-12, 2025 Commission Meeting Minutes",
+      "url": "https://documents.coastal.ca.gov/reports/2025/11/W17/W17-11-2025-September.pdf"
+    },
+    "ccc_o21934_report": {
+      "authority_rank": 1,
+      "certified_effective": "2025-09-21",
+      "commission_meeting": "2025-09-11",
+      "pages": 2,
+      "publisher": "California Coastal Commission",
+      "scope": "Determines O-21934 Footnote 7 repeal de minimis and states it becomes certified ten days after the Commission meeting if fewer than three commissioners object.",
+      "sha256": "2e58d9e614cda467982d10994c7a28db2408dbae7b4e901c9d45500883d736f1",
+      "title": "De Minimis LCP Amendment LCP-6-SAN-25-0037-1 (Encanto Neighborhood)",
+      "url": "https://documents.coastal.ca.gov/reports/2025/9/Th18a/Th18a-9-2025-report.pdf"
+    },
+    "o21836": {
+      "authority_rank": 1,
+      "city_adoption": "2024-07-22",
+      "inside_effective": "2026-09-10",
+      "outside_effective": "2024-10-05",
+      "pages": 328,
+      "publisher": "City of San Diego, Office of the City Clerk",
+      "relevant_pages": [
+        44,
+        46,
+        155,
+        156,
+        209
+      ],
+      "sha256": "2ab750ff80f2d1aaf860e625d9d640e5b06c027aabf31d3dd7636b8411a00d48",
+      "title": "Ordinance O-21836, 2024 Land Development Code Update",
+      "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2024/O-21836.pdf"
+    },
+    "o21934": {
+      "authority_rank": 1,
+      "coastal_amendment": "LCP-6-SAN-25-0037-1",
+      "final_passage": "2025-03-25",
+      "inside_effective": "2025-09-21",
+      "inside_state": "CERTIFIED_EFFECTIVE",
+      "outside_effective": "2025-04-24",
+      "pages": 9,
+      "publisher": "City of San Diego, Office of the City Clerk",
+      "relevant_pages": [
+        5,
+        6,
+        8
+      ],
+      "scope": "Repeals Table 131-04D Footnote 7 and RS-1-2 marker. Coastal Commission concurred with the de minimis amendment on 2025-09-11; it became certified ten days later.",
+      "sha256": "162f93058df3a250846da3bc6d7ac6a74e900a7ae0bf649be51da278e7da86b6",
+      "title": "Ordinance O-21934",
+      "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2025/O-21934.pdf"
+    },
+    "o22109": {
+      "authority_rank": 1,
+      "city_adoption": "2026-06-15",
+      "inside_effective": null,
+      "inside_state": "PENDING_NOT_EFFECTIVE_AS_OF_2026-09-30",
+      "outside_effective": "2026-07-15",
+      "pages": 410,
+      "publisher": "City of San Diego, Office of the City Clerk",
+      "relevant_pages": [
+        193,
+        194,
+        199
+      ],
+      "scope": "Does not amend Table 131-04D; changes dependent Division 4 sections including 131.0443 and 131.0448. City ledger says Coastal approval not yet obtained.",
+      "sha256": "ee3d256eb0fad8f65f6b78bb4bf702a377093b4c87b391d8400f463686ff2e70",
+      "title": "Corrected Ordinance O-22109, 2026 Land Development Code Update",
+      "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2026/O-22109.pdf"
+    },
+    "o22117": {
+      "authority_rank": 1,
+      "city_adoption": "2026-07-14",
+      "pages": 9,
+      "publisher": "City of San Diego, Office of the City Clerk",
+      "relevant_pages": [
+        1,
+        4
+      ],
+      "scope": "Accepts the two Commission modifications; changes sections 143.0740 and 143.0743, not RS Division 4.",
+      "sha256": "c0ca75ff4e9bf4e2d6070ef1273beba0f471845c2424a5bed7b8322039ed0b99",
+      "title": "Ordinance O-22117 accepting Coastal Commission modifications",
+      "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2026/O-22117.pdf"
+    },
+    "residential_division_4": {
+      "authority_rank": 1,
+      "edition": "9-2026",
+      "pages": 98,
+      "publisher": "City of San Diego, Office of the City Clerk",
+      "scope": "Current cell transcription and section coordinates, composited with controlling inside-Coastal ordinances.",
+      "sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+      "table_pages": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "title": "San Diego Municipal Code Chapter 13, Article 1, Division 4: Residential Base Zones",
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf"
+    }
+  },
+  "verified_as_of": "2026-09-30"
+}

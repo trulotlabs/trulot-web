@@ -1,10 +1,10 @@
 {
   "algorithm": "sha256",
   "files": {
-    "contract.json": "bc64bb52e063a5160617bd6184a3285cf70a16aa49dc02e0d048e280973b853c",
-    "decision.json": "5cc7ac36cbd73fa17c7b6e5b8c6536c27be1efc10dcd5e7f2ade566407d8f623",
-    "example-result.json": "3425c375fe9c0f6b56314051503edd276316d15cd07eba533d4df55c18445445",
-    "fixture-results.json": "6a1a650b45dc60594aa1a0ac71ce2c6564cf9a51fb9af2d1d32800f41c351788",
+    "contract.json": "1a3d1ff55931ea762b40f4e1cdcdd44682a42c1ec3451d5ab9fec6b8647f86cf",
+    "decision.json": "36d2323aad65eb3f194b62bee2bc5ecf61ee95ebe88eeb4a45fc193598a54739",
+    "example-result.json": "cf82fe4942550cd3af59843b0d1eae6f619f4db0479abb53ddea1bd0b79b5a8a",
+    "fixture-results.json": "c65a9cd4e79f31c61f6b4a498c16648b4ec3e713fb07a3ee3c0be1a5bf3486a7",
     "fixtures.json": "b5a469224cd4383395c3312532f084f879e0b5d4b22391309fb3fdcf9a83d93c"
   }
 }

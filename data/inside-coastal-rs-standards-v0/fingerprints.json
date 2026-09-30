@@ -1,0 +1,7 @@
+{
+  "canonical_rendering": "UTF-8 sorted-key compact JSON; ensure_ascii=false; allow_nan=false",
+  "inside_outside_comparison_sha256": "6bce60d5de2ff047784263d0d5f5934f7758089685282ac3f6960aff8da67b79",
+  "inside_standards_sha256": "badf0ac26c55cbc7981e2deabf34a80d662c2c55fbfde5b42528671d5a70945b",
+  "runtime_fixture_output_sha256": "e6ed7bbb5bff15f6614c420e6ce8805fce15d1f76d8efae1007b4cbbc6b4d5a9",
+  "source_bundle_sha256": "7b38c52db9e7351d760c6b9c7a51172e696b8c24439cc5f8fc660fc627135bcb"
+}

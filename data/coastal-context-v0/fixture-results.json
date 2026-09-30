@@ -1,5 +1,5 @@
 {
-  "canonical_output_sha256": "325e6862d0df17535fd52ab40b6ced1b64cc50db1c86e3df0022c804852d1140",
+  "canonical_output_sha256": "bccec1016b22aca80d29129dedf6945d9525cd1045a9e07edf7f62c9140bc537",
   "contract_version": "coastal-context-city-sd-2026-09-30-v0",
   "fixture_count": 30,
   "results": [
@@ -24,11 +24,11 @@
         },
         "contract_version": "coastal-context-city-sd-2026-09-30-v0",
         "development_capacity_calculated": false,
-        "fingerprint_sha256": "c86c559dbe2e33f33dcbfce737cc46921d2653b2738ea1ea27807ad47180b750",
+        "fingerprint_sha256": "07027f4e8416cc13346f57af5927d4c1f7608b66ff447b5fd1ce1cae9a8a3099",
         "packet13_bridge": {
           "coastal_context": "inside_coastal",
           "source_state": "available",
-          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+          "standards_resolution": "MAY_USE_INSIDE_COASTAL_RS_V0"
         },
         "parcel": {
           "apn": "3506320400",
@@ -321,11 +321,11 @@
         },
         "contract_version": "coastal-context-city-sd-2026-09-30-v0",
         "development_capacity_calculated": false,
-        "fingerprint_sha256": "1eb7179a050d92edc056436be01dcd83031f62a1b258922060aacbb4d0992452",
+        "fingerprint_sha256": "5f99072bda4dad21805a836cc7988ea68d74712f642eb79faaf55eca8bae6ae2",
         "packet13_bridge": {
           "coastal_context": "inside_coastal",
           "source_state": "available",
-          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+          "standards_resolution": "MAY_USE_INSIDE_COASTAL_RS_V0"
         },
         "parcel": {
           "apn": "3013101500",
@@ -431,11 +431,11 @@
         },
         "contract_version": "coastal-context-city-sd-2026-09-30-v0",
         "development_capacity_calculated": false,
-        "fingerprint_sha256": "93967a8a3b23fd597810a6f4880211561f268741bde1d08a1a119f867a737cd4",
+        "fingerprint_sha256": "120b2818baa838ac4e2beb0306e8919a811b2f30a8af25a14bba021694f5977b",
         "packet13_bridge": {
           "coastal_context": "inside_coastal",
           "source_state": "available",
-          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+          "standards_resolution": "MAY_USE_INSIDE_COASTAL_RS_V0"
         },
         "parcel": {
           "apn": "7600360300",
@@ -617,11 +617,11 @@
         },
         "contract_version": "coastal-context-city-sd-2026-09-30-v0",
         "development_capacity_calculated": false,
-        "fingerprint_sha256": "48d06942e6fdffc3449aed05c882400fcb69a545a4b3abc134e9cd3a1b6c15cd",
+        "fingerprint_sha256": "627e56bb9e68c67c3a690a5a5c810b01c9d390ffdb287a286177a68d07ee28e5",
         "packet13_bridge": {
           "coastal_context": "inside_coastal",
           "source_state": "available",
-          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+          "standards_resolution": "MAY_USE_INSIDE_COASTAL_RS_V0"
         },
         "parcel": {
           "apn": "6271001600",
@@ -1024,11 +1024,11 @@
         },
         "contract_version": "coastal-context-city-sd-2026-09-30-v0",
         "development_capacity_calculated": false,
-        "fingerprint_sha256": "dfae952bf707e928fd8ba1b6496b16446eb59e558b780f328b7b27a450513c8e",
+        "fingerprint_sha256": "66f7bd00ff693a78cd5fc08f9ebe296c4a07bbbeb2bcc879f444edaf471f6b0c",
         "packet13_bridge": {
           "coastal_context": "inside_coastal",
           "source_state": "available",
-          "standards_resolution": "APPLICABILITY_UNRESOLVED"
+          "standards_resolution": "MAY_USE_INSIDE_COASTAL_RS_V0"
         },
         "parcel": {
           "apn": "6271000900",

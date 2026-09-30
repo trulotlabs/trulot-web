@@ -37,9 +37,11 @@ def packet13_projection(state: str) -> dict[str, Any]:
         raise ValueError(f"unsupported Coastal state: {state}")
     if state == "OUTSIDE_COASTAL":
         return {"coastal_context": "outside_coastal", "source_state": "available", "standards_resolution": "MAY_USE_OUTSIDE_COASTAL_RS_V0"}
+    if state == "INSIDE_COASTAL":
+        return {"coastal_context": "inside_coastal", "source_state": "available", "standards_resolution": "MAY_USE_INSIDE_COASTAL_RS_V0"}
     if state == "SOURCE_UNAVAILABLE":
         return {"coastal_context": "unknown", "source_state": "source_unavailable", "standards_resolution": "SOURCE_UNAVAILABLE"}
-    return {"coastal_context": "inside_coastal" if state == "INSIDE_COASTAL" else "unknown", "source_state": "available", "standards_resolution": "APPLICABILITY_UNRESOLVED"}
+    return {"coastal_context": "unknown", "source_state": "available", "standards_resolution": "APPLICABILITY_UNRESOLVED"}
 
 
 def resolve_evidence(evidence: dict[str, Any]) -> dict[str, Any]:

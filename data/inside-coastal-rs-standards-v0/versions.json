@@ -1,0 +1,23 @@
+{
+  "freshness_policy": "Select only dates from 2026-09-10 through 2026-09-30 inclusive. Earlier and later dates fail closed.",
+  "profiles": [
+    {
+      "as_of": "2026-09-30",
+      "coastal_context": "inside",
+      "components": [
+        "O-21836",
+        "LCP-6-SAN-24-0038-3",
+        "O-22117",
+        "O-21934",
+        "LCP-6-SAN-25-0037-1"
+      ],
+      "effective_from": "2026-09-10",
+      "id": "inside-coastal-2026-09-10-through-2026-09-30",
+      "state": "SUPPORTED",
+      "verified_through": "2026-09-30"
+    }
+  ],
+  "rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+  "source_edition": "inside-Coastal composite effective 2026-09-10",
+  "verified_as_of": "2026-09-30"
+}

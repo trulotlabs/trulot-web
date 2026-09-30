@@ -1,6 +1,6 @@
 # Packet 13: offline parcel RS standards runtime V0
 
-Decision: **RS_STANDARDS_RUNTIME_V0_READY**. This repository-only contract deterministically composes accepted Parcel V2 identity, Packet 9 Base Zoning V2 mapping evidence, and Packet 12 RS Base Standards V0. It records standards for review. It is not imported by the application, does not query a database or network, and does not evaluate parcel compliance or development capacity.
+Decision: **RS_STANDARDS_RUNTIME_V0_READY**. This repository-only contract deterministically composes accepted Parcel V2 identity, Packet 9 Base Zoning V2 mapping evidence, and Packet 12 outside-Coastal and Packet 16 inside-Coastal RS standards. It records standards for review. It is not imported by the application, does not query a database or network, and does not evaluate parcel compliance or development capacity.
 
 ## Runtime input and result
 
@@ -8,7 +8,7 @@ The input requires a ten-digit City parcel APN, Parcel V2 acquisition identity, 
 
 The result retains the Parcel Truth vocabulary where practical: truth `state` is `supported`, `partial`, `unknown`, `unavailable`, or `not_applicable`; `source_state` is `available`, `source_unavailable`, or `not_evaluated`; derivation is `deterministic_derived`. Domain resolution states add `RESOLVED`, `PARTIAL_RS_RESOLUTION`, `NOT_APPLICABLE`, `APPLICABILITY_UNRESOLVED`, `MAPPING_UNRESOLVED`, and `SOURCE_UNAVAILABLE` without replacing the source rule's `RECORDED`, `CONDITIONAL`, `UNKNOWN`, or `NOT_APPLICABLE` fact state.
 
-Every result includes ordered zoning evidence, separate zone results, unresolved reasons, explicit exclusions, false compliance/capacity flags, and a SHA-256 fingerprint over canonical JSON. Each resolved rule is the complete Packet 12 record, including its value or expression, unit, condition, exception, unresolved dependency, version, source location, authoritative source hash, and record provenance hash.
+Every result includes ordered zoning evidence, separate zone results, unresolved reasons, explicit exclusions, false compliance/capacity flags, and a SHA-256 fingerprint over canonical JSON. Each resolved rule is the complete selected version record, including its value or expression, unit, condition, exception, unresolved dependency, version, source location, authoritative source hash, and record provenance hash.
 
 ## Mapping behavior
 
@@ -26,7 +26,7 @@ The resolver never invents a primary standards set for a split or ambiguous parc
 
 ## Applicability and version refusal
 
-Packet 12 seals only `outside-coastal-2026-09-30`. That exact Coastal/date pair can resolve. `inside_coastal` and `unknown` return `APPLICABILITY_UNRESOLVED` with no standards. Dates after September 30, 2026 require source reacquisition; earlier dates require a historical law version that V0 does not contain. Both fail closed.
+Packet 12 seals `outside-coastal-2026-09-30`. Packet 16 adds `inside-coastal-2026-09-10-through-2026-09-30`. Explicit inside and outside contexts select their separate versions; boundary-ambiguous, source-unavailable, and applicability-unresolved states still refuse selection. Dates outside each sealed interval fail closed.
 
 ## Conditional and unknown values
 
@@ -49,12 +49,12 @@ Representative APNs include:
 
 ## Provenance and deterministic build
 
-Fixture mapping provenance pins its source artifact path, SHA-256, acquisition identities, mapping method, and evidence commit. Each supported or conditional rule must resolve to Packet 12's version record and an authoritative source hash. A missing or corrupt standards bundle produces `SOURCE_UNAVAILABLE` and no standards.
+Fixture mapping provenance pins its source artifact path, SHA-256, acquisition identities, mapping method, and evidence commit. Each supported or conditional rule must resolve to the selected Packet 12 or Packet 16 version record and an authoritative source hash. A missing or corrupt standards bundle produces `SOURCE_UNAVAILABLE` and no standards.
 
 `scripts/parcel-rs-standards-runtime-v0/build.py` regenerates fixture outputs, the example, decision, and integrity manifest. `test.py` compares a clean rebuild byte for byte and verifies every per-result and aggregate fingerprint.
 
 ## Explicit boundaries and extension points
 
-V0 excludes parcel measurement, compliance, lot legality, unit counts, buildable area, FAR calculation, geometry-applied setbacks, Coastal standards, overlays, parking, ADU/JADU, SB 9, SB 79, Density Bonus, and Complete Communities. Future layers may add separately sourced Coastal profiles, historical versions, cross-reference evaluators, overlays/programs, and parcel facts. They must preserve the current fail-closed states and must not mutate this source contract in place.
+V0 excludes parcel measurement, compliance, lot legality, unit counts, buildable area, FAR calculation, geometry-applied setbacks, Coastal permit rules, overlays, parking, ADU/JADU, SB 9, SB 79, Density Bonus, and Complete Communities. Future layers may add historical versions, cross-reference evaluators, overlays/programs, and parcel facts. They must preserve the current fail-closed states and must not mutate this source contract in place.
 
 No Parcel V1 file, production runtime module, migration, deployment configuration, or database object is changed by this packet.

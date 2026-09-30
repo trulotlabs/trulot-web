@@ -23,7 +23,7 @@
       }
     ]
   },
-  "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+  "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
   "development_capacity_calculated": false,
   "explicit_exclusions": [
     "ADU_JADU",
@@ -37,7 +37,7 @@
     "PARCEL_COMPLIANCE",
     "DEVELOPMENT_CAPACITY"
   ],
-  "fingerprint_sha256": "57d78f53faefa28c4e85b3d0785dc1ea338292d0b5cea14cd8e953e6ec25e740",
+  "fingerprint_sha256": "22ded70150129eb50dc545d9c0e95f074462b97b2b3011940c68aa3470b378b6",
   "parcel": {
     "apn": "3506320400",
     "parcel_acquisition_id": "sangis-20260924T183743Z"

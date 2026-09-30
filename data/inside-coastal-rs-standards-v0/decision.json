@@ -1,0 +1,15 @@
+{
+  "decision": "INSIDE_COASTAL_RS_STANDARDS_V0_READY",
+  "development_capacity_calculated": false,
+  "inside_rule_count": 343,
+  "inside_rule_set_version": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
+  "o21934_inside_coastal": "CERTIFIED_EFFECTIVE_2025-09-21",
+  "o22109_inside_coastal": "PENDING_NOT_EFFECTIVE",
+  "parcel_compliance_evaluated": false,
+  "parcel_v1_modified": false,
+  "production_access": false,
+  "production_runtime_wiring": false,
+  "supported_values_without_provenance": 0,
+  "verified_as_of": "2026-09-30",
+  "zones": 14
+}

@@ -68,18 +68,18 @@ class CoastalContextV0Tests(unittest.TestCase):
     def test_packet13_bridge_fails_closed(self):
         bridge=load('rs-runtime-bridge.json')
         self.assertEqual(bridge['mapping']['OUTSIDE_COASTAL']['coastal_context'],'outside_coastal')
-        self.assertEqual(bridge['mapping']['INSIDE_COASTAL']['standards_resolution'],'APPLICABILITY_UNRESOLVED')
+        self.assertEqual(bridge['mapping']['INSIDE_COASTAL']['standards_resolution'],'MAY_USE_INSIDE_COASTAL_RS_V0')
         self.assertEqual(bridge['mapping']['BOUNDARY_AMBIGUOUS']['coastal_context'],'unknown')
         self.assertEqual(bridge['mapping']['SOURCE_UNAVAILABLE']['source_state'],'source_unavailable')
         self.assertEqual(bridge['examples']['outside_rs_1_7']['zone_code'],'RS-1-7');self.assertEqual(bridge['examples']['outside_rs_1_7']['zoning_state'],'SINGLE_ZONE')
-        self.assertFalse(bridge['inside_coastal_rules_unlocked']);self.assertFalse(bridge['parcel_compliance_evaluated']);self.assertFalse(bridge['development_capacity_calculated'])
+        self.assertTrue(bridge['inside_coastal_rules_unlocked']);self.assertFalse(bridge['parcel_compliance_evaluated']);self.assertFalse(bridge['development_capacity_calculated'])
         packet13=module('packet13_resolver',ROOT/'scripts/parcel-rs-standards-runtime-v0/resolver.py')
         base=load_json(ROOT/'data/parcel-rs-standards-runtime-v0/fixtures.json')['cases'][0]['input']
-        inside={**base,'coastal_context':'inside_coastal'};out=packet13.resolve(inside)
-        self.assertEqual(out['standards']['resolution_state'],'APPLICABILITY_UNRESOLVED')
+        inside={**base,'coastal_context':'inside_coastal','coastal_context_state':'INSIDE_COASTAL'};out=packet13.resolve(inside)
+        self.assertEqual(out['standards']['resolution_state'],'RESOLVED')
         outside={**base,'coastal_context':'outside_coastal'};out=packet13.resolve(outside)
         self.assertEqual(out['standards']['resolution_state'],'RESOLVED')
-        unknown={**base,'coastal_context':'unknown'};out=packet13.resolve(unknown)
+        unknown={**base,'coastal_context':'unknown','coastal_context_state':'APPLICABILITY_UNRESOLVED'};out=packet13.resolve(unknown)
         self.assertEqual(out['standards']['resolution_state'],'APPLICABILITY_UNRESOLVED')
 
     def test_packet12_version_regression(self):
@@ -110,7 +110,8 @@ class CoastalContextV0Tests(unittest.TestCase):
 
     def test_decision_is_bounded(self):
         d=load('decision.json');self.assertEqual(d['decision'],'COASTAL_CONTEXT_V0_READY');self.assertTrue(d['packet13_feed_ready'])
-        for key in ['inside_coastal_rs_supported','parcel_compliance_evaluated','development_capacity_calculated','runtime_production_wiring','parcel_v1_modified','production_access']:
+        self.assertTrue(d['inside_coastal_rs_supported'])
+        for key in ['parcel_compliance_evaluated','development_capacity_calculated','runtime_production_wiring','parcel_v1_modified','production_access']:
             self.assertFalse(d[key],key)
 
 def load_json(path):return json.loads(Path(path).read_text())

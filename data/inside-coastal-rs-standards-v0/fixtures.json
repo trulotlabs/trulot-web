@@ -1,0 +1,691 @@
+{
+  "case_count": 8,
+  "cases": [
+    {
+      "input": {
+        "apn": "3506320400",
+        "as_of": "2026-09-30",
+        "coastal_context": "inside_coastal",
+        "coastal_context_state": "INSIDE_COASTAL",
+        "mapping_evidence_state": "SINGLE_ZONE",
+        "mapping_provenance": {
+          "artifact_path": "sealed Packet 9 full mapping",
+          "artifact_sha256": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+          "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"
+        },
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "zone_evidence": [
+          {
+            "coverage_percent": 100.0,
+            "source_feature_ids": [
+              1374
+            ],
+            "zone_code": "RS-1-7"
+          }
+        ]
+      },
+      "name": "inside-coastal-rs-1-7",
+      "source_evidence": {
+        "base_zoning_mapping_fingerprint": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+        "coastal_mapping_fingerprint": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+        "coastal_row": {
+          "apn": "3506320400",
+          "coastal_area_share_percent": 100.0,
+          "coastal_area_sqft": 9138.360059,
+          "coastal_source_object_ids": [
+            3
+          ],
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "outside_area_sqft": 0.0,
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "parcel_area_sqft": 9138.360059,
+          "parcel_geometry_sha256": "43c9fa9fe84d317f2036db248f0dda84a4c3eb288052cb309a9f89c078bbca8c",
+          "parcel_id": 107112,
+          "parcel_source_object_id": 66264,
+          "point_on_surface_inside": true,
+          "raw_geometry_valid": true,
+          "state": "INSIDE_COASTAL"
+        },
+        "zoning_row": {
+          "apn": "3506320400",
+          "distinctZoneCount": 1,
+          "dominantCoveragePercent": 100.0,
+          "dominantZoneCode": "RS-1-7",
+          "geometrySha256": "43c9fa9fe84d317f2036db248f0dda84a4c3eb288052cb309a9f89c078bbca8c",
+          "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+          "mappingState": "SINGLE_ZONE",
+          "parcelAcquisitionId": "sangis-20260924T183743Z",
+          "parcelAreaSqFt": 9138.377803152907,
+          "parcelId": 107112,
+          "parcelSourceObjectId": 66264,
+          "repairedSourceFeatureCount": 0,
+          "secondaryCoveragePercent": 0.0,
+          "totalCoveredPercent": 100.0,
+          "uncoveredPercent": 0.0,
+          "zoneEvidence": [
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 9138.377803152907,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 1374
+                }
+              ],
+              "intersectedAreaSqFt": 9138.377803152907,
+              "parcelCoveragePercent": 100.0,
+              "zoneCode": "RS-1-7"
+            }
+          ],
+          "zoningAcquisitionId": "zoning-city-sd-20260930T024032Z"
+        }
+      }
+    },
+    {
+      "input": {
+        "apn": "6341302200",
+        "as_of": "2026-09-30",
+        "coastal_context": "outside_coastal",
+        "coastal_context_state": "OUTSIDE_COASTAL",
+        "mapping_evidence_state": "SINGLE_ZONE",
+        "mapping_provenance": {
+          "artifact_path": "sealed Packet 9 full mapping",
+          "artifact_sha256": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+          "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"
+        },
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "zone_evidence": [
+          {
+            "coverage_percent": 100.0,
+            "source_feature_ids": [
+              1324
+            ],
+            "zone_code": "RS-1-7"
+          }
+        ]
+      },
+      "name": "outside-coastal-rs-1-7",
+      "source_evidence": {
+        "base_zoning_mapping_fingerprint": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+        "coastal_mapping_fingerprint": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+        "coastal_row": {
+          "apn": "6341302200",
+          "coastal_area_share_percent": 0.0,
+          "coastal_area_sqft": 0.0,
+          "coastal_source_object_ids": [],
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "outside_area_sqft": 21841.412194,
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "parcel_area_sqft": 21841.412194,
+          "parcel_geometry_sha256": "3cda3f101571d027e172d7eb281041711dbb63680b6fc3fee21bbaa31ef5b5ff",
+          "parcel_id": 716690,
+          "parcel_source_object_id": 654272,
+          "point_on_surface_inside": false,
+          "raw_geometry_valid": true,
+          "state": "OUTSIDE_COASTAL"
+        },
+        "zoning_row": {
+          "apn": "6341302200",
+          "distinctZoneCount": 1,
+          "dominantCoveragePercent": 100.0,
+          "dominantZoneCode": "RS-1-7",
+          "geometrySha256": "3cda3f101571d027e172d7eb281041711dbb63680b6fc3fee21bbaa31ef5b5ff",
+          "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+          "mappingState": "SINGLE_ZONE",
+          "parcelAcquisitionId": "sangis-20260924T183743Z",
+          "parcelAreaSqFt": 21841.444780896963,
+          "parcelId": 716690,
+          "parcelSourceObjectId": 654272,
+          "repairedSourceFeatureCount": 0,
+          "secondaryCoveragePercent": 0.0,
+          "totalCoveredPercent": 100.0,
+          "uncoveredPercent": 0.0,
+          "zoneEvidence": [
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 21841.444780896963,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 1324
+                }
+              ],
+              "intersectedAreaSqFt": 21841.444780896963,
+              "parcelCoveragePercent": 100.0,
+              "zoneCode": "RS-1-7"
+            }
+          ],
+          "zoningAcquisitionId": "zoning-city-sd-20260930T024032Z"
+        }
+      }
+    },
+    {
+      "input": {
+        "apn": "3013428200",
+        "as_of": "2026-09-30",
+        "coastal_context": "inside_coastal",
+        "coastal_context_state": "INSIDE_COASTAL",
+        "mapping_evidence_state": "SINGLE_ZONE",
+        "mapping_provenance": {
+          "artifact_path": "sealed Packet 9 full mapping",
+          "artifact_sha256": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+          "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"
+        },
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "zone_evidence": [
+          {
+            "coverage_percent": 100.00000000000007,
+            "source_feature_ids": [
+              1309
+            ],
+            "zone_code": "RS-1-4"
+          }
+        ]
+      },
+      "name": "inside-coastal-rs-1-4",
+      "source_evidence": {
+        "base_zoning_mapping_fingerprint": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+        "coastal_mapping_fingerprint": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+        "coastal_row": {
+          "apn": "3013428200",
+          "coastal_area_share_percent": 100.0,
+          "coastal_area_sqft": 78011.425355,
+          "coastal_source_object_ids": [
+            5
+          ],
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "outside_area_sqft": 0.0,
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "parcel_area_sqft": 78011.425355,
+          "parcel_geometry_sha256": "94930f26af291f28a4b53557c82b09cad89f8d2053c41bd26e8e7022acf9be0c",
+          "parcel_id": 13639,
+          "parcel_source_object_id": 371,
+          "point_on_surface_inside": true,
+          "raw_geometry_valid": true,
+          "state": "INSIDE_COASTAL"
+        },
+        "zoning_row": {
+          "apn": "3013428200",
+          "distinctZoneCount": 1,
+          "dominantCoveragePercent": 100.00000000000007,
+          "dominantZoneCode": "RS-1-4",
+          "geometrySha256": "94930f26af291f28a4b53557c82b09cad89f8d2053c41bd26e8e7022acf9be0c",
+          "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+          "mappingState": "SINGLE_ZONE",
+          "parcelAcquisitionId": "sangis-20260924T183743Z",
+          "parcelAreaSqFt": 78011.77106349512,
+          "parcelId": 13639,
+          "parcelSourceObjectId": 371,
+          "repairedSourceFeatureCount": 0,
+          "secondaryCoveragePercent": 0.0,
+          "totalCoveredPercent": 100.00000000000007,
+          "uncoveredPercent": 0.0,
+          "zoneEvidence": [
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 78011.77106349518,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 1309
+                }
+              ],
+              "intersectedAreaSqFt": 78011.77106349518,
+              "parcelCoveragePercent": 100.00000000000007,
+              "zoneCode": "RS-1-4"
+            }
+          ],
+          "zoningAcquisitionId": "zoning-city-sd-20260930T024032Z"
+        }
+      }
+    },
+    {
+      "input": {
+        "apn": "4360200200",
+        "as_of": "2026-09-30",
+        "coastal_context": "unknown",
+        "coastal_context_state": "BOUNDARY_AMBIGUOUS",
+        "mapping_evidence_state": "SINGLE_ZONE",
+        "mapping_provenance": {
+          "artifact_path": "sealed Packet 9 full mapping",
+          "artifact_sha256": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+          "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"
+        },
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "zone_evidence": [
+          {
+            "coverage_percent": 99.99999999999999,
+            "source_feature_ids": [
+              3688
+            ],
+            "zone_code": "RS-1-7"
+          }
+        ]
+      },
+      "name": "coastal-boundary-rs",
+      "source_evidence": {
+        "base_zoning_mapping_fingerprint": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+        "coastal_mapping_fingerprint": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+        "coastal_row": {
+          "apn": "4360200200",
+          "coastal_area_share_percent": 49.629443252,
+          "coastal_area_sqft": 52640.271013,
+          "coastal_source_object_ids": [
+            3
+          ],
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "outside_area_sqft": 53426.345018,
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "parcel_area_sqft": 106066.616031,
+          "parcel_geometry_sha256": "029fdb9600ee9f5184a720cf0bfa4b331e9d55cd75fdb194323659a8248cfb0b",
+          "parcel_id": 13686,
+          "parcel_source_object_id": 442,
+          "point_on_surface_inside": false,
+          "raw_geometry_valid": true,
+          "state": "BOUNDARY_AMBIGUOUS"
+        },
+        "zoning_row": {
+          "apn": "4360200200",
+          "distinctZoneCount": 1,
+          "dominantCoveragePercent": 99.99999999999999,
+          "dominantZoneCode": "RS-1-7",
+          "geometrySha256": "029fdb9600ee9f5184a720cf0bfa4b331e9d55cd75fdb194323659a8248cfb0b",
+          "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+          "mappingState": "SINGLE_ZONE",
+          "parcelAcquisitionId": "sangis-20260924T183743Z",
+          "parcelAreaSqFt": 106067.06850195031,
+          "parcelId": 13686,
+          "parcelSourceObjectId": 442,
+          "repairedSourceFeatureCount": 0,
+          "secondaryCoveragePercent": 0.0,
+          "totalCoveredPercent": 99.99999999999999,
+          "uncoveredPercent": 1.4210854715202004e-14,
+          "zoneEvidence": [
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 106067.0685019503,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 3688
+                }
+              ],
+              "intersectedAreaSqFt": 106067.0685019503,
+              "parcelCoveragePercent": 99.99999999999999,
+              "zoneCode": "RS-1-7"
+            }
+          ],
+          "zoningAcquisitionId": "zoning-city-sd-20260930T024032Z"
+        }
+      }
+    },
+    {
+      "input": {
+        "apn": "3013101500",
+        "as_of": "2026-09-30",
+        "coastal_context": "inside_coastal",
+        "coastal_context_state": "INSIDE_COASTAL",
+        "mapping_evidence_state": "MULTI_ZONE",
+        "mapping_provenance": {
+          "artifact_path": "sealed Packet 9 full mapping",
+          "artifact_sha256": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+          "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"
+        },
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "zone_evidence": [
+          {
+            "coverage_percent": 99.62058904318415,
+            "source_feature_ids": [
+              1273
+            ],
+            "zone_code": "RS-1-3"
+          },
+          {
+            "coverage_percent": 0.3794109568199351,
+            "source_feature_ids": [
+              1323
+            ],
+            "zone_code": "RS-1-6"
+          }
+        ]
+      },
+      "name": "split-zone-inside-coastal",
+      "source_evidence": {
+        "base_zoning_mapping_fingerprint": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+        "coastal_mapping_fingerprint": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+        "coastal_row": {
+          "apn": "3013101500",
+          "coastal_area_share_percent": 100.0,
+          "coastal_area_sqft": 59418.125681,
+          "coastal_source_object_ids": [
+            5
+          ],
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "outside_area_sqft": 0.0,
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "parcel_area_sqft": 59418.125681,
+          "parcel_geometry_sha256": "6a5b9d28ac2886a2458498efccc57ba257d9185ac41cc907658ab16531729fbf",
+          "parcel_id": 10019058,
+          "parcel_source_object_id": 1085923,
+          "point_on_surface_inside": true,
+          "raw_geometry_valid": true,
+          "state": "INSIDE_COASTAL"
+        },
+        "zoning_row": {
+          "apn": "3013101500",
+          "distinctZoneCount": 2,
+          "dominantCoveragePercent": 99.62058904318415,
+          "dominantZoneCode": "RS-1-3",
+          "geometrySha256": "6a5b9d28ac2886a2458498efccc57ba257d9185ac41cc907658ab16531729fbf",
+          "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+          "mappingState": "MULTI_ZONE",
+          "parcelAcquisitionId": "sangis-20260924T183743Z",
+          "parcelAreaSqFt": 59418.20253236624,
+          "parcelId": 10019058,
+          "parcelSourceObjectId": 1085923,
+          "repairedSourceFeatureCount": 0,
+          "secondaryCoveragePercent": 0.3794109568199351,
+          "totalCoveredPercent": 100.00000000000408,
+          "uncoveredPercent": 0.0,
+          "zoneEvidence": [
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 59192.76336161541,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 1273
+                }
+              ],
+              "intersectedAreaSqFt": 59192.76336161541,
+              "parcelCoveragePercent": 99.62058904318415,
+              "zoneCode": "RS-1-3"
+            },
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 225.43917075325766,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 1323
+                }
+              ],
+              "intersectedAreaSqFt": 225.43917075325766,
+              "parcelCoveragePercent": 0.3794109568199351,
+              "zoneCode": "RS-1-6"
+            }
+          ],
+          "zoningAcquisitionId": "zoning-city-sd-20260930T024032Z"
+        }
+      }
+    },
+    {
+      "input": {
+        "apn": "6271001600",
+        "as_of": "2026-09-30",
+        "coastal_context": "inside_coastal",
+        "coastal_context_state": "INSIDE_COASTAL",
+        "mapping_evidence_state": "MULTI_ZONE",
+        "mapping_provenance": {
+          "artifact_path": "sealed Packet 9 full mapping",
+          "artifact_sha256": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+          "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"
+        },
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "zone_evidence": [
+          {
+            "coverage_percent": 94.75594446144098,
+            "source_feature_ids": [
+              648
+            ],
+            "zone_code": "OF-1-1"
+          },
+          {
+            "coverage_percent": 5.244055538558022,
+            "source_feature_ids": [
+              230
+            ],
+            "zone_code": "AR-1-2"
+          }
+        ]
+      },
+      "name": "non-rs-inside-coastal",
+      "source_evidence": {
+        "base_zoning_mapping_fingerprint": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+        "coastal_mapping_fingerprint": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+        "coastal_row": {
+          "apn": "6271001600",
+          "coastal_area_share_percent": 100.0,
+          "coastal_area_sqft": 355136.99968,
+          "coastal_source_object_ids": [
+            6
+          ],
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "outside_area_sqft": 0.0,
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "parcel_area_sqft": 355136.99968,
+          "parcel_geometry_sha256": "bcd3926edb802a2f3d4b70ef5f8b8a67abbb05edc226c796b58adc381d87491b",
+          "parcel_id": 13248,
+          "parcel_source_object_id": 8,
+          "point_on_surface_inside": true,
+          "raw_geometry_valid": true,
+          "state": "INSIDE_COASTAL"
+        },
+        "zoning_row": {
+          "apn": "6271001600",
+          "distinctZoneCount": 2,
+          "dominantCoveragePercent": 94.75594446144098,
+          "dominantZoneCode": "OF-1-1",
+          "geometrySha256": "bcd3926edb802a2f3d4b70ef5f8b8a67abbb05edc226c796b58adc381d87491b",
+          "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+          "mappingState": "MULTI_ZONE",
+          "parcelAcquisitionId": "sangis-20260924T183743Z",
+          "parcelAreaSqFt": 355137.5717963361,
+          "parcelId": 13248,
+          "parcelSourceObjectId": 8,
+          "repairedSourceFeatureCount": 0,
+          "secondaryCoveragePercent": 5.244055538558022,
+          "totalCoveredPercent": 99.99999999999899,
+          "uncoveredPercent": 1.0089706847793423e-12,
+          "zoneEvidence": [
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 336513.9602930463,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 648
+                }
+              ],
+              "intersectedAreaSqFt": 336513.9602930463,
+              "parcelCoveragePercent": 94.75594446144098,
+              "zoneCode": "OF-1-1"
+            },
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 18623.611503286233,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 230
+                }
+              ],
+              "intersectedAreaSqFt": 18623.611503286233,
+              "parcelCoveragePercent": 5.244055538558022,
+              "zoneCode": "AR-1-2"
+            }
+          ],
+          "zoningAcquisitionId": "zoning-city-sd-20260930T024032Z"
+        }
+      }
+    },
+    {
+      "input": {
+        "apn": "4236300300",
+        "as_of": "2026-09-30",
+        "coastal_context": "unknown",
+        "coastal_context_state": "BOUNDARY_AMBIGUOUS",
+        "mapping_evidence_state": "INDETERMINATE",
+        "mapping_provenance": {
+          "artifact_path": "sealed Packet 9 full mapping",
+          "artifact_sha256": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+          "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"
+        },
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "zone_evidence": [
+          {
+            "coverage_percent": 58.3492157536219,
+            "source_feature_ids": [
+              623
+            ],
+            "zone_code": "MBPD-R-N"
+          },
+          {
+            "coverage_percent": 34.106966906884615,
+            "source_feature_ids": [
+              625
+            ],
+            "zone_code": "MBPD-R-S"
+          },
+          {
+            "coverage_percent": 0.12183689331466041,
+            "source_feature_ids": [
+              664
+            ],
+            "zone_code": "OP-1-1"
+          }
+        ]
+      },
+      "name": "ambiguous-zoning-coastal",
+      "source_evidence": {
+        "base_zoning_mapping_fingerprint": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+        "coastal_mapping_fingerprint": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+        "coastal_row": {
+          "apn": "4236300300",
+          "coastal_area_share_percent": 99.915059572,
+          "coastal_area_sqft": 313711.629332,
+          "coastal_source_object_ids": [
+            1
+          ],
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "outside_area_sqft": 266.694533,
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "parcel_area_sqft": 313978.323865,
+          "parcel_geometry_sha256": "a87cb0c72df57f50370b5e340659daca5f019581abb7a4833fb04c183dae286d",
+          "parcel_id": 13656,
+          "parcel_source_object_id": 418,
+          "point_on_surface_inside": true,
+          "raw_geometry_valid": true,
+          "state": "BOUNDARY_AMBIGUOUS"
+        },
+        "zoning_row": {
+          "apn": "4236300300",
+          "distinctZoneCount": 3,
+          "dominantCoveragePercent": 58.3492157536219,
+          "dominantZoneCode": "MBPD-R-N",
+          "geometrySha256": "a87cb0c72df57f50370b5e340659daca5f019581abb7a4833fb04c183dae286d",
+          "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+          "mappingState": "INDETERMINATE",
+          "parcelAcquisitionId": "sangis-20260924T183743Z",
+          "parcelAreaSqFt": 313979.0109367845,
+          "parcelId": 13656,
+          "parcelSourceObjectId": 418,
+          "repairedSourceFeatureCount": 0,
+          "secondaryCoveragePercent": 34.22880380019928,
+          "totalCoveredPercent": 92.57801955382118,
+          "uncoveredPercent": 7.4219804461788215,
+          "zoneEvidence": [
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 183204.2905125925,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 623
+                }
+              ],
+              "intersectedAreaSqFt": 183204.2905125925,
+              "parcelCoveragePercent": 58.3492157536219,
+              "zoneCode": "MBPD-R-N"
+            },
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 107088.71735477273,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 625
+                }
+              ],
+              "intersectedAreaSqFt": 107088.71735477273,
+              "parcelCoveragePercent": 34.106966906884615,
+              "zoneCode": "MBPD-R-S"
+            },
+            {
+              "features": [
+                {
+                  "intersectedAreaSqFt": 382.5422725854761,
+                  "sourceGeometryState": "VALID_SOURCE",
+                  "sourceObjectId": 664
+                }
+              ],
+              "intersectedAreaSqFt": 382.5422725854761,
+              "parcelCoveragePercent": 0.12183689331466041,
+              "zoneCode": "OP-1-1"
+            }
+          ],
+          "zoningAcquisitionId": "zoning-city-sd-20260930T024032Z"
+        }
+      }
+    },
+    {
+      "input": {
+        "apn": "7600360300",
+        "as_of": "2026-09-30",
+        "coastal_context": "inside_coastal",
+        "coastal_context_state": "INSIDE_COASTAL",
+        "mapping_evidence_state": "UNMAPPED",
+        "mapping_provenance": {
+          "artifact_path": "sealed Packet 9 full mapping",
+          "artifact_sha256": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+          "zoning_acquisition_id": null
+        },
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "zone_evidence": []
+      },
+      "name": "unmapped-zoning-inside-coastal",
+      "source_evidence": {
+        "base_zoning_mapping_fingerprint": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+        "coastal_mapping_fingerprint": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+        "coastal_row": {
+          "apn": "7600360300",
+          "coastal_area_share_percent": 100.0,
+          "coastal_area_sqft": 92859.273936,
+          "coastal_source_object_ids": [
+            1,
+            6
+          ],
+          "mapping_method": "coastal-overlay-union-positive-area-v1",
+          "outside_area_sqft": 0.0,
+          "parcel_acquisition_id": "sangis-20260924T183743Z",
+          "parcel_area_sqft": 92859.273936,
+          "parcel_geometry_sha256": "44830519481c45bbfbc92f100f7f2d719ef60aad3779fbd4547127828efee786",
+          "parcel_id": 14436,
+          "parcel_source_object_id": 997,
+          "point_on_surface_inside": true,
+          "raw_geometry_valid": true,
+          "state": "INSIDE_COASTAL"
+        },
+        "zoning_row": {
+          "apn": "7600360300",
+          "distinctZoneCount": 0,
+          "dominantCoveragePercent": null,
+          "dominantZoneCode": null,
+          "geometrySha256": "44830519481c45bbfbc92f100f7f2d719ef60aad3779fbd4547127828efee786",
+          "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+          "mappingState": "UNMAPPED",
+          "parcelAcquisitionId": "sangis-20260924T183743Z",
+          "parcelAreaSqFt": 92859.67135093572,
+          "parcelId": 14436,
+          "parcelSourceObjectId": 997,
+          "repairedSourceFeatureCount": 0,
+          "secondaryCoveragePercent": 0.0,
+          "totalCoveredPercent": 0.0,
+          "uncoveredPercent": 100.0,
+          "zoneEvidence": [],
+          "zoningAcquisitionId": null
+        }
+      }
+    }
+  ]
+}

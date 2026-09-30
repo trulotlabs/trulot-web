@@ -1,0 +1,30 @@
+{
+  "comparison_counts": {
+    "CONDITIONAL_DIFFERENCE": 56,
+    "PROVENANCE_ONLY_DIFFERENCE": 280,
+    "UNRESOLVED": 7,
+    "VALUE_CHANGED": 0,
+    "VALUE_SAME": 343
+  },
+  "fixture_cases": 8,
+  "footnote_7_conditioned_rules": 0,
+  "o22109_conditions_removed": 56,
+  "orphan_footnote_8_rules": 7,
+  "rule_count": 343,
+  "zone_counts": {
+    "RS-1-1": 24,
+    "RS-1-10": 25,
+    "RS-1-11": 25,
+    "RS-1-12": 25,
+    "RS-1-13": 25,
+    "RS-1-14": 25,
+    "RS-1-2": 24,
+    "RS-1-3": 24,
+    "RS-1-4": 24,
+    "RS-1-5": 24,
+    "RS-1-6": 24,
+    "RS-1-7": 24,
+    "RS-1-8": 25,
+    "RS-1-9": 25
+  }
+}

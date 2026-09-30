@@ -1,0 +1,13 @@
+{
+  "deployed": false,
+  "development_capacity_calculated": false,
+  "packet_11_frozen": true,
+  "parcel_compliance_evaluated": false,
+  "parcel_v1_modified": false,
+  "production_access": false,
+  "production_mutation": false,
+  "production_runtime_wiring": false,
+  "production_zoning_load": false,
+  "pushed": false,
+  "selected_snapshot": false
+}

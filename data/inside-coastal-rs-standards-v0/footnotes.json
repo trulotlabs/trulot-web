@@ -1,0 +1,52 @@
+{
+  "131-04D:1": {
+    "number": 1,
+    "page": 36,
+    "state": "SOURCE_TEXT",
+    "text": "For lots where at least one-half of the front 50 feet of the lot depth has a minimum slope gradient of 25 percent, the setback closest to the street frontage may be reduced to a minimum 6 feet.",
+    "text_sha256": "785cceebb1e3bdaec136a888f138611e27db260af0e5a7a90ec713f5c57acc81"
+  },
+  "131-04D:2": {
+    "number": 2,
+    "page": 36,
+    "state": "SOURCE_TEXT",
+    "text": "See Section 131.0443(a)(4).",
+    "text_sha256": "ca90021d252762b6481d8fbd8629224936f290dea0319c1db95156447f389bd3"
+  },
+  "131-04D:3": {
+    "number": 3,
+    "page": 36,
+    "state": "SOURCE_TEXT",
+    "text": "See Section 131.0443(a)(2).",
+    "text_sha256": "ec372440b6e9d704cc5b51e2c1b050d0c2856884a317e462cf781fe15c62815e"
+  },
+  "131-04D:4": {
+    "number": 4,
+    "page": 36,
+    "state": "SOURCE_TEXT",
+    "text": "See Section 131.0444(b).",
+    "text_sha256": "eade8c415a921cbc7700d1aa0a402f0797cb8c130b17ba46095f3ccb19322a49"
+  },
+  "131-04D:5": {
+    "number": 5,
+    "page": 36,
+    "state": "SOURCE_TEXT",
+    "text": "See Section 131.0446(a).",
+    "text_sha256": "0f0037f39fdf24d92d03b88441b0c8d9a7210e44d6042c59dffd3e95f1e734b7"
+  },
+  "131-04D:6": {
+    "number": 6,
+    "page": 36,
+    "state": "SOURCE_TEXT",
+    "text": "See Section 131.0443(a)(3).",
+    "text_sha256": "6424b8fc5cf9a450a1cfc2bf329faba90618ccc85895bc7607c8bbbde0f8c50d"
+  },
+  "131-04D:8": {
+    "note": "The source prints Bedroom regulation(8) for RS-1-8 through RS-1-14 but supplies no footnote 8.",
+    "number": 8,
+    "page": 35,
+    "state": "MISSING_IN_SOURCE",
+    "text": null,
+    "text_sha256": null
+  }
+}

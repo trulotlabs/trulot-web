@@ -1,0 +1,17 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "comparison.json": "1267451b102b28c48c010cce7abe1e4deb7943f73009180616bb70921eb5d53c",
+    "decision.json": "c45d9ecd01aaad656e9691b1fadcb794c18b3d7573f39f51f306e42e8ca36ff8",
+    "fingerprints.json": "4e85dc6d8e9dab9e29a55b8488fa6042780ccef5d0ac653159ddff51f72d7bd6",
+    "fixture-results.json": "c2c2908f0881b3c4b76a028730e17265ee6cfc5ebe7d827b45ce6057bfa8c11d",
+    "fixtures.json": "375c3596a198408a7278359c8fb33141b0a22a4948ead5420139cc0acb2647f2",
+    "footnotes.json": "e1d84727f9bc4470050feeabaf430a2e847805cc3dcdebece82344636015e7e5",
+    "legal-version-chain.json": "43738472705dd79538fbe64b36c4333ff048613afa2eb9f65b258f8b1b4fdcd5",
+    "preservation.json": "53ab220012772f6e7b86567a6f5083e4e5c05d16244172359a3ae1f884a4cd8f",
+    "sources.json": "7d7205fa65ad876106da822845454e66271c8f43c5723395bb55eb47d38a2d9a",
+    "standards.json": "f6d0a9b0c2eb3370017a2d01437fdccee5b6746a98a9aeb9e3c68ca780afe392",
+    "validation.json": "4a3de59448f9300abe637c8091985dd473d8523aff0b3e11df00f505784b2280",
+    "versions.json": "ce2d7e4622efabf6fcb11877c1f817ee90549f38738c6385e493e781d03ad030"
+  }
+}

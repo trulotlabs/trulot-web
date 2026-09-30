@@ -11,6 +11,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 DATA = ROOT / "data/parcel-rs-standards-runtime-v0"
 RS_DATA = ROOT / "data/rs-base-standards-v0"
+INSIDE_DATA = ROOT / "data/inside-coastal-rs-standards-v0"
 
 
 def module(name, path):
@@ -34,6 +35,7 @@ RESULTS = load(DATA / "fixture-results.json")
 OUTPUTS = {item["name"]: item["result"] for item in RESULTS["results"]}
 RS_SOURCES = load(RS_DATA / "sources.json")
 SOURCE_HASHES = {value["sha256"] for value in RS_SOURCES["sources"].values() if value.get("sha256")}
+SOURCE_HASHES |= {value["sha256"] for value in load(INSIDE_DATA / "sources.json")["sources"].values() if value.get("sha256")}
 
 
 class ParcelRSStandardsRuntimeV0Tests(unittest.TestCase):
@@ -112,12 +114,15 @@ class ParcelRSStandardsRuntimeV0Tests(unittest.TestCase):
         self.assertEqual(result["standards"]["resolution_state"], "NOT_APPLICABLE")
         self.assertEqual(result["standards"]["zone_results"][0]["rules"], [])
 
-    def test_coastal_refusal(self):
-        for name in ["inside-coastal-rs", "unknown-coastal-rs"]:
-            result = OUTPUTS[name]
-            self.assertEqual(result["standards"]["resolution_state"], "APPLICABILITY_UNRESOLVED")
-            self.assertEqual(result["standards"]["state"], "unknown")
-            self.assertEqual(result["standards"]["zone_results"], [])
+    def test_coastal_version_selection_and_refusal(self):
+        inside = OUTPUTS["inside-coastal-rs"]
+        self.assertEqual(inside["standards"]["resolution_state"], "RESOLVED")
+        self.assertEqual(inside["standards"]["state"], "supported")
+        self.assertEqual(inside["standards"]["rule_set_version"], load(INSIDE_DATA / "versions.json")["rule_set_version"])
+        unknown = OUTPUTS["unknown-coastal-rs"]
+        self.assertEqual(unknown["standards"]["resolution_state"], "APPLICABILITY_UNRESOLVED")
+        self.assertEqual(unknown["standards"]["state"], "unknown")
+        self.assertEqual(unknown["standards"]["zone_results"], [])
 
     def test_as_of_refusal(self):
         future = OUTPUTS["unsupported-future-date"]
@@ -158,7 +163,7 @@ class ParcelRSStandardsRuntimeV0Tests(unittest.TestCase):
         self.assertEqual(OUTPUTS["split-zone-rs-plus-non-rs"]["standards"]["state"], "partial")
         self.assertEqual(OUTPUTS["unmapped"]["standards"]["state"], "unknown")
         self.assertEqual(OUTPUTS["single-zone-non-rs"]["standards"]["state"], "not_applicable")
-        self.assertEqual(OUTPUTS["inside-coastal-rs"]["standards"]["state"], "unknown")
+        self.assertEqual(OUTPUTS["inside-coastal-rs"]["standards"]["state"], "supported")
         for output in OUTPUTS.values():
             self.assertIsInstance(output["parcel_compliance_evaluated"], bool)
             self.assertIsInstance(output["development_capacity_calculated"], bool)
@@ -172,7 +177,6 @@ class ParcelRSStandardsRuntimeV0Tests(unittest.TestCase):
         self.assertEqual(result["standards"]["zone_results"], [])
 
     def test_provenance_complete_and_resolves(self):
-        versions = load(RS_DATA / "versions.json")
         supported = 0
         for output in OUTPUTS.values():
             for zone in output["standards"]["zone_results"]:
@@ -181,7 +185,8 @@ class ParcelRSStandardsRuntimeV0Tests(unittest.TestCase):
                 self.assertEqual(zone["source_state"], "available")
                 for rule in zone["rules"]:
                     supported += 1
-                    self.assertEqual(rule["rule_set_version"], versions["rule_set_version"])
+                    expected_version = load(INSIDE_DATA / "versions.json")["rule_set_version"] if rule["jurisdiction_variant"] == "INSIDE_COASTAL" else load(RS_DATA / "versions.json")["rule_set_version"]
+                    self.assertEqual(rule["rule_set_version"], expected_version)
                     self.assertTrue(rule["source_document"])
                     self.assertTrue(rule["source_section"])
                     self.assertTrue(rule["source_table"])

@@ -1,20 +1,20 @@
 {
-  "canonical_output_sha256": "a1b05b4b046896df266fd11d22fc806ab0455800506dfcad688a772bf313c242",
+  "canonical_output_sha256": "f2e3d91ef4a4ba597415adf34ea9d9e257caaaf4b70a00c676c0e7c53851389f",
   "capacity_logic": false,
-  "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+  "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
   "decision": "RS_STANDARDS_RUNTIME_V0_READY",
   "fixture_cases": 13,
   "parcel_compliance_logic": false,
   "production_runtime_wiring": false,
   "returned_rule_fact_states": {
-    "CONDITIONAL": 131,
+    "CONDITIONAL": 151,
     "NOT_APPLICABLE": 0,
-    "RECORDED": 31,
+    "RECORDED": 35,
     "UNKNOWN": 9
   },
-  "returned_rules": 171,
+  "returned_rules": 195,
   "supported_values_without_provenance": 0,
-  "supported_zone_sets": 7,
+  "supported_zone_sets": 8,
   "unsupported_zone_results": 2,
-  "zone_results": 9
+  "zone_results": 10
 }

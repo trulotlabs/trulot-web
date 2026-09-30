@@ -15,7 +15,8 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_STANDARDS_DIR = ROOT / "data/rs-base-standards-v0"
-CONTRACT_VERSION = "parcel-rs-standards-runtime-2026-09-30-v0"
+DEFAULT_INSIDE_STANDARDS_DIR = ROOT / "data/inside-coastal-rs-standards-v0"
+CONTRACT_VERSION = "parcel-rs-standards-runtime-2026-09-30-v1"
 EXCLUSIONS = [
     "ADU_JADU",
     "SB9",
@@ -53,7 +54,7 @@ class SourceBundleError(ValueError):
     pass
 
 
-def load_source_bundle(data_dir: Path = DEFAULT_STANDARDS_DIR) -> dict[str, Any]:
+def load_source_bundle(data_dir: Path = DEFAULT_STANDARDS_DIR, expected_decision: str = "RS_BASE_STANDARDS_V0_SOURCE_COMPLETE") -> dict[str, Any]:
     try:
         standards = load_json(data_dir / "standards.json")
         sources = load_json(data_dir / "sources.json")
@@ -61,7 +62,7 @@ def load_source_bundle(data_dir: Path = DEFAULT_STANDARDS_DIR) -> dict[str, Any]
         decision = load_json(data_dir / "decision.json")
     except (OSError, json.JSONDecodeError) as exc:
         raise SourceBundleError(f"sealed standards bundle unavailable: {exc}") from exc
-    if decision.get("decision") != "RS_BASE_STANDARDS_V0_SOURCE_COMPLETE":
+    if decision.get("decision") != expected_decision:
         raise SourceBundleError("sealed standards decision is not source-complete")
     by_zone: dict[str, list[dict[str, Any]]] = {}
     for rule in standards:
@@ -96,6 +97,10 @@ def validate_input(parcel: dict[str, Any]) -> None:
             raise ValueError("invalid zone evidence")
     if parcel.get("coastal_context") not in {"outside_coastal", "inside_coastal", "unknown"}:
         raise ValueError("coastal_context must be explicit")
+    if parcel.get("coastal_context_state") is not None and parcel["coastal_context_state"] not in {
+        "OUTSIDE_COASTAL", "INSIDE_COASTAL", "BOUNDARY_AMBIGUOUS", "SOURCE_UNAVAILABLE", "APPLICABILITY_UNRESOLVED"
+    }:
+        raise ValueError("unsupported coastal_context_state")
     try:
         date.fromisoformat(parcel["as_of"])
     except (KeyError, TypeError, ValueError) as exc:
@@ -153,27 +158,43 @@ def unresolved_source(parcel: dict[str, Any], reason: str) -> dict[str, Any]:
     return finish(result)
 
 
-def resolve(parcel: dict[str, Any], standards_dir: Path = DEFAULT_STANDARDS_DIR) -> dict[str, Any]:
+def resolve(
+    parcel: dict[str, Any],
+    standards_dir: Path = DEFAULT_STANDARDS_DIR,
+    inside_standards_dir: Path = DEFAULT_INSIDE_STANDARDS_DIR,
+) -> dict[str, Any]:
     validate_input(parcel)
+    explicit_state = parcel.get("coastal_context_state")
+    if explicit_state == "SOURCE_UNAVAILABLE":
+        return unresolved_source(parcel, "Coastal context source is unavailable.")
+    if explicit_state in {"BOUNDARY_AMBIGUOUS", "APPLICABILITY_UNRESOLVED"} or parcel["coastal_context"] == "unknown":
+        result = base_result(parcel)
+        result["standards"].update({"state": "unknown", "source_state": "available", "resolution_state": "APPLICABILITY_UNRESOLVED"})
+        result["unresolved_reasons"] = [{
+            "code": "COASTAL_APPLICABILITY_UNRESOLVED",
+            "detail": "Boundary-ambiguous or unresolved Coastal context cannot select a definitive standards version.",
+        }]
+        return finish(result)
+    coastal = parcel["coastal_context"]
+    if explicit_state == "INSIDE_COASTAL" and coastal != "inside_coastal":
+        raise ValueError("Coastal state/context mismatch")
+    if explicit_state == "OUTSIDE_COASTAL" and coastal != "outside_coastal":
+        raise ValueError("Coastal state/context mismatch")
+    selected_dir = inside_standards_dir if coastal == "inside_coastal" else standards_dir
+    expected = "INSIDE_COASTAL_RS_STANDARDS_V0_READY" if coastal == "inside_coastal" else "RS_BASE_STANDARDS_V0_SOURCE_COMPLETE"
     try:
-        bundle = load_source_bundle(standards_dir)
+        bundle = load_source_bundle(selected_dir, expected)
     except SourceBundleError as exc:
         return unresolved_source(parcel, str(exc))
     result = base_result(parcel)
     standards = result["standards"]
     versions = bundle["versions"]
     verified_as_of = versions["verified_as_of"]
-    coastal = parcel["coastal_context"]
     as_of = parcel["as_of"]
 
-    if coastal != "outside_coastal":
-        standards.update({"state": "unknown", "source_state": "available", "resolution_state": "APPLICABILITY_UNRESOLVED"})
-        result["unresolved_reasons"] = [{
-            "code": "COASTAL_APPLICABILITY_UNRESOLVED",
-            "detail": "Inside-Coastal and unknown-Coastal profiles cannot select the sealed outside-Coastal composite.",
-        }]
-        return finish(result)
-    if as_of != verified_as_of:
+    inside_supported = coastal == "inside_coastal" and bundle["versions"]["profiles"][0]["effective_from"] <= as_of <= bundle["versions"]["profiles"][0]["verified_through"]
+    outside_supported = coastal == "outside_coastal" and as_of == verified_as_of
+    if not (inside_supported or outside_supported):
         relation = "FUTURE_SOURCE_REACQUISITION_REQUIRED" if as_of > verified_as_of else "HISTORICAL_VERSION_UNAVAILABLE"
         standards.update({"state": "unknown", "source_state": "available", "resolution_state": "APPLICABILITY_UNRESOLVED"})
         result["unresolved_reasons"] = [{"code": relation, "detail": f"V0 is sealed only for {verified_as_of}."}]
@@ -229,7 +250,7 @@ def resolve(parcel: dict[str, Any], standards_dir: Path = DEFAULT_STANDARDS_DIR)
         "rule_set_version": versions["rule_set_version"],
         "zone_results": zone_results,
         "provenance": {
-            "version_profile": "outside-coastal-2026-09-30",
+            "version_profile": bundle["versions"]["profiles"][0]["id"],
             "verified_as_of": verified_as_of,
             "source_edition": versions["source_edition"],
             "source_bundle_sha256": fingerprint({"sources": bundle["sources"], "versions": versions}),

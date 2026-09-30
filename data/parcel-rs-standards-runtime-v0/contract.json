@@ -1,5 +1,5 @@
 {
-  "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+  "contract_version": "parcel-rs-standards-runtime-2026-09-30-v1",
   "input": {
     "required": [
       "apn",
@@ -21,6 +21,16 @@
       "outside_coastal",
       "inside_coastal",
       "unknown"
+    ],
+    "optional": [
+      "coastal_context_state"
+    ],
+    "coastal_context_evidence_states": [
+      "OUTSIDE_COASTAL",
+      "INSIDE_COASTAL",
+      "BOUNDARY_AMBIGUOUS",
+      "SOURCE_UNAVAILABLE",
+      "APPLICABILITY_UNRESOLVED"
     ]
   },
   "mapping_state_projection": {
@@ -62,9 +72,12 @@
   "scope": {
     "jurisdiction": "City of San Diego",
     "zones": "RS-1-1 through RS-1-14",
-    "supported_profile": "outside-coastal-2026-09-30",
     "production_runtime_wiring": false,
     "parcel_compliance": false,
-    "development_capacity": false
+    "development_capacity": false,
+    "supported_profiles": [
+      "outside-coastal-2026-09-30",
+      "inside-coastal-2026-09-10-through-2026-09-30"
+    ]
   }
 }

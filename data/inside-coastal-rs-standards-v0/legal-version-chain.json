@@ -1,0 +1,48 @@
+{
+  "as_of": "2026-09-30",
+  "certification_note": "The acquired Commission report and O-22117 establish the O-21836 conditional-certification chain. The City official update ledger records the resulting inside-Coastal effective date. Separate Commission report and minutes establish O-21934 as a de minimis certified LCP amendment.",
+  "city_acceptance": "2026-07-14",
+  "city_adoption": "2024-07-22",
+  "commission_conditional_certification": "2026-02-05",
+  "controlling_inside_coastal_version": "O-21836_AS_CERTIFIED_LCP-6-SAN-24-0038-3_AND_ACCEPTED_BY_O-22117_PLUS_O-21934_AS_CERTIFIED_LCP-6-SAN-25-0037-1",
+  "events": [
+    {
+      "date": "2024-07-22",
+      "event": "CITY_ADOPTED_O-21836"
+    },
+    {
+      "date": "2024-11-20",
+      "event": "LCP_AMENDMENT_FILED"
+    },
+    {
+      "date": "2025-09-11",
+      "event": "CCC_CONCURRED_ON_DE_MINIMIS_LCP-6-SAN-25-0037-1"
+    },
+    {
+      "date": "2025-09-21",
+      "event": "O-21934_FOOTNOTE_7_REPEAL_BECAME_CERTIFIED_PART_OF_LCP"
+    },
+    {
+      "date": "2026-02-05",
+      "event": "CCC_CONDITIONALLY_CERTIFIED_LCP-6-SAN-24-0038-3"
+    },
+    {
+      "date": "2026-07-14",
+      "event": "CITY_ACCEPTED_MODIFICATIONS_IN_O-22117"
+    },
+    {
+      "date": "2026-09-10",
+      "event": "CITY_RECORDED_INSIDE_COASTAL_EFFECTIVE_DATE"
+    }
+  ],
+  "excluded_later_or_uncertified": [
+    {
+      "ordinance": "O-22109",
+      "reason": "City ledger states not yet approved inside Coastal as of 2026-09-30."
+    }
+  ],
+  "inside_coastal_effective": "2026-09-10",
+  "o21934_certified_effective": "2025-09-21",
+  "o21934_commission_concurrence": "2025-09-11",
+  "superseded_inside_version": "2022_LDC_UPDATE_O-21618_AS_MODIFIED_BY_O-21905_EFFECTIVE_2025-02-06"
+}
