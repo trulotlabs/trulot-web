@@ -1,0 +1,12 @@
+{
+  "production_access": false,
+  "packet_11_state_changed": false,
+  "production_zoning_load_performed": false,
+  "selected_snapshot_changed": false,
+  "parcel_v1_files_changed": false,
+  "canonical_route_changed": false,
+  "navigation_changed": false,
+  "deployment_configuration_changed": false,
+  "deployed": false,
+  "pushed": false
+}

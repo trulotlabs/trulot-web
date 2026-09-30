@@ -1,0 +1,14 @@
+{
+  "decision": "PARCEL_PAGE_V2_PREVIEW_INTEGRATION_READY",
+  "packet": 21,
+  "preview_only": true,
+  "public_navigation_exposed": false,
+  "parcel_v1_modified": false,
+  "canonical_route_modified": false,
+  "production_v2_reads_enabled": false,
+  "production_snapshot_selected": false,
+  "compliance_calculated": false,
+  "capacity_calculated": false,
+  "deployed": false,
+  "pushed": false
+}

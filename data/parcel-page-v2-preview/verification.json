@@ -1,0 +1,45 @@
+{
+  "result": "PASS",
+  "route": "/parcel-v2-preview/[apn]",
+  "render_mode": "dynamic Node.js Server Component",
+  "gate": {
+    "variable": "TRULOT_PARCEL_V2_PREVIEW",
+    "required_value": "1",
+    "allowed_node_env": ["development", "test"],
+    "default_off_http_status": 404,
+    "production_with_flag_http_status": 404
+  },
+  "data": {
+    "source": "data/parcel-intelligence-v2/fixture-results.json",
+    "fixture_count": 30,
+    "fixture_payload_bytes": 2065332,
+    "server_process_cache": true,
+    "production_database_access": false,
+    "external_requests": false
+  },
+  "rendered_fragment_bytes": {
+    "6341302200": 29800,
+    "3506320400": 30007,
+    "4304211000": 31682
+  },
+  "performance": {
+    "browser_load_ms": {"minimum": 105.1, "median": 110.5, "maximum": 810.3},
+    "first_load_includes_dev_compilation": true,
+    "warm_dev_server_render_ms": "19-29",
+    "route_server_output_on_disk": "44K",
+    "route_specific_client_component": false
+  },
+  "checks": [
+    {"command": "node scripts/parcel-v2-preview/test.mjs", "result": "PASS", "detail": "gate, all 30 fixtures, scenarios, unknown APN, corrupt seal, missing secondary source, presentation reuse, legacy containment, privacy"},
+    {"command": "node scripts/parcel-page-v2-ui/test.mjs", "result": "PASS", "detail": "Packet 20 adapter and presentation regressions"},
+    {"command": "python3 scripts/parcel-intelligence-v2/test.py", "result": "PASS", "detail": "31 Packet 18 contract regressions"},
+    {"command": "node scripts/parcel-v2-preview/browser.mjs http://127.0.0.1:3210", "result": "PASS", "detail": "9 canonical viewport checks, exact static comparison, accessibility/keyboard checks, six screenshots"},
+    {"command": "npx tsc --noEmit --incremental false", "result": "PASS"},
+    {"command": "npx eslint app/parcel-v2-preview/[apn]/page.tsx lib/parcel-v2-preview.ts scripts/parcel-v2-preview scripts/parcel-page-v2-ui/renderer.ts", "result": "PASS"},
+    {"command": "NEXT_PUBLIC_SUPABASE_URL=https://example.invalid NEXT_PUBLIC_SUPABASE_ANON_KEY=local-build-placeholder TRULOT_PARCEL_V2_PREVIEW=1 npm run build", "result": "PASS", "detail": "inert local placeholders only; preview reported dynamic"},
+    {"command": "git diff --check", "result": "PASS"}
+  ],
+  "browser_evidence": "data/parcel-page-v2-preview/browser-review.json",
+  "production_containment": "PASS",
+  "security_privacy": "PASS"
+}
