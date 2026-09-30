@@ -1,0 +1,41 @@
+{
+  "contract_version": "rs-parcel-condition-inputs-2026-09-30-v0",
+  "fact_contract": {
+    "required_fields": [
+      "fact_key",
+      "state",
+      "source_state",
+      "value",
+      "unit",
+      "derivation_class",
+      "method",
+      "source",
+      "source_acquisition",
+      "confidence",
+      "limitations",
+      "provenance"
+    ],
+    "states": ["supported", "partial", "unknown", "unavailable", "not_applicable"],
+    "source_states": ["available", "source_unavailable", "not_evaluated"],
+    "derivation_classes": ["RECORDED", "DETERMINISTIC_DERIVED", "INFERRED", "NOT_AVAILABLE"]
+  },
+  "readiness_states": [
+    "READY_FOR_DETERMINISTIC_EVALUATION",
+    "READY_WITH_CONDITION",
+    "INPUT_MISSING",
+    "LEGAL_SEMANTICS_UNRESOLVED",
+    "NOT_APPLICABLE"
+  ],
+  "geometry_diagnostic_namespace": {
+    "legal_semantics": false,
+    "permitted_prefix": "geometry_",
+    "forbidden_promotions": ["legal_lot_width_ft", "legal_lot_depth_ft", "legal_street_frontage_length_ft", "corner_lot_status"]
+  },
+  "scope": {
+    "source": "Parcel V2 committed evidence",
+    "standards": "Packet 12 RS Base Standards V0",
+    "compliance_evaluation": false,
+    "capacity_calculation": false,
+    "production_runtime_wiring": false
+  }
+}

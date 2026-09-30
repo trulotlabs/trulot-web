@@ -1,0 +1,15 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "contract.json": "17933a7c32b5a4599a5d5f2918a60337bad1151aca292e9ed8de3709d9cfcaec",
+    "decision.json": "bea82c7be4d6e62353738b52f0f659459290b0a763ac5586461eb561d84ea6b2",
+    "dependencies.json": "878fe584b7e63e607b4541422e6c4fb39c1b8f935481881bbf5428432785fa50",
+    "dependency-matrix.json": "7879960b8bad2336cede6fbf82f93a8ed9de8f451f0a9377ba27568025d81d1b",
+    "diagnostic-analysis.json": "3af4cd0d93dcca08ccf85203d93d4093679ed3abac2bd0987e68c9c06b7e69c6",
+    "fact-inventory.json": "f9d7ae3cfbd71e0551c67900eb8294c6815bfb2d840786110cc787e2a68b565e",
+    "fixture-results.json": "ec246dffc27638db5131fd50cca84fe870ac4285c7c1a8c0b3d63a5b4ea4e8c1",
+    "fixtures.json": "fc77ee5e761284d940e94844c86cadbe9894c7322393679759e7cf0b4f6b008e",
+    "future-source-priorities.json": "f2321c4b47c0a54fe3c3f39ea0a5803b3b54c5ad3bf49884be1232328494c185",
+    "rs-1-7-example.json": "249bc335bd4e3d1afbea0d1bc3a85cdfa49fc74aa781f4357add566579c38280"
+  }
+}

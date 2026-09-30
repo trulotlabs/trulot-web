@@ -1,0 +1,524 @@
+{
+  "facts": [
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "alley_access",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "angled_envelope_context",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "applicable_accessory_structure_type",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "DETERMINISTIC_DERIVED": 20,
+        "NOT_AVAILABLE": 4
+      },
+      "fact_key": "approximate_geometry_area_sqft",
+      "states": {
+        "supported": 20,
+        "unknown": 4
+      },
+      "supported_examples": 20
+    },
+    {
+      "derivations": {
+        "DETERMINISTIC_DERIVED": 20,
+        "NOT_AVAILABLE": 4
+      },
+      "fact_key": "centroid",
+      "states": {
+        "supported": 20,
+        "unknown": 4
+      },
+      "supported_examples": 20
+    },
+    {
+      "derivations": {
+        "DETERMINISTIC_DERIVED": 20,
+        "NOT_AVAILABLE": 4
+      },
+      "fact_key": "centroid_within",
+      "states": {
+        "supported": 20,
+        "unknown": 4
+      },
+      "supported_examples": 20
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "coastal_context",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "corner_lot_status",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "defensible_space_requirement",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "existing_dwelling_units",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "existing_lot_legality",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "front_lot_line",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "garage_context",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "DETERMINISTIC_DERIVED": 20,
+        "NOT_AVAILABLE": 4
+      },
+      "fact_key": "geometry_sha256",
+      "states": {
+        "supported": 20,
+        "unknown": 4
+      },
+      "supported_examples": 20
+    },
+    {
+      "derivations": {
+        "DETERMINISTIC_DERIVED": 20,
+        "NOT_AVAILABLE": 4
+      },
+      "fact_key": "geometry_type",
+      "states": {
+        "supported": 20,
+        "unknown": 4
+      },
+      "supported_examples": 20
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "gross_floor_area_sqft",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "hardscape_area_sqft",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "height_reference_datum",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "interior_side_lot_lines",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 4,
+        "RECORDED": 20
+      },
+      "fact_key": "jurisdiction_code",
+      "states": {
+        "supported": 20,
+        "unknown": 4
+      },
+      "supported_examples": 20
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "legal_lot_area_sqft",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "legal_lot_depth_ft",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "legal_lot_width_ft",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "legal_street_frontage_length_ft",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "DETERMINISTIC_DERIVED": 24
+      },
+      "fact_key": "parcel_apn",
+      "states": {
+        "supported": 24
+      },
+      "supported_examples": 24
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 4,
+        "RECORDED": 20
+      },
+      "fact_key": "parcel_geometry",
+      "states": {
+        "partial": 7,
+        "supported": 13,
+        "unknown": 4
+      },
+      "supported_examples": 13
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 4,
+        "RECORDED": 20
+      },
+      "fact_key": "parcel_id",
+      "states": {
+        "supported": 20,
+        "unknown": 4
+      },
+      "supported_examples": 20
+    },
+    {
+      "derivations": {
+        "DETERMINISTIC_DERIVED": 20,
+        "NOT_AVAILABLE": 4
+      },
+      "fact_key": "point_on_surface",
+      "states": {
+        "supported": 20,
+        "unknown": 4
+      },
+      "supported_examples": 20
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "proposed_dwelling_unit_count",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "proposed_project_scope",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "proposed_use",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "rear_lot_line",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "refuse_storage_context",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "resubdivision_history",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "DETERMINISTIC_DERIVED": 11,
+        "NOT_AVAILABLE": 13
+      },
+      "fact_key": "situs_address",
+      "states": {
+        "supported": 11,
+        "unknown": 13
+      },
+      "supported_examples": 11
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 4,
+        "RECORDED": 20
+      },
+      "fact_key": "situs_components",
+      "states": {
+        "supported": 20,
+        "unknown": 4
+      },
+      "supported_examples": 20
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "slope_percent",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 4,
+        "RECORDED": 20
+      },
+      "fact_key": "source_object_id",
+      "states": {
+        "supported": 20,
+        "unknown": 4
+      },
+      "supported_examples": 20
+    },
+    {
+      "derivations": {
+        "DETERMINISTIC_DERIVED": 11,
+        "NOT_AVAILABLE": 13
+      },
+      "fact_key": "stack_group_count",
+      "states": {
+        "supported": 11,
+        "unknown": 13
+      },
+      "supported_examples": 11
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "steep_hillside_fraction",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "street_curve_or_turnaround_status",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "street_side_lot_lines",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "structure_footprint_area_sqft",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "structure_geometry",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "structure_height_ft",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "supplemental_requirement_trigger",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 16,
+        "RECORDED": 8
+      },
+      "fact_key": "taxable_acreage",
+      "states": {
+        "supported": 8,
+        "unknown": 16
+      },
+      "supported_examples": 8
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "third_story_dimensions",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    },
+    {
+      "derivations": {
+        "NOT_AVAILABLE": 24
+      },
+      "fact_key": "visibility_area_context",
+      "states": {
+        "unknown": 24
+      },
+      "supported_examples": 0
+    }
+  ],
+  "fixture_count": 24
+}

@@ -1,0 +1,18 @@
+{
+  "canonical_output_sha256": "2c7b2c03dd2da202482931bd71cb6d22ebe27423be6c6369cb169e7a7d9c0b5c",
+  "capacity_calculations": 0,
+  "compliance_conclusions": 0,
+  "contract_version": "rs-parcel-condition-inputs-2026-09-30-v0",
+  "corner_lot_conclusions": 0,
+  "decision": "RS_PARCEL_INPUTS_NOT_READY_FOR_COMPLIANCE",
+  "fixture_count": 24,
+  "frontage_conclusions": 0,
+  "legal_depth_conclusions": 0,
+  "legal_width_conclusions": 0,
+  "production_runtime_wiring": false,
+  "readiness_counts": {
+    "INPUT_MISSING": 21,
+    "LEGAL_SEMANTICS_UNRESOLVED": 4
+  },
+  "standard_families": 25
+}

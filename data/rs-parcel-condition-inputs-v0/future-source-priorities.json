@@ -1,0 +1,61 @@
+{
+  "counting_method": "Upper-bound count of Packet 12 rule records in affected standard families. A source may satisfy only one of several required inputs, so affected does not mean independently sufficient.",
+  "priorities": [
+    {
+      "rank": 1,
+      "source": "Authoritative Coastal boundary plus a completed current Coastal RS standards profile",
+      "affected_standard_family_count": 25,
+      "affected_packet12_rule_records_upper_bound": 343,
+      "would_unlock": ["inside-Coastal applicability selection across the RS domain"],
+      "reason": "Largest rule reach, but context-limited: it does not change the already supported outside-Coastal profile and does not supply parcel measurements."
+    },
+    {
+      "rank": 2,
+      "source": "Project-specific proposed use, unit count, structure, paving, garage, and refuse-storage plans",
+      "affected_standard_family_count": 18,
+      "affected_packet12_rule_records_upper_bound": 252,
+      "would_unlock": ["project/program inputs for density, structures, setbacks, hardscape, refuse storage, dwelling protection, and supplemental requirements"],
+      "reason": "Broadest non-applicability input reach, though these are proposal facts rather than stable parcel-base facts."
+    },
+    {
+      "rank": 3,
+      "source": "Authoritative survey, recorded map, and legal lot/subdivision records",
+      "affected_standard_family_count": 16,
+      "affected_packet12_rule_records_upper_bound": 224,
+      "would_unlock": ["legal lot area", "front/rear/side lot-line designation", "lot width", "lot depth", "corner-lot status", "frontage", "resubdivision history"],
+      "reason": "These foundational legal/cadastral semantics block the core dimensional standards and cannot be recovered from polygon shape."
+    },
+    {
+      "rank": 4,
+      "source": "Authoritative building footprints, structure elevations/heights, story data, and gross floor area",
+      "affected_standard_family_count": 14,
+      "affected_packet12_rule_records_upper_bound": 196,
+      "would_unlock": ["setback distance inputs", "height", "FAR numerator", "lot coverage", "building spacing", "third-story dimensions"],
+      "reason": "Parcel V2 contains no structure geometry or Code-appropriate floor-area measurement."
+    },
+    {
+      "rank": 5,
+      "source": "Authoritative topography/slope and Fire Code defensible-space determinations",
+      "affected_standard_family_count": 6,
+      "affected_packet12_rule_records_upper_bound": 84,
+      "would_unlock": ["front-setback slope condition", "steep-hillside coverage", "variable FAR condition", "defensible-space setback conditions"],
+      "reason": "Parcel outline has no elevation or Fire Code determination."
+    },
+    {
+      "rank": 6,
+      "source": "Official street and right-of-way geometry plus legally defined parcel-frontage relationships",
+      "affected_standard_family_count": 6,
+      "affected_packet12_rule_records_upper_bound": 84,
+      "would_unlock": ["frontage", "front/street-side line context", "street curve or turnaround condition", "corner-lot evidence"],
+      "reason": "Road adjacency alone would remain diagnostic until tied to the Code-defined lot-line relationship."
+    },
+    {
+      "rank": 7,
+      "source": "Authoritative correction for missing Table 131-04D footnote 8",
+      "affected_standard_family_count": 1,
+      "affected_packet12_rule_records_upper_bound": 7,
+      "would_unlock": ["RS-1-8 through RS-1-14 bedroom-regulation meaning"],
+      "reason": "The current official table prints the marker without the footnote text."
+    }
+  ]
+}

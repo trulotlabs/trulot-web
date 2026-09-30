@@ -1,0 +1,125 @@
+{
+  "comparisons": [
+    {
+      "apn": "2748323700",
+      "convex_hull_maximum_span_ft": 961.774495,
+      "maximum_method_delta_ft": 186.804356,
+      "maximum_rotated_rectangle_span_ft": 774.970139,
+      "minimum_method_delta_ft": 77.606077,
+      "minimum_rotated_rectangle_min_span_ft": 757.182436,
+      "principal_axis_transverse_span_ft": 679.576359
+    },
+    {
+      "apn": "2392600700",
+      "convex_hull_maximum_span_ft": 5521.867684,
+      "maximum_method_delta_ft": 166.120747,
+      "maximum_rotated_rectangle_span_ft": 5355.746937,
+      "minimum_method_delta_ft": 400.473492,
+      "minimum_rotated_rectangle_min_span_ft": 2914.025118,
+      "principal_axis_transverse_span_ft": 3314.49861
+    },
+    {
+      "apn": "5891700512",
+      "convex_hull_maximum_span_ft": 666.717309,
+      "maximum_method_delta_ft": 102.930134,
+      "maximum_rotated_rectangle_span_ft": 563.787175,
+      "minimum_method_delta_ft": 156.099826,
+      "minimum_rotated_rectangle_min_span_ft": 423.734928,
+      "principal_axis_transverse_span_ft": 579.834754
+    },
+    {
+      "apn": "5891700513",
+      "convex_hull_maximum_span_ft": 666.717309,
+      "maximum_method_delta_ft": 102.930134,
+      "maximum_rotated_rectangle_span_ft": 563.787175,
+      "minimum_method_delta_ft": 156.099826,
+      "minimum_rotated_rectangle_min_span_ft": 423.734928,
+      "principal_axis_transverse_span_ft": 579.834754
+    },
+    {
+      "apn": "6782511200",
+      "convex_hull_maximum_span_ft": 584.934358,
+      "maximum_method_delta_ft": 69.580567,
+      "maximum_rotated_rectangle_span_ft": 515.353791,
+      "minimum_method_delta_ft": 13.093077,
+      "minimum_rotated_rectangle_min_span_ft": 287.66693,
+      "principal_axis_transverse_span_ft": 300.760007
+    },
+    {
+      "apn": "7600360300",
+      "convex_hull_maximum_span_ft": 427.664752,
+      "maximum_method_delta_ft": 14.00426,
+      "maximum_rotated_rectangle_span_ft": 413.660492,
+      "minimum_method_delta_ft": 90.2236,
+      "minimum_rotated_rectangle_min_span_ft": 322.874505,
+      "principal_axis_transverse_span_ft": 413.098105
+    },
+    {
+      "apn": "4236300300",
+      "convex_hull_maximum_span_ft": 6481.026372,
+      "maximum_method_delta_ft": 0.169163,
+      "maximum_rotated_rectangle_span_ft": 6480.857209,
+      "minimum_method_delta_ft": 20.294485,
+      "minimum_rotated_rectangle_min_span_ft": 242.99321,
+      "principal_axis_transverse_span_ft": 263.287695
+    },
+    {
+      "apn": "5470501600",
+      "convex_hull_maximum_span_ft": 215.694797,
+      "maximum_method_delta_ft": 13.640103,
+      "maximum_rotated_rectangle_span_ft": 202.054694,
+      "minimum_method_delta_ft": 13.420451,
+      "minimum_rotated_rectangle_min_span_ft": 75.487095,
+      "principal_axis_transverse_span_ft": 88.907546
+    },
+    {
+      "apn": "5810934600",
+      "convex_hull_maximum_span_ft": 102.93468,
+      "maximum_method_delta_ft": 10.33603,
+      "maximum_rotated_rectangle_span_ft": 92.59865,
+      "minimum_method_delta_ft": 12.038544,
+      "minimum_rotated_rectangle_min_span_ft": 45.180797,
+      "principal_axis_transverse_span_ft": 57.219341
+    },
+    {
+      "apn": "5490330700",
+      "convex_hull_maximum_span_ft": 124.090528,
+      "maximum_method_delta_ft": 15.939165,
+      "maximum_rotated_rectangle_span_ft": 108.151363,
+      "minimum_method_delta_ft": 0.008228,
+      "minimum_rotated_rectangle_min_span_ft": 61.006991,
+      "principal_axis_transverse_span_ft": 60.998763
+    },
+    {
+      "apn": "6271001600",
+      "convex_hull_maximum_span_ft": 1142.460508,
+      "maximum_method_delta_ft": 32.023723,
+      "maximum_rotated_rectangle_span_ft": 1110.436785,
+      "minimum_method_delta_ft": 14.28049,
+      "minimum_rotated_rectangle_min_span_ft": 327.037249,
+      "principal_axis_transverse_span_ft": 341.317739
+    },
+    {
+      "apn": "5333641301",
+      "convex_hull_maximum_span_ft": 361.493559,
+      "maximum_method_delta_ft": 60.759774,
+      "maximum_rotated_rectangle_span_ft": 300.733785,
+      "minimum_method_delta_ft": 25.721796,
+      "minimum_rotated_rectangle_min_span_ft": 200.591169,
+      "principal_axis_transverse_span_ft": 226.312965
+    },
+    {
+      "apn": "5333641302",
+      "convex_hull_maximum_span_ft": 361.493559,
+      "maximum_method_delta_ft": 60.759774,
+      "maximum_rotated_rectangle_span_ft": 300.733785,
+      "minimum_method_delta_ft": 25.721796,
+      "minimum_rotated_rectangle_min_span_ft": 200.591169,
+      "principal_axis_transverse_span_ft": 226.312965
+    }
+  ],
+  "evaluated_parcels": 13,
+  "finding": "Candidate geometric methods produce shape descriptors, not Code-defined lot width or depth.",
+  "legal_depth_conclusions": 0,
+  "legal_width_conclusions": 0
+}

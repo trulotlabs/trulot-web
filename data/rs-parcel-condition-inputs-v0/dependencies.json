@@ -1,0 +1,155 @@
+{
+  "families": [
+    {
+      "standard_family": "accessory_uses_structures",
+      "required_parcel_facts": ["proposed_use", "structure_geometry", "applicable_accessory_structure_type"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "No project use or accessory-structure facts; referenced sections remain unevaluated."
+    },
+    {
+      "standard_family": "architectural_projections_encroachments",
+      "required_parcel_facts": ["structure_geometry", "front_lot_line", "interior_side_lot_lines", "street_side_lot_lines", "rear_lot_line"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "No structure geometry or legally designated yard boundaries."
+    },
+    {
+      "standard_family": "bedroom_regulation",
+      "required_parcel_facts": [],
+      "source_dependencies": ["authoritative_table_131_04d_footnote_8"],
+      "readiness": "LEGAL_SEMANTICS_UNRESOLVED",
+      "blocker": "Packet 12 proves the printed footnote marker but the authoritative source supplies no footnote 8."
+    },
+    {
+      "standard_family": "building_spacing",
+      "required_parcel_facts": ["structure_geometry", "proposed_project_scope"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "No existing/proposed structure geometry or project scope."
+    },
+    {
+      "standard_family": "corner_lot_width_min",
+      "required_parcel_facts": ["corner_lot_status", "legal_lot_width_ft"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "Corner-lot status and Code-defined lot width are unknown."
+    },
+    {
+      "standard_family": "density_basis",
+      "required_parcel_facts": ["existing_lot_legality", "proposed_dwelling_unit_count", "proposed_use"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "One-unit-per-lot is a source basis; legal-lot and proposed-program facts are absent."
+    },
+    {
+      "standard_family": "dwelling_unit_protection",
+      "required_parcel_facts": ["existing_dwelling_units", "proposed_project_scope"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "No authoritative existing-unit count or project scope."
+    },
+    {
+      "standard_family": "floor_area_ratio_max",
+      "required_parcel_facts": ["legal_lot_area_sqft", "gross_floor_area_sqft", "steep_hillside_fraction"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "The legal denominator, gross-floor-area numerator, and hillside condition are unresolved."
+    },
+    {
+      "standard_family": "front_setback_min",
+      "required_parcel_facts": ["front_lot_line", "structure_geometry", "slope_percent", "steep_hillside_fraction", "defensible_space_requirement"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "Front line, structures, slope condition, and any Fire Code buffer are unknown."
+    },
+    {
+      "standard_family": "garage_regulations",
+      "required_parcel_facts": ["garage_context", "structure_geometry", "proposed_project_scope"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "No garage, parking-access, structure, or project facts."
+    },
+    {
+      "standard_family": "interior_side_setback_min",
+      "required_parcel_facts": ["interior_side_lot_lines", "structure_geometry", "legal_lot_width_ft", "defensible_space_requirement"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "Interior side lines, structure geometry, lot width, and any Fire Code buffer are unknown."
+    },
+    {
+      "standard_family": "lot_area_min",
+      "required_parcel_facts": ["legal_lot_area_sqft"],
+      "readiness": "LEGAL_SEMANTICS_UNRESOLVED",
+      "blocker": "Approximate geometry area is available for many parcels, but equivalence to legal lot area is unproven."
+    },
+    {
+      "standard_family": "lot_coverage_max",
+      "required_parcel_facts": ["legal_lot_area_sqft", "structure_footprint_area_sqft", "steep_hillside_fraction"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "Legal premises area, structure footprint, and hillside fraction are unresolved."
+    },
+    {
+      "standard_family": "lot_depth_min",
+      "required_parcel_facts": ["legal_lot_depth_ft", "front_lot_line", "rear_lot_line"],
+      "readiness": "LEGAL_SEMANTICS_UNRESOLVED",
+      "blocker": "Geometry spans cannot establish Code-defined depth without front/rear lot lines."
+    },
+    {
+      "standard_family": "lot_width_min",
+      "required_parcel_facts": ["legal_lot_width_ft", "front_lot_line"],
+      "readiness": "LEGAL_SEMANTICS_UNRESOLVED",
+      "blocker": "Geometry spans cannot establish Code-defined width or its measurement line."
+    },
+    {
+      "standard_family": "paving_hardscape_max",
+      "required_parcel_facts": ["hardscape_area_sqft", "legal_lot_area_sqft", "proposed_project_scope"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "No hardscape area, legal lot area, or project scope."
+    },
+    {
+      "standard_family": "rear_setback_min",
+      "required_parcel_facts": ["rear_lot_line", "structure_geometry", "legal_lot_depth_ft", "alley_access", "defensible_space_requirement"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "Rear line, structures, lot depth, alley condition, and any Fire Code buffer are unknown."
+    },
+    {
+      "standard_family": "refuse_recycling_storage",
+      "required_parcel_facts": ["refuse_storage_context", "proposed_use", "proposed_project_scope"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "No use, project, or refuse-storage facts."
+    },
+    {
+      "standard_family": "resubdivided_corner_lot_setbacks",
+      "required_parcel_facts": ["resubdivision_history", "corner_lot_status", "front_lot_line", "street_side_lot_lines"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "No subdivision history, corner status, or designated lot lines."
+    },
+    {
+      "standard_family": "street_frontage_min",
+      "required_parcel_facts": ["legal_street_frontage_length_ft", "front_lot_line", "street_curve_or_turnaround_status"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "Situs and spatial adjacency do not establish legal frontage or street configuration."
+    },
+    {
+      "standard_family": "street_side_setback_min",
+      "required_parcel_facts": ["street_side_lot_lines", "structure_geometry", "legal_lot_width_ft", "defensible_space_requirement"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "Street-side lines, structure geometry, lot width, and any Fire Code buffer are unknown."
+    },
+    {
+      "standard_family": "structure_height_max",
+      "required_parcel_facts": ["structure_height_ft", "structure_geometry", "height_reference_datum", "angled_envelope_context"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "No structure height, reference datum, or Table 131-04H angled-envelope context."
+    },
+    {
+      "standard_family": "supplemental_requirements",
+      "required_parcel_facts": ["proposed_project_scope", "supplemental_requirement_trigger"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "No project scope or facts selecting a supplemental requirement."
+    },
+    {
+      "standard_family": "third_story_dimensions_max",
+      "required_parcel_facts": ["third_story_dimensions", "structure_geometry", "proposed_project_scope"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "No story count, third-story dimensions, or project structure geometry."
+    },
+    {
+      "standard_family": "visibility_area",
+      "required_parcel_facts": ["visibility_area_context", "front_lot_line", "street_side_lot_lines", "structure_geometry"],
+      "readiness": "INPUT_MISSING",
+      "blocker": "No designated visibility area, lot-line roles, or obstruction/structure geometry."
+    }
+  ]
+}
