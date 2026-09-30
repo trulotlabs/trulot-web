@@ -1,0 +1,105 @@
+{
+  "aliases": [],
+  "basis": "Exact authoritative codes; no inferred aliases.",
+  "count": 14,
+  "zones": [
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 228,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-1"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 24,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-2"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 22,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-3"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 46,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-4"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 11,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-5"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 8,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-6"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 166,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-7"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 17,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-8"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 4,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-9"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 2,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-10"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 11,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-11"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 8,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-12"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 22,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-13"
+    },
+    {
+      "authoritative_code_recognition": "SDMC 131.0403(b) and Table 131-04D",
+      "base_zoning_v2_source_features": 105,
+      "present_in_base_zoning_v2": true,
+      "support_state": "SUPPORTED",
+      "zone_code": "RS-1-14"
+    }
+  ]
+}

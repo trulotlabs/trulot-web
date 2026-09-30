@@ -1,0 +1,88 @@
+{
+  "authority_policy": "City Clerk codified text controls table transcription; adopted ordinances and the City update ledger control effective-date and Coastal distinctions. No lower-ranked source silently overrides either.",
+  "retrieval_note": "The current 9-2026 Division 4 PDF removes stale O-21836 Coastal editor notes and repaginates the RS table. Semantic token comparison confirmed Table 131-04D and RS-specific sections retained the same substantive text as the pinned 7-2026 acquisition.",
+  "retrieved_at": "2026-09-30T12:53:04Z",
+  "sources": {
+    "adopted_updates": {
+      "authority_rank": 2,
+      "bytes": 160512,
+      "publisher": "City of San Diego, City Planning Department",
+      "sha256": "1df1eac379d7a52e74afc49249e17276afc49fb2f830091f50c1b075f26cbef2",
+      "title": "Adopted Land Development Code Updates",
+      "url": "https://www.sandiego.gov/planning/work/land-development-code/updates"
+    },
+    "chapter_13_index": {
+      "authority_rank": 1,
+      "bytes": 146907,
+      "publisher": "City of San Diego, Office of the City Clerk",
+      "sha256": "3c1466660eeb35fae7c6d927e24c058f00fae6d2740e18c3247e702e014530bc",
+      "title": "Municipal Code - Chapter 13",
+      "url": "https://www.sandiego.gov/city-clerk/officialdocs/municipal-code/chapter-13"
+    },
+    "measurement_rules": {
+      "authority_rank": 1,
+      "publisher": "City of San Diego, Office of the City Clerk",
+      "scope": "Referenced, unevaluated definitions and measurement rules, including section 113.0246(f).",
+      "sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+      "title": "San Diego Municipal Code Chapter 11, Article 3, Division 2: Rules for Calculation and Measurement",
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf"
+    },
+    "o21934": {
+      "authority_rank": 2,
+      "coastal_effective": null,
+      "coastal_state": "UNVERIFIED",
+      "final_passage": "2025-03-25",
+      "outside_effective": "2025-04-24",
+      "publisher": "City of San Diego",
+      "scope": "Repeals Table 131-04D footnote 7 and the RS-1-2 marker outside Coastal.",
+      "sha256": "162f93058df3a250846da3bc6d7ac6a74e900a7ae0bf649be51da278e7da86b6",
+      "title": "Ordinance O-21934",
+      "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2025/O-21934.pdf"
+    },
+    "o22109": {
+      "authority_rank": 2,
+      "coastal_effective": null,
+      "coastal_state": "PENDING",
+      "final_passage": "2026-06-15",
+      "outside_effective": "2026-07-15",
+      "publisher": "City of San Diego",
+      "scope": "Adds section 131.0443(i) and changes section 131.0448; does not amend Table 131-04D.",
+      "sha256": "ed7c48fb1d182777615c9223353bc26e78f9cd058916e6d462557c5ea0e9a677",
+      "title": "Ordinance O-22109",
+      "url": "https://www.sandiego.gov/sites/default/files/2026-07/o-22109-1.pdf"
+    },
+    "residential_division_4": {
+      "authority_rank": 1,
+      "bytes": 1390380,
+      "edition": "9-2026",
+      "pages": 98,
+      "publisher": "City of San Diego, Office of the City Clerk",
+      "sections": [
+        "131.0403",
+        "131.0430",
+        "131.0431",
+        "131.0442",
+        "131.0443",
+        "131.0444",
+        "131.0445",
+        "131.0446",
+        "131.0447",
+        "131.0448",
+        "131.0449",
+        "131.0450",
+        "131.0460",
+        "131.0461",
+        "131.0464"
+      ],
+      "sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+      "tables": [
+        "131-04D",
+        "131-04H",
+        "131-04J"
+      ],
+      "title": "San Diego Municipal Code Chapter 13, Article 1, Division 4: Residential Base Zones",
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf"
+    }
+  },
+  "verified_as_of": "2026-09-30"
+}

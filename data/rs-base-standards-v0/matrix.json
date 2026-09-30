@@ -1,0 +1,2035 @@
+[
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:33:9",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 110.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:33:4",
+        "source_page": 33,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:34:5",
+        "source_page": 34,
+        "unit": "ratio",
+        "value": {
+          "kind": "number",
+          "number": 0.45
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:33:12",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 25.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:33:13",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:33:5",
+        "source_page": 33,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 40000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:34:4",
+        "source_page": 34,
+        "unit": "percent",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0445(a)"
+          ],
+          "text": "applies"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:33:10",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:33:7",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:33:15",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 25.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:33:8",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:33:14",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-1:33:17",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "evaluated": false,
+          "kind": "source_expression",
+          "text": "24/30"
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "NOT_APPLICABLE",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "UNKNOWN"
+    },
+    "zone_code": "RS-1-1"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:33:9",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 85.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:33:4",
+        "source_page": 33,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:34:5",
+        "source_page": 34,
+        "unit": "ratio",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0446(a)",
+            "131-04J"
+          ],
+          "text": "varies"
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:33:12",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 25.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:33:13",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 8.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:33:5",
+        "source_page": 33,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 20000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:34:4",
+        "source_page": 34,
+        "unit": "percent",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0445(a)"
+          ],
+          "text": "applies"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:33:10",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:33:7",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 80.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:33:15",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 25.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:33:8",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 80.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:33:14",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 8.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-2:33:17",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "evaluated": false,
+          "kind": "source_expression",
+          "text": "24/30"
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "NOT_APPLICABLE",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "CONDITIONAL"
+    },
+    "zone_code": "RS-1-2"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:33:9",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 80.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:33:4",
+        "source_page": 33,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:34:5",
+        "source_page": 34,
+        "unit": "ratio",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0446(a)",
+            "131-04J"
+          ],
+          "text": "varies"
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:33:12",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 20.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:33:13",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 7.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:33:5",
+        "source_page": 33,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 15000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:34:4",
+        "source_page": 34,
+        "unit": "percent",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0445(a)"
+          ],
+          "text": "applies"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:33:10",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:33:7",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 75.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:33:15",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 20.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:33:8",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 75.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:33:14",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 7.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-3:33:17",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "evaluated": false,
+          "kind": "source_expression",
+          "text": "24/30"
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "NOT_APPLICABLE",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "CONDITIONAL"
+    },
+    "zone_code": "RS-1-3"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:33:9",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 70.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:33:4",
+        "source_page": 33,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:34:5",
+        "source_page": 34,
+        "unit": "ratio",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0446(a)",
+            "131-04J"
+          ],
+          "text": "varies"
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:33:12",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 20.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:33:13",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 6.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:33:5",
+        "source_page": 33,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 10000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:34:4",
+        "source_page": 34,
+        "unit": "percent",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0445(a)"
+          ],
+          "text": "applies"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:33:10",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:33:7",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 65.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:33:15",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 20.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:33:8",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 65.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:33:14",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 6.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-4:33:17",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "evaluated": false,
+          "kind": "source_expression",
+          "text": "24/30"
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "NOT_APPLICABLE",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "CONDITIONAL"
+    },
+    "zone_code": "RS-1-4"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:33:9",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 65.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:33:4",
+        "source_page": 33,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:34:5",
+        "source_page": 34,
+        "unit": "ratio",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0446(a)",
+            "131-04J"
+          ],
+          "text": "varies"
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:33:12",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 20.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:33:13",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 5.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:33:5",
+        "source_page": 33,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 8000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:34:4",
+        "source_page": 34,
+        "unit": "percent",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0445(a)"
+          ],
+          "text": "applies"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:33:10",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:33:7",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 60.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:33:15",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 20.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:33:8",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 60.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:33:14",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 6.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-5:33:17",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "evaluated": false,
+          "kind": "source_expression",
+          "text": "24/30"
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "NOT_APPLICABLE",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "CONDITIONAL"
+    },
+    "zone_code": "RS-1-5"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:33:9",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 65.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:33:4",
+        "source_page": 33,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:34:5",
+        "source_page": 34,
+        "unit": "ratio",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0446(a)",
+            "131-04J"
+          ],
+          "text": "varies"
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:33:12",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 15.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:33:13",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 5.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:33:5",
+        "source_page": 33,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 6000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:34:4",
+        "source_page": 34,
+        "unit": "percent",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0445(a)"
+          ],
+          "text": "applies"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:33:10",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 95.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:33:7",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 60.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:33:15",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 15.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:33:8",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 60.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:33:14",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 6.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-6:33:17",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "evaluated": false,
+          "kind": "source_expression",
+          "text": "24/30"
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "NOT_APPLICABLE",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "CONDITIONAL"
+    },
+    "zone_code": "RS-1-6"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:9",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 55.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:4",
+        "source_page": 33,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:5",
+        "source_page": 34,
+        "unit": "ratio",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0446(a)",
+            "131-04J"
+          ],
+          "text": "varies"
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:12",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 15.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:13",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 4.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:5",
+        "source_page": 33,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 5000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:4",
+        "source_page": 34,
+        "unit": "percent",
+        "value": {
+          "kind": "reference",
+          "targets": [
+            "131.0445(a)"
+          ],
+          "text": "applies"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:10",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 95.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:7",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 50.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:15",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 13.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:8",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 50.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:14",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 5.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:17",
+        "source_page": 33,
+        "unit": "ft",
+        "value": {
+          "evaluated": false,
+          "kind": "source_expression",
+          "text": "24/30"
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "NOT_APPLICABLE",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "CONDITIONAL"
+    },
+    "zone_code": "RS-1-7"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:9",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 110.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:4",
+        "source_page": 35,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:19",
+        "source_page": 35,
+        "unit": "ratio",
+        "value": {
+          "kind": "number",
+          "number": 0.45
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:12",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 25.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:13",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:5",
+        "source_page": 35,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 40000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "UNKNOWN",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:18",
+        "source_page": 35,
+        "unit": "percent",
+        "value": {
+          "kind": "unknown",
+          "reason": "No scalar standard is supplied by this table cell.",
+          "source_symbol": "-"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:10",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:7",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:15",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:8",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:14",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 20.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-8:35:17",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 35.0
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "UNKNOWN",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "UNKNOWN"
+    },
+    "zone_code": "RS-1-8"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:9",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 85.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:4",
+        "source_page": 35,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:19",
+        "source_page": 35,
+        "unit": "ratio",
+        "value": {
+          "kind": "number",
+          "number": 0.6
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:12",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 25.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:13",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 8.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:5",
+        "source_page": 35,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 20000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "UNKNOWN",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:18",
+        "source_page": 35,
+        "unit": "percent",
+        "value": {
+          "kind": "unknown",
+          "reason": "No scalar standard is supplied by this table cell.",
+          "source_symbol": "-"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:10",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:7",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 80.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:15",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:8",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 80.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:14",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 15.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-9:35:17",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 35.0
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "UNKNOWN",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "UNKNOWN"
+    },
+    "zone_code": "RS-1-9"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:9",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 80.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:4",
+        "source_page": 35,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:19",
+        "source_page": 35,
+        "unit": "ratio",
+        "value": {
+          "kind": "number",
+          "number": 0.6
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:12",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 25.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:13",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 7.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:5",
+        "source_page": 35,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 15000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "UNKNOWN",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:18",
+        "source_page": 35,
+        "unit": "percent",
+        "value": {
+          "kind": "unknown",
+          "reason": "No scalar standard is supplied by this table cell.",
+          "source_symbol": "-"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:10",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:7",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 75.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:15",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:8",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 75.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:14",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 15.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-10:35:17",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 35.0
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "UNKNOWN",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "UNKNOWN"
+    },
+    "zone_code": "RS-1-10"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:9",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 70.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:4",
+        "source_page": 35,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:19",
+        "source_page": 35,
+        "unit": "ratio",
+        "value": {
+          "kind": "number",
+          "number": 0.6
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:12",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 20.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:13",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 6.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:5",
+        "source_page": 35,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 10000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "UNKNOWN",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:18",
+        "source_page": 35,
+        "unit": "percent",
+        "value": {
+          "kind": "unknown",
+          "reason": "No scalar standard is supplied by this table cell.",
+          "source_symbol": "-"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:10",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:7",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 65.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:15",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:8",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 65.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:14",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-11:35:17",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 35.0
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "UNKNOWN",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "UNKNOWN"
+    },
+    "zone_code": "RS-1-11"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:9",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 65.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:4",
+        "source_page": 35,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:19",
+        "source_page": 35,
+        "unit": "ratio",
+        "value": {
+          "kind": "number",
+          "number": 0.6
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:12",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 15.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:13",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 5.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:5",
+        "source_page": 35,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 8000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "UNKNOWN",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:18",
+        "source_page": 35,
+        "unit": "percent",
+        "value": {
+          "kind": "unknown",
+          "reason": "No scalar standard is supplied by this table cell.",
+          "source_symbol": "-"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:10",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 100.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:7",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 60.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:15",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:8",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 60.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:14",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-12:35:17",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 35.0
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "UNKNOWN",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "UNKNOWN"
+    },
+    "zone_code": "RS-1-12"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:9",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 65.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:4",
+        "source_page": 35,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:19",
+        "source_page": 35,
+        "unit": "ratio",
+        "value": {
+          "kind": "number",
+          "number": 0.6
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:12",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 15.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:13",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 5.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:5",
+        "source_page": 35,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 6000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "UNKNOWN",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:18",
+        "source_page": 35,
+        "unit": "percent",
+        "value": {
+          "kind": "unknown",
+          "reason": "No scalar standard is supplied by this table cell.",
+          "source_symbol": "-"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:10",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 95.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:7",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 60.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:15",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:8",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 60.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:14",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-13:35:17",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 35.0
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "UNKNOWN",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "UNKNOWN"
+    },
+    "zone_code": "RS-1-13"
+  },
+  {
+    "cells": {
+      "corner_lot_width_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:9",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 55.0
+        }
+      },
+      "density_basis": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:4",
+        "source_page": 35,
+        "unit": "dwelling_unit_per_lot",
+        "value": {
+          "kind": "number",
+          "number": 1.0
+        }
+      },
+      "floor_area_ratio_max": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:19",
+        "source_page": 35,
+        "unit": "ratio",
+        "value": {
+          "kind": "number",
+          "number": 0.6
+        }
+      },
+      "front_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:12",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 15.0
+        }
+      },
+      "interior_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:13",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 4.0
+        }
+      },
+      "lot_area_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:5",
+        "source_page": 35,
+        "unit": "sq_ft",
+        "value": {
+          "kind": "number",
+          "number": 5000.0
+        }
+      },
+      "lot_coverage_max": {
+        "fact_state": "UNKNOWN",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:18",
+        "source_page": 35,
+        "unit": "percent",
+        "value": {
+          "kind": "unknown",
+          "reason": "No scalar standard is supplied by this table cell.",
+          "source_symbol": "-"
+        }
+      },
+      "lot_depth_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:10",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 95.0
+        }
+      },
+      "lot_width_min": {
+        "fact_state": "RECORDED",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:7",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 50.0
+        }
+      },
+      "rear_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:15",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "street_frontage_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:8",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 50.0
+        }
+      },
+      "street_side_setback_min": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:14",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 10.0
+        }
+      },
+      "structure_height_max": {
+        "fact_state": "CONDITIONAL",
+        "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-14:35:17",
+        "source_page": 35,
+        "unit": "ft",
+        "value": {
+          "kind": "number",
+          "number": 35.0
+        }
+      }
+    },
+    "other": {
+      "bedroom_regulation": "UNKNOWN",
+      "paving_hardscape": "CONDITIONAL",
+      "resubdivided_corner_lot_setbacks": "CONDITIONAL",
+      "third_story_dimensions": "UNKNOWN"
+    },
+    "zone_code": "RS-1-14"
+  }
+]

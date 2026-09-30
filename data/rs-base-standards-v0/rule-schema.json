@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "items": {
+    "properties": {
+      "condition": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "derivation_class": {
+        "enum": [
+          "SOURCE_TRANSCRIPTION",
+          "NORMALIZED_SOURCE_EXPRESSION"
+        ]
+      },
+      "effective_from": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "effective_to": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "fact_state": {
+        "enum": [
+          "RECORDED",
+          "CONDITIONAL",
+          "UNKNOWN",
+          "NOT_APPLICABLE"
+        ]
+      },
+      "jurisdiction_variant": {
+        "const": "OUTSIDE_COASTAL"
+      },
+      "notes": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      }
+    },
+    "required": [
+      "rule_id",
+      "rule_set_version",
+      "zone_code",
+      "standard_key",
+      "value",
+      "unit",
+      "fact_state",
+      "derivation_class",
+      "condition",
+      "source_document",
+      "source_section",
+      "source_table",
+      "source_page",
+      "source_url",
+      "effective_from",
+      "effective_to",
+      "jurisdiction_variant",
+      "notes",
+      "provenance_sha256"
+    ],
+    "type": "object"
+  },
+  "title": "TruLot RS Base Standards V0",
+  "type": "array"
+}

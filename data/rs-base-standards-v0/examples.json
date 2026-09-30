@@ -1,0 +1,104 @@
+[
+  {
+    "capacity_calculated": false,
+    "mapping_state": "SINGLE_ZONE",
+    "name": "ordinary RS-1-7",
+    "standards": [
+      {
+        "rule_count": 24,
+        "state": "SUPPORTED",
+        "zone_code": "RS-1-7"
+      }
+    ],
+    "unresolved": [
+      "parcel-specific conditions remain unevaluated"
+    ],
+    "zone_codes": [
+      "RS-1-7"
+    ]
+  },
+  {
+    "capacity_calculated": false,
+    "mapping_state": "SINGLE_ZONE",
+    "name": "another RS zone",
+    "standards": [
+      {
+        "rule_count": 24,
+        "state": "SUPPORTED",
+        "zone_code": "RS-1-1"
+      }
+    ],
+    "zone_codes": [
+      "RS-1-1"
+    ]
+  },
+  {
+    "blended": false,
+    "capacity_calculated": false,
+    "mapping_state": "BOUNDARY_SLIVER",
+    "name": "boundary sliver",
+    "primary_standards": [
+      {
+        "state": "SUPPORTED",
+        "zone_code": "RS-1-7"
+      }
+    ],
+    "secondary_zoning_evidence": [
+      "RM-1-1"
+    ],
+    "zone_codes": [
+      "RS-1-7",
+      "RM-1-1"
+    ]
+  },
+  {
+    "blended": false,
+    "capacity_calculated": false,
+    "mapping_state": "SPLIT_ZONE",
+    "name": "split RS plus non-RS",
+    "standards": [
+      {
+        "state": "SUPPORTED",
+        "zone_code": "RS-1-7"
+      },
+      {
+        "state": "UNSUPPORTED_BY_RS_V0",
+        "zone_code": "RM-1-1"
+      }
+    ],
+    "zone_codes": [
+      "RS-1-7",
+      "RM-1-1"
+    ]
+  },
+  {
+    "capacity_calculated": false,
+    "mapping_state": "AMBIGUOUS",
+    "name": "ambiguous parcel",
+    "standards": [],
+    "state": "NO_DEFINITIVE_STANDARD_SET",
+    "zone_codes": [
+      "RS-1-7",
+      "RS-1-4"
+    ]
+  },
+  {
+    "capacity_calculated": false,
+    "mapping_state": "UNMAPPED",
+    "name": "unmapped parcel",
+    "standards": [],
+    "state": "NO_ZONE_STANDARDS",
+    "zone_codes": []
+  },
+  {
+    "capacity_calculated": false,
+    "coastal_context": "unknown",
+    "mapping_state": "SINGLE_ZONE",
+    "name": "unknown Coastal context",
+    "standards": [],
+    "state": "APPLICABILITY_UNRESOLVED",
+    "zone_codes": [
+      "RS-1-7"
+    ]
+  }
+]

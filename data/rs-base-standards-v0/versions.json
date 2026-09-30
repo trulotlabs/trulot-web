@@ -1,0 +1,61 @@
+{
+  "effective_dates": [
+    {
+      "inside_coastal": "2026-09-10",
+      "ordinance": "O-21836",
+      "outside": "2024-10-05",
+      "state": "EFFECTIVE"
+    },
+    {
+      "inside_coastal": null,
+      "ordinance": "O-21934",
+      "outside": "2025-04-24",
+      "state": "COASTAL_UNVERIFIED"
+    },
+    {
+      "inside_coastal": null,
+      "ordinance": "O-22109",
+      "outside": "2026-07-15",
+      "state": "COASTAL_PENDING"
+    }
+  ],
+  "freshness_policy": "Only the exact verified date and recorded source hashes select this V0. Later dates require reacquisition and review.",
+  "historical_law_database": false,
+  "profiles": [
+    {
+      "as_of": "2026-09-30",
+      "coastal_context": "outside",
+      "components": [
+        "9-2026 codified Division 4",
+        "O-21934 outside-Coastal repeal",
+        "O-22109 outside-Coastal dependent sections"
+      ],
+      "effective_from": "2026-07-15",
+      "id": "outside-coastal-2026-09-30",
+      "note": "Composite date is a selection boundary, not a claim that every table cell was enacted on this date.",
+      "state": "SUPPORTED"
+    },
+    {
+      "as_of": "2026-09-30",
+      "coastal_context": "inside",
+      "components": [
+        "O-21836 effective in Coastal 2026-09-10",
+        "O-21934 Coastal status unverified",
+        "O-22109 Coastal certification pending"
+      ],
+      "id": "inside-coastal-2026-09-30",
+      "reason": "A complete current Coastal composite cannot be selected while O-21934 certification is unverified and O-22109 remains pending.",
+      "state": "APPLICABILITY_UNRESOLVED"
+    },
+    {
+      "as_of": "2026-09-30",
+      "coastal_context": "unknown",
+      "id": "unknown-coastal-2026-09-30",
+      "reason": "Unknown geography cannot select the outside-Coastal composite.",
+      "state": "APPLICABILITY_UNRESOLVED"
+    }
+  ],
+  "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+  "source_edition": "9-2026",
+  "verified_as_of": "2026-09-30"
+}

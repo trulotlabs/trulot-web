@@ -1,0 +1,22 @@
+{
+  "capacity_logic": false,
+  "coastal_profiles": {
+    "inside": "APPLICABILITY_UNRESOLVED",
+    "outside": "SUPPORTED",
+    "unknown": "APPLICABILITY_UNRESOLVED"
+  },
+  "decision": "RS_BASE_STANDARDS_V0_SOURCE_COMPLETE",
+  "matrix_expected_cells": 182,
+  "matrix_states": {
+    "CONDITIONAL": 111,
+    "NOT_APPLICABLE": 0,
+    "RECORDED": 64,
+    "UNKNOWN": 7
+  },
+  "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+  "rules": 343,
+  "runtime_wiring": false,
+  "scope": "City of San Diego RS base-zone source contract; outside-Coastal current profile supported; inside/unknown fail closed.",
+  "supported_values_without_provenance": 0,
+  "zones": 14
+}
