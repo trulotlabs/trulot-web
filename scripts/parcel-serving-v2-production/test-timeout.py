@@ -47,8 +47,8 @@ def main() -> None:
     test("post-commit validation timeout contract is exactly 30min", IMPORTER.VALIDATION_STATEMENT_TIMEOUT == "30min")
     test("fingerprint float rendering contract is exactly one extra digit", IMPORTER.FINGERPRINT_EXTRA_FLOAT_DIGITS == 1)
     test(
-        "parcel-only and integrated loaders share the transaction timeout boundary",
-        source.count("begin_bulk_import(process)") == 2,
+        "parcel-only, integrated and candidate loaders share the transaction timeout boundary",
+        source.count("begin_bulk_import(process)") == 3,
     )
 
     stream = SimpleNamespace(stdin=io.StringIO())
@@ -167,7 +167,9 @@ def main() -> None:
     test(
         "count and fingerprint validation share the bounded connection contract",
         "validation=True" in inspect.getsource(IMPORTER.query_counts)
+        and "validation=True" in inspect.getsource(IMPORTER.query_integrated_candidate_counts)
         and "bounded_fingerprint_statement" in inspect.getsource(IMPORTER.stream_fingerprint)
+        and "bounded_fingerprint_statement" in inspect.getsource(IMPORTER.parcel_zone_mapping_fingerprint)
         and "bounded_fingerprint_statement" in inspect.getsource(IMPORTER.integrated_fingerprint),
     )
     test(

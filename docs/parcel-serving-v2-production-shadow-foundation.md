@@ -4,7 +4,7 @@ Status: repository foundation only. Public Parcel V1 remains authoritative. No p
 
 ## Sealed inputs
 
-The importer accepts a manifest of operator-materialized files. Paths are supplied at execution time and are never embedded in the importer. Integrated mode must match `scripts/parcel-serving-v2-production/expected.json`; parcel-only mode must match the smaller `parcel-only-expected.json`. On the production path, every supplied artifact is hashed before the first database query.
+The importer accepts a manifest of operator-materialized files. Paths are supplied at execution time and are never embedded in the importer. Legacy integrated mode must match `scripts/parcel-serving-v2-production/expected.json`; parcel-only mode must match `parcel-only-expected.json`; the Packet 10 unselected zoning candidate must match `integrated-candidate-expected.json`. On the production path, every supplied artifact is hashed before the first database query.
 
 | Identity | Sealed value |
 | --- | --- |
@@ -46,9 +46,13 @@ Parcel-only mode writes only `import_run`, `parcel_acquisition`, `parcel_base_sa
 
 Migration `20260925223612_parcel_only_import_run_stage.sql` adds an explicit `run_kind`. Existing rows default to `INTEGRATED`. A `PARCEL_ONLY` run requires a null zoning acquisition; an `INTEGRATED` run requires a non-null zoning acquisition. A composite foreign key makes `selected_snapshot` reference only the matching integrated run and acquisition pair.
 
+Packet 10 adds `--mode integrated-candidate`. It requires the existing validated parcel acquisition `sangis-20260924T183743Z` and parcel-only run `724ff836-eedc-594e-93c5-c80a63de65f7`. The mode accepts no parcel artifacts and never calls the parcel writer. Its write allowlist is exactly `import_run`, `zoning_acquisition`, `base_zoning_source_v2`, `base_zoning_quarantine`, `base_zoning_mapping_geometry`, and `parcel_zone_mapping_v2`.
+
+The candidate remains `run_kind = INTEGRATED` and reaches `status = VALIDATED` without a `selected_snapshot` row. `--validate-only` resolves that exact candidate and recomputes counts and fingerprints without writes. A replay with the same sealed zoning acquisition fails the parcel-reuse preflight before COPY. The schema already expresses an unselected validated integrated run, so Packet 10 adds no migration and does not alter grants, RLS, or serving views.
+
 The importer verifies all artifact SHA-256 values before the first production database query. It then independently verifies acquisition receipts, normalized counts, raw-to-normalized source identity, parcel geometry hashes, zoning geometry hashes, the bounded explicit make-valid policy, mapping cardinality and mapping fingerprint.
 
-Data is copied in one transaction. A loaded candidate remains unselected until these database observations pass:
+Legacy integrated data is copied in one transaction and selected only after its database observations pass. Integrated-candidate data is also copied transactionally, but validation only marks its run `VALIDATED`; it never performs selection.
 
 The bulk transaction and post-commit validation have separate bounded timeout contracts. Bulk COPY uses transaction-local `SET LOCAL statement_timeout = '30min'`. Count reconciliation and streamed fingerprints prepend session-only `SET statement_timeout = '30min'` in each validation `psql` subprocess, including `--validate-only` and `--resume-validation`. Neither contract changes database- or role-level settings, and neither disables timeouts.
 
@@ -64,9 +68,11 @@ The bulk transaction and post-commit validation have separate bounded timeout co
 - exact five-state mapping counts;
 - exact parcel APN, parcel full-row, parcel-zone and integrated fingerprints.
 
-Only after every gate passes does a second transaction insert `selected_snapshot` and mark the import `VALIDATED`. A failed candidate therefore cannot appear in either serving view.
+Only legacy `integrated` mode inserts `selected_snapshot`. `integrated-candidate` has a separate finalization branch that contains no selection statement and asserts that `selected_snapshot`, `parcel_serving_v2`, and `parcel_intelligence_serving_v2` all remain empty.
 
-Integrated production execution requires a separately authorized database URL held in an environment variable plus both `--authorize-production-load` and `TRULOT_V2_PRODUCTION_LOAD_AUTHORIZED=1`. Parcel-only production execution instead requires `--authorize-production-load` and the narrower `TRULOT_V2_PARCEL_LOAD_AUTHORIZED=1`. Both modes validate the sealed project ref and database name before connecting. Credentials alone never authorize a load.
+Integrated production execution requires a separately authorized database URL held in an environment variable plus both `--authorize-production-load` and `TRULOT_V2_PRODUCTION_LOAD_AUTHORIZED=1`. Parcel-only production execution instead requires `--authorize-production-load` and `TRULOT_V2_PARCEL_LOAD_AUTHORIZED=1`. The unselected zoning candidate requires `--authorize-production-load` and its distinct `TRULOT_V2_ZONING_CANDIDATE_LOAD_AUTHORIZED=1` gate. Every mode validates the sealed project ref and database name before connecting. Credentials alone never authorize a load.
+
+The current candidate contract pins zoning acquisition `zoning-city-sd-20260930T024032Z`, 3,706 source features, 3,680 accepted features, 26 quarantine rows, 3,706 mapping geometries, 393,733 parcel mappings, and all Packet 9 portable fingerprints. The full fresh rehearsal passed 27 checks with no selection or serving rows; compact evidence is recorded in `data/parcel-serving-v2-production/integrated-candidate-rehearsal.json`.
 
 On a production target, the importer verifies that the complete foundation object set already exists and refuses a partial or absent foundation. It does not rerun the foundation migration. The staging migration is applied only when its `run_kind` column is absent, then its four constraints are verified. Disposable local rehearsals may bootstrap the foundation before applying the staging migration.
 

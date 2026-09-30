@@ -229,12 +229,40 @@ await test("parcel-only importer is separately gated and cannot accept integrate
   const expected = JSON.parse(fs.readFileSync(path.join(root, "scripts/parcel-serving-v2-production/parcel-only-expected.json"), "utf8"));
   assert.match(importer, /TRULOT_V2_PARCEL_LOAD_AUTHORIZED/);
   assert.match(importer, /TRULOT_V2_PRODUCTION_LOAD_AUTHORIZED/);
-  assert.match(importer, /choices=\("integrated", "parcel-only"\)/);
+  assert.match(importer, /choices=\("integrated", "parcel-only", "integrated-candidate"\)/);
   assert.deepEqual(Object.keys(expected.artifacts).sort(), ["parcelAcquisition", "parcelQuarantine", "parcelRaw", "parcelReport", "parcelRows"]);
   assert.equal(expected.productionProjectRef, "qockltdzvjxdlwrpgtsd");
   assert.equal(expected.productionDatabase, "postgres");
   assert.equal(expected.counts.parcelAccepted, 1088430);
   assert.equal(expected.fingerprints.countywideFullRow, "8bdf89447fd77bd616a882db15875e8674b999051a1954caf1d4cec8a6c6df45");
+});
+
+await test("integrated-candidate mode is separately gated and accepts no parcel artifacts", () => {
+  const importer = fs.readFileSync(path.join(root, "scripts/parcel-serving-v2-production/import.py"), "utf8");
+  const expected = JSON.parse(fs.readFileSync(path.join(root, "scripts/parcel-serving-v2-production/integrated-candidate-expected.json"), "utf8"));
+  assert.match(importer, /TRULOT_V2_ZONING_CANDIDATE_LOAD_AUTHORIZED/);
+  assert.match(importer, /def load_integrated_candidate_data/);
+  assert.doesNotMatch(importer.match(/def load_integrated_candidate_data[\s\S]*?def load_parcel_only_data/)[0], /write_parcel_data/);
+  assert.deepEqual(Object.keys(expected.artifacts).sort(), [
+    "mappingReport", "parcelZoneMapping", "servingRehearsal", "zoneDomain", "zoningAcquisition",
+    "zoningQuarantine", "zoningRaw", "zoningReport", "zoningRows",
+  ]);
+  assert.equal(expected.parcelImportRunId, "724ff836-eedc-594e-93c5-c80a63de65f7");
+  assert.equal(expected.zoningAcquisitionId, "zoning-city-sd-20260930T024032Z");
+  assert.equal(expected.fingerprints.parcelZoneMapping, "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2");
+  assert.equal(expected.fingerprints.integrated, "f08c6169b3dc7a9efba011e86bf51fe0cce449c95ca26f25ac41b5f4a1f1a680");
+});
+
+await test("integrated-candidate finalization cannot select or expose the candidate", () => {
+  const importer = fs.readFileSync(path.join(root, "scripts/parcel-serving-v2-production/import.py"), "utf8");
+  const candidateBranch = importer.match(/if args\.mode == "integrated-candidate":[\s\S]*?if args\.mode == "parcel-only":/)[0];
+  assert.doesNotMatch(candidateBranch, /insert into trulot_v2\.selected_snapshot/i);
+  assert.match(candidateBranch, /status='VALIDATED'/);
+  assert.match(candidateBranch, /select count\(\*\) from trulot_v2\.selected_snapshot/);
+  assert.match(candidateBranch, /parcel_intelligence_serving_v2/);
+  const legacyBranch = importer.slice(importer.indexOf("counts = query_counts(target)"));
+  assert.match(legacyBranch, /insert into trulot_v2\.selected_snapshot/i);
+  assert.match(legacyBranch, /PARCEL_SERVING_V2_PRODUCTION_SHADOW_IMPORT_PASS/);
 });
 
 if (process.argv[2]) {

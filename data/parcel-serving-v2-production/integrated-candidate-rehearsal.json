@@ -1,0 +1,174 @@
+{
+  "candidate": {
+    "acquisitionIds": {
+      "parcel": "sangis-20260924T183743Z",
+      "zoning": "zoning-city-sd-20260930T024032Z"
+    },
+    "artifacts": {
+      "mappingReport": "0a7cc7ac54149e811f42f57892eb2e2047e662e977fb1a0022e0dbdc881bac9f",
+      "parcelZoneMapping": "134e8992015f4554d2b2cd3dd8a5c8a8f6e64c0353ed3790cee7deb04f6ae395",
+      "servingRehearsal": "302c9c2da457f23b95fc5daaa774ef265f658a6755f3096f86c7f2541a9f340c",
+      "zoneDomain": "85a0270789fb4bf7e6285eaa370b000b98f5d5f487cad20ebe68cd6addef429f",
+      "zoningAcquisition": "2f6b95625b807dfc6cd9bc64364d2954bcb9942135cc57a8300a2e9da86d88ca",
+      "zoningQuarantine": "ec9db509e7c177d3c3357a39d8561921ace24a394aeb3d5a3836e1b8cea08632",
+      "zoningRaw": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+      "zoningReport": "fd1d692bbc545fdcc2cd41658d5e61ac32f74ec27e529d37883319371b5b4916",
+      "zoningRows": "1119ce400cef7a3604897400c7081e6a7c9218702bd30371aa264344408ce1de"
+    },
+    "counts": {
+      "acceptedQuarantineOverlap": 0,
+      "candidateImportRuns": 1,
+      "cityDistinctApns": 393733,
+      "cityParcels": 393733,
+      "duplicateApnMappings": 0,
+      "integratedServedRows": 0,
+      "invalidAmbiguousEvidence": 0,
+      "invalidSplitEvidence": 0,
+      "invalidUnmappedEvidence": 0,
+      "mappingPayloadMismatches": 0,
+      "orphanParcelReferences": 0,
+      "orphanZoningReferences": 0,
+      "parcelAccepted": 1088430,
+      "parcelAcquisitions": 1,
+      "parcelImportRuns": 1,
+      "parcelQuarantine": 1328,
+      "parcelServedRows": 0,
+      "parcelSource": 1089758,
+      "quarantineWithoutRepairedEvidence": 0,
+      "repairedMappingGeometry": 26,
+      "repairedWithoutQuarantine": 0,
+      "selectedSnapshots": 0,
+      "zoningAccepted": 3680,
+      "zoningAcquisitions": 1,
+      "zoningMapping": 393733,
+      "zoningMappingGeometry": 3706,
+      "zoningQuarantine": 26,
+      "zoningSource": 3706,
+      "zoningStateCounts": {
+        "BOUNDARY_SLIVER": 1097,
+        "INDETERMINATE": 1641,
+        "MULTI_ZONE": 73064,
+        "SINGLE_ZONE": 317604,
+        "UNMAPPED": 327
+      }
+    },
+    "decision": "UNSELECTED_BASE_ZONING_V2_CANDIDATE_PASS",
+    "durationSeconds": 213.19,
+    "fingerprints": {
+      "acceptedRows": "1119ce400cef7a3604897400c7081e6a7c9218702bd30371aa264344408ce1de",
+      "countywideParcelFullRow": "8bdf89447fd77bd616a882db15875e8674b999051a1954caf1d4cec8a6c6df45",
+      "integrated": "f08c6169b3dc7a9efba011e86bf51fe0cce449c95ca26f25ac41b5f4a1f1a680",
+      "mappingStateDistribution": "e2e11a3e1fe30d5ab06720e9bac09634b039d69f6a96fa5c47e482d71be3881c",
+      "normalizedSourceIdentity": "559598ae4bf70a40356ff357c561b816fd415f0554d0f9761d6eede8fdc5d9a1",
+      "parcelApnSet": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+      "parcelFullRow": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f",
+      "parcelZoneMapping": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+      "quarantineRows": "ec9db509e7c177d3c3357a39d8561921ace24a394aeb3d5a3836e1b8cea08632",
+      "sourceArtifact": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+      "zoneDomain": "e566224c06cb7b91b4893c9d8c5a178259be9f48d7ed2287ae14ce8a34e9411c"
+    },
+    "importRunId": "6606e16f-df95-510f-b079-9d7112b2abb4",
+    "importerVersion": "0b9c2f3f46e92d4f81630a9b7051f983456a48ab273309b2474d50f0c9bad05c",
+    "materializationId": "trulot-base-zoning-v2-candidate-20260930-local-rehearsal",
+    "migrationSha256": {
+      "20260925090000_parcel_serving_v2_shadow_foundation.sql": "4b06c79737f2c6592cf37869ea4a1c1dde7dfe75834ac15730f25c261cc54220",
+      "20260925223612_parcel_only_import_run_stage.sql": "2b25de2d8c5a2bd91e9bb4144a5bff2084232d31ce2e496ed56e73d2055782d5"
+    },
+    "mode": "integrated-candidate",
+    "operation": "load-and-validate",
+    "reusedParcelImportRunId": "724ff836-eedc-594e-93c5-c80a63de65f7",
+    "selectedSnapshotRows": 0,
+    "servedRows": 0,
+    "target": "isolated-local-rehearsal",
+    "timestamps": {
+      "completedAt": "2026-09-29T20:55:41.47247-07:00",
+      "runKind": "INTEGRATED",
+      "startedAt": "2026-09-29T20:52:08.729662-07:00",
+      "status": "VALIDATED"
+    }
+  },
+  "checksPassed": 27,
+  "decision": "UNSELECTED_BASE_ZONING_V2_PRODUCTION_PATH_SEALED",
+  "environment": {
+    "isolation": "fresh disposable Unix-socket-only PostgreSQL/PostGIS",
+    "productionConnected": false
+  },
+  "parcelBaseline": {
+    "counts": {
+      "acceptedQuarantineOverlap": 0,
+      "candidateImportRuns": 0,
+      "cityDistinctApns": 393733,
+      "cityParcels": 393733,
+      "duplicateApnMappings": 0,
+      "integratedServedRows": 0,
+      "invalidAmbiguousEvidence": 0,
+      "invalidSplitEvidence": 0,
+      "invalidUnmappedEvidence": 0,
+      "mappingPayloadMismatches": 0,
+      "orphanParcelReferences": 0,
+      "orphanZoningReferences": 0,
+      "parcelAccepted": 1088430,
+      "parcelAcquisitions": 1,
+      "parcelImportRuns": 1,
+      "parcelQuarantine": 1328,
+      "parcelServedRows": 0,
+      "parcelSource": 1089758,
+      "quarantineWithoutRepairedEvidence": 0,
+      "repairedMappingGeometry": 0,
+      "repairedWithoutQuarantine": 0,
+      "selectedSnapshots": 0,
+      "zoningAccepted": 0,
+      "zoningAcquisitions": 0,
+      "zoningMapping": 0,
+      "zoningMappingGeometry": 0,
+      "zoningQuarantine": 0,
+      "zoningSource": null,
+      "zoningStateCounts": null
+    },
+    "fingerprints": {
+      "countywideParcelFullRow": "8bdf89447fd77bd616a882db15875e8674b999051a1954caf1d4cec8a6c6df45",
+      "parcelApnSet": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+      "parcelFullRow": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f"
+    },
+    "runId": "724ff836-eedc-594e-93c5-c80a63de65f7"
+  },
+  "legacyIntegratedCompatibility": {
+    "decision": "PARCEL_SERVING_V2_PRODUCTION_SHADOW_IMPORT_PASS",
+    "freshIsolatedRehearsal": true,
+    "fingerprints": {
+      "integrated": "27b1a362bdae28369cdf7274d1b9842bef07b5970e33c1f9522d68d042e616d8",
+      "parcelApnSet": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+      "parcelFullRow": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f",
+      "parcelZoneMapping": "313aa7ad46747bb97499a113842ac848de8f7357134e0558210692a1913a8ccf"
+    },
+    "selectedSnapshotRows": 1,
+    "servedRows": 393733
+  },
+  "productionMutation": false,
+  "replay": {
+    "duplicateRows": false,
+    "refused": true
+  },
+  "schemaVersion": 1,
+  "security": {
+    "publicAnonAuthenticatedGrants": 0,
+    "rlsTables": 10,
+    "serviceRoleNonSelectGrants": 0
+  },
+  "validation": {
+    "baseZoningAdapterChecks": 10,
+    "baseZoningChecks": 17,
+    "fingerprintPortabilityChecks": 9,
+    "globalLint": "pre-existing baseline only: 3 errors and 6 warnings; no Packet 10 file reported",
+    "packet9Checks": 23,
+    "parcelServingProductionChecks": 18,
+    "timeoutChecks": 23,
+    "typescript": "PASS",
+    "zoningServingAdapterChecks": 15,
+    "zoningServingChecks": 24
+  },
+  "validateOnly": {
+    "passed": true,
+    "performedWrites": false
+  }
+}

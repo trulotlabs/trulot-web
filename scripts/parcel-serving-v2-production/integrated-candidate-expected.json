@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "productionProjectRef": "qockltdzvjxdlwrpgtsd",
+  "productionDatabase": "postgres",
+  "parcelAcquisitionId": "sangis-20260924T183743Z",
+  "parcelImportRunId": "724ff836-eedc-594e-93c5-c80a63de65f7",
+  "zoningAcquisitionId": "zoning-city-sd-20260930T024032Z",
+  "integrationMethodVersion": "parcel-intelligence-serving-v2-left-join-v1",
+  "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+  "provenanceReferences": {
+    "parcel": "data/parcel-serving-v2/report.json#provenance",
+    "baseZoning": "data/base-zoning-v2-lineage/source.json#receipt",
+    "mapping": "data/base-zoning-v2-lineage/mapping-analysis.json"
+  },
+  "artifacts": {
+    "zoningAcquisition": "2f6b95625b807dfc6cd9bc64364d2954bcb9942135cc57a8300a2e9da86d88ca",
+    "zoningRaw": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+    "zoningReport": "fd1d692bbc545fdcc2cd41658d5e61ac32f74ec27e529d37883319371b5b4916",
+    "zoningRows": "1119ce400cef7a3604897400c7081e6a7c9218702bd30371aa264344408ce1de",
+    "zoningQuarantine": "ec9db509e7c177d3c3357a39d8561921ace24a394aeb3d5a3836e1b8cea08632",
+    "zoneDomain": "85a0270789fb4bf7e6285eaa370b000b98f5d5f487cad20ebe68cd6addef429f",
+    "parcelZoneMapping": "134e8992015f4554d2b2cd3dd8a5c8a8f6e64c0353ed3790cee7deb04f6ae395",
+    "mappingReport": "0a7cc7ac54149e811f42f57892eb2e2047e662e977fb1a0022e0dbdc881bac9f",
+    "servingRehearsal": "302c9c2da457f23b95fc5daaa774ef265f658a6755f3096f86c7f2541a9f340c"
+  },
+  "counts": {
+    "parcelSource": 1089758,
+    "parcelAccepted": 1088430,
+    "parcelQuarantine": 1328,
+    "cityParcels": 393733,
+    "cityDistinctApns": 393733,
+    "zoningSource": 3706,
+    "zoningAccepted": 3680,
+    "zoningQuarantine": 26,
+    "zoningMappingGeometry": 3706,
+    "zoningMapping": 393733,
+    "integrated": 393733
+  },
+  "zoningStateCounts": {
+    "BOUNDARY_SLIVER": 1097,
+    "INDETERMINATE": 1641,
+    "MULTI_ZONE": 73064,
+    "SINGLE_ZONE": 317604,
+    "UNMAPPED": 327
+  },
+  "canonicalStateCounts": {
+    "AMBIGUOUS": 1641,
+    "SINGLE_ZONE": 318701,
+    "SPLIT_ZONE": 73064,
+    "UNMAPPED": 327
+  },
+  "fingerprints": {
+    "countywideParcelFullRow": "8bdf89447fd77bd616a882db15875e8674b999051a1954caf1d4cec8a6c6df45",
+    "parcelApnSet": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+    "parcelFullRow": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f",
+    "sourceArtifact": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+    "normalizedSourceIdentity": "559598ae4bf70a40356ff357c561b816fd415f0554d0f9761d6eede8fdc5d9a1",
+    "acceptedRows": "1119ce400cef7a3604897400c7081e6a7c9218702bd30371aa264344408ce1de",
+    "quarantineRows": "ec9db509e7c177d3c3357a39d8561921ace24a394aeb3d5a3836e1b8cea08632",
+    "zoneDomain": "e566224c06cb7b91b4893c9d8c5a178259be9f48d7ed2287ae14ce8a34e9411c",
+    "parcelZoneMapping": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+    "mappingStateDistribution": "e2e11a3e1fe30d5ab06720e9bac09634b039d69f6a96fa5c47e482d71be3881c",
+    "integrated": "f08c6169b3dc7a9efba011e86bf51fe0cce449c95ca26f25ac41b5f4a1f1a680"
+  }
+}

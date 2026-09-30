@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "materializationId": "operator-supplied-immutable-zoning-candidate-id",
+  "artifacts": {
+    "zoningAcquisition": "/secure/materialization/zoning/acquisition.json",
+    "zoningRaw": "/secure/materialization/zoning/Zoning_Base_SD.geojson",
+    "zoningReport": "/secure/materialization/zoning/report.json",
+    "zoningRows": "/secure/materialization/zoning/accepted.ndjson.gz",
+    "zoningQuarantine": "/secure/materialization/zoning/rejected.ndjson.gz",
+    "zoneDomain": "/secure/materialization/evidence/zone-domain.json",
+    "parcelZoneMapping": "/secure/materialization/integration/parcel-base-zoning-map.ndjson.gz",
+    "mappingReport": "/secure/materialization/integration/mapping-report.json",
+    "servingRehearsal": "/secure/materialization/evidence/serving-rehearsal.json"
+  }
+}

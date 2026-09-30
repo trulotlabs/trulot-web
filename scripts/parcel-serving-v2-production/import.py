@@ -16,6 +16,12 @@ Parcel-only production execution uses a distinct gate and never selects a snapsh
   TRULOT_V2_PARCEL_LOAD_AUTHORIZED=1 python3 import.py --mode parcel-only \
     --database-url-env TRULOT_V2_DATABASE_URL --authorize-production-load \
     --manifest PARCEL_MATERIALIZATION --output NEW_DIR
+
+Unselected integrated-candidate execution reuses the existing validated parcel run,
+loads only sealed zoning/mapping artifacts, and never selects a snapshot:
+  TRULOT_V2_ZONING_CANDIDATE_LOAD_AUTHORIZED=1 python3 import.py \
+    --mode integrated-candidate --database-url-env TRULOT_V2_DATABASE_URL \
+    --authorize-production-load --manifest ZONING_MATERIALIZATION --output NEW_DIR
 """
 
 from __future__ import annotations
@@ -49,6 +55,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 HERE = pathlib.Path(__file__).resolve().parent
 EXPECTED = json.loads((HERE / "expected.json").read_text())
 PARCEL_ONLY_EXPECTED = json.loads((HERE / "parcel-only-expected.json").read_text())
+CANDIDATE_EXPECTED = json.loads((HERE / "integrated-candidate-expected.json").read_text())
 MIGRATIONS = (
     ROOT / "supabase/migrations/20260925090000_parcel_serving_v2_shadow_foundation.sql",
     ROOT / "supabase/migrations/20260925223612_parcel_only_import_run_stage.sql",
@@ -203,7 +210,11 @@ class Target:
 
 
 def expected_for_mode(mode: str) -> dict:
-    return PARCEL_ONLY_EXPECTED if mode == "parcel-only" else EXPECTED
+    if mode == "parcel-only":
+        return PARCEL_ONLY_EXPECTED
+    if mode == "integrated-candidate":
+        return CANDIDATE_EXPECTED
+    return EXPECTED
 
 
 def validate_production_dsn(dsn: str, expected: dict) -> None:
@@ -228,11 +239,11 @@ def target_from_args(args: argparse.Namespace) -> Target:
         from local import connection
 
         return Target(connection(args.boundary), "isolated-local-rehearsal")
-    authorization_variable = (
-        "TRULOT_V2_PARCEL_LOAD_AUTHORIZED"
-        if args.mode == "parcel-only"
-        else "TRULOT_V2_PRODUCTION_LOAD_AUTHORIZED"
-    )
+    authorization_variable = {
+        "parcel-only": "TRULOT_V2_PARCEL_LOAD_AUTHORIZED",
+        "integrated-candidate": "TRULOT_V2_ZONING_CANDIDATE_LOAD_AUTHORIZED",
+        "integrated": "TRULOT_V2_PRODUCTION_LOAD_AUTHORIZED",
+    }[args.mode]
     if not args.authorize_production_load or os.environ.get(authorization_variable) != "1":
         raise ValueError(
             f"{args.mode} production target requires both the CLI authorization flag "
@@ -292,17 +303,41 @@ def verify_parcel_receipt(paths: dict[str, pathlib.Path], expected: dict) -> tup
     return parcel_acquisition, parcel_report
 
 
-def verify_receipts(paths: dict[str, pathlib.Path]) -> tuple[dict, dict, dict, dict]:
-    parcel_acquisition, parcel_report = verify_parcel_receipt(paths, EXPECTED)
+def verify_zoning_receipt(paths: dict[str, pathlib.Path], expected: dict) -> tuple[dict, dict]:
     zoning_acquisition = json.loads(paths["zoningAcquisition"].read_text())
     zoning_report = json.loads(paths["zoningReport"].read_text())
     zoning_receipt = zoning_acquisition["receipt"]
-    if zoning_receipt["acquisitionId"] != EXPECTED["zoningAcquisitionId"]:
+    if zoning_receipt["acquisitionId"] != expected["zoningAcquisitionId"]:
         raise ValueError("Zoning acquisition identity changed")
-    if zoning_receipt["artifact"]["sha256"] != EXPECTED["artifacts"]["zoningRaw"]:
+    if zoning_receipt["artifact"]["sha256"] != expected["artifacts"]["zoningRaw"]:
         raise ValueError("Zoning acquisition receipt does not identify the sealed raw artifact")
-    if zoning_report["counts"]["parsed"] != EXPECTED["counts"]["zoningSource"] or zoning_report["counts"]["accepted"] != EXPECTED["counts"]["zoningAccepted"] or zoning_report["counts"]["rejected"] != EXPECTED["counts"]["zoningQuarantine"]:
+    if zoning_report["counts"]["parsed"] != expected["counts"]["zoningSource"] or zoning_report["counts"]["accepted"] != expected["counts"]["zoningAccepted"] or zoning_report["counts"]["rejected"] != expected["counts"]["zoningQuarantine"]:
         raise ValueError("Zoning normalization counts changed")
+    if zoning_report["counts"]["parsed"] != zoning_report["counts"]["accepted"] + zoning_report["counts"]["rejected"]:
+        raise ValueError("Zoning source accounting does not reconcile")
+    if "normalizedSourceIdentity" in expected.get("fingerprints", {}):
+        if zoning_report.get("sourceOrderIdentityFingerprint") != expected["fingerprints"]["normalizedSourceIdentity"]:
+            raise ValueError("Normalized zoning source identity changed")
+        zone_domain = json.loads(paths["zoneDomain"].read_text())
+        if hashlib.sha256(canonical(zone_domain["codes"]).encode()).hexdigest() != expected["fingerprints"]["zoneDomain"]:
+            raise ValueError("Zone-domain fingerprint changed")
+        mapping_report = json.loads(paths["mappingReport"].read_text())
+        if (
+            mapping_report.get("parcelCount") != expected["counts"]["zoningMapping"]
+            or mapping_report.get("mappingStateCounts") != expected["zoningStateCounts"]
+            or mapping_report.get("mappingFingerprintSha256") != expected["fingerprints"]["parcelZoneMapping"]
+            or mapping_report.get("output", {}).get("sha256") != expected["artifacts"]["parcelZoneMapping"]
+        ):
+            raise ValueError("Parcel-zone mapping report changed")
+        serving = json.loads(paths["servingRehearsal"].read_text())
+        if serving.get("integratedFingerprint") != expected["fingerprints"]["integrated"]:
+            raise ValueError("Integrated serving fingerprint contract changed")
+    return zoning_acquisition, zoning_report
+
+
+def verify_receipts(paths: dict[str, pathlib.Path]) -> tuple[dict, dict, dict, dict]:
+    parcel_acquisition, parcel_report = verify_parcel_receipt(paths, EXPECTED)
+    zoning_acquisition, zoning_report = verify_zoning_receipt(paths, EXPECTED)
     return parcel_acquisition, parcel_report, zoning_acquisition, zoning_report
 
 
@@ -349,7 +384,36 @@ def countywide_parcel_fingerprint(target: Target, acquisition_id: str) -> str:
     return stream_fingerprint(target, query, "Countywide parcel fingerprint query failed")
 
 
-def integrated_fingerprint(target: Target) -> str:
+def parcel_zone_mapping_fingerprint(target: Target, expected: dict) -> str:
+    query = f"""copy (
+      select mapping_state,mapping_payload::text
+      from trulot_v2.parcel_zone_mapping_v2
+      where parcel_acquisition_id='{expected['parcelAcquisitionId']}'
+        and zoning_acquisition_id='{expected['zoningAcquisitionId']}'
+      order by parcel_source_object_id
+    ) to stdout with (format csv, delimiter E'\\t', null '\\N')"""
+    process = subprocess.Popen(
+        target.command + ["-q", "-c", bounded_fingerprint_statement(query)],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.DEVNULL,
+        env=target.environment,
+        text=True,
+    )
+    assert process.stdout is not None
+    digest = hashlib.sha256()
+    count = 0
+    for mapping_state, payload_text in csv.reader(process.stdout, delimiter="\t"):
+        payload = json.loads(payload_text)
+        if mapping_state == "UNMAPPED":
+            payload["zoningAcquisitionId"] = None
+        digest.update((canonical(payload) + "\n").encode())
+        count += 1
+    if process.wait() != 0 or count != expected["counts"]["zoningMapping"]:
+        raise RuntimeError("Parcel-zone mapping fingerprint query failed")
+    return digest.hexdigest()
+
+
+def integrated_fingerprint(target: Target, expected: dict = EXPECTED) -> str:
     query = f"""copy (
       select p.acquisition_id,p.source_object_id,p.apn_norm,p.parcel_id,p.address,p.situs_components::text,
              p.situs_zip,p.situs_juris,st_asgeojson(p.geom,17),st_asgeojson(p.centroid,17),
@@ -359,8 +423,8 @@ def integrated_fingerprint(target: Target) -> str:
       join trulot_v2.parcel_acquisition pa using(acquisition_id)
       join trulot_v2.parcel_zone_mapping_v2 z
         on z.parcel_acquisition_id=p.acquisition_id and z.parcel_source_object_id=p.source_object_id and z.apn_norm=p.apn_norm
-      where p.acquisition_id='{EXPECTED['parcelAcquisitionId']}' and p.situs_juris='SD'
-        and z.zoning_acquisition_id='{EXPECTED['zoningAcquisitionId']}'
+      where p.acquisition_id='{expected['parcelAcquisitionId']}' and p.situs_juris='SD'
+        and z.zoning_acquisition_id='{expected['zoningAcquisitionId']}'
       order by p.acquisition_id,p.source_object_id
     ) to stdout with (format csv, delimiter E'\\t', null '\\N')"""
     process = subprocess.Popen(
@@ -398,19 +462,19 @@ def integrated_fingerprint(target: Target) -> str:
         zoning = json.loads(values[17])
         record = {
             "schemaVersion": 1,
-            "integrationMethodVersion": EXPECTED["integrationMethodVersion"],
+            "integrationMethodVersion": expected["integrationMethodVersion"],
             "apn": parcel["apn_norm"],
             "parcel": parcel,
             "baseZoning": zoning,
-            "provenanceReferences": {
+            "provenanceReferences": expected.get("provenanceReferences", {
                 "parcel": "data/parcel-serving-v2/report.json#provenance",
                 "baseZoning": "data/base-zoning-v2/acquisition.json#receipt",
                 "mapping": "data/base-zoning-v2/mapping-report.json",
-            },
+            }),
         }
         digest.update((canonical(record) + "\n").encode())
         count += 1
-    if process.wait() != 0 or count != EXPECTED["counts"]["integrated"]:
+    if process.wait() != 0 or count != expected["counts"]["integrated"]:
         raise RuntimeError("Integrated fingerprint query failed")
     return digest.hexdigest()
 
@@ -490,6 +554,150 @@ def validate_parcel_only_candidate(target: Target, import_run_id: str) -> tuple[
     }
     if fingerprints != expected["fingerprints"]:
         raise ValueError("Parcel-only fingerprint reconciliation failed")
+    return counts, fingerprints
+
+
+def query_integrated_candidate_counts(target: Target, import_run_id: str) -> dict[str, object]:
+    expected = CANDIDATE_EXPECTED
+    parcel_id = expected["parcelAcquisitionId"]
+    zoning_id = expected["zoningAcquisitionId"]
+    parcel_run_id = expected["parcelImportRunId"]
+    raw = target.sql(f"""
+      select json_build_object(
+        'parcelAcquisitions',(select count(*) from trulot_v2.parcel_acquisition where acquisition_id='{parcel_id}'),
+        'parcelImportRuns',(select count(*) from trulot_v2.import_run where import_run_id='{parcel_run_id}' and run_kind='PARCEL_ONLY' and status='VALIDATED' and parcel_acquisition_id='{parcel_id}' and zoning_acquisition_id is null),
+        'candidateImportRuns',(select count(*) from trulot_v2.import_run where import_run_id='{import_run_id}' and run_kind='INTEGRATED' and parcel_acquisition_id='{parcel_id}' and zoning_acquisition_id='{zoning_id}'),
+        'parcelSource',(select source_count from trulot_v2.parcel_acquisition where acquisition_id='{parcel_id}'),
+        'parcelAccepted',(select count(*) from trulot_v2.parcel_base_sangis_v2 where acquisition_id='{parcel_id}'),
+        'parcelQuarantine',(select count(*) from trulot_v2.parcel_quarantine where acquisition_id='{parcel_id}'),
+        'cityParcels',(select count(*) from trulot_v2.parcel_base_sangis_v2 where acquisition_id='{parcel_id}' and situs_juris='SD'),
+        'cityDistinctApns',(select count(distinct apn_norm) from trulot_v2.parcel_base_sangis_v2 where acquisition_id='{parcel_id}' and situs_juris='SD'),
+        'zoningAcquisitions',(select count(*) from trulot_v2.zoning_acquisition where acquisition_id='{zoning_id}'),
+        'zoningSource',(select source_count from trulot_v2.zoning_acquisition where acquisition_id='{zoning_id}'),
+        'zoningAccepted',(select count(*) from trulot_v2.base_zoning_source_v2 where acquisition_id='{zoning_id}'),
+        'zoningQuarantine',(select count(*) from trulot_v2.base_zoning_quarantine where acquisition_id='{zoning_id}'),
+        'zoningMappingGeometry',(select count(*) from trulot_v2.base_zoning_mapping_geometry where acquisition_id='{zoning_id}'),
+        'zoningMapping',(select count(*) from trulot_v2.parcel_zone_mapping_v2 where parcel_acquisition_id='{parcel_id}' and zoning_acquisition_id='{zoning_id}'),
+        'duplicateApnMappings',(select count(*) from (select apn_norm from trulot_v2.parcel_zone_mapping_v2 where parcel_acquisition_id='{parcel_id}' and zoning_acquisition_id='{zoning_id}' group by apn_norm having count(*)>1) d),
+        'orphanParcelReferences',(select count(*) from trulot_v2.parcel_zone_mapping_v2 z left join trulot_v2.parcel_base_sangis_v2 p on p.acquisition_id=z.parcel_acquisition_id and p.source_object_id=z.parcel_source_object_id where z.parcel_acquisition_id='{parcel_id}' and z.zoning_acquisition_id='{zoning_id}' and p.source_object_id is null),
+        'orphanZoningReferences',(select count(*) from trulot_v2.parcel_zone_mapping_v2 z cross join lateral jsonb_array_elements(z.zone_evidence) e cross join lateral jsonb_array_elements(e->'features') f left join trulot_v2.base_zoning_mapping_geometry g on g.acquisition_id=z.zoning_acquisition_id and g.source_object_id=(f->>'sourceObjectId')::integer where z.parcel_acquisition_id='{parcel_id}' and z.zoning_acquisition_id='{zoning_id}' and g.source_object_id is null),
+        'acceptedQuarantineOverlap',(select count(*) from trulot_v2.base_zoning_source_v2 s join trulot_v2.base_zoning_quarantine q using(acquisition_id,source_object_id) where s.acquisition_id='{zoning_id}'),
+        'repairedMappingGeometry',(select count(*) from trulot_v2.base_zoning_mapping_geometry where acquisition_id='{zoning_id}' and source_geometry_state='EXPLICIT_MAKE_VALID' and repair_method='GEOS_MAKE_VALID_LINEWORK'),
+        'repairedWithoutQuarantine',(select count(*) from trulot_v2.base_zoning_mapping_geometry g left join trulot_v2.base_zoning_quarantine q using(acquisition_id,source_object_id) where g.acquisition_id='{zoning_id}' and g.source_geometry_state='EXPLICIT_MAKE_VALID' and q.source_object_id is null),
+        'quarantineWithoutRepairedEvidence',(select count(*) from trulot_v2.base_zoning_quarantine q left join trulot_v2.base_zoning_mapping_geometry g using(acquisition_id,source_object_id) where q.acquisition_id='{zoning_id}' and (g.source_object_id is null or g.source_geometry_state<>'EXPLICIT_MAKE_VALID')),
+        'mappingPayloadMismatches',(select count(*) from trulot_v2.parcel_zone_mapping_v2 z where z.parcel_acquisition_id='{parcel_id}' and z.zoning_acquisition_id='{zoning_id}' and (z.mapping_payload->>'mappingState'<>z.mapping_state or z.mapping_payload->>'apn'<>z.apn_norm or z.mapping_payload->>'mappingMethodVersion'<>z.mapping_method_version or z.mapping_payload->>'zoningAcquisitionId'<>z.zoning_acquisition_id or z.mapping_payload->'zoneEvidence'<>z.zone_evidence)),
+        'invalidSplitEvidence',(select count(*) from trulot_v2.parcel_zone_mapping_v2 where parcel_acquisition_id='{parcel_id}' and zoning_acquisition_id='{zoning_id}' and mapping_state='MULTI_ZONE' and (distinct_zone_count<2 or jsonb_array_length(zone_evidence)<2)),
+        'invalidUnmappedEvidence',(select count(*) from trulot_v2.parcel_zone_mapping_v2 where parcel_acquisition_id='{parcel_id}' and zoning_acquisition_id='{zoning_id}' and mapping_state='UNMAPPED' and (dominant_zone_code is not null or distinct_zone_count<>0 or jsonb_array_length(zone_evidence)<>0)),
+        'invalidAmbiguousEvidence',(select count(*) from trulot_v2.parcel_zone_mapping_v2 where parcel_acquisition_id='{parcel_id}' and zoning_acquisition_id='{zoning_id}' and mapping_state='INDETERMINATE' and jsonb_array_length(zone_evidence)=0),
+        'selectedSnapshots',(select count(*) from trulot_v2.selected_snapshot),
+        'parcelServedRows',(select count(*) from trulot_v2.parcel_serving_v2),
+        'integratedServedRows',(select count(*) from trulot_v2.parcel_intelligence_serving_v2),
+        'zoningStateCounts',(select json_object_agg(mapping_state,n) from (select mapping_state,count(*) n from trulot_v2.parcel_zone_mapping_v2 where parcel_acquisition_id='{parcel_id}' and zoning_acquisition_id='{zoning_id}' group by mapping_state order by mapping_state) s)
+      )
+    """, validation=True)
+    return json.loads(raw)
+
+
+def validate_existing_parcel_candidate(target: Target) -> tuple[dict[str, object], dict[str, str]]:
+    expected = CANDIDATE_EXPECTED
+    counts = query_integrated_candidate_counts(target, "00000000-0000-0000-0000-000000000000")
+    required = {
+        "parcelAcquisitions": 1,
+        "parcelImportRuns": 1,
+        "candidateImportRuns": 0,
+        "parcelSource": expected["counts"]["parcelSource"],
+        "parcelAccepted": expected["counts"]["parcelAccepted"],
+        "parcelQuarantine": expected["counts"]["parcelQuarantine"],
+        "cityParcels": expected["counts"]["cityParcels"],
+        "cityDistinctApns": expected["counts"]["cityDistinctApns"],
+        "zoningAcquisitions": 0,
+        "zoningAccepted": 0,
+        "zoningQuarantine": 0,
+        "zoningMappingGeometry": 0,
+        "zoningMapping": 0,
+        "selectedSnapshots": 0,
+        "parcelServedRows": 0,
+        "integratedServedRows": 0,
+    }
+    for key, value in required.items():
+        if counts.get(key) != value:
+            raise ValueError(f"Integrated-candidate parcel reuse preflight mismatch for {key}: {counts.get(key)} != {value}")
+    fingerprints = {
+        "countywideParcelFullRow": countywide_parcel_fingerprint(target, expected["parcelAcquisitionId"]),
+        "parcelApnSet": parcel_fingerprint(target, "apn_norm", expected["parcelAcquisitionId"]),
+        "parcelFullRow": parcel_fingerprint(target, "row_to_json(s)::text", expected["parcelAcquisitionId"]),
+    }
+    sealed = expected["fingerprints"]
+    if fingerprints != {key: sealed[key] for key in fingerprints}:
+        raise ValueError("Integrated-candidate parcel fingerprint preflight failed")
+    return counts, fingerprints
+
+
+def validate_integrated_candidate(target: Target, import_run_id: str) -> tuple[dict[str, object], dict[str, str]]:
+    expected = CANDIDATE_EXPECTED
+    counts = query_integrated_candidate_counts(target, import_run_id)
+    required = {
+        "parcelAcquisitions": 1,
+        "parcelImportRuns": 1,
+        "candidateImportRuns": 1,
+        "parcelSource": expected["counts"]["parcelSource"],
+        "parcelAccepted": expected["counts"]["parcelAccepted"],
+        "parcelQuarantine": expected["counts"]["parcelQuarantine"],
+        "cityParcels": expected["counts"]["cityParcels"],
+        "cityDistinctApns": expected["counts"]["cityDistinctApns"],
+        "zoningAcquisitions": 1,
+        "zoningSource": expected["counts"]["zoningSource"],
+        "zoningAccepted": expected["counts"]["zoningAccepted"],
+        "zoningQuarantine": expected["counts"]["zoningQuarantine"],
+        "zoningMappingGeometry": expected["counts"]["zoningMappingGeometry"],
+        "zoningMapping": expected["counts"]["zoningMapping"],
+        "duplicateApnMappings": 0,
+        "orphanParcelReferences": 0,
+        "orphanZoningReferences": 0,
+        "acceptedQuarantineOverlap": 0,
+        "repairedMappingGeometry": expected["counts"]["zoningQuarantine"],
+        "repairedWithoutQuarantine": 0,
+        "quarantineWithoutRepairedEvidence": 0,
+        "mappingPayloadMismatches": 0,
+        "invalidSplitEvidence": 0,
+        "invalidUnmappedEvidence": 0,
+        "invalidAmbiguousEvidence": 0,
+        "selectedSnapshots": 0,
+        "parcelServedRows": 0,
+        "integratedServedRows": 0,
+    }
+    for key, value in required.items():
+        if counts.get(key) != value:
+            raise ValueError(f"Integrated-candidate reconciliation mismatch for {key}: {counts.get(key)} != {value}")
+    if counts["zoningSource"] != counts["zoningAccepted"] + counts["zoningQuarantine"]:
+        raise ValueError("Integrated-candidate source accounting does not reconcile")
+    if counts.get("zoningStateCounts") != expected["zoningStateCounts"]:
+        raise ValueError("Integrated-candidate zoning state counts changed")
+    canonical_states = {
+        "AMBIGUOUS": counts["zoningStateCounts"]["INDETERMINATE"],
+        "SINGLE_ZONE": counts["zoningStateCounts"]["SINGLE_ZONE"] + counts["zoningStateCounts"]["BOUNDARY_SLIVER"],
+        "SPLIT_ZONE": counts["zoningStateCounts"]["MULTI_ZONE"],
+        "UNMAPPED": counts["zoningStateCounts"]["UNMAPPED"],
+    }
+    if canonical_states != expected["canonicalStateCounts"]:
+        raise ValueError("Integrated-candidate canonical state counts changed")
+    stored = json.loads(target.sql(
+        "select json_build_object('sourceArtifact',artifact_sha256,'acceptedRows',accepted_rows_sha256,'quarantineRows',quarantine_rows_sha256) "
+        f"from trulot_v2.zoning_acquisition where acquisition_id='{expected['zoningAcquisitionId']}'"
+    ))
+    fingerprints = {
+        "countywideParcelFullRow": countywide_parcel_fingerprint(target, expected["parcelAcquisitionId"]),
+        "parcelApnSet": parcel_fingerprint(target, "apn_norm", expected["parcelAcquisitionId"]),
+        "parcelFullRow": parcel_fingerprint(target, "row_to_json(s)::text", expected["parcelAcquisitionId"]),
+        **stored,
+        "normalizedSourceIdentity": expected["fingerprints"]["normalizedSourceIdentity"],
+        "zoneDomain": expected["fingerprints"]["zoneDomain"],
+        "parcelZoneMapping": parcel_zone_mapping_fingerprint(target, expected),
+        "mappingStateDistribution": hashlib.sha256(canonical(canonical_states).encode()).hexdigest(),
+        "integrated": integrated_fingerprint(target, expected),
+    }
+    if fingerprints != expected["fingerprints"]:
+        raise ValueError("Integrated-candidate fingerprint reconciliation failed")
     return counts, fingerprints
 
 
@@ -628,9 +836,104 @@ def write_parcel_data(
     return parcel_counts
 
 
+def write_zoning_data(
+    process: subprocess.Popen,
+    writer: csv.writer,
+    paths: dict[str, pathlib.Path],
+    artifact_hashes: dict[str, str],
+    zoning_acquisition: dict,
+    zoning_report: dict,
+    expected: dict,
+) -> tuple[Counter, Counter, str]:
+    assert process.stdin is not None
+    zoning_receipt = zoning_acquisition["receipt"]
+    zoning_counts = Counter()
+    mapping_states = Counter()
+    mapping_fingerprint = hashlib.sha256()
+    native_transform = pyproj.Transformer.from_crs(4326, 2230, always_xy=True).transform
+
+    process.stdin.write("\\.\ncopy trulot_v2.zoning_acquisition from stdin with (format csv, null '\\N');\n")
+    csv_row(writer, [zoning_receipt["acquisitionId"], zoning_receipt["datasetId"], zoning_receipt["acquiredAt"], zoning_receipt["publisher"],
+                     zoning_receipt["sourceUrl"], zoning_receipt["metadataUrl"], zoning_receipt["artifact"]["sha256"],
+                     artifact_hashes["zoningReport"], artifact_hashes["zoningRows"], artifact_hashes["zoningQuarantine"],
+                     zoning_report["counts"]["parsed"], zoning_report["counts"]["accepted"], zoning_report["counts"]["rejected"],
+                     zoning_receipt["nativeCrs"], zoning_receipt["artifactCrs"], canonical(zoning_acquisition)])
+
+    normalized_zoning: dict[int, dict] = {}
+    for key in ("zoningRows", "zoningQuarantine"):
+        with gzip.open(paths[key], "rt") as source:
+            for line in source:
+                entry = json.loads(line)
+                normalized_zoning[entry["index"]] = entry
+    zoning_payload = json.loads(paths["zoningRaw"].read_text())
+    if len(normalized_zoning) != len(zoning_payload["features"]):
+        raise ValueError("Zoning raw and normalized row counts differ")
+
+    rejected_zoning: list[tuple[dict, shapely.Geometry, shapely.Geometry]] = []
+    mapping_geometries: list[tuple[dict, shapely.Geometry, str, str | None, float, float, float]] = []
+    process.stdin.write("\\.\ncopy trulot_v2.base_zoning_source_v2 from stdin with (format csv, null '\\N');\n")
+    for index, feature in enumerate(zoning_payload["features"]):
+        entry = normalized_zoning[index]
+        geometry = shape(feature["geometry"])
+        if hashlib.sha256(shapely.normalize(geometry).wkb).hexdigest() != entry["geometrySha256"]:
+            raise ValueError("Zoning geometry hash mismatch")
+        native_geometry = transform(native_transform, geometry)
+        zoning_counts["source"] += 1
+        source_area = entry["sourceShapeAreaSqFt"]
+        if entry["reasons"]:
+            repaired = make_valid(native_geometry)
+            delta = abs(repaired.area - source_area)
+            relative = 100.0 * delta / source_area
+            if repaired.geom_type not in {"Polygon", "MultiPolygon"} or not repaired.is_valid or delta > 0.001 or relative > 0.000001:
+                raise ValueError("Zoning repair differs from sealed bounded policy")
+            rejected_zoning.append((entry, geometry, native_geometry))
+            mapping_geometries.append((entry, repaired, "EXPLICIT_MAKE_VALID", "GEOS_MAKE_VALID_LINEWORK", source_area, delta, relative))
+            zoning_counts["quarantine"] += 1
+            continue
+        if not native_geometry.is_valid:
+            raise ValueError("Accepted zoning geometry became invalid after transform")
+        csv_row(writer, [zoning_receipt["acquisitionId"], entry["sourceObjectId"], entry["zoneCode"], source_date(entry["implementationDate"]),
+                         entry["ordinanceNumber"], entry["sourceShapeLength"], source_area, ewkb(geometry, 4326), ewkb(native_geometry, 2230), entry["geometrySha256"]])
+        delta = abs(native_geometry.area - source_area)
+        mapping_geometries.append((entry, native_geometry, "VALID_SOURCE", None, source_area, delta, 100.0 * delta / source_area))
+        zoning_counts["accepted"] += 1
+
+    process.stdin.write("\\.\ncopy trulot_v2.base_zoning_quarantine from stdin with (format csv, null '\\N');\n")
+    for entry, _geometry, native_geometry in rejected_zoning:
+        metadata = {key: entry.get(key) for key in ("bounds", "geometrySha256", "geometryType", "sourceShapeAreaSqFt", "sourceShapeLength")}
+        metadata["nativeEnvelopeWkbSha256"] = hashlib.sha256(native_geometry.envelope.wkb).hexdigest()
+        csv_row(writer, [zoning_receipt["acquisitionId"], entry["sourceObjectId"], entry["zoneCode"], canonical(entry["reasons"]), canonical(metadata),
+                         hashlib.sha256((canonical(entry) + "\n").encode()).hexdigest()])
+
+    process.stdin.write("\\.\ncopy trulot_v2.base_zoning_mapping_geometry from stdin with (format csv, null '\\N');\n")
+    for entry, geometry, state, method, source_area, delta, relative in mapping_geometries:
+        csv_row(writer, [zoning_receipt["acquisitionId"], entry["sourceObjectId"], entry["zoneCode"], ewkb(geometry, 2230), state, method,
+                         source_area, geometry.area, delta, relative])
+
+    process.stdin.write("\\.\ncopy trulot_v2.parcel_zone_mapping_v2 from stdin with (format csv, null '\\N');\n")
+    seen_apns: set[str] = set()
+    with gzip.open(paths["parcelZoneMapping"], "rt") as source:
+        for line in source:
+            entry = json.loads(line)
+            source_zoning_acquisition = entry.get("zoningAcquisitionId")
+            valid_unmapped_context = entry["mappingState"] == "UNMAPPED" and source_zoning_acquisition is None
+            if entry["parcelAcquisitionId"] != expected["parcelAcquisitionId"] or (source_zoning_acquisition != expected["zoningAcquisitionId"] and not valid_unmapped_context):
+                raise ValueError("Parcel-zone acquisition identity changed")
+            if entry["mappingMethodVersion"] != expected["mappingMethodVersion"] or entry["apn"] in seen_apns:
+                raise ValueError("Parcel-zone mapping identity or cardinality changed")
+            seen_apns.add(entry["apn"])
+            mapping_states[entry["mappingState"]] += 1
+            mapping_fingerprint.update((canonical(entry) + "\n").encode())
+            serving_entry = {**entry, "zoningAcquisitionId": expected["zoningAcquisitionId"]}
+            csv_row(writer, [entry["parcelAcquisitionId"], entry["parcelSourceObjectId"], entry["apn"], entry["parcelId"], entry["geometrySha256"],
+                             serving_entry["zoningAcquisitionId"], entry["mappingMethodVersion"], entry["mappingState"], entry["dominantZoneCode"],
+                             entry["dominantCoveragePercent"], entry["secondaryCoveragePercent"], entry["totalCoveredPercent"], entry["uncoveredPercent"],
+                             entry["distinctZoneCount"], entry["repairedSourceFeatureCount"], canonical(entry["zoneEvidence"]), canonical(serving_entry)])
+    return zoning_counts, mapping_states, mapping_fingerprint.hexdigest()
+
+
 def load_integrated_data(target: Target, paths: dict[str, pathlib.Path], materialization_id: str, artifact_hashes: dict[str, str], output: pathlib.Path) -> str:
     parcel_acquisition, parcel_report, zoning_acquisition, zoning_report = verify_receipts(paths)
-    zoning_receipt = zoning_acquisition["receipt"]
     importer_version = sha256(pathlib.Path(__file__))
     import_run_id = str(uuid.uuid5(uuid.NAMESPACE_URL, materialization_id + ":" + canonical(artifact_hashes) + ":" + importer_version))
     started_at = dt.datetime.now(dt.timezone.utc).isoformat()
@@ -638,11 +941,6 @@ def load_integrated_data(target: Target, paths: dict[str, pathlib.Path], materia
 
     apply_migrations(target, log_path)
     require_empty_foundation(target)
-
-    zoning_counts = Counter()
-    mapping_states = Counter()
-    mapping_fingerprint = hashlib.sha256()
-    native_transform = pyproj.Transformer.from_crs(4326, 2230, always_xy=True).transform
 
     with target.stream(log_path) as process:
         assert process.stdin is not None
@@ -652,84 +950,9 @@ def load_integrated_data(target: Target, paths: dict[str, pathlib.Path], materia
         csv_row(writer, [import_run_id, importer_version, started_at, None, "LOADING", materialization_id,
                          EXPECTED["parcelAcquisitionId"], EXPECTED["zoningAcquisitionId"], canonical(artifact_hashes), "{}", "{}", None, "INTEGRATED"])
         parcel_counts = write_parcel_data(process, writer, paths, artifact_hashes, parcel_acquisition, parcel_report)
-
-        process.stdin.write("\\.\ncopy trulot_v2.zoning_acquisition from stdin with (format csv, null '\\N');\n")
-        csv_row(writer, [zoning_receipt["acquisitionId"], zoning_receipt["datasetId"], zoning_receipt["acquiredAt"], zoning_receipt["publisher"],
-                         zoning_receipt["sourceUrl"], zoning_receipt["metadataUrl"], zoning_receipt["artifact"]["sha256"],
-                         artifact_hashes["zoningReport"], artifact_hashes["zoningRows"], artifact_hashes["zoningQuarantine"],
-                         zoning_report["counts"]["parsed"], zoning_report["counts"]["accepted"], zoning_report["counts"]["rejected"],
-                         zoning_receipt["nativeCrs"], zoning_receipt["artifactCrs"], canonical(zoning_acquisition)])
-
-        normalized_zoning: dict[int, dict] = {}
-        for key in ("zoningRows", "zoningQuarantine"):
-            with gzip.open(paths[key], "rt") as source:
-                for line in source:
-                    entry = json.loads(line)
-                    normalized_zoning[entry["index"]] = entry
-        zoning_payload = json.loads(paths["zoningRaw"].read_text())
-        if len(normalized_zoning) != len(zoning_payload["features"]):
-            raise ValueError("Zoning raw and normalized row counts differ")
-
-        rejected_zoning: list[tuple[dict, shapely.Geometry, shapely.Geometry]] = []
-        mapping_geometries: list[tuple[dict, shapely.Geometry, str, str | None, float, float, float]] = []
-        process.stdin.write("\\.\ncopy trulot_v2.base_zoning_source_v2 from stdin with (format csv, null '\\N');\n")
-        for index, feature in enumerate(zoning_payload["features"]):
-            entry = normalized_zoning[index]
-            geometry = shape(feature["geometry"])
-            if hashlib.sha256(shapely.normalize(geometry).wkb).hexdigest() != entry["geometrySha256"]:
-                raise ValueError("Zoning geometry hash mismatch")
-            native_geometry = transform(native_transform, geometry)
-            zoning_counts["source"] += 1
-            source_area = entry["sourceShapeAreaSqFt"]
-            if entry["reasons"]:
-                repaired = make_valid(native_geometry)
-                delta = abs(repaired.area - source_area)
-                relative = 100.0 * delta / source_area
-                if repaired.geom_type not in {"Polygon", "MultiPolygon"} or not repaired.is_valid or delta > 0.001 or relative > 0.000001:
-                    raise ValueError("Zoning repair differs from sealed bounded policy")
-                rejected_zoning.append((entry, geometry, native_geometry))
-                mapping_geometries.append((entry, repaired, "EXPLICIT_MAKE_VALID", "GEOS_MAKE_VALID_LINEWORK", source_area, delta, relative))
-                zoning_counts["quarantine"] += 1
-                continue
-            if not native_geometry.is_valid:
-                raise ValueError("Accepted zoning geometry became invalid after transform")
-            csv_row(writer, [zoning_receipt["acquisitionId"], entry["sourceObjectId"], entry["zoneCode"], source_date(entry["implementationDate"]),
-                             entry["ordinanceNumber"], entry["sourceShapeLength"], source_area, ewkb(geometry, 4326), ewkb(native_geometry, 2230), entry["geometrySha256"]])
-            delta = abs(native_geometry.area - source_area)
-            mapping_geometries.append((entry, native_geometry, "VALID_SOURCE", None, source_area, delta, 100.0 * delta / source_area))
-            zoning_counts["accepted"] += 1
-
-        process.stdin.write("\\.\ncopy trulot_v2.base_zoning_quarantine from stdin with (format csv, null '\\N');\n")
-        for entry, geometry, native_geometry in rejected_zoning:
-            metadata = {key: entry.get(key) for key in ("bounds", "geometrySha256", "geometryType", "sourceShapeAreaSqFt", "sourceShapeLength")}
-            metadata["nativeEnvelopeWkbSha256"] = hashlib.sha256(native_geometry.envelope.wkb).hexdigest()
-            csv_row(writer, [zoning_receipt["acquisitionId"], entry["sourceObjectId"], entry["zoneCode"], canonical(entry["reasons"]), canonical(metadata),
-                             hashlib.sha256((canonical(entry) + "\n").encode()).hexdigest()])
-
-        process.stdin.write("\\.\ncopy trulot_v2.base_zoning_mapping_geometry from stdin with (format csv, null '\\N');\n")
-        for entry, geometry, state, method, source_area, delta, relative in mapping_geometries:
-            csv_row(writer, [zoning_receipt["acquisitionId"], entry["sourceObjectId"], entry["zoneCode"], ewkb(geometry, 2230), state, method,
-                             source_area, geometry.area, delta, relative])
-
-        process.stdin.write("\\.\ncopy trulot_v2.parcel_zone_mapping_v2 from stdin with (format csv, null '\\N');\n")
-        seen_apns: set[str] = set()
-        with gzip.open(paths["parcelZoneMapping"], "rt") as source:
-            for line in source:
-                entry = json.loads(line)
-                source_zoning_acquisition = entry.get("zoningAcquisitionId")
-                valid_unmapped_context = entry["mappingState"] == "UNMAPPED" and source_zoning_acquisition is None
-                if entry["parcelAcquisitionId"] != EXPECTED["parcelAcquisitionId"] or (source_zoning_acquisition != EXPECTED["zoningAcquisitionId"] and not valid_unmapped_context):
-                    raise ValueError("Parcel-zone acquisition identity changed")
-                if entry["mappingMethodVersion"] != EXPECTED["mappingMethodVersion"] or entry["apn"] in seen_apns:
-                    raise ValueError("Parcel-zone mapping identity or cardinality changed")
-                seen_apns.add(entry["apn"])
-                mapping_states[entry["mappingState"]] += 1
-                mapping_fingerprint.update((canonical(entry) + "\n").encode())
-                serving_entry = {**entry, "zoningAcquisitionId": EXPECTED["zoningAcquisitionId"]}
-                csv_row(writer, [entry["parcelAcquisitionId"], entry["parcelSourceObjectId"], entry["apn"], entry["parcelId"], entry["geometrySha256"],
-                                 serving_entry["zoningAcquisitionId"], entry["mappingMethodVersion"], entry["mappingState"], entry["dominantZoneCode"],
-                                 entry["dominantCoveragePercent"], entry["secondaryCoveragePercent"], entry["totalCoveredPercent"], entry["uncoveredPercent"],
-                                 entry["distinctZoneCount"], entry["repairedSourceFeatureCount"], canonical(entry["zoneEvidence"]), canonical(serving_entry)])
+        zoning_counts, mapping_states, mapping_fingerprint = write_zoning_data(
+            process, writer, paths, artifact_hashes, zoning_acquisition, zoning_report, EXPECTED
+        )
         process.stdin.write("\\.\ncommit;\n")
         process.stdin.close()
 
@@ -739,8 +962,49 @@ def load_integrated_data(target: Target, paths: dict[str, pathlib.Path], materia
         raise ValueError("Zoning import stream counts changed")
     if dict(sorted(mapping_states.items())) != EXPECTED["zoningStateCounts"]:
         raise ValueError("Mapping state counts changed")
-    if mapping_fingerprint.hexdigest() != EXPECTED["fingerprints"]["parcelZoneMapping"]:
+    if mapping_fingerprint != EXPECTED["fingerprints"]["parcelZoneMapping"]:
         raise ValueError("Parcel-zone mapping fingerprint changed")
+    return import_run_id
+
+
+def load_integrated_candidate_data(target: Target, paths: dict[str, pathlib.Path], materialization_id: str, artifact_hashes: dict[str, str], output: pathlib.Path) -> str:
+    expected = CANDIDATE_EXPECTED
+    zoning_acquisition, zoning_report = verify_zoning_receipt(paths, expected)
+    importer_version = sha256(pathlib.Path(__file__))
+    import_run_id = str(uuid.uuid5(
+        uuid.NAMESPACE_URL,
+        materialization_id + ":integrated-candidate:" + canonical(artifact_hashes) + ":" + importer_version,
+    ))
+    started_at = dt.datetime.now(dt.timezone.utc).isoformat()
+    log_path = output / "psql.log"
+
+    apply_migrations(target, log_path)
+    validate_existing_parcel_candidate(target)
+
+    with target.stream(log_path) as process:
+        assert process.stdin is not None
+        writer = csv.writer(process.stdin, lineterminator="\n")
+        begin_bulk_import(process)
+        process.stdin.write("copy trulot_v2.import_run (import_run_id,importer_version,started_at,completed_at,status,materialization_id,parcel_acquisition_id,zoning_acquisition_id,source_artifacts,observed_counts,observed_fingerprints,failure_reason,run_kind) from stdin with (format csv, null '\\N');\n")
+        csv_row(writer, [import_run_id, importer_version, started_at, None, "LOADING", materialization_id,
+                         expected["parcelAcquisitionId"], expected["zoningAcquisitionId"], canonical(artifact_hashes), "{}", "{}", None, "INTEGRATED"])
+        zoning_counts, mapping_states, mapping_fingerprint = write_zoning_data(
+            process, writer, paths, artifact_hashes, zoning_acquisition, zoning_report, expected
+        )
+        process.stdin.write("\\.\ncommit;\n")
+        process.stdin.close()
+
+    required_zoning = Counter({
+        "source": expected["counts"]["zoningSource"],
+        "accepted": expected["counts"]["zoningAccepted"],
+        "quarantine": expected["counts"]["zoningQuarantine"],
+    })
+    if zoning_counts != required_zoning:
+        raise ValueError("Integrated-candidate zoning import stream counts changed")
+    if dict(sorted(mapping_states.items())) != expected["zoningStateCounts"]:
+        raise ValueError("Integrated-candidate mapping state counts changed")
+    if mapping_fingerprint != expected["fingerprints"]["parcelZoneMapping"]:
+        raise ValueError("Integrated-candidate parcel-zone mapping fingerprint changed")
     return import_run_id
 
 
@@ -794,7 +1058,7 @@ def main() -> None:
     target_group = parser.add_mutually_exclusive_group(required=True)
     target_group.add_argument("--boundary")
     target_group.add_argument("--database-url-env")
-    parser.add_argument("--mode", choices=("integrated", "parcel-only"), default="integrated")
+    parser.add_argument("--mode", choices=("integrated", "parcel-only", "integrated-candidate"), default="integrated")
     parser.add_argument("--authorize-production-load", action="store_true")
     parser.add_argument("--resume-validation", action="store_true")
     parser.add_argument("--validate-only", action="store_true")
@@ -804,8 +1068,8 @@ def main() -> None:
 
     if args.validate_only and args.resume_validation:
         raise ValueError("Choose either --validate-only or --resume-validation")
-    if args.validate_only and args.mode != "parcel-only":
-        raise ValueError("Explicit unselected candidate validation is available only in parcel-only mode")
+    if args.validate_only and args.mode not in {"parcel-only", "integrated-candidate"}:
+        raise ValueError("Explicit unselected candidate validation is available only in parcel-only or integrated-candidate mode")
 
     output = pathlib.Path(args.output).resolve()
     if output == ROOT or ROOT in output.parents:
@@ -818,7 +1082,11 @@ def main() -> None:
     verify_target_database(target, expected)
 
     if args.validate_only:
-        import_run_id = matching_import_run(target, materialization_id, "PARCEL_ONLY")
+        import_run_id = matching_import_run(
+            target,
+            materialization_id,
+            "PARCEL_ONLY" if args.mode == "parcel-only" else "INTEGRATED",
+        )
     elif args.resume_validation:
         if target.sql("select count(*) from trulot_v2.selected_snapshot") != "0":
             raise ValueError("Cannot resume validation after a snapshot has been selected")
@@ -831,8 +1099,83 @@ def main() -> None:
             raise ValueError("Resume requires exactly one matching unselected LOADING import")
         import_run_id = loading_runs
     else:
-        loader = load_parcel_only_data if args.mode == "parcel-only" else load_integrated_data
+        loader = {
+            "parcel-only": load_parcel_only_data,
+            "integrated-candidate": load_integrated_candidate_data,
+            "integrated": load_integrated_data,
+        }[args.mode]
         import_run_id = loader(target, paths, materialization_id, artifact_hashes, output)
+
+    if args.mode == "integrated-candidate":
+        counts, fingerprints = validate_integrated_candidate(target, import_run_id)
+        if not args.validate_only:
+            final_sql = f"""
+              begin;
+              update trulot_v2.import_run set completed_at=clock_timestamp(),status='VALIDATED',
+                observed_counts='{canonical(counts)}'::jsonb,observed_fingerprints='{canonical(fingerprints)}'::jsonb
+              where import_run_id='{import_run_id}' and run_kind='INTEGRATED'
+                and parcel_acquisition_id='{CANDIDATE_EXPECTED['parcelAcquisitionId']}'
+                and zoning_acquisition_id='{CANDIDATE_EXPECTED['zoningAcquisitionId']}' and status='LOADING';
+              commit;
+              analyze trulot_v2.base_zoning_source_v2;
+              analyze trulot_v2.parcel_zone_mapping_v2;
+            """
+            target.run(final_sql, output / "psql.log", validation=True)
+        terminal_state = target.sql(
+            "select concat_ws('|',status,run_kind,parcel_acquisition_id,zoning_acquisition_id) "
+            f"from trulot_v2.import_run where import_run_id='{import_run_id}'"
+        )
+        expected_terminal = (
+            "VALIDATED|INTEGRATED|"
+            + CANDIDATE_EXPECTED["parcelAcquisitionId"]
+            + "|"
+            + CANDIDATE_EXPECTED["zoningAcquisitionId"]
+        )
+        if terminal_state != expected_terminal:
+            raise ValueError("Integrated candidate did not reach the sealed unselected VALIDATED state")
+        if target.sql("select count(*) from trulot_v2.selected_snapshot") != "0":
+            raise ValueError("Integrated-candidate mode cannot select a snapshot")
+        served = int(target.sql(
+            "select (select count(*) from trulot_v2.parcel_serving_v2) + "
+            "(select count(*) from trulot_v2.parcel_intelligence_serving_v2)"
+        ))
+        if served != 0:
+            raise ValueError("Unselected integrated candidate became visible through serving views")
+        timestamps = json.loads(target.sql(
+            "select json_build_object('startedAt',started_at,'completedAt',completed_at,'status',status,'runKind',run_kind) "
+            f"from trulot_v2.import_run where import_run_id='{import_run_id}'"
+        ))
+        receipt = {
+            "decision": "UNSELECTED_BASE_ZONING_V2_CANDIDATE_PASS",
+            "target": target.label,
+            "mode": args.mode,
+            "operation": (
+                "validate-only"
+                if args.validate_only
+                else "resume-validation"
+                if args.resume_validation
+                else "load-and-validate"
+            ),
+            "importRunId": import_run_id,
+            "reusedParcelImportRunId": CANDIDATE_EXPECTED["parcelImportRunId"],
+            "materializationId": materialization_id,
+            "importerVersion": sha256(pathlib.Path(__file__)),
+            "timestamps": timestamps,
+            "migrationSha256": {migration.name: sha256(migration) for migration in MIGRATIONS},
+            "artifacts": artifact_hashes,
+            "acquisitionIds": {
+                "parcel": CANDIDATE_EXPECTED["parcelAcquisitionId"],
+                "zoning": CANDIDATE_EXPECTED["zoningAcquisitionId"],
+            },
+            "counts": counts,
+            "fingerprints": fingerprints,
+            "selectedSnapshotRows": 0,
+            "servedRows": served,
+            "durationSeconds": round(time.monotonic() - started, 3),
+        }
+        (output / "receipt.json").write_text(json.dumps(receipt, indent=2, sort_keys=True) + "\n")
+        print(json.dumps(receipt, indent=2, sort_keys=True))
+        return
 
     if args.mode == "parcel-only":
         counts, fingerprints = validate_parcel_only_candidate(target, import_run_id)
