@@ -1,328 +1,124 @@
 {
   "result": "PASS",
-  "browser": "Playwright Chromium fallback (agent-browser CLI unavailable in this checkout)",
-  "cases": 10,
+  "routes": [
+    "/parcel-public-preview/[apn]",
+    "/parcel-v2-preview/[apn]",
+    "/parcel-v2-evidence/[apn]"
+  ],
+  "checks": 6,
   "viewports": [
-    "mobile 390x844",
-    "tablet 820x1180",
-    "desktop 1440x1000"
+    "390x844",
+    "1440x1000"
   ],
-  "checks": 30,
-  "failures": [],
-  "canonical": [
+  "public_truth_vocabulary": "PASS",
+  "split_zone_map": "PASS",
+  "zoning_detail_conditions": "PASS",
+  "technical_provenance_separation": "PASS",
+  "navigation": "PASS",
+  "keyboard": "PASS",
+  "noindex": "PASS",
+  "console_errors": "PASS",
+  "horizontal_overflow": "PASS",
+  "scenario_states": "PASS",
+  "check_details": [
     {
       "apn": "6341302200",
-      "case": "outside-coastal-rs-1-7",
-      "viewport": {
-        "name": "mobile",
-        "width": 390,
-        "height": 844
-      },
-      "title": "1456 27TH ST",
-      "headings": [
-        "At a glance",
-        "Base development standards",
-        "Existing property facts",
-        "What we don’t know yet",
-        "Next investigation",
-        "Evidence / How TruLot knows"
-      ],
-      "document_height": 4470,
-      "horizontal_overflow": false,
-      "clipped_standards": false,
-      "keyboard_summary_focus": true,
-      "orientation_disclosure_opened": true,
-      "rule_disclosure_available": true,
-      "rule_disclosure_opened": true,
-      "evidence_disclosure_opened": true,
-      "status_has_text": true,
-      "capacity_not_evaluated_visible": true,
-      "split_callout_visible": true,
+      "viewport": "390x844",
+      "public": "PASS",
+      "zoning_detail": "PASS",
+      "technical_evidence": "PASS",
+      "keyboard_disclosure": "PASS",
+      "noindex": "PASS",
       "console_errors": [],
-      "screenshot": "data/parcel-page-v2-ui/screenshots/6341302200-mobile.png"
+      "horizontal_overflow": false,
+      "static_comparison": null,
+      "screenshots": [
+        "data/parcel-page-public-v0/screenshots/6341302200-mobile.png",
+        "data/parcel-page-v2-ui/screenshots/6341302200-mobile.png"
+      ]
     },
     {
       "apn": "6341302200",
-      "case": "outside-coastal-rs-1-7",
-      "viewport": {
-        "name": "tablet",
-        "width": 820,
-        "height": 1180
-      },
-      "title": "1456 27TH ST",
-      "headings": [
-        "At a glance",
-        "Base development standards",
-        "Existing property facts",
-        "What we don’t know yet",
-        "Next investigation",
-        "Evidence / How TruLot knows"
-      ],
-      "document_height": 3639,
-      "horizontal_overflow": false,
-      "clipped_standards": false,
-      "keyboard_summary_focus": true,
-      "orientation_disclosure_opened": true,
-      "rule_disclosure_available": true,
-      "rule_disclosure_opened": true,
-      "evidence_disclosure_opened": true,
-      "status_has_text": true,
-      "capacity_not_evaluated_visible": true,
-      "split_callout_visible": true,
+      "viewport": "1440x1000",
+      "public": "PASS",
+      "zoning_detail": "PASS",
+      "technical_evidence": "PASS",
+      "keyboard_disclosure": "PASS",
+      "noindex": "PASS",
       "console_errors": [],
-      "screenshot": null
-    },
-    {
-      "apn": "6341302200",
-      "case": "outside-coastal-rs-1-7",
-      "viewport": {
-        "name": "desktop",
-        "width": 1440,
-        "height": 1000
-      },
-      "title": "1456 27TH ST",
-      "headings": [
-        "At a glance",
-        "Base development standards",
-        "Existing property facts",
-        "What we don’t know yet",
-        "Next investigation",
-        "Evidence / How TruLot knows"
-      ],
-      "document_height": 3612,
       "horizontal_overflow": false,
-      "clipped_standards": false,
-      "keyboard_summary_focus": true,
-      "orientation_disclosure_opened": true,
-      "rule_disclosure_available": true,
-      "rule_disclosure_opened": true,
-      "evidence_disclosure_opened": true,
-      "status_has_text": true,
-      "capacity_not_evaluated_visible": true,
-      "split_callout_visible": true,
-      "console_errors": [],
-      "screenshot": "data/parcel-page-v2-ui/screenshots/6341302200-desktop.png"
+      "static_comparison": "exact visible Level 1 text match",
+      "screenshots": [
+        "data/parcel-page-public-v0/screenshots/6341302200-desktop.png",
+        "data/parcel-page-v2-ui/screenshots/6341302200-desktop.png",
+        "data/parcel-page-v2-ui/screenshots/6341302200-technical.png"
+      ]
     },
     {
       "apn": "3506320400",
-      "case": "inside-coastal-rs-1-7",
-      "viewport": {
-        "name": "mobile",
-        "width": 390,
-        "height": 844
-      },
-      "title": "7553 CABRILLO AVE",
-      "headings": [
-        "At a glance",
-        "Base development standards",
-        "Existing property facts",
-        "What we don’t know yet",
-        "Next investigation",
-        "Evidence / How TruLot knows"
-      ],
-      "document_height": 4509,
-      "horizontal_overflow": false,
-      "clipped_standards": false,
-      "keyboard_summary_focus": true,
-      "orientation_disclosure_opened": true,
-      "rule_disclosure_available": true,
-      "rule_disclosure_opened": true,
-      "evidence_disclosure_opened": true,
-      "status_has_text": true,
-      "capacity_not_evaluated_visible": true,
-      "split_callout_visible": true,
+      "viewport": "390x844",
+      "public": "PASS",
+      "zoning_detail": "PASS",
+      "technical_evidence": "PASS",
+      "keyboard_disclosure": "PASS",
+      "noindex": "PASS",
       "console_errors": [],
-      "screenshot": "data/parcel-page-v2-ui/screenshots/3506320400-mobile.png"
+      "horizontal_overflow": false,
+      "static_comparison": null,
+      "screenshots": [
+        "data/parcel-page-public-v0/screenshots/3506320400-mobile.png",
+        "data/parcel-page-v2-ui/screenshots/3506320400-mobile.png"
+      ]
     },
     {
       "apn": "3506320400",
-      "case": "inside-coastal-rs-1-7",
-      "viewport": {
-        "name": "tablet",
-        "width": 820,
-        "height": 1180
-      },
-      "title": "7553 CABRILLO AVE",
-      "headings": [
-        "At a glance",
-        "Base development standards",
-        "Existing property facts",
-        "What we don’t know yet",
-        "Next investigation",
-        "Evidence / How TruLot knows"
-      ],
-      "document_height": 3471,
-      "horizontal_overflow": false,
-      "clipped_standards": false,
-      "keyboard_summary_focus": true,
-      "orientation_disclosure_opened": true,
-      "rule_disclosure_available": true,
-      "rule_disclosure_opened": true,
-      "evidence_disclosure_opened": true,
-      "status_has_text": true,
-      "capacity_not_evaluated_visible": true,
-      "split_callout_visible": true,
+      "viewport": "1440x1000",
+      "public": "PASS",
+      "zoning_detail": "PASS",
+      "technical_evidence": "PASS",
+      "keyboard_disclosure": "PASS",
+      "noindex": "PASS",
       "console_errors": [],
-      "screenshot": null
-    },
-    {
-      "apn": "3506320400",
-      "case": "inside-coastal-rs-1-7",
-      "viewport": {
-        "name": "desktop",
-        "width": 1440,
-        "height": 1000
-      },
-      "title": "7553 CABRILLO AVE",
-      "headings": [
-        "At a glance",
-        "Base development standards",
-        "Existing property facts",
-        "What we don’t know yet",
-        "Next investigation",
-        "Evidence / How TruLot knows"
-      ],
-      "document_height": 3464,
       "horizontal_overflow": false,
-      "clipped_standards": false,
-      "keyboard_summary_focus": true,
-      "orientation_disclosure_opened": true,
-      "rule_disclosure_available": true,
-      "rule_disclosure_opened": true,
-      "evidence_disclosure_opened": true,
-      "status_has_text": true,
-      "capacity_not_evaluated_visible": true,
-      "split_callout_visible": true,
-      "console_errors": [],
-      "screenshot": "data/parcel-page-v2-ui/screenshots/3506320400-desktop.png"
+      "static_comparison": "exact visible Level 1 text match",
+      "screenshots": [
+        "data/parcel-page-public-v0/screenshots/3506320400-desktop.png",
+        "data/parcel-page-v2-ui/screenshots/3506320400-desktop.png",
+        "data/parcel-page-v2-ui/screenshots/3506320400-technical.png"
+      ]
     },
     {
       "apn": "4304211000",
-      "case": "split-rs-and-non-rs",
-      "viewport": {
-        "name": "mobile",
-        "width": 390,
-        "height": 844
-      },
-      "title": "4927 WHITEHAVEN WAY",
-      "headings": [
-        "At a glance",
-        "Base development standards",
-        "Existing property facts",
-        "What we don’t know yet",
-        "Next investigation",
-        "Evidence / How TruLot knows"
-      ],
-      "document_height": 5587,
-      "horizontal_overflow": false,
-      "clipped_standards": false,
-      "keyboard_summary_focus": true,
-      "orientation_disclosure_opened": true,
-      "rule_disclosure_available": true,
-      "rule_disclosure_opened": true,
-      "evidence_disclosure_opened": true,
-      "status_has_text": true,
-      "capacity_not_evaluated_visible": true,
-      "split_callout_visible": true,
+      "viewport": "390x844",
+      "public": "PASS",
+      "zoning_detail": "PASS",
+      "technical_evidence": "PASS",
+      "keyboard_disclosure": "PASS",
+      "noindex": "PASS",
       "console_errors": [],
-      "screenshot": "data/parcel-page-v2-ui/screenshots/4304211000-mobile.png"
+      "horizontal_overflow": false,
+      "static_comparison": null,
+      "screenshots": [
+        "data/parcel-page-public-v0/screenshots/4304211000-mobile.png",
+        "data/parcel-page-v2-ui/screenshots/4304211000-mobile.png"
+      ]
     },
     {
       "apn": "4304211000",
-      "case": "split-rs-and-non-rs",
-      "viewport": {
-        "name": "tablet",
-        "width": 820,
-        "height": 1180
-      },
-      "title": "4927 WHITEHAVEN WAY",
-      "headings": [
-        "At a glance",
-        "Base development standards",
-        "Existing property facts",
-        "What we don’t know yet",
-        "Next investigation",
-        "Evidence / How TruLot knows"
-      ],
-      "document_height": 4201,
-      "horizontal_overflow": false,
-      "clipped_standards": false,
-      "keyboard_summary_focus": true,
-      "orientation_disclosure_opened": true,
-      "rule_disclosure_available": true,
-      "rule_disclosure_opened": true,
-      "evidence_disclosure_opened": true,
-      "status_has_text": true,
-      "capacity_not_evaluated_visible": true,
-      "split_callout_visible": true,
+      "viewport": "1440x1000",
+      "public": "PASS",
+      "zoning_detail": "PASS",
+      "technical_evidence": "PASS",
+      "keyboard_disclosure": "PASS",
+      "noindex": "PASS",
       "console_errors": [],
-      "screenshot": null
-    },
-    {
-      "apn": "4304211000",
-      "case": "split-rs-and-non-rs",
-      "viewport": {
-        "name": "desktop",
-        "width": 1440,
-        "height": 1000
-      },
-      "title": "4927 WHITEHAVEN WAY",
-      "headings": [
-        "At a glance",
-        "Base development standards",
-        "Existing property facts",
-        "What we don’t know yet",
-        "Next investigation",
-        "Evidence / How TruLot knows"
-      ],
-      "document_height": 4116,
       "horizontal_overflow": false,
-      "clipped_standards": false,
-      "keyboard_summary_focus": true,
-      "orientation_disclosure_opened": true,
-      "rule_disclosure_available": true,
-      "rule_disclosure_opened": true,
-      "evidence_disclosure_opened": true,
-      "status_has_text": true,
-      "capacity_not_evaluated_visible": true,
-      "split_callout_visible": true,
-      "console_errors": [],
-      "screenshot": "data/parcel-page-v2-ui/screenshots/4304211000-desktop.png"
+      "static_comparison": "exact visible Level 1 text match",
+      "screenshots": [
+        "data/parcel-page-public-v0/screenshots/4304211000-desktop.png",
+        "data/parcel-page-v2-ui/screenshots/4304211000-desktop.png",
+        "data/parcel-page-v2-ui/screenshots/4304211000-technical.png"
+      ]
     }
-  ],
-  "five_second_test": {
-    "property": true,
-    "zoning": true,
-    "coastal_state": true,
-    "standards": true,
-    "obvious_uncertainty": true,
-    "capacity_not_claimed": true
-  },
-  "expert_test": {
-    "source_and_version": true,
-    "condition_disclosure": true,
-    "split_zone_evidence": true,
-    "provenance": true,
-    "mapping_and_coastal_evidence": true
-  },
-  "mobile_scroll_comparison": {
-    "3506320400": {
-      "before_pixels": 9485,
-      "after_pixels": 4509,
-      "reduction_percent": 52.5
-    },
-    "6341302200": {
-      "before_pixels": 8982,
-      "after_pixels": 4470,
-      "reduction_percent": 50.2
-    },
-    "4304211000": {
-      "before_pixels": 9713,
-      "after_pixels": 5587,
-      "reduction_percent": 42.5
-    }
-  },
-  "deficiencies": [
-    "The static review artifact has no parcel map. Clear zone percentages and the split-zone callout make geometry understandable for this review; a map remains a later UI enhancement."
   ]
 }

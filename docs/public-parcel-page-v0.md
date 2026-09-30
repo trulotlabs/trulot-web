@@ -1,4 +1,6 @@
-# Public Parcel Page V0 presentation experiment
+# Public Parcel Page V0 presentation
+
+The final three-level presentation contract is documented in [Parcel Page presentation hierarchy](parcel-page-presentation-hierarchy.md). The public preview is now Level 1, `/parcel-v2-preview/[apn]` is the homeowner zoning-detail Level 2, and `/parcel-v2-evidence/[apn]` is the technical Level 3. The notes below describe the original Packet 21.5 experiment and are retained as implementation history.
 
 Packet 21.5 adds a simplified, public-facing presentation at `/parcel-public-preview/[apn]`. It is a separate development/test preview. The Packet 20/21 expert page at `/parcel-v2-preview/[apn]` remains unchanged and supplies the detailed inspection surface.
 
@@ -33,7 +35,7 @@ The adapter uses existing structured states only. It contains no free-form gener
 
 ## Actions
 
-`Evaluate development potential` is a native disclosure control. It explains that the preview does not run a feasibility calculation and shows at most three already-recorded investigation titles. It performs no calculation or mutation.
+`See what's needed to evaluate this property` is the native disclosure control. It explains the evidence needed for a future parcel-specific evaluation and shows at most three already-recorded investigation titles. It performs no request, calculation, or mutation.
 
 `View zoning details and sources` links to the existing expert preview for the same APN. That page retains all standards, conditions, unknown inputs, investigations, provenance, and developer evidence without duplicating the expert renderer.
 

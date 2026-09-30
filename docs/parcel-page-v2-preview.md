@@ -1,5 +1,7 @@
 # Parcel Page V2 bounded preview
 
+The route now serves Level 2, the homeowner zoning-detail presentation. Technical evidence moved to the separately gated `/parcel-v2-evidence/[apn]` route. See [Parcel Page presentation hierarchy](parcel-page-presentation-hierarchy.md) for the current presentation contract. The sealed loader and gate described below are unchanged.
+
 Packet 21 mounts the sealed Packet 18 Parcel Intelligence V2 corpus and the Packet 20 presentation inside the Next.js App Router at:
 
 `/parcel-v2-preview/[apn]`

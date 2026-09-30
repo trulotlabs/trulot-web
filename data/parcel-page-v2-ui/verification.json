@@ -1,25 +1,26 @@
 {
   "result": "PASS",
-  "decision": "PARCEL_PAGE_V2_PRODUCT_UI_READY",
+  "decision": "THREE_LEVEL_PARCEL_PRESENTATION_READY",
   "commands": [
-    {"command": "node scripts/parcel-page-v2-ui/build.mjs", "result": "PASS", "detail": "10 representative static renderings"},
-    {"command": "node scripts/parcel-page-v2-ui/test.mjs", "result": "PASS", "detail": "adapter, truth-state, split-zone, Coastal, condition, structure semantics, capacity language, and static accessibility"},
-    {"command": "node scripts/parcel-page-v2-ui/capture.mjs", "result": "PASS", "detail": "30 browser checks; 10 cases x mobile/tablet/desktop; 6 canonical screenshots"},
-    {"command": "node scripts/parcel-page-v2-ui/contact-sheet.mjs", "result": "PASS", "detail": "Packet 19 / Packet 20 comparison artifact"},
-    {"command": "npx tsc --noEmit --incremental false", "result": "PASS"},
-    {"command": "npx eslint scripts/parcel-page-v2-ui", "result": "PASS", "detail": "0 errors, 0 warnings"},
-    {"command": "python3 scripts/parcel-intelligence-v2/test.py", "result": "PASS", "detail": "31 existing Packet 18 tests"},
+    {"command": "node scripts/parcel-page-v2-ui/build.mjs", "result": "PASS", "detail": "10 zoning-detail and 10 technical static renderings"},
+    {"command": "node scripts/parcel-page-public-v0/build.mjs", "result": "PASS", "detail": "8 public overview renderings"},
+    {"command": "node scripts/parcel-page-public-v0/test.mjs", "result": "PASS", "detail": "truth vocabulary, compact standards, split diagram, SEO contract, containment"},
+    {"command": "node scripts/parcel-page-v2-ui/test.mjs", "result": "PASS", "detail": "full standards, inline conditions, consolidated unknowns, Level 3 retention"},
+    {"command": "node scripts/parcel-page-public-v0/browser.mjs http://127.0.0.1:3000", "result": "PASS", "detail": "6 three-level checks, five state cases, keyboard, noindex, navigation, console, overflow"},
+    {"command": "npx eslint <changed presentation files>", "result": "PASS"},
+    {"command": "npm run lint", "result": "PRE-EXISTING FAIL", "detail": "3 errors and 6 warnings; none in changed presentation files"},
+    {"command": "npx tsc --noEmit", "result": "PASS"},
     {"command": "git diff --check", "result": "PASS"}
   ],
   "visual_review": {
-    "canonical_mobile": "PASS",
-    "canonical_desktop": "PASS",
-    "five_second_owner_test": "PASS",
-    "thirty_second_developer_test": "PASS",
-    "expert_evidence_test": "PASS",
+    "public_desktop": "PASS",
+    "public_mobile": "PASS",
+    "zoning_detail_desktop": "PASS",
+    "zoning_detail_mobile": "PASS",
+    "technical_evidence_desktop": "PASS",
     "split_zone_clarity": "PASS",
-    "capacity_not_claimed": "PASS",
-    "mobile_scroll_reduction": "42.5%-52.5%"
+    "capacity_not_claimed": "PASS"
   },
-  "agent_browser_cli": "unavailable; existing Playwright Chromium dependency used as the bounded browser fallback"
+  "source_fixture_sha256": "ee8f8aa742e6dc60d57303fd388c870c1bdbc32f097a87f807d962da23b7a85d",
+  "adapter_sha256": "bf9a4914915f13b01b718f9f5faa2a4aa2af1ae0d67233e0ec7e382fa2b32f6a"
 }

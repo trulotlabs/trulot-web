@@ -15,6 +15,11 @@
     "capacity",
     "safeguards"
   ],
+  "presentation_levels": [
+    "public parcel overview",
+    "zoning detail",
+    "technical evidence and provenance"
+  ],
   "allowed_operations": [
     "group",
     "format units",

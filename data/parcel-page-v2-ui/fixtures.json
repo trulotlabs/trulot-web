@@ -17,7 +17,9 @@
       "source_result_fingerprint": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
       "ui_model_sha256": "fe42ca151143fe93c9b4f8f60cd1e9049df0c262a384c1a0f91d595b954e2d40",
       "rendering": "data/parcel-page-v2-ui/renderings/6341302200-outside-coastal-rs-1-7.html",
-      "rendering_sha256": "ecb6a68ab46a81a57f0a94e72f065f7612103e06fd44fec85b6626907eb403d7"
+      "rendering_sha256": "eaf0bcac1ea55362ba6acee8c107ef22598c34c5d9536741d440892045059195",
+      "technical_rendering": "data/parcel-page-v2-ui/technical-renderings/6341302200-outside-coastal-rs-1-7.html",
+      "technical_rendering_sha256": "17faae5d1af00e8e3573382451443b930487e72276f249c31b270ce127e5e0f0"
     },
     {
       "apn": "3506320400",
@@ -30,7 +32,9 @@
       "source_result_fingerprint": "5ab9ab87853af1816bc7e0389c1882f3430d93426ba47076f34e7e4f08a83967",
       "ui_model_sha256": "44bb55f3328e788dbc94e61ca0346072edf9e6c1781a6296789a72889bc41225",
       "rendering": "data/parcel-page-v2-ui/renderings/3506320400-inside-coastal-rs-1-7.html",
-      "rendering_sha256": "5ccb77a17259f1bb0be32555d36de1724bf933a8d0ed25d2509e8f6d0bf96b88"
+      "rendering_sha256": "1fae5bad7eb3288cc6d8273ad13260bf74fed5a392e5e2b0f7a2681733355831",
+      "technical_rendering": "data/parcel-page-v2-ui/technical-renderings/3506320400-inside-coastal-rs-1-7.html",
+      "technical_rendering_sha256": "4347dae8dc9011712dc17e5aa039cabb590eb7eb3afa767d05b826abe1150540"
     },
     {
       "apn": "4304211000",
@@ -44,7 +48,9 @@
       "source_result_fingerprint": "0814a7d54119a3c82b479392f550d562ac677037766d8353b4cf095bd9f66c4b",
       "ui_model_sha256": "c83f89691c1208d62066bad6b38edc5cdac3e7f59be224e5f77fc33f40433962",
       "rendering": "data/parcel-page-v2-ui/renderings/4304211000-split-rs-and-non-rs.html",
-      "rendering_sha256": "8760e296105dffa45266ebff1fcb332321a1904506e6ef81851c49343a14cba1"
+      "rendering_sha256": "da019b3593254ea354601cfdd821c61b997dfef51e75a5e0444d40cff16f2e36",
+      "technical_rendering": "data/parcel-page-v2-ui/technical-renderings/4304211000-split-rs-and-non-rs.html",
+      "technical_rendering_sha256": "393191d2760993412fe1100f28d24adf7788f15c2b19b91f536f487e1b040ce9"
     },
     {
       "apn": "4303410600",
@@ -57,7 +63,9 @@
       "source_result_fingerprint": "b0beff190ccedeec76c1f8ecae66e6b1486ac68077b362edd11317528acdf908",
       "ui_model_sha256": "7c8fa333f995785b78d0d30ce7278b10ceba831e3f1d8741df0f5443fe9c897e",
       "rendering": "data/parcel-page-v2-ui/renderings/4303410600-ambiguous-zoning.html",
-      "rendering_sha256": "1961844b8cdd327266e6876874617e5a184a1407ec07283441e80cad99e5b88c"
+      "rendering_sha256": "0fa11e8fdf2ced5fccb2c808c744a3edc8128343871b397511a8bffc4cf2cfc0",
+      "technical_rendering": "data/parcel-page-v2-ui/technical-renderings/4303410600-ambiguous-zoning.html",
+      "technical_rendering_sha256": "6da8f2770c336b9b9b156de3a2fc5c7a862c56337d6e1bbb9ecdefee46f274bb"
     },
     {
       "apn": "7600360300",
@@ -71,7 +79,9 @@
       "source_result_fingerprint": "d57adc83e3a7887e06111fe88dbb5d8e0b2f0949511bbdc35412a3fafab86b36",
       "ui_model_sha256": "7f9633211c54d66f312df484db64de2a9fc6169bb135f0a339f601e01af60f5c",
       "rendering": "data/parcel-page-v2-ui/renderings/7600360300-unmapped-and-source-zero.html",
-      "rendering_sha256": "ca8ecb011408b58e9994519559f71d3663db3b66df3a39d97f8dc985cc8072ef"
+      "rendering_sha256": "a060088cba990dd22aeaab5819613cab5b2a3d24b18490cc2d52a24730eaa44d",
+      "technical_rendering": "data/parcel-page-v2-ui/technical-renderings/7600360300-unmapped-and-source-zero.html",
+      "technical_rendering_sha256": "a259a20bea1dd838458a6bf96b2960bcca7442b0700bf844466492308f4d27c7"
     },
     {
       "apn": "3082980200",
@@ -84,7 +94,9 @@
       "source_result_fingerprint": "43a4e0c863f75e4367033477af61f9e167f5e196c8c4a01b7fb8d79ef6df5462",
       "ui_model_sha256": "2168f5f967db560e104a498cf46ca7116b4f567e291bbda80077ba71e1e74a28",
       "rendering": "data/parcel-page-v2-ui/renderings/3082980200-coastal-boundary.html",
-      "rendering_sha256": "ebe1439aca05cd2dbd2d51196e004099f3ff9565e8778070bcb16f11b8601aac"
+      "rendering_sha256": "2dc8391aee4f7c2c4ce5c305c5fc99c492bf9b762736f5d2e36b516de6d415a2",
+      "technical_rendering": "data/parcel-page-v2-ui/technical-renderings/3082980200-coastal-boundary.html",
+      "technical_rendering_sha256": "dc2747473e5e74624b22ee63c0612710ed554d0bfc2af36e88aba2961d6bdf6d"
     },
     {
       "apn": "6782511200",
@@ -98,7 +110,9 @@
       "source_result_fingerprint": "be28fe192d5a7eaf7aeb5d39e10f28b296111849d00e012b6a8500444981d56a",
       "ui_model_sha256": "8c33b1ad16e985618c519141802177ede92c0ae01ea1df6d16d9672307c5f2cf",
       "rendering": "data/parcel-page-v2-ui/renderings/6782511200-non-rs-and-missing-address.html",
-      "rendering_sha256": "3131d9f0fcd86a5b9a07fd72ecfc376003490a44e6cfd6cbe3988bb52b8a4348"
+      "rendering_sha256": "f47ebc729bdea87dffb1621181538a3994eda10ce24ab5d0c0422cba3f364be1",
+      "technical_rendering": "data/parcel-page-v2-ui/technical-renderings/6782511200-non-rs-and-missing-address.html",
+      "technical_rendering_sha256": "92068f46813fe08d677ced219ebce5138841f513c1237412c6142ab2a9d4745c"
     },
     {
       "apn": "7600300100",
@@ -112,7 +126,9 @@
       "source_result_fingerprint": "af34cde9fb69ebbceee42c3b61336a2632a698db764dd764b07a1acabcd0f404",
       "ui_model_sha256": "75ae4338730be512d8eb260defc8bfbf8d916a8021819fa981697ef6523ca647",
       "rendering": "data/parcel-page-v2-ui/renderings/7600300100-source-unavailable.html",
-      "rendering_sha256": "698a85b557a9d53807589b184f984576df7dfa96a9b1cf8dab495cf364679c12"
+      "rendering_sha256": "30ee0ea7aa3b809ca8e7b99eda1c3146359016ba84823f73099e00653b6aa94f",
+      "technical_rendering": "data/parcel-page-v2-ui/technical-renderings/7600300100-source-unavailable.html",
+      "technical_rendering_sha256": "441f69d621360aa19cf5425e75e1dc4772150d3d9c37e7946964a6787266e776"
     },
     {
       "apn": "3031701800",
@@ -126,7 +142,9 @@
       "source_result_fingerprint": "b2b63a731cf7be5bf9664a3714eaf9d77c1e7529930393d7a7071c744cf0cc10",
       "ui_model_sha256": "7f313f60cac7c9a6d4bd962b632b0080118cf9e2041d8fd8610b0b8f935aba10",
       "rendering": "data/parcel-page-v2-ui/renderings/3031701800-missing-address.html",
-      "rendering_sha256": "02be335d1a919f5cfb091827c88cbf760e94b39c6a5edffabca0a7e60bd037b2"
+      "rendering_sha256": "9912bb4e54ebf424cb2f9de432c5bc9117474e810f7d5dee619adbfa47bef5bc",
+      "technical_rendering": "data/parcel-page-v2-ui/technical-renderings/3031701800-missing-address.html",
+      "technical_rendering_sha256": "f126bc4fdcbca7eb4610f0014711e02bcd9eb776145bb991475d7f345fe7dc99"
     },
     {
       "apn": "2421001000",
@@ -143,7 +161,9 @@
       "source_result_fingerprint": "b20dbc6e9452cfe06dc38a0defc58018a6fac557797ffaf42c899cbd6882ad65",
       "ui_model_sha256": "ceff7bc89100e980ee2e4e5aa1ec8f9ed30318f59bd2f7035285e4e9f5bb4f94",
       "rendering": "data/parcel-page-v2-ui/renderings/2421001000-structure-zero-unknown.html",
-      "rendering_sha256": "c13fce459e34c61c5df5e9bf79669042908ab2798da95b36557227bcf5c32cdc"
+      "rendering_sha256": "a3708e9a98ef3c5816a8c51f9f06c673076564fcd061228ad68f9993af66b912",
+      "technical_rendering": "data/parcel-page-v2-ui/technical-renderings/2421001000-structure-zero-unknown.html",
+      "technical_rendering_sha256": "1e41a18974ac26d05729e9da93a2d608d5af5e66d7ac61e7ca025a129e155da8"
     }
   ]
 }

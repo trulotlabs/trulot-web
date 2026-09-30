@@ -7,6 +7,7 @@
   "conditional_standards": "PASS",
   "structure_semantics": "PASS",
   "accessibility_static": "PASS",
+  "three_level_separation": "PASS",
   "representative_fixtures": 10,
   "source_fixture_count": 30,
   "production_runtime_wired": false

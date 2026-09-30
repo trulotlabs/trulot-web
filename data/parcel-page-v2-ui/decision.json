@@ -1,13 +1,12 @@
 {
-  "decision": "PARCEL_PAGE_V2_UI_ADAPTER_READY",
+  "decision": "THREE_LEVEL_PARCEL_PRESENTATION_READY",
   "adapter_version": "parcel-page-v2-ui-adapter-2026-09-30-v0",
   "source_fixture_count": 30,
   "representative_rendering_count": 10,
-  "canonical_screenshot_parcels": [
-    "6341302200",
-    "3506320400",
-    "4304211000"
-  ],
+  "technical_rendering_count": 10,
+  "zoning_detail_route": "/parcel-v2-preview/[apn]",
+  "technical_evidence_route": "/parcel-v2-evidence/[apn]",
+  "preview_noindex": true,
   "compliance_calculated": false,
   "capacity_calculated": false,
   "production_runtime_wired": false,

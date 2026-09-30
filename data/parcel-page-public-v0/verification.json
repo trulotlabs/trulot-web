@@ -1,43 +1,22 @@
 {
   "result": "PASS",
-  "route": "/parcel-public-preview/[apn]",
-  "presentation_version": "public-parcel-page-v0-2026-09-30",
-  "contract": {
-    "visible_core_facts": 4,
-    "summary_generation": "deterministic existing truth-state mapping",
-    "capacity_statement": "Development capacity has not yet been evaluated.",
-    "primary_action": "presentational native disclosure only",
-    "expert_action": "links to unchanged /parcel-v2-preview/[apn]"
-  },
-  "mobile_first_screen": {
-    "viewport": "390x844",
-    "6341302200_primary_action_bottom_px": 613,
-    "3506320400_primary_action_bottom_px": 613,
-    "4304211000_primary_action_bottom_px": 722.1,
-    "result": "PASS"
-  },
-  "browser": {
-    "canonical_checks": 6,
-    "console_errors": 0,
-    "failed_requests": 0,
-    "horizontal_overflow": false,
-    "keyboard_actions": "PASS",
-    "static_vs_integrated": "PASS",
-    "public_visible_text_under_expert_ratio": 0.35,
-    "five_second_test": "PASS",
-    "product_test": "PASS",
-    "trust_test": "PASS"
-  },
+  "presentation_levels": 3,
+  "representative_public_renderings": 8,
+  "representative_zoning_and_technical_renderings": 10,
+  "browser_checks": 6,
+  "browser_viewports": ["390x844", "1440x1000"],
   "checks": [
-    {"command": "node scripts/parcel-page-public-v0/build.mjs", "result": "PASS", "detail": "8 bounded static renderings"},
-    {"command": "node scripts/parcel-page-public-v0/test.mjs", "result": "PASS", "detail": "public contract, state machine, split/Coastal summaries, capacity language, actions, containment"},
-    {"command": "node scripts/parcel-v2-preview/test.mjs", "result": "PASS", "detail": "shared gate and sealed fixture loader"},
-    {"command": "node scripts/parcel-page-v2-ui/test.mjs", "result": "PASS", "detail": "unchanged expert-view regression"},
-    {"command": "node scripts/parcel-page-public-v0/browser.mjs http://127.0.0.1:3000", "result": "PASS", "detail": "6 canonical checks, 5 state cases, unknown APN, accessibility, 7 screenshots"},
-    {"command": "python3 scripts/parcel-intelligence-v2/test.py", "result": "PASS", "detail": "31 Packet 18 contract regressions"},
-    {"command": "npx tsc --noEmit --incremental false", "result": "PASS"},
-    {"command": "npx eslint app/parcel-public-preview/[apn]/page.tsx scripts/parcel-page-public-v0", "result": "PASS"},
+    {"command": "node scripts/parcel-page-v2-ui/build.mjs", "result": "PASS"},
+    {"command": "node scripts/parcel-page-public-v0/build.mjs", "result": "PASS"},
+    {"command": "node scripts/parcel-page-public-v0/test.mjs", "result": "PASS"},
+    {"command": "node scripts/parcel-page-v2-ui/test.mjs", "result": "PASS"},
+    {"command": "node scripts/parcel-page-public-v0/browser.mjs http://127.0.0.1:3000", "result": "PASS"},
+    {"command": "npx eslint <changed presentation files>", "result": "PASS"},
+    {"command": "npm run lint", "result": "PRE-EXISTING FAIL", "detail": "3 errors and 6 warnings; none in changed presentation files"},
+    {"command": "npx tsc --noEmit", "result": "PASS"},
     {"command": "git diff --check", "result": "PASS"}
   ],
+  "source_fixture_sha256": "ee8f8aa742e6dc60d57303fd388c870c1bdbc32f097a87f807d962da23b7a85d",
+  "adapter_sha256": "bf9a4914915f13b01b718f9f5faa2a4aa2af1ae0d67233e0ec7e382fa2b32f6a",
   "browser_evidence": "data/parcel-page-public-v0/browser-review.json"
 }

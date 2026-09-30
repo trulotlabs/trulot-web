@@ -1,164 +1,124 @@
 {
   "result": "PASS",
-  "route": "/parcel-public-preview/[apn]",
-  "canonical_checks": 6,
+  "routes": [
+    "/parcel-public-preview/[apn]",
+    "/parcel-v2-preview/[apn]",
+    "/parcel-v2-evidence/[apn]"
+  ],
+  "checks": 6,
   "viewports": [
     "390x844",
     "1440x1000"
   ],
-  "five_second_test": "PASS",
-  "product_test": "PASS — four facts, two headings, one primary CTA; public visible text remains under 35% of expert text",
-  "trust_test": "PASS — secondary action opens the unchanged expert presentation",
-  "mobile_first_screen": "PASS — identity, four facts, meaning, capacity statement, and primary action end within 844px",
-  "scenario_states": "PASS — ambiguous, Coastal boundary, unmapped, non-RS, missing-address, and explicit unknown-APN failure",
-  "comparison_screenshot": "data/parcel-page-public-v0/screenshots/public-vs-expert-6341302200.png",
-  "checks": [
+  "public_truth_vocabulary": "PASS",
+  "split_zone_map": "PASS",
+  "zoning_detail_conditions": "PASS",
+  "technical_provenance_separation": "PASS",
+  "navigation": "PASS",
+  "keyboard": "PASS",
+  "noindex": "PASS",
+  "console_errors": "PASS",
+  "horizontal_overflow": "PASS",
+  "scenario_states": "PASS",
+  "check_details": [
     {
       "apn": "6341302200",
       "viewport": "390x844",
-      "five_second_test": "PASS",
-      "product_simplicity": "PASS",
-      "trust_path": "PASS",
-      "first_screen": [
-        {
-          "selector": "h1",
-          "bottom": 126.1
-        },
-        {
-          "selector": ".public-facts",
-          "bottom": 371.2
-        },
-        {
-          "selector": ".public-meaning",
-          "bottom": 565
-        },
-        {
-          "selector": ".public-capacity",
-          "bottom": 547
-        },
-        {
-          "selector": ".public-primary > summary",
-          "bottom": 613
-        }
-      ],
+      "public": "PASS",
+      "zoning_detail": "PASS",
+      "technical_evidence": "PASS",
+      "keyboard_disclosure": "PASS",
+      "noindex": "PASS",
       "console_errors": [],
-      "failed_requests": [],
       "horizontal_overflow": false,
-      "keyboard_primary_action": "PASS",
       "static_comparison": null,
-      "screenshot": "data/parcel-page-public-v0/screenshots/6341302200-mobile.png"
+      "screenshots": [
+        "data/parcel-page-public-v0/screenshots/6341302200-mobile.png",
+        "data/parcel-page-v2-ui/screenshots/6341302200-mobile.png"
+      ]
     },
     {
       "apn": "6341302200",
       "viewport": "1440x1000",
-      "five_second_test": "PASS",
-      "product_simplicity": "PASS",
-      "trust_path": "PASS",
-      "first_screen": null,
+      "public": "PASS",
+      "zoning_detail": "PASS",
+      "technical_evidence": "PASS",
+      "keyboard_disclosure": "PASS",
+      "noindex": "PASS",
       "console_errors": [],
-      "failed_requests": [],
       "horizontal_overflow": false,
-      "keyboard_primary_action": "PASS",
-      "static_comparison": "exact visible main text match",
-      "screenshot": "data/parcel-page-public-v0/screenshots/6341302200-desktop.png"
+      "static_comparison": "exact visible Level 1 text match",
+      "screenshots": [
+        "data/parcel-page-public-v0/screenshots/6341302200-desktop.png",
+        "data/parcel-page-v2-ui/screenshots/6341302200-desktop.png",
+        "data/parcel-page-v2-ui/screenshots/6341302200-technical.png"
+      ]
     },
     {
       "apn": "3506320400",
       "viewport": "390x844",
-      "five_second_test": "PASS",
-      "product_simplicity": "PASS",
-      "trust_path": "PASS",
-      "first_screen": [
-        {
-          "selector": "h1",
-          "bottom": 126.1
-        },
-        {
-          "selector": ".public-facts",
-          "bottom": 371.2
-        },
-        {
-          "selector": ".public-meaning",
-          "bottom": 565
-        },
-        {
-          "selector": ".public-capacity",
-          "bottom": 547
-        },
-        {
-          "selector": ".public-primary > summary",
-          "bottom": 613
-        }
-      ],
+      "public": "PASS",
+      "zoning_detail": "PASS",
+      "technical_evidence": "PASS",
+      "keyboard_disclosure": "PASS",
+      "noindex": "PASS",
       "console_errors": [],
-      "failed_requests": [],
       "horizontal_overflow": false,
-      "keyboard_primary_action": "PASS",
       "static_comparison": null,
-      "screenshot": "data/parcel-page-public-v0/screenshots/3506320400-mobile.png"
+      "screenshots": [
+        "data/parcel-page-public-v0/screenshots/3506320400-mobile.png",
+        "data/parcel-page-v2-ui/screenshots/3506320400-mobile.png"
+      ]
     },
     {
       "apn": "3506320400",
       "viewport": "1440x1000",
-      "five_second_test": "PASS",
-      "product_simplicity": "PASS",
-      "trust_path": "PASS",
-      "first_screen": null,
+      "public": "PASS",
+      "zoning_detail": "PASS",
+      "technical_evidence": "PASS",
+      "keyboard_disclosure": "PASS",
+      "noindex": "PASS",
       "console_errors": [],
-      "failed_requests": [],
       "horizontal_overflow": false,
-      "keyboard_primary_action": "PASS",
-      "static_comparison": "exact visible main text match",
-      "screenshot": "data/parcel-page-public-v0/screenshots/3506320400-desktop.png"
+      "static_comparison": "exact visible Level 1 text match",
+      "screenshots": [
+        "data/parcel-page-public-v0/screenshots/3506320400-desktop.png",
+        "data/parcel-page-v2-ui/screenshots/3506320400-desktop.png",
+        "data/parcel-page-v2-ui/screenshots/3506320400-technical.png"
+      ]
     },
     {
       "apn": "4304211000",
       "viewport": "390x844",
-      "five_second_test": "PASS",
-      "product_simplicity": "PASS",
-      "trust_path": "PASS",
-      "first_screen": [
-        {
-          "selector": "h1",
-          "bottom": 126.1
-        },
-        {
-          "selector": ".public-facts",
-          "bottom": 402.2
-        },
-        {
-          "selector": ".public-meaning",
-          "bottom": 674.1
-        },
-        {
-          "selector": ".public-capacity",
-          "bottom": 656.1
-        },
-        {
-          "selector": ".public-primary > summary",
-          "bottom": 722.1
-        }
-      ],
+      "public": "PASS",
+      "zoning_detail": "PASS",
+      "technical_evidence": "PASS",
+      "keyboard_disclosure": "PASS",
+      "noindex": "PASS",
       "console_errors": [],
-      "failed_requests": [],
       "horizontal_overflow": false,
-      "keyboard_primary_action": "PASS",
       "static_comparison": null,
-      "screenshot": "data/parcel-page-public-v0/screenshots/4304211000-mobile.png"
+      "screenshots": [
+        "data/parcel-page-public-v0/screenshots/4304211000-mobile.png",
+        "data/parcel-page-v2-ui/screenshots/4304211000-mobile.png"
+      ]
     },
     {
       "apn": "4304211000",
       "viewport": "1440x1000",
-      "five_second_test": "PASS",
-      "product_simplicity": "PASS",
-      "trust_path": "PASS",
-      "first_screen": null,
+      "public": "PASS",
+      "zoning_detail": "PASS",
+      "technical_evidence": "PASS",
+      "keyboard_disclosure": "PASS",
+      "noindex": "PASS",
       "console_errors": [],
-      "failed_requests": [],
       "horizontal_overflow": false,
-      "keyboard_primary_action": "PASS",
-      "static_comparison": "exact visible main text match",
-      "screenshot": "data/parcel-page-public-v0/screenshots/4304211000-desktop.png"
+      "static_comparison": "exact visible Level 1 text match",
+      "screenshots": [
+        "data/parcel-page-public-v0/screenshots/4304211000-desktop.png",
+        "data/parcel-page-v2-ui/screenshots/4304211000-desktop.png",
+        "data/parcel-page-v2-ui/screenshots/4304211000-technical.png"
+      ]
     }
   ]
 }

@@ -40,6 +40,7 @@ function writeJson(file, value) {
 
 const { adaptParcelIntelligenceV2, ADAPTER_VERSION } = loadTs(path.join(here, "adapter.ts"));
 const { renderParcelPageV2 } = loadTs(path.join(here, "renderer.ts"));
+const { renderParcelTechnicalEvidence } = loadTs(path.join(here, "technical-renderer.ts"));
 const corpus = JSON.parse(fs.readFileSync(path.join(root, "data/parcel-intelligence-v2/fixture-results.json"), "utf8"));
 const representative = [
   { apn: "6341302200", case: "outside-coastal-rs-1-7" },
@@ -56,6 +57,7 @@ const representative = [
 const byApn = new Map(corpus.results.map((item) => [item.result.identity.apn, item]));
 
 fs.mkdirSync(path.join(out, "renderings"), { recursive: true });
+fs.mkdirSync(path.join(out, "technical-renderings"), { recursive: true });
 fs.mkdirSync(path.join(out, "screenshots"), { recursive: true });
 const models = [];
 const fixtures = [];
@@ -64,8 +66,11 @@ for (const item of representative) {
   if (!source) throw new Error(`missing Packet 18 fixture for ${item.apn}`);
   const model = adaptParcelIntelligenceV2(source.result);
   const html = renderParcelPageV2(model);
+  const technicalHtml = renderParcelTechnicalEvidence(model);
   const file = `${item.apn}-${item.case}.html`;
+  const technicalFile = `${item.apn}-${item.case}.html`;
   fs.writeFileSync(path.join(out, "renderings", file), html);
+  fs.writeFileSync(path.join(out, "technical-renderings", technicalFile), technicalHtml);
   models.push({ apn: item.apn, case: item.case, model });
   fixtures.push({
     apn: item.apn,
@@ -76,6 +81,8 @@ for (const item of representative) {
     ui_model_sha256: sha(model),
     rendering: `data/parcel-page-v2-ui/renderings/${file}`,
     rendering_sha256: sha(html),
+    technical_rendering: `data/parcel-page-v2-ui/technical-renderings/${technicalFile}`,
+    technical_rendering_sha256: sha(technicalHtml),
   });
 }
 
@@ -94,6 +101,7 @@ writeJson(path.join(out, "contract.json"), {
   purpose: "Presentation-only adapter over a sealed ParcelIntelligenceV2 result.",
   inputs: ["ParcelIntelligenceV2"],
   output_sections: ["header", "orientation", "standardsGroups", "propertyFacts", "unknowns", "investigations", "evidence", "capacity", "safeguards"],
+  presentation_levels: ["public parcel overview", "zoning detail", "technical evidence and provenance"],
   allowed_operations: ["group", "format units", "shorten source labels", "generate deterministic wording from structured states"],
   prohibited_operations: ["recompute regulatory rules", "convert UNKNOWN to false or zero", "select a split zone", "infer Coastal state", "create compliance conclusions", "flatten conditional standards", "calculate development capacity", "wire production runtime"],
   production_runtime_wired: false,

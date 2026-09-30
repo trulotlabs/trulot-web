@@ -1,5 +1,7 @@
 # Parcel Page V2 UI adapter
 
+The adapter contract remains unchanged. Its current outputs are presented through the three levels documented in [Parcel Page presentation hierarchy](parcel-page-presentation-hierarchy.md). The original Packet 19/20 layout notes below are retained as implementation history; developer provenance is no longer part of the default Level 2 reading path.
+
 Packet 19 adapts the sealed `ParcelIntelligenceV2` result into a presentation-safe model and static review page. It is disconnected from the application runtime and production data. The canonical Parcel V1 route remains unchanged.
 
 ## Contract boundary

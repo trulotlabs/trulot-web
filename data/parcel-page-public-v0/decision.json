@@ -1,9 +1,14 @@
 {
-  "decision": "PUBLIC_PARCEL_PAGE_V0_READY",
-  "packet": "21.5",
+  "decision": "THREE_LEVEL_PARCEL_PRESENTATION_READY",
   "presentation_only": true,
-  "expert_preview_preserved": true,
-  "public_navigation_exposed": false,
+  "levels": {
+    "public_overview": "/parcel-public-preview/[apn]",
+    "zoning_detail": "/parcel-v2-preview/[apn]",
+    "technical_evidence": "/parcel-v2-evidence/[apn]"
+  },
+  "preview_noindex": true,
+  "production_seo_contract_defined": true,
+  "production_seo_published": false,
   "parcel_v1_modified": false,
   "production_route_switched": false,
   "production_data_access": false,
