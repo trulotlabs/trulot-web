@@ -1,0 +1,18 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "concepts.json": "8368e4b64afdd1a11c6bb3010a6092ff8b476be83b75493cced929afa148fd1a",
+    "coverage.json": "575f3db0448c4e98999e9b776adcebbe39f126c1451ddcd9acde8ddb6626a6d1",
+    "decision.json": "815e19c9e196e575ea132a79c28bceb5444c9f8755e8d9e72d0e23ceee4afe30",
+    "fingerprints.json": "5e6d9d5cd41e104396cbcd9383f2bafebb93c686e68e7d8d4daa9a9a5fa46dfb",
+    "fixture-results.json": "9496932b1009a149d53c95decc3e3603f112d579b9df127af5bd3b26305d1666",
+    "fixtures.json": "d8e821dba79581ec29160fd7d69bbb792875c2b1cc929a3b80846414d0fbb901",
+    "linkage.json": "b7285c4108a17fe3c4ca9ad26cf7757fa2869d5ac680a8decf4641bff51c171a",
+    "preservation.json": "f13d18495a3966152dc1e4ac5a2e6242183cdc447317384f5a90645eabaf94d5",
+    "schema.json": "43fc46de1f0281ff6bf3688b855f94e7c1273f5e0de7a3758dc7dd0808a83ecc",
+    "source-inventory.json": "81f460073924c8f6ef1d9c67035724deea1f9e13d09cfa14a3560b8367f46b13",
+    "sources.json": "10c187ab4283ca8adcbb21aece94b33cd590a8aa20f74d9b13db55f35dd3c224",
+    "unlock-matrix.json": "1ec69c97f1813d35e4bb2665bead1a579e8d219332037390d18b52a1b314b3fe",
+    "validation.json": "9cd2da2f69699388a8c34ef6f18161183930bcd891f789e059162642a433da63"
+  }
+}

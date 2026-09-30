@@ -1,0 +1,10 @@
+{
+  "assessor_normalization_sha256": "b23bf88b3b17eb34fc31a11788fd3bf4632973b47fa671c35f5a498bc865000f",
+  "canonical_rendering": "UTF-8 sorted-key compact JSON, ensure_ascii=false, allow_nan=false; newline-delimited; gzip mtime=0",
+  "fixture_results_sha256": "4abdd3474832afb015c299248fd053496d9d1e2c8d3dd8d620e6f8e848272e1c",
+  "footprint_normalization_sha256": "27a5be27183810e8362b9a81dcacad17b3f46d8d7e1ece11ae11d21fab308651",
+  "parcel_linkage_sha256": "ee4ec1da97e94d59cb8e8dee57446882752c8b55afeecd6bd2b1d8375ccdc576",
+  "source_normalization_sha256": "7bb6ce2b672f986addf39b8fd2743b30867c8f0b0e385e1a266d8038f7fd9fc8",
+  "source_snapshot_sha256": "9264c361a88741a3d3c457c054b31d977a6fc98d825d0f55fb705a56fa04ed4c",
+  "structure_fact_outputs_sha256": "5773feb3818284e9ffada5d6a7069172b5e12647752b9f348ccf61561e96689c"
+}

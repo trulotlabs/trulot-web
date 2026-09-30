@@ -1,0 +1,38 @@
+{
+  "ambiguous_footprints_have_selected_apn": 0,
+  "assessor_exact_apn": {
+    "duplicate_apns": 0,
+    "linkage_method": "EXACT_APN",
+    "matched_parcel_v2_apns": 393733,
+    "orphan_records": 0,
+    "source_records": 393733,
+    "unique_apns": 393733
+  },
+  "historical_footprints": {
+    "duplicateSourceIds": {
+      "globalId": 0,
+      "objectId": 0,
+      "outlineId": 0
+    },
+    "parcelApnCount": 393733,
+    "parcelCoverageStates": {
+      "AMBIGUOUS_ONLY": 83846,
+      "MULTIPLE_FOOTPRINTS": 35158,
+      "NO_FOOTPRINT_RECORD": 12056,
+      "ONE_FOOTPRINT": 136434,
+      "STACKED_GROUP_WITHOUT_FOOTPRINTS": 17798,
+      "STACKED_GROUP_WITH_FOOTPRINTS": 108441
+    },
+    "physicalParcelGroupCount": 272940,
+    "sourceLinkageStates": {
+      "AMBIGUOUS_MULTI_PARCEL": 115836,
+      "ORPHAN_NO_PARCEL": 1158,
+      "SPATIAL_SINGLE_PARCEL": 234977,
+      "STACKED_PARCEL_GROUP": 34246
+    },
+    "sourceRecordCount": 386217,
+    "stackApnCount": 126239,
+    "stackGroupCount": 5446
+  },
+  "no_silent_winner": true
+}

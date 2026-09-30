@@ -1,0 +1,53 @@
+{
+  "contract_version": "structure-facts-v0-2026-09-30",
+  "derivation_classes": [
+    "recorded",
+    "deterministic_derived",
+    "inferred",
+    "conditional"
+  ],
+  "fact_required_fields": [
+    "apn",
+    "source_record_id",
+    "fact_key",
+    "value",
+    "unit",
+    "source_semantics",
+    "fact_state",
+    "source_state",
+    "derivation_class",
+    "source_acquisition",
+    "source_vintage",
+    "linkage_method",
+    "linkage_confidence",
+    "provenance_ref",
+    "limitations",
+    "state_reason"
+  ],
+  "fact_states": [
+    "supported",
+    "partial",
+    "unknown",
+    "not_applicable",
+    "unavailable"
+  ],
+  "linkage_methods": [
+    "EXACT_APN",
+    "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+    "STACKED_PARCEL_GROUP",
+    "AMBIGUOUS_MULTI_PARCEL",
+    "NO_PARCEL"
+  ],
+  "null_doctrine": {
+    "empty_footprints": "NO_FOOTPRINT_RECORD; vacancy_conclusion remains null",
+    "no_record": "unknown/available with NO_SOURCE_RECORD",
+    "source_failure": "unavailable/source_unavailable",
+    "source_zero": "unknown/available with SOURCE_ZERO_UNRESOLVED"
+  },
+  "source_states": [
+    "available",
+    "partial",
+    "source_unavailable",
+    "not_evaluated"
+  ]
+}

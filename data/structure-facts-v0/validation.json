@@ -1,0 +1,13 @@
+{
+  "duplicate_and_ambiguous_linkage": "PASS",
+  "exact_apn_linkage": "PASS",
+  "fixture_count": 28,
+  "fixture_suite": "PASS",
+  "full_corpus_apns": 393733,
+  "normalized_footprints": 386217,
+  "null_zero_coercion": "PASS",
+  "packet14_readiness_integration": "PASS",
+  "parcel_truth_vocabulary": "PASS",
+  "source_schema_validation": "PASS",
+  "structure_concept_separation": "PASS"
+}

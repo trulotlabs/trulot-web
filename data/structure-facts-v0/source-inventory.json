@@ -1,0 +1,39 @@
+{
+  "artifacts": [
+    {
+      "classification": "authoritative_current_source",
+      "finding": "Reproducible 2026 SanGIS parcel snapshot; ARCC MPR/PAR attributes linked by exact APN.",
+      "id": "parcel_base_sangis_v2_arcc_attributes"
+    },
+    {
+      "classification": "authoritative_historical_source",
+      "finding": "Official outline geometry based on Spring 2017 imagery; current completeness and update cadence are unproven.",
+      "id": "city_sandag_building_outlines_2017"
+    },
+    {
+      "classification": "non_reproducible",
+      "finding": "Repository manifest names a prior source, but has no source artifact, schema, importer, vintage, row count, or checksum.",
+      "id": "assessor_structures_sdcounty_v1"
+    },
+    {
+      "classification": "derived",
+      "finding": "Downstream view exposes assessor-style fields but cannot replace the upstream source receipt.",
+      "id": "public.parcel_page_api_v2"
+    },
+    {
+      "classification": "heuristic",
+      "finding": "Legacy display divides assessor living area by parcel geometry area; it is not authoritative lot coverage.",
+      "id": "parcel_v1_existing_structure_coverage"
+    },
+    {
+      "classification": "conditional_evidence",
+      "finding": "Permit text and valuation do not establish present structures, size, units, or occupancy.",
+      "id": "permit_descriptions"
+    },
+    {
+      "classification": "unknown",
+      "finding": "Bedrooms, baths, garage fields, effective-year codes, and use codes remain raw unless exact encoding/currentness is proven.",
+      "id": "legacy_structure_fields"
+    }
+  ]
+}

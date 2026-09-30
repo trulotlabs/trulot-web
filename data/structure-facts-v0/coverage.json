@@ -1,0 +1,19 @@
+{
+  "assessor_dwelling_unit_count": {
+    "supported": 372314,
+    "unknown": 21419
+  },
+  "assessor_total_living_area_sq_ft": {
+    "supported": 368171,
+    "unknown": 25562
+  },
+  "current_structure_geometry_supported": 0,
+  "gross_floor_area_supported": 0,
+  "height_supported": 0,
+  "parcel_apns": 393733,
+  "parcels_with_direct_historical_footprint_fact": 171592,
+  "parcels_with_supported_assessor_structure_fact": 374090,
+  "parcels_without_supported_assessor_structure_fact": 19643,
+  "story_count_supported": 0,
+  "vacancy_conclusions": 0
+}

@@ -1,0 +1,3326 @@
+{
+  "canonical_output_sha256": "4abdd3474832afb015c299248fd053496d9d1e2c8d3dd8d620e6f8e848272e1c",
+  "contract_version": "structure-facts-v0-2026-09-30",
+  "fixture_count": 28,
+  "results": [
+    {
+      "capacity_calculated": false,
+      "coastal_context": "INSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "rs_1_7",
+        "inside_coastal_rs",
+        "multiple_footprints",
+        "footprint_available"
+      ],
+      "fingerprint_sha256": "279ff8264c9f42af27ca62ba28c12fc6274f501ebc927691b2161738ecaef9d5",
+      "fixture_id": "inside-coastal-rs-1-7",
+      "parcel": {
+        "address_missing": false,
+        "apn": "3506320400",
+        "facts": [
+          {
+            "apn": "3506320400",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:66264",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "3506320400",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:66264",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 1610
+          },
+          {
+            "apn": "3506320400",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:473798",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "9250461504985fb9c286d9751f4973989bd1898aabc38d6143f01f9cd9678e30"
+            }
+          },
+          {
+            "apn": "3506320400",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:473798",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 2331.227154758
+          },
+          {
+            "apn": "3506320400",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:609706",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "e614cccf92944503e0c2f7db94fea2f10df4782eb6a20ae776ab4fae47b4f272"
+            }
+          },
+          {
+            "apn": "3506320400",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:609706",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 150.09397672
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [
+            473798,
+            609706
+          ],
+          "stack_group_source_object_ids": [],
+          "state": "MULTIPLE_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "020",
+          "bedrooms": "003",
+          "garage_stalls": "001",
+          "nucleus_use_cd": "111",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "07000",
+          "year_effective": "44"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RS-1-7"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "rs_1_7",
+        "outside_coastal_rs",
+        "multiple_footprints",
+        "footprint_available"
+      ],
+      "fingerprint_sha256": "6961f963c9672c596be391fe845c8edc2547314a00427e197600aedf4de39a1f",
+      "fixture_id": "outside-coastal-rs-1-7",
+      "parcel": {
+        "address_missing": false,
+        "apn": "6341302200",
+        "facts": [
+          {
+            "apn": "6341302200",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:654272",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "6341302200",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:654272",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 988
+          },
+          {
+            "apn": "6341302200",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:880632",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "089872943b39a6445578a3e38564afb98c1a8e340a5ad6639d86829086f50d55"
+            }
+          },
+          {
+            "apn": "6341302200",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:880632",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 1058.574119839
+          },
+          {
+            "apn": "6341302200",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:987216",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "dac49eed5b6bede3355183def485ca96165161e5029375183a32dacac2887d8a"
+            }
+          },
+          {
+            "apn": "6341302200",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:987216",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 2352.326429209
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [
+            758904
+          ],
+          "direct_source_object_ids": [
+            880632,
+            987216
+          ],
+          "stack_group_source_object_ids": [],
+          "state": "MULTIPLE_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "010",
+          "bedrooms": "002",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "110",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "10"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RS-1-7"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "BOUNDARY_AMBIGUOUS",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "rs_1_7",
+        "unknown_coastal",
+        "no_footprint_record"
+      ],
+      "fingerprint_sha256": "00a6563aedc3086a89688767e413e41acb6f6e25b6808473c45bdb218e07ec09",
+      "fixture_id": "coastal-ambiguous-rs-1-7",
+      "parcel": {
+        "address_missing": true,
+        "apn": "4360200200",
+        "facts": [
+          {
+            "apn": "4360200200",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "unknown",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:442",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "dwelling_unit",
+            "value": null
+          },
+          {
+            "apn": "4360200200",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:442",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [],
+          "state": "NO_FOOTPRINT_RECORD",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "   ",
+          "bedrooms": "   ",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "000",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "  "
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RS-1-7"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "INSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "inside_coastal_rs",
+        "no_footprint_record",
+        "missing_address"
+      ],
+      "fingerprint_sha256": "1711436f1be6b9c82090d79e4ff6e07ac717be30387de73e2de2e85ad96e9e2f",
+      "fixture_id": "inside-coastal-rs-1-4",
+      "parcel": {
+        "address_missing": true,
+        "apn": "3013428200",
+        "facts": [
+          {
+            "apn": "3013428200",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "unknown",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:371",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "dwelling_unit",
+            "value": null
+          },
+          {
+            "apn": "3013428200",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:371",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [],
+          "state": "NO_FOOTPRINT_RECORD",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "   ",
+          "bedrooms": "   ",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "860",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "  "
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RS-1-4"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "INSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "split_zone",
+        "one_footprint",
+        "footprint_available"
+      ],
+      "fingerprint_sha256": "8397c00b6d09a0c6e382c7fd1eaec93be7f4cfdeb28b5b9852321e6f00e100cc",
+      "fixture_id": "split-rs-rs",
+      "parcel": {
+        "address_missing": false,
+        "apn": "3013101500",
+        "facts": [
+          {
+            "apn": "3013101500",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:1085923",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "3013101500",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:1085923",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 5107
+          },
+          {
+            "apn": "3013101500",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:373877",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "1889787e01afdcbb603a9c4be7d7bea6cd6fde1e77ce8a3f39f1c4bdfcd90251"
+            }
+          },
+          {
+            "apn": "3013101500",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:373877",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 6373.93929472
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [
+            373877
+          ],
+          "stack_group_source_object_ids": [],
+          "state": "ONE_FOOTPRINT",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "040",
+          "bedrooms": "005",
+          "garage_stalls": "003",
+          "nucleus_use_cd": "111",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "80"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "MULTI_ZONE",
+        "zones": [
+          "RS-1-3",
+          "RS-1-6"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "split_zone",
+        "one_footprint",
+        "footprint_available"
+      ],
+      "fingerprint_sha256": "99221693ad75ae6de0cba7bc24dc1cb334018d1b08f87c8dd4fd515f522b24bf",
+      "fixture_id": "split-rs-non-rs",
+      "parcel": {
+        "address_missing": false,
+        "apn": "4304211000",
+        "facts": [
+          {
+            "apn": "4304211000",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:352049",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "4304211000",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:352049",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 2893
+          },
+          {
+            "apn": "4304211000",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:541258",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "a4e753f37c3e0b693c2ed98a06e04d616f18cdc27245f83f7cbf3fe019bfc9fe"
+            }
+          },
+          {
+            "apn": "4304211000",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:541258",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 2904.466671172
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [
+            541258
+          ],
+          "stack_group_source_object_ids": [],
+          "state": "ONE_FOOTPRINT",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "050",
+          "bedrooms": "005",
+          "garage_stalls": "002",
+          "nucleus_use_cd": "111",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "06500",
+          "year_effective": "90"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "MULTI_ZONE",
+        "zones": [
+          "RS-1-7",
+          "OR-1-1"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "ambiguous_zoning",
+        "one_footprint",
+        "footprint_available"
+      ],
+      "fingerprint_sha256": "d054b250feaf7793df92a467ef51d16145091fc5dcd42b7180bf890a6b3c32ed",
+      "fixture_id": "ambiguous-zoning",
+      "parcel": {
+        "address_missing": false,
+        "apn": "4303410600",
+        "facts": [
+          {
+            "apn": "4303410600",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:188361",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "4303410600",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:188361",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 800
+          },
+          {
+            "apn": "4303410600",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:645818",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "e55986a70dc88693d58c77b350767864d21c9ba5aa20ed8f8f57d8c7aad8156c"
+            }
+          },
+          {
+            "apn": "4303410600",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:645818",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 1341.046403614
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [
+            645818
+          ],
+          "stack_group_source_object_ids": [],
+          "state": "ONE_FOOTPRINT",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "010",
+          "bedrooms": "002",
+          "garage_stalls": "001",
+          "nucleus_use_cd": "110",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "06800",
+          "year_effective": "42"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "INDETERMINATE",
+        "zones": [
+          "RS-1-7",
+          "CC-3-9"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "no_structure_record",
+        "no_footprint_record",
+        "missing_address"
+      ],
+      "fingerprint_sha256": "1fabca161193699e996919ee31100fcaebd13eac1791b77a87efb32ff84cad87",
+      "fixture_id": "no-record-missing-address",
+      "parcel": {
+        "address_missing": true,
+        "apn": "3031701800",
+        "facts": [
+          {
+            "apn": "3031701800",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "unknown",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:1052286",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "dwelling_unit",
+            "value": null
+          },
+          {
+            "apn": "3031701800",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:1052286",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [],
+          "state": "NO_FOOTPRINT_RECORD",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "   ",
+          "bedrooms": "   ",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "193",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "  "
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "AR-1-1"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "INSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "no_structure_record",
+        "no_footprint_record",
+        "missing_address"
+      ],
+      "fingerprint_sha256": "3baa5b16466bd26dd342f35f26ab1658aeb1c417f0ce5c2171bde3a1141f2f4b",
+      "fixture_id": "no-record-non-rs",
+      "parcel": {
+        "address_missing": true,
+        "apn": "6271001600",
+        "facts": [
+          {
+            "apn": "6271001600",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "unknown",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:8",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "dwelling_unit",
+            "value": null
+          },
+          {
+            "apn": "6271001600",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:8",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [],
+          "state": "NO_FOOTPRINT_RECORD",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "000",
+          "bedrooms": "000",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "000",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "00"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "MULTI_ZONE",
+        "zones": [
+          "OF-1-1",
+          "AR-1-2"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "INSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "area_semantically_unusable",
+        "no_footprint_record"
+      ],
+      "fingerprint_sha256": "21565fd9d1bcbe3487b4dde55d9f8bfb9954ef7ef7ece779f323c87894260242",
+      "fixture_id": "living-area-limit",
+      "parcel": {
+        "address_missing": false,
+        "apn": "4243800700",
+        "facts": [
+          {
+            "apn": "4243800700",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:16710",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 83
+          },
+          {
+            "apn": "4243800700",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:16710",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_LIMIT_VALUE_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [],
+          "state": "NO_FOOTPRINT_RECORD",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "000",
+          "bedrooms": "000",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "217",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "20"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "CC-3-8"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "multiple_footprints",
+        "footprint_available"
+      ],
+      "fingerprint_sha256": "bde6c7880f8c179a9b1b851272278301f5ac8ee373bf72f3b1b39d2262072f13",
+      "fixture_id": "multiple-footprints",
+      "parcel": {
+        "address_missing": false,
+        "apn": "2723200100",
+        "facts": [
+          {
+            "apn": "2723200100",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:448707",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "2723200100",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:448707",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 3613
+          },
+          {
+            "apn": "2723200100",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:230988",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "60e89e718f7b81279f8b92bb61db9cc78afcd76968fefa4cde0c9e17503d84ba"
+            }
+          },
+          {
+            "apn": "2723200100",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:230988",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 5201.661652702
+          },
+          {
+            "apn": "2723200100",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:253322",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "1db6e571c719eb004617be3ca7900fe2ba28b61f0ee2112971c24b3d8503a935"
+            }
+          },
+          {
+            "apn": "2723200100",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:253322",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 193.300902704
+          },
+          {
+            "apn": "2723200100",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:278243",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "aaeb4093ae49297f960514bfcba2bba605c6eeeb6f9502a28aa8a6e322f64fd4"
+            }
+          },
+          {
+            "apn": "2723200100",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:278243",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 1733.652092465
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [
+            230988,
+            253322,
+            278243
+          ],
+          "stack_group_source_object_ids": [],
+          "state": "MULTIPLE_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "035",
+          "bedrooms": "004",
+          "garage_stalls": "004",
+          "nucleus_use_cd": "112",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "77"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "MULTI_ZONE",
+        "zones": [
+          "AR-1-2",
+          "RS-1-11"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "one_footprint",
+        "footprint_available"
+      ],
+      "fingerprint_sha256": "26939ffec13d0cb818aee79ea650380477675fcceaf5568fabcfe9428abf379d",
+      "fixture_id": "one-footprint",
+      "parcel": {
+        "address_missing": false,
+        "apn": "5470501600",
+        "facts": [
+          {
+            "apn": "5470501600",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:2985",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "5470501600",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:2985",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 795
+          },
+          {
+            "apn": "5470501600",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:943203",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "9542c64d966474f137a8bdc00c2d94e38f1d6bb14de5f03171de4925275401d0"
+            }
+          },
+          {
+            "apn": "5470501600",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:943203",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 902.727618284
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [
+            945583
+          ],
+          "direct_source_object_ids": [
+            943203
+          ],
+          "stack_group_source_object_ids": [],
+          "state": "ONE_FOOTPRINT",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "010",
+          "bedrooms": "002",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "111",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "14200",
+          "year_effective": "50"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RM-1-1"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "one_footprint",
+        "footprint_available"
+      ],
+      "fingerprint_sha256": "6ac38ebab91b6d758880eff47f3f2a7fe415fea8b668fc7e4184825864216479",
+      "fixture_id": "one-footprint-large-living",
+      "parcel": {
+        "address_missing": false,
+        "apn": "2673600300",
+        "facts": [
+          {
+            "apn": "2673600300",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:970579",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "2673600300",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:970579",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 2360
+          },
+          {
+            "apn": "2673600300",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:421731",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "bd32b3f0d10b99bc7d5db40d7e9c011dbb3b8f5fd942f59d9d7fb52d49d52a47"
+            }
+          },
+          {
+            "apn": "2673600300",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:421731",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 1983.128711257
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [
+            421731
+          ],
+          "stack_group_source_object_ids": [],
+          "state": "ONE_FOOTPRINT",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "025",
+          "bedrooms": "004",
+          "garage_stalls": "002",
+          "nucleus_use_cd": "111",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "03600",
+          "year_effective": "11"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RX-1-2"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "INSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "one_footprint",
+        "footprint_available",
+        "source_zero_unresolved"
+      ],
+      "fingerprint_sha256": "cfef38eb63842584d7ac1e221c7567ef870f12c28be0c532ef2476c32037672b",
+      "fixture_id": "one-footprint-zero-assessor",
+      "parcel": {
+        "address_missing": false,
+        "apn": "7600360300",
+        "facts": [
+          {
+            "apn": "7600360300",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "unknown",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:997",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "dwelling_unit",
+            "value": null
+          },
+          {
+            "apn": "7600360300",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:997",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          },
+          {
+            "apn": "7600360300",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:649568",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "e56066d8dc07b7570785ca0f6b28942cac0b993b327f61e67623fbf761f23fba"
+            }
+          },
+          {
+            "apn": "7600360300",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:649568",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 6174.987768685
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [
+            649568
+          ],
+          "stack_group_source_object_ids": [],
+          "state": "ONE_FOOTPRINT",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "   ",
+          "bedrooms": "   ",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "000",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "  "
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "UNMAPPED",
+        "zones": []
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "ambiguous_linkage",
+        "missing_address"
+      ],
+      "fingerprint_sha256": "94a721b53236aaa4a465e1e881733f4ad19b56a1058a15a3455f6a114dbe5472",
+      "fixture_id": "ambiguous-footprint-boundary",
+      "parcel": {
+        "address_missing": true,
+        "apn": "2748323700",
+        "facts": [
+          {
+            "apn": "2748323700",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "unknown",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:313",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "dwelling_unit",
+            "value": null
+          },
+          {
+            "apn": "2748323700",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:313",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [
+            426757
+          ],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [],
+          "state": "AMBIGUOUS_ONLY",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "000",
+          "bedrooms": "000",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "860",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "00"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "BOUNDARY_SLIVER",
+        "zones": [
+          "RS-1-14",
+          "RM-1-1"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "ambiguous_linkage",
+        "missing_address"
+      ],
+      "fingerprint_sha256": "184fbbcbb027ff37b7ff6eb5ad345a0a1d2f9fe19031a8e1935c0413fa5172ff",
+      "fixture_id": "ambiguous-footprint-missing-address",
+      "parcel": {
+        "address_missing": true,
+        "apn": "6782511200",
+        "facts": [
+          {
+            "apn": "6782511200",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "unknown",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:3",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "dwelling_unit",
+            "value": null
+          },
+          {
+            "apn": "6782511200",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:3",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [
+            328287
+          ],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [],
+          "state": "AMBIGUOUS_ONLY",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "000",
+          "bedrooms": "000",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "400",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "99999",
+          "year_effective": "  "
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "IP-2-1"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "ambiguous_linkage",
+        "split_zone",
+        "missing_address"
+      ],
+      "fingerprint_sha256": "21c7a99ca205354c4b40326cfdc1068dc785733310cd2f77217116c842574b99",
+      "fixture_id": "ambiguous-footprint-split",
+      "parcel": {
+        "address_missing": true,
+        "apn": "5810934600",
+        "facts": [
+          {
+            "apn": "5810934600",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "unknown",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:25",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "dwelling_unit",
+            "value": null
+          },
+          {
+            "apn": "5810934600",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:25",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [
+            828662
+          ],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [],
+          "state": "AMBIGUOUS_ONLY",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "   ",
+          "bedrooms": "   ",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "000",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "  "
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "MULTI_ZONE",
+        "zones": [
+          "RS-1-1",
+          "RS-1-7"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints",
+        "missing_address"
+      ],
+      "fingerprint_sha256": "809a4f47b7ec80bb062d8430319bb02e24dc1d6ecd01107d1ce1269674e6006c",
+      "fixture_id": "large-stack",
+      "parcel": {
+        "address_missing": true,
+        "apn": "2421001000",
+        "facts": [
+          {
+            "apn": "2421001000",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "unknown",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:653853",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "dwelling_unit",
+            "value": null
+          },
+          {
+            "apn": "2421001000",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:653853",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [
+            215987,
+            235711
+          ],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [
+            115977,
+            116215,
+            116402,
+            120299,
+            122306,
+            123361,
+            123652,
+            124697,
+            127559,
+            128808,
+            129870,
+            130457,
+            130820,
+            131083,
+            131270,
+            131709,
+            132226,
+            133037,
+            133063,
+            133064,
+            133066,
+            133067,
+            134548,
+            136100,
+            136803,
+            138004,
+            139425,
+            140045,
+            141042,
+            142511,
+            145298,
+            147333,
+            147572,
+            147692,
+            148102,
+            149562,
+            150669,
+            151566,
+            156321,
+            156725,
+            157329,
+            158675,
+            159466,
+            159563,
+            159564,
+            159843,
+            159975,
+            159976,
+            160080,
+            162985,
+            169203,
+            169221,
+            169466,
+            173502,
+            175240,
+            177579,
+            178134,
+            179401,
+            181787,
+            182827,
+            184390,
+            185044,
+            187149,
+            189870,
+            191687,
+            191841,
+            192285,
+            192373,
+            193624,
+            199258,
+            199609,
+            200067,
+            200443,
+            202503,
+            205502,
+            208148,
+            210008,
+            210801,
+            215911,
+            216058,
+            216103,
+            216312,
+            218026,
+            222369,
+            223680,
+            226119,
+            226340,
+            228531,
+            229555,
+            230313,
+            230457,
+            231741,
+            232098,
+            233421,
+            234200,
+            234487,
+            235045,
+            235195,
+            235858,
+            238482,
+            239305,
+            239638,
+            241526,
+            242643,
+            242835,
+            244413,
+            246737,
+            248243,
+            248322,
+            251023,
+            251497,
+            251773,
+            252662,
+            254074,
+            254949,
+            255213,
+            257715,
+            258577,
+            258885,
+            258886,
+            259088,
+            261339,
+            261659,
+            261851,
+            262329,
+            263238,
+            264605,
+            265910,
+            265911,
+            266893,
+            267295,
+            267975,
+            267976,
+            269296,
+            270919,
+            272665,
+            272678,
+            273278,
+            273824,
+            276133,
+            278965,
+            280831,
+            281328,
+            282187,
+            288003
+          ],
+          "state": "STACKED_GROUP_WITH_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "   ",
+          "bedrooms": "   ",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "000",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "  "
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "MULTI_ZONE",
+        "zones": [
+          "AG-1-1",
+          "AR-1-1"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints"
+      ],
+      "fingerprint_sha256": "060f5099afa84d51dff1d8bc56492828197e9936a9e48af600f4edea4145ae0e",
+      "fixture_id": "stack-a",
+      "parcel": {
+        "address_missing": false,
+        "apn": "5891700512",
+        "facts": [
+          {
+            "apn": "5891700512",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:92",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "5891700512",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:92",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 1183
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [
+            855129
+          ],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [
+            720717,
+            743533,
+            743534,
+            748029,
+            748030,
+            748618,
+            763947,
+            763948,
+            781756,
+            793274,
+            793275,
+            816063,
+            820876,
+            820877,
+            855128,
+            856524,
+            857394,
+            858471,
+            875070,
+            875073,
+            911831,
+            918122,
+            918124,
+            924508,
+            939199,
+            944761,
+            944762,
+            944763,
+            965965,
+            968683,
+            983532
+          ],
+          "state": "STACKED_GROUP_WITH_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "020",
+          "bedrooms": "003",
+          "garage_stalls": "000",
+          "nucleus_use_cd": "171",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "80"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RM-2-5"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints"
+      ],
+      "fingerprint_sha256": "655f28b6e57195d642f1c0c2a3e4073e7a48ee6a24a68b45aa66b746b2507ffe",
+      "fixture_id": "stack-b",
+      "parcel": {
+        "address_missing": false,
+        "apn": "5891700513",
+        "facts": [
+          {
+            "apn": "5891700513",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:93",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "5891700513",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:93",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 866
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [
+            855129
+          ],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [
+            720717,
+            743533,
+            743534,
+            748029,
+            748030,
+            748618,
+            763947,
+            763948,
+            781756,
+            793274,
+            793275,
+            816063,
+            820876,
+            820877,
+            855128,
+            856524,
+            857394,
+            858471,
+            875070,
+            875073,
+            911831,
+            918122,
+            918124,
+            924508,
+            939199,
+            944761,
+            944762,
+            944763,
+            965965,
+            968683,
+            983532
+          ],
+          "state": "STACKED_GROUP_WITH_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "010",
+          "bedrooms": "002",
+          "garage_stalls": "000",
+          "nucleus_use_cd": "171",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "80"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RM-2-5"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints"
+      ],
+      "fingerprint_sha256": "b180976d4b0f71543b564f462b168e133f7a3ce9ae97053445b712d49e57ec82",
+      "fixture_id": "stack-serving-a",
+      "parcel": {
+        "address_missing": false,
+        "apn": "5333641301",
+        "facts": [
+          {
+            "apn": "5333641301",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:8731",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "5333641301",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:8731",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 950
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [
+            795146
+          ],
+          "state": "STACKED_GROUP_WITH_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "010",
+          "bedrooms": "000",
+          "garage_stalls": "000",
+          "nucleus_use_cd": "171",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "00000",
+          "year_effective": "04"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "CCPD-RE"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints"
+      ],
+      "fingerprint_sha256": "43cde6e5c67e3c5ce71e90504b0cef5e6f4195d4ecd7e2257370e9878652984c",
+      "fixture_id": "stack-serving-b",
+      "parcel": {
+        "address_missing": false,
+        "apn": "5333641302",
+        "facts": [
+          {
+            "apn": "5333641302",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:8732",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "5333641302",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:8732",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 844
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [
+            795146
+          ],
+          "state": "STACKED_GROUP_WITH_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "010",
+          "bedrooms": "000",
+          "garage_stalls": "000",
+          "nucleus_use_cd": "171",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "00000",
+          "year_effective": "04"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "CCPD-RE"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "BOUNDARY_AMBIGUOUS",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_no_footprint",
+        "missing_address"
+      ],
+      "fingerprint_sha256": "9bc4e0e4a873464cf406ffb98c8d449920d1c40ea84cd3b4b2eea483ec22bbe9",
+      "fixture_id": "stack-without-footprint",
+      "parcel": {
+        "address_missing": true,
+        "apn": "4236300300",
+        "facts": [
+          {
+            "apn": "4236300300",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "unknown",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:418",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "dwelling_unit",
+            "value": null
+          },
+          {
+            "apn": "4236300300",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:418",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [],
+          "state": "STACKED_GROUP_WITHOUT_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "   ",
+          "bedrooms": "   ",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "000",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "  "
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "INDETERMINATE",
+        "zones": [
+          "MBPD-R-N",
+          "MBPD-R-S",
+          "OP-1-1"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints",
+        "missing_address"
+      ],
+      "fingerprint_sha256": "60f657e428b68ab30ec666519bf65e0d7324acce7521c3c9d2aae87861946500",
+      "fixture_id": "stack-six-units",
+      "parcel": {
+        "address_missing": true,
+        "apn": "2760400100",
+        "facts": [
+          {
+            "apn": "2760400100",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:898621",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 6
+          },
+          {
+            "apn": "2760400100",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:898621",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [
+            133958,
+            139142,
+            140161,
+            146591,
+            156238,
+            158564,
+            183913,
+            201406,
+            203599,
+            210208,
+            211768,
+            231119,
+            236918,
+            236919,
+            237154,
+            241837,
+            257865,
+            274723,
+            278787
+          ],
+          "state": "STACKED_GROUP_WITH_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "   ",
+          "bedrooms": "   ",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "000",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "  "
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "MULTI_ZONE",
+        "zones": [
+          "AG-1-1",
+          "AR-1-1"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints",
+        "missing_address"
+      ],
+      "fingerprint_sha256": "40ba40118350be12bc92f5bdd6a0c0bbd728297db6b59d2ace467e6c04e9da6a",
+      "fixture_id": "stack-multipolygon",
+      "parcel": {
+        "address_missing": true,
+        "apn": "2392600700",
+        "facts": [
+          {
+            "apn": "2392600700",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "unknown",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:1053738",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "dwelling_unit",
+            "value": null
+          },
+          {
+            "apn": "2392600700",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "unknown",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:1053738",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": "SOURCE_ZERO_UNRESOLVED",
+            "unit": "square_foot",
+            "value": null
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [
+            118859,
+            118860,
+            119629,
+            151116,
+            154003,
+            174953,
+            176328,
+            179403,
+            182318,
+            185641,
+            208270,
+            224177,
+            226180,
+            229123,
+            236544,
+            237836,
+            246928,
+            247006,
+            249205,
+            268159,
+            280872,
+            283047
+          ],
+          "state": "STACKED_GROUP_WITH_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "   ",
+          "bedrooms": "   ",
+          "garage_stalls": "   ",
+          "nucleus_use_cd": "000",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "  "
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "INDETERMINATE",
+        "zones": [
+          "AG-1-1",
+          "AR-1-1"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints"
+      ],
+      "fingerprint_sha256": "76d25a6455935f84c225d88950b5534de3ef75ef92fb84ad7ca5ffb3412a94e4",
+      "fixture_id": "stack-living-area-a",
+      "parcel": {
+        "address_missing": false,
+        "apn": "2725300831",
+        "facts": [
+          {
+            "apn": "2725300831",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:490897",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "2725300831",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:490897",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 1350
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [
+            188997,
+            231732,
+            238762,
+            274918,
+            294303,
+            336588,
+            339709,
+            390050,
+            413448,
+            420911,
+            427922,
+            434278,
+            435496,
+            436054
+          ],
+          "state": "STACKED_GROUP_WITH_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "020",
+          "bedrooms": "003",
+          "garage_stalls": "001",
+          "nucleus_use_cd": "171",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "81"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "AR-1-2"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints"
+      ],
+      "fingerprint_sha256": "837a25cfcedcfe3c23bd1509dd60fc6f6008815c384e1a168f8d06bd63b02fda",
+      "fixture_id": "stack-living-area-b",
+      "parcel": {
+        "address_missing": false,
+        "apn": "2748402401",
+        "facts": [
+          {
+            "apn": "2748402401",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:667040",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "2748402401",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:667040",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 1823
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [
+            421551,
+            438224
+          ],
+          "direct_source_object_ids": [],
+          "stack_group_source_object_ids": [
+            323608
+          ],
+          "state": "STACKED_GROUP_WITH_FOOTPRINTS",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "030",
+          "bedrooms": "003",
+          "garage_stalls": "002",
+          "nucleus_use_cd": "171",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "     ",
+          "year_effective": "94"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "MULTI_ZONE",
+        "zones": [
+          "RM-1-1",
+          "RS-1-14"
+        ]
+      }
+    },
+    {
+      "capacity_calculated": false,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "compliance_evaluated": false,
+      "coverage_tags": [
+        "split_zone",
+        "one_footprint",
+        "footprint_available"
+      ],
+      "fingerprint_sha256": "c0939530ed35e7d5c7bdb999b99cce7f09779dba28f76b1b26b1aad2d62662e0",
+      "fixture_id": "one-footprint-split",
+      "parcel": {
+        "address_missing": false,
+        "apn": "5490330700",
+        "facts": [
+          {
+            "apn": "5490330700",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_dwelling_unit_count",
+            "fact_state": "supported",
+            "limitations": [
+              "Parcel-level assessment fact; not a building-level record.",
+              "A source zero is unresolved and is not evidence of a vacant parcel.",
+              "Does not describe proposed units or legal entitlement."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:203048",
+            "source_semantics": "Number of units currently constructed on the parcel (SanGIS UNITQTY sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "dwelling_unit",
+            "value": 1
+          },
+          {
+            "apn": "5490330700",
+            "derivation_class": "recorded",
+            "fact_key": "assessor_total_living_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Living area is not gross floor area, building footprint, or assessed improvement area.",
+              "Not approved as a FAR numerator.",
+              "A source zero or limit value is unresolved and is not evidence of no structure."
+            ],
+            "linkage_confidence": "authoritative_identifier",
+            "linkage_method": "EXACT_APN",
+            "provenance_ref": "sangis_parcel_arcc_mpr_par",
+            "source_acquisition": "sangis-20260924T183743Z",
+            "source_record_id": "sangis-parcel-objectid:203048",
+            "source_semantics": "Total living area currently constructed on the parcel (SanGIS TOTAL_LVG_AREA sourced from County ARCC MPR/PAR).",
+            "source_state": "available",
+            "source_vintage": "2026-08-29",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 1242
+          },
+          {
+            "apn": "5490330700",
+            "derivation_class": "recorded",
+            "fact_key": "historical_building_footprint_geometry",
+            "fact_state": "supported",
+            "limitations": [
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "The source has no APN; this APN link is deterministic spatial derivation.",
+              "Not a current structure-presence or vacancy conclusion."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:878770",
+            "source_semantics": "Building outline polygon delineated from Spring 2017 regional imagery using EagleView/Pictometry ChangeFinder methodology.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "EPSG:2230",
+            "value": {
+              "geometry_sha256": "c7eda6165e9948aa2e0670c4d8aa378b61885aa6e7c06be2a1522076e3090c2c"
+            }
+          },
+          {
+            "apn": "5490330700",
+            "derivation_class": "deterministic_derived",
+            "fact_key": "historical_building_footprint_area_sq_ft",
+            "fact_state": "supported",
+            "limitations": [
+              "Footprint area is not living area or gross floor area.",
+              "Historical 2017 imagery baseline; current completeness is not established.",
+              "Not approved for current lot-coverage compliance."
+            ],
+            "linkage_confidence": "conditional_historical",
+            "linkage_method": "SPATIAL_POSITIVE_AREA_SINGLE_PHYSICAL_PARCEL",
+            "provenance_ref": "city_sandag_building_outlines",
+            "source_acquisition": "building-outlines-city-20260930T161931Z",
+            "source_record_id": "building-outline-objectid:878770",
+            "source_semantics": "Plan-view polygon area derived from the authoritative building-outline geometry in EPSG:2230.",
+            "source_state": "available",
+            "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+            "state_reason": null,
+            "unit": "square_foot",
+            "value": 565.137438557
+          }
+        ],
+        "footprint_linkage": {
+          "ambiguous_source_object_ids": [
+            843135,
+            913088
+          ],
+          "direct_source_object_ids": [
+            878770
+          ],
+          "stack_group_source_object_ids": [],
+          "state": "ONE_FOOTPRINT",
+          "vacancy_conclusion": null
+        },
+        "raw_assessor_evidence": {
+          "baths": "015",
+          "bedrooms": "004",
+          "garage_stalls": "002",
+          "nucleus_use_cd": "111",
+          "promotion_state": "RAW_ONLY_SEMANTICS_OR_CURRENTNESS_UNRESOLVED",
+          "usable_sq_feet": "06400",
+          "year_effective": "58"
+        }
+      },
+      "zoning_context": {
+        "mapping_state": "MULTI_ZONE",
+        "zones": [
+          "RM-2-5",
+          "RS-1-6"
+        ]
+      }
+    }
+  ]
+}

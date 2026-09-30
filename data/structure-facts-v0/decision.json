@@ -1,0 +1,12 @@
+{
+  "current_footprint_geometry": "NOT_AVAILABLE",
+  "decision": "STRUCTURE_FACTS_V0_READY_FOR_RULE_EVALUATION",
+  "development_capacity_calculated": false,
+  "far_numerator": "FAR_NUMERATOR_NOT_YET_AVAILABLE",
+  "parcel_compliance_evaluated": false,
+  "parcel_v1_modified": false,
+  "production_runtime_wiring": false,
+  "ready_fact_family": "existing_dwelling_units",
+  "ready_rule_family": "dwelling_unit_protection",
+  "scope": "Input availability only; proposed project facts remain required before any rule conclusion."
+}

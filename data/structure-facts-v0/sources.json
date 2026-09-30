@@ -1,0 +1,117 @@
+{
+  "acquisition_path": "/Users/ops/trulot-data/structure-facts-v0/building-outlines-city-20260930T161931Z",
+  "building_outline_acquisition": {
+    "acquired_at": "2026-09-30T16:19:31Z",
+    "acquisition_id": "building-outlines-city-20260930T161931Z",
+    "artifacts": {
+      "chunk-manifest.json": {
+        "byte_size": 69580,
+        "sha256": "66da728f7892dd14343c334150a4546639d1e1402d1c9192a82dc162895f3908"
+      },
+      "city-boundary.geojson": {
+        "byte_size": 1371459,
+        "sha256": "8f1ca43229fd88763dbfc336a21be9ff20fff14f95e8f737bec7bb9043dfcf95"
+      },
+      "footprint-parcel-linkage.ndjson": {
+        "byte_size": 113895300,
+        "sha256": "ee4ec1da97e94d59cb8e8dee57446882752c8b55afeecd6bd2b1d8375ccdc576"
+      },
+      "layer-metadata.json": {
+        "byte_size": 7162,
+        "sha256": "6512e4979644da193a1ccd5b43af87f30971973fc01b4ff400e77476c710bc54"
+      },
+      "linkage-report.json": {
+        "byte_size": 663,
+        "sha256": "8675f7b63919f24b525bdb96305afe68fdcc47dc343fdccef6ac2514075317c9"
+      },
+      "normalized-footprints.csv.gz": {
+        "byte_size": 33000632,
+        "sha256": "4277c67341867cf97f8efce97d2dd7301ba1792dc4ca307a7e1069020458c106"
+      },
+      "object-ids.json": {
+        "byte_size": 2703628,
+        "sha256": "847809ee63aa08e6c38f49fb03b9937d3d0e69256713ba0e29fcf79d342bc973"
+      },
+      "parcel-assessor-source.csv.gz": {
+        "byte_size": 5568751,
+        "sha256": "26f7a6fcee3e1957dea2ba0cae9f55b1e47951f73e008fe8ec4f77c5b8008aa5"
+      },
+      "parcel-footprint-summary.ndjson": {
+        "byte_size": 81180404,
+        "sha256": "27a6bc442862284d2d2c0582dc43b27ab524777e78c105c50764c798b395fd03"
+      },
+      "service-metadata.json": {
+        "byte_size": 5267,
+        "sha256": "cb921d324b7824fe95efef1af30ecfe950a557f10246f43f780ed418ac1ae6f5"
+      }
+    },
+    "scope": "Official building outlines intersecting the official City of San Diego boundary",
+    "source_record_count": 386217
+  },
+  "official_semantic_evidence": {
+    "city_field_semantics": {
+      "sha256": "35d493d6463ff269929b948b75ade615515932dcbdaded697f7636e5ba00f1f9",
+      "url": "https://www.sandiego.gov/sites/default/files/7-active-transportation-in-lieu-fee-calculator-user-manual.pdf"
+    },
+    "sangis_dictionary": {
+      "sha256": "8ce213b2820e674d866e9485f39417ff2aa110be8c5563b6480840fb5f4a3772",
+      "url": "https://www.sandiego.gov/sites/default/files/appendices_-_6-10.pdf"
+    }
+  },
+  "sources": {
+    "city_sandag_building_outlines": {
+      "dataset": "Building Outlines",
+      "endpoint": "https://webmaps.sandiego.gov/arcgis/rest/services/DoIT_Public/DoIT_Public/MapServer/1",
+      "fields": {
+        "AREA": "esriFieldTypeDouble",
+        "CENTROID_X": "esriFieldTypeDouble",
+        "CENTROID_Y": "esriFieldTypeDouble",
+        "COMMENT": "esriFieldTypeString",
+        "GlobalID": "esriFieldTypeGlobalID",
+        "OBJECTID": "esriFieldTypeOID",
+        "Shape": "esriFieldTypeGeometry",
+        "Shape_Area": "esriFieldTypeDouble",
+        "Shape_Leng": "esriFieldTypeDouble",
+        "Shape_Length": "esriFieldTypeDouble",
+        "bldgID": "esriFieldTypeDouble",
+        "created_date": "esriFieldTypeDate",
+        "created_user": "esriFieldTypeString",
+        "last_edited_date": "esriFieldTypeDate",
+        "last_edited_user": "esriFieldTypeString",
+        "outline_id": "esriFieldTypeDouble"
+      },
+      "limitations": [
+        "No height, story, unit, occupancy, or floor-area fields.",
+        "All edit-date fields are null in the acquired City subset."
+      ],
+      "linkage": "No APN; conditional positive-area spatial linkage",
+      "metadata": "https://webmaps.sandiego.gov/arcgis/rest/services/DoIT_Public/DoIT_Public/MapServer/1/metadata",
+      "native_crs": "EPSG:2230",
+      "publisher": "City of San Diego public GIS; SANDAG and EagleView/Pictometry credited",
+      "source_vintage": "Spring 2017 imagery baseline",
+      "update_cadence": "Not stated"
+    },
+    "sangis_parcel_arcc_mpr_par": {
+      "artifact_crs": "EPSG:4326",
+      "content_sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+      "dataset": "Parcels",
+      "endpoint": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0",
+      "fields": {
+        "NUCLEUS_USE_CD": "Detailed assessor use code retained raw; current occupancy not asserted",
+        "TOTAL_LVG_AREA": "Total living area currently constructed on the parcel",
+        "UNITQTY": "Number of units currently constructed on the parcel",
+        "YEAR_EFFECTIVE": "Two-character source code retained raw; full-year semantics not promoted"
+      },
+      "limitations": [
+        "Tax parcel is not necessarily a legal lot.",
+        "Stacked parcels can share one physical polygon."
+      ],
+      "linkage": "Exact ten-digit APN",
+      "metadata": "https://geo.sandag.org/server/rest/services/Hosted/Parcels/FeatureServer/0/metadata",
+      "native_crs": "EPSG:2230",
+      "publisher": "SanGIS; County of San Diego ARCC MPR/PAR attributes",
+      "source_vintage": "2026-08-29T00:00:00",
+      "update_cadence": "MPR-derived fields documented as weekly; sealed snapshot controls this packet"
+    }
+  }
+}

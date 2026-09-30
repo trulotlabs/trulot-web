@@ -1,0 +1,75 @@
+{
+  "rows": [
+    {
+      "available_now": false,
+      "remaining_blocker": "No authoritative height, datum, or current structure geometry.",
+      "rs_family": "structure_height_max",
+      "structure_facts_needed": [
+        "structure_height_ft",
+        "height_reference_datum",
+        "structure_geometry"
+      ]
+    },
+    {
+      "available_now": false,
+      "remaining_blocker": "FAR_NUMERATOR_NOT_YET_AVAILABLE; assessor living area is excluded. Legal lot area and hillside context also remain unresolved.",
+      "rs_family": "floor_area_ratio_max",
+      "structure_facts_needed": [
+        "gross_floor_area_sqft"
+      ]
+    },
+    {
+      "available_now": false,
+      "remaining_blocker": "Only historical 2017 footprints exist; legal premises area and hillside context also remain unresolved.",
+      "rs_family": "lot_coverage_max",
+      "structure_facts_needed": [
+        "current_structure_footprint_area_sqft"
+      ]
+    },
+    {
+      "available_now": false,
+      "remaining_blocker": "Only historical 2017 geometry exists; proposed project scope is also absent.",
+      "rs_family": "building_spacing",
+      "structure_facts_needed": [
+        "current_structure_geometry"
+      ]
+    },
+    {
+      "available_now": false,
+      "remaining_blocker": "Raw assessor garage fields are not a sealed current garage-context model.",
+      "rs_family": "garage_regulations",
+      "structure_facts_needed": [
+        "garage_context",
+        "current_structure_geometry"
+      ]
+    },
+    {
+      "available_now": true,
+      "remaining_blocker": "UNITQTY is supported for positive source values; source zero remains unknown and proposed project scope is still required.",
+      "rs_family": "dwelling_unit_protection",
+      "structure_facts_needed": [
+        "existing_dwelling_units"
+      ]
+    },
+    {
+      "available_now": false,
+      "remaining_blocker": "No story count or third-story dimensions; proposed project scope is absent.",
+      "rs_family": "third_story_dimensions_max",
+      "structure_facts_needed": [
+        "story_count",
+        "third_story_dimensions",
+        "current_structure_geometry"
+      ]
+    },
+    {
+      "available_now": false,
+      "remaining_blocker": "Assessor use codes are approximate and do not identify accessory structures or proposed use.",
+      "rs_family": "accessory_uses_structures",
+      "structure_facts_needed": [
+        "current_use",
+        "accessory_structure_type",
+        "current_structure_geometry"
+      ]
+    }
+  ]
+}

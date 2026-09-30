@@ -1,0 +1,63 @@
+{
+  "concepts": [
+    {
+      "available": "HISTORICAL_ONLY",
+      "key": "building_footprint_area",
+      "meaning": "Plan-view area of a 2017 outline polygon.",
+      "not_equivalent_to": [
+        "gross_floor_area",
+        "living_area"
+      ]
+    },
+    {
+      "available": false,
+      "finding": "FAR_NUMERATOR_NOT_YET_AVAILABLE",
+      "key": "gross_floor_area",
+      "meaning": "Code-defined aggregate floor area."
+    },
+    {
+      "available": true,
+      "key": "living_area",
+      "meaning": "Parcel-level assessor total living area.",
+      "not_equivalent_to": [
+        "gross_floor_area",
+        "building_footprint_area"
+      ]
+    },
+    {
+      "available": false,
+      "key": "assessed_improvement_area",
+      "meaning": "No area with this proven semantic; ASR_IMPR is value, not area."
+    },
+    {
+      "available": "HISTORICAL_OBSERVED_OUTLINE_COUNT_ONLY",
+      "key": "building_count",
+      "meaning": "Count of 2017 outline records linked to one physical parcel."
+    },
+    {
+      "available": false,
+      "key": "story_count",
+      "meaning": "No authoritative field."
+    },
+    {
+      "available": false,
+      "key": "structure_height",
+      "meaning": "No authoritative field or reference datum."
+    },
+    {
+      "available": true,
+      "key": "dwelling_units",
+      "meaning": "Parcel-level UNITQTY from ARCC MPR/PAR, exact APN; zero remains unresolved."
+    },
+    {
+      "available": "RAW_ONLY",
+      "key": "bedrooms",
+      "meaning": "Encoded assessor field; normalization semantics not sealed."
+    },
+    {
+      "available": "RAW_APPROXIMATE_ONLY",
+      "key": "use_occupancy",
+      "meaning": "Assessor use code does not establish current legal occupancy."
+    }
+  ]
+}

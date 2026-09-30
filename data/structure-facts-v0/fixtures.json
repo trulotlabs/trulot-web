@@ -1,0 +1,247 @@
+{
+  "fixture_count": 28,
+  "fixtures": [
+    {
+      "apn": "3506320400",
+      "coverage_tags": [
+        "rs_1_7",
+        "inside_coastal_rs",
+        "multiple_footprints",
+        "footprint_available"
+      ],
+      "id": "inside-coastal-rs-1-7"
+    },
+    {
+      "apn": "6341302200",
+      "coverage_tags": [
+        "rs_1_7",
+        "outside_coastal_rs",
+        "multiple_footprints",
+        "footprint_available"
+      ],
+      "id": "outside-coastal-rs-1-7"
+    },
+    {
+      "apn": "4360200200",
+      "coverage_tags": [
+        "rs_1_7",
+        "unknown_coastal",
+        "no_footprint_record"
+      ],
+      "id": "coastal-ambiguous-rs-1-7"
+    },
+    {
+      "apn": "3013428200",
+      "coverage_tags": [
+        "inside_coastal_rs",
+        "no_footprint_record",
+        "missing_address"
+      ],
+      "id": "inside-coastal-rs-1-4"
+    },
+    {
+      "apn": "3013101500",
+      "coverage_tags": [
+        "split_zone",
+        "one_footprint",
+        "footprint_available"
+      ],
+      "id": "split-rs-rs"
+    },
+    {
+      "apn": "4304211000",
+      "coverage_tags": [
+        "split_zone",
+        "one_footprint",
+        "footprint_available"
+      ],
+      "id": "split-rs-non-rs"
+    },
+    {
+      "apn": "4303410600",
+      "coverage_tags": [
+        "ambiguous_zoning",
+        "one_footprint",
+        "footprint_available"
+      ],
+      "id": "ambiguous-zoning"
+    },
+    {
+      "apn": "3031701800",
+      "coverage_tags": [
+        "no_structure_record",
+        "no_footprint_record",
+        "missing_address"
+      ],
+      "id": "no-record-missing-address"
+    },
+    {
+      "apn": "6271001600",
+      "coverage_tags": [
+        "no_structure_record",
+        "no_footprint_record",
+        "missing_address"
+      ],
+      "id": "no-record-non-rs"
+    },
+    {
+      "apn": "4243800700",
+      "coverage_tags": [
+        "area_semantically_unusable",
+        "no_footprint_record"
+      ],
+      "id": "living-area-limit"
+    },
+    {
+      "apn": "2723200100",
+      "coverage_tags": [
+        "multiple_footprints",
+        "footprint_available"
+      ],
+      "id": "multiple-footprints"
+    },
+    {
+      "apn": "5470501600",
+      "coverage_tags": [
+        "one_footprint",
+        "footprint_available"
+      ],
+      "id": "one-footprint"
+    },
+    {
+      "apn": "2673600300",
+      "coverage_tags": [
+        "one_footprint",
+        "footprint_available"
+      ],
+      "id": "one-footprint-large-living"
+    },
+    {
+      "apn": "7600360300",
+      "coverage_tags": [
+        "one_footprint",
+        "footprint_available",
+        "source_zero_unresolved"
+      ],
+      "id": "one-footprint-zero-assessor"
+    },
+    {
+      "apn": "2748323700",
+      "coverage_tags": [
+        "ambiguous_linkage",
+        "missing_address"
+      ],
+      "id": "ambiguous-footprint-boundary"
+    },
+    {
+      "apn": "6782511200",
+      "coverage_tags": [
+        "ambiguous_linkage",
+        "missing_address"
+      ],
+      "id": "ambiguous-footprint-missing-address"
+    },
+    {
+      "apn": "5810934600",
+      "coverage_tags": [
+        "ambiguous_linkage",
+        "split_zone",
+        "missing_address"
+      ],
+      "id": "ambiguous-footprint-split"
+    },
+    {
+      "apn": "2421001000",
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints",
+        "missing_address"
+      ],
+      "id": "large-stack"
+    },
+    {
+      "apn": "5891700512",
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints"
+      ],
+      "id": "stack-a"
+    },
+    {
+      "apn": "5891700513",
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints"
+      ],
+      "id": "stack-b"
+    },
+    {
+      "apn": "5333641301",
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints"
+      ],
+      "id": "stack-serving-a"
+    },
+    {
+      "apn": "5333641302",
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints"
+      ],
+      "id": "stack-serving-b"
+    },
+    {
+      "apn": "4236300300",
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_no_footprint",
+        "missing_address"
+      ],
+      "id": "stack-without-footprint"
+    },
+    {
+      "apn": "2760400100",
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints",
+        "missing_address"
+      ],
+      "id": "stack-six-units"
+    },
+    {
+      "apn": "2392600700",
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints",
+        "missing_address"
+      ],
+      "id": "stack-multipolygon"
+    },
+    {
+      "apn": "2725300831",
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints"
+      ],
+      "id": "stack-living-area-a"
+    },
+    {
+      "apn": "2748402401",
+      "coverage_tags": [
+        "stack_condo",
+        "stack_group_footprints"
+      ],
+      "id": "stack-living-area-b"
+    },
+    {
+      "apn": "5490330700",
+      "coverage_tags": [
+        "split_zone",
+        "one_footprint",
+        "footprint_available"
+      ],
+      "id": "one-footprint-split"
+    }
+  ]
+}
