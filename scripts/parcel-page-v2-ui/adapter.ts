@@ -53,15 +53,26 @@ export interface ParcelPageV2UiModel {
   orientation: {
     zoningLabel: string;
     zoningState: DisplayState;
-    zones: Array<{ code: string; coverage: string | null; role: string }>;
+    zones: Array<{ code: string; coverage: string | null; role: string; featureIds: string[] }>;
     coastalLabel: string;
     coastalState: DisplayState;
     standardsVersion: string;
     standardsVersionState: DisplayState;
+    mappingEvidence: {
+      state: string;
+      methodVersion: string;
+      acquisition: string;
+    };
+    coastalEvidence: {
+      areaShare: string | null;
+      method: string;
+      acquisition: string;
+      featureIds: string[];
+    };
   };
   standardsGroups: StandardsGroup[];
   propertyFacts: DisplayValue[];
-  unknowns: Array<DisplayValue & { linkedAction?: string }>;
+  unknowns: Array<DisplayValue & { linkedAction?: string; group: "important" | "future" | "technical" }>;
   investigations: Array<{
     action: string;
     title: string;
@@ -162,14 +173,14 @@ const UNKNOWN_PRIORITY = [
 ];
 
 const ACTION_TITLES: Record<string, string> = {
-  OBTAIN_GROSS_FLOOR_AREA: "Obtain Code-defined gross floor area",
+  OBTAIN_GROSS_FLOOR_AREA: "Obtain gross floor area",
   OBTAIN_SUPPORTED_ZONE_STANDARDS: "Research standards for the unsupported zone",
   REVIEW_SPLIT_ZONE_GEOMETRY: "Review the split-zone geometry",
   VERIFY_BASE_ZONING_MAPPING: "Verify the base-zoning mapping",
   VERIFY_COASTAL_APPLICABILITY: "Verify Coastal applicability",
   VERIFY_EXISTING_UNIT_COUNT: "Verify the existing dwelling-unit count",
   VERIFY_LEGAL_LOT_WIDTH: "Verify legal lot width",
-  VERIFY_LOT_LINE_DESIGNATIONS: "Verify legal lot-line designations",
+  VERIFY_LOT_LINE_DESIGNATIONS: "Confirm lot-line designations",
   VERIFY_PARCEL_SITUS: "Verify the parcel situs address",
 };
 
@@ -295,6 +306,12 @@ function actionForUnknown(item: JsonRecord, actions: JsonRecord[]): string | und
   return actions.find((action) => (map[action.action] || []).some((needle) => code.includes(needle)))?.action;
 }
 
+function unknownGroup(code: string): "important" | "future" | "technical" {
+  if (["PARCEL_SOURCE_UNAVAILABLE", "BASE_ZONING_AMBIGUOUS", "BASE_ZONING_UNMAPPED", "COASTAL_APPLICABILITY_UNRESOLVED", "SPLIT_ZONE_REQUIRES_GEOMETRY_REVIEW", "NON_RS_COMPONENT_UNSUPPORTED", "LEGAL_LOT_WIDTH_FT_UNKNOWN", "CORNER_LOT_STATUS_UNKNOWN", "FRONT_LOT_LINE_UNKNOWN", "INTERIOR_SIDE_LOT_LINES_UNKNOWN", "STREET_SIDE_LOT_LINES_UNKNOWN", "REAR_LOT_LINE_UNKNOWN", "SITUS_ADDRESS_UNAVAILABLE"].includes(code)) return "important";
+  if (["LEGAL_LOT_AREA_SQFT_UNKNOWN", "LEGAL_LOT_DEPTH_FT_UNKNOWN", "GROSS_FLOOR_AREA_SQFT_UNKNOWN", "SLOPE_PERCENT_UNKNOWN", "EXISTING_DWELLING_UNITS_UNKNOWN", "LIVING_AREA_UNKNOWN"].includes(code)) return "future";
+  return "technical";
+}
+
 export function adaptParcelIntelligenceV2(input: JsonRecord): ParcelPageV2UiModel {
   if (!input || typeof input !== "object") throw new TypeError("ParcelIntelligenceV2 result is required");
   if (input.parcel_compliance_evaluated !== false || input.development_capacity_calculated !== false || input.standards_blended !== false || input.production_runtime_wired !== false) {
@@ -307,10 +324,11 @@ export function adaptParcelIntelligenceV2(input: JsonRecord): ParcelPageV2UiMode
   const structure = input.property_facts?.structure || {};
   const zoningDisplay = zoningPresentation(zoning);
   const coastalDisplay = coastalPresentation(coastal);
-  const zones: Array<{ code: string; coverage: string | null; role: string }> = (Array.isArray(zoning.zone_evidence) ? zoning.zone_evidence : []).map((zone: JsonRecord) => ({
+  const zones: Array<{ code: string; coverage: string | null; role: string; featureIds: string[] }> = (Array.isArray(zoning.zone_evidence) ? zoning.zone_evidence : []).map((zone: JsonRecord) => ({
     code: String(zone.zone_code),
     coverage: finiteNumber(zone.coverage_percent) ? `${formatNumber(zone.coverage_percent, 1)}%` : null,
     role: String(zone.role || "evidence"),
+    featureIds: Array.isArray(zone.source_feature_ids) ? zone.source_feature_ids.map(String) : [],
   }));
 
   const standardsGroups: StandardsGroup[] = (Array.isArray(standards.zone_results) ? standards.zone_results : []).map((zone: JsonRecord) => {
@@ -389,7 +407,7 @@ export function adaptParcelIntelligenceV2(input: JsonRecord): ParcelPageV2UiMode
     .map((item: JsonRecord, index: number) => ({ item, index, rank: UNKNOWN_PRIORITY.indexOf(item.code) === -1 ? UNKNOWN_PRIORITY.length + index : UNKNOWN_PRIORITY.indexOf(item.code) }))
     .sort((a: JsonRecord, b: JsonRecord) => a.rank - b.rank)
     .map((entry: JsonRecord) => entry.item);
-  const unknowns = ranked.slice(0, 10).map((item: JsonRecord) => ({
+  const unknowns = ranked.map((item: JsonRecord) => ({
     label: UNKNOWN_LABELS[item.code] || String(item.code || "Unresolved fact").replaceAll("_", " ").toLowerCase(),
     value: item.category === "SOURCE_UNAVAILABLE" || String(item.code).includes("SOURCE_UNAVAILABLE") ? "Source currently unavailable" : "Not yet verified",
     state: (item.category === "SOURCE_UNAVAILABLE" || String(item.code).includes("SOURCE_UNAVAILABLE") ? "unavailable" : "unknown") as DisplayState,
@@ -397,6 +415,7 @@ export function adaptParcelIntelligenceV2(input: JsonRecord): ParcelPageV2UiMode
     detail: item.detail,
     source: item.source_layer,
     linkedAction: actionForUnknown(item, actions),
+    group: unknownGroup(String(item.code || "")),
   }));
 
   const investigations = actions.map((action: JsonRecord) => ({
@@ -453,6 +472,17 @@ export function adaptParcelIntelligenceV2(input: JsonRecord): ParcelPageV2UiMode
       coastalState: coastalDisplay.state,
       standardsVersion,
       standardsVersionState,
+      mappingEvidence: {
+        state: String(zoning.mapping_evidence_state || zoning.mapping_state || "Not available"),
+        methodVersion: String(zoning.mapping_method_version || "Not available"),
+        acquisition: String(zoning.zoning_acquisition_id || "Not available"),
+      },
+      coastalEvidence: {
+        areaShare: finiteNumber(coastal.coastal_area_share_percent) ? `${formatNumber(coastal.coastal_area_share_percent, 1)}%` : null,
+        method: String(coastal.mapping_method || "Not available"),
+        acquisition: String(coastal.provenance?.source_acquisition_id || "Not available"),
+        featureIds: Array.isArray(coastal.source_feature_ids) ? coastal.source_feature_ids.map(String) : [],
+      },
     },
     standardsGroups,
     propertyFacts,

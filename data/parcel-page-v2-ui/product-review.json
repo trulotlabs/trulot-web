@@ -1,0 +1,59 @@
+{
+  "decision": "PARCEL_PAGE_V2_PRODUCT_UI_READY",
+  "reviewed_canonical_apns": [
+    "6341302200",
+    "3506320400",
+    "4304211000"
+  ],
+  "initial_hesitations": [
+    "Existing units and parcel area were below the first viewport.",
+    "Every standard repeated source prose, making the page feel like a code report.",
+    "All unresolved facts had equal visual weight.",
+    "The capacity disclaimer appeared too late in the page.",
+    "The split-zone limitation was technically present but not prominent enough."
+  ],
+  "five_second_owner_test": {
+    "6341302200": "PASS",
+    "3506320400": "PASS",
+    "4304211000": "PASS",
+    "property": "PASS",
+    "zoning": "PASS",
+    "coastal": "PASS",
+    "primary_standards": "PASS",
+    "material_uncertainty": "PASS",
+    "capacity_not_claimed": "PASS"
+  },
+  "thirty_second_developer_test": {
+    "result": "PASS",
+    "single_vs_split_zoning": "PASS",
+    "zone_coverage": "PASS",
+    "coastal_context": "PASS",
+    "standards_version": "PASS",
+    "lot_dimensions_setbacks_height_far": "PASS",
+    "existing_units_and_living_area": "PASS",
+    "material_unknowns": "PASS"
+  },
+  "expert_evidence_test": {
+    "result": "PASS",
+    "source_and_sdmc_reference": "one rule-detail interaction",
+    "condition": "one rule-detail interaction",
+    "source_version": "one orientation-evidence interaction",
+    "derivation_and_limitations": "one source-layer interaction",
+    "mapping_and_coastal_evidence": "one orientation-evidence interaction",
+    "technical_fingerprints": "two evidence interactions"
+  },
+  "mobile_scroll_reduction": {
+    "6341302200": "50.2%",
+    "3506320400": "52.5%",
+    "4304211000": "42.5%"
+  },
+  "map_decision": "DEFERRED_NON_BLOCKING",
+  "map_reason": "Visible zone percentages, independent zone groups, and a prominent split-zone callout make the bounded fixtures understandable without introducing a static geometry panel or map dependency.",
+  "remaining_ui_gaps": [
+    "A parcel map could improve spatial orientation in a later runtime-integrated design.",
+    "The split-zone page remains longer than the single-zone pages because it preserves both zoning and investigation evidence."
+  ],
+  "production_runtime_wired": false,
+  "parcel_compliance_evaluated": false,
+  "development_capacity_calculated": false
+}

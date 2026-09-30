@@ -36,6 +36,8 @@ Outside-Coastal and inside-Coastal results show their exact sealed standards ver
 
 Split-zone parcels show every material zone, its mapped coverage, and an independent standards group. APN `4304211000` therefore shows both RS-1-7 and OR-1-1; OR-1-1 remains visibly unsupported by the RS resolver. No standard is blended.
 
+Packet 20 adds a compact `At a glance` region with zoning, Coastal context, existing units, approximate parcel area, and standards state. The same first section states that development capacity is not evaluated. Mapping, Coastal, acquisition, and standards-version evidence are one disclosure away.
+
 RS-1-7 examples preserve their source meaning:
 
 - minimum lot width: `50 ft`;
@@ -47,11 +49,15 @@ Assessor facts remain `Existing dwelling units` and `Living area`; living area i
 
 Unknowns are ordered by materiality and linked to the corresponding Packet 18 action when one exists. Each action states why it matters, the evidence needed, and the blocked conclusion.
 
+Primary dimensional standards remain visible. Corner width, FAR, and density basis move into an `additional base standards` disclosure. Historical outlines, future-analysis unknowns, technical limitations, evidence collection details, and low-level provenance use progressive disclosure. No contract content is removed.
+
 ## Responsive and accessibility review
 
 The review set contains ten representative pages and browser checks at 390 × 844, 820 × 1180, and 1440 × 1000. Core comprehension uses cards rather than horizontal tables. Pages use one `h1`, ordered semantic section headings, native keyboard-operable `details`/`summary` controls, visible focus treatment, text status labels, and sufficient foreground/background contrast in the fixed palette.
 
 The three canonical parcels have mobile and desktop screenshots under `data/parcel-page-v2-ui/screenshots/`. Browser review also checks horizontal overflow, disclosure keyboard operation, status text, required sections, and console errors.
+
+The Packet 20 default mobile pages are 42.5–52.5 percent shorter than the Packet 19 renderings. The before/after contact sheet is `data/parcel-page-v2-ui/screenshots/before-after-contact-sheet.png`.
 
 ## Parcel V1 comparison
 
@@ -59,7 +65,7 @@ The structured comparison is recorded in `data/parcel-page-v2-ui/v1-comparison.j
 
 ## Remaining boundaries
 
-- **UI:** no map or production navigation is part of this static review artifact.
+- **UI:** no map or production navigation is part of this static review artifact. Zone percentages and the split-zone callout are sufficient for the bounded review; a parcel map remains a later enhancement.
 - **Runtime integration:** no route, loader, feature flag, or production read is wired.
 - **Compliance:** legal dimensions and conditional predicates remain unresolved; no rule is applied to the parcel.
 - **Capacity:** no unit or buildable-area calculation exists.

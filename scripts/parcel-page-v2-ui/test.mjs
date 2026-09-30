@@ -53,7 +53,8 @@ assert.equal(rs17.find((item) => item.label === "Minimum corner-lot width").valu
 assert.equal(rs17.find((item) => item.label === "Maximum structure height").value, "24/30 ft — condition-dependent");
 assert.equal(rs17.find((item) => item.label === "Maximum floor-area ratio").value, "Varies — additional rule conditions apply");
 assert.ok(rs17.filter((item) => item.state === "conditional").every((item) => item.conditions.length > 0));
-assert.match(html("6341302200"), /View exact condition/);
+assert.match(html("6341302200"), /Rule details/);
+assert.match(html("6341302200"), /Show 3 additional base standards/);
 
 // Split zones remain separate; unsupported non-RS evidence remains visible.
 const split = model("4304211000");
@@ -62,7 +63,9 @@ assert.deepEqual(split.orientation.zones.map((item) => item.code), ["RS-1-7", "O
 assert.equal(split.standardsGroups[1].state, "not_applicable");
 assert.match(html("4304211000"), /Standards outside this RS adapter/);
 assert.equal(split.safeguards.standardsBlended, false);
-assert.match(html("4304211000"), /no blended standard is selected/i);
+assert.match(html("4304211000"), /This parcel has split zoning/);
+assert.match(html("4304211000"), /has not selected a primary zone/);
+assert.match(html("4304211000"), /Partially available[\s\S]*Review required/);
 
 // UNKNOWN and source-unavailable values keep explicit language, never false or zero.
 const unmappedHtml = html("7600360300");
@@ -94,10 +97,12 @@ for (const fixture of fixtures.fixtures) {
   assert.match(page, /<html lang="en">/);
   assert.match(page, /<meta name="viewport"/);
   assert.equal((page.match(/<h1\b/g) || []).length, 1);
-  for (const heading of ["What applies here", "Base development standards", "Existing property facts", "What we don’t know yet", "Next investigation", "Evidence \/ How TruLot knows"]) assert.ok(page.includes(heading), `${fixture.apn}: ${heading}`);
+  for (const heading of ["At a glance", "Base development standards", "Existing property facts", "What we don’t know yet", "Next investigation", "Evidence \/ How TruLot knows"]) assert.ok(page.includes(heading), `${fixture.apn}: ${heading}`);
   assert.match(page, /<summary>/);
   assert.match(page, /<span class="sr-only">Status: <\/span>/);
   assert.match(page, /Development capacity[\s\S]*Not evaluated yet/);
+  assert.match(page, /TruLot has not claimed how many units/);
+  assert.match(page, /Review zoning, Coastal, and version evidence/);
   assert.doesNotMatch(page, /you can build|buildable units|maximum units|compliant|meets requirement|development potential/i);
   assert.doesNotMatch(page, /\/Users\/|TRULOT_|localhost|credential/i);
 }

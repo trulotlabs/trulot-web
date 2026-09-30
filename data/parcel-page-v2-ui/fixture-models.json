@@ -25,13 +25,27 @@
             {
               "code": "RS-1-7",
               "coverage": "100%",
-              "role": "single"
+              "role": "single",
+              "featureIds": [
+                "1324"
+              ]
             }
           ],
           "coastalLabel": "Outside Coastal Overlay Zone",
           "coastalState": "supported",
           "standardsVersion": "sd-rs-base-standards-2026-09-30-v0",
-          "standardsVersionState": "supported"
+          "standardsVersionState": "supported",
+          "mappingEvidence": {
+            "state": "SINGLE_ZONE",
+            "methodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+            "acquisition": "zoning-city-sd-20260930T024032Z"
+          },
+          "coastalEvidence": {
+            "areaShare": "0%",
+            "method": "coastal-overlay-union-positive-area-v1",
+            "acquisition": "coastal-city-sd-20260930T143055Z",
+            "featureIds": []
+          }
         },
         "standardsGroups": [
           {
@@ -246,7 +260,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "VERIFY_LEGAL_LOT_WIDTH"
+            "linkedAction": "VERIFY_LEGAL_LOT_WIDTH",
+            "group": "important"
           },
           {
             "label": "Legal lot depth",
@@ -254,7 +269,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Legal lot area",
@@ -262,7 +278,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Corner-lot status",
@@ -270,7 +287,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Front lot line",
@@ -279,7 +297,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "group": "important"
           },
           {
             "label": "Gross floor area",
@@ -288,7 +307,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "OBTAIN_GROSS_FLOOR_AREA"
+            "linkedAction": "OBTAIN_GROSS_FLOOR_AREA",
+            "group": "future"
           },
           {
             "label": "Conditional standards",
@@ -296,7 +316,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Conditional source rules are returned unevaluated.",
-            "source": "Parcel RS Standards Runtime V0"
+            "source": "Parcel RS Standards Runtime V0",
+            "group": "technical"
           },
           {
             "label": "Interior-side lot lines",
@@ -305,7 +326,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "group": "important"
           },
           {
             "label": "Legal street frontage",
@@ -313,7 +335,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "technical"
           },
           {
             "label": "Rear lot line",
@@ -322,13 +345,33 @@
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "group": "important"
+          },
+          {
+            "label": "Parcel slope",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
+          },
+          {
+            "label": "Street-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "group": "important"
           }
         ],
         "investigations": [
           {
             "action": "OBTAIN_GROSS_FLOOR_AREA",
-            "title": "Obtain Code-defined gross floor area",
+            "title": "Obtain gross floor area",
             "reason": "A sourced FAR rule exists while Code-defined gross floor area is unavailable.",
             "blockedConclusion": "FAR_UTILIZATION",
             "requiredEvidence": "Code-defined gross-floor-area measurement and legal lot-area denominator."
@@ -342,7 +385,7 @@
           },
           {
             "action": "VERIFY_LOT_LINE_DESIGNATIONS",
-            "title": "Verify legal lot-line designations",
+            "title": "Confirm lot-line designations",
             "reason": "Setback rules require front, side, street-side, and rear lot-line roles.",
             "blockedConclusion": "SETBACK_COMPLIANCE",
             "requiredEvidence": "Authoritative survey and Code-defined lot-line designations."
@@ -440,13 +483,29 @@
             {
               "code": "RS-1-7",
               "coverage": "100%",
-              "role": "single"
+              "role": "single",
+              "featureIds": [
+                "1374"
+              ]
             }
           ],
           "coastalLabel": "Inside Coastal Overlay Zone",
           "coastalState": "supported",
           "standardsVersion": "sd-rs-base-standards-inside-coastal-2026-09-10-v0",
-          "standardsVersionState": "supported"
+          "standardsVersionState": "supported",
+          "mappingEvidence": {
+            "state": "SINGLE_ZONE",
+            "methodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+            "acquisition": "zoning-city-sd-20260930T024032Z"
+          },
+          "coastalEvidence": {
+            "areaShare": "100%",
+            "method": "coastal-overlay-union-positive-area-v1",
+            "acquisition": "coastal-city-sd-20260930T143055Z",
+            "featureIds": [
+              "3"
+            ]
+          }
         },
         "standardsGroups": [
           {
@@ -649,7 +708,8 @@
             "stateLabel": "Not yet verified",
             "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "VERIFY_LEGAL_LOT_WIDTH"
+            "linkedAction": "VERIFY_LEGAL_LOT_WIDTH",
+            "group": "important"
           },
           {
             "label": "Legal lot depth",
@@ -657,7 +717,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Legal lot area",
@@ -665,7 +726,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Corner-lot status",
@@ -673,7 +735,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Front lot line",
@@ -682,7 +745,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate legal front lot lines.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "group": "important"
           },
           {
             "label": "Gross floor area",
@@ -691,7 +755,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "OBTAIN_GROSS_FLOOR_AREA"
+            "linkedAction": "OBTAIN_GROSS_FLOOR_AREA",
+            "group": "future"
           },
           {
             "label": "Conditional standards",
@@ -699,7 +764,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Conditional source rules are returned unevaluated.",
-            "source": "Parcel RS Standards Runtime V0"
+            "source": "Parcel RS Standards Runtime V0",
+            "group": "technical"
           },
           {
             "label": "Interior-side lot lines",
@@ -708,7 +774,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate interior side lot lines.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "group": "important"
           },
           {
             "label": "Legal street frontage",
@@ -716,7 +783,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative frontage or right-of-way relationship is present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "technical"
           },
           {
             "label": "Rear lot line",
@@ -725,13 +793,33 @@
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate rear lot lines.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "group": "important"
+          },
+          {
+            "label": "Parcel slope",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No terrain, survey elevation, or authoritative slope source is present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
+          },
+          {
+            "label": "Street-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate street side lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "group": "important"
           }
         ],
         "investigations": [
           {
             "action": "OBTAIN_GROSS_FLOOR_AREA",
-            "title": "Obtain Code-defined gross floor area",
+            "title": "Obtain gross floor area",
             "reason": "A sourced FAR rule exists while Code-defined gross floor area is unavailable.",
             "blockedConclusion": "FAR_UTILIZATION",
             "requiredEvidence": "Code-defined gross-floor-area measurement and legal lot-area denominator."
@@ -745,7 +833,7 @@
           },
           {
             "action": "VERIFY_LOT_LINE_DESIGNATIONS",
-            "title": "Verify legal lot-line designations",
+            "title": "Confirm lot-line designations",
             "reason": "Setback rules require front, side, street-side, and rear lot-line roles.",
             "blockedConclusion": "SETBACK_COMPLIANCE",
             "requiredEvidence": "Authoritative survey and Code-defined lot-line designations."
@@ -843,18 +931,35 @@
             {
               "code": "RS-1-7",
               "coverage": "64.3%",
-              "role": "material"
+              "role": "material",
+              "featureIds": [
+                "3688"
+              ]
             },
             {
               "code": "OR-1-1",
               "coverage": "35.7%",
-              "role": "material"
+              "role": "material",
+              "featureIds": [
+                "3696"
+              ]
             }
           ],
           "coastalLabel": "Outside Coastal Overlay Zone",
           "coastalState": "supported",
           "standardsVersion": "sd-rs-base-standards-2026-09-30-v0",
-          "standardsVersionState": "supported"
+          "standardsVersionState": "supported",
+          "mappingEvidence": {
+            "state": "MULTI_ZONE",
+            "methodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+            "acquisition": "zoning-city-sd-20260930T024032Z"
+          },
+          "coastalEvidence": {
+            "areaShare": "0%",
+            "method": "coastal-overlay-union-positive-area-v1",
+            "acquisition": "coastal-city-sd-20260930T143055Z",
+            "featureIds": []
+          }
         },
         "standardsGroups": [
           {
@@ -1061,7 +1166,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Every material zone is preserved separately; no blended standard is selected.",
             "source": "Base Zoning V2",
-            "linkedAction": "REVIEW_SPLIT_ZONE_GEOMETRY"
+            "linkedAction": "REVIEW_SPLIT_ZONE_GEOMETRY",
+            "group": "important"
           },
           {
             "label": "Non-RS base standards",
@@ -1070,7 +1176,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Non-RS zoning is preserved as evidence and is outside this resolver.",
             "source": "Parcel RS Standards Runtime V0",
-            "linkedAction": "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+            "linkedAction": "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+            "group": "important"
           },
           {
             "label": "Legal lot width",
@@ -1079,7 +1186,8 @@
             "stateLabel": "Not yet verified",
             "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "VERIFY_LEGAL_LOT_WIDTH"
+            "linkedAction": "VERIFY_LEGAL_LOT_WIDTH",
+            "group": "important"
           },
           {
             "label": "Legal lot depth",
@@ -1087,7 +1195,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Legal lot area",
@@ -1095,7 +1204,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Corner-lot status",
@@ -1103,7 +1213,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Front lot line",
@@ -1112,7 +1223,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate legal front lot lines.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "group": "important"
           },
           {
             "label": "Gross floor area",
@@ -1121,7 +1233,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "OBTAIN_GROSS_FLOOR_AREA"
+            "linkedAction": "OBTAIN_GROSS_FLOOR_AREA",
+            "group": "future"
           },
           {
             "label": "Conditional standards",
@@ -1129,7 +1242,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Conditional source rules are returned unevaluated.",
-            "source": "Parcel RS Standards Runtime V0"
+            "source": "Parcel RS Standards Runtime V0",
+            "group": "technical"
           },
           {
             "label": "Interior-side lot lines",
@@ -1138,13 +1252,52 @@
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate interior side lot lines.",
             "source": "RS Parcel Condition Inputs V0",
-            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS"
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "group": "important"
+          },
+          {
+            "label": "Legal street frontage",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative frontage or right-of-way relationship is present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "technical"
+          },
+          {
+            "label": "Rear lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate rear lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "group": "important"
+          },
+          {
+            "label": "Parcel slope",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No terrain, survey elevation, or authoritative slope source is present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
+          },
+          {
+            "label": "Street-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate street side lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "linkedAction": "VERIFY_LOT_LINE_DESIGNATIONS",
+            "group": "important"
           }
         ],
         "investigations": [
           {
             "action": "OBTAIN_GROSS_FLOOR_AREA",
-            "title": "Obtain Code-defined gross floor area",
+            "title": "Obtain gross floor area",
             "reason": "A sourced FAR rule exists while Code-defined gross floor area is unavailable.",
             "blockedConclusion": "FAR_UTILIZATION",
             "requiredEvidence": "Code-defined gross-floor-area measurement and legal lot-area denominator."
@@ -1172,7 +1325,7 @@
           },
           {
             "action": "VERIFY_LOT_LINE_DESIGNATIONS",
-            "title": "Verify legal lot-line designations",
+            "title": "Confirm lot-line designations",
             "reason": "Setback rules require front, side, street-side, and rear lot-line roles.",
             "blockedConclusion": "SETBACK_COMPLIANCE",
             "requiredEvidence": "Authoritative survey and Code-defined lot-line designations."
@@ -1270,18 +1423,35 @@
             {
               "code": "RS-1-7",
               "coverage": "97.7%",
-              "role": "candidate"
+              "role": "candidate",
+              "featureIds": [
+                "3688"
+              ]
             },
             {
               "code": "CC-3-9",
               "coverage": "2.4%",
-              "role": "candidate"
+              "role": "candidate",
+              "featureIds": [
+                "3686"
+              ]
             }
           ],
           "coastalLabel": "Outside Coastal Overlay Zone",
           "coastalState": "supported",
           "standardsVersion": "Not available until zoning is resolved",
-          "standardsVersionState": "unknown"
+          "standardsVersionState": "unknown",
+          "mappingEvidence": {
+            "state": "INDETERMINATE",
+            "methodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+            "acquisition": "zoning-city-sd-20260930T024032Z"
+          },
+          "coastalEvidence": {
+            "areaShare": "0%",
+            "method": "coastal-overlay-union-positive-area-v1",
+            "acquisition": "coastal-city-sd-20260930T143055Z",
+            "featureIds": []
+          }
         },
         "standardsGroups": [
           {
@@ -1343,7 +1513,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Candidate zoning evidence is preserved; no definitive standards set is selected.",
             "source": "Parcel RS Standards Runtime V0",
-            "linkedAction": "VERIFY_BASE_ZONING_MAPPING"
+            "linkedAction": "VERIFY_BASE_ZONING_MAPPING",
+            "group": "important"
           },
           {
             "label": "Legal lot width",
@@ -1351,7 +1522,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Legal lot depth",
@@ -1359,7 +1531,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Legal lot area",
@@ -1367,7 +1540,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Corner-lot status",
@@ -1375,7 +1549,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Front lot line",
@@ -1383,7 +1558,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate legal front lot lines.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Gross floor area",
@@ -1391,7 +1567,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Interior-side lot lines",
@@ -1399,7 +1576,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate interior side lot lines.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Legal street frontage",
@@ -1407,7 +1585,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative frontage or right-of-way relationship is present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "technical"
           },
           {
             "label": "Rear lot line",
@@ -1415,7 +1594,26 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate rear lot lines.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Parcel slope",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No terrain, survey elevation, or authoritative slope source is present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
+          },
+          {
+            "label": "Street-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate street side lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           }
         ],
         "investigations": [
@@ -1519,7 +1717,21 @@
           "coastalLabel": "Inside Coastal Overlay Zone",
           "coastalState": "supported",
           "standardsVersion": "Not available until zoning is resolved",
-          "standardsVersionState": "unknown"
+          "standardsVersionState": "unknown",
+          "mappingEvidence": {
+            "state": "UNMAPPED",
+            "methodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+            "acquisition": "Not available"
+          },
+          "coastalEvidence": {
+            "areaShare": "100%",
+            "method": "coastal-overlay-union-positive-area-v1",
+            "acquisition": "coastal-city-sd-20260930T143055Z",
+            "featureIds": [
+              "1",
+              "6"
+            ]
+          }
         },
         "standardsGroups": [
           {
@@ -1573,7 +1785,8 @@
             "stateLabel": "Not yet verified",
             "detail": "No definitive base-zone standards can be selected.",
             "source": "Parcel RS Standards Runtime V0",
-            "linkedAction": "VERIFY_BASE_ZONING_MAPPING"
+            "linkedAction": "VERIFY_BASE_ZONING_MAPPING",
+            "group": "important"
           },
           {
             "label": "Legal lot width",
@@ -1581,7 +1794,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Legal lot depth",
@@ -1589,7 +1803,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Legal lot area",
@@ -1597,7 +1812,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Corner-lot status",
@@ -1605,7 +1821,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Front lot line",
@@ -1613,7 +1830,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate legal front lot lines.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Gross floor area",
@@ -1621,7 +1839,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Existing dwelling units",
@@ -1630,7 +1849,8 @@
             "stateLabel": "Not yet verified",
             "detail": "A positive assessor unit count is not available.",
             "source": "Structure Facts V0",
-            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT",
+            "group": "future"
           },
           {
             "label": "Assessor living area",
@@ -1639,7 +1859,8 @@
             "stateLabel": "Not yet verified",
             "detail": "A positive valid assessor living-area value is not available.",
             "source": "Structure Facts V0",
-            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT",
+            "group": "future"
           },
           {
             "label": "Interior-side lot lines",
@@ -1647,7 +1868,44 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate interior side lot lines.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Legal street frontage",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative frontage or right-of-way relationship is present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "technical"
+          },
+          {
+            "label": "Rear lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate rear lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Parcel slope",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No terrain, survey elevation, or authoritative slope source is present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
+          },
+          {
+            "label": "Street-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate street side lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           }
         ],
         "investigations": [
@@ -1758,13 +2016,29 @@
             {
               "code": "AR-1-1",
               "coverage": "100%",
-              "role": "single"
+              "role": "single",
+              "featureIds": [
+                "3024"
+              ]
             }
           ],
           "coastalLabel": "Coastal applicability requires review",
           "coastalState": "review",
           "standardsVersion": "Not selected — Coastal applicability unresolved",
-          "standardsVersionState": "review"
+          "standardsVersionState": "review",
+          "mappingEvidence": {
+            "state": "SINGLE_ZONE",
+            "methodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+            "acquisition": "zoning-city-sd-20260930T024032Z"
+          },
+          "coastalEvidence": {
+            "areaShare": "50.1%",
+            "method": "coastal-overlay-union-positive-area-v1",
+            "acquisition": "coastal-city-sd-20260930T143055Z",
+            "featureIds": [
+              "5"
+            ]
+          }
         },
         "standardsGroups": [
           {
@@ -1810,7 +2084,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Boundary-ambiguous or unresolved Coastal context cannot select a definitive standards version.",
             "source": "Parcel RS Standards Runtime V0",
-            "linkedAction": "VERIFY_COASTAL_APPLICABILITY"
+            "linkedAction": "VERIFY_COASTAL_APPLICABILITY",
+            "group": "important"
           },
           {
             "label": "Legal lot width",
@@ -1818,7 +2093,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Legal lot depth",
@@ -1826,7 +2102,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Legal lot area",
@@ -1834,7 +2111,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Corner-lot status",
@@ -1842,7 +2120,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Front lot line",
@@ -1850,7 +2129,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Gross floor area",
@@ -1858,7 +2138,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Existing dwelling units",
@@ -1867,7 +2148,8 @@
             "stateLabel": "Source currently unavailable",
             "detail": "A positive assessor unit count is not available.",
             "source": "Structure Facts V0",
-            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT",
+            "group": "future"
           },
           {
             "label": "Assessor living area",
@@ -1876,7 +2158,8 @@
             "stateLabel": "Source currently unavailable",
             "detail": "A positive valid assessor living-area value is not available.",
             "source": "Structure Facts V0",
-            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT",
+            "group": "future"
           },
           {
             "label": "Situs address",
@@ -1885,7 +2168,53 @@
             "stateLabel": "Not yet verified",
             "detail": "No normalized situs address is present.",
             "source": "Parcel V2",
-            "linkedAction": "VERIFY_PARCEL_SITUS"
+            "linkedAction": "VERIFY_PARCEL_SITUS",
+            "group": "important"
+          },
+          {
+            "label": "Interior-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Legal street frontage",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "technical"
+          },
+          {
+            "label": "Rear lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Parcel slope",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
+          },
+          {
+            "label": "Street-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           }
         ],
         "investigations": [
@@ -2003,13 +2332,27 @@
             {
               "code": "IP-2-1",
               "coverage": "100%",
-              "role": "single"
+              "role": "single",
+              "featureIds": [
+                "591"
+              ]
             }
           ],
           "coastalLabel": "Outside Coastal Overlay Zone",
           "coastalState": "supported",
           "standardsVersion": "sd-rs-base-standards-2026-09-30-v0",
-          "standardsVersionState": "supported"
+          "standardsVersionState": "supported",
+          "mappingEvidence": {
+            "state": "SINGLE_ZONE",
+            "methodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+            "acquisition": "zoning-city-sd-20260930T024032Z"
+          },
+          "coastalEvidence": {
+            "areaShare": "0%",
+            "method": "coastal-overlay-union-positive-area-v1",
+            "acquisition": "coastal-city-sd-20260930T143055Z",
+            "featureIds": []
+          }
         },
         "standardsGroups": [
           {
@@ -2063,7 +2406,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Non-RS zoning is preserved as evidence and is outside this resolver.",
             "source": "Parcel RS Standards Runtime V0",
-            "linkedAction": "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+            "linkedAction": "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+            "group": "important"
           },
           {
             "label": "Legal lot width",
@@ -2071,7 +2415,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Legal lot depth",
@@ -2079,7 +2424,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Legal lot area",
@@ -2087,7 +2433,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Corner-lot status",
@@ -2095,7 +2442,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Front lot line",
@@ -2103,7 +2451,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate legal front lot lines.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Gross floor area",
@@ -2111,7 +2460,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Existing dwelling units",
@@ -2120,7 +2470,8 @@
             "stateLabel": "Not yet verified",
             "detail": "A positive assessor unit count is not available.",
             "source": "Structure Facts V0",
-            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT",
+            "group": "future"
           },
           {
             "label": "Assessor living area",
@@ -2129,7 +2480,8 @@
             "stateLabel": "Not yet verified",
             "detail": "A positive valid assessor living-area value is not available.",
             "source": "Structure Facts V0",
-            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT",
+            "group": "future"
           },
           {
             "label": "Situs address",
@@ -2138,7 +2490,53 @@
             "stateLabel": "Not yet verified",
             "detail": "No normalized situs address is present.",
             "source": "Parcel V2",
-            "linkedAction": "VERIFY_PARCEL_SITUS"
+            "linkedAction": "VERIFY_PARCEL_SITUS",
+            "group": "important"
+          },
+          {
+            "label": "Interior-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate interior side lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Legal street frontage",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative frontage or right-of-way relationship is present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "technical"
+          },
+          {
+            "label": "Rear lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate rear lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Parcel slope",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No terrain, survey elevation, or authoritative slope source is present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
+          },
+          {
+            "label": "Street-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate street side lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           }
         ],
         "investigations": [
@@ -2256,7 +2654,18 @@
           "coastalLabel": "Coastal source currently unavailable",
           "coastalState": "unavailable",
           "standardsVersion": "Not available until zoning is resolved",
-          "standardsVersionState": "unknown"
+          "standardsVersionState": "unknown",
+          "mappingEvidence": {
+            "state": "UNAVAILABLE",
+            "methodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+            "acquisition": "zoning-city-sd-20260930T024032Z"
+          },
+          "coastalEvidence": {
+            "areaShare": null,
+            "method": "coastal-overlay-union-positive-area-v1",
+            "acquisition": "coastal-city-sd-20260930T143055Z",
+            "featureIds": []
+          }
         },
         "standardsGroups": [
           {
@@ -2309,7 +2718,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Legal lot depth",
@@ -2317,7 +2727,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Legal lot area",
@@ -2325,7 +2736,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Corner-lot status",
@@ -2333,7 +2745,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Front lot line",
@@ -2341,7 +2754,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Gross floor area",
@@ -2349,7 +2763,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Unknown is not zero or false.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Existing dwelling units",
@@ -2358,7 +2773,8 @@
             "stateLabel": "Source currently unavailable",
             "detail": "A positive assessor unit count is not available.",
             "source": "Structure Facts V0",
-            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT",
+            "group": "future"
           },
           {
             "label": "Assessor living area",
@@ -2367,7 +2783,8 @@
             "stateLabel": "Source currently unavailable",
             "detail": "A positive valid assessor living-area value is not available.",
             "source": "Structure Facts V0",
-            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT",
+            "group": "future"
           },
           {
             "label": "base zoning source unavailable",
@@ -2376,7 +2793,8 @@
             "stateLabel": "Source currently unavailable",
             "detail": "Base Zoning V2 source is unavailable.",
             "source": "Base Zoning V2",
-            "linkedAction": "VERIFY_BASE_ZONING_MAPPING"
+            "linkedAction": "VERIFY_BASE_ZONING_MAPPING",
+            "group": "technical"
           },
           {
             "label": "coastal source unavailable",
@@ -2384,7 +2802,62 @@
             "state": "unavailable",
             "stateLabel": "Source currently unavailable",
             "detail": "Coastal Context V0 source is unavailable.",
-            "source": "Coastal Context V0"
+            "source": "Coastal Context V0",
+            "group": "technical"
+          },
+          {
+            "label": "Interior-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Legal street frontage",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "technical"
+          },
+          {
+            "label": "Rear lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Parcel slope",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
+          },
+          {
+            "label": "standards input unavailable",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Identity or zoning input is unavailable.",
+            "source": "Parcel RS Standards Runtime V0",
+            "group": "technical"
+          },
+          {
+            "label": "Street-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Unknown is not zero or false.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           }
         ],
         "investigations": [
@@ -2495,13 +2968,27 @@
             {
               "code": "AR-1-1",
               "coverage": "100%",
-              "role": "single"
+              "role": "single",
+              "featureIds": [
+                "1651"
+              ]
             }
           ],
           "coastalLabel": "Outside Coastal Overlay Zone",
           "coastalState": "supported",
           "standardsVersion": "sd-rs-base-standards-2026-09-30-v0",
-          "standardsVersionState": "supported"
+          "standardsVersionState": "supported",
+          "mappingEvidence": {
+            "state": "SINGLE_ZONE",
+            "methodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+            "acquisition": "zoning-city-sd-20260930T024032Z"
+          },
+          "coastalEvidence": {
+            "areaShare": "0%",
+            "method": "coastal-overlay-union-positive-area-v1",
+            "acquisition": "coastal-city-sd-20260930T143055Z",
+            "featureIds": []
+          }
         },
         "standardsGroups": [
           {
@@ -2547,7 +3034,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Non-RS zoning is preserved as evidence and is outside this resolver.",
             "source": "Parcel RS Standards Runtime V0",
-            "linkedAction": "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+            "linkedAction": "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+            "group": "important"
           },
           {
             "label": "Legal lot width",
@@ -2555,7 +3043,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Legal lot depth",
@@ -2563,7 +3052,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Legal lot area",
@@ -2571,7 +3061,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Corner-lot status",
@@ -2579,7 +3070,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Front lot line",
@@ -2587,7 +3079,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate legal front lot lines.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Gross floor area",
@@ -2595,7 +3088,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Existing dwelling units",
@@ -2604,7 +3098,8 @@
             "stateLabel": "Not yet verified",
             "detail": "A positive assessor unit count is not available.",
             "source": "Structure Facts V0",
-            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT",
+            "group": "future"
           },
           {
             "label": "Assessor living area",
@@ -2613,7 +3108,8 @@
             "stateLabel": "Not yet verified",
             "detail": "A positive valid assessor living-area value is not available.",
             "source": "Structure Facts V0",
-            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT",
+            "group": "future"
           },
           {
             "label": "Situs address",
@@ -2622,7 +3118,53 @@
             "stateLabel": "Not yet verified",
             "detail": "No normalized situs address is present.",
             "source": "Parcel V2",
-            "linkedAction": "VERIFY_PARCEL_SITUS"
+            "linkedAction": "VERIFY_PARCEL_SITUS",
+            "group": "important"
+          },
+          {
+            "label": "Interior-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate interior side lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Legal street frontage",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative frontage or right-of-way relationship is present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "technical"
+          },
+          {
+            "label": "Rear lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate rear lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Parcel slope",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No terrain, survey elevation, or authoritative slope source is present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
+          },
+          {
+            "label": "Street-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate street side lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           }
         ],
         "investigations": [
@@ -2740,18 +3282,39 @@
             {
               "code": "AG-1-1",
               "coverage": "83.9%",
-              "role": "material"
+              "role": "material",
+              "featureIds": [
+                "70",
+                "77",
+                "80",
+                "83"
+              ]
             },
             {
               "code": "AR-1-1",
               "coverage": "16.1%",
-              "role": "material"
+              "role": "material",
+              "featureIds": [
+                "211",
+                "213"
+              ]
             }
           ],
           "coastalLabel": "Outside Coastal Overlay Zone",
           "coastalState": "supported",
           "standardsVersion": "sd-rs-base-standards-2026-09-30-v0",
-          "standardsVersionState": "supported"
+          "standardsVersionState": "supported",
+          "mappingEvidence": {
+            "state": "MULTI_ZONE",
+            "methodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+            "acquisition": "zoning-city-sd-20260930T024032Z"
+          },
+          "coastalEvidence": {
+            "areaShare": "0%",
+            "method": "coastal-overlay-union-positive-area-v1",
+            "acquisition": "coastal-city-sd-20260930T143055Z",
+            "featureIds": []
+          }
         },
         "standardsGroups": [
           {
@@ -2813,7 +3376,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Every material zone is preserved separately; no blended standard is selected.",
             "source": "Base Zoning V2",
-            "linkedAction": "REVIEW_SPLIT_ZONE_GEOMETRY"
+            "linkedAction": "REVIEW_SPLIT_ZONE_GEOMETRY",
+            "group": "important"
           },
           {
             "label": "Non-RS base standards",
@@ -2822,7 +3386,8 @@
             "stateLabel": "Not yet verified",
             "detail": "Non-RS zoning is preserved as evidence and is outside this resolver.",
             "source": "Parcel RS Standards Runtime V0",
-            "linkedAction": "OBTAIN_SUPPORTED_ZONE_STANDARDS"
+            "linkedAction": "OBTAIN_SUPPORTED_ZONE_STANDARDS",
+            "group": "important"
           },
           {
             "label": "Legal lot width",
@@ -2830,7 +3395,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative lot-line designations or Code measurement baseline are present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Legal lot depth",
@@ -2838,7 +3404,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "No authoritative front/rear lot lines or Code measurement baseline are present.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Legal lot area",
@@ -2846,7 +3413,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel geometry area and taxable acreage do not establish the Code-defined or legally recognized lot area.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Corner-lot status",
@@ -2854,7 +3422,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel shape and situs text do not establish Code-defined corner-lot status.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Front lot line",
@@ -2862,7 +3431,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Current parcel data does not designate legal front lot lines.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           },
           {
             "label": "Gross floor area",
@@ -2870,7 +3440,8 @@
             "state": "unknown",
             "stateLabel": "Not yet verified",
             "detail": "Parcel V2 contains no gross floor area; assessed living area is not a substitute.",
-            "source": "RS Parcel Condition Inputs V0"
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
           },
           {
             "label": "Existing dwelling units",
@@ -2879,7 +3450,8 @@
             "stateLabel": "Not yet verified",
             "detail": "A positive assessor unit count is not available.",
             "source": "Structure Facts V0",
-            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT",
+            "group": "future"
           },
           {
             "label": "Assessor living area",
@@ -2888,7 +3460,63 @@
             "stateLabel": "Not yet verified",
             "detail": "A positive valid assessor living-area value is not available.",
             "source": "Structure Facts V0",
-            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT"
+            "linkedAction": "VERIFY_EXISTING_UNIT_COUNT",
+            "group": "future"
+          },
+          {
+            "label": "Situs address",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No normalized situs address is present.",
+            "source": "Parcel V2",
+            "linkedAction": "VERIFY_PARCEL_SITUS",
+            "group": "important"
+          },
+          {
+            "label": "Interior-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate interior side lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Legal street frontage",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No authoritative frontage or right-of-way relationship is present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "technical"
+          },
+          {
+            "label": "Rear lot line",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate rear lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
+          },
+          {
+            "label": "Parcel slope",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "No terrain, survey elevation, or authoritative slope source is present.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "future"
+          },
+          {
+            "label": "Street-side lot lines",
+            "value": "Not yet verified",
+            "state": "unknown",
+            "stateLabel": "Not yet verified",
+            "detail": "Current parcel data does not designate street side lot lines.",
+            "source": "RS Parcel Condition Inputs V0",
+            "group": "important"
           }
         ],
         "investigations": [
