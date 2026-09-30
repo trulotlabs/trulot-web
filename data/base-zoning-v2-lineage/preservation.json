@@ -1,0 +1,11 @@
+{
+  "deployed": false,
+  "identityExceptionDecision": "PARCEL_V2_IDENTITY_EXCEPTIONS_NOT_BOUNDED",
+  "parcelV1Changed": false,
+  "productionMappingLoad": false,
+  "productionMutation": false,
+  "productionZoningLoad": false,
+  "pushed": false,
+  "shadowReads": false,
+  "v2Selection": false
+}

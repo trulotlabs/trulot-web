@@ -1,0 +1,17 @@
+{
+  "basis": "Current official artifact is byte-identical to the prior source, validation and full mapping are deterministic, all truth states reconcile, and integrated serving preserves Parcel V2 identity.",
+  "decision": "BASE_ZONING_V2_READY_FOR_BOUNDED_PRODUCTION_LOAD",
+  "identityCutoverAuthorized": false,
+  "productionLoadPerformed": false,
+  "remainingBlockers": [
+    "Packet 8 identity exceptions remain unbounded, so identity-dependent shadow serving and cutover remain blocked.",
+    "327 parcels remain explicitly UNMAPPED and 1,641 remain AMBIGUOUS; serving must preserve these truth states.",
+    "26 invalid source polygons remain quarantined; mapping uses separately labeled bounded make-valid derivatives.",
+    "The publisher provides per-feature implementation dates but no single dataset-wide legal effective date.",
+    "Authoritative metadata does not establish intended rights-of-way/nonparcel coverage semantics.",
+    "The V1 comparison is a 146-APN stratified sample because no sealed full V1 zoning export was available; V1 is not treated as authority.",
+    "Production load, selection, and shadow reads require separate authorization."
+  ],
+  "selectionPerformed": false,
+  "shadowReadsEnabled": false
+}

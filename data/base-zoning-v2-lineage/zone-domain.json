@@ -1,0 +1,1493 @@
+{
+  "categoryCodeCounts": {
+    "COMMERCIAL": 43,
+    "INDUSTRIAL": 10,
+    "MIXED": 6,
+    "OTHER_BASE": 9,
+    "PLANNED_OR_SPECIAL": 83,
+    "RESIDENTIAL": 31,
+    "SOURCE_LITERAL_UNZONED": 1
+  },
+  "categoryFeatureCounts": {
+    "COMMERCIAL": 653,
+    "INDUSTRIAL": 197,
+    "MIXED": 69,
+    "OTHER_BASE": 815,
+    "PLANNED_OR_SPECIAL": 335,
+    "RESIDENTIAL": 1631,
+    "SOURCE_LITERAL_UNZONED": 6
+  },
+  "codes": [
+    {
+      "acceptedFeatures": 26,
+      "category": "OTHER_BASE",
+      "normalizedZoneCode": "AG-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "AG-1-1",
+      "sourceFeatures": 26
+    },
+    {
+      "acceptedFeatures": 223,
+      "category": "OTHER_BASE",
+      "normalizedZoneCode": "AR-1-1",
+      "quarantinedFeatures": 2,
+      "rawZoneCode": "AR-1-1",
+      "sourceFeatures": 225
+    },
+    {
+      "acceptedFeatures": 42,
+      "category": "OTHER_BASE",
+      "normalizedZoneCode": "AR-1-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "AR-1-2",
+      "sourceFeatures": 42
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-1-1",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-1-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-1-2",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 76,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-1-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-1-3",
+      "sourceFeatures": 76
+    },
+    {
+      "acceptedFeatures": 13,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-2-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-2-1",
+      "sourceFeatures": 13
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-2-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-2-2",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 34,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-2-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-2-3",
+      "sourceFeatures": 34
+    },
+    {
+      "acceptedFeatures": 5,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-2-4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-2-4",
+      "sourceFeatures": 5
+    },
+    {
+      "acceptedFeatures": 9,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-2-5",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-2-5",
+      "sourceFeatures": 9
+    },
+    {
+      "acceptedFeatures": 5,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-3-10",
+      "quarantinedFeatures": 1,
+      "rawZoneCode": "CC-3-10",
+      "sourceFeatures": 6
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-3-11",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-3-11",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 21,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-3-4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-3-4",
+      "sourceFeatures": 21
+    },
+    {
+      "acceptedFeatures": 15,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-3-5",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-3-5",
+      "sourceFeatures": 15
+    },
+    {
+      "acceptedFeatures": 40,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-3-6",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-3-6",
+      "sourceFeatures": 40
+    },
+    {
+      "acceptedFeatures": 14,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-3-7",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-3-7",
+      "sourceFeatures": 14
+    },
+    {
+      "acceptedFeatures": 45,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-3-8",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-3-8",
+      "sourceFeatures": 45
+    },
+    {
+      "acceptedFeatures": 26,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-3-9",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-3-9",
+      "sourceFeatures": 26
+    },
+    {
+      "acceptedFeatures": 17,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-4-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-4-2",
+      "sourceFeatures": 17
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-4-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-4-3",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 31,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-4-5",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-4-5",
+      "sourceFeatures": 31
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-4-6",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-4-6",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 5,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-5-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-5-1",
+      "sourceFeatures": 5
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-5-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-5-2",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 7,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-5-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-5-3",
+      "sourceFeatures": 7
+    },
+    {
+      "acceptedFeatures": 7,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-5-4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-5-4",
+      "sourceFeatures": 7
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CC-5-5",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CC-5-5",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 3,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CCPD-BP",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CCPD-BP",
+      "sourceFeatures": 3
+    },
+    {
+      "acceptedFeatures": 3,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CCPD-CORE",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CCPD-CORE",
+      "sourceFeatures": 3
+    },
+    {
+      "acceptedFeatures": 11,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CCPD-ER",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CCPD-ER",
+      "sourceFeatures": 11
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CCPD-I",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CCPD-I",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 5,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CCPD-MC",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CCPD-MC",
+      "sourceFeatures": 5
+    },
+    {
+      "acceptedFeatures": 8,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CCPD-NC",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CCPD-NC",
+      "sourceFeatures": 8
+    },
+    {
+      "acceptedFeatures": 26,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CCPD-OS",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CCPD-OS",
+      "sourceFeatures": 26
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CCPD-PC",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CCPD-PC",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 12,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CCPD-RE",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CCPD-RE",
+      "sourceFeatures": 12
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CCPD-T",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CCPD-T",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 3,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CN-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CN-1-1",
+      "sourceFeatures": 3
+    },
+    {
+      "acceptedFeatures": 70,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CN-1-2",
+      "quarantinedFeatures": 1,
+      "rawZoneCode": "CN-1-2",
+      "sourceFeatures": 71
+    },
+    {
+      "acceptedFeatures": 41,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CN-1-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CN-1-3",
+      "sourceFeatures": 41
+    },
+    {
+      "acceptedFeatures": 23,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CN-1-4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CN-1-4",
+      "sourceFeatures": 23
+    },
+    {
+      "acceptedFeatures": 3,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CN-1-5",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CN-1-5",
+      "sourceFeatures": 3
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CN-1-6",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CN-1-6",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 3,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CO-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CO-1-1",
+      "sourceFeatures": 3
+    },
+    {
+      "acceptedFeatures": 46,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CO-1-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CO-1-2",
+      "sourceFeatures": 46
+    },
+    {
+      "acceptedFeatures": 5,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CO-2-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CO-2-1",
+      "sourceFeatures": 5
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CO-2-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CO-2-2",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 5,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CO-3-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CO-3-1",
+      "sourceFeatures": 5
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CO-3-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CO-3-2",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 3,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CO-3-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CO-3-3",
+      "sourceFeatures": 3
+    },
+    {
+      "acceptedFeatures": 9,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CP-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CP-1-1",
+      "sourceFeatures": 9
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CR-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CR-1-1",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 7,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CR-2-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CR-2-1",
+      "sourceFeatures": 7
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CSPD-CASS-STREET",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CSPD-CASS-STREET",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 18,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CT-2-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CT-2-3",
+      "sourceFeatures": 18
+    },
+    {
+      "acceptedFeatures": 15,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CT-2-4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CT-2-4",
+      "sourceFeatures": 15
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CT-3-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CT-3-3",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 7,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CT-5-4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CT-5-4",
+      "sourceFeatures": 7
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CU-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CU-1-1",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CU-1-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CU-1-2",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 12,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CU-2-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CU-2-3",
+      "sourceFeatures": 12
+    },
+    {
+      "acceptedFeatures": 8,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CU-2-4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CU-2-4",
+      "sourceFeatures": 8
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CU-2-5",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CU-2-5",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CU-3-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CU-3-3",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CU-3-6",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CU-3-6",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CU-3-7",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CU-3-7",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CUPD-CU-3-8",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CUPD-CU-3-8",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 23,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CV-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CV-1-1",
+      "sourceFeatures": 23
+    },
+    {
+      "acceptedFeatures": 14,
+      "category": "COMMERCIAL",
+      "normalizedZoneCode": "CV-1-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CV-1-2",
+      "sourceFeatures": 14
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-EC",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-EC",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 9,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-EP",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-EP",
+      "sourceFeatures": 9
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-MC",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-MC",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 11,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-MF1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-MF1",
+      "sourceFeatures": 11
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-MF2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-MF2",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 5,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-MF3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-MF3",
+      "sourceFeatures": 5
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-MF4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-MF4",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-MFL",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-MFL",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-NC",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-NC",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 26,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-OS",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-OS",
+      "sourceFeatures": 26
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-SC",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-SC",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-SF",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-SF",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 6,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-SF1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-SF1",
+      "sourceFeatures": 6
+    },
+    {
+      "acceptedFeatures": 6,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-SF1A",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-SF1A",
+      "sourceFeatures": 6
+    },
+    {
+      "acceptedFeatures": 10,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-SF2",
+      "quarantinedFeatures": 1,
+      "rawZoneCode": "CVPD-SF2",
+      "sourceFeatures": 11
+    },
+    {
+      "acceptedFeatures": 15,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-SF3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-SF3",
+      "sourceFeatures": 15
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-SF4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-SF4",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-SP",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-SP",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-TC",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-TC",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "CVPD-VC",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "CVPD-VC",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 23,
+      "category": "MIXED",
+      "normalizedZoneCode": "EMX-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "EMX-1",
+      "sourceFeatures": 23
+    },
+    {
+      "acceptedFeatures": 16,
+      "category": "MIXED",
+      "normalizedZoneCode": "EMX-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "EMX-2",
+      "sourceFeatures": 16
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "MIXED",
+      "normalizedZoneCode": "EMX-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "EMX-3",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "GQPD-GASLAMP-QTR",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "GQPD-GASLAMP-QTR",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 7,
+      "category": "INDUSTRIAL",
+      "normalizedZoneCode": "IBT-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "IBT-1-1",
+      "sourceFeatures": 7
+    },
+    {
+      "acceptedFeatures": 10,
+      "category": "INDUSTRIAL",
+      "normalizedZoneCode": "IH-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "IH-1-1",
+      "sourceFeatures": 10
+    },
+    {
+      "acceptedFeatures": 10,
+      "category": "INDUSTRIAL",
+      "normalizedZoneCode": "IH-2-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "IH-2-1",
+      "sourceFeatures": 10
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "INDUSTRIAL",
+      "normalizedZoneCode": "IL-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "IL-1-1",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 52,
+      "category": "INDUSTRIAL",
+      "normalizedZoneCode": "IL-2-1",
+      "quarantinedFeatures": 2,
+      "rawZoneCode": "IL-2-1",
+      "sourceFeatures": 54
+    },
+    {
+      "acceptedFeatures": 58,
+      "category": "INDUSTRIAL",
+      "normalizedZoneCode": "IL-3-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "IL-3-1",
+      "sourceFeatures": 58
+    },
+    {
+      "acceptedFeatures": 15,
+      "category": "INDUSTRIAL",
+      "normalizedZoneCode": "IP-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "IP-1-1",
+      "sourceFeatures": 15
+    },
+    {
+      "acceptedFeatures": 27,
+      "category": "INDUSTRIAL",
+      "normalizedZoneCode": "IP-2-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "IP-2-1",
+      "sourceFeatures": 27
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "INDUSTRIAL",
+      "normalizedZoneCode": "IP-3-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "IP-3-1",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 12,
+      "category": "INDUSTRIAL",
+      "normalizedZoneCode": "IS-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "IS-1-1",
+      "sourceFeatures": 12
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJPD-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJPD-1",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJPD-1A",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJPD-1A",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJPD-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJPD-2",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJPD-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJPD-3",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 6,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJPD-4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJPD-4",
+      "sourceFeatures": 6
+    },
+    {
+      "acceptedFeatures": 5,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJPD-5",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJPD-5",
+      "sourceFeatures": 5
+    },
+    {
+      "acceptedFeatures": 3,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJPD-5A",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJPD-5A",
+      "sourceFeatures": 3
+    },
+    {
+      "acceptedFeatures": 3,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJPD-6",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJPD-6",
+      "sourceFeatures": 3
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJPD-6A",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJPD-6A",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJSPD-CC",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJSPD-CC",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJSPD-MF1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJSPD-MF1",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJSPD-MF2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJSPD-MF2",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJSPD-PRF",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJSPD-PRF",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 0,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJSPD-SF",
+      "quarantinedFeatures": 1,
+      "rawZoneCode": "LJSPD-SF",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJSPD-V",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJSPD-V",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "LJSPD-YMCA",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "LJSPD-YMCA",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "MBPD-NC-N",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "MBPD-NC-N",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 3,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "MBPD-NC-S",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "MBPD-NC-S",
+      "sourceFeatures": 3
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "MBPD-R-N",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "MBPD-R-N",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "MBPD-R-S",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "MBPD-R-S",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "MBPD-VC-N",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "MBPD-VC-N",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "MBPD-VC-S",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "MBPD-VC-S",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "MPD-MARINA",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "MPD-MARINA",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 74,
+      "category": "OTHER_BASE",
+      "normalizedZoneCode": "OC-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OC-1-1",
+      "sourceFeatures": 74
+    },
+    {
+      "acceptedFeatures": 19,
+      "category": "OTHER_BASE",
+      "normalizedZoneCode": "OF-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OF-1-1",
+      "sourceFeatures": 19
+    },
+    {
+      "acceptedFeatures": 197,
+      "category": "OTHER_BASE",
+      "normalizedZoneCode": "OP-1-1",
+      "quarantinedFeatures": 1,
+      "rawZoneCode": "OP-1-1",
+      "sourceFeatures": 198
+    },
+    {
+      "acceptedFeatures": 45,
+      "category": "OTHER_BASE",
+      "normalizedZoneCode": "OP-2-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OP-2-1",
+      "sourceFeatures": 45
+    },
+    {
+      "acceptedFeatures": 170,
+      "category": "OTHER_BASE",
+      "normalizedZoneCode": "OR-1-1",
+      "quarantinedFeatures": 1,
+      "rawZoneCode": "OR-1-1",
+      "sourceFeatures": 171
+    },
+    {
+      "acceptedFeatures": 15,
+      "category": "OTHER_BASE",
+      "normalizedZoneCode": "OR-1-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OR-1-2",
+      "sourceFeatures": 15
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTCC-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTCC-1-1",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTCC-2-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTCC-2-1",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTCC-2-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTCC-2-2",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTCC-2-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTCC-2-3",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTCC-3-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTCC-3-1",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTCC-3-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTCC-3-2",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTMCR-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTMCR-1-1",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTMCR-1-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTMCR-1-2",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTMCR-1-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTMCR-1-3",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTOP-1-1",
+      "quarantinedFeatures": 1,
+      "rawZoneCode": "OTOP-1-1",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTOP-2-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTOP-2-1",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTRM-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTRM-1-1",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTRM-2-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTRM-2-1",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTRM-2-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTRM-2-2",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "PLANNED_OR_SPECIAL",
+      "normalizedZoneCode": "OTRS-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "OTRS-1-1",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 267,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RM-1-1",
+      "quarantinedFeatures": 3,
+      "rawZoneCode": "RM-1-1",
+      "sourceFeatures": 270
+    },
+    {
+      "acceptedFeatures": 28,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RM-1-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RM-1-2",
+      "sourceFeatures": 28
+    },
+    {
+      "acceptedFeatures": 30,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RM-1-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RM-1-3",
+      "sourceFeatures": 30
+    },
+    {
+      "acceptedFeatures": 16,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RM-2-4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RM-2-4",
+      "sourceFeatures": 16
+    },
+    {
+      "acceptedFeatures": 248,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RM-2-5",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RM-2-5",
+      "sourceFeatures": 248
+    },
+    {
+      "acceptedFeatures": 15,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RM-2-6",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RM-2-6",
+      "sourceFeatures": 15
+    },
+    {
+      "acceptedFeatures": 134,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RM-3-7",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RM-3-7",
+      "sourceFeatures": 134
+    },
+    {
+      "acceptedFeatures": 27,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RM-3-8",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RM-3-8",
+      "sourceFeatures": 27
+    },
+    {
+      "acceptedFeatures": 63,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RM-3-9",
+      "quarantinedFeatures": 1,
+      "rawZoneCode": "RM-3-9",
+      "sourceFeatures": 64
+    },
+    {
+      "acceptedFeatures": 59,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RM-4-10",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RM-4-10",
+      "sourceFeatures": 59
+    },
+    {
+      "acceptedFeatures": 3,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RM-4-11",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RM-4-11",
+      "sourceFeatures": 3
+    },
+    {
+      "acceptedFeatures": 11,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RM-5-12",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RM-5-12",
+      "sourceFeatures": 11
+    },
+    {
+      "acceptedFeatures": 12,
+      "category": "MIXED",
+      "normalizedZoneCode": "RMX-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RMX-1",
+      "sourceFeatures": 12
+    },
+    {
+      "acceptedFeatures": 14,
+      "category": "MIXED",
+      "normalizedZoneCode": "RMX-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RMX-2",
+      "sourceFeatures": 14
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "MIXED",
+      "normalizedZoneCode": "RMX-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RMX-3",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 228,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RS-1-1",
+      "sourceFeatures": 228
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-10",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RS-1-10",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 11,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-11",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RS-1-11",
+      "sourceFeatures": 11
+    },
+    {
+      "acceptedFeatures": 8,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-12",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RS-1-12",
+      "sourceFeatures": 8
+    },
+    {
+      "acceptedFeatures": 21,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-13",
+      "quarantinedFeatures": 1,
+      "rawZoneCode": "RS-1-13",
+      "sourceFeatures": 22
+    },
+    {
+      "acceptedFeatures": 103,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-14",
+      "quarantinedFeatures": 2,
+      "rawZoneCode": "RS-1-14",
+      "sourceFeatures": 105
+    },
+    {
+      "acceptedFeatures": 23,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-2",
+      "quarantinedFeatures": 1,
+      "rawZoneCode": "RS-1-2",
+      "sourceFeatures": 24
+    },
+    {
+      "acceptedFeatures": 22,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-3",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RS-1-3",
+      "sourceFeatures": 22
+    },
+    {
+      "acceptedFeatures": 46,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RS-1-4",
+      "sourceFeatures": 46
+    },
+    {
+      "acceptedFeatures": 11,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-5",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RS-1-5",
+      "sourceFeatures": 11
+    },
+    {
+      "acceptedFeatures": 8,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-6",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RS-1-6",
+      "sourceFeatures": 8
+    },
+    {
+      "acceptedFeatures": 159,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-7",
+      "quarantinedFeatures": 7,
+      "rawZoneCode": "RS-1-7",
+      "sourceFeatures": 166
+    },
+    {
+      "acceptedFeatures": 17,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-8",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RS-1-8",
+      "sourceFeatures": 17
+    },
+    {
+      "acceptedFeatures": 4,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RS-1-9",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RS-1-9",
+      "sourceFeatures": 4
+    },
+    {
+      "acceptedFeatures": 15,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RT-1-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RT-1-2",
+      "sourceFeatures": 15
+    },
+    {
+      "acceptedFeatures": 1,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RT-1-4",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RT-1-4",
+      "sourceFeatures": 1
+    },
+    {
+      "acceptedFeatures": 2,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RT-1-5",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RT-1-5",
+      "sourceFeatures": 2
+    },
+    {
+      "acceptedFeatures": 15,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RX-1-1",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RX-1-1",
+      "sourceFeatures": 15
+    },
+    {
+      "acceptedFeatures": 19,
+      "category": "RESIDENTIAL",
+      "normalizedZoneCode": "RX-1-2",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "RX-1-2",
+      "sourceFeatures": 19
+    },
+    {
+      "acceptedFeatures": 6,
+      "category": "SOURCE_LITERAL_UNZONED",
+      "normalizedZoneCode": "UNZONED",
+      "quarantinedFeatures": 0,
+      "rawZoneCode": "UNZONED",
+      "sourceFeatures": 6
+    }
+  ],
+  "normalization": {
+    "changedObservedCodes": 0,
+    "methodVersion": "city-sd-base-zone-trim-uppercase-v1",
+    "rule": "Trim outer whitespace and uppercase. Reject null/blank/malformed values; never guess a code.",
+    "unknownOrMalformedFeatures": 0
+  },
+  "observedCodeCount": 183
+}

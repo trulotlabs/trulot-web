@@ -1,0 +1,35 @@
+{
+  "ambiguousCauses": {
+    "OVERLAPPING_COVERAGE_GT_100_01": 152,
+    "OVERLAPPING_COVERAGE_GT_100_01_WITH_REPAIRED_SOURCE": 2,
+    "PARTIAL_COVERAGE_LT_99_99": 1375,
+    "PARTIAL_COVERAGE_LT_99_99_WITH_REPAIRED_SOURCE": 112
+  },
+  "boundarySliverDoctrine": "BOUNDARY_SLIVER is a SINGLE_ZONE conclusion with preserved secondary intersection evidence; both 0.01% and 10 sq ft thresholds must pass.",
+  "canonicalStateCounts": {
+    "AMBIGUOUS": 1641,
+    "SINGLE_ZONE": 318701,
+    "SPLIT_ZONE": 73064,
+    "UNMAPPED": 327
+  },
+  "detailedEvidenceStateCounts": {
+    "BOUNDARY_SLIVER": 1097,
+    "INDETERMINATE": 1641,
+    "MULTI_ZONE": 73064,
+    "SINGLE_ZONE": 317604,
+    "UNMAPPED": 327
+  },
+  "duplicateMappingRows": 0,
+  "methodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+  "orphanParcelReferences": 0,
+  "orphanZoningReferences": 0,
+  "parcelCount": 393733,
+  "repairedSourceFeatureParcelCount": 69786,
+  "splitDoctrine": "Every material code and contributing source feature is retained; no blended or winner-take-all zoning result.",
+  "unmappedCauseMethod": "Nearest authoritative mapping geometry distance in EPSG:2230; all 327 have positive distance and no positive-area intersection.",
+  "unmappedCauses": {
+    "COVERAGE_GAP_10_TO_100_FT": 38,
+    "COVERAGE_GAP_1_TO_10_FT": 21,
+    "COVERAGE_GAP_GT_100_FT": 268
+  }
+}

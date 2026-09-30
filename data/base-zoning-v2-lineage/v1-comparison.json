@@ -1,0 +1,18 @@
+{
+  "classificationCounts": {
+    "EXACT_CODE_MATCH": 63,
+    "MATERIAL_ZONING_CODE_DIFFERENCE": 3,
+    "SPLIT_ZONE_V2_V1_SINGLE": 43,
+    "SPLIT_ZONE_WITH_MATERIAL_DIFFERENCE": 5,
+    "V1_MISSING_V2_PRESENT": 12,
+    "V1_PRESENT_V2_UNMAPPED": 20
+  },
+  "doctrine": "V1 is comparison evidence, not zoning authority; it never overrides current polygon evidence.",
+  "endpoint": "https://trulot-web.vercel.app/api/parcel/<exact-10-digit-APN>",
+  "formattingNormalizationMatchesObserved": 0,
+  "sampleCount": 146,
+  "scope": "Deterministic 146-APN stratified sample; exact read-only V1 API lookups. Not a population-wide V1 zoning export.",
+  "v1Missing": 12,
+  "v1Present": 134,
+  "v1Unavailable": 0
+}

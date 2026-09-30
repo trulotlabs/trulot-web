@@ -17,6 +17,14 @@ ROOT = pathlib.Path(__file__).resolve().parents[2]
 ITEM = "e99981214e6348de8ddc3674f799c75d"
 
 
+def normalize_zone_code(value):
+    """Canonicalize only source formatting; never infer or repair a code."""
+    if not isinstance(value, str):
+        return None
+    normalized = value.strip().upper()
+    return normalized or None
+
+
 def sha(path):
     with pathlib.Path(path).open("rb") as stream:
         return hashlib.file_digest(stream, "sha256").hexdigest()
@@ -69,6 +77,7 @@ def validate(acquisition_dir, output_dir):
                 properties = feature["properties"]
             object_id = properties.get("OBJECTID")
             zone = properties.get("ZONE_NAME")
+            normalized_zone = normalize_zone_code(zone)
             if not isinstance(object_id, int) or object_id <= 0:
                 errors.append("INVALID_OBJECT_ID")
             elif object_id in seen_ids:
@@ -100,6 +109,8 @@ def validate(acquisition_dir, output_dir):
                 "index": index,
                 "sourceObjectId": object_id,
                 "zoneCode": zone,
+                "rawZoneCode": zone,
+                "normalizedZoneCode": normalized_zone,
                 "implementationDate": properties.get("IMP_DATE"),
                 "ordinanceNumber": properties.get("ORDNUM"),
                 "sourceShapeLength": properties.get("Shape_Length"),
@@ -126,7 +137,9 @@ def validate(acquisition_dir, output_dir):
 
     if counts["parsed"] != counts["accepted"] + counts["rejected"] or len(seen_ids) != counts["parsed"]:
         raise ValueError("Unexplained feature loss or object-ID conflict")
-    inventory = [{"zoneCode": code, **value} for code, value in sorted(zones.items())]
+    inventory = [{"rawZoneCode": code, "normalizedZoneCode": normalize_zone_code(code), "zoneCode": code, **value}
+                 for code, value in sorted(zones.items())]
+    normalization_changes = sum(row["rawZoneCode"] != row["normalizedZoneCode"] for row in inventory)
     report = {
         "decision": "SOURCE_VALIDATED_WITH_EXPLICIT_QUARANTINE" if counts["rejected"] else "SOURCE_VALIDATED",
         "acquisitionId": receipt["acquisitionId"],
@@ -134,6 +147,12 @@ def validate(acquisition_dir, output_dir):
         "counts": dict(counts),
         "distinctObjectIds": len(seen_ids),
         "distinctZoneCodes": len(inventory),
+        "zoneCodeNormalization": {
+            "methodVersion": "city-sd-base-zone-trim-uppercase-v1",
+            "rule": "Trim outer whitespace and uppercase. Reject null/blank/malformed values; never guess a code.",
+            "changedObservedCodes": normalization_changes,
+            "unknownOrMalformedFeatures": reasons.get("NULL_OR_MALFORMED_ZONE_CODE", 0),
+        },
         "geometryTypes": dict(sorted(geometry_types.items())),
         "rejectionReasons": dict(sorted(reasons.items())),
         "sourceOrderIdentityFingerprint": identity_hash.hexdigest(),

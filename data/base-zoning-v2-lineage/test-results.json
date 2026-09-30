@@ -1,0 +1,75 @@
+{
+  "decision": "PACKET_9_VALIDATION_PASS",
+  "checks": [
+    {
+      "command": "two complete validate.py executions",
+      "exitCode": 0,
+      "summary": "3,706 parsed; 3,680 accepted; 26 quarantined; normalized outputs byte-identical"
+    },
+    {
+      "command": "two complete export-intersections.py and classify.py executions",
+      "exitCode": 0,
+      "summary": "393,733 rows; intersection exports, mapping outputs, state counts, and fingerprints byte-identical"
+    },
+    {
+      "command": "two complete zoning-serving-v2/integrate.py executions",
+      "exitCode": 0,
+      "summary": "393,733 rows; no missing or duplicate joins; complete outputs and fingerprints byte-identical"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/base-zoning-v2/test-packet9.py",
+      "exitCode": 0,
+      "summary": "23 Packet 9 offline checks passed"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/base-zoning-v2/test.py",
+      "exitCode": 0,
+      "summary": "17 Base Zoning V2 offline checks passed"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/zoning-serving-v2/test.py",
+      "exitCode": 0,
+      "summary": "24 integrated zoning-serving offline checks passed"
+    },
+    {
+      "command": "node scripts/base-zoning-v2/test-adapter.mjs",
+      "exitCode": 0,
+      "summary": "10 Base Zoning V2 adapter checks passed"
+    },
+    {
+      "command": "node scripts/zoning-serving-v2/test-adapter.mjs",
+      "exitCode": 0,
+      "summary": "15 integrated zoning-serving adapter checks passed"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 scripts/parcel-serving-v2-production/test-fingerprint-portability.py",
+      "exitCode": 0,
+      "summary": "9 fingerprint-portability checks passed"
+    },
+    {
+      "command": "npx tsc --noEmit",
+      "exitCode": 0,
+      "summary": "TypeScript passed"
+    },
+    {
+      "command": "npm run lint",
+      "exitCode": 1,
+      "summary": "Pre-existing baseline only: 3 errors and 6 warnings; no Packet 9 file reported"
+    }
+  ],
+  "lintBaseline": {
+    "errors": [
+      "scripts/rs17-display-shadow/test.mjs:14:2 @next/next/no-assign-module-variable",
+      "scripts/rs17-parameter-rehearsal/test.mjs:15:3 @next/next/no-assign-module-variable",
+      "supabase/functions/nearby-parcels/index.ts:125:67 @typescript-eslint/no-explicit-any"
+    ],
+    "warnings": [
+      "app/api/jobs-feed/route.ts:114:9 @typescript-eslint/no-unused-vars",
+      "lib/infer-phase.ts:163:10 @typescript-eslint/no-unused-vars",
+      "lib/infer-phase.ts:227:9 @typescript-eslint/no-unused-vars",
+      "lib/infer-phase.ts:237:9 @typescript-eslint/no-unused-vars",
+      "lib/infer-phase.ts:261:9 @typescript-eslint/no-unused-vars",
+      "scripts/triage-overlay-integrity.mjs:76:10 @typescript-eslint/no-unused-vars"
+    ]
+  }
+}

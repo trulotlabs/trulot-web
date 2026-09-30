@@ -1,0 +1,646 @@
+{
+  "caseCount": 30,
+  "cases": [
+    {
+      "apn": "3013101500",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        99.62058904318415,
+        0.3794109568199351
+      ],
+      "explanation": "Current Parcel V2 has source-backed zoning evidence while Parcel V1 has no comparable row or code.",
+      "sourceFeatureIds": [
+        1273,
+        1323
+      ],
+      "tags": [
+        "PARCEL_IDENTITY_EXCEPTION",
+        "SPLIT_ZONE",
+        "V1_MISSING_V2_PRESENT"
+      ],
+      "userVisibleImplication": "Show every material zone and split-zone state; do not collapse to one code.",
+      "v1Zone": null,
+      "v2MappingState": "MULTI_ZONE",
+      "v2Zones": [
+        "RS-1-3",
+        "RS-1-6"
+      ]
+    },
+    {
+      "apn": "3064202100",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        100.0
+      ],
+      "explanation": "Current Parcel V2 has source-backed zoning evidence while Parcel V1 has no comparable row or code.",
+      "sourceFeatureIds": [
+        3334
+      ],
+      "tags": [
+        "PARCEL_IDENTITY_EXCEPTION",
+        "V1_MISSING_V2_PRESENT"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": null,
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "RS-1-14"
+      ]
+    },
+    {
+      "apn": "3064242800",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        100.00000000000003
+      ],
+      "explanation": "Current Parcel V2 has source-backed zoning evidence while Parcel V1 has no comparable row or code.",
+      "sourceFeatureIds": [
+        3329
+      ],
+      "tags": [
+        "PARCEL_IDENTITY_EXCEPTION",
+        "V1_MISSING_V2_PRESENT"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": null,
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "CC-3-5"
+      ]
+    },
+    {
+      "apn": "3164708100",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        100.00000000000006
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        1213
+      ],
+      "tags": [
+        "EXACT_CODE_MATCH"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "RS-1-14",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "RS-1-14"
+      ]
+    },
+    {
+      "apn": "3180703500",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        100.00000000000001
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        3218
+      ],
+      "tags": [
+        "EXACT_CODE_MATCH"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "RS-1-14",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "RS-1-14"
+      ]
+    },
+    {
+      "apn": "3461520600",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        100.00000000000001
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        615
+      ],
+      "tags": [
+        "EXACT_CODE_MATCH",
+        "QUARANTINED_SOURCE_DERIVATIVE"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "LJSPD-SF",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "LJSPD-SF"
+      ]
+    },
+    {
+      "apn": "3468310600",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        99.99999999999999
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        615
+      ],
+      "tags": [
+        "EXACT_CODE_MATCH",
+        "QUARANTINED_SOURCE_DERIVATIVE"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "LJSPD-SF",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "LJSPD-SF"
+      ]
+    },
+    {
+      "apn": "3487130163",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        100.00000000000001
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        3485
+      ],
+      "tags": [
+        "EXACT_CODE_MATCH"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "RM-1-1",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "RM-1-1"
+      ]
+    },
+    {
+      "apn": "3506320400",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        100.0
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        1374
+      ],
+      "tags": [
+        "EXACT_CODE_MATCH"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "RS-1-7",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "RS-1-7"
+      ]
+    },
+    {
+      "apn": "3601202300",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        99.99999999999999
+      ],
+      "explanation": "The current authoritative code differs materially from Parcel V1's displayed code; V1 is not used to override V2.",
+      "sourceFeatureIds": [
+        3667
+      ],
+      "tags": [
+        "MATERIAL_ZONING_CODE_DIFFERENCE"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "RM-1-1",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "RT-1-2"
+      ]
+    },
+    {
+      "apn": "4272101051",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        93.12894524563247,
+        6.461883526323892,
+        0.2155988004727464,
+        0.1935724275871766
+      ],
+      "explanation": "Current area evidence preserves multiple material base-zone intersections; V1 exposes only one code.",
+      "sourceFeatureIds": [
+        674,
+        720,
+        748,
+        1358
+      ],
+      "tags": [
+        "SPLIT_ZONE",
+        "SPLIT_ZONE_V2_V1_SINGLE"
+      ],
+      "userVisibleImplication": "Show every material zone and split-zone state; do not collapse to one code.",
+      "v1Zone": "OP-1-1",
+      "v2MappingState": "MULTI_ZONE",
+      "v2Zones": [
+        "RS-1-7",
+        "OR-1-1",
+        "OP-1-1",
+        "OP-2-1"
+      ]
+    },
+    {
+      "apn": "4303410600",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        97.68621240759705,
+        2.4273758600583815
+      ],
+      "explanation": "Current area evidence preserves multiple material base-zone intersections; V1 exposes only one code.",
+      "sourceFeatureIds": [
+        3686,
+        3688
+      ],
+      "tags": [
+        "AMBIGUOUS_MAPPING",
+        "SPLIT_ZONE_V2_V1_SINGLE"
+      ],
+      "userVisibleImplication": "Show partial/ambiguous zoning evidence and withhold a single-zone conclusion.",
+      "v1Zone": "RS-1-7",
+      "v2MappingState": "INDETERMINATE",
+      "v2Zones": [
+        "RS-1-7",
+        "CC-3-9"
+      ]
+    },
+    {
+      "apn": "4304211000",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        64.31678896738894,
+        35.683211033033054
+      ],
+      "explanation": "Current area evidence preserves multiple material base-zone intersections; V1 exposes only one code.",
+      "sourceFeatureIds": [
+        3688,
+        3696
+      ],
+      "tags": [
+        "SPLIT_ZONE",
+        "SPLIT_ZONE_V2_V1_SINGLE"
+      ],
+      "userVisibleImplication": "Show every material zone and split-zone state; do not collapse to one code.",
+      "v1Zone": "RS-1-7",
+      "v2MappingState": "MULTI_ZONE",
+      "v2Zones": [
+        "RS-1-7",
+        "OR-1-1"
+      ]
+    },
+    {
+      "apn": "4340323941",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        99.99516352022818,
+        0.0048364797408614775
+      ],
+      "explanation": "Current area evidence preserves multiple material base-zone intersections; V1 exposes only one code.",
+      "sourceFeatureIds": [
+        2719,
+        2742
+      ],
+      "tags": [
+        "BOUNDARY_PARCEL",
+        "SPLIT_ZONE_V2_V1_SINGLE"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "RM-1-3",
+      "v2MappingState": "BOUNDARY_SLIVER",
+      "v2Zones": [
+        "RM-1-3",
+        "RM-4-10"
+      ]
+    },
+    {
+      "apn": "4522006834",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        98.75286439038265,
+        1.2471356095228243
+      ],
+      "explanation": "Current area evidence preserves multiple material base-zone intersections; V1 exposes only one code.",
+      "sourceFeatureIds": [
+        3434,
+        3437
+      ],
+      "tags": [
+        "SPLIT_ZONE",
+        "SPLIT_ZONE_V2_V1_SINGLE"
+      ],
+      "userVisibleImplication": "Show every material zone and split-zone state; do not collapse to one code.",
+      "v1Zone": "CC-3-10",
+      "v2MappingState": "MULTI_ZONE",
+      "v2Zones": [
+        "RM-3-9",
+        "CC-3-10"
+      ]
+    },
+    {
+      "apn": "5310812300",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        99.99999999999999
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        1920
+      ],
+      "tags": [
+        "EXACT_CODE_MATCH"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "RS-1-7",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "RS-1-7"
+      ]
+    },
+    {
+      "apn": "5325200400",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [],
+      "explanation": "Parcel V1 displays a code, but the current authoritative polygons have no positive-area intersection with this parcel.",
+      "sourceFeatureIds": [],
+      "tags": [
+        "V1_PRESENT_V2_UNMAPPED"
+      ],
+      "userVisibleImplication": "Show zoning unavailable/unmapped; never label the parcel unzoned.",
+      "v1Zone": "Unknown",
+      "v2MappingState": "UNMAPPED",
+      "v2Zones": []
+    },
+    {
+      "apn": "5335746010",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        100.0
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        544
+      ],
+      "tags": [
+        "EXACT_CODE_MATCH"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "GQPD-GASLAMP-QTR",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "GQPD-GASLAMP-QTR"
+      ]
+    },
+    {
+      "apn": "5351561204",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        100.0
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        1460
+      ],
+      "tags": [
+        "EXACT_CODE_MATCH"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "CCPD-RE",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "CCPD-RE"
+      ]
+    },
+    {
+      "apn": "5424703000",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        82.56720745584695,
+        13.997961723684423,
+        3.43483081991542
+      ],
+      "explanation": "Current area evidence preserves multiple material base-zone intersections; V1 exposes only one code.",
+      "sourceFeatureIds": [
+        1839,
+        1856,
+        1873
+      ],
+      "tags": [
+        "SPLIT_ZONE",
+        "SPLIT_ZONE_V2_V1_SINGLE"
+      ],
+      "userVisibleImplication": "Show every material zone and split-zone state; do not collapse to one code.",
+      "v1Zone": "RS-1-1",
+      "v2MappingState": "MULTI_ZONE",
+      "v2Zones": [
+        "RS-1-7",
+        "RM-1-2",
+        "RS-1-1"
+      ]
+    },
+    {
+      "apn": "5461720600",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        100.0
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        3364
+      ],
+      "tags": [
+        "EXACT_CODE_MATCH"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "RM-1-1",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "RM-1-1"
+      ]
+    },
+    {
+      "apn": "5874411100",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        98.16568888120499
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        1333
+      ],
+      "tags": [
+        "AMBIGUOUS_MAPPING",
+        "EXACT_CODE_MATCH"
+      ],
+      "userVisibleImplication": "Show partial/ambiguous zoning evidence and withhold a single-zone conclusion.",
+      "v1Zone": "RS-1-7",
+      "v2MappingState": "INDETERMINATE",
+      "v2Zones": [
+        "RS-1-7"
+      ]
+    },
+    {
+      "apn": "6273108350",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        99.99882188111256,
+        0.0011781188878605086
+      ],
+      "explanation": "Current area evidence preserves multiple material base-zone intersections; V1 exposes only one code.",
+      "sourceFeatureIds": [
+        771,
+        926
+      ],
+      "tags": [
+        "BOUNDARY_PARCEL",
+        "SPLIT_ZONE_V2_V1_SINGLE"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "RM-1-1",
+      "v2MappingState": "BOUNDARY_SLIVER",
+      "v2Zones": [
+        "RM-2-5",
+        "RM-1-1"
+      ]
+    },
+    {
+      "apn": "6370404903",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        100.00000000000001
+      ],
+      "explanation": "The current authoritative code differs materially from Parcel V1's displayed code; V1 is not used to override V2.",
+      "sourceFeatureIds": [
+        2195
+      ],
+      "tags": [
+        "MATERIAL_ZONING_CODE_DIFFERENCE"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "CC-2-1",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "RM-2-5"
+      ]
+    },
+    {
+      "apn": "6690106000",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        98.39033408422698
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        1906
+      ],
+      "tags": [
+        "AMBIGUOUS_MAPPING",
+        "EXACT_CODE_MATCH",
+        "QUARANTINED_SOURCE_DERIVATIVE"
+      ],
+      "userVisibleImplication": "Show partial/ambiguous zoning evidence and withhold a single-zone conclusion.",
+      "v1Zone": "RS-1-7",
+      "v2MappingState": "INDETERMINATE",
+      "v2Zones": [
+        "RS-1-7"
+      ]
+    },
+    {
+      "apn": "6700510800",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        99.95286246607584,
+        0.047137533986538145
+      ],
+      "explanation": "Current area evidence preserves multiple material base-zone intersections; V1 exposes only one code.",
+      "sourceFeatureIds": [
+        3449,
+        3473
+      ],
+      "tags": [
+        "SPLIT_ZONE",
+        "SPLIT_ZONE_V2_V1_SINGLE"
+      ],
+      "userVisibleImplication": "Show every material zone and split-zone state; do not collapse to one code.",
+      "v1Zone": "RS-1-7",
+      "v2MappingState": "MULTI_ZONE",
+      "v2Zones": [
+        "RS-1-7",
+        "OP-2-1"
+      ]
+    },
+    {
+      "apn": "6774300122",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [
+        99.99922547218131,
+        0.0007745278362311558
+      ],
+      "explanation": "Current area evidence preserves multiple material base-zone intersections; V1 exposes only one code.",
+      "sourceFeatureIds": [
+        2747,
+        2774
+      ],
+      "tags": [
+        "BOUNDARY_PARCEL",
+        "SPLIT_ZONE_V2_V1_SINGLE"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "RM-3-7",
+      "v2MappingState": "BOUNDARY_SLIVER",
+      "v2Zones": [
+        "RM-3-7",
+        "OP-2-1"
+      ]
+    },
+    {
+      "apn": "6783621300",
+      "confidence": "HIGH",
+      "coveragePercentages": [
+        99.99999999999999
+      ],
+      "explanation": "Parcel V1's single displayed code exactly matches the current source-backed V2 code evidence.",
+      "sourceFeatureIds": [
+        1237
+      ],
+      "tags": [
+        "EXACT_CODE_MATCH",
+        "QUARANTINED_SOURCE_DERIVATIVE"
+      ],
+      "userVisibleImplication": "Show source-backed base zoning with provenance and no development-standard inference.",
+      "v1Zone": "RS-1-14",
+      "v2MappingState": "SINGLE_ZONE",
+      "v2Zones": [
+        "RS-1-14"
+      ]
+    },
+    {
+      "apn": "7600156900",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [],
+      "explanation": "Parcel V1 displays a code, but the current authoritative polygons have no positive-area intersection with this parcel.",
+      "sourceFeatureIds": [],
+      "tags": [
+        "V1_PRESENT_V2_UNMAPPED"
+      ],
+      "userVisibleImplication": "Show zoning unavailable/unmapped; never label the parcel unzoned.",
+      "v1Zone": "Unknown",
+      "v2MappingState": "UNMAPPED",
+      "v2Zones": []
+    },
+    {
+      "apn": "7600211800",
+      "confidence": "MEDIUM",
+      "coveragePercentages": [],
+      "explanation": "Parcel V1 displays a code, but the current authoritative polygons have no positive-area intersection with this parcel.",
+      "sourceFeatureIds": [],
+      "tags": [
+        "V1_PRESENT_V2_UNMAPPED"
+      ],
+      "userVisibleImplication": "Show zoning unavailable/unmapped; never label the parcel unzoned.",
+      "v1Zone": "Unknown",
+      "v2MappingState": "UNMAPPED",
+      "v2Zones": []
+    }
+  ],
+  "selection": "Deterministic SHA-ranked stratified sample"
+}

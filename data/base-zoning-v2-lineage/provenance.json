@@ -1,0 +1,13 @@
+{
+  "chain": [
+    "parcel acquisition/source object",
+    "parcel-zone mapping row",
+    "zoning acquisition/source feature",
+    "official City/SanGIS dataset and metadata"
+  ],
+  "mappingMethodVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+  "missingMappedFactLineage": 0,
+  "parcelAcquisitionId": "sangis-20260924T183743Z",
+  "zoningAcquisitionId": "zoning-city-sd-20260930T024032Z",
+  "zoningItemId": "e99981214e6348de8ddc3674f799c75d"
+}

@@ -1,6 +1,6 @@
 """LEFT-join immutable Parcel Serving V2 rows to Base Zoning V2 mappings.
 
-Usage: python3 scripts/zoning-serving-v2/integrate.py PARCEL_EXPORT ZONING_MAP_GZ NEW_OUTPUT_DIR
+Usage: python3 scripts/zoning-serving-v2/integrate.py PARCEL_EXPORT ZONING_MAP_GZ MAPPING_REPORT ACQUISITION_JSON NEW_OUTPUT_DIR
 """
 import csv
 import gzip
@@ -16,9 +16,7 @@ PARCEL_FIELDS = ("acquisition_id", "source_object_id", "apn_norm", "parcel_id", 
                  "situs_zip", "situs_juris", "geom", "centroid", "point_on_surface", "centroid_within",
                  "approximate_geometry_area_sqft", "taxable_acreage", "geometry_sha256", "native_crs", "artifact_crs")
 EXPECTED_STATES = {"SINGLE_ZONE": 317604, "MULTI_ZONE": 73064, "BOUNDARY_SLIVER": 1097, "UNMAPPED": 327, "INDETERMINATE": 1641}
-EXPECTED_ZONING_MAP_SHA256 = "e90e223b3b06017b95e191aee8ec1de918dbb45abf836c4f209ae1c345cbf088"
 EXPECTED_PARCEL_APN_FINGERPRINT = "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25"
-ZONING_ACQUISITION_ID = "zoning-city-sd-20260924T201131Z"
 csv.field_size_limit(sys.maxsize)
 
 
@@ -54,15 +52,21 @@ def compact_zoning(row):
                                       "totalCoveredPercent", "uncoveredPercent", "distinctZoneCount", "repairedSourceFeatureCount", "zoneEvidence")}
 
 
-def run(parcel_export, zoning_map, output_dir):
+def run(parcel_export, zoning_map, mapping_report_path, acquisition_path, output_dir):
     parcel_export = pathlib.Path(parcel_export).resolve()
     zoning_map = pathlib.Path(zoning_map).resolve()
+    mapping_report_path = pathlib.Path(mapping_report_path).resolve()
+    acquisition_path = pathlib.Path(acquisition_path).resolve()
     output = pathlib.Path(output_dir).resolve()
     if output == ROOT or ROOT in output.parents:
         raise ValueError("Full integrated serving output must remain outside Git")
     output.mkdir(exist_ok=False)
-    if sha(zoning_map) != EXPECTED_ZONING_MAP_SHA256:
-        raise ValueError("Base Zoning V2 map identity changed")
+    mapping_report = json.loads(mapping_report_path.read_text())
+    acquisition = json.loads(acquisition_path.read_text())["receipt"]
+    if (sha(zoning_map) != mapping_report["output"]["sha256"] or mapping_report["parcelCount"] != 393733
+            or mapping_report["mappingStateCounts"] != EXPECTED_STATES):
+        raise ValueError("Base Zoning V2 map identity/counts do not match its sealed report")
+    zoning_acquisition_id = acquisition["acquisitionId"]
     parcel_receipt = json.loads((parcel_export.parent / "export.json").read_text())
     if parcel_receipt["packet8ApnSetFingerprint"] != EXPECTED_PARCEL_APN_FINGERPRINT:
         raise ValueError("Parcel Serving V2 APN identity changed")
@@ -99,7 +103,10 @@ def run(parcel_export, zoning_map, output_dir):
                 if parcel["apn_norm"] in seen_apns:
                     raise ValueError("Duplicate integrated APN")
                 seen_apns.add(parcel["apn_norm"])
-                zoning["zoningAcquisitionId"] = ZONING_ACQUISITION_ID
+                source_acquisition = zoning.get("zoningAcquisitionId")
+                if source_acquisition not in {None, zoning_acquisition_id}:
+                    raise ValueError("Zoning mapping acquisition identity mismatch")
+                zoning["zoningAcquisitionId"] = zoning_acquisition_id
                 record = {
                     "schemaVersion": 1,
                     "integrationMethodVersion": METHOD,
@@ -108,8 +115,8 @@ def run(parcel_export, zoning_map, output_dir):
                     "baseZoning": zoning,
                     "provenanceReferences": {
                         "parcel": "data/parcel-serving-v2/report.json#provenance",
-                        "baseZoning": "data/base-zoning-v2/acquisition.json#receipt",
-                        "mapping": "data/base-zoning-v2/mapping-report.json",
+                        "baseZoning": "data/base-zoning-v2-lineage/source.json#receipt",
+                        "mapping": "data/base-zoning-v2-lineage/mapping-analysis.json",
                     },
                 }
                 encoded = (json.dumps(record, sort_keys=True, separators=(",", ":"), allow_nan=False) + "\n").encode()
@@ -149,7 +156,8 @@ def run(parcel_export, zoning_map, output_dir):
         "stacked": {"physicalGeometryGroupCount": len(stacks), "apnCount": sum(group["count"] for group in stacks), "inconsistentGroupCount": 0},
         "packet8ApnSetFingerprint": apn_fingerprint.hexdigest(),
         "packet8FullRowFingerprint": parcel_receipt["packet8FullRowFingerprint"],
-        "packet10MappingFingerprint": "313aa7ad46747bb97499a113842ac848de8f7357134e0558210692a1913a8ccf",
+        "packet10MappingFingerprint": mapping_report["mappingFingerprintSha256"],
+        "zoningAcquisitionId": zoning_acquisition_id,
         "splitAndSliverFingerprint": split_fingerprint.hexdigest(),
         "integratedFingerprint": integrated_fingerprint.hexdigest(),
         "inputs": {"parcelExportSha256": parcel_receipt["compressedSha256"], "zoningMapSha256": sha(zoning_map)},
@@ -162,6 +170,6 @@ def run(parcel_export, zoning_map, output_dir):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 4:
+    if len(sys.argv) != 6:
         raise SystemExit(__doc__)
     run(*sys.argv[1:])

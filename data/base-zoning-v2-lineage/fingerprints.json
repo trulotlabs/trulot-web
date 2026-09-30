@@ -1,0 +1,11 @@
+{
+  "acceptedRowsSha256": "1119ce400cef7a3604897400c7081e6a7c9218702bd30371aa264344408ce1de",
+  "integratedCityOutputSha256": "f08c6169b3dc7a9efba011e86bf51fe0cce449c95ca26f25ac41b5f4a1f1a680",
+  "mappingStateDistributionSha256": "e2e11a3e1fe30d5ab06720e9bac09634b039d69f6a96fa5c47e482d71be3881c",
+  "normalizedSourceIdentitySha256": "559598ae4bf70a40356ff357c561b816fd415f0554d0f9761d6eede8fdc5d9a1",
+  "parcelZoneMappingSha256": "531cd0b9457f273de676d3ca975d6746d20604d74bcdd697d09cb7bbb44f40b2",
+  "portableRendering": "Sorted-key compact JSON, UTF-8, explicit floats from Python; no database-default float rendering.",
+  "quarantineRowsSha256": "ec9db509e7c177d3c3357a39d8561921ace24a394aeb3d5a3836e1b8cea08632",
+  "sourceArtifactSha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+  "zoneDomainSha256": "e566224c06cb7b91b4893c9d8c5a178259be9f48d7ed2287ae14ce8a34e9411c"
+}
