@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://trulot.example/schemas/parcel-identity-exception-v1.json",
+  "title": "Parcel identity exception V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "currentApn", "alternateApn", "fallbackAddress", "relationshipType", "reason", "confidence", "provenance", "observedAt", "geometryStatus", "legalRelationshipAsserted"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "currentApn": {"type": ["string", "null"], "pattern": "^[0-9]{10}$"},
+    "alternateApn": {"type": ["string", "null"], "pattern": "^[0-9]{10}$"},
+    "fallbackAddress": {"type": ["string", "null"], "minLength": 1},
+    "relationshipType": {"enum": ["historical_alias", "possible_replacement", "fallback_presentation", "quarantine_identity", "unresolved"]},
+    "reason": {"type": "string", "minLength": 1},
+    "confidence": {"enum": ["high", "medium", "low"]},
+    "provenance": {"type": "string", "minLength": 1},
+    "observedAt": {"type": ["string", "null"], "format": "date"},
+    "geometryStatus": {"enum": ["current_available", "historical_only", "unavailable", "conflicting"]},
+    "legalRelationshipAsserted": {"const": false}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"relationshipType": {"enum": ["historical_alias", "possible_replacement"]}}},
+      "then": {"properties": {"alternateApn": {"type": "string", "pattern": "^[0-9]{10}$"}}}
+    }
+  ]
+}
