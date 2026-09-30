@@ -1,0 +1,70 @@
+{
+  "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+  "input": {
+    "required": [
+      "apn",
+      "parcel_acquisition_id",
+      "mapping_evidence_state",
+      "zone_evidence",
+      "mapping_provenance",
+      "coastal_context",
+      "as_of"
+    ],
+    "mapping_evidence_states": [
+      "SINGLE_ZONE",
+      "BOUNDARY_SLIVER",
+      "MULTI_ZONE",
+      "UNMAPPED",
+      "INDETERMINATE"
+    ],
+    "coastal_context_states": [
+      "outside_coastal",
+      "inside_coastal",
+      "unknown"
+    ]
+  },
+  "mapping_state_projection": {
+    "BOUNDARY_SLIVER": "SINGLE_ZONE",
+    "INDETERMINATE": "AMBIGUOUS",
+    "MULTI_ZONE": "SPLIT_ZONE",
+    "SINGLE_ZONE": "SINGLE_ZONE",
+    "UNMAPPED": "UNMAPPED"
+  },
+  "output": {
+    "resolution_states": [
+      "RESOLVED",
+      "PARTIAL_RS_RESOLUTION",
+      "NOT_APPLICABLE",
+      "APPLICABILITY_UNRESOLVED",
+      "MAPPING_UNRESOLVED",
+      "SOURCE_UNAVAILABLE"
+    ],
+    "truth_states": [
+      "supported",
+      "partial",
+      "unknown",
+      "unavailable",
+      "not_applicable"
+    ],
+    "source_states": [
+      "available",
+      "source_unavailable",
+      "not_evaluated"
+    ],
+    "derivation_class": "deterministic_derived",
+    "rule_fact_states": [
+      "RECORDED",
+      "CONDITIONAL",
+      "UNKNOWN",
+      "NOT_APPLICABLE"
+    ]
+  },
+  "scope": {
+    "jurisdiction": "City of San Diego",
+    "zones": "RS-1-1 through RS-1-14",
+    "supported_profile": "outside-coastal-2026-09-30",
+    "production_runtime_wiring": false,
+    "parcel_compliance": false,
+    "development_capacity": false
+  }
+}

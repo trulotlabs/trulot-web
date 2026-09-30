@@ -1,0 +1,188 @@
+{
+  "cases": [
+    {
+      "name": "single-zone-rs-1-7",
+      "input": {
+        "apn": "3506320400",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "SINGLE_ZONE",
+        "zone_evidence": [
+          {"zone_code": "RS-1-7", "coverage_percent": 100.0, "source_feature_ids": [1374], "role": "single"}
+        ],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2-lineage/casebook.json", "artifact_sha256": "1d18678617241787a895f000ab5a4f979f7898552fe87b12f368ce3e4a4d42cd", "evidence_commit": "07d98ebe9ffc0b5057e99983695991af3daf5dce", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"},
+        "coastal_context": "outside_coastal",
+        "as_of": "2026-09-30"
+      }
+    },
+    {
+      "name": "single-zone-another-rs",
+      "input": {
+        "apn": "3064202100",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "SINGLE_ZONE",
+        "zone_evidence": [
+          {"zone_code": "RS-1-14", "coverage_percent": 100.0, "source_feature_ids": [3334], "role": "single"}
+        ],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2-lineage/casebook.json", "artifact_sha256": "1d18678617241787a895f000ab5a4f979f7898552fe87b12f368ce3e4a4d42cd", "evidence_commit": "07d98ebe9ffc0b5057e99983695991af3daf5dce", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"},
+        "coastal_context": "outside_coastal",
+        "as_of": "2026-09-30"
+      }
+    },
+    {
+      "name": "boundary-sliver-rs-primary",
+      "input": {
+        "apn": "2748323700",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "BOUNDARY_SLIVER",
+        "zone_evidence": [
+          {"zone_code": "RS-1-14", "coverage_percent": 99.99652345945094, "source_feature_ids": [576, 1233], "role": "principal"},
+          {"zone_code": "RM-1-1", "coverage_percent": 0.003476540535083214, "source_feature_ids": [883], "role": "boundary_sliver"}
+        ],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2/golden-fixture.json", "artifact_sha256": "4c40f448016e2311c06e2f6d1b64364f21ccb0975f68bf8383191028ed152b35", "evidence_commit": "9e4b4ad4c3e748fb0fcc4a2efa8a95c0eaa6e299", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260924T201131Z"},
+        "coastal_context": "outside_coastal",
+        "as_of": "2026-09-30"
+      }
+    },
+    {
+      "name": "split-zone-rs-plus-rs",
+      "input": {
+        "apn": "3013101500",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "MULTI_ZONE",
+        "zone_evidence": [
+          {"zone_code": "RS-1-3", "coverage_percent": 99.62058904318415, "source_feature_ids": [1273], "role": "material"},
+          {"zone_code": "RS-1-6", "coverage_percent": 0.3794109568199351, "source_feature_ids": [1323], "role": "material"}
+        ],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2-lineage/casebook.json", "artifact_sha256": "1d18678617241787a895f000ab5a4f979f7898552fe87b12f368ce3e4a4d42cd", "evidence_commit": "07d98ebe9ffc0b5057e99983695991af3daf5dce", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"},
+        "coastal_context": "outside_coastal",
+        "as_of": "2026-09-30"
+      }
+    },
+    {
+      "name": "split-zone-rs-plus-non-rs",
+      "input": {
+        "apn": "4304211000",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "MULTI_ZONE",
+        "zone_evidence": [
+          {"zone_code": "RS-1-7", "coverage_percent": 64.31678896738894, "source_feature_ids": [3688], "role": "material"},
+          {"zone_code": "OR-1-1", "coverage_percent": 35.683211033033054, "source_feature_ids": [3696], "role": "material"}
+        ],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2-lineage/casebook.json", "artifact_sha256": "1d18678617241787a895f000ab5a4f979f7898552fe87b12f368ce3e4a4d42cd", "evidence_commit": "07d98ebe9ffc0b5057e99983695991af3daf5dce", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"},
+        "coastal_context": "outside_coastal",
+        "as_of": "2026-09-30"
+      }
+    },
+    {
+      "name": "unmapped",
+      "input": {
+        "apn": "7600360300",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "UNMAPPED",
+        "zone_evidence": [],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2/golden-fixture.json", "artifact_sha256": "4c40f448016e2311c06e2f6d1b64364f21ccb0975f68bf8383191028ed152b35", "evidence_commit": "9e4b4ad4c3e748fb0fcc4a2efa8a95c0eaa6e299", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260924T201131Z"},
+        "coastal_context": "outside_coastal",
+        "as_of": "2026-09-30"
+      }
+    },
+    {
+      "name": "ambiguous-indeterminate",
+      "input": {
+        "apn": "4303410600",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "INDETERMINATE",
+        "zone_evidence": [
+          {"zone_code": "RS-1-7", "coverage_percent": 97.68621240759705, "source_feature_ids": [3686], "role": "partial_evidence"},
+          {"zone_code": "CC-3-9", "coverage_percent": 2.4273758600583815, "source_feature_ids": [3688], "role": "partial_evidence"}
+        ],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2-lineage/casebook.json", "artifact_sha256": "1d18678617241787a895f000ab5a4f979f7898552fe87b12f368ce3e4a4d42cd", "evidence_commit": "07d98ebe9ffc0b5057e99983695991af3daf5dce", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"},
+        "coastal_context": "outside_coastal",
+        "as_of": "2026-09-30"
+      }
+    },
+    {
+      "name": "single-zone-non-rs",
+      "input": {
+        "apn": "3064242800",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "SINGLE_ZONE",
+        "zone_evidence": [
+          {"zone_code": "CC-3-5", "coverage_percent": 100.00000000000003, "source_feature_ids": [3329], "role": "single"}
+        ],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2-lineage/casebook.json", "artifact_sha256": "1d18678617241787a895f000ab5a4f979f7898552fe87b12f368ce3e4a4d42cd", "evidence_commit": "07d98ebe9ffc0b5057e99983695991af3daf5dce", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"},
+        "coastal_context": "outside_coastal",
+        "as_of": "2026-09-30"
+      }
+    },
+    {
+      "name": "inside-coastal-rs",
+      "input": {
+        "apn": "5310812300",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "SINGLE_ZONE",
+        "zone_evidence": [
+          {"zone_code": "RS-1-7", "coverage_percent": 99.99999999999999, "source_feature_ids": [1920], "role": "single"}
+        ],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2-lineage/casebook.json", "artifact_sha256": "1d18678617241787a895f000ab5a4f979f7898552fe87b12f368ce3e4a4d42cd", "evidence_commit": "07d98ebe9ffc0b5057e99983695991af3daf5dce", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"},
+        "coastal_context": "inside_coastal",
+        "as_of": "2026-09-30"
+      }
+    },
+    {
+      "name": "unknown-coastal-rs",
+      "input": {
+        "apn": "3506320400",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "SINGLE_ZONE",
+        "zone_evidence": [
+          {"zone_code": "RS-1-7", "coverage_percent": 100.0, "source_feature_ids": [1374], "role": "single"}
+        ],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2-lineage/casebook.json", "artifact_sha256": "1d18678617241787a895f000ab5a4f979f7898552fe87b12f368ce3e4a4d42cd", "evidence_commit": "07d98ebe9ffc0b5057e99983695991af3daf5dce", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"},
+        "coastal_context": "unknown",
+        "as_of": "2026-09-30"
+      }
+    },
+    {
+      "name": "unsupported-future-date",
+      "input": {
+        "apn": "5310812300",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "SINGLE_ZONE",
+        "zone_evidence": [
+          {"zone_code": "RS-1-7", "coverage_percent": 99.99999999999999, "source_feature_ids": [1920], "role": "single"}
+        ],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2-lineage/casebook.json", "artifact_sha256": "1d18678617241787a895f000ab5a4f979f7898552fe87b12f368ce3e4a4d42cd", "evidence_commit": "07d98ebe9ffc0b5057e99983695991af3daf5dce", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"},
+        "coastal_context": "outside_coastal",
+        "as_of": "2026-10-01"
+      }
+    },
+    {
+      "name": "rs-1-14-footnote-8-unknown",
+      "input": {
+        "apn": "3164708100",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "SINGLE_ZONE",
+        "zone_evidence": [
+          {"zone_code": "RS-1-14", "coverage_percent": 100.00000000000006, "source_feature_ids": [1213], "role": "single"}
+        ],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2-lineage/casebook.json", "artifact_sha256": "1d18678617241787a895f000ab5a4f979f7898552fe87b12f368ce3e4a4d42cd", "evidence_commit": "07d98ebe9ffc0b5057e99983695991af3daf5dce", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"},
+        "coastal_context": "outside_coastal",
+        "as_of": "2026-09-30"
+      }
+    },
+    {
+      "name": "unsupported-historical-date",
+      "input": {
+        "apn": "3180703500",
+        "parcel_acquisition_id": "sangis-20260924T183743Z",
+        "mapping_evidence_state": "SINGLE_ZONE",
+        "zone_evidence": [
+          {"zone_code": "RS-1-14", "coverage_percent": 100.00000000000001, "source_feature_ids": [3218], "role": "single"}
+        ],
+        "mapping_provenance": {"artifact_path": "data/base-zoning-v2-lineage/casebook.json", "artifact_sha256": "1d18678617241787a895f000ab5a4f979f7898552fe87b12f368ce3e4a4d42cd", "evidence_commit": "07d98ebe9ffc0b5057e99983695991af3daf5dce", "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1", "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"},
+        "coastal_context": "outside_coastal",
+        "as_of": "2026-09-29"
+      }
+    }
+  ]
+}

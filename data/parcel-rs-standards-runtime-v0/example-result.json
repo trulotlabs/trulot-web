@@ -1,0 +1,1366 @@
+{
+  "base_zoning": {
+    "derivation_class": "deterministic_derived",
+    "mapping_evidence_state": "SINGLE_ZONE",
+    "mapping_state": "SINGLE_ZONE",
+    "provenance": {
+      "artifact_path": "data/base-zoning-v2-lineage/casebook.json",
+      "artifact_sha256": "1d18678617241787a895f000ab5a4f979f7898552fe87b12f368ce3e4a4d42cd",
+      "evidence_commit": "07d98ebe9ffc0b5057e99983695991af3daf5dce",
+      "mapping_method_version": "base-zoning-city-sd-v2-area-coverage-v1",
+      "zoning_acquisition_id": "zoning-city-sd-20260930T024032Z"
+    },
+    "source_state": "available",
+    "state": "supported",
+    "zone_evidence": [
+      {
+        "coverage_percent": 100.0,
+        "role": "single",
+        "source_feature_ids": [
+          1374
+        ],
+        "zone_code": "RS-1-7"
+      }
+    ]
+  },
+  "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+  "development_capacity_calculated": false,
+  "explicit_exclusions": [
+    "ADU_JADU",
+    "SB9",
+    "SB79",
+    "DENSITY_BONUS",
+    "COMPLETE_COMMUNITIES",
+    "COASTAL_MODIFICATIONS",
+    "OVERLAY_EFFECTS",
+    "PARKING",
+    "PARCEL_COMPLIANCE",
+    "DEVELOPMENT_CAPACITY"
+  ],
+  "fingerprint_sha256": "57d78f53faefa28c4e85b3d0785dc1ea338292d0b5cea14cd8e953e6ec25e740",
+  "parcel": {
+    "apn": "3506320400",
+    "parcel_acquisition_id": "sangis-20260924T183743Z"
+  },
+  "parcel_compliance_evaluated": false,
+  "request": {
+    "as_of": "2026-09-30",
+    "coastal_context": "outside_coastal"
+  },
+  "standards": {
+    "derivation_class": "deterministic_derived",
+    "provenance": {
+      "source_bundle_sha256": "7047062bb93fe6a1b222e033e1259445ed7afda74c1302c8d24529e1630b096e",
+      "source_edition": "9-2026",
+      "verified_as_of": "2026-09-30",
+      "version_profile": "outside-coastal-2026-09-30"
+    },
+    "resolution_state": "RESOLVED",
+    "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+    "source_state": "available",
+    "state": "supported",
+    "zone_results": [
+      {
+        "derivation_class": "deterministic_derived",
+        "resolution_state": "RESOLVED",
+        "rules": [
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "RECORDED",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MIN",
+            "provenance_sha256": "89ff09688c913253fca3af4e9aca1fa6b1d5945e7acb62a6bc79dfaea2d4c4f1",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:10",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                507.046,
+                432.78999999999996,
+                548.4614997674419,
+                447.31
+              ],
+              "cell_text": "95",
+              "column": 8,
+              "page": 33,
+              "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+              "row": 10,
+              "row_label": "Lot depth (ft)",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 33,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "lot_depth_min",
+            "unit": "ft",
+            "unresolved_dependencies": [
+              "131.0442"
+            ],
+            "value": {
+              "kind": "number",
+              "number": 95.0
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [
+              "For lots where at least one-half of the front 50 feet of the lot depth has a minimum slope gradient of 25 percent, the setback closest to the street frontage may be reduced to a minimum 6 feet.",
+              "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+              "Outside Coastal, section 131.0443(i) permits the Fire Code Official to require a greater defensible-space buffer."
+            ],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [
+              "131-04D:1"
+            ],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MIN",
+            "provenance_sha256": "95b20488611e431a40cfa0941765a65ccea83f2d0a1d4940d54b413f322b9507",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:12",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                507.046,
+                461.95,
+                548.4614997674419,
+                479.46999999999997
+              ],
+              "cell_text": "(1)\n15",
+              "column": 8,
+              "page": 33,
+              "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+              "row": 12,
+              "row_label": "Min Front setback (ft)",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 33,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "front_setback_min",
+            "unit": "ft",
+            "unresolved_dependencies": [
+              "131.0443(a)(1)",
+              "131.0443(i)",
+              "131-04D:1"
+            ],
+            "value": {
+              "kind": "number",
+              "number": 15.0
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [
+              "See Section 131.0443(a)(4).",
+              "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+              "Outside Coastal, section 131.0443(i) permits the Fire Code Official to require a greater defensible-space buffer."
+            ],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [
+              "131-04D:2"
+            ],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MIN",
+            "provenance_sha256": "434f74d11683a32ff76dc572da5b08cbfe338f56df2eb8db728691cff9d61b06",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:13",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                507.046,
+                479.46999999999997,
+                548.4614997674419,
+                493.990015
+              ],
+              "cell_text": "4(2)",
+              "column": 8,
+              "page": 33,
+              "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+              "row": 13,
+              "row_label": "Min Side setback (ft)",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 33,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "interior_side_setback_min",
+            "unit": "ft",
+            "unresolved_dependencies": [
+              "131.0443(a)(4)",
+              "131.0443(i)",
+              "131-04D:2"
+            ],
+            "value": {
+              "kind": "number",
+              "number": 4.0
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [
+              "See Section 131.0443(a)(4).",
+              "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+              "Outside Coastal, section 131.0443(i) permits the Fire Code Official to require a greater defensible-space buffer."
+            ],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [
+              "131-04D:2"
+            ],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MIN",
+            "provenance_sha256": "80eefe306936fd7cbfb30f46e34fabd7d8796afcbdee538ee2003f316d71d361",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:14",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                507.046,
+                493.990015,
+                548.4614997674419,
+                508.53999999999996
+              ],
+              "cell_text": "5(2)",
+              "column": 8,
+              "page": 33,
+              "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+              "row": 14,
+              "row_label": "Min Street side setback (ft)",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 33,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "street_side_setback_min",
+            "unit": "ft",
+            "unresolved_dependencies": [
+              "131.0443(a)(4)",
+              "131.0443(i)",
+              "131-04D:2"
+            ],
+            "value": {
+              "kind": "number",
+              "number": 5.0
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [
+              "See Section 131.0443(a)(2).",
+              "Section 131.0443 conditions and measurement rules must be evaluated before treating the printed number as a final parcel setback.",
+              "Outside Coastal, section 131.0443(i) permits the Fire Code Official to require a greater defensible-space buffer."
+            ],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [
+              "131-04D:3"
+            ],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MIN",
+            "provenance_sha256": "e541abe914c35bcbc69014b83d99f56d1e368c479f2612026f7e8bf869ced728",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:15",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                507.046,
+                508.53999999999996,
+                548.4614997674419,
+                526.179985
+              ],
+              "cell_text": "(3)\n13",
+              "column": 8,
+              "page": 33,
+              "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+              "row": 15,
+              "row_label": "Min Rear setback (ft)",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 33,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "rear_setback_min",
+            "unit": "ft",
+            "unresolved_dependencies": [
+              "131.0443(a)(2)",
+              "131.0443(a)(3)",
+              "131.0443(i)",
+              "131-04D:3"
+            ],
+            "value": {
+              "kind": "number",
+              "number": 13.0
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [
+              "Requires the parcel and subdivision facts in section 113.0246(f)."
+            ],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "REFERENCE",
+            "provenance_sha256": "76a5a26124118e74790b3cb64f85af8cec5f80afc83b564195f9c507d1a7c346",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:16",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                507.046,
+                526.179985,
+                548.4614997674419,
+                554.4999849999999
+              ],
+              "cell_text": "applies",
+              "column": 8,
+              "page": 33,
+              "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+              "row": 16,
+              "row_label": "Setback requirements for resubdivided\ncorner lots [See Section 113.0246(f)]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 33,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "resubdivided_corner_lot_setbacks",
+            "unit": null,
+            "unresolved_dependencies": [
+              "113.0246(f)",
+              "131.0443"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "113.0246(f)",
+                "131.0443"
+              ],
+              "text": "applies"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [
+              "See Section 131.0444(b).",
+              "Section 131.0444 and Table 131-04H angled-building-envelope rules remain unevaluated."
+            ],
+            "derivation_class": "NORMALIZED_SOURCE_EXPRESSION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [
+              "131-04D:4"
+            ],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MAX",
+            "provenance_sha256": "eff3f2680d8f455a19ac19c8588a6cfd91b83f8d106c8ad34155a64cbc288324",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:17",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                507.046,
+                554.4999849999999,
+                548.4614997674419,
+                582.8199850000001
+              ],
+              "cell_text": "(4)\n24/30",
+              "column": 8,
+              "page": 33,
+              "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+              "row": 17,
+              "row_label": "Max structure height (ft)",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 33,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "structure_height_max",
+            "unit": "ft",
+            "unresolved_dependencies": [
+              "131.0444",
+              "131-04H",
+              "131-04D:4"
+            ],
+            "value": {
+              "evaluated": false,
+              "kind": "source_expression",
+              "text": "24/30"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [
+              "One dwelling unit per lot is a base-table basis, not a project-level capacity conclusion."
+            ],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "RECORDED",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "BASIS",
+            "provenance_sha256": "17d3790c88bb710a70af1de51095bd40d2ed9745374cdf934a17eb9168545f4a",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:4",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                507.046,
+                317.0795652173913,
+                548.4614997674419,
+                332.45
+              ],
+              "cell_text": "1",
+              "column": 8,
+              "page": 33,
+              "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+              "row": 4,
+              "row_label": "Max permitted density (DU per lot)",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 33,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "density_basis",
+            "unit": "dwelling_unit_per_lot",
+            "unresolved_dependencies": [
+              "131.0431"
+            ],
+            "value": {
+              "kind": "number",
+              "number": 1.0
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "RECORDED",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MIN",
+            "provenance_sha256": "201025d9ec1bed5f7129c1cbce0ef79011ab57ecb295337fab7d3a2de0d48efd",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:5",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                507.046,
+                332.45,
+                548.4614997674419,
+                360.78999999999996
+              ],
+              "cell_text": "5,000",
+              "column": 8,
+              "page": 33,
+              "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+              "row": 5,
+              "row_label": "Min lot area (sf)",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 33,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "lot_area_min",
+            "unit": "sq_ft",
+            "unresolved_dependencies": [
+              "131.0431"
+            ],
+            "value": {
+              "kind": "number",
+              "number": 5000.0
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "RECORDED",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MIN",
+            "provenance_sha256": "00acc1571936cfddd52c3747b61491935b9964bb5e71af184a6a70dea47820e2",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:7",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                507.046,
+                375.31,
+                548.4614997674419,
+                389.95
+              ],
+              "cell_text": "50",
+              "column": 8,
+              "page": 33,
+              "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+              "row": 7,
+              "row_label": "Lot width (ft)",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 33,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "lot_width_min",
+            "unit": "ft",
+            "unresolved_dependencies": [
+              "131.0442"
+            ],
+            "value": {
+              "kind": "number",
+              "number": 50.0
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [
+              "Section 131.0442(a) may reduce frontage to 60 percent on qualifying turnaround or curving streets."
+            ],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MIN",
+            "provenance_sha256": "ec305de07ac6e19cab6d631041299b5c953049dee6d15a6bf5719066e51b3814",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:8",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                507.046,
+                389.95,
+                548.4614997674419,
+                418.270015
+              ],
+              "cell_text": "50",
+              "column": 8,
+              "page": 33,
+              "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+              "row": 8,
+              "row_label": "Street frontage (ft)\n[See Section 131.0442(a)]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 33,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "street_frontage_min",
+            "unit": "ft",
+            "unresolved_dependencies": [
+              "131.0442(a)"
+            ],
+            "value": {
+              "kind": "number",
+              "number": 50.0
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [
+              "Applies only when the lot is a corner lot."
+            ],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MIN",
+            "provenance_sha256": "291f0de838eb1d982e1c997e84208d57c92350d8d5be19b001855c9dbbf7d0df",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:9",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                507.046,
+                418.270015,
+                548.4614997674419,
+                432.78999999999996
+              ],
+              "cell_text": "55",
+              "column": 8,
+              "page": 33,
+              "page_text_sha256": "0def7e88eeb79e17ee943e75a8d9a7252c28329eaafa03523de812433c2f8d49",
+              "row": 9,
+              "row_label": "Lot width (corner) (ft)",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 33,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "corner_lot_width_min",
+            "unit": "ft",
+            "unresolved_dependencies": [
+              "131.0442"
+            ],
+            "value": {
+              "kind": "number",
+              "number": 55.0
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "REFERENCE",
+            "provenance_sha256": "4f4d3b20f2a0ad903aef2e8cd384cf16c0d1e3fe881ee6cb846f629dc168b08b",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:10",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                535.9200199999999,
+                366.909995,
+                585.1199899999999,
+                395.11001
+              ],
+              "cell_text": "applies",
+              "column": 8,
+              "page": 34,
+              "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+              "row": 10,
+              "row_label": "Max third story dimensions\n[See Section 131.0460]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 34,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "third_story_dimensions_max",
+            "unit": null,
+            "unresolved_dependencies": [
+              "131.0460"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "131.0460"
+              ],
+              "text": "applies"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "REFERENCE",
+            "provenance_sha256": "538d1b3480d9c25d09fc6336a7ff14dc148271ebcc5a85b1da0e9debe641a65c",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:11",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                535.9200199999999,
+                395.11001,
+                585.1199899999999,
+                436.99001
+              ],
+              "cell_text": "applies",
+              "column": 8,
+              "page": 34,
+              "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+              "row": 11,
+              "row_label": "Architectural projections and\nencroachments\n[See Section 131.0461(a)]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 34,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "architectural_projections_encroachments",
+            "unit": null,
+            "unresolved_dependencies": [
+              "131.0461(a)"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "131.0461(a)"
+              ],
+              "text": "applies"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "REFERENCE",
+            "provenance_sha256": "b5a0201ec1f1e9295d1d5a15d7f99286eea52a8c4fa9a7bd6365544807345190",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:12",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                535.9200199999999,
+                436.99001,
+                585.1199899999999,
+                465.069995
+              ],
+              "cell_text": "applies",
+              "column": 8,
+              "page": 34,
+              "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+              "row": 12,
+              "row_label": "Supplemental requirements\n[See Section 131.0464(a)]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 34,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "supplemental_requirements",
+            "unit": null,
+            "unresolved_dependencies": [
+              "131.0464(a)"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "131.0464(a)"
+              ],
+              "text": "applies"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "REFERENCE",
+            "provenance_sha256": "5e474ed6ebaa9cde05e16a4fc02fd06e2e167f286d775abbedcb28cddbdc05cc",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:13",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                535.9200199999999,
+                465.069995,
+                585.1199899999999,
+                498.339995
+              ],
+              "cell_text": "applies",
+              "column": 8,
+              "page": 34,
+              "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+              "row": 13,
+              "row_label": "Refuse and Recyclable Material\nStorage [See Section 142.0805]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 34,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "refuse_recycling_storage",
+            "unit": null,
+            "unresolved_dependencies": [
+              "142.0805"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "142.0805"
+              ],
+              "text": "applies"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "REFERENCE",
+            "provenance_sha256": "54c297e85f09517da4e18191436f75e2d40240da32b66e1364225d56f4c8f3b2",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:14",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                535.9200199999999,
+                498.339995,
+                585.1199899999999,
+                531.70001
+              ],
+              "cell_text": "applies",
+              "column": 8,
+              "page": 34,
+              "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+              "row": 14,
+              "row_label": "Visibility Area [See Section 113.0273]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 34,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "visibility_area",
+            "unit": null,
+            "unresolved_dependencies": [
+              "113.0273"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "113.0273"
+              ],
+              "text": "applies"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "REFERENCE",
+            "provenance_sha256": "bed1adc4345e4c1249a9653a750e7280f7fea5c7a204e3085a92ce6896c2330c",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:15",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                535.9200199999999,
+                531.70001,
+                585.1199899999999,
+                564.9399800000001
+              ],
+              "cell_text": "applies",
+              "column": 8,
+              "page": 34,
+              "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+              "row": 15,
+              "row_label": "Dwelling Unit Protection Regulations\n[See Chapter 14, Article 3, Division 12]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 34,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "dwelling_unit_protection",
+            "unit": null,
+            "unresolved_dependencies": [
+              "Chapter 14, Article 3, Division 12"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "Chapter 14, Article 3, Division 12"
+              ],
+              "text": "applies"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [
+              "Section 131.0445(a) applies only where more than 50 percent of the premises contains steep hillsides; the section states 50 percent maximum coverage."
+            ],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MAX",
+            "provenance_sha256": "88d9ffe0a853cdbf3f392aa2b9d5a85239fc5720b532d40796675a39fbca302f",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:4",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                535.9200199999999,
+                198.019995,
+                585.1199899999999,
+                226.249995
+              ],
+              "cell_text": "applies",
+              "column": 8,
+              "page": 34,
+              "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+              "row": 4,
+              "row_label": "Lot coverage for sloping lots\n[See Section 131.0445(a)]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 34,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "lot_coverage_max",
+            "unit": "percent",
+            "unresolved_dependencies": [
+              "131.0445(a)"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "131.0445(a)"
+              ],
+              "text": "applies"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [
+              "See Section 131.0446(a).",
+              "The source says varies; section 131.0446(a) and Table 131-04J require lot-area and steep-hillside facts."
+            ],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [
+              "131-04D:5"
+            ],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MAX",
+            "provenance_sha256": "89d56121a6df2558ef7ffc6b10f850bed750f33eb552069a8435e8307cf854ae",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:5",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                535.9200199999999,
+                226.249995,
+                585.1199899999999,
+                254.56999999999994
+              ],
+              "cell_text": "(5)\nvaries",
+              "column": 8,
+              "page": 34,
+              "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+              "row": 5,
+              "row_label": "Max floor area ratio",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 34,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "floor_area_ratio_max",
+            "unit": "ratio",
+            "unresolved_dependencies": [
+              "131.0446",
+              "131-04D:5"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "131.0446(a)",
+                "131-04J"
+              ],
+              "text": "varies"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "MAX",
+            "provenance_sha256": "ac353a7526c899c3d56e2cfafcce7265bfc3d6f89c058bb3665513f7ee31470d",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:6",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                535.9200199999999,
+                254.56999999999994,
+                585.1199899999999,
+                282.649995
+              ],
+              "cell_text": "applies",
+              "column": 8,
+              "page": 34,
+              "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+              "row": 6,
+              "row_label": "Max paving/ hardscape\n[See Section 131.0447]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 34,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "paving_hardscape_max",
+            "unit": "percent",
+            "unresolved_dependencies": [
+              "131.0447"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "131.0447"
+              ],
+              "text": "applies"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "REFERENCE",
+            "provenance_sha256": "0e717b4e4c857f7c929938aa5dbdbb1972d157ce13f982591f9ae6612d7d3056",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:7",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                535.9200199999999,
+                282.649995,
+                585.1199899999999,
+                310.72999500000003
+              ],
+              "cell_text": "applies",
+              "column": 8,
+              "page": 34,
+              "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+              "row": 7,
+              "row_label": "Accessory uses and structures\n[See Sections 131.0448 and 141.0307]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 34,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "accessory_uses_structures",
+            "unit": null,
+            "unresolved_dependencies": [
+              "131.0448",
+              "141.0307"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "131.0448",
+                "141.0307"
+              ],
+              "text": "applies"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "REFERENCE",
+            "provenance_sha256": "135176bfa64af5293151a4274122cac3c74b9c81df1a6c8ae658d0e05252aa69",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:8",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                535.9200199999999,
+                310.72999500000003,
+                585.1199899999999,
+                338.809995
+              ],
+              "cell_text": "applies",
+              "column": 8,
+              "page": 34,
+              "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+              "row": 8,
+              "row_label": "Garage regulations\n[See Section 131.0449(a)]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 34,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "garage_regulations",
+            "unit": null,
+            "unresolved_dependencies": [
+              "131.0449(a)"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "131.0449(a)"
+              ],
+              "text": "applies"
+            },
+            "zone_code": "RS-1-7"
+          },
+          {
+            "condition": [],
+            "derivation_class": "SOURCE_TRANSCRIPTION",
+            "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+            "effective_from": null,
+            "effective_to": null,
+            "exceptions": [],
+            "fact_state": "CONDITIONAL",
+            "jurisdiction_variant": "OUTSIDE_COASTAL",
+            "notes": [
+              "Recorded base-zone evidence only; no parcel compliance or development-capacity conclusion."
+            ],
+            "operator": "REFERENCE",
+            "provenance_sha256": "c36944738f483af577e6f0b845d18500c9069f74cdfc8c16661a3a5eadeb8aab",
+            "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:34:9",
+            "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+            "source_document": "San Diego Municipal Code Chapter 13, Article 1, Division 4",
+            "source_evidence": {
+              "bbox": [
+                535.9200199999999,
+                338.809995,
+                585.1199899999999,
+                366.909995
+              ],
+              "cell_text": "applies",
+              "column": 8,
+              "page": 34,
+              "page_text_sha256": "73981517d705302c12f1a674c2de5d28869db1dd3433eec8f9b7057516ded1c2",
+              "row": 9,
+              "row_label": "Building spacing\n[See Section 131.0450]",
+              "source_edition": "9-2026",
+              "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+              "zone_header": "RS-1-7"
+            },
+            "source_page": 34,
+            "source_section": "131.0431(a)",
+            "source_table": "131-04D",
+            "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+            "standard_key": "building_spacing",
+            "unit": null,
+            "unresolved_dependencies": [
+              "131.0450"
+            ],
+            "value": {
+              "kind": "reference",
+              "targets": [
+                "131.0450"
+              ],
+              "text": "applies"
+            },
+            "zone_code": "RS-1-7"
+          }
+        ],
+        "source_state": "available",
+        "state": "supported",
+        "zone_code": "RS-1-7",
+        "zone_evidence": {
+          "coverage_percent": 100.0,
+          "role": "single",
+          "source_feature_ids": [
+            1374
+          ],
+          "zone_code": "RS-1-7"
+        }
+      }
+    ]
+  },
+  "standards_blended": false,
+  "unresolved_reasons": [
+    {
+      "code": "CONDITIONAL_RULES_REQUIRE_ADDITIONAL_FACTS",
+      "detail": "Conditional source rules are returned unevaluated."
+    }
+  ]
+}

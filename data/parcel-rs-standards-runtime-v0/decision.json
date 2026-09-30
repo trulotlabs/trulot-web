@@ -1,0 +1,20 @@
+{
+  "canonical_output_sha256": "a1b05b4b046896df266fd11d22fc806ab0455800506dfcad688a772bf313c242",
+  "capacity_logic": false,
+  "contract_version": "parcel-rs-standards-runtime-2026-09-30-v0",
+  "decision": "RS_STANDARDS_RUNTIME_V0_READY",
+  "fixture_cases": 13,
+  "parcel_compliance_logic": false,
+  "production_runtime_wiring": false,
+  "returned_rule_fact_states": {
+    "CONDITIONAL": 131,
+    "NOT_APPLICABLE": 0,
+    "RECORDED": 31,
+    "UNKNOWN": 9
+  },
+  "returned_rules": 171,
+  "supported_values_without_provenance": 0,
+  "supported_zone_sets": 7,
+  "unsupported_zone_results": 2,
+  "zone_results": 9
+}
