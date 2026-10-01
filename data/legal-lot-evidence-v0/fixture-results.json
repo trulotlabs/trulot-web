@@ -1,5 +1,5 @@
 {
-  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25",
+  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25a",
   "fixture_count": 25,
   "results": [
     {
@@ -193,8 +193,8 @@
     {
       "apn": "6341302200",
       "apn_recorded_entity_reconciliation": {
-        "reason": "The assessor text names PM 17383 Parcel 2, but the recorded 0.315-acre parcel materially conflicts with the current approximately 0.51-acre assessor/Parcel V2 entity; no later instrument was found remotely to reconcile the difference.",
-        "state": "IDENTITY_MISMATCH"
+        "reason": "Recorded deed DOC # 2001-0706032 identifies APN 634-130-22-00 as Parcel 1 of PM 17383; the map and current rectangular geometry west of 27th Street correspond to that same recorded entity. The assessor-derived Parcel 2 summary is retained as conflicting secondary evidence.",
+        "state": "EXACT_RECORDED_LOT_MATCH"
       },
       "areas": [
         {
@@ -225,15 +225,17 @@
         },
         {
           "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
-          "classification": "RECORDED_ENTITY_AREA_NOT_PROMOTED",
+          "classification": "LEGAL_LOT_AREA_CANDIDATE",
           "provenance": {
-            "label": "PARCEL 2 0.315 ACRES",
+            "dedicated_street_portion_note": "The mapped Parcel 1 outline includes a 30-foot by 94-foot portion of 27th Street; the recorded 0.572-acre value is preserved as the authoritative recorded area without converting current geometry into legal area.",
+            "gross_square_feet": 24916.32,
+            "label": "PARCEL 1 0.572 ACRES",
             "record": "PM 17383",
             "sheet": 2
           },
           "source_semantic": "RECORDED_MAP_AREA",
           "unit": "acre",
-          "value": 0.315
+          "value": 0.572
         }
       ],
       "assessor_evidence": {
@@ -271,6 +273,23 @@
         "status": "CONFIRMED_IN_OFFICIAL_SEARCH",
         "sub_id": "00"
       },
+      "authority_resolution": {
+        "governing_evidence": "DOC # 2001-0706032",
+        "rule": "When a derived title or assessor summary conflicts with an actual recorded deed or recorded map, the authoritative recorded instrument governs legal-description reconciliation.",
+        "secondary_conflict_retained": "PM17383 PAR 2"
+      },
+      "city_modification_search": {
+        "records_found": [],
+        "result": "NO_DIRECTLY_RELATED_RECORD_FOUND",
+        "scope_limitation": "OpenDSD address search covers indexed DSD permit information from 2003-current; absence does not prove no Certificate of Compliance, lot-line adjustment, lot tie, merger, map correction, later map, or right-of-way instrument exists.",
+        "search_terms": [
+          "1456 27TH ST SAN DIEGO CA 92154-3238",
+          "6341302200",
+          "PARCEL 1 PARCEL MAP NO. 17383"
+        ],
+        "searched_at": "2026-09-30",
+        "system": "OpenDSD Approval Search and official City web index"
+      },
       "coverage_tags": {
         "coastal_state": "OUTSIDE_COASTAL",
         "identity_exception": false,
@@ -280,62 +299,84 @@
           "RS-1-7"
         ]
       },
+      "current_area_comparison": {
+        "assessor_delta_from_private_portion_sqft": 118.68,
+        "assessor_delta_percent": 0.54,
+        "assessor_sqft": 22215,
+        "classification": "CONSISTENT_WITHIN_SOURCE_AND_MEASUREMENT_SEMANTICS",
+        "mapped_dedicated_street_portion_sqft": 2820.0,
+        "parcel_v2_delta_from_private_portion_sqft": -254.91,
+        "parcel_v2_delta_percent": 1.15,
+        "parcel_v2_geometry_sqft": 21841.412194,
+        "recorded_gross_area_acres": 0.572,
+        "recorded_gross_area_sqft": 24916.32,
+        "recorded_private_portion_estimate_sqft": 22096.32,
+        "semantic_note": "The recorded 0.572-acre gross parcel includes a 30-foot by 94-foot dedicated street portion; assessor and Parcel V2 figures correspond closely to the land west of the street. Approximate current geometry is not promoted to legal area."
+      },
+      "current_geometry_comparison": {
+        "classification": "BROAD_BOUNDARY_CORRESPONDENCE",
+        "obvious_added_or_removed_land": false,
+        "recognizable_geometry": true,
+        "scope": "Reconciliation check only; not a survey.",
+        "shape": "Near rectangle approximately 235 feet east-west by 94 feet north-south west of 27th Street",
+        "street_adjacency": "East edge at 27th Street"
+      },
       "development_capacity_calculated": false,
       "dimensions": [
         {
           "boundary_segment": "west",
-          "raw_label": "50.00'",
+          "raw_label": "94.00'",
           "semantic": "RECORDED_BOUNDARY_LENGTH",
           "unit": "ft",
-          "value": 50.0
+          "value": 94.0
         },
         {
-          "boundary_segment": "northwest",
-          "raw_label": "N 89\u00b055'03\" E 119.99' (120.00')",
+          "boundary_segment": "north including 30-foot dedicated street portion",
+          "raw_label": "N 89\u00b055'05\" E 265.04'",
           "semantic": "RECORDED_BOUNDARY_LENGTH",
           "unit": "ft",
-          "value": 119.99
+          "value": 265.04
         },
         {
-          "boundary_segment": "north jog",
-          "raw_label": "N 00\u00b003'42\" W 17.02' (17.00')",
-          "semantic": "RECORDED_BOUNDARY_LENGTH",
-          "unit": "ft",
-          "value": 17.02
-        },
-        {
-          "boundary_segment": "northeast",
-          "raw_label": "N 89\u00b057'37\" E 115.08' (115.00')",
-          "semantic": "RECORDED_BOUNDARY_LENGTH",
-          "unit": "ft",
-          "value": 115.08
-        },
-        {
-          "boundary_segment": "east along 27th Street",
-          "raw_label": "67.00'",
-          "semantic": "RECORDED_BOUNDARY_LENGTH",
-          "unit": "ft",
-          "value": 67.0
-        },
-        {
-          "boundary_segment": "south",
-          "raw_label": "N 89\u00b055'05\" E 235.04'",
+          "boundary_segment": "north west of 27th Street",
+          "raw_label": "235.04'",
           "semantic": "RECORDED_BOUNDARY_LENGTH",
           "unit": "ft",
           "value": 235.04
+        },
+        {
+          "boundary_segment": "east",
+          "raw_label": "94.00'",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 94.0
+        },
+        {
+          "boundary_segment": "south including 30-foot dedicated street portion",
+          "raw_label": "S 89\u00b054'59\" W 265.00'",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 265.0
+        },
+        {
+          "boundary_segment": "south west of 27th Street",
+          "raw_label": "235.00'",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 235.0
         }
       ],
-      "fingerprint_sha256": "e043d08c936d97652600f4ad86f241a382e703c6b11139cbcf3e89415862edd1",
+      "fingerprint_sha256": "45d578f06b0a17bc342c1d6504ca0db285db25bfa251cc22988d9f1ead97d3b5",
       "fixture_id": "outside-rs-1-7",
       "frontage_evidence": {
         "authoritative_artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
         "code_frontage_semantics": null,
         "dedicated_right_of_way": true,
-        "finding": "Parcel 2 has a recorded 67.00-foot boundary along 27th Street; the map does not designate the Code front lot line or establish Code frontage semantics.",
-        "frontage_length": 67.0,
+        "finding": "Parcel 1 has a recorded 94.00-foot boundary at 27th Street; the map does not designate the Code front lot line or establish Code frontage semantics.",
+        "frontage_length": 94.0,
         "street_adjacency": "27TH STREET"
       },
-      "land_dimensions_assigned_to_apn": false,
+      "land_dimensions_assigned_to_apn": true,
       "legal_area_findings": [
         {
           "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
@@ -354,17 +395,25 @@
           "state": "UNSUPPORTED"
         },
         {
-          "reason": "EXACT_RECORDED_ENTITY_MATCH_REQUIRED",
-          "state": "UNSUPPORTED"
+          "provenance": {
+            "dedicated_street_portion_note": "The mapped Parcel 1 outline includes a 30-foot by 94-foot portion of 27th Street; the recorded 0.572-acre value is preserved as the authoritative recorded area without converting current geometry into legal area.",
+            "gross_square_feet": 24916.32,
+            "label": "PARCEL 1 0.572 ACRES",
+            "record": "PM 17383",
+            "sheet": 2
+          },
+          "state": "LEGAL_LOT_AREA_SUPPORTED",
+          "unit": "acre",
+          "value": 0.572
         }
       ],
-      "legal_status_state": "LEGAL_LOT_EVIDENCE_PARTIAL",
+      "legal_status_state": "LEGAL_LOT_ESTABLISHED",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
         "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
         "No absence in a City endpoint is treated as proof that no modifying record exists.",
-        "Authoritative recorded-map sheets are retained by SHA-256 outside the repository; source TIFF bytes were not modified or committed.",
-        "Remote search did not close the legally operative Recorder/title chain."
+        "Authoritative recorded-map sheets and deed are retained by SHA-256 outside the repository; source bytes were not modified or committed.",
+        "The bounded chain conclusion supports parcel identity and legal-lot evidence only; it is not an ownership, encumbrance, or title-insurance conclusion."
       ],
       "lot_line_evidence": {
         "authoritative_artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
@@ -373,20 +422,20 @@
       },
       "map_lot_or_parcel_identifier": [
         {
-          "normalized": "PARCEL 2",
+          "normalized": "PARCEL 1",
           "type": "PARCEL"
         }
       ],
-      "minimum_lot_area_evaluation_state": "BLOCKED_BY_LEGAL_LOT_AREA_EVIDENCE",
+      "minimum_lot_area_evaluation_state": "READY_FOR_DETERMINISTIC_EVALUATION",
       "modification_chain": {
-        "limitation": "No directly related later modifying record was found remotely. OpenDSD is limited to its indexed 2003-current approvals, the County correction list is expressly partial from 1982, and Recorder APN search requires an in-person kiosk/title search.",
+        "limitation": "No directly related later modifying record was found remotely. For this bounded identity decision, the 2001 recorded deed, PM 17383, unchanged APN/address, and corresponding current geometry close the chain sufficiently; this is not an ownership or title-insurance conclusion.",
         "searched_sources": [
           "OpenDSD exact-address approval search",
           "City official-domain APN/address/legal-description search",
           "SRS APN/address/map-number search",
           "County partial Certificate of Correction index (1982-current list)"
         ],
-        "state": "UNRESOLVED"
+        "state": "COMPLETE_TO_CURRENT"
       },
       "parcel_compliance_evaluated": false,
       "parcel_v2_comparison": "CONSISTENT_BUT_SEMANTICS_DIFFER",
@@ -413,7 +462,86 @@
           "source": "County Survey Records System"
         }
       ],
-      "reason": "RELEVANT_RECORDS_DO_NOT_CONCLUSIVELY_ESTABLISH_CURRENT_LEGAL_LOT",
+      "reason": "AUTHORITATIVE_LEGAL_STATUS_AND_CURRENT_MODIFICATION_CHAIN",
+      "recorded_chain_chronology": [
+        {
+          "apn": "634-130-16-00",
+          "date": "1994",
+          "description": "Metes-and-bounds portion of Lot 13, Tibbetts Tract, Map 24; retained prior acquired evidence.",
+          "record": "DOC # 1994-0198203",
+          "role": "PREDECESSOR_CONFIGURATION"
+        },
+        {
+          "date": "1994-06-30",
+          "description": "Creates and depicts Parcel 1 and Parcel 2.",
+          "record": "PM 17383 / File No. 1994-414843",
+          "role": "PARCEL_CREATION_AND_LOT_LINE_ADJUSTMENT"
+        },
+        {
+          "apn": "634-130-22-00",
+          "date": "2001-10-01",
+          "description": "Legal description states Parcel 1, Parcel Map No. 17383.",
+          "record": "DOC # 2001-0706032",
+          "role": "CURRENT_APN_RECORDED_DEED"
+        },
+        {
+          "apn": "6341302200",
+          "date": "2026-09-30",
+          "description": "Same situs and APN; current geometry corresponds to Parcel 1 west of 27th Street.",
+          "record": "Current assessor and Parcel V2 evidence",
+          "role": "CURRENT_CORROBORATION"
+        }
+      ],
+      "recorded_deed_artifacts": [
+        {
+          "acquired_at": "2026-09-30T21:24:37-07:00",
+          "apn_normalized": "6341302200",
+          "apn_raw": "634-130-22-00",
+          "artifact_sha256": "1b778cb6a06dc60e75dd1184d22681f672e453f16002e5fb0214cfc9406131fd",
+          "artifact_state": "ACQUIRED_AUTHORITATIVE_RECORDED_DEED_SCAN",
+          "byte_size": 46254,
+          "deed_date": "2001-09-26",
+          "document_number": "2001-0706032",
+          "exact_filename": "B52044301.pdf",
+          "internal_discrepancy": "The deed text says PM 17383 was filed June 30, 1944; the authoritative parcel map's Recorder certificate says June 30, 1994. The discrepancy is retained as written and does not alter the exact map and parcel identifiers.",
+          "legal_description_text": "PARCEL 1 PARCEL MAP NO. 17383, IN THE CITY SAN DIEGO, COUNTY OF SAN DIEGO, STATE OF CALIFORNIA, FILED IN THE OFFICE OF THE COUNTY RECORDER OF SAN DIEGO, JUNE 30, 1944.",
+          "record_type": "Grant Deed",
+          "recording_date": "2001-10-01T08:00:00-07:00",
+          "source_note": "Operator-supplied local scan of the recorded instrument; no title-company summary substituted."
+        }
+      ],
+      "recorded_findings": {
+        "bearings": [
+          "north N 89\u00b055'05\" E",
+          "west N 00\u00b004'59\" W",
+          "south S 89\u00b054'59\" W",
+          "east/street line N 00\u00b003'42\" W"
+        ],
+        "creation_sources": [
+          "portion of Lot 13 of Tibbetts Tract, amended Licensed Survey Map No. 24",
+          "Parcel 1 of PM 4547",
+          "portion of 27th Street dedicated to public use"
+        ],
+        "easements_or_dedications": [
+          "A 4.0-foot water easement to Juanita A. Valverde is shown within Parcel 1 under a deed recorded 1953-04-23, Book 4832, Page 310 O.R.",
+          "The map includes a portion of 27th Street dedicated by Old Road Survey 172 on 1890-01-20."
+        ],
+        "file_number": "1994-414843",
+        "map_notes": [
+          "Field survey requested by Juan Andrade on 1993-12-01.",
+          "City Engineer approval dated 1994-06-28.",
+          "Filed 1994-06-30 at 11:51 AM as File No. 1994-414843."
+        ],
+        "map_purpose": "LOT LINE ADJUSTMENT",
+        "parcel": "1",
+        "recorded_area_acres": 0.572,
+        "recorded_area_square_feet": 24916.32,
+        "street_relationships": [
+          "Parcel 1 is depicted adjoining 27th Street along a 94.00-foot recorded boundary.",
+          "The Parcel 1 map outline includes a 30-foot-wide portion of 27th Street dedicated for public use."
+        ],
+        "total_map_area_acres": 0.887
+      },
       "recorded_map_artifacts": [
         {
           "acquired_at": "2026-09-30T18:32:37-07:00",
@@ -434,7 +562,7 @@
           },
           "record_number": "PM 17383",
           "record_type": "Parcel Map",
-          "relation_to_target_apn": "Official assessor description cites PM 17383 Parcel 2.",
+          "relation_to_target_apn": "The recorded 2001 deed identifies the current APN as Parcel 1 of PM 17383.",
           "sheet": 1,
           "source": "San Diego County Survey Records System",
           "source_url": "https://srs.sandiegocounty.gov/"
@@ -458,7 +586,7 @@
           },
           "record_number": "PM 17383",
           "record_type": "Parcel Map",
-          "relation_to_target_apn": "Sheet 2 contains Parcel 2 boundary and area evidence.",
+          "relation_to_target_apn": "Sheet 2 contains Parcel 1 boundary and area evidence.",
           "sheet": 2,
           "source": "San Diego County Survey Records System",
           "source_url": "https://srs.sandiegocounty.gov/"
@@ -471,8 +599,34 @@
           "type": "PARCEL_MAP"
         }
       ],
-      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
-      "subsequent_modifying_records": []
+      "recorder_chain_state": "REMOTE_CHAIN_SUFFICIENT",
+      "srs_modification_search": {
+        "certificate_of_correction_index": "No MAP 00915 or PM 17383 entry found in the County's expressly partial 1982-current list.",
+        "records_found": [],
+        "result": "ORIGINATING_MAP_ONLY",
+        "same_number_collisions_excluded": [
+          "PM 12057 cross-references TM 17383 and is not PM 17383"
+        ],
+        "scope_limitation": "SRS supplements the Survey Records Counter and its correction list is partial. For 27th Street, the negative search is used only with the recorded deed/map and matching current geometry, not as standalone proof.",
+        "search_terms": [
+          "6341302200",
+          "1456 27TH ST SAN DIEGO CA 92154-3238",
+          "PM 17383"
+        ],
+        "searched_at": "2026-09-30",
+        "system": "San Diego County Survey Records System"
+      },
+      "subsequent_modifying_records": [],
+      "superseded_evidence": [
+        {
+          "corrected_state": "EXACT_RECORDED_LOT_MATCH",
+          "new_authoritative_evidence": "Recorded Grant Deed DOC # 2001-0706032 identifies APN 634-130-22-00 as Parcel 1 of PM 17383",
+          "packet": "Packet 25",
+          "prior_basis": "Derived assessor/title summary PM17383 PAR 2 and comparison to Parcel 2's 0.315-acre area",
+          "prior_conclusion": "IDENTITY_MISMATCH",
+          "reason_for_supersession": "The actual recorded deed controls legal-description reconciliation over the conflicting derived summary"
+        }
+      ]
     },
     {
       "apn": "4304211000",

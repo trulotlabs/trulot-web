@@ -1,12 +1,12 @@
 {
   "artifacts": {
-    "contract.json": "69330664c01950678b3c1329dc642bd115893f392525fc1df780ee9c7b92cc3b",
-    "decision.json": "1d9070349b1cc0e97c14c93da06221cd2741af1c8657c43f0585d6a0eec37320",
-    "fixture-results.json": "5c8b84c7a03fa039cbcc721682ebd23a0583058dbfd0de3e82c35c0a06a53bc1",
-    "fixtures.json": "65aa5c90d776c02d7e4f626e3cc4bbd69178d4216e06cd4a7537335ac12dd2b1",
-    "reconciliation.json": "2f019d53e8724d359be142d460c7b1f998ae554606b719bacfa3acbfd351e426",
-    "source-systems.json": "f1396922d100a1a78d617ccca654a05d8a3c87cdde4d0b699de65716b2fd6595"
+    "contract.json": "f3877044ecb194ed403bc2e798ba176b8ec383efcfe4b9f5a8f09919e1a9dd84",
+    "decision.json": "215de45f3e1f3b76e4ed4dd310b660dee224c441ce18cb2645305ef847c8ced6",
+    "fixture-results.json": "db13a386ac0f7b3e8fe8bcaf237fcc4b4b1c6fb5eca46fb41fb53b11fbf60135",
+    "fixtures.json": "8afe909441fca439db173c6694094c9ca4d1062907dbcc60e9c03c189e0a7713",
+    "reconciliation.json": "3f5032a67ae29d3c18316b1838b1e5d483d95973549b118d2c600e07129a218a",
+    "source-systems.json": "ed3a348ebcc0871ad8a775890e68e8aa000d529ac1b7752accf31c161e6de762"
   },
-  "bundle_sha256": "33991f8286762530fe9b70222338588182b93b7055eea22baa9aa4d13e43d5d1",
-  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25"
+  "bundle_sha256": "dca91e48524336e176dbdec8da666e680caf240d363941976fd168406d3e38a0",
+  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25a"
 }

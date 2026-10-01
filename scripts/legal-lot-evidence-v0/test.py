@@ -13,8 +13,9 @@ class LegalLotEvidenceTests(unittest.TestCase):
         self.assertNotEqual(resolve_fixture(f)["legal_status_state"],"LEGAL_LOT_ESTABLISHED")
     def test_02_assessor_semantics_remain_separate(self):
         r=next(x for x in self.results if x["apn"]=="6341302200")
-        self.assertEqual(r["legal_status_state"],"LEGAL_LOT_EVIDENCE_PARTIAL")
-        self.assertTrue(all(a["classification"]!="LEGAL_LOT_AREA_SUPPORTED" for a in r["areas"]))
+        self.assertEqual(r["legal_status_state"],"LEGAL_LOT_ESTABLISHED")
+        assessor_indexes=[i for i,a in enumerate(r["areas"]) if a["source_semantic"].startswith("ASSESSOR_") or a["source_semantic"].startswith("PARCEL_V2_")]
+        self.assertTrue(all(r["legal_area_findings"][i]["state"]=="UNSUPPORTED" for i in assessor_indexes))
     def test_03_recorded_reference_parsing(self):
         self.assertEqual(parse_recorded_references("PM17383 PAR 2")["references"][0]["normalized"],"PM 17383")
         self.assertEqual(parse_recorded_references("TR 915 BLK 4*LOTS 7 THRU 9*")["references"][0]["normalized"],"MAP 00915")
@@ -34,18 +35,21 @@ class LegalLotEvidenceTests(unittest.TestCase):
     def test_08_frontage_refusal(self):
         self.assertEqual(resolve_frontage({"street_adjacency":True})["state"],"REFUSED")
     def test_09_modification_chain_preserved(self):
-        self.assertTrue(all(x["modification_chain"]["state"]=="UNRESOLVED" for x in self.results))
+        r=next(x for x in self.results if x["apn"]=="6341302200")
+        self.assertEqual(r["modification_chain"]["state"],"COMPLETE_TO_CURRENT")
+        self.assertTrue(all(x["modification_chain"]["state"]=="UNRESOLVED" for x in self.results if x["apn"]!="6341302200"))
     def test_10_condo_stack_refusal(self):
         for apn in ("5891700512","5891700513","5333641301","5333641302"):
             r=next(x for x in self.results if x["apn"]==apn); self.assertFalse(r["land_dimensions_assigned_to_apn"])
     def test_11_source_unavailable_handling(self):
         self.assertEqual(sum(x["legal_status_state"]=="LEGAL_LOT_SOURCE_UNAVAILABLE" for x in self.results),22)
-    def test_12_no_rule_unlock_without_artifact(self):
-        self.assertTrue(all(x["minimum_lot_area_evaluation_state"]=="BLOCKED_BY_LEGAL_LOT_AREA_EVIDENCE" for x in self.results))
+    def test_12_only_deed_reconciled_parcel_unlocks_readiness(self):
+        ready=[x["apn"] for x in self.results if x["minimum_lot_area_evaluation_state"]=="READY_FOR_DETERMINISTIC_EVALUATION"]
+        self.assertEqual(ready,["6341302200"])
     def test_13_bounded_corpus_coverage(self):
         self.assertEqual(len(self.fixtures),25); self.assertTrue({"3506320400","6341302200","4304211000"}.issubset({x["apn"] for x in self.fixtures}))
     def test_14_exact_reconciliation(self):
-        c=self.outputs["reconciliation.json"]["counts"]; self.assertEqual(c["assessor_map_found"],3); self.assertEqual(c["recorded_map_reference_found"],3); self.assertEqual(c["recorded_map_acquired"],2); self.assertEqual(c["LEGAL_LOT_EVIDENCE_PARTIAL"],3); self.assertEqual(c["LEGAL_LOT_SOURCE_UNAVAILABLE"],22)
+        c=self.outputs["reconciliation.json"]["counts"]; self.assertEqual(c["assessor_map_found"],3); self.assertEqual(c["recorded_map_reference_found"],3); self.assertEqual(c["recorded_map_acquired"],2); self.assertEqual(c["LEGAL_LOT_ESTABLISHED"],1); self.assertEqual(c["LEGAL_LOT_EVIDENCE_PARTIAL"],2); self.assertEqual(c["LEGAL_LOT_SOURCE_UNAVAILABLE"],22)
     def test_15_no_compliance_or_capacity(self):
         encoded=canonical_json(self.outputs); self.assertNotIn('"parcel_compliance_evaluated":true',encoded); self.assertNotIn('"development_capacity_calculated":true',encoded)
     def test_16_deterministic_build(self):
@@ -65,12 +69,14 @@ class LegalLotEvidenceTests(unittest.TestCase):
         self.assertEqual(r["apn_recorded_entity_reconciliation"]["state"],"MULTIPLE_RECORDED_LOTS_ONE_APN")
         self.assertEqual(r["legal_status_state"],"LEGAL_LOT_EVIDENCE_PARTIAL")
         self.assertFalse(r["land_dimensions_assigned_to_apn"])
-    def test_20_identity_conflict_blocks_recorded_area_promotion(self):
+    def test_20_authoritative_deed_overrides_secondary_identity_conflict(self):
         r=next(x for x in self.results if x["apn"]=="6341302200")
-        self.assertEqual(r["apn_recorded_entity_reconciliation"]["state"],"IDENTITY_MISMATCH")
+        self.assertEqual(r["assessor_evidence"]["legal_description_raw"],"PM17383 PAR 2")
+        self.assertEqual(r["recorded_deed_artifacts"][0]["legal_description_text"].split(",")[0],"PARCEL 1 PARCEL MAP NO. 17383")
+        self.assertEqual(r["apn_recorded_entity_reconciliation"]["state"],"EXACT_RECORDED_LOT_MATCH")
         recorded=next(a for a in r["areas"] if a["source_semantic"]=="RECORDED_MAP_AREA")
         finding=r["legal_area_findings"][r["areas"].index(recorded)]
-        self.assertEqual(finding["reason"],"EXACT_RECORDED_ENTITY_MATCH_REQUIRED")
+        self.assertEqual(finding["state"],"LEGAL_LOT_AREA_SUPPORTED")
     def test_21_boundary_dimensions_preserve_semantics(self):
         r=next(x for x in self.results if x["apn"]=="6341302200")
         self.assertEqual({x["semantic"] for x in r["dimensions"]},{"RECORDED_BOUNDARY_LENGTH"})
@@ -81,9 +87,10 @@ class LegalLotEvidenceTests(unittest.TestCase):
             self.assertEqual(resolve_frontage(f["frontage_evidence"])["state"],"REFUSED")
             self.assertEqual(assign_lot_line_role(f["lot_line_evidence"])["state"],"REFUSED")
     def test_23_recorder_check_required(self):
-        for apn in ("3506320400","6341302200"):
-            r=next(x for x in self.results if x["apn"]==apn)
-            self.assertEqual(r["recorder_chain_state"],"RECORDER_CHECK_REQUIRED")
+        c=next(x for x in self.results if x["apn"]=="3506320400")
+        r=next(x for x in self.results if x["apn"]=="6341302200")
+        self.assertEqual(c["recorder_chain_state"],"RECORDER_CHECK_REQUIRED")
+        self.assertEqual(r["recorder_chain_state"],"REMOTE_CHAIN_SUFFICIENT")
     def test_24_artifact_seals_and_private_payment_exclusion(self):
         expected={"MAP 00915-1.TIF":"b17fa5436951059f76381dfa7f04a5215cdd9e5c79f51249b9b0fb11c12121bc","PM 17383-1.TIF":"4f3c57bf6dce29044532109abb1bb4bcc0c1740a506fb1ec36787f1b1ff821da","PM 17383-2.TIF":"6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00"}
         artifacts=[a for f in self.fixtures if f["apn"] in ("3506320400","6341302200") for a in f["recorded_map_artifacts"]]
@@ -95,5 +102,41 @@ class LegalLotEvidenceTests(unittest.TestCase):
             r=next(x for x in self.results if x["apn"]==apn)
             self.assertFalse(r["parcel_compliance_evaluated"])
             self.assertFalse(r["development_capacity_calculated"])
+
+    def test_26_deed_artifact_is_sealed(self):
+        r=next(x for x in self.results if x["apn"]=="6341302200")
+        deed=r["recorded_deed_artifacts"][0]
+        self.assertEqual(deed["document_number"],"2001-0706032")
+        self.assertEqual(deed["apn_normalized"],"6341302200")
+        self.assertEqual(deed["artifact_sha256"],"1b778cb6a06dc60e75dd1184d22681f672e453f16002e5fb0214cfc9406131fd")
+        self.assertIn("JUNE 30, 1944",deed["legal_description_text"])
+        self.assertIn("June 30, 1994",deed["internal_discrepancy"])
+
+    def test_27_predecessor_to_current_chronology(self):
+        r=next(x for x in self.results if x["apn"]=="6341302200")
+        records=[x["record"] for x in r["recorded_chain_chronology"]]
+        self.assertEqual(records[:3],["DOC # 1994-0198203","PM 17383 / File No. 1994-414843","DOC # 2001-0706032"])
+        self.assertEqual(r["recorded_chain_chronology"][0]["apn"],"634-130-16-00")
+
+    def test_28_parcel_one_area_and_geometry_semantics(self):
+        r=next(x for x in self.results if x["apn"]=="6341302200")
+        self.assertEqual(r["recorded_findings"]["parcel"],"1")
+        self.assertEqual(r["recorded_findings"]["recorded_area_acres"],.572)
+        self.assertEqual(r["current_area_comparison"]["classification"],"CONSISTENT_WITHIN_SOURCE_AND_MEASUREMENT_SEMANTICS")
+        self.assertEqual(r["current_geometry_comparison"]["classification"],"BROAD_BOUNDARY_CORRESPONDENCE")
+        self.assertFalse(r["current_geometry_comparison"]["obvious_added_or_removed_land"])
+
+    def test_29_superseded_evidence_audit_trail(self):
+        r=next(x for x in self.results if x["apn"]=="6341302200")
+        audit=r["superseded_evidence"][0]
+        self.assertEqual(audit["prior_conclusion"],"IDENTITY_MISMATCH")
+        self.assertEqual(audit["corrected_state"],"EXACT_RECORDED_LOT_MATCH")
+        self.assertIn("PM17383 PAR 2",audit["prior_basis"])
+
+    def test_30_cabrillo_remains_unresolved(self):
+        r=next(x for x in self.results if x["apn"]=="3506320400")
+        self.assertEqual(r["apn_recorded_entity_reconciliation"]["state"],"MULTIPLE_RECORDED_LOTS_ONE_APN")
+        self.assertEqual(r["legal_status_state"],"LEGAL_LOT_EVIDENCE_PARTIAL")
+        self.assertEqual(r["recorder_chain_state"],"RECORDER_CHECK_REQUIRED")
 
 if __name__=="__main__": unittest.main(verbosity=2)

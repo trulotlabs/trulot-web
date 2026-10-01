@@ -12,7 +12,7 @@
     "parcel_compliance_calculated": false,
     "production_wired": false
   },
-  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25",
+  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25a",
   "dimension_semantics": [
     "RECORDED_BOUNDARY_LENGTH",
     "ARC_LENGTH",
@@ -26,6 +26,7 @@
   "doctrine": [
     "APN is not a legal-lot conclusion.",
     "Multiple recorded lots under one APN are not collapsed into one legal lot.",
+    "When a derived title or assessor summary conflicts with an actual recorded deed or recorded map, the authoritative recorded instrument governs legal-description reconciliation; the secondary summary remains in the audit trail.",
     "Recorded area is promoted only after exact entity match and a complete current legal-status chain.",
     "Assessor map dimensions are not automatically Code-defined width or depth.",
     "Street adjacency, dedicated right-of-way, frontage length, and Code-defined frontage are distinct.",

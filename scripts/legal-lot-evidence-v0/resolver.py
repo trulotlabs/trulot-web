@@ -13,7 +13,7 @@ import re
 from typing import Any
 
 
-CONTRACT_VERSION = "legal-lot-evidence-v0-2026-09-30-p25"
+CONTRACT_VERSION = "legal-lot-evidence-v0-2026-09-30-p25a"
 LEGAL_STATES = (
     "LEGAL_LOT_ESTABLISHED",
     "LEGAL_LOT_EVIDENCE_PARTIAL",
@@ -166,6 +166,18 @@ def resolve_fixture(fixture: dict[str, Any]) -> dict[str, Any]:
         "parcel_compliance_evaluated": False,
         "development_capacity_calculated": False,
     })
+    if fixture.get("recorded_deed_artifacts"):
+        result.update({
+            "recorded_deed_artifacts": fixture["recorded_deed_artifacts"],
+            "recorded_findings": fixture.get("recorded_findings"),
+            "authority_resolution": fixture.get("authority_resolution"),
+            "recorded_chain_chronology": fixture.get("recorded_chain_chronology", []),
+            "current_geometry_comparison": fixture.get("current_geometry_comparison"),
+            "current_area_comparison": fixture.get("current_area_comparison"),
+            "city_modification_search": fixture.get("city_modification_search"),
+            "srs_modification_search": fixture.get("srs_modification_search"),
+            "superseded_evidence": fixture.get("superseded_evidence", []),
+        })
     reconciliation_state = result["apn_recorded_entity_reconciliation"]["state"]
     modification_chain_complete = fixture.get("modification_chain", {}).get("state") == "COMPLETE_TO_CURRENT"
     area_results = [

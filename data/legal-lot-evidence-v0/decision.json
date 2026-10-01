@@ -1,11 +1,11 @@
 {
-  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25",
-  "decision": "BOUNDED_LEGAL_LOT_PROOF_NOT_READY",
+  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25a",
+  "decision": "27TH_STREET_LEGAL_LOT_RECONCILIATION_READY",
   "first_rule_unlock": {
-    "minimum_lot_area": "BLOCKED",
-    "ready_fixture_count": 0
+    "minimum_lot_area": "READY_FOR_DETERMINISTIC_EVALUATION",
+    "ready_fixture_count": 1
   },
-  "next_feasibility_source_target": "County Recorder APN/title chain for APNs 3506320400 and 6341302200",
+  "next_feasibility_step": "minimum lot area rule evaluator",
   "parcel_decisions": {
     "3506320400": {
       "legal_area_supported": false,
@@ -15,12 +15,12 @@
       "recorder_chain_state": "RECORDER_CHECK_REQUIRED"
     },
     "6341302200": {
-      "legal_area_supported": false,
-      "legal_lot_state": "LEGAL_LOT_EVIDENCE_PARTIAL",
-      "minimum_lot_area_readiness": "BLOCKED_BY_LEGAL_LOT_AREA_EVIDENCE",
-      "reconciliation_state": "IDENTITY_MISMATCH",
-      "recorder_chain_state": "RECORDER_CHECK_REQUIRED"
+      "legal_area_supported": true,
+      "legal_lot_state": "LEGAL_LOT_ESTABLISHED",
+      "minimum_lot_area_readiness": "READY_FOR_DETERMINISTIC_EVALUATION",
+      "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+      "recorder_chain_state": "REMOTE_CHAIN_SUFFICIENT"
     }
   },
-  "reason": "The full recorded maps were acquired, but Cabrillo remains three platted lots under one APN without a proven merger/tie chain and 27th Street has an unresolved recorded-area/current-entity conflict; both require a Recorder/title chain."
+  "reason": "Recorded deed DOC # 2001-0706032 identifies current APN 6341302200 as Parcel 1 of PM 17383; the recorded map, bounded later-chain search, and current geometry support the same entity. Cabrillo remains unchanged and unresolved."
 }

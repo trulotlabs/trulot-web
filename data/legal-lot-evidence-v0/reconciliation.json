@@ -1,15 +1,15 @@
 {
   "apn_recorded_entity_reconciliation_counts": {
     "CURRENT_CONFIGURATION_REQUIRES_MODIFICATION_RECORD": 0,
-    "EXACT_RECORDED_LOT_MATCH": 0,
-    "IDENTITY_MISMATCH": 1,
+    "EXACT_RECORDED_LOT_MATCH": 1,
+    "IDENTITY_MISMATCH": 0,
     "MULTIPLE_RECORDED_LOTS_ONE_APN": 1,
     "UNRESOLVED": 23
   },
-  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25",
+  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25a",
   "counts": {
-    "LEGAL_LOT_ESTABLISHED": 0,
-    "LEGAL_LOT_EVIDENCE_PARTIAL": 3,
+    "LEGAL_LOT_ESTABLISHED": 1,
+    "LEGAL_LOT_EVIDENCE_PARTIAL": 2,
     "LEGAL_LOT_SOURCE_UNAVAILABLE": 22,
     "LEGAL_LOT_STATUS_UNRESOLVED": 0,
     "area_present": 2,
@@ -26,7 +26,7 @@
     "UNRESOLVED": 24
   },
   "recorder_chain_counts": {
-    "RECORDER_CHECK_REQUIRED": 25,
-    "REMOTE_CHAIN_SUFFICIENT": 0
+    "RECORDER_CHECK_REQUIRED": 24,
+    "REMOTE_CHAIN_SUFFICIENT": 1
   }
 }
