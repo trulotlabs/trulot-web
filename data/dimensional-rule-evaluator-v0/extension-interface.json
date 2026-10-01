@@ -1,6 +1,13 @@
 {
   "condition_contract": {
+    "not_applicable_behavior": "NO_NUMERIC_COMPARISON",
     "null_or_zero_coercion": false,
+    "result_states": [
+      "RULE_REQUIREMENT_SATISFIED",
+      "RULE_REQUIREMENT_NOT_SATISFIED",
+      "RULE_EVALUATION_UNRESOLVED",
+      "NOT_APPLICABLE"
+    ],
     "states": [
       "UNCONDITIONAL",
       "RESOLVED",
@@ -9,7 +16,7 @@
     ],
     "unresolved_behavior": "RULE_EVALUATION_UNRESOLVED"
   },
-  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p31",
+  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p37",
   "measurement_provider_types": [
     "derived_geometry",
     "recorded_source_fact",

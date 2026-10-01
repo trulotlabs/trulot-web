@@ -1,5 +1,5 @@
 {
-  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p31",
+  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p37",
   "fields": [
     "parcel_identity",
     "legal_lot_state",
@@ -22,6 +22,7 @@
   "result_states": [
     "RULE_REQUIREMENT_SATISFIED",
     "RULE_REQUIREMENT_NOT_SATISFIED",
-    "RULE_EVALUATION_UNRESOLVED"
+    "RULE_EVALUATION_UNRESOLVED",
+    "NOT_APPLICABLE"
   ]
 }

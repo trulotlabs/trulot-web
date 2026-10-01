@@ -1,6 +1,6 @@
 {
   "all_rules_identical": true,
-  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p31",
+  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p37",
   "rules": {
     "minimum_frontage": {
       "baseline_bundle_sha256": "dd1fd1683b30b0dbec8056989f014e3571495384952f68d54f74d0848bb3fc93",

@@ -1,0 +1,19 @@
+{
+  "apn": "6341302200",
+  "contract_version": "street-side-setback-applicability-v0-2026-10-01-p37",
+  "setback_family_summary": {
+    "front": "CONDITIONAL",
+    "interior_side": "CONDITIONAL",
+    "overall_compliance_computed": false,
+    "rear": "CONDITIONAL",
+    "street_side": "NOT_APPLICABLE"
+  },
+  "street_side_setback": {
+    "compliance_evaluated": false,
+    "display": "Street-side setback: Not applicable to this parcel because no side property line adjoins a street.",
+    "numeric_value_selected": false,
+    "rule_available_for_qualifying_parcels": true,
+    "state": "NOT_APPLICABLE"
+  },
+  "ui_wired": false
+}

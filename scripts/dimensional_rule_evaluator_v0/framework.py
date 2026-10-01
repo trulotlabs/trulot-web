@@ -14,8 +14,8 @@ from decimal import Decimal
 from typing import Any, Iterable, Mapping, Sequence
 
 
-CONTRACT_VERSION = "dimensional-rule-evaluator-v0-2026-10-01-p31"
-RESULT_STATES = ("RULE_REQUIREMENT_SATISFIED", "RULE_REQUIREMENT_NOT_SATISFIED", "RULE_EVALUATION_UNRESOLVED")
+CONTRACT_VERSION = "dimensional-rule-evaluator-v0-2026-10-01-p37"
+RESULT_STATES = ("RULE_REQUIREMENT_SATISFIED", "RULE_REQUIREMENT_NOT_SATISFIED", "RULE_EVALUATION_UNRESOLVED", "NOT_APPLICABLE")
 CONTRACT_FIELDS = (
     "parcel_identity", "legal_lot_state", "rule_family", "rule_id", "rule_source",
     "measurement_doctrine", "required_semantic_inputs", "resolved_inputs",
@@ -47,6 +47,16 @@ def evaluate_evidence_gates(gates: Mapping[str, Any]) -> GateResult:
     """Require literal True for every gate; nulls and truthy values do not pass."""
     failed = tuple(name for name, state in gates.items() if state is not True)
     return GateResult(passed=not failed, failed=failed)
+
+
+def resolve_rule_applicability(*, prerequisite_gates: Mapping[str, Any], applies: bool | None) -> dict[str, Any]:
+    """Resolve applicability only after every semantic prerequisite is literal True."""
+    gate = evaluate_evidence_gates(prerequisite_gates)
+    if not gate.passed or applies is None:
+        return {"state": "RULE_EVALUATION_UNRESOLVED", "failed_gates": list(gate.failed), "applies": None}
+    if applies is not True and applies is not False:
+        raise ValueError("APPLIES_MUST_BE_BOOLEAN_OR_NONE")
+    return {"state": "APPLICABLE" if applies else "NOT_APPLICABLE", "failed_gates": [], "applies": applies}
 
 
 def unresolved_result(*, contract_version: str, apn: str, rule_family: str, failed_gates: Sequence[str], false_fields: Sequence[str]) -> dict[str, Any]:

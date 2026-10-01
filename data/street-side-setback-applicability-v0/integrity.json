@@ -1,0 +1,12 @@
+{
+  "artifacts": {
+    "contract.json": "3a1f9904d526117a7aa3cb320d62120b494719badb1e7a3ebc42e4a43a6c40fb",
+    "decision.json": "c44b028371f99d0e64dd8ef8abaa986860b3a3cd4d23cccd965bb5d3ed404874",
+    "evaluation.json": "2ddf958acbc6214a48fa0d44d0b4557b91293614834fc73eba444e12d38808bd",
+    "framework-contract.json": "fa625e37c405281a11199815365a3e42e67e98b90a687a578bc6ef6ecbab6d7b",
+    "product-example.json": "51d3c9e27cc6ea5ca520e6469d1a9ef349ca24a7869e8bb9f64bd2909361c2c5",
+    "provenance.json": "38bfc438b6a82f0b1c8e698cafeb3fe133fb5098736edd9f9803d90fbd20bf7b"
+  },
+  "bundle_sha256": "bba21c80b46dce6e21e0c6c248d17b9faca5597114a3248c422469c4153f4053",
+  "contract_version": "street-side-setback-applicability-v0-2026-10-01-p37"
+}

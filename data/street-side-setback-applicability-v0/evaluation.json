@@ -1,0 +1,147 @@
+{
+  "apn": "6341302200",
+  "applicability_doctrine": {
+    "alley": "An alley-abutting line is not a street property line for setback or street-yard purposes; a side line at an alley receives an interior-side-yard standard (SDMC §113.0246(e)(2)).",
+    "corner_lot": "On a corner lot, the narrower street frontage is the front line; the other street-adjoining side line is the street-side property line (SDMC §113.0246(a), Diagram 113-02Z).",
+    "double_fronted_lot": "A lot extending from one street to another generally has front property lines along both frontages, not a street-side line (SDMC §113.0246(b)).",
+    "measurement_if_applicable": "A street-side setback is measured inward and perpendicular to the street-side property line (SDMC §113.0252(a)(3)); no measurement is invoked here.",
+    "measurement_pages_sha256": "3a36e2af8c025be4aa2d1d7c4a990b091c54db5835d8907cebad841b0376cf65",
+    "measurement_source_sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+    "resubdivided_corner_lot": "A residential resubdivided corner lot preserves original front and street-side setback treatment (SDMC §113.0246(f)).",
+    "source_edition": "7-2026",
+    "street_side_property_line": "A side property line that abuts public right-of-way (SDMC §113.0246(d))."
+  },
+  "applicability_gates": {
+    "baseline": true,
+    "corner_status_resolved": true,
+    "double_fronted_status_resolved": true,
+    "geometry_complete_for_line_roles": true,
+    "north_adjacency_resolved": true,
+    "resubdivided_corner_status_resolved": true,
+    "south_adjacency_resolved": true
+  },
+  "applicable_requirement": null,
+  "bounded_conclusion": "RS-1-7 contains a street-side rule for parcels with a street-side condition, but APN 6341302200 has no street-side property line. The rule family is NOT_APPLICABLE to this parcel; no numeric value or compliance comparison is selected.",
+  "compliance_evaluated": false,
+  "contract_version": "street-side-setback-applicability-v0-2026-10-01-p37",
+  "development_capacity_calculated": false,
+  "evaluation_scope": "STREET_SIDE_APPLICABILITY_ONLY",
+  "fingerprint_sha256": "b4c6975ed80ec3887e447215f413987327e6ceddef8658ff7b43ca4bc3178129",
+  "forbidden_conclusions": [
+    "STREET_SIDE_COMPLIANT",
+    "ZERO_FOOT_STREET_SIDE_SETBACK",
+    "STREET_SIDE_REQUIREMENT_WAIVED",
+    "OVERALL_ZONING_COMPLIANCE",
+    "STRUCTURE_COMPLIANCE",
+    "LEGAL_NONCONFORMITY",
+    "DEVELOPMENT_CAPACITY",
+    "BUILDABILITY",
+    "ENTITLEMENT_LIKELIHOOD",
+    "PERMIT_APPROVAL"
+  ],
+  "gates": {
+    "apn": true,
+    "legal_lot": true,
+    "legal_match": true,
+    "outside_coastal": true,
+    "parcel_identity": true,
+    "rule_available": true,
+    "single_zone": true,
+    "standards_version": true,
+    "zone": true
+  },
+  "legal_lot": {
+    "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+    "recorded_entity": "PM 17383 PARCEL 1",
+    "state": "LEGAL_LOT_ESTABLISHED"
+  },
+  "line_facts": {
+    "classification_state": "SINGLE_FRONTAGE_INTERIOR_NON_CORNER",
+    "corner_lot": false,
+    "double_fronted_lot": false,
+    "front_line": "east boundary at west edge of 27th Street right-of-way",
+    "geometry_complete_for_line_roles": true,
+    "north_side_abuts_public_right_of_way": false,
+    "rear_line": "opposite and most distant west boundary",
+    "resubdivided_corner_lot": false,
+    "side_lines": [
+      "north rear-to-front boundary",
+      "south rear-to-front boundary"
+    ],
+    "south_side_abuts_public_right_of_way": false,
+    "street_adjacencies": [
+      {
+        "line": "EAST_FRONT",
+        "role": "FRONT",
+        "street": "27TH_STREET"
+      }
+    ],
+    "through_lot": false
+  },
+  "next_feasibility_step": "parcel feasibility summary V0",
+  "numeric_comparison_performed": false,
+  "other_rule_families_evaluated": [],
+  "overall_compliance_conclusion": false,
+  "parcel_compliance_evaluated": false,
+  "parcel_identity": {
+    "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+    "situs_address": "1456 27TH ST"
+  },
+  "predicate_states": {
+    "corner_lot": {
+      "state": "FALSE",
+      "value": false
+    },
+    "double_fronted_lot": {
+      "state": "FALSE",
+      "value": false
+    },
+    "north_side_is_street_side": {
+      "state": "FALSE",
+      "value": false
+    },
+    "resubdivided_corner_lot": {
+      "state": "FALSE",
+      "value": false
+    },
+    "second_street_adjoining_side_line": {
+      "state": "FALSE",
+      "value": false
+    },
+    "south_side_is_street_side": {
+      "state": "FALSE",
+      "value": false
+    },
+    "street_side_rule_applicability": {
+      "state": "NOT_APPLICABLE",
+      "value": null
+    }
+  },
+  "product_wording": "Street-side setback: Not applicable to this parcel because no side property line adjoins a street.",
+  "rule_availability": {
+    "numeric_rule_selected_for_this_parcel": false,
+    "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:14",
+    "source_edition": "9-2026",
+    "source_page": 33,
+    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "source_table": "131-04D",
+    "state": "AVAILABLE_FOR_APPLICABLE_PARCELS",
+    "table_value_ft_evidence_only": 5
+  },
+  "rule_family": "street_side_setback",
+  "setback_family_summary": {
+    "front": "CONDITIONAL",
+    "interior_side": "CONDITIONAL",
+    "overall_compliance_computed": false,
+    "rear": "CONDITIONAL",
+    "street_side": "NOT_APPLICABLE"
+  },
+  "state": "STREET_SIDE_SETBACK_NOT_APPLICABLE",
+  "structure_compliance_evaluated": false,
+  "truth_state": "NOT_APPLICABLE",
+  "zoning": {
+    "coastal_state": "OUTSIDE_COASTAL",
+    "standards_version": "sd-rs-base-standards-2026-09-30-v0",
+    "zone_code": "RS-1-7"
+  }
+}

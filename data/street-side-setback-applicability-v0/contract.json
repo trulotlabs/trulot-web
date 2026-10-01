@@ -1,0 +1,31 @@
+{
+  "contract_version": "street-side-setback-applicability-v0-2026-10-01-p37",
+  "forbidden_conclusions": [
+    "STREET_SIDE_COMPLIANT",
+    "ZERO_FOOT_STREET_SIDE_SETBACK",
+    "STREET_SIDE_REQUIREMENT_WAIVED",
+    "OVERALL_ZONING_COMPLIANCE",
+    "STRUCTURE_COMPLIANCE",
+    "LEGAL_NONCONFORMITY",
+    "DEVELOPMENT_CAPACITY",
+    "BUILDABILITY",
+    "ENTITLEMENT_LIKELIHOOD",
+    "PERMIT_APPROVAL"
+  ],
+  "not_applicable_semantics": "Affirmatively excluded by supported geometry and classification; never zero, false, unknown, waived, or compliant.",
+  "scope": {
+    "apns": [
+      "6341302200"
+    ],
+    "rule_families": [
+      "street_side_setback_applicability"
+    ]
+  },
+  "shared_framework": "dimensional-rule-evaluator-v0-2026-10-01-p37",
+  "truth_states": [
+    "APPLICABLE",
+    "CONDITIONAL",
+    "NOT_APPLICABLE",
+    "RULE_EVALUATION_UNRESOLVED"
+  ]
+}

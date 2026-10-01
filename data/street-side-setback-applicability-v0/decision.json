@@ -1,0 +1,11 @@
+{
+  "applicability_result": "STREET_SIDE_SETBACK_NOT_APPLICABLE",
+  "contract_version": "street-side-setback-applicability-v0-2026-10-01-p37",
+  "decision": "STREET_SIDE_SETBACK_APPLICABILITY_V0_READY",
+  "development_capacity_calculated": false,
+  "next_feasibility_step": "parcel feasibility summary V0",
+  "numeric_comparison_performed": false,
+  "overall_compliance_conclusion": false,
+  "structure_compliance_evaluated": false,
+  "truth_state": "NOT_APPLICABLE"
+}

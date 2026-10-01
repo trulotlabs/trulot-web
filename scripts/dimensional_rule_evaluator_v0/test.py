@@ -3,7 +3,7 @@ from __future__ import annotations
 import json, unittest
 from decimal import Decimal
 from build import OUTPUT, ROOT, RULES, build_outputs
-from framework import CORE_FORBIDDEN_CONCLUSIONS, canonical_json, compare_values, conclusion_guard_fields, evaluate_evidence_gates, provenance_graph, validate_contract
+from framework import CORE_FORBIDDEN_CONCLUSIONS, canonical_json, compare_values, conclusion_guard_fields, evaluate_evidence_gates, provenance_graph, resolve_rule_applicability, validate_contract
 
 
 class DimensionalRuleEvaluatorV0Tests(unittest.TestCase):
@@ -62,6 +62,11 @@ class DimensionalRuleEvaluatorV0Tests(unittest.TestCase):
     def test_11_front_setback_is_representable_but_not_implemented(self):
         readiness = self.outputs["front-setback-readiness.json"]
         self.assertEqual(readiness["state"], "FRAMEWORK_SUFFICIENT_RULE_SPECIFIC_PREDICATE_MODEL_REQUIRED"); self.assertFalse(readiness["framework_change_required"]); self.assertFalse(readiness["implementation_started"])
+
+    def test_12_not_applicable_requires_resolved_prerequisites(self):
+        self.assertEqual(resolve_rule_applicability(prerequisite_gates={"geometry": True, "classification": True}, applies=False)["state"], "NOT_APPLICABLE")
+        self.assertEqual(resolve_rule_applicability(prerequisite_gates={"geometry": True, "classification": True}, applies=True)["state"], "APPLICABLE")
+        self.assertEqual(resolve_rule_applicability(prerequisite_gates={"geometry": None, "classification": True}, applies=False)["state"], "RULE_EVALUATION_UNRESOLVED")
 
     def test_12_combined_fingerprint_is_deterministic(self):
         self.assertEqual(build_outputs()["decision.json"]["combined_dimensional_evaluator_fingerprint_sha256"], build_outputs()["decision.json"]["combined_dimensional_evaluator_fingerprint_sha256"])

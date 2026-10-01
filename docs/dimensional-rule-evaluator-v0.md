@@ -15,3 +15,5 @@ Golden parity covers the entire canonical artifact bundle for every migrated rul
 `DIMENSIONAL_RULE_EVALUATOR_V0_READY`
 
 `NEXT_RULE_EVALUATION_TARGET: front setback`
+
+Packet 37 extends the validated result vocabulary with `NOT_APPLICABLE`. The shared applicability resolver emits that state only after all semantic prerequisites are affirmatively resolved and the rule family is excluded. Missing geometry or unresolved classification remains `RULE_EVALUATION_UNRESOLVED`; an inapplicable family never invokes numeric comparison and never becomes zero. Existing numeric contracts retain their prior results.

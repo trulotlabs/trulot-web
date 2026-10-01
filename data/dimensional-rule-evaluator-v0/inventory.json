@@ -1,5 +1,5 @@
 {
-  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p31",
+  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p37",
   "duplicated_inputs_now_normalized": [
     "parcel identity",
     "legal-lot state",
@@ -22,6 +22,7 @@
   "shared_machinery": [
     "canonical rendering and fingerprints",
     "literal-true evidence gates",
+    "explicit applicable/not-applicable resolver",
     "unresolved result envelope",
     "MIN/MAX/EXACT numeric comparator",
     "bounded conclusion guard fields",

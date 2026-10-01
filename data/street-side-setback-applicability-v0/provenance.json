@@ -1,0 +1,51 @@
+{
+  "chain": [
+    {
+      "apn": "6341302200",
+      "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+      "hop": "APN_TO_PARCEL_V2"
+    },
+    {
+      "entity": "PM 17383 Parcel 1",
+      "fingerprint_sha256": "45d578f06b0a17bc342c1d6504ca0db285db25bfa251cc22988d9f1ead97d3b5",
+      "hop": "PARCEL_TO_RECORDED_LOT"
+    },
+    {
+      "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+      "hop": "RECORDED_MAP_TO_LINE_ROLES",
+      "state": "SINGLE_FRONTAGE_INTERIOR_NON_CORNER"
+    },
+    {
+      "front": "EAST_27TH_STREET",
+      "hop": "LINE_ROLES_TO_STREET_ADJACENCY",
+      "north": "INTERIOR_SIDE",
+      "south": "INTERIOR_SIDE",
+      "west": "REAR"
+    },
+    {
+      "hop": "CODE_TO_STREET_SIDE_DEFINITION",
+      "section": "113.0246(d)",
+      "source_sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345"
+    },
+    {
+      "hop": "CODE_TO_UNUSUAL_CONDITIONS",
+      "pages_sha256": "3a36e2af8c025be4aa2d1d7c4a990b091c54db5835d8907cebad841b0376cf65",
+      "sections": [
+        "113.0246(b)",
+        "113.0246(e)(2)",
+        "113.0246(f)"
+      ]
+    },
+    {
+      "hop": "TABLE_TO_RULE_AVAILABILITY",
+      "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:14",
+      "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538"
+    },
+    {
+      "hop": "APPLICABILITY_GATE",
+      "numeric_comparison_performed": false,
+      "state": "NOT_APPLICABLE"
+    }
+  ],
+  "contract_version": "street-side-setback-applicability-v0-2026-10-01-p37"
+}

@@ -74,7 +74,7 @@ def build_outputs() -> dict[str, object]:
     parity = {"contract_version": CONTRACT_VERSION, "state": "BYTE_IDENTICAL_CANONICAL_PARITY", "rules": parity_rules, "all_rules_identical": all(item["canonical_bundle_identical"] for item in parity_rules.values())}
     inventory = {
         "contract_version": CONTRACT_VERSION,
-        "shared_machinery": ["canonical rendering and fingerprints", "literal-true evidence gates", "unresolved result envelope", "MIN/MAX/EXACT numeric comparator", "bounded conclusion guard fields", "provenance graph validation", "integrity artifact rendering"],
+        "shared_machinery": ["canonical rendering and fingerprints", "literal-true evidence gates", "explicit applicable/not-applicable resolver", "unresolved result envelope", "MIN/MAX/EXACT numeric comparator", "bounded conclusion guard fields", "provenance graph validation", "integrity artifact rendering"],
         "rule_specific_doctrine": {"minimum_lot_area": "legal-area denominator and public-ROW subtraction", "minimum_lot_depth": "front/rear midpoint line", "minimum_lot_width": "perpendicular line through depth midpoint", "minimum_frontage": "premises property-line-along-street fact plus §131.0442(a) predicate"},
         "duplicated_inputs_now_normalized": ["parcel identity", "legal-lot state", "rule source", "semantic inputs", "measurement result", "applicable requirement", "condition state", "comparison result", "bounded conclusion", "forbidden conclusions", "provenance"],
     }
@@ -82,7 +82,7 @@ def build_outputs() -> dict[str, object]:
         "contract_version": CONTRACT_VERSION,
         "required_extension_fields": ["rule_selector", "semantic_prerequisites", "measurement_doctrine", "measurement_provider", "condition_resolver", "unit", "operator", "scope_wording", "forbidden_conclusions", "provenance_hops"],
         "measurement_provider_types": ["derived_geometry", "recorded_source_fact", "normalized_legal_area"],
-        "condition_contract": {"states": ["UNCONDITIONAL", "RESOLVED", "UNRESOLVED", "NOT_APPLICABLE"], "unresolved_behavior": "RULE_EVALUATION_UNRESOLVED", "null_or_zero_coercion": False},
+        "condition_contract": {"states": ["UNCONDITIONAL", "RESOLVED", "UNRESOLVED", "NOT_APPLICABLE"], "result_states": ["RULE_REQUIREMENT_SATISFIED", "RULE_REQUIREMENT_NOT_SATISFIED", "RULE_EVALUATION_UNRESOLVED", "NOT_APPLICABLE"], "unresolved_behavior": "RULE_EVALUATION_UNRESOLVED", "not_applicable_behavior": "NO_NUMERIC_COMPARISON", "null_or_zero_coercion": False},
         "output_contract_fields": list(CONTRACT_FIELDS),
     }
     front_setback = {
@@ -94,7 +94,7 @@ def build_outputs() -> dict[str, object]:
         "implementation_started": False,
     }
     decision = {"contract_version": CONTRACT_VERSION, "decision": "DIMENSIONAL_RULE_EVALUATOR_V0_READY" if parity["all_rules_identical"] else "DIMENSIONAL_RULE_EVALUATOR_V0_NOT_READY", "next_rule_evaluation_target": "front setback", "combined_dimensional_evaluator_fingerprint_sha256": combined_fingerprint(normalized), "new_rule_family_evaluated": False}
-    outputs: dict[str, object] = {"contract.json": {"contract_version": CONTRACT_VERSION, "fields": list(CONTRACT_FIELDS), "result_states": ["RULE_REQUIREMENT_SATISFIED", "RULE_REQUIREMENT_NOT_SATISFIED", "RULE_EVALUATION_UNRESOLVED"]}, "inventory.json": inventory, "normalized-results.json": {"contract_version": CONTRACT_VERSION, "results": normalized}, "parity-report.json": parity, "extension-interface.json": extension, "front-setback-readiness.json": front_setback, "decision.json": decision}
+    outputs: dict[str, object] = {"contract.json": {"contract_version": CONTRACT_VERSION, "fields": list(CONTRACT_FIELDS), "result_states": ["RULE_REQUIREMENT_SATISFIED", "RULE_REQUIREMENT_NOT_SATISFIED", "RULE_EVALUATION_UNRESOLVED", "NOT_APPLICABLE"]}, "inventory.json": inventory, "normalized-results.json": {"contract_version": CONTRACT_VERSION, "results": normalized}, "parity-report.json": parity, "extension-interface.json": extension, "front-setback-readiness.json": front_setback, "decision.json": decision}
     outputs["integrity.json"] = integrity_artifact(CONTRACT_VERSION, outputs)
     return outputs
 
