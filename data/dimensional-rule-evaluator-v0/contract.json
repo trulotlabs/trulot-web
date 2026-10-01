@@ -1,0 +1,27 @@
+{
+  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p31",
+  "fields": [
+    "parcel_identity",
+    "legal_lot_state",
+    "rule_family",
+    "rule_id",
+    "rule_source",
+    "measurement_doctrine",
+    "required_semantic_inputs",
+    "resolved_inputs",
+    "measurement_result",
+    "unit",
+    "applicable_requirement",
+    "operator",
+    "condition_state",
+    "comparison_result",
+    "bounded_conclusion",
+    "forbidden_conclusions",
+    "provenance"
+  ],
+  "result_states": [
+    "RULE_REQUIREMENT_SATISFIED",
+    "RULE_REQUIREMENT_NOT_SATISFIED",
+    "RULE_EVALUATION_UNRESOLVED"
+  ]
+}

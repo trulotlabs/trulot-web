@@ -1,0 +1,31 @@
+{
+  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p31",
+  "duplicated_inputs_now_normalized": [
+    "parcel identity",
+    "legal-lot state",
+    "rule source",
+    "semantic inputs",
+    "measurement result",
+    "applicable requirement",
+    "condition state",
+    "comparison result",
+    "bounded conclusion",
+    "forbidden conclusions",
+    "provenance"
+  ],
+  "rule_specific_doctrine": {
+    "minimum_frontage": "premises property-line-along-street fact plus §131.0442(a) predicate",
+    "minimum_lot_area": "legal-area denominator and public-ROW subtraction",
+    "minimum_lot_depth": "front/rear midpoint line",
+    "minimum_lot_width": "perpendicular line through depth midpoint"
+  },
+  "shared_machinery": [
+    "canonical rendering and fingerprints",
+    "literal-true evidence gates",
+    "unresolved result envelope",
+    "MIN/MAX/EXACT numeric comparator",
+    "bounded conclusion guard fields",
+    "provenance graph validation",
+    "integrity artifact rendering"
+  ]
+}

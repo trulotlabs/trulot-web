@@ -2,10 +2,17 @@
 
 from __future__ import annotations
 
-import hashlib
-import json
+import sys
 from decimal import Decimal
+from pathlib import Path
 from typing import Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from dimensional_rule_evaluator_v0 import (  # noqa: E402
+    canonical_json, compare_values, conclusion_guard_fields,
+    evaluate_evidence_gates, fingerprint, integrity_artifact,
+    provenance_graph, unresolved_result,
+)
 
 
 CONTRACT_VERSION = "minimum-frontage-evaluation-v0-2026-10-01-p30"
@@ -25,14 +32,6 @@ FORBIDDEN_CONCLUSIONS = (
     "PERMIT_APPROVAL",
     "BUILDABILITY",
 )
-
-
-def canonical_json(value: Any) -> str:
-    return json.dumps(value, ensure_ascii=False, allow_nan=False, sort_keys=True, separators=(",", ":"))
-
-
-def fingerprint(value: Any) -> str:
-    return hashlib.sha256(canonical_json(value).encode()).hexdigest()
 
 
 def evaluate_minimum_frontage(parcel: dict[str, Any], legal_lot: dict[str, Any], rule: dict[str, Any], authority: dict[str, Any]) -> dict[str, Any]:
@@ -62,13 +61,13 @@ def evaluate_minimum_frontage(parcel: dict[str, Any], legal_lot: dict[str, Any],
         "rule_state": rule.get("fact_state") == "CONDITIONAL" and rule.get("operator") == "MIN",
         "rule_condition": len(condition) == 1 and "131.0442(a)" in condition[0],
     }
-    failed = [name for name, passed in gates.items() if not passed]
-    if failed:
-        return {"contract_version": CONTRACT_VERSION, "apn": EXPECTED_APN, "rule_family": "minimum_frontage", "state": "RULE_EVALUATION_UNRESOLVED", "reason": "REQUIRED_GATE_FAILED", "failed_gates": failed, "legal_access_evaluated": False, "parcel_compliance_evaluated": False, "development_capacity_calculated": False, "other_rule_families_evaluated": []}
+    gate_result = evaluate_evidence_gates(gates)
+    if not gate_result.passed:
+        return unresolved_result(contract_version=CONTRACT_VERSION, apn=EXPECTED_APN, rule_family="minimum_frontage", failed_gates=gate_result.failed, false_fields=("legal_access_evaluated", "parcel_compliance_evaluated", "development_capacity_calculated"))
 
     recorded_frontage = Decimal(str(authority["recorded_geometry"]["street_adjoining_property_line"]["length_ft"])).quantize(Decimal("0.01"))
     required_frontage = Decimal(str(rule["value"]["number"]))
-    satisfied = recorded_frontage >= required_frontage
+    comparison = compare_values(measured=recorded_frontage, required=required_frontage, unit="ft", operator="MIN", expression="code_defined_frontage_ft >= applicable_minimum_frontage_ft")
     result = {
         "contract_version": CONTRACT_VERSION,
         "apn": EXPECTED_APN,
@@ -82,11 +81,11 @@ def evaluate_minimum_frontage(parcel: dict[str, Any], legal_lot: dict[str, Any],
         "applicable_rule": {"selection": "BASE_RS_1_7_MINIMUM_FRONTAGE", "exception_disposition": "SECTION_131_0442_A_NOT_APPLICABLE", "rule_id": rule["rule_id"], "standard_key": rule["standard_key"], "numeric_value": int(required_frontage), "unit": rule["unit"], "operator": rule["operator"], "fact_state": rule["fact_state"], "condition": condition, "condition_resolved": True, "jurisdiction_variant": rule["jurisdiction_variant"], "rule_set_version": rule["rule_set_version"], "source_section": rule["source_section"], "source_table": rule["source_table"], "source_page": rule["source_page"], "source_url": rule["source_url"], "source_edition": rule["source_evidence"]["source_edition"], "source_sha256": rule["source_evidence"]["source_sha256"], "provenance_sha256": rule["provenance_sha256"]},
         "frontage_measurement": {"street": "27th Street", "source_line": "east/front development-regulation property line at west edge of 27th Street right-of-way", "bearing": authority["recorded_geometry"]["street_adjoining_property_line"]["bearing"], "recorded_length_ft": "94.00", "code_defined_frontage_ft": str(recorded_frontage), "method": "Length of the premises property line along the street it borders", "derivation_class": "DIRECT_RECORDED_MAP_MEASUREMENT_WITH_CODE_SEMANTICS", "precision": "Recorded to 0.01 ft; no additional rounding", "assumptions": [], "parcel_v2_geometry_used": False},
         "frontage_access_distinctions": {"frontage": "Length of the premises property line along the street it borders; evaluated", "street_adjacency": "Parcel boundary relationship to 27th Street; established", "legal_access": "Separate legal right or approval to enter the street; not evaluated", "driveway_access": "Physical or permitted driveway connection; not evaluated", "public_right_of_way": "Dedicated street area east of the premises property line; establishes the street boundary but is not itself frontage length", "curb_cut_or_access_point": "Specific opening or permission in the curb; not evaluated"},
-        "comparison": {"expression": "code_defined_frontage_ft >= applicable_minimum_frontage_ft", "left": str(recorded_frontage), "operator": ">=", "right": str(required_frontage), "unit": "ft"},
-        "state": "RULE_REQUIREMENT_SATISFIED" if satisfied else "RULE_REQUIREMENT_NOT_SATISFIED",
-        "bounded_conclusion": "The supported Code-defined lot frontage satisfies the RS-1-7 minimum frontage standard." if satisfied else "The supported Code-defined lot frontage does not satisfy the RS-1-7 minimum frontage standard.",
+        "comparison": comparison.comparison,
+        "state": comparison.state,
+        "bounded_conclusion": "The supported Code-defined lot frontage satisfies the RS-1-7 minimum frontage standard." if comparison.state == "RULE_REQUIREMENT_SATISFIED" else "The supported Code-defined lot frontage does not satisfy the RS-1-7 minimum frontage standard.",
         "mandatory_qualifier": "This evaluates only the minimum-frontage rule. It does not establish access adequacy, driveway compliance, setback compliance, development capacity, or project approval.",
-        "forbidden_conclusions": list(FORBIDDEN_CONCLUSIONS), "legal_access_evaluated": False, "driveway_access_evaluated": False, "parcel_compliance_evaluated": False, "development_capacity_calculated": False, "other_rule_families_evaluated": [],
+        **conclusion_guard_fields(FORBIDDEN_CONCLUSIONS, ("legal_access_evaluated", "driveway_access_evaluated", "parcel_compliance_evaluated", "development_capacity_calculated")),
     }
     result["fingerprint_sha256"] = fingerprint(result)
     return result

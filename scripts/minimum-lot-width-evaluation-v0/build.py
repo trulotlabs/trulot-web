@@ -7,7 +7,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from resolver import CONTRACT_VERSION, EXPECTED_APN, FORBIDDEN_CONCLUSIONS, canonical_json, evaluate_minimum_lot_width
+from resolver import CONTRACT_VERSION, EXPECTED_APN, FORBIDDEN_CONCLUSIONS, canonical_json, evaluate_minimum_lot_width, integrity_artifact, provenance_graph
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "data" / "minimum-lot-width-evaluation-v0"
@@ -15,10 +15,6 @@ PARCELS = ROOT / "data" / "parcel-intelligence-v2" / "fixture-results.json"
 LEGAL_LOTS = ROOT / "data" / "legal-lot-evidence-v0" / "fixture-results.json"
 AUTHORITY = ROOT / "data" / "high-value-residential-review" / "authority-excerpts.json"
 SOURCE_OBSERVATION = ROOT / "data" / "residential-standards-review" / "source-observation.json"
-
-
-def sha(value: object) -> str:
-    return hashlib.sha256(canonical_json(value).encode()).hexdigest()
 
 
 def _inputs() -> tuple[dict, dict, dict, dict, dict]:
@@ -50,7 +46,7 @@ def build_outputs() -> dict[str, object]:
     parcel, legal_lot, standard_rule, corner_rule, authority = _inputs()
     evaluation = evaluate_minimum_lot_width(parcel, legal_lot, standard_rule, corner_rule, authority)
     contract = {"contract_version": CONTRACT_VERSION, "scope": {"apns": [EXPECTED_APN], "rule_families": ["minimum_lot_width"]}, "states": ["RULE_REQUIREMENT_SATISFIED", "RULE_REQUIREMENT_NOT_SATISFIED", "RULE_EVALUATION_UNRESOLVED"], "required_expression": "code_defined_lot_width_ft >= applicable_minimum_width_ft", "forbidden_conclusions": list(FORBIDDEN_CONCLUSIONS), "containment": {"overall_compliance": False, "capacity": False, "frontage": False, "setbacks": False, "far": False, "production_wired": False, "citywide": False}}
-    provenance = {"contract_version": CONTRACT_VERSION, "chain": [
+    provenance = provenance_graph(CONTRACT_VERSION, [
         {"hop": "APN_TO_PARCEL_V2", "apn": EXPECTED_APN, "fingerprint_sha256": parcel["fingerprint_sha256"]},
         {"hop": "PARCEL_V2_TO_RECORDED_DEED", "document": "DOC # 2001-0706032", "artifact_sha256": legal_lot["recorded_deed_artifacts"][0]["artifact_sha256"]},
         {"hop": "DEED_TO_RECORDED_MAP", "entity": "PM 17383 Parcel 1", "artifact_sha256": authority["recorded_geometry"]["artifact_sha256"]},
@@ -62,11 +58,11 @@ def build_outputs() -> dict[str, object]:
         {"hop": "CONTEXT_TO_STANDARDS_VERSION", "version": parcel["base_standards"]["rule_set_version"], "fingerprint_sha256": parcel["base_standards"]["fingerprint_sha256"]},
         {"hop": "CLASSIFICATION_TO_APPLICABLE_RULE", "selected_rule_id": standard_rule["rule_id"], "excluded_corner_rule_id": corner_rule["rule_id"]},
         {"hop": "RULE_TO_COMPARISON", "expression": evaluation.get("comparison", {}).get("expression"), "evaluation_fingerprint_sha256": evaluation.get("fingerprint_sha256")},
-    ]}
+    ])
     product = {"contract_version": CONTRACT_VERSION, "heading": "Minimum lot width", "required": "50 ft", "supported_measured_width": "94.00 ft", "lot_type": "interior (single-frontage, non-corner)", "result": "RULE_REQUIREMENT_SATISFIED", "measurement_basis": "SDMC §§113.0243(b) and 113.0246 applied to PM 17383 Parcel 1", "scope": "Minimum-lot-width rule only", "source": "PM 17383 Parcel 1; DOC # 2001-0706032; SDMC §§113.0243, 113.0246, and 131.0431(a), Table 131-04D", "qualifier": evaluation.get("mandatory_qualifier"), "ui_wired": False}
     decision = {"contract_version": CONTRACT_VERSION, "decision": "MINIMUM_LOT_WIDTH_RULE_EVALUATION_READY" if evaluation.get("state") in {"RULE_REQUIREMENT_SATISFIED", "RULE_REQUIREMENT_NOT_SATISFIED"} else "MINIMUM_LOT_WIDTH_RULE_EVALUATION_NOT_READY", "result": evaluation.get("state"), "next_rule_evaluation_target": "frontage", "overall_compliance_conclusion": False, "development_capacity_calculated": False}
     outputs: dict[str, object] = {"contract.json": contract, "evaluation.json": evaluation, "provenance.json": provenance, "product-example.json": product, "decision.json": decision}
-    outputs["integrity.json"] = {"contract_version": CONTRACT_VERSION, "artifacts": {name: sha(value) for name, value in outputs.items()}, "bundle_sha256": sha(outputs)}
+    outputs["integrity.json"] = integrity_artifact(CONTRACT_VERSION, outputs)
     return outputs
 
 

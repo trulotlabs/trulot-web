@@ -1,0 +1,13 @@
+{
+  "artifacts": {
+    "contract.json": "25bebe1a2a987c044e111e9c53b2d2f11bb1882f0a48bc31b75d5b661dce1a1c",
+    "decision.json": "5cd7b2cb06cb119ab7ba0da404152d73fb8cc94db0f6e4f2a45284e937695a04",
+    "extension-interface.json": "5c7c30f712087e0b71b8b7133fce27c7b4b28ed74d812111dfe969047bffb444",
+    "front-setback-readiness.json": "0721a03b3cc1d6d90b2e6538d8ba1c84fc175ea214617470ae3a43944ae67757",
+    "inventory.json": "46da219c326d7ad01a25b53d8184d1f1e2fac506d00cc77ea9e3f16f2e59e347",
+    "normalized-results.json": "d78b975bc3225d705be15cc6ff0ead3eb9381d093bef4e29995abb4305f00c10",
+    "parity-report.json": "5c49adfd6adda12a6a13094e32a42930ca40246e5f552104d14d1eb59b88c3e5"
+  },
+  "bundle_sha256": "e1bde31a3677894e692a1cf89c1770efe214ae9cfed96712e935f94e22542535",
+  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p31"
+}

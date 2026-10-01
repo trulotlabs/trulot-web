@@ -2,11 +2,18 @@
 
 from __future__ import annotations
 
-import hashlib
-import json
 import math
+import sys
 from decimal import Decimal, ROUND_HALF_UP
+from pathlib import Path
 from typing import Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from dimensional_rule_evaluator_v0 import (  # noqa: E402
+    canonical_json, compare_values, conclusion_guard_fields,
+    evaluate_evidence_gates, fingerprint, integrity_artifact,
+    provenance_graph, unresolved_result,
+)
 
 
 CONTRACT_VERSION = "minimum-lot-width-evaluation-v0-2026-09-30-p29"
@@ -26,14 +33,6 @@ FORBIDDEN_CONCLUSIONS = (
     "BUILDABILITY",
     "ENTITLEMENT",
 )
-
-
-def canonical_json(value: Any) -> str:
-    return json.dumps(value, ensure_ascii=False, allow_nan=False, sort_keys=True, separators=(",", ":"))
-
-
-def fingerprint(value: Any) -> str:
-    return hashlib.sha256(canonical_json(value).encode()).hexdigest()
 
 
 def _bearing_vector(length: float, degrees: int, minutes: int, seconds: int, east: bool = True) -> tuple[float, float]:
@@ -75,9 +74,9 @@ def evaluate_minimum_lot_width(parcel: dict[str, Any], legal_lot: dict[str, Any]
         "rule_state": standard_rule.get("fact_state") == "RECORDED" and standard_rule.get("condition") == [] and standard_rule.get("operator") == "MIN",
         "corner_rule_excluded": corner_rule.get("standard_key") == "corner_lot_width_min" and corner_rule.get("fact_state") == "CONDITIONAL" and authority.get("lot_classification", {}).get("corner_lot") is False,
     }
-    failed = [name for name, passed in gates.items() if not passed]
-    if failed:
-        return {"contract_version": CONTRACT_VERSION, "apn": EXPECTED_APN, "rule_family": "minimum_lot_width", "state": "RULE_EVALUATION_UNRESOLVED", "reason": "REQUIRED_GATE_FAILED", "failed_gates": failed, "parcel_compliance_evaluated": False, "development_capacity_calculated": False, "other_rule_families_evaluated": []}
+    gate_result = evaluate_evidence_gates(gates)
+    if not gate_result.passed:
+        return unresolved_result(contract_version=CONTRACT_VERSION, apn=EXPECTED_APN, rule_family="minimum_lot_width", failed_gates=gate_result.failed, false_fields=("parcel_compliance_evaluated", "development_capacity_calculated"))
 
     g = authority["recorded_geometry"]
     southwest = (0.0, 0.0)
@@ -99,7 +98,7 @@ def evaluate_minimum_lot_width(parcel: dict[str, Any], legal_lot: dict[str, Any]
     raw_width = Decimal(str(math.hypot(north_point[0] - south_point[0], north_point[1] - south_point[1])))
     code_width = raw_width.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
     required_width = Decimal(str(standard_rule["value"]["number"]))
-    satisfied = code_width >= required_width
+    comparison = compare_values(measured=code_width, required=required_width, unit="ft", operator="MIN", expression="code_defined_lot_width_ft >= applicable_minimum_width_ft")
 
     result = {
         "contract_version": CONTRACT_VERSION,
@@ -115,11 +114,11 @@ def evaluate_minimum_lot_width(parcel: dict[str, Any], legal_lot: dict[str, Any]
         "measurement_doctrine": authority,
         "dimension_distinctions": {"recorded_boundary_lengths": "PM 17383 survey calls; the 94-foot edges are not relabeled as width", "frontage": "Length of the premises property line along the street; not evaluated", "property_line_roles": "East line is front, west line is rear, north and south lines are side property lines", "development_regulation_boundary": "Front line separates the lot from the 27th Street public right-of-way", "code_defined_lot_width": "Perpendicular distance between side lot lines at the midpoint of the front-to-rear depth line"},
         "geometry_reconstruction": {"coordinate_convention": "east-positive x, north-positive y; southwest rear corner is the origin", "depth_midpoint_ft": {"east": f"{depth_midpoint[0]:.9f}", "north": f"{depth_midpoint[1]:.9f}"}, "south_intersection_ft": {"east": f"{south_point[0]:.9f}", "north": f"{south_point[1]:.9f}", "side_parameter": f"{south_u:.12f}"}, "north_intersection_ft": {"east": f"{north_point[0]:.9f}", "north": f"{north_point[1]:.9f}", "side_parameter": f"{north_u:.12f}"}, "unrounded_distance_ft": f"{raw_width:.12f}", "source_precision": "Lengths are recorded to 0.01 ft and bearings to 1 arc-second; result is reported to 0.01 ft.", "reported_code_defined_lot_width_ft": str(code_width), "derivation_class": "DETERMINISTIC_DERIVED_FROM_RECORDED_MAP_AND_CODE_MEASUREMENT_RULE", "assumptions": [], "parcel_v2_geometry_used": False},
-        "comparison": {"expression": "code_defined_lot_width_ft >= applicable_minimum_width_ft", "left": str(code_width), "operator": ">=", "right": str(required_width), "unit": "ft"},
-        "state": "RULE_REQUIREMENT_SATISFIED" if satisfied else "RULE_REQUIREMENT_NOT_SATISFIED",
-        "bounded_conclusion": "The supported Code-defined lot width satisfies the RS-1-7 minimum lot width standard." if satisfied else "The supported Code-defined lot width does not satisfy the RS-1-7 minimum lot width standard.",
+        "comparison": comparison.comparison,
+        "state": comparison.state,
+        "bounded_conclusion": "The supported Code-defined lot width satisfies the RS-1-7 minimum lot width standard." if comparison.state == "RULE_REQUIREMENT_SATISFIED" else "The supported Code-defined lot width does not satisfy the RS-1-7 minimum lot width standard.",
         "mandatory_qualifier": "This evaluates only the minimum-lot-width rule. It does not establish overall zoning compliance, development capacity, frontage compliance, setback compliance, or project approval.",
-        "forbidden_conclusions": list(FORBIDDEN_CONCLUSIONS), "parcel_compliance_evaluated": False, "development_capacity_calculated": False, "other_rule_families_evaluated": [],
+        **conclusion_guard_fields(FORBIDDEN_CONCLUSIONS, ("parcel_compliance_evaluated", "development_capacity_calculated")),
     }
     result["fingerprint_sha256"] = fingerprint(result)
     return result

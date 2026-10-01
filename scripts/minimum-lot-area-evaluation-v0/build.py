@@ -7,7 +7,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from resolver import CONTRACT_VERSION, EXPECTED_APN, FORBIDDEN_CONCLUSIONS, canonical_json, evaluate_minimum_lot_area
+from resolver import CONTRACT_VERSION, EXPECTED_APN, FORBIDDEN_CONCLUSIONS, evaluate_minimum_lot_area, integrity_artifact, provenance_graph
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -16,10 +16,6 @@ PARCELS = ROOT / "data" / "parcel-intelligence-v2" / "fixture-results.json"
 LEGAL_LOTS = ROOT / "data" / "legal-lot-evidence-v0" / "fixture-results.json"
 AUTHORITY = ROOT / "data" / "high-value-residential-review" / "authority-excerpts.json"
 SOURCE_OBSERVATION = ROOT / "data" / "residential-standards-review" / "source-observation.json"
-
-
-def sha(value: object) -> str:
-    return hashlib.sha256(canonical_json(value).encode()).hexdigest()
 
 
 def _inputs() -> tuple[dict, dict, dict, dict]:
@@ -59,9 +55,7 @@ def build_outputs() -> dict[str, object]:
         "forbidden_conclusions": list(FORBIDDEN_CONCLUSIONS),
         "containment": {"overall_compliance": False, "capacity": False, "other_rules": False, "production_wired": False, "citywide": False},
     }
-    provenance = {
-        "contract_version": CONTRACT_VERSION,
-        "chain": [
+    provenance = provenance_graph(CONTRACT_VERSION, [
             {"hop": "APN_TO_PARCEL_V2", "apn": EXPECTED_APN, "fingerprint_sha256": parcel["fingerprint_sha256"]},
             {"hop": "PARCEL_V2_TO_RECORDED_DEED", "document": "DOC # 2001-0706032", "artifact_sha256": legal_lot["recorded_deed_artifacts"][0]["artifact_sha256"]},
             {"hop": "DEED_TO_RECORDED_MAP", "entity": "PM 17383 Parcel 1", "artifact_sha256": next(a["artifact_sha256"] for a in legal_lot["recorded_map_artifacts"] if a["sheet"] == 2)},
@@ -72,8 +66,7 @@ def build_outputs() -> dict[str, object]:
             {"hop": "CONTEXT_TO_STANDARDS_VERSION", "version": parcel["base_standards"]["rule_set_version"], "fingerprint_sha256": parcel["base_standards"]["fingerprint_sha256"]},
             {"hop": "STANDARDS_TO_RULE", "rule_id": rule["rule_id"], "provenance_sha256": rule["provenance_sha256"]},
             {"hop": "RULE_TO_COMPARISON", "expression": evaluation.get("comparison", {}).get("expression"), "evaluation_fingerprint_sha256": evaluation.get("fingerprint_sha256")},
-        ],
-    }
+    ])
     product = {
         "contract_version": CONTRACT_VERSION,
         "heading": "Minimum lot area",
@@ -100,11 +93,7 @@ def build_outputs() -> dict[str, object]:
         "product-example.json": product,
         "decision.json": decision,
     }
-    outputs["integrity.json"] = {
-        "contract_version": CONTRACT_VERSION,
-        "artifacts": {name: sha(value) for name, value in outputs.items()},
-        "bundle_sha256": sha(outputs),
-    }
+    outputs["integrity.json"] = integrity_artifact(CONTRACT_VERSION, outputs)
     return outputs
 
 

@@ -1,0 +1,29 @@
+{
+  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p31",
+  "framework_change_required": false,
+  "implementation_started": false,
+  "mapping": {
+    "condition_resolver": [
+      "slope/hillside",
+      "cul-de-sac",
+      "fire/defensible-space",
+      "documentary setback modification"
+    ],
+    "measurement_provider": "perpendicular distance from front property line to applicable building-frame edge",
+    "rule_selector": "front_setback_min for resolved RS-1-7 version",
+    "scope_wording": "front-setback rule only",
+    "semantic_prerequisites": [
+      "front property line",
+      "project/structure geometry"
+    ]
+  },
+  "rule_specific_evidence_required": [
+    "resolved front property line",
+    "applicable base setback rule",
+    "front-setback conditional branches",
+    "slope/hillside predicates",
+    "fire and defensible-space predicates",
+    "existing/proposed structure geometry"
+  ],
+  "state": "FRAMEWORK_SUFFICIENT_RULE_SPECIFIC_PREDICATE_MODEL_REQUIRED"
+}

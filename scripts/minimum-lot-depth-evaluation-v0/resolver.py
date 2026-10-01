@@ -6,11 +6,18 @@ setbacks, overall zoning compliance, or development capacity.
 
 from __future__ import annotations
 
-import hashlib
-import json
 import math
+import sys
 from decimal import Decimal, ROUND_HALF_UP
+from pathlib import Path
 from typing import Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from dimensional_rule_evaluator_v0 import (  # noqa: E402
+    canonical_json, compare_values, conclusion_guard_fields,
+    evaluate_evidence_gates, fingerprint, integrity_artifact,
+    provenance_graph, unresolved_result,
+)
 
 
 CONTRACT_VERSION = "minimum-lot-depth-evaluation-v0-2026-09-30-p28"
@@ -31,14 +38,6 @@ FORBIDDEN_CONCLUSIONS = (
     "BUILDABILITY",
     "ENTITLEMENT",
 )
-
-
-def canonical_json(value: Any) -> str:
-    return json.dumps(value, ensure_ascii=False, allow_nan=False, sort_keys=True, separators=(",", ":"))
-
-
-def fingerprint(value: Any) -> str:
-    return hashlib.sha256(canonical_json(value).encode()).hexdigest()
 
 
 def _decimal(value: Any) -> Decimal:
@@ -80,19 +79,9 @@ def evaluate_minimum_lot_depth(
         "right_of_way": measurement_authority.get("right_of_way_treatment", {}).get("state") == "RESOLVED_USE_BOUNDARY_SEPARATING_LOT_FROM_PUBLIC_RIGHT_OF_WAY",
         "geometry": measurement_authority.get("geometry_state") == "RECORDED_MAP_SUFFICIENT",
     }
-    failed = [name for name, passed in gates.items() if not passed]
-    if failed:
-        return {
-            "contract_version": CONTRACT_VERSION,
-            "apn": EXPECTED_APN,
-            "rule_family": "minimum_lot_depth",
-            "state": "RULE_EVALUATION_UNRESOLVED",
-            "reason": "REQUIRED_GATE_FAILED",
-            "failed_gates": failed,
-            "parcel_compliance_evaluated": False,
-            "development_capacity_calculated": False,
-            "other_rule_families_evaluated": [],
-        }
+    gate_result = evaluate_evidence_gates(gates)
+    if not gate_result.passed:
+        return unresolved_result(contract_version=CONTRACT_VERSION, apn=EXPECTED_APN, rule_family="minimum_lot_depth", failed_gates=gate_result.failed, false_fields=("parcel_compliance_evaluated", "development_capacity_calculated"))
 
     geometry = measurement_authority["recorded_geometry"]
     north_length = _decimal(geometry["north_rear_to_front"]["length_ft"])
@@ -103,7 +92,7 @@ def evaluate_minimum_lot_depth(
     raw_depth = Decimal(str(math.hypot(*midpoint_vector)))
     code_depth = raw_depth.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
     required_depth = _decimal(rule["value"]["number"])
-    satisfied = code_depth >= required_depth
+    comparison = compare_values(measured=code_depth, required=required_depth, unit="ft", operator="MIN", expression="code_defined_lot_depth_ft >= minimum_lot_depth_ft")
 
     result = {
         "contract_version": CONTRACT_VERSION,
@@ -177,20 +166,11 @@ def evaluate_minimum_lot_depth(
             "assumptions": [],
             "parcel_v2_geometry_used": False,
         },
-        "comparison": {
-            "expression": "code_defined_lot_depth_ft >= minimum_lot_depth_ft",
-            "left": str(code_depth),
-            "operator": ">=",
-            "right": str(required_depth),
-            "unit": "ft",
-        },
-        "state": "RULE_REQUIREMENT_SATISFIED" if satisfied else "RULE_REQUIREMENT_NOT_SATISFIED",
-        "bounded_conclusion": "The supported Code-defined lot depth satisfies the RS-1-7 minimum lot depth standard." if satisfied else "The supported Code-defined lot depth does not satisfy the RS-1-7 minimum lot depth standard.",
+        "comparison": comparison.comparison,
+        "state": comparison.state,
+        "bounded_conclusion": "The supported Code-defined lot depth satisfies the RS-1-7 minimum lot depth standard." if comparison.state == "RULE_REQUIREMENT_SATISFIED" else "The supported Code-defined lot depth does not satisfy the RS-1-7 minimum lot depth standard.",
         "mandatory_qualifier": "This evaluates only the minimum-lot-depth rule. It does not establish overall zoning compliance, development capacity, setback compliance, or project approval.",
-        "forbidden_conclusions": list(FORBIDDEN_CONCLUSIONS),
-        "parcel_compliance_evaluated": False,
-        "development_capacity_calculated": False,
-        "other_rule_families_evaluated": [],
+        **conclusion_guard_fields(FORBIDDEN_CONCLUSIONS, ("parcel_compliance_evaluated", "development_capacity_calculated")),
     }
     result["fingerprint_sha256"] = fingerprint(result)
     return result

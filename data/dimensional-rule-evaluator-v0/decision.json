@@ -1,0 +1,7 @@
+{
+  "combined_dimensional_evaluator_fingerprint_sha256": "2434211fac596931f643481d1a3c6f6b2f56bd8bdce759bafa9b4fb039929336",
+  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p31",
+  "decision": "DIMENSIONAL_RULE_EVALUATOR_V0_READY",
+  "new_rule_family_evaluated": false,
+  "next_rule_evaluation_target": "front setback"
+}

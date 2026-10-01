@@ -1,0 +1,51 @@
+{
+  "all_rules_identical": true,
+  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p31",
+  "rules": {
+    "minimum_frontage": {
+      "baseline_bundle_sha256": "dd1fd1683b30b0dbec8056989f014e3571495384952f68d54f74d0848bb3fc93",
+      "bounded_conclusion_sha256": "7230a1f843f63e17a98063328b2fede32689d7247bd789ee37588fd636cae305",
+      "canonical_bundle_identical": true,
+      "current_bundle_sha256": "dd1fd1683b30b0dbec8056989f014e3571495384952f68d54f74d0848bb3fc93",
+      "forbidden_conclusions_sha256": "f4cbbfaa77ebd41c33301e7dfd49a3cb9299002b814ebee78196b7c12a93de28",
+      "measurement_identical": true,
+      "provenance_closed": true,
+      "requirement_identical": true,
+      "result_identical": true
+    },
+    "minimum_lot_area": {
+      "baseline_bundle_sha256": "8a7d22ee2d143a243bc38d6455499b9a04446f4b2c3ca6c5fe1133d803ca68b0",
+      "bounded_conclusion_sha256": "ef222d98ec8d55d9fd0ba4957cccb66037fe6f10bb1a12ba191a9537d284137a",
+      "canonical_bundle_identical": true,
+      "current_bundle_sha256": "8a7d22ee2d143a243bc38d6455499b9a04446f4b2c3ca6c5fe1133d803ca68b0",
+      "forbidden_conclusions_sha256": "828764374091bccb88214eb31f29518b38e6364b7a5755810cfb6483cfedb44d",
+      "measurement_identical": true,
+      "provenance_closed": true,
+      "requirement_identical": true,
+      "result_identical": true
+    },
+    "minimum_lot_depth": {
+      "baseline_bundle_sha256": "52de78a9377b3bb01b7d39cbc59eea7fe1b3793d9e94dc850f76b4d8d2f6df78",
+      "bounded_conclusion_sha256": "706025b4136f726d645f570fd0547a3514e9edae25078e0f1c00b370af11cdc7",
+      "canonical_bundle_identical": true,
+      "current_bundle_sha256": "52de78a9377b3bb01b7d39cbc59eea7fe1b3793d9e94dc850f76b4d8d2f6df78",
+      "forbidden_conclusions_sha256": "ec03a7d9d010e02a4b0f38816aaf19295bac79584b66c460663854ad2031a3c0",
+      "measurement_identical": true,
+      "provenance_closed": true,
+      "requirement_identical": true,
+      "result_identical": true
+    },
+    "minimum_lot_width": {
+      "baseline_bundle_sha256": "c9c45f8de8cd068b7abbde8f6d52fd91f9c65a7fc92a8702bd20bd4c4d2c4ed6",
+      "bounded_conclusion_sha256": "517564e21ebb5ae07e5987858b7b0decafc6889d63883d7a33eb9fb0d580d673",
+      "canonical_bundle_identical": true,
+      "current_bundle_sha256": "c9c45f8de8cd068b7abbde8f6d52fd91f9c65a7fc92a8702bd20bd4c4d2c4ed6",
+      "forbidden_conclusions_sha256": "510dd079ca99df7315d2df0f192f549d62ab18a2294cab0e2345e50c70b80998",
+      "measurement_identical": true,
+      "provenance_closed": true,
+      "requirement_identical": true,
+      "result_identical": true
+    }
+  },
+  "state": "BYTE_IDENTICAL_CANONICAL_PARITY"
+}

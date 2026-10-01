@@ -1,0 +1,49 @@
+{
+  "condition_contract": {
+    "null_or_zero_coercion": false,
+    "states": [
+      "UNCONDITIONAL",
+      "RESOLVED",
+      "UNRESOLVED",
+      "NOT_APPLICABLE"
+    ],
+    "unresolved_behavior": "RULE_EVALUATION_UNRESOLVED"
+  },
+  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p31",
+  "measurement_provider_types": [
+    "derived_geometry",
+    "recorded_source_fact",
+    "normalized_legal_area"
+  ],
+  "output_contract_fields": [
+    "parcel_identity",
+    "legal_lot_state",
+    "rule_family",
+    "rule_id",
+    "rule_source",
+    "measurement_doctrine",
+    "required_semantic_inputs",
+    "resolved_inputs",
+    "measurement_result",
+    "unit",
+    "applicable_requirement",
+    "operator",
+    "condition_state",
+    "comparison_result",
+    "bounded_conclusion",
+    "forbidden_conclusions",
+    "provenance"
+  ],
+  "required_extension_fields": [
+    "rule_selector",
+    "semantic_prerequisites",
+    "measurement_doctrine",
+    "measurement_provider",
+    "condition_resolver",
+    "unit",
+    "operator",
+    "scope_wording",
+    "forbidden_conclusions",
+    "provenance_hops"
+  ]
+}

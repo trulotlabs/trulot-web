@@ -1,0 +1,775 @@
+{
+  "contract_version": "dimensional-rule-evaluator-v0-2026-10-01-p31",
+  "results": [
+    {
+      "applicable_requirement": "5000.0",
+      "bounded_conclusion": "The supported Code-defined lot area satisfies the RS-1-7 minimum lot area standard.",
+      "comparison_result": "RULE_REQUIREMENT_SATISFIED",
+      "condition_state": "UNCONDITIONAL",
+      "forbidden_conclusions": [
+        "OVERALL_ZONING_COMPLIANCE",
+        "DEVELOPMENT_CAPACITY",
+        "MAXIMUM_UNITS",
+        "FAR_READINESS",
+        "SETBACK_READINESS",
+        "SUBDIVISION_ELIGIBILITY",
+        "PERMIT_LIKELIHOOD",
+        "BUILDABILITY",
+        "ENTITLEMENT"
+      ],
+      "legal_lot_state": {
+        "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+        "recorded_entity": "PM 17383 PARCEL 1",
+        "state": "LEGAL_LOT_ESTABLISHED"
+      },
+      "measurement_doctrine": {
+        "assessor_area": {
+          "classification": "COMPARISON_ONLY",
+          "unit": "sq_ft",
+          "value": 22215
+        },
+        "code_lot_area_used": {
+          "derivation_class": "DETERMINISTIC_DERIVED_FROM_RECORDED_MAP",
+          "unit": "sq_ft",
+          "value": "22096.320"
+        },
+        "code_source": {
+          "doctrine": "For development regulations, property lines separate a lot or premises from public right-of-way regardless of ownership extending into it. The pre-dedication exception is expressly limited to maximum permitted density and maximum permitted gross floor area.",
+          "page": 26,
+          "page_text_sha256": "cbc4171f054923f3d1393803c249f9b4b8b249922ef20bebe480ddd0e9fb0cfc",
+          "section": "SDMC §113.0246",
+          "source_sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+          "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf",
+          "title": "Determining Property Lines"
+        },
+        "parcel_v2_geometry_area": {
+          "classification": "DIAGNOSTIC_ONLY",
+          "unit": "sq_ft",
+          "value": 21841.412194
+        },
+        "pre_dedication_exception_scope": "MAXIMUM_PERMITTED_DENSITY_AND_MAXIMUM_PERMITTED_GROSS_FLOOR_AREA_ONLY",
+        "public_right_of_way_area": {
+          "derivation": "30 ft × 94 ft from PM 17383",
+          "unit": "sq_ft",
+          "value": "2820"
+        },
+        "recorded_parcel_map_area": {
+          "square_feet": "24916.320",
+          "unit": "acre",
+          "value": "0.572"
+        },
+        "state": "RESOLVED_EXCLUDE_PUBLIC_RIGHT_OF_WAY"
+      },
+      "measurement_result": "22096.320",
+      "operator": "MIN",
+      "parcel_identity": {
+        "parcel_geometry_sha256": "3cda3f101571d027e172d7eb281041711dbb63680b6fc3fee21bbaa31ef5b5ff",
+        "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+        "situs_address": "1456 27TH ST"
+      },
+      "provenance": [
+        {
+          "apn": "6341302200",
+          "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+          "hop": "APN_TO_PARCEL_V2"
+        },
+        {
+          "artifact_sha256": "1b778cb6a06dc60e75dd1184d22681f672e453f16002e5fb0214cfc9406131fd",
+          "document": "DOC # 2001-0706032",
+          "hop": "PARCEL_V2_TO_RECORDED_DEED"
+        },
+        {
+          "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+          "entity": "PM 17383 Parcel 1",
+          "hop": "DEED_TO_RECORDED_MAP"
+        },
+        {
+          "fingerprint_sha256": "45d578f06b0a17bc342c1d6504ca0db285db25bfa251cc22988d9f1ead97d3b5",
+          "hop": "RECORDED_MAP_TO_LEGAL_LOT",
+          "state": "LEGAL_LOT_ESTABLISHED"
+        },
+        {
+          "hop": "LEGAL_AREA_TO_CODE_DENOMINATOR",
+          "page_text_sha256": "cbc4171f054923f3d1393803c249f9b4b8b249922ef20bebe480ddd0e9fb0cfc",
+          "section": "113.0246"
+        },
+        {
+          "hop": "PARCEL_TO_BASE_ZONING",
+          "mapping_row_sha256": "56ff295bb34046b281d3eb35de7829e687b6b66c2beda6a5c5cf3568c9e1e8d3",
+          "zone": "RS-1-7"
+        },
+        {
+          "fingerprint_sha256": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334",
+          "hop": "PARCEL_TO_COASTAL_CONTEXT",
+          "state": "OUTSIDE_COASTAL"
+        },
+        {
+          "fingerprint_sha256": "4e38994c7243dc446bc7a07fba568fa1deaf5dbc521abc1296e22ba4fc10d77d",
+          "hop": "CONTEXT_TO_STANDARDS_VERSION",
+          "version": "sd-rs-base-standards-2026-09-30-v0"
+        },
+        {
+          "hop": "STANDARDS_TO_RULE",
+          "provenance_sha256": "201025d9ec1bed5f7129c1cbce0ef79011ab57ecb295337fab7d3a2de0d48efd",
+          "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:5"
+        },
+        {
+          "evaluation_fingerprint_sha256": "2352256707a36c95d8b1182bae9fd8438838047558d74a686d9e9677282da70b",
+          "expression": "code_lot_area_sqft >= minimum_lot_area_sqft",
+          "hop": "RULE_TO_COMPARISON"
+        }
+      ],
+      "required_semantic_inputs": [],
+      "resolved_inputs": [
+        "apn",
+        "coastal",
+        "denominator",
+        "legal_area",
+        "legal_lot",
+        "legal_match",
+        "parcel_identity",
+        "rule_family",
+        "rule_state",
+        "single_zone",
+        "standards",
+        "zone"
+      ],
+      "rule_family": "minimum_lot_area",
+      "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:5",
+      "rule_source": {
+        "source_page": 33,
+        "source_section": "131.0431(a)",
+        "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+        "source_table": "131-04D",
+        "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf"
+      },
+      "unit": "sq_ft"
+    },
+    {
+      "applicable_requirement": "95.0",
+      "bounded_conclusion": "The supported Code-defined lot depth satisfies the RS-1-7 minimum lot depth standard.",
+      "comparison_result": "RULE_REQUIREMENT_SATISFIED",
+      "condition_state": "UNCONDITIONAL",
+      "forbidden_conclusions": [
+        "OVERALL_ZONING_COMPLIANCE",
+        "DEVELOPMENT_CAPACITY",
+        "MAXIMUM_UNITS",
+        "LOT_WIDTH_COMPLIANCE",
+        "FRONTAGE_COMPLIANCE",
+        "SETBACK_COMPLIANCE",
+        "FAR_COMPLIANCE",
+        "SUBDIVISION_ELIGIBILITY",
+        "PERMIT_LIKELIHOOD",
+        "BUILDABILITY",
+        "ENTITLEMENT"
+      ],
+      "legal_lot_state": {
+        "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+        "recorded_entity": "PM 17383 PARCEL 1",
+        "state": "LEGAL_LOT_ESTABLISHED"
+      },
+      "measurement_doctrine": {
+        "configuration": {
+          "corner_lot": false,
+          "double_fronted_lot": false,
+          "irregular_lot_special_depth_rule": false,
+          "reason": "PM 17383 depicts a four-sided Parcel 1 with only the east boundary adjoining 27th Street; the Code states no separate lot-depth method for this configuration.",
+          "triangular_lot": false
+        },
+        "depth_definition_state": "RESOLVED_MIDPOINT_TO_MIDPOINT",
+        "front_property_line": {
+          "basis": "The front property line separates a lot from public right-of-way. Parcel 1 has one street adjacency, 27th Street, so the 94.00-foot north-south line at the west edge of that right-of-way is the front property line.",
+          "section": "SDMC §113.0246(a)",
+          "state": "RESOLVED_27TH_STREET_RIGHT_OF_WAY_BOUNDARY"
+        },
+        "geometry_state": "RECORDED_MAP_SUFFICIENT",
+        "lot_depth": {
+          "definition": "Lot depth is measured along an imaginary straight line drawn from the midpoint of the front property line to the midpoint of the rear property line.",
+          "edition": "7-2026",
+          "page": 25,
+          "page_text_sha256": "5a0b86a18d12b5832e70a39b110a08aef3f53b4dfeb3c627a778f8dc1441f550",
+          "section": "SDMC §113.0243(a)",
+          "source_sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+          "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf"
+        },
+        "property_line_source": {
+          "edition": "7-2026",
+          "page_text_sha256": "9ca26d239e6ba00d4fc4b0144b284e417cd210a9fa85e8c70f5f7e716d0710af",
+          "pages": [
+            26,
+            27
+          ],
+          "source_sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+          "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf"
+        },
+        "rear_property_line": {
+          "basis": "The 94.00-foot west line is opposite and most distant from the resolved front property line.",
+          "section": "SDMC §113.0246(c)",
+          "state": "RESOLVED_OPPOSITE_MOST_DISTANT_WEST_LINE"
+        },
+        "recorded_geometry": {
+          "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+          "excluded_dedicated_street_portion": {
+            "frontage_length_ft": 94,
+            "width_ft": 30
+          },
+          "front_line": {
+            "boundary": "west edge of 27th Street right-of-way",
+            "length_ft": 94.0,
+            "role": "front property line"
+          },
+          "north_rear_to_front": {
+            "bearing": "N 89°55′05″ E",
+            "length_ft": 235.04
+          },
+          "rear_line": {
+            "boundary": "west",
+            "length_ft": 94.0,
+            "role": "rear property line"
+          },
+          "record": "PM 17383 Parcel 1, sheet 2",
+          "south_rear_to_front": {
+            "bearing": "N 89°54′59″ E (reverse of recorded S 89°54′59″ W)",
+            "length_ft": 235.0
+          }
+        },
+        "required_semantic_inputs": [
+          "legal lot boundary",
+          "public-right-of-way boundary",
+          "front property line",
+          "rear property line",
+          "front and rear midpoints",
+          "recorded connecting-line bearings and lengths",
+          "applicable minimum depth"
+        ],
+        "right_of_way_treatment": {
+          "basis": "Property lines used to apply development regulations separate the lot from public right-of-way regardless of ownership extending into it. The 30-foot dedicated 27th Street portion is therefore outside the front-to-rear depth geometry.",
+          "section": "SDMC §113.0246",
+          "state": "RESOLVED_USE_BOUNDARY_SEPARATING_LOT_FROM_PUBLIC_RIGHT_OF_WAY"
+        }
+      },
+      "measurement_result": "235.02",
+      "operator": "MIN",
+      "parcel_identity": {
+        "parcel_geometry_sha256": "3cda3f101571d027e172d7eb281041711dbb63680b6fc3fee21bbaa31ef5b5ff",
+        "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+        "situs_address": "1456 27TH ST"
+      },
+      "provenance": [
+        {
+          "apn": "6341302200",
+          "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+          "hop": "APN_TO_PARCEL_V2"
+        },
+        {
+          "artifact_sha256": "1b778cb6a06dc60e75dd1184d22681f672e453f16002e5fb0214cfc9406131fd",
+          "document": "DOC # 2001-0706032",
+          "hop": "PARCEL_V2_TO_RECORDED_DEED"
+        },
+        {
+          "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+          "entity": "PM 17383 Parcel 1",
+          "hop": "DEED_TO_RECORDED_MAP"
+        },
+        {
+          "fingerprint_sha256": "45d578f06b0a17bc342c1d6504ca0db285db25bfa251cc22988d9f1ead97d3b5",
+          "hop": "RECORDED_MAP_TO_LEGAL_LOT",
+          "state": "LEGAL_LOT_ESTABLISHED"
+        },
+        {
+          "hop": "MAP_TO_FRONT_REAR_LINES",
+          "page_text_sha256": "9ca26d239e6ba00d4fc4b0144b284e417cd210a9fa85e8c70f5f7e716d0710af",
+          "sections": [
+            "113.0246(a)",
+            "113.0246(c)"
+          ]
+        },
+        {
+          "hop": "LINES_TO_CODE_DEPTH",
+          "page_text_sha256": "5a0b86a18d12b5832e70a39b110a08aef3f53b4dfeb3c627a778f8dc1441f550",
+          "section": "113.0243(a)",
+          "value_ft": "235.02"
+        },
+        {
+          "hop": "PARCEL_TO_BASE_ZONING",
+          "mapping_row_sha256": "56ff295bb34046b281d3eb35de7829e687b6b66c2beda6a5c5cf3568c9e1e8d3",
+          "zone": "RS-1-7"
+        },
+        {
+          "fingerprint_sha256": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334",
+          "hop": "PARCEL_TO_COASTAL_CONTEXT",
+          "state": "OUTSIDE_COASTAL"
+        },
+        {
+          "fingerprint_sha256": "4e38994c7243dc446bc7a07fba568fa1deaf5dbc521abc1296e22ba4fc10d77d",
+          "hop": "CONTEXT_TO_STANDARDS_VERSION",
+          "version": "sd-rs-base-standards-2026-09-30-v0"
+        },
+        {
+          "hop": "STANDARDS_TO_RULE",
+          "provenance_sha256": "89ff09688c913253fca3af4e9aca1fa6b1d5945e7acb62a6bc79dfaea2d4c4f1",
+          "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:10"
+        },
+        {
+          "evaluation_fingerprint_sha256": "af874ae823e3d90fb4dc415b24fe1b5e0684745b6f9fe8c19c2dea87bbdcc14f",
+          "expression": "code_defined_lot_depth_ft >= minimum_lot_depth_ft",
+          "hop": "RULE_TO_COMPARISON"
+        }
+      ],
+      "required_semantic_inputs": [
+        "legal lot boundary",
+        "public-right-of-way boundary",
+        "front property line",
+        "rear property line",
+        "front and rear midpoints",
+        "recorded connecting-line bearings and lengths",
+        "applicable minimum depth"
+      ],
+      "resolved_inputs": [
+        "apn",
+        "coastal",
+        "depth_definition",
+        "front_line",
+        "geometry",
+        "legal_lot",
+        "legal_match",
+        "parcel_identity",
+        "rear_line",
+        "recorded_map",
+        "right_of_way",
+        "rule_family",
+        "rule_state",
+        "single_zone",
+        "standards",
+        "zone"
+      ],
+      "rule_family": "minimum_lot_depth",
+      "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:10",
+      "rule_source": {
+        "source_page": 33,
+        "source_section": "131.0431(a)",
+        "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+        "source_table": "131-04D",
+        "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf"
+      },
+      "unit": "ft"
+    },
+    {
+      "applicable_requirement": "50.0",
+      "bounded_conclusion": "The supported Code-defined lot width satisfies the RS-1-7 minimum lot width standard.",
+      "comparison_result": "RULE_REQUIREMENT_SATISFIED",
+      "condition_state": "UNCONDITIONAL",
+      "forbidden_conclusions": [
+        "OVERALL_ZONING_COMPLIANCE",
+        "DEVELOPMENT_CAPACITY",
+        "MAXIMUM_UNITS",
+        "FRONTAGE_COMPLIANCE",
+        "SETBACK_COMPLIANCE",
+        "FAR_COMPLIANCE",
+        "SUBDIVISION_ELIGIBILITY",
+        "PERMIT_LIKELIHOOD",
+        "BUILDABILITY",
+        "ENTITLEMENT"
+      ],
+      "legal_lot_state": {
+        "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+        "recorded_entity": "PM 17383 PARCEL 1",
+        "state": "LEGAL_LOT_ESTABLISHED"
+      },
+      "measurement_doctrine": {
+        "geometry_state": "RECORDED_MAP_SUFFICIENT",
+        "irregular_lot_disposition": {
+          "basis": "PM 17383 Parcel 1 is a regular four-sided near-rectangle with equal 94.00-foot front and rear lines and nearly parallel side lines, not an irregular or pie-shaped lot.",
+          "section": "SDMC §113.0243(c)(1)",
+          "state": "NOT_APPLICABLE"
+        },
+        "lot_classification": {
+          "basis": "PM 17383 shows only the east line adjoining 27th Street. There is no second adjacent street line as in §113.0246(a)/(d) corner-lot geometry and no opposite street frontage under §113.0246(b).",
+          "corner_lot": false,
+          "display": "interior (single-frontage, non-corner)",
+          "double_fronted_lot": false,
+          "state": "SINGLE_FRONTAGE_INTERIOR_NON_CORNER",
+          "through_lot": false
+        },
+        "lot_width": {
+          "definition": "Lot width is measured along an imaginary straight line drawn at right angles to the lot depth line, between the side lot lines at the point midway between the front and rear property lines.",
+          "edition": "7-2026",
+          "page": 25,
+          "page_text_sha256": "5a0b86a18d12b5832e70a39b110a08aef3f53b4dfeb3c627a778f8dc1441f550",
+          "section": "SDMC §113.0243(b)",
+          "source_sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+          "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf"
+        },
+        "property_line_roles_state": "RESOLVED",
+        "property_lines": {
+          "edition": "7-2026",
+          "front": "east boundary at west edge of 27th Street right-of-way",
+          "page_text_sha256": "de3ab09d625b2d3866c2e2c0849d255c8287fc5e7a7160a00e11bc1bbc6eb7a0",
+          "rear": "opposite and most distant west boundary",
+          "sections": [
+            "SDMC §113.0246(a)",
+            "SDMC §113.0246(b)",
+            "SDMC §113.0246(c)",
+            "SDMC §113.0246(d)"
+          ],
+          "sides": [
+            "north rear-to-front boundary",
+            "south rear-to-front boundary"
+          ],
+          "source_sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+          "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf"
+        },
+        "recorded_geometry": {
+          "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+          "excluded_dedicated_street_portion": {
+            "frontage_length_ft": 94,
+            "width_ft": 30
+          },
+          "front_line": {
+            "bearing": "N 00°03′42″ W",
+            "length_ft": 94.0
+          },
+          "north_rear_to_front": {
+            "bearing": "N 89°55′05″ E",
+            "length_ft": 235.04
+          },
+          "rear_line": {
+            "bearing": "N 00°04′59″ W",
+            "length_ft": 94.0
+          },
+          "record": "PM 17383 Parcel 1, sheet 2",
+          "south_rear_to_front": {
+            "bearing": "N 89°54′59″ E",
+            "length_ft": 235.0
+          }
+        },
+        "required_semantic_inputs": [
+          "legal lot boundary",
+          "public-right-of-way boundary",
+          "lot classification",
+          "front and rear property lines",
+          "side property lines",
+          "lot depth line and midpoint",
+          "perpendicular width line",
+          "applicable standard or corner minimum"
+        ],
+        "right_of_way_treatment": {
+          "basis": "Development-regulation property lines separate the lot from public right-of-way regardless of ownership extending into it; width geometry uses the front line at the west edge of 27th Street.",
+          "section": "SDMC §113.0246",
+          "state": "RESOLVED_USE_BOUNDARY_SEPARATING_LOT_FROM_PUBLIC_RIGHT_OF_WAY"
+        },
+        "width_definition_state": "RESOLVED_PERPENDICULAR_AT_DEPTH_MIDPOINT"
+      },
+      "measurement_result": "94.00",
+      "operator": "MIN",
+      "parcel_identity": {
+        "parcel_geometry_sha256": "3cda3f101571d027e172d7eb281041711dbb63680b6fc3fee21bbaa31ef5b5ff",
+        "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+        "situs_address": "1456 27TH ST"
+      },
+      "provenance": [
+        {
+          "apn": "6341302200",
+          "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+          "hop": "APN_TO_PARCEL_V2"
+        },
+        {
+          "artifact_sha256": "1b778cb6a06dc60e75dd1184d22681f672e453f16002e5fb0214cfc9406131fd",
+          "document": "DOC # 2001-0706032",
+          "hop": "PARCEL_V2_TO_RECORDED_DEED"
+        },
+        {
+          "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+          "entity": "PM 17383 Parcel 1",
+          "hop": "DEED_TO_RECORDED_MAP"
+        },
+        {
+          "hop": "MAP_TO_LOT_CLASSIFICATION",
+          "sections": [
+            "SDMC §113.0246(a)",
+            "SDMC §113.0246(b)",
+            "SDMC §113.0246(c)",
+            "SDMC §113.0246(d)"
+          ],
+          "state": "SINGLE_FRONTAGE_INTERIOR_NON_CORNER"
+        },
+        {
+          "hop": "MAP_TO_PROPERTY_LINES",
+          "page_text_sha256": "de3ab09d625b2d3866c2e2c0849d255c8287fc5e7a7160a00e11bc1bbc6eb7a0",
+          "state": "RESOLVED"
+        },
+        {
+          "hop": "LINES_TO_CODE_WIDTH",
+          "page_text_sha256": "5a0b86a18d12b5832e70a39b110a08aef3f53b4dfeb3c627a778f8dc1441f550",
+          "section": "113.0243(b)",
+          "value_ft": "94.00"
+        },
+        {
+          "hop": "PARCEL_TO_BASE_ZONING",
+          "mapping_row_sha256": "56ff295bb34046b281d3eb35de7829e687b6b66c2beda6a5c5cf3568c9e1e8d3",
+          "zone": "RS-1-7"
+        },
+        {
+          "fingerprint_sha256": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334",
+          "hop": "PARCEL_TO_COASTAL_CONTEXT",
+          "state": "OUTSIDE_COASTAL"
+        },
+        {
+          "fingerprint_sha256": "4e38994c7243dc446bc7a07fba568fa1deaf5dbc521abc1296e22ba4fc10d77d",
+          "hop": "CONTEXT_TO_STANDARDS_VERSION",
+          "version": "sd-rs-base-standards-2026-09-30-v0"
+        },
+        {
+          "excluded_corner_rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:9",
+          "hop": "CLASSIFICATION_TO_APPLICABLE_RULE",
+          "selected_rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:7"
+        },
+        {
+          "evaluation_fingerprint_sha256": "85f9f17d97a1cf8974f551863b0f9531b2e9e5f9a910aedbcbf504dea0db46ec",
+          "expression": "code_defined_lot_width_ft >= applicable_minimum_width_ft",
+          "hop": "RULE_TO_COMPARISON"
+        }
+      ],
+      "required_semantic_inputs": [
+        "legal lot boundary",
+        "public-right-of-way boundary",
+        "lot classification",
+        "front and rear property lines",
+        "side property lines",
+        "lot depth line and midpoint",
+        "perpendicular width line",
+        "applicable standard or corner minimum"
+      ],
+      "resolved_inputs": [
+        "apn",
+        "coastal",
+        "corner_rule_excluded",
+        "geometry",
+        "irregularity",
+        "legal_lot",
+        "legal_match",
+        "lot_classification",
+        "parcel_identity",
+        "property_lines",
+        "recorded_map",
+        "right_of_way",
+        "rule_family",
+        "rule_state",
+        "single_zone",
+        "standards",
+        "width_definition",
+        "zone"
+      ],
+      "rule_family": "minimum_lot_width",
+      "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:7",
+      "rule_source": {
+        "source_page": 33,
+        "source_section": "131.0431(a)",
+        "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+        "source_table": "131-04D",
+        "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf"
+      },
+      "unit": "ft"
+    },
+    {
+      "applicable_requirement": "50.0",
+      "bounded_conclusion": "The supported Code-defined lot frontage satisfies the RS-1-7 minimum frontage standard.",
+      "comparison_result": "RULE_REQUIREMENT_SATISFIED",
+      "condition_state": "RESOLVED",
+      "forbidden_conclusions": [
+        "LEGAL_ACCESS",
+        "DRIVEWAY_ACCESS",
+        "CURB_CUT_PERMISSION",
+        "SETBACK_COMPLIANCE",
+        "OVERALL_ZONING_COMPLIANCE",
+        "DEVELOPMENT_CAPACITY",
+        "MAXIMUM_UNITS",
+        "SUBDIVISION_ELIGIBILITY",
+        "PERMIT_APPROVAL",
+        "BUILDABILITY"
+      ],
+      "legal_lot_state": {
+        "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+        "recorded_entity": "PM 17383 PARCEL 1",
+        "state": "LEGAL_LOT_ESTABLISHED"
+      },
+      "measurement_doctrine": {
+        "front_property_line": {
+          "basis": "The front property line separates the lot from public right-of-way; PM 17383 shows the east Parcel 1 line bordering 27th Street.",
+          "page_text_sha256": "cbc4171f054923f3d1393803c249f9b4b8b249922ef20bebe480ddd0e9fb0cfc",
+          "section": "SDMC §113.0246(a)",
+          "source_sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+          "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf",
+          "state": "RESOLVED_27TH_STREET_RIGHT_OF_WAY_BOUNDARY"
+        },
+        "frontage_definition_state": "RESOLVED_PROPERTY_LINE_ALONG_STREET",
+        "frontage_exception": {
+          "basis": "The recorded frontage is on a straight 27th Street segment, so neither predicate is present.",
+          "edition": "7-2026",
+          "page": 47,
+          "page_text_sha256": "f7fc0e5242a3f25ec2a0c2db6c12194a0192f801b30a9ba9ca13080566f0ad4b",
+          "rule": "The RS/RM minimum is reduced to 60 percent only where a lot fronts principally on a turnaround or curving street with centerline radius under 100 feet.",
+          "section": "SDMC §131.0442(a)",
+          "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+          "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "state": "NOT_APPLICABLE"
+        },
+        "geometry_state": "RECORDED_MAP_SUFFICIENT",
+        "lot_classification_state": "SINGLE_FRONTAGE_INTERIOR_NON_CORNER",
+        "recorded_geometry": {
+          "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+          "dedicated_right_of_way": {
+            "note": "Portion of 27th Street dedicated per Old Road Survey 172, January 20, 1890",
+            "width_ft": 30
+          },
+          "record": "PM 17383 Parcel 1, sheet 2",
+          "street_adjoining_property_line": {
+            "bearing": "N 00°03′42″ W",
+            "geometry": "straight line",
+            "length_ft": 94.0,
+            "role": "front development-regulation property line",
+            "street": "27th Street"
+          },
+          "street_centerline": {
+            "bearing": "N 00°03′42″ W",
+            "geometry": "straight line"
+          }
+        },
+        "required_semantic_inputs": [
+          "legal premises boundary",
+          "street-adjoining property line",
+          "public-right-of-way relationship",
+          "recorded street adjacency",
+          "line or curve length",
+          "turnaround/curvature predicate",
+          "lot classification",
+          "applicable frontage rule"
+        ],
+        "right_of_way_treatment": {
+          "basis": "The frontage line is the premises property line separating Parcel 1 from the public right-of-way, not the street centerline, curb, or outer edge of dedicated right-of-way.",
+          "section": "SDMC §113.0246",
+          "state": "RESOLVED_PROPERTY_LINE_ALONG_STREET"
+        },
+        "street_frontage": {
+          "definition": "Street frontage means the length of one premises’ property line along the street it borders.",
+          "edition": "7-2026",
+          "page": 27,
+          "page_text_sha256": "f00f7c09ca0673adcb1ff935421a3b52721808399de65d0ee0f203908f6dd19e",
+          "source": "SDMC Chapter 11, Article 3, Division 1 definition of Street frontage",
+          "source_sha256": "7a2234c4b02089867be21002036235c7eba2abebd60fa2ef0413a60b00a652ae",
+          "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division01.pdf"
+        },
+        "street_geometry": {
+          "basis": "PM 17383 sheet 2 depicts the 27th Street centerline and Parcel 1 street boundary as straight survey lines with bearing N 00°03′42″ W; no curve, radius, or turnaround is shown at the frontage.",
+          "state": "STRAIGHT_NOT_TURNAROUND"
+        }
+      },
+      "measurement_result": "94.00",
+      "operator": "MIN",
+      "parcel_identity": {
+        "parcel_geometry_sha256": "3cda3f101571d027e172d7eb281041711dbb63680b6fc3fee21bbaa31ef5b5ff",
+        "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+        "situs_address": "1456 27TH ST"
+      },
+      "provenance": [
+        {
+          "apn": "6341302200",
+          "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+          "hop": "APN_TO_PARCEL_V2"
+        },
+        {
+          "artifact_sha256": "1b778cb6a06dc60e75dd1184d22681f672e453f16002e5fb0214cfc9406131fd",
+          "document": "DOC # 2001-0706032",
+          "hop": "PARCEL_V2_TO_RECORDED_DEED"
+        },
+        {
+          "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+          "entity": "PM 17383 Parcel 1",
+          "hop": "DEED_TO_RECORDED_MAP"
+        },
+        {
+          "hop": "MAP_TO_STREET_PROPERTY_LINE",
+          "page_text_sha256": "cbc4171f054923f3d1393803c249f9b4b8b249922ef20bebe480ddd0e9fb0cfc",
+          "state": "RESOLVED_27TH_STREET_RIGHT_OF_WAY_BOUNDARY"
+        },
+        {
+          "definition_page_text_sha256": "f00f7c09ca0673adcb1ff935421a3b52721808399de65d0ee0f203908f6dd19e",
+          "hop": "PROPERTY_LINE_TO_CODE_FRONTAGE",
+          "value_ft": "94.00"
+        },
+        {
+          "exception_state": "NOT_APPLICABLE",
+          "hop": "MAP_TO_EXCEPTION_PREDICATE",
+          "street_geometry": "STRAIGHT_NOT_TURNAROUND"
+        },
+        {
+          "hop": "PARCEL_TO_BASE_ZONING",
+          "mapping_row_sha256": "56ff295bb34046b281d3eb35de7829e687b6b66c2beda6a5c5cf3568c9e1e8d3",
+          "zone": "RS-1-7"
+        },
+        {
+          "fingerprint_sha256": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334",
+          "hop": "PARCEL_TO_COASTAL_CONTEXT",
+          "state": "OUTSIDE_COASTAL"
+        },
+        {
+          "fingerprint_sha256": "4e38994c7243dc446bc7a07fba568fa1deaf5dbc521abc1296e22ba4fc10d77d",
+          "hop": "CONTEXT_TO_STANDARDS_VERSION",
+          "version": "sd-rs-base-standards-2026-09-30-v0"
+        },
+        {
+          "condition_resolved": true,
+          "hop": "CONDITION_TO_APPLICABLE_RULE",
+          "provenance_sha256": "ec305de07ac6e19cab6d631041299b5c953049dee6d15a6bf5719066e51b3814",
+          "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:8"
+        },
+        {
+          "evaluation_fingerprint_sha256": "9a9a6002733ee52c7ef71b6e87a5dda9d29d12f67f7df060e53aa005fe74e6f8",
+          "expression": "code_defined_frontage_ft >= applicable_minimum_frontage_ft",
+          "hop": "RULE_TO_COMPARISON"
+        }
+      ],
+      "required_semantic_inputs": [
+        "legal premises boundary",
+        "street-adjoining property line",
+        "public-right-of-way relationship",
+        "recorded street adjacency",
+        "line or curve length",
+        "turnaround/curvature predicate",
+        "lot classification",
+        "applicable frontage rule"
+      ],
+      "resolved_inputs": [
+        "apn",
+        "classification",
+        "coastal",
+        "exception",
+        "front_line",
+        "frontage_definition",
+        "geometry",
+        "legal_lot",
+        "legal_match",
+        "parcel_identity",
+        "recorded_map",
+        "right_of_way",
+        "rule_condition",
+        "rule_family",
+        "rule_state",
+        "single_zone",
+        "standards",
+        "street_geometry",
+        "zone"
+      ],
+      "rule_family": "minimum_frontage",
+      "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:8",
+      "rule_source": {
+        "source_page": 33,
+        "source_section": "131.0431(a)",
+        "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+        "source_table": "131-04D",
+        "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf"
+      },
+      "unit": "ft"
+    }
+  ]
+}

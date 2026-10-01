@@ -6,10 +6,17 @@ overall zoning compliance, or any other rule family.
 
 from __future__ import annotations
 
-import hashlib
-import json
+import sys
 from decimal import Decimal
+from pathlib import Path
 from typing import Any
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from dimensional_rule_evaluator_v0 import (  # noqa: E402
+    canonical_json, compare_values, conclusion_guard_fields,
+    evaluate_evidence_gates, fingerprint, integrity_artifact,
+    provenance_graph, unresolved_result,
+)
 
 
 CONTRACT_VERSION = "minimum-lot-area-evaluation-v0-2026-09-30-p27"
@@ -29,14 +36,6 @@ FORBIDDEN_CONCLUSIONS = (
     "BUILDABILITY",
     "ENTITLEMENT",
 )
-
-
-def canonical_json(value: Any) -> str:
-    return json.dumps(value, ensure_ascii=False, allow_nan=False, sort_keys=True, separators=(",", ":"))
-
-
-def fingerprint(value: Any) -> str:
-    return hashlib.sha256(canonical_json(value).encode()).hexdigest()
 
 
 def _decimal(value: Any) -> Decimal:
@@ -68,19 +67,9 @@ def evaluate_minimum_lot_area(
         "rule_state": rule.get("fact_state") == "RECORDED" and rule.get("condition") == [] and rule.get("operator") == "MIN",
         "denominator": denominator_authority.get("state") == "RESOLVED_EXCLUDE_PUBLIC_RIGHT_OF_WAY",
     }
-    failed = [name for name, passed in gates.items() if not passed]
-    if failed:
-        return {
-            "contract_version": CONTRACT_VERSION,
-            "apn": EXPECTED_APN,
-            "rule_family": "minimum_lot_area",
-            "state": "RULE_EVALUATION_UNRESOLVED",
-            "reason": "REQUIRED_GATE_FAILED",
-            "failed_gates": failed,
-            "parcel_compliance_evaluated": False,
-            "development_capacity_calculated": False,
-            "other_rule_families_evaluated": [],
-        }
+    gate_result = evaluate_evidence_gates(gates)
+    if not gate_result.passed:
+        return unresolved_result(contract_version=CONTRACT_VERSION, apn=EXPECTED_APN, rule_family="minimum_lot_area", failed_gates=gate_result.failed, false_fields=("parcel_compliance_evaluated", "development_capacity_calculated"))
 
     supported_area = next(item for item in legal_lot["legal_area_findings"] if item.get("state") == "LEGAL_LOT_AREA_SUPPORTED")
     recorded_acres = _decimal(supported_area["value"])
@@ -90,7 +79,7 @@ def evaluate_minimum_lot_area(
     public_right_of_way_sqft = street_width * street_length
     code_lot_area_sqft = gross_sqft - public_right_of_way_sqft
     required_sqft = _decimal(rule["value"]["number"])
-    satisfied = code_lot_area_sqft >= required_sqft
+    comparison = compare_values(measured=code_lot_area_sqft, required=required_sqft, unit="sq_ft", operator="MIN", expression="code_lot_area_sqft >= minimum_lot_area_sqft")
 
     result = {
         "contract_version": CONTRACT_VERSION,
@@ -163,20 +152,11 @@ def evaluate_minimum_lot_area(
             "gross_result_sqft": str(gross_sqft),
             "rounding": "No rounding; Decimal arithmetic preserves the recorded three-decimal acre value exactly.",
         },
-        "comparison": {
-            "expression": "code_lot_area_sqft >= minimum_lot_area_sqft",
-            "left": str(code_lot_area_sqft),
-            "operator": ">=",
-            "right": str(required_sqft),
-            "unit": "sq_ft",
-        },
-        "state": "RULE_REQUIREMENT_SATISFIED" if satisfied else "RULE_REQUIREMENT_NOT_SATISFIED",
-        "bounded_conclusion": "The supported Code-defined lot area satisfies the RS-1-7 minimum lot area standard." if satisfied else "The supported Code-defined lot area does not satisfy the RS-1-7 minimum lot area standard.",
+        "comparison": comparison.comparison,
+        "state": comparison.state,
+        "bounded_conclusion": "The supported Code-defined lot area satisfies the RS-1-7 minimum lot area standard." if comparison.state == "RULE_REQUIREMENT_SATISFIED" else "The supported Code-defined lot area does not satisfy the RS-1-7 minimum lot area standard.",
         "mandatory_qualifier": "This evaluates only the minimum-lot-area rule. It does not establish overall zoning compliance, development capacity, subdivision rights, or project approval.",
-        "forbidden_conclusions": list(FORBIDDEN_CONCLUSIONS),
-        "parcel_compliance_evaluated": False,
-        "development_capacity_calculated": False,
-        "other_rule_families_evaluated": [],
+        **conclusion_guard_fields(FORBIDDEN_CONCLUSIONS, ("parcel_compliance_evaluated", "development_capacity_calculated")),
     }
     result["fingerprint_sha256"] = fingerprint(result)
     return result
