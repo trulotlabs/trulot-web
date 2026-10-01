@@ -1,0 +1,12 @@
+{
+  "artifacts": {
+    "contract.json": "589dbb988172fc844d30a7897085bcf2d1ee3dbc8f8f7ac94d9e0351dbc279ff",
+    "decision.json": "d5d9e62234807a7ca44d2c09fc709086f42010fa03df6f8684fbb7d8382d7b8a",
+    "dimensional-evaluator-assessment.json": "3b71f9f81d41b99c96f1e306a5fa0493fc0bf799be6ca73392ab543b431a54b3",
+    "evaluation.json": "e43780521fcbf2633db7276c936f151897aaa9048108948b61f2e9083a2542b8",
+    "product-example.json": "10aa384f3e5632c7b59430cfcb759ddfd067f3f1a31823cf1f2eb724ddee11e8",
+    "provenance.json": "2dab82811cce8f69197b0d2e32e4427d03d83cb98284c4f710b860ff42e99924"
+  },
+  "bundle_sha256": "7fdecf5b60fe6ded7f90e514b54a9bfe7ac3005aa9b0a8093e4a5fd53d926930",
+  "contract_version": "minimum-frontage-evaluation-v0-2026-10-01-p30"
+}

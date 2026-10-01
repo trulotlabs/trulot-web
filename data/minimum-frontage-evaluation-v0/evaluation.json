@@ -1,0 +1,191 @@
+{
+  "apn": "6341302200",
+  "applicable_rule": {
+    "condition": [
+      "Section 131.0442(a) may reduce frontage to 60 percent on qualifying turnaround or curving streets."
+    ],
+    "condition_resolved": true,
+    "exception_disposition": "SECTION_131_0442_A_NOT_APPLICABLE",
+    "fact_state": "CONDITIONAL",
+    "jurisdiction_variant": "OUTSIDE_COASTAL",
+    "numeric_value": 50,
+    "operator": "MIN",
+    "provenance_sha256": "ec305de07ac6e19cab6d631041299b5c953049dee6d15a6bf5719066e51b3814",
+    "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:8",
+    "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+    "selection": "BASE_RS_1_7_MINIMUM_FRONTAGE",
+    "source_edition": "9-2026",
+    "source_page": 33,
+    "source_section": "131.0431(a)",
+    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "source_table": "131-04D",
+    "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+    "standard_key": "street_frontage_min",
+    "unit": "ft"
+  },
+  "bounded_conclusion": "The supported Code-defined lot frontage satisfies the RS-1-7 minimum frontage standard.",
+  "comparison": {
+    "expression": "code_defined_frontage_ft >= applicable_minimum_frontage_ft",
+    "left": "94.00",
+    "operator": ">=",
+    "right": "50.0",
+    "unit": "ft"
+  },
+  "contract_version": "minimum-frontage-evaluation-v0-2026-10-01-p30",
+  "development_capacity_calculated": false,
+  "driveway_access_evaluated": false,
+  "evaluation_scope": "MINIMUM_STREET_FRONTAGE_ONLY",
+  "fingerprint_sha256": "9a9a6002733ee52c7ef71b6e87a5dda9d29d12f67f7df060e53aa005fe74e6f8",
+  "forbidden_conclusions": [
+    "LEGAL_ACCESS",
+    "DRIVEWAY_ACCESS",
+    "CURB_CUT_PERMISSION",
+    "SETBACK_COMPLIANCE",
+    "OVERALL_ZONING_COMPLIANCE",
+    "DEVELOPMENT_CAPACITY",
+    "MAXIMUM_UNITS",
+    "SUBDIVISION_ELIGIBILITY",
+    "PERMIT_APPROVAL",
+    "BUILDABILITY"
+  ],
+  "frontage_access_distinctions": {
+    "curb_cut_or_access_point": "Specific opening or permission in the curb; not evaluated",
+    "driveway_access": "Physical or permitted driveway connection; not evaluated",
+    "frontage": "Length of the premises property line along the street it borders; evaluated",
+    "legal_access": "Separate legal right or approval to enter the street; not evaluated",
+    "public_right_of_way": "Dedicated street area east of the premises property line; establishes the street boundary but is not itself frontage length",
+    "street_adjacency": "Parcel boundary relationship to 27th Street; established"
+  },
+  "frontage_measurement": {
+    "assumptions": [],
+    "bearing": "N 00°03′42″ W",
+    "code_defined_frontage_ft": "94.00",
+    "derivation_class": "DIRECT_RECORDED_MAP_MEASUREMENT_WITH_CODE_SEMANTICS",
+    "method": "Length of the premises property line along the street it borders",
+    "parcel_v2_geometry_used": false,
+    "precision": "Recorded to 0.01 ft; no additional rounding",
+    "recorded_length_ft": "94.00",
+    "source_line": "east/front development-regulation property line at west edge of 27th Street right-of-way",
+    "street": "27th Street"
+  },
+  "gates": {
+    "apn": true,
+    "classification": true,
+    "coastal": true,
+    "exception": true,
+    "front_line": true,
+    "frontage_definition": true,
+    "geometry": true,
+    "legal_lot": true,
+    "legal_match": true,
+    "parcel_identity": true,
+    "recorded_map": true,
+    "right_of_way": true,
+    "rule_condition": true,
+    "rule_family": true,
+    "rule_state": true,
+    "single_zone": true,
+    "standards": true,
+    "street_geometry": true,
+    "zone": true
+  },
+  "legal_access_evaluated": false,
+  "legal_lot": {
+    "deed_artifact_sha256": "1b778cb6a06dc60e75dd1184d22681f672e453f16002e5fb0214cfc9406131fd",
+    "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+    "recorded_deed": "DOC # 2001-0706032",
+    "recorded_entity": "PM 17383 PARCEL 1",
+    "recorded_map_artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+    "state": "LEGAL_LOT_ESTABLISHED"
+  },
+  "mandatory_qualifier": "This evaluates only the minimum-frontage rule. It does not establish access adequacy, driveway compliance, setback compliance, development capacity, or project approval.",
+  "measurement_doctrine": {
+    "front_property_line": {
+      "basis": "The front property line separates the lot from public right-of-way; PM 17383 shows the east Parcel 1 line bordering 27th Street.",
+      "page_text_sha256": "cbc4171f054923f3d1393803c249f9b4b8b249922ef20bebe480ddd0e9fb0cfc",
+      "section": "SDMC §113.0246(a)",
+      "source_sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+      "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf",
+      "state": "RESOLVED_27TH_STREET_RIGHT_OF_WAY_BOUNDARY"
+    },
+    "frontage_definition_state": "RESOLVED_PROPERTY_LINE_ALONG_STREET",
+    "frontage_exception": {
+      "basis": "The recorded frontage is on a straight 27th Street segment, so neither predicate is present.",
+      "edition": "7-2026",
+      "page": 47,
+      "page_text_sha256": "f7fc0e5242a3f25ec2a0c2db6c12194a0192f801b30a9ba9ca13080566f0ad4b",
+      "rule": "The RS/RM minimum is reduced to 60 percent only where a lot fronts principally on a turnaround or curving street with centerline radius under 100 feet.",
+      "section": "SDMC §131.0442(a)",
+      "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+      "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+      "state": "NOT_APPLICABLE"
+    },
+    "geometry_state": "RECORDED_MAP_SUFFICIENT",
+    "lot_classification_state": "SINGLE_FRONTAGE_INTERIOR_NON_CORNER",
+    "recorded_geometry": {
+      "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+      "dedicated_right_of_way": {
+        "note": "Portion of 27th Street dedicated per Old Road Survey 172, January 20, 1890",
+        "width_ft": 30
+      },
+      "record": "PM 17383 Parcel 1, sheet 2",
+      "street_adjoining_property_line": {
+        "bearing": "N 00°03′42″ W",
+        "geometry": "straight line",
+        "length_ft": 94.0,
+        "role": "front development-regulation property line",
+        "street": "27th Street"
+      },
+      "street_centerline": {
+        "bearing": "N 00°03′42″ W",
+        "geometry": "straight line"
+      }
+    },
+    "required_semantic_inputs": [
+      "legal premises boundary",
+      "street-adjoining property line",
+      "public-right-of-way relationship",
+      "recorded street adjacency",
+      "line or curve length",
+      "turnaround/curvature predicate",
+      "lot classification",
+      "applicable frontage rule"
+    ],
+    "right_of_way_treatment": {
+      "basis": "The frontage line is the premises property line separating Parcel 1 from the public right-of-way, not the street centerline, curb, or outer edge of dedicated right-of-way.",
+      "section": "SDMC §113.0246",
+      "state": "RESOLVED_PROPERTY_LINE_ALONG_STREET"
+    },
+    "street_frontage": {
+      "definition": "Street frontage means the length of one premises’ property line along the street it borders.",
+      "edition": "7-2026",
+      "page": 27,
+      "page_text_sha256": "f00f7c09ca0673adcb1ff935421a3b52721808399de65d0ee0f203908f6dd19e",
+      "source": "SDMC Chapter 11, Article 3, Division 1 definition of Street frontage",
+      "source_sha256": "7a2234c4b02089867be21002036235c7eba2abebd60fa2ef0413a60b00a652ae",
+      "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division01.pdf"
+    },
+    "street_geometry": {
+      "basis": "PM 17383 sheet 2 depicts the 27th Street centerline and Parcel 1 street boundary as straight survey lines with bearing N 00°03′42″ W; no curve, radius, or turnaround is shown at the frontage.",
+      "state": "STRAIGHT_NOT_TURNAROUND"
+    }
+  },
+  "other_rule_families_evaluated": [],
+  "parcel_compliance_evaluated": false,
+  "parcel_identity": {
+    "parcel_geometry_sha256": "3cda3f101571d027e172d7eb281041711dbb63680b6fc3fee21bbaa31ef5b5ff",
+    "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+    "situs_address": "1456 27TH ST"
+  },
+  "rule_family": "minimum_frontage",
+  "state": "RULE_REQUIREMENT_SATISFIED",
+  "zoning": {
+    "coastal_fingerprint_sha256": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334",
+    "coastal_state": "OUTSIDE_COASTAL",
+    "mapping_row_sha256": "56ff295bb34046b281d3eb35de7829e687b6b66c2beda6a5c5cf3568c9e1e8d3",
+    "mapping_state": "SINGLE_ZONE",
+    "standards_fingerprint_sha256": "4e38994c7243dc446bc7a07fba568fa1deaf5dbc521abc1296e22ba4fc10d77d",
+    "standards_version": "sd-rs-base-standards-2026-09-30-v0",
+    "zone_code": "RS-1-7"
+  }
+}

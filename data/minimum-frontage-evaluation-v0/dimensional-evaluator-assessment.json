@@ -1,0 +1,21 @@
+{
+  "completed_rule_families": [
+    "minimum_lot_area",
+    "minimum_lot_depth",
+    "minimum_lot_width",
+    "minimum_frontage"
+  ],
+  "contract_version": "minimum-frontage-evaluation-v0-2026-10-01-p30",
+  "recommended_follow_up": "Consolidate shared gates, provenance hops, comparison states, and containment fields in a separately bounded packet without changing sealed outputs.",
+  "refactor_performed": false,
+  "stable_stages": [
+    "authoritative legal-lot evidence",
+    "Code measurement doctrine",
+    "geometry construction",
+    "rule selection and condition resolution",
+    "deterministic comparison",
+    "bounded result",
+    "provenance"
+  ],
+  "state": "DIMENSIONAL_EVALUATOR_PATTERN_READY"
+}

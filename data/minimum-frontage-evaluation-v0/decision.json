@@ -1,0 +1,9 @@
+{
+  "contract_version": "minimum-frontage-evaluation-v0-2026-10-01-p30",
+  "decision": "MINIMUM_FRONTAGE_RULE_EVALUATION_READY",
+  "development_capacity_calculated": false,
+  "dimensional_evaluator_assessment": "DIMENSIONAL_EVALUATOR_PATTERN_READY",
+  "next_rule_evaluation_target": "front setback",
+  "overall_compliance_conclusion": false,
+  "result": "RULE_REQUIREMENT_SATISFIED"
+}

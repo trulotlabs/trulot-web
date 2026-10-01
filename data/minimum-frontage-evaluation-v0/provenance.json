@@ -1,0 +1,61 @@
+{
+  "chain": [
+    {
+      "apn": "6341302200",
+      "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+      "hop": "APN_TO_PARCEL_V2"
+    },
+    {
+      "artifact_sha256": "1b778cb6a06dc60e75dd1184d22681f672e453f16002e5fb0214cfc9406131fd",
+      "document": "DOC # 2001-0706032",
+      "hop": "PARCEL_V2_TO_RECORDED_DEED"
+    },
+    {
+      "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+      "entity": "PM 17383 Parcel 1",
+      "hop": "DEED_TO_RECORDED_MAP"
+    },
+    {
+      "hop": "MAP_TO_STREET_PROPERTY_LINE",
+      "page_text_sha256": "cbc4171f054923f3d1393803c249f9b4b8b249922ef20bebe480ddd0e9fb0cfc",
+      "state": "RESOLVED_27TH_STREET_RIGHT_OF_WAY_BOUNDARY"
+    },
+    {
+      "definition_page_text_sha256": "f00f7c09ca0673adcb1ff935421a3b52721808399de65d0ee0f203908f6dd19e",
+      "hop": "PROPERTY_LINE_TO_CODE_FRONTAGE",
+      "value_ft": "94.00"
+    },
+    {
+      "exception_state": "NOT_APPLICABLE",
+      "hop": "MAP_TO_EXCEPTION_PREDICATE",
+      "street_geometry": "STRAIGHT_NOT_TURNAROUND"
+    },
+    {
+      "hop": "PARCEL_TO_BASE_ZONING",
+      "mapping_row_sha256": "56ff295bb34046b281d3eb35de7829e687b6b66c2beda6a5c5cf3568c9e1e8d3",
+      "zone": "RS-1-7"
+    },
+    {
+      "fingerprint_sha256": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334",
+      "hop": "PARCEL_TO_COASTAL_CONTEXT",
+      "state": "OUTSIDE_COASTAL"
+    },
+    {
+      "fingerprint_sha256": "4e38994c7243dc446bc7a07fba568fa1deaf5dbc521abc1296e22ba4fc10d77d",
+      "hop": "CONTEXT_TO_STANDARDS_VERSION",
+      "version": "sd-rs-base-standards-2026-09-30-v0"
+    },
+    {
+      "condition_resolved": true,
+      "hop": "CONDITION_TO_APPLICABLE_RULE",
+      "provenance_sha256": "ec305de07ac6e19cab6d631041299b5c953049dee6d15a6bf5719066e51b3814",
+      "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:8"
+    },
+    {
+      "evaluation_fingerprint_sha256": "9a9a6002733ee52c7ef71b6e87a5dda9d29d12f67f7df060e53aa005fe74e6f8",
+      "expression": "code_defined_frontage_ft >= applicable_minimum_frontage_ft",
+      "hop": "RULE_TO_COMPARISON"
+    }
+  ],
+  "contract_version": "minimum-frontage-evaluation-v0-2026-10-01-p30"
+}

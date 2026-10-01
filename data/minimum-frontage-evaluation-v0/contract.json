@@ -1,0 +1,38 @@
+{
+  "containment": {
+    "capacity": false,
+    "citywide": false,
+    "driveway": false,
+    "legal_access": false,
+    "overall_compliance": false,
+    "production_wired": false,
+    "setbacks": false
+  },
+  "contract_version": "minimum-frontage-evaluation-v0-2026-10-01-p30",
+  "forbidden_conclusions": [
+    "LEGAL_ACCESS",
+    "DRIVEWAY_ACCESS",
+    "CURB_CUT_PERMISSION",
+    "SETBACK_COMPLIANCE",
+    "OVERALL_ZONING_COMPLIANCE",
+    "DEVELOPMENT_CAPACITY",
+    "MAXIMUM_UNITS",
+    "SUBDIVISION_ELIGIBILITY",
+    "PERMIT_APPROVAL",
+    "BUILDABILITY"
+  ],
+  "required_expression": "code_defined_frontage_ft >= applicable_minimum_frontage_ft",
+  "scope": {
+    "apns": [
+      "6341302200"
+    ],
+    "rule_families": [
+      "minimum_frontage"
+    ]
+  },
+  "states": [
+    "RULE_REQUIREMENT_SATISFIED",
+    "RULE_REQUIREMENT_NOT_SATISFIED",
+    "RULE_EVALUATION_UNRESOLVED"
+  ]
+}

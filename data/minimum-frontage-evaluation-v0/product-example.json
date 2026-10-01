@@ -1,0 +1,13 @@
+{
+  "contract_version": "minimum-frontage-evaluation-v0-2026-10-01-p30",
+  "heading": "Minimum frontage",
+  "measurement_basis": "SDMC street-frontage definition and §§113.0246/131.0442(a) applied to PM 17383 Parcel 1",
+  "qualifier": "This evaluates only the minimum-frontage rule. It does not establish access adequacy, driveway compliance, setback compliance, development capacity, or project approval.",
+  "required": "50 ft",
+  "result": "RULE_REQUIREMENT_SATISFIED",
+  "scope": "Minimum-frontage rule only",
+  "source": "PM 17383 Parcel 1; DOC # 2001-0706032; SDMC definition of street frontage; §§113.0246, 131.0431(a), and 131.0442(a)",
+  "street": "27th Street",
+  "supported_frontage": "94.00 ft",
+  "ui_wired": false
+}
