@@ -1,0 +1,41 @@
+{
+  "contractVersion": "parcel-lookup-production-v0-tests-2026-10-01-p44",
+  "results": [
+    {
+      "command": "node scripts/parcel-lookup-production-v0/rehearse.mjs",
+      "status": "PASS",
+      "summary": "Verified normalized-row SHA-256; loaded 1,088,430 accepted rows and exactly 393,733 distinct City APNs; exercised exact APN, prefix, address, autocomplete, ambiguity, stacked/condo, missing-address, and point-only cases; deleted disposable database."
+    },
+    {
+      "command": "node scripts/parcel-lookup-production-v0/test.mjs",
+      "status": "PASS",
+      "summary": "Architecture, security containment, full-corpus evidence, index-plan evidence, failure contract, and protected-route preservation passed."
+    },
+    {
+      "command": "node scripts/parcel-lookup-v0/test.mjs",
+      "status": "PASS",
+      "summary": "Packet 43 normalization, ambiguity, stacked identity, 60-case benchmark, preview containment, and deterministic rebuild regression passed."
+    },
+    {
+      "command": "npx tsc --noEmit --incremental false",
+      "status": "PASS",
+      "summary": "TypeScript passed without writing incremental state."
+    },
+    {
+      "command": "npx eslint lib/parcel-lookup-production-v0.ts scripts/parcel-lookup-production-v0/rehearse.mjs scripts/parcel-lookup-production-v0/test.mjs",
+      "status": "PASS",
+      "summary": "Bounded ESLint passed."
+    },
+    {
+      "command": "psql -v ON_ERROR_STOP=1 -f /tmp/parcel-lookup-production-v0-design.sql",
+      "environment": "Disposable local postgis/postgis:16-3.4 container with minimal source-table dependency",
+      "status": "PASS",
+      "summary": "PostgreSQL/PostGIS parsed every DDL, index, comment, security, and revoke statement; the artifact ended in ROLLBACK and the container was removed."
+    },
+    {
+      "command": "git diff --cached --check",
+      "status": "PASS",
+      "summary": "Final staged Packet 44 diff passed whitespace validation."
+    }
+  ]
+}

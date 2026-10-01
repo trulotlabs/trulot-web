@@ -1,0 +1,72 @@
+{
+  "contractVersion": "parcel-lookup-production-v0-rehearsal-2026-10-01-p44",
+  "observedOn": "2026-10-01",
+  "source": {
+    "classification": "LOCAL_SEALED_PARCEL_V2_ARTIFACT",
+    "acquisitionId": "SANGIS-20260924T183743Z",
+    "validatedRunId": "724ff836-eedc-594e-93c5-c80a63de65f7",
+    "normalizedRowsSha256": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+    "productionAccessed": false,
+    "sourcePathRecorded": false,
+    "acceptedCountywideRows": 1088430,
+    "cityRows": 393733,
+    "distinctCityApns": 393733
+  },
+  "engine": {
+    "name": "SQLite FTS5 disposable rehearsal",
+    "sqliteVersion": "3.51.3",
+    "productionPostgresClaimed": false
+  },
+  "coverage": {
+    "exactApn": true,
+    "apnPrefix": true,
+    "exactAddress": true,
+    "partialAutocomplete": true,
+    "multipleMatches": true,
+    "missingAddress": true,
+    "stackedParcels": true,
+    "mapPayload": "point_only",
+    "missingAddressCount": 14846,
+    "largestObservedStack": 3061,
+    "largestObservedSharedAddress": 3059
+  },
+  "timings": {
+    "exactApn": {
+      "sampleCount": 200,
+      "p50Ms": 0.009,
+      "p95Ms": 0.015,
+      "targetP95Ms": 100,
+      "targetMet": true
+    },
+    "exactAddress": {
+      "sampleCount": 200,
+      "p50Ms": 0.014,
+      "p95Ms": 0.064,
+      "targetP95Ms": 150,
+      "targetMet": true
+    },
+    "autocomplete": {
+      "sampleCount": 200,
+      "p50Ms": 0.075,
+      "p95Ms": 0.603,
+      "targetP95Ms": 200,
+      "targetMet": true
+    }
+  },
+  "sampleStrategy": "200 deterministic APN-ordered, evenly spaced records from the complete address-bearing City population",
+  "plans": {
+    "exactApn": [
+      "SEARCH parcel_lookup USING PRIMARY KEY (apn_norm=?)"
+    ],
+    "exactAddress": [
+      "SEARCH parcel_lookup USING INDEX parcel_lookup_address_exact_idx (normalized_address=?)"
+    ],
+    "autocomplete": [
+      "SCAN parcel_lookup_address_fts VIRTUAL TABLE INDEX 0:M3"
+    ]
+  },
+  "limitations": [
+    "This measures a local SQLite FTS5 materialization, not production PostgreSQL network or API latency.",
+    "PostgreSQL EXPLAIN (ANALYZE, BUFFERS) remains an acceptance gate for the bounded implementation packet."
+  ]
+}
