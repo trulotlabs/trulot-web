@@ -1,0 +1,47 @@
+{
+  "apn": "6341302200",
+  "applicable_rear_setback": {
+    "alternate_branches": [
+      "a greater buffer may be required by the Fire Code Official",
+      "a controlling document, program, or overlay may modify the base-zone line"
+    ],
+    "depth_adjusted_base": "23.502 ft",
+    "excluded_branches": [
+      "rear-alley credit",
+      "RS-1-8 through RS-1-14 four-foot alley permission",
+      "small-lot garage/non-habitable accessory-building encroachment"
+    ],
+    "formula": "max(10% × 235.02 ft, 13 ft)",
+    "state": "SETBACK_REQUIREMENT_CONDITIONAL",
+    "table_rule": "13 ft",
+    "unresolved_predicates": [
+      "fire_official_defensible_space_buffer",
+      "airport_transition_context",
+      "document_modified_setback",
+      "special_program_or_overlay_modification"
+    ]
+  },
+  "contract_version": "rear-setback-evaluator-v0-2026-10-01-p34",
+  "existing_structure": {
+    "current_compliance_evaluated": false,
+    "historical_diagnostic": {
+      "classification": "HISTORICAL_DIAGNOSTIC_REAR_SETBACK",
+      "current_compliance_evidence": false,
+      "reason": "Compact Packet 17 evidence retains geometry hashes rather than coordinates, uses a Spring 2017 imagery baseline, and does not establish current completeness or legal-boundary registration for compliance.",
+      "source_record_ids": [
+        "building-outline-objectid:880632",
+        "building-outline-objectid:987216"
+      ],
+      "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+      "state": "NOT_MEASURED"
+    },
+    "missing_evidence": [
+      "resolved final parcel-specific requirement",
+      "authoritative current structure geometry",
+      "resolved structure/project and projection/encroachment classification"
+    ],
+    "result": "SETBACK_COMPLIANCE_NOT_EVALUATED"
+  },
+  "qualifier": "This evaluates only the current outside-Coastal RS-1-7 rear-setback rule envelope. It does not establish current structure compliance, overall zoning compliance, development capacity, legal nonconformity, or project approval.",
+  "ui_wired": false
+}

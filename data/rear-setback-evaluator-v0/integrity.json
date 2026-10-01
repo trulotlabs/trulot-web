@@ -1,0 +1,12 @@
+{
+  "artifacts": {
+    "contract.json": "7e556ddfda95d9f2c5124f930e5f6f52616d8955d0c7adc770904710427d9f43",
+    "decision.json": "2471d008cfec78940e91f9282a82e52bc3f943bac7b472b5bad2edee39c093c5",
+    "evaluation.json": "d8a1afe4d68227e8249ddbd851f31d6fd9e0c9ba4d8fc0be93cbdb70ae95ce54",
+    "framework-contract.json": "2196b41a89cfc94a5fa52bd199c5fc2dc3b559bdf5590a85449ed1d500cd714d",
+    "product-example.json": "c9e665cc7b3e5fb869ba2241b6adeaa234ede49c1b767429d4a6ba4e0ee0eac6",
+    "provenance.json": "2825db884cb075613ba37c0263f059f6daaf51c0427800825c03def17343df7f"
+  },
+  "bundle_sha256": "9ab923ac6599b8f0405676280979e37776760c598d282c93ff90383681ce17b3",
+  "contract_version": "rear-setback-evaluator-v0-2026-10-01-p34"
+}

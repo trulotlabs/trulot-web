@@ -1,0 +1,364 @@
+{
+  "apn": "6341302200",
+  "applicable_rule": {
+    "cross_reference_disposition": "RESOLVED_BY_131_0443_A_2_A_II_EXPLICIT_TABLE_131_04D_REFERENCE",
+    "fact_state": "CONDITIONAL",
+    "operator": "MIN",
+    "requirement_state": "SETBACK_REQUIREMENT_CONDITIONAL",
+    "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:15",
+    "section_text_sha256": "007b26a9a04939b1a78f2f83f8d323a4301674eff5bdd4ed5c1699d71e7e1c00",
+    "source_edition": "9-2026",
+    "source_page": 33,
+    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "source_table": "131-04D",
+    "table_value_ft": 13
+  },
+  "bounded_conclusion": "The ordinary depth-adjusted rear-setback branch is 23.502 feet; the final applicable requirement remains conditional on Fire Official and controlling-document/program predicates, and current structure compliance is not evaluated.",
+  "capacity_calculated": false,
+  "compliance": {
+    "comparison": null,
+    "failed_gates": [
+      "requirement_resolved",
+      "current_structure_geometry",
+      "structure_classification",
+      "projection_scope_resolved",
+      "measured_value",
+      "required_value"
+    ],
+    "gates": {
+      "current_structure_geometry": false,
+      "measured_value": false,
+      "measurement_semantics": true,
+      "projection_scope_resolved": false,
+      "required_value": false,
+      "requirement_resolved": false,
+      "structure_classification": false
+    },
+    "state": "SETBACK_COMPLIANCE_NOT_EVALUATED"
+  },
+  "compliance_state": "SETBACK_COMPLIANCE_NOT_EVALUATED",
+  "conditional_branches": [
+    {
+      "branch_id": "DEPTH_ADJUSTED_BASE",
+      "conditions": [
+        "Lot depth greater than 150 feet",
+        "No greater Fire Code Official buffer",
+        "No controlling documentary/program modification"
+      ],
+      "formula": "max(0.10 × 235.02 ft, 13 ft) = 23.502 ft",
+      "modality": "REQUIRED_BASE",
+      "operator": "MIN",
+      "parcel_disposition": "VALID_POSSIBLE_BRANCH",
+      "source": "Table 131-04D + SDMC §131.0443(a)(2)(A)(ii)",
+      "value_ft": "23.5020"
+    },
+    {
+      "branch_id": "REAR_ALLEY_CREDIT",
+      "conditions": [
+        "Rear yard abuts an alley",
+        "At most half alley width and 10 feet credited",
+        "At least 5 feet remains on premises"
+      ],
+      "modality": "MAY_COUNT_ALLEY_WIDTH",
+      "parcel_disposition": "EXCLUDED_PREDICATE_FALSE",
+      "source": "SDMC §131.0443(a)(2)(B)",
+      "value_ft": null
+    },
+    {
+      "branch_id": "FIRE_OFFICIAL_BUFFER",
+      "conditions": [
+        "O-22109 provision applies",
+        "Fire Code Official requires a greater defensible-space buffer"
+      ],
+      "modality": "MAY_REQUIRE",
+      "operator": "GREATER_THAN_OTHERWISE_APPLICABLE",
+      "parcel_disposition": "VALID_POSSIBLE_BRANCH_VALUE_UNRESOLVED",
+      "source": "SDMC §131.0443(i)",
+      "value_ft": null
+    },
+    {
+      "branch_id": "DOCUMENT_OR_PROGRAM_MODIFICATION",
+      "conditions": [
+        "A controlling document, program, or overlay modifies the base-zone rear setback"
+      ],
+      "modality": "CONDITIONAL",
+      "operator": "REPLACES_OR_MODIFIES_BASE",
+      "parcel_disposition": "VALID_POSSIBLE_BRANCH_VALUE_UNRESOLVED",
+      "source": "SDMC §§113.0249(b)-(c), 131.0430(a)",
+      "value_ft": null
+    }
+  ],
+  "contract_version": "rear-setback-evaluator-v0-2026-10-01-p34",
+  "current_structure_compliance_evaluated": false,
+  "depth_adjustment": {
+    "branch": "LONG_LOT_EXPLICIT_EXCEPTION",
+    "lot_depth_ft": "235.02",
+    "result_ft": "23.5020",
+    "rounding": "No rounding; Decimal arithmetic preserves the sealed 0.01-foot lot-depth precision.",
+    "table_value_ft": "13.0",
+    "ten_percent_ft": "23.5020"
+  },
+  "development_capacity_calculated": false,
+  "evaluation_scope": "RS_1_7_REAR_SETBACK_CURRENT_OUTSIDE_COASTAL_PROFILE_ONLY",
+  "evidence_needed_to_select": {
+    "fire": "A project-specific Fire Code Official determination and supported O-22109 applicability.",
+    "modifications": "Project/document review sufficient to exclude or apply controlling setback modifications and special programs."
+  },
+  "fingerprint_sha256": "b94262372652bcb8c841ea1d80d656a34d28ee83694a89b0df976421210ac0eb",
+  "forbidden_conclusions": [
+    "OVERALL_ZONING_COMPLIANCE",
+    "LEGAL_NONCONFORMITY",
+    "VARIANCE_REQUIREMENT",
+    "PERMIT_VIOLATION",
+    "DEVELOPMENT_CAPACITY",
+    "BUILDABILITY",
+    "ENTITLEMENT_LIKELIHOOD",
+    "PERMIT_APPROVAL"
+  ],
+  "gates": {
+    "apn": true,
+    "dependencies": true,
+    "legal_area": true,
+    "legal_lot": true,
+    "legal_match": true,
+    "outside_coastal": true,
+    "parcel_identity": true,
+    "rear_line": true,
+    "resolved_depth": true,
+    "rule_family": true,
+    "rule_shape": true,
+    "single_zone": true,
+    "standards_version": true,
+    "zone": true
+  },
+  "historical_diagnostic": {
+    "classification": "HISTORICAL_DIAGNOSTIC_REAR_SETBACK",
+    "current_compliance_evidence": false,
+    "reason": "Compact Packet 17 evidence retains geometry hashes rather than coordinates, uses a Spring 2017 imagery baseline, and does not establish current completeness or legal-boundary registration for compliance.",
+    "source_record_ids": [
+      "building-outline-objectid:880632",
+      "building-outline-objectid:987216"
+    ],
+    "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+    "state": "NOT_MEASURED"
+  },
+  "legal_lot": {
+    "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+    "recorded_entity": "PM 17383 PARCEL 1",
+    "state": "LEGAL_LOT_ESTABLISHED"
+  },
+  "mandatory_qualifier": "This evaluates only the current outside-Coastal RS-1-7 rear-setback rule envelope. It does not establish current structure compliance, overall zoning compliance, development capacity, legal nonconformity, or project approval.",
+  "measurement_doctrine": {
+    "above_grade_scope": "Above-grade portions of underground parking, first stories, and basements are subject to setbacks; completely underground structures have the bounded exception in §113.0252(b).",
+    "accessory_treatment": "Section 131.0449(a) concerns front/street-side embankment garages. Section 131.0461(a)(12) rear-yard garage/non-habitable accessory encroachment is unavailable because the sealed Code lot area exceeds 10,000 square feet.",
+    "alley_treatment": "An alley-adjacent rear line remains a rear property line under §113.0246(e)(3), with the separate credit and parking-distance rules in §131.0443(a)(2)(B)-(C); this parcel has no rear alley.",
+    "direction": "Measured inward and perpendicular to the west rear property line (SDMC §113.0252(a)(4)).",
+    "living_area_excluded": true,
+    "rear_property_line": "West boundary of PM 17383 Parcel 1, opposite and most distant from the east front line at 27th Street.",
+    "required_inputs": [
+      "resolved applicable rear-setback branch",
+      "current authoritative structure geometry",
+      "structure/project classification",
+      "permitted projection or encroachment classification",
+      "resolved documentary/program modifications"
+    ],
+    "setback_line": "A line parallel to the west rear property line at the required inward distance; the intervening area is the rear yard (SDMC §113.0249(a)).",
+    "source": {
+      "authority_rank": 1,
+      "publisher": "City of San Diego, Office of the City Clerk",
+      "scope": "Referenced, unevaluated definitions and measurement rules, including section 113.0246(f).",
+      "sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+      "title": "San Diego Municipal Code Chapter 11, Article 3, Division 2: Rules for Calculation and Measurement",
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf"
+    },
+    "structure_edge": "For new-development compliance, measured to the outer edge of the building frame (SDMC §113.0252(c)); element-specific permitted projections and encroachments remain governed by §131.0461(a)."
+  },
+  "next_feasibility_source_target": "Fire Official / defensible-space applicability",
+  "other_rule_families_evaluated": [],
+  "parcel_compliance_evaluated": false,
+  "parcel_identity": {
+    "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+    "situs_address": "1456 27TH ST"
+  },
+  "predicates": {
+    "airport_transition_context": {
+      "basis": "No sealed airport-transition applicability determination was made for this parcel.",
+      "effect": "May affect applicability of the O-22109 provision.",
+      "source": "O-22109 effective-version record",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "application_complete_date": {
+      "basis": "This evaluator is scoped to the current-version development profile and does not adjudicate a protected earlier application.",
+      "effect": "An earlier complete-application profile requires a separately versioned evaluation.",
+      "source": "Packet 17 authority/version profile",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    },
+    "completely_underground_structure": {
+      "basis": "No proposed structure is supplied.",
+      "effect": "Completely underground construction has separate setback treatment.",
+      "source": "SDMC §113.0252(b)",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "current_outside_coastal_profile": {
+      "basis": "Parcel Coastal mapping is supported OUTSIDE_COASTAL and the selected current rule set applies.",
+      "effect": "Selects the reviewed current outside-Coastal authority envelope.",
+      "source": "Parcel Intelligence V2 + RS Base Standards V0",
+      "state": "TRUE",
+      "value": "outside-coastal-2026-09-30"
+    },
+    "document_modified_setback": {
+      "basis": "The legal-lot chain is sufficient for identity but is not a complete search for every ordinance, final subdivision, record of survey, or division-plat setback modification.",
+      "effect": "A controlling document can replace the calculated setback line.",
+      "source": "SDMC §113.0249(b)-(c) + Legal Lot Evidence V0 limitation",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "fire_official_defensible_space_buffer": {
+      "basis": "No project-specific Fire Code Official determination is in sealed evidence.",
+      "effect": "May require a buffer greater than the depth-adjusted base-zone setback.",
+      "source": "SDMC §131.0443(i)",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "garage_within_embankment_rule": {
+      "basis": "Section 131.0449(a) authorizes encroachment only into front and street-side yards.",
+      "effect": "Does not alter the rear-setback requirement.",
+      "source": "SDMC §131.0449(a)",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    },
+    "general_table_cross_reference_valid": {
+      "basis": "The general sentence prints Table 141-04D, which is not the residential RS table.",
+      "effect": "Would fail closed for an ordinary 100-to-150-foot lot.",
+      "source": "SDMC §131.0443(a)(2)(A)",
+      "state": "FALSE",
+      "value": false
+    },
+    "long_lot_clause_table_cross_reference_valid": {
+      "basis": "The selected greater-than-150-foot clause expressly references Table 131-04D.",
+      "effect": "Allows this parcel's depth-adjusted requirement to be computed without repairing the malformed general reference.",
+      "source": "SDMC §131.0443(a)(2)(A)(ii)",
+      "state": "TRUE",
+      "value": true
+    },
+    "lot_depth_greater_than_150_ft": {
+      "basis": "The sealed Code-defined lot depth is 235.02 feet.",
+      "effect": "Selects §131.0443(a)(2)(A)(ii).",
+      "source": "Minimum Lot Depth Evaluation V0",
+      "state": "TRUE",
+      "value": true
+    },
+    "lot_depth_less_than_100_ft": {
+      "basis": "The sealed Code-defined lot depth is 235.02 feet.",
+      "effect": "Excludes §131.0443(a)(2)(A)(i).",
+      "source": "Minimum Lot Depth Evaluation V0",
+      "state": "FALSE",
+      "value": false
+    },
+    "parking_access_taken_from_rear_alley": {
+      "basis": "The recorded rear line does not abut an alley.",
+      "effect": "Excludes §131.0443(a)(2)(C).",
+      "source": "PM 17383 sheet 2",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    },
+    "parking_spaces_not_parallel_to_alley": {
+      "basis": "There is no rear alley branch for this parcel.",
+      "effect": "No 21-foot alley parking distance is selected.",
+      "source": "Derived from PM 17383 sheet 2",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    },
+    "permitted_projection_or_encroachment": {
+      "basis": "No current or proposed building element is classified under §131.0461(a).",
+      "effect": "The element-specific reference edge may differ from the primary building frame.",
+      "source": "SDMC §131.0461(a)",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "rear_property_line": {
+      "basis": "PM 17383 Parcel 1 and §113.0246(c) resolve the west line opposite 27th Street as the rear property line.",
+      "effect": "Selects the rear-setback measurement origin.",
+      "source": "PM 17383 sheet 2 + Minimum Lot Depth Evaluation V0",
+      "state": "TRUE",
+      "value": "WEST_BOUNDARY"
+    },
+    "rear_yard_abuts_alley": {
+      "basis": "PM 17383 depicts the west rear boundary adjoining land, with no alley; the only public right-of-way adjacency is 27th Street at the east front line.",
+      "effect": "Excludes the alley-width credit in §131.0443(a)(2)(B).",
+      "source": "PM 17383 sheet 2",
+      "state": "FALSE",
+      "value": false
+    },
+    "required_street_or_alley_dedication": {
+      "basis": "No proposed development or dedication determination is supplied.",
+      "effect": "A future required rear-alley dedication can alter the property line used for measurement.",
+      "source": "SDMC §113.0246 and §142.0610",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "rs_1_8_through_1_14_alley_permission": {
+      "basis": "The parcel is RS-1-7, outside the zones listed in §131.0443(a)(3).",
+      "effect": "Excludes the four-foot alley-access permission.",
+      "source": "Parcel Intelligence V2 + SDMC §131.0443(a)(3)",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    },
+    "small_lot_accessory_building_encroachment": {
+      "basis": "The sealed Code lot area is 22,096.320 square feet, exceeding the 10,000-square-foot ceiling in §131.0461(a)(12)(A).",
+      "effect": "Excludes the garage/non-habitable accessory-building rear-yard encroachment.",
+      "source": "Minimum Lot Area Evaluation V0 + SDMC §131.0461(a)(12)",
+      "state": "FALSE",
+      "value": false
+    },
+    "special_program_or_overlay_modification": {
+      "basis": "No project/program scope or complete overlay-specific setback-modification review is supplied.",
+      "effect": "A separate applicable regulation may modify the base-zone envelope.",
+      "source": "SDMC §131.0430(a)",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "structure_or_project_classification": {
+      "basis": "The sealed facts do not classify a current/proposed structure element or project scope for rear-setback comparison.",
+      "effect": "Prevents selection of projection, pool, patio, equipment, and other element-specific rules.",
+      "source": "Packet 17 Structure Facts V0",
+      "state": "UNKNOWN",
+      "value": null
+    }
+  },
+  "rule_family": "rear_setback",
+  "setback_family_assessment": {
+    "new_reusable_pattern": "A malformed general cross-reference fails closed unless a selected, mutually exclusive parcel branch supplies its own valid authoritative reference; the greater-than-150-foot branch does so here.",
+    "shared_pattern": "Evidence gates → rule selection → explicit predicates → valid branches → measurement doctrine → compliance gates → contained result.",
+    "state": "SETBACK_FAMILY_PATTERN_READY"
+  },
+  "state": "SETBACK_REQUIREMENT_CONDITIONAL",
+  "structure_evidence": {
+    "assessor_living_area_available": true,
+    "assessor_living_area_is_geometry": false,
+    "authoritative_current_structure_geometry": false,
+    "completeness_proven": false,
+    "historical_outline_count": 2,
+    "structure_classification_resolved": false
+  },
+  "unresolved_requirement_predicates": [
+    "fire_official_defensible_space_buffer",
+    "airport_transition_context",
+    "document_modified_setback",
+    "special_program_or_overlay_modification"
+  ],
+  "valid_possible_requirement_branches": [
+    "DEPTH_ADJUSTED_BASE:23.502_FT",
+    "FIRE_OFFICIAL_BUFFER:GREATER_VALUE_IF_REQUIRED",
+    "DOCUMENT_OR_PROGRAM_MODIFICATION:VALUE_IF_APPLICABLE"
+  ],
+  "zoning": {
+    "coastal_state": "OUTSIDE_COASTAL",
+    "standards_version": "sd-rs-base-standards-2026-09-30-v0",
+    "verified_as_of": "2026-09-30",
+    "zone_code": "RS-1-7"
+  }
+}
