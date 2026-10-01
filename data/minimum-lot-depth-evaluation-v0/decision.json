@@ -1,0 +1,8 @@
+{
+  "contract_version": "minimum-lot-depth-evaluation-v0-2026-09-30-p28",
+  "decision": "MINIMUM_LOT_DEPTH_RULE_EVALUATION_READY",
+  "development_capacity_calculated": false,
+  "next_rule_evaluation_target": "legal lot width",
+  "overall_compliance_conclusion": false,
+  "result": "RULE_REQUIREMENT_SATISFIED"
+}

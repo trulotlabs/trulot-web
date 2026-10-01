@@ -1,0 +1,12 @@
+{
+  "contract_version": "minimum-lot-depth-evaluation-v0-2026-09-30-p28",
+  "heading": "Minimum lot depth",
+  "measurement_basis": "SDMC §§113.0243(a) and 113.0246 applied to PM 17383 Parcel 1 recorded map geometry",
+  "qualifier": "This evaluates only the minimum-lot-depth rule. It does not establish overall zoning compliance, development capacity, setback compliance, or project approval.",
+  "required": "95 ft",
+  "result": "RULE_REQUIREMENT_SATISFIED",
+  "scope": "Minimum-lot-depth rule only",
+  "source": "PM 17383 Parcel 1; DOC # 2001-0706032; SDMC §§113.0243, 113.0246, and 131.0431(a), Table 131-04D",
+  "supported_measured_depth": "235.02 ft",
+  "ui_wired": false
+}
