@@ -1,0 +1,552 @@
+{
+  "contractVersion": "parcel-lookup-v0-benchmark-2026-10-01-p43",
+  "classification": "PUBLIC_AUTHORITY_SANITIZED_TEST_CASES",
+  "privateBenchmarkInputUsed": false,
+  "caseCount": 60,
+  "cases": [
+    {
+      "id": "p43-001",
+      "query": "639 N 67TH ST",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5442140600"
+      ]
+    },
+    {
+      "id": "p43-002",
+      "query": "639 North 67th Street",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5442140600"
+      ]
+    },
+    {
+      "id": "p43-003",
+      "query": "  639   n. 67th st. ",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5442140600"
+      ]
+    },
+    {
+      "id": "p43-004",
+      "query": "639 67",
+      "intent": "partial_address",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "5442140600"
+      ]
+    },
+    {
+      "id": "p43-005",
+      "query": "639 N 67",
+      "intent": "partial_address",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "5442140600"
+      ]
+    },
+    {
+      "id": "p43-006",
+      "query": "5442140600",
+      "intent": "apn_exact",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5442140600"
+      ]
+    },
+    {
+      "id": "p43-007",
+      "query": "544-214-06-00",
+      "intent": "apn_exact",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5442140600"
+      ]
+    },
+    {
+      "id": "p43-008",
+      "query": "544 214 06 00",
+      "intent": "apn_exact",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5442140600"
+      ]
+    },
+    {
+      "id": "p43-009",
+      "query": "544214",
+      "intent": "apn_prefix",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "5442140600"
+      ]
+    },
+    {
+      "id": "p43-010",
+      "query": "1456 27TH ST",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "6341302200"
+      ]
+    },
+    {
+      "id": "p43-011",
+      "query": "1456 27th Street",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "6341302200"
+      ]
+    },
+    {
+      "id": "p43-012",
+      "query": "1456 27",
+      "intent": "partial_address",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "6341302200"
+      ]
+    },
+    {
+      "id": "p43-013",
+      "query": "634-130-22-00",
+      "intent": "apn_exact",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "6341302200"
+      ]
+    },
+    {
+      "id": "p43-014",
+      "query": "6341302200",
+      "intent": "apn_exact",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "6341302200"
+      ]
+    },
+    {
+      "id": "p43-015",
+      "query": "7553 CABRILLO AVE",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "3506320400"
+      ]
+    },
+    {
+      "id": "p43-016",
+      "query": "7553 Cabrillo Avenue",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "3506320400"
+      ]
+    },
+    {
+      "id": "p43-017",
+      "query": "7553 CAB",
+      "intent": "partial_address",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "3506320400"
+      ]
+    },
+    {
+      "id": "p43-018",
+      "query": "350-632-04-00",
+      "intent": "apn_exact",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "3506320400"
+      ]
+    },
+    {
+      "id": "p43-019",
+      "query": "4927 WHITEHAVEN WAY",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "4304211000"
+      ]
+    },
+    {
+      "id": "p43-020",
+      "query": "4927 WHITE",
+      "intent": "partial_address",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "4304211000"
+      ]
+    },
+    {
+      "id": "p43-021",
+      "query": "430-421-10-00",
+      "intent": "apn_exact",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "4304211000"
+      ]
+    },
+    {
+      "id": "p43-022",
+      "query": "303-170-18-00",
+      "intent": "missing_situs_apn",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "3031701800"
+      ]
+    },
+    {
+      "id": "p43-023",
+      "query": "6782511200",
+      "intent": "missing_situs_apn",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "6782511200"
+      ]
+    },
+    {
+      "id": "p43-024",
+      "query": "581-093-46-00",
+      "intent": "missing_situs_apn",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5810934600"
+      ]
+    },
+    {
+      "id": "p43-025",
+      "query": "1501 FRONT ST",
+      "intent": "ambiguous_address",
+      "expectedState": "MULTIPLE_MATCHES",
+      "expectedTopApns": [
+        "5333641301",
+        "5333641302"
+      ]
+    },
+    {
+      "id": "p43-026",
+      "query": "1501 Front Street Unit 101",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5333641301"
+      ]
+    },
+    {
+      "id": "p43-027",
+      "query": "1501 FRONT ST #102",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5333641302"
+      ]
+    },
+    {
+      "id": "p43-028",
+      "query": "5333641301",
+      "intent": "apn_exact",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5333641301"
+      ]
+    },
+    {
+      "id": "p43-029",
+      "query": "2416 ADIRONDACK ROW",
+      "intent": "ambiguous_address",
+      "expectedState": "MULTIPLE_MATCHES",
+      "expectedTopApns": [
+        "5891700509",
+        "5891700510",
+        "5891700512"
+      ]
+    },
+    {
+      "id": "p43-030",
+      "query": "2416 ADIRONDACK ROW UNIT 1",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5891700509"
+      ]
+    },
+    {
+      "id": "p43-031",
+      "query": "2416 ADIRONDACK ROW UNIT 2",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5891700510"
+      ]
+    },
+    {
+      "id": "p43-032",
+      "query": "2416 ADIRONDACK ROW UNIT 4",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5891700512"
+      ]
+    },
+    {
+      "id": "p43-033",
+      "query": "589-170-05-12",
+      "intent": "apn_exact",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5891700512"
+      ]
+    },
+    {
+      "id": "p43-034",
+      "query": "5173 BRIGHTON AVE",
+      "intent": "ambiguous_address",
+      "expectedState": "MULTIPLE_MATCHES",
+      "expectedTopApns": [
+        "4480233601",
+        "4480233602",
+        "4480233603",
+        "4480233611",
+        "4480233605"
+      ]
+    },
+    {
+      "id": "p43-035",
+      "query": "5173 Brighton Avenue Unit 1",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "4480233601"
+      ]
+    },
+    {
+      "id": "p43-036",
+      "query": "5173 BRIGHT",
+      "intent": "partial_address",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "4480233601"
+      ]
+    },
+    {
+      "id": "p43-037",
+      "query": "44802336",
+      "intent": "apn_prefix",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "4480233601"
+      ]
+    },
+    {
+      "id": "p43-038",
+      "query": "4010 TEXAS ST",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "4455722001"
+      ]
+    },
+    {
+      "id": "p43-039",
+      "query": "4016 TEXAS STREET",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "4455722004"
+      ]
+    },
+    {
+      "id": "p43-040",
+      "query": "4016 1/2 TEXAS ST",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "4455722005"
+      ]
+    },
+    {
+      "id": "p43-041",
+      "query": "401 TEXAS",
+      "intent": "partial_address",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "4455722001"
+      ]
+    },
+    {
+      "id": "p43-042",
+      "query": "2112 ERIE ST",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "4303410600"
+      ]
+    },
+    {
+      "id": "p43-043",
+      "query": "2112 ERIE",
+      "intent": "partial_address",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "4303410600"
+      ]
+    },
+    {
+      "id": "p43-044",
+      "query": "4303410600",
+      "intent": "apn_exact",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "4303410600"
+      ]
+    },
+    {
+      "id": "p43-045",
+      "query": "505 IONA DR",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5490330700"
+      ]
+    },
+    {
+      "id": "p43-046",
+      "query": "505 IONA DRIVE",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5490330700"
+      ]
+    },
+    {
+      "id": "p43-047",
+      "query": "740 47TH ST",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "5470501600"
+      ]
+    },
+    {
+      "id": "p43-048",
+      "query": "740 47",
+      "intent": "partial_address",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "5470501600"
+      ]
+    },
+    {
+      "id": "p43-049",
+      "query": "13591 NOGALES DR",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "3013101500"
+      ]
+    },
+    {
+      "id": "p43-050",
+      "query": "13591 NOGALES",
+      "intent": "partial_address",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "3013101500"
+      ]
+    },
+    {
+      "id": "p43-051",
+      "query": "6292 CAMINO DE LA COSTA",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "3515710700"
+      ]
+    },
+    {
+      "id": "p43-052",
+      "query": "6292 CAMINO",
+      "intent": "partial_address",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "3515710700"
+      ]
+    },
+    {
+      "id": "p43-053",
+      "query": "12761 CAMINO DE LA BRECCIA",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "2725300831"
+      ]
+    },
+    {
+      "id": "p43-054",
+      "query": "12761 BRECCIA",
+      "intent": "partial_address",
+      "expectedState": "PARTIAL_MATCHES",
+      "expectedTopApns": [
+        "2725300831"
+      ]
+    },
+    {
+      "id": "p43-055",
+      "query": "15747 SPRECKELS PL",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "2673600300"
+      ]
+    },
+    {
+      "id": "p43-056",
+      "query": "18320 BERNARDO TRAILS DR",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "2723200100"
+      ]
+    },
+    {
+      "id": "p43-057",
+      "query": "2688 MISSION BAY DR",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "7600360300"
+      ]
+    },
+    {
+      "id": "p43-058",
+      "query": "998 West Mission Bay Drive",
+      "intent": "exact_address",
+      "expectedState": "EXACT_MATCH",
+      "expectedTopApns": [
+        "7600300100"
+      ]
+    },
+    {
+      "id": "p43-059",
+      "query": "9999999999",
+      "intent": "nonexistent_apn",
+      "expectedState": "NO_MATCH",
+      "expectedTopApns": []
+    },
+    {
+      "id": "p43-060",
+      "query": "99999 NOWHERE ST",
+      "intent": "nonexistent_address",
+      "expectedState": "NO_MATCH",
+      "expectedTopApns": []
+    }
+  ],
+  "canonicalSha256": "10a00e1bef3969b6878cf7aee4b7fd46a05bbfde5a1a48b173e150884b7dad99"
+}

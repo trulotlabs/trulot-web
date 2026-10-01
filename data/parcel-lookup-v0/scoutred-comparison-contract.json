@@ -1,0 +1,17 @@
+{
+  "contractVersion": "parcel-lookup-scoutred-comparison-2026-10-01-p43",
+  "state": "AWAITING_INDEPENDENT_EVIDENCE",
+  "superiorityClaimed": false,
+  "dimensions": [
+    "steps_to_apn",
+    "time_to_apn",
+    "autocomplete",
+    "partial_address_tolerance",
+    "apn_prominence",
+    "copy_behavior",
+    "parcel_map",
+    "first_screen_facts"
+  ],
+  "requiredEvidence": "Independent, like-for-like observed results using the same query cases and timing method.",
+  "canonicalSha256": "770c60a62ee3e1e7fbea7ef1f1db1c2255fefd9cdb034ad76519ef1e3cf818a9"
+}

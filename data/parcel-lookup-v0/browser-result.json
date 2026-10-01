@@ -1,0 +1,44 @@
+{
+  "browser": "Playwright Chromium",
+  "baseUrl": "http://127.0.0.1:3000/parcel-lookup-preview",
+  "screenshots": [
+    "639-n-67th-result-desktop.png",
+    "639-n-67th-result-mobile.png",
+    "lookup-home-desktop.png",
+    "lookup-home-mobile.png",
+    "missing-address-apn-desktop.png",
+    "multiple-match-desktop.png"
+  ],
+  "canonicalInteraction": {
+    "query": "639 N 67TH ST",
+    "inputActions": [
+      "focus/fill",
+      "ArrowDown",
+      "Enter"
+    ],
+    "elapsedMs": 40,
+    "hesitationObserved": false
+  },
+  "apnFirstInteraction": {
+    "query": "544-214-06-00",
+    "inputActions": [
+      "focus/fill",
+      "Enter"
+    ],
+    "elapsedMs": 31.6,
+    "exactResult": true
+  },
+  "checks": {
+    "pageContent": true,
+    "frameworkOverlayAbsent": true,
+    "consoleErrorsAbsent": true,
+    "keyboardSelection": true,
+    "escapeDismissal": true,
+    "copyApn": true,
+    "parcelOutline": true,
+    "ambiguousAddress": true,
+    "missingAddressApn": true,
+    "desktop": true,
+    "mobile": true
+  }
+}

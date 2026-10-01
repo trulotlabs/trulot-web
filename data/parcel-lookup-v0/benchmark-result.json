@@ -1,0 +1,23 @@
+{
+  "contract_version": "parcel-lookup-v0-benchmark-result-2026-10-01-p43",
+  "measured_at": "2026-10-01",
+  "environment": {
+    "node": "v22.22.3",
+    "platform": "darwin",
+    "architecture": "arm64",
+    "operating_system": "macOS 26.6.2 (25G83)"
+  },
+  "method": "Node.js performance.now around one in-memory search per benchmark case; local bounded corpus; one sequential pass in a fresh process",
+  "corpus_records": 49,
+  "benchmark_cases": 60,
+  "quality": {
+    "exact_address_top_1": { "passed": 28, "total": 28, "rate": 1 },
+    "apn_exact_match": { "passed": 13, "total": 13, "rate": 1 },
+    "partial_address_useful_top_5": { "passed": 12, "total": 12, "rate": 1 }
+  },
+  "latency_ms": {
+    "median": 0.034,
+    "p95": 0.054
+  },
+  "scope": "Local bounded-preview measurement only; not a production latency claim."
+}
