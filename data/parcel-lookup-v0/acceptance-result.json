@@ -1,0 +1,54 @@
+{
+  "contractVersion": "parcel-lookup-v0-acceptance-2026-10-01-p43b",
+  "evidence": "LOCAL_FIXTURE_EVIDENCE",
+  "baseUrl": "http://127.0.0.1:3000/parcel-lookup-preview",
+  "viewports": {
+    "desktop": "1440x1000",
+    "mobile": "390x844"
+  },
+  "checks": {
+    "mobileIdentityAboveFold": true,
+    "emptySubmissionRecovery": true,
+    "tooShortSubmissionRecovery": true,
+    "passiveTypingDoesNotFlashValidation": true,
+    "civicAddressOutranksIncidentalUnit": true,
+    "leadingZeroNormalizationAndCopy": true,
+    "sourceUnavailableRecovery": true,
+    "selectedOpenFailureRecovery": true,
+    "suggestionApn": true,
+    "ambiguityAndKeyboard": true,
+    "cleanCopy": true,
+    "selectedOutline": true,
+    "consoleErrorsAbsent": true
+  },
+  "mobilePositions": {
+    "address": {
+      "x": 37,
+      "y": 411.46875,
+      "width": 316,
+      "height": 39.96875
+    },
+    "apn": {
+      "x": 54,
+      "y": 518.046875,
+      "width": 157.90625,
+      "height": 22.5625
+    },
+    "copy": {
+      "x": 254.03125,
+      "y": 498.4375,
+      "width": 81.96875,
+      "height": 37.265625
+    }
+  },
+  "screenshots": [
+    "p43b-autocomplete-apn-desktop.png",
+    "p43b-civic-vs-unit-ranking-desktop.png",
+    "p43b-empty-query-mobile.png",
+    "p43b-selected-identity-desktop.png",
+    "p43b-selected-identity-mobile.png",
+    "p43b-selected-open-failure-mobile.png",
+    "p43b-source-unavailable-mobile.png",
+    "p43b-too-short-mobile.png"
+  ]
+}

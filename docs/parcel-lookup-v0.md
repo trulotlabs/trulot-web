@@ -29,10 +29,12 @@ Candidates sort by these explicit tiers, then display address and APN:
 
 1. exact APN;
 2. exact normalized address;
-3. APN prefix;
-4. normalized address prefix;
-5. all normalized query tokens matched as candidate-token prefixes;
-6. bounded normalized substring.
+3. exact normalized unit address when the query explicitly supplies a unit;
+4. APN prefix;
+5. normalized address prefix;
+6. all normalized query tokens matched as candidate-token prefixes;
+7. bounded normalized substring;
+8. incidental unit-number match.
 
 Autocomplete begins at two characters, returns at most 10 records, promotes exact matches, and exposes listbox semantics, arrow navigation, Enter selection, Escape dismissal, and visible focus. An exact address shared by multiple tax identities returns every bounded match up to the documented maximum and never silently selects one.
 
@@ -55,3 +57,18 @@ The eventual production funnel is **Search → Level 1 public parcel page → Le
 ## ScoutRed comparison
 
 `scoutred-comparison-contract.json` reserves like-for-like dimensions for steps and time to APN, autocomplete, partial-address tolerance, APN prominence, copy behavior, parcel map, and first-screen facts. Its state is `AWAITING_INDEPENDENT_EVIDENCE`; no superiority claim is made.
+
+## Packet 43B acceptance closure
+
+The mobile result orders the identity card before the parcel map so address,
+formatted APN, and Copy APN remain visible together at 390×844. Empty and
+one-character validation appears only after submission and leaves the input
+focused. Preview-gated `failure=source-unavailable` and
+`failure=selected-open` injections provide deterministic browser recovery
+coverage and are disabled in production regardless of query parameters.
+
+Test-only `fixture=ranking` and `fixture=normalization` modes are likewise
+preview-gated, visibly labeled synthetic, and loaded from a file isolated from
+the sealed 49-record corpus. They prove civic-address priority over incidental
+unit-number matches and preservation of a ten-digit leading-zero APN without
+making public-authority claims.

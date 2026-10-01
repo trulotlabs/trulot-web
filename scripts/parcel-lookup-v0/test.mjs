@@ -29,12 +29,14 @@ const loader = loadTs(path.join(root, "lib/parcel-lookup-v0.ts"));
 const preview = loadTs(path.join(root, "lib/parcel-v2-preview.ts"));
 const corpus = JSON.parse(fs.readFileSync(path.join(root, "data/parcel-lookup-v0/corpus.json"), "utf8"));
 const benchmark = JSON.parse(fs.readFileSync(path.join(root, "data/parcel-lookup-v0/benchmark-cases.json"), "utf8"));
+const synthetic = JSON.parse(fs.readFileSync(path.join(root, "data/parcel-lookup-v0/synthetic-acceptance-fixtures.json"), "utf8"));
 const records = loader.loadParcelLookupRecords();
 
 assert.equal(records.length, 49);
 assert.equal(corpus.recordCount, 49);
 assert.equal(benchmark.caseCount, 60);
 assert.equal(benchmark.privateBenchmarkInputUsed, false);
+assert.equal(synthetic.authorityClassification, "TEST_ONLY_NOT_PUBLIC_AUTHORITY_EVIDENCE");
 
 // Strict APN normalization accepts ordinary separators and never pads or guesses.
 for (const input of ["5442140600", "544-214-06-00", "544 214 06 00", "(544) 214.06.00"]) {
@@ -47,6 +49,14 @@ assert.equal(lookup.normalizeApnInput("544214060").state, "PREFIX");
 assert.equal(lookup.normalizeApnInput("54421").state, "INVALID");
 assert.equal(lookup.normalizeApnInput("054421406").state, "PREFIX");
 assert.equal(lookup.normalizeApnInput("APN 5442140600").state, "INVALID");
+
+// A test-only leading-zero identity remains a string from normalization through display/copy value.
+const leadingZero = lookup.normalizeApnInput(synthetic.normalizationFixture.inputApn);
+assert.equal(synthetic.normalizationFixture.classification, "SYNTHETIC_NORMALIZATION_FIXTURE");
+assert.equal(leadingZero.state, "VALID");
+assert.equal(leadingZero.canonical, synthetic.normalizationFixture.expectedCanonicalApn);
+assert.equal(leadingZero.display, synthetic.normalizationFixture.expectedDisplayApn);
+assert.equal(leadingZero.display, synthetic.normalizationFixture.expectedClipboardText);
 
 // Deterministic address normalization handles ordinary presentation variants.
 assert.equal(lookup.normalizeAddress("639 North 67th Street"), "639 N 67TH ST");
@@ -80,6 +90,37 @@ assert.equal(condo.state, "MULTIPLE_MATCHES");
 assert.deepEqual(condo.candidates.map((candidate) => candidate.record.apn), ["5891700509", "5891700510", "5891700512"]);
 assert.equal(lookup.searchParcelLookup(records, "2416 ADIRONDACK ROW UNIT 2").candidates[0].record.apn, "5891700510");
 assert.equal(lookup.searchParcelLookup(records, "2416 ADIRONDACK ROW UNIT 02").candidates[0].record.apn, "5891700510");
+
+// Test-only ranking evidence never enters the sealed public-authority corpus.
+const syntheticRecord = (fixture) => ({
+  apn: fixture.apn,
+  apnDisplay: lookup.formatApn(fixture.apn),
+  parcelId: null,
+  sourceObjectId: fixture.apn === "9900000001" ? 1 : 2,
+  address: fixture.address,
+  unit: fixture.unit,
+  displayAddress: fixture.unit ? `${fixture.address} · Unit ${fixture.unit}` : fixture.address,
+  normalizedAddress: lookup.normalizeAddress(fixture.address),
+  normalizedUnitAddress: fixture.unit ? lookup.normalizeAddress(`${fixture.address} UNIT ${fixture.unit}`) : lookup.normalizeAddress(fixture.address),
+  zip: null,
+  jurisdiction: "SYNTHETIC",
+  approximateAreaSqFt: 1,
+  centroid: [0, 0],
+  geometryType: "Polygon",
+  geometrySha256: "0".repeat(64),
+  polygons: [[[[0, 0], [1, 0], [1, 1], [0, 0]]]],
+  parcelIntelligenceAvailable: false,
+  zoningState: "NOT_APPLICABLE",
+  zones: [],
+  coastalState: "NOT_APPLICABLE",
+  coastalValue: null,
+  existingUnits: null,
+});
+assert.equal(synthetic.rankingFixture.classification, "SYNTHETIC_RANKING_FIXTURE");
+const syntheticRanking = lookup.searchParcelLookup(synthetic.rankingFixture.records.map(syntheticRecord), synthetic.rankingFixture.query);
+assert.deepEqual(syntheticRanking.candidates.map((candidate) => candidate.record.apn), synthetic.rankingFixture.expectedApnOrder);
+assert.deepEqual(syntheticRanking.candidates.map((candidate) => candidate.matchReason), synthetic.rankingFixture.expectedMatchReasons);
+assert.ok(!records.some((record) => synthetic.rankingFixture.expectedApnOrder.includes(record.apn)));
 
 const missingSitus = lookup.searchParcelLookup(records, "303-170-18-00").candidates[0].record;
 assert.equal(missingSitus.address, null);
@@ -126,9 +167,22 @@ assert.equal(preview.parcelV2PreviewEnabled({ NODE_ENV: "development" }), false)
 assert.equal(preview.parcelV2PreviewEnabled({ NODE_ENV: "development", TRULOT_PARCEL_V2_PREVIEW: "1" }), true);
 assert.equal(preview.parcelV2PreviewEnabled({ NODE_ENV: "test", TRULOT_PARCEL_V2_PREVIEW: "1" }), true);
 assert.equal(preview.parcelV2PreviewEnabled({ NODE_ENV: "production", TRULOT_PARCEL_V2_PREVIEW: "1" }), false);
+assert.equal(loader.parcelLookupFailureInjection("source-unavailable", { NODE_ENV: "production", TRULOT_PARCEL_V2_PREVIEW: "1" }), null);
+assert.equal(loader.parcelLookupFailureInjection("selected-open", { NODE_ENV: "development" }), null);
+assert.equal(loader.parcelLookupFailureInjection("source-unavailable", { NODE_ENV: "development", TRULOT_PARCEL_V2_PREVIEW: "1" }), "source-unavailable");
+assert.equal(loader.parcelLookupFailureInjection("selected-open", { NODE_ENV: "test", TRULOT_PARCEL_V2_PREVIEW: "1" }), "selected-open");
+assert.equal(loader.parcelLookupSyntheticFixtureInjection("ranking", { NODE_ENV: "production", TRULOT_PARCEL_V2_PREVIEW: "1" }), null);
+assert.equal(loader.parcelLookupSyntheticFixtureInjection("ranking", { NODE_ENV: "development", TRULOT_PARCEL_V2_PREVIEW: "1" }), "ranking");
+assert.equal(loader.parcelLookupSyntheticFixtureInjection("normalization", { NODE_ENV: "test", TRULOT_PARCEL_V2_PREVIEW: "1" }), "normalization");
+const isolatedRankingRecords = loader.loadParcelLookupSyntheticFixture("ranking");
+assert.deepEqual(lookup.searchParcelLookup(isolatedRankingRecords, "202 C ST").candidates.map((candidate) => candidate.apn ?? candidate.record.apn), ["9900000001", "9900000002"]);
+const isolatedNormalizationRecord = loader.loadParcelLookupSyntheticFixture("normalization")[0];
+assert.equal(isolatedNormalizationRecord.apn, "0123456789");
+assert.equal(isolatedNormalizationRecord.apnDisplay, "012-345-67-89");
 
 const routeSource = fs.readFileSync(path.join(root, "app/parcel-lookup-preview/page.tsx"), "utf8");
 const clientSource = fs.readFileSync(path.join(root, "app/parcel-lookup-preview/ParcelLookupPreviewClient.tsx"), "utf8");
+const styleSource = fs.readFileSync(path.join(root, "app/parcel-lookup-preview/parcel-lookup-preview.module.css"), "utf8");
 const loaderSource = fs.readFileSync(path.join(root, "lib/parcel-lookup-v0.ts"), "utf8");
 assert.match(routeSource, /parcelV2PreviewEnabled\(\)/);
 assert.match(routeSource, /notFound\(\)/);
@@ -141,6 +195,14 @@ assert.match(clientSource, /ArrowUp/);
 assert.match(clientSource, /Escape/);
 assert.match(clientSource, /Parcel mapping shown for orientation/);
 assert.match(clientSource, /does not evaluate compliance, feasibility, legal-lot status, or development capacity/);
+assert.match(clientSource, /Enter an address or APN to search\./);
+assert.match(clientSource, /Enter at least.*characters\./);
+assert.match(clientSource, /data-lookup-state="SOURCE_UNAVAILABLE"/);
+assert.match(clientSource, /data-lookup-state="SELECTED_PARCEL_UNAVAILABLE"/);
+assert.match(clientSource, /Retry lookup/);
+assert.match(clientSource, /Retry parcel/);
+assert.match(styleSource, /\.identityCard \{ grid-row: 1;/);
+assert.match(styleSource, /\.mapCard \{ grid-row: 2;/);
 for (const source of [routeSource, clientSource, loaderSource]) {
   assert.doesNotMatch(source, /supabase|fetch\s*\(|parcel_page_api_v2|selected_snapshot|calculateCapacity|capacity score/i);
 }

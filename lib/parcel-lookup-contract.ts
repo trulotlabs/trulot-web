@@ -51,8 +51,18 @@ export type ParcelLookupRecord = {
 export type ParcelLookupCandidate = {
   record: ParcelLookupRecord;
   rank: number;
-  matchReason: "exact_apn" | "apn_prefix" | "exact_address" | "address_prefix" | "token_match" | "substring";
+  matchReason:
+    | "exact_apn"
+    | "apn_prefix"
+    | "exact_address"
+    | "exact_unit_address"
+    | "address_prefix"
+    | "token_match"
+    | "substring"
+    | "incidental_unit_match";
 };
+
+export type ParcelLookupOpenState = "READY" | "SELECTED_PARCEL_UNAVAILABLE";
 
 export type ParcelLookupResponse = {
   inputType: ParcelLookupInputType;
@@ -141,33 +151,41 @@ export function normalizeAddress(input: string): string {
     .replace(/\bUNIT 0+(\d+)\b/g, "UNIT $1");
 }
 
-function addressAliases(record: ParcelLookupRecord): string[] {
-  return [record.normalizedAddress, record.normalizedUnitAddress]
-    .filter((value): value is string => Boolean(value));
-}
-
 function rankAddress(record: ParcelLookupRecord, query: string): Omit<ParcelLookupCandidate, "rank"> | null {
-  const aliases = addressAliases(record);
-  if (aliases.some((alias) => alias === query)) return { record, matchReason: "exact_address" };
-  if (aliases.some((alias) => alias.startsWith(query))) return { record, matchReason: "address_prefix" };
+  const baseAddress = record.normalizedAddress;
+  const unitAddress = record.normalizedUnitAddress && record.normalizedUnitAddress !== baseAddress
+    ? record.normalizedUnitAddress
+    : null;
+  const explicitUnit = /\bUNIT\s+[A-Z0-9]+\b/.test(query);
+  if (baseAddress === query) return { record, matchReason: "exact_address" };
+  if (explicitUnit && unitAddress === query) return { record, matchReason: "exact_unit_address" };
+  if (baseAddress?.startsWith(query) || (explicitUnit && unitAddress?.startsWith(query))) {
+    return { record, matchReason: "address_prefix" };
+  }
 
   const queryTokens = query.split(" ");
-  const tokenMatch = aliases.some((alias) => {
+  const tokensMatch = (alias: string) => {
     const tokens = alias.split(" ");
     return queryTokens.every((queryToken) => tokens.some((token) => token.startsWith(queryToken)));
-  });
-  if (tokenMatch) return { record, matchReason: "token_match" };
-  if (aliases.some((alias) => alias.includes(query))) return { record, matchReason: "substring" };
+  };
+  if (baseAddress && tokensMatch(baseAddress)) return { record, matchReason: "token_match" };
+  if (explicitUnit && unitAddress && tokensMatch(unitAddress)) return { record, matchReason: "token_match" };
+  if (baseAddress?.includes(query)) return { record, matchReason: "substring" };
+  if (unitAddress && (tokensMatch(unitAddress) || unitAddress.includes(query))) {
+    return { record, matchReason: "incidental_unit_match" };
+  }
   return null;
 }
 
 const MATCH_ORDER: Record<ParcelLookupCandidate["matchReason"], number> = {
   exact_apn: 0,
   exact_address: 1,
-  apn_prefix: 2,
-  address_prefix: 3,
-  token_match: 4,
-  substring: 5,
+  exact_unit_address: 2,
+  apn_prefix: 3,
+  address_prefix: 4,
+  token_match: 5,
+  substring: 6,
+  incidental_unit_match: 7,
 };
 
 function finalize(
@@ -227,7 +245,8 @@ export function searchParcelLookup(
   const matches = records
     .map((record) => rankAddress(record, query))
     .filter((candidate): candidate is Omit<ParcelLookupCandidate, "rank"> => candidate !== null);
-  const exactCount = matches.filter((candidate) => candidate.matchReason === "exact_address").length;
+  const exactCount = matches.filter((candidate) =>
+    candidate.matchReason === "exact_address" || candidate.matchReason === "exact_unit_address").length;
   const state: ParcelLookupState = exactCount === 1
     ? "EXACT_MATCH"
     : exactCount > 1

@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { parcelV2PreviewEnabled } from "@/lib/parcel-v2-preview";
-import { loadParcelLookupRecords, ParcelLookupFixtureError } from "@/lib/parcel-lookup-v0";
+import {
+  loadParcelLookupRecords,
+  loadParcelLookupSyntheticFixture,
+  parcelLookupFailureInjection,
+  parcelLookupSyntheticFixtureInjection,
+  ParcelLookupFixtureError,
+} from "@/lib/parcel-lookup-v0";
 import type { ParcelLookupRecord } from "@/lib/parcel-lookup-contract";
 import ParcelLookupPreviewClient from "./ParcelLookupPreviewClient";
 
@@ -17,14 +23,17 @@ export const metadata: Metadata = {
 export default async function ParcelLookupPreviewPage({
   searchParams,
 }: {
-  searchParams: Promise<{ apn?: string | string[] }>;
+  searchParams: Promise<{ apn?: string | string[]; failure?: string | string[]; fixture?: string | string[] }>;
 }) {
   if (!parcelV2PreviewEnabled()) notFound();
   const params = await searchParams;
   const initialApn = typeof params.apn === "string" ? params.apn : null;
+  const failure = parcelLookupFailureInjection(typeof params.failure === "string" ? params.failure : null);
+  const syntheticFixture = parcelLookupSyntheticFixtureInjection(typeof params.fixture === "string" ? params.fixture : null);
   let records: ParcelLookupRecord[];
   try {
     records = loadParcelLookupRecords();
+    if (syntheticFixture) records = loadParcelLookupSyntheticFixture(syntheticFixture);
   } catch (error) {
     if (!(error instanceof ParcelLookupFixtureError)) throw error;
     return (
@@ -37,5 +46,12 @@ export default async function ParcelLookupPreviewPage({
       </main>
     );
   }
-  return <ParcelLookupPreviewClient records={records} initialApn={initialApn} />;
+  return (
+    <ParcelLookupPreviewClient
+      records={records}
+      initialApn={initialApn}
+      failureInjection={failure}
+      syntheticFixture={syntheticFixture}
+    />
+  );
 }

@@ -48,6 +48,7 @@
 .suggestionApn small { font-family: var(--font-geist-sans), sans-serif; text-transform: capitalize; }
 .emptyMessage { margin: 0; padding: 22px; color: var(--muted); font-size: .85rem; line-height: 1.5; }
 .resultMessage { margin: 0; border-top: 1px solid #edf0ec; padding: 10px 20px; background: #fafbf9; color: #65746d; font-size: .72rem; }
+.validationMessage { max-width: 820px; margin: 10px auto 0; border-left: 3px solid #a34f35; padding: 9px 12px; background: #fff4ee; color: #743824; font-size: .82rem; text-align: left; }
 .examples { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; margin-top: 20px; color: #748079; font-size: .7rem; }
 .examples button { border: 1px solid rgba(19, 38, 31, .16); border-radius: 999px; padding: 7px 11px; background: rgba(255,255,255,.42); color: #385448; cursor: pointer; font-size: .7rem; }
 
@@ -87,6 +88,11 @@
 .detailPanel span { color: #78847e; font-size: .67rem; text-transform: uppercase; }
 .detailPanel strong { font-size: .82rem; }
 .detailPanel p { grid-column: 1 / -1; margin: 4px 0 0; border-top: 1px solid #e4e7e2; padding-top: 14px; color: #66736d; font-size: .76rem; line-height: 1.55; }
+.failureCard { max-width: 820px; margin: 0 auto 28px; border: 1px solid rgba(163, 79, 53, .28); border-radius: 12px; padding: 22px 24px; background: #fffaf6; box-shadow: 0 16px 42px rgba(70, 41, 31, .07); }
+.failureCard h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.6rem; font-weight: 400; }
+.failureCard > p:not(.eyebrow) { margin: 10px 0 0; color: var(--muted); font-size: .84rem; line-height: 1.55; }
+.failureCard button { min-height: 40px; margin-top: 16px; border: 1px solid var(--ink); border-radius: 6px; padding: 0 14px; background: var(--ink); color: #fff; cursor: pointer; font-size: .74rem; font-weight: 700; }
+.failureActions { display: flex; flex-wrap: wrap; gap: 9px; }
 
 .promiseGrid { display: grid; max-width: 1060px; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 0 auto 80px; border: 1px solid rgba(19,38,31,.13); background: rgba(19,38,31,.13); }
 .promiseGrid article { min-height: 190px; padding: 28px; background: rgba(250,248,243,.95); }
@@ -108,8 +114,8 @@
   .suggestionPanel li > button { grid-template-columns: 30px minmax(0,1fr); }
   .suggestionApn { grid-column: 2; justify-items: start; }
   .resultSection { grid-template-columns: 1fr; gap: 14px; }
-  .identityCard { padding: 24px 20px; }
-  .mapCard { grid-row: 1; }
+  .identityCard { grid-row: 1; padding: 24px 20px; }
+  .mapCard { grid-row: 2; }
   .mapCard svg { min-height: 330px; }
   .identityCard h2 { font-size: 2.55rem; }
   .apnUtility { align-items: flex-start; }

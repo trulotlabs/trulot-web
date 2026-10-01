@@ -10,9 +10,15 @@ import {
   type ParcelLookupRecord,
   type ParcelLookupResponse,
 } from "@/lib/parcel-lookup-contract";
+import type { ParcelLookupFailureInjection, ParcelLookupSyntheticFixture } from "@/lib/parcel-lookup-v0";
 import styles from "./parcel-lookup-preview.module.css";
 
-type Props = { records: ParcelLookupRecord[]; initialApn: string | null };
+type Props = {
+  records: ParcelLookupRecord[];
+  initialApn: string | null;
+  failureInjection: ParcelLookupFailureInjection | null;
+  syntheticFixture: ParcelLookupSyntheticFixture | null;
+};
 
 function Highlight({ value, query }: { value: string; query: string }) {
   const tokens = new Set(normalizeAddress(query).split(" ").filter((token) => token.length >= 2));
@@ -98,12 +104,13 @@ function responseMessage(response: ParcelLookupResponse): string | null {
   if (response.state === "INVALID_APN") return "Enter all 10 APN digits. TruLot will not guess missing digits.";
   if (response.state === "MALFORMED_QUERY") return "Enter at least two address characters or a complete 10-digit APN.";
   if (response.state === "NO_MATCH") return "No parcel matched this bounded preview. Check the address or APN and try again.";
+  if (response.state === "SOURCE_UNAVAILABLE") return "Parcel lookup is temporarily unavailable. Retry the lookup or start a new search.";
   if (response.state === "MULTIPLE_MATCHES") return `${response.totalMatches} parcel records share this address. Choose the correct APN or unit.`;
   if (response.state === "PARTIAL_MATCHES") return `${response.totalMatches} matching parcel${response.totalMatches === 1 ? "" : "s"}.`;
   return null;
 }
 
-export default function ParcelLookupPreviewClient({ records, initialApn }: Props) {
+export default function ParcelLookupPreviewClient({ records, initialApn, failureInjection, syntheticFixture }: Props) {
   const initial = initialApn ? records.find((record) => record.apn === initialApn) ?? null : null;
   const [query, setQuery] = useState(initial?.address ?? (initial ? initial.apnDisplay : ""));
   const [selected, setSelected] = useState<ParcelLookupRecord | null>(initial);
@@ -111,9 +118,16 @@ export default function ParcelLookupPreviewClient({ records, initialApn }: Props
   const [activeIndex, setActiveIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const [detailsOpen, setDetailsOpen] = useState(false);
+  const [submissionMessage, setSubmissionMessage] = useState<string | null>(null);
+  const [sourceAvailable, setSourceAvailable] = useState(failureInjection !== "source-unavailable");
+  const [openFailure, setOpenFailure] = useState<ParcelLookupRecord | null>(null);
+  const [selectedFailureInjected, setSelectedFailureInjected] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const listId = useId();
-  const response = useMemo(() => searchParcelLookup(records, query, { maximumResults: PARCEL_LOOKUP_MAX_RESULTS }), [records, query]);
+  const response = useMemo(
+    () => searchParcelLookup(records, query, { maximumResults: PARCEL_LOOKUP_MAX_RESULTS, sourceAvailable }),
+    [records, query, sourceAvailable],
+  );
   const suggestions = response.candidates;
   const isSearchable = query.trim().length >= PARCEL_LOOKUP_QUERY_THRESHOLD;
 
@@ -123,16 +137,45 @@ export default function ParcelLookupPreviewClient({ records, initialApn }: Props
     return () => window.clearTimeout(timer);
   }, [copied]);
 
-  function selectParcel(record: ParcelLookupRecord) {
+  function completeSelection(record: ParcelLookupRecord) {
     setSelected(record);
+    setOpenFailure(null);
     setQuery(record.address ?? record.apnDisplay);
     setOpen(false);
     setCopied(false);
     setDetailsOpen(false);
+    setSubmissionMessage(null);
     window.history.replaceState({}, "", `/parcel-lookup-preview?apn=${record.apn}`);
   }
 
+  function selectParcel(record: ParcelLookupRecord) {
+    if (failureInjection === "selected-open" && !selectedFailureInjected) {
+      setSelectedFailureInjected(true);
+      setSelected(null);
+      setOpenFailure(record);
+      setQuery(record.address ?? record.apnDisplay);
+      setOpen(false);
+      setSubmissionMessage(null);
+      return;
+    }
+    completeSelection(record);
+  }
+
   function submitSearch() {
+    const trimmed = query.trim();
+    setSubmissionMessage(null);
+    if (!trimmed) {
+      setOpen(false);
+      setSubmissionMessage("Enter an address or APN to search.");
+      inputRef.current?.focus();
+      return;
+    }
+    if (trimmed.length < PARCEL_LOOKUP_QUERY_THRESHOLD) {
+      setOpen(false);
+      setSubmissionMessage(`Enter at least ${PARCEL_LOOKUP_QUERY_THRESHOLD} characters.`);
+      inputRef.current?.focus();
+      return;
+    }
     if (response.state === "EXACT_MATCH" && suggestions[0]) selectParcel(suggestions[0].record);
     else if (suggestions.length) {
       setOpen(true);
@@ -151,17 +194,21 @@ export default function ParcelLookupPreviewClient({ records, initialApn }: Props
     setSelected(null);
     setOpen(false);
     setDetailsOpen(false);
+    setSubmissionMessage(null);
+    setOpenFailure(null);
     window.history.replaceState({}, "", "/parcel-lookup-preview");
     window.setTimeout(() => inputRef.current?.focus(), 0);
   }
 
   return (
-    <main className={styles.shell} data-preview-source="sealed-parcel-lookup-v0" data-production-wired="false">
+    <main className={styles.shell} data-preview-source="sealed-parcel-lookup-v0" data-production-wired="false" data-lookup-source={sourceAvailable ? "available" : "unavailable"}>
       <header className={styles.header}>
         <Link href="/parcel-lookup-preview" className={styles.wordmark} aria-label="TruLot Parcel Lookup preview home">
           <span className={styles.wordmarkMark}>T</span><span>TRULOT</span>
         </Link>
-        <span className={styles.previewBadge}>Local preview · 49 parcels</span>
+        <span className={styles.previewBadge}>
+          {syntheticFixture ? `SYNTHETIC_${syntheticFixture.toUpperCase()}_FIXTURE` : `Local preview · ${records.length} parcels`}
+        </span>
       </header>
 
       <section className={`${styles.searchSection} ${selected ? styles.searchSectionCompact : ""}`}>
@@ -176,7 +223,14 @@ export default function ParcelLookupPreviewClient({ records, initialApn }: Props
               ref={inputRef}
               id="parcel-query"
               value={query}
-              onChange={(event) => { setQuery(event.target.value); setSelected(null); setOpen(true); setActiveIndex(0); }}
+              onChange={(event) => {
+                setQuery(event.target.value);
+                setSelected(null);
+                setOpenFailure(null);
+                setSubmissionMessage(null);
+                setOpen(true);
+                setActiveIndex(0);
+              }}
               onFocus={() => { if (isSearchable) setOpen(true); }}
               onKeyDown={(event) => {
                 if (event.key === "ArrowDown" && suggestions.length) { event.preventDefault(); setOpen(true); setActiveIndex((index) => Math.min(index + 1, suggestions.length - 1)); }
@@ -219,13 +273,40 @@ export default function ParcelLookupPreviewClient({ records, initialApn }: Props
             </div>
           ) : null}
         </form>
+        {submissionMessage ? <p className={styles.validationMessage} role="alert">{submissionMessage}</p> : null}
         {!selected ? (
           <div className={styles.examples} aria-label="Example searches">
             <span>Try an example</span>
-            {["639 N 67TH ST", "544-214-06-00", "1501 FRONT ST"].map((example) => <button key={example} type="button" onClick={() => { setQuery(example); setOpen(true); inputRef.current?.focus(); }}>{example}</button>)}
+            {["639 N 67TH ST", "544-214-06-00", "1501 FRONT ST"].map((example) => <button key={example} type="button" onClick={() => { setQuery(example); setSubmissionMessage(null); setOpen(true); inputRef.current?.focus(); }}>{example}</button>)}
           </div>
         ) : null}
       </section>
+
+      {!sourceAvailable ? (
+        <section className={styles.failureCard} role="alert" data-lookup-state="SOURCE_UNAVAILABLE">
+          <p className={styles.eyebrow}>Source unavailable</p>
+          <h2>Parcel lookup is temporarily unavailable.</h2>
+          <p>The bounded preview did not use a fallback source. Your search remains ready to retry.</p>
+          <button type="button" onClick={() => {
+            setSourceAvailable(true);
+            setOpen(query.trim().length >= PARCEL_LOOKUP_QUERY_THRESHOLD);
+            window.history.replaceState({}, "", "/parcel-lookup-preview");
+            inputRef.current?.focus();
+          }}>Retry lookup</button>
+        </section>
+      ) : null}
+
+      {openFailure ? (
+        <section className={styles.failureCard} role="alert" data-lookup-state="SELECTED_PARCEL_UNAVAILABLE">
+          <p className={styles.eyebrow}>Parcel unavailable</p>
+          <h2>We couldn&apos;t open this parcel.</h2>
+          <p>{openFailure.displayAddress} · APN {openFailure.apnDisplay}</p>
+          <div className={styles.failureActions}>
+            <button type="button" onClick={() => completeSelection(openFailure)}>Retry parcel</button>
+            <button type="button" onClick={resetSearch}>Search again</button>
+          </div>
+        </section>
+      ) : null}
 
       {selected ? (
         <section className={styles.resultSection} aria-live="polite">
@@ -233,11 +314,11 @@ export default function ParcelLookupPreviewClient({ records, initialApn }: Props
             <div className={styles.identityTopline}><span>Parcel found</span><button type="button" onClick={resetSearch}>New search</button></div>
             <h2>{selected.address ?? `APN ${selected.apnDisplay}`}</h2>
             {selected.unit ? <p className={styles.unitLine}>Unit {selected.unit}</p> : null}
-            <p className={styles.locationLine}>{selected.jurisdiction}{selected.zip ? ` · ${selected.zip}` : ""}</p>
             <div className={styles.apnUtility}>
               <div><span>Assessor parcel number</span><strong>APN {selected.apnDisplay}</strong></div>
               <button type="button" onClick={copyApn}>{copied ? "Copied" : "Copy APN"}</button>
             </div>
+            <p className={styles.locationLine}>{selected.jurisdiction}{selected.zip ? ` · ${selected.zip}` : ""}</p>
             <dl className={styles.facts}>
               <div><dt>Base zoning</dt><dd>{zoningLabel(selected)}</dd></div>
               <div><dt>Coastal status</dt><dd>{coastalLabel(selected)}</dd></div>

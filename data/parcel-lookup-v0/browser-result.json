@@ -7,7 +7,15 @@
     "lookup-home-desktop.png",
     "lookup-home-mobile.png",
     "missing-address-apn-desktop.png",
-    "multiple-match-desktop.png"
+    "multiple-match-desktop.png",
+    "p43b-autocomplete-apn-desktop.png",
+    "p43b-civic-vs-unit-ranking-desktop.png",
+    "p43b-empty-query-mobile.png",
+    "p43b-selected-identity-desktop.png",
+    "p43b-selected-identity-mobile.png",
+    "p43b-selected-open-failure-mobile.png",
+    "p43b-source-unavailable-mobile.png",
+    "p43b-too-short-mobile.png"
   ],
   "canonicalInteraction": {
     "query": "639 N 67TH ST",
@@ -16,7 +24,7 @@
       "ArrowDown",
       "Enter"
     ],
-    "elapsedMs": 40,
+    "elapsedMs": 39.1,
     "hesitationObserved": false
   },
   "apnFirstInteraction": {
@@ -25,7 +33,7 @@
       "focus/fill",
       "Enter"
     ],
-    "elapsedMs": 31.6,
+    "elapsedMs": 30.6,
     "exactResult": true
   },
   "checks": {
