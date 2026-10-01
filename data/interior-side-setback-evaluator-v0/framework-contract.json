@@ -1,0 +1,191 @@
+{
+  "applicable_requirement": [
+    "BASE_TABLE:4_FT_EACH",
+    "ESTABLISHED_SIDE_SETBACK_FOR_ADDITION:VALUE_IF_APPLICABLE",
+    "ELEMENT_SPECIFIC_ENCROACHMENT:VALUE_IF_APPLICABLE",
+    "FIRE_OFFICIAL_BUFFER:GREATER_VALUE_IF_REQUIRED",
+    "DOCUMENT_OR_PROGRAM_MODIFICATION:VALUE_IF_APPLICABLE"
+  ],
+  "bounded_conclusion": "The ordinary base is 4 feet from each north and south interior side line. The narrow-lot branch is excluded, and optional reallocation cannot reduce either line below 4 feet here. The final project-specific requirement remains conditional; current structure compliance is not evaluated.",
+  "comparison_result": "RULE_EVALUATION_UNRESOLVED",
+  "condition_state": "UNRESOLVED",
+  "forbidden_conclusions": [
+    "OVERALL_ZONING_COMPLIANCE",
+    "LEGAL_NONCONFORMITY",
+    "VARIANCE_REQUIREMENT",
+    "PERMIT_VIOLATION",
+    "DEVELOPMENT_CAPACITY",
+    "BUILDABILITY",
+    "ENTITLEMENT_LIKELIHOOD",
+    "PERMIT_APPROVAL"
+  ],
+  "legal_lot_state": {
+    "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+    "recorded_entity": "PM 17383 PARCEL 1",
+    "state": "LEGAL_LOT_ESTABLISHED"
+  },
+  "measurement_doctrine": {
+    "above_grade_scope": "Above-grade portions of underground parking, first stories, and basements are subject to setbacks; completely underground structures have the bounded exception in §113.0252(b).",
+    "accessory_treatment": "The §131.0461(a)(12) garage/non-habitable accessory-building permission is unavailable because lot area exceeds 10,000 square feet; other accessory standards remain project/classification dependent.",
+    "direction": "Measured inward and perpendicular to the applicable north or south side property line (SDMC §113.0252(a)(2)).",
+    "interior_side_property_lines": {
+      "basis": "§113.0246(d) and PM 17383",
+      "north": "north rear-to-front boundary",
+      "south": "south rear-to-front boundary"
+    },
+    "living_area_excluded": true,
+    "projection_treatment": "Roof projections, openly supported projections, bay windows, fireplaces, mechanical equipment, patios, dormers, low unroofed structures, pools/spas/hot tubs, and qualifying small-lot accessory buildings each retain their own §131.0461(a) conditions; no permission is selected without element facts.",
+    "required_inputs": [
+      "resolved final parcel-specific requirement",
+      "current authoritative structure geometry registered to legal boundaries",
+      "structure/project classification",
+      "projection/encroachment classification",
+      "established-side-setback history if addition",
+      "resolved Fire and documentary/program predicates"
+    ],
+    "setback_line": "For each side, a line parallel to the nearest side property line at the required inward distance; the intervening area is the required side yard (SDMC §113.0249(a)).",
+    "source": {
+      "authority_rank": 1,
+      "publisher": "City of San Diego, Office of the City Clerk",
+      "scope": "Referenced, unevaluated definitions and measurement rules, including section 113.0246(f).",
+      "sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+      "title": "San Diego Municipal Code Chapter 11, Article 3, Division 2: Rules for Calculation and Measurement",
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf"
+    },
+    "structure_edge": "For new-development compliance, measured to the outer edge of the building frame (SDMC §113.0252(c)); qualifying element-specific projections and encroachments remain governed by §131.0461(a)."
+  },
+  "measurement_result": null,
+  "operator": "MIN",
+  "parcel_identity": {
+    "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+    "situs_address": "1456 27TH ST"
+  },
+  "provenance": [
+    {
+      "apn": "6341302200",
+      "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+      "hop": "APN_TO_PARCEL_V2"
+    },
+    {
+      "entity": "PM 17383 Parcel 1",
+      "fingerprint_sha256": "45d578f06b0a17bc342c1d6504ca0db285db25bfa251cc22988d9f1ead97d3b5",
+      "hop": "PARCEL_TO_RECORDED_LOT"
+    },
+    {
+      "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+      "hop": "RECORDED_MAP_TO_SIDE_LINES",
+      "state": "RESOLVED_NORTH_AND_SOUTH_INTERIOR_SIDE_LINES"
+    },
+    {
+      "fingerprint_sha256": "85f9f17d97a1cf8974f551863b0f9531b2e9e5f9a910aedbcbf504dea0db46ec",
+      "hop": "RECORDED_MAP_TO_CODE_LOT_WIDTH",
+      "value_ft": "94.00"
+    },
+    {
+      "fingerprint_sha256": "2352256707a36c95d8b1182bae9fd8438838047558d74a686d9e9677282da70b",
+      "hop": "RECORDED_MAP_TO_CODE_LOT_AREA",
+      "value_sq_ft": "22096.320"
+    },
+    {
+      "hop": "PARCEL_TO_BASE_ZONING",
+      "mapping_row_sha256": "56ff295bb34046b281d3eb35de7829e687b6b66c2beda6a5c5cf3568c9e1e8d3",
+      "zone": "RS-1-7"
+    },
+    {
+      "fingerprint_sha256": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334",
+      "hop": "PARCEL_TO_COASTAL_CONTEXT",
+      "state": "OUTSIDE_COASTAL"
+    },
+    {
+      "hop": "TABLE_TO_BASE_RULE",
+      "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:13",
+      "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538"
+    },
+    {
+      "hop": "WIDTH_TO_SIDE_BRANCHES",
+      "narrow_lot": false,
+      "reallocation_eligible": true,
+      "section": "131.0443(a)(4)",
+      "section_text_sha256": "007b26a9a04939b1a78f2f83f8d323a4301674eff5bdd4ed5c1699d71e7e1c00"
+    },
+    {
+      "hop": "SECTION_TO_ELEMENT_BRANCHES",
+      "section": "131.0461(a)",
+      "section_text_sha256": "d07e1694feab453cc25754d244cdb90959d1dd1f34f7addd0020e2539eb2538a"
+    },
+    {
+      "fingerprint_sha256": "73bc225f30600b527237497e591b76a974cfd42d2c648bf0dc7534a602d6bba0",
+      "hop": "PACKET_35_TO_FIRE_BRANCH",
+      "state": "FIRE_BUFFER_PROJECT_REVIEW_REQUIRED"
+    },
+    {
+      "hop": "MEASUREMENT_SEMANTICS",
+      "page_text_sha256": "b1a54e17c82cc12a5984aadca56bf81ed4978006ed2dbf6bf06e7318fc0040b4",
+      "sections": [
+        "113.0246(d)",
+        "113.0249",
+        "113.0252(a)(2),(b)-(c)"
+      ]
+    },
+    {
+      "contract_version": "structure-facts-v0-2026-09-30",
+      "footprint_state": "MULTIPLE_FOOTPRINTS",
+      "hop": "PARCEL_TO_STRUCTURE_EVIDENCE"
+    },
+    {
+      "hop": "PREDICATES_TO_REQUIREMENT_STATE",
+      "state": "SETBACK_REQUIREMENT_CONDITIONAL",
+      "unresolved": [
+        "existing_primary_structure_addition",
+        "established_side_setback_dimension",
+        "accessory_or_element_classification",
+        "permitted_projection_or_encroachment",
+        "fire_official_defensible_space_buffer",
+        "document_modified_setback",
+        "special_program_or_overlay_modification"
+      ]
+    },
+    {
+      "failed_gates": [
+        "requirement_resolved",
+        "current_structure_geometry",
+        "structure_classification",
+        "projection_scope_resolved",
+        "measured_value",
+        "required_value"
+      ],
+      "hop": "REQUIREMENT_TO_COMPLIANCE_GATE",
+      "state": "SETBACK_COMPLIANCE_NOT_EVALUATED"
+    }
+  ],
+  "required_semantic_inputs": [
+    "resolved final parcel-specific requirement",
+    "current authoritative structure geometry registered to legal boundaries",
+    "structure/project classification",
+    "projection/encroachment classification",
+    "established-side-setback history if addition",
+    "resolved Fire and documentary/program predicates"
+  ],
+  "resolved_inputs": [
+    "parcel identity",
+    "legal lot",
+    "base zoning",
+    "outside-Coastal context",
+    "north and south interior-side lines",
+    "Code-defined lot width",
+    "Code lot area",
+    "measurement direction",
+    "building-frame edge semantics",
+    "Packet 35 fire doctrine"
+  ],
+  "rule_family": "interior_side_setback",
+  "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:13",
+  "rule_source": {
+    "source_page": 33,
+    "source_section": "131.0431(a)",
+    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "source_table": "131-04D",
+    "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf"
+  },
+  "unit": "ft"
+}

@@ -1,0 +1,427 @@
+{
+  "apn": "6341302200",
+  "applicable_rule": {
+    "base_value_ft_each_interior_side": 4,
+    "fact_state": "CONDITIONAL",
+    "operator": "MIN",
+    "requirement_state": "SETBACK_REQUIREMENT_CONDITIONAL",
+    "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:13",
+    "section_131_0443_text_sha256": "007b26a9a04939b1a78f2f83f8d323a4301674eff5bdd4ed5c1699d71e7e1c00",
+    "section_131_0461_text_sha256": "d07e1694feab453cc25754d244cdb90959d1dd1f34f7addd0020e2539eb2538a",
+    "source_edition": "9-2026",
+    "source_page": 33,
+    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "source_table": "131-04D"
+  },
+  "bounded_conclusion": "The ordinary base is 4 feet from each north and south interior side line. The narrow-lot branch is excluded, and optional reallocation cannot reduce either line below 4 feet here. The final project-specific requirement remains conditional; current structure compliance is not evaluated.",
+  "capacity_calculated": false,
+  "compliance": {
+    "comparison": null,
+    "failed_gates": [
+      "requirement_resolved",
+      "current_structure_geometry",
+      "structure_classification",
+      "projection_scope_resolved",
+      "measured_value",
+      "required_value"
+    ],
+    "gates": {
+      "current_structure_geometry": false,
+      "measured_value": false,
+      "measurement_semantics": true,
+      "projection_scope_resolved": false,
+      "required_value": false,
+      "requirement_resolved": false,
+      "structure_classification": false
+    },
+    "state": "SETBACK_COMPLIANCE_NOT_EVALUATED"
+  },
+  "compliance_state": "SETBACK_COMPLIANCE_NOT_EVALUATED",
+  "conditional_branches": [
+    {
+      "branch_id": "BASE_TABLE_EACH_INTERIOR_SIDE",
+      "conditions": [
+        "No applicable established-side continuation",
+        "No greater Fire Official buffer",
+        "No controlling documentary/program modification"
+      ],
+      "modality": "REQUIRED_BASE",
+      "operator": "MIN",
+      "parcel_disposition": "VALID_POSSIBLE_BRANCH",
+      "source": "SDMC §131.0431(a), Table 131-04D, RS-1-7 row",
+      "value_ft": 4
+    },
+    {
+      "branch_id": "NARROW_LOT_EIGHT_PERCENT_EACH_SIDE",
+      "conditions": [
+        "Lot width is strictly less than applicable zone minimum"
+      ],
+      "formula": "8% × 94.00 ft",
+      "modality": "MANDATORY_IF_WIDTH_BELOW_MINIMUM",
+      "operator": "MIN",
+      "parcel_disposition": "EXCLUDED_PREDICATE_FALSE",
+      "source": "SDMC §131.0443(a)(4)(A)",
+      "value_ft": "7.520"
+    },
+    {
+      "branch_id": "OPTIONAL_SIDE_REALLOCATION",
+      "conditions": [
+        "Lot width strictly greater than 50 feet",
+        "Reallocation elected",
+        "Combined side setbacks at least 8 feet",
+        "Each reallocated interior side at least 4 feet"
+      ],
+      "modality": "MAY",
+      "operator": "COMBINED_MINIMUM_WITH_LINE_FLOORS",
+      "parcel_disposition": "AVAILABLE_BUT_NO_REDUCTION_BELOW_BASE_FOR_THIS_TWO_INTERIOR_SIDE_CONFIGURATION",
+      "source": "SDMC §131.0443(a)(4)(B)(i)-(ii)",
+      "value_ft": null
+    },
+    {
+      "branch_id": "ESTABLISHED_SIDE_SETBACK_FOR_ADDITION",
+      "conditions": [
+        "Project is an addition to primary structure",
+        "A qualifying side setback was previously established"
+      ],
+      "modality": "REQUIRED_IF_APPLICABLE",
+      "operator": "MAINTAIN_ESTABLISHED_DIMENSION",
+      "parcel_disposition": "VALID_POSSIBLE_BRANCH_VALUE_UNRESOLVED",
+      "source": "SDMC §§113.0249(d), 131.0443(a)(4)(B)(i)",
+      "value_ft": null
+    },
+    {
+      "branch_id": "ELEMENT_SPECIFIC_ENCROACHMENT",
+      "conditions": [
+        "Element is classified under §131.0461(a)",
+        "Every applicable dimensional and location condition is met"
+      ],
+      "modality": "PERMITTED_IF_ALL_CONDITIONS_MET",
+      "operator": "ELEMENT_SPECIFIC",
+      "parcel_disposition": "VALID_POSSIBLE_BRANCH_VALUE_UNRESOLVED",
+      "source": "SDMC §131.0461(a)(1)-(12)",
+      "value_ft": null
+    },
+    {
+      "branch_id": "FIRE_OFFICIAL_BUFFER",
+      "conditions": [
+        "Fire Code Official requires a project-specific greater defensible-space buffer"
+      ],
+      "modality": "MAY_REQUIRE",
+      "operator": "GREATER_THAN_OTHERWISE_APPLICABLE",
+      "parcel_disposition": "VALID_POSSIBLE_BRANCH_VALUE_UNRESOLVED",
+      "source": "SDMC §131.0443(i) + Fire Defensible Space Predicate V0",
+      "value_ft": null
+    },
+    {
+      "branch_id": "DOCUMENT_OR_PROGRAM_MODIFICATION",
+      "conditions": [
+        "A controlling document, program, or overlay modifies the base-zone side setback"
+      ],
+      "modality": "CONDITIONAL",
+      "operator": "REPLACES_OR_MODIFIES_BASE",
+      "parcel_disposition": "VALID_POSSIBLE_BRANCH_VALUE_UNRESOLVED",
+      "source": "SDMC §§113.0249(b)-(c), 131.0430(a)",
+      "value_ft": null
+    }
+  ],
+  "contract_version": "interior-side-setback-evaluator-v0-2026-10-01-p36",
+  "current_structure_compliance_evaluated": false,
+  "development_capacity_calculated": false,
+  "evaluation_scope": "RS_1_7_INTERIOR_SIDE_SETBACK_CURRENT_OUTSIDE_COASTAL_PROFILE_ONLY",
+  "evidence_needed_to_select": {
+    "element": "Element classification and geometry sufficient to test every applicable §131.0461(a) condition.",
+    "established_setback": "Approval/history and compliance-grade dimension for any established reallocated side setback.",
+    "fire": "Project-specific Fire Code Official evidence accepted by Packet 35.",
+    "modifications": "Project/document review sufficient to exclude or apply controlling setback modifications and special programs.",
+    "project": "Current/proposed project type, structure classification, and whether work is an addition."
+  },
+  "fingerprint_sha256": "aadda9860ec2b7674ad5035a5d3ba5b03a79d520f75b85f975bc3a919e6f7807",
+  "fire_integration": {
+    "geography_determines_greater_buffer": false,
+    "greater_buffer_ft": null,
+    "source_fingerprint_sha256": "73bc225f30600b527237497e591b76a974cfd42d2c648bf0dc7534a602d6bba0",
+    "state": "FIRE_BUFFER_PROJECT_REVIEW_REQUIRED"
+  },
+  "forbidden_conclusions": [
+    "OVERALL_ZONING_COMPLIANCE",
+    "LEGAL_NONCONFORMITY",
+    "VARIANCE_REQUIREMENT",
+    "PERMIT_VIOLATION",
+    "DEVELOPMENT_CAPACITY",
+    "BUILDABILITY",
+    "ENTITLEMENT_LIKELIHOOD",
+    "PERMIT_APPROVAL"
+  ],
+  "gates": {
+    "apn": true,
+    "dependencies": true,
+    "fire_doctrine": true,
+    "legal_area": true,
+    "legal_lot": true,
+    "legal_match": true,
+    "lot_classification": true,
+    "outside_coastal": true,
+    "parcel_identity": true,
+    "resolved_width": true,
+    "rule_family": true,
+    "rule_shape": true,
+    "side_lines": true,
+    "single_zone": true,
+    "standards_version": true,
+    "zone": true
+  },
+  "historical_diagnostic": {
+    "classification": "HISTORICAL_DIAGNOSTIC_INTERIOR_SIDE_SETBACK",
+    "current_compliance_evidence": false,
+    "lines": [
+      "NORTH_INTERIOR_SIDE",
+      "SOUTH_INTERIOR_SIDE"
+    ],
+    "reason": "Packet 17 retains geometry hashes rather than coordinates, uses a Spring 2017 imagery baseline, and does not prove current completeness or compliance-grade registration to the legal side lines.",
+    "source_record_ids": [
+      "building-outline-objectid:880632",
+      "building-outline-objectid:987216"
+    ],
+    "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+    "state": "NOT_MEASURED"
+  },
+  "legal_lot": {
+    "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+    "recorded_entity": "PM 17383 PARCEL 1",
+    "state": "LEGAL_LOT_ESTABLISHED"
+  },
+  "mandatory_qualifier": "This evaluates only the current outside-Coastal RS-1-7 interior-side-setback rule envelope. It does not establish current structure compliance, overall zoning compliance, capacity, legal nonconformity, or project approval.",
+  "measurement_doctrine": {
+    "above_grade_scope": "Above-grade portions of underground parking, first stories, and basements are subject to setbacks; completely underground structures have the bounded exception in §113.0252(b).",
+    "accessory_treatment": "The §131.0461(a)(12) garage/non-habitable accessory-building permission is unavailable because lot area exceeds 10,000 square feet; other accessory standards remain project/classification dependent.",
+    "direction": "Measured inward and perpendicular to the applicable north or south side property line (SDMC §113.0252(a)(2)).",
+    "interior_side_property_lines": {
+      "basis": "§113.0246(d) and PM 17383",
+      "north": "north rear-to-front boundary",
+      "south": "south rear-to-front boundary"
+    },
+    "living_area_excluded": true,
+    "projection_treatment": "Roof projections, openly supported projections, bay windows, fireplaces, mechanical equipment, patios, dormers, low unroofed structures, pools/spas/hot tubs, and qualifying small-lot accessory buildings each retain their own §131.0461(a) conditions; no permission is selected without element facts.",
+    "required_inputs": [
+      "resolved final parcel-specific requirement",
+      "current authoritative structure geometry registered to legal boundaries",
+      "structure/project classification",
+      "projection/encroachment classification",
+      "established-side-setback history if addition",
+      "resolved Fire and documentary/program predicates"
+    ],
+    "setback_line": "For each side, a line parallel to the nearest side property line at the required inward distance; the intervening area is the required side yard (SDMC §113.0249(a)).",
+    "source": {
+      "authority_rank": 1,
+      "publisher": "City of San Diego, Office of the City Clerk",
+      "scope": "Referenced, unevaluated definitions and measurement rules, including section 113.0246(f).",
+      "sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+      "title": "San Diego Municipal Code Chapter 11, Article 3, Division 2: Rules for Calculation and Measurement",
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf"
+    },
+    "structure_edge": "For new-development compliance, measured to the outer edge of the building frame (SDMC §113.0252(c)); qualifying element-specific projections and encroachments remain governed by §131.0461(a)."
+  },
+  "next_rule_evaluation_target": "street-side setback",
+  "other_rule_families_evaluated": [],
+  "parcel_compliance_evaluated": false,
+  "parcel_identity": {
+    "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+    "situs_address": "1456 27TH ST"
+  },
+  "predicates": {
+    "accessory_or_element_classification": {
+      "basis": "No current or proposed element is classified.",
+      "effect": "Controls element-specific projection, equipment, patio, pool, unroofed-structure, and other encroachment rules.",
+      "source": "Packet 17 Structure Facts V0",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "application_complete_date": {
+      "basis": "This evaluator is limited to the current-version profile and does not adjudicate a protected earlier application.",
+      "effect": "Earlier applications require a separately versioned evaluation.",
+      "source": "Packet 17 authority/version profile",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    },
+    "combined_table_side_setback_total": {
+      "basis": "This non-corner lot has two interior side lines and the RS-1-7 table minimum is 4 feet for each.",
+      "effect": "A reallocation must preserve at least the 8-foot combined total.",
+      "source": "Table 131-04D + resolved property-line roles",
+      "state": "TRUE",
+      "value": "8_FT_FOR_TWO_INTERIOR_SIDES"
+    },
+    "completely_underground_structure": {
+      "basis": "No proposed structure is supplied.",
+      "effect": "Completely underground construction has separate treatment.",
+      "source": "SDMC §113.0252(b)",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "current_outside_coastal_profile": {
+      "basis": "The parcel is supported outside Coastal and uses the current reviewed rule set.",
+      "effect": "Selects the current outside-Coastal authority envelope.",
+      "source": "Parcel Intelligence V2 + RS Base Standards V0",
+      "state": "TRUE",
+      "value": "outside-coastal-2026-09-30"
+    },
+    "document_modified_setback": {
+      "basis": "The legal-lot chain is not a complete search for every ordinance, final subdivision, record of survey, or division-plat setback modification.",
+      "effect": "A controlling document can replace the calculated line.",
+      "source": "SDMC §113.0249(b)-(c) + Legal Lot Evidence V0 limitation",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "established_side_setback_dimension": {
+      "basis": "Historical outlines do not establish an approved reallocation or compliance-grade current dimension.",
+      "effect": "Needed if the project is an addition subject to continuation rules.",
+      "source": "Packet 17 Structure Facts V0",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "existing_primary_structure_addition": {
+      "basis": "No proposed project scope or complete established-side-setback history is supplied.",
+      "effect": "An addition may have to maintain an established reallocated side setback.",
+      "source": "SDMC §§113.0249(d), 131.0443(a)(4)(B)(i)",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "fire_official_defensible_space_buffer": {
+      "basis": "Packet 35 proves that mapped fire geography does not select a number; project review is required.",
+      "effect": "May require a buffer greater than the otherwise applicable side setback.",
+      "source": "Fire Defensible Space Predicate V0 + SDMC §131.0443(i)",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "garage_within_embankment_rule": {
+      "basis": "Section 131.0449(a) applies only to front and street-side yards.",
+      "effect": "Does not alter an interior-side setback.",
+      "source": "SDMC §131.0449(a)",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    },
+    "interior_side_property_lines": {
+      "basis": "PM 17383 and §113.0246(d) resolve both non-street lines connecting east front to west rear as interior side lines.",
+      "effect": "Selects two interior-side measurement origins.",
+      "source": "PM 17383 sheet 2 + Minimum Lot Width Evaluation V0",
+      "state": "TRUE",
+      "value": [
+        "NORTH_BOUNDARY",
+        "SOUTH_BOUNDARY"
+      ]
+    },
+    "lot_is_non_corner": {
+      "basis": "The sealed classification is SINGLE_FRONTAGE_INTERIOR_NON_CORNER.",
+      "effect": "Uses the ordinary RS-1-7 minimum-width row and excludes street-side evaluation.",
+      "source": "Minimum Lot Width Evaluation V0",
+      "state": "TRUE",
+      "value": true
+    },
+    "lot_width_greater_than_50_ft": {
+      "basis": "The sealed Code-defined width is 94.00 feet.",
+      "effect": "Makes optional side-setback reallocation legally available.",
+      "source": "Minimum Lot Width Evaluation V0",
+      "state": "TRUE",
+      "value": true
+    },
+    "lot_width_less_than_zone_minimum": {
+      "basis": "The sealed Code-defined width is 94.00 feet and the ordinary RS-1-7 minimum is 50 feet.",
+      "effect": "Excludes the mandatory 8-percent narrow-lot branch.",
+      "source": "Minimum Lot Width Evaluation V0 + Table 131-04D",
+      "state": "FALSE",
+      "value": false
+    },
+    "permitted_projection_or_encroachment": {
+      "basis": "No proposed element is tested against §131.0461(a)(1)-(12).",
+      "effect": "Can change the allowed element edge while preserving the building-frame base setback.",
+      "source": "SDMC §131.0461(a)",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "reallocated_interior_side_floor": {
+      "basis": "Section 131.0443(a)(4)(B)(ii) bars a reallocated side setback below 4 feet.",
+      "effect": "For this parcel, reallocation cannot reduce either interior side below the table base.",
+      "source": "SDMC §131.0443(a)(4)(B)(ii)",
+      "state": "TRUE",
+      "value": "4_FT_EACH"
+    },
+    "required_street_or_alley_dedication": {
+      "basis": "The north and south interior lines abut land and are not street or alley lines in the sealed recorded map.",
+      "effect": "No alley remapping or current side-line dedication branch is selected.",
+      "source": "PM 17383 sheet 2 + SDMC §113.0246(e)",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    },
+    "resubdivided_corner_lot": {
+      "basis": "The parcel is a single-frontage interior non-corner recorded lot.",
+      "effect": "Excludes §113.0246(f) original-corner-line treatment.",
+      "source": "Minimum Lot Width Evaluation V0",
+      "state": "FALSE",
+      "value": false
+    },
+    "side_setback_reallocation_elected": {
+      "basis": "No proposed project, approved reallocation, or established-side-setback record is supplied.",
+      "effect": "Controls whether the optional reallocation/continuation branch is selected.",
+      "source": "SDMC §131.0443(a)(4)(B)",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "small_lot_accessory_building_encroachment": {
+      "basis": "The sealed Code lot area is 22,096.320 square feet, above the 10,000-square-foot ceiling.",
+      "effect": "Excludes the garage/non-habitable accessory-building side-yard encroachment.",
+      "source": "Minimum Lot Area Evaluation V0 + SDMC §131.0461(a)(12)",
+      "state": "FALSE",
+      "value": false
+    },
+    "special_program_or_overlay_modification": {
+      "basis": "No project/program scope or complete overlay-specific setback review is supplied.",
+      "effect": "A separate applicable regulation may modify the base-zone envelope.",
+      "source": "SDMC §131.0430(a)",
+      "state": "UNKNOWN",
+      "value": null
+    }
+  },
+  "rule_family": "interior_side_setback",
+  "setback_family_assessment": {
+    "shared_pattern": "Evidence gates → rule selection → explicit predicates → valid branches → measurement doctrine → compliance gates → contained result.",
+    "side_specific_extension": "Paired side lines add strict width thresholds, a combined-total reallocation permission with line-specific floors, and established-side continuation for additions without changing the shared evaluator contract.",
+    "state": "SETBACK_FAMILY_PATTERN_STABLE"
+  },
+  "state": "SETBACK_REQUIREMENT_CONDITIONAL",
+  "structure_evidence": {
+    "assessor_living_area_available": true,
+    "assessor_living_area_is_geometry": false,
+    "authoritative_current_structure_geometry": false,
+    "completeness_proven": false,
+    "historical_outline_count": 2,
+    "structure_classification_resolved": false
+  },
+  "unresolved_requirement_predicates": [
+    "existing_primary_structure_addition",
+    "established_side_setback_dimension",
+    "accessory_or_element_classification",
+    "permitted_projection_or_encroachment",
+    "fire_official_defensible_space_buffer",
+    "document_modified_setback",
+    "special_program_or_overlay_modification"
+  ],
+  "valid_possible_requirement_branches": [
+    "BASE_TABLE:4_FT_EACH",
+    "ESTABLISHED_SIDE_SETBACK_FOR_ADDITION:VALUE_IF_APPLICABLE",
+    "ELEMENT_SPECIFIC_ENCROACHMENT:VALUE_IF_APPLICABLE",
+    "FIRE_OFFICIAL_BUFFER:GREATER_VALUE_IF_REQUIRED",
+    "DOCUMENT_OR_PROGRAM_MODIFICATION:VALUE_IF_APPLICABLE"
+  ],
+  "width_analysis": {
+    "code_defined_lot_width_ft": "94.00",
+    "narrow_lot_threshold_met": false,
+    "reallocation_threshold_met": true,
+    "strict_threshold_note": "Exactly 50 feet satisfies neither strict inequality.",
+    "zone_minimum_width_ft": "50"
+  },
+  "zoning": {
+    "coastal_state": "OUTSIDE_COASTAL",
+    "standards_version": "sd-rs-base-standards-2026-09-30-v0",
+    "verified_as_of": "2026-09-30",
+    "zone_code": "RS-1-7"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "applicable_setback_state": "SETBACK_REQUIREMENT_CONDITIONAL",
+  "compliance_result": "SETBACK_COMPLIANCE_NOT_EVALUATED",
+  "contract_version": "interior-side-setback-evaluator-v0-2026-10-01-p36",
+  "decision": "INTERIOR_SIDE_SETBACK_EVALUATOR_V0_READY",
+  "development_capacity_calculated": false,
+  "next_rule_evaluation_target": "street-side setback",
+  "ordinary_base_value_ft_each_side": 4,
+  "overall_compliance_conclusion": false,
+  "setback_family_pattern": "SETBACK_FAMILY_PATTERN_STABLE"
+}

@@ -1,0 +1,56 @@
+{
+  "apn": "6341302200",
+  "applicable_interior_side_setback": {
+    "alternate_branches": [
+      "an established side setback may control an addition",
+      "element-specific §131.0461(a) encroachment permissions may apply",
+      "a greater Fire Official buffer may apply",
+      "a controlling document, program, or overlay may modify the base line"
+    ],
+    "base_rule": "4 ft from each north and south interior side property line",
+    "excluded_branches": [
+      "8-percent narrow-lot rule",
+      "small-lot garage/non-habitable accessory-building encroachment",
+      "front/street-side embankment garage"
+    ],
+    "reallocation": "Available in principle because width is 94 ft, but it cannot reduce either interior side below the 4-ft table base for this two-interior-side configuration.",
+    "state": "SETBACK_REQUIREMENT_CONDITIONAL",
+    "unresolved_predicates": [
+      "existing_primary_structure_addition",
+      "established_side_setback_dimension",
+      "accessory_or_element_classification",
+      "permitted_projection_or_encroachment",
+      "fire_official_defensible_space_buffer",
+      "document_modified_setback",
+      "special_program_or_overlay_modification"
+    ]
+  },
+  "contract_version": "interior-side-setback-evaluator-v0-2026-10-01-p36",
+  "existing_structure": {
+    "current_compliance_evaluated": false,
+    "historical_diagnostic": {
+      "classification": "HISTORICAL_DIAGNOSTIC_INTERIOR_SIDE_SETBACK",
+      "current_compliance_evidence": false,
+      "lines": [
+        "NORTH_INTERIOR_SIDE",
+        "SOUTH_INTERIOR_SIDE"
+      ],
+      "reason": "Packet 17 retains geometry hashes rather than coordinates, uses a Spring 2017 imagery baseline, and does not prove current completeness or compliance-grade registration to the legal side lines.",
+      "source_record_ids": [
+        "building-outline-objectid:880632",
+        "building-outline-objectid:987216"
+      ],
+      "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+      "state": "NOT_MEASURED"
+    },
+    "missing_evidence": [
+      "resolved final project-specific requirement",
+      "authoritative current structure geometry registered to legal side lines",
+      "resolved structure/project and projection/encroachment classification",
+      "established-side history if addition"
+    ],
+    "result": "SETBACK_COMPLIANCE_NOT_EVALUATED"
+  },
+  "qualifier": "This evaluates only the current outside-Coastal RS-1-7 interior-side-setback rule envelope. It does not establish current structure compliance, overall zoning compliance, capacity, legal nonconformity, or project approval.",
+  "ui_wired": false
+}

@@ -1,0 +1,101 @@
+{
+  "chain": [
+    {
+      "apn": "6341302200",
+      "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+      "hop": "APN_TO_PARCEL_V2"
+    },
+    {
+      "entity": "PM 17383 Parcel 1",
+      "fingerprint_sha256": "45d578f06b0a17bc342c1d6504ca0db285db25bfa251cc22988d9f1ead97d3b5",
+      "hop": "PARCEL_TO_RECORDED_LOT"
+    },
+    {
+      "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+      "hop": "RECORDED_MAP_TO_SIDE_LINES",
+      "state": "RESOLVED_NORTH_AND_SOUTH_INTERIOR_SIDE_LINES"
+    },
+    {
+      "fingerprint_sha256": "85f9f17d97a1cf8974f551863b0f9531b2e9e5f9a910aedbcbf504dea0db46ec",
+      "hop": "RECORDED_MAP_TO_CODE_LOT_WIDTH",
+      "value_ft": "94.00"
+    },
+    {
+      "fingerprint_sha256": "2352256707a36c95d8b1182bae9fd8438838047558d74a686d9e9677282da70b",
+      "hop": "RECORDED_MAP_TO_CODE_LOT_AREA",
+      "value_sq_ft": "22096.320"
+    },
+    {
+      "hop": "PARCEL_TO_BASE_ZONING",
+      "mapping_row_sha256": "56ff295bb34046b281d3eb35de7829e687b6b66c2beda6a5c5cf3568c9e1e8d3",
+      "zone": "RS-1-7"
+    },
+    {
+      "fingerprint_sha256": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334",
+      "hop": "PARCEL_TO_COASTAL_CONTEXT",
+      "state": "OUTSIDE_COASTAL"
+    },
+    {
+      "hop": "TABLE_TO_BASE_RULE",
+      "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:13",
+      "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538"
+    },
+    {
+      "hop": "WIDTH_TO_SIDE_BRANCHES",
+      "narrow_lot": false,
+      "reallocation_eligible": true,
+      "section": "131.0443(a)(4)",
+      "section_text_sha256": "007b26a9a04939b1a78f2f83f8d323a4301674eff5bdd4ed5c1699d71e7e1c00"
+    },
+    {
+      "hop": "SECTION_TO_ELEMENT_BRANCHES",
+      "section": "131.0461(a)",
+      "section_text_sha256": "d07e1694feab453cc25754d244cdb90959d1dd1f34f7addd0020e2539eb2538a"
+    },
+    {
+      "fingerprint_sha256": "73bc225f30600b527237497e591b76a974cfd42d2c648bf0dc7534a602d6bba0",
+      "hop": "PACKET_35_TO_FIRE_BRANCH",
+      "state": "FIRE_BUFFER_PROJECT_REVIEW_REQUIRED"
+    },
+    {
+      "hop": "MEASUREMENT_SEMANTICS",
+      "page_text_sha256": "b1a54e17c82cc12a5984aadca56bf81ed4978006ed2dbf6bf06e7318fc0040b4",
+      "sections": [
+        "113.0246(d)",
+        "113.0249",
+        "113.0252(a)(2),(b)-(c)"
+      ]
+    },
+    {
+      "contract_version": "structure-facts-v0-2026-09-30",
+      "footprint_state": "MULTIPLE_FOOTPRINTS",
+      "hop": "PARCEL_TO_STRUCTURE_EVIDENCE"
+    },
+    {
+      "hop": "PREDICATES_TO_REQUIREMENT_STATE",
+      "state": "SETBACK_REQUIREMENT_CONDITIONAL",
+      "unresolved": [
+        "existing_primary_structure_addition",
+        "established_side_setback_dimension",
+        "accessory_or_element_classification",
+        "permitted_projection_or_encroachment",
+        "fire_official_defensible_space_buffer",
+        "document_modified_setback",
+        "special_program_or_overlay_modification"
+      ]
+    },
+    {
+      "failed_gates": [
+        "requirement_resolved",
+        "current_structure_geometry",
+        "structure_classification",
+        "projection_scope_resolved",
+        "measured_value",
+        "required_value"
+      ],
+      "hop": "REQUIREMENT_TO_COMPLIANCE_GATE",
+      "state": "SETBACK_COMPLIANCE_NOT_EVALUATED"
+    }
+  ],
+  "contract_version": "interior-side-setback-evaluator-v0-2026-10-01-p36"
+}

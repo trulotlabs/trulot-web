@@ -1,0 +1,12 @@
+{
+  "artifacts": {
+    "contract.json": "78712fdcda405f58edc9b37355d6ff05f2bfd12712ecfea9034a4c276fb3e28b",
+    "decision.json": "f72f1a6696924128762026758b8e4b996a70d2def3a3e352b4ed62b6aa66b298",
+    "evaluation.json": "8517d5ad0d309f31f1ee1d0f81ecbb1e850704d9f811c05b4063e9eedae99cf2",
+    "framework-contract.json": "2da2f31ae867417d021ef13e95915987126e19878c607fb427a150808b2247e1",
+    "product-example.json": "8ee60f1f9329c9bbe617264d33fafd807d7006bb99912a11a7e543102bdfd0b7",
+    "provenance.json": "5770f841a24b6cc1f09f05c1c744a9ad02256d4d70815f263e2af47edc789f85"
+  },
+  "bundle_sha256": "4195183df6e7bdf7519b729cb81c1f9cb4074b68ab2becba450c77b04ccf8256",
+  "contract_version": "interior-side-setback-evaluator-v0-2026-10-01-p36"
+}

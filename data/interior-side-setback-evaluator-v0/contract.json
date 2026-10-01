@@ -1,0 +1,42 @@
+{
+  "compliance_states": [
+    "RULE_REQUIREMENT_SATISFIED",
+    "RULE_REQUIREMENT_NOT_SATISFIED",
+    "RULE_EVALUATION_UNRESOLVED",
+    "SETBACK_COMPLIANCE_NOT_EVALUATED"
+  ],
+  "contract_version": "interior-side-setback-evaluator-v0-2026-10-01-p36",
+  "fire_dependency": "fire-defensible-space-predicate-v0-2026-10-01-p35",
+  "forbidden_conclusions": [
+    "OVERALL_ZONING_COMPLIANCE",
+    "LEGAL_NONCONFORMITY",
+    "VARIANCE_REQUIREMENT",
+    "PERMIT_VIOLATION",
+    "DEVELOPMENT_CAPACITY",
+    "BUILDABILITY",
+    "ENTITLEMENT_LIKELIHOOD",
+    "PERMIT_APPROVAL"
+  ],
+  "predicate_states": [
+    "TRUE",
+    "FALSE",
+    "UNKNOWN",
+    "SOURCE_UNAVAILABLE",
+    "NOT_APPLICABLE"
+  ],
+  "requirement_states": [
+    "SETBACK_REQUIREMENT_RESOLVED",
+    "SETBACK_REQUIREMENT_CONDITIONAL",
+    "SETBACK_REQUIREMENT_SOURCE_UNAVAILABLE"
+  ],
+  "scope": {
+    "apns": [
+      "6341302200"
+    ],
+    "jurisdiction_profile": "outside-coastal-2026-09-30",
+    "rule_families": [
+      "interior_side_setback"
+    ]
+  },
+  "shared_framework": "dimensional-rule-evaluator-v0-2026-10-01-p31"
+}
