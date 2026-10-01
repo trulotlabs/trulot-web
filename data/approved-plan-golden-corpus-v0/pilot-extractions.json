@@ -1,0 +1,389 @@
+{
+  "contract_version": "approved-plan-golden-corpus-v0-2026-10-01-p41",
+  "projects": [
+    {
+      "address_apn": {
+        "address": "639-659 N 67th Street, San Diego, CA 92114",
+        "apn": "5442140600"
+      },
+      "author_design_professional": "Stosh Thomas Architects PC",
+      "building_frame_geometry": "Seven proposed building frames labeled on A0.1",
+      "facts": [
+        {
+          "evidence_class": "GOLDEN_EVIDENCE",
+          "exact_callout_or_dimension": "Scope states construction of 26 ADU units within seven buildings",
+          "fact_id": "p41-adu-units",
+          "method": "DIRECT_LABELED_PLAN_ANNOTATION",
+          "pdf_page": 1,
+          "project_id": "PRJ-1111087",
+          "project_scope": "PROPOSED_WORK",
+          "provenance": {
+            "pdf_page": 1,
+            "sheet_number": "T-1",
+            "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/Submittal - 051926/BUILDING_CONSTRUCTION_PLANS_051826 Red1.pdf",
+            "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+          },
+          "reproduction_integrity_validated": false,
+          "sheet_number": "T-1",
+          "sheet_title": "Title Sheet",
+          "source_state": "SUBMITTED_PLAN_ANNOTATION",
+          "subject": "PROPOSED_PROJECT_FACT",
+          "unit": "dwelling_units",
+          "value": 26
+        },
+        {
+          "evidence_class": "GOLDEN_EVIDENCE",
+          "exact_callout_or_dimension": "MAX. BUILDING HEIGHT: 40'-0\"",
+          "fact_id": "p41-adu-height",
+          "method": "DIRECT_LABELED_PLAN_DIMENSION",
+          "pdf_page": 1,
+          "project_id": "PRJ-1111087",
+          "project_scope": "PROPOSED_WORK",
+          "provenance": {
+            "pdf_page": 1,
+            "sheet_number": "T-1",
+            "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/Submittal - 051926/BUILDING_CONSTRUCTION_PLANS_051826 Red1.pdf",
+            "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+          },
+          "reproduction_integrity_validated": false,
+          "sheet_number": "T-1",
+          "sheet_title": "Title Sheet",
+          "source_state": "SUBMITTED_PLAN_PROJECT_DATA",
+          "subject": "PROPOSED_PROJECT_FACT",
+          "unit": "ft-in",
+          "value": "40'-0\""
+        },
+        {
+          "evidence_class": "GOLDEN_EVIDENCE",
+          "exact_callout_or_dimension": "F.A.R. - PROPOSED: 22,219.6 S.F. / 20,084 = 1.10 FAR",
+          "fact_id": "p41-adu-far",
+          "method": "DIRECT_LABELED_PLAN_DIMENSION",
+          "pdf_page": 1,
+          "project_id": "PRJ-1111087",
+          "project_scope": "PROPOSED_WORK",
+          "provenance": {
+            "pdf_page": 1,
+            "sheet_number": "T-1",
+            "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/Submittal - 051926/BUILDING_CONSTRUCTION_PLANS_051826 Red1.pdf",
+            "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+          },
+          "reproduction_integrity_validated": false,
+          "sheet_number": "T-1",
+          "sheet_title": "Title Sheet",
+          "source_state": "SUBMITTED_PLAN_PROJECT_DATA",
+          "subject": "PROPOSED_PROJECT_FACT",
+          "unit": "ratio",
+          "value": {
+            "far": 1.1,
+            "gross_floor_area_sq_ft": 22219.6,
+            "lot_area_sq_ft": 20084.0
+          }
+        },
+        {
+          "evidence_class": "GOLDEN_EVIDENCE",
+          "exact_callout_or_dimension": "4'-0\" ADU SETBACK",
+          "fact_id": "p41-adu-side-setback",
+          "method": "DIRECT_LABELED_PLAN_DIMENSION",
+          "pdf_page": 15,
+          "project_id": "PRJ-1111087",
+          "project_scope": "PROPOSED_WORK",
+          "provenance": {
+            "pdf_page": 15,
+            "sheet_number": "A0.1",
+            "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/Submittal - 051926/BUILDING_CONSTRUCTION_PLANS_051826 Red1.pdf",
+            "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+          },
+          "reproduction_integrity_validated": false,
+          "sheet_number": "A0.1",
+          "sheet_title": "Architectural Site Plan",
+          "source_state": "SUBMITTED_ARCHITECTURAL_SITE_PLAN",
+          "subject": "PROPOSED_PROJECT_FACT",
+          "unit": "ft",
+          "value": 4.0
+        },
+        {
+          "evidence_class": "GOLDEN_EVIDENCE",
+          "exact_callout_or_dimension": "PROPERTY LINE - 199.59'",
+          "fact_id": "p41-adu-north-boundary",
+          "method": "DIRECT_RECORDED_DIMENSION",
+          "pdf_page": 15,
+          "project_id": "PRJ-1111087",
+          "project_scope": "PROPOSED_WORK",
+          "provenance": {
+            "pdf_page": 15,
+            "sheet_number": "A0.1",
+            "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/Submittal - 051926/BUILDING_CONSTRUCTION_PLANS_051826 Red1.pdf",
+            "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+          },
+          "reproduction_integrity_validated": false,
+          "sheet_number": "A0.1",
+          "sheet_title": "Architectural Site Plan",
+          "source_state": "SUBMITTED_SITE_PLAN_TIED_TO_SURVEY",
+          "subject": "PROPOSED_PROJECT_FACT",
+          "unit": "ft",
+          "value": 199.59
+        },
+        {
+          "evidence_class": "GOLDEN_EVIDENCE",
+          "exact_callout_or_dimension": "PROPERTY LINE - 202.60'",
+          "fact_id": "p41-adu-south-boundary",
+          "method": "DIRECT_RECORDED_DIMENSION",
+          "pdf_page": 15,
+          "project_id": "PRJ-1111087",
+          "project_scope": "PROPOSED_WORK",
+          "provenance": {
+            "pdf_page": 15,
+            "sheet_number": "A0.1",
+            "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/Submittal - 051926/BUILDING_CONSTRUCTION_PLANS_051826 Red1.pdf",
+            "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+          },
+          "reproduction_integrity_validated": false,
+          "sheet_number": "A0.1",
+          "sheet_title": "Architectural Site Plan",
+          "source_state": "SUBMITTED_SITE_PLAN_TIED_TO_SURVEY",
+          "subject": "PROPOSED_PROJECT_FACT",
+          "unit": "ft",
+          "value": 202.6
+        }
+      ],
+      "geometry_gate": {
+        "building_frame_location": true,
+        "plan_status_recorded": true,
+        "project_semantics_clear": true,
+        "property_line_tie": true,
+        "scope": "PROPOSED_PROJECT_GEOMETRY_ONLY",
+        "setback_dimensions": true,
+        "state": "COMPLIANCE_GEOMETRY_READY"
+      },
+      "grading_topography": "Topographic survey and referenced grading/civil sheets present",
+      "gross_floor_area": "Proposed 22,219.6 sq ft FAR numerator",
+      "height": "40'-0\" maximum building height in project data",
+      "legal_boundary_reference": "Lot 4, Block 7, Encanto Heights, Map 1063",
+      "notes_conditions": [
+        "Project facts are proposed, not as-built facts.",
+        "Plan status is submitted; issuance is not established.",
+        "Survey boundary is calculated and carries a not-precise-boundary-survey disclaimer."
+      ],
+      "plan_date": "2026-05-09_PRINTED_LATEST_ISSUE",
+      "plan_set_identifier": "PRJ-1111087 / 67th STREET ADUs",
+      "plan_status": "FOURTH_CD_SUBMITTAL_NOT_PROVEN_ISSUED",
+      "privacy_classification": "PRIVATE_OPERATOR_OWNED_OR_AUTHORIZED",
+      "project_id": "PRJ-1111087",
+      "project_use": "Accessory dwelling units with tuck-under parking",
+      "property_lines": "Directly labeled on C-1 and A0.1; long sides 199.59 ft and 202.60 ft on A0.1",
+      "proposed_units": 26,
+      "scale": {
+        "A0.1": "3/32 inch = 1 foot",
+        "C-1": "1 inch = 10 feet"
+      },
+      "setback_dimensions": "A0.1 labels 4'-0\" ADU setback and 10'-0\" standard side-yard setback lines",
+      "story_count": "Buildings 1-4 described as two story; Buildings 5-7 described as three story",
+      "structure_footprint": "Proposed footprints shown; no plan area is promoted to an existing-parcel footprint",
+      "survey_map_reference": "Topographic Survey C-1; Map 1063; calculated boundary; survey expressly is not a precise boundary survey"
+    },
+    {
+      "address_apn": {
+        "address": "639 N 67th Street, San Diego, CA 92114",
+        "apn": "5442140600"
+      },
+      "author_design_professional": "Stosh Thomas Architects PC; civil/survey references retained on sheets",
+      "building_frame_geometry": "Separate future building project appears only as reference/background and is excluded from this project geometry",
+      "facts": [
+        {
+          "evidence_class": "GOLDEN_EVIDENCE",
+          "exact_callout_or_dimension": "construction approximately 557 linear feet of site walls",
+          "fact_id": "p41-wall-linear-feet",
+          "method": "DIRECT_LABELED_PLAN_DIMENSION",
+          "pdf_page": 1,
+          "project_id": "PRJ-1140985",
+          "project_scope": "PROPOSED_WORK",
+          "provenance": {
+            "pdf_page": 1,
+            "sheet_number": "T-1",
+            "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/639 67th Site Walls Issued Plans - 112525.PDF",
+            "source_sha256": "7b682112c7495bd01569071059c7ea61f381f13a65862f37d0aab083715faf17"
+          },
+          "reproduction_integrity_validated": false,
+          "sheet_number": "T-1",
+          "sheet_title": "Title Sheet / Architectural Site Plan - Site Wall Locations",
+          "source_state": "CITY_ISSUED_PLAN",
+          "subject": "PROPOSED_PROJECT_FACT",
+          "unit": "linear_ft",
+          "value": 557
+        },
+        {
+          "evidence_class": "GOLDEN_EVIDENCE",
+          "exact_callout_or_dimension": "walls ranging in heights of 1'-2\" to 9'-3\"",
+          "fact_id": "p41-wall-height-range",
+          "method": "DIRECT_LABELED_PLAN_DIMENSION",
+          "pdf_page": 1,
+          "project_id": "PRJ-1140985",
+          "project_scope": "PROPOSED_WORK",
+          "provenance": {
+            "pdf_page": 1,
+            "sheet_number": "T-1",
+            "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/639 67th Site Walls Issued Plans - 112525.PDF",
+            "source_sha256": "7b682112c7495bd01569071059c7ea61f381f13a65862f37d0aab083715faf17"
+          },
+          "reproduction_integrity_validated": false,
+          "sheet_number": "T-1",
+          "sheet_title": "Title Sheet / Architectural Site Plan - Site Wall Locations",
+          "source_state": "CITY_ISSUED_PLAN",
+          "subject": "PROPOSED_PROJECT_FACT",
+          "unit": "ft-in",
+          "value": {
+            "max": "9'-3\"",
+            "min": "1'-2\""
+          }
+        },
+        {
+          "evidence_class": "GOLDEN_EVIDENCE",
+          "exact_callout_or_dimension": "TOTAL AREA OF WALL PROPOSE ... EQUAL 2,619.6 S.F.",
+          "fact_id": "p41-wall-area",
+          "method": "DIRECT_LABELED_PLAN_DIMENSION",
+          "pdf_page": 1,
+          "project_id": "PRJ-1140985",
+          "project_scope": "PROPOSED_WORK",
+          "provenance": {
+            "pdf_page": 1,
+            "sheet_number": "T-1",
+            "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/639 67th Site Walls Issued Plans - 112525.PDF",
+            "source_sha256": "7b682112c7495bd01569071059c7ea61f381f13a65862f37d0aab083715faf17"
+          },
+          "reproduction_integrity_validated": false,
+          "sheet_number": "T-1",
+          "sheet_title": "Title Sheet / Architectural Site Plan - Site Wall Locations",
+          "source_state": "CITY_ISSUED_PLAN",
+          "subject": "PROPOSED_PROJECT_FACT",
+          "unit": "sq_ft_projected_wall_area",
+          "value": 2619.6
+        }
+      ],
+      "geometry_gate": {
+        "building_frame_location": false,
+        "plan_status_recorded": true,
+        "project_semantics_clear": true,
+        "property_line_tie": true,
+        "scope": "SITE_WALL_GEOMETRY_READY; BUILDING_SETBACK_GEOMETRY_NOT_READY",
+        "setback_dimensions": false,
+        "state": "COMPLIANCE_GEOMETRY_NOT_READY"
+      },
+      "grading_topography": "C-1 survey and grading sheet for reference",
+      "gross_floor_area": null,
+      "height": "Site walls range from 1'-2\" to 9'-3\"",
+      "legal_boundary_reference": "Lot 4, Block 7, Encanto Heights, Map 1063",
+      "notes_conditions": [
+        "Issued status applies to site walls only.",
+        "No right-of-way work is proposed.",
+        "Separate building footprints are not approved by this plan set."
+      ],
+      "plan_date": "2025-10-30_PRINTED_LATEST_ISSUE",
+      "plan_set_identifier": "PRJ-1140985 / PMT-3368931",
+      "plan_status": "CITY_ISSUED_2025-11-25",
+      "privacy_classification": "PRIVATE_OPERATOR_OWNED_OR_AUTHORIZED",
+      "project_id": "PRJ-1140985",
+      "project_use": "Site and retaining walls",
+      "property_lines": "Directly labeled on T-1 and C-1",
+      "proposed_units": null,
+      "scale": {
+        "C-1": "1 inch = 10 feet",
+        "T-1": "3/32 inch = 1 foot"
+      },
+      "setback_dimensions": null,
+      "story_count": null,
+      "structure_footprint": "Site-wall alignments only",
+      "survey_map_reference": "C-1 Topographic Survey tied to Map 1063; calculated boundary disclaimer retained"
+    },
+    {
+      "address_apn": {
+        "address": "639-659 N 67th Street, San Diego, CA 92114",
+        "apn": "5442140600"
+      },
+      "author_design_professional": "Civil Landworks; Rancho Coastal Surveying",
+      "building_frame_geometry": null,
+      "facts": [
+        {
+          "evidence_class": "GOLDEN_EVIDENCE",
+          "exact_callout_or_dimension": "LEGAL DESCRIPTION: LOT 4 BLOCK 7 ENCANTO HEIGHTS MAP 1063",
+          "fact_id": "p41-grading-legal-description",
+          "method": "DIRECT_RECORDED_FACT",
+          "pdf_page": 6,
+          "project_id": "PRJ-1110168",
+          "project_scope": "PROPOSED_WORK",
+          "provenance": {
+            "pdf_page": 6,
+            "sheet_number": "C-1",
+            "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/Submittal - 051926/BUILDING_CONSTRUCTION_PLANS_051826 Red1.pdf",
+            "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+          },
+          "reproduction_integrity_validated": false,
+          "sheet_number": "C-1",
+          "sheet_title": "Topographic Survey",
+          "source_state": "REFERENCE_SURVEY_IN_SUBMITTED_PLAN",
+          "subject": "PROPOSED_PROJECT_FACT",
+          "unit": null,
+          "value": "Lot 4, Block 7, Encanto Heights, Map 1063"
+        },
+        {
+          "evidence_class": "GOLDEN_EVIDENCE",
+          "exact_callout_or_dimension": "GRADING AND R.O.W.: PRJ-1110168 - PMT-3269275",
+          "fact_id": "p41-grading-reference",
+          "method": "DIRECT_LABELED_PLAN_ANNOTATION",
+          "pdf_page": 1,
+          "project_id": "PRJ-1110168",
+          "project_scope": "PROPOSED_WORK",
+          "provenance": {
+            "pdf_page": 1,
+            "sheet_number": "T-1",
+            "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/Submittal - 051926/BUILDING_CONSTRUCTION_PLANS_051826 Red1.pdf",
+            "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+          },
+          "reproduction_integrity_validated": false,
+          "sheet_number": "T-1",
+          "sheet_title": "Title Sheet",
+          "source_state": "PROJECT_REFERENCE_NOT_DIRECT_STATUS_PROOF",
+          "subject": "PROPOSED_PROJECT_FACT",
+          "unit": null,
+          "value": {
+            "permit": "PMT-3269275",
+            "project": "PRJ-1110168"
+          }
+        }
+      ],
+      "geometry_gate": {
+        "building_frame_location": false,
+        "plan_status_recorded": true,
+        "project_semantics_clear": true,
+        "property_line_tie": true,
+        "scope": "GRADING_TOPOGRAPHY_GOLDEN_INPUTS_ONLY",
+        "setback_dimensions": false,
+        "state": "COMPLIANCE_GEOMETRY_NOT_READY"
+      },
+      "grading_topography": "Direct topographic contours/spot elevations and grading/civil reference sheets",
+      "gross_floor_area": null,
+      "height": null,
+      "legal_boundary_reference": "Lot 4, Block 7, Encanto Heights, Map 1063",
+      "notes_conditions": [
+        "The parent plan says grading/public-improvement approvals were addressed.",
+        "A direct City approval record was not independently reviewed.",
+        "No building compliance conclusion may use these reference sheets alone."
+      ],
+      "plan_date": "REFERENCE_SHEETS_IN_2026_SUBMITTAL",
+      "plan_set_identifier": "PRJ-1110168 / PMT-3269275",
+      "plan_status": "REFERENCE_SHEETS_EMBEDDED; DIRECT_APPROVAL_STATUS_NOT_INDEPENDENTLY_VERIFIED",
+      "privacy_classification": "PRIVATE_OPERATOR_OWNED_OR_AUTHORIZED",
+      "project_id": "PRJ-1110168",
+      "project_use": "Grading, utilities, erosion control, and public improvements",
+      "property_lines": "Survey-tied calculated boundary present",
+      "proposed_units": null,
+      "scale": {
+        "C-1": "1 inch = 10 feet",
+        "other_civil_sheets": "sheet-specific scales retained"
+      },
+      "setback_dimensions": null,
+      "story_count": null,
+      "structure_footprint": null,
+      "survey_map_reference": "C-1 topographic survey, Map 1063 and found monuments; not a precise boundary survey"
+    }
+  ]
+}

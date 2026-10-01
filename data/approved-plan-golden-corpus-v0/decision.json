@@ -1,0 +1,19 @@
+{
+  "basis": [
+    "All selected sources are operator-owned or authorized",
+    "Three bounded pilot projects have deterministic sheet provenance",
+    "Direct dimensions and diagnostic measurements are separated",
+    "Proposed project facts remain separate from existing parcel facts",
+    "Evaluator compatibility and the missing adapter are explicit"
+  ],
+  "contract_version": "approved-plan-golden-corpus-v0-2026-10-01-p41",
+  "decision": "APPROVED_PLAN_GOLDEN_CORPUS_V0_READY",
+  "limits": [
+    "Single property only",
+    "No simple RS parcel was available in the bounded operator-held source set",
+    "No Coastal determination",
+    "No RM-2-5 compliance conclusion",
+    "No production or public-product integration"
+  ],
+  "next_move": "NEXT_FEASIBILITY_STEP: validate setback compliance against approved plans"
+}

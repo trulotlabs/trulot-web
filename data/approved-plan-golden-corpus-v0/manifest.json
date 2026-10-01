@@ -1,0 +1,101 @@
+{
+  "contract_version": "approved-plan-golden-corpus-v0-2026-10-01-p41",
+  "excluded_sources": [
+    {
+      "reason": "Administrative inspection evidence contains personal contact fields; issuance is established by the stamped plan set.",
+      "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/639 67th Site Walls Inspection Plan - 112525.pdf",
+      "source_sha256": "84708d9a62343b8fc43b6373084eadec2039878c31f3b9398fa598dfe74bd30a"
+    },
+    {
+      "reason": "Correspondence only; no plan set.",
+      "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Codex/TruLot Mail - 3927 Utah Street ROW Construction Proposal.pdf",
+      "source_sha256": "18e386da9876ba9c354478ece8c3c300518f2e523fdffc36bb27a57caa78f97e"
+    },
+    {
+      "reason": "Correspondence only; no plan set.",
+      "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Codex/TruLot Mail - 4324 Meade off-site ROW Proposal.pdf",
+      "source_sha256": "9cd23d05d5b01a722b751c53d560811244ad3f0b016b134d741478938d929fdc"
+    }
+  ],
+  "expected_outputs": [
+    "bounded project facts",
+    "sheet provenance",
+    "geometry readiness",
+    "public-intelligence comparison",
+    "evaluator compatibility"
+  ],
+  "selected_projects": [
+    {
+      "evidence_families": [
+        "parcel identity",
+        "boundary",
+        "setback geometry",
+        "footprint",
+        "height",
+        "FAR inputs",
+        "units",
+        "project scope"
+      ],
+      "excluded_sheets": "All sheets not necessary for bounded title/survey/site-plan facts",
+      "included_sheets": [
+        "T-1",
+        "C-1",
+        "A0.1"
+      ],
+      "privacy_classification": "PRIVATE_OPERATOR_OWNED_OR_AUTHORIZED",
+      "project_id": "PRJ-1111087",
+      "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/Submittal - 051926/BUILDING_CONSTRUCTION_PLANS_051826 Red1.pdf",
+      "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+    },
+    {
+      "evidence_families": [
+        "parcel identity",
+        "boundary",
+        "site-wall geometry",
+        "height",
+        "grading reference",
+        "project scope"
+      ],
+      "excluded_sheets": "Structural details and unrelated administrative fields",
+      "included_sheets": [
+        "T-1",
+        "C-1",
+        "SW-0"
+      ],
+      "privacy_classification": "PRIVATE_OPERATOR_OWNED_OR_AUTHORIZED",
+      "project_id": "PRJ-1140985",
+      "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/639 67th Site Walls Issued Plans - 112525.PDF",
+      "source_sha256": "7b682112c7495bd01569071059c7ea61f381f13a65862f37d0aab083715faf17"
+    },
+    {
+      "evidence_families": [
+        "legal description",
+        "boundary/survey",
+        "grading/topography",
+        "civil project linkage"
+      ],
+      "excluded_sheets": "Building sheets and all unneeded pages",
+      "included_sheets": [
+        "T-1 project reference",
+        "C-1",
+        "G001-C005 reference sheets as needed"
+      ],
+      "privacy_classification": "PRIVATE_OPERATOR_OWNED_OR_AUTHORIZED",
+      "project_id": "PRJ-1110168",
+      "source_path": "/Users/ops/Google Drive/My Drive/TruLot/Projects/639 67th St/Submittal - 051926/BUILDING_CONSTRUCTION_PLANS_051826 Red1.pdf",
+      "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+    }
+  ],
+  "storage": {
+    "bounded_external_manifest": "/Users/ops/trulot-data/golden-plan-corpus-v0/source-manifest.json",
+    "private_files_in_git": false,
+    "repository_content": [
+      "manifests",
+      "hashes",
+      "bounded extracted facts",
+      "tests",
+      "non-sensitive documentation"
+    ],
+    "source_root": "/Users/ops/Google Drive/My Drive/TruLot"
+  }
+}

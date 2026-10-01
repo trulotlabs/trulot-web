@@ -1,0 +1,90 @@
+{
+  "authorization_classes": [
+    "PRIVATE_OPERATOR_OWNED_OR_AUTHORIZED",
+    "PUBLIC_RECORD",
+    "RESTRICTED_COPY",
+    "UNAUTHORIZED_OR_UNCLEAR"
+  ],
+  "contract_version": "approved-plan-golden-corpus-v0-2026-10-01-p41",
+  "evidence_doctrine": "PRIVATE_VALIDATION_EVIDENCE",
+  "extraction_hierarchy": [
+    {
+      "classification": "GOLDEN_EVIDENCE",
+      "method": "DIRECT_RECORDED_DIMENSION",
+      "rank": 1
+    },
+    {
+      "classification": "GOLDEN_EVIDENCE_IF_CLEAR_AND_GEOMETRY_TIED",
+      "method": "DIRECT_LABELED_PLAN_DIMENSION",
+      "rank": 2
+    },
+    {
+      "classification": "DIAGNOSTIC_ONLY_EVEN_AFTER_REPRODUCTION_VALIDATION",
+      "method": "SCALE_DERIVED_MEASUREMENT",
+      "rank": 3
+    },
+    {
+      "classification": "DIAGNOSTIC_ONLY",
+      "method": "IMAGE_PIXEL_ESTIMATE",
+      "rank": 4
+    }
+  ],
+  "fact_subjects": [
+    "PROPOSED_PROJECT_FACT",
+    "EXISTING_PARCEL_FACT"
+  ],
+  "forbidden": [
+    "PUBLISH_PRIVATE_PLAN_CONTENT",
+    "REPLACE_PUBLIC_TRUTH",
+    "PROMOTE_PROPOSED_TO_EXISTING",
+    "CITYWIDE_GENERALIZATION",
+    "PRODUCTION_WIRING",
+    "CAPACITY_CALCULATION"
+  ],
+  "geometry_semantics": [
+    "legal property line",
+    "surveyed property line",
+    "setback line",
+    "building-frame edge",
+    "roof edge",
+    "wall face",
+    "foundation edge",
+    "eave/projection",
+    "accessory structure",
+    "driveway/hardscape",
+    "lot coverage footprint"
+  ],
+  "non_dimensional_fact_methods": [
+    "DIRECT_RECORDED_FACT",
+    "DIRECT_LABELED_PLAN_ANNOTATION"
+  ],
+  "public_truth_replacement": false,
+  "purpose": "Internal deterministic validation of plan extraction and rule-application logic",
+  "schema": "ApprovedPlanGoldenCorpusV0",
+  "scope": {
+    "candidate_count": 5,
+    "citywide_generalization": false,
+    "distinct_properties": 1,
+    "selected_project_count": 3
+  },
+  "sheet_priority": {
+    "tier_1": [
+      "site plan",
+      "plot plan",
+      "civil site sheet",
+      "grading plan",
+      "boundary/survey plan"
+    ],
+    "tier_2": [
+      "foundation plan",
+      "architectural site sheet",
+      "roof plan when needed for footprint understanding"
+    ],
+    "tier_3": [
+      "floor plans",
+      "elevations",
+      "sections",
+      "project data/code analysis sheets"
+    ]
+  }
+}

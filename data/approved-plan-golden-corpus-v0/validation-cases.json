@@ -1,0 +1,71 @@
+{
+  "cases": [
+    {
+      "expected": "PLAN_INPUT_CAPTURED_RULE_EVALUATION_DEFERRED",
+      "input": "20,084.0 sq ft plan-provided lot area",
+      "project_id": "PRJ-1111087",
+      "rule_family": "minimum lot area"
+    },
+    {
+      "expected": "PLAN_INPUT_CAPTURED_LEGAL_MEASUREMENT_UNRESOLVED",
+      "input": "survey/site-plan boundary dimensions with disclaimer",
+      "project_id": "PRJ-1111087",
+      "rule_family": "lot width"
+    },
+    {
+      "expected": "PLAN_INPUT_CAPTURED_LINE_ROLE_CONFIRMATION_REQUIRED",
+      "input": "199.59 ft and 202.60 ft long property lines",
+      "project_id": "PRJ-1111087",
+      "rule_family": "lot depth"
+    },
+    {
+      "expected": "PLAN_INPUT_CAPTURED_CODE_FRONTAGE_MEASUREMENT_UNRESOLVED",
+      "input": "property line/street tie shown",
+      "project_id": "PRJ-1111087",
+      "rule_family": "frontage"
+    },
+    {
+      "expected": "GEOMETRY_READY_RULE_REQUIREMENT_UNRESOLVED",
+      "input": "proposed site plan geometry",
+      "project_id": "PRJ-1111087",
+      "rule_family": "front setback"
+    },
+    {
+      "expected": "GEOMETRY_READY_RULE_REQUIREMENT_UNRESOLVED",
+      "input": "proposed rear-yard line and building frames",
+      "project_id": "PRJ-1111087",
+      "rule_family": "rear setback"
+    },
+    {
+      "expected": "GOLDEN_DIMENSION_READY_RULE_REQUIREMENT_UNRESOLVED",
+      "input": "direct 4 ft ADU setback label",
+      "project_id": "PRJ-1111087",
+      "rule_family": "interior side setback"
+    },
+    {
+      "expected": "LINE_ROLE_ADAPTER_REQUIRED",
+      "input": "survey/property-line/street geometry",
+      "project_id": "PRJ-1111087",
+      "rule_family": "street-side applicability"
+    },
+    {
+      "expected": "PROPOSED_PROJECT_FACT_READY_RULE_COMPARISON_DEFERRED",
+      "input": "40 ft plan project-data maximum",
+      "project_id": "PRJ-1111087",
+      "rule_family": "height"
+    },
+    {
+      "expected": "PROPOSED_PROJECT_FACT_READY_RULE_COMPARISON_DEFERRED",
+      "input": "22,219.6 / 20,084 = 1.10",
+      "project_id": "PRJ-1111087",
+      "rule_family": "FAR"
+    },
+    {
+      "expected": "NOT_READY_MISSING_COVERAGE_SEMANTICS",
+      "input": "building frames present but coverage denominator/semantics not extracted",
+      "project_id": "PRJ-1111087",
+      "rule_family": "lot coverage"
+    }
+  ],
+  "contract_version": "approved-plan-golden-corpus-v0-2026-10-01-p41"
+}

@@ -1,0 +1,43 @@
+{
+  "architectural_change_to_shared_framework_required": false,
+  "assessments": [
+    {
+      "current_adapter_compatible": false,
+      "evaluator": "front setback",
+      "reason": "Resolver is sealed to APN 6341302200, RS-1-7, outside-Coastal sources, and current-structure geometry; corpus is APN 5442140600, RM-2-5, unknown Coastal, proposed geometry.",
+      "shared_numeric_gate_compatible": true
+    },
+    {
+      "current_adapter_compatible": false,
+      "evaluator": "rear setback",
+      "reason": "Parcel/rule/depth inputs are fixture-sealed and project facts need an explicit proposed-plan adapter.",
+      "shared_numeric_gate_compatible": true
+    },
+    {
+      "current_adapter_compatible": false,
+      "evaluator": "interior side setback",
+      "reason": "Direct dimension is usable, but RM/ADU rule selection and line-role mapping are not sealed.",
+      "shared_numeric_gate_compatible": true
+    },
+    {
+      "current_adapter_compatible": false,
+      "evaluator": "street-side applicability",
+      "reason": "Current line-fact helper hard-codes PM 17383 and 27th Street; corpus requires sheet-provenanced line-role facts.",
+      "shared_numeric_gate_compatible": true
+    },
+    {
+      "current_adapter_compatible": false,
+      "evaluator": "structure geometry gate",
+      "reason": "Existing gates require current structure geometry; corpus deliberately supplies proposed project geometry.",
+      "shared_numeric_gate_compatible": true
+    }
+  ],
+  "containment": {
+    "capacity_calculated": false,
+    "compliance_calculated": false,
+    "production_wired": false
+  },
+  "contract_version": "approved-plan-golden-corpus-v0-2026-10-01-p41",
+  "missing_abstraction": "PlanFactEnvelope / ProjectEvidenceAdapter carrying APN, zone/rule profile, proposed-vs-existing subject, approval status, legal line role, geometry semantic, direct dimension, and sheet provenance",
+  "overall": "SHARED_FRAMEWORK_REUSABLE_PACKET_SPECIFIC_ADAPTER_REQUIRED"
+}

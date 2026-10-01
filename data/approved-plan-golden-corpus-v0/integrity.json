@@ -1,0 +1,14 @@
+{
+  "artifacts": {
+    "candidate-inventory.json": "c724d3f00afa92b96f035b8acde0c8de2d7e1adb78b5a0f0e1c326fab8e4828d",
+    "contract.json": "85b9c69d601329b1aaf30f3944ddcbed007e3f583ed98e8d032b9607f7f9b6a3",
+    "decision.json": "c173519cdf5569a597b2be9fcfe8b33b8901aadbeb2ac5eea9d763416266d32a",
+    "evaluator-compatibility.json": "1d06bd00c8c3500103b5abe10569681de5dba894863ff3f17a06e51eb7dadc7c",
+    "manifest.json": "9efb6f7409f35bcf01dc195c9b5fae329076d1c40ed96c3752f857d1cfd7aa96",
+    "pilot-extractions.json": "912d0da25fb83dbf6d7deb611f7177c49cefefd30f4a554cd731f3861db30525",
+    "public-intelligence-comparison.json": "16ea3cf06f2fcf6f3325719b8fe1457e3d283de76b8ae891d796c92ddfae5b84",
+    "validation-cases.json": "3d6e3719b94d2005124face69c42a248037157834b23d97666cbb9b9006796e4"
+  },
+  "bundle_sha256": "deb600f65f722d0fe7910972c4ae83817a2fc1616b75f98cf064ce0909279fb6",
+  "contract_version": "approved-plan-golden-corpus-v0-2026-10-01-p41"
+}

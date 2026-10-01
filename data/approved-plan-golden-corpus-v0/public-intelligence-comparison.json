@@ -1,0 +1,64 @@
+{
+  "apn": "5442140600",
+  "comparison_scope": "Repository-local public-intelligence artifacts only; no production access",
+  "contract_version": "approved-plan-golden-corpus-v0-2026-10-01-p41",
+  "dimensions": [
+    {
+      "classification": "PUBLIC_SOURCE_INCOMPLETE",
+      "dimension": "parcel identity",
+      "plan_state": "Address/APN directly labeled",
+      "public_state": "No repository fixture for APN",
+      "truth_action": "Do not overwrite public identity; queue independent reconciliation"
+    },
+    {
+      "classification": "PLAN_ADDS_PROJECT_SPECIFIC_FACT",
+      "dimension": "zoning",
+      "plan_state": "RM-2-5 labeled",
+      "public_state": "No repository comparator",
+      "truth_action": "Keep as plan-provided until authoritative zoning lookup"
+    },
+    {
+      "classification": "UNRESOLVED",
+      "dimension": "Coastal state",
+      "plan_state": "No bounded Coastal determination",
+      "public_state": "No repository comparator",
+      "truth_action": "Remain unknown"
+    },
+    {
+      "classification": "PLAN_ADDS_PROJECT_SPECIFIC_FACT",
+      "dimension": "legal-lot evidence",
+      "plan_state": "Lot 4 Block 7 Encanto Heights Map 1063",
+      "public_state": "No repository comparator",
+      "truth_action": "Treat as plan evidence pending recorded-map reconciliation"
+    },
+    {
+      "classification": "PLAN_ADDS_PROJECT_SPECIFIC_FACT",
+      "dimension": "lot dimensions",
+      "plan_state": "Survey/site-plan dimensions present with calculated-boundary disclaimer",
+      "public_state": "No repository comparator",
+      "truth_action": "Use for project validation with disclaimer; do not promote to legal-lot truth"
+    },
+    {
+      "classification": "SEMANTIC_MISMATCH",
+      "dimension": "setback rule requirements",
+      "plan_state": "Plan notes/dimensions concern RM-2-5/ADU project",
+      "public_state": "Existing sealed evaluators cover RS-1-7 APN 6341302200",
+      "truth_action": "Require independent RM-2-5 rule contract before compliance"
+    },
+    {
+      "classification": "PLAN_ADDS_PROJECT_SPECIFIC_FACT",
+      "dimension": "structure facts",
+      "plan_state": "Proposed project geometry, areas, height, units",
+      "public_state": "No repository comparator",
+      "truth_action": "Keep proposed facts separate from existing parcel facts"
+    },
+    {
+      "classification": "UNRESOLVED",
+      "dimension": "feasibility summary",
+      "plan_state": "No overall compliance or capacity conclusion",
+      "public_state": "No corpus-parcel summary",
+      "truth_action": "Do not compose until rules and gates are independently sealed"
+    }
+  ],
+  "repository_public_record_found": false
+}
