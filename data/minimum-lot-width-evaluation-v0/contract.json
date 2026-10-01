@@ -1,0 +1,38 @@
+{
+  "containment": {
+    "capacity": false,
+    "citywide": false,
+    "far": false,
+    "frontage": false,
+    "overall_compliance": false,
+    "production_wired": false,
+    "setbacks": false
+  },
+  "contract_version": "minimum-lot-width-evaluation-v0-2026-09-30-p29",
+  "forbidden_conclusions": [
+    "OVERALL_ZONING_COMPLIANCE",
+    "DEVELOPMENT_CAPACITY",
+    "MAXIMUM_UNITS",
+    "FRONTAGE_COMPLIANCE",
+    "SETBACK_COMPLIANCE",
+    "FAR_COMPLIANCE",
+    "SUBDIVISION_ELIGIBILITY",
+    "PERMIT_LIKELIHOOD",
+    "BUILDABILITY",
+    "ENTITLEMENT"
+  ],
+  "required_expression": "code_defined_lot_width_ft >= applicable_minimum_width_ft",
+  "scope": {
+    "apns": [
+      "6341302200"
+    ],
+    "rule_families": [
+      "minimum_lot_width"
+    ]
+  },
+  "states": [
+    "RULE_REQUIREMENT_SATISFIED",
+    "RULE_REQUIREMENT_NOT_SATISFIED",
+    "RULE_EVALUATION_UNRESOLVED"
+  ]
+}

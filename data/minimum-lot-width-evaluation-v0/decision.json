@@ -1,0 +1,8 @@
+{
+  "contract_version": "minimum-lot-width-evaluation-v0-2026-09-30-p29",
+  "decision": "MINIMUM_LOT_WIDTH_RULE_EVALUATION_READY",
+  "development_capacity_calculated": false,
+  "next_rule_evaluation_target": "frontage",
+  "overall_compliance_conclusion": false,
+  "result": "RULE_REQUIREMENT_SATISFIED"
+}

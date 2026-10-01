@@ -1,0 +1,11 @@
+{
+  "artifacts": {
+    "contract.json": "f03236e4fdb808e4a6713bac6d5b2735d27d113a12b2227cd903bc4f26dcb297",
+    "decision.json": "58909077d38aeb49237d049ee59ba724175aeb65a349338d542b912ce57b7bbf",
+    "evaluation.json": "1f84b584a6fcba296905496b40ba02f953f5fcf67af45b0f104385636390d24a",
+    "product-example.json": "6f6e80a94d4cc28bfca1e1e90b12bf95a7ce31fcd019be50dce3aeffa683b129",
+    "provenance.json": "1130c2b43145b65ca4e5180007d6db54b298c73d015d4f9748fb3378349f3ed9"
+  },
+  "bundle_sha256": "867c6f1bec78d30f4d3161a33a4bbe3c466755ed7edb28eb7ccc73b4b4d3e2be",
+  "contract_version": "minimum-lot-width-evaluation-v0-2026-09-30-p29"
+}
