@@ -1,0 +1,11 @@
+{
+  "contract_version": "minimum-lot-area-evaluation-v0-2026-09-30-p27",
+  "heading": "Minimum lot area",
+  "qualifier": "This evaluates only the minimum-lot-area rule. It does not establish overall zoning compliance, development capacity, subdivision rights, or project approval.",
+  "required": "5,000 sq ft",
+  "result": "Requirement satisfied",
+  "scope": "Minimum-lot-area rule only",
+  "source": "PM 17383 Parcel 1; DOC # 2001-0706032; SDMC \u00a7\u00a7113.0246 and 131.0431(a), Table 131-04D",
+  "supported_parcel_area_used_for_rule": "22,096.32 sq ft",
+  "ui_wired": false
+}

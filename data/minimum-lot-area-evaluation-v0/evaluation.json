@@ -1,0 +1,146 @@
+{
+  "apn": "6341302200",
+  "area_denominator": {
+    "assessor_area": {
+      "classification": "COMPARISON_ONLY",
+      "unit": "sq_ft",
+      "value": 22215
+    },
+    "code_lot_area_used": {
+      "derivation_class": "DETERMINISTIC_DERIVED_FROM_RECORDED_MAP",
+      "unit": "sq_ft",
+      "value": "22096.320"
+    },
+    "code_source": {
+      "doctrine": "For development regulations, property lines separate a lot or premises from public right-of-way regardless of ownership extending into it. The pre-dedication exception is expressly limited to maximum permitted density and maximum permitted gross floor area.",
+      "page": 26,
+      "page_text_sha256": "cbc4171f054923f3d1393803c249f9b4b8b249922ef20bebe480ddd0e9fb0cfc",
+      "section": "SDMC \u00a7113.0246",
+      "source_sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+      "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf",
+      "title": "Determining Property Lines"
+    },
+    "parcel_v2_geometry_area": {
+      "classification": "DIAGNOSTIC_ONLY",
+      "unit": "sq_ft",
+      "value": 21841.412194
+    },
+    "pre_dedication_exception_scope": "MAXIMUM_PERMITTED_DENSITY_AND_MAXIMUM_PERMITTED_GROSS_FLOOR_AREA_ONLY",
+    "public_right_of_way_area": {
+      "derivation": "30 ft \u00d7 94 ft from PM 17383",
+      "unit": "sq_ft",
+      "value": "2820"
+    },
+    "recorded_parcel_map_area": {
+      "square_feet": "24916.320",
+      "unit": "acre",
+      "value": "0.572"
+    },
+    "state": "RESOLVED_EXCLUDE_PUBLIC_RIGHT_OF_WAY"
+  },
+  "bounded_conclusion": "The supported Code-defined lot area satisfies the RS-1-7 minimum lot area standard.",
+  "comparison": {
+    "expression": "code_lot_area_sqft >= minimum_lot_area_sqft",
+    "left": "22096.320",
+    "operator": ">=",
+    "right": "5000.0",
+    "unit": "sq_ft"
+  },
+  "contract_version": "minimum-lot-area-evaluation-v0-2026-09-30-p27",
+  "development_capacity_calculated": false,
+  "evaluation_scope": "MINIMUM_LOT_AREA_ONLY",
+  "fingerprint_sha256": "2352256707a36c95d8b1182bae9fd8438838047558d74a686d9e9677282da70b",
+  "forbidden_conclusions": [
+    "OVERALL_ZONING_COMPLIANCE",
+    "DEVELOPMENT_CAPACITY",
+    "MAXIMUM_UNITS",
+    "FAR_READINESS",
+    "SETBACK_READINESS",
+    "SUBDIVISION_ELIGIBILITY",
+    "PERMIT_LIKELIHOOD",
+    "BUILDABILITY",
+    "ENTITLEMENT"
+  ],
+  "gates": {
+    "apn": true,
+    "coastal": true,
+    "denominator": true,
+    "legal_area": true,
+    "legal_lot": true,
+    "legal_match": true,
+    "parcel_identity": true,
+    "rule_family": true,
+    "rule_state": true,
+    "single_zone": true,
+    "standards": true,
+    "zone": true
+  },
+  "legal_lot": {
+    "deed_artifact_sha256": "1b778cb6a06dc60e75dd1184d22681f672e453f16002e5fb0214cfc9406131fd",
+    "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+    "recorded_area": {
+      "unit": "acre",
+      "value": 0.572
+    },
+    "recorded_area_artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+    "recorded_deed": "DOC # 2001-0706032",
+    "recorded_entity": "PM 17383 PARCEL 1",
+    "state": "LEGAL_LOT_ESTABLISHED",
+    "superseded_secondary_description": "PM17383 PAR 2"
+  },
+  "mandatory_qualifier": "This evaluates only the minimum-lot-area rule. It does not establish overall zoning compliance, development capacity, subdivision rights, or project approval.",
+  "normalization": {
+    "conversion": "1 acre = 43,560 sq ft",
+    "gross_result_sqft": "24916.320",
+    "original": {
+      "unit": "acre",
+      "value": "0.572"
+    },
+    "rounding": "No rounding; Decimal arithmetic preserves the recorded three-decimal acre value exactly."
+  },
+  "other_rule_families_evaluated": [],
+  "parcel_compliance_evaluated": false,
+  "parcel_identity": {
+    "parcel_geometry_sha256": "3cda3f101571d027e172d7eb281041711dbb63680b6fc3fee21bbaa31ef5b5ff",
+    "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+    "situs_address": "1456 27TH ST"
+  },
+  "rule": {
+    "condition": [],
+    "derivation_class": "SOURCE_TRANSCRIPTION",
+    "effective_date_basis": "Current composite selected by versions.json; each provision retains its own section history.",
+    "effective_from": null,
+    "effective_to": null,
+    "exceptions": [],
+    "fact_state": "RECORDED",
+    "jurisdiction_variant": "OUTSIDE_COASTAL",
+    "numeric_value": 5000,
+    "operator": "MIN",
+    "provenance_sha256": "201025d9ec1bed5f7129c1cbce0ef79011ab57ecb295337fab7d3a2de0d48efd",
+    "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:5",
+    "rule_set_version": "sd-rs-base-standards-2026-09-30-v0",
+    "source_edition": "9-2026",
+    "source_page": 33,
+    "source_section": "131.0431(a)",
+    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "source_table": "131-04D",
+    "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+    "standard_key": "lot_area_min",
+    "unit": "sq_ft",
+    "unresolved_dependencies": [
+      "131.0431"
+    ],
+    "value": "5000"
+  },
+  "rule_family": "minimum_lot_area",
+  "state": "RULE_REQUIREMENT_SATISFIED",
+  "zoning": {
+    "coastal_fingerprint_sha256": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334",
+    "coastal_state": "OUTSIDE_COASTAL",
+    "mapping_row_sha256": "56ff295bb34046b281d3eb35de7829e687b6b66c2beda6a5c5cf3568c9e1e8d3",
+    "mapping_state": "SINGLE_ZONE",
+    "standards_fingerprint_sha256": "4e38994c7243dc446bc7a07fba568fa1deaf5dbc521abc1296e22ba4fc10d77d",
+    "standards_version": "sd-rs-base-standards-2026-09-30-v0",
+    "zone_code": "RS-1-7"
+  }
+}

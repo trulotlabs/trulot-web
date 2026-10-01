@@ -1,0 +1,55 @@
+{
+  "chain": [
+    {
+      "apn": "6341302200",
+      "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+      "hop": "APN_TO_PARCEL_V2"
+    },
+    {
+      "artifact_sha256": "1b778cb6a06dc60e75dd1184d22681f672e453f16002e5fb0214cfc9406131fd",
+      "document": "DOC # 2001-0706032",
+      "hop": "PARCEL_V2_TO_RECORDED_DEED"
+    },
+    {
+      "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+      "entity": "PM 17383 Parcel 1",
+      "hop": "DEED_TO_RECORDED_MAP"
+    },
+    {
+      "fingerprint_sha256": "45d578f06b0a17bc342c1d6504ca0db285db25bfa251cc22988d9f1ead97d3b5",
+      "hop": "RECORDED_MAP_TO_LEGAL_LOT",
+      "state": "LEGAL_LOT_ESTABLISHED"
+    },
+    {
+      "hop": "LEGAL_AREA_TO_CODE_DENOMINATOR",
+      "page_text_sha256": "cbc4171f054923f3d1393803c249f9b4b8b249922ef20bebe480ddd0e9fb0cfc",
+      "section": "113.0246"
+    },
+    {
+      "hop": "PARCEL_TO_BASE_ZONING",
+      "mapping_row_sha256": "56ff295bb34046b281d3eb35de7829e687b6b66c2beda6a5c5cf3568c9e1e8d3",
+      "zone": "RS-1-7"
+    },
+    {
+      "fingerprint_sha256": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334",
+      "hop": "PARCEL_TO_COASTAL_CONTEXT",
+      "state": "OUTSIDE_COASTAL"
+    },
+    {
+      "fingerprint_sha256": "4e38994c7243dc446bc7a07fba568fa1deaf5dbc521abc1296e22ba4fc10d77d",
+      "hop": "CONTEXT_TO_STANDARDS_VERSION",
+      "version": "sd-rs-base-standards-2026-09-30-v0"
+    },
+    {
+      "hop": "STANDARDS_TO_RULE",
+      "provenance_sha256": "201025d9ec1bed5f7129c1cbce0ef79011ab57ecb295337fab7d3a2de0d48efd",
+      "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:5"
+    },
+    {
+      "evaluation_fingerprint_sha256": "2352256707a36c95d8b1182bae9fd8438838047558d74a686d9e9677282da70b",
+      "expression": "code_lot_area_sqft >= minimum_lot_area_sqft",
+      "hop": "RULE_TO_COMPARISON"
+    }
+  ],
+  "contract_version": "minimum-lot-area-evaluation-v0-2026-09-30-p27"
+}

@@ -1,0 +1,11 @@
+{
+  "artifacts": {
+    "contract.json": "78fbf0fc249f54afa5b52c3fe32071e91609234cb77f460a9c2e683ec764a36c",
+    "decision.json": "0b8d6e94b5b51637eb016aed0861486c0da6e3647ff018dbd334dd539f0b3694",
+    "evaluation.json": "0bd3281d6605b85dc7f9959386c30ec0ca7d07d7385fa71a9c8b967b8b424054",
+    "product-example.json": "35528d9ff7f2a646414128db1c3741a0ca35ae3d1f2099f133ee108f201af82c",
+    "provenance.json": "d2c0425d5bcaa7c956af22e74d32c505b78e121ab3eae4257c5f97a3bb18e437"
+  },
+  "bundle_sha256": "c5595b293b329111e65a87f99f4d6b7ff827885da50436463004729d9a6cdede",
+  "contract_version": "minimum-lot-area-evaluation-v0-2026-09-30-p27"
+}

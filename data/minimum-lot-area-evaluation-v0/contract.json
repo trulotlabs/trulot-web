@@ -1,0 +1,35 @@
+{
+  "containment": {
+    "capacity": false,
+    "citywide": false,
+    "other_rules": false,
+    "overall_compliance": false,
+    "production_wired": false
+  },
+  "contract_version": "minimum-lot-area-evaluation-v0-2026-09-30-p27",
+  "forbidden_conclusions": [
+    "OVERALL_ZONING_COMPLIANCE",
+    "DEVELOPMENT_CAPACITY",
+    "MAXIMUM_UNITS",
+    "FAR_READINESS",
+    "SETBACK_READINESS",
+    "SUBDIVISION_ELIGIBILITY",
+    "PERMIT_LIKELIHOOD",
+    "BUILDABILITY",
+    "ENTITLEMENT"
+  ],
+  "required_expression": "legal_code_lot_area_sqft >= applicable_minimum_lot_area_sqft",
+  "scope": {
+    "apns": [
+      "6341302200"
+    ],
+    "rule_families": [
+      "minimum_lot_area"
+    ]
+  },
+  "states": [
+    "RULE_REQUIREMENT_SATISFIED",
+    "RULE_REQUIREMENT_NOT_SATISFIED",
+    "RULE_EVALUATION_UNRESOLVED"
+  ]
+}
