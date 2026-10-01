@@ -1,0 +1,73 @@
+{
+  "contract_version": "development-feasibility-v0-2026-09-30",
+  "priorities": [
+    {
+      "rank": 1,
+      "reason": "Largest legal-semantic bottleneck and prerequisite for the first defensible mechanical base-rule comparison.",
+      "target": "recorded parcel maps and legal lot records",
+      "unlocks": [
+        "legal lot area",
+        "legal width",
+        "legal depth",
+        "frontage",
+        "lot-line roles",
+        "setback foundations",
+        "FAR denominator",
+        "coverage denominator"
+      ]
+    },
+    {
+      "rank": 2,
+      "reason": "Resolves street relationships that parcel geometry and situs addresses cannot establish.",
+      "target": "street/right-of-way and legal frontage evidence",
+      "unlocks": [
+        "frontage",
+        "front lot line",
+        "street-side lot line",
+        "setback orientation"
+      ]
+    },
+    {
+      "rank": 3,
+      "reason": "Replaces the prohibited 2017 historical-footprint substitute.",
+      "target": "current structure footprints",
+      "unlocks": [
+        "lot coverage",
+        "setback distance geometry",
+        "structure-presence evidence"
+      ]
+    },
+    {
+      "rank": 4,
+      "reason": "Required for FAR; assessor living area is not interchangeable.",
+      "target": "Code-defined gross floor area",
+      "unlocks": [
+        "FAR numerator"
+      ]
+    },
+    {
+      "rank": 5,
+      "reason": "Resolves several conditional source branches after legal lot geometry exists.",
+      "target": "authoritative topography and slope",
+      "unlocks": [
+        "front setback condition",
+        "height/FAR/coverage hillside branches"
+      ]
+    },
+    {
+      "rank": 6,
+      "reason": "Necessary for final setback selection where the source permits a greater buffer.",
+      "target": "fire/defensible-space applicability",
+      "unlocks": [
+        "outside-Coastal setback conditions"
+      ]
+    }
+  ],
+  "ranking_basis": [
+    "rule families unlocked",
+    "legal-semantic importance",
+    "acquisition feasibility",
+    "reproducibility"
+  ],
+  "selected_next_target": "recorded parcel maps and legal lot records"
+}

@@ -1,0 +1,337 @@
+{
+  "allowed_conclusions": [
+    "PARCEL_IN_SUPPORTED_V0_SCOPE",
+    "APPLICABLE_RS_STANDARDS_VERSION_SELECTED",
+    "BASE_RULE_SOURCE_AVAILABLE",
+    "REQUIRED_EVIDENCE_INCOMPLETE",
+    "RULE_EVALUATION_BLOCKED_BY_NAMED_EVIDENCE",
+    "MECHANICAL_COMPARISON_POSSIBLE_LEGAL_SEMANTICS_UNRESOLVED",
+    "REQUIRED_SOURCE_UNAVAILABLE",
+    "BASE_DENSITY_TABLE_STATES_ONE_DWELLING_UNIT_PER_LOT",
+    "POSITIVE_ASSESSOR_UNIT_COUNT_RECORDED"
+  ],
+  "contract_version": "development-feasibility-v0-2026-09-30",
+  "current_legal_lot_area_state": "LEGAL_LOT_AREA_NOT_YET_ESTABLISHED",
+  "density_basis_doctrine": {
+    "allowed_statement": "The applicable RS base table states a basis of 1 dwelling unit per lot.",
+    "does_not_mean": [
+      "maximum legal units",
+      "development capacity",
+      "ADU-inclusive capacity",
+      "SB 9 capacity",
+      "density-bonus capacity"
+    ]
+  },
+  "existing_unit_doctrine": {
+    "does_not_establish": [
+      "permit status",
+      "lawful occupancy",
+      "development rights",
+      "future capacity"
+    ],
+    "positive_UNITQTY": "Recorded assessor parcel-level count of units currently constructed; usable only with source semantics and provenance.",
+    "zero_UNITQTY": "UNKNOWN; not evidence of vacancy or zero structures."
+  },
+  "far_evaluation_contract": {
+    "current_numerator_state": "FAR_NUMERATOR_NOT_YET_AVAILABLE",
+    "prohibited_substitute": "assessor living area",
+    "requires": [
+      "applicable FAR rule",
+      "legal lot-area denominator",
+      "Code-defined gross-floor-area numerator",
+      "hillside/condition predicates"
+    ]
+  },
+  "height_evaluation_contract": {
+    "prohibited": [
+      "infer height from stories",
+      "infer height from footprint"
+    ],
+    "requires": [
+      "applicable height rule",
+      "resolved source branch/condition",
+      "current or proposed structure height",
+      "Code-appropriate reference datum",
+      "angled-envelope context and geometry"
+    ]
+  },
+  "legal_evidence_doctrine": {
+    "front_lot_line": {
+      "acceptable": [
+        "authoritative_subdivision_map",
+        "authoritative_parcel_map",
+        "licensed_survey",
+        "authoritative_legal_dimension_source"
+      ],
+      "prohibited_substitutes": [
+        "situs_address",
+        "cardinal_direction",
+        "nearest_street",
+        "parcel_geometry_orientation"
+      ]
+    },
+    "interior_side_lot_lines": {
+      "acceptable": [
+        "authoritative_subdivision_map",
+        "authoritative_parcel_map",
+        "licensed_survey",
+        "authoritative_legal_dimension_source"
+      ],
+      "prohibited_substitutes": [
+        "situs_address",
+        "cardinal_direction",
+        "nearest_street",
+        "parcel_geometry_orientation"
+      ]
+    },
+    "legal_lot_area_sqft": {
+      "acceptable": [
+        "authoritative_legal_dimension_source",
+        "authoritative_parcel_map",
+        "authoritative_subdivision_map",
+        "licensed_survey",
+        "recorded_legal_lot_record"
+      ],
+      "prohibited_substitutes": [
+        "approximate_geometry_area_sqft",
+        "taxable_acreage"
+      ]
+    },
+    "legal_lot_depth_ft": {
+      "acceptable": [
+        "authoritative_legal_dimension_source",
+        "authoritative_parcel_map",
+        "authoritative_subdivision_map",
+        "licensed_survey",
+        "recorded_legal_lot_record"
+      ],
+      "prohibited_substitutes": [
+        "geometry_minimum_rotated_rectangle_span",
+        "diagnostic_depth_span"
+      ]
+    },
+    "legal_lot_width_ft": {
+      "acceptable": [
+        "authoritative_legal_dimension_source",
+        "authoritative_parcel_map",
+        "authoritative_subdivision_map",
+        "licensed_survey",
+        "recorded_legal_lot_record"
+      ],
+      "prohibited_substitutes": [
+        "geometry_minimum_rotated_rectangle_span",
+        "diagnostic_width_span"
+      ]
+    },
+    "legal_street_frontage_length_ft": {
+      "acceptable": [
+        "recorded_legal_lot_record",
+        "authoritative_subdivision_map",
+        "authoritative_parcel_map",
+        "licensed_survey",
+        "authoritative_right_of_way_frontage_record"
+      ],
+      "prohibited_substitutes": [
+        "situs_address",
+        "spatial_street_adjacency",
+        "diagnostic_boundary_length"
+      ]
+    },
+    "lot_line_roles": {
+      "acceptable": [
+        "authoritative_subdivision_map",
+        "authoritative_parcel_map",
+        "licensed_survey",
+        "authoritative_legal_dimension_source"
+      ],
+      "prohibited_substitutes": [
+        "situs_address",
+        "cardinal_direction",
+        "nearest_street",
+        "parcel_geometry_orientation"
+      ]
+    },
+    "rear_lot_line": {
+      "acceptable": [
+        "authoritative_subdivision_map",
+        "authoritative_parcel_map",
+        "licensed_survey",
+        "authoritative_legal_dimension_source"
+      ],
+      "prohibited_substitutes": [
+        "situs_address",
+        "cardinal_direction",
+        "nearest_street",
+        "parcel_geometry_orientation"
+      ]
+    },
+    "street_side_lot_lines": {
+      "acceptable": [
+        "authoritative_subdivision_map",
+        "authoritative_parcel_map",
+        "licensed_survey",
+        "authoritative_legal_dimension_source"
+      ],
+      "prohibited_substitutes": [
+        "situs_address",
+        "cardinal_direction",
+        "nearest_street",
+        "parcel_geometry_orientation"
+      ]
+    }
+  },
+  "lot_coverage_evaluation_contract": {
+    "prohibited_substitute": "historical 2017 footprint geometry",
+    "requires": [
+      "applicable coverage rule",
+      "legal premises/lot-area denominator",
+      "current structure footprint",
+      "hillside/condition predicates"
+    ]
+  },
+  "mission": "Determine whether supported evidence is sufficient for bounded RS base-rule evaluation; never calculate compliance or development capacity.",
+  "prohibited_conclusions": [
+    "MAXIMUM_LEGAL_UNITS",
+    "BUILDABLE_AREA",
+    "PARCEL_COMPLIES",
+    "LOT_IS_BUILDABLE",
+    "VARIANCE_REQUIRED",
+    "ENTITLEMENT_CERTAINTY",
+    "PERMIT_APPROVAL_PREDICTION",
+    "PROPERTY_VALUE_OR_PROJECT_ECONOMICS",
+    "ADU_JADU_ELIGIBILITY",
+    "SB9_ELIGIBILITY",
+    "SB79_ELIGIBILITY",
+    "DENSITY_BONUS_OR_COMPLETE_COMMUNITIES_CAPACITY"
+  ],
+  "project_fact_boundary": {
+    "future_project_facts": [
+      "proposed use",
+      "proposed units",
+      "proposed floor area",
+      "proposed footprint",
+      "proposed height",
+      "demolition/retention scope",
+      "accessory structure scope"
+    ],
+    "parcel_facts": [
+      "legal lot evidence",
+      "lot-line roles",
+      "frontage",
+      "topography/fire predicates",
+      "current structure evidence"
+    ],
+    "rule": "Project facts are required only when a requested rule comparison inherently depends on a proposal."
+  },
+  "public_product_bridge": {
+    "blocked_behavior": "State that feasibility remains blocked; never imply a completed feasibility result.",
+    "cta": "See what's needed to evaluate this property",
+    "may_show": [
+      "what TruLot already knows",
+      "missing evidence",
+      "what rule could be evaluated next"
+    ]
+  },
+  "questions": [
+    "SCOPE_ELIGIBILITY",
+    "RULE_AVAILABILITY",
+    "EVIDENCE_COMPLETENESS",
+    "RULE_EVALUATION_READINESS",
+    "DEVELOPMENT_FEASIBILITY_READINESS"
+  ],
+  "rule_states": [
+    "RULE_READY_FOR_EVALUATION",
+    "RULE_AVAILABLE_FOR_BOUNDED_STATEMENT",
+    "RULE_BLOCKED_BY_MISSING_EVIDENCE",
+    "RULE_NEEDS_PROJECT_FACTS",
+    "RULE_SOURCE_UNAVAILABLE",
+    "RULE_OUTSIDE_V0_SCOPE"
+  ],
+  "scope": {
+    "analysis": "base-zone feasibility readiness only",
+    "coastal_states": [
+      "OUTSIDE_COASTAL",
+      "INSIDE_COASTAL"
+    ],
+    "excluded": [
+      "split/ambiguous/unmapped zoning",
+      "unresolved Coastal boundary",
+      "non-RS zones",
+      "ADU/JADU",
+      "SB 9",
+      "SB 79",
+      "Density Bonus",
+      "Complete Communities",
+      "parking programs",
+      "discretionary entitlement findings",
+      "variances",
+      "environmentally sensitive lands",
+      "historical-resource analysis",
+      "permit-processing conclusions",
+      "project economics"
+    ],
+    "identity_contract": "Parcel V2",
+    "jurisdiction": "City of San Diego",
+    "mapping_state": "SINGLE_ZONE",
+    "zones": [
+      "RS-1-1",
+      "RS-1-2",
+      "RS-1-3",
+      "RS-1-4",
+      "RS-1-5",
+      "RS-1-6",
+      "RS-1-7",
+      "RS-1-8",
+      "RS-1-9",
+      "RS-1-10",
+      "RS-1-11",
+      "RS-1-12",
+      "RS-1-13",
+      "RS-1-14"
+    ]
+  },
+  "setback_evaluation_contract": {
+    "distinct_states": [
+      "RULE_KNOWN",
+      "PARCEL_SPECIFIC_REQUIREMENT_UNRESOLVED",
+      "ACTUAL_STRUCTURE_COMPLIANCE_UNEVALUATED"
+    ],
+    "requires": [
+      "applicable standard/version",
+      "legally designated lot-line roles",
+      "legal dimensions where the source condition requires them",
+      "current or proposed structure geometry",
+      "applicable source conditions",
+      "slope/fire/other predicates"
+    ]
+  },
+  "summary_result_fields": [
+    "parcel_identity",
+    "scope_state",
+    "standards_version",
+    "rule_family_readiness",
+    "supported_parcel_facts",
+    "missing_evidence",
+    "project_facts_required",
+    "allowed_conclusions",
+    "prohibited_conclusions",
+    "next_evidence_target",
+    "provenance"
+  ],
+  "top_level_states": [
+    "FEASIBILITY_READY_FOR_RULE_EVALUATION",
+    "FEASIBILITY_BLOCKED_BY_MISSING_EVIDENCE",
+    "FEASIBILITY_OUTSIDE_V0_SCOPE",
+    "FEASIBILITY_SOURCE_UNAVAILABLE",
+    "FEASIBILITY_MAPPING_UNRESOLVED"
+  ],
+  "truth_doctrine": [
+    "Approximate parcel geometry area and taxable acreage are not legal lot area.",
+    "Diagnostic spans are not legal width, depth, frontage, or lot-line roles.",
+    "Assessor living area is not Code-defined gross floor area.",
+    "Historical 2017 footprints are not current structure footprints.",
+    "Source zero is unknown, not actual zero or false.",
+    "Rule availability does not establish parcel compliance.",
+    "No numeric confidence score is permitted."
+  ]
+}

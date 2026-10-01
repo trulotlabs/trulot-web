@@ -1,0 +1,185 @@
+{
+  "contract_version": "development-feasibility-v0-2026-09-30",
+  "rows": [
+    {
+      "blocking_evidence": "Legal lot area from a recorded/legal source; approximate geometry and taxable acreage refused.",
+      "current_state": "RULE_BLOCKED_BY_MISSING_EVIDENCE",
+      "evaluation_path": "possible with additional authoritative evidence",
+      "required_parcel_facts": [
+        "legal_lot_area_sqft"
+      ],
+      "required_project_facts": [],
+      "rule_family": "minimum_lot_area",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "lot_area_min"
+    },
+    {
+      "blocking_evidence": "Code-defined legal width from authoritative legal-lot evidence; geometry spans refused.",
+      "current_state": "RULE_BLOCKED_BY_MISSING_EVIDENCE",
+      "evaluation_path": "possible with additional authoritative evidence",
+      "required_parcel_facts": [
+        "legal_lot_width_ft"
+      ],
+      "required_project_facts": [],
+      "rule_family": "minimum_lot_width",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "lot_width_min"
+    },
+    {
+      "blocking_evidence": "Code-defined legal depth from authoritative legal-lot evidence; geometry spans refused.",
+      "current_state": "RULE_BLOCKED_BY_MISSING_EVIDENCE",
+      "evaluation_path": "possible with additional authoritative evidence",
+      "required_parcel_facts": [
+        "legal_lot_depth_ft"
+      ],
+      "required_project_facts": [],
+      "rule_family": "minimum_lot_depth",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "lot_depth_min"
+    },
+    {
+      "blocking_evidence": "Legal frontage plus designated front lot line and right-of-way relationship.",
+      "current_state": "RULE_BLOCKED_BY_MISSING_EVIDENCE",
+      "evaluation_path": "possible with additional authoritative evidence",
+      "required_parcel_facts": [
+        "legal_street_frontage_length_ft",
+        "front_lot_line"
+      ],
+      "required_project_facts": [],
+      "rule_family": "frontage",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "street_frontage_min"
+    },
+    {
+      "blocking_evidence": "Front lot line, structure geometry, slope branch, fire buffer, and all source predicates.",
+      "current_state": "RULE_BLOCKED_BY_MISSING_EVIDENCE",
+      "evaluation_path": "possible with additional authoritative evidence",
+      "required_parcel_facts": [
+        "front_lot_line",
+        "slope_percent",
+        "fire_buffer_applicability"
+      ],
+      "required_project_facts": [
+        "structure_geometry"
+      ],
+      "rule_family": "front_setback",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "front_setback_min"
+    },
+    {
+      "blocking_evidence": "Interior-side lot lines, structure geometry, fire buffer, and all source predicates.",
+      "current_state": "RULE_BLOCKED_BY_MISSING_EVIDENCE",
+      "evaluation_path": "possible with additional authoritative evidence",
+      "required_parcel_facts": [
+        "interior_side_lot_lines",
+        "fire_buffer_applicability"
+      ],
+      "required_project_facts": [
+        "structure_geometry"
+      ],
+      "rule_family": "interior_side_setback",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "interior_side_setback_min"
+    },
+    {
+      "blocking_evidence": "Corner-lot status, street-side line, structure geometry, fire buffer, and source predicates.",
+      "current_state": "RULE_BLOCKED_BY_MISSING_EVIDENCE",
+      "evaluation_path": "possible with additional authoritative evidence",
+      "required_parcel_facts": [
+        "corner_lot_status",
+        "street_side_lot_lines",
+        "fire_buffer_applicability"
+      ],
+      "required_project_facts": [
+        "structure_geometry"
+      ],
+      "rule_family": "street_side_setback",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "street_side_setback_min"
+    },
+    {
+      "blocking_evidence": "Rear line, structure geometry, fire buffer, and all source predicates.",
+      "current_state": "RULE_BLOCKED_BY_MISSING_EVIDENCE",
+      "evaluation_path": "possible with additional authoritative evidence",
+      "required_parcel_facts": [
+        "rear_lot_line",
+        "fire_buffer_applicability"
+      ],
+      "required_project_facts": [
+        "structure_geometry"
+      ],
+      "rule_family": "rear_setback",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "rear_setback_min"
+    },
+    {
+      "blocking_evidence": "Reference datum, source branch, angled-envelope context, and measured/proposed structure height.",
+      "current_state": "RULE_BLOCKED_BY_MISSING_EVIDENCE",
+      "evaluation_path": "possible with additional authoritative evidence",
+      "required_parcel_facts": [
+        "height_reference_datum",
+        "angled_envelope_context"
+      ],
+      "required_project_facts": [
+        "structure_height_ft",
+        "structure_geometry"
+      ],
+      "rule_family": "height",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "structure_height_max"
+    },
+    {
+      "blocking_evidence": "Legal lot-area denominator, Code-defined GFA numerator, and hillside predicates.",
+      "current_state": "RULE_BLOCKED_BY_MISSING_EVIDENCE",
+      "evaluation_path": "possible with additional authoritative evidence",
+      "required_parcel_facts": [
+        "legal_lot_area_sqft",
+        "hillside_applicability"
+      ],
+      "required_project_facts": [
+        "code_gross_floor_area_sqft"
+      ],
+      "rule_family": "far",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "floor_area_ratio_max"
+    },
+    {
+      "blocking_evidence": "Legal lot-area denominator, current/proposed footprint, and hillside predicates.",
+      "current_state": "RULE_BLOCKED_BY_MISSING_EVIDENCE",
+      "evaluation_path": "possible with additional authoritative evidence",
+      "required_parcel_facts": [
+        "legal_lot_area_sqft",
+        "current_structure_footprint",
+        "hillside_applicability"
+      ],
+      "required_project_facts": [
+        "proposed_footprint_sqft"
+      ],
+      "rule_family": "lot_coverage",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "lot_coverage_max"
+    },
+    {
+      "blocking_evidence": "Source table supports only the bounded one-dwelling-unit-per-lot basis statement.",
+      "current_state": "RULE_AVAILABLE_FOR_BOUNDED_STATEMENT",
+      "evaluation_path": "possible now as a bounded source statement",
+      "required_parcel_facts": [],
+      "required_project_facts": [],
+      "rule_family": "density_basis",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "density_basis"
+    },
+    {
+      "blocking_evidence": "Positive assessor UNITQTY is a recorded parcel fact; zero remains unknown and legality is not established.",
+      "current_state": "RULE_AVAILABLE_FOR_BOUNDED_STATEMENT",
+      "evaluation_path": "possible now as a bounded source statement",
+      "required_parcel_facts": [
+        "assessor_dwelling_unit_count"
+      ],
+      "required_project_facts": [],
+      "rule_family": "existing_unit_conditions",
+      "rule_source_available_in_supported_rs_contract": true,
+      "rule_source_key": "density_basis"
+    }
+  ]
+}

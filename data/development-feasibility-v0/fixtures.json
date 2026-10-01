@@ -1,0 +1,237 @@
+{
+  "contract_version": "development-feasibility-v0-2026-09-30",
+  "fixture_count": 10,
+  "fixtures": [
+    {
+      "description": "In-scope RS parcel with legal lot dimensions unresolved.",
+      "expected_state": "FEASIBILITY_BLOCKED_BY_MISSING_EVIDENCE",
+      "fixture_id": "in-scope-missing-legal-dimensions",
+      "parcel_fixture_id": "p14-ordinary-rs-1-7"
+    },
+    {
+      "description": "Structure facts exist, but assessor living area is not Code-defined GFA.",
+      "expected_state": "FEASIBILITY_BLOCKED_BY_MISSING_EVIDENCE",
+      "fixture_id": "structure-facts-missing-gfa",
+      "parcel_fixture_id": "outside-rs-1-7"
+    },
+    {
+      "description": "Inside-Coastal version selection succeeds; legal evidence remains incomplete.",
+      "expected_state": "FEASIBILITY_BLOCKED_BY_MISSING_EVIDENCE",
+      "fixture_id": "inside-coastal-rs",
+      "parcel_fixture_id": "p14-ordinary-rs-1-7"
+    },
+    {
+      "description": "Outside-Coastal version selection succeeds; legal evidence remains incomplete.",
+      "expected_state": "FEASIBILITY_BLOCKED_BY_MISSING_EVIDENCE",
+      "fixture_id": "outside-coastal-rs",
+      "parcel_fixture_id": "outside-rs-1-7"
+    },
+    {
+      "description": "Split zoning is outside V0.",
+      "expected_state": "FEASIBILITY_OUTSIDE_V0_SCOPE",
+      "fixture_id": "split-zone-outside-v0",
+      "parcel_fixture_id": "p14-split-rs-non-rs"
+    },
+    {
+      "description": "Non-RS zoning is outside V0.",
+      "expected_state": "FEASIBILITY_OUTSIDE_V0_SCOPE",
+      "fixture_id": "non-rs-outside-v0",
+      "parcel_fixture_id": "p14-missing-situs-taxable"
+    },
+    {
+      "description": "Coastal boundary applicability is unresolved.",
+      "expected_state": "FEASIBILITY_MAPPING_UNRESOLVED",
+      "fixture_id": "coastal-boundary-unresolved",
+      "parcel_fixture_id": "boundary-balanced"
+    },
+    {
+      "description": "Required zoning/Coastal/standards sources are unavailable.",
+      "expected_state": "FEASIBILITY_SOURCE_UNAVAILABLE",
+      "fixture_id": "source-unavailable",
+      "parcel_fixture_id": "packet8-identity-exception"
+    },
+    {
+      "description": "Hypothetical authoritative evidence makes bounded rule comparisons ready without calculating them.",
+      "expected_state": "FEASIBILITY_READY_FOR_RULE_EVALUATION",
+      "fact_overrides": {
+        "angled_envelope_context": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": "resolved-fixture"
+        },
+        "corner_lot_status": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": false
+        },
+        "current_structure_footprint": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": {
+            "area_sqft": 2400,
+            "geometry_ref": "fixture-current-footprint"
+          }
+        },
+        "fire_buffer_applicability": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": false
+        },
+        "front_lot_line": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": "line-front"
+        },
+        "height_reference_datum": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": "code-datum-fixture"
+        },
+        "hillside_applicability": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": false
+        },
+        "interior_side_lot_lines": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": [
+            "line-side-a",
+            "line-side-b"
+          ]
+        },
+        "legal_lot_area_sqft": {
+          "evidence_class": "authoritative_parcel_map",
+          "provenance": {
+            "observed_as_of": "2026-09-30",
+            "record_id": "fixture-map-1",
+            "source": "hypothetical recorded parcel map"
+          },
+          "state": "supported",
+          "value": 21840
+        },
+        "legal_lot_depth_ft": {
+          "evidence_class": "authoritative_parcel_map",
+          "provenance": {
+            "observed_as_of": "2026-09-30",
+            "record_id": "fixture-map-1",
+            "source": "hypothetical recorded parcel map"
+          },
+          "state": "supported",
+          "value": 182
+        },
+        "legal_lot_width_ft": {
+          "evidence_class": "authoritative_parcel_map",
+          "provenance": {
+            "observed_as_of": "2026-09-30",
+            "record_id": "fixture-map-1",
+            "source": "hypothetical recorded parcel map"
+          },
+          "state": "supported",
+          "value": 120
+        },
+        "legal_street_frontage_length_ft": {
+          "evidence_class": "authoritative_parcel_map",
+          "provenance": {
+            "observed_as_of": "2026-09-30",
+            "record_id": "fixture-map-1",
+            "source": "hypothetical recorded parcel map"
+          },
+          "state": "supported",
+          "value": 120
+        },
+        "rear_lot_line": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": "line-rear"
+        },
+        "slope_percent": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": 8.0
+        },
+        "street_side_lot_lines": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": []
+        }
+      },
+      "fixture_id": "hypothetical-fully-evidenced-rule-family",
+      "parcel_fixture_id": "outside-rs-1-7",
+      "project_facts": {
+        "code_gross_floor_area_sqft": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": 3200
+        },
+        "proposed_footprint_sqft": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": 1800
+        },
+        "structure_geometry": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": "fixture-proposed-envelope"
+        },
+        "structure_height_ft": {
+          "classification": "usable_for_feasibility",
+          "provenance": {
+            "source": "hypothetical authoritative fixture"
+          },
+          "state": "supported",
+          "value": 22
+        }
+      }
+    },
+    {
+      "description": "Maximum-unit requests are outside V0.",
+      "expected_state": "FEASIBILITY_OUTSIDE_V0_SCOPE",
+      "fixture_id": "forbidden-maximum-units-request",
+      "parcel_fixture_id": "outside-rs-1-7",
+      "requested_analysis": "maximum_units"
+    }
+  ]
+}

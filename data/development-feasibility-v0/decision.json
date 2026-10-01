@@ -1,0 +1,9 @@
+{
+  "capacity_calculated": false,
+  "compliance_calculated": false,
+  "contract_version": "development-feasibility-v0-2026-09-30",
+  "decision": "DEVELOPMENT_FEASIBILITY_V0_CONTRACT_READY",
+  "next_feasibility_source_target": "recorded parcel maps and legal lot records",
+  "production_runtime_wired": false,
+  "project_feasibility_implemented": false
+}

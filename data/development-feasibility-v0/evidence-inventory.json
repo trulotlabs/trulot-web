@@ -1,0 +1,141 @@
+{
+  "contract_version": "development-feasibility-v0-2026-09-30",
+  "layers": [
+    {
+      "facts": [
+        {
+          "classification": "usable_for_feasibility",
+          "fact": "APN, parcel ID, jurisdiction, acquisition and source row identity"
+        },
+        {
+          "classification": "diagnostic_only",
+          "fact": "approximate geometry area and parcel geometry"
+        },
+        {
+          "classification": "diagnostic_only",
+          "fact": "taxable acreage"
+        },
+        {
+          "classification": "usable_for_identity_only",
+          "fact": "situs address"
+        }
+      ],
+      "layer": "Parcel V2 identity"
+    },
+    {
+      "facts": [
+        {
+          "classification": "usable_for_feasibility",
+          "fact": "SINGLE_ZONE RS mapping and zone code"
+        },
+        {
+          "classification": "outside_v0_scope_or_mapping_unresolved",
+          "fact": "split, ambiguous, indeterminate, or unmapped result"
+        },
+        {
+          "classification": "diagnostic_only",
+          "fact": "intersection coverage"
+        }
+      ],
+      "layer": "Base Zoning V2"
+    },
+    {
+      "facts": [
+        {
+          "classification": "usable_for_feasibility",
+          "fact": "resolved INSIDE_COASTAL or OUTSIDE_COASTAL state"
+        },
+        {
+          "classification": "legally_unresolved",
+          "fact": "BOUNDARY_AMBIGUOUS"
+        },
+        {
+          "classification": "source_unavailable",
+          "fact": "source failure"
+        }
+      ],
+      "layer": "Coastal Context V0"
+    },
+    {
+      "facts": [
+        {
+          "classification": "usable_for_rule_availability",
+          "fact": "supported rule-set version, rule values, conditions, citations, and dependencies"
+        },
+        {
+          "classification": "not_parcel_compliance",
+          "fact": "rule availability"
+        }
+      ],
+      "layer": "inside/outside-Coastal RS standards and Parcel RS Standards Runtime V0"
+    },
+    {
+      "facts": [
+        {
+          "classification": "legally_unresolved",
+          "fact": "legal lot area, width, depth, frontage, corner status, and lot-line roles"
+        },
+        {
+          "classification": "legally_unresolved",
+          "fact": "slope, fire, hillside, GFA, and structure-condition predicates"
+        },
+        {
+          "classification": "diagnostic_only",
+          "fact": "geometry spans and orientations"
+        }
+      ],
+      "layer": "RS Parcel Condition Inputs V0"
+    },
+    {
+      "facts": [
+        {
+          "classification": "usable_for_bounded_recorded_statement",
+          "fact": "positive assessor UNITQTY"
+        },
+        {
+          "classification": "legally_unresolved",
+          "fact": "zero/sentinel UNITQTY"
+        },
+        {
+          "classification": "diagnostic_only",
+          "fact": "assessor living area"
+        },
+        {
+          "classification": "diagnostic_only",
+          "fact": "2017 building outlines and derived footprint areas"
+        },
+        {
+          "classification": "source_unavailable_or_not_yet_acquired",
+          "fact": "current structure footprint and Code-defined GFA"
+        }
+      ],
+      "layer": "Structure Facts V0"
+    },
+    {
+      "facts": [
+        {
+          "classification": "usable_for_feasibility",
+          "fact": "sealed identity/zoning/Coastal/standards composition and provenance"
+        },
+        {
+          "classification": "outside_v0_scope",
+          "fact": "what_can_i_build"
+        }
+      ],
+      "layer": "Parcel Intelligence V2"
+    },
+    {
+      "facts": [
+        {
+          "classification": "usable_for_future_product_bridge",
+          "fact": "truth vocabulary, CTA, homeowner summaries, and technical provenance"
+        },
+        {
+          "classification": "not_a_feasibility_source",
+          "fact": "rendered labels or HTML"
+        }
+      ],
+      "layer": "Parcel Page presentation levels"
+    }
+  ]
+}

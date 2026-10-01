@@ -1,0 +1,33 @@
+{
+  "diff_check": "PASS",
+  "json_validation": "PASS",
+  "packet_23_tests": {
+    "result": "PASS",
+    "tests": 20
+  },
+  "parcel_intelligence_v2": {
+    "result": "PASS",
+    "tests": 31
+  },
+  "parcel_rs_standards_runtime_v0": {
+    "result": "PASS",
+    "tests": 15
+  },
+  "parcel_truth": {
+    "result": "PASS",
+    "tests": 19
+  },
+  "result": "PASS_WITH_PREEXISTING_BASELINE_DRIFT",
+  "rs_parcel_condition_inputs_v0": {
+    "baseline_reproduction": "Fails identically in an archive of authorized HEAD 9ea605b827f784449c97f6bb51a0d6ff9c415ff5.",
+    "difference": "Stored Packet 13 artifact SHA and dependent fingerprints differ from a fresh Packet 14 rebuild; semantic assertions pass.",
+    "failing_test": "test_fingerprint_and_full_rebuild",
+    "packet_23_files_involved": false,
+    "result": "13_PASS_1_PREEXISTING_FAILURE"
+  },
+  "structure_facts_v0": {
+    "result": "PASS",
+    "tests": 10
+  },
+  "typescript": "PASS"
+}

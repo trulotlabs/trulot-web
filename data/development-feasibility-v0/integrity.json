@@ -1,0 +1,14 @@
+{
+  "bundle_sha256": "bc16beba7cee5fcc3db02fd334a332bfc32c998f17418b76f5c23bbac837e55f",
+  "contract_version": "development-feasibility-v0-2026-09-30",
+  "files": {
+    "contract.json": "3ec431f8095996475ffefc1ea07978f77430634faa81f6d1733e13b71ea35648",
+    "decision.json": "a0eef09f37c007e846d91e72628a0f32d271a6bda7261f70940a396794e8950b",
+    "evidence-inventory.json": "6996553c7fbe46cea8bfa551401696ca353b564459dfd05f972ca6c3a2b36fdb",
+    "evidence-matrix.json": "c83649d8c790ab90ca4bec75b1af3c76102c81a5195998d3ead13338c8193c54",
+    "fixture-results.json": "864692ae967d9e7ec41a1fa28f2ee122793a525ff83344b2b6f38930cd974a35",
+    "fixtures.json": "87f0057e332e88353cb80b1592d77d91b709be46264ac1b59d9d8e3cd8812739",
+    "source-priorities.json": "c8959cca57928c8b7837d30ed9a38e409bfef246e533b40e5e7a8e646354004d",
+    "verification.json": "66c4f35f6ae1d86ae1cd8499a78fb5bc42c18d770c28e2e9f7eb7bf8ea2163c5"
+  }
+}
