@@ -1,102 +1,97 @@
-# Legal Lot Evidence V0
+# Legal Lot Evidence V0 — Packet 25 bounded proof
 
-Legal Lot Evidence V0 tests whether a current Parcel V2 APN can be traced through three distinct evidence classes: an assessor tax parcel, an authoritative recorded map or survey, and legally operative current-lot evidence. It never equates an APN with a legal development lot, calculates compliance, or calculates capacity.
+Legal Lot Evidence V0 tests whether a current Parcel V2 APN can be traced through an assessor tax parcel, an authoritative recorded map or survey, and legally operative current-lot evidence. It never equates an APN with a legal development lot, calculates compliance, or calculates capacity.
 
-## Official source systems and access paths
+Packet 25 investigates exactly two RS-1-7 parcels: APN `3506320400` at 7553 Cabrillo Avenue and APN `6341302200` at 1456 27th Street. It seals the operator-acquired County Survey Records System (SRS) map sheets, parses only what those sheets show, searches bounded remote City and County indexes for modifying records, and refuses conclusions that require the unavailable Recorder/title chain.
 
-The County Assessor's Mapping Services page routes online parcel-map lookup to ParcelQuest. The bounded method selects San Diego County, selects APN, and submits the formatted ten-digit APN. The result exposes the tax parcel identity, a book/page lookup key, a property detail record, assessor-displayed acreage where present, and raw legal-description text that may contain a tract, parcel-map, block, parcel, or lot reference. The Assessor states that parcel boundaries and map details are for assessment purposes and do not have survey accuracy or establish legal property rights. The ParcelQuest map action is session-bound. In this review it displayed “Preparing your download” but produced no retained file in the browser's download directory, so no assessor map image or hash is claimed.
+## Acquired authoritative artifacts
 
-The County Survey Records System (SRS) accepts record text/number, APN, address, intersection, public-land-survey, and geographic queries. It indexes subdivision/final maps, parcel maps, records of survey, corner records, and related records. Search results expose title, page count, document type, cross-reference, and some subdivision names. SRS also exposes preview thumbnails, but full authoritative pages are sold through the cart. This packet verified metadata for `MAP 00915`, `PM 17383`, and `MAP 03225`; it did not initiate the $4/$8/$24 purchases because spending was not authorized. SRS warns that parcel/aerial overlays are not fully registered, that the application supplements the Survey Records Counter, and that its Certificate of Correction list is only partial from 1982.
+The human operator purchased and downloaded the source TIFFs. The packet did not automate payment, alter the files, or commit their bytes. The receipt metadata below excludes all private payment data.
 
-City Development Services distributes mapping and land-title records among Mapping and Land Title Review, OpenDSD, Accela, Permit Finder, open data, subdivision index cards, and formal records requests. Accepted lookup keys vary among address, plan/approval/permit number, legal description, and APN. Relevant record families include parcel/final maps, Certificates of Compliance, lot-line adjustments, mergers, amended maps, certificates of correction, easements, and reversions. Absence from one City endpoint is never treated as proof that no record exists.
+| File | Record | Filing/recording | Sheet count | Bytes | SHA-256 |
+| --- | --- | --- | ---: | ---: | --- |
+| `MAP 00915-1.TIF` | Subdivision Map 00915 | 1904-08-04 4:30 PM | 1 | 191,043 | `b17fa5436951059f76381dfa7f04a5215cdd9e5c79f51249b9b0fb11c12121bc` |
+| `PM 17383-1.TIF` | Parcel Map 17383, sheet 1 | 1994-06-30 11:51 AM | 2 | 135,273 | `4f3c57bf6dce29044532109abb1bb4bcc0c1740a506fb1ec36787f1b1ff821da` |
+| `PM 17383-2.TIF` | Parcel Map 17383, sheet 2 | 1994-06-30 11:51 AM | 2 | 100,497 | `6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00` |
 
-The County Recorder is essential for the later-in-time instrument chain. Effective December 9, 2024, the Recorder removed online APN search; APN lookup is available only at five in-person kiosks. That makes a complete remote APN-to-current-modification proof unavailable in this bounded packet.
+All three were acquired from the official SRS at `2026-09-30T18:32:37-07:00`. Receipt metadata: order `db8edaa3-8df8-4bf7-9293-2db8407fa2cf`, placed `2026-09-30T17:21:58.228-07:00`; delivery email from `SRSCoordinator@ptfs.com`, subject “Purchase Confirmation for SDSRS,” received at approximately `2026-09-30T18:24:00-07:00`.
 
-Machine-readable system details are in `data/legal-lot-evidence-v0/source-systems.json`.
+## Cabrillo: Map 00915
 
-## Legal-lot doctrine
+Map 00915 is the “Map of Center Addition to La Jolla Park,” a subdivision of a portion of Pueblo Lot 1283. The survey is dated June 17, 1904; the City Board of Public Works adoption is dated July 7, 1904; the filing statement is August 4, 1904 at 4:30 PM. A later copy certification on the retained sheet is dated November 17, 1915.
 
-An **assessor parcel** or **tax parcel** is an assessment unit identified by APN. It may span, split, or otherwise differ from a legally established development lot. An APN is therefore identity evidence, not a legal-lot conclusion.
+The assessor description `TR 915 BLK 4*LOTS 7 THRU 9*` corresponds to three separately drawn lots in Block 4. The source does not depict or describe those three lots as one merged lot. The map scale is one inch to 200 feet. No numeric boundary dimension or area can be attributed to Lots 7, 8, or 9 with sufficient confidence from the retained sheet, so none is recorded as target-lot dimension or area evidence.
 
-A **parcel-map parcel** is a parcel shown on a recorded parcel map. A **subdivision lot** is a lot shown on a recorded subdivision/final map. Both may supply recorded geometry and identifiers, but neither historic map alone proves that its configuration remains current after later adjustments, mergers, corrections, amended maps, vacations, dedications, or later parcel maps.
+Lots 7, 8, and 9 are depicted adjoining Miramar Street. The City acceptance text includes Miramar Street and unnamed alleys among the public ways accepted from the subdivision. That supports street adjacency and dedication context only. It does not designate a Code front lot line or establish a supported frontage length.
 
-A City **lot** is land established by plat, subdivision, or another lawful means to own, use, or develop. A **premises** is the site to which development regulations apply and can require additional legal reasoning. A **legal lot** requires legally operative establishment evidence and an adequate current modification chain.
+The APN-to-recorded-lot state is `MULTIPLE_RECORDED_LOTS_ONE_APN`. The current Parcel Intelligence fixture does not retain a parcel geometry area; its 100-percent single-zone intersection area is approximately 9,138 square feet and remains a diagnostic overlay fact, not legal-lot geometry or area. No remote evidence establishes a merger, lot tie agreement, lot-line adjustment, Certificate of Compliance, or other instrument converting the three recorded lots into one current legal lot.
 
-The contract returns only four states:
+## 27th Street: Parcel Map 17383
 
-- `LEGAL_LOT_ESTABLISHED`: authoritative legal-status evidence and a complete-to-current modification chain support the conclusion.
-- `LEGAL_LOT_EVIDENCE_PARTIAL`: relevant assessor or recorded-map evidence exists, but current legal-lot status is not conclusive.
-- `LEGAL_LOT_STATUS_UNRESOLVED`: no adequate legal-status evidence has been identified.
-- `LEGAL_LOT_SOURCE_UNAVAILABLE`: a required authoritative source or artifact is unavailable.
+Parcel Map 17383 is a two-sheet lot-line-adjustment map involving a portion of Lot 13 of Tibbetts Tract, amended Licensed Survey Map 24; Parcel 1 of Parcel Map 4547; and a portion of 27th Street dedicated to public use. The field survey was requested by Juan Andrade on December 1, 1993. The City Engineer approval is dated June 28, 1994. The Recorder certificate states File No. `1994-414843`, filed June 30, 1994 at 11:51 AM.
 
-## Bounded corpus and acquisition findings
+Sheet 2 expressly labels Parcel 2 as `0.315 ACRES`. Its recorded boundary includes:
 
-The deterministic corpus contains 25 real Parcel Intelligence V2 fixtures and includes APNs `3506320400`, `6341302200`, and `4304211000`. It covers RS-1-7 and other RS contexts, inside/outside/ambiguous Coastal states, irregular and MultiPolygon geometry, four stacked APNs, split and ambiguous zoning examples used only for source research, the Packet 8 identity exception, small and large parcels, and records with and without taxable acreage.
+- west segment: 50.00 feet;
+- northwest segment: N 89°55′03″ E, 119.99 feet, record 120.00 feet;
+- north jog: N 00°03′42″ W, 17.02 feet, record 17.00 feet;
+- northeast segment: N 89°57′37″ E, 115.08 feet, record 115.00 feet;
+- east segment along 27th Street: 67.00 feet;
+- south segment: N 89°55′05″ E, 235.04 feet.
 
-Three assessor searches were completed through the official online route:
+These remain `RECORDED_BOUNDARY_LENGTH` evidence. They are not labeled Code lot width, depth, or frontage. Parcel 2 directly adjoins 27th Street along the 67-foot boundary. The 4-foot water easement shown on Sheet 2 lies in Parcel 1, not Parcel 2. The map also notes the portion of 27th Street dedicated by Old Road Survey 172 on January 20, 1890.
 
-| APN | Assessor legal description (raw) | Assessor key | SRS result |
-| --- | --- | --- | --- |
-| `3506320400` | `TR 915 BLK 4*LOTS 7 THRU 9*` | `350~35063` | `MAP 00915`, 1 page, Subdivision Map, “MAP OF CENTER ADDITION” |
-| `6341302200` | `PM17383 PAR 2` | `634~63413` | `PM 17383`, 2 pages, Parcel Map, `FILE NO 1994-414843` |
-| `4304211000` | `TR 3225 LOT 85*` | `430~43042` | `MAP 03225`, 6 pages, Subdivision Map, `FILE NO 57695`, “WESTERN HILLS UNIT NO.1” |
+The assessor text `PM17383 PAR 2` directly names the recorded entity. However, the current assessor/Parcel V2 evidence is approximately 0.51 acre: the assessor displays 0.510 acre and 22,215 square feet, while Parcel V2 geometry is approximately 21,841 square feet. That materially conflicts with the recorded 0.315-acre Parcel 2. Without a later instrument or title evidence explaining the difference, the reconciliation state is `IDENTITY_MISMATCH`, not `EXACT_RECORDED_LOT_MATCH`.
 
-Raw reference text is retained independently from normalized identifiers. The parser recognizes only explicit `TR`, `PM`, block, lot, and parcel forms and returns `AMBIGUOUS_REFERENCE` rather than guessing malformed or conflicting map references.
+## Bounded modification searches
 
-For all 25 APNs the contract retains the APN-derived Assessor book/page lookup key. Only the three observed keys are marked confirmed in an official search. The remaining 22 are explicitly marked derived lookup keys and `LEGAL_LOT_SOURCE_UNAVAILABLE`; they are not represented as acquired maps.
+On September 30, 2026, the City OpenDSD approval search was queried by exact address for `7553 CABRILLO AV` and `1456 27TH ST`/`1456 S 27TH ST`. No approval at either target address was returned. Official City-domain searches for each APN, address, and legal/map reference also returned no directly related record. OpenDSD describes this address search as indexed permit information from 2003-current. Records are distributed across City systems, and absence here does not prove that no Certificate of Compliance, lot-line adjustment, lot tie, merger, correction, later map, or right-of-way instrument exists.
 
-## Evidence schema
+SRS was searched by unformatted and formatted APN, exact address, and map number. APN and address searches returned zero results. Map-number searches returned the originating Map 00915 and PM 17383 only after unrelated same-number collisions were excluded: Corner Record 00915 cross-references Map 8737, and PM 12057 cross-references Tentative Map 17383. Neither is a modifying record for a target parcel.
 
-Each fixture retains APN, Parcel V2 contract/fingerprint identity, assessor map identifier and observation, raw and normalized map references, recorded-map metadata/artifacts, map lot/parcel identifier, dimensions, areas, frontage, lot-line evidence, later modifying records, legal-status evidence/state, provenance, and limitations. A source artifact requires a SHA-256 before it can support a legal dimension or area. The SRS metadata observations have no artifact SHA because no authoritative page was purchased or downloaded.
+The County’s Certificate of Correction list was searched for `Map 915`/`Map 00915` and `PM 17383`; no entry was found. The County expressly labels that list partial from 1982. SRS itself states that it supplements the Survey Records Counter. These negative results therefore narrow the remote search but do not close the later-in-time instrument chain.
 
-## Dimension and area semantics
+## Recorder limitation and legal-lot doctrine
 
-Every extracted dimension must be classified as recorded boundary length, arc length, radial dimension, street width, easement width, explicitly defined lot width, explicitly defined lot depth, or unknown. Boundary lengths do not become Code-defined width or depth automatically.
+Both parcels are `RECORDER_CHECK_REQUIRED`. Effective December 9, 2024, County Recorder APN lookup is available only at in-person kiosks. A Recorder/title search is still needed to identify or rule out legally operative later instruments.
 
-Area remains separated into assessor-displayed acreage or lot square feet, recorded-map area, calculated recorded-boundary area, Parcel V2 geometry area, and legal lot area. Promotion to `LEGAL_LOT_AREA_SUPPORTED` requires an authoritative recorded-map/legal-status/survey artifact hash and a complete-to-current modification chain. Parcel geometry area, taxable acreage, and the assessor's displayed lot area remain distinct diagnostics.
+An assessor parcel is a tax unit and may span, split, or differ from a legal development lot. A recorded subdivision lot or parcel-map parcel supplies historic creation and geometry evidence, but its historic map does not alone prove the current configuration after adjustments, mergers, corrections, amended maps, vacations, dedications, later maps, or title instruments.
 
-For `6341302200`, the assessor displayed 0.510 acre and 22,215 square feet, while Parcel V2 geometry is about 21,841 square feet. The values are close enough to classify as consistent with differing semantics, not as interchangeable legal area. Whitehaven's assessor showed 0.385 acre and 16,800 square feet, but the bounded Parcel V2 fixture does not retain a geometry area for comparison. No discrepancy is automatically labeled an error.
+For Cabrillo, Map 00915 establishes three historic subdivision lots. It does not establish that one current legal lot matches APN `3506320400`. For 27th Street, PM 17383 establishes the adjusted Parcel 2 as of 1994. It does not reconcile the material current-entity area conflict or prove that no later operative instrument exists.
 
-## Lot lines and frontage
+## Legal area, dimensions, and lot-line roles
 
-No retained authoritative artifact explicitly designates front, rear, interior-side, or street-side lot lines. The resolver refuses to assign those roles from situs address, nearest street, cardinal direction, or parcel orientation.
+Recorded area may be promoted to `LEGAL_LOT_AREA_SUPPORTED` only when all four gates pass: an authoritative artifact hash, `EXACT_RECORDED_LOT_MATCH`, `LEGAL_LOT_ESTABLISHED`, and a complete-to-current modification chain.
 
-Street adjacency, dedicated right-of-way, frontage length, and Code-defined frontage are separate facts. None is inferred from a situs address. Supporting frontage requires an authoritative artifact plus the right-of-way and Code measurement semantics.
+Cabrillo has no recorded area attributable to the three target lots and has unresolved multi-lot aggregation. The 27th Street map’s 0.315-acre label is authoritative recorded-area evidence for historic Parcel 2, but it is not promoted because the current entity is an identity mismatch and the modification chain is unresolved.
 
-## Modification chain and stacked APNs
+No map explicitly designates front, rear, interior-side, or street-side lot lines under current Code measurement semantics. Recorded street adjacency and boundary lengths remain separate from Code frontage. Both frontage and lot-line-role resolution are refused.
 
-The original map is never presumed current. A complete chain must search lot-line adjustments, mergers, Certificates of Compliance, corrections, amended maps, vacations/dedications, and later parcel maps. Remote proof is blocked by the partial SRS correction list, distributed City indexes, and Recorder APN search being limited to in-person kiosks.
+## First-rule readiness and scale lesson
 
-The four stacked APNs are refused individual land-lot dimensions. Equal Parcel V2 geometry suggests shared underlying land geometry, but that diagnostic pattern does not establish condominium-plan semantics or authorize assigning land dimensions to an individual unit APN.
+Both target parcels remain `BLOCKED_BY_LEGAL_LOT_AREA_EVIDENCE` for minimum-lot-area readiness. The packet emits no compliance result.
 
-## Reconciliation and first-rule unlock
+The reusable cohorts are:
 
-The final 25-fixture counts are:
+- one APN to one recorded parcel-map parcel, automatable only after current identity and chain validation;
+- one APN to one subdivision lot, potentially automatable with the same chain gate;
+- one APN to multiple recorded subdivision lots, a hard case requiring explicit merger/tie/configuration evidence;
+- a modified parcel requiring a later instrument because current evidence conflicts;
+- condominium or stacked APNs requiring underlying-land evidence;
+- unresolved or source-unavailable parcels.
 
-| State | Count |
-| --- | ---: |
-| Assessor map/page record found | 3 |
-| Recorded map reference found | 3 |
-| Full recorded map acquired | 0 |
-| Dimensions present | 0 |
-| Assessor-displayed area present | 2 |
-| Frontage evidence present | 0 |
-| Subsequent modifying record found | 0 |
-| `LEGAL_LOT_ESTABLISHED` | 0 |
-| `LEGAL_LOT_EVIDENCE_PARTIAL` | 3 |
-| `LEGAL_LOT_STATUS_UNRESOLVED` | 0 |
-| `LEGAL_LOT_SOURCE_UNAVAILABLE` | 22 |
+The simple one-to-one cohort can eventually be automated separately, but PM 17383 demonstrates that textual one-to-one correspondence is insufficient when current geometry/area conflicts with the recorded entity.
 
-No fixture has `LEGAL_LOT_AREA_SUPPORTED`. Minimum lot area therefore remains `BLOCKED_BY_LEGAL_LOT_AREA_EVIDENCE`; this packet issues no PASS/FAIL compliance result.
+## Decision
 
-## Scale assessment and decision
+For APN `3506320400`: `LEGAL_LOT_EVIDENCE_PARTIAL`.
 
-APN-to-Assessor book/page keys and common tract/parcel-map references are stable enough to normalize. The limiting steps are authoritative file acquisition, paid page volume, browser/session controls, distributed City indexes, in-person Recorder APN lookup, manual interpretation of ambiguous references, condo-to-underlying-land reconciliation, and the later-in-time modification chain. A citywide import is not warranted from this path.
+For APN `6341302200`: `LEGAL_LOT_EVIDENCE_PARTIAL`.
 
-`LEGAL_LOT_EVIDENCE_V0_NOT_READY: full authoritative recorded-map artifacts and current modification-chain evidence remain unavailable without paid and in-person retrieval`
+`BOUNDED_LEGAL_LOT_PROOF_NOT_READY: current legal configuration and the complete later-in-time instrument chain remain unresolved for both parcels`
 
-`NEXT_FEASIBILITY_SOURCE_TARGET: recorded map artifacts and current legal-lot modification-chain records`
+`NEXT_FEASIBILITY_SOURCE_TARGET: County Recorder APN/title chain for APNs 3506320400 and 6341302200`
 
 ## Containment
 
-The builder is repository-local and deterministic. It performs no production access, database operation, zoning load, snapshot selection, route wiring, compliance calculation, capacity calculation, citywide import, deployment, or push. Parcel V1 and the frozen Packet 11 production state are unchanged.
+The builder is repository-local and deterministic. It performs no production access, database operation, zoning load, snapshot selection, route wiring, compliance calculation, capacity calculation, citywide import, deployment, or push. Parcel V1 and the frozen Packet 11 production state are unchanged. Only the two bounded parcels received new recorded-map and modification-search analysis.

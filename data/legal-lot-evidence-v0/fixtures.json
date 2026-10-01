@@ -1,9 +1,13 @@
 {
-  "contract_version": "legal-lot-evidence-v0-2026-09-30",
+  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25",
   "fixture_count": 25,
   "fixtures": [
     {
       "apn": "3506320400",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "The assessor description and plat identify three separately drawn subdivision lots under one APN; no merger, lot tie, or later configuration instrument was found remotely.",
+        "state": "MULTIPLE_RECORDED_LOTS_ONE_APN"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -58,6 +62,18 @@
         "status": "CONFIRMED_IN_OFFICIAL_SEARCH",
         "sub_id": "00"
       },
+      "city_modification_search": {
+        "records_found": [],
+        "result": "NO_DIRECTLY_RELATED_RECORD_FOUND",
+        "scope_limitation": "OpenDSD address search covers indexed DSD permit information from 2003-current; absence does not prove no Certificate of Compliance, lot-line adjustment, lot tie, merger, map correction, later map, or right-of-way instrument exists.",
+        "search_terms": [
+          "7553 CABRILLO AVE LA JOLLA CA 92037-5206",
+          "3506320400",
+          "TR 915 BLK 4*LOTS 7 THRU 9*"
+        ],
+        "searched_at": "2026-09-30",
+        "system": "OpenDSD Approval Search and official City web index"
+      },
       "coverage_tags": {
         "coastal_state": "INSIDE_COASTAL",
         "identity_exception": false,
@@ -69,31 +85,48 @@
       },
       "dimensions": [],
       "fixture_id": "p14-ordinary-rs-1-7",
-      "frontage_evidence": null,
-      "legal_status_evidence": null,
+      "frontage_evidence": {
+        "authoritative_artifact_sha256": "b17fa5436951059f76381dfa7f04a5215cdd9e5c79f51249b9b0fb11c12121bc",
+        "code_frontage_semantics": null,
+        "dedicated_right_of_way": true,
+        "finding": "The plat depicts Lots 7, 8, and 9 adjoining Miramar Street, but does not designate a Code front lot line or a supported frontage length.",
+        "frontage_length": null,
+        "street_adjacency": "MIRAMAR ST"
+      },
+      "legal_status_evidence": {
+        "artifact_sha256": "b17fa5436951059f76381dfa7f04a5215cdd9e5c79f51249b9b0fb11c12121bc",
+        "basis": "The recorded subdivision map establishes three historic platted lots, not one current legal lot matching the tax APN.",
+        "establishes_legal_lot": false
+      },
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
         "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
         "No absence in a City endpoint is treated as proof that no modifying record exists.",
-        "SRS verified record metadata, but the full authoritative document requires a paid cart transaction that was not authorized."
+        "Authoritative recorded-map sheets are retained by SHA-256 outside the repository; source TIFF bytes were not modified or committed.",
+        "Remote search did not close the legally operative Recorder/title chain."
       ],
-      "lot_line_evidence": null,
+      "lot_line_evidence": {
+        "authoritative_artifact_sha256": "b17fa5436951059f76381dfa7f04a5215cdd9e5c79f51249b9b0fb11c12121bc",
+        "explicit_roles": [],
+        "state": "NOT_EXPLICITLY_DESIGNATED"
+      },
       "map_lot_or_parcel_identifier": [
         {
           "normalized": "BLOCK 4",
-          "raw": "BLK 4",
           "type": "BLOCK"
         },
         {
           "normalized": "LOTS 7-9",
-          "raw": "LOTS 7 THRU 9",
           "type": "LOT"
         }
       ],
       "modification_chain": {
-        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "limitation": "No directly related later modifying record was found remotely. OpenDSD is limited to its indexed 2003-current approvals, the County correction list is expressly partial from 1982, and Recorder APN search requires an in-person kiosk/title search.",
         "searched_sources": [
-          "SRS record metadata"
+          "OpenDSD exact-address approval search",
+          "City official-domain APN/address/legal-description search",
+          "SRS APN/address/map-number search",
+          "County partial Certificate of Correction index (1982-current list)"
         ],
         "state": "UNRESOLVED"
       },
@@ -103,6 +136,7 @@
         "fingerprint_sha256": "5ab9ab87853af1816bc7e0389c1882f3430d93426ba47076f34e7e4f08a83967",
         "geometry_area_sqft": null,
         "geometry_type": null,
+        "single_zone_intersection_area_sqft": 9138.377803152907,
         "situs_address": "7553 CABRILLO AVE",
         "taxable_acreage": null
       },
@@ -120,19 +154,55 @@
           "source": "County Survey Records System"
         }
       ],
+      "recorded_entity_comparison": "MULTIPLE_HISTORIC_LOTS_CURRENT_ENTITY_UNRESOLVED",
+      "recorded_findings": {
+        "area_shown": false,
+        "block": "4",
+        "dimension_finding": "No numeric boundary dimension could be attributed to Lots 7, 8, or 9 with sufficient confidence from the retained sheet.",
+        "easements_or_dedications": [
+          "Named streets and unnamed alleys shown on the map were accepted for public use."
+        ],
+        "lots": [
+          "7",
+          "8",
+          "9"
+        ],
+        "map_notes": [
+          "The map is a subdivision of a portion of Pueblo Lot 1283.",
+          "The City adopted the subdivision as Center Addition to La Jolla Park."
+        ],
+        "map_scale": "1 inch = 200 feet",
+        "recorded_entity_count": 3,
+        "street_relationships": [
+          "Lots 7, 8, and 9 are depicted adjoining Miramar Street.",
+          "The City acceptance text includes Miramar Street and unnamed alleys among accepted public ways."
+        ],
+        "subdivision_name": "CENTER ADDITION TO LA JOLLA PARK"
+      },
       "recorded_map_artifacts": [
         {
-          "artifact_sha256": null,
-          "artifact_state": "FULL_DOCUMENT_PURCHASE_REQUIRED_NOT_AUTHORIZED",
-          "cross_reference": null,
-          "download_price_usd": 4,
-          "filing_or_recording_date": null,
-          "pages": 1,
+          "acquired_at": "2026-09-30T18:32:37-07:00",
+          "artifact_sha256": "b17fa5436951059f76381dfa7f04a5215cdd9e5c79f51249b9b0fb11c12121bc",
+          "artifact_state": "ACQUIRED_AUTHORITATIVE_TIFF",
+          "byte_size": 191043,
+          "exact_filename": "MAP 00915-1.TIF",
+          "filing_or_recording_date": "1904-08-04T16:30:00",
+          "map_number": "00915",
+          "page_count": 1,
+          "receipt": {
+            "delivered_at": "2026-09-30T18:24:00-07:00",
+            "delivery_sender": "SRSCoordinator@ptfs.com",
+            "delivery_subject": "Purchase Confirmation for SDSRS",
+            "order_id": "db8edaa3-8df8-4bf7-9293-2db8407fa2cf",
+            "ordered_at": "2026-09-30T17:21:58.228-07:00",
+            "private_payment_data_excluded": true
+          },
           "record_number": "MAP 00915",
           "record_type": "Subdivision Map",
-          "relation_to_target_apn": "REFERENCE_FROM_OFFICIAL_ASSESSOR_LEGAL_DESCRIPTION",
-          "source_url": "https://srs.sandiegocounty.gov/#/s?v=G&a=c&q=MAP%2000915",
-          "subdivision_name": "MAP OF CENTER ADDITION"
+          "relation_to_target_apn": "Official assessor description cites TR 915, Block 4, Lots 7 through 9.",
+          "sheet": 1,
+          "source": "San Diego County Survey Records System",
+          "source_url": "https://srs.sandiegocounty.gov/"
         }
       ],
       "recorded_map_references": [
@@ -142,13 +212,34 @@
           "type": "SUBDIVISION_MAP"
         }
       ],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": null,
+      "srs_modification_search": {
+        "certificate_of_correction_index": "No MAP 00915 or PM 17383 entry found in the County's expressly partial 1982-current list.",
+        "records_found": [],
+        "result": "ORIGINATING_MAP_ONLY",
+        "same_number_collisions_excluded": [
+          "CR 00915 cross-references MAP 8737 and is not MAP 00915"
+        ],
+        "scope_limitation": "SRS supplements the Survey Records Counter and its correction list is partial; absence is not a complete later-instrument chain.",
+        "search_terms": [
+          "3506320400",
+          "7553 CABRILLO AVE LA JOLLA CA 92037-5206",
+          "MAP 00915"
+        ],
+        "searched_at": "2026-09-30",
+        "system": "San Diego County Survey Records System"
+      },
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
       "underlying_land_parcel_evidence": null
     },
     {
       "apn": "6341302200",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "The assessor text names PM 17383 Parcel 2, but the recorded 0.315-acre parcel materially conflicts with the current approximately 0.51-acre assessor/Parcel V2 entity; no later instrument was found remotely to reconcile the difference.",
+        "state": "IDENTITY_MISMATCH"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -175,6 +266,18 @@
           "source_semantic": "ASSESSOR_DISPLAYED_LOT_SQFT",
           "unit": "sqft",
           "value": 22215
+        },
+        {
+          "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+          "classification": "RECORDED_ENTITY_AREA_NOT_PROMOTED",
+          "provenance": {
+            "label": "PARCEL 2 0.315 ACRES",
+            "record": "PM 17383",
+            "sheet": 2
+          },
+          "source_semantic": "RECORDED_MAP_AREA",
+          "unit": "acre",
+          "value": 0.315
         }
       ],
       "assessor_evidence": {
@@ -212,6 +315,18 @@
         "status": "CONFIRMED_IN_OFFICIAL_SEARCH",
         "sub_id": "00"
       },
+      "city_modification_search": {
+        "records_found": [],
+        "result": "NO_DIRECTLY_RELATED_RECORD_FOUND",
+        "scope_limitation": "OpenDSD address search covers indexed DSD permit information from 2003-current; absence does not prove no Certificate of Compliance, lot-line adjustment, lot tie, merger, map correction, later map, or right-of-way instrument exists.",
+        "search_terms": [
+          "1456 27TH ST SAN DIEGO CA 92154-3238",
+          "6341302200",
+          "PM17383 PAR 2"
+        ],
+        "searched_at": "2026-09-30",
+        "system": "OpenDSD Approval Search and official City web index"
+      },
       "coverage_tags": {
         "coastal_state": "OUTSIDE_COASTAL",
         "identity_exception": false,
@@ -221,28 +336,89 @@
           "RS-1-7"
         ]
       },
-      "dimensions": [],
+      "dimensions": [
+        {
+          "boundary_segment": "west",
+          "raw_label": "50.00'",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 50.0
+        },
+        {
+          "boundary_segment": "northwest",
+          "raw_label": "N 89\u00b055'03\" E 119.99' (120.00')",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 119.99
+        },
+        {
+          "boundary_segment": "north jog",
+          "raw_label": "N 00\u00b003'42\" W 17.02' (17.00')",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 17.02
+        },
+        {
+          "boundary_segment": "northeast",
+          "raw_label": "N 89\u00b057'37\" E 115.08' (115.00')",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 115.08
+        },
+        {
+          "boundary_segment": "east along 27th Street",
+          "raw_label": "67.00'",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 67.0
+        },
+        {
+          "boundary_segment": "south",
+          "raw_label": "N 89\u00b055'05\" E 235.04'",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 235.04
+        }
+      ],
       "fixture_id": "outside-rs-1-7",
-      "frontage_evidence": null,
-      "legal_status_evidence": null,
+      "frontage_evidence": {
+        "authoritative_artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+        "code_frontage_semantics": null,
+        "dedicated_right_of_way": true,
+        "finding": "Parcel 2 has a recorded 67.00-foot boundary along 27th Street; the map does not designate the Code front lot line or establish Code frontage semantics.",
+        "frontage_length": 67.0,
+        "street_adjacency": "27TH STREET"
+      },
+      "legal_status_evidence": {
+        "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+        "basis": "PM 17383 establishes the 1994 adjusted Parcel 2, but current entity identity and the later modification chain are unresolved.",
+        "establishes_legal_lot": false
+      },
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
         "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
         "No absence in a City endpoint is treated as proof that no modifying record exists.",
-        "SRS verified record metadata, but the full authoritative document requires a paid cart transaction that was not authorized."
+        "Authoritative recorded-map sheets are retained by SHA-256 outside the repository; source TIFF bytes were not modified or committed.",
+        "Remote search did not close the legally operative Recorder/title chain."
       ],
-      "lot_line_evidence": null,
+      "lot_line_evidence": {
+        "authoritative_artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+        "explicit_roles": [],
+        "state": "NOT_EXPLICITLY_DESIGNATED"
+      },
       "map_lot_or_parcel_identifier": [
         {
           "normalized": "PARCEL 2",
-          "raw": "PAR 2",
           "type": "PARCEL"
         }
       ],
       "modification_chain": {
-        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "limitation": "No directly related later modifying record was found remotely. OpenDSD is limited to its indexed 2003-current approvals, the County correction list is expressly partial from 1982, and Recorder APN search requires an in-person kiosk/title search.",
         "searched_sources": [
-          "SRS record metadata"
+          "OpenDSD exact-address approval search",
+          "City official-domain APN/address/legal-description search",
+          "SRS APN/address/map-number search",
+          "County partial Certificate of Correction index (1982-current list)"
         ],
         "state": "UNRESOLVED"
       },
@@ -252,6 +428,7 @@
         "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
         "geometry_area_sqft": 21841.412194,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 21841.444780896963,
         "situs_address": "1456 27TH ST",
         "taxable_acreage": 0.51
       },
@@ -269,19 +446,79 @@
           "source": "County Survey Records System"
         }
       ],
+      "recorded_entity_comparison": "RECORDED_0_315_ACRE_VS_CURRENT_APPROX_0_51_ACRE_MATERIAL_CONFLICT",
+      "recorded_findings": {
+        "creation_sources": [
+          "portion of Lot 13 of Tibbetts Tract, amended Licensed Survey Map No. 24",
+          "Parcel 1 of PM 4547",
+          "portion of 27th Street dedicated to public use"
+        ],
+        "easements_or_dedications": [
+          "The 4.0-foot water easement shown on Sheet 2 is within Parcel 1, not Parcel 2.",
+          "The map includes a portion of 27th Street dedicated by Old Road Survey 172 on 1890-01-20."
+        ],
+        "file_number": "1994-414843",
+        "map_notes": [
+          "Field survey requested by Juan Andrade on 1993-12-01.",
+          "City Engineer approval dated 1994-06-28.",
+          "Filed 1994-06-30 at 11:51 AM as File No. 1994-414843."
+        ],
+        "map_purpose": "LOT LINE ADJUSTMENT",
+        "parcel": "2",
+        "recorded_area_acres": 0.315,
+        "street_relationships": [
+          "Parcel 2 is depicted adjoining 27th Street along a 67.00-foot recorded boundary."
+        ],
+        "total_map_area_acres": 0.887
+      },
       "recorded_map_artifacts": [
         {
-          "artifact_sha256": null,
-          "artifact_state": "FULL_DOCUMENT_PURCHASE_REQUIRED_NOT_AUTHORIZED",
-          "cross_reference": "FILE NO 1994-414843",
-          "download_price_usd": 8,
-          "filing_or_recording_date": null,
-          "pages": 2,
+          "acquired_at": "2026-09-30T18:32:37-07:00",
+          "artifact_sha256": "4f3c57bf6dce29044532109abb1bb4bcc0c1740a506fb1ec36787f1b1ff821da",
+          "artifact_state": "ACQUIRED_AUTHORITATIVE_TIFF",
+          "byte_size": 135273,
+          "exact_filename": "PM 17383-1.TIF",
+          "filing_or_recording_date": "1994-06-30T11:51:00-07:00",
+          "map_number": "17383",
+          "page_count": 2,
+          "receipt": {
+            "delivered_at": "2026-09-30T18:24:00-07:00",
+            "delivery_sender": "SRSCoordinator@ptfs.com",
+            "delivery_subject": "Purchase Confirmation for SDSRS",
+            "order_id": "db8edaa3-8df8-4bf7-9293-2db8407fa2cf",
+            "ordered_at": "2026-09-30T17:21:58.228-07:00",
+            "private_payment_data_excluded": true
+          },
           "record_number": "PM 17383",
           "record_type": "Parcel Map",
-          "relation_to_target_apn": "REFERENCE_FROM_OFFICIAL_ASSESSOR_LEGAL_DESCRIPTION",
-          "source_url": "https://srs.sandiegocounty.gov/#/s?v=G&a=c&q=PM%2017383",
-          "subdivision_name": null
+          "relation_to_target_apn": "Official assessor description cites PM 17383 Parcel 2.",
+          "sheet": 1,
+          "source": "San Diego County Survey Records System",
+          "source_url": "https://srs.sandiegocounty.gov/"
+        },
+        {
+          "acquired_at": "2026-09-30T18:32:37-07:00",
+          "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+          "artifact_state": "ACQUIRED_AUTHORITATIVE_TIFF",
+          "byte_size": 100497,
+          "exact_filename": "PM 17383-2.TIF",
+          "filing_or_recording_date": "1994-06-30T11:51:00-07:00",
+          "map_number": "17383",
+          "page_count": 2,
+          "receipt": {
+            "delivered_at": "2026-09-30T18:24:00-07:00",
+            "delivery_sender": "SRSCoordinator@ptfs.com",
+            "delivery_subject": "Purchase Confirmation for SDSRS",
+            "order_id": "db8edaa3-8df8-4bf7-9293-2db8407fa2cf",
+            "ordered_at": "2026-09-30T17:21:58.228-07:00",
+            "private_payment_data_excluded": true
+          },
+          "record_number": "PM 17383",
+          "record_type": "Parcel Map",
+          "relation_to_target_apn": "Sheet 2 contains Parcel 2 boundary and area evidence.",
+          "sheet": 2,
+          "source": "San Diego County Survey Records System",
+          "source_url": "https://srs.sandiegocounty.gov/"
         }
       ],
       "recorded_map_references": [
@@ -291,13 +528,34 @@
           "type": "PARCEL_MAP"
         }
       ],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": null,
+      "srs_modification_search": {
+        "certificate_of_correction_index": "No MAP 00915 or PM 17383 entry found in the County's expressly partial 1982-current list.",
+        "records_found": [],
+        "result": "ORIGINATING_MAP_ONLY",
+        "same_number_collisions_excluded": [
+          "PM 12057 cross-references TM 17383 and is not PM 17383"
+        ],
+        "scope_limitation": "SRS supplements the Survey Records Counter and its correction list is partial; absence is not a complete later-instrument chain.",
+        "search_terms": [
+          "6341302200",
+          "1456 27TH ST SAN DIEGO CA 92154-3238",
+          "PM 17383"
+        ],
+        "searched_at": "2026-09-30",
+        "system": "San Diego County Survey Records System"
+      },
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
       "underlying_land_parcel_evidence": null
     },
     {
       "apn": "4304211000",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -402,6 +660,7 @@
         "fingerprint_sha256": "0814a7d54119a3c82b479392f550d562ac677037766d8353b4cf095bd9f66c4b",
         "geometry_area_sqft": null,
         "geometry_type": null,
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "4927 WHITEHAVEN WAY",
         "taxable_acreage": null
       },
@@ -441,6 +700,7 @@
           "type": "SUBDIVISION_MAP"
         }
       ],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": null,
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -448,6 +708,10 @@
     },
     {
       "apn": "3031701800",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -504,6 +768,7 @@
         "fingerprint_sha256": "b2b63a731cf7be5bf9664a3714eaf9d77c1e7529930393d7a7071c744cf0cc10",
         "geometry_area_sqft": 8.548198,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 8.548232428508411,
         "situs_address": null,
         "taxable_acreage": null
       },
@@ -523,6 +788,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -530,6 +796,10 @@
     },
     {
       "apn": "2421001000",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -587,6 +857,7 @@
         "fingerprint_sha256": "b20dbc6e9452cfe06dc38a0defc58018a6fac557797ffaf42c899cbd6882ad65",
         "geometry_area_sqft": 54948372.53094,
         "geometry_type": "MultiPolygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": null,
         "taxable_acreage": 1261.93
       },
@@ -606,6 +877,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -613,6 +885,10 @@
     },
     {
       "apn": "2392600700",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -670,6 +946,7 @@
         "fingerprint_sha256": "607896ef68046c67f5c8202cf28792da6433464f62f4bff7fa1f09b9876b03a2",
         "geometry_area_sqft": 10588120.373922,
         "geometry_type": "MultiPolygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": null,
         "taxable_acreage": 241.34
       },
@@ -689,6 +966,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -696,6 +974,10 @@
     },
     {
       "apn": "5891700512",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -752,6 +1034,7 @@
         "fingerprint_sha256": "5145bf317129af3017451c2b31ae6f93225a0adf61c4e67f65a2a035ca04051f",
         "geometry_area_sqft": 170671.407301,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 170671.76438001913,
         "situs_address": "2416 ADIRONDACK ROW",
         "taxable_acreage": null
       },
@@ -771,6 +1054,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": true,
       "subsequent_modifying_records": [],
@@ -778,6 +1062,10 @@
     },
     {
       "apn": "5891700513",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -834,6 +1122,7 @@
         "fingerprint_sha256": "36d1a5c18272d823fb8aadf093863cb4f4d3721fce9c99e79f18bb67a28eab5d",
         "geometry_area_sqft": 170671.407301,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 170671.76438001913,
         "situs_address": "2412 ADIRONDACK ROW",
         "taxable_acreage": null
       },
@@ -853,6 +1142,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": true,
       "subsequent_modifying_records": [],
@@ -860,6 +1150,10 @@
     },
     {
       "apn": "5333641301",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -916,6 +1210,7 @@
         "fingerprint_sha256": "28237c80da2c2a5e9f9348d807f4ef1fef5aa34b9c777ea2bb33e21a1fcee3bd",
         "geometry_area_sqft": 60214.745592,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 60214.88846315378,
         "situs_address": "1501 FRONT ST",
         "taxable_acreage": null
       },
@@ -935,6 +1230,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": true,
       "subsequent_modifying_records": [],
@@ -942,6 +1238,10 @@
     },
     {
       "apn": "5333641302",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -998,6 +1298,7 @@
         "fingerprint_sha256": "31bfa73c0ef927f54941ffe3b0d6075a9bed379fbe4a90000cdc10f14a74fce2",
         "geometry_area_sqft": 60214.745592,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 60214.88846315378,
         "situs_address": "1501 FRONT ST",
         "taxable_acreage": null
       },
@@ -1017,6 +1318,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": true,
       "subsequent_modifying_records": [],
@@ -1024,6 +1326,10 @@
     },
     {
       "apn": "6782511200",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1080,6 +1386,7 @@
         "fingerprint_sha256": "be28fe192d5a7eaf7aeb5d39e10f28b296111849d00e012b6a8500444981d56a",
         "geometry_area_sqft": 142397.733717,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 142397.9879029563,
         "situs_address": null,
         "taxable_acreage": 3.24
       },
@@ -1099,6 +1406,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -1106,6 +1414,10 @@
     },
     {
       "apn": "3013101500",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1163,6 +1475,7 @@
         "fingerprint_sha256": "de57e1c554ad5c6aeaa382f5e78ac24665fb413eb54b039944f05cbf43629e19",
         "geometry_area_sqft": null,
         "geometry_type": null,
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "13591 NOGALES DR",
         "taxable_acreage": null
       },
@@ -1182,6 +1495,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -1189,6 +1503,10 @@
     },
     {
       "apn": "2748323700",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1246,6 +1564,7 @@
         "fingerprint_sha256": "909c74f2d5666b0af2e6246e3649d292e570741f6b64d07a2615905de2e08bdc",
         "geometry_area_sqft": 171394.658452,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": null,
         "taxable_acreage": 3.64
       },
@@ -1265,6 +1584,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -1272,6 +1592,10 @@
     },
     {
       "apn": "4303410600",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1329,6 +1653,7 @@
         "fingerprint_sha256": "b0beff190ccedeec76c1f8ecae66e6b1486ac68077b362edd11317528acdf908",
         "geometry_area_sqft": null,
         "geometry_type": null,
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "2112 ERIE ST",
         "taxable_acreage": null
       },
@@ -1348,6 +1673,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -1355,6 +1681,10 @@
     },
     {
       "apn": "7600360300",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1409,6 +1739,7 @@
         "fingerprint_sha256": "d57adc83e3a7887e06111fe88dbb5d8e0b2f0949511bbdc35412a3fafab86b36",
         "geometry_area_sqft": 92859.273936,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "2688 MISSION BAY DR",
         "taxable_acreage": null
       },
@@ -1428,6 +1759,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -1435,6 +1767,10 @@
     },
     {
       "apn": "4236300300",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1493,6 +1829,7 @@
         "fingerprint_sha256": "aa1902e4f82e78d4c78821b23f40547a4ea396b115a9f5c3d2738683cc6f89ac",
         "geometry_area_sqft": 313978.323865,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": null,
         "taxable_acreage": 17.31
       },
@@ -1512,6 +1849,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -1519,6 +1857,10 @@
     },
     {
       "apn": "5810934600",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1576,6 +1918,7 @@
         "fingerprint_sha256": "8269969e4a99151bd99b9eb44e389f8956f1ebc31fe70ba60dd866689c9160d2",
         "geometry_area_sqft": 3644.945157,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": null,
         "taxable_acreage": null
       },
@@ -1595,6 +1938,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -1602,6 +1946,10 @@
     },
     {
       "apn": "5490330700",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1659,6 +2007,7 @@
         "fingerprint_sha256": "eb18b0fd63f0e58259a70ad47ab3b63874f57d704825d5f40ce08cd2ef3c2bb0",
         "geometry_area_sqft": 6480.635462,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "505 IONA DR",
         "taxable_acreage": null
       },
@@ -1678,6 +2027,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -1685,6 +2035,10 @@
     },
     {
       "apn": "6271001600",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1742,6 +2096,7 @@
         "fingerprint_sha256": "20533f0498b43903934e287b6816b276cbe24e55d6b5da797d3db62f17b61368",
         "geometry_area_sqft": 355136.99968,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": null,
         "taxable_acreage": 8.4
       },
@@ -1761,6 +2116,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -1768,6 +2124,10 @@
     },
     {
       "apn": "2725300831",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1824,6 +2184,7 @@
         "fingerprint_sha256": "7f35bc1dcbc6abfdad69a7bf650c4b705b594294ff593cc91e5bdcb21bb01b1f",
         "geometry_area_sqft": 209625.647166,
         "geometry_type": "MultiPolygon",
+        "single_zone_intersection_area_sqft": 209625.92844478838,
         "situs_address": "12761 CAMINO DE LA BRECCIA",
         "taxable_acreage": null
       },
@@ -1843,6 +2204,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -1850,6 +2212,10 @@
     },
     {
       "apn": "2748402401",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1907,6 +2273,7 @@
         "fingerprint_sha256": "c663081adc45f0f1a24b1072d6696b0245b6fd14788435546ff7ffbece097356",
         "geometry_area_sqft": 26131.672061,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "16162 AVENIDA VENUSTO",
         "taxable_acreage": null
       },
@@ -1926,6 +2293,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -1933,6 +2301,10 @@
     },
     {
       "apn": "2673600300",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1989,6 +2361,7 @@
         "fingerprint_sha256": "a3c3d478e3ca9b4b0c7f7f8ff714ee6b9828dfcad2482fe3f4f33fd3bfa81b4b",
         "geometry_area_sqft": 3680.055779,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 3680.0646125827993,
         "situs_address": "15747 SPRECKELS PL",
         "taxable_acreage": null
       },
@@ -2008,6 +2381,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -2015,6 +2389,10 @@
     },
     {
       "apn": "2723200100",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -2072,6 +2450,7 @@
         "fingerprint_sha256": "102f7876e5f81c20ebf9cc3978b1c9d4aa030c80a1a45e61b9c3ccce714dac8a",
         "geometry_area_sqft": 43417.538719,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "18320 BERNARDO TRAILS DR",
         "taxable_acreage": 1
       },
@@ -2091,6 +2470,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -2098,6 +2478,10 @@
     },
     {
       "apn": "3527702600",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -2154,6 +2538,7 @@
         "fingerprint_sha256": "9f00e1498733db6617e2532f594a86bb1fa9ba3df997260fe56bc181ee44cf7e",
         "geometry_area_sqft": 80098.549217,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 80098.90549454167,
         "situs_address": null,
         "taxable_acreage": 1.9700000000000002
       },
@@ -2173,6 +2558,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],
@@ -2180,6 +2566,10 @@
     },
     {
       "apn": "7600300100",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -2234,6 +2624,7 @@
         "fingerprint_sha256": "af34cde9fb69ebbceee42c3b61336a2632a698db764dd764b07a1acabcd0f404",
         "geometry_area_sqft": 330149.123459,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "998 W MISSION BAY DR",
         "taxable_acreage": 15.5
       },
@@ -2253,6 +2644,7 @@
       ],
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "stacked_or_condo": false,
       "subsequent_modifying_records": [],

@@ -12,7 +12,7 @@
     "parcel_compliance_calculated": false,
     "production_wired": false
   },
-  "contract_version": "legal-lot-evidence-v0-2026-09-30",
+  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25",
   "dimension_semantics": [
     "RECORDED_BOUNDARY_LENGTH",
     "ARC_LENGTH",
@@ -25,6 +25,8 @@
   ],
   "doctrine": [
     "APN is not a legal-lot conclusion.",
+    "Multiple recorded lots under one APN are not collapsed into one legal lot.",
+    "Recorded area is promoted only after exact entity match and a complete current legal-status chain.",
     "Assessor map dimensions are not automatically Code-defined width or depth.",
     "Street adjacency, dedicated right-of-way, frontage length, and Code-defined frontage are distinct.",
     "Historic recorded maps require a later-modification search.",
@@ -40,5 +42,16 @@
     "LEGAL_LOT_EVIDENCE_PARTIAL",
     "LEGAL_LOT_STATUS_UNRESOLVED",
     "LEGAL_LOT_SOURCE_UNAVAILABLE"
+  ],
+  "reconciliation_states": [
+    "EXACT_RECORDED_LOT_MATCH",
+    "MULTIPLE_RECORDED_LOTS_ONE_APN",
+    "CURRENT_CONFIGURATION_REQUIRES_MODIFICATION_RECORD",
+    "IDENTITY_MISMATCH",
+    "UNRESOLVED"
+  ],
+  "recorder_chain_states": [
+    "REMOTE_CHAIN_SUFFICIENT",
+    "RECORDER_CHECK_REQUIRED"
   ]
 }

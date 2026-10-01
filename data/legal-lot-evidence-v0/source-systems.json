@@ -1,5 +1,5 @@
 {
-  "contract_version": "legal-lot-evidence-v0-2026-09-30",
+  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25",
   "systems": [
     {
       "limitations": [
@@ -28,6 +28,7 @@
       ],
       "name": "County Survey Records System",
       "official_url": "https://srs.sandiegocounty.gov/",
+      "packet25_observation": "The operator acquired MAP 00915 and both sheets of PM 17383. APN/address searches found no result; map-number searches found the originating maps only after unrelated same-number collisions were excluded.",
       "provides": [
         "subdivision/final maps",
         "parcel maps",

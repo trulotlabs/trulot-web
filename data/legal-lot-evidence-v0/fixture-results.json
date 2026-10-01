@@ -1,9 +1,13 @@
 {
-  "contract_version": "legal-lot-evidence-v0-2026-09-30",
+  "contract_version": "legal-lot-evidence-v0-2026-09-30-p25",
   "fixture_count": 25,
   "results": [
     {
       "apn": "3506320400",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "The assessor description and plat identify three separately drawn subdivision lots under one APN; no merger, lot tie, or later configuration instrument was found remotely.",
+        "state": "MULTIPLE_RECORDED_LOTS_ONE_APN"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -69,35 +73,58 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "8b63ad208c4600531c7ba6d191c4ef6917c5c1c246176ecc1099947301366841",
+      "fingerprint_sha256": "6b3389f98d501028d60effd73a37b8dc2ff427ee16ed3c07675c8f2d615a17f7",
       "fixture_id": "p14-ordinary-rs-1-7",
-      "frontage_evidence": null,
+      "frontage_evidence": {
+        "authoritative_artifact_sha256": "b17fa5436951059f76381dfa7f04a5215cdd9e5c79f51249b9b0fb11c12121bc",
+        "code_frontage_semantics": null,
+        "dedicated_right_of_way": true,
+        "finding": "The plat depicts Lots 7, 8, and 9 adjoining Miramar Street, but does not designate a Code front lot line or a supported frontage length.",
+        "frontage_length": null,
+        "street_adjacency": "MIRAMAR ST"
+      },
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_EVIDENCE_PARTIAL",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
         "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
         "No absence in a City endpoint is treated as proof that no modifying record exists.",
-        "SRS verified record metadata, but the full authoritative document requires a paid cart transaction that was not authorized."
+        "Authoritative recorded-map sheets are retained by SHA-256 outside the repository; source TIFF bytes were not modified or committed.",
+        "Remote search did not close the legally operative Recorder/title chain."
       ],
-      "lot_line_evidence": null,
+      "lot_line_evidence": {
+        "authoritative_artifact_sha256": "b17fa5436951059f76381dfa7f04a5215cdd9e5c79f51249b9b0fb11c12121bc",
+        "explicit_roles": [],
+        "state": "NOT_EXPLICITLY_DESIGNATED"
+      },
       "map_lot_or_parcel_identifier": [
         {
           "normalized": "BLOCK 4",
-          "raw": "BLK 4",
           "type": "BLOCK"
         },
         {
           "normalized": "LOTS 7-9",
-          "raw": "LOTS 7 THRU 9",
           "type": "LOT"
         }
       ],
       "minimum_lot_area_evaluation_state": "BLOCKED_BY_LEGAL_LOT_AREA_EVIDENCE",
       "modification_chain": {
-        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "limitation": "No directly related later modifying record was found remotely. OpenDSD is limited to its indexed 2003-current approvals, the County correction list is expressly partial from 1982, and Recorder APN search requires an in-person kiosk/title search.",
         "searched_sources": [
-          "SRS record metadata"
+          "OpenDSD exact-address approval search",
+          "City official-domain APN/address/legal-description search",
+          "SRS APN/address/map-number search",
+          "County partial Certificate of Correction index (1982-current list)"
         ],
         "state": "UNRESOLVED"
       },
@@ -108,6 +135,7 @@
         "fingerprint_sha256": "5ab9ab87853af1816bc7e0389c1882f3430d93426ba47076f34e7e4f08a83967",
         "geometry_area_sqft": null,
         "geometry_type": null,
+        "single_zone_intersection_area_sqft": 9138.377803152907,
         "situs_address": "7553 CABRILLO AVE",
         "taxable_acreage": null
       },
@@ -128,17 +156,28 @@
       "reason": "RELEVANT_RECORDS_DO_NOT_CONCLUSIVELY_ESTABLISH_CURRENT_LEGAL_LOT",
       "recorded_map_artifacts": [
         {
-          "artifact_sha256": null,
-          "artifact_state": "FULL_DOCUMENT_PURCHASE_REQUIRED_NOT_AUTHORIZED",
-          "cross_reference": null,
-          "download_price_usd": 4,
-          "filing_or_recording_date": null,
-          "pages": 1,
+          "acquired_at": "2026-09-30T18:32:37-07:00",
+          "artifact_sha256": "b17fa5436951059f76381dfa7f04a5215cdd9e5c79f51249b9b0fb11c12121bc",
+          "artifact_state": "ACQUIRED_AUTHORITATIVE_TIFF",
+          "byte_size": 191043,
+          "exact_filename": "MAP 00915-1.TIF",
+          "filing_or_recording_date": "1904-08-04T16:30:00",
+          "map_number": "00915",
+          "page_count": 1,
+          "receipt": {
+            "delivered_at": "2026-09-30T18:24:00-07:00",
+            "delivery_sender": "SRSCoordinator@ptfs.com",
+            "delivery_subject": "Purchase Confirmation for SDSRS",
+            "order_id": "db8edaa3-8df8-4bf7-9293-2db8407fa2cf",
+            "ordered_at": "2026-09-30T17:21:58.228-07:00",
+            "private_payment_data_excluded": true
+          },
           "record_number": "MAP 00915",
           "record_type": "Subdivision Map",
-          "relation_to_target_apn": "REFERENCE_FROM_OFFICIAL_ASSESSOR_LEGAL_DESCRIPTION",
-          "source_url": "https://srs.sandiegocounty.gov/#/s?v=G&a=c&q=MAP%2000915",
-          "subdivision_name": "MAP OF CENTER ADDITION"
+          "relation_to_target_apn": "Official assessor description cites TR 915, Block 4, Lots 7 through 9.",
+          "sheet": 1,
+          "source": "San Diego County Survey Records System",
+          "source_url": "https://srs.sandiegocounty.gov/"
         }
       ],
       "recorded_map_references": [
@@ -148,10 +187,15 @@
           "type": "SUBDIVISION_MAP"
         }
       ],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "6341302200",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "The assessor text names PM 17383 Parcel 2, but the recorded 0.315-acre parcel materially conflicts with the current approximately 0.51-acre assessor/Parcel V2 entity; no later instrument was found remotely to reconcile the difference.",
+        "state": "IDENTITY_MISMATCH"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -178,6 +222,18 @@
           "source_semantic": "ASSESSOR_DISPLAYED_LOT_SQFT",
           "unit": "sqft",
           "value": 22215
+        },
+        {
+          "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+          "classification": "RECORDED_ENTITY_AREA_NOT_PROMOTED",
+          "provenance": {
+            "label": "PARCEL 2 0.315 ACRES",
+            "record": "PM 17383",
+            "sheet": 2
+          },
+          "source_semantic": "RECORDED_MAP_AREA",
+          "unit": "acre",
+          "value": 0.315
         }
       ],
       "assessor_evidence": {
@@ -225,31 +281,110 @@
         ]
       },
       "development_capacity_calculated": false,
-      "dimensions": [],
-      "fingerprint_sha256": "e11c73f7cddee558f951b81450c84f5a81c28006dde7d76f6de84859167c57aa",
+      "dimensions": [
+        {
+          "boundary_segment": "west",
+          "raw_label": "50.00'",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 50.0
+        },
+        {
+          "boundary_segment": "northwest",
+          "raw_label": "N 89\u00b055'03\" E 119.99' (120.00')",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 119.99
+        },
+        {
+          "boundary_segment": "north jog",
+          "raw_label": "N 00\u00b003'42\" W 17.02' (17.00')",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 17.02
+        },
+        {
+          "boundary_segment": "northeast",
+          "raw_label": "N 89\u00b057'37\" E 115.08' (115.00')",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 115.08
+        },
+        {
+          "boundary_segment": "east along 27th Street",
+          "raw_label": "67.00'",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 67.0
+        },
+        {
+          "boundary_segment": "south",
+          "raw_label": "N 89\u00b055'05\" E 235.04'",
+          "semantic": "RECORDED_BOUNDARY_LENGTH",
+          "unit": "ft",
+          "value": 235.04
+        }
+      ],
+      "fingerprint_sha256": "e043d08c936d97652600f4ad86f241a382e703c6b11139cbcf3e89415862edd1",
       "fixture_id": "outside-rs-1-7",
-      "frontage_evidence": null,
+      "frontage_evidence": {
+        "authoritative_artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+        "code_frontage_semantics": null,
+        "dedicated_right_of_way": true,
+        "finding": "Parcel 2 has a recorded 67.00-foot boundary along 27th Street; the map does not designate the Code front lot line or establish Code frontage semantics.",
+        "frontage_length": 67.0,
+        "street_adjacency": "27TH STREET"
+      },
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "EXACT_RECORDED_ENTITY_MATCH_REQUIRED",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_EVIDENCE_PARTIAL",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
         "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
         "No absence in a City endpoint is treated as proof that no modifying record exists.",
-        "SRS verified record metadata, but the full authoritative document requires a paid cart transaction that was not authorized."
+        "Authoritative recorded-map sheets are retained by SHA-256 outside the repository; source TIFF bytes were not modified or committed.",
+        "Remote search did not close the legally operative Recorder/title chain."
       ],
-      "lot_line_evidence": null,
+      "lot_line_evidence": {
+        "authoritative_artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+        "explicit_roles": [],
+        "state": "NOT_EXPLICITLY_DESIGNATED"
+      },
       "map_lot_or_parcel_identifier": [
         {
           "normalized": "PARCEL 2",
-          "raw": "PAR 2",
           "type": "PARCEL"
         }
       ],
       "minimum_lot_area_evaluation_state": "BLOCKED_BY_LEGAL_LOT_AREA_EVIDENCE",
       "modification_chain": {
-        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "limitation": "No directly related later modifying record was found remotely. OpenDSD is limited to its indexed 2003-current approvals, the County correction list is expressly partial from 1982, and Recorder APN search requires an in-person kiosk/title search.",
         "searched_sources": [
-          "SRS record metadata"
+          "OpenDSD exact-address approval search",
+          "City official-domain APN/address/legal-description search",
+          "SRS APN/address/map-number search",
+          "County partial Certificate of Correction index (1982-current list)"
         ],
         "state": "UNRESOLVED"
       },
@@ -260,6 +395,7 @@
         "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
         "geometry_area_sqft": 21841.412194,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 21841.444780896963,
         "situs_address": "1456 27TH ST",
         "taxable_acreage": 0.51
       },
@@ -280,17 +416,52 @@
       "reason": "RELEVANT_RECORDS_DO_NOT_CONCLUSIVELY_ESTABLISH_CURRENT_LEGAL_LOT",
       "recorded_map_artifacts": [
         {
-          "artifact_sha256": null,
-          "artifact_state": "FULL_DOCUMENT_PURCHASE_REQUIRED_NOT_AUTHORIZED",
-          "cross_reference": "FILE NO 1994-414843",
-          "download_price_usd": 8,
-          "filing_or_recording_date": null,
-          "pages": 2,
+          "acquired_at": "2026-09-30T18:32:37-07:00",
+          "artifact_sha256": "4f3c57bf6dce29044532109abb1bb4bcc0c1740a506fb1ec36787f1b1ff821da",
+          "artifact_state": "ACQUIRED_AUTHORITATIVE_TIFF",
+          "byte_size": 135273,
+          "exact_filename": "PM 17383-1.TIF",
+          "filing_or_recording_date": "1994-06-30T11:51:00-07:00",
+          "map_number": "17383",
+          "page_count": 2,
+          "receipt": {
+            "delivered_at": "2026-09-30T18:24:00-07:00",
+            "delivery_sender": "SRSCoordinator@ptfs.com",
+            "delivery_subject": "Purchase Confirmation for SDSRS",
+            "order_id": "db8edaa3-8df8-4bf7-9293-2db8407fa2cf",
+            "ordered_at": "2026-09-30T17:21:58.228-07:00",
+            "private_payment_data_excluded": true
+          },
           "record_number": "PM 17383",
           "record_type": "Parcel Map",
-          "relation_to_target_apn": "REFERENCE_FROM_OFFICIAL_ASSESSOR_LEGAL_DESCRIPTION",
-          "source_url": "https://srs.sandiegocounty.gov/#/s?v=G&a=c&q=PM%2017383",
-          "subdivision_name": null
+          "relation_to_target_apn": "Official assessor description cites PM 17383 Parcel 2.",
+          "sheet": 1,
+          "source": "San Diego County Survey Records System",
+          "source_url": "https://srs.sandiegocounty.gov/"
+        },
+        {
+          "acquired_at": "2026-09-30T18:32:37-07:00",
+          "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+          "artifact_state": "ACQUIRED_AUTHORITATIVE_TIFF",
+          "byte_size": 100497,
+          "exact_filename": "PM 17383-2.TIF",
+          "filing_or_recording_date": "1994-06-30T11:51:00-07:00",
+          "map_number": "17383",
+          "page_count": 2,
+          "receipt": {
+            "delivered_at": "2026-09-30T18:24:00-07:00",
+            "delivery_sender": "SRSCoordinator@ptfs.com",
+            "delivery_subject": "Purchase Confirmation for SDSRS",
+            "order_id": "db8edaa3-8df8-4bf7-9293-2db8407fa2cf",
+            "ordered_at": "2026-09-30T17:21:58.228-07:00",
+            "private_payment_data_excluded": true
+          },
+          "record_number": "PM 17383",
+          "record_type": "Parcel Map",
+          "relation_to_target_apn": "Sheet 2 contains Parcel 2 boundary and area evidence.",
+          "sheet": 2,
+          "source": "San Diego County Survey Records System",
+          "source_url": "https://srs.sandiegocounty.gov/"
         }
       ],
       "recorded_map_references": [
@@ -300,10 +471,15 @@
           "type": "PARCEL_MAP"
         }
       ],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "4304211000",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -379,10 +555,28 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "dff2fda02fbf6389a647385294f6529dfcd7054847fe95dbd44dda1fb2605267",
+      "fingerprint_sha256": "775219d05a603627b534063ad862b17a1dcf78018e0da5b866ba1b69499863c6",
       "fixture_id": "p14-split-rs-non-rs",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_EVIDENCE_PARTIAL",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -413,6 +607,7 @@
         "fingerprint_sha256": "0814a7d54119a3c82b479392f550d562ac677037766d8353b4cf095bd9f66c4b",
         "geometry_area_sqft": null,
         "geometry_type": null,
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "4927 WHITEHAVEN WAY",
         "taxable_acreage": null
       },
@@ -453,10 +648,15 @@
           "type": "SUBDIVISION_MAP"
         }
       ],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "3031701800",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -492,10 +692,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "f7f377c032409892767650d3750bc584b70b96dd54b297eb78a8eab966c2f0e9",
+      "fingerprint_sha256": "78e3a688d13731755debcfa93f04dff6a4a4891033e0e17f61bfae0dd0ca2763",
       "fixture_id": "p14-smallest-geometry",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -519,6 +729,7 @@
         "fingerprint_sha256": "b2b63a731cf7be5bf9664a3714eaf9d77c1e7529930393d7a7071c744cf0cc10",
         "geometry_area_sqft": 8.548198,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 8.548232428508411,
         "situs_address": null,
         "taxable_acreage": null
       },
@@ -539,10 +750,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "2421001000",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -579,10 +795,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "a2015c3b330786442311ec1ac99fcc08b165b344c2f82a71949175c3e9ab2985",
+      "fingerprint_sha256": "a4ff2a8ba706f320f907a43abe3bb20ded6ab1bed5b82c83957bafc1500df723",
       "fixture_id": "p14-largest-geometry",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -606,6 +832,7 @@
         "fingerprint_sha256": "b20dbc6e9452cfe06dc38a0defc58018a6fac557797ffaf42c899cbd6882ad65",
         "geometry_area_sqft": 54948372.53094,
         "geometry_type": "MultiPolygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": null,
         "taxable_acreage": 1261.93
       },
@@ -626,10 +853,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "2392600700",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -666,10 +898,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "882a6900f4ad1c97934f1960cd0d0760032d226e9108473d2b41a0396ff08fa5",
+      "fingerprint_sha256": "7578b966035d7ca7c0c84dd3f854f268d24904119017b6d5c46cca24b8b58ce9",
       "fixture_id": "p14-multipolygon",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -693,6 +935,7 @@
         "fingerprint_sha256": "607896ef68046c67f5c8202cf28792da6433464f62f4bff7fa1f09b9876b03a2",
         "geometry_area_sqft": 10588120.373922,
         "geometry_type": "MultiPolygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": null,
         "taxable_acreage": 241.34
       },
@@ -713,10 +956,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "5891700512",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -752,10 +1000,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "ce322db037647ccfda470424c877ca883f1499292bd883fffcd2acbaacadbd78",
+      "fingerprint_sha256": "f4741ddf76fc968b7be74839f27c7b1b09b39fba1b3dd9195f9ed646ef05cedc",
       "fixture_id": "p14-stacked-a",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -779,6 +1037,7 @@
         "fingerprint_sha256": "5145bf317129af3017451c2b31ae6f93225a0adf61c4e67f65a2a035ca04051f",
         "geometry_area_sqft": 170671.407301,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 170671.76438001913,
         "situs_address": "2416 ADIRONDACK ROW",
         "taxable_acreage": null
       },
@@ -799,10 +1058,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "5891700513",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -838,10 +1102,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "049a957b7e91db008bc22344bfddca398e5e05a705b55f6e2b49f356aa1d6734",
+      "fingerprint_sha256": "21335d71327de4ad0d97aeb13c5072a4e04288efffd58ea7041b74409164cd54",
       "fixture_id": "p14-stacked-b",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -865,6 +1139,7 @@
         "fingerprint_sha256": "36d1a5c18272d823fb8aadf093863cb4f4d3721fce9c99e79f18bb67a28eab5d",
         "geometry_area_sqft": 170671.407301,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 170671.76438001913,
         "situs_address": "2412 ADIRONDACK ROW",
         "taxable_acreage": null
       },
@@ -885,10 +1160,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "5333641301",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -924,10 +1204,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "cbe906122ad314ce56c6078d62dbee20d6cc78cfd2be0e8e955bb58cfc7e495f",
+      "fingerprint_sha256": "dd7b63a4a957f60521653e8b694c880d682f2fa4e6e7ed4b87a65ad9e32d1c53",
       "fixture_id": "p14-stacked-serving-a",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -951,6 +1241,7 @@
         "fingerprint_sha256": "28237c80da2c2a5e9f9348d807f4ef1fef5aa34b9c777ea2bb33e21a1fcee3bd",
         "geometry_area_sqft": 60214.745592,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 60214.88846315378,
         "situs_address": "1501 FRONT ST",
         "taxable_acreage": null
       },
@@ -971,10 +1262,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "5333641302",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1010,10 +1306,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "53c379d8526eea48fba3be29869dfb393d8a0d5cc106dda4584ad1e922452156",
+      "fingerprint_sha256": "7973d843a566b67ec40bb01ef6dff22bcc5c66734271dc4c355cb42e4c5226bc",
       "fixture_id": "p14-stacked-serving-b",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -1037,6 +1343,7 @@
         "fingerprint_sha256": "31bfa73c0ef927f54941ffe3b0d6075a9bed379fbe4a90000cdc10f14a74fce2",
         "geometry_area_sqft": 60214.745592,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 60214.88846315378,
         "situs_address": "1501 FRONT ST",
         "taxable_acreage": null
       },
@@ -1057,10 +1364,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "6782511200",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1096,10 +1408,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "8d8e7d5d074d723f232fb9c2a3dfdd30d22dd05424925b546812581cf3e515a6",
+      "fingerprint_sha256": "4bb9828e7d0941c78c7b18f7c8f25d84466e1877a146c6d88873d89b6609321a",
       "fixture_id": "p14-missing-situs-taxable",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -1123,6 +1445,7 @@
         "fingerprint_sha256": "be28fe192d5a7eaf7aeb5d39e10f28b296111849d00e012b6a8500444981d56a",
         "geometry_area_sqft": 142397.733717,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 142397.9879029563,
         "situs_address": null,
         "taxable_acreage": 3.24
       },
@@ -1143,10 +1466,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "3013101500",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1183,10 +1511,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "03e6301ba007c99d34506f9348eba5627ea541a041a40f8e3cc2f0361c79b71c",
+      "fingerprint_sha256": "9db839b563ef865a2c2a9465a413cb934cdea209509325dae51c73e6f1c63008",
       "fixture_id": "p14-split-rs-rs",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -1210,6 +1548,7 @@
         "fingerprint_sha256": "de57e1c554ad5c6aeaa382f5e78ac24665fb413eb54b039944f05cbf43629e19",
         "geometry_area_sqft": null,
         "geometry_type": null,
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "13591 NOGALES DR",
         "taxable_acreage": null
       },
@@ -1230,10 +1569,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "2748323700",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1270,10 +1614,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "26ea16de530c50b3d4d79e9fd5131ddea16e8c745a83d6f8d7c8e12c4f5a684d",
+      "fingerprint_sha256": "daeaf94558200ea0bbe70167f5cedab88d17897f4ccfee2560350cae10ba84d9",
       "fixture_id": "p14-boundary-sliver",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -1297,6 +1651,7 @@
         "fingerprint_sha256": "909c74f2d5666b0af2e6246e3649d292e570741f6b64d07a2615905de2e08bdc",
         "geometry_area_sqft": 171394.658452,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": null,
         "taxable_acreage": 3.64
       },
@@ -1317,10 +1672,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "4303410600",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1357,10 +1717,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "3f55d6a77d16d1bc39e34745c064cb36b0e2c527b2678875143df4f5f2ba7cd3",
+      "fingerprint_sha256": "b24344ca6147ee6795d72a75ec5933c1bc84df0765c631249201689e4a738aa1",
       "fixture_id": "p14-ambiguous-rs",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -1384,6 +1754,7 @@
         "fingerprint_sha256": "b0beff190ccedeec76c1f8ecae66e6b1486ac68077b362edd11317528acdf908",
         "geometry_area_sqft": null,
         "geometry_type": null,
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "2112 ERIE ST",
         "taxable_acreage": null
       },
@@ -1404,10 +1775,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "7600360300",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1441,10 +1817,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "ae7ba0426a6f810afb04bb67a6f007778e75967b627397b9d436905ec32fb80a",
+      "fingerprint_sha256": "c91c22732e41893858632558f639384f7652c116d585e7fb27765e69351d6be9",
       "fixture_id": "p14-unmapped",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -1468,6 +1854,7 @@
         "fingerprint_sha256": "d57adc83e3a7887e06111fe88dbb5d8e0b2f0949511bbdc35412a3fafab86b36",
         "geometry_area_sqft": 92859.273936,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "2688 MISSION BAY DR",
         "taxable_acreage": null
       },
@@ -1488,10 +1875,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "4236300300",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1529,10 +1921,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "8cb96d052d3544a8b82672e488ea7e9502101f78d9ed22de60f79a749fb04d0d",
+      "fingerprint_sha256": "8f6a2e95ecab6568df4aab6a528537e1348554dbd6ac443497e989ad6c477ea9",
       "fixture_id": "p14-indeterminate-centroid-outside",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -1556,6 +1958,7 @@
         "fingerprint_sha256": "aa1902e4f82e78d4c78821b23f40547a4ea396b115a9f5c3d2738683cc6f89ac",
         "geometry_area_sqft": 313978.323865,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": null,
         "taxable_acreage": 17.31
       },
@@ -1576,10 +1979,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "5810934600",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1616,10 +2024,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "5e0976d95cf343a06daed20f95f5180b68d595a9eceb514e6d5dc7b9cafed573",
+      "fingerprint_sha256": "992b6fc52bf2ab4dcbd3ae7ac4815ad5706342f8bed4486b8934adfc43466564",
       "fixture_id": "p14-explicit-geometry-derivative",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -1643,6 +2061,7 @@
         "fingerprint_sha256": "8269969e4a99151bd99b9eb44e389f8956f1ebc31fe70ba60dd866689c9160d2",
         "geometry_area_sqft": 3644.945157,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": null,
         "taxable_acreage": null
       },
@@ -1663,10 +2082,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "5490330700",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1703,10 +2127,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "ada344e08bb51c79c9e40a6ef3e3f2fca1d70b77459ee5dea1ad7a2d5b0450ec",
+      "fingerprint_sha256": "8588b559276cbbafbd63e6a9e7bcd166d074f9fcf974c304358b541ed45c2550",
       "fixture_id": "p14-historical-known-split",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -1730,6 +2164,7 @@
         "fingerprint_sha256": "eb18b0fd63f0e58259a70ad47ab3b63874f57d704825d5f40ce08cd2ef3c2bb0",
         "geometry_area_sqft": 6480.635462,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "505 IONA DR",
         "taxable_acreage": null
       },
@@ -1750,10 +2185,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "6271001600",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1790,10 +2230,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "d3a06a02212008f99c4c0fa261930afd0ec41247e7b6996d5986857e48d01c05",
+      "fingerprint_sha256": "b097229bb64666b87e22c2150a6730f6019dec19cc1b98812a1b55f7b0efed3d",
       "fixture_id": "p14-multi-zone-non-rs",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -1817,6 +2267,7 @@
         "fingerprint_sha256": "20533f0498b43903934e287b6816b276cbe24e55d6b5da797d3db62f17b61368",
         "geometry_area_sqft": 355136.99968,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": null,
         "taxable_acreage": 8.4
       },
@@ -1837,10 +2288,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "2725300831",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1876,10 +2332,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "e5af255edb8a7aad5b72346464a935112543f613a9018feba3a948af4e7751a9",
+      "fingerprint_sha256": "4a51db56647f9f687924413b04c701a625e30220266366c028fc192542fca0d4",
       "fixture_id": "p14-multipolygon-centroid-outside",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -1903,6 +2369,7 @@
         "fingerprint_sha256": "7f35bc1dcbc6abfdad69a7bf650c4b705b594294ff593cc91e5bdcb21bb01b1f",
         "geometry_area_sqft": 209625.647166,
         "geometry_type": "MultiPolygon",
+        "single_zone_intersection_area_sqft": 209625.92844478838,
         "situs_address": "12761 CAMINO DE LA BRECCIA",
         "taxable_acreage": null
       },
@@ -1923,10 +2390,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "2748402401",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -1963,10 +2435,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "cf9689f48746f8ed27e5797db3143573206b603fd3d71bf6e42862fab0012d06",
+      "fingerprint_sha256": "3714a80349151eeba494a5dd9119f9370f62f2b0695c20f679105d385ff8dd7f",
       "fixture_id": "p14-polygon-centroid-outside",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -1990,6 +2472,7 @@
         "fingerprint_sha256": "c663081adc45f0f1a24b1072d6696b0245b6fd14788435546ff7ffbece097356",
         "geometry_area_sqft": 26131.672061,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "16162 AVENIDA VENUSTO",
         "taxable_acreage": null
       },
@@ -2010,10 +2493,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "2673600300",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -2049,10 +2537,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "e5d35b283f862cf79a2c199455b61ef627b02a177d523b96285cea985c3a8390",
+      "fingerprint_sha256": "c0a7faa351626776a26223f71ca0063bf4b81cb49df278177e6982a1ca9b371c",
       "fixture_id": "p14-small-addressed",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -2076,6 +2574,7 @@
         "fingerprint_sha256": "a3c3d478e3ca9b4b0c7f7f8ff714ee6b9828dfcad2482fe3f4f33fd3bfa81b4b",
         "geometry_area_sqft": 3680.055779,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 3680.0646125827993,
         "situs_address": "15747 SPRECKELS PL",
         "taxable_acreage": null
       },
@@ -2096,10 +2595,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "2723200100",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -2136,10 +2640,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "c6022658715065c567e3464d28105c808c99a349f893d4465fdd1a8d72c962db",
+      "fingerprint_sha256": "83fe14b3bbd35571a6c8f399f4d7bb54cde32005f21c192582224f08c14b5933",
       "fixture_id": "p14-acreage-one",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -2163,6 +2677,7 @@
         "fingerprint_sha256": "102f7876e5f81c20ebf9cc3978b1c9d4aa030c80a1a45e61b9c3ccce714dac8a",
         "geometry_area_sqft": 43417.538719,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "18320 BERNARDO TRAILS DR",
         "taxable_acreage": 1
       },
@@ -2183,10 +2698,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "3527702600",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -2222,10 +2742,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "d286c908a9dd12f624c140b2c60743de8236322ed353311a03a13ffa1596890a",
+      "fingerprint_sha256": "cc49aca58b2c8e8140a8cebaa62c6ff700c36d511e822d864ac5f7328f264a9d",
       "fixture_id": "boundary-tiny-contact",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -2249,6 +2779,7 @@
         "fingerprint_sha256": "9f00e1498733db6617e2532f594a86bb1fa9ba3df997260fe56bc181ee44cf7e",
         "geometry_area_sqft": 80098.549217,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": 80098.90549454167,
         "situs_address": null,
         "taxable_acreage": 1.9700000000000002
       },
@@ -2269,10 +2800,15 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     },
     {
       "apn": "7600300100",
+      "apn_recorded_entity_reconciliation": {
+        "reason": "No full recorded entity reconciliation was completed.",
+        "state": "UNRESOLVED"
+      },
       "areas": [
         {
           "classification": "DIAGNOSTIC_ONLY",
@@ -2306,10 +2842,20 @@
       },
       "development_capacity_calculated": false,
       "dimensions": [],
-      "fingerprint_sha256": "660b6fdfde4d90ba814f71711fbac351f6b6bddc6c52491adfe700cf943442e4",
+      "fingerprint_sha256": "6e32bf049f37d89e2308685965649fc0abf842e442f37e859d712f158e98d8c8",
       "fixture_id": "packet8-identity-exception",
       "frontage_evidence": null,
       "land_dimensions_assigned_to_apn": false,
+      "legal_area_findings": [
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        },
+        {
+          "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA",
+          "state": "UNSUPPORTED"
+        }
+      ],
       "legal_status_state": "LEGAL_LOT_SOURCE_UNAVAILABLE",
       "limitations": [
         "APN existence and assessor parcel mapping do not prove a legal development lot.",
@@ -2333,6 +2879,7 @@
         "fingerprint_sha256": "af34cde9fb69ebbceee42c3b61336a2632a698db764dd764b07a1acabcd0f404",
         "geometry_area_sqft": 330149.123459,
         "geometry_type": "Polygon",
+        "single_zone_intersection_area_sqft": null,
         "situs_address": "998 W MISSION BAY DR",
         "taxable_acreage": 15.5
       },
@@ -2353,6 +2900,7 @@
       "reason": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
       "recorded_map_artifacts": [],
       "recorded_map_references": [],
+      "recorder_chain_state": "RECORDER_CHECK_REQUIRED",
       "subsequent_modifying_records": []
     }
   ]

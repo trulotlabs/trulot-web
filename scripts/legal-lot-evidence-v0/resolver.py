@@ -13,7 +13,7 @@ import re
 from typing import Any
 
 
-CONTRACT_VERSION = "legal-lot-evidence-v0-2026-09-30"
+CONTRACT_VERSION = "legal-lot-evidence-v0-2026-09-30-p25"
 LEGAL_STATES = (
     "LEGAL_LOT_ESTABLISHED",
     "LEGAL_LOT_EVIDENCE_PARTIAL",
@@ -30,6 +30,14 @@ DIMENSION_SEMANTICS = (
     "LOT_DEPTH_EXPLICIT",
     "UNKNOWN_DIMENSION",
 )
+RECONCILIATION_STATES = (
+    "EXACT_RECORDED_LOT_MATCH",
+    "MULTIPLE_RECORDED_LOTS_ONE_APN",
+    "CURRENT_CONFIGURATION_REQUIRES_MODIFICATION_RECORD",
+    "IDENTITY_MISMATCH",
+    "UNRESOLVED",
+)
+CHAIN_STATES = ("REMOTE_CHAIN_SUFFICIENT", "RECORDER_CHECK_REQUIRED")
 
 
 def canonical_json(value: Any) -> str:
@@ -87,12 +95,21 @@ def classify_dimension(raw_label: str | None, explicit_role: str | None = None) 
     return "UNKNOWN_DIMENSION"
 
 
-def legal_area_support(area: dict[str, Any], modification_chain_complete: bool) -> dict[str, Any]:
+def legal_area_support(
+    area: dict[str, Any],
+    modification_chain_complete: bool,
+    reconciliation_state: str = "UNRESOLVED",
+    legal_status_state: str = "LEGAL_LOT_STATUS_UNRESOLVED",
+) -> dict[str, Any]:
     accepted = {"RECORDED_MAP_AREA", "LEGAL_STATUS_RECORD_AREA", "LICENSED_SURVEY_AREA"}
     if area.get("source_semantic") not in accepted:
         return {"state": "UNSUPPORTED", "reason": "ASSESSOR_OR_GEOMETRY_AREA_IS_NOT_LEGAL_LOT_AREA"}
     if not area.get("artifact_sha256"):
         return {"state": "UNSUPPORTED", "reason": "AUTHORITATIVE_ARTIFACT_REQUIRED"}
+    if reconciliation_state != "EXACT_RECORDED_LOT_MATCH":
+        return {"state": "UNSUPPORTED", "reason": "EXACT_RECORDED_ENTITY_MATCH_REQUIRED"}
+    if legal_status_state != "LEGAL_LOT_ESTABLISHED":
+        return {"state": "UNSUPPORTED", "reason": "CURRENT_LEGAL_LOT_STATUS_REQUIRED"}
     if not modification_chain_complete:
         return {"state": "UNSUPPORTED", "reason": "MODIFICATION_CHAIN_UNRESOLVED"}
     return {"state": "LEGAL_LOT_AREA_SUPPORTED", "value": area.get("value"), "unit": area.get("unit"), "provenance": area.get("provenance")}
@@ -142,12 +159,21 @@ def resolve_fixture(fixture: dict[str, Any]) -> dict[str, Any]:
         "lot_line_evidence": fixture.get("lot_line_evidence"),
         "subsequent_modifying_records": fixture.get("subsequent_modifying_records", []),
         "modification_chain": fixture.get("modification_chain"),
+        "apn_recorded_entity_reconciliation": fixture.get("apn_recorded_entity_reconciliation", {"state": "UNRESOLVED"}),
+        "recorder_chain_state": fixture.get("recorder_chain_state", "RECORDER_CHECK_REQUIRED"),
         "provenance": fixture.get("provenance", []),
         "limitations": fixture.get("limitations", []),
         "parcel_compliance_evaluated": False,
         "development_capacity_calculated": False,
     })
-    result["minimum_lot_area_evaluation_state"] = "READY_FOR_DETERMINISTIC_EVALUATION" if any(legal_area_support(area, fixture.get("modification_chain", {}).get("state") == "COMPLETE_TO_CURRENT").get("state") == "LEGAL_LOT_AREA_SUPPORTED" for area in fixture.get("areas", [])) else "BLOCKED_BY_LEGAL_LOT_AREA_EVIDENCE"
+    reconciliation_state = result["apn_recorded_entity_reconciliation"]["state"]
+    modification_chain_complete = fixture.get("modification_chain", {}).get("state") == "COMPLETE_TO_CURRENT"
+    area_results = [
+        legal_area_support(area, modification_chain_complete, reconciliation_state, result["legal_status_state"])
+        for area in fixture.get("areas", [])
+    ]
+    result["legal_area_findings"] = area_results
+    result["minimum_lot_area_evaluation_state"] = "READY_FOR_DETERMINISTIC_EVALUATION" if any(item.get("state") == "LEGAL_LOT_AREA_SUPPORTED" for item in area_results) else "BLOCKED_BY_LEGAL_LOT_AREA_EVIDENCE"
     core = dict(result)
     result["fingerprint_sha256"] = fingerprint(core)
     return result
