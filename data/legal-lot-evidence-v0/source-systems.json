@@ -1,0 +1,71 @@
+{
+  "contract_version": "legal-lot-evidence-v0-2026-09-30",
+  "systems": [
+    {
+      "limitations": [
+        "assessment/tax purpose only",
+        "not survey accuracy or legal-rights proof",
+        "map download is session-bound and did not yield a retained file in bounded browser review",
+        "usage limits apply"
+      ],
+      "name": "County Assessor Mapping Services",
+      "official_url": "https://www.sdarcc.gov/content/arcc/home/divisions/assessor/mapping-services.html",
+      "online_search": "https://assr.parcelquest.com/",
+      "provides": [
+        "tax parcel/APN identity",
+        "assessor map book/page lookup",
+        "recorded dimensions and acreage where displayed",
+        "recorded-map references"
+      ],
+      "query": "County=San Diego; By APN; formatted APN"
+    },
+    {
+      "limitations": [
+        "full authoritative page/document downloads require paid cart transactions",
+        "parcel and aerial overlays are not fully registered",
+        "system supplements the Survey Records Counter",
+        "Certificate of Correction list is partial from 1982"
+      ],
+      "name": "County Survey Records System",
+      "official_url": "https://srs.sandiegocounty.gov/",
+      "provides": [
+        "subdivision/final maps",
+        "parcel maps",
+        "records of survey",
+        "corner records",
+        "metadata and preview thumbnails"
+      ],
+      "query": "keyword/record number, APN, address, intersection, geography"
+    },
+    {
+      "limitations": [
+        "records are distributed among OpenDSD, Accela, Permit Finder, open data, subdivision cards, and records requests",
+        "absence in a single endpoint is not proof of no record"
+      ],
+      "name": "City Development Services records",
+      "official_url": "https://www.sandiego.gov/development-services/permits-inspections/mapping-land-title-review",
+      "provides": [
+        "parcel/final maps",
+        "Certificates of Compliance",
+        "lot-line adjustments",
+        "mergers",
+        "corrections/amended maps",
+        "mapping approvals"
+      ],
+      "query": "address, plan/approval/permit number, legal description/APN through listed City tools or records request",
+      "records_url": "https://www.sandiego.gov/development-services/forms-publications/information-bulletin/110"
+    },
+    {
+      "limitations": [
+        "online APN search removed by law",
+        "bounded remote APN-to-modification-chain proof is unavailable"
+      ],
+      "name": "County Recorder",
+      "official_url": "https://www.sdarcc.gov/content/arcc/home/divisions/recorder-clerk/recording.html",
+      "provides": [
+        "recorded legal instruments needed for modification-chain reconciliation"
+      ],
+      "query": "document/title/name online; APN only at five in-person kiosks effective 2024-12-09"
+    }
+  ]
+}

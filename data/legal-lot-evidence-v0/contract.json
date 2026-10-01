@@ -1,0 +1,44 @@
+{
+  "area_semantics": [
+    "ASSESSOR_DISPLAYED_ACREAGE",
+    "RECORDED_MAP_AREA",
+    "CALCULATED_RECORDED_BOUNDARY_AREA",
+    "PARCEL_V2_GEOMETRY_AREA",
+    "LEGAL_LOT_AREA"
+  ],
+  "containment": {
+    "citywide_imported": false,
+    "development_capacity_calculated": false,
+    "parcel_compliance_calculated": false,
+    "production_wired": false
+  },
+  "contract_version": "legal-lot-evidence-v0-2026-09-30",
+  "dimension_semantics": [
+    "RECORDED_BOUNDARY_LENGTH",
+    "ARC_LENGTH",
+    "RADIAL_DIMENSION",
+    "STREET_WIDTH",
+    "EASEMENT_WIDTH",
+    "LOT_WIDTH_EXPLICIT",
+    "LOT_DEPTH_EXPLICIT",
+    "UNKNOWN_DIMENSION"
+  ],
+  "doctrine": [
+    "APN is not a legal-lot conclusion.",
+    "Assessor map dimensions are not automatically Code-defined width or depth.",
+    "Street adjacency, dedicated right-of-way, frontage length, and Code-defined frontage are distinct.",
+    "Historic recorded maps require a later-modification search.",
+    "Condominium/stack APN dimensions belong to no unit unless explicit underlying-land semantics support that attribution."
+  ],
+  "evidence_classes": {
+    "assessor_parcel_map": "Tax identity and map-reference evidence; never legal-lot proof by itself.",
+    "legal_lot_status": "Requires legally operative evidence plus a current modification chain.",
+    "recorded_map_or_survey": "May support recorded geometry and identifiers when the full authoritative artifact is retained."
+  },
+  "legal_states": [
+    "LEGAL_LOT_ESTABLISHED",
+    "LEGAL_LOT_EVIDENCE_PARTIAL",
+    "LEGAL_LOT_STATUS_UNRESOLVED",
+    "LEGAL_LOT_SOURCE_UNAVAILABLE"
+  ]
+}

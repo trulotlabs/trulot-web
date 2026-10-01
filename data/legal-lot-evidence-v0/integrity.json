@@ -1,0 +1,12 @@
+{
+  "artifacts": {
+    "contract.json": "5be5d4ab4cae1d8e37322f5f950a63131f8d223020d8f486863e943eb965ef34",
+    "decision.json": "655f991f0b3f74ea03322d84c39b2f889f03a6b037f204fd4af58425baa7f3c6",
+    "fixture-results.json": "9976245c3a094ed7e708bc4cff860a6e79ad94c360fde15397fd774d9d1164b3",
+    "fixtures.json": "b98c869cbe4269d46f974be04c0c644a864c75510952696f6cb9111e92195efa",
+    "reconciliation.json": "b369f6e6ab3770b665cc9e58c5563e95e4799724d34a7f4d1854b341a4a8982e",
+    "source-systems.json": "972accdc5a68683b2e546ba5d7ad5b223dc27014edccf20122dadcbd7e614b83"
+  },
+  "bundle_sha256": "f8b8ab7c606328ff92036db6c1a426a559823bbc981cc2355e536fb2ff09b41e",
+  "contract_version": "legal-lot-evidence-v0-2026-09-30"
+}

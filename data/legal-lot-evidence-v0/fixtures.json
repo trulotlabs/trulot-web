@@ -1,0 +1,2262 @@
+{
+  "contract_version": "legal-lot-evidence-v0-2026-09-30",
+  "fixture_count": 25,
+  "fixtures": [
+    {
+      "apn": "3506320400",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": null
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": {
+        "acquired_at": "2026-09-30T22:20:00-07:00",
+        "address": "7553 CABRILLO AVE LA JOLLA CA 92037-5206",
+        "artifact_sha256": null,
+        "artifact_state": "DOWNLOAD_TRIGGERED_NO_FILE_RETAINED",
+        "legal_description_raw": "TR 915 BLK 4*LOTS 7 THRU 9*",
+        "map_action_key": "350~35063",
+        "reference_parse": {
+          "normalized_text": "TR 915 BLK 4 LOTS 7 THRU 9",
+          "raw": "TR 915 BLK 4*LOTS 7 THRU 9*",
+          "references": [
+            {
+              "normalized": "MAP 00915",
+              "raw": "TR 915",
+              "type": "SUBDIVISION_MAP"
+            },
+            {
+              "normalized": "BLOCK 4",
+              "raw": "BLK 4",
+              "type": "BLOCK"
+            },
+            {
+              "normalized": "LOTS 7-9",
+              "raw": "LOTS 7 THRU 9",
+              "type": "LOT"
+            }
+          ],
+          "state": "REFERENCE_FOUND"
+        },
+        "source_url": "https://assr.parcelquest.com/Statewide",
+        "state": "FOUND"
+      },
+      "assessor_map_identifier": {
+        "book": "350",
+        "lookup_key": "350~35063",
+        "page": "63",
+        "parcel": "204",
+        "status": "CONFIRMED_IN_OFFICIAL_SEARCH",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "INSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RS-1-7"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-ordinary-rs-1-7",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists.",
+        "SRS verified record metadata, but the full authoritative document requires a paid cart transaction that was not authorized."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [
+        {
+          "normalized": "BLOCK 4",
+          "raw": "BLK 4",
+          "type": "BLOCK"
+        },
+        {
+          "normalized": "LOTS 7-9",
+          "raw": "LOTS 7 THRU 9",
+          "type": "LOT"
+        }
+      ],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "SRS record metadata"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "5ab9ab87853af1816bc7e0389c1882f3430d93426ba47076f34e7e4f08a83967",
+        "geometry_area_sqft": null,
+        "geometry_type": null,
+        "situs_address": "7553 CABRILLO AVE",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "5ab9ab87853af1816bc7e0389c1882f3430d93426ba47076f34e7e4f08a83967",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [
+        {
+          "artifact_sha256": null,
+          "artifact_state": "FULL_DOCUMENT_PURCHASE_REQUIRED_NOT_AUTHORIZED",
+          "cross_reference": null,
+          "download_price_usd": 4,
+          "filing_or_recording_date": null,
+          "pages": 1,
+          "record_number": "MAP 00915",
+          "record_type": "Subdivision Map",
+          "relation_to_target_apn": "REFERENCE_FROM_OFFICIAL_ASSESSOR_LEGAL_DESCRIPTION",
+          "source_url": "https://srs.sandiegocounty.gov/#/s?v=G&a=c&q=MAP%2000915",
+          "subdivision_name": "MAP OF CENTER ADDITION"
+        }
+      ],
+      "recorded_map_references": [
+        {
+          "normalized": "MAP 00915",
+          "raw": "TR 915",
+          "type": "SUBDIVISION_MAP"
+        }
+      ],
+      "source_unavailable": null,
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "6341302200",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 21841.412194
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": 0.51
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_location": "ParcelQuest Property Characteristics / Lot Acres",
+          "source_semantic": "ASSESSOR_DISPLAYED_ACREAGE",
+          "unit": "acre",
+          "value": 0.51
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_location": "ParcelQuest Property Characteristics / Lot SqFt",
+          "source_semantic": "ASSESSOR_DISPLAYED_LOT_SQFT",
+          "unit": "sqft",
+          "value": 22215
+        }
+      ],
+      "assessor_evidence": {
+        "acquired_at": "2026-09-30T22:20:00-07:00",
+        "address": "1456 27TH ST SAN DIEGO CA 92154-3238",
+        "artifact_sha256": null,
+        "artifact_state": "DOWNLOAD_TRIGGERED_NO_FILE_RETAINED",
+        "legal_description_raw": "PM17383 PAR 2",
+        "map_action_key": "634~63413",
+        "reference_parse": {
+          "normalized_text": "PM17383 PAR 2",
+          "raw": "PM17383 PAR 2",
+          "references": [
+            {
+              "normalized": "PM 17383",
+              "raw": "PM17383",
+              "type": "PARCEL_MAP"
+            },
+            {
+              "normalized": "PARCEL 2",
+              "raw": "PAR 2",
+              "type": "PARCEL"
+            }
+          ],
+          "state": "REFERENCE_FOUND"
+        },
+        "source_url": "https://assr.parcelquest.com/Statewide",
+        "state": "FOUND"
+      },
+      "assessor_map_identifier": {
+        "book": "634",
+        "lookup_key": "634~63413",
+        "page": "13",
+        "parcel": "022",
+        "status": "CONFIRMED_IN_OFFICIAL_SEARCH",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RS-1-7"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "outside-rs-1-7",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists.",
+        "SRS verified record metadata, but the full authoritative document requires a paid cart transaction that was not authorized."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [
+        {
+          "normalized": "PARCEL 2",
+          "raw": "PAR 2",
+          "type": "PARCEL"
+        }
+      ],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "SRS record metadata"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "CONSISTENT_BUT_SEMANTICS_DIFFER",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+        "geometry_area_sqft": 21841.412194,
+        "geometry_type": "Polygon",
+        "situs_address": "1456 27TH ST",
+        "taxable_acreage": 0.51
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [
+        {
+          "artifact_sha256": null,
+          "artifact_state": "FULL_DOCUMENT_PURCHASE_REQUIRED_NOT_AUTHORIZED",
+          "cross_reference": "FILE NO 1994-414843",
+          "download_price_usd": 8,
+          "filing_or_recording_date": null,
+          "pages": 2,
+          "record_number": "PM 17383",
+          "record_type": "Parcel Map",
+          "relation_to_target_apn": "REFERENCE_FROM_OFFICIAL_ASSESSOR_LEGAL_DESCRIPTION",
+          "source_url": "https://srs.sandiegocounty.gov/#/s?v=G&a=c&q=PM%2017383",
+          "subdivision_name": null
+        }
+      ],
+      "recorded_map_references": [
+        {
+          "normalized": "PM 17383",
+          "raw": "PM17383",
+          "type": "PARCEL_MAP"
+        }
+      ],
+      "source_unavailable": null,
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "4304211000",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": null
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_location": "ParcelQuest Property Characteristics / Lot Acres",
+          "source_semantic": "ASSESSOR_DISPLAYED_ACREAGE",
+          "unit": "acre",
+          "value": 0.385
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_location": "ParcelQuest Property Characteristics / Lot SqFt",
+          "source_semantic": "ASSESSOR_DISPLAYED_LOT_SQFT",
+          "unit": "sqft",
+          "value": 16800
+        }
+      ],
+      "assessor_evidence": {
+        "acquired_at": "2026-09-30T22:20:00-07:00",
+        "address": "4927 WHITEHAVEN WAY SAN DIEGO CA 92110-1249",
+        "artifact_sha256": null,
+        "artifact_state": "DOWNLOAD_TRIGGERED_NO_FILE_RETAINED",
+        "legal_description_raw": "TR 3225 LOT 85*",
+        "map_action_key": "430~43042",
+        "reference_parse": {
+          "normalized_text": "TR 3225 LOT 85",
+          "raw": "TR 3225 LOT 85*",
+          "references": [
+            {
+              "normalized": "MAP 03225",
+              "raw": "TR 3225",
+              "type": "SUBDIVISION_MAP"
+            },
+            {
+              "normalized": "LOT 85",
+              "raw": "LOT 85",
+              "type": "LOT"
+            }
+          ],
+          "state": "REFERENCE_FOUND"
+        },
+        "source_url": "https://assr.parcelquest.com/Statewide",
+        "state": "FOUND"
+      },
+      "assessor_map_identifier": {
+        "book": "430",
+        "lookup_key": "430~43042",
+        "page": "42",
+        "parcel": "110",
+        "status": "CONFIRMED_IN_OFFICIAL_SEARCH",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SPLIT_ZONE",
+        "zones": [
+          "RS-1-7",
+          "OR-1-1"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-split-rs-non-rs",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists.",
+        "SRS verified record metadata, but the full authoritative document requires a paid cart transaction that was not authorized."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [
+        {
+          "normalized": "LOT 85",
+          "raw": "LOT 85",
+          "type": "LOT"
+        }
+      ],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "SRS record metadata"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "0814a7d54119a3c82b479392f550d562ac677037766d8353b4cf095bd9f66c4b",
+        "geometry_area_sqft": null,
+        "geometry_type": null,
+        "situs_address": "4927 WHITEHAVEN WAY",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "0814a7d54119a3c82b479392f550d562ac677037766d8353b4cf095bd9f66c4b",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [
+        {
+          "artifact_sha256": null,
+          "artifact_state": "FULL_DOCUMENT_PURCHASE_REQUIRED_NOT_AUTHORIZED",
+          "cross_reference": "FILE NO 57695",
+          "download_price_usd": 24,
+          "filing_or_recording_date": null,
+          "pages": 6,
+          "record_number": "MAP 03225",
+          "record_type": "Subdivision Map",
+          "relation_to_target_apn": "REFERENCE_FROM_OFFICIAL_ASSESSOR_LEGAL_DESCRIPTION",
+          "source_url": "https://srs.sandiegocounty.gov/#/s?v=G&a=c&q=MAP%2003225",
+          "subdivision_name": "WESTERN HILLS UNIT NO.1"
+        }
+      ],
+      "recorded_map_references": [
+        {
+          "normalized": "MAP 03225",
+          "raw": "TR 3225",
+          "type": "SUBDIVISION_MAP"
+        }
+      ],
+      "source_unavailable": null,
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "3031701800",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 8.548198
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "303",
+        "lookup_key": "303~30317",
+        "page": "17",
+        "parcel": "018",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "AR-1-1"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-smallest-geometry",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "b2b63a731cf7be5bf9664a3714eaf9d77c1e7529930393d7a7071c744cf0cc10",
+        "geometry_area_sqft": 8.548198,
+        "geometry_type": "Polygon",
+        "situs_address": null,
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "b2b63a731cf7be5bf9664a3714eaf9d77c1e7529930393d7a7071c744cf0cc10",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "2421001000",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 54948372.53094
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": 1261.93
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "242",
+        "lookup_key": "242~24210",
+        "page": "10",
+        "parcel": "010",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SPLIT_ZONE",
+        "zones": [
+          "AG-1-1",
+          "AR-1-1"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-largest-geometry",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "b20dbc6e9452cfe06dc38a0defc58018a6fac557797ffaf42c899cbd6882ad65",
+        "geometry_area_sqft": 54948372.53094,
+        "geometry_type": "MultiPolygon",
+        "situs_address": null,
+        "taxable_acreage": 1261.93
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "b20dbc6e9452cfe06dc38a0defc58018a6fac557797ffaf42c899cbd6882ad65",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "2392600700",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 10588120.373922
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": 241.34
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "239",
+        "lookup_key": "239~23926",
+        "page": "26",
+        "parcel": "007",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "AMBIGUOUS",
+        "zones": [
+          "AG-1-1",
+          "AR-1-1"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-multipolygon",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "607896ef68046c67f5c8202cf28792da6433464f62f4bff7fa1f09b9876b03a2",
+        "geometry_area_sqft": 10588120.373922,
+        "geometry_type": "MultiPolygon",
+        "situs_address": null,
+        "taxable_acreage": 241.34
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "607896ef68046c67f5c8202cf28792da6433464f62f4bff7fa1f09b9876b03a2",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "5891700512",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 170671.407301
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "589",
+        "lookup_key": "589~58917",
+        "page": "17",
+        "parcel": "005",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "12"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": true,
+        "zone_mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RM-2-5"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-stacked-a",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "5145bf317129af3017451c2b31ae6f93225a0adf61c4e67f65a2a035ca04051f",
+        "geometry_area_sqft": 170671.407301,
+        "geometry_type": "Polygon",
+        "situs_address": "2416 ADIRONDACK ROW",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "5145bf317129af3017451c2b31ae6f93225a0adf61c4e67f65a2a035ca04051f",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": true,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "5891700513",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 170671.407301
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "589",
+        "lookup_key": "589~58917",
+        "page": "17",
+        "parcel": "005",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "13"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": true,
+        "zone_mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RM-2-5"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-stacked-b",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "36d1a5c18272d823fb8aadf093863cb4f4d3721fce9c99e79f18bb67a28eab5d",
+        "geometry_area_sqft": 170671.407301,
+        "geometry_type": "Polygon",
+        "situs_address": "2412 ADIRONDACK ROW",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "36d1a5c18272d823fb8aadf093863cb4f4d3721fce9c99e79f18bb67a28eab5d",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": true,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "5333641301",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 60214.745592
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "533",
+        "lookup_key": "533~53336",
+        "page": "36",
+        "parcel": "413",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "01"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": true,
+        "zone_mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "CCPD-RE"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-stacked-serving-a",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "28237c80da2c2a5e9f9348d807f4ef1fef5aa34b9c777ea2bb33e21a1fcee3bd",
+        "geometry_area_sqft": 60214.745592,
+        "geometry_type": "Polygon",
+        "situs_address": "1501 FRONT ST",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "28237c80da2c2a5e9f9348d807f4ef1fef5aa34b9c777ea2bb33e21a1fcee3bd",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": true,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "5333641302",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 60214.745592
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "533",
+        "lookup_key": "533~53336",
+        "page": "36",
+        "parcel": "413",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "02"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": true,
+        "zone_mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "CCPD-RE"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-stacked-serving-b",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "31bfa73c0ef927f54941ffe3b0d6075a9bed379fbe4a90000cdc10f14a74fce2",
+        "geometry_area_sqft": 60214.745592,
+        "geometry_type": "Polygon",
+        "situs_address": "1501 FRONT ST",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "31bfa73c0ef927f54941ffe3b0d6075a9bed379fbe4a90000cdc10f14a74fce2",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": true,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "6782511200",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 142397.733717
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": 3.24
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "678",
+        "lookup_key": "678~67825",
+        "page": "25",
+        "parcel": "112",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "IP-2-1"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-missing-situs-taxable",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "be28fe192d5a7eaf7aeb5d39e10f28b296111849d00e012b6a8500444981d56a",
+        "geometry_area_sqft": 142397.733717,
+        "geometry_type": "Polygon",
+        "situs_address": null,
+        "taxable_acreage": 3.24
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "be28fe192d5a7eaf7aeb5d39e10f28b296111849d00e012b6a8500444981d56a",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "3013101500",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": null
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "301",
+        "lookup_key": "301~30131",
+        "page": "31",
+        "parcel": "015",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "INSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SPLIT_ZONE",
+        "zones": [
+          "RS-1-3",
+          "RS-1-6"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-split-rs-rs",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "de57e1c554ad5c6aeaa382f5e78ac24665fb413eb54b039944f05cbf43629e19",
+        "geometry_area_sqft": null,
+        "geometry_type": null,
+        "situs_address": "13591 NOGALES DR",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "de57e1c554ad5c6aeaa382f5e78ac24665fb413eb54b039944f05cbf43629e19",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "2748323700",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 171394.658452
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": 3.64
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "274",
+        "lookup_key": "274~27483",
+        "page": "83",
+        "parcel": "237",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "BOUNDARY_SLIVER",
+        "zones": [
+          "RS-1-14",
+          "RM-1-1"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-boundary-sliver",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "909c74f2d5666b0af2e6246e3649d292e570741f6b64d07a2615905de2e08bdc",
+        "geometry_area_sqft": 171394.658452,
+        "geometry_type": "Polygon",
+        "situs_address": null,
+        "taxable_acreage": 3.64
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "909c74f2d5666b0af2e6246e3649d292e570741f6b64d07a2615905de2e08bdc",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "4303410600",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": null
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "430",
+        "lookup_key": "430~43034",
+        "page": "34",
+        "parcel": "106",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "AMBIGUOUS",
+        "zones": [
+          "RS-1-7",
+          "CC-3-9"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-ambiguous-rs",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "b0beff190ccedeec76c1f8ecae66e6b1486ac68077b362edd11317528acdf908",
+        "geometry_area_sqft": null,
+        "geometry_type": null,
+        "situs_address": "2112 ERIE ST",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "b0beff190ccedeec76c1f8ecae66e6b1486ac68077b362edd11317528acdf908",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "7600360300",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 92859.273936
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "760",
+        "lookup_key": "760~76003",
+        "page": "03",
+        "parcel": "603",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "INSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "UNMAPPED",
+        "zones": []
+      },
+      "dimensions": [],
+      "fixture_id": "p14-unmapped",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "d57adc83e3a7887e06111fe88dbb5d8e0b2f0949511bbdc35412a3fafab86b36",
+        "geometry_area_sqft": 92859.273936,
+        "geometry_type": "Polygon",
+        "situs_address": "2688 MISSION BAY DR",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "d57adc83e3a7887e06111fe88dbb5d8e0b2f0949511bbdc35412a3fafab86b36",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "4236300300",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 313978.323865
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": 17.31
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "423",
+        "lookup_key": "423~42363",
+        "page": "63",
+        "parcel": "003",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "BOUNDARY_AMBIGUOUS",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "AMBIGUOUS",
+        "zones": [
+          "MBPD-R-N",
+          "MBPD-R-S",
+          "OP-1-1"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-indeterminate-centroid-outside",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "aa1902e4f82e78d4c78821b23f40547a4ea396b115a9f5c3d2738683cc6f89ac",
+        "geometry_area_sqft": 313978.323865,
+        "geometry_type": "Polygon",
+        "situs_address": null,
+        "taxable_acreage": 17.31
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "aa1902e4f82e78d4c78821b23f40547a4ea396b115a9f5c3d2738683cc6f89ac",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "5810934600",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 3644.945157
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "581",
+        "lookup_key": "581~58109",
+        "page": "09",
+        "parcel": "346",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SPLIT_ZONE",
+        "zones": [
+          "RS-1-1",
+          "RS-1-7"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-explicit-geometry-derivative",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "8269969e4a99151bd99b9eb44e389f8956f1ebc31fe70ba60dd866689c9160d2",
+        "geometry_area_sqft": 3644.945157,
+        "geometry_type": "Polygon",
+        "situs_address": null,
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "8269969e4a99151bd99b9eb44e389f8956f1ebc31fe70ba60dd866689c9160d2",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "5490330700",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 6480.635462
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "549",
+        "lookup_key": "549~54903",
+        "page": "03",
+        "parcel": "307",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SPLIT_ZONE",
+        "zones": [
+          "RM-2-5",
+          "RS-1-6"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-historical-known-split",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "eb18b0fd63f0e58259a70ad47ab3b63874f57d704825d5f40ce08cd2ef3c2bb0",
+        "geometry_area_sqft": 6480.635462,
+        "geometry_type": "Polygon",
+        "situs_address": "505 IONA DR",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "eb18b0fd63f0e58259a70ad47ab3b63874f57d704825d5f40ce08cd2ef3c2bb0",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "6271001600",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 355136.99968
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": 8.4
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "627",
+        "lookup_key": "627~62710",
+        "page": "10",
+        "parcel": "016",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "INSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SPLIT_ZONE",
+        "zones": [
+          "OF-1-1",
+          "AR-1-2"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-multi-zone-non-rs",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "20533f0498b43903934e287b6816b276cbe24e55d6b5da797d3db62f17b61368",
+        "geometry_area_sqft": 355136.99968,
+        "geometry_type": "Polygon",
+        "situs_address": null,
+        "taxable_acreage": 8.4
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "20533f0498b43903934e287b6816b276cbe24e55d6b5da797d3db62f17b61368",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "2725300831",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 209625.647166
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "272",
+        "lookup_key": "272~27253",
+        "page": "53",
+        "parcel": "008",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "31"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "AR-1-2"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-multipolygon-centroid-outside",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "7f35bc1dcbc6abfdad69a7bf650c4b705b594294ff593cc91e5bdcb21bb01b1f",
+        "geometry_area_sqft": 209625.647166,
+        "geometry_type": "MultiPolygon",
+        "situs_address": "12761 CAMINO DE LA BRECCIA",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "7f35bc1dcbc6abfdad69a7bf650c4b705b594294ff593cc91e5bdcb21bb01b1f",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "2748402401",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 26131.672061
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "274",
+        "lookup_key": "274~27484",
+        "page": "84",
+        "parcel": "024",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "01"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SPLIT_ZONE",
+        "zones": [
+          "RM-1-1",
+          "RS-1-14"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-polygon-centroid-outside",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "c663081adc45f0f1a24b1072d6696b0245b6fd14788435546ff7ffbece097356",
+        "geometry_area_sqft": 26131.672061,
+        "geometry_type": "Polygon",
+        "situs_address": "16162 AVENIDA VENUSTO",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "c663081adc45f0f1a24b1072d6696b0245b6fd14788435546ff7ffbece097356",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "2673600300",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 3680.055779
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": null
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "267",
+        "lookup_key": "267~26736",
+        "page": "36",
+        "parcel": "003",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RX-1-2"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-small-addressed",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "a3c3d478e3ca9b4b0c7f7f8ff714ee6b9828dfcad2482fe3f4f33fd3bfa81b4b",
+        "geometry_area_sqft": 3680.055779,
+        "geometry_type": "Polygon",
+        "situs_address": "15747 SPRECKELS PL",
+        "taxable_acreage": null
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "a3c3d478e3ca9b4b0c7f7f8ff714ee6b9828dfcad2482fe3f4f33fd3bfa81b4b",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "2723200100",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 43417.538719
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": 1
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "272",
+        "lookup_key": "272~27232",
+        "page": "32",
+        "parcel": "001",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "OUTSIDE_COASTAL",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SPLIT_ZONE",
+        "zones": [
+          "AR-1-2",
+          "RS-1-11"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "p14-acreage-one",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "102f7876e5f81c20ebf9cc3978b1c9d4aa030c80a1a45e61b9c3ccce714dac8a",
+        "geometry_area_sqft": 43417.538719,
+        "geometry_type": "Polygon",
+        "situs_address": "18320 BERNARDO TRAILS DR",
+        "taxable_acreage": 1
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "102f7876e5f81c20ebf9cc3978b1c9d4aa030c80a1a45e61b9c3ccce714dac8a",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "3527702600",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 80098.549217
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": 1.9700000000000002
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "352",
+        "lookup_key": "352~35277",
+        "page": "77",
+        "parcel": "026",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "BOUNDARY_AMBIGUOUS",
+        "identity_exception": false,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "SINGLE_ZONE",
+        "zones": [
+          "RS-1-2"
+        ]
+      },
+      "dimensions": [],
+      "fixture_id": "boundary-tiny-contact",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "9f00e1498733db6617e2532f594a86bb1fa9ba3df997260fe56bc181ee44cf7e",
+        "geometry_area_sqft": 80098.549217,
+        "geometry_type": "Polygon",
+        "situs_address": null,
+        "taxable_acreage": 1.9700000000000002
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "9f00e1498733db6617e2532f594a86bb1fa9ba3df997260fe56bc181ee44cf7e",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    },
+    {
+      "apn": "7600300100",
+      "areas": [
+        {
+          "classification": "DIAGNOSTIC_ONLY",
+          "source_semantic": "PARCEL_V2_GEOMETRY_AREA",
+          "unit": "sqft",
+          "value": 330149.123459
+        },
+        {
+          "classification": "ASSESSOR_TAX_FACT_NOT_LEGAL_LOT_AREA",
+          "source_semantic": "PARCEL_V2_TAXABLE_ACREAGE",
+          "unit": "acre",
+          "value": 15.5
+        }
+      ],
+      "assessor_evidence": null,
+      "assessor_map_identifier": {
+        "book": "760",
+        "lookup_key": "760~76003",
+        "page": "03",
+        "parcel": "001",
+        "status": "DERIVED_LOOKUP_KEY_NOT_ARTIFACT_CONFIRMED",
+        "sub_id": "00"
+      },
+      "coverage_tags": {
+        "coastal_state": "SOURCE_UNAVAILABLE",
+        "identity_exception": true,
+        "stacked_or_condo": false,
+        "zone_mapping_state": "UNAVAILABLE",
+        "zones": []
+      },
+      "dimensions": [],
+      "fixture_id": "packet8-identity-exception",
+      "frontage_evidence": null,
+      "legal_status_evidence": null,
+      "limitations": [
+        "APN existence and assessor parcel mapping do not prove a legal development lot.",
+        "No dimension may be promoted to Code-defined width/depth without explicit legal semantics.",
+        "No absence in a City endpoint is treated as proof that no modifying record exists."
+      ],
+      "lot_line_evidence": null,
+      "map_lot_or_parcel_identifier": [],
+      "modification_chain": {
+        "limitation": "Recorder APN search is available only at in-person kiosks; the SRS Certificate of Correction list is partial from 1982.",
+        "searched_sources": [
+          "assessor lookup route"
+        ],
+        "state": "UNRESOLVED"
+      },
+      "parcel_v2_comparison": "UNRESOLVED",
+      "parcel_v2_source_identity": {
+        "contract_version": "parcel-intelligence-v2-2026-09-30-v1",
+        "fingerprint_sha256": "af34cde9fb69ebbceee42c3b61336a2632a698db764dd764b07a1acabcd0f404",
+        "geometry_area_sqft": 330149.123459,
+        "geometry_type": "Polygon",
+        "situs_address": "998 W MISSION BAY DR",
+        "taxable_acreage": 15.5
+      },
+      "provenance": [
+        {
+          "fingerprint_sha256": "af34cde9fb69ebbceee42c3b61336a2632a698db764dd764b07a1acabcd0f404",
+          "source": "Parcel Intelligence V2 fixture"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Assessor Mapping Services / ParcelQuest"
+        },
+        {
+          "observed_at": "2026-09-30",
+          "source": "County Survey Records System"
+        }
+      ],
+      "recorded_map_artifacts": [],
+      "recorded_map_references": [],
+      "source_unavailable": "SESSION_BOUND_ASSESSOR_DOWNLOAD_DID_NOT_YIELD_RETAINABLE_ARTIFACT",
+      "stacked_or_condo": false,
+      "subsequent_modifying_records": [],
+      "underlying_land_parcel_evidence": null
+    }
+  ]
+}
