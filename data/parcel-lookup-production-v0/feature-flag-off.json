@@ -1,0 +1,18 @@
+{
+  "contractVersion": "parcel-lookup-production-v0-feature-flag-off-2026-10-01-p45",
+  "evidence": "LOCAL_PRODUCTION_SHAPED_EVIDENCE",
+  "productionAccessed": false,
+  "environment": {
+    "TRULOT_PARCEL_LOOKUP_V0": "0"
+  },
+  "results": [
+    {
+      "pathname": "/parcel-lookup",
+      "status": 404
+    },
+    {
+      "pathname": "/api/parcel-lookup?q=5442140600",
+      "status": 404
+    }
+  ]
+}

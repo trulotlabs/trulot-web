@@ -1,0 +1,65 @@
+{
+  "contractVersion": "parcel-lookup-production-v0-browser-2026-10-01-p45",
+  "evidence": "LOCAL_PRODUCTION_SHAPED_EVIDENCE",
+  "baseUrl": "http://127.0.0.1:3216/parcel-lookup",
+  "productionAccessed": false,
+  "viewports": {
+    "desktop": "1440x1000",
+    "mobile": "390x844"
+  },
+  "renderedWarmSearch": {
+    "query": "639 N 67",
+    "sampleCount": 20,
+    "medianMs": 189.1,
+    "p95Ms": 293.1,
+    "target": "median <= 300 ms; p95 <= 800 ms"
+  },
+  "correctlyCopiedApn": {
+    "query": "639 N 67TH ST",
+    "value": "544-214-06-00",
+    "elapsedMs": 369.1,
+    "target": "< 2000 ms warm session"
+  },
+  "checks": {
+    "actualApiRoute": true,
+    "stableResponseSchema": true,
+    "internalFieldsAbsent": true,
+    "invalidQueryStable": true,
+    "apnVisibleInAutocomplete": true,
+    "exactAddressRanking": true,
+    "formattedSpacedApn": true,
+    "ambiguitySafety": true,
+    "keyboard": true,
+    "cleanCopy": true,
+    "mobileIdentityAboveFold": true,
+    "pointOrientationOnly": true,
+    "canonicalParcelV1Destination": true,
+    "zoningAndCoastalAbsent": true,
+    "consoleErrorsAbsent": true
+  },
+  "mobilePositions": {
+    "address": {
+      "x": 37,
+      "y": 411.46875,
+      "width": 316,
+      "height": 39.96875
+    },
+    "apn": {
+      "x": 54,
+      "y": 518.046875,
+      "width": 157.90625,
+      "height": 22.5625
+    },
+    "copy": {
+      "x": 254.03125,
+      "y": 498.4375,
+      "width": 81.96875,
+      "height": 37.265625
+    }
+  },
+  "screenshots": [
+    "production-autocomplete-desktop.png",
+    "production-selected-desktop.png",
+    "production-selected-mobile.png"
+  ]
+}

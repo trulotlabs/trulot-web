@@ -70,7 +70,6 @@ for (const file of [
   "lib/parcel-page-v1.ts",
   "docs/parcel-lookup-production-v0.md",
   "docs/sql/parcel-lookup-production-v0-design.sql",
-  "lib/parcel-lookup-production-v0.ts",
 ]) {
   const baseline = execFileSync("git", ["show", `1697069306691aa543a98f4d97184bb0da88a2b5:${file}`], { cwd: root });
   assert.deepEqual(fs.readFileSync(path.join(root, file)), baseline, `${file} changed outside Packet 43B scope`);

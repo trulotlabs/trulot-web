@@ -1,0 +1,249 @@
+{
+  "contractVersion": "parcel-lookup-production-v0-postgres-rehearsal-2026-10-01-p45",
+  "evidence": "LOCAL_DISPOSABLE_POSTGRESQL_FULL_CITY_CORPUS",
+  "productionAccessed": false,
+  "source": {
+    "acquisitionId": "SANGIS-20260924T183743Z",
+    "validatedRunId": "724ff836-eedc-594e-93c5-c80a63de65f7",
+    "normalizedRowsSha256": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+    "acceptedCountywideRows": 1088430,
+    "cityRows": 393733,
+    "pinMismatchRejected": true
+  },
+  "environment": {
+    "postgresVersion": "16.4 (Debian 16.4-1.pgdg110+2)",
+    "postgisVersion": "3.4.3",
+    "jit": "on",
+    "sharedBuffers": "128MB"
+  },
+  "correctness": {
+    "rows": 393733,
+    "distinctApns": 393733,
+    "missingAddress": 14846,
+    "exactApn": "544-214-06-00",
+    "exactAddressApn": "5442140600",
+    "condoUnitApn": "5891700510",
+    "sharedAddressCount": 230,
+    "apnPrefixContainsKnown": true,
+    "autocompleteContainsKnown": true,
+    "apnSetSha256": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25"
+  },
+  "normalization": [
+    {
+      "input": "639 North 67th Street",
+      "normalized": "639 N 67TH ST"
+    },
+    {
+      "input": "  639   n. 67th st. ",
+      "normalized": "639 N 67TH ST"
+    },
+    {
+      "input": "2416 Adirondack Row #02",
+      "normalized": "2416 ADIRONDACK ROW UNIT 2"
+    },
+    {
+      "input": "202 C Street, San Diego CA 92101",
+      "normalized": "202 C ST"
+    },
+    {
+      "input": "100 West Broadway Avenue CA 92101",
+      "normalized": "100 W BROADWAY AVE"
+    }
+  ],
+  "plans": [
+    {
+      "name": "exactApn",
+      "planningTimeMs": 11.563,
+      "executionTimeMs": 1.258,
+      "nodes": [
+        {
+          "nodeType": "Limit",
+          "indexName": null,
+          "actualRows": 1,
+          "planRows": 1,
+          "sharedHitBlocks": 1,
+          "sharedReadBlocks": 3
+        },
+        {
+          "nodeType": "Index Scan",
+          "indexName": "parcel_lookup_v0_apn_prefix_idx",
+          "actualRows": 1,
+          "planRows": 1,
+          "sharedHitBlocks": 1,
+          "sharedReadBlocks": 3
+        }
+      ],
+      "sequentialScan": false,
+      "indexes": [
+        "parcel_lookup_v0_apn_prefix_idx"
+      ]
+    },
+    {
+      "name": "apnPrefix",
+      "planningTimeMs": 13.904,
+      "executionTimeMs": 2.104,
+      "nodes": [
+        {
+          "nodeType": "Limit",
+          "indexName": null,
+          "actualRows": 9,
+          "planRows": 11,
+          "sharedHitBlocks": 7,
+          "sharedReadBlocks": 0
+        },
+        {
+          "nodeType": "Sort",
+          "indexName": null,
+          "actualRows": 9,
+          "planRows": 39,
+          "sharedHitBlocks": 7,
+          "sharedReadBlocks": 0
+        },
+        {
+          "nodeType": "Index Scan",
+          "indexName": "parcel_lookup_v0_apn_prefix_idx",
+          "actualRows": 9,
+          "planRows": 39,
+          "sharedHitBlocks": 4,
+          "sharedReadBlocks": 0
+        }
+      ],
+      "sequentialScan": false,
+      "indexes": [
+        "parcel_lookup_v0_apn_prefix_idx"
+      ]
+    },
+    {
+      "name": "exactAddress",
+      "planningTimeMs": 11.051,
+      "executionTimeMs": 2.017,
+      "nodes": [
+        {
+          "nodeType": "Limit",
+          "indexName": null,
+          "actualRows": 1,
+          "planRows": 3,
+          "sharedHitBlocks": 1,
+          "sharedReadBlocks": 3
+        },
+        {
+          "nodeType": "Index Scan",
+          "indexName": "parcel_lookup_v0_address_exact_idx",
+          "actualRows": 1,
+          "planRows": 3,
+          "sharedHitBlocks": 1,
+          "sharedReadBlocks": 3
+        }
+      ],
+      "sequentialScan": false,
+      "indexes": [
+        "parcel_lookup_v0_address_exact_idx"
+      ]
+    },
+    {
+      "name": "unitAddress",
+      "planningTimeMs": 11.369,
+      "executionTimeMs": 2.217,
+      "nodes": [
+        {
+          "nodeType": "Limit",
+          "indexName": null,
+          "actualRows": 1,
+          "planRows": 1,
+          "sharedHitBlocks": 1,
+          "sharedReadBlocks": 3
+        },
+        {
+          "nodeType": "Index Scan",
+          "indexName": "parcel_lookup_v0_unit_address_exact_idx",
+          "actualRows": 1,
+          "planRows": 1,
+          "sharedHitBlocks": 1,
+          "sharedReadBlocks": 3
+        }
+      ],
+      "sequentialScan": false,
+      "indexes": [
+        "parcel_lookup_v0_unit_address_exact_idx"
+      ]
+    },
+    {
+      "name": "autocomplete",
+      "planningTimeMs": 16.437,
+      "executionTimeMs": 5.161,
+      "nodes": [
+        {
+          "nodeType": "Limit",
+          "indexName": null,
+          "actualRows": 1,
+          "planRows": 1,
+          "sharedHitBlocks": 7,
+          "sharedReadBlocks": 53
+        },
+        {
+          "nodeType": "Sort",
+          "indexName": null,
+          "actualRows": 1,
+          "planRows": 1,
+          "sharedHitBlocks": 7,
+          "sharedReadBlocks": 53
+        },
+        {
+          "nodeType": "Bitmap Heap Scan",
+          "indexName": null,
+          "actualRows": 1,
+          "planRows": 1,
+          "sharedHitBlocks": 4,
+          "sharedReadBlocks": 53
+        },
+        {
+          "nodeType": "Bitmap Index Scan",
+          "indexName": "parcel_lookup_v0_address_search_idx",
+          "actualRows": 1,
+          "planRows": 1,
+          "sharedHitBlocks": 3,
+          "sharedReadBlocks": 53
+        }
+      ],
+      "sequentialScan": false,
+      "indexes": [
+        "parcel_lookup_v0_address_search_idx"
+      ]
+    }
+  ],
+  "timings": {
+    "autocomplete": {
+      "sampleCount": 200,
+      "medianMs": 0.727,
+      "p95Ms": 1.069
+    },
+    "exactAddress": {
+      "sampleCount": 200,
+      "medianMs": 0.02,
+      "p95Ms": 0.086
+    },
+    "exactApn": {
+      "sampleCount": 200,
+      "medianMs": 0.018,
+      "p95Ms": 0.072
+    }
+  },
+  "performanceConditions": {
+    "sampleStrategy": "200 deterministic, APN-ordered samples from the full address-bearing City population",
+    "cache": "warm local container after materialization build and ANALYZE",
+    "hardware": "Local Apple host running an amd64 PostGIS container under Docker emulation; not a production-network claim"
+  },
+  "security": {
+    "directPublic": "DENIED",
+    "directAnon": "DENIED",
+    "directAuthenticated": "DENIED",
+    "directServiceRole": "DENIED",
+    "serviceRpc": "PASS",
+    "anonymousRpc": "DENIED",
+    "fixedSearchPath": "PASS",
+    "noDynamicSql": "PASS",
+    "limitBound": "PASS",
+    "malformedRejected": "PASS",
+    "injectionInert": "PASS"
+  }
+}

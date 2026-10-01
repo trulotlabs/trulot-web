@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { canonicalParcelPath } from "@/lib/parcel-slug";
 import {
   normalizeAddress,
   PARCEL_LOOKUP_MAX_RESULTS,
@@ -11,6 +12,11 @@ import {
   type ParcelLookupResponse,
 } from "@/lib/parcel-lookup-contract";
 import type { ParcelLookupFailureInjection, ParcelLookupSyntheticFixture } from "@/lib/parcel-lookup-v0";
+import {
+  openProductionParcelIdentity,
+  productionParcelLookupUiResult,
+  type ParcelLookupUiSource,
+} from "@/lib/parcel-lookup-ui-adapter";
 import styles from "./parcel-lookup-preview.module.css";
 
 type Props = {
@@ -18,6 +24,7 @@ type Props = {
   initialApn: string | null;
   failureInjection: ParcelLookupFailureInjection | null;
   syntheticFixture: ParcelLookupSyntheticFixture | null;
+  dataSource?: ParcelLookupUiSource;
 };
 
 function Highlight({ value, query }: { value: string; query: string }) {
@@ -57,6 +64,19 @@ function geometryPath(record: ParcelLookupRecord): string {
 
 function ParcelMap({ record }: { record: ParcelLookupRecord }) {
   const street = record.address?.replace(/^\d+\s+/, "") ?? "Parcel location";
+  if (!record.polygons.length) {
+    return (
+      <figure className={styles.mapCard}>
+        <svg viewBox="0 0 720 420" role="img" aria-label={`Display orientation point for ${record.displayAddress}`}>
+          <rect width="720" height="420" className={styles.mapBase} />
+          <path d="M-30 332 C145 280 288 364 750 248" className={styles.contextRoad} />
+          <circle cx="360" cy="205" r="18" className={styles.orientationPoint} />
+          <text x="360" y="250" textAnchor="middle" className={styles.streetLabel}>{street}</text>
+        </svg>
+        <figcaption>Display orientation only. The lookup response does not provide a parcel boundary or legal survey.</figcaption>
+      </figure>
+    );
+  }
   return (
     <figure className={styles.mapCard}>
       <svg viewBox="0 0 720 420" role="img" aria-label={`Parcel outline for ${record.displayAddress}`}>
@@ -110,7 +130,14 @@ function responseMessage(response: ParcelLookupResponse): string | null {
   return null;
 }
 
-export default function ParcelLookupPreviewClient({ records, initialApn, failureInjection, syntheticFixture }: Props) {
+export default function ParcelLookupPreviewClient({
+  records,
+  initialApn,
+  failureInjection,
+  syntheticFixture,
+  dataSource = "sealed-preview",
+}: Props) {
+  const productionSource = dataSource === "bounded-production-api";
   const initial = initialApn ? records.find((record) => record.apn === initialApn) ?? null : null;
   const [query, setQuery] = useState(initial?.address ?? (initial ? initial.apnDisplay : ""));
   const [selected, setSelected] = useState<ParcelLookupRecord | null>(initial);
@@ -122,12 +149,16 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
   const [sourceAvailable, setSourceAvailable] = useState(failureInjection !== "source-unavailable");
   const [openFailure, setOpenFailure] = useState<ParcelLookupRecord | null>(null);
   const [selectedFailureInjected, setSelectedFailureInjected] = useState(false);
+  const [remoteResponse, setRemoteResponse] = useState<ParcelLookupResponse | null>(null);
+  const [remoteLoading, setRemoteLoading] = useState(false);
+  const [retrySequence, setRetrySequence] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const listId = useId();
-  const response = useMemo(
+  const sealedResponse = useMemo(
     () => searchParcelLookup(records, query, { maximumResults: PARCEL_LOOKUP_MAX_RESULTS, sourceAvailable }),
     [records, query, sourceAvailable],
   );
+  const response = productionSource && remoteResponse ? remoteResponse : sealedResponse;
   const suggestions = response.candidates;
   const isSearchable = query.trim().length >= PARCEL_LOOKUP_QUERY_THRESHOLD;
 
@@ -137,6 +168,33 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
     return () => window.clearTimeout(timer);
   }, [copied]);
 
+  useEffect(() => {
+    if (!productionSource) return;
+    const trimmed = query.trim();
+    if (trimmed.length < PARCEL_LOOKUP_QUERY_THRESHOLD) {
+      setRemoteResponse(null);
+      setRemoteLoading(false);
+      return;
+    }
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      setRemoteLoading(true);
+      try {
+        const result = await productionParcelLookupUiResult(trimmed, { signal: controller.signal });
+        setRemoteResponse(result.response);
+        setSourceAvailable(result.sourceAvailable);
+      } catch (error) {
+        if (!(error instanceof DOMException && error.name === "AbortError")) setSourceAvailable(false);
+      } finally {
+        setRemoteLoading(false);
+      }
+    }, 140);
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [productionSource, query, retrySequence]);
+
   function completeSelection(record: ParcelLookupRecord) {
     setSelected(record);
     setOpenFailure(null);
@@ -145,10 +203,10 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
     setCopied(false);
     setDetailsOpen(false);
     setSubmissionMessage(null);
-    window.history.replaceState({}, "", `/parcel-lookup-preview?apn=${record.apn}`);
+    window.history.replaceState({}, "", productionSource ? "/parcel-lookup" : `/parcel-lookup-preview?apn=${record.apn}`);
   }
 
-  function selectParcel(record: ParcelLookupRecord) {
+  async function selectParcel(record: ParcelLookupRecord) {
     if (failureInjection === "selected-open" && !selectedFailureInjected) {
       setSelectedFailureInjected(true);
       setSelected(null);
@@ -156,6 +214,26 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
       setQuery(record.address ?? record.apnDisplay);
       setOpen(false);
       setSubmissionMessage(null);
+      return;
+    }
+    if (productionSource) {
+      setRemoteLoading(true);
+      try {
+        const identity = await openProductionParcelIdentity(record.apn);
+        if (!identity) {
+          setOpenFailure(record);
+          setSelected(null);
+          setOpen(false);
+          return;
+        }
+        completeSelection(identity);
+      } catch {
+        setOpenFailure(record);
+        setSelected(null);
+        setOpen(false);
+      } finally {
+        setRemoteLoading(false);
+      }
       return;
     }
     completeSelection(record);
@@ -176,7 +254,7 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
       inputRef.current?.focus();
       return;
     }
-    if (response.state === "EXACT_MATCH" && suggestions[0]) selectParcel(suggestions[0].record);
+    if (response.state === "EXACT_MATCH" && suggestions[0]) void selectParcel(suggestions[0].record);
     else if (suggestions.length) {
       setOpen(true);
       setActiveIndex(0);
@@ -196,25 +274,38 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
     setDetailsOpen(false);
     setSubmissionMessage(null);
     setOpenFailure(null);
-    window.history.replaceState({}, "", "/parcel-lookup-preview");
+    window.history.replaceState({}, "", productionSource ? "/parcel-lookup" : "/parcel-lookup-preview");
     window.setTimeout(() => inputRef.current?.focus(), 0);
   }
 
   return (
-    <main className={styles.shell} data-preview-source="sealed-parcel-lookup-v0" data-production-wired="false" data-lookup-source={sourceAvailable ? "available" : "unavailable"}>
+    <main
+      className={styles.shell}
+      data-preview-source={productionSource ? undefined : "sealed-parcel-lookup-v0"}
+      data-production-wired={productionSource ? "true" : "false"}
+      data-lookup-source={sourceAvailable ? "available" : "unavailable"}
+    >
       <header className={styles.header}>
         <Link href="/parcel-lookup-preview" className={styles.wordmark} aria-label="TruLot Parcel Lookup preview home">
           <span className={styles.wordmarkMark}>T</span><span>TRULOT</span>
         </Link>
         <span className={styles.previewBadge}>
-          {syntheticFixture ? `SYNTHETIC_${syntheticFixture.toUpperCase()}_FIXTURE` : `Local preview · ${records.length} parcels`}
+          {productionSource
+            ? "Private production-shaped lookup"
+            : syntheticFixture
+              ? `SYNTHETIC_${syntheticFixture.toUpperCase()}_FIXTURE`
+              : `Local preview · ${records.length} parcels`}
         </span>
       </header>
 
       <section className={`${styles.searchSection} ${selected ? styles.searchSectionCompact : ""}`}>
         <p className={styles.eyebrow}>San Diego parcel lookup</p>
         <h1>{selected ? "Find another parcel" : "Start with an address or APN."}</h1>
-        {!selected ? <p className={styles.intro}>Identify the parcel first. Then see its outline, APN, zoning, and essential public facts.</p> : null}
+        {!selected ? <p className={styles.intro}>
+          {productionSource
+            ? "Identify the parcel from bounded address and APN evidence, then continue to its canonical parcel page."
+            : "Identify the parcel first. Then see its outline, APN, zoning, and essential public facts."}
+        </p> : null}
         <form className={styles.searchForm} onSubmit={(event) => { event.preventDefault(); submitSearch(); }} role="search">
           <div className={styles.comboboxWrap}>
             <label htmlFor="parcel-query" className={styles.srOnly}>Address or APN</label>
@@ -236,7 +327,7 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
                 if (event.key === "ArrowDown" && suggestions.length) { event.preventDefault(); setOpen(true); setActiveIndex((index) => Math.min(index + 1, suggestions.length - 1)); }
                 if (event.key === "ArrowUp" && suggestions.length) { event.preventDefault(); setActiveIndex((index) => Math.max(index - 1, 0)); }
                 if (event.key === "Escape") { event.preventDefault(); setOpen(false); }
-                if (event.key === "Enter" && open && suggestions[activeIndex]) { event.preventDefault(); selectParcel(suggestions[activeIndex].record); }
+                if (event.key === "Enter" && open && suggestions[activeIndex]) { event.preventDefault(); void selectParcel(suggestions[activeIndex].record); }
               }}
               placeholder="Try 639 N 67TH ST or 544-214-06-00"
               autoComplete="off"
@@ -252,11 +343,11 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
           <button type="submit" className={styles.searchButton}>Find parcel</button>
           {open && isSearchable ? (
             <div className={styles.suggestionPanel}>
-              {suggestions.length ? (
+              {remoteLoading ? <p className={styles.emptyMessage}>Searching bounded parcel identity…</p> : suggestions.length ? (
                 <ul id={listId} role="listbox" aria-label="Parcel matches">
                   {suggestions.map(({ record, matchReason }, index) => (
                     <li key={record.apn} id={`${listId}-${index}`} role="option" aria-selected={index === activeIndex}>
-                      <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => selectParcel(record)} className={index === activeIndex ? styles.activeSuggestion : ""}>
+                      <button type="button" onMouseDown={(event) => event.preventDefault()} onClick={() => { void selectParcel(record); }} className={index === activeIndex ? styles.activeSuggestion : ""}>
                         <span className={styles.suggestionPin} aria-hidden="true">{index + 1}</span>
                         <span className={styles.suggestionText}>
                           <strong><Highlight value={record.displayAddress} query={query} /></strong>
@@ -289,8 +380,9 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
           <p>The bounded preview did not use a fallback source. Your search remains ready to retry.</p>
           <button type="button" onClick={() => {
             setSourceAvailable(true);
+            setRetrySequence((value) => value + 1);
             setOpen(query.trim().length >= PARCEL_LOOKUP_QUERY_THRESHOLD);
-            window.history.replaceState({}, "", "/parcel-lookup-preview");
+            window.history.replaceState({}, "", productionSource ? "/parcel-lookup" : "/parcel-lookup-preview");
             inputRef.current?.focus();
           }}>Retry lookup</button>
         </section>
@@ -302,7 +394,7 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
           <h2>We couldn&apos;t open this parcel.</h2>
           <p>{openFailure.displayAddress} · APN {openFailure.apnDisplay}</p>
           <div className={styles.failureActions}>
-            <button type="button" onClick={() => completeSelection(openFailure)}>Retry parcel</button>
+            <button type="button" onClick={() => { void selectParcel(openFailure); }}>Retry parcel</button>
             <button type="button" onClick={resetSearch}>Search again</button>
           </div>
         </section>
@@ -320,14 +412,16 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
             </div>
             <p className={styles.locationLine}>{selected.jurisdiction}{selected.zip ? ` · ${selected.zip}` : ""}</p>
             <dl className={styles.facts}>
-              <div><dt>Base zoning</dt><dd>{zoningLabel(selected)}</dd></div>
-              <div><dt>Coastal status</dt><dd>{coastalLabel(selected)}</dd></div>
+              {!productionSource ? <div><dt>Base zoning</dt><dd>{zoningLabel(selected)}</dd></div> : null}
+              {!productionSource ? <div><dt>Coastal status</dt><dd>{coastalLabel(selected)}</dd></div> : null}
               <div><dt>Approx. parcel area</dt><dd>{Math.round(selected.approximateAreaSqFt).toLocaleString()} sq ft</dd></div>
               {selected.existingUnits !== null ? <div><dt>Existing dwelling units</dt><dd>{selected.existingUnits}</dd></div> : null}
             </dl>
             <div className={styles.actions}>
               <button type="button" className={styles.primaryAction} onClick={() => setDetailsOpen((value) => !value)} aria-expanded={detailsOpen}>{detailsOpen ? "Hide parcel details" : "View parcel details"}</button>
-              {selected.parcelIntelligenceAvailable ? <Link href={`/parcel-v2-preview/${selected.apn}`}>View zoning details</Link> : <span>Zoning detail preview unavailable</span>}
+              {productionSource ? (
+                <Link href={canonicalParcelPath(selected.apn, selected.address)}>Open canonical parcel page</Link>
+              ) : selected.parcelIntelligenceAvailable ? <Link href={`/parcel-v2-preview/${selected.apn}`}>View zoning details</Link> : <span>Zoning detail preview unavailable</span>}
             </div>
           </div>
           <ParcelMap record={selected} />
@@ -335,7 +429,7 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
             <aside className={styles.detailPanel}>
               <div><span>Stable parcel identity</span><strong>{selected.apn}</strong></div>
               <div><span>Parcel record</span><strong>{selected.parcelId ?? "Not recorded"}</strong></div>
-              <div><span>Geometry source</span><strong>SanGIS · {selected.geometryType}</strong></div>
+              <div><span>Geometry source</span><strong>{productionSource ? "SanGIS · Point orientation" : `SanGIS · ${selected.geometryType}`}</strong></div>
               <p>This lookup confirms parcel orientation only. It does not evaluate compliance, feasibility, legal-lot status, or development capacity.</p>
             </aside>
           ) : null}
@@ -343,12 +437,14 @@ export default function ParcelLookupPreviewClient({ records, initialApn, failure
       ) : (
         <section className={styles.promiseGrid} aria-label="Parcel lookup sequence">
           <article><span>01</span><h2>Find the identity</h2><p>Search a full or partial address, a formatted APN, or all 10 APN digits.</p></article>
-          <article><span>02</span><h2>Confirm the shape</h2><p>See the sealed parcel outline and public identity before opening deeper intelligence.</p></article>
-          <article><span>03</span><h2>Continue with context</h2><p>Move into available zoning detail while keeping uncertainty explicit.</p></article>
+          <article><span>02</span><h2>{productionSource ? "Confirm the identity" : "Confirm the shape"}</h2><p>{productionSource ? "Review the bounded address, APN, and display-orientation point." : "See the sealed parcel outline and public identity before opening deeper intelligence."}</p></article>
+          <article><span>03</span><h2>Continue with context</h2><p>{productionSource ? "Open the existing canonical Parcel V1 page for the selected identity." : "Move into available zoning detail while keeping uncertainty explicit."}</p></article>
         </section>
       )}
 
-      <footer className={styles.footer}>Development/test preview · Sealed local parcel data · No production database</footer>
+      <footer className={styles.footer}>
+        {productionSource ? "Private, feature-gated Parcel Lookup V0" : "Development/test preview · Sealed local parcel data · No production database"}
+      </footer>
     </main>
   );
 }

@@ -1,0 +1,26 @@
+{
+  "contractVersion": "parcel-lookup-production-v0-rollback-2026-10-01-p45",
+  "evidence": "LOCAL_DISPOSABLE_POSTGRESQL_FULL_CITY_CORPUS",
+  "productionAccessed": false,
+  "before": {
+    "baseRows": 393733,
+    "lookupRows": 393733,
+    "acquisitions": 1,
+    "runs": 1
+  },
+  "after": {
+    "baseRows": 393733,
+    "acquisitions": 1,
+    "runs": 1,
+    "lookupRelation": null,
+    "searchRpc": null,
+    "builder": null,
+    "normalizer": null
+  },
+  "preservation": {
+    "parcelBaseV2": true,
+    "acquisitionMetadata": true,
+    "importRunMetadata": true,
+    "lookupInfrastructureRemoved": true
+  }
+}
