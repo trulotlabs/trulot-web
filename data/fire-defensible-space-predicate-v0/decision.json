@@ -1,0 +1,9 @@
+{
+  "capacity_calculated": false,
+  "contract_version": "fire-defensible-space-predicate-v0-2026-10-01-p35",
+  "decision": "FIRE_DEFENSIBLE_SPACE_PREDICATE_V0_READY",
+  "gis_lookup_determination": "FIRE_BUFFER_GIS_LOOKUP_NOT_DETERMINATIVE",
+  "next_rule_evaluation_target": "interior side setback",
+  "parcel_state": "FIRE_BUFFER_PROJECT_REVIEW_REQUIRED",
+  "structure_compliance_evaluated": false
+}

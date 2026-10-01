@@ -1,0 +1,14 @@
+{
+  "artifacts": {
+    "contract.json": "7b9ad04ac6979d6159fa022795a0f8f974c0e4a47f6bae502e7ec3d4ef01a711",
+    "decision.json": "3387fb93fc81a4219a2334df0a2cef7b664e8fea309d51aa381c9f740abec081",
+    "evaluation.json": "9880ce7ee8f2d1a82c4b111ad2a6b82f57936a4e950922ca211d4da40e0319d8",
+    "front-bridge.json": "0fe05d08b05f3a356be3cb785103bf1461da0954a07a200cfae2f9942d4e1236",
+    "product-example.json": "ffa7d7590d59f076ffc88945c5849fe26d8f8e365b7568f5709cfd127003644a",
+    "provenance.json": "7759b879c24ae8c75da8abe69e992d4621ccbbe222701634a8bec0e4b1aa9bf1",
+    "rear-bridge.json": "40663cb3bd76f724e99ac7397a00fd07984fd2097c9ee655ab410bccaefc98f0",
+    "sources.json": "e8a8e1dbc63e828f51901fafbdcb00920c7e13b2bfdc2ec77ca2ad2a1c1fbdc1"
+  },
+  "bundle_sha256": "179a304d53e5181f2dcf3774e3a93b5dcc7dfd8ab86782be47f8312ee03a020a",
+  "contract_version": "fire-defensible-space-predicate-v0-2026-10-01-p35"
+}

@@ -1,0 +1,108 @@
+{
+  "brush_management_code": {
+    "authority_rank": 1,
+    "effective_date": "Current composite acquired 2026-10-01",
+    "section": "§142.0412 Brush Management",
+    "sha256": "5ae9b149f89eff0a798a3f11bc0368192af8963ebfd032b5c8e3ee669d98d5be",
+    "state": "AVAILABLE",
+    "title": "SDMC Chapter 14, Article 2, Division 4",
+    "url": "https://docs.sandiego.gov/municode/municodechapter14/ch14art02division04.pdf"
+  },
+  "california_fire_code": {
+    "acquired_html_sha256": "075ea026a23d212b219ed5ff26781efe96701ac7e7a67a9ba6f6457d0ac39381",
+    "authority_rank": 1,
+    "effective_date": "2026-01-01",
+    "section": "§§102.9, 104.1, 104.3",
+    "state": "AVAILABLE",
+    "title": "2025 California Fire Code, Title 24, Part 9, January 2026 errata",
+    "url": "https://codes.iccsafe.org/content/CAFC2025P2/chapter-1-administration"
+  },
+  "city_defensible_space_guidance": {
+    "accessed_at": "2026-10-01",
+    "acquired_html_sha256": "16d95767c3c7c8a481be77251ce7ae3b27846a6831cebdf9d33c5331b5952aef",
+    "authority_rank": 2,
+    "effective_date": null,
+    "section": "Zones 0, 1, and 2",
+    "state": "AVAILABLE",
+    "title": "Guide to Defensible Space: Property Owners",
+    "url": "https://www.sandiego.gov/fire/community-risk-reduction/defensible-space-property-owners"
+  },
+  "city_vhfhsz_map": {
+    "adopting_ordinance_sha256": "01671a2b8c95ec4b2bad6ffa3907ba3c90cf2123d0cc06ecf4518294129a7c41",
+    "adopting_ordinance_url": "https://www.sandiego.gov/sites/default/files/2025-08/o-21992.pdf",
+    "authority_rank": 1,
+    "effective_date": "2025-08-30",
+    "exact_apn_query_evidence_sha256": "a626b25b8a072345ce995ac90b9ab54a42e634f6d10b3004ca2a311b9150bba4",
+    "section": "City-adopted VHFHSZ layer",
+    "state": "AVAILABLE",
+    "title": "City of San Diego Fire Hazard Severity Zone Map 2025",
+    "url": "https://webmaps.sandiego.gov/arcgis/rest/services/Hosted/COSD_FHSZ_LRA/FeatureServer/21"
+  },
+  "city_zone0_standard": {
+    "authority_rank": 2,
+    "effective_date": "2026-02-28",
+    "section": "Scope and requirements",
+    "sha256": "4a2e6c0194867014f7771c924e06706dabd03252e4c9d39aca1118bb841471f5",
+    "state": "AVAILABLE",
+    "title": "SDFD Standard D-2: Zone 0 Requirements for New Structures",
+    "url": "https://www.sandiego.gov/sites/default/files/2026-04/d-2_zone_0_new_structures.pdf"
+  },
+  "fhsz_faq": {
+    "authority_rank": 2,
+    "effective_date": null,
+    "section": "Questions 3, 17, 18, and 25",
+    "sha256": "3517924e87141efbd147a799027797b21b8e15f2adf8872ba697d208be7aacb2",
+    "state": "AVAILABLE",
+    "title": "2025 LRA Fire Hazard Severity Zones FAQs",
+    "url": "https://www.sandiego.gov/sites/default/files/2025-06/2025_lra_fhsz_faqs.pdf"
+  },
+  "o22109": {
+    "authority_rank": 1,
+    "effective_date": "2026-07-15 outside Coastal",
+    "section": "Adds §131.0443(i)",
+    "sha256": "ed7c48fb1d182777615c9223353bc26e78f9cd058916e6d462557c5ea0e9a677",
+    "state": "AVAILABLE",
+    "title": "Ordinance O-22109",
+    "url": "https://www.sandiego.gov/sites/default/files/2026-07/o-22109-1.pdf"
+  },
+  "sd_fire_code_adoption": {
+    "authority_rank": 1,
+    "effective_date": "2026-02-28",
+    "section": "SDMC §511.0001; 2025 California Fire Code adoption",
+    "sha256": "182446d7a423cbd678d9b8e70d5839e30471235dd2c6d25a8b073b79722876db",
+    "state": "AVAILABLE",
+    "title": "Ordinance O-22043 / San Diego Fire Code",
+    "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2026/O-22043.pdf"
+  },
+  "sd_wui_code": {
+    "adopting_ordinance_sha256": "ba369e3c8dfe81c1eb35e77acd1ae4afa62f5c98b3b8f9a69e98b8fb4d6793c2",
+    "adopting_ordinance_url": "https://docs.sandiego.gov/council_reso_ordinance/rao2026/O-22042.pdf",
+    "authority_rank": 1,
+    "effective_date": "2026-02-28",
+    "section": "SDMC §§512.0202, 512.0302, 512.0603, 512.0604",
+    "sha256": "7bb624fe38039077d1088e3479b4561928e42992cf964787fdb5b27e4ab24d21",
+    "state": "AVAILABLE",
+    "title": "San Diego Wildland-Urban Interface Code",
+    "url": "https://docs.sandiego.gov/municode/MuniCodeChapter05/Ch05Art12Division06.pdf"
+  },
+  "sdmc_131_0443_i": {
+    "authority_rank": 1,
+    "edition": "9-2026",
+    "effective_date": "2026-07-15",
+    "section": "131.0443(i)",
+    "section_text_sha256": "007b26a9a04939b1a78f2f83f8d323a4301674eff5bdd4ed5c1699d71e7e1c00",
+    "sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "state": "AVAILABLE",
+    "title": "San Diego Municipal Code Chapter 13, Article 1, Division 4: Residential Base Zones",
+    "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf"
+  },
+  "state_recommended_fhsz": {
+    "authority_rank": 1,
+    "effective_date": "Recommendation dated 2025-03-24",
+    "exact_apn_query_evidence_sha256": "b561e84768446d964696225a5de989a9b828b66aa9308bf54134937e25957c0c",
+    "section": "San Diego County LRA",
+    "state": "AVAILABLE",
+    "title": "2025 Recommended LRA Fire Hazard Severity Zones, Phase 4",
+    "url": "https://utility.arcgis.com/usrsvcs/servers/89aed69e4a144689b9cd67c1d80ef3bb/rest/services/FHSZLRA25_Phase4_v1/FeatureServer/0"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "apn": "6341302200",
+  "base_zoning_setback_ft": 23.502,
+  "base_zoning_setback_reportable": true,
+  "capacity_calculated": false,
+  "contract_version": "fire-defensible-space-predicate-v0-2026-10-01-p35",
+  "final_project_setback_resolved": false,
+  "fire_branch": {
+    "automatic_numeric_greater_setback": false,
+    "caveat": "A greater fire-safety buffer may be required for a specific project by the Fire Code Official.",
+    "greater_buffer_ft": null,
+    "state": "FIRE_BUFFER_PROJECT_REVIEW_REQUIRED"
+  },
+  "other_unresolved_branches": [
+    "document_or_program_modification"
+  ],
+  "requirement_state": "SETBACK_REQUIREMENT_CONDITIONAL",
+  "rule_family": "rear_setback",
+  "structure_compliance_evaluated": false
+}

@@ -1,0 +1,92 @@
+{
+  "apn": "6341302200",
+  "automatic_numeric_rule": false,
+  "automatic_rule_state": "FIRE_BUFFER_NOT_REQUIRED_BY_PUBLISHED_DETERMINISTIC_RULE",
+  "capacity_calculated": false,
+  "contract_version": "fire-defensible-space-predicate-v0-2026-10-01-p35",
+  "fingerprint_sha256": "73bc225f30600b527237497e591b76a974cfd42d2c648bf0dc7534a602d6bba0",
+  "forbidden_conclusions": [
+    "FIRE_COMPLIANT",
+    "FIRE_SAFE",
+    "NO_FIRE_ISSUE",
+    "FINAL_PROJECT_SETBACK",
+    "STRUCTURE_COMPLIANCE",
+    "DEVELOPMENT_CAPACITY",
+    "BUILDABILITY",
+    "PERMIT_APPROVAL"
+  ],
+  "geography": {
+    "city_applicability_rule": "Any portion of the lot within the VHFHSZ map triggers mapped requirements (City FAQ Q25).",
+    "city_vhfhsz_intersects": true,
+    "city_vhfhsz_relation": "EXACT_SAN_GIS_PARCEL_GEOMETRY_INTERSECTS_CITY_ADOPTED_VHFHSZ",
+    "limitations": [
+      "Map status is fire-hazard/defensible-space context, not a §131.0443(i) greater-setback determination.",
+      "No citywide GIS data was downloaded; evidence is an exact APN query only."
+    ],
+    "mapped_defensible_space_context": "APPLIES_BY_CITY_ADOPTED_VHFHSZ_INTERSECTION",
+    "parcel_geometry_source": {
+      "apn": "6341302200",
+      "geometry_sha256": "5913a41c6f4b131e7239c6d028ae95f2f76adc156d3792c8c02c600284c6e9d0",
+      "objectid": 654272,
+      "parcelid": 716690
+    },
+    "state_recommended_class": "NonWildland",
+    "state_responsibility_area": "LRA"
+  },
+  "geography_determines_greater_buffer": false,
+  "geography_state": "CITY_VHFHSZ_INTERSECTION_SUPPORTED",
+  "gis_lookup_determination": "FIRE_BUFFER_GIS_LOOKUP_NOT_DETERMINATIVE",
+  "greater_buffer_ft": null,
+  "legal_doctrine": {
+    "authority": "The Fire Code Official may require a defensible-space buffer greater than the base-zone setback.",
+    "automatic_numeric_greater_setback": false,
+    "city_wui_relationship": "Mapped WUI/VHFHSZ geography establishes separate fire-hazard, construction, vegetation, and fuel-management context. It does not itself select a greater §131.0443(i) zoning setback.",
+    "decision_type": "PROJECT_SPECIFIC_FIRE_CODE_OFFICIAL_DETERMINATION",
+    "fuel_zone_relationship": "SDMC §§512.0603 and 512.0604 allow site-specific Fire Code Official increases to fuel-modification distances. Those vegetation/fuel distances do not automatically become a numeric structure-to-property-line setback under §131.0443(i).",
+    "geographic_gate": false,
+    "scope": "ALL_STRUCTURES_OUTSIDE_COASTAL_CURRENT_PROFILE",
+    "section": "SDMC §131.0443(i)"
+  },
+  "other_rule_families_evaluated": [],
+  "project_determination": {
+    "absence_semantics": "No project-specific Fire Code Official determination is present; absence is not FALSE and does not establish that no greater buffer will be required.",
+    "record": null,
+    "state": "FIRE_BUFFER_PROJECT_REVIEW_REQUIRED"
+  },
+  "project_evidence_contract": {
+    "accepted_evidence_types": [
+      "APPROVED_PROJECT_CONDITION",
+      "FIRE_PLAN_REVIEW_COMMENT",
+      "FIRE_CODE_OFFICIAL_DETERMINATION",
+      "APPROVED_FIRE_ACCESS_OR_DEFENSIBLE_SPACE_PLAN",
+      "PERMIT_RECORD_REQUIRED_FIRE_BUFFER"
+    ],
+    "excluded_as_determinations": [
+      "VHFHSZ map",
+      "WUI map",
+      "general defensible-space guidance",
+      "brush-management obligation",
+      "absence of a located record"
+    ],
+    "required_fields": [
+      "evidence_type",
+      "record_id",
+      "issued_by=FIRE_CODE_OFFICIAL",
+      "required_buffer_ft"
+    ]
+  },
+  "publication_contract": {
+    "base_setback_reportable": true,
+    "final_project_setback_resolved": false,
+    "fire_branch_resolved": false,
+    "forbidden_phrases": [
+      "fire compliant",
+      "fire safe",
+      "no fire issue",
+      "final project setback"
+    ],
+    "required_caveat": "A greater fire-safety buffer may be required for a specific project by the Fire Code Official."
+  },
+  "state": "FIRE_BUFFER_PROJECT_REVIEW_REQUIRED",
+  "structure_compliance_evaluated": false
+}

@@ -1,0 +1,49 @@
+{
+  "chain": [
+    {
+      "apn": "6341302200",
+      "hop": "APN_TO_SEALED_PARCEL_GEOMETRY",
+      "parcel_geometry_sha256": "5913a41c6f4b131e7239c6d028ae95f2f76adc156d3792c8c02c600284c6e9d0"
+    },
+    {
+      "hop": "PARCEL_TO_CITY_VHFHSZ",
+      "query_evidence_sha256": "a626b25b8a072345ce995ac90b9ab54a42e634f6d10b3004ca2a311b9150bba4",
+      "state": "EXACT_SAN_GIS_PARCEL_GEOMETRY_INTERSECTS_CITY_ADOPTED_VHFHSZ"
+    },
+    {
+      "hop": "PARCEL_TO_STATE_RECOMMENDED_FHSZ",
+      "query_evidence_sha256": "b561e84768446d964696225a5de989a9b828b66aa9308bf54134937e25957c0c",
+      "state": "NonWildland"
+    },
+    {
+      "hop": "SECTION_TO_FIRE_AUTHORITY",
+      "section": "131.0443(i)",
+      "section_text_sha256": "007b26a9a04939b1a78f2f83f8d323a4301674eff5bdd4ed5c1699d71e7e1c00"
+    },
+    {
+      "hop": "CITY_FIRE_AND_WUI_CODE_CONTEXT",
+      "sections": [
+        "511.0001",
+        "512.0202",
+        "512.0302",
+        "512.0603",
+        "512.0604"
+      ]
+    },
+    {
+      "hop": "GEOGRAPHY_TO_SEPARATE_OBLIGATIONS",
+      "state": "GEOGRAPHY_CONTEXT_ONLY_FOR_131_0443_I"
+    },
+    {
+      "hop": "PROJECT_RECORD_TO_FIRE_BUFFER",
+      "required_buffer_ft": null,
+      "state": "FIRE_BUFFER_PROJECT_REVIEW_REQUIRED"
+    },
+    {
+      "front_state": "SETBACK_REQUIREMENT_CONDITIONAL",
+      "hop": "FIRE_PREDICATE_TO_SETBACK_BRIDGES",
+      "rear_state": "SETBACK_REQUIREMENT_CONDITIONAL"
+    }
+  ],
+  "contract_version": "fire-defensible-space-predicate-v0-2026-10-01-p35"
+}

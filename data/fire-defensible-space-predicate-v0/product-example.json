@@ -1,0 +1,9 @@
+{
+  "apn": "6341302200",
+  "contract_version": "fire-defensible-space-predicate-v0-2026-10-01-p35",
+  "fire_hazard_context": "The parcel intersects the City-adopted VHFHSZ map. This establishes mapped fire-hazard and defensible-space context, not an automatic greater zoning setback.",
+  "front_setback": "Base front setback from zoning: 15 ft. The slope branch remains unresolved. A greater fire-safety buffer may be required for a specific project by the Fire Code Official.",
+  "rear_setback": "Base rear setback derived from zoning and lot depth: 23.502 ft. A greater fire-safety buffer may be required for a specific project by the Fire Code Official.",
+  "scope_note": "These are base zoning setback presentations with unresolved project-specific branches. They are not final project setbacks or fire-safety findings.",
+  "ui_wired": false
+}
