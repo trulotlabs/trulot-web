@@ -18,7 +18,8 @@ const source = process.env.TRULOT_PARCEL_V2_ROWS
   ?? "/Users/ops/trulot-data/parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz";
 const migration = path.join(root, "supabase/migrations/20261001203830_parcel_lookup_v0_bounded.sql");
 const reportPath = path.join(root, "data/parcel-lookup-production-v0/postgres-rehearsal.json");
-const expectedAcquisition = "SANGIS-20260924T183743Z";
+const expectedAcquisition = "sangis-20260924T183743Z";
+const alteredCaseAcquisition = "SANGIS-20260924T183743Z";
 const expectedRun = "724ff836-eedc-594e-93c5-c80a63de65f7";
 const expectedSourceSha256 = "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868";
 const expectedCityRows = 393_733;
@@ -204,6 +205,15 @@ assert.equal(loaded.cityRows, expectedCityRows);
 runPsql("", { file: migration });
 expectPsqlFailure(`
   begin;
+  update trulot_v2.import_run
+    set parcel_acquisition_id = '${alteredCaseAcquisition}'
+    where import_run_id = '${expectedRun}';
+  select trulot_v2.build_parcel_lookup_v0();
+`, /source run is not the pinned validated parcel-only run/i);
+assert.equal(runPsql(`select parcel_acquisition_id from trulot_v2.import_run where import_run_id = '${expectedRun}'`), expectedAcquisition);
+assert.equal(Number(runPsql("select count(*) from trulot_v2.parcel_lookup_v0")), 0);
+expectPsqlFailure(`
+  begin;
   update trulot_v2.parcel_acquisition
     set accepted_count = 0
     where acquisition_id = '${expectedAcquisition}';
@@ -262,11 +272,11 @@ const normalization = normalizationFixtures.map((input) => {
 });
 
 const plans = [
-  planEvidence("exactApn", "select * from trulot_v2.parcel_lookup_v0 where acquisition_id = 'SANGIS-20260924T183743Z' and apn_norm = '5442140600' limit 11"),
-  planEvidence("apnPrefix", "select * from trulot_v2.parcel_lookup_v0 where acquisition_id = 'SANGIS-20260924T183743Z' and apn_norm like '544214%' order by apn_norm limit 11"),
-  planEvidence("exactAddress", "select * from trulot_v2.parcel_lookup_v0 where acquisition_id = 'SANGIS-20260924T183743Z' and normalized_address = '639 N 67TH ST' limit 11"),
-  planEvidence("unitAddress", "select * from trulot_v2.parcel_lookup_v0 where acquisition_id = 'SANGIS-20260924T183743Z' and normalized_unit_address = '2416 ADIRONDACK ROW UNIT 2' limit 11"),
-  planEvidence("autocomplete", "select * from trulot_v2.parcel_lookup_v0 where acquisition_id = 'SANGIS-20260924T183743Z' and address_search_vector @@ to_tsquery('simple', '''639'':* & ''67'':*') order by normalized_address, normalized_unit_address nulls last, apn_norm limit 50"),
+  planEvidence("exactApn", `select * from trulot_v2.parcel_lookup_v0 where acquisition_id = '${expectedAcquisition}' and apn_norm = '5442140600' limit 11`),
+  planEvidence("apnPrefix", `select * from trulot_v2.parcel_lookup_v0 where acquisition_id = '${expectedAcquisition}' and apn_norm like '544214%' order by apn_norm limit 11`),
+  planEvidence("exactAddress", `select * from trulot_v2.parcel_lookup_v0 where acquisition_id = '${expectedAcquisition}' and normalized_address = '639 N 67TH ST' limit 11`),
+  planEvidence("unitAddress", `select * from trulot_v2.parcel_lookup_v0 where acquisition_id = '${expectedAcquisition}' and normalized_unit_address = '2416 ADIRONDACK ROW UNIT 2' limit 11`),
+  planEvidence("autocomplete", `select * from trulot_v2.parcel_lookup_v0 where acquisition_id = '${expectedAcquisition}' and address_search_vector @@ to_tsquery('simple', '''639'':* & ''67'':*') order by normalized_address, normalized_unit_address nulls last, apn_norm limit 50`),
 ];
 for (const plan of plans) {
   assert.equal(plan.sequentialScan, false, `${plan.name} must not use a sequential scan`);
@@ -369,6 +379,7 @@ const report = {
     normalizedRowsSha256: expectedSourceSha256,
     acceptedCountywideRows: loaded.acceptedRows,
     cityRows: loaded.cityRows,
+    alteredCaseRunRejected: true,
     pinMismatchRejected: true,
   },
   environment,

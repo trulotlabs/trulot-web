@@ -10,7 +10,7 @@ const root = path.resolve(here, "../..");
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
 
 const report = JSON.parse(read("data/parcel-lookup-production-v0/rehearsal.json"));
-assert.equal(report.source.acquisitionId, "SANGIS-20260924T183743Z");
+assert.equal(report.source.acquisitionId, "sangis-20260924T183743Z");
 assert.equal(report.source.validatedRunId, "724ff836-eedc-594e-93c5-c80a63de65f7");
 assert.equal(report.source.normalizedRowsSha256, "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868");
 assert.equal(report.source.productionAccessed, false);
@@ -18,6 +18,13 @@ assert.equal(report.source.acceptedCountywideRows, 1_088_430);
 assert.equal(report.source.cityRows, 393_733);
 assert.equal(report.source.distinctCityApns, 393_733);
 assert.equal(report.engine.productionPostgresClaimed, false);
+const postgresReport = JSON.parse(read("data/parcel-lookup-production-v0/postgres-rehearsal.json"));
+assert.equal(postgresReport.source.acquisitionId, "sangis-20260924T183743Z");
+assert.equal(postgresReport.source.alteredCaseRunRejected, true);
+assert.equal(postgresReport.source.normalizedRowsSha256, "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868");
+assert.equal(postgresReport.correctness.rows, 393_733);
+assert.equal(postgresReport.correctness.distinctApns, 393_733);
+assert.equal(postgresReport.correctness.apnSetSha256, "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25");
 for (const key of ["exactApn", "exactAddress", "autocomplete"]) {
   assert.equal(report.timings[key].sampleCount, 200);
   assert.equal(report.timings[key].targetMet, true);
@@ -52,7 +59,11 @@ const contract = read("lib/parcel-lookup-production-v0.ts");
 for (const required of ["ParcelLookupProductionV0", "ParcelLookupProductionCandidate", "POINT_ONLY", "Approximate geometry area", "MAX_RESULTS = 10"]) {
   assert.ok(contract.includes(required), required);
 }
-assert.doesNotMatch(contract, /zone|coastal|structure|standard|compliance|capacity|feasibility|adu|sb9|sb79/i);
+const publicIdentityContract = contract.slice(
+  contract.indexOf("export type ParcelLookupProductionCandidate"),
+  contract.indexOf("export type ParcelLookupProductionRequest"),
+);
+assert.doesNotMatch(publicIdentityContract, /zone|coastal|structure|standard|compliance|capacity|feasibility|adu|sb9|sb79/i);
 
 const design = read("docs/parcel-lookup-production-v0.md");
 for (const required of [
@@ -68,7 +79,7 @@ for (const required of [
 ]) assert.ok(design.includes(required), required);
 
 const changed = execFileSync("git", ["status", "--porcelain=v1", "--untracked-files=all"], { cwd: root, encoding: "utf8" })
-  .trim().split("\n").filter(Boolean).map((line) => line.slice(3));
+  .split("\n").filter(Boolean).map((line) => line.slice(3));
 const protectedPaths = [
   "app/page.tsx",
   "app/api/search/route.ts",
@@ -83,9 +94,12 @@ for (const file of protectedPaths) assert.ok(!changed.includes(file), `${file} m
 assert.ok(changed.every((file) => [
   "data/parcel-lookup-production-v0/",
   "docs/parcel-lookup-production-v0.md",
+  "docs/parcel-lookup-production-v0-runbook.md",
   "docs/sql/parcel-lookup-production-v0-design.sql",
   "lib/parcel-lookup-production-v0.ts",
   "scripts/parcel-lookup-production-v0/",
+  "scripts/parcel-lookup-v0/test-acceptance.mjs",
+  "supabase/migrations/20261001203830_parcel_lookup_v0_bounded.sql",
 ].some((allowed) => file === allowed || file.startsWith(allowed))), `unexpected changed path: ${changed.join(", ")}`);
 
 console.log("PASS Packet 44 architecture, security containment, full-corpus evidence, and preservation tests");

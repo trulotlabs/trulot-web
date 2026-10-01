@@ -17,7 +17,7 @@ const root = path.resolve(here, "../..");
 const source = process.env.TRULOT_PARCEL_V2_ROWS
   ?? "/Users/ops/trulot-data/parcel-base-v2/sangis-20260924T183743Z-pass2/rows.ndjson.gz";
 const reportPath = path.join(root, "data/parcel-lookup-production-v0/rehearsal.json");
-const expectedAcquisition = "SANGIS-20260924T183743Z";
+const expectedAcquisition = "sangis-20260924T183743Z";
 const expectedRows = 393_733;
 const expectedRun = "724ff836-eedc-594e-93c5-c80a63de65f7";
 const expectedRowsSha256 = "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868";

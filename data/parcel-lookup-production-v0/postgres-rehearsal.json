@@ -3,11 +3,12 @@
   "evidence": "LOCAL_DISPOSABLE_POSTGRESQL_FULL_CITY_CORPUS",
   "productionAccessed": false,
   "source": {
-    "acquisitionId": "SANGIS-20260924T183743Z",
+    "acquisitionId": "sangis-20260924T183743Z",
     "validatedRunId": "724ff836-eedc-594e-93c5-c80a63de65f7",
     "normalizedRowsSha256": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
     "acceptedCountywideRows": 1088430,
     "cityRows": 393733,
+    "alteredCaseRunRejected": true,
     "pinMismatchRejected": true
   },
   "environment": {
@@ -53,8 +54,8 @@
   "plans": [
     {
       "name": "exactApn",
-      "planningTimeMs": 11.563,
-      "executionTimeMs": 1.258,
+      "planningTimeMs": 12.451,
+      "executionTimeMs": 1.381,
       "nodes": [
         {
           "nodeType": "Limit",
@@ -80,8 +81,8 @@
     },
     {
       "name": "apnPrefix",
-      "planningTimeMs": 13.904,
-      "executionTimeMs": 2.104,
+      "planningTimeMs": 14.934,
+      "executionTimeMs": 2.252,
       "nodes": [
         {
           "nodeType": "Limit",
@@ -115,8 +116,8 @@
     },
     {
       "name": "exactAddress",
-      "planningTimeMs": 11.051,
-      "executionTimeMs": 2.017,
+      "planningTimeMs": 11.991,
+      "executionTimeMs": 2.092,
       "nodes": [
         {
           "nodeType": "Limit",
@@ -142,8 +143,8 @@
     },
     {
       "name": "unitAddress",
-      "planningTimeMs": 11.369,
-      "executionTimeMs": 2.217,
+      "planningTimeMs": 11.9,
+      "executionTimeMs": 2.357,
       "nodes": [
         {
           "nodeType": "Limit",
@@ -169,8 +170,8 @@
     },
     {
       "name": "autocomplete",
-      "planningTimeMs": 16.437,
-      "executionTimeMs": 5.161,
+      "planningTimeMs": 18.358,
+      "executionTimeMs": 5.618,
       "nodes": [
         {
           "nodeType": "Limit",
@@ -214,18 +215,18 @@
   "timings": {
     "autocomplete": {
       "sampleCount": 200,
-      "medianMs": 0.727,
-      "p95Ms": 1.069
+      "medianMs": 0.755,
+      "p95Ms": 0.968
     },
     "exactAddress": {
       "sampleCount": 200,
-      "medianMs": 0.02,
-      "p95Ms": 0.086
+      "medianMs": 0.019,
+      "p95Ms": 0.07
     },
     "exactApn": {
       "sampleCount": 200,
-      "medianMs": 0.018,
-      "p95Ms": 0.072
+      "medianMs": 0.016,
+      "p95Ms": 0.048
     }
   },
   "performanceConditions": {

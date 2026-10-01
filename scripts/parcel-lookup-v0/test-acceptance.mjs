@@ -68,7 +68,6 @@ assert.doesNotMatch(client, /satellite|neighbor parcel/i);
 for (const file of [
   "app/parcel/san-diego/[slug]/page.tsx",
   "lib/parcel-page-v1.ts",
-  "docs/parcel-lookup-production-v0.md",
   "docs/sql/parcel-lookup-production-v0-design.sql",
 ]) {
   const baseline = execFileSync("git", ["show", `1697069306691aa543a98f4d97184bb0da88a2b5:${file}`], { cwd: root });

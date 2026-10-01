@@ -122,7 +122,7 @@ security invoker
 set search_path = ''
 as $function$
 declare
-  expected_acquisition constant text := 'SANGIS-20260924T183743Z';
+  expected_acquisition constant text := 'sangis-20260924T183743Z';
   expected_run constant uuid := '724ff836-eedc-594e-93c5-c80a63de65f7';
   expected_city_rows constant bigint := 393733;
   source_rows bigint;
@@ -273,7 +273,7 @@ set search_path = ''
 set statement_timeout = '1500ms'
 as $function$
 declare
-  expected_acquisition constant text := 'SANGIS-20260924T183743Z';
+  expected_acquisition constant text := 'sangis-20260924T183743Z';
   bounded_limit integer;
   tsquery_text text;
 begin

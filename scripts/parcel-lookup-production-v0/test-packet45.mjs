@@ -137,7 +137,7 @@ assert.equal(timeout.body.state, "TIMEOUT");
 
 const migration = read("supabase/migrations/20261001203830_parcel_lookup_v0_bounded.sql");
 for (const required of [
-  "SANGIS-20260924T183743Z",
+  "sangis-20260924T183743Z",
   "724ff836-eedc-594e-93c5-c80a63de65f7",
   "parcel_lookup_v0_apn_prefix_idx",
   "parcel_lookup_v0_address_exact_idx",
@@ -148,6 +148,14 @@ for (const required of [
   "set statement_timeout = '1500ms'",
   "grant execute on function public.parcel_lookup_v0_search",
 ]) assert.ok(migration.toLowerCase().includes(required.toLowerCase()), required);
+assert.ok(migration.includes("sangis-20260924T183743Z"));
+assert.ok(!migration.includes("SANGIS-20260924T183743Z"));
+assert.doesNotMatch(migration, /lower\s*\(\s*(?:\w+\.)?acquisition_id\s*\)/i);
+assert.doesNotMatch(migration, /acquisition_id\s+ilike/i);
+const postgresRehearsal = read("scripts/parcel-lookup-production-v0/postgres-rehearsal.mjs");
+assert.ok(postgresRehearsal.includes('const expectedAcquisition = "sangis-20260924T183743Z"'));
+assert.ok(postgresRehearsal.includes('const alteredCaseAcquisition = "SANGIS-20260924T183743Z"'));
+assert.ok(postgresRehearsal.includes("alteredCaseRunRejected: true"));
 assert.doesNotMatch(migration, /grant\s+select\s+on\s+.*parcel_lookup_v0/i);
 assert.doesNotMatch(migration, /^\s*execute\s+/im);
 assert.match(migration, /revoke all on table trulot_v2\.parcel_lookup_v0[\s\S]*service_role/i);
@@ -182,7 +190,6 @@ for (const file of [
   "app/page.tsx",
   "app/sitemap.ts",
   "app/robots.ts",
-  "docs/parcel-lookup-production-v0.md",
   "docs/sql/parcel-lookup-production-v0-design.sql",
 ]) {
   const baseline = execFileSync("git", ["show", `9eb954031d0efa9831f515decb8b3b1078ff492e:${file}`], { cwd: root });

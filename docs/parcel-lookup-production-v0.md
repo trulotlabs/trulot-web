@@ -9,7 +9,7 @@ parcel identity and returns only bounded display fields. It does not expose
 Parcel Intelligence V2, zoning, Coastal context, structure facts, standards,
 compliance, legal-lot status, capacity, ADU, SB9, SB79, or feasibility.
 
-The derivation is pinned to parcel acquisition `SANGIS-20260924T183743Z` and
+The derivation is pinned to parcel acquisition `sangis-20260924T183743Z` and
 validated parcel-only run `724ff836-eedc-594e-93c5-c80a63de65f7`. It reads
 `trulot_v2.parcel_base_sangis_v2` directly during an explicitly authorized
 backfill. It never reads `selected_snapshot`, `parcel_serving_v2`,

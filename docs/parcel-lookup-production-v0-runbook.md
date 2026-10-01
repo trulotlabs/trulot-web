@@ -12,7 +12,7 @@ migration, operator, maintenance window, and rollback owner.
 3. Verify Parcel V1 health and record counts for selected snapshots and both V2
    serving relations. The lookup installation must not change them.
 4. Confirm Parcel Base V2 contains acquisition
-   `SANGIS-20260924T183743Z` and validated parcel-only run
+   `sangis-20260924T183743Z` and validated parcel-only run
    `724ff836-eedc-594e-93c5-c80a63de65f7` with status `VALIDATED`, a non-null
    completion timestamp, no zoning acquisition, accepted count `1,088,430`, and
    normalized-row SHA-256

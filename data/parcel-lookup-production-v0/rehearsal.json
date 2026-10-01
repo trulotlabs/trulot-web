@@ -3,7 +3,7 @@
   "observedOn": "2026-10-01",
   "source": {
     "classification": "LOCAL_SEALED_PARCEL_V2_ARTIFACT",
-    "acquisitionId": "SANGIS-20260924T183743Z",
+    "acquisitionId": "sangis-20260924T183743Z",
     "validatedRunId": "724ff836-eedc-594e-93c5-c80a63de65f7",
     "normalizedRowsSha256": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
     "productionAccessed": false,
@@ -34,21 +34,21 @@
     "exactApn": {
       "sampleCount": 200,
       "p50Ms": 0.009,
-      "p95Ms": 0.015,
+      "p95Ms": 0.017,
       "targetP95Ms": 100,
       "targetMet": true
     },
     "exactAddress": {
       "sampleCount": 200,
-      "p50Ms": 0.014,
-      "p95Ms": 0.064,
+      "p50Ms": 0.015,
+      "p95Ms": 0.084,
       "targetP95Ms": 150,
       "targetMet": true
     },
     "autocomplete": {
       "sampleCount": 200,
-      "p50Ms": 0.075,
-      "p95Ms": 0.603,
+      "p50Ms": 0.082,
+      "p95Ms": 0.662,
       "targetP95Ms": 200,
       "targetMet": true
     }
