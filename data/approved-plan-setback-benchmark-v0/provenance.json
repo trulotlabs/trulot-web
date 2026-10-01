@@ -1,0 +1,57 @@
+{
+  "boundary": "Private facts corroborate project geometry and program selection only; public sources determine parcel, zoning, overlays, and law.",
+  "contract_version": "approved-plan-setback-benchmark-v0-2026-10-01-p42",
+  "private": [
+    {
+      "hop": "AUTHORIZED_PLAN_TO_PLAN_FACT_ENVELOPE",
+      "privacy": "PRIVATE_VALIDATION_EVIDENCE",
+      "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+      "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+    },
+    {
+      "hop": "CITY_RECORD_EXPORT_TO_APPLICATION_DATE",
+      "privacy": "PRIVATE_VALIDATION_EVIDENCE",
+      "source_ref": "PRIVATE_CITY_RECORD_EXPORT_PRJ-1111087",
+      "source_sha256": "49541bf72a0a6dc1cf3928c2e2a1ac8963631ed66a43d5204dfdf0dd955c4ea9"
+    },
+    {
+      "fire_source_sha256": "3dd65d8143a2fd188d575d044e6ec5166fabb4f823beea2dba4e80fea32605bf",
+      "hop": "CITY_REVIEW_RECORDS_TO_CORROBORATION",
+      "planning_source_sha256": "e8a1757223ca62f5c217f10e4df310f0623470e77e5e54e26ccd2ddc1cfc759a",
+      "privacy": "PRIVATE_VALIDATION_EVIDENCE"
+    }
+  ],
+  "public": [
+    {
+      "acquisition": "sangis-20260924T183743Z",
+      "hop": "APN_TO_SANGIS_PARCEL",
+      "source": "SanGIS Parcels FeatureServer/0"
+    },
+    {
+      "acquisition": "zoning-city-sd-20260930T024032Z",
+      "hop": "PARCEL_TO_BASE_ZONE",
+      "source": "SanGIS Zoning_Base_SD FeatureServer/0"
+    },
+    {
+      "acquisition": "coastal-city-sd-20260930T143055Z",
+      "hop": "PARCEL_TO_COASTAL",
+      "source": "City DSD Zoning Overlay MapServer/2"
+    },
+    {
+      "hop": "PARCEL_TO_SDA",
+      "query_evidence_sha256": "2bacc1003b8262a5c8f34ea18513c2756d17b83b609924ef182975d2bf36f117",
+      "source": "City DSD Planning MapServer/11"
+    },
+    {
+      "hop": "PARCEL_TO_FIRE",
+      "query_evidence_sha256": "a840518dec4c382dca8c6976a3f87f3e31b32d64269aa6966aa686adac0d16f4",
+      "source": "City-adopted FHSZ FeatureServer/21"
+    },
+    {
+      "hop": "APPLICATION_PROFILE_TO_RULE",
+      "ordinance_source_sha256": "a3b3bdbbc9a3d780f099e4404a2c13d82341c73db8abddb23476da988f9ef467",
+      "rule_text_source_sha256": "5a1584050862cc02fa8427466f5eeff372b32a8b1bcbb92e0d8814e5f65f77cb",
+      "source": "SDMC 141.0302 / O-21618 plus O-21758 old-language baseline"
+    }
+  ]
+}

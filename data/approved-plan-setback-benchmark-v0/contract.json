@@ -1,0 +1,16 @@
+{
+  "conclusion_scope": "PROPOSED_PLAN_RULE_VALIDATION",
+  "contract_version": "approved-plan-setback-benchmark-v0-2026-10-01-p42",
+  "plan_fact_subjects": [
+    "PROPOSED_PROJECT_FACT",
+    "EXISTING_PARCEL_FACT"
+  ],
+  "production": false,
+  "result_states": [
+    "PLAN_RULE_REQUIREMENT_SATISFIED",
+    "PLAN_RULE_REQUIREMENT_NOT_SATISFIED",
+    "PLAN_RULE_EVALUATION_UNRESOLVED"
+  ],
+  "scope": "ONE_PROJECT_ONE_STRUCTURE_ONE_INTERIOR_SIDE_SETBACK",
+  "unresolved_rule_selection_state": "PLAN_SETBACK_VALIDATION_UNRESOLVED"
+}

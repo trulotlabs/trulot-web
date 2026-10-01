@@ -1,0 +1,75 @@
+{
+  "address": "639-659 N 67th Street, San Diego, CA 92114",
+  "apn": "5442140600",
+  "application_record_date": "2024-01-29",
+  "application_record_provenance": {
+    "source_ref": "PRIVATE_CITY_RECORD_EXPORT_PRJ-1111087",
+    "source_sha256": "49541bf72a0a6dc1cf3928c2e2a1ac8963631ed66a43d5204dfdf0dd955c4ea9"
+  },
+  "contract_version": "approved-plan-setback-benchmark-v0-2026-10-01-p42",
+  "direct_dimensions": {
+    "evidence_class": "GOLDEN_PLAN_DIMENSION",
+    "plan_label": "5 FT 11-1/2 IN",
+    "proposed_setback_ft": "5.958333333333333333333333333",
+    "rule_line_annotation_ft": "4"
+  },
+  "fingerprint_sha256": "e883bbb960afe84a7a579292551bdb2ca16b2de78f6d38ec222c2d268db6d69d",
+  "floor_area": {
+    "evaluated": false,
+    "project_far_label": "1.10",
+    "project_gross_floor_area_sq_ft": "22219.6"
+  },
+  "geometry_semantics": {
+    "direction": "PERPENDICULAR_INWARD",
+    "origin": "NORTH_INTERIOR_PROPERTY_LINE",
+    "roofed_balcony_used_as_target": false,
+    "scale_derived": false,
+    "target": "OUTER_BUILDING_FRAME_OF_ENCLOSED_ADU_AREA"
+  },
+  "height": {
+    "evaluated": false,
+    "project_max_height_label": "40 FT 0 IN",
+    "selected_structure_stories": 2
+  },
+  "legal_survey_line_roles": {
+    "authority_state": "PLAN_GEOMETRY_ONLY_NOT_PUBLIC_PARCEL_TRUTH",
+    "label": "PROPERTY LINE - 199.59 FT",
+    "selected_line": "NORTH_INTERIOR_PROPERTY_LINE"
+  },
+  "plan_set_version": "2026-05-09_PRINTED_LATEST_ISSUE; 2026-05-18_FILE_REVISION",
+  "privacy_classification": "PRIVATE_VALIDATION_EVIDENCE",
+  "project_id": "PRJ-1111087",
+  "project_specific_conditions": {
+    "fire_review_comment_279": "CLOSED_INFORMATION_ONLY",
+    "fire_review_source_sha256": "3dd65d8143a2fd188d575d044e6ec5166fabb4f823beea2dba4e80fea32605bf",
+    "greater_property_line_setback_imposed_for_building_1": false,
+    "mapped_vhfhsz": true,
+    "planning_review_source_sha256": "e8a1757223ca62f5c217f10e4df310f0623470e77e5e54e26ccd2ddc1cfc759a",
+    "roofed_balcony_base_setback_issue": "SEPARATE_OPEN_PLANNING_COMMENT_NOT_SELECTED_GEOMETRY"
+  },
+  "project_status": "FOURTH_CD_SUBMITTAL_NOT_PROVEN_ISSUED",
+  "proposed_use_units": {
+    "program_annotation": "ADU_HOME_DENSITY_BONUS_WITH_AFFORDABLE_ADUS",
+    "project_units": 26,
+    "selected_building_units": 2,
+    "use": "ACCESSORY_DWELLING_UNITS"
+  },
+  "public_truth_promotion": false,
+  "sheet_provenance": {
+    "pdf_page": 15,
+    "sheet": "A0.1",
+    "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+    "title": "Architectural Site Plan"
+  },
+  "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12",
+  "structure_id": {
+    "address_label": "641 67TH ST",
+    "building": "BUILDING_1",
+    "stories": 2,
+    "units": [
+      "ADU_1",
+      "ADU_2"
+    ]
+  },
+  "subject": "PROPOSED_PROJECT_FACT"
+}

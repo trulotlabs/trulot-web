@@ -1,0 +1,151 @@
+{
+  "public_profile": {
+    "adjacent_premises": {
+      "apn": "5442140500",
+      "legal_description": "BLOCK 7 LOT 3",
+      "line": "NORTH_INTERIOR_PROPERTY_LINE",
+      "parcel_objectid": 7814,
+      "residentially_zoned": true,
+      "situs": "713 67TH ST",
+      "zone": "RS-1-6",
+      "zone_objectid": 1866
+    },
+    "authority_classification": "PUBLIC_AUTHORITY",
+    "coastal": {
+      "acquisition": "coastal-city-sd-20260930T143055Z",
+      "intersection_sq_ft": "0",
+      "source_artifact_sha256": "9b7b744247278000123a56965597917cdc560db4de78c539f4876aa09b267f97",
+      "state": "OUTSIDE_COASTAL"
+    },
+    "contract_version": "approved-plan-setback-benchmark-v0-2026-10-01-p42",
+    "fire": {
+      "effective_date": "2025-08-30",
+      "intersection_share": "1.0",
+      "layer": "COSD_CalFire_FHSZ_LRA_Dissolve",
+      "map": "City of San Diego Fire Hazard Severity Zone Map 2025",
+      "mapped_geography_is_final_project_requirement": false,
+      "query_evidence_sha256": "a840518dec4c382dca8c6976a3f87f3e31b32d64269aa6966aa686adac0d16f4",
+      "state": "CITY_VHFHSZ_INTERSECTION_SUPPORTED"
+    },
+    "parcel_identity": {
+      "apn": "5442140600",
+      "artifact_sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+      "jurisdiction": "CITY_OF_SAN_DIEGO",
+      "legal_description": "BLOCK 7 LOT 4",
+      "map_reference": "1063",
+      "parcel_acquisition": "sangis-20260924T183743Z",
+      "parcel_id": 53299,
+      "situs": "639 N 67TH ST, SAN DIEGO, CA 92114-2910",
+      "source_currency": "2026-08-29",
+      "source_object_id": 7815,
+      "subdivision": "ENCANTO HEIGHTS"
+    },
+    "sda": {
+      "feature_name": "Sustainable Development Area",
+      "feature_objectid": 1548,
+      "intersection_share": "0.999999999981",
+      "query_evidence_sha256": "2bacc1003b8262a5c8f34ea18513c2756d17b83b609924ef182975d2bf36f117",
+      "source": "City DSD Planning MapServer layer 11",
+      "state": "INSIDE_SDA"
+    },
+    "zoning": {
+      "acquired_at": "2026-09-30T02:40:39.064005Z",
+      "acquisition": "zoning-city-sd-20260930T024032Z",
+      "artifact_sha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+      "authoritative_zone": "RM-2-5",
+      "detailed_mapping_state": "BOUNDARY_SLIVER",
+      "mapping_state": "SINGLE_ZONE",
+      "plan_reported_zone": "RM-2-5",
+      "principal_feature": {
+        "implementation_date": "2016-01-14",
+        "intersection_sq_ft": "20343.024965",
+        "objectid": 1888,
+        "ordinance": "O-20580 N.S.",
+        "share": "0.999995123815",
+        "zone": "RM-2-5"
+      },
+      "private_plan_overrode_public_zone": false,
+      "retained_secondary": {
+        "classification": "BOUNDARY_SLIVER",
+        "intersection_sq_ft": "0.099197",
+        "objectid": 1866,
+        "share": "0.000004876186",
+        "zone": "RS-1-6"
+      },
+      "selected_zone": "RM-2-5",
+      "source_modified_at": "2026-08-10T22:44:01.705Z",
+      "state": "MATCH"
+    }
+  },
+  "rule_profile": {
+    "adu_setbacks": {
+      "front": {
+        "exceptions_not_evaluated": true,
+        "rule": "BASE_ZONE_FRONT_SETBACK"
+      },
+      "interior_side": {
+        "rule": "ZERO_IF_ONE_STORY_AT_OR_BELOW_16_FT; FOUR_FT_IF_TALLER_OR_MULTISTORY_AND_ADJOINING_PREMISES_IS_RESIDENTIAL",
+        "selected_required_ft": "4"
+      },
+      "rear": {
+        "evaluated": false,
+        "rule": "SAME_HEIGHT_AND_ADJACENCY_BRANCH_AS_INTERIOR_SIDE"
+      },
+      "street_side": {
+        "evaluated": false,
+        "rule": "BASE_ZONE_STREET_SIDE_SETBACK"
+      }
+    },
+    "application_version": {
+      "city_review_corroboration": "2026 Planning Comment 00332 distinguishes the reduced ADU setback from the 10-foot roofed-balcony base setback.",
+      "later_o_21758_effective": "2024-03-16",
+      "ordinance_source": "O-21618 N.S.",
+      "ordinance_source_sha256": "a3b3bdbbc9a3d780f099e4404a2c13d82341c73db8abddb23476da988f9ef467",
+      "record_opened": "2024-01-29",
+      "rule_text_source": "O-21758 strikeout ordinance old-language baseline",
+      "rule_text_source_sha256": "5a1584050862cc02fa8427466f5eeff372b32a8b1bcbb92e0d8814e5f65f77cb",
+      "section": "SDMC 141.0302(c)(2)(G)(ii)",
+      "selected_profile": "OUTSIDE_COASTAL_O-21618_EFFECTIVE_2023-05-06"
+    },
+    "contract_version": "approved-plan-setback-benchmark-v0-2026-10-01-p42",
+    "current_forward_profile": {
+      "compiled_code_edition": "9-2026",
+      "compiled_code_source_sha256": "fd641f3de53b183ea1e163838d573be8f50b81b5bfb2bb9976923bbee9d0ecd1",
+      "effective_outside_coastal": "2025-08-22",
+      "fire_official_may_require_greater": true,
+      "limitation": "A new/current-profile application would require containment of any project-specific greater Fire Official setback before comparison.",
+      "minimum_ft_in_high_or_vhfhsz": "4",
+      "ordinance": "O-21989 N.S.",
+      "section": "SDMC 141.0302(b)(9)(D)(ii)",
+      "used_for_selected_application_comparison": false
+    },
+    "project_program": {
+      "basis": "Private plan expressly identifies affordable and bonus ADUs; classification is not inferred from unit count.",
+      "classification": "ADU_HOME_DENSITY_BONUS_PROGRAM",
+      "deed_restriction_state": "PLAN_STATED_NOT_INDEPENDENTLY_RECORDED",
+      "eligibility_or_capacity_evaluated": false,
+      "sda_dependency": "PUBLIC_SDA_MEMBERSHIP_SUPPORTED"
+    },
+    "rm_2_5_base_setbacks": {
+      "front": {
+        "condition": "Section 131.0443(e)(1) envelope allocation applies.",
+        "minimum_ft": 15,
+        "standard_ft": 20
+      },
+      "interior_side": {
+        "condition": "Section 131.0443(e)(2): 5 feet or 10 percent of premises width, whichever is greater, subject to listed narrow-premises exceptions.",
+        "minimum_ft": 5
+      },
+      "rear": {
+        "condition": "Section 131.0443(e)(4) and alley credit conditions apply.",
+        "minimum_ft": 15
+      },
+      "source": "SDMC Table 131-04G (9-2026)",
+      "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+      "street_side": {
+        "condition": "Section 131.0443(e)(3) applies.",
+        "minimum_ft": 10
+      }
+    }
+  }
+}

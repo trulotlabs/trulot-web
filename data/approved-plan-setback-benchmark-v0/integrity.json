@@ -1,0 +1,13 @@
+{
+  "artifacts": {
+    "benchmark-result.json": "ffc85df93ff1f909ebcc2fe20ae97e2d90e318ba572df8bcae4ca738410f3b68",
+    "contract.json": "f065d317e3a9395f10eb56ec8339eb204c5e56a7dbd59a9f0db41741fd76c631",
+    "decision.json": "9de90f9be4950bf7c3cbd8ee1df004e6f6bd250db659ef66acc6d085c330b725",
+    "evaluator-compatibility.json": "776561f642ceeb9d26cdd46783c5f6fa7c8ceea6819437bd8b709e7e1d96b35c",
+    "plan-fact-envelope.json": "7c378732b3bbe53729458be8725707efbb524fcb308da912fec11804b49d02c8",
+    "provenance.json": "9c1411a7bdbc34e6a43405e2082228b4b6965e6f09602475cc5fa97096507765",
+    "public-rule-profile.json": "79b54c030626fc08c9bbe3d645e9b9651683de7e576b98c13844eb64dc8f1e2c"
+  },
+  "bundle_sha256": "787b21bffca5e26feac309a3e6e922039502001b0a5f253d946c02ce5e49ca79",
+  "contract_version": "approved-plan-setback-benchmark-v0-2026-10-01-p42"
+}

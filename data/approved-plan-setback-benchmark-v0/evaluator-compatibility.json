@@ -1,0 +1,10 @@
+{
+  "adapter": "ProjectEvidenceAdapter/PlanFactEnvelope",
+  "architectural_fork_required": false,
+  "contract_version": "approved-plan-setback-benchmark-v0-2026-10-01-p42",
+  "minimal_extension": "Accept PROPOSED_PROJECT_FACT with plan-status and private-provenance gates while retaining the shared Decimal MIN comparison.",
+  "packet_result": "PLAN_RULE_REQUIREMENT_SATISFIED",
+  "parity": true,
+  "shared_framework": "dimensional-rule-evaluator-v0-2026-10-01-p37",
+  "shared_numeric_result": "RULE_REQUIREMENT_SATISFIED"
+}

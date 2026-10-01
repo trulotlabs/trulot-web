@@ -1,0 +1,76 @@
+{
+  "bounded_conclusion": "The submitted Building 1 north enclosed-ADU frame dimension of 5 feet 11-1/2 inches is at least the independently selected 4-foot application-profile interior-side minimum. This is only a proposed-plan rule comparison.",
+  "capacity_calculated": false,
+  "city_review_corroboration": {
+    "comment": "Planning Comment 00332 requires roofed balconies at the 10-foot base-zone setback and says only fully enclosed ADU area may use the reduced ADU setback.",
+    "fire_comment": "Fire Comment 00279 confirms VHFHSZ context and no brush-management comment; it is not treated as a general approval.",
+    "selected_building_frame_is_roofed_balcony": false,
+    "silence_treated_as_approval": false,
+    "state": "CITY_REVIEWER_QUESTIONED_CORRECTED_SEPARATE_ELEMENT"
+  },
+  "comparison": {
+    "comparison": {
+      "expression": "proposed_plan_setback_ft >= applicable_required_setback_ft",
+      "left": "5.958333333333333333333333333",
+      "operator": ">=",
+      "right": "4",
+      "unit": "ft"
+    },
+    "state": "PLAN_RULE_REQUIREMENT_SATISFIED"
+  },
+  "conclusion_scope": "PROPOSED_PLAN_RULE_VALIDATION",
+  "contract_version": "approved-plan-setback-benchmark-v0-2026-10-01-p42",
+  "direct_proposed_setback_ft": "5.958333333333333333333333333",
+  "far_evaluated": false,
+  "forbidden_conclusions": [
+    "APPROVED_COMPLIANCE",
+    "PERMITTED_CONDITION",
+    "CONSTRUCTED_COMPLIANCE",
+    "AS_BUILT_COMPLIANCE",
+    "OVERALL_PROJECT_FEASIBILITY",
+    "DEVELOPMENT_CAPACITY",
+    "HEIGHT_COMPLIANCE",
+    "FAR_COMPLIANCE"
+  ],
+  "height_evaluated": false,
+  "measurement_semantics": {
+    "direction": "PERPENDICULAR_INWARD",
+    "origin": "NORTH_INTERIOR_PROPERTY_LINE",
+    "roofed_balcony_used_as_target": false,
+    "scale_derived": false,
+    "target": "OUTER_BUILDING_FRAME_OF_ENCLOSED_ADU_AREA"
+  },
+  "plan_status": "FOURTH_CD_SUBMITTAL_NOT_PROVEN_ISSUED",
+  "privacy": {
+    "plan_evidence": "PRIVATE_VALIDATION_EVIDENCE",
+    "private_path_in_output": false,
+    "private_plan_promoted_to_public_truth": false,
+    "private_plan_published": false,
+    "public_profile": "PUBLIC_AUTHORITY"
+  },
+  "production_wired": false,
+  "project_identity": {
+    "apn": "5442140600",
+    "project_id": "PRJ-1111087"
+  },
+  "property_line": "NORTH_INTERIOR_PROPERTY_LINE",
+  "required_setback_ft": "4",
+  "requirement": {
+    "failed_gates": [],
+    "fire_override_applies_to_selected_profile": false,
+    "operator": "MIN",
+    "required_ft": "4",
+    "selected_branch": "MULTISTORY_ADU_ADJACENT_TO_RESIDENTIALLY_ZONED_PREMISES",
+    "state": "SETBACK_REQUIREMENT_RESOLVED"
+  },
+  "selected_setback_family": "INTERIOR_SIDE_SETBACK",
+  "selected_structure": {
+    "address_label": "641 67TH ST",
+    "building": "BUILDING_1",
+    "stories": 2,
+    "units": [
+      "ADU_1",
+      "ADU_2"
+    ]
+  }
+}

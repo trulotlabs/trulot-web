@@ -1,0 +1,6 @@
+{
+  "contract_version": "approved-plan-setback-benchmark-v0-2026-10-01-p42",
+  "decision": "APPROVED_PLAN_SETBACK_BENCHMARK_V0_READY",
+  "next": "NEXT_FEASIBILITY_STEP: expand approved-plan setback benchmarks",
+  "reason": "A second project is now more valuable than extracting additional fact families from the same plan because it tests transferability of the adapter and rule-selection gates."
+}
