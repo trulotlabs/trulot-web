@@ -1,0 +1,341 @@
+{
+  "apn": "6341302200",
+  "capacity": {
+    "calculated": false,
+    "state": "NOT_EVALUATED"
+  },
+  "contract_version": "parcel-feasibility-summary-v0-2026-10-01-p38",
+  "expert_detail_bridge": {
+    "conditional_display": "Conditional rules must retain their conditional state, unresolved evidence groups, and unevaluated structure-compliance state.",
+    "fields": [
+      "rule family",
+      "required value",
+      "supported parcel value",
+      "bounded result",
+      "source/provenance"
+    ],
+    "source_chain_mode": "REFERENCE_ORIGINATING_SEALED_BUNDLE",
+    "ui_wired": false
+  },
+  "fingerprint_sha256": "f16fd83c6542b20fe17967873d7379f3dbcadb1f817962bcb7da14183f6e198a",
+  "forbidden_aggregation": {
+    "forbidden_conclusions": [
+      "ZONING_COMPLIANT",
+      "CONFORMING_LOT",
+      "BUILDABLE_LOT",
+      "DEVELOPMENT_CAPACITY_AVAILABLE",
+      "PROJECT_FEASIBLE",
+      "PERMIT_READY",
+      "OVERALL_COMPLIANCE",
+      "STRUCTURE_COMPLIANCE"
+    ],
+    "satisfied_rule_count_does_not_imply": [
+      "zoning compliant",
+      "conforming lot",
+      "buildable lot",
+      "development capacity available",
+      "project feasible",
+      "permit-ready"
+    ]
+  },
+  "human_summary": "TruLot has verified the parcel’s legal lot identity and evaluated four base dimensional requirements. Minimum lot area, depth, width, and frontage satisfy the applicable RS-1-7 base standards. Setback requirements remain conditional and structure compliance has not been evaluated.",
+  "legal_lot": {
+    "fingerprint_sha256": "45d578f06b0a17bc342c1d6504ca0db285db25bfa251cc22988d9f1ead97d3b5",
+    "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+    "state": "LEGAL_LOT_ESTABLISHED"
+  },
+  "new_rule_families_evaluated": [],
+  "next_feasibility_source_target": "current structure geometry",
+  "next_investigation_order": [
+    {
+      "rank": 1,
+      "target": "current structure geometry"
+    },
+    {
+      "rank": 2,
+      "target": "height and FAR inputs"
+    },
+    {
+      "rank": 3,
+      "target": "project-specific Fire review"
+    },
+    {
+      "rank": 4,
+      "target": "front slope methodology if needed"
+    },
+    {
+      "rank": 5,
+      "target": "project proposal facts"
+    }
+  ],
+  "overall_compliance": {
+    "conclusion_emitted": false,
+    "state": "NOT_EVALUATED"
+  },
+  "parcel_identity": {
+    "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+    "recorded_entity": "PM 17383 PARCEL 1",
+    "situs_address": "1456 27TH ST"
+  },
+  "product_bridge": {
+    "capacity": "Not evaluated.",
+    "evaluated_so_far": "4 base dimensional rules satisfied.",
+    "level_1_cta": "See what’s needed to evaluate this property",
+    "still_needed": "Setbacks, height, FAR, structure geometry, and project-specific Fire review.",
+    "ui_wired": false
+  },
+  "provenance": [
+    {
+      "conclusion": "minimum_lot_area",
+      "contract_version": "minimum-lot-area-evaluation-v0-2026-09-30-p27",
+      "evaluation_fingerprint_sha256": "2352256707a36c95d8b1182bae9fd8438838047558d74a686d9e9677282da70b"
+    },
+    {
+      "conclusion": "minimum_lot_depth",
+      "contract_version": "minimum-lot-depth-evaluation-v0-2026-09-30-p28",
+      "evaluation_fingerprint_sha256": "af874ae823e3d90fb4dc415b24fe1b5e0684745b6f9fe8c19c2dea87bbdcc14f"
+    },
+    {
+      "conclusion": "minimum_lot_width",
+      "contract_version": "minimum-lot-width-evaluation-v0-2026-09-30-p29",
+      "evaluation_fingerprint_sha256": "85f9f17d97a1cf8974f551863b0f9531b2e9e5f9a910aedbcbf504dea0db46ec"
+    },
+    {
+      "conclusion": "minimum_frontage",
+      "contract_version": "minimum-frontage-evaluation-v0-2026-10-01-p30",
+      "evaluation_fingerprint_sha256": "9a9a6002733ee52c7ef71b6e87a5dda9d29d12f67f7df060e53aa005fe74e6f8"
+    },
+    {
+      "conclusion": "front_setback",
+      "contract_version": "front-setback-evaluator-v0-2026-10-01-p32",
+      "evaluation_fingerprint_sha256": "1a1e4fef0536ca70a93baf2c89d91ecae10c5e3259a8da4d4626103c4a6f24e8"
+    },
+    {
+      "conclusion": "rear_setback",
+      "contract_version": "rear-setback-evaluator-v0-2026-10-01-p34",
+      "evaluation_fingerprint_sha256": "b94262372652bcb8c841ea1d80d656a34d28ee83694a89b0df976421210ac0eb"
+    },
+    {
+      "conclusion": "interior_side_setback",
+      "contract_version": "interior-side-setback-evaluator-v0-2026-10-01-p36",
+      "evaluation_fingerprint_sha256": "aadda9860ec2b7674ad5035a5d3ba5b03a79d520f75b85f975bc3a919e6f7807"
+    },
+    {
+      "conclusion": "street_side_setback",
+      "contract_version": "street-side-setback-applicability-v0-2026-10-01-p37",
+      "evaluation_fingerprint_sha256": "b4c6975ed80ec3887e447215f413987327e6ceddef8658ff7b43ca4bc3178129"
+    }
+  ],
+  "result_counts": {
+    "conditional": 3,
+    "not_applicable": 1,
+    "not_evaluated": 4,
+    "not_satisfied": 0,
+    "satisfied": 4
+  },
+  "rule_results": {
+    "conditional": [
+      {
+        "ordinary_base": {
+          "unit": "ft",
+          "value": "15"
+        },
+        "origin": {
+          "contract_version": "front-setback-evaluator-v0-2026-10-01-p32",
+          "evaluation_fingerprint_sha256": "1a1e4fef0536ca70a93baf2c89d91ecae10c5e3259a8da4d4626103c4a6f24e8"
+        },
+        "rule_family": "front_setback",
+        "state": "SETBACK_REQUIREMENT_CONDITIONAL",
+        "structure_compliance": "SETBACK_COMPLIANCE_NOT_EVALUATED",
+        "unresolved_groups": [
+          "front slope predicate and permission",
+          "project-specific Fire Official buffer",
+          "document/program conditions",
+          "current/proposed structure geometry and element classification"
+        ]
+      },
+      {
+        "ordinary_base": {
+          "derivation": "depth-adjusted",
+          "unit": "ft",
+          "value": "23.5020"
+        },
+        "origin": {
+          "contract_version": "rear-setback-evaluator-v0-2026-10-01-p34",
+          "evaluation_fingerprint_sha256": "b94262372652bcb8c841ea1d80d656a34d28ee83694a89b0df976421210ac0eb"
+        },
+        "rule_family": "rear_setback",
+        "state": "SETBACK_REQUIREMENT_CONDITIONAL",
+        "structure_compliance": "SETBACK_COMPLIANCE_NOT_EVALUATED",
+        "unresolved_groups": [
+          "project-specific Fire Official buffer",
+          "document/program modification",
+          "current structure geometry and element classification"
+        ]
+      },
+      {
+        "ordinary_base": {
+          "applies_to": "each north and south interior side",
+          "unit": "ft",
+          "value": "4"
+        },
+        "origin": {
+          "contract_version": "interior-side-setback-evaluator-v0-2026-10-01-p36",
+          "evaluation_fingerprint_sha256": "aadda9860ec2b7674ad5035a5d3ba5b03a79d520f75b85f975bc3a919e6f7807"
+        },
+        "rule_family": "interior_side_setback",
+        "state": "SETBACK_REQUIREMENT_CONDITIONAL",
+        "structure_compliance": "SETBACK_COMPLIANCE_NOT_EVALUATED",
+        "unresolved_groups": [
+          "reallocation/addition history",
+          "projection or encroachment classification",
+          "project-specific Fire Official buffer",
+          "document/program conditions",
+          "current structure geometry"
+        ]
+      }
+    ],
+    "not_applicable": [
+      {
+        "numeric_requirement_selected": false,
+        "origin": {
+          "contract_version": "street-side-setback-applicability-v0-2026-10-01-p37",
+          "evaluation_fingerprint_sha256": "b4c6975ed80ec3887e447215f413987327e6ceddef8658ff7b43ca4bc3178129"
+        },
+        "reason": "No side property line adjoins a street.",
+        "rule_family": "street_side_setback",
+        "state": "NOT_APPLICABLE"
+      }
+    ],
+    "not_evaluated": [
+      {
+        "reason": "No height evaluator was run in this packet.",
+        "rule_family": "height",
+        "state": "NOT_EVALUATED"
+      },
+      {
+        "reason": "Code-defined gross floor area and a FAR evaluation are not available.",
+        "rule_family": "far",
+        "state": "NOT_EVALUATED"
+      },
+      {
+        "reason": "Current authoritative footprint and complete coverage predicates are not available.",
+        "rule_family": "lot_coverage",
+        "state": "NOT_EVALUATED"
+      },
+      {
+        "reason": "Current authoritative structure geometry and final setback branches are unresolved.",
+        "rule_family": "structure_compliance",
+        "state": "NOT_EVALUATED"
+      }
+    ],
+    "not_satisfied": [],
+    "satisfied": [
+      {
+        "bounded_conclusion": "The supported Code-defined lot area satisfies the RS-1-7 minimum lot area standard.",
+        "label": "Minimum lot area",
+        "operator": ">=",
+        "origin": {
+          "contract_version": "minimum-lot-area-evaluation-v0-2026-09-30-p27",
+          "evaluation_fingerprint_sha256": "2352256707a36c95d8b1182bae9fd8438838047558d74a686d9e9677282da70b"
+        },
+        "required_value": {
+          "unit": "sq_ft",
+          "value": "5000.0"
+        },
+        "rule_family": "minimum_lot_area",
+        "state": "RULE_REQUIREMENT_SATISFIED",
+        "supported_value": {
+          "unit": "sq_ft",
+          "value": "22096.320"
+        }
+      },
+      {
+        "bounded_conclusion": "The supported Code-defined lot depth satisfies the RS-1-7 minimum lot depth standard.",
+        "label": "Minimum lot depth",
+        "operator": ">=",
+        "origin": {
+          "contract_version": "minimum-lot-depth-evaluation-v0-2026-09-30-p28",
+          "evaluation_fingerprint_sha256": "af874ae823e3d90fb4dc415b24fe1b5e0684745b6f9fe8c19c2dea87bbdcc14f"
+        },
+        "required_value": {
+          "unit": "ft",
+          "value": "95.0"
+        },
+        "rule_family": "minimum_lot_depth",
+        "state": "RULE_REQUIREMENT_SATISFIED",
+        "supported_value": {
+          "unit": "ft",
+          "value": "235.02"
+        }
+      },
+      {
+        "bounded_conclusion": "The supported Code-defined lot width satisfies the RS-1-7 minimum lot width standard.",
+        "label": "Minimum lot width",
+        "operator": ">=",
+        "origin": {
+          "contract_version": "minimum-lot-width-evaluation-v0-2026-09-30-p29",
+          "evaluation_fingerprint_sha256": "85f9f17d97a1cf8974f551863b0f9531b2e9e5f9a910aedbcbf504dea0db46ec"
+        },
+        "required_value": {
+          "unit": "ft",
+          "value": "50.0"
+        },
+        "rule_family": "minimum_lot_width",
+        "state": "RULE_REQUIREMENT_SATISFIED",
+        "supported_value": {
+          "unit": "ft",
+          "value": "94.00"
+        }
+      },
+      {
+        "bounded_conclusion": "The supported Code-defined lot frontage satisfies the RS-1-7 minimum frontage standard.",
+        "label": "Minimum frontage",
+        "operator": ">=",
+        "origin": {
+          "contract_version": "minimum-frontage-evaluation-v0-2026-10-01-p30",
+          "evaluation_fingerprint_sha256": "9a9a6002733ee52c7ef71b6e87a5dda9d29d12f67f7df060e53aa005fe74e6f8"
+        },
+        "required_value": {
+          "unit": "ft",
+          "value": "50.0"
+        },
+        "rule_family": "minimum_frontage",
+        "state": "RULE_REQUIREMENT_SATISFIED",
+        "supported_value": {
+          "unit": "ft",
+          "value": "94.00"
+        }
+      }
+    ]
+  },
+  "schema": "ParcelFeasibilitySummaryV0",
+  "state": "PARTIAL_BASE_RULE_FEASIBILITY_ESTABLISHED",
+  "unresolved_evidence": [
+    "Front setback final branch, including the front slope predicate",
+    "Rear setback final branch",
+    "Interior-side final branch",
+    "Project-specific Fire Code Official buffer",
+    "Current authoritative structure geometry",
+    "Height",
+    "FAR and Code-defined gross floor area",
+    "Lot coverage",
+    "Project-specific proposal facts"
+  ],
+  "what_trulot_knows": [
+    "Legal lot established",
+    "Base zoning is RS-1-7",
+    "Parcel is outside Coastal",
+    "Minimum lot area rule satisfied",
+    "Minimum lot depth rule satisfied",
+    "Minimum lot width rule satisfied",
+    "Minimum frontage rule satisfied"
+  ],
+  "zoning": {
+    "coastal_context": "OUTSIDE_COASTAL",
+    "mapping_state": "SINGLE_ZONE",
+    "standards_verified_as_of": "2026-09-30",
+    "standards_version": "sd-rs-base-standards-2026-09-30-v0",
+    "zone_code": "RS-1-7"
+  }
+}

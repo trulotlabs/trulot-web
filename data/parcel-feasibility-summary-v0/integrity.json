@@ -1,0 +1,11 @@
+{
+  "artifacts": {
+    "contract.json": "5be4b3d894bd0bb5ccfd0132a5e16caf425eba5d30051e62c6f681f1bc18ae78",
+    "decision.json": "187785a333b1d21212e7cb7b356b3d8a2e3e9ac8a09fec3b080dc41b5f3a35ed",
+    "product-example.json": "703da5d7aae2eb67d7f4d8b34375b9a5137a485e485445cf34c011b792d8ac62",
+    "provenance.json": "5051646989dcbee5ca1d1bd8f27032388d1ec64814e9586ad8957a9a21e0c78e",
+    "summary.json": "8daa559456d74c22afc2de44964379d3bdce2f2e3dfabfeb6da7bb9ef99d16d8"
+  },
+  "bundle_sha256": "007f679acb04f6b77cabb7da6e8037086f6beb74b0fab75b7b0581fd4f06eeff",
+  "contract_version": "parcel-feasibility-summary-v0-2026-10-01-p38"
+}

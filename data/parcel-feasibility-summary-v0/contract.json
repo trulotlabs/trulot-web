@@ -1,0 +1,42 @@
+{
+  "contract_version": "parcel-feasibility-summary-v0-2026-10-01-p38",
+  "forbidden_conclusions": [
+    "ZONING_COMPLIANT",
+    "CONFORMING_LOT",
+    "BUILDABLE_LOT",
+    "DEVELOPMENT_CAPACITY_AVAILABLE",
+    "PROJECT_FEASIBLE",
+    "PERMIT_READY",
+    "OVERALL_COMPLIANCE",
+    "STRUCTURE_COMPLIANCE"
+  ],
+  "required_fields": [
+    "parcel_identity",
+    "legal_lot",
+    "zoning",
+    "rule_results",
+    "unresolved_evidence",
+    "forbidden_aggregation",
+    "next_investigation_order",
+    "provenance",
+    "fingerprint_sha256"
+  ],
+  "result_classes": [
+    "SATISFIED",
+    "NOT_SATISFIED",
+    "CONDITIONAL",
+    "NOT_APPLICABLE",
+    "NOT_EVALUATED"
+  ],
+  "schema": "ParcelFeasibilitySummaryV0",
+  "scope": {
+    "apns": [
+      "6341302200"
+    ],
+    "composition_only": true
+  },
+  "top_level_states": [
+    "PARTIAL_BASE_RULE_FEASIBILITY_ESTABLISHED",
+    "SUMMARY_COMPOSITION_SOURCE_MISMATCH"
+  ]
+}

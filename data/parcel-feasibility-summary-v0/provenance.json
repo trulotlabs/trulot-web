@@ -1,0 +1,76 @@
+{
+  "chain": [
+    {
+      "apn": "6341302200",
+      "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+      "hop": "APN_TO_PARCEL_INTELLIGENCE"
+    },
+    {
+      "fingerprint_sha256": "45d578f06b0a17bc342c1d6504ca0db285db25bfa251cc22988d9f1ead97d3b5",
+      "hop": "PARCEL_TO_LEGAL_LOT",
+      "state": "LEGAL_LOT_ESTABLISHED"
+    },
+    {
+      "contract_version": "minimum-lot-area-evaluation-v0-2026-09-30-p27",
+      "evaluation_fingerprint_sha256": "2352256707a36c95d8b1182bae9fd8438838047558d74a686d9e9677282da70b",
+      "hop": "SEALED_RULE_TO_SUMMARY_CLASS",
+      "rule_family": "minimum_lot_area",
+      "summary_class": "SATISFIED"
+    },
+    {
+      "contract_version": "minimum-lot-depth-evaluation-v0-2026-09-30-p28",
+      "evaluation_fingerprint_sha256": "af874ae823e3d90fb4dc415b24fe1b5e0684745b6f9fe8c19c2dea87bbdcc14f",
+      "hop": "SEALED_RULE_TO_SUMMARY_CLASS",
+      "rule_family": "minimum_lot_depth",
+      "summary_class": "SATISFIED"
+    },
+    {
+      "contract_version": "minimum-lot-width-evaluation-v0-2026-09-30-p29",
+      "evaluation_fingerprint_sha256": "85f9f17d97a1cf8974f551863b0f9531b2e9e5f9a910aedbcbf504dea0db46ec",
+      "hop": "SEALED_RULE_TO_SUMMARY_CLASS",
+      "rule_family": "minimum_lot_width",
+      "summary_class": "SATISFIED"
+    },
+    {
+      "contract_version": "minimum-frontage-evaluation-v0-2026-10-01-p30",
+      "evaluation_fingerprint_sha256": "9a9a6002733ee52c7ef71b6e87a5dda9d29d12f67f7df060e53aa005fe74e6f8",
+      "hop": "SEALED_RULE_TO_SUMMARY_CLASS",
+      "rule_family": "minimum_frontage",
+      "summary_class": "SATISFIED"
+    },
+    {
+      "contract_version": "front-setback-evaluator-v0-2026-10-01-p32",
+      "evaluation_fingerprint_sha256": "1a1e4fef0536ca70a93baf2c89d91ecae10c5e3259a8da4d4626103c4a6f24e8",
+      "hop": "SEALED_RULE_TO_SUMMARY_CLASS",
+      "rule_family": "front_setback",
+      "summary_class": "CONDITIONAL"
+    },
+    {
+      "contract_version": "rear-setback-evaluator-v0-2026-10-01-p34",
+      "evaluation_fingerprint_sha256": "b94262372652bcb8c841ea1d80d656a34d28ee83694a89b0df976421210ac0eb",
+      "hop": "SEALED_RULE_TO_SUMMARY_CLASS",
+      "rule_family": "rear_setback",
+      "summary_class": "CONDITIONAL"
+    },
+    {
+      "contract_version": "interior-side-setback-evaluator-v0-2026-10-01-p36",
+      "evaluation_fingerprint_sha256": "aadda9860ec2b7674ad5035a5d3ba5b03a79d520f75b85f975bc3a919e6f7807",
+      "hop": "SEALED_RULE_TO_SUMMARY_CLASS",
+      "rule_family": "interior_side_setback",
+      "summary_class": "CONDITIONAL"
+    },
+    {
+      "contract_version": "street-side-setback-applicability-v0-2026-10-01-p37",
+      "evaluation_fingerprint_sha256": "b4c6975ed80ec3887e447215f413987327e6ceddef8658ff7b43ca4bc3178129",
+      "hop": "SEALED_RULE_TO_SUMMARY_CLASS",
+      "rule_family": "street_side_setback",
+      "summary_class": "NOT_APPLICABLE"
+    },
+    {
+      "hop": "RULE_CLASSES_TO_PARTIAL_SUMMARY",
+      "state": "PARTIAL_BASE_RULE_FEASIBILITY_ESTABLISHED",
+      "summary_fingerprint_sha256": "f16fd83c6542b20fe17967873d7379f3dbcadb1f817962bcb7da14183f6e198a"
+    }
+  ],
+  "contract_version": "parcel-feasibility-summary-v0-2026-10-01-p38"
+}

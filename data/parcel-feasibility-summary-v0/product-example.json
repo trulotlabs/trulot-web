@@ -1,0 +1,47 @@
+{
+  "apn": "6341302200",
+  "capacity": "Not evaluated.",
+  "contract_version": "parcel-feasibility-summary-v0-2026-10-01-p38",
+  "level_1": {
+    "capacity": "Not evaluated.",
+    "evaluated_so_far": "4 base dimensional rules satisfied.",
+    "level_1_cta": "See what’s needed to evaluate this property",
+    "still_needed": "Setbacks, height, FAR, structure geometry, and project-specific Fire review.",
+    "ui_wired": false
+  },
+  "level_2": {
+    "conditional_display": "Conditional rules must retain their conditional state, unresolved evidence groups, and unevaluated structure-compliance state.",
+    "fields": [
+      "rule family",
+      "required value",
+      "supported parcel value",
+      "bounded result",
+      "source/provenance"
+    ],
+    "source_chain_mode": "REFERENCE_ORIGINATING_SEALED_BUNDLE",
+    "ui_wired": false
+  },
+  "state": "PARTIAL_BASE_RULE_FEASIBILITY_ESTABLISHED",
+  "summary": "TruLot has verified the parcel’s legal lot identity and evaluated four base dimensional requirements. Minimum lot area, depth, width, and frontage satisfy the applicable RS-1-7 base standards. Setback requirements remain conditional and structure compliance has not been evaluated.",
+  "ui_wired": false,
+  "what_remains_unresolved": [
+    "Front setback final branch, including the front slope predicate",
+    "Rear setback final branch",
+    "Interior-side final branch",
+    "Project-specific Fire Code Official buffer",
+    "Current authoritative structure geometry",
+    "Height",
+    "FAR and Code-defined gross floor area",
+    "Lot coverage",
+    "Project-specific proposal facts"
+  ],
+  "what_trulot_knows": [
+    "Legal lot established",
+    "Base zoning is RS-1-7",
+    "Parcel is outside Coastal",
+    "Minimum lot area rule satisfied",
+    "Minimum lot depth rule satisfied",
+    "Minimum lot width rule satisfied",
+    "Minimum frontage rule satisfied"
+  ]
+}

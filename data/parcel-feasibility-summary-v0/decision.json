@@ -1,0 +1,10 @@
+{
+  "capacity_calculated": false,
+  "contract_version": "parcel-feasibility-summary-v0-2026-10-01-p38",
+  "decision": "PARCEL_FEASIBILITY_SUMMARY_V0_READY",
+  "new_rule_family_evaluated": false,
+  "next_feasibility_source_target": "current structure geometry",
+  "overall_compliance_conclusion": false,
+  "state": "PARTIAL_BASE_RULE_FEASIBILITY_ESTABLISHED",
+  "summary_fingerprint_sha256": "f16fd83c6542b20fe17967873d7379f3dbcadb1f817962bcb7da14183f6e198a"
+}
