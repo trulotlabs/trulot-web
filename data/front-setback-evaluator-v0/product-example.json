@@ -1,0 +1,33 @@
+{
+  "apn": "6341302200",
+  "applicable_front_setback": {
+    "base_rule": "15 ft",
+    "conditional_branches": [
+      "6 ft may be used only if the literal front-50-foot slope test is met and the permission is elected",
+      "a greater buffer may be required by the Fire Code Official"
+    ],
+    "excluded_branch": "10 ft cul-de-sac permission does not apply to the recorded straight 27th Street frontage",
+    "state": "SETBACK_REQUIREMENT_CONDITIONAL",
+    "unresolved_predicates": [
+      "front_50ft_fraction_at_least_25pct_slope",
+      "slope_permission_elected",
+      "fire_official_defensible_space_buffer",
+      "airport_transition_context",
+      "document_modified_setback",
+      "special_program_or_overlay_modification"
+    ]
+  },
+  "contract_version": "front-setback-evaluator-v0-2026-10-01-p32",
+  "existing_structure": {
+    "current_compliance_evaluated": false,
+    "historical_diagnostic": "Two direct Spring 2017 outline records are available; no setback is measured and they are not current compliance evidence.",
+    "missing_evidence": [
+      "resolved parcel-specific requirement",
+      "authoritative current or proposed structure geometry",
+      "resolved projection/encroachment and project scope"
+    ],
+    "result": "SETBACK_COMPLIANCE_NOT_EVALUATED"
+  },
+  "qualifier": "This evaluates only the front-setback rule envelope. It does not establish overall zoning compliance, legal nonconformity, a variance or violation, capacity, buildability, entitlement likelihood, or permit status.",
+  "ui_wired": false
+}

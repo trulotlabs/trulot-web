@@ -1,0 +1,12 @@
+{
+  "artifacts": {
+    "contract.json": "cc8dcb012d1e205e7a314fb5ee73f0ba4610a4b3dfb5b714dd089597c6bf1ba1",
+    "decision.json": "722515c307c66c54fd61cbbbfa12ad1dc07f5c4c8b2a98fe88b450a2958ee413",
+    "evaluation.json": "2338cbfb9931e017654cb3d1fc65bb6aa2647971b822194a7b39d2ffa3f1ee4d",
+    "framework-contract.json": "adc806b44d04d076b3fb123d09aac1587967d25751b215f2877ed33b3e74a4a2",
+    "product-example.json": "bacd0a73b6c802e3da4f0ded1f8ad21b9b97663e87f59a382889d9cd47aaa769",
+    "provenance.json": "f7c96adfff6645b49f1351539eb89b47a1404783094c546ff6975948fc2b8900"
+  },
+  "bundle_sha256": "b0a1f5157686c7b7e97ba5f6fa330c37e767b35ab5786be9d7fee50ea1f61030",
+  "contract_version": "front-setback-evaluator-v0-2026-10-01-p32"
+}

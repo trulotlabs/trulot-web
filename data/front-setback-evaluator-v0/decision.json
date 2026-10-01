@@ -1,0 +1,9 @@
+{
+  "applicable_setback_state": "SETBACK_REQUIREMENT_CONDITIONAL",
+  "compliance_result": "SETBACK_COMPLIANCE_NOT_EVALUATED",
+  "contract_version": "front-setback-evaluator-v0-2026-10-01-p32",
+  "decision": "FRONT_SETBACK_EVALUATOR_V0_READY",
+  "development_capacity_calculated": false,
+  "next_feasibility_source_target": "authoritative slope/topography for the front 50 feet",
+  "overall_compliance_conclusion": false
+}

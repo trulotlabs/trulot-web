@@ -1,0 +1,160 @@
+{
+  "applicable_requirement": [
+    "BASE_TABLE:15_FT",
+    "SLOPE_PERMISSION:6_FT_IF_QUALIFIED_AND_ELECTED",
+    "FIRE_OFFICIAL_BUFFER:GREATER_VALUE_IF_REQUIRED"
+  ],
+  "bounded_conclusion": "The current outside-Coastal RS-1-7 front-setback rule is supported as a conditional envelope, but the parcel-specific distance and structure compliance are not resolved.",
+  "comparison_result": "RULE_EVALUATION_UNRESOLVED",
+  "condition_state": "UNRESOLVED",
+  "forbidden_conclusions": [
+    "OVERALL_ZONING_COMPLIANCE",
+    "LEGAL_NONCONFORMITY",
+    "VARIANCE_REQUIREMENT",
+    "PERMIT_VIOLATION",
+    "DEVELOPMENT_CAPACITY",
+    "BUILDABILITY",
+    "ENTITLEMENT_LIKELIHOOD",
+    "PERMIT_APPROVAL"
+  ],
+  "legal_lot_state": {
+    "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+    "recorded_entity": "PM 17383 PARCEL 1",
+    "state": "LEGAL_LOT_ESTABLISHED"
+  },
+  "measurement_doctrine": {
+    "direction": "Measured inward and perpendicular to the front property line (SDMC §113.0252(a)(1)).",
+    "front_property_line": "East boundary of PM 17383 Parcel 1 at the west edge of 27th Street public right-of-way.",
+    "living_area_excluded": true,
+    "required_inputs": [
+      "authoritative front property line",
+      "authoritative current or proposed structure geometry",
+      "resolved parcel-specific requirement",
+      "resolved structure/project classification",
+      "resolved projection/encroachment treatment"
+    ],
+    "setback_line": "A line parallel to the nearest property line at the required inward distance; the intervening area is the required yard (SDMC §113.0249(a)).",
+    "structure_edge": "For new-development compliance, measured to the outer edge of the building frame (SDMC §113.0252(c))."
+  },
+  "measurement_result": null,
+  "operator": "MIN",
+  "parcel_identity": {
+    "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+    "situs_address": "1456 27TH ST"
+  },
+  "provenance": [
+    {
+      "apn": "6341302200",
+      "fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+      "hop": "APN_TO_PARCEL_V2"
+    },
+    {
+      "entity": "PM 17383 Parcel 1",
+      "fingerprint_sha256": "45d578f06b0a17bc342c1d6504ca0db285db25bfa251cc22988d9f1ead97d3b5",
+      "hop": "PARCEL_TO_RECORDED_LOT"
+    },
+    {
+      "artifact_sha256": "6912324c0a4d54dce4f02a019ebae38485ac7a7fffde5e05d8166e3257afbb00",
+      "hop": "RECORDED_MAP_TO_FRONT_LINE",
+      "state": "RESOLVED_27TH_STREET_RIGHT_OF_WAY_BOUNDARY"
+    },
+    {
+      "basis": "straight recorded frontage and centerline",
+      "hop": "MAP_TO_CUL_DE_SAC_PREDICATE",
+      "state": "FALSE"
+    },
+    {
+      "hop": "PARCEL_TO_BASE_ZONING",
+      "mapping_row_sha256": "56ff295bb34046b281d3eb35de7829e687b6b66c2beda6a5c5cf3568c9e1e8d3",
+      "zone": "RS-1-7"
+    },
+    {
+      "fingerprint_sha256": "171d0c1b2f53d4c3aefaec462313b1f1eb628650d87815190a2f1e0f5f917334",
+      "hop": "PARCEL_TO_COASTAL_CONTEXT",
+      "state": "OUTSIDE_COASTAL"
+    },
+    {
+      "fingerprint_sha256": "4e38994c7243dc446bc7a07fba568fa1deaf5dbc521abc1296e22ba4fc10d77d",
+      "hop": "CONTEXT_TO_STANDARDS_VERSION",
+      "version": "sd-rs-base-standards-2026-09-30-v0"
+    },
+    {
+      "hop": "TABLE_TO_BASE_RULE",
+      "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:12",
+      "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538"
+    },
+    {
+      "hop": "FOOTNOTE_TO_SLOPE_BRANCH",
+      "proposal_rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:12",
+      "source_sha256": "c707e3daaf92c645208782a6db2ee81c5f1db2142694e85eb8b2bd7b3568712b"
+    },
+    {
+      "hop": "SECTION_TO_CUL_DE_SAC_AND_FIRE_BRANCHES",
+      "section": "131.0443(a)(1),(i)",
+      "section_text_sha256": "007b26a9a04939b1a78f2f83f8d323a4301674eff5bdd4ed5c1699d71e7e1c00"
+    },
+    {
+      "hop": "MEASUREMENT_SEMANTICS",
+      "page_text_sha256": "187e18a7a5e82c2a8be8a11d77a2f972cffc65489ccd800241bdf64d13deceaf",
+      "sections": [
+        "113.0249",
+        "113.0252"
+      ]
+    },
+    {
+      "contract_version": "structure-facts-v0-2026-09-30",
+      "footprint_state": "MULTIPLE_FOOTPRINTS",
+      "hop": "PARCEL_TO_STRUCTURE_EVIDENCE"
+    },
+    {
+      "hop": "PREDICATES_TO_REQUIREMENT_STATE",
+      "state": "SETBACK_REQUIREMENT_CONDITIONAL",
+      "unresolved": [
+        "front_50ft_fraction_at_least_25pct_slope",
+        "slope_permission_elected",
+        "fire_official_defensible_space_buffer",
+        "airport_transition_context",
+        "document_modified_setback",
+        "special_program_or_overlay_modification"
+      ]
+    },
+    {
+      "failed_gates": [
+        "requirement_resolved",
+        "current_structure_geometry",
+        "projection_scope_resolved",
+        "measured_value",
+        "required_value"
+      ],
+      "hop": "REQUIREMENT_TO_COMPLIANCE_GATE",
+      "state": "SETBACK_COMPLIANCE_NOT_EVALUATED"
+    }
+  ],
+  "required_semantic_inputs": [
+    "authoritative front property line",
+    "authoritative current or proposed structure geometry",
+    "resolved parcel-specific requirement",
+    "resolved structure/project classification",
+    "resolved projection/encroachment treatment"
+  ],
+  "resolved_inputs": [
+    "parcel identity",
+    "legal lot",
+    "base zoning",
+    "outside-Coastal context",
+    "front property line",
+    "cul-de-sac predicate",
+    "measurement direction",
+    "building-frame edge semantics"
+  ],
+  "rule_family": "front_setback",
+  "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:12",
+  "rule_source": {
+    "source_page": 33,
+    "source_section": "131.0431(a)",
+    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "source_table": "131-04D",
+    "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf"
+  },
+  "unit": "ft"
+}

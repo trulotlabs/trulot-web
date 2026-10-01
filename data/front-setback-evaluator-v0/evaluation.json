@@ -1,0 +1,337 @@
+{
+  "apn": "6341302200",
+  "applicable_rule": {
+    "base_value_ft": 15,
+    "fact_state": "CONDITIONAL",
+    "operator": "MIN",
+    "proposal_rule_id": "sd-residential-2026-09-24-research-v1:RS-1-7:34:12",
+    "requirement_state": "SETBACK_REQUIREMENT_CONDITIONAL",
+    "rule_id": "sd-rs-base-standards-2026-09-30-v0:RS-1-7:33:12",
+    "section_text_sha256": "007b26a9a04939b1a78f2f83f8d323a4301674eff5bdd4ed5c1699d71e7e1c00",
+    "source_edition": "9-2026",
+    "source_page": 33,
+    "source_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "source_table": "131-04D"
+  },
+  "bounded_conclusion": "The current outside-Coastal RS-1-7 front-setback rule is supported as a conditional envelope, but the parcel-specific distance and structure compliance are not resolved.",
+  "capacity_calculated": false,
+  "compliance": {
+    "comparison": null,
+    "failed_gates": [
+      "requirement_resolved",
+      "current_structure_geometry",
+      "projection_scope_resolved",
+      "measured_value",
+      "required_value"
+    ],
+    "gates": {
+      "current_structure_geometry": false,
+      "measured_value": false,
+      "measurement_semantics": true,
+      "projection_scope_resolved": false,
+      "required_value": false,
+      "requirement_resolved": false
+    },
+    "state": "SETBACK_COMPLIANCE_NOT_EVALUATED"
+  },
+  "compliance_state": "SETBACK_COMPLIANCE_NOT_EVALUATED",
+  "conditional_branches": [
+    {
+      "branch_id": "BASE_TABLE",
+      "conditions": [
+        "No elected qualifying reduction",
+        "No greater Fire Code Official buffer",
+        "No controlling documentary/program modification"
+      ],
+      "modality": "REQUIRED_BASE",
+      "parcel_disposition": "VALID_POSSIBLE_BRANCH",
+      "source": "SDMC §131.0431(a), Table 131-04D, RS-1-7 row",
+      "value_ft": 15
+    },
+    {
+      "branch_id": "CUL_DE_SAC_PERMISSION",
+      "conditions": [
+        "Portion of lot fronts a cul-de-sac",
+        "Permission elected"
+      ],
+      "formula": "max(5, 15 - 5)",
+      "modality": "MAY",
+      "parcel_disposition": "EXCLUDED_PREDICATE_FALSE",
+      "source": "SDMC §131.0443(a)(1)",
+      "value_ft": 10
+    },
+    {
+      "branch_id": "SLOPE_PERMISSION",
+      "conditions": [
+        "At least one-half of the front 50 feet of lot depth has minimum slope gradient of 25 percent",
+        "Evaluated setback is closest to street frontage",
+        "Permission elected"
+      ],
+      "modality": "MAY",
+      "parcel_disposition": "VALID_POSSIBLE_BRANCH_PREDICATES_UNRESOLVED",
+      "source": "Table 131-04D footnote 1",
+      "value_ft": 6
+    },
+    {
+      "branch_id": "FIRE_OFFICIAL_BUFFER",
+      "conditions": [
+        "O-22109 provision applies",
+        "Fire Code Official requires a greater defensible-space buffer"
+      ],
+      "modality": "MAY_REQUIRE",
+      "operator": "GREATER_THAN_OTHERWISE_APPLICABLE",
+      "parcel_disposition": "VALID_POSSIBLE_BRANCH_VALUE_UNRESOLVED",
+      "source": "SDMC §131.0443(i)",
+      "value_ft": null
+    }
+  ],
+  "contract_version": "front-setback-evaluator-v0-2026-10-01-p32",
+  "current_structure_compliance_evaluated": false,
+  "development_capacity_calculated": false,
+  "evaluation_scope": "RS_1_7_FRONT_SETBACK_CURRENT_OUTSIDE_COASTAL_PROFILE_ONLY",
+  "evidence_needed_to_select": {
+    "fire": "A project-specific Fire Code Official determination and supported airport-transition applicability.",
+    "modifications": "Project/document review sufficient to exclude or apply controlling setback modifications and programs.",
+    "permission_election": "A project-specific election of the permissive slope alternative.",
+    "slope": "Authoritative slope/topography measuring the literal Table 131-04D footnote 1 test across the front 50 feet of lot depth."
+  },
+  "fingerprint_sha256": "1a1e4fef0536ca70a93baf2c89d91ecae10c5e3259a8da4d4626103c4a6f24e8",
+  "forbidden_conclusions": [
+    "OVERALL_ZONING_COMPLIANCE",
+    "LEGAL_NONCONFORMITY",
+    "VARIANCE_REQUIREMENT",
+    "PERMIT_VIOLATION",
+    "DEVELOPMENT_CAPACITY",
+    "BUILDABILITY",
+    "ENTITLEMENT_LIKELIHOOD",
+    "PERMIT_APPROVAL"
+  ],
+  "gates": {
+    "apn": true,
+    "dependencies": true,
+    "legal_lot": true,
+    "legal_match": true,
+    "outside_coastal": true,
+    "parcel_identity": true,
+    "rule_family": true,
+    "rule_shape": true,
+    "single_zone": true,
+    "standards_version": true,
+    "zone": true
+  },
+  "historical_diagnostic": {
+    "classification": "HISTORICAL_DIAGNOSTIC_SETBACK",
+    "geometry_source": "City/SANDAG Building Outlines",
+    "limitations": [
+      "No current completeness",
+      "No current compliance use",
+      "Compact repository evidence retains geometry hashes but not coordinates for a setback measurement",
+      "An additional boundary-touching outline is ambiguous in sealed linkage evidence"
+    ],
+    "source_record_ids": [
+      "building-outline-objectid:880632",
+      "building-outline-objectid:987216"
+    ],
+    "source_vintage": "SPRING_2017_IMAGERY_BASELINE",
+    "state": "NOT_MEASURED"
+  },
+  "legal_lot": {
+    "reconciliation_state": "EXACT_RECORDED_LOT_MATCH",
+    "recorded_entity": "PM 17383 PARCEL 1",
+    "state": "LEGAL_LOT_ESTABLISHED"
+  },
+  "mandatory_qualifier": "This evaluates only the front-setback rule envelope. It does not establish overall zoning compliance, legal nonconformity, a variance or violation, capacity, buildability, entitlement likelihood, or permit status.",
+  "measurement_doctrine": {
+    "direction": "Measured inward and perpendicular to the front property line (SDMC §113.0252(a)(1)).",
+    "front_property_line": "East boundary of PM 17383 Parcel 1 at the west edge of 27th Street public right-of-way.",
+    "living_area_excluded": true,
+    "required_inputs": [
+      "authoritative front property line",
+      "authoritative current or proposed structure geometry",
+      "resolved parcel-specific requirement",
+      "resolved structure/project classification",
+      "resolved projection/encroachment treatment"
+    ],
+    "setback_line": "A line parallel to the nearest property line at the required inward distance; the intervening area is the required yard (SDMC §113.0249(a)).",
+    "structure_edge": "For new-development compliance, measured to the outer edge of the building frame (SDMC §113.0252(c))."
+  },
+  "next_feasibility_source_target": "authoritative slope/topography for the front 50 feet",
+  "non_cumulative_rule": "The cul-de-sac reduction is from the table requirement and must not be subtracted from the six-foot slope permission.",
+  "other_rule_families_evaluated": [],
+  "parcel_compliance_evaluated": false,
+  "parcel_identity": {
+    "parcel_intelligence_fingerprint_sha256": "daec96041609cea12fb84d5946286cac0e7fd3bd6c446d9ad193b2a0db808d90",
+    "situs_address": "1456 27TH ST"
+  },
+  "predicates": {
+    "accessory_structure_standard": {
+      "basis": "No proposed structure classification is supplied.",
+      "effect": "Accessory structures use separate standards.",
+      "source": "SDMC §§131.0448/141.0307",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "airport_transition_context": {
+      "basis": "No sealed airport transition-area determination was made for this parcel.",
+      "effect": "Can affect applicability of the O-22109 fire-buffer provision.",
+      "source": "O-22109 §§60-62 effective-version record",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "alley_property_line_special_mapping": {
+      "basis": "The resolved front line abuts 27th Street public right-of-way, not an alley.",
+      "effect": "Does not remap this front line to a rear-yard standard.",
+      "source": "PM 17383 sheet 2 + SDMC §113.0246(e)",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    },
+    "application_complete_date": {
+      "basis": "This evaluator is expressly scoped to the current-version development profile and does not adjudicate a protected earlier application.",
+      "effect": "An earlier complete-application profile would require a separately versioned evaluation.",
+      "source": "Packet 17 authority/version profile",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    },
+    "completely_underground_structure": {
+      "basis": "No proposed structure is supplied.",
+      "effect": "Completely underground construction has a separate setback treatment.",
+      "source": "SDMC §113.0252(b)",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "cul_de_sac_frontage_portion": {
+      "basis": "The recorded 27th Street frontage and centerline are straight survey lines with no curve, radius, or turnaround.",
+      "effect": "Excludes the §131.0443(a)(1) 10-foot permission for this parcel.",
+      "source": "PM 17383 sheet 2",
+      "state": "FALSE",
+      "value": false
+    },
+    "cul_de_sac_permission_elected": {
+      "basis": "The physical cul-de-sac predicate is false.",
+      "effect": "No parcel branch may select this permission.",
+      "source": "Derived from PM 17383 sheet 2",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    },
+    "current_outside_coastal_profile": {
+      "basis": "Parcel Coastal mapping is supported OUTSIDE_COASTAL and the selected rule set is the current 9-2026 outside-Coastal profile.",
+      "effect": "Selects the reviewed current outside-Coastal authority envelope.",
+      "source": "Parcel Intelligence V2 + RS Base Standards V0",
+      "state": "TRUE",
+      "value": "outside-coastal-2026-09-30"
+    },
+    "defined_steep_hillside_condition": {
+      "basis": "Table 131-04D footnote 1 states its own literal front-50-foot slope test; the separate Code-defined steep-hillside concept must not be substituted for it.",
+      "effect": "Does not select or alter the front-setback branch in this evaluator.",
+      "source": "Table 131-04D footnote 1 + Packet 17 authority review",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    },
+    "document_modified_setback": {
+      "basis": "The recorded map/deed chain resolves the lot but is not a complete search for every ordinance, survey, division plat, or approved subdivision setback modification.",
+      "effect": "A controlling document can replace the base-zone setback line.",
+      "source": "SDMC §113.0249(b)-(c) + Legal Lot Evidence V0 limitation",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "existing_primary_structure_addition": {
+      "basis": "No proposed project scope is supplied.",
+      "effect": "Addition-specific established-setback rules remain outside this evaluation.",
+      "source": "Packet 14 condition inventory",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "fire_official_defensible_space_buffer": {
+      "basis": "No project-specific Fire Code Official determination is in sealed evidence.",
+      "effect": "May require a buffer greater than the otherwise applicable base-zone setback.",
+      "source": "SDMC §131.0443(i)",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "front_50ft_fraction_at_least_25pct_slope": {
+      "basis": "No sealed authoritative topographic source measures the slope gradient across the front 50 feet of lot depth.",
+      "effect": "Controls availability of the Table 131-04D footnote 1 six-foot permission.",
+      "source": "Packet 14 condition inventory; no qualifying source",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "projection_or_encroachment": {
+      "basis": "No proposed building element is supplied.",
+      "effect": "Permitted projections or encroachments can change which edge is tested.",
+      "source": "SDMC §131.0461",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "property_line_roles": {
+      "basis": "PM 17383 Parcel 1 and §§113.0246(a)-(d) resolve the east boundary at 27th Street as the front property line.",
+      "effect": "Selects the front-setback family and its measurement origin.",
+      "source": "PM 17383 sheet 2 + SDMC §113.0246",
+      "state": "TRUE",
+      "value": "SINGLE_FRONTAGE_INTERIOR_NON_CORNER"
+    },
+    "required_street_or_alley_dedication": {
+      "basis": "The existing 30-foot dedication is accounted for, but no proposed-development dedication determination exists.",
+      "effect": "A future required dedication can change the measurement line for a proposed project.",
+      "source": "PM 17383 sheet 2; Packet 30 doctrine",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "resubdivided_corner_lot": {
+      "basis": "The legal-lot evaluation classifies Parcel 1 as single-frontage, interior, and non-corner.",
+      "effect": "Excludes §113.0246(f) original-corner-line treatment.",
+      "source": "PM 17383 sheet 2 + Packet 29",
+      "state": "FALSE",
+      "value": false
+    },
+    "setback_is_closest_to_street_frontage": {
+      "basis": "The evaluated line is the only Code front property line, at 27th Street.",
+      "effect": "Satisfies the line-selection part of footnote 1.",
+      "source": "PM 17383 sheet 2 + SDMC §113.0246",
+      "state": "TRUE",
+      "value": true
+    },
+    "slope_permission_elected": {
+      "basis": "The footnote is permissive and no proposed project or election is supplied.",
+      "effect": "Even a qualifying slope retains both the ordinary base and elected permission branches.",
+      "source": "Table 131-04D footnote 1",
+      "state": "UNKNOWN",
+      "value": null
+    },
+    "special_program_or_overlay_modification": {
+      "basis": "No project/program scope or complete overlay-specific modification review is supplied.",
+      "effect": "A separate applicable regulation may modify the base-zone envelope.",
+      "source": "SDMC §131.0430(a)",
+      "state": "UNKNOWN",
+      "value": null
+    }
+  },
+  "rule_family": "front_setback",
+  "state": "SETBACK_REQUIREMENT_CONDITIONAL",
+  "structure_evidence": {
+    "assessor_living_area_sq_ft": 988,
+    "authoritative_current_structure_geometry": false,
+    "current_completeness_proven": false,
+    "footprint_linkage_state": "MULTIPLE_FOOTPRINTS",
+    "historical_outline_count": 2,
+    "living_area_is_geometry": false
+  },
+  "unresolved_requirement_predicates": [
+    "front_50ft_fraction_at_least_25pct_slope",
+    "slope_permission_elected",
+    "fire_official_defensible_space_buffer",
+    "airport_transition_context",
+    "document_modified_setback",
+    "special_program_or_overlay_modification"
+  ],
+  "valid_possible_requirement_branches": [
+    "BASE_TABLE:15_FT",
+    "SLOPE_PERMISSION:6_FT_IF_QUALIFIED_AND_ELECTED",
+    "FIRE_OFFICIAL_BUFFER:GREATER_VALUE_IF_REQUIRED"
+  ],
+  "zoning": {
+    "coastal_state": "OUTSIDE_COASTAL",
+    "standards_version": "sd-rs-base-standards-2026-09-30-v0",
+    "verified_as_of": "2026-09-30",
+    "zone_code": "RS-1-7"
+  }
+}
