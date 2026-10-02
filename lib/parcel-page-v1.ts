@@ -59,8 +59,16 @@ export interface SourcedFact<T = string> {
 
 export type SnapshotFact = SourcedFact<string>;
 
+export type ProgramDisplayState =
+  | "mapped_overlay"
+  | "verification_pending"
+  | "source_unavailable"
+  | "not_evaluated"
+  | "conditional";
+
 export interface ProgramFact extends SourcedFact<string> {
   name: string;
+  displayState: ProgramDisplayState;
 }
 
 export interface StandardFact extends SourcedFact<string> {
@@ -77,6 +85,7 @@ export interface SimilarParcelFact {
   permitStatus: string | null;
   permitDate: string | null;
   distanceMiles: number | null;
+  hasRecordedActivity: boolean;
 }
 
 export interface PermitFact extends SourcedFact<string> {
@@ -151,6 +160,7 @@ export interface ParcelPageV1Data {
   similarLots: {
     criteriaLabel: string;
     totalMatchCount: number;
+    activityMatchCount: number;
     matches: SimilarParcelFact[];
     emptyState: string | null;
   };
@@ -497,7 +507,7 @@ function buildSignalFacts(row: RawRow, overlays: Pick<OverlayFlags, "tpa">): Sig
     signals.push({
       title: "Transit Priority Area overlay is mapped here",
       value: "Mapped TPA overlay",
-      detail: "Overlay presence is based on the current lookup function.",
+      detail: "Overlay presence comes from mapped public planning data.",
       sourceLabel: "check_parcel_overlays(lat,lng)",
       confidenceTier: "mapped",
       nullBehavior: `Show “${NULL_SECTION_UNAVAILABLE}”.`,
@@ -570,7 +580,7 @@ function staticMethodology(): ParcelPageV1Data["methodology"] {
         id: "zoning",
         title: "How we determine zoning",
         body:
-          "We show the mapped zone and overlay context returned by the current parcel views and overlay lookup functions. We do not treat pending rezonings, title exceptions, or site-specific determinations as settled facts on this page.",
+          "We show the mapped zone and overlay context returned by public parcel and planning sources. We do not treat pending rezonings, title exceptions, or site-specific determinations as settled facts on this page.",
       },
       {
         id: "matching",
@@ -652,6 +662,7 @@ async function fetchSimilarLots(
       similarLots: {
         criteriaLabel: "Same recorded base zone, similar lot size, within 0.5 miles.",
         totalMatchCount: 0,
+        activityMatchCount: 0,
         matches: [],
         emptyState: "Nearby parcel matching is not available because the current parcel record is missing zone, lot-size, or coordinate fields.",
       },
@@ -679,6 +690,7 @@ async function fetchSimilarLots(
       similarLots: {
         criteriaLabel: "Same recorded base zone, similar lot size, within 0.5 miles.",
         totalMatchCount: 0,
+        activityMatchCount: 0,
         matches: [],
         emptyState: "Nearby precedent matching is temporarily unavailable.",
       },
@@ -694,11 +706,12 @@ async function fetchSimilarLots(
       similarLots: {
         criteriaLabel: "Same recorded base zone, similar lot size, within 0.5 miles.",
         totalMatchCount: 0,
+        activityMatchCount: 0,
         matches: [],
-        emptyState: "No nearby precedents were found in the current parcel and permit views.",
+        emptyState: "No nearby precedents were found in the available parcel and permit records.",
       },
       status: buildSourceStatus("not_found", {
-        publicMessage: "No nearby precedents were found in the current parcel and permit views.",
+        publicMessage: "No nearby precedents were found in the available parcel and permit records.",
       }),
     };
   }
@@ -717,6 +730,7 @@ async function fetchSimilarLots(
       similarLots: {
         criteriaLabel: "Same recorded base zone, similar lot size, within 0.5 miles.",
         totalMatchCount: 0,
+        activityMatchCount: 0,
         matches: [],
         emptyState: "No nearby precedents were found within 0.5 miles using the current parcel coordinates.",
       },
@@ -741,6 +755,7 @@ async function fetchSimilarLots(
       similarLots: {
         criteriaLabel: "Same recorded base zone, similar lot size, within 0.5 miles.",
         totalMatchCount: 0,
+        activityMatchCount: 0,
         matches: [],
         emptyState: "Nearby precedent matching is temporarily unavailable.",
       },
@@ -770,7 +785,7 @@ async function fetchSimilarLots(
       : "No recorded permit activity found";
     return {
       value,
-      sourceLabel: firstPermit ? "City permit record" : "Current parcel + permit views",
+      sourceLabel: firstPermit ? "City permit record" : "Parcel and permit records",
       confidenceTier: firstPermit ? "recorded" : "mapped",
       nullBehavior: "Omit row if parcel address is unavailable.",
       url: canonicalParcelPath(apn, str(row.address)),
@@ -778,6 +793,7 @@ async function fetchSimilarLots(
       permitStatus,
       permitDate,
       distanceMiles,
+      hasRecordedActivity: firstPermit !== null,
     };
   });
 
@@ -785,6 +801,7 @@ async function fetchSimilarLots(
     similarLots: {
       criteriaLabel: "Same recorded base zone, similar lot size, within 0.5 miles.",
       totalMatchCount: withDistance.length,
+      activityMatchCount: matches.filter((match) => match.hasRecordedActivity).length,
       matches,
       emptyState: null,
     },
@@ -1027,19 +1044,6 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
   ];
 
   const snapshot: SnapshotFact[] = [];
-  if (lotSize || existingUse || buildingSize) {
-    const pieces = [
-      lotSize ? `This parcel is ${lotSize.toLowerCase()}` : "This parcel is on file",
-      existingUse ? `and recorded as ${existingUse.toLowerCase()}` : null,
-      buildingSize ? `with ${buildingSize.toLowerCase()} of building area` : null,
-    ].filter(Boolean);
-    snapshot.push({
-      value: `${pieces.join(" ")}.`,
-      sourceLabel: "SanGIS parcel layer + County Assessor",
-      confidenceTier: "recorded",
-      nullBehavior: "Omit sentence when required inputs are missing.",
-    });
-  }
   if (zoneName) {
     const overlayText = formatUnaffectedOverlaySummary({
       tpa: overlays.tpa,
@@ -1070,12 +1074,12 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
       nullBehavior: "Show this sentence when no permit rows are returned.",
     });
   }
-  if (similarLots.matches.length > 0) {
+  if (similarLots.activityMatchCount > 0) {
     snapshot.push({
-      value: `${similarLots.matches.length} nearby parcels with the same recorded base zone and similar lot size have permit records on file.`,
+      value: `${similarLots.activityMatchCount} nearby parcels with the same recorded base zone and similar lot size have recorded permit activity.`,
       sourceLabel: "Same-zone parcel query + permit records",
       confidenceTier: "mapped",
-      nullBehavior: "Omit sentence when nearby matching is unavailable.",
+      nullBehavior: "Omit sentence when no matched parcels have recorded permit activity or nearby matching is unavailable.",
     });
   }
 
@@ -1083,6 +1087,7 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     {
       name: "Accessory Dwelling Unit rules",
       value: null,
+      displayState: "not_evaluated",
       sourceLabel: "TODO — program rules adapter",
       confidenceTier: "conditional",
       nullBehavior: "Show “Eligibility not yet exposed in the current parcel views”.",
@@ -1091,6 +1096,7 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     {
       name: "SB 9",
       value: null,
+      displayState: "not_evaluated",
       sourceLabel: "TODO — program rules adapter",
       confidenceTier: "conditional",
       nullBehavior: "Show “Eligibility not yet exposed in the current parcel views”.",
@@ -1103,6 +1109,7 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
         : overlays.tpa
         ? "Applies per mapped overlay"
         : "Does not appear to apply — parcel is outside the current mapped TPA overlay",
+      displayState: overlays.unavailable ? "source_unavailable" : "mapped_overlay",
       sourceLabel: "check_parcel_overlays(lat,lng)",
       confidenceTier: "conditional",
       nullBehavior: "Show “Overlay lookup unavailable”.",
@@ -1110,6 +1117,7 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     {
       name: "Sustainable Development Area",
       value: `${SDA_RECONCILIATION_LABEL} — ${SDA_RECONCILIATION_MESSAGE}`,
+      displayState: "verification_pending",
       sourceLabel: "City of San Diego SDA source",
       confidenceTier: "conditional",
       nullBehavior: "Always show the reconciliation-pending state until the source is approved.",
@@ -1117,6 +1125,7 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     {
       name: "Complete Communities / other bonus programs",
       value: null,
+      displayState: "not_evaluated",
       sourceLabel: "TODO — program rules adapter",
       confidenceTier: "conditional",
       nullBehavior: "Show “Eligibility not yet exposed in the current parcel views”.",
@@ -1221,7 +1230,7 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
       dataRefreshedAt: refreshedAt,
       stale,
       staleReason: stale ? `Current parcel view refresh is ${staleDays} days old.` : null,
-      mapCaption: lat !== null && lng !== null ? "Parcel location from current parcel coordinates. Boundary image is not yet attached to this record." : "Parcel map is not available from the current parcel views.",
+      mapCaption: lat !== null && lng !== null ? "Parcel location from public parcel coordinates. A boundary image is unavailable for this record." : "Parcel map is unavailable from the available public records.",
       lat,
       lng,
       staticMapUrl: null,

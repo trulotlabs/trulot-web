@@ -76,7 +76,7 @@ for (const { name, payload, available = false, options = {} } of cases) {
   if (!available) {
     assert.doesNotMatch(html, /Applies per mapped overlay|outside the current mapped TPA|No TPA or CTCAC overlay|Mapped TPA overlay|Other mapped overlays:|CTCAC mapped area/, name);
     assert.doesNotMatch(html, /private diagnostic|private transport diagnostic/, name);
-    assert.match(html, /Overlay lookup unavailable/, name);
+    assert.match(html, /Source unavailable/, name);
   }
   assert.equal(f.rpcCalls(), options.coordinates === false ? 0 : 2, name);
   console.log(`PASS ${name}`);

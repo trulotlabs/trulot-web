@@ -6,12 +6,14 @@ import type { ReactNode } from "react";
 import {
   getParcelPageV1Result,
   type FaqItem,
+  type ProgramDisplayState,
   type SourcedFact,
 } from "@/lib/parcel-page-v1";
 import { extractApnFromSlug } from "@/lib/parcel-slug";
 import { parcelServingV2ShadowEnabled, runParcelServingV2Shadow } from "@/lib/parcel-serving-v2-shadow";
 import { verifiedStandardsEnabled } from "@/lib/rs17-shadow-gate";
 import { CopyApnButton } from "./copy-apn-button";
+import { SourcesMethodologyLink } from "./sources-methodology-link";
 
 const BASE_URL = "https://trulot-web.vercel.app";
 const NULL_PUBLIC_RECORD = "Not available in public records";
@@ -28,6 +30,48 @@ function confidenceLabel(confidence: SourcedFact["confidenceTier"]): string {
   return "Conditional";
 }
 
+function publicSourceLabel(sourceLabel: string): string {
+  const labels: Record<string, string> = {
+    "check_parcel_overlays(lat,lng)": "Mapped public planning overlays",
+    "TODO — owner type category adapter": "Public ownership records",
+    "TODO — recorder sale-date adapter": "County recorder sale records",
+    "TODO — sewer adapter": "Public utility records",
+    "TODO — program rules adapter": "Program eligibility review",
+    "TODO — curated zoning copy table": "Reviewed zoning descriptions",
+    "TODO — zoning standards adapter": "Published zoning standards",
+    "TODO — zoning adapter": "Mapped public zoning sources",
+    "Current parcel ownership field": "Public parcel ownership record",
+    "Current parcel utility field": "Public utility record",
+    "Current parcel community field": "Public parcel community record",
+    "parcel_page_api_v2 nearby development summary": "Nearby public development records",
+    "Mapped base zone + overlay lookup": "Mapped zoning and public planning overlays",
+    "Overlay lookup + SDA source control": "Mapped planning overlays and SDA verification record",
+    "Overlay lookup unavailable + SDA source control": "SDA verification record",
+    "Same-zone parcel query + permit records": "Similar parcel and permit records",
+  };
+  if (labels[sourceLabel]) return labels[sourceLabel];
+  if (/TODO|adapter|parcel_page_api_v2|check_parcel_overlays|lookup function/i.test(sourceLabel)) {
+    return "Public-record source details";
+  }
+  return sourceLabel;
+}
+
+function programStateLabel(state: ProgramDisplayState): string {
+  if (state === "mapped_overlay") return "Mapped overlay";
+  if (state === "verification_pending") return "Verification pending";
+  if (state === "source_unavailable") return "Source unavailable";
+  if (state === "not_evaluated") return "Eligibility not yet evaluated";
+  return "Conditional";
+}
+
+function programStateClass(state: ProgramDisplayState): string {
+  if (state === "mapped_overlay") return "border-sky-200 bg-sky-50 text-sky-900";
+  if (state === "verification_pending") return "border-amber-200 bg-amber-50 text-amber-900";
+  if (state === "source_unavailable") return "border-rose-200 bg-rose-50 text-rose-900";
+  if (state === "conditional") return "border-violet-200 bg-violet-50 text-violet-900";
+  return "border-slate-200 bg-slate-50 text-slate-600";
+}
+
 function factDisplay(value: string | null): ReactNode {
   if (!value) {
     return <span className="italic text-slate-400">Not available in public records</span>;
@@ -35,25 +79,33 @@ function factDisplay(value: string | null): ReactNode {
   return <span className="text-slate-900">{value}</span>;
 }
 
-function SourceMeta({ fact, label = "Source" }: { fact: SourcedFact<string>; label?: string }) {
+function SourceMeta({
+  fact,
+  context = "this fact",
+  stateLabel,
+}: {
+  fact: SourcedFact<string>;
+  context?: string;
+  stateLabel?: string | null;
+}) {
+  const publicLabel = publicSourceLabel(fact.sourceLabel);
+  const publicState = stateLabel === undefined ? confidenceLabel(fact.confidenceTier) : stateLabel;
   return (
     <details className="group mt-1 text-xs text-slate-500">
-      <summary aria-label={`${label} for ${fact.sourceLabel}`} className="w-fit cursor-pointer list-none rounded text-sky-800 underline decoration-slate-300 underline-offset-2 marker:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">
-        {label}{fact.confidenceTier === "conditional" ? " · Conditional" : ""}
+      <summary aria-label={`Source for ${context}`} className="inline-flex min-h-6 cursor-pointer list-none items-center rounded py-1 text-sky-800 underline decoration-slate-300 underline-offset-2 marker:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">
+        Source
       </summary>
       <div className="mt-1 max-w-xl rounded bg-slate-50 px-2.5 py-2 leading-5 text-slate-600">
-        <span className="sr-only">Source: </span><span>{fact.sourceLabel}</span>
-        <span aria-hidden="true" className="mx-1.5 text-slate-300">·</span>
-        <span>{confidenceLabel(fact.confidenceTier)}</span>
-        {fact.todo ? <p className="mt-1 text-slate-500">Technical note: {fact.todo}</p> : null}
-        <p className="mt-1"><a href="#receipts" className="text-sky-800 underline underline-offset-2">View source receipts</a></p>
+        <span className="sr-only">Source: </span><span>{publicLabel}</span>
+        {publicState ? <><span aria-hidden="true" className="mx-1.5 text-slate-300">·</span><span>{publicState}</span></> : null}
+        <p className="mt-1"><SourcesMethodologyLink className="inline-flex min-h-6 items-center text-sky-800 underline underline-offset-2">Sources</SourcesMethodologyLink></p>
       </div>
     </details>
   );
 }
 
-function SectionSource({ children = "Source details" }: { children?: ReactNode }) {
-  return <a href="#receipts" aria-label="Source details in Sources and methodology" className="rounded text-xs text-sky-800 underline decoration-slate-300 underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">{children}</a>;
+function SectionSource() {
+  return <SourcesMethodologyLink className="inline-flex min-h-6 items-center rounded py-1 text-xs text-sky-800 underline decoration-slate-300 underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Sources</SourcesMethodologyLink>;
 }
 
 function FactCard({ label, fact }: { label: string; fact: SourcedFact<string> }) {
@@ -61,7 +113,7 @@ function FactCard({ label, fact }: { label: string; fact: SourcedFact<string> })
     <div className="min-w-0 rounded border border-slate-200 bg-white px-3 py-2.5">
       <dt className="text-[11px] font-medium uppercase tracking-[0.1em] text-slate-500">{label}</dt>
       <dd className="mt-1 text-sm font-medium leading-5 text-slate-900">{factDisplay(fact.value)}</dd>
-      <SourceMeta fact={fact} />
+      <SourceMeta fact={fact} context={label} />
     </div>
   );
 }
@@ -239,7 +291,7 @@ export default async function ParcelPage({
           </div>
           <nav className="hidden items-center gap-5 text-sm text-slate-600 md:flex">
             <Link href="/" className="hover:text-slate-900">Search parcels</Link>
-            <a href="#receipts" className="hover:text-slate-900">Methodology</a>
+            <SourcesMethodologyLink className="inline-flex min-h-6 items-center hover:text-slate-900">Sources &amp; methodology</SourcesMethodologyLink>
           </nav>
         </div>
       </header>
@@ -287,8 +339,8 @@ export default async function ParcelPage({
             </div>
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-500">
-            <span>{data.identity.dataRefreshedAt ? `Parcel view last rebuilt ${data.identity.dataRefreshedAt}` : "Refresh date not available in the current parcel views"}</span>
-            <span aria-hidden="true" className="text-slate-300">·</span><SectionSource>Sources</SectionSource>
+            <span>{data.identity.dataRefreshedAt ? `Parcel view last rebuilt ${data.identity.dataRefreshedAt}` : "Source refresh date unavailable"}</span>
+            <span aria-hidden="true" className="text-slate-300">·</span><SectionSource />
             <details className="basis-full text-xs text-slate-500">
               <summary className="w-fit cursor-pointer rounded text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Map context</summary>
               <figure className="mt-2 rounded border border-slate-200 bg-slate-50 px-3 py-2"><div>{data.identity.boundaryAvailable ? "Static parcel map is available." : data.identity.mapCaption}</div><figcaption className="mt-1 text-[11px]">{data.identity.mapCaption}</figcaption></figure>
@@ -320,15 +372,15 @@ export default async function ParcelPage({
           {data.snapshot.length > 0 ? (
             <div className="mt-2 rounded border border-slate-200 bg-slate-50 px-3 py-3">
               <div className="space-y-2">
-                {data.snapshot.slice(0, 2).map((item, index) => <div key={`${item.value}-${index}`}><p className="text-sm leading-6 text-slate-800">{item.value}</p><SourceMeta fact={item} label={index === 0 ? "Snapshot sources" : "Source"} /></div>)}
-                {data.snapshot.length > 2 ? <details className="text-sm"><summary className="w-fit cursor-pointer rounded font-medium text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">More parcel context</summary><div className="mt-2 space-y-2">{data.snapshot.slice(2).map((item, index) => <div key={`${item.value}-${index}`}><p className="leading-6 text-slate-700">{item.value}</p><SourceMeta fact={item} /></div>)}</div></details> : null}
+                {data.snapshot.slice(0, 2).map((item, index) => <div key={`${item.value}-${index}`}><p className="text-sm leading-6 text-slate-800">{item.value}</p><SourceMeta fact={item} context="property snapshot" /></div>)}
+                {data.snapshot.length > 2 ? <details className="text-sm"><summary className="inline-flex min-h-6 cursor-pointer items-center rounded py-1 font-medium text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">More parcel context</summary><div className="mt-2 space-y-2">{data.snapshot.slice(2).map((item, index) => <div key={`${item.value}-${index}`}><p className="leading-6 text-slate-700">{item.value}</p><SourceMeta fact={item} context="property snapshot" /></div>)}</div></details> : null}
               </div>
             </div>
           ) : (
             <div className="mt-2">
               <EmptyState
                 title="Property snapshot unavailable"
-                body="The current parcel views do not expose enough confirmed fields to assemble the snapshot for this parcel yet."
+                body="The available public records do not contain enough confirmed fields to assemble a property snapshot."
               />
             </div>
           )}
@@ -341,8 +393,8 @@ export default async function ParcelPage({
             <div className="rounded border border-slate-200 bg-slate-50 p-3">
               <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-sky-800">Base zoning</p>
               <p className="mt-1 text-xl font-semibold text-slate-950">{data.zoning.baseCode.value ?? "Not available"}</p>
-              <p className="mt-1 text-xs leading-5 text-slate-600">{data.zoning.plainName.value ?? "Plain-language zone description not yet attached to this parcel record."}</p>
-              <SourceMeta fact={data.zoning.plainName.value ? data.zoning.plainName : data.zoning.baseCode} />
+              <p className="mt-1 text-xs leading-5 text-slate-600">{data.zoning.plainName.value ?? "Plain-language zone description unavailable."}</p>
+              <SourceMeta fact={data.zoning.plainName.value ? data.zoning.plainName : data.zoning.baseCode} context="base zoning" />
             </div>
             <div className="rounded border border-slate-200 bg-white">
               <h3 className="border-b border-slate-100 px-3 py-2 text-sm font-semibold text-slate-900">Programs &amp; overlays</h3>
@@ -350,8 +402,11 @@ export default async function ParcelPage({
                 {data.zoning.programs.map((item) => (
                   <li key={item.name} className="grid gap-1 px-3 py-2 text-sm sm:grid-cols-[minmax(150px,0.45fr)_1fr]">
                     <span className="font-medium text-slate-800">{item.name}</span>
-                    <span className="text-slate-600">{item.value ?? "Eligibility not yet exposed in the current parcel views."}</span>
-                    <div className="sm:col-start-2"><SourceMeta fact={item} /></div>
+                    <div>
+                      <span className={`inline-flex rounded border px-2 py-0.5 text-xs font-medium ${programStateClass(item.displayState)}`}>{programStateLabel(item.displayState)}</span>
+                      {item.value ? <p className="mt-1 text-slate-600">{item.value}</p> : null}
+                      <SourceMeta fact={item} context={item.name} stateLabel={programStateLabel(item.displayState)} />
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -364,9 +419,9 @@ export default async function ParcelPage({
             <details className="mt-1 text-sm">
               <summary className="w-fit cursor-pointer rounded font-medium text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">How TruLot interprets this</summary>
               <div className="mt-2 space-y-2">
-                {data.zoning.interpretation.map((item, index) => <div key={`${item.value}-${index}`}><p className="leading-6 text-slate-700">{item.value}</p><SourceMeta fact={item} /></div>)}
+                {data.zoning.interpretation.map((item, index) => <div key={`${item.value}-${index}`}><p className="leading-6 text-slate-700">{item.value}</p><SourceMeta fact={item} context="zoning interpretation" /></div>)}
                 <div className="border-t border-sky-200 pt-2">
-                  {data.zoning.standards.length > 0 ? <dl className="space-y-1">{data.zoning.standards.map(item => <div key={item.label} className="flex justify-between gap-3"><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl> : <p className="text-slate-600"><span className="font-medium">Published standards unavailable.</span> Published standards and code citations are not yet attached to the active parcel route for this base zone.</p>}
+                  {data.zoning.standards.length > 0 ? <dl className="space-y-1">{data.zoning.standards.map(item => <div key={item.label} className="flex justify-between gap-3"><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl> : <p className="text-slate-600"><span className="font-medium">Published standards unavailable.</span> Published standards and code citations are unavailable for this base zone.</p>}
                 </div>
               </div>
             </details>
@@ -375,7 +430,7 @@ export default async function ParcelPage({
 
         <section className="border-b border-slate-100 py-4" id="similar">
           <div className="flex items-baseline justify-between gap-3"><SectionHeading id="similar-lots-precedents">Similar lots &amp; nearby precedents</SectionHeading><SectionSource /></div>
-          <p className="mt-1 text-sm text-slate-600">{data.similarLots.matches.length > 0 ? `${data.similarLots.totalMatchCount} nearby parcels have recorded development activity. ` : ""}<span className="text-slate-500">{data.similarLots.criteriaLabel}</span></p>
+          <p className="mt-1 text-sm text-slate-600">{data.similarLots.matches.length > 0 ? data.similarLots.activityMatchCount > 0 ? `${data.similarLots.activityMatchCount} nearby parcels have recorded development activity. ` : "No matched nearby parcels have recorded development activity in this source. " : ""}<span className="text-slate-500">{data.similarLots.criteriaLabel}</span></p>
           {data.similarLots.matches.length > 0 ? (
             <div className="mt-3">
               <div className="overflow-x-auto rounded border border-slate-200">
@@ -389,7 +444,7 @@ export default async function ParcelPage({
                     {data.similarLots.matches.slice(0, 3).map((match) => (
                       <tr key={match.url} className="border-t border-slate-200">
                         <td className="px-3 py-2 align-top"><Link href={match.url} className="text-sky-800 hover:underline">{match.address}</Link></td>
-                        <td className="px-3 py-2 align-top"><div>{match.value}</div><SourceMeta fact={match} /></td>
+                        <td className="px-3 py-2 align-top"><div>{match.value}</div><SourceMeta fact={match} context={`similar parcel ${match.address}`} /></td>
                         <td className="px-3 py-2 align-top text-slate-700">{match.permitStatus ?? "—"}{match.permitDate ? ` · ${match.permitDate}` : ""}</td>
                         <td className="px-3 py-2 align-top text-slate-700">{match.distanceMiles !== null ? `${match.distanceMiles.toFixed(1)} mi` : "—"}</td>
                       </tr>
@@ -397,8 +452,8 @@ export default async function ParcelPage({
                   </tbody>
                 </table>
               </div>
-              {data.similarLots.matches.length > 3 ? <details className="mt-2 rounded border border-slate-200"><summary className="cursor-pointer rounded px-3 py-2 text-sm font-medium text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">View all {data.similarLots.matches.length}</summary><div className="overflow-x-auto border-t border-slate-200"><table className="w-full border-collapse text-sm"><tbody>{data.similarLots.matches.slice(3).map(match => <tr key={match.url} className="border-t border-slate-100 first:border-t-0"><td className="px-3 py-2"><Link href={match.url} className="text-sky-800 hover:underline">{match.address}</Link></td><td className="px-3 py-2">{match.value}<SourceMeta fact={match} /></td><td className="px-3 py-2">{match.permitStatus ?? "—"}{match.permitDate ? ` · ${match.permitDate}` : ""}</td><td className="px-3 py-2">{match.distanceMiles !== null ? `${match.distanceMiles.toFixed(1)} mi` : "—"}</td></tr>)}</tbody></table></div></details> : null}
-              <details className="mt-2 text-xs text-slate-500"><summary className="w-fit cursor-pointer rounded text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Matching and map notes</summary><p className="mt-1">Similar-lot map preview is not yet attached to the current parcel route. Internal links above use the canonical parcel URLs. Similar lots are linked using canonical parcel URLs.</p></details>
+              {data.similarLots.matches.length > 3 ? <details className="mt-2 rounded border border-slate-200"><summary className="cursor-pointer rounded px-3 py-2 text-sm font-medium text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">View all {data.similarLots.matches.length}</summary><div className="overflow-x-auto border-t border-slate-200"><table className="w-full border-collapse text-sm"><tbody>{data.similarLots.matches.slice(3).map(match => <tr key={match.url} className="border-t border-slate-100 first:border-t-0"><td className="px-3 py-2"><Link href={match.url} className="text-sky-800 hover:underline">{match.address}</Link></td><td className="px-3 py-2">{match.value}<SourceMeta fact={match} context={`similar parcel ${match.address}`} /></td><td className="px-3 py-2">{match.permitStatus ?? "—"}{match.permitDate ? ` · ${match.permitDate}` : ""}</td><td className="px-3 py-2">{match.distanceMiles !== null ? `${match.distanceMiles.toFixed(1)} mi` : "—"}</td></tr>)}</tbody></table></div></details> : null}
+              <details className="mt-2 text-xs text-slate-500"><summary className="inline-flex min-h-6 cursor-pointer items-center rounded py-1 text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Matching and map notes</summary><p className="mt-1">A similar-lot map preview is unavailable. The parcel links use canonical URLs.</p></details>
             </div>
           ) : (
             <div className="mt-2">
@@ -418,7 +473,7 @@ export default async function ParcelPage({
             </span>
             <span className="ml-auto"><SectionSource /></span>
           </div>
-          <p className="mt-1 text-sm text-slate-500">Permit activity from the current city permit view for this parcel, plus the nearby activity summary already attached to the parcel record.</p>
+          <p className="mt-1 text-sm text-slate-500">Permit activity from available City records for this parcel, plus its nearby activity summary.</p>
           <div className="mt-3 grid gap-3 md:grid-cols-[1.4fr_1fr]">
             <div>
             <h3 className="text-sm font-semibold text-slate-900">This parcel</h3>
@@ -441,7 +496,7 @@ export default async function ParcelPage({
                         ) : null}
                         {permit.status ? ` · ${permit.status}` : ""}
                       </p>
-                      <SourceMeta fact={permit} />
+                      <SourceMeta fact={permit} context={permit.permitNumber ? `permit ${permit.permitNumber}` : "permit record"} />
                     </div>
                   ))}
                 </div>
@@ -464,7 +519,7 @@ export default async function ParcelPage({
                     <span className="font-medium">{label}:</span>{" "}
                     {fact.value ?? NULL_PUBLIC_RECORD}
                   </p>
-                  <SourceMeta fact={fact} />
+                  <SourceMeta fact={fact} context={label} />
                 </div>
               ))}
             </div>
@@ -486,7 +541,7 @@ export default async function ParcelPage({
                   ) : null}
                 </div>
               ))}
-            </div><details className="mt-2 text-xs text-slate-500"><summary className="w-fit cursor-pointer rounded text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Signal sources</summary><div className="mt-2 grid gap-2 sm:grid-cols-2">{data.signals.map(signal => <div key={signal.title} className="rounded bg-slate-50 p-2"><span className="font-medium text-slate-700">{signal.title}</span><SourceMeta fact={signal} /></div>)}</div></details></>
+            </div><details className="mt-2 text-xs text-slate-500"><summary className="inline-flex min-h-6 cursor-pointer items-center rounded py-1 text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Sources</summary><div className="mt-2 grid gap-2 sm:grid-cols-2">{data.signals.map(signal => <div key={signal.title} className="rounded bg-slate-50 p-2"><span className="font-medium text-slate-700">{signal.title}</span><SourceMeta fact={signal} context={signal.title} /></div>)}</div></details></>
           ) : (
             <div className="mt-4">
               <EmptyState
@@ -497,15 +552,17 @@ export default async function ParcelPage({
           )}
         </section>
 
+        <p className="border-b border-slate-100 py-3 text-xs leading-5 text-slate-500">TruLot summarizes public records and planning data. It is not a substitute for official records, city determinations, or professional advice.</p>
+
         <section className="bg-slate-50 py-4" id="receipts" itemScope itemType="https://schema.org/Dataset">
           <details className="rounded border border-slate-200 bg-white">
-            <summary className="flex cursor-pointer items-center justify-between gap-3 rounded px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">
+            <summary id="sources-methodology" className="flex cursor-pointer items-center justify-between gap-3 rounded px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">
               <span><span id="receipts-methodology" className="block text-[18px] font-semibold tracking-tight text-slate-950">Sources &amp; methodology</span><span className="mt-0.5 block text-xs text-slate-500">{data.sources.length} datasets · receipts, methods, FAQ, and limitations</span></span>
               <span aria-hidden="true" className="text-sky-800">View</span>
             </summary>
           <div className="border-t border-slate-200 px-4 pb-4">
           <h3 className="mt-3 text-base font-semibold text-slate-900">Receipts &amp; methodology</h3>
-          <p className="mt-3 text-sm text-slate-500" itemProp="description">Every dataset used on this page, and how the current parcel route uses it.</p>
+          <p className="mt-3 text-sm text-slate-500" itemProp="description">Every dataset used on this page, and how TruLot uses it here.</p>
           <div className="mt-3 overflow-x-auto rounded border border-slate-200 bg-white">
             <table className="w-full border-collapse text-sm">
               <thead className="bg-slate-50 text-left text-slate-700">
@@ -524,7 +581,7 @@ export default async function ParcelPage({
                     <td className="px-4 py-3">{source.vintageOrRefresh}</td>
                     <td className="px-4 py-3">
                       {source.url ? (
-                        <a href={source.url} className="text-sky-800 hover:underline">
+                        <a href={source.url} className="inline-flex min-h-6 items-center text-sky-800 hover:underline">
                           Source
                         </a>
                       ) : (
@@ -576,7 +633,7 @@ export default async function ParcelPage({
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-[960px] px-5 py-6 text-[13px] leading-6 text-slate-500">
           TruLot · Public parcel records for San Diego, explained ·{" "}
-          <a href="#receipts" className="text-sky-800 hover:underline">Methodology</a> ·{" "}
+          <SourcesMethodologyLink className="inline-flex min-h-6 items-center text-sky-800 hover:underline">Sources &amp; methodology</SourcesMethodologyLink> ·{" "}
           <Link href="/parcel/san-diego" className="text-sky-800 hover:underline">Browse parcels</Link>
           <br />
           Canonical: {data.canonicalPath}

@@ -29,18 +29,26 @@ export function fixture(payload, options = {}) {
   };
   const client = {
     from(name) {
-      assert.ok(["parcel_page_api_v2", "trulot_permit_parcel_link_v1"].includes(name), `Unexpected query: ${name}`);
+      assert.ok(["parcel_page_api_v2", "trulot_permit_parcel_link_v1", "parcel_permit_terminal_v2"].includes(name), `Unexpected query: ${name}`);
       let single = false;
       const query = {
         then(resolve, reject) {
           const core = name === "parcel_page_api_v2" && single;
           const history = name === "trulot_permit_parcel_link_v1";
+          const similarParcels = name === "parcel_page_api_v2" && !single;
+          const similarPermits = name === "parcel_permit_terminal_v2";
           if ((core && options.coreReject) || (history && options.permitReject)) {
             return Promise.reject(new Error("private source failure")).then(resolve, reject);
           }
           const data = history ? ("permitData" in options ? options.permitData : [permit])
-            : core ? ("coreData" in options ? options.coreData : { ...parcel, ...options.parcelFields }) : [];
-          return Promise.resolve({ data, error: core ? options.coreError ?? null : history ? options.permitError ?? null : null }).then(resolve, reject);
+            : core ? ("coreData" in options ? options.coreData : { ...parcel, ...options.parcelFields })
+            : similarParcels ? options.similarData ?? []
+            : similarPermits ? options.similarPermitData ?? [] : [];
+          const queryError = core ? options.coreError ?? null
+            : history ? options.permitError ?? null
+            : similarParcels ? options.similarError ?? null
+            : similarPermits ? options.similarPermitError ?? null : null;
+          return Promise.resolve({ data, error: queryError }).then(resolve, reject);
         },
       };
       for (const method of ["select", "eq", "in", "order", "gte", "lte", "neq", "limit"]) query[method] = () => query;
