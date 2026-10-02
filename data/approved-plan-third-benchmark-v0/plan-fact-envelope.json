@@ -1,0 +1,66 @@
+{
+  "address": "639-659 N 67th Street, San Diego, CA 92114",
+  "apn": "5442140600",
+  "contract_version": "approved-plan-third-benchmark-v0-2026-10-02-p55",
+  "direct_dimensions": {
+    "method": "DIRECT_LABELED_PLAN_DIMENSION",
+    "plan_callout": "CONSTRUCT 20 FT DRIVEWAY PER SDG-159, SDG-164",
+    "primary_fact_count": 1,
+    "width_ft": "20"
+  },
+  "fingerprint_sha256": "87d1f93927e70d3d968b1e4ce3ce18106dfc8651630f96ea39bcb6e2c7e3c1d3",
+  "floor_area": {
+    "evaluated": false,
+    "reason": "NOT_RELEVANT_TO_SELECTED_RULE"
+  },
+  "geometry_semantics": {
+    "curb_opening_or_flare_width": false,
+    "directionality_corroboration": "PROPOSED_2_WAY_DRIVEWAY_PER_CIVIL_ON_ASSOCIATED_TITLE_SHEET",
+    "feature": "DRIVEWAY",
+    "measurement": "DIRECT_LABELED_CONSTRUCTED_DRIVEWAY_WIDTH",
+    "scale_derived": false
+  },
+  "height": {
+    "evaluated": false,
+    "reason": "NOT_RELEVANT_TO_SELECTED_RULE"
+  },
+  "legal_survey_line_roles": {
+    "authority_state": "PLAN_GEOMETRY_ONLY_NOT_PUBLIC_PARCEL_TRUTH",
+    "required_for_selected_rule": true,
+    "scope": "PARCEL_TIED_CIVIL_IMPROVEMENT_PLAN",
+    "selected_line": "PROPOSED_DRIVEWAY_AT_67TH_STREET_RIGHT_OF_WAY"
+  },
+  "plan_set_version": "REFERENCE_CIVIL_SHEET_C001_DATED_2025-12-03_IN_2026_SUBMITTAL",
+  "privacy_classification": "PRIVATE_VALIDATION_EVIDENCE",
+  "project_id": "PRJ-1110168",
+  "project_specific_conditions": {
+    "approval_block_observed_blank": true,
+    "direct_issuance_proven": false,
+    "related_building_project_used_only_for_use_and_directionality_predicates": true,
+    "standard_drawing_references": [
+      "SDG-159",
+      "SDG-164"
+    ],
+    "standard_drawings_used_as_selected_legal_rule": false
+  },
+  "project_status": "REFERENCE_SHEETS_EMBEDDED; DIRECT_APPROVAL_STATUS_NOT_INDEPENDENTLY_VERIFIED",
+  "proposed_use_units": {
+    "basis": "ASSOCIATED_PLAN_IDENTIFIES_ONE_EXISTING_SINGLE_FAMILY_HOME_AND ONLY_NEW_ADUS; SDMC_131_0112_EXCLUDES_ADUS_FROM_MULTIPLE_DWELLING_UNIT_DEFINITION",
+    "unit_count_used_for_capacity": false,
+    "use_category": "DETACHED_SINGLE_DWELLING_UNIT_WITH_ACCESSORY_DWELLING_UNITS"
+  },
+  "public_truth_promotion": false,
+  "sheet_provenance": {
+    "pdf_page": 10,
+    "sheet": "C001",
+    "source_ref": "PRIVATE_PLAN_PRJ-1110168_REFERENCE_CIVIL_C001",
+    "title": "Improvement Plan"
+  },
+  "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12",
+  "structure_id": {
+    "individual_feature": "C001_CONSTRUCTION_NOTE_2",
+    "project_type": "Grading, utilities, erosion control, and public improvements",
+    "scope": "PROPOSED_RIGHT_OF_WAY_DRIVEWAY"
+  },
+  "subject": "PROPOSED_PROJECT_FACT"
+}

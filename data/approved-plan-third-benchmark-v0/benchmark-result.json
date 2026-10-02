@@ -1,0 +1,75 @@
+{
+  "bounded_conclusion": "The reference civil plan's directly labeled proposed 20-foot driveway falls within the 12-to-25-foot SDMC Table 142-05M range selected for a greater-than-50-foot residential lot outside the Parking Impact Overlay Zone. This validates only that proposed plan fact against that rule branch.",
+  "capacity_calculated": false,
+  "city_review_corroboration": {
+    "approval_block_blank": true,
+    "plan_standard_drawing_callout_treated_as_legal_authority": false,
+    "record_list_source_sha256": "49541bf72a0a6dc1cf3928c2e2a1ac8963631ed66a43d5204dfdf0dd955c4ea9",
+    "record_list_statuses": {
+      "PMT-3269275": "Opened",
+      "PRJ-1110168": "Pending Invoice Payment"
+    },
+    "silence_treated_as_approval": false,
+    "state": "NO_RELEVANT_RULE_SPECIFIC_REVIEW_EVIDENCE"
+  },
+  "comparison": {
+    "comparisons": [
+      {
+        "expression": "proposed_driveway_width_ft >= applicable_minimum_width_ft",
+        "left": "20",
+        "operator": ">=",
+        "right": "12",
+        "state": "RULE_REQUIREMENT_SATISFIED",
+        "unit": "ft"
+      },
+      {
+        "expression": "proposed_driveway_width_ft <= applicable_maximum_width_ft",
+        "left": "20",
+        "operator": "<=",
+        "right": "25",
+        "state": "RULE_REQUIREMENT_SATISFIED",
+        "unit": "ft"
+      }
+    ],
+    "state": "PLAN_RULE_REQUIREMENT_SATISFIED"
+  },
+  "conclusion_scope": "PROPOSED_PLAN_RULE_VALIDATION",
+  "contract_version": "approved-plan-third-benchmark-v0-2026-10-02-p55",
+  "forbidden_conclusions": [
+    "AS_BUILT_COMPLIANCE",
+    "CURRENT_PARCEL_COMPLIANCE",
+    "COMPLETE_PROJECT_APPROVAL",
+    "OVERALL_PROJECT_COMPLIANCE",
+    "DEVELOPMENT_CAPACITY",
+    "CITYWIDE_FEASIBILITY"
+  ],
+  "production_wired": false,
+  "project_identity": {
+    "apn": "5442140600",
+    "project_id": "PRJ-1110168"
+  },
+  "requirement": {
+    "failed_gates": [],
+    "maximum_ft": "25",
+    "maximum_operator": "MAX",
+    "minimum_ft": "12",
+    "minimum_operator": "MIN",
+    "selected_branch": "LOT_GT_50_DETACHED_SINGLE_DWELLING_OUTSIDE_PIOZ",
+    "state": "DRIVEWAY_WIDTH_REQUIREMENT_RESOLVED"
+  },
+  "selected_plan_fact": {
+    "direct_or_derived": "DIRECT_LABELED",
+    "measurement_semantics": "CONSTRUCTED_DRIVEWAY_WIDTH",
+    "pdf_page": 10,
+    "project_status": "REFERENCE_SHEETS_EMBEDDED; DIRECT_APPROVAL_STATUS_NOT_INDEPENDENTLY_VERIFIED",
+    "proposed_vs_existing": "PROPOSED",
+    "scale_derived": false,
+    "sheet": "C001",
+    "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12",
+    "subject": "PROPOSED_PROJECT_FACT",
+    "unit": "ft",
+    "value": "20"
+  },
+  "selected_rule_family": "DRIVEWAY_WIDTH",
+  "viability": "THIRD_BENCHMARK_PROJECT_VIABLE"
+}

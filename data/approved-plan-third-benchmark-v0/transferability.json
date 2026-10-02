@@ -1,0 +1,22 @@
+{
+  "adapter_project_constants": false,
+  "architectural_fork_required": false,
+  "contract_version": "approved-plan-third-benchmark-v0-2026-10-02-p55",
+  "decision": "THREE_PROJECT_TRANSFERABILITY_SUPPORTED",
+  "projects": [
+    "PRJ-1111087",
+    "PRJ-1140985",
+    "PRJ-1110168"
+  ],
+  "rule_families": [
+    "INTERIOR_SIDE_SETBACK",
+    "WALL_HEIGHT_BUILDING_PERMIT_TRIGGER",
+    "DRIVEWAY_WIDTH"
+  ],
+  "same_adapter": "project_evidence_adapter_v0",
+  "same_fail_closed_semantics": true,
+  "same_public_private_boundary": true,
+  "same_shared_decimal_comparator": true,
+  "third_evidence_type": "CIVIL_RIGHT_OF_WAY_IMPROVEMENT_PLAN",
+  "third_project_status": "REFERENCE_SHEETS_EMBEDDED; DIRECT_APPROVAL_STATUS_NOT_INDEPENDENTLY_VERIFIED"
+}

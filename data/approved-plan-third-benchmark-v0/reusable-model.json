@@ -1,0 +1,20 @@
+{
+  "contract_version": "approved-plan-third-benchmark-v0-2026-10-02-p55",
+  "fields": {
+    "dimension_semantics": "enum",
+    "direct_or_derived": "enum",
+    "feature_type": "enum",
+    "page": "integer",
+    "privacy_classification": "PRIVATE_VALIDATION_EVIDENCE",
+    "project_status": "string",
+    "scale_derived": "boolean",
+    "sheet": "string",
+    "source_sha256": "sha256",
+    "subject": "PROPOSED_PROJECT_FACT",
+    "unit": "enum",
+    "value": "decimal"
+  },
+  "model": "CIVIL_DIMENSION_EVIDENCE",
+  "parcel_constants": false,
+  "project_constants": false
+}

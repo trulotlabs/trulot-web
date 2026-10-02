@@ -1,0 +1,15 @@
+{
+  "contract_version": "approved-plan-third-benchmark-v0-2026-10-02-p55",
+  "predicates": {
+    "city_jurisdiction": true,
+    "detached_single_dwelling_use_with_adus": true,
+    "direct_constructed_driveway_width": true,
+    "lot_width_greater_than_50_ft": true,
+    "not_pixel_or_scale_derived": true,
+    "outside_parking_impact_overlay": true,
+    "project_status_explicit": true,
+    "residential_rule_unchanged_across_relevant_dates": true
+  },
+  "state": "ALL_SELECTED_RULE_PREDICATES_RESOLVED",
+  "unresolved_predicates": []
+}

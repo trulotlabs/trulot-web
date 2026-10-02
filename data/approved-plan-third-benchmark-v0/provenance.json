@@ -1,0 +1,36 @@
+{
+  "contract_version": "approved-plan-third-benchmark-v0-2026-10-02-p55",
+  "private": [
+    {
+      "artifact": "PRJ-1110168 C001 direct driveway callout",
+      "privacy": "PRIVATE_VALIDATION_EVIDENCE"
+    },
+    {
+      "artifact": "Bounded associated title-sheet use/directionality facts",
+      "privacy": "PRIVATE_VALIDATION_EVIDENCE"
+    },
+    {
+      "artifact": "Local record-list status rows",
+      "privacy": "PRIVATE_VALIDATION_EVIDENCE"
+    }
+  ],
+  "private_plan_published": false,
+  "public": [
+    {
+      "artifact": "Packet 42 public parcel profile",
+      "privacy": "PUBLIC_AUTHORITY"
+    },
+    {
+      "artifact": "County Map 1063 evidence",
+      "privacy": "PUBLIC_AUTHORITY"
+    },
+    {
+      "artifact": "SDMC 113.0243 and 142.0560(j)(1)/Table 142-05M",
+      "privacy": "PUBLIC_AUTHORITY"
+    },
+    {
+      "artifact": "City Parking Impact Overlay layer 7 query",
+      "privacy": "PUBLIC_AUTHORITY"
+    }
+  ]
+}

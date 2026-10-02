@@ -1,0 +1,51 @@
+{
+  "candidates": [
+    {
+      "family": "DRIVEWAY_WIDTH",
+      "reason": "Direct 20-foot callout, sealed public predicates, numeric minimum and maximum.",
+      "state": "SELECTED"
+    },
+    {
+      "family": "DRIVEWAY_SLOPE",
+      "reason": "Profiles contain several grades and transition segments; no single direct fact seals every 142.0560(j)(9) segment predicate.",
+      "state": "REJECTED"
+    },
+    {
+      "family": "GRADING_SLOPE_RATIO",
+      "reason": "Multiple proposed slopes and wall conditions prevent one unambiguous controlling fact/rule pair.",
+      "state": "REJECTED"
+    },
+    {
+      "family": "GRADING_QUANTITY_THRESHOLD",
+      "reason": "Direct cut, fill, and export quantities exist, but the bounded review did not seal all permit-threshold and exemption predicates.",
+      "state": "REJECTED"
+    },
+    {
+      "family": "CUT_FILL_HEIGHT",
+      "reason": "Direct maximum cut and fill depths exist, but location-specific retaining, slope, and permit branches remain unresolved.",
+      "state": "REJECTED"
+    },
+    {
+      "family": "RETAINING_WALL_PERMIT_TRIGGER",
+      "reason": "Already covered by Packet 49 and walls are identified as separate-permit work.",
+      "state": "REJECTED"
+    },
+    {
+      "family": "CURB_OR_ROW_DIMENSION",
+      "reason": "Standard-drawing and field/as-built branches need additional technical predicates.",
+      "state": "REJECTED"
+    },
+    {
+      "family": "VISIBILITY_TRIANGLE_GEOMETRY",
+      "reason": "The bounded plan does not seal all obstruction and applicable triangle semantics.",
+      "state": "REJECTED"
+    },
+    {
+      "family": "SEWER_LATERAL_SLOPE",
+      "reason": "Less reusable than the direct civil driveway fact and would require a separate plumbing/utility standard chain.",
+      "state": "REJECTED"
+    }
+  ],
+  "contract_version": "approved-plan-third-benchmark-v0-2026-10-02-p55",
+  "selected": "DRIVEWAY_WIDTH"
+}

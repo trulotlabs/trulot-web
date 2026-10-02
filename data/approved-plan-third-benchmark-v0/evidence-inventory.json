@@ -1,0 +1,72 @@
+{
+  "available": {
+    "civil_geometry": true,
+    "curb_and_gutter": true,
+    "direct_regulatory_callouts": [
+      "SDG-159",
+      "SDG-164"
+    ],
+    "driveways": true,
+    "grading_sheets": true,
+    "improvement_dimensions": true,
+    "legal_description": true,
+    "right_of_way_sheets": true,
+    "slopes": true,
+    "survey_sheets": true,
+    "topography": true,
+    "utility_references": true,
+    "walls": true
+  },
+  "contract_version": "approved-plan-third-benchmark-v0-2026-10-02-p55",
+  "plan_status": "REFERENCE_SHEETS_EMBEDDED; DIRECT_APPROVAL_STATUS_NOT_INDEPENDENTLY_VERIFIED",
+  "private_source_published": false,
+  "private_source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12",
+  "project_identity": {
+    "address": "639-659 N 67th Street, San Diego, CA 92114",
+    "apn": "5442140600",
+    "permit_id": "PMT-3269275",
+    "project_id": "PRJ-1110168"
+  },
+  "sheet_inventory": [
+    {
+      "pdf_page": 7,
+      "scope": "GENERAL_AND_TITLE",
+      "sheet": "G001"
+    },
+    {
+      "pdf_page": 8,
+      "scope": "GENERAL_NOTES",
+      "sheet": "G002"
+    },
+    {
+      "pdf_page": 9,
+      "scope": "WATER_AND_SEWER_NOTES",
+      "sheet": "G003"
+    },
+    {
+      "pdf_page": 10,
+      "scope": "IMPROVEMENT_PLAN",
+      "sheet": "C001"
+    },
+    {
+      "pdf_page": 11,
+      "scope": "GRADING",
+      "sheet": "C002"
+    },
+    {
+      "pdf_page": 12,
+      "scope": "UTILITIES",
+      "sheet": "C003"
+    },
+    {
+      "pdf_page": 13,
+      "scope": "PROFILES_AND_DETAILS",
+      "sheet": "C004"
+    },
+    {
+      "pdf_page": 14,
+      "scope": "BMP_AND_EROSION_CONTROL",
+      "sheet": "C005"
+    }
+  ]
+}

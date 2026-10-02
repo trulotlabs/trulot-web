@@ -1,0 +1,107 @@
+{
+  "contract_version": "approved-plan-third-benchmark-v0-2026-10-02-p55",
+  "public_profile": {
+    "authority_classification": "PUBLIC_AUTHORITY",
+    "coastal": {
+      "acquisition": "coastal-city-sd-20260930T143055Z",
+      "intersection_sq_ft": "0",
+      "source_artifact_sha256": "9b7b744247278000123a56965597917cdc560db4de78c539f4876aa09b267f97",
+      "state": "OUTSIDE_COASTAL"
+    },
+    "jurisdiction": "CITY_OF_SAN_DIEGO",
+    "lot_width": {
+      "measurement_method": "SDMC_113_0243_MIDPOINT_WIDTH_FROM_PUBLIC_PARCEL_VECTOR_EPSG_2230",
+      "parcel_geometry_sha256": "05073c1c7e7c910e4b60ce05df6c80b2fb61dd3da2d0cd99f4d42d20f3c176be",
+      "pixel_scaled": false,
+      "public_vector_code_midpoint_width_ft": "98.56",
+      "recorded_map_evidence_sha256": "83785872c678f09097650b98b9cbf82ccd90d5b30702a870fe7f1a629d74e617",
+      "recorded_map_frontage_ft": "100",
+      "state": "GREATER_THAN_50_FT_RESOLVED",
+      "threshold_ft": "50"
+    },
+    "only_selected_rule_overlays_included": [
+      "PARKING_IMPACT_OVERLAY_ZONE"
+    ],
+    "parcel_identity": {
+      "apn": "5442140600",
+      "artifact_sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+      "jurisdiction": "CITY_OF_SAN_DIEGO",
+      "legal_description": "BLOCK 7 LOT 4",
+      "map_reference": "1063",
+      "parcel_acquisition": "sangis-20260924T183743Z",
+      "parcel_id": 53299,
+      "situs": "639 N 67TH ST, SAN DIEGO, CA 92114-2910",
+      "source_currency": "2026-08-29",
+      "source_object_id": 7815,
+      "subdivision": "ENCANTO HEIGHTS"
+    },
+    "parking_impact_overlay": {
+      "feature_count": 0,
+      "layer": "City DSD Zoning_Overlay MapServer layer 7",
+      "queried_on": "2026-10-02",
+      "query_response_sha256": "a91e8e808fb8be122eb1af9b10c9a6d0395c842bfc9af52e3cabd66f71743007",
+      "query_scope": "FULL_PUBLIC_PARCEL_POLYGON_INTERSECTS",
+      "source_url": "https://webmaps.sandiego.gov/arcgis/rest/services/DSD/Zoning_Overlay/MapServer/7",
+      "state": "OUTSIDE_PARKING_IMPACT_OVERLAY_ZONE"
+    },
+    "private_plan_used_to_select_public_truth": false,
+    "zoning": {
+      "artifact_sha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+      "authoritative_zone": "RM-2-5",
+      "detailed_mapping_state": "BOUNDARY_SLIVER",
+      "mapping_state": "SINGLE_ZONE"
+    }
+  },
+  "rule_profile": {
+    "application_version": {
+      "o21836_download_sha256": "2ab750ff80f2d1aaf860e625d9d640e5b06c027aabf31d3dd7636b8411a00d48",
+      "o21836_source_url": "https://docs.sandiego.gov/council_reso_ordinance/rao2024/O-21836.pdf",
+      "originating_numeric_source": {
+        "detached_single_dwelling_outside_pioz_maximum_ft": "25",
+        "detached_single_dwelling_outside_pioz_minimum_ft": "12",
+        "effective_date": "2007-08-31",
+        "ordinance": "O-19650 N.S.",
+        "source_sha256": "0ddf0818d0440ee7958330fe2f37586b77966079bac9937559332d91f5f31d4a",
+        "source_url": "https://docs.sandiego.gov/council_reso_ordinance/rao2007/O-19650.pdf",
+        "table_at_enactment": "Table 142-05L; renumbered to Table 142-05M in 2012"
+      },
+      "project_record_date": "2024-01-09",
+      "reference_plan_date": "2025-12-03",
+      "residential_row_changed_by_o21836": false,
+      "selected_profile": "RESIDENTIAL_TABLE_142_05M_UNCHANGED_ACROSS_2024_APPLICATION_AND_2025_PLAN",
+      "version_basis": "O-21836_CORRECTED_COPY_MARKS_DETACHED_SINGLE_THROUGH_MULTIPLE_DWELLING_ROW_NO_CHANGE; 2026_COMPILED_CODE_SUPPLIES_VALUES"
+    },
+    "authority": {
+      "compiled_pdf_page": 60,
+      "compiled_source_sha256": "5791eb4ea46a5cf4c79c550be85dda069fefa6846ea7155349a10d9e8e43dc5d",
+      "compiled_source_url": "https://docs.sandiego.gov/municode/municodechapter14/ch14art02division05.pdf",
+      "lot_width_section": "SDMC 113.0243",
+      "lot_width_source_sha256": "c3dfa2f75b21fcd4d1d1c896e3112d6de588a2079c54fb138b199575d2a03f1e",
+      "lot_width_source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf",
+      "publisher": "City of San Diego",
+      "section": "SDMC 142.0560(j)(1), Table 142-05M"
+    },
+    "exceptions_and_limits": {
+      "industrial_loading_dock_exception": "NOT_APPLICABLE_TO_RESIDENTIAL_USE",
+      "parking_impact_area_maximum": "NOT_SELECTED_OUTSIDE_OVERLAY",
+      "project_specific_review_override": "NONE_FOUND_IN_BOUNDED_EVIDENCE",
+      "standard_drawing_flare_or_curb_opening": "NOT_EVALUATED"
+    },
+    "rule_family": "DRIVEWAY_WIDTH",
+    "selected_branch": {
+      "lot_size": "GREATER_THAN_50_FT",
+      "maximum_width_ft": "25",
+      "minimum_width_ft": "12",
+      "parking_impact_overlay": "OUTSIDE",
+      "use": "DETACHED_SINGLE_DWELLING_UNIT"
+    },
+    "use_classification_authority": {
+      "rule": "Accessory dwelling units are excluded when determining whether more than one dwelling unit constitutes the Multiple Dwelling Units use category.",
+      "section": "SDMC 131.0112(a)(3)(C)-(D)",
+      "source_edition": "10-2022",
+      "source_pdf_page": 7,
+      "source_sha256": "b6247ec6f6d8cdb9457f730ddf9dfc9758198f13731507f89351811f49d7b001",
+      "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division01.pdf"
+    }
+  }
+}

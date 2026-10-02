@@ -1,0 +1,14 @@
+{
+  "contract_version": "approved-plan-third-benchmark-v0-2026-10-02-p55",
+  "corpus_status": "THREE_PROJECT_BENCHMARK_CORPUS_ESTABLISHED",
+  "evaluation": "PLAN_RULE_REQUIREMENT_SATISFIED",
+  "feasibility_suite_addition": [
+    "CIVIL_PLAN_EVIDENCE_TRANSFER",
+    "RIGHT_OF_WAY_RULE_EVALUATION",
+    "BOUNDED_RANGE_COMPARISON"
+  ],
+  "next": "NEXT_FEASIBILITY_STEP: current-structure compliance geometry",
+  "selected_rule_family": "DRIVEWAY_WIDTH",
+  "transferability": "THREE_PROJECT_TRANSFERABILITY_SUPPORTED",
+  "viability": "THIRD_BENCHMARK_PROJECT_VIABLE"
+}

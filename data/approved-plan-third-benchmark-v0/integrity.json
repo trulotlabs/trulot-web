@@ -1,0 +1,17 @@
+{
+  "artifacts": {
+    "benchmark-result.json": "4992428e130053b66c271d2cac04f142a37533e06f084860b0cd68774cd749de",
+    "candidate-rule-families.json": "0d218c5426934f238e84175963cea9570b6d4be07e391bfbf760e20274ecdb40",
+    "contract.json": "bf0c1a6d34080b635b2af09577436a3d775a820ab72b042eadcb0abd47863bdc",
+    "decision.json": "613a37913359b0636697be4d4982e79201a46c2a3bf39b0a3ec282456b9d1423",
+    "evidence-inventory.json": "0c1eb15785028835adb418cfd231a70da3184e615948df1b05ea899308272b12",
+    "plan-fact-envelope.json": "6ea9ec5805c774f80e38ca6b041773a8e2fea227c78f9ecbf04cdf36f6ff917c",
+    "predicate-resolution.json": "b57e9e29f6f57c63cd9387740e54104c7ff05c7f7e8d8008f12e81415ed670e6",
+    "provenance.json": "17df24c7a4cd760cb331cf8e8e5bb0e02be7a8370fa38c8b8478c4d5970017e0",
+    "public-rule-profile.json": "3d01764e39113951bd54c76036dd990b91ad78951d5deb35388d25f9adc23963",
+    "reusable-model.json": "0efde4988176b084e09c18d596a434945c57f15d2a356fb1fe916b35758809d9",
+    "transferability.json": "5ae7c077efe89efa237212fa70f15e9ebfadfc6f4748263906eee660d3ffe627"
+  },
+  "bundle_sha256": "1643c77946263ddd886114493a298ba072a333e38ea7ce40e1e5543dc5e028e2",
+  "contract_version": "approved-plan-third-benchmark-v0-2026-10-02-p55"
+}

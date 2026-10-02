@@ -1,0 +1,13 @@
+{
+  "allowed_result_states": [
+    "PLAN_RULE_REQUIREMENT_SATISFIED",
+    "PLAN_RULE_REQUIREMENT_NOT_SATISFIED",
+    "PLAN_RULE_EVALUATION_UNRESOLVED"
+  ],
+  "contract_version": "approved-plan-third-benchmark-v0-2026-10-02-p55",
+  "production": false,
+  "project": "PRJ-1110168",
+  "project_fact_subject": "PROPOSED_PROJECT_FACT",
+  "result_scope": "PROPOSED_PLAN_RULE_VALIDATION",
+  "rule_family": "DRIVEWAY_WIDTH"
+}
