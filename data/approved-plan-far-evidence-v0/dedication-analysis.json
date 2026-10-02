@@ -1,0 +1,13 @@
+{
+  "classification": "NO_REQUIRED_DEDICATION_EVIDENCE",
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "evidence": [
+    "G001 existing and proposed legal descriptions are identical",
+    "bounded grading/ROW sheets show public improvements but no dedication-area or changed-boundary callout",
+    "C-1 calculated boundary follows Lot 4 record information"
+  ],
+  "limitation": "This is a bounded absence-of-evidence classification, not affirmative proof that no dedication condition exists outside the reviewed corpus.",
+  "post_dedication_area_sq_ft": null,
+  "pre_dedication_area_sq_ft": null,
+  "selected_area_sq_ft": null
+}

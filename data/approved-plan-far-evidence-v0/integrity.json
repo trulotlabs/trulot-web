@@ -1,0 +1,25 @@
+{
+  "artifacts": {
+    "area-reconciliation.json": "69969e461b1e3032ffede5421c12d806d98730de288b77dfb7e4a45177a0b5ae",
+    "city-review-corroboration.json": "c9c5da220bdefcf40f8d70b6ad3feb708b4e8756d36223a61e34e3bbb890c64b",
+    "code-compatible-numerator.json": "b6cbfa7a99538f456a82f25a0c023088c7d71e5cb9a2cf47c7b1c5ad90b7f931",
+    "contract.json": "c3bac017e40c5b00be890b5ef6442c20ec806f7d00318a9e27c399c0c966bd74",
+    "decision.json": "4a845d3acfc84da2ccb4cc5415f75a9ebafbb4047e9a6dc2fe6c9e7cd33d017a",
+    "dedication-analysis.json": "fd946d8d98631001f62e0d6a0522688daa42fb73a5f63ab3fc66abcf16e80abc",
+    "evidence-inventory.json": "31ed3a9f4058ba937eaf9683a0d0a55aa1c07f3e1b275f3f555bed68145aa7dc",
+    "far-computation.json": "a0358b028bea5459e5c658ce8c1a22f8ea9536b53228dc4aaecf22f02ddb80e2",
+    "gfa-component-ledger.json": "7a7f54f16fca20dfea8a98431ce3d20414cba10d89dfe93b229a719318133d7e",
+    "historical-gfa-classification.json": "09fec751919e957721db05e9f9a712acd7d3d25125a86ca8da716cd1f50842fc",
+    "legal-premises-decision.json": "c2fa3e607c6035be5c0f26a66cafd75947306feceb44c6674ee95d029874c3a3",
+    "legal-premises-evidence.json": "369cf41c7131a6177b71ce521858f91c5c4cb89b1f8a60673b7890ba3b3f2e51",
+    "numerator-reconciliation.json": "027668efa28f0051ce401b7e54f2e82bd705395cedaa4048f773701b67617f40",
+    "plan-denominator-semantics.json": "440840704c55861fb8f666f4275a0b92a8c40f153e7ef701f41e1294b153f33f",
+    "plan-vs-code-comparison.json": "c7eb7c2ca8d0aa34f0224ae19802e200b639767a7de9e4b6170862719f77181a",
+    "provenance-chain.json": "66c83d1eaeb3f27125bceab8fd8e50f13d1791c094618ee8fec6396b64b6b903",
+    "reusable-schema.json": "15acaa37b6bf237a94dca237212d6f357513e01d6e3926e2ebd0409459dc58a9",
+    "rm-2-5-comparison.json": "d5f074362390f7752203bfa14a85cd1f9430a665688d975717e649fb5f76a9d6",
+    "rounding-analysis.json": "cb9328734a1420839aa86798f8af67a8751e54beacdab08a7d15b6f7929e6a0d"
+  },
+  "bundle_sha256": "58706109c46340561e7f153c41e91ce05a0ff01015ba110438b3df7982e83d0d",
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52"
+}

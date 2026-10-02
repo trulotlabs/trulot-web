@@ -1,0 +1,59 @@
+{
+  "$id": "trulot://schemas/far-evidence-v0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "contracts": {
+    "dedication_adjustment": {
+      "required": [
+        "status",
+        "evidence",
+        "pre_dedication_area",
+        "post_dedication_area",
+        "selected_area"
+      ]
+    },
+    "far_computation": {
+      "required": [
+        "numerator_state",
+        "denominator_state",
+        "unrounded_decimal",
+        "presentation_rounding",
+        "comparison_authorized"
+      ]
+    },
+    "gfa_component": {
+      "required": [
+        "component_id",
+        "building_id",
+        "floor_or_story",
+        "labeled_area_sq_ft",
+        "use_category",
+        "direct_provenance",
+        "included_by_plan",
+        "historical_113_0234_treatment",
+        "code_inclusion_state",
+        "uncertainty"
+      ],
+      "states": [
+        "INCLUDED_IN_CODE_GFA",
+        "EXCLUDED_FROM_CODE_GFA",
+        "CONDITIONAL_GFA",
+        "UNRESOLVED_GFA"
+      ]
+    },
+    "legal_premises_area": {
+      "required": [
+        "legal_identity",
+        "recorded_map",
+        "boundary_authority",
+        "area_sq_ft",
+        "multiple_lot_status",
+        "unity_of_use",
+        "decision"
+      ]
+    },
+    "unresolved_handling": {
+      "rule": "Unknown components remain explicit; compute no exact Code FAR unless numerator and denominator gates pass. A bounded interval may inform materiality but cannot replace a required exact benchmark gate."
+    }
+  },
+  "project_specific": false
+}

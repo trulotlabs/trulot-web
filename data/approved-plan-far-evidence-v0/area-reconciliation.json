@@ -1,0 +1,31 @@
+{
+  "classification": "PLAN_AND_CALCULATED_SURVEY_CORROBORATE; GIS_DIFFERS_SEMANTICALLY; LEGAL_AREA_NOT_SEALED",
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "gis_minus_plan_sq_ft": "259.182028",
+  "survey_minus_plan_sq_ft": "0.272422",
+  "values": [
+    {
+      "area_sq_ft": "20084.0",
+      "semantics": "plan-labeled lot area",
+      "source": "T-1 plan lot area"
+    },
+    {
+      "area_sq_ft": "20084.272422",
+      "semantics": "derived from calculated boundary; not precise survey",
+      "source": "C-1 direct course traverse"
+    },
+    {
+      "area_sq_ft": "20343.182028",
+      "artifact_sha256": "b871a054a16d6b0fe67af1a80a764cb9aebdb7c9ea09bca052cd95f493cdab5e",
+      "geometry_sha256": "05073a61792fcbe67366917c06d8e7330cfd8a5f6b370878c620634a53536d4e",
+      "path": "data/parcel-lookup-v0/source-records.json",
+      "semantics": "approximate GIS geometry; diagnostic only",
+      "source": "Parcel V2/SanGIS polygon"
+    },
+    {
+      "area_sq_ft": null,
+      "semantics": "no independent assessor area in bounded evidence",
+      "source": "assessor"
+    }
+  ]
+}

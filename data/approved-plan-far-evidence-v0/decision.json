@@ -1,0 +1,13 @@
+{
+  "benchmark": "FAR_GOLDEN_BENCHMARK_UNRESOLVED: the direct area schedule conflicts by 10 sq ft, historical garage/deck/trash classifications are not fully sealed, and the 20,084 sq ft denominator lacks a directly reviewed recorded map or precise boundary survey",
+  "comparison": {
+    "comparison": null,
+    "margin": null,
+    "state": "FAR_RULE_EVALUATION_UNRESOLVED"
+  },
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "dedication": "NO_REQUIRED_DEDICATION_EVIDENCE",
+  "legal_premises": "LEGAL_PREMISES_AREA_PARTIAL: recorded Lot 4 identity and a near-closing calculated traverse corroborate approximately 20,084 sq ft, but Map 1063 was not directly reviewed and C-1 expressly is not a precise boundary survey",
+  "next": "NEXT_FEASIBILITY_STEP: close Packet 50 height evidence",
+  "useful_artifacts": true
+}

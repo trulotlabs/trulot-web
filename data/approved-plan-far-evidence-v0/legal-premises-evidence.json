@@ -1,0 +1,86 @@
+{
+  "boundary": {
+    "authority": "CALCULATED_BOUNDARY_PER_RECORD_INFORMATION_AND_FOUND_MONUMENTS",
+    "closure_ft": "0.005007",
+    "courses": [
+      {
+        "degrees": 0,
+        "east_west": "E",
+        "length_ft": 99.88,
+        "line": "WEST",
+        "minutes": 36,
+        "north_south": "N",
+        "seconds": 41
+      },
+      {
+        "degrees": 89,
+        "east_west": "E",
+        "length_ft": 199.58,
+        "line": "NORTH",
+        "minutes": 33,
+        "north_south": "S",
+        "seconds": 1
+      },
+      {
+        "degrees": 1,
+        "east_west": "E",
+        "length_ft": 99.91,
+        "line": "EAST",
+        "minutes": 7,
+        "north_south": "S",
+        "seconds": 25
+      },
+      {
+        "degrees": 89,
+        "east_west": "W",
+        "length_ft": 202.6,
+        "line": "SOUTH",
+        "minutes": 33,
+        "north_south": "N",
+        "seconds": 8
+      }
+    ],
+    "derived_traverse_area_sq_ft": "20084.272422",
+    "disclaimer": "THIS IS NOT A PRECISE BOUNDARY SURVEY"
+  },
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "exact_legal_area": null,
+  "legal_identity": {
+    "description": "Lot 4, Block 7, Encanto Heights, Map 1063",
+    "multiple_lot_evidence": false,
+    "single_record_lot": true,
+    "sources": [
+      {
+        "artifact_sha256": "fe706b433bc7cc808dc8541465494b032a0acb6f7e17a6f678e9910ced023c91",
+        "parcel_identity_sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+        "path": "data/approved-plan-setback-benchmark-v0/public-rule-profile.json",
+        "source": "Packet 42 public parcel identity"
+      },
+      {
+        "pdf_page": 6,
+        "sheet": "C-1",
+        "source": "C-1 survey legal description",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      {
+        "pdf_page": 7,
+        "sheet": "G001",
+        "source": "G001 existing and proposed legal descriptions",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      }
+    ]
+  },
+  "plan_label": {
+    "classification": "PLAN_LABELED_LOT_AREA_NOT_PREMISES_AREA",
+    "pdf_page": 1,
+    "sheet": "T-1",
+    "wording": "LOT AREAS: 20,084.0 S.F. (.46 ACRES)"
+  },
+  "recorded_map": {
+    "directly_reviewed_in_packet": false,
+    "map": "1063"
+  },
+  "unity_of_use": "ONE_PROJECT_AND_ONE_DESCRIBED_LOT_BUT_CONVEYABILITY_NOT_INDEPENDENTLY_RECORDED"
+}

@@ -1,0 +1,19 @@
+{
+  "conditional_sq_ft": "5467.6",
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "counts": {
+    "CONDITIONAL_GFA": 11,
+    "EXCLUDED_FROM_CODE_GFA": 0,
+    "INCLUDED_IN_CODE_GFA": 27,
+    "UNRESOLVED_GFA": 1
+  },
+  "definitely_included_sq_ft": "17089.6",
+  "historical_boundary": "O-21836 changes are not back-applied to the 2024-01-29 application profile.",
+  "rule_source": "Packet 51 RM Rule Profile V0; no rule reconstruction",
+  "rule_source_artifact": {
+    "bundle_sha256": "2016a33bb1757254216d9158fd5524638b9a11687533123a99ca582a5643b2c4",
+    "path": "data/rm-rule-profile-v0/integrity.json"
+  },
+  "selected_profile": "RM25_2023_05_06_OUTSIDE_COASTAL",
+  "unresolved_sq_ft": "300.0"
+}

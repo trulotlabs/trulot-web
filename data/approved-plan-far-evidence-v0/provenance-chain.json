@@ -1,0 +1,70 @@
+{
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "links": [
+    {
+      "from": "private plan sheets T-1, A0.1, A1-1 through A1-19",
+      "locator": "each component.direct_provenance",
+      "state": "INSPECTABLE",
+      "to": "gfa-component-ledger.json"
+    },
+    {
+      "from": "gfa-component-ledger.json",
+      "rule_authority": "Packet 51 bundle",
+      "state": "PARTIAL_GARAGE_DECK_TRASH_PREDICATES",
+      "to": "historical-gfa-classification.json"
+    },
+    {
+      "from": "historical-gfa-classification.json",
+      "reason": "conditional and unresolved component states",
+      "state": "UNRESOLVED",
+      "to": "code-compatible-numerator.json"
+    },
+    {
+      "from": "Packet 42 public Lot 4 identity plus private C-1/G001",
+      "locator": "legal_identity.sources",
+      "state": "PARTIAL",
+      "to": "legal-premises-evidence.json"
+    },
+    {
+      "from": "legal-premises-evidence.json",
+      "reason": "recorded map not directly reviewed; survey disclaimer",
+      "state": "UNRESOLVED",
+      "to": "legal-premises-decision.json"
+    },
+    {
+      "from": "code-compatible-numerator.json plus legal-premises-decision.json",
+      "reason": "both semantic gates are unresolved",
+      "state": "BLOCKED",
+      "to": "far-computation.json"
+    },
+    {
+      "comparator": "resolver.compare_max Decimal MAX",
+      "from": "far-computation.json plus Packet 51 maximum 1.35",
+      "state": "BLOCKED",
+      "to": "rm-2-5-comparison.json"
+    }
+  ],
+  "source_artifacts": [
+    {
+      "published": false,
+      "sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12",
+      "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD"
+    },
+    {
+      "path": "data/rm-rule-profile-v0/integrity.json",
+      "sha256": "2016a33bb1757254216d9158fd5524638b9a11687533123a99ca582a5643b2c4"
+    },
+    {
+      "path": "data/approved-plan-setback-benchmark-v0/public-rule-profile.json",
+      "sha256": "fe706b433bc7cc808dc8541465494b032a0acb6f7e17a6f678e9910ced023c91"
+    },
+    {
+      "path": "data/parcel-lookup-v0/source-records.json",
+      "sha256": "b871a054a16d6b0fe67af1a80a764cb9aebdb7c9ea09bca052cd95f493cdab5e"
+    },
+    {
+      "path": "data/approved-plan-height-far-benchmark-v0/city-review-corroboration.json",
+      "sha256": "7fee5f043d326db208c7ed389d0175d2c78e60268bc81d87d7c8153c01aacd4b"
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "apn": "5442140600",
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "irrelevant_pages_ingested": false,
+  "privacy": "PRIVATE_OPERATOR_AUTHORIZED_NOT_PUBLISHED",
+  "project_id": "PRJ-1111087",
+  "sheets": [
+    {
+      "pdf_page": 1,
+      "sheet": "T-1",
+      "use": [
+        "project data",
+        "FAR calculation",
+        "lot area label",
+        "existing/new/building/unit/garage/deck area schedules"
+      ]
+    },
+    {
+      "pdf_page": 6,
+      "sheet": "C-1",
+      "use": [
+        "legal description",
+        "calculated boundary courses",
+        "boundary disclaimer"
+      ]
+    },
+    {
+      "pdf_pages": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "sheet": "G001-C005",
+      "use": [
+        "existing/proposed legal description",
+        "grading/ROW and public-improvement dedication search"
+      ]
+    },
+    {
+      "pdf_page": 15,
+      "sheet": "A0.1",
+      "use": [
+        "site component inventory",
+        "trash area",
+        "building labels"
+      ]
+    },
+    {
+      "pdf_pages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "sheet": "A1-1 through A1-19",
+      "use": [
+        "garage, dwelling-story, deck, stair, and roof-plan corroboration"
+      ]
+    }
+  ],
+  "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+}

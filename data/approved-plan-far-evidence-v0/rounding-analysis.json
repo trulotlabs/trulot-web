@@ -1,0 +1,18 @@
+{
+  "classification": "UNEXPLAINED; NUMERICALLY_CONSISTENT_WITH_ONE_DECIMAL_HALF_UP_DISPLAYED_WITH_TWO_DIGITS",
+  "component_corrected_inputs": {
+    "exact": "1.106831308504282015534754033061143198566",
+    "one_decimal_half_up": "1.1",
+    "two_decimal_half_up": "1.11"
+  },
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "explicit_plan_rounding_rule_found": false,
+  "legal_policy": "Use unrounded Decimal inputs; presentation rounding cannot repair semantic gates or the component conflict.",
+  "plan_display": "1.10",
+  "stated_inputs": {
+    "exact": "1.106333399721171081457876916948814977096",
+    "one_decimal_half_up": "1.1",
+    "two_decimal_half_up": "1.11"
+  },
+  "two_decimal_rounding_of_stated_inputs": "1.11"
+}

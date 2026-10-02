@@ -1,0 +1,16 @@
+{
+  "checks": {
+    "adu_sum_sq_ft": "16370.6",
+    "arithmetically_expected_new_plus_existing_sq_ft": "22229.6",
+    "existing_house_sq_ft": "719.0",
+    "garage_sum_sq_ft": "5140.0",
+    "new_construction_sum_sq_ft": "21510.6",
+    "title_new_plus_existing_line_sq_ft": "22219.6"
+  },
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "difference_component_sum_minus_stated_sq_ft": "10.0",
+  "direct_component_sum_sq_ft": "22229.6",
+  "explanation": "The 26 direct ADU labels sum to 16,370.6 and ten garages sum to 5,140.0, matching the 21,510.6 new-construction line. Adding the separately labeled 719.0 existing house produces 22,229.6, not 22,219.6.",
+  "plan_stated_numerator_sq_ft": "22219.6",
+  "state": "CONFLICT"
+}

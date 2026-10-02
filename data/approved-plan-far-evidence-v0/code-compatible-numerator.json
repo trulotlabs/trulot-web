@@ -1,0 +1,11 @@
+{
+  "all_catalogued_components_upper_bound_sq_ft": "22857.2",
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "definitely_included_lower_bound_sq_ft": "17089.6",
+  "exact_total_sq_ft": null,
+  "reason": "Garage exclusion predicates, deck openness/roof predicates, the trash enclosure, and the 10-square-foot schedule conflict prevent an exact Code-compatible numerator.",
+  "rm_2_5_threshold_numerator_at_plan_denominator_sq_ft": "27113.40",
+  "state": "CODE_COMPATIBLE_GFA_UNRESOLVED",
+  "unresolved_components_could_change_1_35_comparison_if_denominator_20084": false,
+  "upper_bound_far_using_unsealed_plan_denominator": "1.138080063732324238199561840270862378012"
+}

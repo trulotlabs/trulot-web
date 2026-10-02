@@ -1,0 +1,14 @@
+{
+  "classification": "UNRESOLVED",
+  "code_far": null,
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "observed_differences": [
+    "presentation rounding",
+    "10-square-foot numerator conflict",
+    "historical GFA component semantics",
+    "legal premises denominator"
+  ],
+  "plan_stated_far": "1.10",
+  "recomputed_direct_plan_components": "1.106831308504282015534754033061143198566",
+  "recomputed_stated_inputs": "1.106333399721171081457876916948814977096"
+}

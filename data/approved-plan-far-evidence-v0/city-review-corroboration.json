@@ -1,0 +1,10 @@
+{
+  "basis": "Packet 50's bounded city-review artifact contains no height/FAR-specific review evidence; Packet 42 comments address setbacks and fire only.",
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "silence_treated_as_approval": false,
+  "source_artifact": {
+    "path": "data/approved-plan-height-far-benchmark-v0/city-review-corroboration.json",
+    "sha256": "7fee5f043d326db208c7ed389d0175d2c78e60268bc81d87d7c8153c01aacd4b"
+  },
+  "state": "NO_RELEVANT_FAR_EVIDENCE"
+}

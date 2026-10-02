@@ -1,0 +1,746 @@
+{
+  "components": [
+    {
+      "building_id": "BUILDING_1",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_1",
+      "direct_provenance": {
+        "direct_callout": "ADU 1: 724.5 S.F.; story corroborated by A1-2 / PDF page 25",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "FIRST",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "724.5",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_1",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_2",
+      "direct_provenance": {
+        "direct_callout": "ADU 2: 704.8 S.F.; story corroborated by A1-3 / PDF page 26",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "SECOND",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "704.8",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_2",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_3",
+      "direct_provenance": {
+        "direct_callout": "ADU 3: 710.5 S.F.; story corroborated by A1-2 / PDF page 25",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "FIRST",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "710.5",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_2",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_4",
+      "direct_provenance": {
+        "direct_callout": "ADU 4: 690.8 S.F.; story corroborated by A1-3 / PDF page 26",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "SECOND",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "690.8",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_3",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_5",
+      "direct_provenance": {
+        "direct_callout": "ADU 5: 710.5 S.F.; story corroborated by A1-6 / PDF page 29",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "FIRST",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "710.5",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_3",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_6",
+      "direct_provenance": {
+        "direct_callout": "ADU 6: 690.8 S.F.; story corroborated by A1-7 / PDF page 30",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "SECOND",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "690.8",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_4",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_7",
+      "direct_provenance": {
+        "direct_callout": "ADU 7: 710.5 S.F.; story corroborated by A1-6 / PDF page 29",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "FIRST",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "710.5",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_4",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_8",
+      "direct_provenance": {
+        "direct_callout": "ADU 8: 690.8 S.F.; story corroborated by A1-7 / PDF page 30",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "SECOND",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "690.8",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_5_649",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_9",
+      "direct_provenance": {
+        "direct_callout": "ADU 9: 383.6 S.F.; story corroborated by A1-9 / PDF page 32",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "LOWER",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "383.6",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_5_649",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_10",
+      "direct_provenance": {
+        "direct_callout": "ADU 10: 724.5 S.F.; story corroborated by A1-10 / PDF page 33",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "FIRST",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "724.5",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_5_649",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_11",
+      "direct_provenance": {
+        "direct_callout": "ADU 11: 704.8 S.F.; story corroborated by A1-11 / PDF page 34",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "SECOND",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "704.8",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_5_651",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_12",
+      "direct_provenance": {
+        "direct_callout": "ADU 12: 383.6 S.F.; story corroborated by A1-9 / PDF page 32",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "LOWER",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "383.6",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_5_651",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_13",
+      "direct_provenance": {
+        "direct_callout": "ADU 13: 710.5 S.F.; story corroborated by A1-10 / PDF page 33",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "FIRST",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "710.5",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_5_651",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_14",
+      "direct_provenance": {
+        "direct_callout": "ADU 14: 690.8 S.F.; story corroborated by A1-11 / PDF page 34",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "SECOND",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "690.8",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_6_653",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_15",
+      "direct_provenance": {
+        "direct_callout": "ADU 15: 383.6 S.F.; story corroborated by A1-13 / PDF page 36",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "LOWER",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "383.6",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_6_653",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_16",
+      "direct_provenance": {
+        "direct_callout": "ADU 16: 710.5 S.F.; story corroborated by A1-14 / PDF page 37",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "FIRST",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "710.5",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_6_653",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_17",
+      "direct_provenance": {
+        "direct_callout": "ADU 17: 690.8 S.F.; story corroborated by A1-15 / PDF page 38",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "SECOND",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "690.8",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_6_655",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_18",
+      "direct_provenance": {
+        "direct_callout": "ADU 18: 383.6 S.F.; story corroborated by A1-13 / PDF page 36",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "LOWER",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "383.6",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_6_655",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_19",
+      "direct_provenance": {
+        "direct_callout": "ADU 19: 710.5 S.F.; story corroborated by A1-14 / PDF page 37",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "FIRST",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "710.5",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_6_655",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_20",
+      "direct_provenance": {
+        "direct_callout": "ADU 20: 690.8 S.F.; story corroborated by A1-15 / PDF page 38",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "SECOND",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "690.8",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_7_657",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_21",
+      "direct_provenance": {
+        "direct_callout": "ADU 21: 383.6 S.F.; story corroborated by A1-17 / PDF page 40",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "LOWER",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "383.6",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_7_657",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_22",
+      "direct_provenance": {
+        "direct_callout": "ADU 22: 710.5 S.F.; story corroborated by A1-18 / PDF page 41",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "FIRST",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "710.5",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_7_657",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_23",
+      "direct_provenance": {
+        "direct_callout": "ADU 23: 690.8 S.F.; story corroborated by A1-19 / PDF page 42",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "SECOND",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "690.8",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_7_659",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_24",
+      "direct_provenance": {
+        "direct_callout": "ADU 24: 383.6 S.F.; story corroborated by A1-17 / PDF page 40",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "LOWER",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "383.6",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_7_659",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_25",
+      "direct_provenance": {
+        "direct_callout": "ADU 25: 710.5 S.F.; story corroborated by A1-18 / PDF page 41",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "FIRST",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "710.5",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_7_659",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "ADU_26",
+      "direct_provenance": {
+        "direct_callout": "ADU 26: 690.8 S.F.; story corroborated by A1-19 / PDF page 42",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "SECOND",
+      "historical_113_0234_treatment": "\u00a7113.0234(a): actual floor within exterior walls",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "690.8",
+      "uncertainty": null,
+      "use_category": "HABITABLE_DWELLING_UNIT"
+    },
+    {
+      "building_id": "BUILDING_1",
+      "code_inclusion_state": "CONDITIONAL_GFA",
+      "component_id": "GARAGE_1",
+      "direct_provenance": {
+        "direct_callout": "BUILDING_1: GARAGE 514.0 S.F.",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "TUCK_UNDER_OR_GARAGE_LEVEL",
+      "historical_113_0234_treatment": "Application-time \u00a7113.0234(a) parking inclusion and (d)(3) parking-structure exclusion predicates",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "514.0",
+      "uncertainty": "Plan includes every garage; Code exclusion eligibility requires parking-design predicates not sealed by the bounded ledger.",
+      "use_category": "GARAGE_PARKING"
+    },
+    {
+      "building_id": "BUILDING_2",
+      "code_inclusion_state": "CONDITIONAL_GFA",
+      "component_id": "GARAGE_2",
+      "direct_provenance": {
+        "direct_callout": "BUILDING_2: GARAGE 514.0 S.F.",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "TUCK_UNDER_OR_GARAGE_LEVEL",
+      "historical_113_0234_treatment": "Application-time \u00a7113.0234(a) parking inclusion and (d)(3) parking-structure exclusion predicates",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "514.0",
+      "uncertainty": "Plan includes every garage; Code exclusion eligibility requires parking-design predicates not sealed by the bounded ledger.",
+      "use_category": "GARAGE_PARKING"
+    },
+    {
+      "building_id": "BUILDING_3",
+      "code_inclusion_state": "CONDITIONAL_GFA",
+      "component_id": "GARAGE_3",
+      "direct_provenance": {
+        "direct_callout": "BUILDING_3: GARAGE 514.0 S.F.",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "TUCK_UNDER_OR_GARAGE_LEVEL",
+      "historical_113_0234_treatment": "Application-time \u00a7113.0234(a) parking inclusion and (d)(3) parking-structure exclusion predicates",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "514.0",
+      "uncertainty": "Plan includes every garage; Code exclusion eligibility requires parking-design predicates not sealed by the bounded ledger.",
+      "use_category": "GARAGE_PARKING"
+    },
+    {
+      "building_id": "BUILDING_4",
+      "code_inclusion_state": "CONDITIONAL_GFA",
+      "component_id": "GARAGE_4",
+      "direct_provenance": {
+        "direct_callout": "BUILDING_4: GARAGE 514.0 S.F.",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "TUCK_UNDER_OR_GARAGE_LEVEL",
+      "historical_113_0234_treatment": "Application-time \u00a7113.0234(a) parking inclusion and (d)(3) parking-structure exclusion predicates",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "514.0",
+      "uncertainty": "Plan includes every garage; Code exclusion eligibility requires parking-design predicates not sealed by the bounded ledger.",
+      "use_category": "GARAGE_PARKING"
+    },
+    {
+      "building_id": "BUILDING_5_649",
+      "code_inclusion_state": "CONDITIONAL_GFA",
+      "component_id": "GARAGE_5",
+      "direct_provenance": {
+        "direct_callout": "BUILDING_5_649: GARAGE 514.0 S.F.",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "TUCK_UNDER_OR_GARAGE_LEVEL",
+      "historical_113_0234_treatment": "Application-time \u00a7113.0234(a) parking inclusion and (d)(3) parking-structure exclusion predicates",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "514.0",
+      "uncertainty": "Plan includes every garage; Code exclusion eligibility requires parking-design predicates not sealed by the bounded ledger.",
+      "use_category": "GARAGE_PARKING"
+    },
+    {
+      "building_id": "BUILDING_5_651",
+      "code_inclusion_state": "CONDITIONAL_GFA",
+      "component_id": "GARAGE_6",
+      "direct_provenance": {
+        "direct_callout": "BUILDING_5_651: GARAGE 514.0 S.F.",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "TUCK_UNDER_OR_GARAGE_LEVEL",
+      "historical_113_0234_treatment": "Application-time \u00a7113.0234(a) parking inclusion and (d)(3) parking-structure exclusion predicates",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "514.0",
+      "uncertainty": "Plan includes every garage; Code exclusion eligibility requires parking-design predicates not sealed by the bounded ledger.",
+      "use_category": "GARAGE_PARKING"
+    },
+    {
+      "building_id": "BUILDING_6_653",
+      "code_inclusion_state": "CONDITIONAL_GFA",
+      "component_id": "GARAGE_7",
+      "direct_provenance": {
+        "direct_callout": "BUILDING_6_653: GARAGE 514.0 S.F.",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "TUCK_UNDER_OR_GARAGE_LEVEL",
+      "historical_113_0234_treatment": "Application-time \u00a7113.0234(a) parking inclusion and (d)(3) parking-structure exclusion predicates",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "514.0",
+      "uncertainty": "Plan includes every garage; Code exclusion eligibility requires parking-design predicates not sealed by the bounded ledger.",
+      "use_category": "GARAGE_PARKING"
+    },
+    {
+      "building_id": "BUILDING_6_655",
+      "code_inclusion_state": "CONDITIONAL_GFA",
+      "component_id": "GARAGE_8",
+      "direct_provenance": {
+        "direct_callout": "BUILDING_6_655: GARAGE 514.0 S.F.",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "TUCK_UNDER_OR_GARAGE_LEVEL",
+      "historical_113_0234_treatment": "Application-time \u00a7113.0234(a) parking inclusion and (d)(3) parking-structure exclusion predicates",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "514.0",
+      "uncertainty": "Plan includes every garage; Code exclusion eligibility requires parking-design predicates not sealed by the bounded ledger.",
+      "use_category": "GARAGE_PARKING"
+    },
+    {
+      "building_id": "BUILDING_7_657",
+      "code_inclusion_state": "CONDITIONAL_GFA",
+      "component_id": "GARAGE_9",
+      "direct_provenance": {
+        "direct_callout": "BUILDING_7_657: GARAGE 514.0 S.F.",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "TUCK_UNDER_OR_GARAGE_LEVEL",
+      "historical_113_0234_treatment": "Application-time \u00a7113.0234(a) parking inclusion and (d)(3) parking-structure exclusion predicates",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "514.0",
+      "uncertainty": "Plan includes every garage; Code exclusion eligibility requires parking-design predicates not sealed by the bounded ledger.",
+      "use_category": "GARAGE_PARKING"
+    },
+    {
+      "building_id": "BUILDING_7_659",
+      "code_inclusion_state": "CONDITIONAL_GFA",
+      "component_id": "GARAGE_10",
+      "direct_provenance": {
+        "direct_callout": "BUILDING_7_659: GARAGE 514.0 S.F.",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "TUCK_UNDER_OR_GARAGE_LEVEL",
+      "historical_113_0234_treatment": "Application-time \u00a7113.0234(a) parking inclusion and (d)(3) parking-structure exclusion predicates",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "514.0",
+      "uncertainty": "Plan includes every garage; Code exclusion eligibility requires parking-design predicates not sealed by the bounded ledger.",
+      "use_category": "GARAGE_PARKING"
+    },
+    {
+      "building_id": "EXISTING_HOUSE",
+      "code_inclusion_state": "INCLUDED_IN_CODE_GFA",
+      "component_id": "EXISTING_HOUSE",
+      "direct_provenance": {
+        "direct_callout": "EXISTING SINGLE FAMILY HOME: 719.0 S.F.",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": false,
+      "floor_or_story": "EXISTING",
+      "historical_113_0234_treatment": "\u00a7113.0234 total GFA of all buildings on the premises",
+      "included_by_plan": true,
+      "labeled_area_sq_ft": "719.0",
+      "uncertainty": null,
+      "use_category": "HABITABLE_EXISTING_BUILDING"
+    },
+    {
+      "building_id": "BUILDINGS_5_TO_7",
+      "code_inclusion_state": "CONDITIONAL_GFA",
+      "component_id": "DECKS_6",
+      "direct_provenance": {
+        "direct_callout": "DECKS: 6 x 62.0 S.F.; TOTALS DECKS: 327.6 S.F.",
+        "pdf_page": 1,
+        "sheet": "T-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": true,
+      "floor_or_story": "EXTERIOR_DECKS",
+      "historical_113_0234_treatment": "Application-time \u00a7113.0234(b) roofed exterior balcony/opening predicates",
+      "included_by_plan": false,
+      "labeled_area_sq_ft": "327.6",
+      "uncertainty": "Six 62.0-square-foot decks are labeled, but the bounded evidence does not seal roof/open-enclosure predicates.",
+      "use_category": "EXTERIOR_DECK_OR_BALCONY"
+    },
+    {
+      "building_id": "SITE_ACCESSORY",
+      "code_inclusion_state": "UNRESOLVED_GFA",
+      "component_id": "TRASH_ENCLOSURE",
+      "direct_provenance": {
+        "direct_callout": "TRASH 300 S.F.; 96 S.F. refuse, 96 S.F. recycle, 96 S.F. organic",
+        "pdf_page": 15,
+        "sheet": "A0.1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      "excluded_by_plan": true,
+      "floor_or_story": "GROUND",
+      "historical_113_0234_treatment": "Classification depends on structural enclosure and roof facts under \u00a7113.0234",
+      "included_by_plan": false,
+      "labeled_area_sq_ft": "300.0",
+      "uncertainty": "A0.1 labels 300 S.F.; the bounded evidence does not establish whether it is a GFA-counted building element.",
+      "use_category": "TRASH_ENCLOSURE"
+    }
+  ],
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52"
+}

@@ -1,0 +1,14 @@
+{
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "label": {
+    "classification": "PLAN_LABELED_LOT_AREA_NOT_PREMISES_AREA",
+    "pdf_page": 1,
+    "sheet": "T-1",
+    "wording": "LOT AREAS: 20,084.0 S.F. (.46 ACRES)"
+  },
+  "not_proven_as": [
+    "LEGAL_PREMISES_AREA",
+    "NET_OR_GROSS_POST_DEDICATION_AREA",
+    "ASSESSOR_AREA"
+  ]
+}

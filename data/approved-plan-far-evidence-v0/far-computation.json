@@ -1,0 +1,18 @@
+{
+  "code_compatible_numerator_sq_ft": null,
+  "code_far": null,
+  "comparison_authorized": false,
+  "contract_version": "approved-plan-far-evidence-v0-2026-10-02-p52",
+  "corrected_component_input_far_not_code_far": {
+    "exact": "1.106831308504282015534754033061143198566",
+    "one_decimal_half_up": "1.1",
+    "two_decimal_half_up": "1.11"
+  },
+  "legal_premises_area_sq_ft": null,
+  "plan_stated_input_far": {
+    "exact": "1.106333399721171081457876916948814977096",
+    "one_decimal_half_up": "1.1",
+    "two_decimal_half_up": "1.11"
+  },
+  "reason": "Exact Code-compatible numerator and legal premises denominator are not both supported."
+}
