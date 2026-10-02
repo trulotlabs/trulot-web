@@ -1,0 +1,8 @@
+{
+  "capacity": false,
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "private_source_published": false,
+  "rule_profile": "RM Rule Profile V0 Packet 51",
+  "scope": "FINAL_BOUNDED_APPROVED_PLAN_HEIGHT_EVIDENCE_CLOSURE",
+  "whole_project_compliance": false
+}

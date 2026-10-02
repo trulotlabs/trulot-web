@@ -1,0 +1,8 @@
+{
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "existing_doctrine_authorizes_result": false,
+  "legal_branch_invariant": true,
+  "numeric_maximum_ft": "40",
+  "project_height_outcome_invariant": false,
+  "reason": "The legal maximum branch is fixed, but supported plan labels have different/non-Code semantics and unknown Code datum pairing; not all Code-compatible building-height possibilities are bounded."
+}

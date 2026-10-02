@@ -1,0 +1,27 @@
+{
+  "chain": [
+    "full parcel polygon \u2192 CHLOZ/community predicates \u2192 40-ft branch",
+    "bounded sheets \u2192 building/grade/roof evidence \u2192 datum gate",
+    "datum gate + Footnote 18 geometry gate \u2192 unresolved evaluations"
+  ],
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "sources": [
+    {
+      "published": false,
+      "sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12",
+      "source": "Private PRJ-1111087 Fourth CD plan"
+    },
+    {
+      "sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+      "source": "Packet 51 RM height profile"
+    },
+    {
+      "sha256": "cb6a356c9aaa2202c63bd784344844ba274424ce14172dde1749df88a507f28b",
+      "source": "City CHLOZ full-parcel intersection query"
+    },
+    {
+      "sha256": "0778c73cf7f234ef896b337b7197e174a6a0feb1f061f2ba97af94c76b083f9e",
+      "source": "City Community Plan full-parcel intersection query"
+    }
+  ]
+}

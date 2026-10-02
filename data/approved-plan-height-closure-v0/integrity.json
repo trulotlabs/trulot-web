@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "angled-plane-result.json": "68332f35856a34440883270d6510053511447e949f8d410b61d8aeaa35c82216",
+    "base-height-result.json": "e1ff9cf4996a544e23e297277f9eb692f83a6e539ed8acb83f9c556ec6e1759d",
+    "building-height-inventory.json": "db6e4bca90decbc3cebe605e6c3c96be8c2096c4d83511fd1e5e74e9a73bb820",
+    "city-review-corroboration.json": "e6f733b7b5c438118e185592d58ce14463ba8ac4c37ae9769b9c8619b845fcac",
+    "code-datum-reconstruction.json": "7488a33764866959424b0e749025f26ad880e14d7ef9bd23795b0f216e96962c",
+    "contract.json": "e7181baf3c847e8daac95d2927ce24257bdc32c6d17b4ebdfe0c26c9c4aeffab",
+    "decision.json": "c2d2a5545b6eaa47de54420148941de02a5e104d2a719ca1aad385072224cd0b",
+    "feasibility-suite-status.json": "029dbc08aa4f4567d2c53577b3af0454462d38c19a4f09e5014fbb4ec0a09013",
+    "footnote-18-evidence.json": "0fc32046b716e4e134bacac8193dbb345c3f67aeb7706d7b90b261b79d0e804d",
+    "footnote-37-predicates.json": "564139ae50bb6c9b5ec249025481694c36cc3ed27f8cd6016b5a887db73f3d60",
+    "grade-evidence.json": "affac5d087b3aa2f76c5d3dc719c42eaa203ed6092aaef0c5896bb1c0e38b1a1",
+    "height-evidence-inventory.json": "af01859636a0e4de0155eb1cf427a70607fc0bf0df34626b83d0e3a356021125",
+    "height-label-semantics.json": "8ef086aa3da36343d628a52aba58ba48d07a2be0c20bf3c85d361548308a8533",
+    "height-limit-branch.json": "f668b0cc84ecd278879fed61c9f4134e5111fe01edcd874b6f232796a0d7555d",
+    "outcome-invariance.json": "63eb24a40b0c43a2810313154f037251e4d1fa95951643ea1ad5d55e54988517",
+    "per-structure-calculations.json": "ff9c21bcb2ad1e4bfbf5e10f3163e71a5829c4368e707c7fcfb2d7e01f1e3a37",
+    "plan-vs-code-height.json": "842071634743f24d3b2b4a3f1438ced69ce74ca7af4f6eee34232710b1b20a0d",
+    "provenance.json": "1f2091af06db87f526c75bc120b2557085c839af3d891e9a21362be08847d157",
+    "remaining-external-evidence.json": "6a7f286b40be65b0948a329cbc0c8630b6c939ca02daa20b9a82d0bb7211ac33",
+    "reusable-height-evidence-model.json": "057929add1227f37dc49741ef0da86c60d7e2617d3a5a2726969c75e26b258cc",
+    "roof-parapet-classification.json": "b23dd17488de25e4aeec5e289d5465d3bf255582e11a8d4d797d7550787cfbe9"
+  },
+  "bundle_sha256": "e6961c4ae15a2677952a8586bcc2ef6c981a2b27c266f2961f11a9d65984538b",
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53"
+}

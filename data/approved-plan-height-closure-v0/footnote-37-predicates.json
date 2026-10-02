@@ -1,0 +1,26 @@
+{
+  "coastal_overlay_zone_equated_to_coastal_height_limit_overlay": false,
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "parcel_geometry_sha256": "05073c1c7e7c910e4b60ce05df6c80b2fb61dd3da2d0cd99f4d42d20f3c176be",
+  "predicates": [
+    {
+      "authority": "City of San Diego DSD/Zoning_Overlay MapServer/1",
+      "predicate": "IN_COASTAL_HEIGHT_LIMIT_OVERLAY",
+      "query_evidence_sha256": "cb6a356c9aaa2202c63bd784344844ba274424ce14172dde1749df88a507f28b",
+      "query_result": "zero intersecting features",
+      "state": "SUPPORTED_FALSE"
+    },
+    {
+      "authority": "City of San Diego DSD/Planning MapServer/2",
+      "predicate": "IN_PENINSULA_COMMUNITY_PLAN",
+      "query_evidence_sha256": "0778c73cf7f234ef896b337b7197e174a6a0feb1f061f2ba97af94c76b083f9e",
+      "query_result": {
+        "CPCODE": 11,
+        "CPNAME": "ENCANTO NEIGHBORHOODS",
+        "OBJECTID": 56
+      },
+      "state": "SUPPORTED_FALSE"
+    }
+  ],
+  "query_geometry": "FULL_PARCEL_POLYGON_WGS84"
+}

@@ -1,0 +1,7 @@
+{
+  "applicable_maximum_ft": "40",
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "reason": "Controlling Code-compatible per-structure height is unavailable.",
+  "shared_decimal_max_comparator_invoked": false,
+  "state": "HEIGHT_RULE_EVALUATION_UNRESOLVED"
+}

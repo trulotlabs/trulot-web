@@ -1,0 +1,132 @@
+{
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "excluded": "Unrelated structural, MEP, landscape, and interior-detail content was not ingested.",
+  "sheets": [
+    {
+      "facts": [
+        "MAX. BUILDING HEIGHT: 40'-0\"",
+        "seven proposed buildings",
+        "RM-2-5"
+      ],
+      "pdf_page": 1,
+      "role": "project data",
+      "sheet": "T-1"
+    },
+    {
+      "facts": [
+        "existing contours and spot elevations",
+        "existing house finish floor 266.48 ft",
+        "benchmark 234.18 ft",
+        "not a precise boundary survey"
+      ],
+      "pdf_page": 6,
+      "role": "topographic survey",
+      "sheet": "C-1"
+    },
+    {
+      "facts": [
+        "proposed finish-floor and pad elevations",
+        "proposed spot grades and contours",
+        "building footprints"
+      ],
+      "pdf_page": 11,
+      "role": "grading plan",
+      "sheet": "C002"
+    },
+    {
+      "facts": [
+        "building IDs 1-7",
+        "property and setback lines",
+        "motor court",
+        "inter-building layout"
+      ],
+      "pdf_page": 16,
+      "role": "lower-level site plan",
+      "sheet": "A0.2"
+    },
+    {
+      "facts": [
+        "building edges",
+        "property and setback lines",
+        "floor layouts"
+      ],
+      "pdf_page": 17,
+      "role": "second-level site plan",
+      "sheet": "A0.3"
+    },
+    {
+      "facts": [
+        "flat built-up roof geometry",
+        "roof edges"
+      ],
+      "pdf_page": 19,
+      "role": "Buildings 1-4 roof plan",
+      "sheet": "A0.5"
+    },
+    {
+      "facts": [
+        "flat built-up roof geometry",
+        "roof edges"
+      ],
+      "pdf_page": 21,
+      "role": "Buildings 5-7 roof plan",
+      "sheet": "A0.7"
+    },
+    {
+      "facts": [
+        "Class A built-up roofing",
+        "roof drains",
+        "parapet condition"
+      ],
+      "pdf_pages": [
+        27,
+        31,
+        35,
+        39,
+        43
+      ],
+      "role": "building roof plans",
+      "sheet": "A1.4/A1.8/A1.12/A1.16/A1.20"
+    },
+    {
+      "facts": [
+        "Buildings 1 and 5 representative sections",
+        "story stacks",
+        "grade/contour callouts",
+        "roof and parapet"
+      ],
+      "pdf_page": 44,
+      "role": "typical building sections",
+      "sheet": "A2.1"
+    },
+    {
+      "facts": [
+        "top of parapet",
+        "30-inch minimum parapets",
+        "roof framing and finish-floor callouts"
+      ],
+      "pdf_page": 45,
+      "role": "wall/roof sections",
+      "sheet": "A2.2"
+    },
+    {
+      "facts": [
+        "building-specific/grouped facades",
+        "story dimensions",
+        "grade lines and spot elevations on selected views",
+        "roof/top-of-parapet callouts"
+      ],
+      "pdf_pages": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "role": "exterior elevations",
+      "sheet": "A3-0 through A3-4"
+    }
+  ],
+  "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+}

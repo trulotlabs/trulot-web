@@ -1,0 +1,80 @@
+{
+  "by_building": {
+    "BUILDING_1": {
+      "existing_grade": "PARTIAL_SITE_SURVEY",
+      "lowest_grade_within_5ft_or_property_line": "UNRESOLVED",
+      "perimeter_lower_of_existing_proposed": "UNRESOLVED",
+      "proposed_ff_pad": "DIRECT_ON_C002"
+    },
+    "BUILDING_2": {
+      "existing_grade": "PARTIAL_SITE_SURVEY",
+      "lowest_grade_within_5ft_or_property_line": "UNRESOLVED",
+      "perimeter_lower_of_existing_proposed": "UNRESOLVED",
+      "proposed_ff_pad": "DIRECT_ON_C002"
+    },
+    "BUILDING_3": {
+      "existing_grade": "PARTIAL_SITE_SURVEY",
+      "lowest_grade_within_5ft_or_property_line": "UNRESOLVED",
+      "perimeter_lower_of_existing_proposed": "UNRESOLVED",
+      "proposed_ff_pad": "DIRECT_ON_C002"
+    },
+    "BUILDING_4": {
+      "existing_grade": "PARTIAL_SITE_SURVEY",
+      "lowest_grade_within_5ft_or_property_line": "UNRESOLVED",
+      "perimeter_lower_of_existing_proposed": "UNRESOLVED",
+      "proposed_ff_pad": "DIRECT_ON_C002"
+    },
+    "BUILDING_5": {
+      "existing_grade": "PARTIAL_SITE_SURVEY",
+      "lowest_grade_within_5ft_or_property_line": "UNRESOLVED",
+      "perimeter_lower_of_existing_proposed": "UNRESOLVED",
+      "proposed_ff_pad": "DIRECT_ON_C002"
+    },
+    "BUILDING_6": {
+      "existing_grade": "PARTIAL_SITE_SURVEY",
+      "lowest_grade_within_5ft_or_property_line": "UNRESOLVED",
+      "perimeter_lower_of_existing_proposed": "UNRESOLVED",
+      "proposed_ff_pad": "DIRECT_ON_C002"
+    },
+    "BUILDING_7": {
+      "existing_grade": "PARTIAL_SITE_SURVEY",
+      "lowest_grade_within_5ft_or_property_line": "UNRESOLVED",
+      "perimeter_lower_of_existing_proposed": "UNRESOLVED",
+      "proposed_ff_pad": "DIRECT_ON_C002"
+    }
+  },
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "limitation": "The sheets do not provide a sealed point-by-point correspondence between every roof/parapet top point and the lower of existing or proposed grade directly below, nor a complete labeled lowest-grade search within five feet around each combined structure.",
+  "supported": [
+    {
+      "fact": "existing site contours and spot elevations",
+      "source": {
+        "evidence": "topographic survey",
+        "pdf_page": 6,
+        "sheet": "C-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      }
+    },
+    {
+      "fact": "proposed finish-floor, pad, contour, and spot-grade elevations",
+      "source": {
+        "evidence": "grading plan",
+        "pdf_page": 11,
+        "sheet": "C002",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      }
+    },
+    {
+      "fact": "selected elevation views depict solid and dashed grade/contour lines",
+      "source": {
+        "evidence": "sections and east/west elevations",
+        "pdf_page": 44,
+        "sheet": "A2.1/A3-1/A3-2a",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      }
+    }
+  ]
+}

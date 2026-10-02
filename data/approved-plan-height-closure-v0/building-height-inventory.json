@@ -1,0 +1,257 @@
+{
+  "buildings": [
+    {
+      "building_id": "BUILDING_1",
+      "direct_height_decimal_ft": [
+        "30.04166666666666666666666667"
+      ],
+      "direct_height_label": "30'-0 1/2\" architectural elevation dimension on representative west elevation",
+      "grade_elevation": "partial proposed finish-floor/pad and spot-grade evidence; no complete Code datum pairing",
+      "parking_or_garage_level": true,
+      "provenance": [
+        {
+          "evidence": "building layout and separations",
+          "pdf_page": 16,
+          "sheet": "A0.2/A0.3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "representative section",
+          "pdf_page": 44,
+          "sheet": "A2.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "elevation set",
+          "pdf_page": 48,
+          "sheet": "A3-0 through A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roof_form": "flat Class A built-up roof with parapet",
+      "separation_at_least_six_ft": false,
+      "separation_basis": "A0.2/A0.3 directly dimension narrow stair/gap conditions below six feet between adjacent building modules; no building is treated as independently measurable under the six-foot predicate from this evidence.",
+      "stories": 2,
+      "top_elevation": null
+    },
+    {
+      "building_id": "BUILDING_2",
+      "direct_height_decimal_ft": null,
+      "direct_height_label": "No unique Code-height label",
+      "grade_elevation": "partial proposed finish-floor/pad and spot-grade evidence; no complete Code datum pairing",
+      "parking_or_garage_level": true,
+      "provenance": [
+        {
+          "evidence": "building layout and separations",
+          "pdf_page": 16,
+          "sheet": "A0.2/A0.3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "representative section",
+          "pdf_page": 44,
+          "sheet": "A2.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "elevation set",
+          "pdf_page": 48,
+          "sheet": "A3-0 through A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roof_form": "flat Class A built-up roof with parapet",
+      "separation_at_least_six_ft": false,
+      "separation_basis": "A0.2/A0.3 directly dimension narrow stair/gap conditions below six feet between adjacent building modules; no building is treated as independently measurable under the six-foot predicate from this evidence.",
+      "stories": 2,
+      "top_elevation": null
+    },
+    {
+      "building_id": "BUILDING_3",
+      "direct_height_decimal_ft": null,
+      "direct_height_label": "No unique Code-height label",
+      "grade_elevation": "partial proposed finish-floor/pad and spot-grade evidence; no complete Code datum pairing",
+      "parking_or_garage_level": true,
+      "provenance": [
+        {
+          "evidence": "building layout and separations",
+          "pdf_page": 16,
+          "sheet": "A0.2/A0.3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "representative section",
+          "pdf_page": 44,
+          "sheet": "A2.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "elevation set",
+          "pdf_page": 48,
+          "sheet": "A3-0 through A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roof_form": "flat Class A built-up roof with parapet",
+      "separation_at_least_six_ft": false,
+      "separation_basis": "A0.2/A0.3 directly dimension narrow stair/gap conditions below six feet between adjacent building modules; no building is treated as independently measurable under the six-foot predicate from this evidence.",
+      "stories": 2,
+      "top_elevation": null
+    },
+    {
+      "building_id": "BUILDING_4",
+      "direct_height_decimal_ft": null,
+      "direct_height_label": "No unique Code-height label",
+      "grade_elevation": "partial proposed finish-floor/pad and spot-grade evidence; no complete Code datum pairing",
+      "parking_or_garage_level": true,
+      "provenance": [
+        {
+          "evidence": "building layout and separations",
+          "pdf_page": 16,
+          "sheet": "A0.2/A0.3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "representative section",
+          "pdf_page": 44,
+          "sheet": "A2.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "elevation set",
+          "pdf_page": 48,
+          "sheet": "A3-0 through A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roof_form": "flat Class A built-up roof with parapet",
+      "separation_at_least_six_ft": false,
+      "separation_basis": "A0.2/A0.3 directly dimension narrow stair/gap conditions below six feet between adjacent building modules; no building is treated as independently measurable under the six-foot predicate from this evidence.",
+      "stories": 2,
+      "top_elevation": null
+    },
+    {
+      "building_id": "BUILDING_5",
+      "direct_height_decimal_ft": [
+        "33.04166666666666666666666667",
+        "37.27083333333333333333333333"
+      ],
+      "direct_height_label": "33'-0 1/2\" and 37'-3 1/4\" architectural elevation dimensions on representative west elevation",
+      "grade_elevation": "partial proposed finish-floor/pad and spot-grade evidence; no complete Code datum pairing",
+      "parking_or_garage_level": true,
+      "provenance": [
+        {
+          "evidence": "building layout and separations",
+          "pdf_page": 16,
+          "sheet": "A0.2/A0.3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "representative section",
+          "pdf_page": 44,
+          "sheet": "A2.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "elevation set",
+          "pdf_page": 48,
+          "sheet": "A3-0 through A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roof_form": "flat Class A built-up roof with parapet",
+      "separation_at_least_six_ft": false,
+      "separation_basis": "A0.2/A0.3 directly dimension narrow stair/gap conditions below six feet between adjacent building modules; no building is treated as independently measurable under the six-foot predicate from this evidence.",
+      "stories": 3,
+      "top_elevation": null
+    },
+    {
+      "building_id": "BUILDING_6",
+      "direct_height_decimal_ft": null,
+      "direct_height_label": "No unique Code-height label",
+      "grade_elevation": "partial proposed finish-floor/pad and spot-grade evidence; no complete Code datum pairing",
+      "parking_or_garage_level": true,
+      "provenance": [
+        {
+          "evidence": "building layout and separations",
+          "pdf_page": 16,
+          "sheet": "A0.2/A0.3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "representative section",
+          "pdf_page": 44,
+          "sheet": "A2.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "elevation set",
+          "pdf_page": 48,
+          "sheet": "A3-0 through A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roof_form": "flat Class A built-up roof with parapet",
+      "separation_at_least_six_ft": false,
+      "separation_basis": "A0.2/A0.3 directly dimension narrow stair/gap conditions below six feet between adjacent building modules; no building is treated as independently measurable under the six-foot predicate from this evidence.",
+      "stories": 3,
+      "top_elevation": null
+    },
+    {
+      "building_id": "BUILDING_7",
+      "direct_height_decimal_ft": null,
+      "direct_height_label": "No unique Code-height label",
+      "grade_elevation": "partial proposed finish-floor/pad and spot-grade evidence; no complete Code datum pairing",
+      "parking_or_garage_level": true,
+      "provenance": [
+        {
+          "evidence": "building layout and separations",
+          "pdf_page": 16,
+          "sheet": "A0.2/A0.3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "representative section",
+          "pdf_page": 44,
+          "sheet": "A2.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "elevation set",
+          "pdf_page": 48,
+          "sheet": "A3-0 through A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roof_form": "flat Class A built-up roof with parapet",
+      "separation_at_least_six_ft": false,
+      "separation_basis": "A0.2/A0.3 directly dimension narrow stair/gap conditions below six feet between adjacent building modules; no building is treated as independently measurable under the six-foot predicate from this evidence.",
+      "stories": 3,
+      "top_elevation": null
+    }
+  ],
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "project_maximum_label": "40'-0\"",
+  "project_maximum_scope": "PROJECT_DATA_MAXIMUM_ONLY"
+}

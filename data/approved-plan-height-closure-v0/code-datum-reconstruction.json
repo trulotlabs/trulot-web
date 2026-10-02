@@ -1,0 +1,14 @@
+{
+  "code_compatible_reconstruction": false,
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "highest_structure_point": "PARTIAL_PARAPET_GEOMETRY_NO_ABSOLUTE_TOP_ELEVATION",
+  "overall_lowest_applicable_grade": "UNRESOLVED",
+  "per_structure_rule": "ADJACENT_MODULES_SHOWN_LESS_THAN_SIX_FEET_APART; COMBINED-TREATMENT GEOMETRY NOT SEALED",
+  "plumb_line_lower_existing_or_proposed_grade": "UNRESOLVED",
+  "unresolved_predicates": [
+    "pointwise lower-of-existing/proposed grade",
+    "complete five-foot/perimeter low-point search",
+    "absolute highest parapet/top elevations",
+    "combined-structure treatment for sub-six-foot separations"
+  ]
+}

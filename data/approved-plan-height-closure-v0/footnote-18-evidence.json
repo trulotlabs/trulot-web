@@ -1,0 +1,17 @@
+{
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "inference_prohibited": "A 40-foot project maximum or a four-foot setback does not prove angled-plane compliance.",
+  "missing": [
+    "dimensioned 60-degree plane section normal to each side setback line",
+    "Code-datum height at each potentially controlling roof/parapet point",
+    "coordinated horizontal offset from each side setback line to each controlling point",
+    "complete combined-structure geometry under the less-than-six-foot separation rule"
+  ],
+  "state": "HEIGHT_ANGLED_PLANE_UNRESOLVED",
+  "supported": [
+    "side property and setback lines shown on A0.2/A0.3",
+    "building/roof edges shown on site and roof plans",
+    "flat roofs and parapets shown",
+    "some architectural vertical dimensions exceed 30 feet"
+  ]
+}

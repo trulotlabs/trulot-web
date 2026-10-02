@@ -1,0 +1,10 @@
+{
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "far": "EXTERNAL_EVIDENCE_BLOCKED_CLOSED_LOOP",
+  "height": "EXTERNAL_EVIDENCE_BLOCKED_CLOSED_LOOP",
+  "next": "NEXT_FEASIBILITY_STEP: lot coverage golden evaluation",
+  "reusable_rm_profile": "AVAILABLE_PACKET_51",
+  "setbacks": "GOLDEN_EVALUATION_AVAILABLE",
+  "wall_permit_trigger": "GOLDEN_EVALUATION_AVAILABLE",
+  "whole_project_feasibility": "NOT_EVALUATED"
+}

@@ -1,0 +1,62 @@
+{
+  "buildings": [
+    {
+      "building_id": "BUILDING_1",
+      "code_exclusion": "NONE_PROVEN",
+      "equipment": "no controlling rooftop equipment elevation established",
+      "highest_point": "parapet/top geometry depicted but absolute elevation not stated",
+      "parapet": "present; 30 inches minimum by A2.2",
+      "roof_type": "flat Class A built-up"
+    },
+    {
+      "building_id": "BUILDING_2",
+      "code_exclusion": "NONE_PROVEN",
+      "equipment": "no controlling rooftop equipment elevation established",
+      "highest_point": "parapet/top geometry depicted but absolute elevation not stated",
+      "parapet": "present; 30 inches minimum by A2.2",
+      "roof_type": "flat Class A built-up"
+    },
+    {
+      "building_id": "BUILDING_3",
+      "code_exclusion": "NONE_PROVEN",
+      "equipment": "no controlling rooftop equipment elevation established",
+      "highest_point": "parapet/top geometry depicted but absolute elevation not stated",
+      "parapet": "present; 30 inches minimum by A2.2",
+      "roof_type": "flat Class A built-up"
+    },
+    {
+      "building_id": "BUILDING_4",
+      "code_exclusion": "NONE_PROVEN",
+      "equipment": "no controlling rooftop equipment elevation established",
+      "highest_point": "parapet/top geometry depicted but absolute elevation not stated",
+      "parapet": "present; 30 inches minimum by A2.2",
+      "roof_type": "flat Class A built-up"
+    },
+    {
+      "building_id": "BUILDING_5",
+      "code_exclusion": "NONE_PROVEN",
+      "equipment": "no controlling rooftop equipment elevation established",
+      "highest_point": "parapet/top geometry depicted but absolute elevation not stated",
+      "parapet": "present; 30 inches minimum by A2.2",
+      "roof_type": "flat Class A built-up"
+    },
+    {
+      "building_id": "BUILDING_6",
+      "code_exclusion": "NONE_PROVEN",
+      "equipment": "no controlling rooftop equipment elevation established",
+      "highest_point": "parapet/top geometry depicted but absolute elevation not stated",
+      "parapet": "present; 30 inches minimum by A2.2",
+      "roof_type": "flat Class A built-up"
+    },
+    {
+      "building_id": "BUILDING_7",
+      "code_exclusion": "NONE_PROVEN",
+      "equipment": "no controlling rooftop equipment elevation established",
+      "highest_point": "parapet/top geometry depicted but absolute elevation not stated",
+      "parapet": "present; 30 inches minimum by A2.2",
+      "roof_type": "flat Class A built-up"
+    }
+  ],
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "result": "Roof form and parapet presence are supported; Code highest-point elevations and any exception/exclusion remain unsealed."
+}

@@ -1,0 +1,43 @@
+{
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "labels": [
+    {
+      "classification": "NONCOMPARABLE_HEIGHT_LABEL",
+      "label": "40'-0\"",
+      "reason": "Project-data maximum does not identify a controlling building, grade datum, measured top point, or Code measurement method.",
+      "sheet": "T-1"
+    },
+    {
+      "building": "BUILDING_1",
+      "classification": "PARTIALLY_COMPARABLE_HEIGHT_LABEL",
+      "label": "30'-0 1/2\"",
+      "reason": "Direct architectural elevation dimension reaches the roof/parapet diagram, but its lower endpoint is not proven to be the lower of existing/proposed grade directly below every top point or the Code overall low point.",
+      "sheet": "A3-1"
+    },
+    {
+      "building": "BUILDING_5",
+      "classification": "PARTIALLY_COMPARABLE_HEIGHT_LABEL",
+      "label": "33'-0 1/2\" / 37'-3 1/4\"",
+      "reason": "Direct architectural dimensions use depicted floor/site datums, but the plan does not label either as a complete \u00a7113.0270 plumb-line or overall-height calculation.",
+      "sheet": "A3-1"
+    },
+    {
+      "classification": "NONCOMPARABLE_HEIGHT_LABEL",
+      "label": "8'-0\", 9'-0\", 10'-0\" story-stack dimensions",
+      "reason": "Floor-to-floor and level dimensions are not Code structure heights.",
+      "sheets": [
+        "A2.1",
+        "A3-0",
+        "A3-2",
+        "A3-3",
+        "A3-4"
+      ]
+    },
+    {
+      "classification": "NONCOMPARABLE_HEIGHT_LABEL",
+      "label": "30-inch minimum parapets",
+      "reason": "A parapet detail dimension does not establish height from the Code datum.",
+      "sheet": "A2.2"
+    }
+  ]
+}

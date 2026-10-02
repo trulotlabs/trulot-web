@@ -1,0 +1,53 @@
+{
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "entities": {
+    "angled_plane": [
+      "setback_line",
+      "origin_elevation",
+      "angle_degrees",
+      "horizontal_run",
+      "controlling_point"
+    ],
+    "building_height_inventory": [
+      "building_id",
+      "stories",
+      "direct_height_label",
+      "roof_form",
+      "top_elevation",
+      "grade_elevation",
+      "separation_at_least_six_ft"
+    ],
+    "code_height": [
+      "plumb_line_inputs",
+      "overall_inputs",
+      "Decimal_result",
+      "provenance"
+    ],
+    "grade_datum": [
+      "existing_grade",
+      "proposed_grade",
+      "lower_grade_directly_below",
+      "lowest_applicable_grade",
+      "scope"
+    ],
+    "highest_point": [
+      "point_id",
+      "absolute_elevation",
+      "appurtenance",
+      "exclusion"
+    ],
+    "overlay_branch": [
+      "overlay_predicate",
+      "community_predicate",
+      "maximum_ft"
+    ],
+    "roof_parapet": [
+      "roof_type",
+      "parapet",
+      "equipment",
+      "exception_predicates"
+    ]
+  },
+  "project_constants": [],
+  "project_independent": true
+}

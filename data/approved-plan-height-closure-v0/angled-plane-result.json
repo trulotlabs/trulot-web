@@ -1,0 +1,5 @@
+{
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "reason": "The plan does not coordinate the side-setback origin, horizontal run, and Code-datum controlling roof/parapet point in a dimensioned 60-degree analysis.",
+  "state": "HEIGHT_ANGLED_PLANE_UNRESOLVED"
+}

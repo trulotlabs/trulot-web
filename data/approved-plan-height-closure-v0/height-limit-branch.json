@@ -1,0 +1,8 @@
+{
+  "branch": "RM_2_5_BASE_HEIGHT",
+  "contract_version": "approved-plan-height-closure-v0-2026-10-02-p53",
+  "footnote_37_applies": false,
+  "numeric_maximum_ft": "40",
+  "reason": "Both Footnote 37 trigger predicates are supported false; either false predicate defeats the combined trigger.",
+  "state": "SUPPORTED"
+}
