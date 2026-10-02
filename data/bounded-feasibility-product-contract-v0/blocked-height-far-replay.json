@@ -1,0 +1,88 @@
+{
+  "actions": [
+    "SEE_EVIDENCE_NEEDED"
+  ],
+  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "evidence_state": {
+    "far": "BLOCKED",
+    "height": "BLOCKED"
+  },
+  "overall_state": "MORE_EVIDENCE_NEEDED",
+  "privacy": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX",
+  "project_id": "PRJ-1111087",
+  "provenance": [
+    {
+      "artifact": "data/rm-rule-profile-v0/packet-50-replay.json",
+      "privacy": "PRIVATE_AUTHORIZED_EVIDENCE"
+    }
+  ],
+  "rule_results": [
+    {
+      "actions": [
+        "REVIEW_SOURCE"
+      ],
+      "answer": "Project-height compliance needs a Code-compatible grade and top-elevation analysis.",
+      "blocker_codes": [
+        "CODE_HEIGHT_ANALYSIS"
+      ],
+      "card_id": "P50_HEIGHT",
+      "evidence": [
+        {
+          "artifact": "data/rm-rule-profile-v0/packet-50-replay.json",
+          "privacy": "PRIVATE_AUTHORIZED_EVIDENCE"
+        }
+      ],
+      "fact": "40 ft plan label not accepted as Code measurement",
+      "legal_version_context": "EXPANDABLE_EVIDENCE_UNLESS_MATERIAL",
+      "privacy": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX",
+      "requirement": "40 ft base profile plus angled-plane rules",
+      "result_state": "NEEDS_EVIDENCE",
+      "rule_family": "STRUCTURE_HEIGHT",
+      "rule_name": "project height",
+      "scope": "PROJECT_COMPARISON",
+      "unresolved_condition": null,
+      "why": "The plan label does not seal grade datum, highest point, roof treatment, or angled-plane geometry."
+    },
+    {
+      "actions": [
+        "REVIEW_SOURCE"
+      ],
+      "answer": "Project FAR needs a reconciled gross-floor-area worksheet and legal premises area.",
+      "blocker_codes": [
+        "CODE_GFA_AND_PREMISES_AREA"
+      ],
+      "card_id": "P50_FAR",
+      "evidence": [
+        {
+          "artifact": "data/rm-rule-profile-v0/packet-50-replay.json",
+          "privacy": "PRIVATE_AUTHORIZED_EVIDENCE"
+        }
+      ],
+      "fact": "Plan-labeled FAR 1.10 not accepted as Code computation",
+      "legal_version_context": "EXPANDABLE_EVIDENCE_UNLESS_MATERIAL",
+      "privacy": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX",
+      "requirement": "1.35 selected RM-2-5 maximum",
+      "result_state": "NEEDS_EVIDENCE",
+      "rule_family": "FAR",
+      "rule_name": "project FAR",
+      "scope": "PROJECT_COMPARISON",
+      "unresolved_condition": null,
+      "why": "The numerator and denominator were not sealed under the applicable Code definitions."
+    }
+  ],
+  "scope": "PRIVATE_PROJECT",
+  "summary": {
+    "conditional": [],
+    "needs_evidence": [
+      "project height",
+      "project FAR"
+    ],
+    "not_evaluated": [
+      "whole-project compliance"
+    ],
+    "verified": [
+      "base RM-2-5 height and FAR profiles"
+    ]
+  },
+  "whole_project_compliance": false
+}

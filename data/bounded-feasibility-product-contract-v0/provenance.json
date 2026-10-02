@@ -1,0 +1,15 @@
+{
+  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "inputs": [
+    "data/parcel-feasibility-summary-v0/summary.json",
+    "data/development-feasibility-v0/contract.json",
+    "data/rs-rule-profile-v0/decision.json",
+    "data/rm-rule-profile-v0/decision.json",
+    "data/current-structure-compliance-geometry-v0/decision.json",
+    "data/approved-plan-setback-benchmark-v0/benchmark-result.json",
+    "data/approved-plan-height-far-benchmark-v0/height-result.json",
+    "data/approved-plan-height-far-benchmark-v0/far-result.json"
+  ],
+  "production_access": false,
+  "public_private_separation_preserved": true
+}

@@ -1,0 +1,61 @@
+{
+  "ambiguous_likely_state_allowed": false,
+  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "internal_mapping": {
+    "FAR_RULE_EVALUATION_UNRESOLVED": "NEEDS_EVIDENCE",
+    "HEIGHT_RULE_EVALUATION_UNRESOLVED": "NEEDS_EVIDENCE",
+    "NOT_APPLICABLE": "NOT_APPLICABLE",
+    "PLAN_RULE_REQUIREMENT_SATISFIED": "MEETS_BASE_RULE",
+    "RULE_BLOCKED_BY_MISSING_EVIDENCE": "NEEDS_EVIDENCE",
+    "RULE_NOT_EVALUATED": "NOT_EVALUATED",
+    "RULE_OUTSIDE_V0_SCOPE": "OUTSIDE_CURRENT_SCOPE",
+    "RULE_REQUIREMENT_CONDITIONAL": "CONDITIONAL",
+    "RULE_REQUIREMENT_NOT_SATISFIED": "DOES_NOT_MEET_BASE_RULE",
+    "RULE_REQUIREMENT_SATISFIED": "MEETS_BASE_RULE",
+    "RULE_SOURCE_UNAVAILABLE": "SOURCE_UNAVAILABLE",
+    "SETBACK_REQUIREMENT_CONDITIONAL": "CONDITIONAL",
+    "STREET_SIDE_SETBACK_NOT_APPLICABLE": "NOT_APPLICABLE"
+  },
+  "product_states": [
+    {
+      "label": "Conditional",
+      "meaning": "The rule depends on an identified unresolved predicate or branch.",
+      "state": "CONDITIONAL"
+    },
+    {
+      "label": "Does Not Meet Base Rule",
+      "meaning": "A supported deterministic comparison does not satisfy the selected base rule.",
+      "state": "DOES_NOT_MEET_BASE_RULE"
+    },
+    {
+      "label": "Meets Base Rule",
+      "meaning": "A supported deterministic comparison satisfies the selected base rule.",
+      "state": "MEETS_BASE_RULE"
+    },
+    {
+      "label": "Needs Evidence",
+      "meaning": "Required parcel or project evidence is missing.",
+      "state": "NEEDS_EVIDENCE"
+    },
+    {
+      "label": "Not Applicable",
+      "meaning": "The rule is proven not to apply to this parcel or selected subject.",
+      "state": "NOT_APPLICABLE"
+    },
+    {
+      "label": "Not Evaluated",
+      "meaning": "TruLot has not evaluated the rule or program.",
+      "state": "NOT_EVALUATED"
+    },
+    {
+      "label": "Outside Current Scope",
+      "meaning": "The rule or project type is not supported by V0.",
+      "state": "OUTSIDE_CURRENT_SCOPE"
+    },
+    {
+      "label": "Source Unavailable",
+      "meaning": "The authoritative source cannot currently be evaluated.",
+      "state": "SOURCE_UNAVAILABLE"
+    }
+  ]
+}

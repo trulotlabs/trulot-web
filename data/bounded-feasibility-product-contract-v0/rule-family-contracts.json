@@ -1,0 +1,33 @@
+{
+  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "far": {
+    "diagnostic_ranges_legal": false,
+    "rm": "Show the selected base maximum and unit-band context; project FAR separately needs Code-compatible GFA and legal premises area.",
+    "rs": "Show the applicable Table 131-04J lot-area branch and separately disclose the steep-hillside formula when unresolved."
+  },
+  "height": {
+    "blocked_copy": "Project-height compliance needs a Code-compatible grade and top-elevation analysis.",
+    "rm": "Show the selected base maximum and angled-envelope/overlay qualifiers; project comparison separately needs Code-compatible height evidence.",
+    "rs": "Show 24 ft at applicable setback lines and 30 ft overall with the lot-width-selected angled plane; never flatten 24/30."
+  },
+  "legal_lot_area": {
+    "assessor_area": "Recorded administrative fact; not automatically Code area.",
+    "code_regulatory_area": "Code-defined area used for the named regulation.",
+    "gis_area": "Approximate diagnostic parcel geometry only.",
+    "recorded_legal_lot": "Recorded instrument-supported identity.",
+    "unresolved_effect": "Block every rule whose denominator or boundary depends on legal-lot identity."
+  },
+  "lot_coverage": {
+    "not_specified_copy": "No numeric base-zone lot-coverage standard identified.",
+    "prohibited_synonyms": [
+      "Unlimited",
+      "No restriction"
+    ],
+    "rs_conditional_copy": "A 50% maximum applies when more than half the premises contains steep hillsides; that condition must be evaluated."
+  },
+  "setbacks": {
+    "existing_or_project_compliance": "Requires compatible geometry for the named existing structure or proposal.",
+    "requirement_conditional": "Show the base value and named unresolved branches.",
+    "requirement_known": "Show the selected base value."
+  }
+}

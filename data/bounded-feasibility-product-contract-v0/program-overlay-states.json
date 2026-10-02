@@ -1,0 +1,62 @@
+{
+  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "doctrine": "Mapped geography is context, not proof of program eligibility or a project-specific conditional result.",
+  "programs": [
+    {
+      "eligibility_copy": "TruLot has not evaluated Coastal eligibility yet.",
+      "mapped_copy": "Coastal context is mapped; eligibility has not been evaluated.",
+      "pending_copy": "Coastal context needs verification.",
+      "program": "COASTAL",
+      "unavailable_copy": "Coastal source is unavailable."
+    },
+    {
+      "eligibility_copy": "TruLot has not evaluated SDA eligibility yet.",
+      "mapped_copy": "SDA context is mapped; eligibility has not been evaluated.",
+      "pending_copy": "SDA context needs verification.",
+      "program": "SDA",
+      "unavailable_copy": "SDA source is unavailable."
+    },
+    {
+      "eligibility_copy": "TruLot has not evaluated TPA eligibility yet.",
+      "mapped_copy": "TPA context is mapped; eligibility has not been evaluated.",
+      "pending_copy": "TPA context needs verification.",
+      "program": "TPA",
+      "unavailable_copy": "TPA source is unavailable."
+    },
+    {
+      "eligibility_copy": "TruLot has not evaluated Fire hazard eligibility yet.",
+      "mapped_copy": "Fire hazard context is mapped; eligibility has not been evaluated.",
+      "pending_copy": "Fire hazard context needs verification.",
+      "program": "FIRE",
+      "unavailable_copy": "Fire hazard source is unavailable."
+    },
+    {
+      "eligibility_copy": "TruLot has not evaluated ADU eligibility yet.",
+      "mapped_copy": "ADU context is mapped; eligibility has not been evaluated.",
+      "pending_copy": "ADU context needs verification.",
+      "program": "ADU",
+      "unavailable_copy": "ADU source is unavailable."
+    },
+    {
+      "eligibility_copy": "TruLot has not evaluated SB 9 eligibility yet.",
+      "mapped_copy": "SB 9 context is mapped; eligibility has not been evaluated.",
+      "pending_copy": "SB 9 context needs verification.",
+      "program": "SB9",
+      "unavailable_copy": "SB 9 source is unavailable."
+    },
+    {
+      "eligibility_copy": "TruLot has not evaluated Complete Communities eligibility yet.",
+      "mapped_copy": "Complete Communities context is mapped; eligibility has not been evaluated.",
+      "pending_copy": "Complete Communities context needs verification.",
+      "program": "COMPLETE_COMMUNITIES",
+      "unavailable_copy": "Complete Communities source is unavailable."
+    },
+    {
+      "eligibility_copy": "TruLot has not evaluated This program eligibility yet.",
+      "mapped_copy": "This program context is mapped; eligibility has not been evaluated.",
+      "pending_copy": "This program context needs verification.",
+      "program": "OTHER_MODIFIER",
+      "unavailable_copy": "This program source is unavailable."
+    }
+  ]
+}

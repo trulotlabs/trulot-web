@@ -1,0 +1,72 @@
+{
+  "blockers": [
+    {
+      "action": "SEE_EVIDENCE_NEEDED",
+      "code": "LEGAL_LOT_IDENTITY",
+      "copy": "TruLot needs recorded evidence establishing the legal lot or premises.",
+      "state": "NEEDS_EVIDENCE"
+    },
+    {
+      "action": "SEE_EVIDENCE_NEEDED",
+      "code": "CODE_LOT_AREA",
+      "copy": "TruLot needs a Code-defined regulatory lot or premises area.",
+      "state": "NEEDS_EVIDENCE"
+    },
+    {
+      "action": "SEE_EVIDENCE_NEEDED",
+      "code": "LEGAL_BOUNDARY_GEOMETRY",
+      "copy": "TruLot needs authoritative legal boundary geometry and property-line roles.",
+      "state": "NEEDS_EVIDENCE"
+    },
+    {
+      "action": "SEE_EVIDENCE_NEEDED",
+      "code": "CURRENT_SURVEY_STRUCTURE_GEOMETRY",
+      "copy": "TruLot needs a current survey tying the building frame to property lines.",
+      "state": "NEEDS_EVIDENCE"
+    },
+    {
+      "action": "SEE_EVIDENCE_NEEDED",
+      "code": "CODE_HEIGHT_ANALYSIS",
+      "copy": "TruLot needs a Code-compatible grade and top-elevation analysis.",
+      "state": "NEEDS_EVIDENCE"
+    },
+    {
+      "action": "SEE_EVIDENCE_NEEDED",
+      "code": "CODE_GFA_AND_PREMISES_AREA",
+      "copy": "TruLot needs a reconciled gross-floor-area worksheet and legal premises area.",
+      "state": "NEEDS_EVIDENCE"
+    },
+    {
+      "action": "SEE_EVIDENCE_NEEDED",
+      "code": "PARCEL_SLOPE_EVIDENCE",
+      "copy": "TruLot needs reviewable parcel-specific slope evidence.",
+      "state": "NEEDS_EVIDENCE"
+    },
+    {
+      "action": "SEE_EVIDENCE_NEEDED",
+      "code": "FIRE_OFFICIAL_DETERMINATION",
+      "copy": "TruLot needs any project-specific Fire Official setback determination.",
+      "state": "NEEDS_EVIDENCE"
+    },
+    {
+      "action": "SEE_EVIDENCE_NEEDED",
+      "code": "PROGRAM_ELIGIBILITY_EVIDENCE",
+      "copy": "TruLot has not established the program’s eligibility predicates.",
+      "state": "NEEDS_EVIDENCE"
+    },
+    {
+      "action": "SEE_EVIDENCE_NEEDED",
+      "code": "AUTHORITATIVE_SOURCE",
+      "copy": "The authoritative source needed for this rule is currently unavailable.",
+      "state": "NEEDS_EVIDENCE"
+    },
+    {
+      "action": "SEE_EVIDENCE_NEEDED",
+      "code": "MAPPING_RESOLUTION",
+      "copy": "The parcel’s zoning or overlay mapping must be resolved first.",
+      "state": "NEEDS_EVIDENCE"
+    }
+  ],
+  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "copy_is_allowlisted": true
+}

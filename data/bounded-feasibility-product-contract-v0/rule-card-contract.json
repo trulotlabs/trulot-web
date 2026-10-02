@@ -1,0 +1,28 @@
+{
+  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "fields": [
+    "card_id",
+    "rule_name",
+    "rule_family",
+    "scope",
+    "requirement",
+    "fact",
+    "result_state",
+    "answer",
+    "why",
+    "evidence",
+    "blocker_codes",
+    "unresolved_condition",
+    "legal_version_context",
+    "privacy",
+    "actions"
+  ],
+  "internal_adapter_names_exposed": false,
+  "layers": {
+    "COMPARISON": "A bounded deterministic relationship between compatible rule and fact.",
+    "EXISTING_STRUCTURE_COMPLIANCE": "Requires current survey-controlled structure geometry and remains separate from parcel-rule evaluation.",
+    "PARCEL_FACT": "The independently supported parcel measurement or classification.",
+    "PARCEL_RULE": "The authoritative requirement.",
+    "PROJECT_COMPARISON": "A named proposed-plan fact compared with the selected rule; not approval or whole-project compliance."
+  }
+}

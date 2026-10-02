@@ -1,0 +1,18 @@
+{
+  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "hard_invariant": "No private fact may enter public parcel generation, indexing, metadata, cache keys, or public provenance.",
+  "scopes": {
+    "EXISTING_STRUCTURE": {
+      "allowed": "Current survey-controlled structure evidence when separately authorized and supported.",
+      "privacy": "MATCH_INPUT_EVIDENCE_AND_NEVER_PROMOTE_PRIVATE_FACTS"
+    },
+    "PRIVATE_PROJECT": {
+      "allowed": "Operator-authorized plans and bounded named-project comparisons.",
+      "privacy": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX"
+    },
+    "PUBLIC_PARCEL": {
+      "allowed": "Authoritative public evidence and deterministic public comparisons only.",
+      "privacy": "PUBLIC"
+    }
+  }
+}

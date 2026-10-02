@@ -1,0 +1,21 @@
+{
+  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "denylist": [
+    "This property is buildable",
+    "You can build X units",
+    "This project complies with zoning",
+    "The existing structure is legal",
+    "The property qualifies for ADU bonus",
+    "Height complies",
+    "FAR complies"
+  ],
+  "exception_rule": "A claim may be replaced only by the exact narrower statement supported by a named rule, compatible fact, and completed evidence gate. Whole-project, capacity, legality, and eligibility claims remain outside V0.",
+  "substring_gate": [
+    "buildable",
+    "can build",
+    "complies with zoning",
+    "existing structure is legal",
+    "qualifies for",
+    "development feasible"
+  ]
+}

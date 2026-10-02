@@ -1,0 +1,29 @@
+{
+  "algorithm": "SHA-256 of canonical JSON with final newline",
+  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "files": {
+    "actions.json": "fcc67997a596bea901b673947f3b36d211a22ee17ecc78a8941aa056ce6d6ca2",
+    "blocked-height-far-replay.json": "bc7d6e7078d7598cef3e9a071d7f9ebed7ffc807b49af8ba6bc958c63122ea7c",
+    "decision.json": "53749be1eb1582b72c4f1f2defa8856ebbd4691c2c1180f5417de1bc122f3e63",
+    "evidence-blockers.json": "260caa5d1d7c41cb17c9a88b01a9a5dd2f8dfaec11a57f651ebd8eeb7ecf3333",
+    "examples.json": "29f14902a9bacc0a5e3edae6583f118f17d3ebac666d399d2485d466f7aac36d",
+    "explainability.json": "82cb149fc70b08dfefe5d2628c1589565e35a3b770e3fff8c7c34428a47541e1",
+    "indexing-doctrine.json": "7aa3e8da316492b1d2f8e70c4eca24d06f0cb09c94a3fc3d3a9cf9dea10011b2",
+    "language-doctrine.json": "31360199587d5e17ca9e4ac344d4fb3b52bdd93dfb2dddfd55f7dd73010fdde8",
+    "overall-state.json": "164c7d5f94e5ebd5e6f1c418b676ac7c5549cb36a69ae6acdde62931ce944d23",
+    "private-prj-1111087-replay.json": "56f047ef0d0e7f2d0f46c2ca1fbd74df33a7cea7e322cc2688c3fb0dda4129ea",
+    "program-overlay-states.json": "cfdd2b03619e414ab87652eea01e75616c9cc313489779ef10515bae4b54036c",
+    "prohibited-statements.json": "74beb59772e2320a1f69a4bd222103b01ce2d31b3fddf289662f90e2ee334a44",
+    "provenance.json": "19d45eb04b709ddc30a7fde779bde2e9f2cc5d4e140fb42b0b29320b93cd6186",
+    "public-private-boundary.json": "be4a83625ee7b7882ee240f4af7183c680925fba5cba50b414d5b0a705d6e9bb",
+    "renderer-contract.json": "af30c36c9ac684141a8981908bd59347f015010eca485b85e13b145c140a1c68",
+    "rm-5442140600-public-replay.json": "1661ae7185198baf2f6dd769f997c32e70182dabba3c88c195b426bf3d2ebaf9",
+    "rs-6341302200-replay.json": "a96ebafac703be9613082669e1530024206df040808d4bfd7920bf66c4041ca0",
+    "rule-card-contract.json": "92a6470b8821977ca0eebab91f799c69298ab985963100a82273a462738eb533",
+    "rule-family-contracts.json": "0b197421145bde6ad3738fbe30c04b9679707866632585232ab4565598d9e5c1",
+    "schema.json": "5b0e5fea6c7355bd4f5dec7459784e79f184d5853731d30ffff28fa005c366da",
+    "scope.json": "9c534e9f0edfeb12ce0a9d9b6b39f36dfb95ac2da019bf7eaae138d5c4b37e52",
+    "states.json": "a82742a33297e1601f0d82715f0dd84123612c220ec53fefe73eb5f26b6e557c",
+    "summary-contract.json": "6ecb64b7c0c4f75c7b150866d6682cdb8ca20082b2888a79e99c869488119d52"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "capacity_calculated": false,
+  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "next": "NEXT_FEASIBILITY_STEP: implement bounded feasibility preview",
+  "production_wired": false,
+  "readiness": "BOUNDED_FEASIBILITY_PRODUCT_CONTRACT_READY",
+  "ui_implemented": false,
+  "whole_project_compliance": false
+}

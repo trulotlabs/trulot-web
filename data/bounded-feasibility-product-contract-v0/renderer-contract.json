@@ -1,0 +1,23 @@
+{
+  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "copy_versioned": true,
+  "free_form_conclusion_generation": false,
+  "input_fields": [
+    "state",
+    "allowlisted template values",
+    "blocker code",
+    "source refs"
+  ],
+  "missing_template_value_behavior": "REJECT",
+  "templates": {
+    "CONDITIONAL": "The base {rule_name} requirement is conditional: {condition}.",
+    "DOES_NOT_MEET_BASE_RULE": "Does not meet the {requirement} base {rule_name} rule.",
+    "MEETS_BASE_RULE": "Meets the {requirement} base {rule_name} rule.",
+    "NEEDS_EVIDENCE": "This rule cannot be evaluated yet because {blocker_copy}",
+    "NOT_APPLICABLE": "This rule does not apply to this parcel.",
+    "NOT_EVALUATED": "TruLot has not evaluated {subject} yet.",
+    "OUTSIDE_CURRENT_SCOPE": "This rule is outside the current TruLot scope.",
+    "SOURCE_UNAVAILABLE": "This rule cannot be evaluated because its authoritative source is unavailable."
+  },
+  "unknown_state_behavior": "REJECT"
+}

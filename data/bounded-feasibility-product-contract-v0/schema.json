@@ -1,0 +1,227 @@
+{
+  "$id": "trulot://schemas/bounded-feasibility-product-contract-v0",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": false,
+  "definitions": {
+    "ruleResult": {
+      "additionalProperties": false,
+      "properties": {
+        "actions": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "answer": {
+          "type": "string"
+        },
+        "blocker_codes": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "card_id": {
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/definitions/source"
+          },
+          "type": "array"
+        },
+        "fact": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "legal_version_context": {
+          "type": "string"
+        },
+        "privacy": {
+          "enum": [
+            "PUBLIC",
+            "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX"
+          ]
+        },
+        "requirement": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "result_state": {
+          "enum": [
+            "CONDITIONAL",
+            "DOES_NOT_MEET_BASE_RULE",
+            "MEETS_BASE_RULE",
+            "NEEDS_EVIDENCE",
+            "NOT_APPLICABLE",
+            "NOT_EVALUATED",
+            "OUTSIDE_CURRENT_SCOPE",
+            "SOURCE_UNAVAILABLE"
+          ]
+        },
+        "rule_family": {
+          "type": "string"
+        },
+        "rule_name": {
+          "type": "string"
+        },
+        "scope": {
+          "enum": [
+            "PARCEL_RULE",
+            "PROJECT_COMPARISON",
+            "EXISTING_STRUCTURE_COMPLIANCE",
+            "PROGRAM_OR_OVERLAY"
+          ]
+        },
+        "unresolved_condition": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "why": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "card_id",
+        "rule_name",
+        "rule_family",
+        "scope",
+        "requirement",
+        "fact",
+        "result_state",
+        "answer",
+        "why",
+        "evidence",
+        "blocker_codes",
+        "privacy",
+        "actions"
+      ],
+      "type": "object"
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact": {
+          "type": "string"
+        },
+        "privacy": {
+          "enum": [
+            "PUBLIC_AUTHORITY",
+            "PRIVATE_AUTHORIZED_EVIDENCE"
+          ]
+        }
+      },
+      "required": [
+        "artifact",
+        "privacy"
+      ],
+      "type": "object"
+    }
+  },
+  "deterministic_mapping": "Existing sealed internal states select allowlisted states and templates; uncontrolled generated conclusion text is prohibited.",
+  "properties": {
+    "actions": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "apn": {
+      "pattern": "^[0-9]{10}$",
+      "type": "string"
+    },
+    "application_date": {
+      "format": "date",
+      "type": "string"
+    },
+    "code_profile": {
+      "type": "string"
+    },
+    "contract_version": {
+      "const": "bounded-feasibility-product-contract-v0-2026-10-02-p59"
+    },
+    "evidence_state": {
+      "type": "object"
+    },
+    "overall_state": {
+      "enum": [
+        "BASE_PARCEL_RULES_EVALUATED",
+        "PARTIAL_EVALUATION",
+        "MORE_EVIDENCE_NEEDED",
+        "OUTSIDE_CURRENT_SCOPE",
+        "SOURCE_UNAVAILABLE"
+      ]
+    },
+    "plan_status": {
+      "type": "string"
+    },
+    "privacy": {
+      "enum": [
+        "PUBLIC",
+        "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX"
+      ]
+    },
+    "private_plan_facts_present": {
+      "type": "boolean"
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "provenance": {
+      "items": {
+        "$ref": "#/definitions/source"
+      },
+      "type": "array"
+    },
+    "public_cache": {
+      "type": "boolean"
+    },
+    "public_index": {
+      "type": "boolean"
+    },
+    "rule_results": {
+      "items": {
+        "$ref": "#/definitions/ruleResult"
+      },
+      "type": "array"
+    },
+    "scope": {
+      "enum": [
+        "PUBLIC_PARCEL",
+        "PRIVATE_PROJECT",
+        "EXISTING_STRUCTURE"
+      ]
+    },
+    "summary": {
+      "required": [
+        "verified",
+        "conditional",
+        "needs_evidence",
+        "not_evaluated"
+      ],
+      "type": "object"
+    },
+    "whole_project_compliance": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "contract_version",
+    "scope",
+    "privacy",
+    "overall_state",
+    "summary",
+    "rule_results",
+    "evidence_state",
+    "actions",
+    "provenance"
+  ],
+  "title": "Bounded Feasibility Product Contract V0",
+  "type": "object"
+}
