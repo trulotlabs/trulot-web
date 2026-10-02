@@ -1,0 +1,50 @@
+{
+  "boundary": "Private facts supply proposed values and program annotation only; public evidence supplies parcel identity, overlays, version profile, definitions, and base rules.",
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "private": [
+    {
+      "hop": "AUTHORIZED_PLAN_TO_HEIGHT_FACT",
+      "privacy": "PRIVATE_VALIDATION_EVIDENCE",
+      "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+      "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+    },
+    {
+      "hop": "AUTHORIZED_PLAN_TO_FAR_FACT",
+      "privacy": "PRIVATE_VALIDATION_EVIDENCE",
+      "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+      "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+    }
+  ],
+  "public": [
+    {
+      "artifact_sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+      "hop": "APN_TO_SANGIS_PARCEL",
+      "source": "SanGIS Parcels FeatureServer/0"
+    },
+    {
+      "artifact_sha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+      "hop": "PARCEL_TO_BASE_ZONE",
+      "source": "SanGIS Zoning_Base_SD FeatureServer/0"
+    },
+    {
+      "artifact_sha256": "9b7b744247278000123a56965597917cdc560db4de78c539f4876aa09b267f97",
+      "hop": "PARCEL_TO_COASTAL",
+      "source": "City DSD Zoning Overlay MapServer/2"
+    },
+    {
+      "hop": "PARCEL_TO_SDA",
+      "query_evidence_sha256": "2bacc1003b8262a5c8f34ea18513c2756d17b83b609924ef182975d2bf36f117",
+      "source": "City DSD Planning MapServer/11"
+    },
+    {
+      "hop": "APPLICATION_DATE_TO_VERSION_PROFILE",
+      "source": "O-21618 N.S.",
+      "source_sha256": "a3b3bdbbc9a3d780f099e4404a2c13d82341c73db8abddb23476da988f9ef467"
+    },
+    {
+      "hop": "ZONE_TO_HEIGHT_AND_FAR",
+      "source": "SDMC Table 131-04G and \u00a7\u00a7113.0234, 113.0270, 131.0444, 131.0446",
+      "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "cross_family_inference": false,
+  "far_states": [
+    "FAR_RULE_REQUIREMENT_SATISFIED",
+    "FAR_RULE_REQUIREMENT_NOT_SATISFIED",
+    "FAR_RULE_EVALUATION_UNRESOLVED"
+  ],
+  "forbidden_conclusions": [
+    "AS_BUILT_COMPLIANCE",
+    "FINAL_PERMIT_APPROVAL",
+    "WHOLE_PROJECT_COMPLIANCE",
+    "DEVELOPMENT_CAPACITY",
+    "LEGAL_LOT_STATUS"
+  ],
+  "height_states": [
+    "HEIGHT_RULE_REQUIREMENT_SATISFIED",
+    "HEIGHT_RULE_REQUIREMENT_NOT_SATISFIED",
+    "HEIGHT_RULE_EVALUATION_UNRESOLVED"
+  ],
+  "production": false,
+  "scope": "ONE_PROJECT_TWO_INDEPENDENT_PROPOSED_PLAN_RULE_FAMILIES"
+}

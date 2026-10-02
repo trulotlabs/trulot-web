@@ -1,0 +1,18 @@
+{
+  "architectural_fork_required": false,
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "far": {
+    "decimal_ratio_compatible": true,
+    "invoked": false,
+    "new_comparator_required": false,
+    "operator": "MAX",
+    "reason": "semantic gates fail before comparison"
+  },
+  "height": {
+    "decimal_compatible": true,
+    "invoked": false,
+    "operator": "MAX",
+    "reason": "semantic gates fail before comparison"
+  },
+  "shared_framework": "dimensional-rule-evaluator-v0-2026-10-01-p37"
+}

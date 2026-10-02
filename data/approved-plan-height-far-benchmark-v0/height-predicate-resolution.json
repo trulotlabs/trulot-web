@@ -1,0 +1,20 @@
+{
+  "all_comparison_predicates_resolved": false,
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "family": "HEIGHT",
+  "resolved": {
+    "adu_uses_base_zone_height": true,
+    "base_maximum_40_ft": true,
+    "city_jurisdiction": true,
+    "direct_project_maximum_label": true,
+    "outside_coastal": true,
+    "zone_rm_2_5": true
+  },
+  "unresolved": [
+    "coastal_height_limit_peninsula_predicate_not_in_bounded_profile",
+    "plan_measurement_datum_not_established",
+    "plan_highest_measured_point_not_established",
+    "plan_roof_parapet_treatment_not_established",
+    "plan_per_structure_plumb_and_overall_measurement_not_established"
+  ]
+}

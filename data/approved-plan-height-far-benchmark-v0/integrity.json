@@ -1,0 +1,24 @@
+{
+  "artifacts": {
+    "city-review-corroboration.json": "660499d05d0b066b9474392c4d4e2526b44997c5268d4f981962adf6b7f9c781",
+    "contract.json": "3bfaffe72dc69b27308397e8b7b4d927d3e2f99ca31dfb8714486207fb330872",
+    "decision.json": "219614ba420cc0fdc34ccf574a0d8241611987690f40a6db6086ba9600ea9ad9",
+    "evaluator-compatibility.json": "e4e77177aa377f2fd55fc1bb178e411e3ad11a5fbe611348ba3ecee1b2a918da",
+    "far-comparison.json": "297632791561628deda76c8312984492e7afb59191f5bbaaa1edc32a32390274",
+    "far-predicate-resolution.json": "1a0dbd6353750e32691c9e512aad565702cd057fb8e6c1629042f1eb923f092c",
+    "far-private-plan-fact.json": "c629f5ec108578d3d39d5b26fa5f1d2eb86c62bdb56c0f81c8e6b468ec33a2c6",
+    "far-public-rule-profile.json": "516c13b2b076d132074718c83f22c38e520ce4a62935167ded55c56717e956b5",
+    "far-result.json": "802935683176a2bb5ac34eacf8170cf7625d0d52afc4e25c8c4990c7590e9d81",
+    "far-selected-branch.json": "a37fae5796bdf33f26606fadf33b8393e2a2bdce61507ebf6a8f35f5fb0e78fd",
+    "height-comparison.json": "24ddb759186a497f86132f9181c830f0b301dea08b18e6976ccda7a3e024300a",
+    "height-predicate-resolution.json": "bf89d22f3b8e775f4fc2929e26f53e36b8eb16650a9f81ea5a15206232fa03b2",
+    "height-private-plan-fact.json": "8dcce0177289c3af3cceabc3cb62c0620d5c7a4409c24f18ebc00325654e4598",
+    "height-public-rule-profile.json": "71202f9556f682282db1c1d79794c79bebbc4c19a40bfa37213e480742bdf83c",
+    "height-result.json": "fe86536e6fe1368dc2046c5d98c219e6b1aa0219931935d744b0d58031eaad03",
+    "height-selected-branch.json": "b50cba28a4913f4f0dc1b13b1ba4fba77ab2cf7329276e67730b7d0ba852596b",
+    "provenance.json": "1ebe36a0a81160dd460e8046ef4e31c9ee664e76ba3ec32896893168e18a44da",
+    "public-parcel-profile.json": "b4581bc2e53c9f3ab80ef33a36f9e355dc2293fa2039208937a64c9ab02410d9"
+  },
+  "bundle_sha256": "86004a17a09e1f3508eab22bf17d11932d4bd38796225e5e5ae4625227d34522",
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50"
+}

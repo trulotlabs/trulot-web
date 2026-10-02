@@ -1,0 +1,19 @@
+{
+  "all_comparison_predicates_resolved": false,
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "family": "FAR",
+  "resolved": {
+    "base_maximum_1_35": true,
+    "city_jurisdiction": true,
+    "direct_plan_calculation": true,
+    "eight_or_more_units": true,
+    "outside_coastal": true,
+    "zone_rm_2_5": true
+  },
+  "unresolved": [
+    "plan_numerator_not_reconciled_to_sdmc_113_0234",
+    "plan_denominator_not_proven_total_premises_area",
+    "required_dedication_area_treatment_not_established",
+    "plan_display_not_nearest_hundredth_of_stated_inputs"
+  ]
+}

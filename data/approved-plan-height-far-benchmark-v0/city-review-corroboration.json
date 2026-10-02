@@ -1,0 +1,12 @@
+{
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "far": {
+    "silence_treated_as_approval": false,
+    "state": "NO_RELEVANT_RULE_SPECIFIC_REVIEW_EVIDENCE"
+  },
+  "height": {
+    "silence_treated_as_approval": false,
+    "state": "NO_RELEVANT_RULE_SPECIFIC_REVIEW_EVIDENCE"
+  },
+  "note": "The bounded review evidence used by Packet 42 concerns setback and fire context, not height or FAR acceptance."
+}

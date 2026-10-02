@@ -1,0 +1,14 @@
+{
+  "artifacts_useful": true,
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "far": "FAR_GOLDEN_BENCHMARK_UNRESOLVED: plan numerator and total-premises denominator semantics are not sealed",
+  "height": "HEIGHT_GOLDEN_BENCHMARK_UNRESOLVED: footnote 37 applicability and plan height datum/highest-point/roof semantics are not sealed",
+  "next": "NEXT_FEASIBILITY_STEP: broader RM rule profile",
+  "reason": "The largest confidence gain is to seal reusable RM height/FAR definitions, exceptions, and application-version branches before acquiring more project facts.",
+  "utility": [
+    "maximum-type comparator preconditions validated",
+    "ratio arithmetic independently validated",
+    "fail-closed semantic gates validated",
+    "RM-2-5 8-plus branch reconstructed"
+  ]
+}

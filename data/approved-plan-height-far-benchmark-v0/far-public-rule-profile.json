@@ -1,0 +1,38 @@
+{
+  "adu_treatment": {
+    "general": "ADU gross floor area is included in premises total and underlying-zone FAR applies",
+    "home_density_bonus_override": "NO_SEPARATE_RM_2_5_FAR_MAXIMUM_IDENTIFIED",
+    "one_adu_up_to_800_sq_ft_exception": "retained but branch-invariant only after Code-compatible plan FAR is established",
+    "sda_override": "NO_SEPARATE_RM_2_5_FAR_MAXIMUM_IDENTIFIED"
+  },
+  "base_branch_predicates": {
+    "eight_or_more": true,
+    "historic_resource_status": "UNRESOLVED_RESULT_INVARIANT_BECAUSE_ALL_RM_2_5_UNIT_BANDS_EQUAL_1_35",
+    "project_units": 26
+  },
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "definition": "gross floor area of all buildings on a premises divided by total area of that premises",
+  "family": "FAR",
+  "gfa_section": "SDMC 113.0234",
+  "maximum_ratio": "1.35",
+  "multiple_building_aggregation": true,
+  "operator": "MAX",
+  "rm_specific_modifiers": {
+    "child_care_bonus": "UNRESOLVED_MONOTONE_INCREASE_CANNOT_DEFEAT_SATISFACTION_AT_OR_BELOW_BASE_MAXIMUM",
+    "rm_5_12_height_bonus": "NOT_APPLICABLE_TO_RM_2_5"
+  },
+  "selected_branch": "RM_2_5_EIGHT_OR_MORE_DWELLING_UNITS",
+  "source": "SDMC Table 131-04G, RM-2-5, 8 or more dwelling units",
+  "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+  "version_chain": {
+    "application_date": "2024-01-29",
+    "o_21618_rm_2_5_cells": {
+      "eight_or_more": "1.35",
+      "one_to_two": "1.35",
+      "three_to_seven": "1.35"
+    },
+    "o_21618_source_sha256": "a3b3bdbbc9a3d780f099e4404a2c13d82341c73db8abddb23476da988f9ef467",
+    "selected_ordinance_profile": "O-21618_EFFECTIVE_2023-05-06_OUTSIDE_COASTAL"
+  },
+  "zone": "RM-2-5"
+}

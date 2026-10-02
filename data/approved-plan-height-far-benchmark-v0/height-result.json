@@ -1,0 +1,7 @@
+{
+  "classification": "PROPOSED_PLAN_HEIGHT_VALIDATION",
+  "comparison_state": "HEIGHT_RULE_EVALUATION_UNRESOLVED",
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "decision": "HEIGHT_GOLDEN_BENCHMARK_UNRESOLVED: footnote 37 applicability and plan height datum/highest-point/roof semantics are not sealed",
+  "whole_project_compliance": false
+}

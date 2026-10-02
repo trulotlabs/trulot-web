@@ -1,0 +1,36 @@
+{
+  "adu_treatment": "ADUs, including multiple/bonus ADUs, remain subject to underlying base-zone and overlay maximum structure height",
+  "bonus_height_increase_found": false,
+  "coastal_height_limit_overlay_and_peninsula_predicate": "UNRESOLVED_IN_BOUNDED_PUBLIC_PROFILE",
+  "coastal_state": "OUTSIDE_COASTAL",
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "family": "HEIGHT",
+  "footnote_37": "30 ft only within Coastal Height Limit Overlay Zone in Peninsula Community Plan area",
+  "footnote_37_selected": null,
+  "maximum_ft": "40",
+  "measurement": {
+    "overall": "lowest grade within 5 ft or property line to highest structure point; zone maximum plus lesser of footprint grade differential or 10 ft",
+    "plumb_line": "all top points to lower of existing or proposed grade directly below",
+    "roof_parapet": "ordinary top points included; only expressly qualifying exclusions may be omitted",
+    "section": "SDMC 113.0270(a)",
+    "separate_structures": "measure separately when separated by 6 ft or more",
+    "special_circumstances": [
+      "extreme_topographic_variation",
+      "subterranean_areas",
+      "pool",
+      "coastal_height_limit"
+    ]
+  },
+  "operator": "MAX",
+  "sda_height_increase_found": false,
+  "selected_branch": "RM_2_5_BASE_TABLE_CANDIDATE_FOOTNOTE_37_UNRESOLVED",
+  "source": "SDMC Table 131-04G, RM-2-5, footnotes 18 and 37",
+  "source_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+  "version_chain": {
+    "application_date": "2024-01-29",
+    "current_cell_used_as_corrobative_transcription": true,
+    "o_21618_table_treatment": "MAXIMUM_DENSITY_THROUGH_MAX_LOT_COVERAGE_NO_CHANGE; HEIGHT_CELL_PREEXISTING",
+    "selected_ordinance_profile": "O-21618_EFFECTIVE_2023-05-06_OUTSIDE_COASTAL"
+  },
+  "zone": "RM-2-5"
+}

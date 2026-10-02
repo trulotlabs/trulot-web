@@ -1,0 +1,7 @@
+{
+  "classification": "PROPOSED_PLAN_FAR_VALIDATION",
+  "comparison_state": "FAR_RULE_EVALUATION_UNRESOLVED",
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "decision": "FAR_GOLDEN_BENCHMARK_UNRESOLVED: plan numerator and total-premises denominator semantics are not sealed",
+  "whole_project_compliance": false
+}

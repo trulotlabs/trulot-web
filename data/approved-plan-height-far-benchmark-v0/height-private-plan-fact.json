@@ -1,0 +1,23 @@
+{
+  "apn": "5442140600",
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "controlling_building": null,
+  "fact_id": "p41-adu-height",
+  "highest_point_semantics": null,
+  "measurement_datum": null,
+  "method": "DIRECT_LABELED_PLAN_DIMENSION",
+  "pdf_page": 1,
+  "privacy_classification": "PRIVATE_VALIDATION_EVIDENCE",
+  "project_id": "PRJ-1111087",
+  "project_maximum": true,
+  "roof_parapet_treatment": null,
+  "scale_derived": false,
+  "sheet": "T-1",
+  "sheet_title": "Title Sheet",
+  "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+  "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12",
+  "source_state": "SUBMITTED_PLAN_PROJECT_DATA",
+  "subject": "PROPOSED_PROJECT_FACT",
+  "value_ft": "40.00",
+  "value_label": "40'-0\""
+}

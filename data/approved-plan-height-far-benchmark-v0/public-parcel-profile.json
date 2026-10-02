@@ -1,0 +1,75 @@
+{
+  "application_version": {
+    "later_o_21758_effective": "2024-03-16",
+    "later_profile_not_selected": true,
+    "ordinance": "O-21618 N.S.",
+    "ordinance_sha256": "a3b3bdbbc9a3d780f099e4404a2c13d82341c73db8abddb23476da988f9ef467",
+    "record_opened": "2024-01-29",
+    "selected_profile": "OUTSIDE_COASTAL_O-21618_EFFECTIVE_2023-05-06"
+  },
+  "authority_classification": "PUBLIC_AUTHORITY",
+  "coastal": {
+    "acquisition": "coastal-city-sd-20260930T143055Z",
+    "intersection_sq_ft": "0",
+    "source_artifact_sha256": "9b7b744247278000123a56965597917cdc560db4de78c539f4876aa09b267f97",
+    "state": "OUTSIDE_COASTAL"
+  },
+  "contract_version": "approved-plan-height-far-benchmark-v0-2026-10-02-p50",
+  "parcel_identity": {
+    "apn": "5442140600",
+    "artifact_sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+    "jurisdiction": "CITY_OF_SAN_DIEGO",
+    "legal_description": "BLOCK 7 LOT 4",
+    "map_reference": "1063",
+    "parcel_acquisition": "sangis-20260924T183743Z",
+    "parcel_id": 53299,
+    "situs": "639 N 67TH ST, SAN DIEGO, CA 92114-2910",
+    "source_currency": "2026-08-29",
+    "source_object_id": 7815,
+    "subdivision": "ENCANTO HEIGHTS"
+  },
+  "private_plan_used_to_select_public_truth": false,
+  "project_program": {
+    "classification": "ADU_HOME_DENSITY_BONUS_PROGRAM",
+    "classification_basis": "PRIVATE_PLAN_ANNOTATION_ONLY",
+    "deed_restriction_recorded_proven": false,
+    "inside_sda_public_predicate": true,
+    "program_eligibility_proven": false
+  },
+  "sda": {
+    "feature_name": "Sustainable Development Area",
+    "feature_objectid": 1548,
+    "intersection_share": "0.999999999981",
+    "query_evidence_sha256": "2bacc1003b8262a5c8f34ea18513c2756d17b83b609924ef182975d2bf36f117",
+    "source": "City DSD Planning MapServer layer 11",
+    "state": "INSIDE_SDA"
+  },
+  "zoning": {
+    "acquired_at": "2026-09-30T02:40:39.064005Z",
+    "acquisition": "zoning-city-sd-20260930T024032Z",
+    "artifact_sha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+    "authoritative_zone": "RM-2-5",
+    "detailed_mapping_state": "BOUNDARY_SLIVER",
+    "mapping_state": "SINGLE_ZONE",
+    "plan_reported_zone": "RM-2-5",
+    "principal_feature": {
+      "implementation_date": "2016-01-14",
+      "intersection_sq_ft": "20343.024965",
+      "objectid": 1888,
+      "ordinance": "O-20580 N.S.",
+      "share": "0.999995123815",
+      "zone": "RM-2-5"
+    },
+    "private_plan_overrode_public_zone": false,
+    "retained_secondary": {
+      "classification": "BOUNDARY_SLIVER",
+      "intersection_sq_ft": "0.099197",
+      "objectid": 1866,
+      "share": "0.000004876186",
+      "zone": "RS-1-6"
+    },
+    "selected_zone": "RM-2-5",
+    "source_modified_at": "2026-08-10T22:44:01.705Z",
+    "state": "MATCH"
+  }
+}
