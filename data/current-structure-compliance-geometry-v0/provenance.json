@@ -1,0 +1,19 @@
+{
+  "contract_version": "current-structure-compliance-geometry-v0-2026-10-02-p56",
+  "inputs": [
+    {
+      "path": "data/current-structure-geometry-v0/evaluation.json",
+      "sha256": "2318fd93b408c34ad47f47ae0cab1fa001224d9f8d9565fd4421f7578dba714d"
+    },
+    {
+      "path": "data/survey-controlled-building-geometry-prep-v0/evaluation.json",
+      "sha256": "6becaa8f3e5b5bd8ee37932cd408c6bc57a7947fb27293c8b50dc85bff5c4145"
+    },
+    {
+      "path": "data/legal-lot-evidence-v0/fixture-results.json",
+      "sha256": "db13a386ac0f7b3e8fe8bcaf237fcc4b4b1c6fb5eca46fb41fb53b11fbf60135"
+    }
+  ],
+  "new_external_research": false,
+  "private_plan_published": false
+}

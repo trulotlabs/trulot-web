@@ -1,0 +1,13 @@
+{
+  "boundary_control": "BOUNDARY_CONTROL_PARTIAL",
+  "capacity_calculated": false,
+  "contract_version": "current-structure-compliance-geometry-v0-2026-10-02-p56",
+  "currentness": "CURRENTNESS_PARTIAL",
+  "evaluator": "CURRENT_STRUCTURE_SETBACK_EVALUATOR_COMPATIBLE",
+  "existing_compliance_concluded": false,
+  "geometry": "COMPLIANCE_GEOMETRY_NOT_READY: no current survey-controlled building-frame tie to the recorded property lines",
+  "golden_benchmark": "CURRENT_STRUCTURE_GOLDEN_BENCHMARK_BLOCKED: no current survey-controlled building-frame tie and unresolved post-2023 currentness",
+  "next": "NEXT_FEASIBILITY_STEP: acquire current survey-controlled geometry",
+  "production_wired": false,
+  "structure_control": "STRUCTURE_CONTROL_PARTIAL"
+}

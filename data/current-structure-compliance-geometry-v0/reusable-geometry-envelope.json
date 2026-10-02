@@ -1,0 +1,66 @@
+{
+  "coordinate_reference_system": {
+    "horizontal_crs": null,
+    "units": null,
+    "vertical_datum": null
+  },
+  "currentness_evidence": {
+    "as_of": null,
+    "basis": [],
+    "state": "CURRENTNESS_UNRESOLVED"
+  },
+  "direct_dimension": {
+    "from": null,
+    "method": null,
+    "to": null,
+    "unit": null,
+    "value": null
+  },
+  "geometry_subject": {
+    "geometry_level": null,
+    "structure_class": null,
+    "structure_id": null
+  },
+  "later_change_reconciliation": {
+    "records_reviewed": [],
+    "through_date": null,
+    "unresolved_change": true
+  },
+  "legal_boundary_source": {
+    "boundary_definition": null,
+    "record_id": null,
+    "status": null
+  },
+  "parcel_identity": {
+    "jurisdiction": null,
+    "parcel_key": null,
+    "recorded_entity": null
+  },
+  "privacy_class": "PUBLIC_AUTHORITY",
+  "property_line_role": {
+    "line_id": null,
+    "role": null,
+    "role_basis": null
+  },
+  "provenance": {
+    "basis": null,
+    "publisher_or_author": null,
+    "retrieved_at": null,
+    "source_id": null,
+    "source_sha256": null
+  },
+  "schema": "CurrentStructureComplianceGeometryEnvelopeV0",
+  "source_date": null,
+  "structure_edge_type": {
+    "applicable_rule": null,
+    "semantic_equivalence_proven": false,
+    "type": null
+  },
+  "subject_status": "UNKNOWN",
+  "survey_control": {
+    "controlled": false,
+    "precision": null,
+    "professional_record": null,
+    "registration_method": null
+  }
+}

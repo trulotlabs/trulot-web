@@ -1,0 +1,53 @@
+{
+  "contract_version": "current-structure-compliance-geometry-v0-2026-10-02-p56",
+  "edges": [
+    {
+      "compliance_role": "Code reference edge for SDMC 113.0252(c) new-development setback measurement",
+      "may_substitute_for_building_frame": true,
+      "type": "BUILDING_FRAME"
+    },
+    {
+      "compliance_role": "Distinct wall surface",
+      "exception": "Only when the source expressly proves coincidence/equivalence to the applicable building-frame edge.",
+      "may_substitute_for_building_frame": false,
+      "type": "WALL_FACE"
+    },
+    {
+      "compliance_role": "Distinct foundation limit",
+      "exception": "Only when the source expressly proves coincidence/equivalence to the applicable building-frame edge.",
+      "may_substitute_for_building_frame": false,
+      "type": "FOUNDATION_EDGE"
+    },
+    {
+      "compliance_role": "Projection/roof geometry subject to separate treatment",
+      "may_substitute_for_building_frame": false,
+      "type": "ROOF_OR_EAVE"
+    },
+    {
+      "compliance_role": "Element-specific projection or encroachment",
+      "may_substitute_for_building_frame": false,
+      "type": "PROJECTION"
+    },
+    {
+      "compliance_role": "Separately classified occupied projection/structure",
+      "may_substitute_for_building_frame": false,
+      "type": "BALCONY_OR_DECK"
+    },
+    {
+      "compliance_role": "Separate structure class and potentially separate standard",
+      "may_substitute_for_building_frame": false,
+      "type": "ACCESSORY_STRUCTURE"
+    },
+    {
+      "compliance_role": "Wall/fence/grading feature with separate rules",
+      "may_substitute_for_building_frame": false,
+      "type": "RETAINING_WALL"
+    },
+    {
+      "compliance_role": "Surface/site improvement rather than building edge",
+      "may_substitute_for_building_frame": false,
+      "type": "HARDSCAPE"
+    }
+  ],
+  "generic_building_footprint_accepted": false
+}

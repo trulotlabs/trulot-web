@@ -1,0 +1,43 @@
+{
+  "contract_version": "current-structure-compliance-geometry-v0-2026-10-02-p56",
+  "mappings": [
+    {
+      "DerivationClass": "recorded",
+      "FactState": "supported",
+      "SourceState": "available",
+      "output": "direct survey dimension"
+    },
+    {
+      "DerivationClass": "deterministic_derived",
+      "FactState": "supported",
+      "SourceState": "available",
+      "output": "coordinate-derived distance from survey-controlled geometry"
+    },
+    {
+      "DerivationClass": "recorded",
+      "FactState": "partial",
+      "SourceState": "available",
+      "output": "approved/project-plan geometry without as-built corroboration"
+    },
+    {
+      "DerivationClass": "inferred",
+      "FactState": "partial",
+      "SourceState": "partial",
+      "output": "imagery-only estimate",
+      "use": "diagnostic_only"
+    },
+    {
+      "DerivationClass": "conditional",
+      "FactState": "unknown",
+      "SourceState": "partial",
+      "output": "unresolved currentness"
+    },
+    {
+      "DerivationClass": "conditional",
+      "FactState": "unavailable",
+      "SourceState": "source_unavailable",
+      "output": "missing controlling geometry"
+    }
+  ],
+  "numeric_confidence_score": false
+}

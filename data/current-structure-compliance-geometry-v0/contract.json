@@ -1,0 +1,28 @@
+{
+  "contract_version": "current-structure-compliance-geometry-v0-2026-10-02-p56",
+  "disallowed_substitutes": [
+    "imagery estimate",
+    "GIS roof outline",
+    "generic building footprint",
+    "assessor living area",
+    "proposed plan without construction/as-built corroboration",
+    "permit silence"
+  ],
+  "distance_methods": [
+    "DIRECT_LABELED_SURVEY_DIMENSION",
+    "DETERMINISTIC_DISTANCE_FROM_SURVEY_CONTROLLED_GEOMETRY"
+  ],
+  "fail_closed": true,
+  "ready_state": "COMPLIANCE_GEOMETRY_READY",
+  "required_gates": [
+    "legal_property_boundary_established",
+    "property_line_roles_established",
+    "current_existing_structure_identified",
+    "code_relevant_structure_edge_identified",
+    "direct_or_survey_controlled_distance",
+    "plan_or_survey_status_known",
+    "currentness_date_known",
+    "no_unresolved_later_footprint_change",
+    "geometry_semantics_compatible"
+  ]
+}

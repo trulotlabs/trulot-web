@@ -1,0 +1,54 @@
+{
+  "contract_version": "current-structure-compliance-geometry-v0-2026-10-02-p56",
+  "levels": [
+    {
+      "examples": [
+        "aerial imagery",
+        "GIS building outline",
+        "visible roof form"
+      ],
+      "level": "OBSERVATIONAL_STRUCTURE_GEOMETRY",
+      "limit": "Observation does not prove boundary registration, building-frame semantics, survey precision, or current/as-built status.",
+      "supports_existing_compliance": false
+    },
+    {
+      "examples": [
+        "proposed or approved site plan",
+        "architectural site sheet",
+        "grading/civil plan"
+      ],
+      "level": "PROJECT_PLAN_STRUCTURE_GEOMETRY",
+      "limit": "A design or approval is a project fact until construction/as-built corroboration proves the existing condition.",
+      "supports_existing_compliance": false
+    },
+    {
+      "level": "SURVEY_CONTROLLED_STRUCTURE_GEOMETRY",
+      "limit": "Survey control alone does not prove that the measured subject remains current.",
+      "requires": [
+        "legal boundary control",
+        "structure location tied to boundary",
+        "direct dimensions or controlled coordinates",
+        "known plan/survey status"
+      ],
+      "supports_existing_compliance": false
+    },
+    {
+      "level": "CURRENT_AS_BUILT_STRUCTURE_GEOMETRY",
+      "limit": "Readiness is rule- and edge-specific; it is not overall legality or zoning compliance.",
+      "requires": [
+        "existing/as-built subject",
+        "survey or equivalent control",
+        "Code-relevant edge",
+        "currentness date",
+        "no unresolved later footprint-changing work"
+      ],
+      "supports_existing_compliance": true
+    }
+  ],
+  "ordered_levels": [
+    "OBSERVATIONAL_STRUCTURE_GEOMETRY",
+    "PROJECT_PLAN_STRUCTURE_GEOMETRY",
+    "SURVEY_CONTROLLED_STRUCTURE_GEOMETRY",
+    "CURRENT_AS_BUILT_STRUCTURE_GEOMETRY"
+  ]
+}

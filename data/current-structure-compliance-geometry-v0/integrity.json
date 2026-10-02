@@ -1,0 +1,14 @@
+{
+  "artifacts": {
+    "contract.json": "410d9622660808c07b6025c2d93ff3d93ace1f004f94b9d80270ae562bcc49aa",
+    "decision.json": "a93f633cc2f831f21fc18829e80fc849c4dd9e272316528bb111a451a33266ba",
+    "geometry-hierarchy.json": "e1f01e0f0aa0a2edc18b221de0b5c2af5fada52ff7dcd89777969aea0616dda1",
+    "provenance.json": "7d70b62e8d10849fb845c0a1e3e0f38010de7806f4985707e1ec67d3957743bf",
+    "reusable-geometry-envelope.json": "22429f6d63589bdb2a1e58869a52d9f17cbf06bf7bdde1eaed79b32190dbfdee",
+    "structure-edge-semantics.json": "2145564bab627728d4fa0359cc44ba10246ed8ab52b23a7f61622893d0f54f61",
+    "subject-evaluation.json": "6374937b08b19a2076b4285e2c83517d1a1082aad07c6f01c7ffdc92f64869fe",
+    "truth-state-integration.json": "7fcf5573849b4899fb246129799207f14326e35bd5271e291df656e335093637"
+  },
+  "bundle_sha256": "8d50d857f8501840b852dceec6a40841c28743e4350018fef821428375da9b06",
+  "contract_version": "current-structure-compliance-geometry-v0-2026-10-02-p56"
+}
