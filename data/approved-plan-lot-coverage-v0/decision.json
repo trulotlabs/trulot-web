@@ -1,0 +1,7 @@
+{
+  "benchmark": "LOT_COVERAGE_GOLDEN_BENCHMARK_NOT_APPLICABLE: no RM-2-5 lot-coverage standard",
+  "comparison": "LOT_COVERAGE_RULE_NOT_APPLICABLE_AS_NUMERIC_BASE_STANDARD",
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "next": "NEXT_FEASIBILITY_STEP: third approved-plan benchmark",
+  "rule_existence": "LOT_COVERAGE_RULE_NOT_SPECIFIED"
+}

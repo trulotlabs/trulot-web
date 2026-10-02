@@ -1,0 +1,17 @@
+{
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "external_evidence_needs": [
+    "architect- or City-certified Section 113.0240 footprint worksheet if a future program requires coverage",
+    "survey-controlled or recorded regulatory lot area",
+    "trash roof/wall/support classification",
+    "complete exterior stair/landing classification"
+  ],
+  "far": "EXTERNAL_EVIDENCE_BLOCKED_CLOSED_LOOP",
+  "height": "EXTERNAL_EVIDENCE_BLOCKED_CLOSED_LOOP",
+  "lot_coverage": "NOT_APPLICABLE_NO_RM_2_5_BASE_STANDARD; PROJECT_FACT_NUMERICALLY_UNRESOLVED",
+  "next": "NEXT_FEASIBILITY_STEP: third approved-plan benchmark",
+  "rm_rule_profile_v0": "AVAILABLE_PACKET_51",
+  "setbacks": "GOLDEN_EVALUATION_AVAILABLE",
+  "wall_trigger": "GOLDEN_EVALUATION_AVAILABLE",
+  "whole_project_feasibility": "NOT_EVALUATED"
+}

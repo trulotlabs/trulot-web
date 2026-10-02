@@ -1,0 +1,7 @@
+{
+  "comparison": null,
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "maximum": null,
+  "reason": "The historical RM-2-5 maximum-lot-coverage cell is a dash and the sealed profile has comparator NOT_SPECIFIED.",
+  "state": "LOT_COVERAGE_RULE_NOT_APPLICABLE_AS_NUMERIC_BASE_STANDARD"
+}

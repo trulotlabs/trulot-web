@@ -1,0 +1,12 @@
+{
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "searched": [
+    "lot coverage",
+    "building coverage",
+    "footprint",
+    "coverage percentage"
+  ],
+  "silence_treated_as_approval": false,
+  "source_scope": "Existing bounded Packet 42/50 city-review evidence",
+  "state": "NO_RELEVANT_EVIDENCE"
+}

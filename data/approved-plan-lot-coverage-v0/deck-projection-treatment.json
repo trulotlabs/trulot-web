@@ -1,0 +1,19 @@
+{
+  "balconies": "No additional separately quantified balcony footprint is promoted.",
+  "canopies": "No project-wide canopy area or complete treatment is established.",
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "decks": {
+    "count": 6,
+    "coverage_state": "EXCLUDED_OPEN_UNROOFED_PROJECTION",
+    "open": true,
+    "roofed": false
+  },
+  "eaves_and_overhangs": "Architectural roof projections are excluded; no area is added.",
+  "schedule_conflict": {
+    "coverage_effect": "NONE_FOR_DECK_PLANES_BECAUSE_EXCLUDED",
+    "difference_sq_ft": "44.4",
+    "six_times_each_sq_ft": "372.0",
+    "stated_total_sq_ft": "327.6"
+  },
+  "stairs": "Exterior stairs/landings remain unresolved because direct aggregate footprint and every open-projection predicate are absent."
+}

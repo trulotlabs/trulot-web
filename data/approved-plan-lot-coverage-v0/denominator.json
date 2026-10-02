@@ -1,0 +1,10 @@
+{
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "exact_sq_ft": null,
+  "identity": "Lot 4, Block 7, Encanto Heights, Map 1063",
+  "non_precise_c1_traverse_candidate_sq_ft": "20084.272422",
+  "packet_52a_state": "LEGAL_PREMISES_AREA_PARTIAL",
+  "plan_label_candidate_sq_ft": "20084.0",
+  "reason": "Packet 52A established identity but no exact recorded or survey-controlled area; this packet does not reopen that research loop.",
+  "required_semantic": "REGULATORY_LOT_AREA"
+}

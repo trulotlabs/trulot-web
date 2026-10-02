@@ -1,0 +1,15 @@
+{
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "defensible_range_sq_ft": null,
+  "exact_sq_ft": null,
+  "known_missing_or_unresolved": [
+    "retained existing house exterior-wall/support footprint",
+    "exterior stair/landing treatment and aggregate area",
+    "trash-enclosure roof/wall/support treatment",
+    "confirmation that A0.1 labels reconcile every Section 113.0240 inclusion/exclusion"
+  ],
+  "proposed_building_plan_view_label_subtotal_sq_ft": "16954.4",
+  "reason_no_range": "Unresolved components are not bounded on both sides by direct footprint areas, so a closed minimum/maximum Code-compatible range would be fabricated.",
+  "state": "CODE_COMPATIBLE_COVERED_AREA_UNRESOLVED",
+  "subtotal_semantics": "DIAGNOSTIC_PROPOSED_BUILDING_LABEL_SUBTOTAL_NOT_CODE_NUMERATOR"
+}

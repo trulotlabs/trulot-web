@@ -1,0 +1,80 @@
+{
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "irrelevant_pages_ingested": false,
+  "privacy": "PRIVATE_OPERATOR_AUTHORIZED_NOT_PUBLISHED",
+  "sheets": [
+    {
+      "pdf_page": 1,
+      "sheet": "T-1",
+      "use": [
+        "project/zone identity",
+        "lot-area label",
+        "existing house area",
+        "garage/deck schedules",
+        "search for stated coverage"
+      ]
+    },
+    {
+      "pdf_page": 6,
+      "sheet": "C-1",
+      "use": [
+        "legal description",
+        "non-precise boundary traverse context"
+      ]
+    },
+    {
+      "pdf_page": 11,
+      "sheet": "C002",
+      "use": [
+        "grading and proposed building footprints"
+      ]
+    },
+    {
+      "pdf_page": 15,
+      "sheet": "A0.1",
+      "use": [
+        "ten direct plan-view building area labels",
+        "existing house retained",
+        "existing garage removed",
+        "trash allocation"
+      ]
+    },
+    {
+      "pdf_pages": [
+        16,
+        17
+      ],
+      "sheet": "A0.2-A0.3",
+      "use": [
+        "lower/second-level outlines",
+        "garages",
+        "stairs",
+        "decks"
+      ]
+    },
+    {
+      "pdf_pages": [
+        19,
+        21
+      ],
+      "sheet": "A0.5/A0.7",
+      "use": [
+        "roof outlines",
+        "overhangs",
+        "deck roof-state corroboration"
+      ]
+    },
+    {
+      "pdf_pages": [
+        24,
+        42
+      ],
+      "sheet": "A1.1-A1.19",
+      "use": [
+        "garage integration",
+        "open-deck and story corroboration"
+      ]
+    }
+  ],
+  "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+}

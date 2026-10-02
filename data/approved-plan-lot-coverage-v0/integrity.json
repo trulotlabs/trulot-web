@@ -1,0 +1,26 @@
+{
+  "artifacts": {
+    "city-review-corroboration.json": "f128d6b0929cd70e14081c58e965c888f734ab7da34f7ec582f3887ab400f925",
+    "code-compatible-covered-area.json": "219b871461e776b11c691a746fa0a3dc06268802c2bea56dbe6c2d700132df8a",
+    "contract.json": "dc20c7100931f7fed68b3a60e128edfb30b3ec6f7783de16ccd2b2defde16ecf",
+    "decision.json": "9807e45a9e9259d2a2180e0f230fc045dd91d1a2a66ef2753813199e914d893e",
+    "deck-projection-treatment.json": "e1144b083135fa0592dc136aecc4f2c7ce7066e8744cb5a76f2efce364b5d35e",
+    "denominator.json": "595f6814b91fd23f4c3f30e7928f3b6623ff9129cc119892001596b2e69f5d7b",
+    "evidence-inventory.json": "7dd787783a10d30bf1be984a1d05d42ba5fd1ba107881db9e663d28251183179",
+    "existing-house-treatment.json": "0c7073f95929252a96f969f3af75e72298d5dc23ce37014d624f83e761a59163",
+    "feasibility-suite-status.json": "92d79b2e57adec0ceecd7b90c4b150a58f08805dd72d227491031d76734c7b10",
+    "footprint-component-ledger.json": "3530b96ac7b509d3c810e2008a4c084e46bee4ab31c31d6cdcba843faf6118d0",
+    "garage-treatment.json": "8950eb3ad0e44d700be97bb84fe2da3a388b96a0c4c18073a6875329d7052401",
+    "lot-coverage-computation.json": "2cdd62c4414db0651574d1b31a7dd20bce0e611f7c3aef41b39aa3bec37d205a",
+    "lot-coverage-definition.json": "691bd8963395a502e263376a7e7739dd930edc789703f6cd5e0072d6fb79bdc0",
+    "plan-stated-coverage.json": "4c66b7d870eccae21e476b2bf09a10c36c73a2c141aad2feebe7377faa735063",
+    "project-fact-value.json": "e21c6872b27cde1d25dbbe23384cb8b4c5b8f90350ef529867791f24d1ba95dc",
+    "provenance.json": "7c2ea6c4fda134567e149d805bb5e9b56f3e71ea4a88e7070942726be7e9776d",
+    "reusable-lot-coverage-model.json": "21fd81237a8809abb270231658781bc61ed01df7062a42a79ad47eb2257832bd",
+    "rule-comparison.json": "193698b792a4b2ea066237013a18dbd2c8fa93408ac8ba0aae416976bd930694",
+    "rule-existence.json": "47f3d776df7601dcbe37467e1f89efef31b8797bcc6ad882573400542ba34cbf",
+    "trash-enclosure-treatment.json": "bbe1eadbad130d9069023fbd5a95d841d1aa877305f0500006684ef020038609"
+  },
+  "bundle_sha256": "3f920ac14a30d8ff5cf54dde4814e9bcfe378be7beb2e7032998e9681dc4fe93",
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54"
+}

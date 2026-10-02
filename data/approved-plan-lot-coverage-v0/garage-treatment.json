@@ -1,0 +1,8 @@
+{
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "count": 10,
+  "coverage_state": "INCLUDED_WITHIN_PARENT_BUILDING_FOOTPRINT_NOT_ADDITIVE",
+  "direct_schedule_area_each_sq_ft": "514.0",
+  "far_semantics_reused": false,
+  "reason": "The tuck-under garages are roofed structural portions of the proposed buildings. A0.2 places each inside its parent outline, so adding 5,140 S.F. to the ten building labels would double count."
+}

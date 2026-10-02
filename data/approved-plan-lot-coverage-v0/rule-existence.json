@@ -1,0 +1,16 @@
+{
+  "application_date": "2024-01-29",
+  "cell": "\u2014",
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "decision": "LOT_COVERAGE_RULE_NOT_SPECIFIED",
+  "footnotes": [],
+  "meaning": "The historical RM-2-5 base-zone table supplies no numeric or qualitative maximum lot-coverage standard. The dash is not converted into zero, unlimited, or a borrowed standard.",
+  "normalized_comparator": "NOT_SPECIFIED",
+  "normalized_rule_id": "RM25_LOT_COVERAGE",
+  "numeric_maximum": null,
+  "profile": "RM25_2023_05_06_OUTSIDE_COASTAL",
+  "qualitative_requirement": null,
+  "row": "Maximum lot coverage",
+  "table": "SDMC Table 131-04G",
+  "zone": "RM-2-5"
+}

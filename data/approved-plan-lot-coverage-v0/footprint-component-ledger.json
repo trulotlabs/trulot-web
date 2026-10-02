@@ -1,0 +1,626 @@
+{
+  "components": [
+    {
+      "building_id": "BUILDING_1_641",
+      "component_id": "BUILDING_1_641_PLAN_VIEW_AREA",
+      "coverage_inclusion_state": "SUPPORTED_COMPONENT_BUT_NOT_COMPLETE_CODE_NUMERATOR",
+      "direct_labeled_area_sq_ft": "1544.4",
+      "enclosure_state": "MIXED_ENCLOSED_AND_GARAGE_LEVEL",
+      "footprint_type": "PROPOSED_BUILDING_PLAN_VIEW_OUTLINE",
+      "provenance": [
+        {
+          "evidence": "Plan-view building outline labeled 1544.4 S.F.; A0.2-A0.3 and roof plans corroborate the multi-level outline",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": "A0.1 directly labels an area within each plan-view building outline, but does not call the label lot-coverage footprint or prove that all exterior supports and every Section 113.0240 exclusion are reconciled."
+    },
+    {
+      "building_id": "BUILDING_2_643",
+      "component_id": "BUILDING_2_643_PLAN_VIEW_AREA",
+      "coverage_inclusion_state": "SUPPORTED_COMPONENT_BUT_NOT_COMPLETE_CODE_NUMERATOR",
+      "direct_labeled_area_sq_ft": "1516.8",
+      "enclosure_state": "MIXED_ENCLOSED_AND_GARAGE_LEVEL",
+      "footprint_type": "PROPOSED_BUILDING_PLAN_VIEW_OUTLINE",
+      "provenance": [
+        {
+          "evidence": "Plan-view building outline labeled 1516.8 S.F.; A0.2-A0.3 and roof plans corroborate the multi-level outline",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": "A0.1 directly labels an area within each plan-view building outline, but does not call the label lot-coverage footprint or prove that all exterior supports and every Section 113.0240 exclusion are reconciled."
+    },
+    {
+      "building_id": "BUILDING_3_645",
+      "component_id": "BUILDING_3_645_PLAN_VIEW_AREA",
+      "coverage_inclusion_state": "SUPPORTED_COMPONENT_BUT_NOT_COMPLETE_CODE_NUMERATOR",
+      "direct_labeled_area_sq_ft": "1516.8",
+      "enclosure_state": "MIXED_ENCLOSED_AND_GARAGE_LEVEL",
+      "footprint_type": "PROPOSED_BUILDING_PLAN_VIEW_OUTLINE",
+      "provenance": [
+        {
+          "evidence": "Plan-view building outline labeled 1516.8 S.F.; A0.2-A0.3 and roof plans corroborate the multi-level outline",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": "A0.1 directly labels an area within each plan-view building outline, but does not call the label lot-coverage footprint or prove that all exterior supports and every Section 113.0240 exclusion are reconciled."
+    },
+    {
+      "building_id": "BUILDING_4_647",
+      "component_id": "BUILDING_4_647_PLAN_VIEW_AREA",
+      "coverage_inclusion_state": "SUPPORTED_COMPONENT_BUT_NOT_COMPLETE_CODE_NUMERATOR",
+      "direct_labeled_area_sq_ft": "1516.8",
+      "enclosure_state": "MIXED_ENCLOSED_AND_GARAGE_LEVEL",
+      "footprint_type": "PROPOSED_BUILDING_PLAN_VIEW_OUTLINE",
+      "provenance": [
+        {
+          "evidence": "Plan-view building outline labeled 1516.8 S.F.; A0.2-A0.3 and roof plans corroborate the multi-level outline",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": "A0.1 directly labels an area within each plan-view building outline, but does not call the label lot-coverage footprint or prove that all exterior supports and every Section 113.0240 exclusion are reconciled."
+    },
+    {
+      "building_id": "BUILDING_5_649",
+      "component_id": "BUILDING_5_649_PLAN_VIEW_AREA",
+      "coverage_inclusion_state": "SUPPORTED_COMPONENT_BUT_NOT_COMPLETE_CODE_NUMERATOR",
+      "direct_labeled_area_sq_ft": "1836.6",
+      "enclosure_state": "MIXED_ENCLOSED_AND_GARAGE_LEVEL",
+      "footprint_type": "PROPOSED_BUILDING_PLAN_VIEW_OUTLINE",
+      "provenance": [
+        {
+          "evidence": "Plan-view building outline labeled 1836.6 S.F.; A0.2-A0.3 and roof plans corroborate the multi-level outline",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": "A0.1 directly labels an area within each plan-view building outline, but does not call the label lot-coverage footprint or prove that all exterior supports and every Section 113.0240 exclusion are reconciled."
+    },
+    {
+      "building_id": "BUILDING_5_651",
+      "component_id": "BUILDING_5_651_PLAN_VIEW_AREA",
+      "coverage_inclusion_state": "SUPPORTED_COMPONENT_BUT_NOT_COMPLETE_CODE_NUMERATOR",
+      "direct_labeled_area_sq_ft": "1804.6",
+      "enclosure_state": "MIXED_ENCLOSED_AND_GARAGE_LEVEL",
+      "footprint_type": "PROPOSED_BUILDING_PLAN_VIEW_OUTLINE",
+      "provenance": [
+        {
+          "evidence": "Plan-view building outline labeled 1804.6 S.F.; A0.2-A0.3 and roof plans corroborate the multi-level outline",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": "A0.1 directly labels an area within each plan-view building outline, but does not call the label lot-coverage footprint or prove that all exterior supports and every Section 113.0240 exclusion are reconciled."
+    },
+    {
+      "building_id": "BUILDING_6_653",
+      "component_id": "BUILDING_6_653_PLAN_VIEW_AREA",
+      "coverage_inclusion_state": "SUPPORTED_COMPONENT_BUT_NOT_COMPLETE_CODE_NUMERATOR",
+      "direct_labeled_area_sq_ft": "1804.6",
+      "enclosure_state": "MIXED_ENCLOSED_AND_GARAGE_LEVEL",
+      "footprint_type": "PROPOSED_BUILDING_PLAN_VIEW_OUTLINE",
+      "provenance": [
+        {
+          "evidence": "Plan-view building outline labeled 1804.6 S.F.; A0.2-A0.3 and roof plans corroborate the multi-level outline",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": "A0.1 directly labels an area within each plan-view building outline, but does not call the label lot-coverage footprint or prove that all exterior supports and every Section 113.0240 exclusion are reconciled."
+    },
+    {
+      "building_id": "BUILDING_6_655",
+      "component_id": "BUILDING_6_655_PLAN_VIEW_AREA",
+      "coverage_inclusion_state": "SUPPORTED_COMPONENT_BUT_NOT_COMPLETE_CODE_NUMERATOR",
+      "direct_labeled_area_sq_ft": "1804.6",
+      "enclosure_state": "MIXED_ENCLOSED_AND_GARAGE_LEVEL",
+      "footprint_type": "PROPOSED_BUILDING_PLAN_VIEW_OUTLINE",
+      "provenance": [
+        {
+          "evidence": "Plan-view building outline labeled 1804.6 S.F.; A0.2-A0.3 and roof plans corroborate the multi-level outline",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": "A0.1 directly labels an area within each plan-view building outline, but does not call the label lot-coverage footprint or prove that all exterior supports and every Section 113.0240 exclusion are reconciled."
+    },
+    {
+      "building_id": "BUILDING_7_657",
+      "component_id": "BUILDING_7_657_PLAN_VIEW_AREA",
+      "coverage_inclusion_state": "SUPPORTED_COMPONENT_BUT_NOT_COMPLETE_CODE_NUMERATOR",
+      "direct_labeled_area_sq_ft": "1804.6",
+      "enclosure_state": "MIXED_ENCLOSED_AND_GARAGE_LEVEL",
+      "footprint_type": "PROPOSED_BUILDING_PLAN_VIEW_OUTLINE",
+      "provenance": [
+        {
+          "evidence": "Plan-view building outline labeled 1804.6 S.F.; A0.2-A0.3 and roof plans corroborate the multi-level outline",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": "A0.1 directly labels an area within each plan-view building outline, but does not call the label lot-coverage footprint or prove that all exterior supports and every Section 113.0240 exclusion are reconciled."
+    },
+    {
+      "building_id": "BUILDING_7_659",
+      "component_id": "BUILDING_7_659_PLAN_VIEW_AREA",
+      "coverage_inclusion_state": "SUPPORTED_COMPONENT_BUT_NOT_COMPLETE_CODE_NUMERATOR",
+      "direct_labeled_area_sq_ft": "1804.6",
+      "enclosure_state": "MIXED_ENCLOSED_AND_GARAGE_LEVEL",
+      "footprint_type": "PROPOSED_BUILDING_PLAN_VIEW_OUTLINE",
+      "provenance": [
+        {
+          "evidence": "Plan-view building outline labeled 1804.6 S.F.; A0.2-A0.3 and roof plans corroborate the multi-level outline",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": "A0.1 directly labels an area within each plan-view building outline, but does not call the label lot-coverage footprint or prove that all exterior supports and every Section 113.0240 exclusion are reconciled."
+    },
+    {
+      "building_id": "EXISTING_HOUSE_639",
+      "component_id": "EXISTING_HOUSE",
+      "coverage_inclusion_state": "INCLUDED_AREA_UNRESOLVED",
+      "direct_labeled_area_sq_ft": null,
+      "enclosure_state": "YES",
+      "footprint_type": "RETAINED_EXISTING_BUILDING",
+      "provenance": [
+        {
+          "evidence": "Existing house is shown in solid outline; the adjacent existing garage alone is dashed and labeled TO BE REMOVED",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": "T-1 labels 719.0 S.F. for the existing single-family home, but that is not labeled as the Section 113.0240 exterior-wall/support footprint."
+    },
+    {
+      "building_id": "EXISTING_SITE",
+      "component_id": "EXISTING_GARAGE",
+      "coverage_inclusion_state": "EXCLUDED_DEMOLISHED",
+      "direct_labeled_area_sq_ft": null,
+      "enclosure_state": "UNRESOLVED",
+      "footprint_type": "DEMOLISHED_EXISTING_ACCESSORY_STRUCTURE",
+      "provenance": [
+        {
+          "evidence": "Dashed outline explicitly labeled EXISTING GARAGE TO BE REMOVED",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": null
+    },
+    {
+      "building_id": "BUILDING_1_641",
+      "component_id": "GARAGE_1",
+      "coverage_inclusion_state": "INCLUDED_WITHIN_PARENT_BUILDING_FOOTPRINT_NOT_ADDITIVE",
+      "direct_labeled_area_sq_ft": "514.0",
+      "enclosure_state": "ENCLOSED_EXCEPT_VEHICLE_OPENING",
+      "footprint_type": "INTEGRATED_TUCK_UNDER_GARAGE",
+      "provenance": [
+        {
+          "evidence": "Direct 514.0 S.F. garage schedule; A0.2 shows garage within the parent building outline",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": null
+    },
+    {
+      "building_id": "BUILDING_2_643",
+      "component_id": "GARAGE_2",
+      "coverage_inclusion_state": "INCLUDED_WITHIN_PARENT_BUILDING_FOOTPRINT_NOT_ADDITIVE",
+      "direct_labeled_area_sq_ft": "514.0",
+      "enclosure_state": "ENCLOSED_EXCEPT_VEHICLE_OPENING",
+      "footprint_type": "INTEGRATED_TUCK_UNDER_GARAGE",
+      "provenance": [
+        {
+          "evidence": "Direct 514.0 S.F. garage schedule; A0.2 shows garage within the parent building outline",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": null
+    },
+    {
+      "building_id": "BUILDING_3_645",
+      "component_id": "GARAGE_3",
+      "coverage_inclusion_state": "INCLUDED_WITHIN_PARENT_BUILDING_FOOTPRINT_NOT_ADDITIVE",
+      "direct_labeled_area_sq_ft": "514.0",
+      "enclosure_state": "ENCLOSED_EXCEPT_VEHICLE_OPENING",
+      "footprint_type": "INTEGRATED_TUCK_UNDER_GARAGE",
+      "provenance": [
+        {
+          "evidence": "Direct 514.0 S.F. garage schedule; A0.2 shows garage within the parent building outline",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": null
+    },
+    {
+      "building_id": "BUILDING_4_647",
+      "component_id": "GARAGE_4",
+      "coverage_inclusion_state": "INCLUDED_WITHIN_PARENT_BUILDING_FOOTPRINT_NOT_ADDITIVE",
+      "direct_labeled_area_sq_ft": "514.0",
+      "enclosure_state": "ENCLOSED_EXCEPT_VEHICLE_OPENING",
+      "footprint_type": "INTEGRATED_TUCK_UNDER_GARAGE",
+      "provenance": [
+        {
+          "evidence": "Direct 514.0 S.F. garage schedule; A0.2 shows garage within the parent building outline",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": null
+    },
+    {
+      "building_id": "BUILDING_5_649",
+      "component_id": "GARAGE_5",
+      "coverage_inclusion_state": "INCLUDED_WITHIN_PARENT_BUILDING_FOOTPRINT_NOT_ADDITIVE",
+      "direct_labeled_area_sq_ft": "514.0",
+      "enclosure_state": "ENCLOSED_EXCEPT_VEHICLE_OPENING",
+      "footprint_type": "INTEGRATED_TUCK_UNDER_GARAGE",
+      "provenance": [
+        {
+          "evidence": "Direct 514.0 S.F. garage schedule; A0.2 shows garage within the parent building outline",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": null
+    },
+    {
+      "building_id": "BUILDING_5_651",
+      "component_id": "GARAGE_6",
+      "coverage_inclusion_state": "INCLUDED_WITHIN_PARENT_BUILDING_FOOTPRINT_NOT_ADDITIVE",
+      "direct_labeled_area_sq_ft": "514.0",
+      "enclosure_state": "ENCLOSED_EXCEPT_VEHICLE_OPENING",
+      "footprint_type": "INTEGRATED_TUCK_UNDER_GARAGE",
+      "provenance": [
+        {
+          "evidence": "Direct 514.0 S.F. garage schedule; A0.2 shows garage within the parent building outline",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": null
+    },
+    {
+      "building_id": "BUILDING_6_653",
+      "component_id": "GARAGE_7",
+      "coverage_inclusion_state": "INCLUDED_WITHIN_PARENT_BUILDING_FOOTPRINT_NOT_ADDITIVE",
+      "direct_labeled_area_sq_ft": "514.0",
+      "enclosure_state": "ENCLOSED_EXCEPT_VEHICLE_OPENING",
+      "footprint_type": "INTEGRATED_TUCK_UNDER_GARAGE",
+      "provenance": [
+        {
+          "evidence": "Direct 514.0 S.F. garage schedule; A0.2 shows garage within the parent building outline",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": null
+    },
+    {
+      "building_id": "BUILDING_6_655",
+      "component_id": "GARAGE_8",
+      "coverage_inclusion_state": "INCLUDED_WITHIN_PARENT_BUILDING_FOOTPRINT_NOT_ADDITIVE",
+      "direct_labeled_area_sq_ft": "514.0",
+      "enclosure_state": "ENCLOSED_EXCEPT_VEHICLE_OPENING",
+      "footprint_type": "INTEGRATED_TUCK_UNDER_GARAGE",
+      "provenance": [
+        {
+          "evidence": "Direct 514.0 S.F. garage schedule; A0.2 shows garage within the parent building outline",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": null
+    },
+    {
+      "building_id": "BUILDING_7_657",
+      "component_id": "GARAGE_9",
+      "coverage_inclusion_state": "INCLUDED_WITHIN_PARENT_BUILDING_FOOTPRINT_NOT_ADDITIVE",
+      "direct_labeled_area_sq_ft": "514.0",
+      "enclosure_state": "ENCLOSED_EXCEPT_VEHICLE_OPENING",
+      "footprint_type": "INTEGRATED_TUCK_UNDER_GARAGE",
+      "provenance": [
+        {
+          "evidence": "Direct 514.0 S.F. garage schedule; A0.2 shows garage within the parent building outline",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": null
+    },
+    {
+      "building_id": "BUILDING_7_659",
+      "component_id": "GARAGE_10",
+      "coverage_inclusion_state": "INCLUDED_WITHIN_PARENT_BUILDING_FOOTPRINT_NOT_ADDITIVE",
+      "direct_labeled_area_sq_ft": "514.0",
+      "enclosure_state": "ENCLOSED_EXCEPT_VEHICLE_OPENING",
+      "footprint_type": "INTEGRATED_TUCK_UNDER_GARAGE",
+      "provenance": [
+        {
+          "evidence": "Direct 514.0 S.F. garage schedule; A0.2 shows garage within the parent building outline",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "YES",
+      "uncertainty": null
+    },
+    {
+      "building_id": "BUILDING_5_649",
+      "component_id": "DECK_1",
+      "coverage_inclusion_state": "EXCLUDED_OPEN_UNROOFED_PROJECTION",
+      "direct_labeled_area_sq_ft": null,
+      "enclosure_state": "OPEN",
+      "footprint_type": "OPEN_EXTERIOR_DECK",
+      "provenance": [
+        {
+          "evidence": "Second-floor deck; upper plan identifies DECK BELOW; roof/elevation evidence shows no deck roof",
+          "pdf_page": 33,
+          "sheet": "A1.10",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "NO",
+      "structural_state": "YES",
+      "uncertainty": "The plan schedule conflicts between 6 x 62.0 S.F. and a 327.6 S.F. total; area is immaterial to coverage because direct roof/elevation evidence supports exclusion of the open unroofed deck planes."
+    },
+    {
+      "building_id": "BUILDING_5_651",
+      "component_id": "DECK_2",
+      "coverage_inclusion_state": "EXCLUDED_OPEN_UNROOFED_PROJECTION",
+      "direct_labeled_area_sq_ft": null,
+      "enclosure_state": "OPEN",
+      "footprint_type": "OPEN_EXTERIOR_DECK",
+      "provenance": [
+        {
+          "evidence": "Second-floor deck; upper plan identifies DECK BELOW; roof/elevation evidence shows no deck roof",
+          "pdf_page": 33,
+          "sheet": "A1.10",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "NO",
+      "structural_state": "YES",
+      "uncertainty": "The plan schedule conflicts between 6 x 62.0 S.F. and a 327.6 S.F. total; area is immaterial to coverage because direct roof/elevation evidence supports exclusion of the open unroofed deck planes."
+    },
+    {
+      "building_id": "BUILDING_6_653",
+      "component_id": "DECK_3",
+      "coverage_inclusion_state": "EXCLUDED_OPEN_UNROOFED_PROJECTION",
+      "direct_labeled_area_sq_ft": null,
+      "enclosure_state": "OPEN",
+      "footprint_type": "OPEN_EXTERIOR_DECK",
+      "provenance": [
+        {
+          "evidence": "Second-floor deck; upper plan identifies DECK BELOW; roof/elevation evidence shows no deck roof",
+          "pdf_page": 37,
+          "sheet": "A1.14",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "NO",
+      "structural_state": "YES",
+      "uncertainty": "The plan schedule conflicts between 6 x 62.0 S.F. and a 327.6 S.F. total; area is immaterial to coverage because direct roof/elevation evidence supports exclusion of the open unroofed deck planes."
+    },
+    {
+      "building_id": "BUILDING_6_655",
+      "component_id": "DECK_4",
+      "coverage_inclusion_state": "EXCLUDED_OPEN_UNROOFED_PROJECTION",
+      "direct_labeled_area_sq_ft": null,
+      "enclosure_state": "OPEN",
+      "footprint_type": "OPEN_EXTERIOR_DECK",
+      "provenance": [
+        {
+          "evidence": "Second-floor deck; upper plan identifies DECK BELOW; roof/elevation evidence shows no deck roof",
+          "pdf_page": 37,
+          "sheet": "A1.14",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "NO",
+      "structural_state": "YES",
+      "uncertainty": "The plan schedule conflicts between 6 x 62.0 S.F. and a 327.6 S.F. total; area is immaterial to coverage because direct roof/elevation evidence supports exclusion of the open unroofed deck planes."
+    },
+    {
+      "building_id": "BUILDING_7_657",
+      "component_id": "DECK_5",
+      "coverage_inclusion_state": "EXCLUDED_OPEN_UNROOFED_PROJECTION",
+      "direct_labeled_area_sq_ft": null,
+      "enclosure_state": "OPEN",
+      "footprint_type": "OPEN_EXTERIOR_DECK",
+      "provenance": [
+        {
+          "evidence": "Second-floor deck; upper plan identifies DECK BELOW; roof/elevation evidence shows no deck roof",
+          "pdf_page": 41,
+          "sheet": "A1.18",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "NO",
+      "structural_state": "YES",
+      "uncertainty": "The plan schedule conflicts between 6 x 62.0 S.F. and a 327.6 S.F. total; area is immaterial to coverage because direct roof/elevation evidence supports exclusion of the open unroofed deck planes."
+    },
+    {
+      "building_id": "BUILDING_7_659",
+      "component_id": "DECK_6",
+      "coverage_inclusion_state": "EXCLUDED_OPEN_UNROOFED_PROJECTION",
+      "direct_labeled_area_sq_ft": null,
+      "enclosure_state": "OPEN",
+      "footprint_type": "OPEN_EXTERIOR_DECK",
+      "provenance": [
+        {
+          "evidence": "Second-floor deck; upper plan identifies DECK BELOW; roof/elevation evidence shows no deck roof",
+          "pdf_page": 41,
+          "sheet": "A1.18",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "NO",
+      "structural_state": "YES",
+      "uncertainty": "The plan schedule conflicts between 6 x 62.0 S.F. and a 327.6 S.F. total; area is immaterial to coverage because direct roof/elevation evidence supports exclusion of the open unroofed deck planes."
+    },
+    {
+      "building_id": "PROPOSED_BUILDINGS",
+      "component_id": "EAVES_AND_ROOF_OVERHANGS",
+      "coverage_inclusion_state": "EXCLUDED_ARCHITECTURAL_PROJECTION",
+      "direct_labeled_area_sq_ft": null,
+      "enclosure_state": "OPEN",
+      "footprint_type": "ARCHITECTURAL_PROJECTION",
+      "provenance": [
+        {
+          "evidence": "Roof plans distinguish roof edges from exterior-wall building outlines",
+          "pdf_page": 19,
+          "sheet": "A0.5/A0.7",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "YES",
+      "structural_state": "NO",
+      "uncertainty": "No project-wide direct area is labeled; no area is needed for the exclusion classification."
+    },
+    {
+      "building_id": "PROPOSED_BUILDINGS",
+      "component_id": "EXTERIOR_STAIRS_AND_LANDINGS",
+      "coverage_inclusion_state": "UNRESOLVED_COMPONENT",
+      "direct_labeled_area_sq_ft": null,
+      "enclosure_state": "OPEN",
+      "footprint_type": "OPEN_CIRCULATION_PROJECTION_OR_SUPPORT",
+      "provenance": [
+        {
+          "evidence": "Lower- and second-level site plans show exterior inter-building stair and landing systems",
+          "pdf_page": 16,
+          "sheet": "A0.2/A0.3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "MIXED_OR_UNRESOLVED",
+      "structural_state": "YES",
+      "uncertainty": "The plans show exterior stairs and landings, but the bounded sheets do not supply a direct aggregate footprint or seal every Section 113.0240 open-projection predicate."
+    },
+    {
+      "building_id": "SITE_ACCESSORY",
+      "component_id": "TRASH_ENCLOSURE",
+      "coverage_inclusion_state": "UNRESOLVED_COMPONENT",
+      "direct_labeled_area_sq_ft": "300.0",
+      "enclosure_state": "PARTIAL_OR_UNRESOLVED",
+      "footprint_type": "TRASH_ENCLOSURE_SITE_ALLOCATION",
+      "provenance": [
+        {
+          "evidence": "Site plan labels TRASH 300 S.F.; bounded elevation evidence does not establish a roof",
+          "pdf_page": 15,
+          "sheet": "A0.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "roofed_state": "UNRESOLVED",
+      "structural_state": "YES",
+      "uncertainty": "The 300 S.F. label establishes an allocation, not the roof state or Code footprint treatment."
+    }
+  ],
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "proposed_building_plan_view_label_subtotal_sq_ft": "16954.4"
+}

@@ -1,0 +1,8 @@
+{
+  "arithmetic": "Decimal",
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "diagnostic_range": null,
+  "exact_ratio": null,
+  "formula": "covered area / applicable lot area",
+  "reason": "Neither a complete Code-compatible numerator nor an exact regulatory lot-area denominator is supported."
+}

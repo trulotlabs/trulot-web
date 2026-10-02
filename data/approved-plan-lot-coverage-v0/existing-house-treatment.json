@@ -1,0 +1,8 @@
+{
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "garage_state": "DEMOLISHED",
+  "house_code_footprint_sq_ft": null,
+  "house_direct_floor_area_label_sq_ft": "719.0",
+  "house_state": "RETAINED",
+  "reason": "A0.1 shows the house in solid outline and separately labels the dashed existing garage TO BE REMOVED. The 719.0 S.F. title-sheet value is not labeled as exterior-wall/support footprint."
+}

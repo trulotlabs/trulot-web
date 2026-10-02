@@ -1,0 +1,34 @@
+{
+  "chain": [
+    "historical profile \u2192 rule-existence gate",
+    "Section 113.0240 \u2192 component semantics",
+    "bounded plan sheets \u2192 component ledger",
+    "Packet 52A \u2192 denominator gate",
+    "gates \u2192 non-applicable legal comparison and unresolved project fact"
+  ],
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "sources": [
+    {
+      "bundle_sha256": "2016a33bb1757254216d9158fd5524638b9a11687533123a99ca582a5643b2c4",
+      "source": "Packet 51 historical RM-2-5 rule profile"
+    },
+    {
+      "published": true,
+      "sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+      "source": "SDMC 113.0240 measurement source already reviewed by the residential standards corpus"
+    },
+    {
+      "published": false,
+      "sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12",
+      "source": "Private PRJ-1111087 Fourth CD plan"
+    },
+    {
+      "sha256": "d5d9033c25cc9c2c7385549185cafe90f4c7ae556234b068100af37bd4744e60",
+      "source": "Packet 52A legal-premises decision"
+    },
+    {
+      "published": true,
+      "source": "Bounded Packet 42/50 city-review evidence"
+    }
+  ]
+}

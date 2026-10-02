@@ -1,0 +1,21 @@
+{
+  "building_id": "SITE_ACCESSORY",
+  "component_id": "TRASH_ENCLOSURE",
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "coverage_inclusion_state": "UNRESOLVED_COMPONENT",
+  "direct_labeled_area_sq_ft": "300.0",
+  "enclosure_state": "PARTIAL_OR_UNRESOLVED",
+  "footprint_type": "TRASH_ENCLOSURE_SITE_ALLOCATION",
+  "provenance": [
+    {
+      "evidence": "Site plan labels TRASH 300 S.F.; bounded elevation evidence does not establish a roof",
+      "pdf_page": 15,
+      "sheet": "A0.1",
+      "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+      "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+    }
+  ],
+  "roofed_state": "UNRESOLVED",
+  "structural_state": "YES",
+  "uncertainty": "The 300 S.F. label establishes an allocation, not the roof state or Code footprint treatment."
+}

@@ -1,0 +1,18 @@
+{
+  "classification": "PROPOSED_PROJECT_FACT",
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "current_numeric_state": "UNRESOLVED",
+  "not_compliance_evidence": true,
+  "supported_now": {
+    "component_classifications": true,
+    "exact_coverage": false,
+    "ten_proposed_plan_view_labels_sq_ft": "16954.4"
+  },
+  "useful": true,
+  "uses": [
+    "design comparison after the missing footprint semantics are sealed",
+    "precedent analysis with identical measurement doctrine",
+    "future program-rule inputs",
+    "project benchmarking"
+  ]
+}

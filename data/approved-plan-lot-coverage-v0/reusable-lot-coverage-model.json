@@ -1,0 +1,41 @@
+{
+  "component_states": [
+    "INCLUDED",
+    "EXCLUDED",
+    "INCLUDED_WITHIN_PARENT_NOT_ADDITIVE",
+    "UNRESOLVED"
+  ],
+  "computation": {
+    "exact": "Decimal(sum(included_nonoverlapping_areas) / lot_area)",
+    "range": "Only when every unresolved component and denominator has supported closed bounds",
+    "unresolved": "Return null; never coerce unknown to zero"
+  },
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "coverage_component_ledger": [
+    "component_id",
+    "building_id",
+    "footprint_type",
+    "direct_labeled_area_sq_ft",
+    "roofed_state",
+    "enclosure_state",
+    "structural_state",
+    "coverage_inclusion_state",
+    "uncertainty",
+    "provenance"
+  ],
+  "denominator": [
+    "regulatory_lot_identity",
+    "area_sq_ft",
+    "area_state",
+    "source",
+    "uncertainty"
+  ],
+  "project_constants": [],
+  "project_independent": true,
+  "rule_existence": [
+    "PRESENT_NUMERIC",
+    "PRESENT_QUALITATIVE",
+    "NOT_SPECIFIED",
+    "UNRESOLVED"
+  ]
+}

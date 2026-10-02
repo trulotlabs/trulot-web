@@ -1,0 +1,13 @@
+{
+  "contract_version": "approved-plan-lot-coverage-v0-2026-10-02-p54",
+  "covered_area_sq_ft": null,
+  "note": "Building-area and lot-area labels are preserved separately and are not recast as a plan-stated coverage calculation.",
+  "percentage": null,
+  "search_terms": [
+    "lot coverage",
+    "building coverage",
+    "coverage percentage",
+    "footprint percentage"
+  ],
+  "state": "NO_PLAN_STATED_COVERAGE_FOUND"
+}
