@@ -116,7 +116,7 @@ assert.match(route, /notFound\(\)/);
 assert.match(route, /robots:\s*\{\s*index:\s*false/);
 assert.match(route, /Preview contract rejected/);
 assert.match(component, /What TruLot knows/);
-assert.match(component, /Evidence and context/);
+assert.match(component, /Evidence and sources/);
 assert.match(component, /Private project analysis/);
 assert.match(component, /Not for public indexing/);
 assert.doesNotMatch(`${route}\n${component}\n${loader}`, /supabase|fetch\s*\(|parcel-page-v1|selected_snapshot|development capacity calculat/i);
@@ -131,13 +131,16 @@ for (const payload of [rs, rm, privateProject, blocked]) {
 }
 
 const screenshotManifest = {
-  "public-rs-desktop.png": "b277ffa3b990ec5036492b974ffb32e207f80298da351ac84f49e98975de2234",
-  "public-rs-mobile.png": "f5aeacb26972d25ebb791e7f86c73f6f6c5ff66174cc400d7830ba34efcb061f",
-  "public-rm-desktop.png": "8813c8acb41cb355ac0b9427f30b94e8d8e5a2f90ccdec274356e0e568ffb39e",
-  "public-rm-mobile.png": "09461dee07c402762dacc0adab7d6146e075f42213a717323b7abfa031334a18",
-  "private-project-desktop.png": "3b6967f3182fba2777ef1639884c93639f9ea7b0ab5d9c4ccd4077ad01f3e60c",
-  "private-project-mobile.png": "ca8ca644636237c8c8e1c6b4d395310278051e63aa67d95071d4c78b90186139",
-  "height-far-blocked-desktop.png": "9a636c50ff1302e65ab7225eed9db329f9f540f7566cfb8fe82108d3b9e23034",
+  "public-rs-desktop.png": "92af28b2f18bf16b12fcf5d9613924cbd3fd159917f860b94e1fb5fc0954e3cc",
+  "public-rs-mobile.png": "9658b85f00a523a74b3580e30abba32aa2f7061881a11b979a6776322f8be668",
+  "public-rs-rear-setback-expanded.png": "75ad1a61100d8b40a0f58c4d6efb19b3c89b0e321e57dee7db7131193d65f0d6",
+  "public-rm-desktop.png": "7bb663f7683bc6f9bd06a6da76880f763e3924d670aaacd93c5d753111e33cd1",
+  "public-rm-mobile.png": "ba43e8a89aff0763ca70382ae31b9f48ce6badec5783da8e766dc75e65a4c2e6",
+  "public-rm-sda-context-expanded.png": "8faa29334b50e918e49b2794351dfdccc7fb995ce0ea390edb17cfa250e2c010",
+  "private-project-desktop.png": "c1975c24cc7ee366db10f0726f1ea536b311478e8ffd6195f903df63099c24d6",
+  "private-project-mobile.png": "64d5d8f7dff36018aa4b0a69daa75c977a12da93cfab029a7e72bb10725e44e4",
+  "private-project-status-expanded.png": "3c28891ce184d1f17869ce75c0499173a5ffe7d31ef6a91f5946323d9861b2af",
+  "height-far-blocked-desktop.png": "fe30c66b97b7918cdb03e987172dfd66ea83815edd6b3d7c594ae3ad0afd48e0",
 };
 for (const [name, expected] of Object.entries(screenshotManifest)) {
   const bytes = fs.readFileSync(path.join(root, "data/bounded-feasibility-preview-v0/review-evidence", name));
