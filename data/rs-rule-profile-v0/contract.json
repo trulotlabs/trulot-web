@@ -1,0 +1,8 @@
+{
+  "capacity": false,
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "production": false,
+  "scope": "REUSABLE_VERSIONED_RS_BASE_ZONE_RULE_PROFILE",
+  "ui": false,
+  "zone": "RS-1-7"
+}

@@ -1,0 +1,62 @@
+{
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "definitions": {
+    "far": {
+      "meaning": "Gross floor area of all buildings on a premises divided by total premises area, with express component rules.",
+      "source": "SDMC §113.0234"
+    },
+    "front_property_line": {
+      "meaning": "Street-adjoining line selected under §113.0246, including corner and double-fronted rules.",
+      "source": "SDMC §113.0246(a)-(b)"
+    },
+    "lot": {
+      "meaning": "Legally established parcel, tract, or area of land under SDMC §113.0237; APN identity alone is insufficient.",
+      "source": "SDMC §113.0237"
+    },
+    "lot_area": {
+      "meaning": "Area bounded by Code-determined property lines; public right-of-way treatment follows §113.0246.",
+      "source": "SDMC §§113.0222, 113.0246"
+    },
+    "lot_depth": {
+      "meaning": "Straight-line distance from midpoint of front property line to midpoint of rear property line.",
+      "source": "SDMC Chapter 11 measurement rules"
+    },
+    "lot_width": {
+      "meaning": "Perpendicular distance between side lot lines at the midpoint of the front-to-rear depth line.",
+      "source": "SDMC Chapter 11 measurement rules"
+    },
+    "premises": {
+      "meaning": "Land and structures with unity of use constituting the smallest conveyable unit.",
+      "source": "SDMC Chapter 11 definitions"
+    },
+    "rear_property_line": {
+      "meaning": "Line opposite and most distant from the front line under the Code classification rules.",
+      "source": "SDMC §113.0246"
+    },
+    "side_property_line": {
+      "meaning": "Property line connecting front and rear lines and not selected as a front line.",
+      "source": "SDMC §113.0246"
+    },
+    "street_frontage": {
+      "meaning": "Length of premises property line along the street it borders.",
+      "source": "SDMC Chapter 11 definitions"
+    },
+    "street_side_property_line": {
+      "meaning": "Side property line abutting public right-of-way; alley adjacency does not create one.",
+      "source": "SDMC §113.0246(d)-(e)"
+    },
+    "structure_edge": {
+      "meaning": "Setback comparison uses the qualifying structure/building feature and projection rules, not an undifferentiated footprint.",
+      "source": "SDMC §§113.0252, 131.0461"
+    },
+    "structure_height": {
+      "meaning": "Measured at plumb lines to the lower of existing or proposed grade and subject to overall, topographic, roof, parapet, and appurtenance rules.",
+      "source": "SDMC §113.0270"
+    }
+  },
+  "policy": "Definitions are authoritative measurement semantics, separate from table values and project facts.",
+  "source_sha256": {
+    "definitions": "7a2234c4b02089867be21002036235c7eba2abebd60fa2ef0413a60b00a652ae",
+    "measurement": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345"
+  }
+}

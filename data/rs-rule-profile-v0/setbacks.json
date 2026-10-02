@@ -1,0 +1,152 @@
+{
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "document_or_program_override": "External modifier only; no project document is inferred.",
+  "profiles": {
+    "front": {
+      "base_ft": "15",
+      "branches": [
+        {
+          "branch_id": "BASE",
+          "effect_ft": "15"
+        },
+        {
+          "branch_id": "CUL_DE_SAC",
+          "effect_ft": "10",
+          "formula": "max(5, table-5)",
+          "predicates": [
+            "FRONTS_CUL_DE_SAC",
+            "REDUCTION_ELECTED"
+          ]
+        },
+        {
+          "branch_id": "SLOPE",
+          "effect_ft": "6",
+          "predicates": [
+            "AT_LEAST_HALF_FRONT_50_FT_DEPTH_HAS_MIN_SLOPE_25_PERCENT",
+            "SETBACK_IS_CLOSEST_TO_STREET",
+            "REDUCTION_ELECTED"
+          ]
+        },
+        {
+          "branch_id": "FIRE_OFFICIAL_GREATER_BUFFER",
+          "effect": "GREATER_THAN_OTHERWISE_APPLICABLE",
+          "predicate": "PROJECT_SPECIFIC_FIRE_OFFICIAL_BUFFER_REQUIRED",
+          "value_ft": null,
+          "version_gate": "SECTION_131_0443_I_EFFECTIVE"
+        }
+      ],
+      "projections": {
+        "policy": "Never subtract from base setback without qualifying feature and dimension evidence.",
+        "source": "SDMC §131.0461",
+        "treatment": "SEPARATE_FEATURE_SPECIFIC_EXCEPTION"
+      }
+    },
+    "interior_side": {
+      "base_each_ft": "4",
+      "branches": [
+        {
+          "branch_id": "WIDTH_BELOW_ZONE_MIN",
+          "formula": "8% lot width each side",
+          "predicate": "LOT_WIDTH_LT_50"
+        },
+        {
+          "branch_id": "REALLOCATION",
+          "combined_min_ft": "8",
+          "each_interior_floor_ft": "4",
+          "predicates": [
+            "LOT_WIDTH_GT_50",
+            "REALLOCATION_ELECTED"
+          ],
+          "street_side_floor_ft": "10"
+        },
+        {
+          "branch_id": "ESTABLISHED_SIDE_FOR_ADDITION",
+          "effect": "maintain qualifying established side dimension",
+          "predicate": "QUALIFYING_PRIMARY_STRUCTURE_ADDITION"
+        },
+        {
+          "branch_id": "FIRE_OFFICIAL_GREATER_BUFFER",
+          "effect": "GREATER_THAN_OTHERWISE_APPLICABLE",
+          "predicate": "PROJECT_SPECIFIC_FIRE_OFFICIAL_BUFFER_REQUIRED",
+          "value_ft": null,
+          "version_gate": "SECTION_131_0443_I_EFFECTIVE"
+        }
+      ],
+      "projections": {
+        "policy": "Never subtract from base setback without qualifying feature and dimension evidence.",
+        "source": "SDMC §131.0461",
+        "treatment": "SEPARATE_FEATURE_SPECIFIC_EXCEPTION"
+      }
+    },
+    "rear": {
+      "base_ft": "13",
+      "branches": [
+        {
+          "branch_id": "DEPTH_LT_100",
+          "formula": "max(5, 10% lot depth)",
+          "predicate": "LOT_DEPTH_LT_100"
+        },
+        {
+          "branch_id": "DEPTH_100_TO_150",
+          "effect_ft": "13",
+          "predicate": "100_LE_LOT_DEPTH_LE_150"
+        },
+        {
+          "branch_id": "DEPTH_GT_150",
+          "formula": "max(13, 10% lot depth)",
+          "predicate": "LOT_DEPTH_GT_150"
+        },
+        {
+          "branch_id": "REAR_ALLEY",
+          "effect": "credit half alley width capped at 10 ft; at least 5 ft remains on premises",
+          "predicate": "REAR_ABUTS_ALLEY"
+        },
+        {
+          "branch_id": "ALLEY_PARKING_ACCESS",
+          "effect": "21 ft between opposite alley ROW edge and nearest garage/stall edge",
+          "predicate": "NONPARALLEL_PARKING_ACCESSED_FROM_ALLEY"
+        },
+        {
+          "branch_id": "FIRE_OFFICIAL_GREATER_BUFFER",
+          "effect": "GREATER_THAN_OTHERWISE_APPLICABLE",
+          "predicate": "PROJECT_SPECIFIC_FIRE_OFFICIAL_BUFFER_REQUIRED",
+          "value_ft": null,
+          "version_gate": "SECTION_131_0443_I_EFFECTIVE"
+        }
+      ],
+      "projections": {
+        "policy": "Never subtract from base setback without qualifying feature and dimension evidence.",
+        "source": "SDMC §131.0461",
+        "treatment": "SEPARATE_FEATURE_SPECIFIC_EXCEPTION"
+      }
+    },
+    "street_side": {
+      "applicability": "STREET_SIDE_PROPERTY_LINE_EXISTS",
+      "base_ft": "5",
+      "branches": [
+        {
+          "branch_id": "REALLOCATION",
+          "predicates": [
+            "LOT_WIDTH_GT_50",
+            "REALLOCATION_ELECTED"
+          ],
+          "street_side_floor_ft": "10"
+        },
+        {
+          "branch_id": "FIRE_OFFICIAL_GREATER_BUFFER",
+          "effect": "GREATER_THAN_OTHERWISE_APPLICABLE",
+          "predicate": "PROJECT_SPECIFIC_FIRE_OFFICIAL_BUFFER_REQUIRED",
+          "value_ft": null,
+          "version_gate": "SECTION_131_0443_I_EFFECTIVE"
+        }
+      ],
+      "not_applicable_state": "NOT_APPLICABLE",
+      "projections": {
+        "policy": "Never subtract from base setback without qualifying feature and dimension evidence.",
+        "source": "SDMC §131.0461",
+        "treatment": "SEPARATE_FEATURE_SPECIFIC_EXCEPTION"
+      }
+    }
+  },
+  "zone": "RS-1-7"
+}

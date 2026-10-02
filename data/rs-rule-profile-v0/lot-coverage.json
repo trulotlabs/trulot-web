@@ -1,0 +1,24 @@
+{
+  "branches": [
+    {
+      "branch_id": "STEEP_HILLSIDE_PREMISES",
+      "maximum_percent": "50",
+      "predicate": "MORE_THAN_50_PERCENT_OF_PREMISES_CONTAINS_STEEP_HILLSIDES",
+      "source": "SDMC §131.0445(a)"
+    },
+    {
+      "branch_id": "OTHERWISE",
+      "predicate": "STEEP_HILLSIDE_PREDICATE_FALSE",
+      "source": "No general numeric RS-1-7 lot-coverage maximum in §131.0445",
+      "value": "NOT_SPECIFIED"
+    },
+    {
+      "branch_id": "UNKNOWN",
+      "predicate": "STEEP_HILLSIDE_PREDICATE_UNKNOWN",
+      "value": "UNRESOLVED"
+    }
+  ],
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "policy": "The conditional 50 percent maximum is not generalized to every RS-1-7 premises.",
+  "zone": "RS-1-7"
+}

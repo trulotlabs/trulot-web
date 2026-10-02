@@ -1,0 +1,126 @@
+{
+  "$id": "trulot://schemas/shared-base-zone-rule-profile-v0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": true,
+  "compatibility_decision": "RS_PROFILE_SCHEMA_EXTENSION_REQUIRED: existing RM schema restricts zone_code to RM; this generic pattern extension preserves every field and layer for RM and RS",
+  "layer_separation": [
+    "BASE_ZONE_RULE",
+    "DEFINITION_MEASUREMENT",
+    "FOOTNOTE_EXCEPTION",
+    "PROGRAM_MODIFIER",
+    "PROJECT_FACT"
+  ],
+  "properties": {
+    "applicability_predicates": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "base_value": {},
+    "coastal_applicability_profile": {
+      "type": "string"
+    },
+    "comparator": {
+      "enum": [
+        "MIN",
+        "MAX",
+        "FORMULA",
+        "PROCESS",
+        "NOT_SPECIFIED"
+      ]
+    },
+    "derivation_class": {
+      "enum": [
+        "recorded",
+        "deterministic_derived",
+        "inferred",
+        "conditional"
+      ]
+    },
+    "effective_date": {
+      "format": "date",
+      "type": "string"
+    },
+    "effective_through": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "exceptions": {
+      "type": "array"
+    },
+    "footnotes": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "legal_version": {
+      "type": "string"
+    },
+    "measurement_definition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "program_modifiers": {
+      "type": "array"
+    },
+    "raw_value": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "rule_family": {
+      "type": "string"
+    },
+    "rule_id": {
+      "type": "string"
+    },
+    "source_provenance": {
+      "minItems": 1,
+      "type": "array"
+    },
+    "unit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unresolved_dependencies": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "zone_code": {
+      "pattern": "^(RM|RS)-[0-9]+-[0-9]+$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "rule_id",
+    "zone_code",
+    "legal_version",
+    "effective_date",
+    "coastal_applicability_profile",
+    "rule_family",
+    "base_value",
+    "unit",
+    "comparator",
+    "applicability_predicates",
+    "footnotes",
+    "exceptions",
+    "measurement_definition",
+    "program_modifiers",
+    "source_provenance",
+    "derivation_class",
+    "unresolved_dependencies"
+  ],
+  "title": "Reusable residential base-zone rule record",
+  "type": "object"
+}

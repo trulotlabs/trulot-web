@@ -1,0 +1,14 @@
+{
+  "apn_specific_logic": false,
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "doctrine": {
+    "effect": "May require a greater defensible-space buffer and never silently reduces a base setback.",
+    "mapped_fire_hazard": "CONTEXT_ONLY",
+    "missing_determination": "UNKNOWN_NOT_FALSE",
+    "project_specific_fire_official_determination": "SEPARATE_REQUIRED_EVIDENCE"
+  },
+  "versioning": {
+    "inside_coastal_current": "§131.0443(i) excluded because O-22109 remains pending in the established chain",
+    "outside_coastal_from_2026_07_15": "§131.0443(i) included by O-22109"
+  }
+}

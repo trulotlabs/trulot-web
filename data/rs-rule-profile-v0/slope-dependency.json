@@ -1,0 +1,14 @@
+{
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "dem_research_reopened": false,
+  "generic_dem_limit": "A diagnostic DEM does not alone establish the legal surface, required precision, boundary alignment, or Code-compatible gradient determination.",
+  "predicate": "At least one-half of the front 50 feet of lot depth has a minimum slope gradient of 25 percent.",
+  "required_evidence": [
+    "legal boundary and front-line role",
+    "front 50-foot depth geometry",
+    "authoritative Code-compatible elevation surface",
+    "method computing area/extent meeting minimum gradient",
+    "reviewable calculation"
+  ],
+  "unresolved_outcome": "FRONT_SETBACK_BRANCH_UNRESOLVED; do not treat predicate as false"
+}

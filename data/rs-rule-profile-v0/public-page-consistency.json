@@ -1,0 +1,26 @@
+{
+  "approved_public_parameters": [
+    {
+      "family": "MINIMUM_LOT_WIDTH",
+      "unit": "ft",
+      "value": "50"
+    },
+    {
+      "family": "MINIMUM_CORNER_LOT_WIDTH",
+      "qualifier": "corner lots only",
+      "unit": "ft",
+      "value": "55"
+    },
+    {
+      "family": "MINIMUM_LOT_DEPTH",
+      "unit": "ft",
+      "value": "95"
+    }
+  ],
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "excluded_standards_exposed": false,
+  "profile_supply": "EXACT_MATCH",
+  "truth_semantics_changed": false,
+  "ui_wired": false,
+  "zone": "RS-1-7"
+}

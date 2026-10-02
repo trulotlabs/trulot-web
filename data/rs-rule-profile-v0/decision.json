@@ -1,0 +1,10 @@
+{
+  "architecture": "FEASIBILITY_ARCHITECTURE_READY_FOR_BOUNDED_PRODUCT_CONTRACT",
+  "capacity_calculated": false,
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "family_extension": "RS_ZONE_FAMILY_EXTENSION_READY",
+  "next": "NEXT_FEASIBILITY_STEP: bounded feasibility product contract",
+  "production": false,
+  "readiness": "RS_RULE_PROFILE_V0_READY",
+  "schema": "RS_PROFILE_SCHEMA_EXTENSION_REQUIRED: existing RM schema restricts zone_code to RM; generic zone pattern extension only"
+}

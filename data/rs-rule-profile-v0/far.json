@@ -1,0 +1,116 @@
+{
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "definition": {
+    "denominator": "total area of legal premises",
+    "numerator": "Code-compatible gross floor area of all buildings",
+    "source": "SDMC §113.0234"
+  },
+  "ordinary_branch": {
+    "bands": [
+      {
+        "maximum": "3000",
+        "maximum_far": "0.70",
+        "minimum": "0"
+      },
+      {
+        "maximum": "4000",
+        "maximum_far": "0.65",
+        "minimum": "3001"
+      },
+      {
+        "maximum": "5000",
+        "maximum_far": "0.60",
+        "minimum": "4001"
+      },
+      {
+        "maximum": "6000",
+        "maximum_far": "0.59",
+        "minimum": "5001"
+      },
+      {
+        "maximum": "7000",
+        "maximum_far": "0.58",
+        "minimum": "6001"
+      },
+      {
+        "maximum": "8000",
+        "maximum_far": "0.57",
+        "minimum": "7001"
+      },
+      {
+        "maximum": "9000",
+        "maximum_far": "0.56",
+        "minimum": "8001"
+      },
+      {
+        "maximum": "10000",
+        "maximum_far": "0.55",
+        "minimum": "9001"
+      },
+      {
+        "maximum": "11000",
+        "maximum_far": "0.54",
+        "minimum": "10001"
+      },
+      {
+        "maximum": "12000",
+        "maximum_far": "0.53",
+        "minimum": "11001"
+      },
+      {
+        "maximum": "13000",
+        "maximum_far": "0.52",
+        "minimum": "12001"
+      },
+      {
+        "maximum": "14000",
+        "maximum_far": "0.51",
+        "minimum": "13001"
+      },
+      {
+        "maximum": "15000",
+        "maximum_far": "0.50",
+        "minimum": "14001"
+      },
+      {
+        "maximum": "16000",
+        "maximum_far": "0.49",
+        "minimum": "15001"
+      },
+      {
+        "maximum": "17000",
+        "maximum_far": "0.48",
+        "minimum": "16001"
+      },
+      {
+        "maximum": "18000",
+        "maximum_far": "0.47",
+        "minimum": "17001"
+      },
+      {
+        "maximum": "19000",
+        "maximum_far": "0.46",
+        "minimum": "18001"
+      },
+      {
+        "maximum": null,
+        "maximum_far": "0.45",
+        "minimum": "19001"
+      }
+    ],
+    "selector": "CODE_LOT_AREA_SQ_FT",
+    "source": "SDMC §131.0446(a)(1), Table 131-04J"
+  },
+  "raw_cell": "(5) varies",
+  "steep_hillside_branch": {
+    "maximum_gfa_formula": "max(non_steep_hillside_area, minimum_zone_lot_area) + 25% of remaining lot area",
+    "predicates": [
+      "LOT_AREA_EXCEEDS_ZONE_MINIMUM",
+      "STEEP_HILLSIDES_OVER_50_PERCENT"
+    ],
+    "result_type": "MAXIMUM_GFA_FORMULA_NOT_SINGLE_FAR_RATIO",
+    "source": "SDMC §131.0446(a)(2)"
+  },
+  "unknown_policy": "If hillside share or Code-compatible numerator/denominator is missing, evaluation remains unresolved.",
+  "zone": "RS-1-7"
+}

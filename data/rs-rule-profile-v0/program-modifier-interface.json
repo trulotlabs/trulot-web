@@ -1,0 +1,62 @@
+{
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "invariant": "Program label, geography, or plan annotation does not prove eligibility or an operand.",
+  "program_stubs": [
+    {
+      "base_rule_mutated": false,
+      "implementation": "INTERFACE_ONLY",
+      "program": "ORDINARY_ADU_JADU"
+    },
+    {
+      "base_rule_mutated": false,
+      "implementation": "INTERFACE_ONLY",
+      "program": "ADU_HOME_DENSITY_BONUS"
+    },
+    {
+      "base_rule_mutated": false,
+      "implementation": "INTERFACE_ONLY",
+      "program": "SB9"
+    },
+    {
+      "base_rule_mutated": false,
+      "implementation": "INTERFACE_ONLY",
+      "program": "COMPLETE_COMMUNITIES"
+    },
+    {
+      "base_rule_mutated": false,
+      "implementation": "INTERFACE_ONLY",
+      "program": "SDA"
+    },
+    {
+      "base_rule_mutated": false,
+      "implementation": "INTERFACE_ONLY",
+      "program": "FIRE_REQUIREMENTS"
+    },
+    {
+      "base_rule_mutated": false,
+      "implementation": "INTERFACE_ONLY",
+      "program": "COASTAL_APPLICABILITY"
+    }
+  ],
+  "schema": {
+    "operations": [
+      "OVERRIDE",
+      "EXEMPTION",
+      "ADDITIVE",
+      "UNCHANGED"
+    ],
+    "predicate_policy": "Apply only when every predicate is supported; false leaves base unchanged; unknown remains unknown.",
+    "required": [
+      "modifier_id",
+      "program",
+      "rule_family",
+      "operation",
+      "predicates",
+      "effective_from",
+      "effective_through",
+      "coastal_applicability",
+      "operand",
+      "provenance"
+    ]
+  }
+}

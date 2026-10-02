@@ -1,0 +1,22 @@
+{
+  "base_rule": {
+    "meaning": "one dwelling unit per lot",
+    "operator": "PROCESS",
+    "raw_cell": "1",
+    "source": "Table 131-04D"
+  },
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "development_capacity_calculated": false,
+  "doctrine": "This is a base-zone fact, not final development capacity.",
+  "excluded_from_base_result": [
+    "ADU",
+    "JADU",
+    "ADU_HOME_DENSITY_BONUS",
+    "SB9",
+    "COMPLETE_COMMUNITIES",
+    "SDA",
+    "AFFORDABLE_BONUS",
+    "OTHER_PROGRAMS"
+  ],
+  "zone": "RS-1-7"
+}

@@ -1,0 +1,23 @@
+{
+  "basis": "Tables 131-04D and 131-04E are already structured by the same rule families, locators, footnote references, definitions, and version axes.",
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "decision": "RS_ZONE_FAMILY_EXTENSION_READY",
+  "research_policy": "Zone cells and their footnotes must still be transcribed and tested; unresolved source footnote 8 for RS-1-8 through RS-1-14 remains explicit and does not block RS-1-7 or the shared architecture.",
+  "schema_change_required": false,
+  "zones": [
+    "RS-1-1",
+    "RS-1-2",
+    "RS-1-3",
+    "RS-1-4",
+    "RS-1-5",
+    "RS-1-6",
+    "RS-1-7",
+    "RS-1-8",
+    "RS-1-9",
+    "RS-1-10",
+    "RS-1-11",
+    "RS-1-12",
+    "RS-1-13",
+    "RS-1-14"
+  ]
+}

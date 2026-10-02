@@ -1,0 +1,60 @@
+{
+  "benchmark_preservation": "The 1456 27th St replay selects current outside-Coastal law; no later law is back-applied to earlier benchmarks.",
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "profiles": [
+    {
+      "coastal_context": "OUTSIDE_COASTAL",
+      "effective_from": "2025-04-24",
+      "effective_through": "2026-07-14",
+      "fire_section_131_0443_i": false,
+      "profile_id": "RS17_OUTSIDE_COASTAL_2025_04_24",
+      "sources": [
+        "O21934"
+      ],
+      "table": "O-21934/Table 131-04D",
+      "zone": "RS-1-7"
+    },
+    {
+      "coastal_context": "OUTSIDE_COASTAL",
+      "effective_from": "2026-07-15",
+      "effective_through": null,
+      "fire_section_131_0443_i": true,
+      "profile_id": "RS17_OUTSIDE_COASTAL_2026_07_15",
+      "sources": [
+        "CURRENT_RESIDENTIAL",
+        "O22109"
+      ],
+      "table": "compiled 9-2026/Table 131-04D",
+      "zone": "RS-1-7"
+    },
+    {
+      "coastal_context": "INSIDE_COASTAL",
+      "effective_from": "2025-09-21",
+      "effective_through": "2026-09-09",
+      "fire_section_131_0443_i": false,
+      "profile_id": "RS17_INSIDE_COASTAL_2025_09_21",
+      "sources": [
+        "O21934"
+      ],
+      "table": "O-21934 certified Coastal/Table 131-04D",
+      "zone": "RS-1-7"
+    },
+    {
+      "coastal_context": "INSIDE_COASTAL",
+      "effective_from": "2026-09-10",
+      "effective_through": null,
+      "excluded_pending": [
+        "O-22109"
+      ],
+      "fire_section_131_0443_i": false,
+      "profile_id": "RS17_INSIDE_COASTAL_2026_09_10",
+      "sources": [
+        "INSIDE_COASTAL_LEGAL_VERSION_CHAIN",
+        "O21934"
+      ],
+      "table": "O-21836 plus certified chain and O-21934/Table 131-04D",
+      "zone": "RS-1-7"
+    }
+  ],
+  "selection_rule": "Select independently by date and proven Coastal context; O-22109 is current outside Coastal and remains pending inside Coastal."
+}

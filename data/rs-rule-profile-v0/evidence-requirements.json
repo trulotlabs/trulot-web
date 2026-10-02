@@ -1,0 +1,59 @@
+{
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "families": {
+    "FAR": {
+      "required": [
+        "legal_premises_identity",
+        "code_compatible_gfa",
+        "total_premises_area",
+        "lot_area_band",
+        "steep_hillside_share",
+        "program_predicates"
+      ]
+    },
+    "LOT_AREA": {
+      "required": [
+        "legal_premises_identity",
+        "recorded_boundary",
+        "code_property_lines",
+        "code_defined_lot_area"
+      ]
+    },
+    "LOT_COVERAGE": {
+      "required": [
+        "legal_premises_identity",
+        "steep_hillside_share",
+        "code_compatible_coverage_components"
+      ]
+    },
+    "SETBACKS": {
+      "compliance_additional": [
+        "current_or_proposed_structure_geometry",
+        "feature_classification",
+        "projection predicates"
+      ],
+      "required": [
+        "property_line_roles",
+        "branch_predicates",
+        "version_and_coastal_context"
+      ]
+    },
+    "STRUCTURE_HEIGHT": {
+      "required": [
+        "code_lot_width",
+        "setback_lines",
+        "existing_and_proposed_grade",
+        "highest_points",
+        "roof_topography_overlay_predicates"
+      ]
+    },
+    "WIDTH_DEPTH_FRONTAGE": {
+      "required": [
+        "legal_boundary_geometry",
+        "front_rear_side_line_roles",
+        "code_measurement_semantics"
+      ]
+    }
+  },
+  "gate": "Missing required evidence yields UNKNOWN or NOT_EVALUATED, never a favorable default."
+}

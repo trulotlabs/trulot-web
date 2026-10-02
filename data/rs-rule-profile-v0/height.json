@@ -1,0 +1,54 @@
+{
+  "branches": [
+    {
+      "applies_at": [
+        "required_side_yards",
+        "front_and_street_side_yards_when_overall_height_exceeds_27_ft"
+      ],
+      "branch_id": "SETBACK_LINE_HEIGHT",
+      "maximum_ft": "24"
+    },
+    {
+      "applies_at": [
+        "overall_structure_high_point_subject_to_measurement_rules"
+      ],
+      "branch_id": "OVERALL_HEIGHT",
+      "maximum_ft": "30"
+    },
+    {
+      "angle_degrees_from_vertical_inward": "45",
+      "branch_id": "ANGLED_ENVELOPE_LT_75",
+      "predicate": "LOT_WIDTH_LT_75"
+    },
+    {
+      "angle_degrees_from_vertical_inward": "30",
+      "branch_id": "ANGLED_ENVELOPE_75_TO_150",
+      "predicate": "75_LE_LOT_WIDTH_LE_150"
+    },
+    {
+      "angle": "NOT_APPLICABLE",
+      "branch_id": "ANGLED_ENVELOPE_GT_150",
+      "predicate": "LOT_WIDTH_GT_150"
+    }
+  ],
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "evidence_prerequisites": [
+    "code_lot_width",
+    "required_setback_lines",
+    "existing_grade",
+    "proposed_grade",
+    "highest_structure_points",
+    "roof_parapet_appurtenance_classification",
+    "overlay_and_program_predicates"
+  ],
+  "measurement": {
+    "overall": "lowest applicable grade near structure to highest point, subject to express topographic rule",
+    "plumb_line": "lower of existing or proposed grade directly below",
+    "roof_and_topography": "requires classification under express Code provisions",
+    "section": "SDMC §113.0270"
+  },
+  "overlay_policy": "Any overlay or program change attaches as a separate proven modifier.",
+  "raw_cell": "(4) 24/30",
+  "unsupported_shortcut": "24/30 is not one interchangeable maximum.",
+  "zone": "RS-1-7"
+}

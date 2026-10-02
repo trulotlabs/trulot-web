@@ -1,0 +1,54 @@
+{
+  "address": "1456 27th St",
+  "apn": "6341302200",
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "development_capacity": false,
+  "differences_from_prior": [],
+  "profile": "RS17_OUTSIDE_COASTAL_2026_07_15",
+  "results": {
+    "front_setback": {
+      "source_artifact": "data/front-setback-evaluator-v0/evaluation.json",
+      "state": "CONDITIONAL"
+    },
+    "interior_side_setback": {
+      "ordinary_base_each_ft": "4",
+      "source_artifact": "data/interior-side-setback-evaluator-v0/evaluation.json",
+      "state": "CONDITIONAL"
+    },
+    "minimum_frontage": {
+      "measured": "94.00 ft",
+      "required": "50 ft",
+      "source_artifact": "data/minimum-frontage-evaluation-v0/evaluation.json",
+      "state": "SATISFIED"
+    },
+    "minimum_lot_area": {
+      "measured": "22096.320 sq ft",
+      "required": "5000 sq ft",
+      "source_artifact": "data/minimum-lot-area-evaluation-v0/evaluation.json",
+      "state": "SATISFIED"
+    },
+    "minimum_lot_depth": {
+      "measured": "235.02 ft",
+      "required": "95 ft",
+      "source_artifact": "data/minimum-lot-depth-evaluation-v0/evaluation.json",
+      "state": "SATISFIED"
+    },
+    "minimum_lot_width": {
+      "measured": "94.00 ft",
+      "required": "50 ft",
+      "source_artifact": "data/minimum-lot-width-evaluation-v0/evaluation.json",
+      "state": "SATISFIED"
+    },
+    "rear_setback": {
+      "ordinary_depth_branch_ft": "23.502",
+      "source_artifact": "data/rear-setback-evaluator-v0/evaluation.json",
+      "state": "CONDITIONAL"
+    },
+    "street_side_setback": {
+      "source_artifact": "data/street-side-setback-applicability-v0/evaluation.json",
+      "state": "NOT_APPLICABLE",
+      "value": null
+    }
+  },
+  "whole_project_compliance": false
+}

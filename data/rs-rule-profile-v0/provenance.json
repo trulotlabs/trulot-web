@@ -1,0 +1,40 @@
+{
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "derived_from_public_sources_only": true,
+  "private_plans_included": false,
+  "sources": {
+    "CURRENT_DEFINITIONS": {
+      "sha256": "7a2234c4b02089867be21002036235c7eba2abebd60fa2ef0413a60b00a652ae",
+      "title": "SDMC Chapter 11 definitions"
+    },
+    "CURRENT_MEASUREMENT": {
+      "sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+      "title": "SDMC Chapter 11 Article 3 Division 2",
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf"
+    },
+    "CURRENT_RESIDENTIAL_TABLE_131_04D": {
+      "pages": [
+        33,
+        57,
+        58,
+        59,
+        60,
+        61,
+        64,
+        65,
+        66
+      ],
+      "sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+      "title": "SDMC Chapter 13 Article 1 Division 4 (9-2026)",
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf"
+    },
+    "O21934": {
+      "role": "table and Coastal-effective version chain",
+      "sha256": "162f93058df3a250846da3bc6d7ac6a74e900a7ae0bf649be51da278e7da86b6"
+    },
+    "O22109": {
+      "role": "outside-Coastal current Fire buffer and amendment boundary",
+      "sha256": "ed7c48fb1d182777615c9223353bc26e78f9cd058916e6d462557c5ea0e9a677"
+    }
+  }
+}

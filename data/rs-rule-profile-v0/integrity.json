@@ -1,0 +1,27 @@
+{
+  "algorithm": "SHA-256 of canonical JSON with final newline",
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "files": {
+    "apn-6341302200-replay.json": "ef6cb94490571bf10988c38bc4939bb7dd4b16bad567d7fde976d59ff0442b8a",
+    "contract.json": "b8683521311cdca421ef457555473e56490f86e73bf5b0cb5f34fc127ebde8b2",
+    "decision.json": "1c38a9880f7963d29408c930e3e70956ba8345a2fc034208a64d26794ffd2ef3",
+    "definitions.json": "c9b0a58d183c3db238405453a4cf946466c6a2f2571309aefa27b8126c06742a",
+    "density.json": "343a721055dca76dc8f5f5951dcdc4303de0198e0e97e9f745bc9d39b98b75cb",
+    "evidence-requirements.json": "dd9b07067fdaee019befb6c3e62c9fb793eb5223633ca346b6637a6ef56bcab8",
+    "family-extension.json": "eb450da002eaf3cd8a16b5aa1933f19f43099e391521127f8c53a20358929c1e",
+    "far.json": "9a2f385afd7438792a1831e7790a408d656d3db27584476115bb3efc5d00680c",
+    "fire-doctrine.json": "2fff9dde5586d63dacef31db3c6ada5f52ab5ef8085072c900fd238ef8454f61",
+    "footnotes.json": "c0733c315b8db25e7d37a078368ee0ae35ca257f2cdee06e091465e669ef1533",
+    "height.json": "8ce3c34f41f62c87058a351532ec30c3f934a33bb29b34df0edd52eeabeba8e2",
+    "invariants.json": "885b0d545d6f9383639753dfc874d636530c1276f44ec4a763369c406ec52d28",
+    "lot-coverage.json": "e28d96360b6419b8e6848f5d7f025577ace76edcef59f41e22ba8b08d9626849",
+    "program-modifier-interface.json": "1f4ed8e588ad05d4e046a3c44982106cfb1ac770ed4110fed70f7e9591dd8ae4",
+    "provenance.json": "fc4b99962f9a3c109995145dde05c96a90dccab66f6b5e3c82c88f768fbc5dff",
+    "public-page-consistency.json": "270724f5889200efe0c5923c698c451e0200e758b06c8e0b37592c4f5934c877",
+    "rs-1-7-base-rules.json": "3d8877df56c7f148f704710ec6c3cd1d805b05209743497ecada491891501876",
+    "schema.json": "e607dcb92fc83216460d0f116ce2d6154f9abbc2e0511cc7c8913393e8e1165d",
+    "setbacks.json": "a8b94d48e553412c4c5b32905438faee9fdd0eea265c772f87751a0cec19c9ad",
+    "slope-dependency.json": "8f2a4ef14e1c7322eb306efcb581d332f64873a8f97ae68f6feeed4658290112",
+    "version-profiles.json": "177a839a93c5d4bab03bebb9084d39f1cbd2abf2980074f0aa11af8324e2b3fb"
+  }
+}

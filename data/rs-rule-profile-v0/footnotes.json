@@ -1,0 +1,109 @@
+{
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "footnotes": [
+    {
+      "effect": {
+        "kind": "NUMERIC_PERMISSION",
+        "minimum_ft": "6"
+      },
+      "evidence": [
+        "code_compatible_slope_analysis",
+        "frontage_and_depth_geometry",
+        "election"
+      ],
+      "families": [
+        "FRONT_SETBACK"
+      ],
+      "footnote_id": "FN1",
+      "source": "Table 131-04D footnote 1",
+      "trigger_predicates": [
+        "AT_LEAST_HALF_FRONT_50_FT_DEPTH_HAS_MIN_SLOPE_25_PERCENT",
+        "SETBACK_IS_CLOSEST_TO_STREET",
+        "REDUCTION_ELECTED"
+      ],
+      "version": "ALL_MODELED"
+    },
+    {
+      "effect": {
+        "kind": "FORMULA",
+        "value": "APPLY_SIDE_WIDTH_AND_REALLOCATION_BRANCHES"
+      },
+      "evidence": [
+        "code_lot_width",
+        "line_roles",
+        "reallocation_election"
+      ],
+      "families": [
+        "INTERIOR_SIDE_SETBACK",
+        "STREET_SIDE_SETBACK"
+      ],
+      "footnote_id": "FN2",
+      "source": "Table 131-04D footnote 2",
+      "trigger_predicates": [
+        "SECTION_131_0443_A_4_APPLIES"
+      ],
+      "version": "ALL_MODELED"
+    },
+    {
+      "effect": {
+        "kind": "FORMULA",
+        "value": "APPLY_DEPTH_AND_ALLEY_BRANCHES"
+      },
+      "evidence": [
+        "code_lot_depth",
+        "rear_alley_status"
+      ],
+      "families": [
+        "REAR_SETBACK"
+      ],
+      "footnote_id": "FN3",
+      "source": "Table 131-04D footnote 3",
+      "trigger_predicates": [
+        "SECTION_131_0443_A_2_APPLIES"
+      ],
+      "version": "ALL_MODELED"
+    },
+    {
+      "effect": {
+        "kind": "GEOMETRIC_ENVELOPE",
+        "value": "APPLY_TABLE_131_04H_ANGLE"
+      },
+      "evidence": [
+        "code_lot_width",
+        "setback_lines",
+        "code_grade_and_top_geometry"
+      ],
+      "families": [
+        "STRUCTURE_HEIGHT"
+      ],
+      "footnote_id": "FN4",
+      "source": "Table 131-04D footnote 4",
+      "trigger_predicates": [
+        "SECTION_131_0444_B_APPLIES"
+      ],
+      "version": "ALL_MODELED"
+    },
+    {
+      "effect": {
+        "kind": "FORMULA",
+        "value": "APPLY_TABLE_131_04J_AND_STEEP_HILLSIDE_BRANCH"
+      },
+      "evidence": [
+        "code_lot_area",
+        "premises_identity",
+        "code_gfa",
+        "steep_hillside_share"
+      ],
+      "families": [
+        "FAR"
+      ],
+      "footnote_id": "FN5",
+      "source": "Table 131-04D footnote 5",
+      "trigger_predicates": [
+        "SECTION_131_0446_A_APPLIES"
+      ],
+      "version": "ALL_MODELED"
+    }
+  ],
+  "unknown_policy": "A missing trigger predicate produces UNKNOWN and cannot select the no-footnote branch."
+}

@@ -1,0 +1,443 @@
+{
+  "capacity_calculation_authorized": false,
+  "contract_version": "rs-rule-profile-v0-2026-10-02-p58",
+  "direct_cross_references": [
+    "resubdivided corner-lot setbacks",
+    "hardscape",
+    "accessory structures",
+    "garage placement",
+    "structure spacing",
+    "third-story requirements",
+    "projections",
+    "supplemental regulations",
+    "refuse/recyclables",
+    "visibility",
+    "environmentally sensitive lands"
+  ],
+  "rules": [
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7"
+      ],
+      "base_value": "1",
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "PROCESS",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "BASE_ZONE_DENSITY_ONLY",
+      "program_modifiers": [],
+      "raw_value": "1",
+      "rule_family": "DENSITY_BASIS",
+      "rule_id": "RS17_DENSITY",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "DENSITY_BASIS",
+        "table": "131-04D"
+      },
+      "unit": "dwelling_unit_per_lot",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7"
+      ],
+      "base_value": "5000",
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "SDMC_LOT_AREA",
+      "program_modifiers": [],
+      "raw_value": "5,000",
+      "rule_family": "MINIMUM_LOT_AREA",
+      "rule_id": "RS17_MIN_LOT_AREA",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "MINIMUM_LOT_AREA",
+        "table": "131-04D"
+      },
+      "unit": "sq_ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7"
+      ],
+      "base_value": "50",
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "SDMC_LOT_WIDTH",
+      "program_modifiers": [],
+      "raw_value": "50",
+      "rule_family": "MINIMUM_LOT_WIDTH",
+      "rule_id": "RS17_MIN_LOT_WIDTH",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "MINIMUM_LOT_WIDTH",
+        "table": "131-04D"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7",
+        "NO_131_0442_A_REDUCTION"
+      ],
+      "base_value": "50",
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "SDMC_STREET_FRONTAGE",
+      "program_modifiers": [],
+      "raw_value": "50",
+      "rule_family": "MINIMUM_STREET_FRONTAGE",
+      "rule_id": "RS17_MIN_STREET_FRONTAGE",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "MINIMUM_STREET_FRONTAGE",
+        "table": "131-04D"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7",
+        "LOT_IS_CORNER"
+      ],
+      "base_value": "55",
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "SDMC_LOT_WIDTH",
+      "program_modifiers": [],
+      "raw_value": "55",
+      "rule_family": "MINIMUM_CORNER_LOT_WIDTH",
+      "rule_id": "RS17_MIN_CORNER_WIDTH",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "MINIMUM_CORNER_LOT_WIDTH",
+        "table": "131-04D"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7"
+      ],
+      "base_value": "95",
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "SDMC_LOT_DEPTH",
+      "program_modifiers": [],
+      "raw_value": "95",
+      "rule_family": "MINIMUM_LOT_DEPTH",
+      "rule_id": "RS17_MIN_LOT_DEPTH",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "MINIMUM_LOT_DEPTH",
+        "table": "131-04D"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7"
+      ],
+      "base_value": "15",
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN1"
+      ],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "SDMC_113_0252",
+      "program_modifiers": [],
+      "raw_value": "(1) 15",
+      "rule_family": "FRONT_SETBACK",
+      "rule_id": "RS17_FRONT_SETBACK",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "FRONT_SETBACK",
+        "table": "131-04D"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7"
+      ],
+      "base_value": "4",
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "FORMULA",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN2"
+      ],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "SDMC_113_0252",
+      "program_modifiers": [],
+      "raw_value": "4(2)",
+      "rule_family": "INTERIOR_SIDE_SETBACK",
+      "rule_id": "RS17_INTERIOR_SIDE_SETBACK",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "INTERIOR_SIDE_SETBACK",
+        "table": "131-04D"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7",
+        "STREET_SIDE_PROPERTY_LINE_EXISTS"
+      ],
+      "base_value": "5",
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "FORMULA",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN2"
+      ],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "SDMC_113_0252",
+      "program_modifiers": [],
+      "raw_value": "5(2)",
+      "rule_family": "STREET_SIDE_SETBACK",
+      "rule_id": "RS17_STREET_SIDE_SETBACK",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "STREET_SIDE_SETBACK",
+        "table": "131-04D"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7"
+      ],
+      "base_value": "13",
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "FORMULA",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN3"
+      ],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "SDMC_113_0252",
+      "program_modifiers": [],
+      "raw_value": "(3) 13",
+      "rule_family": "REAR_SETBACK",
+      "rule_id": "RS17_REAR_SETBACK",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "REAR_SETBACK",
+        "table": "131-04D"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7"
+      ],
+      "base_value": {
+        "overall_ft": "30",
+        "setback_line_ft": "24"
+      },
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "MAX",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN4"
+      ],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "SDMC_113_0270_AND_131_0444",
+      "program_modifiers": [],
+      "raw_value": "(4) 24/30",
+      "rule_family": "STRUCTURE_HEIGHT",
+      "rule_id": "RS17_STRUCTURE_HEIGHT",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "STRUCTURE_HEIGHT",
+        "table": "131-04D"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7",
+        "CODE_LOT_AREA_AVAILABLE"
+      ],
+      "base_value": null,
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "FORMULA",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN5"
+      ],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "SDMC_113_0234_AND_131_0446",
+      "program_modifiers": [],
+      "raw_value": "(5) varies",
+      "rule_family": "FAR",
+      "rule_id": "RS17_FAR",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "FAR",
+        "table": "131-04D"
+      },
+      "unit": "ratio",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RS_1_7",
+        "STEEP_HILLSIDE_SHARE_KNOWN"
+      ],
+      "base_value": null,
+      "coastal_applicability_profile": "VERSION_SELECTED_OUTSIDE_OR_INSIDE_COASTAL",
+      "comparator": "FORMULA",
+      "derivation_class": "recorded",
+      "effective_date": "2025-04-24",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "RS17_TABLE_131_04D",
+      "measurement_definition": "SDMC_LOT_COVERAGE",
+      "program_modifiers": [],
+      "raw_value": "applies",
+      "rule_family": "LOT_COVERAGE",
+      "rule_id": "RS17_LOT_COVERAGE",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL_TABLE_131_04D"
+      ],
+      "table_locator": {
+        "column": "RS-1-7",
+        "page": 33,
+        "row": "LOT_COVERAGE",
+        "table": "131-04D"
+      },
+      "unit": "percent",
+      "unresolved_dependencies": [],
+      "zone_code": "RS-1-7"
+    }
+  ],
+  "zone": "RS-1-7"
+}
