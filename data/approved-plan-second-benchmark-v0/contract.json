@@ -1,0 +1,12 @@
+{
+  "conclusion_scope": "ISSUED_PLAN_RULE_VALIDATION",
+  "contract_version": "approved-plan-second-benchmark-v0-2026-10-02-p49",
+  "production": false,
+  "result_states": [
+    "PLAN_RULE_REQUIREMENT_SATISFIED",
+    "PLAN_RULE_REQUIREMENT_NOT_SATISFIED",
+    "PLAN_RULE_EVALUATION_UNRESOLVED"
+  ],
+  "scope": "ONE_PROJECT_ONE_DIRECT_WALL_HEIGHT_ONE_BUILDING_PERMIT_TRIGGER",
+  "unresolved_rule_selection_state": "SECOND_BENCHMARK_RULE_SELECTION_UNRESOLVED"
+}

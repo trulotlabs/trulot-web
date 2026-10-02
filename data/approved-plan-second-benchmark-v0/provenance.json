@@ -1,0 +1,37 @@
+{
+  "boundary": "Private evidence supplies only the issued proposed-plan wall fact and status; public authority supplies parcel identity, zoning, Coastal context, and law.",
+  "contract_version": "approved-plan-second-benchmark-v0-2026-10-02-p49",
+  "private": [
+    {
+      "hop": "AUTHORIZED_ISSUED_PLAN_TO_PLAN_FACT_ENVELOPE",
+      "privacy": "PRIVATE_VALIDATION_EVIDENCE",
+      "source_ref": "PRIVATE_PLAN_PRJ-1140985_CITY_ISSUED",
+      "source_sha256": "7b682112c7495bd01569071059c7ea61f381f13a65862f37d0aab083715faf17"
+    }
+  ],
+  "public": [
+    {
+      "acquisition": "sangis-20260924T183743Z",
+      "artifact_sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+      "hop": "APN_TO_SANGIS_PARCEL",
+      "source": "SanGIS Parcels FeatureServer/0"
+    },
+    {
+      "acquisition": "zoning-city-sd-20260930T024032Z",
+      "artifact_sha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+      "hop": "PARCEL_TO_BASE_ZONE",
+      "source": "SanGIS Zoning_Base_SD FeatureServer/0"
+    },
+    {
+      "acquisition": "coastal-city-sd-20260930T143055Z",
+      "artifact_sha256": "9b7b744247278000123a56965597917cdc560db4de78c539f4876aa09b267f97",
+      "hop": "PARCEL_TO_COASTAL",
+      "source": "City DSD Zoning Overlay MapServer/2"
+    },
+    {
+      "hop": "APPLICATION_PROFILE_TO_RULE",
+      "source": "https://docs.sandiego.gov/municode/MuniCodeChapter14/Ch14Art02Division03.pdf",
+      "source_sha256": "e328b7d946263d0bdb67ff7cda828a48fbdca003cb6126bb4dd3de607d82cd72"
+    }
+  ]
+}

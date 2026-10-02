@@ -1,0 +1,21 @@
+{
+  "adapter_project_constants": false,
+  "architectural_fork_required": false,
+  "contract_version": "approved-plan-second-benchmark-v0-2026-10-02-p49",
+  "decision": "APPROVED_PLAN_BENCHMARK_TRANSFERABILITY_SUPPORTED",
+  "different_project": {
+    "packet_42": "PRJ-1111087",
+    "packet_49": "PRJ-1140985"
+  },
+  "different_rule_family": {
+    "packet_42": "INTERIOR_SIDE_SETBACK",
+    "packet_49": "WALL_HEIGHT_BUILDING_PERMIT_TRIGGER"
+  },
+  "different_status": {
+    "packet_42": "SUBMITTED_NOT_PROVEN_ISSUED",
+    "packet_49": "CITY_ISSUED_PLAN_SET"
+  },
+  "same_adapter": "ProjectEvidenceAdapter/PlanFactEnvelope via project_evidence_adapter_v0",
+  "same_comparator_pattern": "Decimal MIN comparison through dimensional-rule-evaluator-v0-2026-10-01-p37",
+  "same_public_private_boundary": true
+}

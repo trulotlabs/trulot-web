@@ -1,0 +1,66 @@
+{
+  "address": "639 N 67th Street, San Diego, CA 92114",
+  "apn": "5442140600",
+  "contract_version": "approved-plan-second-benchmark-v0-2026-10-02-p49",
+  "direct_dimensions": {
+    "evidence_class": "DIRECT_LABELED_PLAN_DIMENSION",
+    "maximum_height_ft": "9.25",
+    "maximum_height_label": "9'-3\"",
+    "minimum_height_label": "1'-2\"",
+    "plan_callout": "walls ranging in heights of 1'-2\" to 9'-3\""
+  },
+  "fingerprint_sha256": "712593aa5e6f917ee794af66479deed34243bf1eb144d33bedb186a87db245ea",
+  "floor_area": {
+    "evaluated": false,
+    "reason": "NOT_RELEVANT_TO_SELECTED_RULE"
+  },
+  "geometry_semantics": {
+    "maximum_height_compliance_evaluated": false,
+    "measurement": "DIRECT_LABELED_PROJECT_MAXIMUM_HEIGHT",
+    "scale_derived": false,
+    "wall_scope": "SITE_OR_RETAINING_WALL",
+    "yard_location": "NOT_REQUIRED_FOR_SELECTED_PERMIT_TRIGGER"
+  },
+  "height": {
+    "project_wall_range": {
+      "max": "9'-3\"",
+      "min": "1'-2\""
+    },
+    "scale_derived": false,
+    "selected_maximum_ft": "9.25"
+  },
+  "legal_survey_line_roles": {
+    "authority_state": "PLAN_GEOMETRY_ONLY_NOT_PUBLIC_PARCEL_TRUTH",
+    "required_for_selected_rule": false,
+    "scope": "PARCEL_TIED_SITE_WALL_PLAN",
+    "selected_line": null
+  },
+  "plan_set_version": "2025-10-30_PRINTED_LATEST_ISSUE",
+  "privacy_classification": "PRIVATE_VALIDATION_EVIDENCE",
+  "project_id": "PRJ-1140985",
+  "project_specific_conditions": {
+    "no_right_of_way_work_plan_note": true,
+    "separate_building_project_excluded": true,
+    "subtype_changes_selected_result": false,
+    "wall_subtype_for_maximum": "NOT_DISTINGUISHED_BY_CORPUS_FACT"
+  },
+  "project_status": "CITY_ISSUED_2025-11-25",
+  "proposed_use_units": {
+    "dwelling_units_evaluated": false,
+    "use": "SITE_AND_RETAINING_WALLS"
+  },
+  "public_truth_promotion": false,
+  "sheet_provenance": {
+    "pdf_page": 1,
+    "sheet": "T-1",
+    "source_ref": "PRIVATE_PLAN_PRJ-1140985_CITY_ISSUED",
+    "title": "Title Sheet / Architectural Site Plan - Site Wall Locations"
+  },
+  "source_sha256": "7b682112c7495bd01569071059c7ea61f381f13a65862f37d0aab083715faf17",
+  "structure_id": {
+    "individual_wall_segment": "NOT_REQUIRED_FOR_BRANCH_INVARIANT_PERMIT_TRIGGER",
+    "project_type": "Site and retaining walls",
+    "scope": "PROJECT_MAXIMUM_SITE_WALL_HEIGHT"
+  },
+  "subject": "PROPOSED_PROJECT_FACT"
+}

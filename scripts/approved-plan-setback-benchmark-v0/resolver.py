@@ -4,8 +4,13 @@ from __future__ import annotations
 
 import hashlib
 import json
+import sys
 from decimal import Decimal
+from pathlib import Path
 from typing import Any, Mapping
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from project_evidence_adapter_v0 import validate_project_evidence_envelope
 
 
 CONTRACT_VERSION = "approved-plan-setback-benchmark-v0-2026-10-01-p42"
@@ -24,26 +29,17 @@ def fingerprint(value: Any) -> str:
 
 
 def validate_plan_fact_envelope(envelope: Mapping[str, Any]) -> None:
-    required = {
-        "project_id", "apn", "address", "project_status", "plan_set_version",
-        "subject", "sheet_provenance", "legal_survey_line_roles", "structure_id",
-        "geometry_semantics", "direct_dimensions", "height", "floor_area",
-        "proposed_use_units", "project_specific_conditions",
-        "privacy_classification", "source_sha256",
-    }
-    missing = sorted(required - set(envelope))
-    if missing:
-        raise ValueError(f"PLAN_FACT_ENVELOPE_MISSING:{','.join(missing)}")
-    if envelope["project_id"] != EXPECTED_PROJECT or envelope["apn"] != EXPECTED_APN:
-        raise ValueError("PLAN_PROJECT_IDENTITY_MISMATCH")
-    if envelope["subject"] != "PROPOSED_PROJECT_FACT":
-        raise ValueError("PRIVATE_PLAN_FACT_MUST_REMAIN_PROPOSED")
-    if envelope["project_status"] != "FOURTH_CD_SUBMITTAL_NOT_PROVEN_ISSUED":
-        raise ValueError("SUBMITTAL_STATUS_REQUIRED")
-    if envelope["privacy_classification"] != PRIVATE_CLASS:
-        raise ValueError("PRIVATE_CLASSIFICATION_REQUIRED")
-    if "source_path" in envelope or "private_path" in canonical_json(envelope):
-        raise ValueError("PRIVATE_PATH_LEAKAGE")
+    try:
+        validate_project_evidence_envelope(
+            envelope,
+            expected_project_id=EXPECTED_PROJECT,
+            expected_apn=EXPECTED_APN,
+            allowed_project_statuses={"FOURTH_CD_SUBMITTAL_NOT_PROVEN_ISSUED"},
+        )
+    except ValueError as error:
+        if str(error) == "PLAN_STATUS_OUTSIDE_ALLOWED_SCOPE":
+            raise ValueError("SUBMITTAL_STATUS_REQUIRED") from error
+        raise
 
 
 def reconcile_zone(public_zone: str, plan_zone: str) -> dict[str, Any]:

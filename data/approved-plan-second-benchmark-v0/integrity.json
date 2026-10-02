@@ -1,0 +1,13 @@
+{
+  "artifacts": {
+    "benchmark-result.json": "d3129737713cf8865ce01c423b08d66d9b6bc5085e4f0b4600929e9245858d05",
+    "contract.json": "acad7eb50d5e43a5afdaa5b7722fa9008e703960a31399ed85b0bb294b56078b",
+    "decision.json": "f0bd53f3d088abe2f462b1689b8b5b0b3d1366d7ca493fcd4f2acbfbcadd4366",
+    "plan-fact-envelope.json": "bf1c52353232f6ebd39efe4817951f311a9b80163b5dd89c42486fa27cc457a4",
+    "provenance.json": "9c69c1a37e88fabe7915d519f2ccdef22aa0bb8491d3471ddbdadd0ecae33ac7",
+    "public-rule-profile.json": "483964106474462072e836c41a2cb47c11259ecd08015dc5c94a9cef02923250",
+    "transferability.json": "9550475a456a1c66c13ece46ed61de9ef33de47ad9b8c5767877c47d9561030b"
+  },
+  "bundle_sha256": "b7c082835263034e4e15af236dbc0c719402f258891ddd1bc1e7a7d5e574d00f",
+  "contract_version": "approved-plan-second-benchmark-v0-2026-10-02-p49"
+}

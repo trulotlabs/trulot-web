@@ -1,0 +1,91 @@
+{
+  "public_profile": {
+    "authority_classification": "PUBLIC_AUTHORITY",
+    "coastal": {
+      "acquisition": "coastal-city-sd-20260930T143055Z",
+      "intersection_sq_ft": "0",
+      "source_artifact_sha256": "9b7b744247278000123a56965597917cdc560db4de78c539f4876aa09b267f97",
+      "state": "OUTSIDE_COASTAL"
+    },
+    "jurisdiction": "CITY_OF_SAN_DIEGO",
+    "parcel_identity": {
+      "apn": "5442140600",
+      "artifact_sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+      "jurisdiction": "CITY_OF_SAN_DIEGO",
+      "legal_description": "BLOCK 7 LOT 4",
+      "map_reference": "1063",
+      "parcel_acquisition": "sangis-20260924T183743Z",
+      "parcel_id": 53299,
+      "situs": "639 N 67TH ST, SAN DIEGO, CA 92114-2910",
+      "source_currency": "2026-08-29",
+      "source_object_id": 7815,
+      "subdivision": "ENCANTO HEIGHTS"
+    },
+    "private_plan_used_to_select_public_truth": false,
+    "zoning": {
+      "acquired_at": "2026-09-30T02:40:39.064005Z",
+      "acquisition": "zoning-city-sd-20260930T024032Z",
+      "artifact_sha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6",
+      "authoritative_zone": "RM-2-5",
+      "detailed_mapping_state": "BOUNDARY_SLIVER",
+      "mapping_state": "SINGLE_ZONE",
+      "principal_feature": {
+        "implementation_date": "2016-01-14",
+        "intersection_sq_ft": "20343.024965",
+        "objectid": 1888,
+        "ordinance": "O-20580 N.S.",
+        "share": "0.999995123815",
+        "zone": "RM-2-5"
+      },
+      "retained_secondary": {
+        "classification": "BOUNDARY_SLIVER",
+        "intersection_sq_ft": "0.099197",
+        "objectid": 1866,
+        "share": "0.000004876186",
+        "zone": "RS-1-6"
+      },
+      "selected_zone": "RM-2-5",
+      "source_modified_at": "2026-08-10T22:44:01.705Z"
+    }
+  },
+  "rule_profile": {
+    "applicability_predicates": {
+      "city_jurisdiction": true,
+      "direct_maximum_height": true,
+      "outside_coastal": true,
+      "wall_is_fence_or_retaining_wall": true,
+      "yard_location_required": false
+    },
+    "application_version": {
+      "compiled_code_edition_verified": "9-2026",
+      "effective_date": "2024-10-05",
+      "ordinance": "O-21836 N.S.",
+      "project_plan_issued": "2025-11-25",
+      "selected_profile": "OUTSIDE_COASTAL_TABLE_142_03A_EFFECTIVE_2024-10-05",
+      "table_last_amended": "2024-07-22"
+    },
+    "authority": {
+      "publisher": "City of San Diego",
+      "section": "SDMC Table 142-03A, Fence Regulations Applicability",
+      "source_sha256": "e328b7d946263d0bdb67ff7cda828a48fbdca003cb6126bb4dd3de607d82cd72",
+      "source_url": "https://docs.sandiego.gov/municode/MuniCodeChapter14/Ch14Art02Division03.pdf"
+    },
+    "branches": {
+      "fence": {
+        "height_ft_greater_than_or_equal": "7",
+        "required_permit": "BUILDING_PERMIT_PROCESS_ONE"
+      },
+      "retaining_wall": {
+        "height_ft_greater_than_or_equal": "3",
+        "required_permit": "BUILDING_PERMIT_PROCESS_ONE"
+      }
+    },
+    "exceptions_and_limits": {
+      "coastal_between_shoreline_and_first_public_roadway": "NOT_APPLICABLE_OUTSIDE_COASTAL",
+      "maximum_height_compliance": "NOT_EVALUATED",
+      "project_review_override": "NONE_USED",
+      "walls_exceeding_permitted_height": "SEPARATE_NDP_PROCESS_TWO_RULE_NOT_EVALUATED"
+    },
+    "rule_family": "WALL_HEIGHT_BUILDING_PERMIT_TRIGGER"
+  }
+}
