@@ -1,18 +1,9 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
   "prohibited_top_level_labels": [
     "Buildable",
-    "Not buildable",
     "Approved",
-    "Development feasible",
-    "Can build X units"
+    "Development feasible"
   ],
-  "qualification": "Top-level state summarizes evaluation coverage, never entitlement, capacity, approval, or whole-project compliance.",
-  "states": {
-    "BASE_PARCEL_RULES_EVALUATED": "Every requested, supported base parcel rule has a deterministic result; this is not whole-property feasibility.",
-    "MORE_EVIDENCE_NEEDED": "The requested evaluation cannot reach a bounded comparison without named evidence.",
-    "OUTSIDE_CURRENT_SCOPE": "The requested analysis is outside V0.",
-    "PARTIAL_EVALUATION": "At least one base parcel rule is evaluated and at least one remains conditional, blocked, or unevaluated.",
-    "SOURCE_UNAVAILABLE": "An authoritative source required for the requested analysis is unavailable."
-  }
+  "qualification": "Coverage only; never entitlement, capacity, approval, or whole-project compliance."
 }

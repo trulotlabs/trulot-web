@@ -1,0 +1,447 @@
+{
+  "actions": [],
+  "base_facts": [
+    {
+      "fact_id": "zone",
+      "label": "Base zone identified",
+      "value": "RM-2-5"
+    },
+    {
+      "fact_id": "coastal",
+      "label": "Coastal context",
+      "value": "Outside Coastal"
+    },
+    {
+      "fact_id": "scope",
+      "label": "Evidence scope",
+      "value": "Public parcel sources only"
+    }
+  ],
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
+  "items": [
+    {
+      "actions": [],
+      "answer": "Base zone: RM-2-5.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": null,
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": "RM-2-5 mapped zone",
+      "display_requirement": null,
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Mapping source",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "value": "SanGIS public zoning mapping"
+        },
+        {
+          "label": "Mapped result",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "MAPPING_OBSERVATION",
+          "value": "RM-2-5 principal zone"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "The principal public mapped zoning feature is RM-2-5.",
+      "item_id": "RM25_ZONE",
+      "item_kind": "FACT",
+      "name": "Base zone",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": null,
+      "rule_family": "BASE_ZONING",
+      "section": "BASE_FACTS",
+      "state_label": "Base zone identified",
+      "summary_entries": [],
+      "template_key": "FACT_IDENTIFIED",
+      "template_values": {
+        "fact": "RM-2-5",
+        "name": "Base zone"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Base height rule: 40 ft with angled-plane and other applicable conditions.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": "PARCEL_RULE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": null,
+      "display_requirement": "40 ft maximum with angled-plane and overlay conditions",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04G"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RM-2-5 · effective May 6, 2023"
+        },
+        {
+          "label": "Measurement rules",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "RULE_CITATION",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf",
+          "value": "SDMC Chapter 11, Article 3, Division 2"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "The base profile remains conditional on the identified envelope and overlay conditions.",
+      "item_id": "RM25_BASE_HEIGHT",
+      "item_kind": "RULE",
+      "name": "height rule",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "CONDITIONAL",
+      "rule_family": "STRUCTURE_HEIGHT",
+      "section": "HEIGHT_FAR",
+      "state_label": "Base rule · Conditional",
+      "summary_entries": [
+        {
+          "group": "CONDITIONAL",
+          "label": "Base height rule"
+        }
+      ],
+      "template_key": "CONDITIONAL_BASE_RULE",
+      "template_values": {
+        "name": "height rule",
+        "requirement": "40 ft with angled-plane and other applicable conditions"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Project height: not evaluated.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": "PROJECT_SPECIFIC",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": null,
+      "display_requirement": null,
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04G"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RM-2-5 · effective May 6, 2023"
+        },
+        {
+          "label": "Measurement rules",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "RULE_CITATION",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf",
+          "value": "SDMC Chapter 11, Article 3, Division 2"
+        },
+        {
+          "label": "A comparison would require",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "BLOCKER_EVIDENCE",
+          "value": "Dimensions using the City’s grade, roof, and angled-plane measurement rules"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "A project-specific comparison would require dimensions using the City’s grade, roof, and angled-plane measurement rules.",
+      "item_id": "RM25_PROJECT_HEIGHT",
+      "item_kind": "COMPARISON",
+      "name": "Project height",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "NOT_EVALUATED",
+      "rule_family": "STRUCTURE_HEIGHT",
+      "section": "HEIGHT_FAR",
+      "state_label": "Not evaluated",
+      "summary_entries": [
+        {
+          "group": "NOT_EVALUATED",
+          "label": "Project height comparison"
+        }
+      ],
+      "template_key": "NOT_EVALUATED",
+      "template_values": {
+        "name": "Project height"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Base FAR rule: 1.35 across the recorded RM-2-5 dwelling-count ranges.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": "PARCEL_RULE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": null,
+      "display_requirement": "1.35 maximum across recorded dwelling-count ranges",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04G"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RM-2-5 · effective May 6, 2023"
+        },
+        {
+          "label": "Measurement rules",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "RULE_CITATION",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf",
+          "value": "SDMC Chapter 11, Article 3, Division 2"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "The recorded RM-2-5 profile uses the same 1.35 maximum across its listed dwelling-count ranges.",
+      "item_id": "RM25_BASE_FAR",
+      "item_kind": "RULE",
+      "name": "FAR rule",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "CONDITIONAL",
+      "rule_family": "FAR",
+      "section": "HEIGHT_FAR",
+      "state_label": "Base rule · Conditional",
+      "summary_entries": [
+        {
+          "group": "CONDITIONAL",
+          "label": "Base FAR rule"
+        }
+      ],
+      "template_key": "CONDITIONAL_BASE_RULE",
+      "template_values": {
+        "name": "FAR rule",
+        "requirement": "1.35 across the recorded RM-2-5 dwelling-count ranges"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Project FAR: not evaluated.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": "PROJECT_SPECIFIC",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": null,
+      "display_requirement": null,
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04G"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RM-2-5 · effective May 6, 2023"
+        },
+        {
+          "label": "Measurement rules",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "RULE_CITATION",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf",
+          "value": "SDMC Chapter 11, Article 3, Division 2"
+        },
+        {
+          "label": "A comparison would require",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "BLOCKER_EVIDENCE",
+          "value": "A floor-area worksheet and verified legal premises area"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "A project-specific comparison would require a floor-area worksheet and verified legal premises area.",
+      "item_id": "RM25_PROJECT_FAR",
+      "item_kind": "COMPARISON",
+      "name": "Project FAR",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "NOT_EVALUATED",
+      "rule_family": "FAR",
+      "section": "HEIGHT_FAR",
+      "state_label": "Not evaluated",
+      "summary_entries": [
+        {
+          "group": "NOT_EVALUATED",
+          "label": "Project FAR comparison"
+        }
+      ],
+      "template_key": "NOT_EVALUATED",
+      "template_values": {
+        "name": "Project FAR"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Sustainable Development Area (SDA) geometry was detected. Verification is pending.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": null,
+      "context_state": "MAPPED_VERIFICATION_PENDING",
+      "context_type": "SDA",
+      "derived_requirement": null,
+      "display_fact": "Mapped geometry intersects the parcel",
+      "display_requirement": null,
+      "eligibility_state": "Not evaluated",
+      "evidence_entries": [
+        {
+          "label": "Mapped geometry",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "MAPPING_OBSERVATION",
+          "value": "City planning data recorded an SDA intersection"
+        },
+        {
+          "label": "Mapping receipt",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "MAPPING_RECEIPT",
+          "value": "Packet 42 public mapping evidence records the parcel intersection"
+        },
+        {
+          "label": "Product status",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "SDA source reconciliation pending; not used for a regulatory or eligibility conclusion"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "A City planning-map intersection was recorded, but the SDA source is still being reconciled. It is not used for a regulatory or eligibility conclusion.",
+      "item_id": "RM25_SDA",
+      "item_kind": "CONTEXT",
+      "name": "Sustainable Development Area (SDA)",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": "Not used pending verification",
+      "result_state": "NOT_EVALUATED",
+      "rule_family": "SDA",
+      "section": "MAPPED_CONTEXT",
+      "state_label": "Mapped context",
+      "summary_entries": [
+        {
+          "group": "MAPPED_CONTEXT",
+          "label": "SDA geometry detected; verification pending"
+        },
+        {
+          "group": "NOT_EVALUATED",
+          "label": "SDA program eligibility"
+        }
+      ],
+      "template_key": "MAPPED_CONTEXT_PENDING",
+      "template_values": {
+        "name": "Sustainable Development Area (SDA)"
+      },
+      "verification_state": "Pending"
+    },
+    {
+      "actions": [],
+      "answer": "Mapped Very High Fire Hazard Severity Zone (VHFHSZ) context is identified.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": null,
+      "context_state": "MAPPED_VERIFIED",
+      "context_type": "FIRE",
+      "derived_requirement": null,
+      "display_fact": "Parcel intersects mapped VHFHSZ geography",
+      "display_requirement": null,
+      "eligibility_state": "Not evaluated",
+      "evidence_entries": [
+        {
+          "label": "Mapped source",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "value": "City of San Diego Fire Hazard Severity Zone Map 2025"
+        },
+        {
+          "label": "Effective date",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "August 30, 2025"
+        },
+        {
+          "label": "Mapped result",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "MAPPING_OBSERVATION",
+          "value": "Parcel intersects the mapped Very High Fire Hazard Severity Zone"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "The mapped area is context only. Project-specific Fire requirements have not been evaluated.",
+      "item_id": "RM25_FIRE",
+      "item_kind": "CONTEXT",
+      "name": "Very High Fire Hazard Severity Zone (VHFHSZ)",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": "Context only",
+      "result_state": "NOT_EVALUATED",
+      "rule_family": "FIRE",
+      "section": "MAPPED_CONTEXT",
+      "state_label": "Mapped context",
+      "summary_entries": [
+        {
+          "group": "MAPPED_CONTEXT",
+          "label": "Very High Fire Hazard Severity Zone mapped"
+        },
+        {
+          "group": "NOT_EVALUATED",
+          "label": "Project-specific Fire requirements"
+        }
+      ],
+      "template_key": "MAPPED_CONTEXT",
+      "template_values": {
+        "name": "Very High Fire Hazard Severity Zone (VHFHSZ)"
+      },
+      "verification_state": "Verified"
+    }
+  ],
+  "overall_state": "PARTIAL_EVALUATION",
+  "privacy": "PUBLIC",
+  "project_context": null,
+  "provenance": [
+    {
+      "artifact": "data/approved-plan-setback-benchmark-v0/public-rule-profile.json",
+      "privacy": "PUBLIC_AUTHORITY"
+    },
+    {
+      "artifact": "data/rm-rule-profile-v0/rm-2-5-base-rules.json",
+      "privacy": "PUBLIC_AUTHORITY"
+    }
+  ],
+  "scope": "PUBLIC_PARCEL",
+  "subject": {
+    "detail": "APN 5442140600 · RM-2-5 · Outside Coastal",
+    "eyebrow": "Public parcel feasibility",
+    "title": "639 N 67th St"
+  }
+}

@@ -1,42 +1,18 @@
 {
   "classifications": {
     "OUTSIDE_V0_SCOPE": [
-      "development_capacity",
-      "whole_project_compliance",
-      "existing_structure_legality_without_current_survey",
-      "program_eligibility_without_program_evaluation",
-      "permit_approval",
-      "economics"
+      "development capacity",
+      "whole-project compliance"
     ],
     "PRODUCT_READY": [
-      "parcel_identity",
-      "legal_lot_readiness",
-      "base_zoning",
-      "coastal_context",
-      "supported_lot_area_width_depth_frontage_comparisons",
-      "source_availability"
+      "parcel facts",
+      "base-rule comparisons"
     ],
     "PRODUCT_READY_CONDITIONAL": [
-      "setback_requirements",
-      "street_side_applicability",
-      "base_height_profile",
-      "base_far_profile",
-      "lot_coverage_rule_existence",
-      "mapped_program_overlay_context",
-      "evidence_blockers"
-    ],
-    "TECHNICAL_ONLY": [
-      "diagnostic_geometry",
-      "internal_fingerprints",
-      "source_adapter_states",
-      "predicate_resolution_trace",
-      "sensitivity_ranges"
+      "conditional parcel rules",
+      "mapped context",
+      "evidence blockers"
     ]
   },
-  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
-  "rule_project_existing_layers_must_remain_distinct": true,
-  "supported_zones": [
-    "RS profile families",
-    "RM profile families with sealed profiles"
-  ]
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c"
 }

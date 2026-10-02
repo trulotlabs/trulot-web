@@ -1,6 +1,6 @@
 {
   "ambiguous_likely_state_allowed": false,
-  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
   "internal_mapping": {
     "FAR_RULE_EVALUATION_UNRESOLVED": "NEEDS_EVIDENCE",
     "HEIGHT_RULE_EVALUATION_UNRESOLVED": "NEEDS_EVIDENCE",
@@ -18,43 +18,27 @@
   },
   "product_states": [
     {
-      "label": "Conditional",
-      "meaning": "The rule depends on an identified unresolved predicate or branch.",
       "state": "CONDITIONAL"
     },
     {
-      "label": "Does Not Meet Base Rule",
-      "meaning": "A supported deterministic comparison does not satisfy the selected base rule.",
       "state": "DOES_NOT_MEET_BASE_RULE"
     },
     {
-      "label": "Meets Base Rule",
-      "meaning": "A supported deterministic comparison satisfies the selected base rule.",
       "state": "MEETS_BASE_RULE"
     },
     {
-      "label": "Needs Evidence",
-      "meaning": "Required parcel or project evidence is missing.",
       "state": "NEEDS_EVIDENCE"
     },
     {
-      "label": "Not Applicable",
-      "meaning": "The rule is proven not to apply to this parcel or selected subject.",
       "state": "NOT_APPLICABLE"
     },
     {
-      "label": "Not Evaluated",
-      "meaning": "TruLot has not evaluated the rule or program.",
       "state": "NOT_EVALUATED"
     },
     {
-      "label": "Outside Current Scope",
-      "meaning": "The rule or project type is not supported by V0.",
       "state": "OUTSIDE_CURRENT_SCOPE"
     },
     {
-      "label": "Source Unavailable",
-      "meaning": "The authoritative source cannot currently be evaluated.",
       "state": "SOURCE_UNAVAILABLE"
     }
   ]

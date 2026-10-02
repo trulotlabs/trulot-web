@@ -1,31 +1,21 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
   "examples": [
     {
-      "artifact": "rs-6341302200-replay.json",
-      "example_id": "A_RS17_PARTIAL",
-      "scope": "PUBLIC_PARCEL"
+      "artifact": "public-rs-replay.json",
+      "view": "rs"
     },
     {
-      "artifact": "rm-5442140600-public-replay.json",
-      "example_id": "B_RM25_PUBLIC_ONLY",
-      "scope": "PUBLIC_PARCEL"
+      "artifact": "public-rm-replay.json",
+      "view": "rm"
     },
     {
-      "artifact": "private-prj-1111087-replay.json",
-      "example_id": "C_PRIVATE_PLAN",
-      "scope": "PRIVATE_PROJECT"
+      "artifact": "private-project-replay.json",
+      "view": "private"
     },
     {
-      "artifact": "blocked-height-far-replay.json",
-      "example_id": "D_BLOCKED_HEIGHT_FAR",
-      "scope": "PRIVATE_PROJECT"
-    },
-    {
-      "artifact": "rs-6341302200-replay.json#RS17_STREET_SIDE",
-      "example_id": "E_NOT_APPLICABLE",
-      "scope": "PUBLIC_PARCEL"
+      "artifact": "blocked-project-replay.json",
+      "view": "blocked"
     }
-  ],
-  "new_conclusions_added": false
+  ]
 }

@@ -1,42 +1,228 @@
 {
-  "$id": "trulot://schemas/bounded-feasibility-product-contract-v0",
+  "$id": "trulot://schemas/bounded-feasibility-product-contract-v1",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
   "definitions": {
-    "ruleResult": {
+    "action": {
+      "additionalProperties": false,
+      "properties": {
+        "destination": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "LINK",
+            "INSTRUCTION"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "label",
+        "destination"
+      ],
+      "type": "object"
+    },
+    "baseFact": {
+      "additionalProperties": false,
+      "properties": {
+        "fact_id": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "fact_id",
+        "label",
+        "value"
+      ],
+      "type": "object"
+    },
+    "blocker": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "missing": {
+          "type": "string"
+        },
+        "why": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "missing",
+        "why"
+      ],
+      "type": "object"
+    },
+    "evidenceEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "privacy": {
+          "enum": [
+            "PUBLIC_AUTHORITY",
+            "PRIVATE_AUTHORIZED_EVIDENCE"
+          ]
+        },
+        "type": {
+          "enum": [
+            "PUBLIC_SOURCE",
+            "RULE_CITATION",
+            "VERSION",
+            "PARCEL_FACT",
+            "COMPARISON_INPUT",
+            "MAPPING_OBSERVATION",
+            "MAPPING_RECEIPT",
+            "BLOCKER_EVIDENCE",
+            "PRIVATE_PLAN_STATUS",
+            "PRIVACY"
+          ]
+        },
+        "url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "label",
+        "value",
+        "privacy"
+      ],
+      "type": "object"
+    },
+    "item": {
       "additionalProperties": false,
       "properties": {
         "actions": {
           "items": {
-            "type": "string"
+            "$ref": "#/definitions/action"
           },
           "type": "array"
         },
         "answer": {
           "type": "string"
         },
-        "blocker_codes": {
-          "items": {
-            "type": "string"
-          },
-          "type": "array"
-        },
-        "card_id": {
-          "type": "string"
-        },
-        "evidence": {
-          "items": {
-            "$ref": "#/definitions/source"
-          },
-          "type": "array"
-        },
-        "fact": {
+        "base_requirement": {
           "type": [
             "string",
             "null"
           ]
         },
-        "legal_version_context": {
+        "blocker": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/blocker"
+            }
+          ]
+        },
+        "comparison_scope": {
+          "enum": [
+            "PARCEL_RULE",
+            "THIS_DIMENSION_ONLY",
+            "PROJECT_SPECIFIC",
+            "EXISTING_STRUCTURE",
+            null
+          ],
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "context_state": {
+          "enum": [
+            "MAPPED_VERIFICATION_PENDING",
+            "MAPPED_VERIFIED",
+            "NO_MAPPED_INTERSECTION",
+            "SOURCE_UNAVAILABLE",
+            "NOT_EVALUATED",
+            null
+          ],
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "context_type": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "derived_requirement": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "display_fact": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "display_requirement": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "eligibility_state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_entries": {
+          "items": {
+            "$ref": "#/definitions/evidenceEntry"
+          },
+          "minItems": 1,
+          "type": "array"
+        },
+        "exact_calculation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "explanation": {
+          "type": "string"
+        },
+        "item_id": {
+          "type": "string"
+        },
+        "item_kind": {
+          "enum": [
+            "FACT",
+            "RULE",
+            "CONTEXT",
+            "COMPARISON"
+          ]
+        },
+        "name": {
           "type": "string"
         },
         "privacy": {
@@ -45,7 +231,7 @@
             "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX"
           ]
         },
-        "requirement": {
+        "regulatory_use_state": {
           "type": [
             "string",
             "null"
@@ -60,47 +246,140 @@
             "NOT_APPLICABLE",
             "NOT_EVALUATED",
             "OUTSIDE_CURRENT_SCOPE",
-            "SOURCE_UNAVAILABLE"
-          ]
-        },
-        "rule_family": {
-          "type": "string"
-        },
-        "rule_name": {
-          "type": "string"
-        },
-        "scope": {
-          "enum": [
-            "PARCEL_RULE",
-            "PROJECT_COMPARISON",
-            "EXISTING_STRUCTURE_COMPLIANCE",
-            "PROGRAM_OR_OVERLAY"
-          ]
-        },
-        "unresolved_condition": {
+            "SOURCE_UNAVAILABLE",
+            null
+          ],
           "type": [
             "string",
             "null"
           ]
         },
-        "why": {
+        "rule_family": {
+          "type": "string"
+        },
+        "section": {
+          "enum": [
+            "BASE_FACTS",
+            "PARCEL_DIMENSIONS",
+            "SETBACKS",
+            "HEIGHT_FAR",
+            "MAPPED_CONTEXT",
+            "EVIDENCE_NEEDED"
+          ]
+        },
+        "state_label": {
+          "type": "string"
+        },
+        "summary_entries": {
+          "items": {
+            "$ref": "#/definitions/summaryEntry"
+          },
+          "type": "array"
+        },
+        "template_key": {
+          "enum": [
+            "CONDITIONAL_BASE_RULE",
+            "CONDITIONAL_CURRENT_RULE",
+            "FACT_IDENTIFIED",
+            "MAPPED_CONTEXT",
+            "MAPPED_CONTEXT_PENDING",
+            "MINIMUM_COMPARISON_DOES_NOT_MEET",
+            "MINIMUM_COMPARISON_MEETS",
+            "NEEDS_EVIDENCE",
+            "NOT_APPLICABLE",
+            "NOT_EVALUATED",
+            "NO_MAPPED_CONTEXT",
+            "PROJECT_COMPARISON_MEETS",
+            "SOURCE_UNAVAILABLE"
+          ]
+        },
+        "template_values": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "type": "object"
+        },
+        "verification_state": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "item_id",
+        "item_kind",
+        "name",
+        "rule_family",
+        "section",
+        "result_state",
+        "state_label",
+        "summary_entries",
+        "comparison_scope",
+        "template_key",
+        "template_values",
+        "answer",
+        "explanation",
+        "display_requirement",
+        "display_fact",
+        "base_requirement",
+        "derived_requirement",
+        "exact_calculation",
+        "context_type",
+        "context_state",
+        "verification_state",
+        "eligibility_state",
+        "regulatory_use_state",
+        "evidence_entries",
+        "blocker",
+        "privacy",
+        "actions"
+      ],
+      "type": "object"
+    },
+    "projectContext": {
+      "additionalProperties": false,
+      "properties": {
+        "application_date": {
+          "type": "string"
+        },
+        "code_profile": {
+          "type": "string"
+        },
+        "not_evaluated": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "privacy_label": {
+          "type": "string"
+        },
+        "project_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "summary_entries": {
+          "items": {
+            "$ref": "#/definitions/summaryEntry"
+          },
+          "type": "array"
+        },
+        "target_id": {
           "type": "string"
         }
       },
       "required": [
-        "card_id",
-        "rule_name",
-        "rule_family",
-        "scope",
-        "requirement",
-        "fact",
-        "result_state",
-        "answer",
-        "why",
-        "evidence",
-        "blocker_codes",
-        "privacy",
-        "actions"
+        "target_id",
+        "project_id",
+        "status",
+        "application_date",
+        "code_profile",
+        "privacy_label",
+        "summary_entries",
+        "not_evaluated"
       ],
       "type": "object"
     },
@@ -122,32 +401,73 @@
         "privacy"
       ],
       "type": "object"
+    },
+    "subject": {
+      "additionalProperties": false,
+      "properties": {
+        "detail": {
+          "type": "string"
+        },
+        "eyebrow": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "eyebrow",
+        "title",
+        "detail"
+      ],
+      "type": "object"
+    },
+    "summaryEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "group": {
+          "enum": [
+            "MEETS_BASE_RULE",
+            "CONDITIONAL",
+            "NEEDS_EVIDENCE",
+            "NOT_EVALUATED",
+            "MAPPED_CONTEXT",
+            "NOT_APPLICABLE"
+          ]
+        },
+        "label": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "group",
+        "label"
+      ],
+      "type": "object"
     }
   },
-  "deterministic_mapping": "Existing sealed internal states select allowlisted states and templates; uncontrolled generated conclusion text is prohibited.",
+  "deterministic_mapping": "Validated item semantics and versioned templates drive every visible state, summary, fact, comparison, blocker, and evidence disclosure.",
   "properties": {
     "actions": {
       "items": {
-        "type": "string"
+        "$ref": "#/definitions/action"
       },
       "type": "array"
     },
-    "apn": {
-      "pattern": "^[0-9]{10}$",
-      "type": "string"
-    },
-    "application_date": {
-      "format": "date",
-      "type": "string"
-    },
-    "code_profile": {
-      "type": "string"
+    "base_facts": {
+      "items": {
+        "$ref": "#/definitions/baseFact"
+      },
+      "type": "array"
     },
     "contract_version": {
-      "const": "bounded-feasibility-product-contract-v0-2026-10-02-p59"
+      "const": "bounded-feasibility-product-contract-v1-2026-10-02-p60c"
     },
-    "evidence_state": {
-      "type": "object"
+    "items": {
+      "items": {
+        "$ref": "#/definitions/item"
+      },
+      "type": "array"
     },
     "overall_state": {
       "enum": [
@@ -158,36 +478,25 @@
         "SOURCE_UNAVAILABLE"
       ]
     },
-    "plan_status": {
-      "type": "string"
-    },
     "privacy": {
       "enum": [
         "PUBLIC",
         "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX"
       ]
     },
-    "private_plan_facts_present": {
-      "type": "boolean"
-    },
-    "project_id": {
-      "type": "string"
+    "project_context": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/definitions/projectContext"
+        }
+      ]
     },
     "provenance": {
       "items": {
         "$ref": "#/definitions/source"
-      },
-      "type": "array"
-    },
-    "public_cache": {
-      "type": "boolean"
-    },
-    "public_index": {
-      "type": "boolean"
-    },
-    "rule_results": {
-      "items": {
-        "$ref": "#/definitions/ruleResult"
       },
       "type": "array"
     },
@@ -198,30 +507,22 @@
         "EXISTING_STRUCTURE"
       ]
     },
-    "summary": {
-      "required": [
-        "verified",
-        "conditional",
-        "needs_evidence",
-        "not_evaluated"
-      ],
-      "type": "object"
-    },
-    "whole_project_compliance": {
-      "type": "boolean"
+    "subject": {
+      "$ref": "#/definitions/subject"
     }
   },
   "required": [
     "contract_version",
     "scope",
     "privacy",
+    "subject",
+    "base_facts",
+    "project_context",
     "overall_state",
-    "summary",
-    "rule_results",
-    "evidence_state",
+    "items",
     "actions",
     "provenance"
   ],
-  "title": "Bounded Feasibility Product Contract V0",
+  "title": "Bounded Feasibility Product Contract V1",
   "type": "object"
 }

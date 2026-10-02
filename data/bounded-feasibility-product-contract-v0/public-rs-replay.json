@@ -1,0 +1,736 @@
+{
+  "actions": [],
+  "base_facts": [
+    {
+      "fact_id": "zone",
+      "label": "Base zone identified",
+      "value": "RS-1-7"
+    },
+    {
+      "fact_id": "coastal",
+      "label": "Coastal context",
+      "value": "Outside Coastal"
+    },
+    {
+      "fact_id": "scope",
+      "label": "Evidence scope",
+      "value": "Public parcel sources only"
+    }
+  ],
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
+  "items": [
+    {
+      "actions": [],
+      "answer": "Meets the 5,000 sq ft minimum lot area rule.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": "PARCEL_RULE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": "22,096 sq ft Code-defined area",
+      "display_requirement": "5,000 sq ft minimum",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04D"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RS-1-7 · effective April 24, 2025"
+        },
+        {
+          "label": "Parcel facts",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PARCEL_FACT",
+          "value": "Recorded public parcel evaluation"
+        },
+        {
+          "label": "Comparison inputs",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "COMPARISON_INPUT",
+          "value": "5,000 sq ft minimum; exact Code-defined area 22,096.320 sq ft"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "The supported Code-defined lot area is at least the RS-1-7 base minimum.",
+      "item_id": "RS17_AREA",
+      "item_kind": "COMPARISON",
+      "name": "lot area",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "MEETS_BASE_RULE",
+      "rule_family": "MINIMUM_LOT_AREA",
+      "section": "PARCEL_DIMENSIONS",
+      "state_label": "Meets base rule",
+      "summary_entries": [
+        {
+          "group": "MEETS_BASE_RULE",
+          "label": "Minimum Lot Area"
+        }
+      ],
+      "template_key": "MINIMUM_COMPARISON_MEETS",
+      "template_values": {
+        "name": "lot area",
+        "requirement": "5,000 sq ft minimum"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Meets the 50 ft minimum lot width rule.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": "PARCEL_RULE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": "94 ft Code-defined width",
+      "display_requirement": "50 ft minimum",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04D"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RS-1-7 · effective April 24, 2025"
+        },
+        {
+          "label": "Parcel facts",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PARCEL_FACT",
+          "value": "Recorded public parcel evaluation"
+        },
+        {
+          "label": "Comparison inputs",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "COMPARISON_INPUT",
+          "value": "50 ft minimum; exact Code-defined width 94.00 ft"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "The supported Code-defined lot width is at least the RS-1-7 base minimum.",
+      "item_id": "RS17_WIDTH",
+      "item_kind": "COMPARISON",
+      "name": "lot width",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "MEETS_BASE_RULE",
+      "rule_family": "MINIMUM_LOT_WIDTH",
+      "section": "PARCEL_DIMENSIONS",
+      "state_label": "Meets base rule",
+      "summary_entries": [
+        {
+          "group": "MEETS_BASE_RULE",
+          "label": "Minimum Lot Width"
+        }
+      ],
+      "template_key": "MINIMUM_COMPARISON_MEETS",
+      "template_values": {
+        "name": "lot width",
+        "requirement": "50 ft minimum"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Meets the 95 ft minimum lot depth rule.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": "PARCEL_RULE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": "235 ft Code-defined depth",
+      "display_requirement": "95 ft minimum",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04D"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RS-1-7 · effective April 24, 2025"
+        },
+        {
+          "label": "Parcel facts",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PARCEL_FACT",
+          "value": "Recorded public parcel evaluation"
+        },
+        {
+          "label": "Comparison inputs",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "COMPARISON_INPUT",
+          "value": "95 ft minimum; exact Code-defined depth 235.02 ft"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "The supported Code-defined lot depth is at least the RS-1-7 base minimum.",
+      "item_id": "RS17_DEPTH",
+      "item_kind": "COMPARISON",
+      "name": "lot depth",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "MEETS_BASE_RULE",
+      "rule_family": "MINIMUM_LOT_DEPTH",
+      "section": "PARCEL_DIMENSIONS",
+      "state_label": "Meets base rule",
+      "summary_entries": [
+        {
+          "group": "MEETS_BASE_RULE",
+          "label": "Minimum Lot Depth"
+        }
+      ],
+      "template_key": "MINIMUM_COMPARISON_MEETS",
+      "template_values": {
+        "name": "lot depth",
+        "requirement": "95 ft minimum"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Meets the 50 ft minimum frontage rule.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": "PARCEL_RULE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": "94 ft supported frontage",
+      "display_requirement": "50 ft minimum",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04D"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RS-1-7 · effective April 24, 2025"
+        },
+        {
+          "label": "Parcel facts",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PARCEL_FACT",
+          "value": "Recorded public parcel evaluation"
+        },
+        {
+          "label": "Comparison inputs",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "COMPARISON_INPUT",
+          "value": "50 ft minimum; exact supported frontage 94.00 ft"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "The supported frontage is at least the selected RS-1-7 base requirement.",
+      "item_id": "RS17_FRONTAGE",
+      "item_kind": "COMPARISON",
+      "name": "frontage",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "MEETS_BASE_RULE",
+      "rule_family": "MINIMUM_STREET_FRONTAGE",
+      "section": "PARCEL_DIMENSIONS",
+      "state_label": "Meets base rule",
+      "summary_entries": [
+        {
+          "group": "MEETS_BASE_RULE",
+          "label": "Minimum Frontage"
+        }
+      ],
+      "template_key": "MINIMUM_COMPARISON_MEETS",
+      "template_values": {
+        "name": "frontage",
+        "requirement": "50 ft minimum"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Current front-setback rule: 15 ft starting point. Additional conditions may still modify this requirement.",
+      "base_requirement": "15 ft table base",
+      "blocker": null,
+      "comparison_scope": "PARCEL_RULE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": null,
+      "display_requirement": "15 ft starting point",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04D"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RS-1-7 · effective April 24, 2025"
+        },
+        {
+          "label": "Parcel facts",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PARCEL_FACT",
+          "value": "Recorded public parcel evaluation"
+        },
+        {
+          "label": "Rule location",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "RULE_CITATION",
+          "value": "Table 131-04D front setback; slope, cul-de-sac, and Fire conditions remain separate"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "Lot slope, cul-de-sac geometry, and project-specific Fire conditions may change the requirement.",
+      "item_id": "RS17_FRONT",
+      "item_kind": "RULE",
+      "name": "front-setback rule",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "CONDITIONAL",
+      "rule_family": "FRONT_SETBACK",
+      "section": "SETBACKS",
+      "state_label": "Conditional",
+      "summary_entries": [
+        {
+          "group": "CONDITIONAL",
+          "label": "Front setback"
+        }
+      ],
+      "template_key": "CONDITIONAL_CURRENT_RULE",
+      "template_values": {
+        "name": "front-setback rule",
+        "requirement": "15 ft starting point"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Current calculated rear setback rule: 23.5 ft. Additional conditions may still modify this requirement.",
+      "base_requirement": "13 ft",
+      "blocker": null,
+      "comparison_scope": "PARCEL_RULE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": "23.5 ft",
+      "display_fact": "235 ft Code-defined lot depth",
+      "display_requirement": "23.5 ft current calculated rule; 13 ft table base",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04D"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RS-1-7 · effective April 24, 2025"
+        },
+        {
+          "label": "Parcel facts",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PARCEL_FACT",
+          "value": "Recorded public parcel evaluation"
+        },
+        {
+          "label": "Selected calculation",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "COMPARISON_INPUT",
+          "value": "235.02 ft lot depth × 10% = 23.502 ft; 13 ft is the table base"
+        }
+      ],
+      "exact_calculation": "235.02 ft lot depth × 10% = 23.502 ft",
+      "explanation": "The RS-1-7 table base is 13 ft, but this lot’s depth triggers the long-lot formula. Additional unresolved conditions may still increase or modify the requirement.",
+      "item_id": "RS17_REAR",
+      "item_kind": "RULE",
+      "name": "calculated rear setback rule",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "CONDITIONAL",
+      "rule_family": "REAR_SETBACK",
+      "section": "SETBACKS",
+      "state_label": "Conditional",
+      "summary_entries": [
+        {
+          "group": "CONDITIONAL",
+          "label": "Rear setback"
+        }
+      ],
+      "template_key": "CONDITIONAL_CURRENT_RULE",
+      "template_values": {
+        "name": "calculated rear setback rule",
+        "requirement": "23.5 ft"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Current interior-side setback rule: 4 ft per side starting point. Additional conditions may still modify this requirement.",
+      "base_requirement": "4 ft",
+      "blocker": null,
+      "comparison_scope": "PARCEL_RULE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": "94 ft Code-defined lot width",
+      "display_requirement": "4 ft ordinary base per side",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04D"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RS-1-7 · effective April 24, 2025"
+        },
+        {
+          "label": "Parcel facts",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PARCEL_FACT",
+          "value": "Recorded public parcel evaluation"
+        },
+        {
+          "label": "Rule location",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "RULE_CITATION",
+          "value": "Table 131-04D interior-side setback"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "Additions, side-yard reallocation, projections, and project-specific Fire conditions remain separate.",
+      "item_id": "RS17_SIDE",
+      "item_kind": "RULE",
+      "name": "interior-side setback rule",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "CONDITIONAL",
+      "rule_family": "INTERIOR_SIDE_SETBACK",
+      "section": "SETBACKS",
+      "state_label": "Conditional",
+      "summary_entries": [
+        {
+          "group": "CONDITIONAL",
+          "label": "Interior-side setback"
+        }
+      ],
+      "template_key": "CONDITIONAL_CURRENT_RULE",
+      "template_values": {
+        "name": "interior-side setback rule",
+        "requirement": "4 ft per side starting point"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "This rule does not apply to this parcel.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": "PARCEL_RULE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": "No street-side property line",
+      "display_requirement": "5 ft when a street-side property line exists",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04D"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RS-1-7 · effective April 24, 2025"
+        },
+        {
+          "label": "Parcel facts",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PARCEL_FACT",
+          "value": "Recorded public parcel evaluation"
+        },
+        {
+          "label": "Parcel condition",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PARCEL_FACT",
+          "value": "Recorded line roles show no street-side property line"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "Recorded line roles establish a single-frontage, non-corner lot without a street-side property line.",
+      "item_id": "RS17_STREET_SIDE",
+      "item_kind": "RULE",
+      "name": "street-side setback",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "NOT_APPLICABLE",
+      "rule_family": "STREET_SIDE_SETBACK",
+      "section": "SETBACKS",
+      "state_label": "Not applicable",
+      "summary_entries": [
+        {
+          "group": "NOT_APPLICABLE",
+          "label": "Street-side setback"
+        }
+      ],
+      "template_key": "NOT_APPLICABLE",
+      "template_values": {},
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "The existing-building setback check cannot be evaluated yet because an existing-building setback check needs a current survey tying the building frame to the property lines.",
+      "base_requirement": null,
+      "blocker": {
+        "code": "CURRENT_SURVEY_STRUCTURE_GEOMETRY",
+        "missing": "an existing-building setback check needs a current survey tying the building frame to the property lines",
+        "why": "A setback rule by itself does not establish where an existing building sits."
+      },
+      "comparison_scope": "EXISTING_STRUCTURE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": null,
+      "display_requirement": null,
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04D"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RS-1-7 · effective April 24, 2025"
+        },
+        {
+          "label": "Parcel facts",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PARCEL_FACT",
+          "value": "Recorded public parcel evaluation"
+        },
+        {
+          "label": "Evidence needed",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "BLOCKER_EVIDENCE",
+          "value": "Current survey-controlled building-frame geometry"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "A base setback requirement is not an existing-structure compliance result.",
+      "item_id": "RS17_EXISTING",
+      "item_kind": "COMPARISON",
+      "name": "existing-building setback check",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "NEEDS_EVIDENCE",
+      "rule_family": "EXISTING_STRUCTURE_SETBACKS",
+      "section": "SETBACKS",
+      "state_label": "Needs evidence",
+      "summary_entries": [
+        {
+          "group": "NEEDS_EVIDENCE",
+          "label": "Existing-building setbacks"
+        }
+      ],
+      "template_key": "NEEDS_EVIDENCE",
+      "template_values": {
+        "blocker": "an existing-building setback check needs a current survey tying the building frame to the property lines",
+        "name": "existing-building setback check"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Base height rule: 24 ft at applicable setback lines and 30 ft overall.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": "PARCEL_RULE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": null,
+      "display_requirement": "24 ft at applicable setback lines · 30 ft overall",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04D"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RS-1-7 · effective April 24, 2025"
+        },
+        {
+          "label": "Parcel facts",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PARCEL_FACT",
+          "value": "Recorded public parcel evaluation"
+        },
+        {
+          "label": "Rule location",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "RULE_CITATION",
+          "value": "SDMC Table 131-04D structure height"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "The inward angled plane depends on Code-defined lot width. Project height has not been evaluated.",
+      "item_id": "RS17_HEIGHT_PROFILE",
+      "item_kind": "RULE",
+      "name": "height rule",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "CONDITIONAL",
+      "rule_family": "STRUCTURE_HEIGHT",
+      "section": "HEIGHT_FAR",
+      "state_label": "Conditional",
+      "summary_entries": [
+        {
+          "group": "CONDITIONAL",
+          "label": "Height profile"
+        }
+      ],
+      "template_key": "CONDITIONAL_BASE_RULE",
+      "template_values": {
+        "name": "height rule",
+        "requirement": "24 ft at applicable setback lines and 30 ft overall"
+      },
+      "verification_state": null
+    },
+    {
+      "actions": [],
+      "answer": "Base FAR rule: the applicable Table 131-04J lot-area rule.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": "PARCEL_RULE",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": null,
+      "display_requirement": "Table 131-04J lot-area rule",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Authoritative rule",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PUBLIC_SOURCE",
+          "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
+          "value": "San Diego Municipal Code Table 131-04D"
+        },
+        {
+          "label": "Rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "value": "RS-1-7 · effective April 24, 2025"
+        },
+        {
+          "label": "Parcel facts",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "PARCEL_FACT",
+          "value": "Recorded public parcel evaluation"
+        },
+        {
+          "label": "Rule location",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "RULE_CITATION",
+          "value": "SDMC residential development regulations"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "The applicable rule depends on Code-defined area and the separate steep-hillside formula. Project FAR has not been evaluated.",
+      "item_id": "RS17_FAR_PROFILE",
+      "item_kind": "RULE",
+      "name": "FAR rule",
+      "privacy": "PUBLIC",
+      "regulatory_use_state": null,
+      "result_state": "CONDITIONAL",
+      "rule_family": "FAR",
+      "section": "HEIGHT_FAR",
+      "state_label": "Conditional",
+      "summary_entries": [
+        {
+          "group": "CONDITIONAL",
+          "label": "FAR profile"
+        }
+      ],
+      "template_key": "CONDITIONAL_BASE_RULE",
+      "template_values": {
+        "name": "FAR rule",
+        "requirement": "the applicable Table 131-04J lot-area rule"
+      },
+      "verification_state": null
+    }
+  ],
+  "overall_state": "PARTIAL_EVALUATION",
+  "privacy": "PUBLIC",
+  "project_context": null,
+  "provenance": [
+    {
+      "artifact": "data/rs-rule-profile-v0/rs-1-7-base-rules.json",
+      "privacy": "PUBLIC_AUTHORITY"
+    },
+    {
+      "artifact": "data/rs-rule-profile-v0/apn-6341302200-replay.json",
+      "privacy": "PUBLIC_AUTHORITY"
+    }
+  ],
+  "scope": "PUBLIC_PARCEL",
+  "subject": {
+    "detail": "APN 6341302200 · RS-1-7 · Outside Coastal",
+    "eyebrow": "Public parcel feasibility",
+    "title": "1456 27th St"
+  }
+}

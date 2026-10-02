@@ -1,0 +1,136 @@
+{
+  "actions": [],
+  "base_facts": [],
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
+  "items": [
+    {
+      "actions": [],
+      "answer": "The proposed 5 ft 11-1/2 in enclosed-ADU frame setback meets the selected 4 ft interior-side setback rule. This comparison applies only to this dimension.",
+      "base_requirement": null,
+      "blocker": null,
+      "comparison_scope": "THIS_DIMENSION_ONLY",
+      "context_state": null,
+      "context_type": null,
+      "derived_requirement": null,
+      "display_fact": "5 ft 11-1/2 in proposed enclosed-ADU frame setback",
+      "display_requirement": "4 ft selected application-date minimum",
+      "eligibility_state": null,
+      "evidence_entries": [
+        {
+          "label": "Private plan evidence",
+          "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "type": "PRIVATE_PLAN_STATUS",
+          "value": "Architectural Site Plan A0.1, page 15 · fourth construction-document submittal"
+        },
+        {
+          "label": "Plan status",
+          "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "type": "PRIVATE_PLAN_STATUS",
+          "value": "Issuance has not been proven"
+        },
+        {
+          "label": "Application record",
+          "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "type": "PRIVATE_PLAN_STATUS",
+          "value": "January 29, 2024"
+        },
+        {
+          "label": "Applicable rule profile",
+          "privacy": "PUBLIC_AUTHORITY",
+          "type": "VERSION",
+          "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2023/O-21618.pdf",
+          "value": "Outside Coastal · Ordinance O-21618 · effective May 6, 2023"
+        },
+        {
+          "label": "Comparison inputs",
+          "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "type": "COMPARISON_INPUT",
+          "value": "5 ft 11-1/2 in proposed enclosed-ADU frame setback; 4 ft selected minimum"
+        },
+        {
+          "label": "Privacy",
+          "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "type": "PRIVACY",
+          "value": "Private authorized evidence · excluded from public caching and indexing"
+        }
+      ],
+      "exact_calculation": null,
+      "explanation": "This dimension only: Building 1’s north enclosed-ADU frame is compared with the identified rule. This does not establish project compliance, approval, or issuance.",
+      "item_id": "PRJ1111087_SIDE",
+      "item_kind": "COMPARISON",
+      "name": "proposed interior-side setback",
+      "privacy": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX",
+      "regulatory_use_state": null,
+      "result_state": "MEETS_BASE_RULE",
+      "rule_family": "INTERIOR_SIDE_SETBACK",
+      "section": "SETBACKS",
+      "state_label": "Meets setback rule",
+      "summary_entries": [
+        {
+          "group": "MEETS_BASE_RULE",
+          "label": "Building 1 north enclosed-ADU frame setback — this dimension only"
+        }
+      ],
+      "template_key": "PROJECT_COMPARISON_MEETS",
+      "template_values": {
+        "fact": "5 ft 11-1/2 in enclosed-ADU frame setback",
+        "requirement": "4 ft interior-side setback rule"
+      },
+      "verification_state": null
+    }
+  ],
+  "overall_state": "PARTIAL_EVALUATION",
+  "privacy": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX",
+  "project_context": {
+    "application_date": "January 29, 2024",
+    "code_profile": "Outside Coastal · Ordinance O-21618 · effective May 6, 2023",
+    "not_evaluated": [
+      "Height",
+      "FAR",
+      "development capacity",
+      "whole-project compliance"
+    ],
+    "privacy_label": "Not for public indexing · no public cache",
+    "project_id": "PRJ-1111087",
+    "status": "Fourth construction-document submittal — issuance not proven",
+    "summary_entries": [
+      {
+        "group": "NOT_EVALUATED",
+        "label": "Height"
+      },
+      {
+        "group": "NOT_EVALUATED",
+        "label": "FAR"
+      },
+      {
+        "group": "NOT_EVALUATED",
+        "label": "Development capacity"
+      },
+      {
+        "group": "NOT_EVALUATED",
+        "label": "Whole-project compliance"
+      }
+    ],
+    "target_id": "private-scope-status"
+  },
+  "provenance": [
+    {
+      "artifact": "data/approved-plan-setback-benchmark-v0/benchmark-result.json",
+      "privacy": "PRIVATE_AUTHORIZED_EVIDENCE"
+    },
+    {
+      "artifact": "data/approved-plan-setback-benchmark-v0/plan-fact-envelope.json",
+      "privacy": "PRIVATE_AUTHORIZED_EVIDENCE"
+    },
+    {
+      "artifact": "data/approved-plan-setback-benchmark-v0/public-rule-profile.json",
+      "privacy": "PUBLIC_AUTHORITY"
+    }
+  ],
+  "scope": "PRIVATE_PROJECT",
+  "subject": {
+    "detail": "APN 5442140600 · Not for public indexing",
+    "eyebrow": "Private project analysis",
+    "title": "PRJ-1111087"
+  }
+}

@@ -38,12 +38,12 @@ export default async function FeasibilityPreviewPage({
 }) {
   if (!feasibilityPreviewEnabled()) notFound();
   const mode = normalizePreviewMode((await searchParams).view);
-  let payload;
+  let preview;
   try {
-    payload = loadFeasibilityPreview(mode);
+    preview = loadFeasibilityPreview(mode);
   } catch (error) {
     if (!(error instanceof FeasibilityPreviewError)) throw error;
     return <PreviewContractError />;
   }
-  return <FeasibilityPreview mode={mode} payload={payload} />;
+  return <FeasibilityPreview selectedView={mode} payload={preview.payload} templates={preview.templates} />;
 }

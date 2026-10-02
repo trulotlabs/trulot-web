@@ -1,18 +1,4 @@
 {
-  "cache_rule": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX must never enter public page generation, metadata, search documents, or shared caches.",
-  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
-  "public_indexable": [
-    "base zoning",
-    "current base dimensional rules",
-    "public-source parcel facts",
-    "supported public parcel-rule comparisons",
-    "public-source blockers"
-  ],
-  "public_not_indexable": [
-    "private project-plan facts",
-    "private evidence",
-    "operator-owned plan details",
-    "private project comparisons",
-    "current structure conclusions derived from private surveys"
-  ]
+  "cache_rule": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX never enters public generation, indexing, metadata, or shared caches.",
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c"
 }

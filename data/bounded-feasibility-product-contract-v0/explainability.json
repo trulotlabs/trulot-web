@@ -1,22 +1,9 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
   "levels": [
-    {
-      "content": "Short deterministic product statement.",
-      "level": 1,
-      "name": "ANSWER"
-    },
-    {
-      "content": "One sentence explaining the selected rule, fact, or blocker.",
-      "level": 2,
-      "name": "EXPLANATION"
-    },
-    {
-      "content": "Expandable authoritative sources, effective-date context, and receipts.",
-      "level": 3,
-      "name": "EVIDENCE"
-    }
+    "ANSWER",
+    "EXPLANATION",
+    "EVIDENCE"
   ],
-  "rule": "Each displayed conclusion must retain the source card and blocker path that produced it.",
-  "unresolved_addition": "WHAT_IS_MISSING"
+  "rule": "Every conclusion retains meaningful structured evidence."
 }

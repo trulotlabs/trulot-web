@@ -90,6 +90,9 @@
 .blocker { display: grid; gap: 10px; margin-top: 15px; border-radius: 8px; padding: 13px; background: #f5f2f9; }
 .blocker span { color: #746685; font-size: .61rem; font-weight: 720; letter-spacing: .05em; text-transform: uppercase; }
 .blocker p { margin: 3px 0 0; color: #5f5668; font-size: .7rem; line-height: 1.42; }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; color: #526587; font-size: .68rem; }
+.actions p { margin: 0; }
+.actions a { color: inherit; text-underline-offset: 2px; }
 .evidence { margin-top: 15px; border-top: 1px solid #e3e6e4; padding-top: 11px; }
 .evidence summary { width: fit-content; color: #526587; cursor: pointer; font-size: .68rem; font-weight: 690; }
 .evidence dl { display: grid; gap: 8px; margin: 11px 0 0; }

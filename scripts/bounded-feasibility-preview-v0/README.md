@@ -5,6 +5,7 @@ Run the deterministic acceptance test:
 ```sh
 node scripts/bounded-feasibility-preview-v0/test.mjs
 node scripts/bounded-feasibility-preview-v0/test-60b.mjs
+node scripts/bounded-feasibility-preview-v0/test-60c.mjs
 ```
 
 Run the local preview:

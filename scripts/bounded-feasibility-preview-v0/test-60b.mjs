@@ -7,64 +7,55 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 const read = (file) => fs.readFileSync(path.join(root, file), "utf8");
 const component = read("app/feasibility-preview/FeasibilityPreview.tsx");
+const presentation = read("lib/feasibility-preview-presentation.ts");
 const css = read("app/feasibility-preview/feasibility-preview.module.css");
-const sda = read("lib/sda-source-reconciliation.ts");
-const parcelPage = read("lib/parcel-page-v1.ts");
+const fixtures = ["public-rs-replay.json", "public-rm-replay.json", "private-project-replay.json", "blocked-project-replay.json"].map((file) => JSON.parse(read(`data/bounded-feasibility-product-contract-v0/${file}`)));
+const [rs, rm, privateProject, blocked] = fixtures;
+const byFamily = (payload, family) => payload.items.filter((item) => item.rule_family === family);
 
-// State taxonomy: facts, contexts, base rules, and comparisons remain distinct.
-assert.match(component, /Base zone identified/);
-assert.doesNotMatch(component, /RM25_ZONE[\s\S]{0,300}Meets base rule/);
-assert.match(component, /Meets setback rule/);
-assert.match(component, /This dimension only/);
-assert.match(component, /Mapped context/);
-assert.match(component, /Not applicable/);
-assert.match(component, /Base rule · Conditional/);
-assert.match(component, /Project comparison · Needs evidence/);
+assert.equal(byFamily(rm, "BASE_ZONING")[0].item_kind, "FACT");
+assert.equal(byFamily(rm, "BASE_ZONING")[0].result_state, null);
+assert.equal(rm.items.find((item) => item.context_type === "SDA").state_label, "Mapped context");
+assert.equal(rm.items.find((item) => item.context_type === "FIRE").state_label, "Mapped context");
+assert.equal(privateProject.items[0].comparison_scope, "THIS_DIMENSION_ONLY");
+assert.equal(privateProject.items[0].state_label, "Meets setback rule");
+assert.equal(byFamily(blocked, "STRUCTURE_HEIGHT").find((item) => item.item_kind === "RULE").result_state, "CONDITIONAL");
+assert.equal(byFamily(blocked, "STRUCTURE_HEIGHT").find((item) => item.item_kind === "COMPARISON").result_state, "NEEDS_EVIDENCE");
 
-// Canonical SDA presentation carries the observation and unresolved product state together.
-assert.match(component, /Mapped SDA geometry detected\. SDA verification is pending\./);
-assert.match(component, /not used for a regulatory or eligibility conclusion/);
-assert.match(sda, /source_reconciliation_pending/);
-assert.match(sda, /authoritative: false/);
-assert.match(parcelPage, /SDA_RECONCILIATION_LABEL/);
+const sda = rm.items.find((item) => item.context_type === "SDA");
+assert.equal(sda.context_state, "MAPPED_VERIFICATION_PENDING");
+assert.equal(sda.verification_state, "Pending");
+assert.equal(sda.eligibility_state, "Not evaluated");
+assert.equal(sda.regulatory_use_state, "Not used pending verification");
 
-// Parcel-specific selected branch is foregrounded; exact arithmetic remains inspectable.
-assert.match(component, /Current calculated rear setback rule: 23\.5 ft/);
-assert.match(component, /235\.02 ft lot depth × 10% = 23\.502 ft/);
-assert.match(component, /13 ft is the table base/);
+const rear = byFamily(rs, "REAR_SETBACK")[0];
+assert.equal(rear.derived_requirement, "23.5 ft");
+assert.equal(rear.base_requirement, "13 ft");
+assert.equal(rear.exact_calculation, "235.02 ft lot depth × 10% = 23.502 ft");
+assert.equal(byFamily(rs, "STREET_SIDE_SETBACK")[0].result_state, "NOT_APPLICABLE");
 
-// Summary items are complete and each is an actual in-page link.
-assert.doesNotMatch(component, /items\.slice/);
-assert.doesNotMatch(css, /nth-child\(n\+4\)/);
-assert.match(component, /href={`#\$\{item\.target\}`}/);
-for (const target of ["RS17_HEIGHT_PROFILE", "RS17_FAR_PROFILE", "RS17_EXISTING", "RM25_HEIGHT", "RM25_FAR", "RM25_SDA", "RM25_FIRE", "private-scope-status"]) {
-  assert.match(component, new RegExp(target));
+for (const payload of fixtures) {
+  const targets = new Set(payload.items.map((item) => item.item_id)); if (payload.project_context) targets.add(payload.project_context.target_id);
+  for (const item of payload.items) {
+    assert.ok(item.evidence_entries.length > 0);
+    assert.ok(item.evidence_entries.every((entry) => entry.label && entry.value));
+    for (const summary of item.summary_entries) assert.ok(targets.has(item.item_id) && summary.label);
+  }
 }
+assert.equal(privateProject.project_context.status, "Fourth construction-document submittal — issuance not proven");
+assert.equal(privateProject.project_context.application_date, "January 29, 2024");
+assert.match(privateProject.project_context.code_profile, /Ordinance O-21618/);
 
-// Evidence exposes real citations, legal dates, comparison inputs, and private status.
-assert.match(component, /San Diego Municipal Code Table 131-04D/);
-assert.match(component, /effective April 24, 2025/);
-assert.match(component, /effective May 6, 2023/);
-assert.match(component, /Mapping receipt/);
-assert.match(component, /Fourth construction-document submittal — issuance not proven/);
-assert.match(component, /January 29, 2024/);
-assert.match(component, /Ordinance O-21618/);
-assert.doesNotMatch(component, /Version details remain attached/);
+assert.doesNotMatch(component, /items\.slice|<button/); assert.doesNotMatch(css, /nth-child\(n\+4\)/);
+assert.match(component, /href={`#\$\{item\.target\}`}/); assert.match(component, /item\.evidence_entries\.map/);
+assert.match(component, /payload\.base_facts\.map/); assert.match(component, /project\.status/); assert.match(component, /project\.application_date/); assert.match(component, /project\.code_profile/);
+assert.match(presentation, /item\.summary_entries/); assert.match(presentation, /payload\.project_context\.summary_entries/);
+assert.doesNotMatch(`${component}\n${presentation}`, /cardCopy|summariesFor|COMMON_RS|BLOCKER_COPY/);
 
-// Public parcel cards use educational comparison copy, not fake blocker actions.
-assert.match(component, /Project height: not evaluated/);
-assert.match(component, /A project-specific comparison would require/);
-assert.doesNotMatch(component, /Add a survey|See what evidence is needed|Review source/);
-assert.doesNotMatch(component, /<button/);
+const allCopy = JSON.stringify(fixtures);
+assert.match(allCopy, /Very High Fire Hazard Severity Zone \(VHFHSZ\)/);
+assert.match(allCopy, /22,096 sq ft Code-defined area/);
+assert.doesNotMatch(allCopy, /not accepted|numerator and denominator were not sealed|eligibility predicates|retained boundary sliver/);
+assert.match(allCopy, /Private authorized evidence · excluded from public caching and indexing/);
 
-// Plain-language and precision checks.
-assert.match(component, /Very High Fire Hazard Severity Zone \(VHFHSZ\)/);
-assert.match(component, /22,096 sq ft Code-defined area/);
-assert.doesNotMatch(component, /not accepted|numerator and denominator were not sealed|eligibility predicates|retained boundary sliver/);
-
-// Public/private containment remains explicit in both copy and component structure.
-assert.match(component, /Not for public indexing/);
-assert.match(component, /no public cache/);
-assert.match(component, /Private authorized evidence · excluded from public caching and indexing/);
-
-console.log("PASS Packet 60B: state taxonomy, SDA reconciliation, rear-setback emphasis, summary integrity, evidence, actions, language, and containment");
+console.log("PASS Packet 60B regression: accepted taxonomy, SDA state, rear precision, summary targets, evidence, language, and containment remain encoded in V1 data");

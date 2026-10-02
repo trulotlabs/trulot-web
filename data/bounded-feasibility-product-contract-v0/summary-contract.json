@@ -1,39 +1,14 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
-  "green_red_score": false,
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
   "groups": [
-    {
-      "content": "Base zone, Coastal context, supported dimensions, and bounded comparisons.",
-      "group": "VERIFIED",
-      "states": [
-        "MEETS_BASE_RULE",
-        "DOES_NOT_MEET_BASE_RULE",
-        "NOT_APPLICABLE"
-      ]
-    },
-    {
-      "content": "Rules with identified unresolved branches.",
-      "group": "CONDITIONAL",
-      "states": [
-        "CONDITIONAL"
-      ]
-    },
-    {
-      "content": "Named blockers for requested comparisons.",
-      "group": "NEEDS_EVIDENCE",
-      "states": [
-        "NEEDS_EVIDENCE",
-        "SOURCE_UNAVAILABLE"
-      ]
-    },
-    {
-      "content": "Programs and analyses not performed by V0.",
-      "group": "NOT_EVALUATED",
-      "states": [
-        "NOT_EVALUATED",
-        "OUTSIDE_CURRENT_SCOPE"
-      ]
-    }
+    "MEETS_BASE_RULE",
+    "CONDITIONAL",
+    "NEEDS_EVIDENCE",
+    "NOT_EVALUATED",
+    "MAPPED_CONTEXT",
+    "NOT_APPLICABLE"
   ],
-  "numeric_score": false
+  "numeric_score": false,
+  "silent_truncation": false,
+  "source": "item.summary_entries and project_context.summary_entries"
 }

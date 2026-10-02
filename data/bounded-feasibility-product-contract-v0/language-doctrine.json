@@ -1,24 +1,14 @@
 {
   "avoid_in_product_copy": [
-    "RULE_REQUIREMENT_SATISFIED",
-    "STREET_SIDE_SETBACK_NOT_APPLICABLE",
-    "adapter",
-    "predicate enum",
-    "fingerprint"
+    "branch",
+    "predicate",
+    "bounded",
+    "sealed",
+    "not accepted",
+    "raw acquisition identifier",
+    "internal MapServer language",
+    "unexplained unit band"
   ],
-  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
-  "no_numeric_confidence": true,
-  "positive_scope_rule": "A positive result describes only the named base rule or bounded proposed-plan comparison.",
-  "preferred": [
-    "Meets the 50 ft minimum lot-width rule.",
-    "A street-side setback does not apply because this parcel has no street-side property line.",
-    "This cannot be evaluated yet because TruLot does not have survey-controlled building geometry."
-  ],
-  "required_qualifiers": [
-    "base rule",
-    "selected zone",
-    "parcel rule",
-    "proposed-plan comparison when private plan facts are used",
-    "not whole-project compliance"
-  ]
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
+  "no_numeric_confidence": true
 }

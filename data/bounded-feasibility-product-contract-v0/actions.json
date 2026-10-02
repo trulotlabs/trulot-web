@@ -1,31 +1,8 @@
 {
-  "actions": [
-    {
-      "code": "REVIEW_SOURCE",
-      "copy": "Review source",
-      "requires_existing_functionality": true
-    },
-    {
-      "code": "SEE_EVIDENCE_NEEDED",
-      "copy": "See what evidence is needed",
-      "requires_existing_functionality": true
-    },
-    {
-      "code": "EVALUATE_WITH_PROJECT_PLANS",
-      "copy": "Evaluate with project plans",
-      "requires_existing_functionality": false
-    },
-    {
-      "code": "ADD_SURVEY",
-      "copy": "Add a survey",
-      "requires_existing_functionality": false
-    },
-    {
-      "code": "VIEW_ZONING_DETAILS",
-      "copy": "View zoning details",
-      "requires_existing_functionality": true
-    }
-  ],
-  "availability_rule": "Only actions backed by an existing product capability may render as executable; others are informational next steps.",
-  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59"
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
+  "rule": "LINK requires a destination; INSTRUCTION renders as plain text.",
+  "types": [
+    "LINK",
+    "INSTRUCTION"
+  ]
 }

@@ -1,23 +1,22 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v0-2026-10-02-p59",
+  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
   "copy_versioned": true,
   "free_form_conclusion_generation": false,
-  "input_fields": [
-    "state",
-    "allowlisted template values",
-    "blocker code",
-    "source refs"
-  ],
   "missing_template_value_behavior": "REJECT",
   "templates": {
-    "CONDITIONAL": "The base {rule_name} requirement is conditional: {condition}.",
-    "DOES_NOT_MEET_BASE_RULE": "Does not meet the {requirement} base {rule_name} rule.",
-    "MEETS_BASE_RULE": "Meets the {requirement} base {rule_name} rule.",
-    "NEEDS_EVIDENCE": "This rule cannot be evaluated yet because {blocker_copy}",
+    "CONDITIONAL_BASE_RULE": "Base {name}: {requirement}.",
+    "CONDITIONAL_CURRENT_RULE": "Current {name}: {requirement}. Additional conditions may still modify this requirement.",
+    "FACT_IDENTIFIED": "{name}: {fact}.",
+    "MAPPED_CONTEXT": "Mapped {name} context is identified.",
+    "MAPPED_CONTEXT_PENDING": "{name} geometry was detected. Verification is pending.",
+    "MINIMUM_COMPARISON_DOES_NOT_MEET": "Does not meet the {requirement} {name} rule.",
+    "MINIMUM_COMPARISON_MEETS": "Meets the {requirement} {name} rule.",
+    "NEEDS_EVIDENCE": "The {name} cannot be evaluated yet because {blocker}.",
     "NOT_APPLICABLE": "This rule does not apply to this parcel.",
-    "NOT_EVALUATED": "TruLot has not evaluated {subject} yet.",
-    "OUTSIDE_CURRENT_SCOPE": "This rule is outside the current TruLot scope.",
-    "SOURCE_UNAVAILABLE": "This rule cannot be evaluated because its authoritative source is unavailable."
+    "NOT_EVALUATED": "{name}: not evaluated.",
+    "NO_MAPPED_CONTEXT": "No mapped {name} intersection was identified by the recorded source.",
+    "PROJECT_COMPARISON_MEETS": "The proposed {fact} meets the selected {requirement}. This comparison applies only to this dimension.",
+    "SOURCE_UNAVAILABLE": "{name} cannot be evaluated because its authoritative source is unavailable."
   },
-  "unknown_state_behavior": "REJECT"
+  "unknown_template_behavior": "REJECT"
 }
