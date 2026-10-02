@@ -75,6 +75,7 @@ export function fixture(payload, options = {}) {
       if (id === "@supabase/supabase-js") return { createClient: () => client };
       if (id === "server-only") return {};
       if (id === "zod") return require(id);
+      if (id === "react") return React;
       if (id.startsWith("node:")) return require(id);
       if (id === "react/jsx-runtime") return require(id);
       if (id === "next/link") return function FixtureLink({ children, ...props }) { return React.createElement("a", props, children); };
@@ -85,7 +86,9 @@ export function fixture(payload, options = {}) {
       };
       assert.ok(id.startsWith("./") || id.startsWith("../") || id.startsWith("@/"), `Unexpected import: ${id}`);
       const target = id.startsWith("@/") ? path.join(root, id.slice(2)) : path.resolve(path.dirname(filename), id);
-      return load(path.extname(target) ? target : `${target}.ts`);
+      if (path.extname(target)) return load(target);
+      if (fs.existsSync(`${target}.ts`)) return load(`${target}.ts`);
+      return load(`${target}.tsx`);
     }
     vm.runInNewContext(code, {
       module: loadedModule, exports: loadedModule.exports, require: localRequire, process: { env: options.env ?? {} }, Buffer, performance,

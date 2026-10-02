@@ -11,6 +11,7 @@ import {
 import { extractApnFromSlug } from "@/lib/parcel-slug";
 import { parcelServingV2ShadowEnabled, runParcelServingV2Shadow } from "@/lib/parcel-serving-v2-shadow";
 import { verifiedStandardsEnabled } from "@/lib/rs17-shadow-gate";
+import { CopyApnButton } from "./copy-apn-button";
 
 const BASE_URL = "https://trulot-web.vercel.app";
 const NULL_PUBLIC_RECORD = "Not available in public records";
@@ -34,25 +35,40 @@ function factDisplay(value: string | null): ReactNode {
   return <span className="text-slate-900">{value}</span>;
 }
 
-function SourceMeta({ fact }: { fact: SourcedFact<string> }) {
+function SourceMeta({ fact, label = "Source" }: { fact: SourcedFact<string>; label?: string }) {
   return (
-    <div className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px] text-slate-500">
-      <span>Source: {fact.sourceLabel}</span>
-      <span aria-hidden="true" className="text-slate-300">·</span>
-      <span>{confidenceLabel(fact.confidenceTier)}</span>
-      {fact.todo ? (
-        <>
-          <span aria-hidden="true" className="text-slate-300">·</span>
-          <span>TODO: {fact.todo}</span>
-        </>
-      ) : null}
+    <details className="group mt-1 text-xs text-slate-500">
+      <summary aria-label={`${label} for ${fact.sourceLabel}`} className="w-fit cursor-pointer list-none rounded text-sky-800 underline decoration-slate-300 underline-offset-2 marker:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">
+        {label}{fact.confidenceTier === "conditional" ? " · Conditional" : ""}
+      </summary>
+      <div className="mt-1 max-w-xl rounded bg-slate-50 px-2.5 py-2 leading-5 text-slate-600">
+        <span className="sr-only">Source: </span><span>{fact.sourceLabel}</span>
+        <span aria-hidden="true" className="mx-1.5 text-slate-300">·</span>
+        <span>{confidenceLabel(fact.confidenceTier)}</span>
+        {fact.todo ? <p className="mt-1 text-slate-500">Technical note: {fact.todo}</p> : null}
+        <p className="mt-1"><a href="#receipts" className="text-sky-800 underline underline-offset-2">View source receipts</a></p>
+      </div>
+    </details>
+  );
+}
+
+function SectionSource({ children = "Source details" }: { children?: ReactNode }) {
+  return <a href="#receipts" aria-label="Source details in Sources and methodology" className="rounded text-xs text-sky-800 underline decoration-slate-300 underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">{children}</a>;
+}
+
+function FactCard({ label, fact }: { label: string; fact: SourcedFact<string> }) {
+  return (
+    <div className="min-w-0 rounded border border-slate-200 bg-white px-3 py-2.5">
+      <dt className="text-[11px] font-medium uppercase tracking-[0.1em] text-slate-500">{label}</dt>
+      <dd className="mt-1 text-sm font-medium leading-5 text-slate-900">{factDisplay(fact.value)}</dd>
+      <SourceMeta fact={fact} />
     </div>
   );
 }
 
 function SectionHeading({ id, children }: { id: string; children: ReactNode }) {
   return (
-    <h2 id={id} className="text-[19px] font-semibold tracking-tight text-slate-950">
+    <h2 id={id} className="text-[18px] font-semibold tracking-tight text-slate-950">
       {children}
     </h2>
   );
@@ -60,9 +76,9 @@ function SectionHeading({ id, children }: { id: string; children: ReactNode }) {
 
 function EmptyState({ title, body }: { title: string; body: string }) {
   return (
-    <div className="rounded border border-slate-200 bg-slate-50 px-4 py-4">
+    <div className="rounded border border-slate-200 bg-slate-50 px-3 py-3">
       <p className="text-sm font-medium text-slate-800">{title}</p>
-      <p className="mt-1 text-sm leading-6 text-slate-600">{body}</p>
+      <p className="mt-1 text-sm leading-5 text-slate-600">{body}</p>
     </div>
   );
 }
@@ -187,6 +203,9 @@ export default async function ParcelPage({
   }
 
   const pageTitle = `${data.identity.address}, ${data.identity.city}, ${data.identity.state}${data.identity.zip ? ` ${data.identity.zip}` : ""}`;
+  const primaryFacts = data.facts.slice(0, 6).filter(({ fact }) => fact.value);
+  const additionalFacts = data.facts.filter(({ fact }, index) => index >= 6 || !fact.value);
+  const unavailableFactCount = additionalFacts.filter(({ fact }) => !fact.value).length;
   const placeJsonLd = {
     "@context": "https://schema.org",
     "@type": "Place",
@@ -238,111 +257,75 @@ export default async function ParcelPage({
           <span>{data.identity.address}</span>
         </nav>
 
-        {data.identity.stale ? (
-          <div className="mt-4 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-            <span className="font-medium">Stale data notice.</span>{" "}
-            {data.identity.staleReason ?? "This parcel record is older than the current freshness target."}
+        <details className="mt-3 rounded border border-amber-200 bg-amber-50 text-sm text-amber-950" data-testid="sda-reconciliation-notice">
+          <summary className="cursor-pointer rounded px-3 py-2 font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700">
+            Data status · SDA verification pending{data.identity.stale ? " · stale parcel source" : ""}{data.pageStatus === "partial" ? " · some sources unavailable" : ""}
+          </summary>
+          <div className="space-y-2 border-t border-amber-200 px-3 py-2.5 leading-6">
+            {data.identity.stale ? <p><span className="font-medium">Stale data notice.</span> {data.identity.staleReason ?? "This parcel record is older than the current freshness target."}</p> : null}
+            <p><span className="font-medium">SDA source reconciliation pending.</span> SDA status is temporarily unavailable. Other overlay results remain separate.</p>
+            {data.pageStatus === "partial" ? <p><span className="font-medium">Some sources are temporarily unavailable.</span> TruLot is showing the parts of the public record that loaded successfully and withholding absence conclusions where a source did not complete.</p> : null}
           </div>
-        ) : null}
+        </details>
 
-        <div
-          className="mt-4 rounded border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-950"
-          data-testid="sda-reconciliation-notice"
-        >
-          <span className="font-medium">SDA source reconciliation pending.</span>{" "}
-          SDA status is temporarily unavailable. Other overlay results remain separate.
-        </div>
-
-        {data.pageStatus === "partial" ? (
-          <div className="mt-4 rounded border border-sky-200 bg-sky-50 px-4 py-3 text-sm text-sky-950">
-            <span className="font-medium">Some sources are temporarily unavailable.</span>{" "}
-            TruLot is showing the parts of the public record that loaded successfully and withholding absence conclusions where a source did not complete.
-          </div>
-        ) : null}
-
-        <section className="flex flex-col gap-5 border-b border-slate-100 py-6 md:flex-row md:items-start md:justify-between" id="identity">
-          <div className="min-w-0 flex-1">
-            <h1 className="text-[28px] font-semibold tracking-tight text-slate-950">
+        <section className="border-b border-slate-100 py-4" id="identity">
+          <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
+            <div className="min-w-0 flex-1">
+              <p className="text-xs font-medium uppercase tracking-[0.12em] text-slate-500">{data.identity.city}, {data.identity.state} parcel</p>
+              <h1 className="mt-1 text-[26px] font-semibold tracking-tight text-slate-950 md:text-[30px]">
               {pageTitle}
-            </h1>
-            <p className="mt-2 text-[15px] text-slate-600">
-              APN {data.identity.apn}
-              {data.identity.neighborhood ? (
-                <>
-                  <span className="mx-2 text-slate-300">·</span>
-                  {data.identity.neighborhood}
-                </>
-              ) : null}
-              {data.identity.communityPlanArea ? (
-                <>
-                  <span className="mx-2 text-slate-300">·</span>
-                  {data.identity.communityPlanArea}
-                </>
-              ) : null}
-            </p>
-            <p className="mt-4 text-[13px] text-slate-500">
-              {data.identity.dataRefreshedAt
-                ? `Parcel view last rebuilt ${data.identity.dataRefreshedAt}`
-                : "Refresh date not available in the current parcel views"}
-              <span className="mx-2 text-slate-300">·</span>
-              Sources: <a href="#receipts" className="underline decoration-slate-300 underline-offset-2">see receipts</a>
-            </p>
-          </div>
-
-          <figure className="h-[180px] w-full shrink-0 overflow-hidden rounded border border-slate-200 bg-slate-50 md:w-[260px]">
-            <div className="flex h-full items-center justify-center px-6 text-center text-sm leading-6 text-slate-500">
-              {data.identity.boundaryAvailable
-                ? "Static parcel map is available."
-                : data.identity.mapCaption}
+              </h1>
+              <div className="mt-1.5 flex flex-wrap items-center gap-x-1 text-sm text-slate-600">
+                <span>APN {data.identity.apn}</span><CopyApnButton apn={data.identity.apn} />
+                {data.identity.neighborhood ? <><span aria-hidden="true" className="text-slate-300">·</span><span>{data.identity.neighborhood}</span></> : null}
+                {data.identity.communityPlanArea ? <><span aria-hidden="true" className="text-slate-300">·</span><span>{data.identity.communityPlanArea}</span></> : null}
+              </div>
             </div>
-            <figcaption className="border-t border-slate-200 bg-white px-3 py-2 text-[11px] text-slate-500">
-              {data.identity.mapCaption}
-            </figcaption>
-          </figure>
-        </section>
-
-        <section className="border-b border-slate-100 py-7" id="facts">
-          <SectionHeading id="property-facts">Property facts</SectionHeading>
-          <p className="mt-1 text-sm text-slate-500">
-            Values from public records. Source and confidence shown for each item.
-          </p>
-          <div className="mt-4 overflow-hidden rounded border border-slate-200">
-            <table className="w-full border-collapse text-sm">
-              <tbody>
-                {data.facts.map(({ label, fact }) => (
-                  <tr key={label} className="border-t border-slate-200 first:border-t-0">
-                    <th className="w-[34%] bg-slate-50 px-4 py-3 text-left font-medium text-slate-700">
-                      {label}
-                    </th>
-                    <td className="px-4 py-3 align-top">
-                      {factDisplay(fact.value)}
-                      <SourceMeta fact={fact} />
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="flex shrink-0 flex-wrap items-center gap-2">
+              <a href="#zoning" className="rounded bg-sky-800 px-3 py-2 text-sm font-medium text-white hover:bg-sky-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">See development context</a>
+              <Link href="/parcel/san-diego" className="rounded border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Search another parcel</Link>
+            </div>
+          </div>
+          <div className="mt-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-500">
+            <span>{data.identity.dataRefreshedAt ? `Parcel view last rebuilt ${data.identity.dataRefreshedAt}` : "Refresh date not available in the current parcel views"}</span>
+            <span aria-hidden="true" className="text-slate-300">·</span><SectionSource>Sources</SectionSource>
+            <details className="basis-full text-xs text-slate-500">
+              <summary className="w-fit cursor-pointer rounded text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Map context</summary>
+              <figure className="mt-2 rounded border border-slate-200 bg-slate-50 px-3 py-2"><div>{data.identity.boundaryAvailable ? "Static parcel map is available." : data.identity.mapCaption}</div><figcaption className="mt-1 text-[11px]">{data.identity.mapCaption}</figcaption></figure>
+            </details>
           </div>
         </section>
 
-        <section className="border-b border-slate-100 py-7" id="snapshot">
-          <SectionHeading id="property-snapshot">Property snapshot</SectionHeading>
-          <p className="mt-1 text-sm text-slate-500">
-            A plain-English summary assembled from the recorded and mapped facts above.
-          </p>
+        <section className="border-b border-slate-100 py-4" id="facts">
+          <div className="flex items-baseline justify-between gap-3"><SectionHeading id="property-facts">Property facts</SectionHeading><SectionSource /></div>
+          <p className="mt-1 text-xs text-slate-500">Values from public records. Source and confidence remain available for each item.</p>
+          <dl className="mt-3 grid grid-cols-2 gap-2 md:grid-cols-3">
+            {primaryFacts.map(({ label, fact }) => <FactCard key={label} label={label} fact={fact} />)}
+          </dl>
+          {additionalFacts.length > 0 ? (
+            <details className="mt-2 rounded border border-slate-200 bg-slate-50 text-sm">
+              <summary className="cursor-pointer rounded px-3 py-2 font-medium text-slate-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">
+                Additional public records · {unavailableFactCount} {unavailableFactCount === 1 ? "field" : "fields"} currently unavailable
+              </summary>
+              <dl className="grid gap-2 border-t border-slate-200 p-3 sm:grid-cols-2">
+                {additionalFacts.map(({ label, fact }) => <FactCard key={label} label={label} fact={fact} />)}
+              </dl>
+            </details>
+          ) : null}
+        </section>
+
+        <section className="border-b border-slate-100 py-4" id="snapshot">
+          <div className="flex items-baseline justify-between gap-3"><SectionHeading id="property-snapshot">Property snapshot</SectionHeading><SectionSource /></div>
+          <p className="mt-1 text-xs text-slate-500">A plain-English summary assembled from the recorded and mapped facts above.</p>
           {data.snapshot.length > 0 ? (
-            <div className="mt-4 rounded border border-slate-200 bg-slate-50 px-5 py-5">
-              <div className="space-y-4">
-                {data.snapshot.map((item, index) => (
-                  <div key={`${item.value}-${index}`}>
-                    <p className="text-[15px] leading-7 text-slate-800">{item.value}</p>
-                    <SourceMeta fact={item} />
-                  </div>
-                ))}
+            <div className="mt-2 rounded border border-slate-200 bg-slate-50 px-3 py-3">
+              <div className="space-y-2">
+                {data.snapshot.slice(0, 2).map((item, index) => <div key={`${item.value}-${index}`}><p className="text-sm leading-6 text-slate-800">{item.value}</p><SourceMeta fact={item} label={index === 0 ? "Snapshot sources" : "Source"} /></div>)}
+                {data.snapshot.length > 2 ? <details className="text-sm"><summary className="w-fit cursor-pointer rounded font-medium text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">More parcel context</summary><div className="mt-2 space-y-2">{data.snapshot.slice(2).map((item, index) => <div key={`${item.value}-${index}`}><p className="leading-6 text-slate-700">{item.value}</p><SourceMeta fact={item} /></div>)}</div></details> : null}
               </div>
             </div>
           ) : (
-            <div className="mt-4">
+            <div className="mt-2">
               <EmptyState
                 title="Property snapshot unavailable"
                 body="The current parcel views do not expose enough confirmed fields to assemble the snapshot for this parcel yet."
@@ -351,144 +334,74 @@ export default async function ParcelPage({
           )}
         </section>
 
-        <section className="border-b border-slate-100 py-7" id="zoning">
-          <SectionHeading id="zoning-overlay-context">Zoning &amp; overlay context</SectionHeading>
-          <p className="mt-1 text-sm text-slate-500">
-            Base zoning, mapped overlays, and conditional program statements are kept separate here.
-          </p>
-          <div className="mt-4 grid gap-4 md:grid-cols-3">
-            <div className="rounded border border-slate-200 bg-white p-4">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-800">
-                Base zoning
-              </p>
-              <h3 className="mt-2 text-[16px] font-semibold text-slate-900">
-                {data.zoning.baseCode.value ?? "Base zone not available"}
-              </h3>
-              <div className="mt-3">
-                <p className="text-sm text-slate-700">
-                  {data.zoning.plainName.value ?? "Plain-language zone description not yet attached to this parcel record."}
-                </p>
-                <SourceMeta fact={data.zoning.plainName.value ? data.zoning.plainName : data.zoning.baseCode} />
-              </div>
-              <div className="mt-4 border-t border-slate-100 pt-4">
-                {data.zoning.standards.length > 0 ? (
-                  <dl className="space-y-2 text-sm">
-                    {data.zoning.standards.map((item) => (
-                      <div key={item.label} className="flex items-start justify-between gap-4">
-                        <dt className="text-slate-600">{item.label}</dt>
-                        <dd className="text-right text-slate-900">{item.value}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                ) : (
-                  <EmptyState
-                    title="Published standards unavailable"
-                    body="Published standards and code citations are not yet attached to the active parcel route for this base zone."
-                  />
-                )}
-              </div>
+        <section className="border-b border-slate-100 py-4" id="zoning">
+          <div className="flex items-baseline justify-between gap-3"><SectionHeading id="zoning-overlay-context">Zoning &amp; overlay context</SectionHeading><SectionSource /></div>
+          <p className="mt-1 text-sm text-slate-500">Base zoning, mapped overlays, and conditional program statements are kept separate here.</p>
+          <div className="mt-3 grid gap-3 md:grid-cols-[220px_1fr]">
+            <div className="rounded border border-slate-200 bg-slate-50 p-3">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-sky-800">Base zoning</p>
+              <p className="mt-1 text-xl font-semibold text-slate-950">{data.zoning.baseCode.value ?? "Not available"}</p>
+              <p className="mt-1 text-xs leading-5 text-slate-600">{data.zoning.plainName.value ?? "Plain-language zone description not yet attached to this parcel record."}</p>
+              <SourceMeta fact={data.zoning.plainName.value ? data.zoning.plainName : data.zoning.baseCode} />
             </div>
-
-            {standardsShadow ? (
-              <div data-testid="rs17-runtime-shadow" className="col-span-full rounded border-2 border-amber-400 bg-amber-50 p-4 [&_h2]:text-lg [&_h2]:font-semibold [&_h3]:mt-4 [&_h3]:font-semibold [&_p]:my-3 [&_table]:w-full [&_th]:text-left [&_th]:p-2 [&_td]:p-2 [&_td]:align-top [&_summary]:cursor-pointer [&_summary]:py-3 [&_a]:underline [&_code]:break-all [&_details]:border-t [&_details]:border-amber-200">
-                <div dangerouslySetInnerHTML={{ __html: standardsShadow }} />
-              </div>
-            ) : null}
-
-            <div className="rounded border border-slate-200 bg-white p-4">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-800">
-                Current programs &amp; overlays
-              </p>
-              <h3 className="mt-2 text-[16px] font-semibold text-slate-900">
-                Program rows
-              </h3>
-              <ul className="mt-3 space-y-4">
+            <div className="rounded border border-slate-200 bg-white">
+              <h3 className="border-b border-slate-100 px-3 py-2 text-sm font-semibold text-slate-900">Programs &amp; overlays</h3>
+              <ul className="divide-y divide-slate-100">
                 {data.zoning.programs.map((item) => (
-                  <li key={item.name} className="border-t border-slate-100 pt-3 first:border-t-0 first:pt-0">
-                    <p className="text-sm text-slate-800">{item.name}</p>
-                    <p className="mt-1 text-sm text-slate-600">
-                      {item.value ?? "Eligibility not yet exposed in the current parcel views."}
-                    </p>
-                    <SourceMeta fact={item} />
+                  <li key={item.name} className="grid gap-1 px-3 py-2 text-sm sm:grid-cols-[minmax(150px,0.45fr)_1fr]">
+                    <span className="font-medium text-slate-800">{item.name}</span>
+                    <span className="text-slate-600">{item.value ?? "Eligibility not yet exposed in the current parcel views."}</span>
+                    <div className="sm:col-start-2"><SourceMeta fact={item} /></div>
                   </li>
                 ))}
               </ul>
             </div>
-
-            <div className="rounded border border-sky-200 bg-sky-50 p-4">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-sky-800">
-                What this means, cautiously
-              </p>
-              <h3 className="mt-2 text-[16px] font-semibold text-slate-900">
-                In plain English
-              </h3>
-              <div className="mt-3 space-y-4">
-                {data.zoning.interpretation.map((item, index) => (
-                  <div key={`${item.value}-${index}`}>
-                    <p className="text-sm leading-6 text-slate-700">{item.value}</p>
-                    <SourceMeta fact={item} />
-                  </div>
-                ))}
+            {standardsShadow ? <div data-testid="rs17-runtime-shadow" className="col-span-full rounded border-2 border-amber-400 bg-amber-50 p-4 [&_h2]:text-lg [&_h2]:font-semibold [&_h3]:mt-4 [&_h3]:font-semibold [&_p]:my-3 [&_table]:w-full [&_th]:p-2 [&_th]:text-left [&_td]:p-2 [&_td]:align-top [&_summary]:cursor-pointer [&_summary]:py-3 [&_a]:underline [&_code]:break-all [&_details]:border-t [&_details]:border-amber-200"><div dangerouslySetInnerHTML={{ __html: standardsShadow }} /></div> : null}
+          </div>
+          <div className="mt-3 rounded border border-sky-200 bg-sky-50 px-3 py-3">
+            <h3 className="text-sm font-semibold text-slate-900">What this means, cautiously</h3>
+            {data.zoning.interpretation[0] ? <p className="mt-1 text-sm leading-6 text-slate-700">{data.zoning.interpretation[0].value}</p> : null}
+            <details className="mt-1 text-sm">
+              <summary className="w-fit cursor-pointer rounded font-medium text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">How TruLot interprets this</summary>
+              <div className="mt-2 space-y-2">
+                {data.zoning.interpretation.map((item, index) => <div key={`${item.value}-${index}`}><p className="leading-6 text-slate-700">{item.value}</p><SourceMeta fact={item} /></div>)}
+                <div className="border-t border-sky-200 pt-2">
+                  {data.zoning.standards.length > 0 ? <dl className="space-y-1">{data.zoning.standards.map(item => <div key={item.label} className="flex justify-between gap-3"><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl> : <p className="text-slate-600"><span className="font-medium">Published standards unavailable.</span> Published standards and code citations are not yet attached to the active parcel route for this base zone.</p>}
+                </div>
               </div>
-            </div>
+            </details>
           </div>
         </section>
 
-        <section className="border-b border-slate-100 py-7" id="similar">
-          <SectionHeading id="similar-lots-precedents">Similar lots &amp; nearby precedents</SectionHeading>
-          <p className="mt-1 text-sm text-slate-500">
-            {data.similarLots.criteriaLabel}
-          </p>
+        <section className="border-b border-slate-100 py-4" id="similar">
+          <div className="flex items-baseline justify-between gap-3"><SectionHeading id="similar-lots-precedents">Similar lots &amp; nearby precedents</SectionHeading><SectionSource /></div>
+          <p className="mt-1 text-sm text-slate-600">{data.similarLots.matches.length > 0 ? `${data.similarLots.totalMatchCount} nearby parcels have recorded development activity. ` : ""}<span className="text-slate-500">{data.similarLots.criteriaLabel}</span></p>
           {data.similarLots.matches.length > 0 ? (
-            <div className="mt-4 grid gap-4 md:grid-cols-[1fr_220px]">
-              <div className="overflow-hidden rounded border border-slate-200">
+            <div className="mt-3">
+              <div className="overflow-x-auto rounded border border-slate-200">
                 <table className="w-full border-collapse text-sm">
                   <thead className="bg-slate-50 text-left text-slate-700">
                     <tr>
-                      <th className="px-4 py-3 font-medium">Address</th>
-                      <th className="px-4 py-3 font-medium">What happened</th>
-                      <th className="px-4 py-3 font-medium">Permit status</th>
-                      <th className="px-4 py-3 font-medium">Distance</th>
+                      <th className="px-3 py-2 font-medium">Address</th><th className="px-3 py-2 font-medium">What happened</th><th className="px-3 py-2 font-medium">Permit status</th><th className="px-3 py-2 font-medium">Distance</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {data.similarLots.matches.map((match) => (
+                    {data.similarLots.matches.slice(0, 3).map((match) => (
                       <tr key={match.url} className="border-t border-slate-200">
-                        <td className="px-4 py-3 align-top">
-                          <Link href={match.url} className="text-sky-800 hover:underline">
-                            {match.address}
-                          </Link>
-                        </td>
-                        <td className="px-4 py-3 align-top">
-                          <div>{match.value}</div>
-                          <div className="mt-1 text-[12px] text-slate-500">
-                            Source: {match.sourceLabel} · {confidenceLabel(match.confidenceTier)}
-                          </div>
-                        </td>
-                        <td className="px-4 py-3 align-top text-slate-700">
-                          {match.permitStatus ?? "—"}
-                          {match.permitDate ? ` · ${match.permitDate}` : ""}
-                        </td>
-                        <td className="px-4 py-3 align-top text-slate-700">
-                          {match.distanceMiles !== null ? `${match.distanceMiles.toFixed(1)} mi` : "—"}
-                        </td>
+                        <td className="px-3 py-2 align-top"><Link href={match.url} className="text-sky-800 hover:underline">{match.address}</Link></td>
+                        <td className="px-3 py-2 align-top"><div>{match.value}</div><SourceMeta fact={match} /></td>
+                        <td className="px-3 py-2 align-top text-slate-700">{match.permitStatus ?? "—"}{match.permitDate ? ` · ${match.permitDate}` : ""}</td>
+                        <td className="px-3 py-2 align-top text-slate-700">{match.distanceMiles !== null ? `${match.distanceMiles.toFixed(1)} mi` : "—"}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
-
-              <figure className="overflow-hidden rounded border border-slate-200 bg-slate-50">
-                <div className="flex h-[220px] items-center justify-center px-6 text-center text-sm leading-6 text-slate-500">
-                  Similar-lot map preview is not yet attached to the current parcel route. Internal links above use the canonical parcel URLs.
-                </div>
-                <figcaption className="border-t border-slate-200 bg-white px-3 py-2 text-[11px] text-slate-500">
-                  Similar lots are linked using canonical parcel URLs.
-                </figcaption>
-              </figure>
+              {data.similarLots.matches.length > 3 ? <details className="mt-2 rounded border border-slate-200"><summary className="cursor-pointer rounded px-3 py-2 text-sm font-medium text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">View all {data.similarLots.matches.length}</summary><div className="overflow-x-auto border-t border-slate-200"><table className="w-full border-collapse text-sm"><tbody>{data.similarLots.matches.slice(3).map(match => <tr key={match.url} className="border-t border-slate-100 first:border-t-0"><td className="px-3 py-2"><Link href={match.url} className="text-sky-800 hover:underline">{match.address}</Link></td><td className="px-3 py-2">{match.value}<SourceMeta fact={match} /></td><td className="px-3 py-2">{match.permitStatus ?? "—"}{match.permitDate ? ` · ${match.permitDate}` : ""}</td><td className="px-3 py-2">{match.distanceMiles !== null ? `${match.distanceMiles.toFixed(1)} mi` : "—"}</td></tr>)}</tbody></table></div></details> : null}
+              <details className="mt-2 text-xs text-slate-500"><summary className="w-fit cursor-pointer rounded text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Matching and map notes</summary><p className="mt-1">Similar-lot map preview is not yet attached to the current parcel route. Internal links above use the canonical parcel URLs. Similar lots are linked using canonical parcel URLs.</p></details>
             </div>
           ) : (
-            <div className="mt-4">
+            <div className="mt-2">
               <EmptyState
                 title="No nearby precedents found"
                 body={data.similarLots.emptyState ?? "No matching nearby parcel precedents were returned for this parcel."}
@@ -497,27 +410,26 @@ export default async function ParcelPage({
           )}
         </section>
 
-        <section className="border-b border-slate-100 py-7" id="permits">
+        <section className="border-b border-slate-100 py-4" id="permits">
           <div className="flex flex-wrap items-center gap-2">
             <SectionHeading id="permit-development-activity">Permit &amp; development activity</SectionHeading>
             <span className="rounded border border-slate-300 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
               Recorded permit data
             </span>
+            <span className="ml-auto"><SectionSource /></span>
           </div>
-          <p className="mt-1 text-sm text-slate-500">
-            Permit activity from the current city permit view for this parcel, plus the nearby activity summary already attached to the parcel record.
-          </p>
-
-          <div className="mt-5">
-            <h3 className="text-[15px] font-semibold text-slate-900">This parcel</h3>
+          <p className="mt-1 text-sm text-slate-500">Permit activity from the current city permit view for this parcel, plus the nearby activity summary already attached to the parcel record.</p>
+          <div className="mt-3 grid gap-3 md:grid-cols-[1.4fr_1fr]">
+            <div>
+            <h3 className="text-sm font-semibold text-slate-900">This parcel</h3>
             {data.permits.thisParcel.length > 0 ? (
-              <div className="mt-3 border-l-2 border-slate-200 pl-5">
-                <div className="space-y-5">
+              <div className="mt-2 border-l-2 border-slate-200 pl-4">
+                <div className="space-y-3">
                   {data.permits.thisParcel.map((permit, index) => (
                     <div key={`${permit.permitNumber}-${index}`} className="relative">
-                      <span className="absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-sky-800 bg-white" />
-                      <p className="text-[13px] text-slate-500">{permit.date ?? "Date not available"}</p>
-                      <p className="mt-1 text-sm leading-6 text-slate-800">
+                      <span className="absolute -left-[21px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-sky-800 bg-white" />
+                      <p className="text-xs text-slate-500">{permit.date ?? "Date not available"}</p>
+                      <p className="text-sm leading-5 text-slate-800">
                         {permit.value}
                         {permit.permitNumber ? (
                           <>
@@ -535,18 +447,17 @@ export default async function ParcelPage({
                 </div>
               </div>
             ) : (
-              <div className="mt-3">
+              <div className="mt-2">
                 <EmptyState
                   title={result.truth.permits.state === "unavailable" ? "Permit history unavailable" : result.truth.permits.state === "partial" ? "Permit history incomplete" : "No linked permits in this source"}
                   body={data.permits.emptyState ?? "No linked permit records were found in the current direct permit-history source."}
                 />
               </div>
             )}
-          </div>
-
-          <div className="mt-6 border-t border-dashed border-slate-200 pt-5">
-            <h3 className="text-[15px] font-semibold text-slate-900">Nearby</h3>
-            <div className="mt-3 space-y-3">
+            </div>
+            <div className="rounded border border-slate-200 bg-slate-50 p-3">
+            <h3 className="text-sm font-semibold text-slate-900">Nearby</h3>
+            <div className="mt-2 grid gap-2">
               {data.permits.nearbySummary.map(({ label, fact }) => (
                 <div key={label}>
                   <p className="text-sm text-slate-800">
@@ -557,27 +468,25 @@ export default async function ParcelPage({
                 </div>
               ))}
             </div>
+            </div>
           </div>
         </section>
 
-        <section className="border-b border-slate-100 py-7" id="signals">
-          <SectionHeading id="development-potential-signals">Development potential signals</SectionHeading>
-          <p className="mt-1 text-sm text-slate-500">
-            Signals are derived from mapped data or conditional overlay context. They are observations, not a score.
-          </p>
+        <section className="border-b border-slate-100 py-4" id="signals">
+          <div className="flex items-baseline justify-between gap-3"><SectionHeading id="development-potential-signals">Development potential signals</SectionHeading><SectionSource /></div>
+          <p className="mt-1 text-sm text-slate-500">Signals are derived from mapped data or conditional overlay context. They are observations, not a score.</p>
           {data.signals.length > 0 ? (
-            <div className="mt-4 flex flex-wrap gap-3">
+            <><div className="mt-2 grid gap-2 sm:grid-cols-2 md:grid-cols-3">
               {data.signals.map((signal) => (
-                <div key={signal.title} className="max-w-[340px] rounded border border-slate-200 bg-white px-4 py-3">
+                <div key={signal.title} className="rounded border border-slate-200 bg-white px-3 py-2.5">
                   <p className="text-sm font-medium text-slate-900">{signal.title}</p>
-                  <p className="mt-1 text-sm text-slate-700">{signal.value}</p>
+                  <p className="text-sm text-slate-700">{signal.value}</p>
                   {signal.detail ? (
                     <p className="mt-1 text-[12px] leading-5 text-slate-500">{signal.detail}</p>
                   ) : null}
-                  <SourceMeta fact={signal} />
                 </div>
               ))}
-            </div>
+            </div><details className="mt-2 text-xs text-slate-500"><summary className="w-fit cursor-pointer rounded text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Signal sources</summary><div className="mt-2 grid gap-2 sm:grid-cols-2">{data.signals.map(signal => <div key={signal.title} className="rounded bg-slate-50 p-2"><span className="font-medium text-slate-700">{signal.title}</span><SourceMeta fact={signal} /></div>)}</div></details></>
           ) : (
             <div className="mt-4">
               <EmptyState
@@ -588,13 +497,16 @@ export default async function ParcelPage({
           )}
         </section>
 
-        <section className="bg-slate-50 py-7" id="receipts" itemScope itemType="https://schema.org/Dataset">
-          <SectionHeading id="receipts-methodology">Receipts &amp; methodology</SectionHeading>
-          <p className="mt-1 text-sm text-slate-500" itemProp="description">
-            Every dataset used on this page, and how the current parcel route uses it.
-          </p>
-
-          <div className="mt-4 overflow-hidden rounded border border-slate-200 bg-white">
+        <section className="bg-slate-50 py-4" id="receipts" itemScope itemType="https://schema.org/Dataset">
+          <details className="rounded border border-slate-200 bg-white">
+            <summary className="flex cursor-pointer items-center justify-between gap-3 rounded px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">
+              <span><span id="receipts-methodology" className="block text-[18px] font-semibold tracking-tight text-slate-950">Sources &amp; methodology</span><span className="mt-0.5 block text-xs text-slate-500">{data.sources.length} datasets · receipts, methods, FAQ, and limitations</span></span>
+              <span aria-hidden="true" className="text-sky-800">View</span>
+            </summary>
+          <div className="border-t border-slate-200 px-4 pb-4">
+          <h3 className="mt-3 text-base font-semibold text-slate-900">Receipts &amp; methodology</h3>
+          <p className="mt-3 text-sm text-slate-500" itemProp="description">Every dataset used on this page, and how the current parcel route uses it.</p>
+          <div className="mt-3 overflow-x-auto rounded border border-slate-200 bg-white">
             <table className="w-full border-collapse text-sm">
               <thead className="bg-slate-50 text-left text-slate-700">
                 <tr>
@@ -625,10 +537,10 @@ export default async function ParcelPage({
             </table>
           </div>
 
-          <div className="mt-5 space-y-3">
+          <div className="mt-4 space-y-2">
             {data.methodology.sections.map((section) => (
               <details key={section.id} className="rounded border border-slate-200 bg-white">
-                <summary className="cursor-pointer px-4 py-3 text-sm font-medium text-slate-900">
+                <summary className="cursor-pointer rounded px-3 py-2 text-sm font-medium text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">
                   {section.title}
                 </summary>
                 <div className="border-t border-slate-100 px-4 py-3 text-sm leading-6 text-slate-600">
@@ -638,11 +550,11 @@ export default async function ParcelPage({
             ))}
           </div>
 
-          <h3 className="mt-6 text-[15px] font-semibold text-slate-900">Frequently asked questions</h3>
-          <div className="mt-3 space-y-3" itemScope itemType="https://schema.org/FAQPage">
+          <h3 className="mt-4 text-[15px] font-semibold text-slate-900">Frequently asked questions</h3>
+          <div className="mt-2 space-y-2" itemScope itemType="https://schema.org/FAQPage">
             {data.methodology.faq.map((item) => (
               <details key={item.question} className="rounded border border-slate-200 bg-white">
-                <summary className="cursor-pointer px-4 py-3 text-sm font-medium text-slate-900">
+                <summary className="cursor-pointer rounded px-3 py-2 text-sm font-medium text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">
                   {item.question}
                 </summary>
                 <div className="border-t border-slate-100 px-4 py-3 text-sm leading-6 text-slate-600">
@@ -652,10 +564,12 @@ export default async function ParcelPage({
             ))}
           </div>
 
-          <div className="mt-6 rounded border border-slate-200 bg-white px-4 py-4 text-sm leading-6 text-slate-600">
+          <div className="mt-4 border-t border-slate-200 pt-3 text-xs leading-5 text-slate-500">
             <strong className="text-slate-900">Disclaimer.</strong>{" "}
             {data.methodology.disclaimer}
           </div>
+          </div>
+          </details>
         </section>
       </div>
 
