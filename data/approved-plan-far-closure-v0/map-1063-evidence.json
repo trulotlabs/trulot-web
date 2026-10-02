@@ -1,0 +1,31 @@
+{
+  "area_reconstruction": {
+    "possible_from_map_alone": false,
+    "reason": "The one-page map shows direct side dimensions but does not state Lot 4 area or provide a complete bearing relationship sufficient for a unique area reconstruction without geometric assumptions."
+  },
+  "authority": "San Diego County Survey Records System",
+  "contract_version": "approved-plan-far-closure-v0-2026-10-02-p52a",
+  "dedication": {
+    "additional_lot_4_project_dedication_shown": false,
+    "subdivision_streets_roads_and_alleys_dedicated_to_public_use": true
+  },
+  "lot_4_block_7": {
+    "explicit_area_sq_ft": null,
+    "shown": true,
+    "south_distance_ft": "202.6",
+    "street_frontage_distance_ft": "100",
+    "west_relationship": "fronts the recorded street now identified by project and survey evidence as 67th Street"
+  },
+  "record": {
+    "document_type": "Subdivision Map",
+    "filing_endorsement": "Filed June 6, 1907 at 2:34 PM",
+    "page": 1,
+    "pages": 1,
+    "subdivision_name": "ENCANTO HEIGHTS",
+    "system_uuid": "92692",
+    "title": "MAP 01063"
+  },
+  "redistributed": false,
+  "reviewed_preview_sha256": "3069d111116c534d3b200252e804cbe21bb8694c1cd06efaae260d97cd1c57a5",
+  "source_url": "https://srs.sandiegocounty.gov/#/s?v=G&a=c&q=1063"
+}

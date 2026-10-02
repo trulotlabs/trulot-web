@@ -1,0 +1,585 @@
+{
+  "contract_version": "approved-plan-far-closure-v0-2026-10-02-p52a",
+  "deck_schedule_conflict": {
+    "difference_sq_ft": "44.4",
+    "effect_on_code_bounds": "NONE_BECAUSE_ALL_SIX_DECKS_ARE_EXCLUDED_FROM_CODE_GFA",
+    "plan_stated_total_sq_ft": "327.6",
+    "six_times_schedule_each_sq_ft": "372.0"
+  },
+  "decks": [
+    {
+      "component_id": "DECK_1",
+      "exact_area_sq_ft": null,
+      "provenance": [
+        {
+          "evidence": "Second-floor deck plan",
+          "pdf_page": 33,
+          "sheet": "A1.10",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Upper floor labels DECK BELOW",
+          "pdf_page": 34,
+          "sheet": "A1.11",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "South elevation shows open metal guardrails",
+          "pdf_page": 53,
+          "sheet": "A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "reason": "Direct floor, upper-floor, roof, and elevation evidence shows an exterior open deck without a roof; the historical roofed-balcony inclusion is not triggered.",
+      "schedule_area_each_sq_ft": "62.0",
+      "state": "EXCLUDED_FROM_CODE_GFA"
+    },
+    {
+      "component_id": "DECK_2",
+      "exact_area_sq_ft": null,
+      "provenance": [
+        {
+          "evidence": "Second-floor deck plan",
+          "pdf_page": 33,
+          "sheet": "A1.10",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Upper floor labels DECK BELOW",
+          "pdf_page": 34,
+          "sheet": "A1.11",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "South elevation shows open metal guardrails",
+          "pdf_page": 53,
+          "sheet": "A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "reason": "Direct floor, upper-floor, roof, and elevation evidence shows an exterior open deck without a roof; the historical roofed-balcony inclusion is not triggered.",
+      "schedule_area_each_sq_ft": "62.0",
+      "state": "EXCLUDED_FROM_CODE_GFA"
+    },
+    {
+      "component_id": "DECK_3",
+      "exact_area_sq_ft": null,
+      "provenance": [
+        {
+          "evidence": "Second-floor deck plan",
+          "pdf_page": 37,
+          "sheet": "A1.14",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Upper floor labels DECK BELOW",
+          "pdf_page": 38,
+          "sheet": "A1.15",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "South elevation shows open metal guardrails",
+          "pdf_page": 53,
+          "sheet": "A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "reason": "Direct floor, upper-floor, roof, and elevation evidence shows an exterior open deck without a roof; the historical roofed-balcony inclusion is not triggered.",
+      "schedule_area_each_sq_ft": "62.0",
+      "state": "EXCLUDED_FROM_CODE_GFA"
+    },
+    {
+      "component_id": "DECK_4",
+      "exact_area_sq_ft": null,
+      "provenance": [
+        {
+          "evidence": "Second-floor deck plan",
+          "pdf_page": 37,
+          "sheet": "A1.14",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Upper floor labels DECK BELOW",
+          "pdf_page": 38,
+          "sheet": "A1.15",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "South elevation shows open metal guardrails",
+          "pdf_page": 53,
+          "sheet": "A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "reason": "Direct floor, upper-floor, roof, and elevation evidence shows an exterior open deck without a roof; the historical roofed-balcony inclusion is not triggered.",
+      "schedule_area_each_sq_ft": "62.0",
+      "state": "EXCLUDED_FROM_CODE_GFA"
+    },
+    {
+      "component_id": "DECK_5",
+      "exact_area_sq_ft": null,
+      "provenance": [
+        {
+          "evidence": "Second-floor deck plan",
+          "pdf_page": 41,
+          "sheet": "A1.18",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Upper floor labels DECK BELOW",
+          "pdf_page": 42,
+          "sheet": "A1.19",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "South elevation shows open metal guardrails",
+          "pdf_page": 53,
+          "sheet": "A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "reason": "Direct floor, upper-floor, roof, and elevation evidence shows an exterior open deck without a roof; the historical roofed-balcony inclusion is not triggered.",
+      "schedule_area_each_sq_ft": "62.0",
+      "state": "EXCLUDED_FROM_CODE_GFA"
+    },
+    {
+      "component_id": "DECK_6",
+      "exact_area_sq_ft": null,
+      "provenance": [
+        {
+          "evidence": "Second-floor deck plan",
+          "pdf_page": 41,
+          "sheet": "A1.18",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Upper floor labels DECK BELOW",
+          "pdf_page": 42,
+          "sheet": "A1.19",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "South elevation shows open metal guardrails",
+          "pdf_page": 53,
+          "sheet": "A3-4",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "reason": "Direct floor, upper-floor, roof, and elevation evidence shows an exterior open deck without a roof; the historical roofed-balcony inclusion is not triggered.",
+      "schedule_area_each_sq_ft": "62.0",
+      "state": "EXCLUDED_FROM_CODE_GFA"
+    }
+  ],
+  "garages": [
+    {
+      "area_sq_ft": "514.0",
+      "component_id": "GARAGE_1",
+      "facts_supported": [
+        "tuck-under parking",
+        "residential parking use",
+        "structure above",
+        "one motor-court-facing open elevation",
+        "integrated with a dwelling building"
+      ],
+      "provenance": [
+        {
+          "evidence": "Scope identifies tuck-under parking",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Garage-level plan",
+          "pdf_page": 24,
+          "sheet": "A1.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "North elevation shows motor-court-facing garage openings",
+          "pdf_page": 52,
+          "sheet": "A3-3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "state": "CONDITIONAL_GFA",
+      "unresolved_historical_predicate": "The plans do not seal whether at least two pre-O-21836 \u00a7113.0234(d)(3)(B) parking-structure design criteria are met, including wrapped/screened relationships to the public right-of-way."
+    },
+    {
+      "area_sq_ft": "514.0",
+      "component_id": "GARAGE_2",
+      "facts_supported": [
+        "tuck-under parking",
+        "residential parking use",
+        "structure above",
+        "one motor-court-facing open elevation",
+        "integrated with a dwelling building"
+      ],
+      "provenance": [
+        {
+          "evidence": "Scope identifies tuck-under parking",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Garage-level plan",
+          "pdf_page": 24,
+          "sheet": "A1.1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "North elevation shows motor-court-facing garage openings",
+          "pdf_page": 52,
+          "sheet": "A3-3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "state": "CONDITIONAL_GFA",
+      "unresolved_historical_predicate": "The plans do not seal whether at least two pre-O-21836 \u00a7113.0234(d)(3)(B) parking-structure design criteria are met, including wrapped/screened relationships to the public right-of-way."
+    },
+    {
+      "area_sq_ft": "514.0",
+      "component_id": "GARAGE_3",
+      "facts_supported": [
+        "tuck-under parking",
+        "residential parking use",
+        "structure above",
+        "one motor-court-facing open elevation",
+        "integrated with a dwelling building"
+      ],
+      "provenance": [
+        {
+          "evidence": "Scope identifies tuck-under parking",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Garage-level plan",
+          "pdf_page": 28,
+          "sheet": "A1.5",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "North elevation shows motor-court-facing garage openings",
+          "pdf_page": 52,
+          "sheet": "A3-3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "state": "CONDITIONAL_GFA",
+      "unresolved_historical_predicate": "The plans do not seal whether at least two pre-O-21836 \u00a7113.0234(d)(3)(B) parking-structure design criteria are met, including wrapped/screened relationships to the public right-of-way."
+    },
+    {
+      "area_sq_ft": "514.0",
+      "component_id": "GARAGE_4",
+      "facts_supported": [
+        "tuck-under parking",
+        "residential parking use",
+        "structure above",
+        "one motor-court-facing open elevation",
+        "integrated with a dwelling building"
+      ],
+      "provenance": [
+        {
+          "evidence": "Scope identifies tuck-under parking",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Garage-level plan",
+          "pdf_page": 28,
+          "sheet": "A1.5",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "North elevation shows motor-court-facing garage openings",
+          "pdf_page": 52,
+          "sheet": "A3-3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "state": "CONDITIONAL_GFA",
+      "unresolved_historical_predicate": "The plans do not seal whether at least two pre-O-21836 \u00a7113.0234(d)(3)(B) parking-structure design criteria are met, including wrapped/screened relationships to the public right-of-way."
+    },
+    {
+      "area_sq_ft": "514.0",
+      "component_id": "GARAGE_5",
+      "facts_supported": [
+        "tuck-under parking",
+        "residential parking use",
+        "structure above",
+        "one motor-court-facing open elevation",
+        "integrated with a dwelling building"
+      ],
+      "provenance": [
+        {
+          "evidence": "Scope identifies tuck-under parking",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Garage-level plan",
+          "pdf_page": 32,
+          "sheet": "A1.9",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "North elevation shows motor-court-facing garage openings",
+          "pdf_page": 52,
+          "sheet": "A3-3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "state": "CONDITIONAL_GFA",
+      "unresolved_historical_predicate": "The plans do not seal whether at least two pre-O-21836 \u00a7113.0234(d)(3)(B) parking-structure design criteria are met, including wrapped/screened relationships to the public right-of-way."
+    },
+    {
+      "area_sq_ft": "514.0",
+      "component_id": "GARAGE_6",
+      "facts_supported": [
+        "tuck-under parking",
+        "residential parking use",
+        "structure above",
+        "one motor-court-facing open elevation",
+        "integrated with a dwelling building"
+      ],
+      "provenance": [
+        {
+          "evidence": "Scope identifies tuck-under parking",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Garage-level plan",
+          "pdf_page": 32,
+          "sheet": "A1.9",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "North elevation shows motor-court-facing garage openings",
+          "pdf_page": 52,
+          "sheet": "A3-3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "state": "CONDITIONAL_GFA",
+      "unresolved_historical_predicate": "The plans do not seal whether at least two pre-O-21836 \u00a7113.0234(d)(3)(B) parking-structure design criteria are met, including wrapped/screened relationships to the public right-of-way."
+    },
+    {
+      "area_sq_ft": "514.0",
+      "component_id": "GARAGE_7",
+      "facts_supported": [
+        "tuck-under parking",
+        "residential parking use",
+        "structure above",
+        "one motor-court-facing open elevation",
+        "integrated with a dwelling building"
+      ],
+      "provenance": [
+        {
+          "evidence": "Scope identifies tuck-under parking",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Garage-level plan",
+          "pdf_page": 36,
+          "sheet": "A1.13",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "North elevation shows motor-court-facing garage openings",
+          "pdf_page": 52,
+          "sheet": "A3-3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "state": "CONDITIONAL_GFA",
+      "unresolved_historical_predicate": "The plans do not seal whether at least two pre-O-21836 \u00a7113.0234(d)(3)(B) parking-structure design criteria are met, including wrapped/screened relationships to the public right-of-way."
+    },
+    {
+      "area_sq_ft": "514.0",
+      "component_id": "GARAGE_8",
+      "facts_supported": [
+        "tuck-under parking",
+        "residential parking use",
+        "structure above",
+        "one motor-court-facing open elevation",
+        "integrated with a dwelling building"
+      ],
+      "provenance": [
+        {
+          "evidence": "Scope identifies tuck-under parking",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Garage-level plan",
+          "pdf_page": 36,
+          "sheet": "A1.13",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "North elevation shows motor-court-facing garage openings",
+          "pdf_page": 52,
+          "sheet": "A3-3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "state": "CONDITIONAL_GFA",
+      "unresolved_historical_predicate": "The plans do not seal whether at least two pre-O-21836 \u00a7113.0234(d)(3)(B) parking-structure design criteria are met, including wrapped/screened relationships to the public right-of-way."
+    },
+    {
+      "area_sq_ft": "514.0",
+      "component_id": "GARAGE_9",
+      "facts_supported": [
+        "tuck-under parking",
+        "residential parking use",
+        "structure above",
+        "one motor-court-facing open elevation",
+        "integrated with a dwelling building"
+      ],
+      "provenance": [
+        {
+          "evidence": "Scope identifies tuck-under parking",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Garage-level plan",
+          "pdf_page": 40,
+          "sheet": "A1.17",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "North elevation shows motor-court-facing garage openings",
+          "pdf_page": 52,
+          "sheet": "A3-3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "state": "CONDITIONAL_GFA",
+      "unresolved_historical_predicate": "The plans do not seal whether at least two pre-O-21836 \u00a7113.0234(d)(3)(B) parking-structure design criteria are met, including wrapped/screened relationships to the public right-of-way."
+    },
+    {
+      "area_sq_ft": "514.0",
+      "component_id": "GARAGE_10",
+      "facts_supported": [
+        "tuck-under parking",
+        "residential parking use",
+        "structure above",
+        "one motor-court-facing open elevation",
+        "integrated with a dwelling building"
+      ],
+      "provenance": [
+        {
+          "evidence": "Scope identifies tuck-under parking",
+          "pdf_page": 1,
+          "sheet": "T-1",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "Garage-level plan",
+          "pdf_page": 40,
+          "sheet": "A1.17",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        },
+        {
+          "evidence": "North elevation shows motor-court-facing garage openings",
+          "pdf_page": 52,
+          "sheet": "A3-3",
+          "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+          "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+        }
+      ],
+      "state": "CONDITIONAL_GFA",
+      "unresolved_historical_predicate": "The plans do not seal whether at least two pre-O-21836 \u00a7113.0234(d)(3)(B) parking-structure design criteria are met, including wrapped/screened relationships to the public right-of-way."
+    }
+  ],
+  "packet52_ledger": {
+    "path": "data/approved-plan-far-evidence-v0/gfa-component-ledger.json",
+    "rebuilt": false,
+    "sha256": "5ec41b63ce8788b2695cbc2ed0b16d83e8b9ba15f95b7ee6f2b89a0d4d360b80"
+  },
+  "trash_enclosure": {
+    "area_sq_ft": "300.0",
+    "component_id": "TRASH_ENCLOSURE",
+    "missing_fact": "No direct detail or annotation seals roof state and building/GFA treatment under the historical definition.",
+    "provenance": [
+      {
+        "evidence": "300 S.F. trash enclosure site allocation",
+        "pdf_page": 15,
+        "sheet": "A0.1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      },
+      {
+        "evidence": "West elevation depicts trash enclosure",
+        "pdf_page": 49,
+        "sheet": "A3-1",
+        "source_ref": "PRIVATE_PLAN_PRJ-1111087_FOURTH_CD",
+        "source_sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12"
+      }
+    ],
+    "state": "UNRESOLVED_GFA",
+    "supported_facts": [
+      "plan-labeled trash enclosure",
+      "300.0-square-foot site allocation",
+      "west elevation depicts an approximately eight-foot enclosure"
+    ]
+  }
+}

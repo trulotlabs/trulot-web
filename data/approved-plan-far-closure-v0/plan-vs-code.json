@@ -1,0 +1,10 @@
+{
+  "code_far": null,
+  "contract_version": "approved-plan-far-closure-v0-2026-10-02-p52a",
+  "direct_component_sum_sq_ft": "22229.6",
+  "displayed_far": "1.10",
+  "exact_plan_input_ratio": "1.1063333997211710814578769169488149770961959768970",
+  "explanation": "The plan's new-construction subtotal is internally reproducible, but new construction plus the existing house is 10.0 sq ft higher than the stated FAR numerator. The displayed 1.10 is consistent only with one-decimal rounding padded to two digits; it is not used as legal FAR.",
+  "plan_denominator_sq_ft": "20084",
+  "plan_numerator_sq_ft": "22219.6"
+}

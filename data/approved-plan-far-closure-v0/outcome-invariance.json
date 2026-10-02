@@ -1,0 +1,26 @@
+{
+  "all_enumerated_candidates_same": true,
+  "candidate_far_max": "1.1217685719976100378410675164309898426608245369448",
+  "candidate_far_min": "0.85089465233902711101156960795579871865173608129622",
+  "candidate_margin_max": "0.49910534766097288898843039204420128134826391870378",
+  "candidate_margin_min": "0.2282314280023899621589324835690101573391754630552",
+  "classification": "NUMERIC_SENSITIVITY_INVARIANT_BUT_NOT_RULE_ENGINE_AUTHORIZED",
+  "contract_version": "approved-plan-far-closure-v0-2026-10-02-p52a",
+  "doctrine_evidence": [
+    "The shared evaluator requires literal-true prerequisite gates before comparison.",
+    "Packet 52's reusable unresolved-component contract permits an interval to inform materiality but not replace an exact benchmark gate."
+  ],
+  "enumerated_denominators": [
+    {
+      "status": "PLAN_LABEL_CANDIDATE_NOT_LEGAL_AREA",
+      "value": "20084"
+    },
+    {
+      "status": "NON_PRECISE_C1_TRAVERSE_CANDIDATE",
+      "value": "20084.272422"
+    }
+  ],
+  "existing_evaluator_allows_branch_invariant_result": false,
+  "legal_denominator_interval_supported": false,
+  "numeric_branch_state": "FAR_RULE_REQUIREMENT_SATISFIED"
+}

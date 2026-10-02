@@ -1,0 +1,11 @@
+{
+  "candidate_sensitivity_interval_not_legal_far": {
+    "maximum": "1.1217685719976100378410675164309898426608245369448",
+    "minimum": "0.85089465233902711101156960795579871865173608129622"
+  },
+  "contract_version": "approved-plan-far-closure-v0-2026-10-02-p52a",
+  "direct_component_plan_denominator_ratio_not_code_far": "1.1068313085042820155347540330611431985660227046405",
+  "legal_far": null,
+  "legal_far_interval": null,
+  "reason": "The Code numerator is an interval and no supported legal premises area or legal denominator interval is available."
+}

@@ -1,0 +1,18 @@
+{
+  "bounded_search_results": {
+    "demolition_or_retention_adjustment": null,
+    "excluded_component_line": null,
+    "explicit_adjustment": null,
+    "revision_adjustment": null,
+    "transcription_explanation": null,
+    "unit_or_garage_subtotal_discrepancy": null
+  },
+  "contract_version": "approved-plan-far-closure-v0-2026-10-02-p52a",
+  "difference_sq_ft": "10.0",
+  "direct_new_construction_sq_ft": "21510.6",
+  "direct_sum_sq_ft": "22229.6",
+  "existing_house_sq_ft": "719.0",
+  "finding": "The direct dwelling and garage schedule reproduces 21,510.6 exactly; adding the separately labeled 719.0 existing house produces 22,229.6. No bounded FAR/project-data evidence explains the 10.0-square-foot difference, so it is not labeled a typo.",
+  "plan_stated_far_numerator_sq_ft": "22219.6",
+  "state": "NUMERATOR_CONFLICT_UNRESOLVED"
+}

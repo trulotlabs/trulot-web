@@ -1,0 +1,12 @@
+{
+  "candidate_margin_range_not_legal_margin": {
+    "maximum": "0.49910534766097288898843039204420128134826391870378",
+    "minimum": "0.2282314280023899621589324835690101573391754630552"
+  },
+  "comparison": null,
+  "contract_version": "approved-plan-far-closure-v0-2026-10-02-p52a",
+  "margin": null,
+  "maximum": "1.35",
+  "reason": "Existing evaluator doctrine does not authorize comparison when required semantic gates remain unresolved.",
+  "state": "FAR_RULE_EVALUATION_UNRESOLVED"
+}

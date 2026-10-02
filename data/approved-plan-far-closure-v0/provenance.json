@@ -1,0 +1,33 @@
+{
+  "chain": [
+    "Map 1063 \u2192 legal identity \u2192 denominator gate",
+    "Packet 52 ledger + bounded plan details \u2192 component states \u2192 numerator interval",
+    "numerator interval + denominator candidates \u2192 sensitivity test",
+    "shared evaluator doctrine \u2192 formal unresolved comparison"
+  ],
+  "contract_version": "approved-plan-far-closure-v0-2026-10-02-p52a",
+  "sources": [
+    {
+      "sha256": "5ec41b63ce8788b2695cbc2ed0b16d83e8b9ba15f95b7ee6f2b89a0d4d360b80",
+      "source": "Packet 52 component ledger"
+    },
+    {
+      "sha256": "58706109c46340561e7f153c41e91ce05a0ff01015ba110438b3df7982e83d0d",
+      "source": "Packet 52 evidence bundle"
+    },
+    {
+      "sha256": "2016a33bb1757254216d9158fd5524638b9a11687533123a99ca582a5643b2c4",
+      "source": "Packet 51 rule-profile bundle"
+    },
+    {
+      "published": false,
+      "sha256": "93d8bae01e2f1458f9a65ced9b06c7df55d2c593db8b7dd26ae68207b7d68b12",
+      "source": "Private plan corpus"
+    },
+    {
+      "published": false,
+      "sha256": "3069d111116c534d3b200252e804cbe21bb8694c1cd06efaae260d97cd1c57a5",
+      "source": "County SRS Map 1063 preview"
+    }
+  ]
+}

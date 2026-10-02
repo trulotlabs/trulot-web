@@ -1,0 +1,20 @@
+{
+  "artifacts": {
+    "code-compatible-numerator.json": "514227b113c7ad137f449b9909ffaa4af7275c3d88d8bc47e6dcc6e3e8a35c61",
+    "component-resolution.json": "027d079c430af616cc652597450c8dadf296178d0db926bb305dd8ef7f5e5f8a",
+    "contract.json": "cab72ab94136b6d30e374f023b2b2c90a099ca775eca2fb18d514a08752bcc1c",
+    "decision.json": "9834a721d2f0202789b67e5e11dba533b3b6bfad56919e7fdd55167fc8e06ea2",
+    "far-computation.json": "507a974a82ced7afab51f6e3acdbe5ac0447b1392c9f5c486bfa47185fb7e749",
+    "legal-premises-decision.json": "d8fc19d8e9625948f87bd20e5d63481efc8b80a3f9942166509d406d16a4420d",
+    "legal-premises-reconciliation.json": "bfcab2e8bee563984992609f22be8c73b392f2241707eea6e6286c6965370683",
+    "map-1063-evidence.json": "83785872c678f09097650b98b9cbf82ccd90d5b30702a870fe7f1a629d74e617",
+    "numerator-conflict.json": "a2f6dda9f0bb539405630ba3d4823a0f871c3a1a9d799d1bf7ba1e2746c5eed6",
+    "outcome-invariance.json": "69564241b7c61154f9d58682eb8c36f3d0798bb305da49d321c3108b51aadb3e",
+    "plan-vs-code.json": "156eb74b32f56544745978222cf492bc7317c5553c75b3ffefb8607351b4edbd",
+    "provenance.json": "efd539683c122de8cfa892995b489bdcdefb0909cccde83c018e579a0c14ebfb",
+    "remaining-external-evidence.json": "7f59f0804c45f861052ae67881ac8e1431a669ca1db8f75b4050f1712abe4706",
+    "rm-2-5-comparison.json": "f54a7ac6c9e37d2dde7d466f32671ab311e7f58156dcdc42aefc36d019553366"
+  },
+  "bundle_sha256": "e868f8485a4014e37c42118b38e33d043ff71cad2fa87dbfcb65ad5d0afbd699",
+  "contract_version": "approved-plan-far-closure-v0-2026-10-02-p52a"
+}
