@@ -1,0 +1,114 @@
+{
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "far": {
+    "applicability": {
+      "operation": "UNCHANGED",
+      "rule": "Base RM-2-5 FAR remains applicable absent a proven external override."
+    },
+    "denominator": {
+      "operation": "UNCHANGED",
+      "rule": "Total premises area remains the denominator."
+    },
+    "maximum_far": {
+      "operation": "UNCHANGED",
+      "program_specific_rm_2_5_override_found": false
+    },
+    "numerator": {
+      "operation": "UNCHANGED",
+      "rule": "ADU floor area follows Code GFA unless a proven express exclusion applies; no blanket Home Density Bonus exclusion is modeled."
+    },
+    "ordinary_single_adu_800_sq_ft_rule": {
+      "effect": "Retained as an external ADU-specific exception candidate; it cannot be used for a 26-unit bonus project or any project until exact version and predicates are proven.",
+      "state": "conditional"
+    }
+  },
+  "height": {
+    "base_zone_maximum_preserved": true,
+    "footnote_18_preserved": true,
+    "operation": "UNCHANGED",
+    "overlay_maximum_preserved": true,
+    "predicates": [
+      "ADU_PROGRAM_APPLIES"
+    ],
+    "program_specific_numeric_increase_found": false,
+    "project_eligibility_evaluated": false
+  },
+  "modifiers": [
+    {
+      "coastal_applicability": "OUTSIDE_COASTAL",
+      "effective_from": "2023-05-06",
+      "effective_through": null,
+      "modifier_id": "RM25_ADU_HEIGHT_UNCHANGED",
+      "operand": null,
+      "operation": "UNCHANGED",
+      "predicates": [
+        "ADU_PROGRAM_APPLIES"
+      ],
+      "program": "ORDINARY_ADU_OR_ADU_HOME_DENSITY_BONUS",
+      "provenance": [
+        "PACKET50_HEIGHT_RULE_RECONSTRUCTION"
+      ],
+      "rule_family": "STRUCTURE_HEIGHT"
+    },
+    {
+      "coastal_applicability": "OUTSIDE_COASTAL",
+      "effective_from": "2023-05-06",
+      "effective_through": null,
+      "modifier_id": "RM25_ADU_FAR_MAX_UNCHANGED",
+      "operand": null,
+      "operation": "UNCHANGED",
+      "predicates": [
+        "ADU_PROGRAM_APPLIES",
+        "NO_SEPARATE_PROVEN_FAR_OVERRIDE"
+      ],
+      "program": "ORDINARY_ADU_OR_ADU_HOME_DENSITY_BONUS",
+      "provenance": [
+        "PACKET50_FAR_RULE_RECONSTRUCTION"
+      ],
+      "rule_family": "FAR_MAXIMUM"
+    },
+    {
+      "coastal_applicability": "OUTSIDE_COASTAL",
+      "effective_from": "2023-05-06",
+      "effective_through": null,
+      "modifier_id": "RM25_ADU_FAR_NUMERATOR_UNCHANGED",
+      "operand": null,
+      "operation": "UNCHANGED",
+      "predicates": [
+        "ADU_PROGRAM_APPLIES",
+        "NO_EXPRESS_GFA_EXCLUSION_PROVEN"
+      ],
+      "program": "ORDINARY_ADU_OR_ADU_HOME_DENSITY_BONUS",
+      "provenance": [
+        "PACKET50_FAR_RULE_RECONSTRUCTION"
+      ],
+      "rule_family": "FAR_NUMERATOR"
+    },
+    {
+      "coastal_applicability": "OUTSIDE_COASTAL",
+      "effective_from": "2023-05-06",
+      "effective_through": null,
+      "modifier_id": "RM25_ADU_FAR_DENOMINATOR_UNCHANGED",
+      "operand": null,
+      "operation": "UNCHANGED",
+      "predicates": [
+        "ADU_PROGRAM_APPLIES"
+      ],
+      "program": "ORDINARY_ADU_OR_ADU_HOME_DENSITY_BONUS",
+      "provenance": [
+        "PACKET50_FAR_RULE_RECONSTRUCTION"
+      ],
+      "rule_family": "FAR_DENOMINATOR"
+    }
+  ],
+  "packet_50_context": {
+    "annotation_proves_eligibility": false,
+    "inside_sda_fact_changes_base_height_or_far": false,
+    "plan_annotation": "ADU_HOME_DENSITY_BONUS_WITH_AFFORDABLE_ADUS"
+  },
+  "scope": [
+    "ORDINARY_ADU",
+    "ADU_HOME_DENSITY_BONUS"
+  ],
+  "zone": "RM-2-5"
+}

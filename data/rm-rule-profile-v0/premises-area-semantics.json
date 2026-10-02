@@ -1,0 +1,18 @@
+{
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "dedication": "Required street/alley dedication under \u00a7142.0610 uses pre-dedication property lines for maximum permitted GFA and density.",
+  "definition": "An area of land with its structures that has unity of use and is the smallest conveyable unit.",
+  "easements": "No general denominator deduction is modeled. Any claimed easement effect requires an express controlling provision and recorded instrument.",
+  "far_role": "The denominator is total area of the premises, not automatically an APN, assessor area, GIS polygon, or a single legal lot.",
+  "lot_vs_parcel": "A lot is legally established under the Code definition; an assessor parcel is an administrative mapping/tax unit and does not alone establish the premises.",
+  "multiple_legal_lots_one_apn": "Resolve recorded lots, conveyability, tie agreements, and unity of use before choosing a denominator.",
+  "split_or_multizone_premises": "Apply the version-selected \u00a7113.0234 multiple-zone calculation; do not divide or aggregate based only on GIS polygons.",
+  "term": "premises",
+  "unresolved_dependencies": [
+    "recorded_boundary",
+    "smallest_conveyable_unit",
+    "unity_of_use",
+    "required_dedication",
+    "multiple_zone_areas"
+  ]
+}

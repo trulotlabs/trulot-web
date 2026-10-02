@@ -1,0 +1,58 @@
+{
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "fail_closed": "A missing prerequisite produces unknown/unresolved, never false and never compliant.",
+  "families": {
+    "FAR": {
+      "comparison_gate": "NUMERATOR_AND_DENOMINATOR_BOTH_CODE_COMPATIBLE",
+      "required": [
+        "code_compatible_gfa_schedule_all_buildings",
+        "component_level_inclusion_exclusion_reconciliation",
+        "legal_premises_identity",
+        "total_premises_area",
+        "required_dedication_status",
+        "multiple_zone_areas",
+        "unit_band",
+        "program_modifier_predicates"
+      ]
+    },
+    "LOT_DIMENSIONS": {
+      "comparison_gate": "LEGAL_GEOMETRY_SUPPORTED",
+      "required": [
+        "legal_lot_identity",
+        "recorded_boundary",
+        "code_measurement_method",
+        "corner_lot_status",
+        "street_frontage"
+      ]
+    },
+    "SETBACK": {
+      "comparison_gate": "SELECTED_FORMULA_AND_EXCEPTIONS_RESOLVED",
+      "required": [
+        "legal_property_line_roles",
+        "premises_width",
+        "lot_width",
+        "building_frame_geometry",
+        "alley_width",
+        "street_centerline_radius",
+        "projection_classification",
+        "fire_constraints"
+      ]
+    },
+    "STRUCTURE_HEIGHT": {
+      "comparison_gate": "ALL_REQUIRED_SEMANTICS_SUPPORTED",
+      "required": [
+        "controlling_structure",
+        "structure_separation",
+        "existing_grade_surface",
+        "proposed_grade_surface",
+        "lower_grade_at_each_plumb_line",
+        "lowest_applicable_grade",
+        "highest_structure_point",
+        "roof_parapet_and_appurtenance_classification",
+        "coastal_height_limit_overlay",
+        "community_plan",
+        "side_setback_lines_and_above_30_ft_envelope"
+      ]
+    }
+  }
+}

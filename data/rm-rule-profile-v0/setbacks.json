@@ -1,0 +1,45 @@
+{
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "fire_override": {
+    "effect": "May require greater separation; never silently reduces a base setback.",
+    "treatment": "GENERAL_EXTERNAL_SAFETY_CONSTRAINT"
+  },
+  "profiles": {
+    "front": {
+      "base_min_ft": "15",
+      "curving_street_exception": {
+        "centerline_radius_below_ft": "100",
+        "minimum_ft": "5",
+        "standard_ft": "10"
+      },
+      "rule": "Up to 50% of building-envelope width may use minimum; remainder uses standard, floor by floor.",
+      "standard_ft": "20"
+    },
+    "interior_side": {
+      "formula": "max(5 ft, 10% of premises width)",
+      "narrow_lot_exception": {
+        "formula": "max(3 ft, 10% of lot width)",
+        "lot_width_lt_ft": "40"
+      },
+      "width_exception": {
+        "premises_width_gt_ft": "40",
+        "premises_width_lte_ft": "50",
+        "setback_ft": "4"
+      }
+    },
+    "rear": {
+      "alley_credit": "One-half alley width, capped at 10 ft; on-premises rear setback may not be below 5 ft.",
+      "base_min_ft": "15"
+    },
+    "street_side": {
+      "facade_encroachment": "Up to 50% of facade may encroach 5 ft into required street-side yard, floor by floor.",
+      "formula": "max(10 ft, 10% of premises width)"
+    }
+  },
+  "project_evaluation": false,
+  "projection_exceptions": {
+    "source": "SDMC 131.0461",
+    "treatment": "SEPARATE_CONDITIONAL_RULE; never deducted from base setback without qualifying feature evidence"
+  },
+  "zone": "RM-2-5"
+}

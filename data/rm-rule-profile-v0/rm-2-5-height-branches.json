@@ -1,0 +1,42 @@
+{
+  "branch_tree": {
+    "base": {
+      "source_rule": "RM25_HEIGHT",
+      "value_ft": "40"
+    },
+    "footnote_18": {
+      "if_all": [
+        "ZONE_IS_RM_2_5",
+        "STRUCTURE_PORTION_ABOVE_30_FT"
+      ],
+      "numeric_maximum_unchanged": true,
+      "then_constraint": "SIXTY_DEGREE_INWARD_PLANE_FROM_SIDE_SETBACK_LINE_AT_30_FT"
+    },
+    "footnote_37": {
+      "else_value_ft": "40",
+      "if_all": [
+        "IN_COASTAL_HEIGHT_LIMIT_OVERLAY",
+        "IN_PENINSULA_COMMUNITY_PLAN"
+      ],
+      "measurement": "SDMC_113_0270_A_4_D",
+      "then_value_ft": "30",
+      "unknown_result": "HEIGHT_BRANCH_UNRESOLVED"
+    }
+  },
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "inside_coastal_unknown_community": {
+    "numeric_maximum_ft": null,
+    "required_evidence": [
+      "coastal_height_limit_overlay_mapping",
+      "community_plan_mapping"
+    ],
+    "state": "unknown"
+  },
+  "no_other_rm_2_5_numeric_height_modifier_found": true,
+  "outside_coastal": {
+    "footnote_18_still_applies": true,
+    "footnote_37": false,
+    "numeric_maximum_ft": "40"
+  },
+  "zone": "RM-2-5"
+}

@@ -1,0 +1,45 @@
+{
+  "coastal_overlay": {
+    "additional_limit": "Lowest surface constraint of 10 feet and the applicable zoning maximum both remain operative.",
+    "base": "Finished grade under the referenced 1970 Uniform Building Code method",
+    "method": "\u00a7113.0270(a)(4)(D)",
+    "uppermost_point": "Includes appurtenances"
+  },
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "definition_id": "SDMC_113_0270_HEIGHT",
+  "derivation_class": "recorded",
+  "legal_versions": [
+    "APPLICATION_2024_01_29",
+    "CURRENT_2026_07_15"
+  ],
+  "overall": {
+    "high_point": "Highest point of the structure.",
+    "low_point": "Lowest existing or proposed grade within 5 feet of the structure perimeter, or at the property line when closer than 5 feet.",
+    "maximum": "Base-zone maximum plus the lesser of the footprint grade differential or 10 feet; no top point may exceed the zone maximum by plumb-line measurement."
+  },
+  "per_structure": {
+    "predicate": "STRUCTURE_SEPARATION_AT_LEAST_6_FT",
+    "separate_when": "Structures are separated by 6 feet or more."
+  },
+  "plumb_line": {
+    "required_evidence": [
+      "top_point_geometry",
+      "existing_grade_directly_below",
+      "proposed_grade_directly_below"
+    ],
+    "rule": "Each point at the top is measured vertically to the lower of existing or proposed grade directly below."
+  },
+  "roof_and_parapet": {
+    "conditional_exclusion": "\u00a7113.0270(a)(5) applies only when all stated development and roof-form predicates are proven; it is not a default RM-2-5 exclusion.",
+    "default": "Top points are measured unless an express Code exclusion applies."
+  },
+  "source_provenance": [
+    "CURRENT_MEASUREMENT"
+  ],
+  "special_conditions": [
+    "extreme_topographic_variation",
+    "subterranean_structure",
+    "pool",
+    "coastal_height_limit_overlay"
+  ]
+}

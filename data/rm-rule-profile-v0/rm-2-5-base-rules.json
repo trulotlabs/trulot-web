@@ -1,0 +1,546 @@
+{
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "deferred": {
+    "parking": "Deferred; no selected height/FAR branch depends on parking supply. GFA treatment of parking structures remains in the FAR definition.",
+    "usable_open_space": "Not needed to resolve Packet 50 height/FAR and not forced into V0."
+  },
+  "rules": [
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": "1500",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "PROCESS",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN1",
+        "FN2"
+      ],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "1,500 sq ft per dwelling unit",
+      "rule_family": "DENSITY",
+      "rule_id": "RM25_DENSITY",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Maximum permitted residential density",
+        "table": "131-04G"
+      },
+      "unit": "sq_ft_per_dwelling_unit",
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": "6000",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "6,000",
+      "rule_family": "MINIMUM_LOT_AREA",
+      "rule_id": "RM25_MIN_LOT_AREA",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Minimum lot dimensions / lot area",
+        "table": "131-04G"
+      },
+      "unit": "sq_ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": "50",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "50",
+      "rule_family": "MINIMUM_LOT_WIDTH",
+      "rule_id": "RM25_MIN_LOT_WIDTH",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Minimum lot dimensions / width",
+        "table": "131-04G"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": "50",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "50",
+      "rule_family": "MINIMUM_STREET_FRONTAGE",
+      "rule_id": "RM25_MIN_STREET_FRONTAGE",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Minimum lot dimensions / street frontage",
+        "table": "131-04G"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": "55",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "55",
+      "rule_family": "MINIMUM_CORNER_LOT_WIDTH",
+      "rule_id": "RM25_MIN_CORNER_WIDTH",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Minimum lot dimensions / corner lot width",
+        "table": "131-04G"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": "90",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "90",
+      "rule_family": "MINIMUM_LOT_DEPTH",
+      "rule_id": "RM25_MIN_LOT_DEPTH",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Minimum lot dimensions / depth",
+        "table": "131-04G"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": "15",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN7"
+      ],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "15",
+      "rule_family": "FRONT_SETBACK_MINIMUM",
+      "rule_id": "RM25_FRONT_MIN",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Setback requirements / front / minimum",
+        "table": "131-04G"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": "20",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN7"
+      ],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "20",
+      "rule_family": "FRONT_SETBACK_STANDARD",
+      "rule_id": "RM25_FRONT_STANDARD",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Setback requirements / front / standard",
+        "table": "131-04G"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": "5",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "FORMULA",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN8"
+      ],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "5",
+      "rule_family": "INTERIOR_SIDE_SETBACK",
+      "rule_id": "RM25_SIDE_MIN",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Setback requirements / side / minimum",
+        "table": "131-04G"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": "10",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "FORMULA",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN9"
+      ],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "10",
+      "rule_family": "STREET_SIDE_SETBACK",
+      "rule_id": "RM25_STREET_SIDE_MIN",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Setback requirements / street side / minimum",
+        "table": "131-04G"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": "15",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "MIN",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN10"
+      ],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "15",
+      "rule_family": "REAR_SETBACK",
+      "rule_id": "RM25_REAR_MIN",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Setback requirements / rear / minimum",
+        "table": "131-04G"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": "40",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "MAX",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [
+        "FN18",
+        "FN37"
+      ],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "40",
+      "rule_family": "STRUCTURE_HEIGHT",
+      "rule_id": "RM25_HEIGHT",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Maximum structure height",
+        "table": "131-04G"
+      },
+      "unit": "ft",
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5"
+      ],
+      "base_value": null,
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "NOT_SPECIFIED",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [],
+      "raw_value": "\u2014",
+      "rule_family": "LOT_COVERAGE",
+      "rule_id": "RM25_LOT_COVERAGE",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "RM-2-5",
+        "row": "Maximum lot coverage",
+        "table": "131-04G"
+      },
+      "unit": null,
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5",
+        "UNIT_BAND_IS_1_2"
+      ],
+      "base_value": "1.35",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "MAX",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [
+        "CHILD_CARE_FAR_BONUS",
+        "EXTERNAL_ADU_OR_AFFORDABLE_PROGRAM_IF_PROVEN"
+      ],
+      "raw_value": "1.35",
+      "rule_family": "FAR",
+      "rule_id": "RM25_FAR_1_2",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "1-2",
+        "row": "Maximum floor area ratio",
+        "table": "131-04G"
+      },
+      "unit": "ratio",
+      "unit_band": {
+        "maximum_units": 2,
+        "minimum_units": 1
+      },
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5",
+        "UNIT_BAND_IS_3_7"
+      ],
+      "base_value": "1.35",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "MAX",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [
+        "CHILD_CARE_FAR_BONUS",
+        "EXTERNAL_ADU_OR_AFFORDABLE_PROGRAM_IF_PROVEN"
+      ],
+      "raw_value": "1.35",
+      "rule_family": "FAR",
+      "rule_id": "RM25_FAR_3_7",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "3-7",
+        "row": "Maximum floor area ratio",
+        "table": "131-04G"
+      },
+      "unit": "ratio",
+      "unit_band": {
+        "maximum_units": 7,
+        "minimum_units": 3
+      },
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    },
+    {
+      "applicability_predicates": [
+        "ZONE_IS_RM_2_5",
+        "UNIT_BAND_IS_8_PLUS"
+      ],
+      "base_value": "1.35",
+      "coastal_applicability_profile": "BASE_ZONE_ALL_CONTEXTS_SUBJECT_TO_SEPARATE_OVERLAYS",
+      "comparator": "MAX",
+      "derivation_class": "recorded",
+      "effective_date": "2023-05-06",
+      "effective_through": null,
+      "exceptions": [],
+      "footnotes": [],
+      "legal_version": "TABLE_131_04G_SHARED_APPLICATION_AND_CURRENT",
+      "measurement_definition": null,
+      "program_modifiers": [
+        "CHILD_CARE_FAR_BONUS",
+        "EXTERNAL_ADU_OR_AFFORDABLE_PROGRAM_IF_PROVEN"
+      ],
+      "raw_value": "1.35",
+      "rule_family": "FAR",
+      "rule_id": "RM25_FAR_8_PLUS",
+      "source_provenance": [
+        "CURRENT_RESIDENTIAL",
+        "O21618_APPLICATION_VERSION"
+      ],
+      "table_locator": {
+        "column": "8-PLUS",
+        "row": "Maximum floor area ratio",
+        "table": "131-04G"
+      },
+      "unit": "ratio",
+      "unit_band": {
+        "maximum_units": null,
+        "minimum_units": 8
+      },
+      "unresolved_dependencies": [],
+      "zone_code": "RM-2-5"
+    }
+  ],
+  "zone": "RM-2-5"
+}

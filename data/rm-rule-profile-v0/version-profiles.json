@@ -1,0 +1,42 @@
+{
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "inside_coastal": {
+    "reason": "No inside-Coastal project evaluation is required by Packet 50 and the existing source set does not contain a fully verified inside-Coastal composite. The schema preserves the axis for later evidence.",
+    "source_state": "not_evaluated",
+    "state": "unavailable"
+  },
+  "profiles": [
+    {
+      "coastal_applicability": "OUTSIDE_COASTAL",
+      "effective_from": "2023-05-06",
+      "effective_through": "2024-03-15",
+      "far_definition_status": "PRE_O21836_TEXT; later O-21836 strikeout is retained as amendment-boundary evidence and cannot be back-applied.",
+      "ordinance": "O-21618 N.S.",
+      "profile_id": "RM25_2023_05_06_OUTSIDE_COASTAL",
+      "selected_for": "PACKET_50_APPLICATION_2024_01_29",
+      "sources": [
+        "O21618_APPLICATION_VERSION",
+        "O21836_STRIKEOUT_BOUNDARY"
+      ],
+      "table_status": "O-21618 records no change from maximum permitted density through maximum lot coverage; its Table 131-04G independently records all three RM-2-5 FAR cells as 1.35.",
+      "zone": "RM-2-5"
+    },
+    {
+      "coastal_applicability": "OUTSIDE_COASTAL",
+      "effective_from": "2026-07-15",
+      "effective_through": null,
+      "far_definition_status": "CURRENT_SECTION_113_0234",
+      "ordinance": "O-22109 N.S. compiled 7-2026",
+      "profile_id": "RM25_CURRENT_2026_07_15_OUTSIDE_COASTAL",
+      "selected_for": "CURRENT_COMPILED_CODE",
+      "sources": [
+        "CURRENT_RESIDENTIAL",
+        "CURRENT_MEASUREMENT",
+        "CURRENT_DEFINITIONS"
+      ],
+      "table_status": "CURRENT_TABLE_131_04G",
+      "zone": "RM-2-5"
+    }
+  ],
+  "selection_rule": "Choose by application date and independently proven Coastal context; never substitute a later compiled section into an earlier profile."
+}

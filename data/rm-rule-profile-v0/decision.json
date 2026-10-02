@@ -1,0 +1,6 @@
+{
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "next": "NEXT_FEASIBILITY_STEP: close Packet 50 FAR evidence",
+  "readiness": "RM_RULE_PROFILE_V0_READY",
+  "reason": "Code-compatible GFA and legal premises area are the broadest remaining reusable prerequisites; closing them removes both numerator and denominator uncertainty before a numeric FAR comparison."
+}

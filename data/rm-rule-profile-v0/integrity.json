@@ -1,0 +1,27 @@
+{
+  "artifacts": {
+    "contract.json": "43d88363b0fa7078838d073384ebce94f6c86f00dacf1816f0e699a470ffa6d0",
+    "decision.json": "1c75e6eb2c190976824ffe3b4054fa52da8440a0cdc1379f66845cb694cd0899",
+    "evidence-requirements.json": "61e026194aeb716bd225d8650aec39691b22e46867b8089c6f9c17d912f5835d",
+    "far-definition.json": "cadd8b7b48485a19689ca9a79b968ed11932eb4644bb403a5cef736f1297fcb0",
+    "footnotes.json": "e2ee32cc4a500ebb651f4f2aac99878edf856b449668e6be2cc019c7a2498de6",
+    "height-definition.json": "1cb7c2f82905328805f6716a0611348802527f69813fa7a0c2bf5b5e256453f8",
+    "invariants.json": "ed1ee0717727290d0433ee34347e9938e0cae1045d40aaa64ac01743e4ea35fc",
+    "lot-area-semantics.json": "a5408cdc0b2384c699acb3b3b6361a53248df386f35da21739f1875a7b4f32c2",
+    "packet-50-replay.json": "a23f43ba780a6fa5847e9a4884760c5f7df964f94c9bbf6c042f86ae0e12f6c2",
+    "premises-area-semantics.json": "dc3e7c101812679529fe245e57241a097448b8840d9f1f2d879f2970e77ceabf",
+    "program-modifier-interface.json": "a646ad66907c6447dd773397a1aeed396e40fbe476106cfda58846d0f1d7191b",
+    "provenance.json": "f07aaa4052b1967cc992268a9235bb832e8a637e49dc79d5e5cccd050693f8fb",
+    "rm-2-5-adu-interactions.json": "676f61d181c27369d1f37e734c336d88620a88ec7d92b795e38967df86f68ab9",
+    "rm-2-5-base-rules.json": "18088816a12aaf9f4bdca184586fb18b27927b37947cf55487108c568eb82acc",
+    "rm-2-5-far-branches.json": "81b97e4490609b358182a7db26f6381bde09b30d807c407224cc14aba8ea931b",
+    "rm-2-5-height-branches.json": "30d32862d9557fd6c743ca1c1c18c2ed0ff23c2ac5ee39b3954f753452b7ddf9",
+    "schema.json": "b3d8c0e6d30dfa5a628db861d4ee5708ce25e708e1d4ba9d49682c5b6c82bc93",
+    "setbacks.json": "2a4aabffe1b3a6e90ad7c3e7cd8457e5783b2363b792a01a2629e5a23d7493ed",
+    "truth-state-integration.json": "664dc28eb95b322c04937bbec3687e169ec2704114587935b0732530e839171c",
+    "unit-bands.json": "710368fbdf66334e9e6cf5ef2d4fedcf5cd644e266859ff04f0ec1d0f2d88d26",
+    "version-profiles.json": "d15838a8d8332b9343d5085c3f0d2baaeaacdb4017ee69912e89108f1c5e7182"
+  },
+  "bundle_sha256": "2016a33bb1757254216d9158fd5524638b9a11687533123a99ca582a5643b2c4",
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51"
+}

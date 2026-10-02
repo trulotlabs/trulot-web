@@ -1,0 +1,43 @@
+{
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "invariant": "Program identity or a plan annotation is not proof of eligibility, predicates, or an operand.",
+  "program_stubs": [
+    {
+      "implementation": "BOUNDED_HEIGHT_FAR_INTERACTIONS_ONLY",
+      "program": "ORDINARY_ADU"
+    },
+    {
+      "implementation": "BOUNDED_HEIGHT_FAR_INTERACTIONS_ONLY",
+      "program": "ADU_HOME_DENSITY_BONUS"
+    },
+    {
+      "implementation": "INTERFACE_ONLY",
+      "program": "SDA"
+    },
+    {
+      "implementation": "INTERFACE_ONLY",
+      "program": "AFFORDABLE_DEED_RESTRICTED_BONUS"
+    }
+  ],
+  "schema": {
+    "operations": [
+      "OVERRIDE",
+      "EXEMPTION",
+      "ADDITIVE",
+      "UNCHANGED"
+    ],
+    "predicate_policy": "All predicates must be supported before application; false means unchanged and unknown remains unknown.",
+    "required": [
+      "modifier_id",
+      "program",
+      "rule_family",
+      "operation",
+      "predicates",
+      "effective_from",
+      "effective_through",
+      "coastal_applicability",
+      "operand",
+      "provenance"
+    ]
+  }
+}

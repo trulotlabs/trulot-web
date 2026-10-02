@@ -1,0 +1,52 @@
+{
+  "application_date": "2024-01-29",
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "development_capacity": false,
+  "far": {
+    "comparison": null,
+    "maximum_ratio": "1.35",
+    "plan_inputs": {
+      "displayed": "1.10",
+      "exact_recomputation": "1.106333399721171081457876916948814977096",
+      "labeled_denominator_sq_ft": "20084",
+      "labeled_numerator_sq_ft": "22219.6",
+      "nearest_hundredth": "1.11"
+    },
+    "precise_missing_denominator_evidence": [
+      "legal premises identity",
+      "smallest conveyable unit and unity of use",
+      "recorded boundary and total premises area",
+      "required dedication status",
+      "multiple-zone area if applicable"
+    ],
+    "precise_missing_numerator_evidence": [
+      "all-building GFA schedule",
+      "component inclusion/exclusion reconciliation under application-time \u00a7113.0234",
+      "parking/roofed-open/phantom-floor treatment"
+    ],
+    "program_modifier_predicates_proven": false,
+    "state": "FAR_RULE_EVALUATION_UNRESOLVED",
+    "unit_band": "RM25_FAR_8_PLUS"
+  },
+  "height": {
+    "base_branch": "40_FT_PLUS_FOOTNOTE_18_ANGLED_PLANE",
+    "comparison": null,
+    "footnote_37": "NOT_TRIGGERED_BY_SUPPORTED_OUTSIDE_COASTAL_FACT",
+    "plan_label": "40'-0\"",
+    "plan_label_is_code_measurement": false,
+    "precise_missing_evidence": [
+      "controlling building/structure",
+      "per-structure separation",
+      "existing and proposed grade surfaces",
+      "lower grade beneath each top point",
+      "lowest applicable perimeter grade",
+      "highest structure point",
+      "roof/parapet/appurtenance classification",
+      "side-setback angled-plane geometry above 30 ft"
+    ],
+    "state": "HEIGHT_RULE_EVALUATION_UNRESOLVED"
+  },
+  "project_id": "PRJ-1111087",
+  "selected_version_profile": "RM25_2023_05_06_OUTSIDE_COASTAL",
+  "whole_project_compliance": false
+}

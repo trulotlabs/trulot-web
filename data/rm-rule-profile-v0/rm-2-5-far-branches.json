@@ -1,0 +1,43 @@
+{
+  "base": {
+    "bands_artifact": "unit-bands.json",
+    "selector": "EXPLICIT_UNIT_BAND"
+  },
+  "branches": [
+    {
+      "branch_id": "BASE_UNIT_BAND",
+      "effect": "MAXIMUM_1_35_IN_EACH_DISTINCT_BAND"
+    },
+    {
+      "branch_id": "HISTORIC_RESOURCE",
+      "effect": "NO_RM25_FAR_MODIFIER_IDENTIFIED_IN_BOUNDED_PROFILE",
+      "predicate": "QUALIFYING_HISTORIC_RESOURCE_PROVEN",
+      "state_if_claimed": "REQUIRES_EXTERNAL_PROGRAM_PROFILE"
+    },
+    {
+      "branch_id": "CHILD_CARE",
+      "effect": "MONOTONIC_BONUS_UNDER_131_0446_E",
+      "maximum": null,
+      "predicate": "QUALIFYING_CHILD_CARE_FACILITY",
+      "state_if_triggered": "REQUIRES_PROGRAM_SPECIFIC_OPERAND"
+    },
+    {
+      "branch_id": "ADU",
+      "effect": "SEE_RM25_ADU_INTERACTIONS",
+      "predicate": "ADU_PROGRAM_APPLIES"
+    },
+    {
+      "branch_id": "SDA",
+      "effect": "NO_AUTOMATIC_BASE_FAR_CHANGE; external program must declare any override",
+      "predicate": "SDA_PROGRAM_APPLIES"
+    },
+    {
+      "branch_id": "AFFORDABLE_BONUS",
+      "effect": "EXTERNAL_MODIFIER_ONLY; no unproven bonus is applied",
+      "predicate": "QUALIFYING_AFFORDABLE_PROGRAM_APPLIES"
+    }
+  ],
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "numerator_or_denominator_exceptions": "Only express \u00a7113.0234, \u00a7113.0246, or program-specific provisions may change inputs; none is inferred from project naming.",
+  "zone": "RM-2-5"
+}

@@ -1,0 +1,34 @@
+{
+  "all_values_equal": true,
+  "bands": [
+    {
+      "band_id": "RM25_FAR_1_2",
+      "far_maximum": "1.35",
+      "maximum_units": 2,
+      "minimum_units": 1,
+      "table_cell": "1-2 dwelling units"
+    },
+    {
+      "band_id": "RM25_FAR_3_7",
+      "far_maximum": "1.35",
+      "maximum_units": 7,
+      "minimum_units": 3,
+      "table_cell": "3-7 dwelling units"
+    },
+    {
+      "band_id": "RM25_FAR_8_PLUS",
+      "far_maximum": "1.35",
+      "maximum_units": null,
+      "minimum_units": 8,
+      "table_cell": "8 or more dwelling units"
+    }
+  ],
+  "capacity_calculation_authorized": false,
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "families_varying_by_band": [],
+  "families_with_distinct_legal_cells_but_equal_values": [
+    "FAR"
+  ],
+  "selection_still_required": true,
+  "zone": "RM-2-5"
+}

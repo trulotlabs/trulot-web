@@ -1,0 +1,61 @@
+{
+  "allowed_derivations": [
+    "recorded",
+    "deterministic_derived",
+    "inferred",
+    "conditional"
+  ],
+  "allowed_fact_states": [
+    "supported",
+    "partial",
+    "unknown",
+    "not_applicable",
+    "unavailable"
+  ],
+  "allowed_source_states": [
+    "available",
+    "partial",
+    "source_unavailable",
+    "not_evaluated"
+  ],
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "mappings": [
+    {
+      "DerivationClass": "recorded",
+      "FactState": "supported",
+      "SourceState": "available",
+      "output": "authoritative_table_cell"
+    },
+    {
+      "DerivationClass": "deterministic_derived",
+      "FactState": "supported",
+      "SourceState": "available",
+      "output": "computed_proportional_setback_with_supported_inputs"
+    },
+    {
+      "DerivationClass": "deterministic_derived",
+      "FactState": "supported",
+      "SourceState": "available",
+      "output": "triggered_footnote_with_supported_predicates"
+    },
+    {
+      "DerivationClass": "conditional",
+      "FactState": "unknown",
+      "SourceState": "partial",
+      "output": "unresolved_footnote_predicate"
+    },
+    {
+      "DerivationClass": "conditional",
+      "FactState": "unavailable",
+      "SourceState": "not_evaluated",
+      "output": "deferred_rule_family"
+    },
+    {
+      "DerivationClass": "deterministic_derived",
+      "FactState": "not_applicable",
+      "SourceState": "available",
+      "output": "predicate_proven_not_applicable"
+    }
+  ],
+  "new_categories_added": false
+}

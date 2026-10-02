@@ -1,0 +1,111 @@
+{
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "private_sources": [],
+  "production_access": false,
+  "sources": [
+    {
+      "artifact_sha256": "513f34d5245e24ec90b6d2cb2c621cab16b29847dcbfd0ef67c9b697ce464cc9",
+      "citation": "SDMC Chapter 13, Article 1, Division 4 (7-2026), Table 131-04G and \u00a7\u00a7131.0443-131.0446",
+      "pages": [
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "source_id": "CURRENT_RESIDENTIAL",
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf"
+    },
+    {
+      "artifact_sha256": "5766096f34fe5d5fd6b807e6c9aaa40393f31e6c4c76d85ff4de68cff032a345",
+      "citation": "SDMC Chapter 11, Article 3, Division 2 (7-2026), \u00a7\u00a7113.0222, 113.0234, 113.0246, 113.0270",
+      "pages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "source_id": "CURRENT_MEASUREMENT",
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division02.pdf"
+    },
+    {
+      "artifact_sha256": "7a2234c4b02089867be21002036235c7eba2abebd60fa2ef0413a60b00a652ae",
+      "citation": "SDMC Chapter 11 definitions (7-2026), Lot and Premises",
+      "pages": [
+        10
+      ],
+      "source_id": "CURRENT_DEFINITIONS",
+      "url": "https://docs.sandiego.gov/municode/MuniCodeChapter11/Ch11Art03Division01.pdf"
+    },
+    {
+      "artifact_sha256": "a3b3bdbbc9a3d780f099e4404a2c13d82341c73db8abddb23476da988f9ef467",
+      "citation": "Ordinance O-21618 N.S.; effective outside Coastal 2023-05-06",
+      "pages": [
+        20,
+        21
+      ],
+      "source_id": "O21618_APPLICATION_VERSION",
+      "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2023/O-21618.pdf"
+    },
+    {
+      "artifact_sha256": "2f9bbdac685280f658c03611fbdc21b0b3e6396fa92518735a6de5604ced6028",
+      "citation": "O-21836 corrected strikeout, \u00a7113.0234 amendment boundary",
+      "pages": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "source_id": "O21836_STRIKEOUT_BOUNDARY",
+      "url": "https://docs.sandiego.gov/municode_strikeout_ord/O-21836-SO.pdf",
+      "use": "Separates pre-amendment application profile from later FAR-definition text; later provisions are not back-applied."
+    },
+    {
+      "artifact_sha256": "b4f1125d64c9a20752e8eb2ddd247b7f1543e43248a899ffc74409b36dc5714e",
+      "citation": "O-22109 corrected strikeout, \u00a7113.0234(b)(5)",
+      "pages": [
+        15
+      ],
+      "source_id": "O22109_STRIKEOUT_BOUNDARY",
+      "url": "https://docs.sandiego.gov/municode_strikeout_ord/O-22109-SO.pdf",
+      "use": "Shows the multiple-base-zone paragraph is a later addition and is excluded from the 2024-01-29 application profile."
+    },
+    {
+      "artifact_sha256": "784bfb53d7f967f14ef442c9cdf14dab26862844d19f0d7fa65bac5c9d05f65a",
+      "citation": "Packet 50 public RM-2-5 height rule reconstruction backed by SDMC Table 131-04G and \u00a7\u00a7113.0270 and 131.0444",
+      "pages": [],
+      "source_id": "PACKET50_HEIGHT_RULE_RECONSTRUCTION",
+      "url": null,
+      "use": "Carries the sealed bounded ADU/base-height interaction into the reusable interface without project facts."
+    },
+    {
+      "artifact_sha256": "368eedc8c4845cb542eeeabffe3698ce8153237acffea5e422ce151f4c62e1eb",
+      "citation": "Packet 50 public RM-2-5 FAR rule reconstruction backed by SDMC Table 131-04G and \u00a7\u00a7113.0234 and 131.0446",
+      "pages": [],
+      "source_id": "PACKET50_FAR_RULE_RECONSTRUCTION",
+      "url": null,
+      "use": "Carries the sealed bounded ADU/base-FAR interaction into the reusable interface without project facts."
+    }
+  ]
+}

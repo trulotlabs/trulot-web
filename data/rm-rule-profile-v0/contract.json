@@ -1,0 +1,8 @@
+{
+  "capacity": false,
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "private_plan_publication": false,
+  "production": false,
+  "project_compliance": false,
+  "scope": "VERSIONED_REUSABLE_RM_RULE_LAYER_STARTING_WITH_RM_2_5"
+}

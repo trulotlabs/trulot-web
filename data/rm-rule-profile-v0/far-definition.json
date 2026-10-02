@@ -1,0 +1,74 @@
+{
+  "application_profile_2024_01_29": {
+    "exclusions": [
+      "interior_courts",
+      "interior_modifications_that_do_not_change_envelope",
+      "parking_structures_only_when_express_design_conditions_are_met",
+      "qualifying_bay_windows"
+    ],
+    "formula": "TOTAL_GROSS_FLOOR_AREA_OF_ALL_BUILDINGS_ON_PREMISES / TOTAL_AREA_OF_PREMISES",
+    "inclusions": [
+      "floors_within_exterior_wall_surfaces",
+      "qualifying_basement_area",
+      "enclosed_stairs_and_elevators",
+      "shafts_stairs_ramps_and_mechanical_rooms_on_each_floor",
+      "nonexcluded_parking_garages_and_carports",
+      "nonexcluded_penthouses",
+      "qualifying_roofed_residential_porches_entries_balconies_and_patios",
+      "phantom_floors_high_spaces_underfloor_area_mezzanines_lofts_and_atriums",
+      "roof_decks_with_enclosure_over_code_threshold"
+    ],
+    "later_change_excluded": "The at-grade space with enclosed space above paragraph added by O-21836 and the multiple-base-zone paragraph added by O-22109 are not back-applied; pre-amendment numbering for phantom floors and roof decks is retained.",
+    "multiple_building_aggregation": true,
+    "parking_exclusion_boundary": "Pre-O-21836 text excludes the parking-structure exclusion for garages or carports serving single-dwelling-unit or duplex development.",
+    "parking_storage_common_area": "No categorical project-wide exclusion is inferred. Each space follows \u00a7113.0234's express inclusion/exclusion predicates.",
+    "premises_denominator": "Total area of the legally established premises, subject to express property-line and dedication rules.",
+    "required_dedication": "For a street/alley dedication required under \u00a7142.0610, maximum permitted GFA and density use property lines before dedication.",
+    "roofed_open_area": "Count only under the openness, recession, support, and dimensional predicates in \u00a7113.0234; a plan label alone is insufficient.",
+    "source_provenance": [
+      "O21836_STRIKEOUT_BOUNDARY",
+      "O22109_STRIKEOUT_BOUNDARY",
+      "O21618_APPLICATION_VERSION"
+    ],
+    "unit_band_interaction": "Unit count selects a Table 131-04G maximum; it does not redefine numerator or denominator.",
+    "version": "PRE_O21836"
+  },
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "current_profile_2026_07_15": {
+    "additional_inclusion": "Qualifying at-grade space with enclosed space above under \u00a7113.0234(b)(3).",
+    "exclusions": [
+      "interior_courts",
+      "interior_modifications_that_do_not_change_envelope",
+      "parking_structures_only_when_express_design_conditions_are_met",
+      "qualifying_bay_windows"
+    ],
+    "formula": "TOTAL_GROSS_FLOOR_AREA_OF_ALL_BUILDINGS_ON_PREMISES / TOTAL_AREA_OF_PREMISES",
+    "inclusions": [
+      "floors_within_exterior_wall_surfaces",
+      "qualifying_basement_area",
+      "enclosed_stairs_and_elevators",
+      "shafts_stairs_ramps_and_mechanical_rooms_on_each_floor",
+      "nonexcluded_parking_garages_and_carports",
+      "nonexcluded_penthouses",
+      "qualifying_roofed_residential_porches_entries_balconies_and_patios",
+      "phantom_floors_high_spaces_underfloor_area_mezzanines_lofts_and_atriums",
+      "roof_decks_with_enclosure_over_code_threshold"
+    ],
+    "multiple_building_aggregation": true,
+    "multiple_zones": "Calculate maximum GFA separately from the lot area in each base zone, add the maxima, and allow distribution without following zone boundaries where \u00a7113.0234 permits.",
+    "parking_exclusion_boundary": "Current text applies the stated parking exclusion limitations to single-dwelling-unit garages/carports and separately accessed multiple-dwelling-unit garages/carports.",
+    "parking_storage_common_area": "No categorical project-wide exclusion is inferred. Each space follows \u00a7113.0234's express inclusion/exclusion predicates.",
+    "premises_denominator": "Total area of the legally established premises, subject to express property-line and dedication rules.",
+    "required_dedication": "For a street/alley dedication required under \u00a7142.0610, maximum permitted GFA and density use property lines before dedication.",
+    "roofed_open_area": "Count only under the openness, recession, support, and dimensional predicates in \u00a7113.0234; a plan label alone is insufficient.",
+    "source_provenance": [
+      "CURRENT_MEASUREMENT",
+      "CURRENT_DEFINITIONS",
+      "O22109_STRIKEOUT_BOUNDARY"
+    ],
+    "unit_band_interaction": "Unit count selects a Table 131-04G maximum; it does not redefine numerator or denominator.",
+    "version": "CURRENT_COMPILED_7_2026"
+  },
+  "definition_id": "SDMC_113_0234_FAR",
+  "plan_label_policy": "A plan-labeled gross floor area, lot area, or FAR cannot satisfy the Code definition until every included/excluded component and the premises denominator are reconciled."
+}

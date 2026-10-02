@@ -1,0 +1,57 @@
+{
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "definition": "A parcel, tract, or area of land established by plat, subdivision, or other legally recognized means under \u00a7113.0237.",
+  "evidence_map": [
+    {
+      "can_satisfy": [
+        "LEGAL_LOT_IDENTITY",
+        "RECORDED_BOUNDARY"
+      ],
+      "condition": "instrument and subject match",
+      "evidence": "recorded_legal_area"
+    },
+    {
+      "can_satisfy": [
+        "LOT_AREA",
+        "PREMISES_AREA",
+        "FAR_DENOMINATOR"
+      ],
+      "condition": "recorded geometry plus selected Code measurement rules and premises identity",
+      "evidence": "code_defined_area"
+    },
+    {
+      "can_satisfy": [
+        "DIAGNOSTIC_RECONCILIATION"
+      ],
+      "cannot_satisfy_alone": [
+        "LEGAL_LOT_STATUS",
+        "FAR_DENOMINATOR",
+        "MINIMUM_LOT_AREA"
+      ],
+      "evidence": "parcel_v2_geometry_area"
+    },
+    {
+      "can_satisfy": [
+        "RECORDED_ADMINISTRATIVE_FACT"
+      ],
+      "cannot_satisfy_alone": [
+        "CODE_DEFINED_AREA",
+        "FAR_DENOMINATOR"
+      ],
+      "evidence": "assessor_area"
+    },
+    {
+      "can_satisfy": [
+        "PROJECT_ASSERTION"
+      ],
+      "cannot_satisfy_alone": [
+        "LEGAL_LOT_STATUS",
+        "CODE_DEFINED_AREA",
+        "FAR_DENOMINATOR"
+      ],
+      "evidence": "plan_provided_area"
+    }
+  ],
+  "packet_27_reuse": "Uses the recorded/legal versus GIS/assessor hierarchy; RM premises and \u00a7113.0246 rules are added explicitly rather than assumed identical to RS rules.",
+  "term": "lot"
+}

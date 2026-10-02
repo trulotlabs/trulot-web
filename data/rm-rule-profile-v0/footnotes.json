@@ -1,0 +1,142 @@
+{
+  "contract_version": "rm-rule-profile-v0-2026-10-02-p51",
+  "footnotes": [
+    {
+      "affected_rule_families": [
+        "DENSITY"
+      ],
+      "effect": {
+        "kind": "PROCESS",
+        "value": "CALCULATE_PER_SDMC_113_0222"
+      },
+      "footnote_id": "FN1",
+      "meaning": "One dwelling unit per specified square feet of lot area, determined under \u00a7113.0222.",
+      "source": "SDMC Table 131-04G footnote and cited section",
+      "trigger_predicates": [
+        "CODE_DEFINED_LOT_AREA_AVAILABLE"
+      ],
+      "unresolved_external_evidence": []
+    },
+    {
+      "affected_rule_families": [
+        "DENSITY"
+      ],
+      "effect": {
+        "kind": "EXCEPTION",
+        "value": "DENSITY_EXCEPTION_MAY_APPLY"
+      },
+      "footnote_id": "FN2",
+      "meaning": "A density exception may be permitted under the Affordable Housing Regulations.",
+      "source": "SDMC Table 131-04G footnote and cited section",
+      "trigger_predicates": [
+        "CHAPTER_14_ARTICLE_3_DIVISION_7_APPLIES"
+      ],
+      "unresolved_external_evidence": [
+        "CHAPTER_14_ARTICLE_3_DIVISION_7_APPLIES"
+      ]
+    },
+    {
+      "affected_rule_families": [
+        "FRONT_SETBACK_MINIMUM",
+        "FRONT_SETBACK_STANDARD"
+      ],
+      "effect": {
+        "kind": "PROCESS",
+        "value": "APPLY_131_0443_E_1"
+      },
+      "footnote_id": "FN7",
+      "meaning": "Apply the RM front-setback rules in \u00a7131.0443(e)(1).",
+      "source": "SDMC Table 131-04G footnote and cited section",
+      "trigger_predicates": [
+        "RM_SETBACK_SECTION_APPLIES"
+      ],
+      "unresolved_external_evidence": []
+    },
+    {
+      "affected_rule_families": [
+        "INTERIOR_SIDE_SETBACK"
+      ],
+      "effect": {
+        "kind": "FORMULA",
+        "value": "APPLY_131_0443_E_2"
+      },
+      "footnote_id": "FN8",
+      "meaning": "Apply the RM side-setback rules in \u00a7131.0443(e)(2).",
+      "source": "SDMC Table 131-04G footnote and cited section",
+      "trigger_predicates": [
+        "RM_SETBACK_SECTION_APPLIES"
+      ],
+      "unresolved_external_evidence": []
+    },
+    {
+      "affected_rule_families": [
+        "STREET_SIDE_SETBACK"
+      ],
+      "effect": {
+        "kind": "FORMULA",
+        "value": "APPLY_131_0443_E_3"
+      },
+      "footnote_id": "FN9",
+      "meaning": "Apply the RM street-side setback rules in \u00a7131.0443(e)(3).",
+      "source": "SDMC Table 131-04G footnote and cited section",
+      "trigger_predicates": [
+        "RM_SETBACK_SECTION_APPLIES"
+      ],
+      "unresolved_external_evidence": []
+    },
+    {
+      "affected_rule_families": [
+        "REAR_SETBACK"
+      ],
+      "effect": {
+        "kind": "EXCEPTION",
+        "value": "APPLY_131_0443_E_4"
+      },
+      "footnote_id": "FN10",
+      "meaning": "Apply the RM rear-setback rules in \u00a7131.0443(e)(4).",
+      "source": "SDMC Table 131-04G footnote and cited section",
+      "trigger_predicates": [
+        "RM_SETBACK_SECTION_APPLIES"
+      ],
+      "unresolved_external_evidence": []
+    },
+    {
+      "affected_rule_families": [
+        "STRUCTURE_HEIGHT"
+      ],
+      "effect": {
+        "kind": "GEOMETRIC_LIMIT",
+        "value": "SIXTY_DEGREE_PLANE_FROM_SIDE_SETBACK_LINE_AT_30_FT"
+      },
+      "footnote_id": "FN18",
+      "meaning": "For RM-2-4, RM-2-5, and RM-2-6, \u00a7131.0444(f) adds a 60-degree inward angled plane above 30 feet at each side setback line.",
+      "source": "SDMC Table 131-04G footnote and cited section",
+      "trigger_predicates": [
+        "ZONE_IS_RM_2_4_OR_RM_2_5_OR_RM_2_6",
+        "STRUCTURE_PORTION_ABOVE_30_FT"
+      ],
+      "unresolved_external_evidence": []
+    },
+    {
+      "affected_rule_families": [
+        "STRUCTURE_HEIGHT"
+      ],
+      "effect": {
+        "kind": "NUMERIC_OVERRIDE",
+        "value": "30"
+      },
+      "footnote_id": "FN37",
+      "meaning": "Within the Coastal Height Limit Overlay Zone in the Peninsula Community Plan area, the base-zone maximum structure height is 30 feet measured under \u00a7113.0270(a)(4)(D).",
+      "source": "SDMC Table 131-04G footnote and cited section",
+      "trigger_predicates": [
+        "IN_COASTAL_HEIGHT_LIMIT_OVERLAY",
+        "IN_PENINSULA_COMMUNITY_PLAN"
+      ],
+      "unresolved_external_evidence": [
+        "IN_COASTAL_HEIGHT_LIMIT_OVERLAY",
+        "IN_PENINSULA_COMMUNITY_PLAN"
+      ]
+    }
+  ],
+  "invariant": "A footnote remains a separate conditional object; it never overwrites its table cell until every trigger predicate is supported."
+}
