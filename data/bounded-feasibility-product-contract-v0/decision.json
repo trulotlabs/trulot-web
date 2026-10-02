@@ -1,7 +1,7 @@
 {
   "capacity_calculated": false,
-  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
-  "next": "NEXT_FEASIBILITY_STEP: final external verification",
+  "contract_version": "bounded-feasibility-product-contract-v4-2026-10-02-p60f",
+  "next": "NEXT_FEASIBILITY_STEP: final integration review",
   "production_wired": false,
-  "readiness": "FEASIBILITY_CONTRACT_COMPARISON_ENFORCED_AND_READY_FOR_INTEGRATION"
+  "readiness": "FEASIBILITY_CONTRACT_FULLY_EVIDENCE_BOUND_AND_READY_FOR_INTEGRATION"
 }

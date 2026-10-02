@@ -1,5 +1,5 @@
 {
-  "$id": "trulot://schemas/bounded-feasibility-product-contract-v3",
+  "$id": "trulot://schemas/bounded-feasibility-product-contract-v4",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
   "definitions": {
@@ -76,47 +76,114 @@
       ],
       "type": "object"
     },
-    "comparison": {
+    "calculation": {
       "additionalProperties": false,
       "properties": {
-        "comparator": {
+        "factor": {
+          "type": "number"
+        },
+        "input_measurement_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "operation": {
           "enum": [
-            "MIN",
-            "MAX",
-            "EXACT"
+            "MULTIPLY"
           ]
         },
-        "fact_value": {
-          "type": "number"
-        },
-        "requirement_value": {
-          "type": "number"
-        },
-        "unit": {
+        "result_measurement_id": {
           "minLength": 1,
           "type": "string"
         }
       },
       "required": [
-        "comparator",
-        "requirement_value",
-        "fact_value",
-        "unit"
+        "operation",
+        "input_measurement_id",
+        "factor",
+        "result_measurement_id"
+      ],
+      "type": "object"
+    },
+    "comparison": {
+      "additionalProperties": false,
+      "properties": {
+        "fact_measurement_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "requirement_measurement_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "rule_label": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "rule_semantic": {
+          "enum": [
+            "MINIMUM_REQUIREMENT",
+            "MAXIMUM_LIMIT",
+            "EXACT_REQUIREMENT"
+          ]
+        }
+      },
+      "required": [
+        "rule_semantic",
+        "rule_label",
+        "requirement_measurement_id",
+        "fact_measurement_id"
+      ],
+      "type": "object"
+    },
+    "displayPolicy": {
+      "additionalProperties": false,
+      "properties": {
+        "decimal_places": {
+          "maximum": 6,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "max_decimal_places": {
+          "maximum": 8,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "qualifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "trailing_zeros": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "decimal_places",
+        "max_decimal_places",
+        "trailing_zeros",
+        "qualifier"
       ],
       "type": "object"
     },
     "evidenceEntry": {
       "additionalProperties": false,
       "properties": {
+        "evidence_id": {
+          "minLength": 1,
+          "type": "string"
+        },
         "label": {
           "minLength": 1,
           "type": "string"
         },
-        "measurements": {
+        "measurement_refs": {
           "items": {
-            "$ref": "#/definitions/measurement"
+            "minLength": 1,
+            "type": "string"
           },
-          "type": "array"
+          "type": "array",
+          "uniqueItems": true
         },
         "privacy": {
           "enum": [
@@ -124,23 +191,40 @@
             "PRIVATE_AUTHORIZED_EVIDENCE"
           ]
         },
-        "project_status_code": {
-          "enum": [
-            "SUBMITTAL_ISSUANCE_NOT_PROVEN",
-            "CITY_ISSUED",
-            "REFERENCE_SHEETS_APPROVAL_NOT_VERIFIED",
-            "EVIDENCE_REVIEW",
-            null
-          ],
-          "type": [
-            "string",
-            "null"
+        "project_status": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/projectStatus"
+            }
+          ]
+        },
+        "rule_binding": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/ruleBinding"
+            }
           ]
         },
         "source_date": {
           "type": [
             "string",
             "null"
+          ]
+        },
+        "survey_currentness": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/surveyCurrentness"
+            }
           ]
         },
         "type": {
@@ -170,18 +254,23 @@
           "type": "string"
         },
         "value": {
-          "minLength": 1,
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         }
       },
       "required": [
+        "evidence_id",
         "type",
         "label",
         "value",
         "privacy",
         "source_date",
-        "measurements",
-        "project_status_code"
+        "measurement_refs",
+        "rule_binding",
+        "project_status",
+        "survey_currentness"
       ],
       "type": "object"
     },
@@ -195,8 +284,10 @@
           "type": "array"
         },
         "answer": {
-          "minLength": 1,
-          "type": "string"
+          "type": [
+            "string",
+            "null"
+          ]
         },
         "base_requirement": {
           "type": [
@@ -211,6 +302,16 @@
             },
             {
               "$ref": "#/definitions/blocker"
+            }
+          ]
+        },
+        "calculation": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/calculation"
             }
           ]
         },
@@ -323,19 +424,15 @@
             "null"
           ]
         },
+        "measurements": {
+          "items": {
+            "$ref": "#/definitions/measurement"
+          },
+          "type": "array"
+        },
         "name": {
           "minLength": 1,
           "type": "string"
-        },
-        "precision": {
-          "anyOf": [
-            {
-              "type": "null"
-            },
-            {
-              "$ref": "#/definitions/precision"
-            }
-          ]
         },
         "privacy": {
           "enum": [
@@ -391,8 +488,6 @@
         },
         "template_key": {
           "enum": [
-            "COMPARISON_DOES_NOT_MEET",
-            "COMPARISON_MEETS",
             "CONDITIONAL_BASE_RULE",
             "CONDITIONAL_CURRENT_RULE",
             "FACT_IDENTIFIED",
@@ -403,8 +498,12 @@
             "NOT_EVALUATED",
             "NO_MAPPED_CONTEXT",
             "OUTSIDE_CURRENT_SCOPE",
-            "PROJECT_COMPARISON_MEETS",
-            "SOURCE_UNAVAILABLE"
+            "SOURCE_UNAVAILABLE",
+            null
+          ],
+          "type": [
+            "string",
+            "null"
           ]
         },
         "template_values": {
@@ -446,7 +545,8 @@
         "base_requirement",
         "derived_requirement",
         "exact_calculation",
-        "precision",
+        "measurements",
+        "calculation",
         "context_type",
         "context_state",
         "mapped_observation",
@@ -463,59 +563,56 @@
     "measurement": {
       "additionalProperties": false,
       "properties": {
-        "kind": {
+        "dimension": {
           "enum": [
-            "EXACT",
-            "DISPLAY",
-            "REQUIREMENT",
-            "FACT"
+            "AREA",
+            "LENGTH",
+            "RATIO"
           ]
         },
-        "unit": {
-          "minLength": 1,
-          "type": "string"
+        "display_policy": {
+          "$ref": "#/definitions/displayPolicy"
         },
-        "value": {
-          "type": "number"
-        }
-      },
-      "required": [
-        "kind",
-        "value",
-        "unit"
-      ],
-      "type": "object"
-    },
-    "precision": {
-      "additionalProperties": false,
-      "properties": {
-        "decimal_places": {
-          "maximum": 6,
-          "minimum": 0,
-          "type": "integer"
-        },
-        "display_value": {
-          "type": "number"
+        "evidence_refs": {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "minItems": 1,
+          "type": "array",
+          "uniqueItems": true
         },
         "exact_value": {
           "type": "number"
         },
-        "rounding_rule": {
+        "measurement_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "role": {
           "enum": [
-            "HALF_UP"
+            "REQUIREMENT",
+            "FACT",
+            "DERIVED_REQUIREMENT",
+            "EXACT_CALCULATION"
           ]
         },
         "unit": {
-          "minLength": 1,
-          "type": "string"
+          "enum": [
+            "sq ft",
+            "ft",
+            "ratio"
+          ]
         }
       },
       "required": [
+        "measurement_id",
+        "role",
         "exact_value",
-        "display_value",
-        "decimal_places",
-        "rounding_rule",
-        "unit"
+        "unit",
+        "dimension",
+        "display_policy",
+        "evidence_refs"
       ],
       "type": "object"
     },
@@ -583,6 +680,93 @@
       ],
       "type": "object"
     },
+    "projectStatus": {
+      "additionalProperties": false,
+      "properties": {
+        "cycle_context": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "issuance_date": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "issuance_record_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "plan_project_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "source_type": {
+          "enum": [
+            "PUBLIC_AUTHORITY",
+            "PUBLIC_MAPPING",
+            "PUBLIC_CODE",
+            "PUBLIC_PARCEL_FACT",
+            "RULE_VERSION",
+            "COMPARISON_INPUT",
+            "MAPPING_OBSERVATION",
+            "VERIFICATION_RECORD",
+            "ELIGIBILITY_RULE",
+            "ELIGIBILITY_PREDICATE",
+            "REGULATORY_DETERMINATION",
+            "BLOCKER_EVIDENCE",
+            "PRIVATE_PLAN_STATUS",
+            "PRIVATE_AUTHORIZED_EVIDENCE",
+            "PRIVATE_PLAN_FACT",
+            "PRIVATE_SURVEY",
+            "PRIVATE_PROJECT_REVIEW",
+            "PRIVACY_NOTICE"
+          ]
+        },
+        "status_code": {
+          "enum": [
+            "SUBMITTAL_ISSUANCE_NOT_PROVEN",
+            "CITY_ISSUED",
+            "REFERENCE_SHEETS_APPROVAL_NOT_VERIFIED",
+            "EVIDENCE_REVIEW"
+          ]
+        }
+      },
+      "required": [
+        "status_code",
+        "source_type",
+        "plan_project_id",
+        "cycle_context",
+        "issuance_record_id",
+        "issuance_date"
+      ],
+      "type": "object"
+    },
+    "ruleBinding": {
+      "additionalProperties": false,
+      "properties": {
+        "requirement_measurement_id": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "rule_semantic": {
+          "enum": [
+            "MINIMUM_REQUIREMENT",
+            "MAXIMUM_LIMIT",
+            "EXACT_REQUIREMENT"
+          ]
+        }
+      },
+      "required": [
+        "rule_semantic",
+        "requirement_measurement_id"
+      ],
+      "type": "object"
+    },
     "source": {
       "additionalProperties": false,
       "properties": {
@@ -625,6 +809,49 @@
         "detail"
       ],
       "type": "object"
+    },
+    "surveyCurrentness": {
+      "additionalProperties": false,
+      "properties": {
+        "boundary_control": {
+          "enum": [
+            "BOUNDARY_CONTROL_SUFFICIENT",
+            "UNRESOLVED"
+          ]
+        },
+        "currentness": {
+          "enum": [
+            "CURRENTNESS_SUPPORTED",
+            "CURRENTNESS_UNRESOLVED"
+          ]
+        },
+        "geometry_subject": {
+          "enum": [
+            "EXISTING_AS_BUILT"
+          ]
+        },
+        "later_change_reconciliation": {
+          "enum": [
+            "NO_MATERIAL_LATER_CHANGE",
+            "RECONCILED",
+            "UNRESOLVED"
+          ]
+        },
+        "structure_edge": {
+          "enum": [
+            "CODE_RELEVANT_EDGE_IDENTIFIED",
+            "UNRESOLVED"
+          ]
+        }
+      },
+      "required": [
+        "geometry_subject",
+        "currentness",
+        "later_change_reconciliation",
+        "structure_edge",
+        "boundary_control"
+      ],
+      "type": "object"
     }
   },
   "properties": {
@@ -641,7 +868,7 @@
       "type": "array"
     },
     "contract_version": {
-      "const": "bounded-feasibility-product-contract-v3-2026-10-02-p60e"
+      "const": "bounded-feasibility-product-contract-v4-2026-10-02-p60f"
     },
     "items": {
       "items": {
@@ -704,17 +931,21 @@
     "actions",
     "provenance"
   ],
-  "title": "Bounded Feasibility Product Contract V3",
+  "title": "Bounded Feasibility Product Contract V4",
   "type": "object",
   "validation_order": [
     "STRUCTURAL_SCHEMA",
     "SEMANTIC_INVARIANTS",
     "SCOPE_PRIVACY",
-    "COMPARATOR_ARITHMETIC",
-    "DETERMINISTIC_TEMPLATE",
+    "RULE_SEMANTIC_BINDING",
+    "COMPARISON_ARITHMETIC",
+    "DETERMINISTIC_DERIVATION",
     "EVIDENCE_TYPE_REQUIREMENTS",
-    "EVIDENCE_VALUE_CONSISTENCY",
-    "PRECISION_ROUNDING",
-    "PROJECT_STATUS_EVIDENCE"
+    "MEASUREMENT_REFERENCE_INTEGRITY",
+    "UNIT_DIMENSION_BINDING",
+    "CALCULATION_BINDING",
+    "DISPLAY_ORDER_PRESERVATION",
+    "PROJECT_STATUS_EVIDENCE",
+    "EXISTING_STRUCTURE_CURRENTNESS"
   ]
 }

@@ -1,4 +1,4 @@
-import type { EligibilityState, EvidenceEntry, FeasibilityItem, PreviewPayload, ProjectStatusCode, ProjectTopic, RegulatoryUseState, Section, SummaryGroup, TemplateCatalog, VerificationState } from "./bounded-feasibility-preview";
+import type { EligibilityState, EvidenceEntry, FeasibilityItem, Measurement, PreviewPayload, ProductState, ProjectStatusCode, ProjectTopic, RegulatoryUseState, Section, SummaryGroup, TemplateCatalog, VerificationState } from "./bounded-feasibility-preview";
 
 export const SECTION_ORDER: Section[] = ["BASE_FACTS", "PARCEL_DIMENSIONS", "SETBACKS", "HEIGHT_FAR", "MAPPED_CONTEXT", "EVIDENCE_NEEDED"];
 export const SECTION_LABELS: Record<Section, string> = { BASE_FACTS: "Base facts", PARCEL_DIMENSIONS: "Parcel dimensions", SETBACKS: "Setbacks", HEIGHT_FAR: "Height and FAR", MAPPED_CONTEXT: "Mapped context", EVIDENCE_NEEDED: "Evidence needed" };
@@ -14,7 +14,37 @@ export type SummarySection = { group: SummaryGroup; title: string; items: Array<
 
 export function templateFields(template: string): string[] { return [...template.matchAll(/\{([a-z_]+)\}/g)].map((match) => match[1]).filter((value, index, all) => all.indexOf(value) === index).sort(); }
 export function renderTemplate(template: string, values: Record<string, string>): string { const fields = templateFields(template); const keys = Object.keys(values).sort(); if (fields.length !== keys.length || fields.some((field, index) => field !== keys[index])) throw new Error("Template values do not match the selected template"); return template.replace(/\{([a-z_]+)\}/g, (_, key: string) => values[key]); }
-export function renderItemAnswer(item: FeasibilityItem, templates: TemplateCatalog): string { const template = templates[item.template_key]; if (!template) throw new Error(`Unknown template ${item.template_key}`); return renderTemplate(template, item.template_values); }
+function numeric(value: number, decimals: number, trailingZeros: boolean): string { return new Intl.NumberFormat("en-US", { minimumFractionDigits: trailingZeros ? decimals : 0, maximumFractionDigits: decimals, useGrouping: true }).format(value); }
+export function formatMeasurement(measurement: Measurement, exact = false, decimalOverride?: number): string {
+  const decimals = decimalOverride ?? (exact ? measurement.display_policy.max_decimal_places : measurement.display_policy.decimal_places);
+  const number = numeric(measurement.exact_value, decimals, exact ? false : measurement.display_policy.trailing_zeros);
+  return `${number}${measurement.unit === "ratio" ? "" : ` ${measurement.unit}`}${measurement.display_policy.qualifier ? ` ${measurement.display_policy.qualifier}` : ""}`;
+}
+function comparisonPair(requirement: Measurement, fact: Measurement): [string, string] {
+  let decimals = Math.max(requirement.display_policy.decimal_places, fact.display_policy.decimal_places);
+  const maximum = Math.min(requirement.display_policy.max_decimal_places, fact.display_policy.max_decimal_places);
+  while (decimals < maximum && requirement.exact_value !== fact.exact_value && numeric(requirement.exact_value, decimals, true) === numeric(fact.exact_value, decimals, true)) decimals += 1;
+  const requirementDisplay = formatMeasurement(requirement, false, decimals);
+  let factDisplay = formatMeasurement(fact, false, decimals);
+  if (requirement.exact_value !== fact.exact_value && numeric(requirement.exact_value, decimals, true) === numeric(fact.exact_value, decimals, true)) factDisplay = `${fact.exact_value < requirement.exact_value ? "<" : ">"} ${requirementDisplay}`;
+  return [requirementDisplay, factDisplay];
+}
+export function deriveComparisonPresentation(item: FeasibilityItem): { resultState: ProductState; displayRequirement: string; displayFact: string; answer: string } {
+  if (!item.comparison) throw new Error("Comparison is required");
+  const requirement = item.measurements.find((measurement) => measurement.measurement_id === item.comparison!.requirement_measurement_id);
+  const fact = item.measurements.find((measurement) => measurement.measurement_id === item.comparison!.fact_measurement_id);
+  if (!requirement || !fact) throw new Error("Comparison measurements are missing");
+  const passes = item.comparison.rule_semantic === "MINIMUM_REQUIREMENT" ? fact.exact_value >= requirement.exact_value : item.comparison.rule_semantic === "MAXIMUM_LIMIT" ? fact.exact_value <= requirement.exact_value : fact.exact_value === requirement.exact_value;
+  const resultState: ProductState = passes ? "MEETS_BASE_RULE" : "DOES_NOT_MEET_BASE_RULE";
+  const [displayRequirement, displayFact] = comparisonPair(requirement, fact);
+  const semantic = item.comparison.rule_semantic === "MINIMUM_REQUIREMENT" ? "minimum" : item.comparison.rule_semantic === "MAXIMUM_LIMIT" ? "maximum" : "exact";
+  const scoped = item.comparison_scope === "THIS_DIMENSION_ONLY" || item.comparison_scope === "PROJECT_SPECIFIC" || item.comparison_scope === "EXISTING_STRUCTURE";
+  const answer = scoped
+    ? `The proposed ${displayFact} ${passes ? "meets" : "does not meet"} the selected ${displayRequirement} ${item.comparison.rule_label} rule. This comparison applies only to this dimension.`
+    : `${passes ? "Meets" : "Does not meet"} the ${displayRequirement} ${semantic} ${item.comparison.rule_label} rule.`;
+  return { resultState, displayRequirement, displayFact, answer };
+}
+export function renderItemAnswer(item: FeasibilityItem, templates: TemplateCatalog): string { if (item.comparison) return deriveComparisonPresentation(item).answer; if (!item.template_key) throw new Error("Template is required"); const template = templates[item.template_key]; if (!template) throw new Error(`Unknown template ${item.template_key}`); return renderTemplate(template, item.template_values); }
 
 export function deriveStateLabel(item: FeasibilityItem): string {
   if (item.item_kind === "FACT") return "Identified fact";

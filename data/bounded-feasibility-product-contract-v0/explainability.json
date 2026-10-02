@@ -1,9 +1,9 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
+  "contract_version": "bounded-feasibility-product-contract-v4-2026-10-02-p60f",
   "levels": [
     "ANSWER",
     "EXPLANATION",
     "EVIDENCE"
   ],
-  "rule": "Every conclusion retains typed, privacy-checked evidence."
+  "rule": "Every conclusion, display value, operator, and evidence value derives from typed, privacy-checked structured measurements."
 }

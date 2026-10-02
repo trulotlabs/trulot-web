@@ -1,23 +1,35 @@
 {
-  "comparators": [
-    "MIN",
-    "MAX",
-    "EXACT"
-  ],
   "comparison_scopes": [
     "PARCEL_RULE",
     "THIS_DIMENSION_ONLY",
     "PROJECT_SPECIFIC",
     "EXISTING_STRUCTURE"
   ],
-  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
+  "contract_version": "bounded-feasibility-product-contract-v4-2026-10-02-p60f",
+  "derived_comparators": {
+    "EXACT_REQUIREMENT": "EXACT",
+    "MAXIMUM_LIMIT": "MAX",
+    "MINIMUM_REQUIREMENT": "MIN"
+  },
   "item_kinds": [
     "FACT",
     "RULE",
     "CONTEXT",
     "COMPARISON"
   ],
+  "measurement_roles": [
+    "REQUIREMENT",
+    "FACT",
+    "DERIVED_REQUIREMENT",
+    "EXACT_CALCULATION"
+  ],
   "producer_authored_badges": false,
+  "producer_authored_conclusive_copy": false,
+  "rule_semantics": [
+    "MINIMUM_REQUIREMENT",
+    "MAXIMUM_LIMIT",
+    "EXACT_REQUIREMENT"
+  ],
   "sections": [
     "BASE_FACTS",
     "PARCEL_DIMENSIONS",

@@ -17,74 +17,82 @@
       "value": "Public parcel sources only"
     }
   ],
-  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
+  "contract_version": "bounded-feasibility-product-contract-v4-2026-10-02-p60f",
   "items": [
     {
       "actions": [],
-      "answer": "Meets the 5,000 sq ft minimum lot area rule.",
+      "answer": null,
       "base_requirement": null,
       "blocker": null,
+      "calculation": null,
       "comparison": {
-        "comparator": "MIN",
-        "fact_value": 22096.32,
-        "requirement_value": 5000,
-        "unit": "sq ft"
+        "fact_measurement_id": "RS17_AREA-M2",
+        "requirement_measurement_id": "RS17_AREA-M1",
+        "rule_label": "lot area",
+        "rule_semantic": "MINIMUM_REQUIREMENT"
       },
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
       "derived_requirement": null,
-      "display_fact": "22,096 sq ft Code-defined area",
-      "display_requirement": "5,000 sq ft minimum",
+      "display_fact": null,
+      "display_requirement": null,
       "eligibility_state": null,
       "evidence_entries": [
         {
+          "evidence_id": "RS17_AREA-E1",
           "label": "Authoritative rule",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": {
+            "requirement_measurement_id": "RS17_AREA-M1",
+            "rule_semantic": "MINIMUM_REQUIREMENT"
+          },
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04D"
         },
         {
+          "evidence_id": "RS17_AREA-E2",
           "label": "Rule profile",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "RULE_VERSION",
           "value": "RS-1-7"
         },
         {
+          "evidence_id": "RS17_AREA-E3",
           "label": "Parcel facts",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Recorded September 24, 2026",
+          "survey_currentness": null,
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
         },
         {
+          "evidence_id": "RS17_AREA-E4",
           "label": "Comparison inputs",
-          "measurements": [
-            {
-              "kind": "REQUIREMENT",
-              "unit": "sq ft",
-              "value": 5000
-            },
-            {
-              "kind": "FACT",
-              "unit": "sq ft",
-              "value": 22096.32
-            }
+          "measurement_refs": [
+            "RS17_AREA-M1",
+            "RS17_AREA-M2"
           ],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Evaluated October 2, 2026",
+          "survey_currentness": null,
           "type": "COMPARISON_INPUT",
-          "value": "5,000 sq ft minimum; exact Code-defined area 22,096.320 sq ft"
+          "value": null
         }
       ],
       "exact_calculation": null,
@@ -92,86 +100,124 @@
       "item_id": "RS17_AREA",
       "item_kind": "COMPARISON",
       "mapped_observation": null,
+      "measurements": [
+        {
+          "dimension": "AREA",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_AREA-E4"
+          ],
+          "exact_value": 5000,
+          "measurement_id": "RS17_AREA-M1",
+          "role": "REQUIREMENT",
+          "unit": "sq ft"
+        },
+        {
+          "dimension": "AREA",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": "Code-defined area",
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_AREA-E4"
+          ],
+          "exact_value": 22096.32,
+          "measurement_id": "RS17_AREA-M2",
+          "role": "FACT",
+          "unit": "sq ft"
+        }
+      ],
       "name": "Lot Area",
-      "precision": null,
       "privacy": "PUBLIC",
       "regulatory_use_state": null,
-      "result_state": "MEETS_BASE_RULE",
+      "result_state": null,
       "rule_family": "MINIMUM_LOT_AREA",
       "section": "PARCEL_DIMENSIONS",
-      "template_key": "COMPARISON_MEETS",
-      "template_values": {
-        "name": "lot area",
-        "requirement": "5,000 sq ft minimum"
-      },
+      "template_key": null,
+      "template_values": {},
       "verification_state": null
     },
     {
       "actions": [],
-      "answer": "Meets the 50 ft minimum lot width rule.",
+      "answer": null,
       "base_requirement": null,
       "blocker": null,
+      "calculation": null,
       "comparison": {
-        "comparator": "MIN",
-        "fact_value": 94,
-        "requirement_value": 50,
-        "unit": "ft"
+        "fact_measurement_id": "RS17_WIDTH-M2",
+        "requirement_measurement_id": "RS17_WIDTH-M1",
+        "rule_label": "lot width",
+        "rule_semantic": "MINIMUM_REQUIREMENT"
       },
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
       "derived_requirement": null,
-      "display_fact": "94 ft Code-defined width",
-      "display_requirement": "50 ft minimum",
+      "display_fact": null,
+      "display_requirement": null,
       "eligibility_state": null,
       "evidence_entries": [
         {
+          "evidence_id": "RS17_WIDTH-E1",
           "label": "Authoritative rule",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": {
+            "requirement_measurement_id": "RS17_WIDTH-M1",
+            "rule_semantic": "MINIMUM_REQUIREMENT"
+          },
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04D"
         },
         {
+          "evidence_id": "RS17_WIDTH-E2",
           "label": "Rule profile",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "RULE_VERSION",
           "value": "RS-1-7"
         },
         {
+          "evidence_id": "RS17_WIDTH-E3",
           "label": "Parcel facts",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Recorded September 24, 2026",
+          "survey_currentness": null,
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
         },
         {
+          "evidence_id": "RS17_WIDTH-E4",
           "label": "Comparison inputs",
-          "measurements": [
-            {
-              "kind": "REQUIREMENT",
-              "unit": "ft",
-              "value": 50
-            },
-            {
-              "kind": "FACT",
-              "unit": "ft",
-              "value": 94
-            }
+          "measurement_refs": [
+            "RS17_WIDTH-M1",
+            "RS17_WIDTH-M2"
           ],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Evaluated October 2, 2026",
+          "survey_currentness": null,
           "type": "COMPARISON_INPUT",
-          "value": "50 ft minimum; exact Code-defined width 94.00 ft"
+          "value": null
         }
       ],
       "exact_calculation": null,
@@ -179,86 +225,124 @@
       "item_id": "RS17_WIDTH",
       "item_kind": "COMPARISON",
       "mapped_observation": null,
+      "measurements": [
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_WIDTH-E4"
+          ],
+          "exact_value": 50,
+          "measurement_id": "RS17_WIDTH-M1",
+          "role": "REQUIREMENT",
+          "unit": "ft"
+        },
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_WIDTH-E4"
+          ],
+          "exact_value": 94,
+          "measurement_id": "RS17_WIDTH-M2",
+          "role": "FACT",
+          "unit": "ft"
+        }
+      ],
       "name": "Lot Width",
-      "precision": null,
       "privacy": "PUBLIC",
       "regulatory_use_state": null,
-      "result_state": "MEETS_BASE_RULE",
+      "result_state": null,
       "rule_family": "MINIMUM_LOT_WIDTH",
       "section": "PARCEL_DIMENSIONS",
-      "template_key": "COMPARISON_MEETS",
-      "template_values": {
-        "name": "lot width",
-        "requirement": "50 ft minimum"
-      },
+      "template_key": null,
+      "template_values": {},
       "verification_state": null
     },
     {
       "actions": [],
-      "answer": "Meets the 95 ft minimum lot depth rule.",
+      "answer": null,
       "base_requirement": null,
       "blocker": null,
+      "calculation": null,
       "comparison": {
-        "comparator": "MIN",
-        "fact_value": 235.02,
-        "requirement_value": 95,
-        "unit": "ft"
+        "fact_measurement_id": "RS17_DEPTH-M2",
+        "requirement_measurement_id": "RS17_DEPTH-M1",
+        "rule_label": "lot depth",
+        "rule_semantic": "MINIMUM_REQUIREMENT"
       },
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
       "derived_requirement": null,
-      "display_fact": "235 ft Code-defined depth",
-      "display_requirement": "95 ft minimum",
+      "display_fact": null,
+      "display_requirement": null,
       "eligibility_state": null,
       "evidence_entries": [
         {
+          "evidence_id": "RS17_DEPTH-E1",
           "label": "Authoritative rule",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": {
+            "requirement_measurement_id": "RS17_DEPTH-M1",
+            "rule_semantic": "MINIMUM_REQUIREMENT"
+          },
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04D"
         },
         {
+          "evidence_id": "RS17_DEPTH-E2",
           "label": "Rule profile",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "RULE_VERSION",
           "value": "RS-1-7"
         },
         {
+          "evidence_id": "RS17_DEPTH-E3",
           "label": "Parcel facts",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Recorded September 24, 2026",
+          "survey_currentness": null,
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
         },
         {
+          "evidence_id": "RS17_DEPTH-E4",
           "label": "Comparison inputs",
-          "measurements": [
-            {
-              "kind": "REQUIREMENT",
-              "unit": "ft",
-              "value": 95
-            },
-            {
-              "kind": "FACT",
-              "unit": "ft",
-              "value": 235.02
-            }
+          "measurement_refs": [
+            "RS17_DEPTH-M1",
+            "RS17_DEPTH-M2"
           ],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Evaluated October 2, 2026",
+          "survey_currentness": null,
           "type": "COMPARISON_INPUT",
-          "value": "95 ft minimum; exact Code-defined depth 235.02 ft"
+          "value": null
         }
       ],
       "exact_calculation": null,
@@ -266,86 +350,124 @@
       "item_id": "RS17_DEPTH",
       "item_kind": "COMPARISON",
       "mapped_observation": null,
+      "measurements": [
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_DEPTH-E4"
+          ],
+          "exact_value": 95,
+          "measurement_id": "RS17_DEPTH-M1",
+          "role": "REQUIREMENT",
+          "unit": "ft"
+        },
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_DEPTH-E4"
+          ],
+          "exact_value": 235.02,
+          "measurement_id": "RS17_DEPTH-M2",
+          "role": "FACT",
+          "unit": "ft"
+        }
+      ],
       "name": "Lot Depth",
-      "precision": null,
       "privacy": "PUBLIC",
       "regulatory_use_state": null,
-      "result_state": "MEETS_BASE_RULE",
+      "result_state": null,
       "rule_family": "MINIMUM_LOT_DEPTH",
       "section": "PARCEL_DIMENSIONS",
-      "template_key": "COMPARISON_MEETS",
-      "template_values": {
-        "name": "lot depth",
-        "requirement": "95 ft minimum"
-      },
+      "template_key": null,
+      "template_values": {},
       "verification_state": null
     },
     {
       "actions": [],
-      "answer": "Meets the 50 ft minimum frontage rule.",
+      "answer": null,
       "base_requirement": null,
       "blocker": null,
+      "calculation": null,
       "comparison": {
-        "comparator": "MIN",
-        "fact_value": 94,
-        "requirement_value": 50,
-        "unit": "ft"
+        "fact_measurement_id": "RS17_FRONTAGE-M2",
+        "requirement_measurement_id": "RS17_FRONTAGE-M1",
+        "rule_label": "frontage",
+        "rule_semantic": "MINIMUM_REQUIREMENT"
       },
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
       "derived_requirement": null,
-      "display_fact": "94 ft supported frontage",
-      "display_requirement": "50 ft minimum",
+      "display_fact": null,
+      "display_requirement": null,
       "eligibility_state": null,
       "evidence_entries": [
         {
+          "evidence_id": "RS17_FRONTAGE-E1",
           "label": "Authoritative rule",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": {
+            "requirement_measurement_id": "RS17_FRONTAGE-M1",
+            "rule_semantic": "MINIMUM_REQUIREMENT"
+          },
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04D"
         },
         {
+          "evidence_id": "RS17_FRONTAGE-E2",
           "label": "Rule profile",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "RULE_VERSION",
           "value": "RS-1-7"
         },
         {
+          "evidence_id": "RS17_FRONTAGE-E3",
           "label": "Parcel facts",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Recorded September 24, 2026",
+          "survey_currentness": null,
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
         },
         {
+          "evidence_id": "RS17_FRONTAGE-E4",
           "label": "Comparison inputs",
-          "measurements": [
-            {
-              "kind": "REQUIREMENT",
-              "unit": "ft",
-              "value": 50
-            },
-            {
-              "kind": "FACT",
-              "unit": "ft",
-              "value": 94
-            }
+          "measurement_refs": [
+            "RS17_FRONTAGE-M1",
+            "RS17_FRONTAGE-M2"
           ],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Evaluated October 2, 2026",
+          "survey_currentness": null,
           "type": "COMPARISON_INPUT",
-          "value": "50 ft minimum; exact supported frontage 94.00 ft"
+          "value": null
         }
       ],
       "exact_calculation": null,
@@ -353,25 +475,56 @@
       "item_id": "RS17_FRONTAGE",
       "item_kind": "COMPARISON",
       "mapped_observation": null,
+      "measurements": [
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_FRONTAGE-E4"
+          ],
+          "exact_value": 50,
+          "measurement_id": "RS17_FRONTAGE-M1",
+          "role": "REQUIREMENT",
+          "unit": "ft"
+        },
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_FRONTAGE-E4"
+          ],
+          "exact_value": 94,
+          "measurement_id": "RS17_FRONTAGE-M2",
+          "role": "FACT",
+          "unit": "ft"
+        }
+      ],
       "name": "Frontage",
-      "precision": null,
       "privacy": "PUBLIC",
       "regulatory_use_state": null,
-      "result_state": "MEETS_BASE_RULE",
+      "result_state": null,
       "rule_family": "MINIMUM_STREET_FRONTAGE",
       "section": "PARCEL_DIMENSIONS",
-      "template_key": "COMPARISON_MEETS",
-      "template_values": {
-        "name": "frontage",
-        "requirement": "50 ft minimum"
-      },
+      "template_key": null,
+      "template_values": {},
       "verification_state": null
     },
     {
       "actions": [],
-      "answer": "Current front-setback rule: 15 ft starting point. Additional conditions may still modify this requirement.",
+      "answer": null,
       "base_requirement": "15 ft table base",
       "blocker": null,
+      "calculation": null,
       "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
@@ -382,45 +535,53 @@
       "eligibility_state": null,
       "evidence_entries": [
         {
+          "evidence_id": "RS17_FRONT-E1",
           "label": "Authoritative rule",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04D"
         },
         {
+          "evidence_id": "RS17_FRONT-E2",
           "label": "Rule profile",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "RULE_VERSION",
           "value": "RS-1-7"
         },
         {
+          "evidence_id": "RS17_FRONT-E3",
           "label": "Parcel facts",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Recorded September 24, 2026",
+          "survey_currentness": null,
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
         },
         {
+          "evidence_id": "RS17_FRONT-E4",
           "label": "Rule input",
-          "measurements": [
-            {
-              "kind": "REQUIREMENT",
-              "unit": "ft",
-              "value": 15
-            }
+          "measurement_refs": [
+            "RS17_FRONT-M1"
           ],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Evaluated October 2, 2026",
+          "survey_currentness": null,
           "type": "COMPARISON_INPUT",
           "value": "15 ft starting point"
         }
@@ -430,8 +591,25 @@
       "item_id": "RS17_FRONT",
       "item_kind": "RULE",
       "mapped_observation": null,
+      "measurements": [
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_FRONT-E4"
+          ],
+          "exact_value": 15,
+          "measurement_id": "RS17_FRONT-M1",
+          "role": "REQUIREMENT",
+          "unit": "ft"
+        }
+      ],
       "name": "Front setback",
-      "precision": null,
       "privacy": "PUBLIC",
       "regulatory_use_state": null,
       "result_state": "CONDITIONAL",
@@ -446,90 +624,134 @@
     },
     {
       "actions": [],
-      "answer": "Current calculated rear setback rule: 23.5 ft. Additional conditions may still modify this requirement.",
+      "answer": null,
       "base_requirement": "13 ft",
       "blocker": null,
+      "calculation": {
+        "factor": 0.09999999999999999,
+        "input_measurement_id": "RS17_REAR-M1",
+        "operation": "MULTIPLY",
+        "result_measurement_id": "RS17_REAR-M2"
+      },
       "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
-      "derived_requirement": "23.5 ft",
+      "derived_requirement": null,
       "display_fact": "235 ft Code-defined lot depth",
       "display_requirement": "23.5 ft current calculated rule; 13 ft table base",
       "eligibility_state": null,
       "evidence_entries": [
         {
+          "evidence_id": "RS17_REAR-E1",
           "label": "Authoritative rule",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04D"
         },
         {
+          "evidence_id": "RS17_REAR-E2",
           "label": "Rule profile",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "RULE_VERSION",
           "value": "RS-1-7"
         },
         {
+          "evidence_id": "RS17_REAR-E3",
           "label": "Parcel facts",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Recorded September 24, 2026",
+          "survey_currentness": null,
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
         },
         {
+          "evidence_id": "RS17_REAR-E4",
           "label": "Selected calculation",
-          "measurements": [
-            {
-              "kind": "FACT",
-              "unit": "ft",
-              "value": 235.02
-            },
-            {
-              "kind": "EXACT",
-              "unit": "ft",
-              "value": 23.502
-            },
-            {
-              "kind": "DISPLAY",
-              "unit": "ft",
-              "value": 23.5
-            },
-            {
-              "kind": "REQUIREMENT",
-              "unit": "ft",
-              "value": 13
-            }
+          "measurement_refs": [
+            "RS17_REAR-M1",
+            "RS17_REAR-M2",
+            "RS17_REAR-M3"
           ],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Evaluated October 2, 2026",
+          "survey_currentness": null,
           "type": "COMPARISON_INPUT",
-          "value": "235.02 ft lot depth × 10% = 23.502 ft; displayed as 23.5 ft; 13 ft is the table base"
+          "value": null
         }
       ],
-      "exact_calculation": "235.02 ft lot depth × 10% = 23.502 ft",
+      "exact_calculation": null,
       "explanation": "The RS-1-7 table base is 13 ft, but this lot’s depth triggers the long-lot formula. Additional unresolved conditions may still increase or modify the requirement.",
       "item_id": "RS17_REAR",
       "item_kind": "RULE",
       "mapped_observation": null,
+      "measurements": [
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 2,
+            "max_decimal_places": 6,
+            "qualifier": "lot depth",
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_REAR-E4"
+          ],
+          "exact_value": 235.02,
+          "measurement_id": "RS17_REAR-M1",
+          "role": "FACT",
+          "unit": "ft"
+        },
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 1,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_REAR-E4"
+          ],
+          "exact_value": 23.502,
+          "measurement_id": "RS17_REAR-M2",
+          "role": "DERIVED_REQUIREMENT",
+          "unit": "ft"
+        },
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_REAR-E4"
+          ],
+          "exact_value": 13,
+          "measurement_id": "RS17_REAR-M3",
+          "role": "REQUIREMENT",
+          "unit": "ft"
+        }
+      ],
       "name": "Rear setback",
-      "precision": {
-        "decimal_places": 1,
-        "display_value": 23.5,
-        "exact_value": 23.502,
-        "rounding_rule": "HALF_UP",
-        "unit": "ft"
-      },
       "privacy": "PUBLIC",
       "regulatory_use_state": null,
       "result_state": "CONDITIONAL",
@@ -544,9 +766,10 @@
     },
     {
       "actions": [],
-      "answer": "Current interior-side setback rule: 4 ft per side starting point. Additional conditions may still modify this requirement.",
+      "answer": null,
       "base_requirement": "4 ft",
       "blocker": null,
+      "calculation": null,
       "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
@@ -557,50 +780,54 @@
       "eligibility_state": null,
       "evidence_entries": [
         {
+          "evidence_id": "RS17_SIDE-E1",
           "label": "Authoritative rule",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04D"
         },
         {
+          "evidence_id": "RS17_SIDE-E2",
           "label": "Rule profile",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "RULE_VERSION",
           "value": "RS-1-7"
         },
         {
+          "evidence_id": "RS17_SIDE-E3",
           "label": "Parcel facts",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Recorded September 24, 2026",
+          "survey_currentness": null,
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
         },
         {
+          "evidence_id": "RS17_SIDE-E4",
           "label": "Rule input",
-          "measurements": [
-            {
-              "kind": "REQUIREMENT",
-              "unit": "ft",
-              "value": 4
-            },
-            {
-              "kind": "FACT",
-              "unit": "ft",
-              "value": 94
-            }
+          "measurement_refs": [
+            "RS17_SIDE-M1",
+            "RS17_SIDE-M2"
           ],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Evaluated October 2, 2026",
+          "survey_currentness": null,
           "type": "COMPARISON_INPUT",
           "value": "4 ft ordinary base per side; 94 ft Code-defined lot width"
         }
@@ -610,8 +837,41 @@
       "item_id": "RS17_SIDE",
       "item_kind": "RULE",
       "mapped_observation": null,
+      "measurements": [
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_SIDE-E4"
+          ],
+          "exact_value": 4,
+          "measurement_id": "RS17_SIDE-M1",
+          "role": "REQUIREMENT",
+          "unit": "ft"
+        },
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_SIDE-E4"
+          ],
+          "exact_value": 94,
+          "measurement_id": "RS17_SIDE-M2",
+          "role": "FACT",
+          "unit": "ft"
+        }
+      ],
       "name": "Interior-Side setback",
-      "precision": null,
       "privacy": "PUBLIC",
       "regulatory_use_state": null,
       "result_state": "CONDITIONAL",
@@ -626,9 +886,10 @@
     },
     {
       "actions": [],
-      "answer": "This rule does not apply to this parcel.",
+      "answer": null,
       "base_requirement": null,
       "blocker": null,
+      "calculation": null,
       "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
@@ -639,45 +900,53 @@
       "eligibility_state": null,
       "evidence_entries": [
         {
+          "evidence_id": "RS17_STREET_SIDE-E1",
           "label": "Authoritative rule",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04D"
         },
         {
+          "evidence_id": "RS17_STREET_SIDE-E2",
           "label": "Rule profile",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "RULE_VERSION",
           "value": "RS-1-7"
         },
         {
+          "evidence_id": "RS17_STREET_SIDE-E3",
           "label": "Parcel facts",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Recorded September 24, 2026",
+          "survey_currentness": null,
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
         },
         {
+          "evidence_id": "RS17_STREET_SIDE-E4",
           "label": "Parcel condition",
-          "measurements": [
-            {
-              "kind": "REQUIREMENT",
-              "unit": "ft",
-              "value": 5
-            }
+          "measurement_refs": [
+            "RS17_STREET_SIDE-M1"
           ],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Evaluated October 2, 2026",
+          "survey_currentness": null,
           "type": "COMPARISON_INPUT",
           "value": "5 ft rule; recorded line roles show no street-side property line"
         }
@@ -687,8 +956,25 @@
       "item_id": "RS17_STREET_SIDE",
       "item_kind": "RULE",
       "mapped_observation": null,
+      "measurements": [
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_STREET_SIDE-E4"
+          ],
+          "exact_value": 5,
+          "measurement_id": "RS17_STREET_SIDE-M1",
+          "role": "REQUIREMENT",
+          "unit": "ft"
+        }
+      ],
       "name": "Street-Side setback",
-      "precision": null,
       "privacy": "PUBLIC",
       "regulatory_use_state": null,
       "result_state": "NOT_APPLICABLE",
@@ -700,13 +986,14 @@
     },
     {
       "actions": [],
-      "answer": "This check cannot be completed yet. A current survey tying the building frame to the property lines is needed.",
+      "answer": null,
       "base_requirement": null,
       "blocker": {
         "code": "CURRENT_SURVEY_STRUCTURE_GEOMETRY",
         "missing": "A current survey tying the building frame to the property lines is needed.",
         "why": "A setback rule by itself does not establish where an existing building sits."
       },
+      "calculation": null,
       "comparison": null,
       "comparison_scope": "EXISTING_STRUCTURE",
       "context_state": null,
@@ -717,39 +1004,51 @@
       "eligibility_state": null,
       "evidence_entries": [
         {
+          "evidence_id": "RS17_EXISTING-E1",
           "label": "Authoritative rule",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04D"
         },
         {
+          "evidence_id": "RS17_EXISTING-E2",
           "label": "Rule profile",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "RULE_VERSION",
           "value": "RS-1-7"
         },
         {
+          "evidence_id": "RS17_EXISTING-E3",
           "label": "Parcel facts",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Recorded September 24, 2026",
+          "survey_currentness": null,
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
         },
         {
+          "evidence_id": "RS17_EXISTING-E4",
           "label": "Evidence needed",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": null,
+          "survey_currentness": null,
           "type": "BLOCKER_EVIDENCE",
           "value": "Current survey-controlled building-frame geometry"
         }
@@ -759,8 +1058,8 @@
       "item_id": "RS17_EXISTING",
       "item_kind": "COMPARISON",
       "mapped_observation": null,
+      "measurements": [],
       "name": "Existing-Building setbacks",
-      "precision": null,
       "privacy": "PUBLIC",
       "regulatory_use_state": null,
       "result_state": "NEEDS_EVIDENCE",
@@ -774,9 +1073,10 @@
     },
     {
       "actions": [],
-      "answer": "Base height rule: 24 ft at applicable setback lines and 30 ft overall.",
+      "answer": null,
       "base_requirement": null,
       "blocker": null,
+      "calculation": null,
       "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
@@ -787,50 +1087,54 @@
       "eligibility_state": null,
       "evidence_entries": [
         {
+          "evidence_id": "RS17_HEIGHT_PROFILE-E1",
           "label": "Authoritative rule",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04D"
         },
         {
+          "evidence_id": "RS17_HEIGHT_PROFILE-E2",
           "label": "Rule profile",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "RULE_VERSION",
           "value": "RS-1-7"
         },
         {
+          "evidence_id": "RS17_HEIGHT_PROFILE-E3",
           "label": "Parcel facts",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Recorded September 24, 2026",
+          "survey_currentness": null,
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
         },
         {
+          "evidence_id": "RS17_HEIGHT_PROFILE-E4",
           "label": "Rule values",
-          "measurements": [
-            {
-              "kind": "REQUIREMENT",
-              "unit": "ft",
-              "value": 24
-            },
-            {
-              "kind": "REQUIREMENT",
-              "unit": "ft",
-              "value": 30
-            }
+          "measurement_refs": [
+            "RS17_HEIGHT_PROFILE-M1",
+            "RS17_HEIGHT_PROFILE-M2"
           ],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Evaluated October 2, 2026",
+          "survey_currentness": null,
           "type": "COMPARISON_INPUT",
           "value": "24 ft at applicable setback lines; 30 ft overall"
         }
@@ -840,8 +1144,41 @@
       "item_id": "RS17_HEIGHT_PROFILE",
       "item_kind": "RULE",
       "mapped_observation": null,
+      "measurements": [
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_HEIGHT_PROFILE-E4"
+          ],
+          "exact_value": 24,
+          "measurement_id": "RS17_HEIGHT_PROFILE-M1",
+          "role": "REQUIREMENT",
+          "unit": "ft"
+        },
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 0,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": false
+          },
+          "evidence_refs": [
+            "RS17_HEIGHT_PROFILE-E4"
+          ],
+          "exact_value": 30,
+          "measurement_id": "RS17_HEIGHT_PROFILE-M2",
+          "role": "REQUIREMENT",
+          "unit": "ft"
+        }
+      ],
       "name": "Height profile",
-      "precision": null,
       "privacy": "PUBLIC",
       "regulatory_use_state": null,
       "result_state": "CONDITIONAL",
@@ -856,9 +1193,10 @@
     },
     {
       "actions": [],
-      "answer": "Base FAR rule: the applicable RS lot-area band and any steep-hillside rule.",
+      "answer": null,
       "base_requirement": null,
       "blocker": null,
+      "calculation": null,
       "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
@@ -869,39 +1207,51 @@
       "eligibility_state": null,
       "evidence_entries": [
         {
+          "evidence_id": "RS17_FAR_PROFILE-E1",
           "label": "Authoritative rule",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04D"
         },
         {
+          "evidence_id": "RS17_FAR_PROFILE-E2",
           "label": "Rule profile",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "RULE_VERSION",
           "value": "RS-1-7"
         },
         {
+          "evidence_id": "RS17_FAR_PROFILE-E3",
           "label": "Parcel facts",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Recorded September 24, 2026",
+          "survey_currentness": null,
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
         },
         {
+          "evidence_id": "RS17_FAR_PROFILE-E4",
           "label": "FAR rule location",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Effective April 24, 2025",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04J"
@@ -912,8 +1262,8 @@
       "item_id": "RS17_FAR_PROFILE",
       "item_kind": "RULE",
       "mapped_observation": null,
+      "measurements": [],
       "name": "FAR profile",
-      "precision": null,
       "privacy": "PUBLIC",
       "regulatory_use_state": null,
       "result_state": "CONDITIONAL",

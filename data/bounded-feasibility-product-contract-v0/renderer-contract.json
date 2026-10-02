@@ -1,5 +1,5 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
+  "contract_version": "bounded-feasibility-product-contract-v4-2026-10-02-p60f",
   "copy_versioned": true,
   "free_form_conclusion_generation": false,
   "project_status_labels": {
@@ -9,8 +9,6 @@
     "SUBMITTAL_ISSUANCE_NOT_PROVEN": "Construction-document submittal — issuance not proven"
   },
   "templates": {
-    "COMPARISON_DOES_NOT_MEET": "Does not meet the {requirement} {name} rule.",
-    "COMPARISON_MEETS": "Meets the {requirement} {name} rule.",
     "CONDITIONAL_BASE_RULE": "Base {name}: {requirement}.",
     "CONDITIONAL_CURRENT_RULE": "Current {name}: {requirement}. Additional conditions may still modify this requirement.",
     "FACT_IDENTIFIED": "{name}: {fact}.",
@@ -21,7 +19,6 @@
     "NOT_EVALUATED": "{name}: not evaluated.",
     "NO_MAPPED_CONTEXT": "No mapped {name} intersection was identified by the recorded source.",
     "OUTSIDE_CURRENT_SCOPE": "{name} is outside the current evaluation scope.",
-    "PROJECT_COMPARISON_MEETS": "The proposed {fact} meets the selected {requirement}. This comparison applies only to this dimension.",
     "SOURCE_UNAVAILABLE": "{name} cannot be evaluated because its authoritative source is unavailable."
   },
   "unknown_template_behavior": "REJECT"

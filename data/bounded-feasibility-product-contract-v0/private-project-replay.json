@@ -1,81 +1,101 @@
 {
   "actions": [],
   "base_facts": [],
-  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
+  "contract_version": "bounded-feasibility-product-contract-v4-2026-10-02-p60f",
   "items": [
     {
       "actions": [],
-      "answer": "The proposed 5 ft 11-1/2 in enclosed-ADU frame setback meets the selected 4 ft interior-side setback rule. This comparison applies only to this dimension.",
+      "answer": null,
       "base_requirement": null,
       "blocker": null,
+      "calculation": null,
       "comparison": {
-        "comparator": "MIN",
-        "fact_value": 5.958333,
-        "requirement_value": 4,
-        "unit": "ft"
+        "fact_measurement_id": "PRJ1111087_SIDE-M1",
+        "requirement_measurement_id": "PRJ1111087_SIDE-M2",
+        "rule_label": "proposed interior-side setback",
+        "rule_semantic": "MINIMUM_REQUIREMENT"
       },
       "comparison_scope": "THIS_DIMENSION_ONLY",
       "context_state": null,
       "context_type": null,
       "derived_requirement": null,
-      "display_fact": "5 ft 11-1/2 in (5.958333 ft) proposed enclosed-ADU frame setback",
-      "display_requirement": "4 ft selected application-date minimum",
+      "display_fact": null,
+      "display_requirement": null,
       "eligibility_state": null,
       "evidence_entries": [
         {
+          "evidence_id": "PRJ1111087_SIDE-E1",
           "label": "Plan status",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
-          "project_status_code": "SUBMITTAL_ISSUANCE_NOT_PROVEN",
+          "project_status": {
+            "cycle_context": null,
+            "issuance_date": null,
+            "issuance_record_id": null,
+            "plan_project_id": "PRJ-1111087",
+            "source_type": "PRIVATE_PLAN_STATUS",
+            "status_code": "SUBMITTAL_ISSUANCE_NOT_PROVEN"
+          },
+          "rule_binding": null,
           "source_date": "Application recorded January 29, 2024",
+          "survey_currentness": null,
           "type": "PRIVATE_PLAN_STATUS",
-          "value": "Construction-document submittal; issuance not proven"
+          "value": null
         },
         {
+          "evidence_id": "PRJ1111087_SIDE-E2",
           "label": "Private plan fact",
-          "measurements": [],
+          "measurement_refs": [
+            "PRJ1111087_SIDE-M1"
+          ],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Application recorded January 29, 2024",
+          "survey_currentness": null,
           "type": "PRIVATE_PLAN_FACT",
           "value": "Architectural Site Plan A0.1, page 15"
         },
         {
+          "evidence_id": "PRJ1111087_SIDE-E3",
           "label": "Applicable rule",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": {
+            "requirement_measurement_id": "PRJ1111087_SIDE-M2",
+            "rule_semantic": "MINIMUM_REQUIREMENT"
+          },
           "source_date": "Effective May 6, 2023",
+          "survey_currentness": null,
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2023/O-21618.pdf",
           "value": "Outside Coastal · Ordinance O-21618"
         },
         {
+          "evidence_id": "PRJ1111087_SIDE-E4",
           "label": "Comparison inputs",
-          "measurements": [
-            {
-              "kind": "FACT",
-              "unit": "ft",
-              "value": 5.958333
-            },
-            {
-              "kind": "REQUIREMENT",
-              "unit": "ft",
-              "value": 4
-            }
+          "measurement_refs": [
+            "PRJ1111087_SIDE-M1",
+            "PRJ1111087_SIDE-M2"
           ],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": "Evaluated October 2, 2026",
+          "survey_currentness": null,
           "type": "COMPARISON_INPUT",
-          "value": "Exact setback 5.958333 ft (5 ft 11-1/2 in); selected minimum 4 ft"
+          "value": null
         },
         {
+          "evidence_id": "PRJ1111087_SIDE-E5",
           "label": "Privacy",
-          "measurements": [],
+          "measurement_refs": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
-          "project_status_code": null,
+          "project_status": null,
+          "rule_binding": null,
           "source_date": null,
+          "survey_currentness": null,
           "type": "PRIVACY_NOTICE",
           "value": "Private authorized evidence · excluded from public caching and indexing"
         }
@@ -85,18 +105,49 @@
       "item_id": "PRJ1111087_SIDE",
       "item_kind": "COMPARISON",
       "mapped_observation": null,
+      "measurements": [
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 1,
+            "max_decimal_places": 6,
+            "qualifier": "enclosed-ADU frame setback",
+            "trailing_zeros": true
+          },
+          "evidence_refs": [
+            "PRJ1111087_SIDE-E4",
+            "PRJ1111087_SIDE-E2"
+          ],
+          "exact_value": 5.958333,
+          "measurement_id": "PRJ1111087_SIDE-M1",
+          "role": "FACT",
+          "unit": "ft"
+        },
+        {
+          "dimension": "LENGTH",
+          "display_policy": {
+            "decimal_places": 1,
+            "max_decimal_places": 6,
+            "qualifier": null,
+            "trailing_zeros": true
+          },
+          "evidence_refs": [
+            "PRJ1111087_SIDE-E4"
+          ],
+          "exact_value": 4,
+          "measurement_id": "PRJ1111087_SIDE-M2",
+          "role": "REQUIREMENT",
+          "unit": "ft"
+        }
+      ],
       "name": "Proposed interior-side setback",
-      "precision": null,
       "privacy": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX",
       "regulatory_use_state": null,
-      "result_state": "MEETS_BASE_RULE",
+      "result_state": null,
       "rule_family": "INTERIOR_SIDE_SETBACK",
       "section": "SETBACKS",
-      "template_key": "PROJECT_COMPARISON_MEETS",
-      "template_values": {
-        "fact": "5 ft 11-1/2 in enclosed-ADU frame setback",
-        "requirement": "4 ft interior-side setback rule"
-      },
+      "template_key": null,
+      "template_values": {},
       "verification_state": null
     }
   ],

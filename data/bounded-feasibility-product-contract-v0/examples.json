@@ -1,5 +1,5 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
+  "contract_version": "bounded-feasibility-product-contract-v4-2026-10-02-p60f",
   "examples": [
     {
       "artifact": "public-rs-replay.json",
