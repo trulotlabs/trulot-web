@@ -1,6 +1,18 @@
 {
-  "ambiguous_likely_state_allowed": false,
-  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
+  "context_states": [
+    "MAPPED_VERIFICATION_PENDING",
+    "MAPPED_VERIFIED",
+    "NO_MAPPED_INTERSECTION",
+    "SOURCE_UNAVAILABLE",
+    "NOT_EVALUATED"
+  ],
+  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
+  "eligibility_states": [
+    "NOT_EVALUATED",
+    "ELIGIBLE",
+    "NOT_ELIGIBLE",
+    "SOURCE_UNAVAILABLE"
+  ],
   "internal_mapping": {
     "FAR_RULE_EVALUATION_UNRESOLVED": "NEEDS_EVIDENCE",
     "HEIGHT_RULE_EVALUATION_UNRESOLVED": "NEEDS_EVIDENCE",
@@ -17,29 +29,28 @@
     "STREET_SIDE_SETBACK_NOT_APPLICABLE": "NOT_APPLICABLE"
   },
   "product_states": [
-    {
-      "state": "CONDITIONAL"
-    },
-    {
-      "state": "DOES_NOT_MEET_BASE_RULE"
-    },
-    {
-      "state": "MEETS_BASE_RULE"
-    },
-    {
-      "state": "NEEDS_EVIDENCE"
-    },
-    {
-      "state": "NOT_APPLICABLE"
-    },
-    {
-      "state": "NOT_EVALUATED"
-    },
-    {
-      "state": "OUTSIDE_CURRENT_SCOPE"
-    },
-    {
-      "state": "SOURCE_UNAVAILABLE"
-    }
+    "CONDITIONAL",
+    "DOES_NOT_MEET_BASE_RULE",
+    "MEETS_BASE_RULE",
+    "NEEDS_EVIDENCE",
+    "NOT_APPLICABLE",
+    "NOT_EVALUATED",
+    "OUTSIDE_CURRENT_SCOPE",
+    "SOURCE_UNAVAILABLE"
+  ],
+  "regulatory_use_states": [
+    "NOT_USED_PENDING_VERIFICATION",
+    "CONTEXT_ONLY",
+    "APPLIES",
+    "DOES_NOT_APPLY",
+    "NOT_EVALUATED",
+    "SOURCE_UNAVAILABLE"
+  ],
+  "verification_states": [
+    "PENDING",
+    "VERIFIED",
+    "NO_INTERSECTION",
+    "SOURCE_UNAVAILABLE",
+    "NOT_EVALUATED"
   ]
 }

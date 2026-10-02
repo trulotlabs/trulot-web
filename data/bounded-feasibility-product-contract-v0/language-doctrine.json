@@ -1,14 +1,11 @@
 {
   "avoid_in_product_copy": [
-    "branch",
-    "predicate",
-    "bounded",
-    "sealed",
-    "not accepted",
+    "replay",
+    "Packet",
     "raw acquisition identifier",
     "internal MapServer language",
     "unexplained unit band"
   ],
-  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
+  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
   "no_numeric_confidence": true
 }

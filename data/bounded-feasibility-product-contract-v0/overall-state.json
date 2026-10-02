@@ -1,9 +1,4 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
-  "prohibited_top_level_labels": [
-    "Buildable",
-    "Approved",
-    "Development feasible"
-  ],
-  "qualification": "Coverage only; never entitlement, capacity, approval, or whole-project compliance."
+  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
+  "rule": "Overall state is derived from validated item, context, blocker, and project-topic states."
 }

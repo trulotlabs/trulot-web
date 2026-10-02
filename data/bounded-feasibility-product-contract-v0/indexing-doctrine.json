@@ -1,4 +1,4 @@
 {
-  "cache_rule": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX never enters public generation, indexing, metadata, or shared caches.",
-  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c"
+  "cache_rule": "Private scopes never enter public generation, indexing, metadata, or shared caches.",
+  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d"
 }

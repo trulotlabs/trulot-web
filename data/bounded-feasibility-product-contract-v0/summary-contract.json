@@ -1,14 +1,15 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
+  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
   "groups": [
     "MEETS_BASE_RULE",
+    "DOES_NOT_MEET_BASE_RULE",
     "CONDITIONAL",
     "NEEDS_EVIDENCE",
     "NOT_EVALUATED",
     "MAPPED_CONTEXT",
-    "NOT_APPLICABLE"
+    "NOT_APPLICABLE",
+    "SOURCE_UNAVAILABLE",
+    "OUTSIDE_CURRENT_SCOPE"
   ],
-  "numeric_score": false,
-  "silent_truncation": false,
-  "source": "item.summary_entries and project_context.summary_entries"
+  "source": "Derived from validated item and project semantics; no producer-authored group or label."
 }

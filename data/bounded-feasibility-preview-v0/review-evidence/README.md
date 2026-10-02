@@ -1,4 +1,4 @@
-# Packet 60C review evidence
+# Packet 60D review evidence
 
 Static screenshots of the development/test-only, contract-driven Bounded Feasibility Preview. They contain fixture evidence only: no production URL, credentials, browser identity, private filesystem path, or environment value.
 
@@ -6,15 +6,15 @@ Desktop captures use a 1440×1000 viewport. Mobile captures use a 390×844 viewp
 
 | File | View | Pixels | SHA-256 |
 | --- | --- | ---: | --- |
-| `public-rs-desktop.png` | Public RS, collapsed | 1440×2889 | `275a8c636798f3cdc4ea65bb1e08ab1dea7074ef87d8b4f8e555d36b6cd6caff` |
-| `public-rs-mobile.png` | Public RS, collapsed | 390×5502 | `44bd74db7b9a3afd096121ed3ddd47e52a6677366f71eaa85f5e8b34e4567f5e` |
-| `public-rs-rear-setback-expanded.png` | Public RS, rear-setback evidence open | 1440×3054 | `738a27e6735fe9350269f6e0b1a791ae637ef11c9004bf632e08fa5c89525dd6` |
-| `public-rm-desktop.png` | Public RM, collapsed | 1440×2211 | `64c6c347b5999d8b31be226ea8cd13a479f57a1de38acf8c0380a5da4634c65b` |
-| `public-rm-mobile.png` | Public RM, collapsed | 390×3872 | `a4645fed25ddf1256d71fc523c743d107ac0c03eb76b6a37bb847215c667b0c7` |
-| `public-rm-sda-context-expanded.png` | Public RM, SDA evidence open | 1440×2335 | `082e813d1fd47e89d3b32a59ffb3c607407a195ccbff7aa032179ee2f1c78f97` |
-| `private-project-desktop.png` | Private project, collapsed | 1440×1502 | `049673b4a9bc21776c9619bc5af47a01f3b298e8da5d574b406ed85b49069636` |
-| `private-project-mobile.png` | Private project, collapsed | 390×1875 | `340a93570f370e042e74c628e221cb9d278933cd901cea1644708f5c3a041f21` |
-| `private-project-status-expanded.png` | Private project, status/evidence open | 1440×1747 | `89e2463fe6602d1244bc8c94cfe4a6063944f3f51dd3dd8d782e2fbdd4c42e05` |
-| `height-far-blocked-desktop.png` | Private height/FAR evidence blockers | 1440×2072 | `37e7014088ca177e0b2a806f1bcf3a73edf66972687152666048ccaa3e8425d9` |
+| `public-rs-desktop.png` | Public RS, collapsed | 1440×2905 | `8f8fb02f9b50355e18401690292a99840d1417bb31d5f376f956152e1971d620` |
+| `public-rs-mobile.png` | Public RS, collapsed | 390×5499 | `d2c8f9041a801deffca8cb6e1d535a36230d6c7a120af94b102f2837d068d963` |
+| `public-rs-rear-setback-expanded.png` | Public RS, rear-setback evidence open | 1440×3132 | `64f30af0ee0dcf0451d3174075258fda7102db31f0e1d4ef2a46a10398f2e249` |
+| `public-rm-desktop.png` | Public RM, collapsed | 1440×2211 | `811ab0f02a3e7728b9364a169f0946cfd56e7fc5926dd9a302f7407b4d69ba34` |
+| `public-rm-mobile.png` | Public RM, collapsed | 390×3837 | `e4a7e2aae5a991296a89d1ddce225dd0e3abda92afaab3239b147e05c7f0c604` |
+| `public-rm-sda-context-expanded.png` | Public RM, SDA evidence open | 1440×2326 | `c41ae200c65f9b918497bcf1cf062976a984ab4b50b89ad791f99624ff3dc78b` |
+| `private-project-desktop.png` | Private project, collapsed | 1440×1502 | `e5d0ac731474e0b7c2d706f753010cb60f0eb2c7aa37fb97edbdf7d3bea884b8` |
+| `private-project-mobile.png` | Private project, collapsed | 390×1875 | `edc92aafa57eb80b6744cbd036a87f8844ed7ebd15d3b6549434c09688ecf1a5` |
+| `private-project-status-expanded.png` | Private project, status/evidence open | 1440×1769 | `02b8324d305e13bd0f2d864d95914e9b2e89ba70f370da2f4b636f4834de2ea6` |
+| `height-far-blocked-desktop.png` | Private height/FAR evidence blockers | 1440×2072 | `b85baaa741a8f6883e6022d9f0338bf6cde45db8719d26b2c5726c7aeed0e8ee` |
 
 The browser suite separately proves keyboard disclosure operation, summary-link targets, mobile overflow containment, production gating, public/private containment, and failure handling. Those behaviors should be judged from tests and source rather than inferred from static images.

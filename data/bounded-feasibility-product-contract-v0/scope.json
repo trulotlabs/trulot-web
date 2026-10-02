@@ -1,18 +1,12 @@
 {
-  "classifications": {
-    "OUTSIDE_V0_SCOPE": [
-      "development capacity",
-      "whole-project compliance"
-    ],
-    "PRODUCT_READY": [
-      "parcel facts",
-      "base-rule comparisons"
-    ],
-    "PRODUCT_READY_CONDITIONAL": [
-      "conditional parcel rules",
-      "mapped context",
-      "evidence blockers"
-    ]
+  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
+  "matrix": {
+    "EXISTING_STRUCTURE": "PRIVATE only; project context required",
+    "PRIVATE_PROJECT": "PRIVATE only; project context required",
+    "PUBLIC_PARCEL": "PUBLIC only; no project context or private evidence"
   },
-  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c"
+  "outside_scope": [
+    "development capacity",
+    "whole-project compliance"
+  ]
 }

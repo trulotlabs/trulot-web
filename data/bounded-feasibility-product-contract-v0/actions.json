@@ -1,6 +1,5 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
-  "rule": "LINK requires a destination; INSTRUCTION renders as plain text.",
+  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
   "types": [
     "LINK",
     "INSTRUCTION"

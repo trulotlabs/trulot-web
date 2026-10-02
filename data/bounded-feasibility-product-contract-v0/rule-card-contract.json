@@ -5,14 +5,14 @@
     "PROJECT_SPECIFIC",
     "EXISTING_STRUCTURE"
   ],
-  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
-  "internal_adapter_names_exposed": false,
+  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
   "item_kinds": [
     "FACT",
     "RULE",
     "CONTEXT",
     "COMPARISON"
   ],
+  "producer_authored_badges": false,
   "sections": [
     "BASE_FACTS",
     "PARCEL_DIMENSIONS",

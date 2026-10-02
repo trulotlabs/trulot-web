@@ -78,8 +78,8 @@ try {
   const desktop = { width: 1440, height: 1000 };
   const mobile = { width: 390, height: 844 };
   const rs = { present: [/1456 27th St/, /Current calculated rear setback rule: 23\.5 ft/, /table base is 13 ft/, /22,096 sq ft/, /Not applicable/] };
-  const rm = { present: [/639 N 67th St/, /Base zone identified/, /Sustainable Development Area \(SDA\) geometry was detected/, /Verification is pending/, /Very High Fire Hazard Severity Zone \(VHFHSZ\)/, /Project height: not evaluated/], absent: [/PRJ-1111087/, /26 ADUs/, /5 ft 11-1\/2 in/, /FOURTH_CD/] };
-  const privateView = { present: [/Private project analysis/, /Fourth construction-document submittal — issuance not proven/, /January 29, 2024/, /Ordinance O-21618/, /Meets setback rule/, /This dimension only/] };
+  const rm = { present: [/639 N 67th St/, /Base zone: RM-2-5/, /Sustainable Development Area \(SDA\) geometry was detected/, /Verification is pending/, /Very High Fire Hazard Severity Zone \(VHFHSZ\)/, /Project height: not evaluated/], absent: [/PRJ-1111087/, /26 ADUs/, /5 ft 11-1\/2 in/, /FOURTH_CD/] };
+  const privateView = { present: [/Private project analysis/, /Fourth construction-document submittal — issuance not proven/, /January 29, 2024/, /Ordinance O-21618/, /Meets selected rule · this dimension/, /This dimension only/] };
   const blocked = { present: [/More evidence needed/, /Base height rule: 40 ft plus angled-plane conditions/, /project-height check cannot be evaluated yet/, /dimensioned height analysis/, /floor-area worksheet/] };
 
   await capture("rs", desktop, "public-rs-desktop.png", rs);

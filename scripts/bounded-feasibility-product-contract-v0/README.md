@@ -1,6 +1,6 @@
 # Bounded Feasibility Product Contract V0
 
-Packet 59 defines deterministic, product-facing states and copy for bounded parcel-rule and named-project comparisons. It does not build UI, calculate capacity, wire production, or promote private evidence into public outputs.
+Packet 60D emits the V2 deterministic contract for bounded parcel-rule and named-project comparisons. Badges, summary groups, project status copy, and context labels are derived by the consumer from closed semantic states. The contract does not calculate capacity, wire production, or promote private evidence into public outputs.
 
 Generate and test locally:
 
@@ -9,4 +9,4 @@ PYTHONDONTWRITEBYTECODE=1 python3 scripts/bounded-feasibility-product-contract-v
 PYTHONDONTWRITEBYTECODE=1 python3 scripts/bounded-feasibility-product-contract-v0/test.py
 ```
 
-All visible answer strings come from versioned templates or sealed replay facts. Unknown states and missing template values fail closed.
+Validation runs in a fixed order: structural JSON Schema, semantic invariants, privacy, deterministic templates, then evidence/value consistency. Unknown states, contradictory context tuples, producer-authored semantic labels, incomplete evidence, and privacy conflicts fail closed.

@@ -14,13 +14,7 @@
       "code": "CODE_GFA_AND_PREMISES_AREA",
       "missing": "a project FAR check needs a floor-area worksheet showing what counts toward FAR and a verified legal premises area",
       "why": "The counted floor area and legal premises area must both use the applicable City definitions."
-    },
-    {
-      "code": "PROGRAM_ELIGIBILITY_EVIDENCE",
-      "missing": "TruLot has not evaluated this program’s eligibility requirements yet",
-      "why": "Mapped geography does not establish program eligibility."
     }
   ],
-  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
-  "copy_is_allowlisted": true
+  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d"
 }

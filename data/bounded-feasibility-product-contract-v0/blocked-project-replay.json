@@ -1,7 +1,7 @@
 {
   "actions": [],
   "base_facts": [],
-  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
+  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
   "items": [
     {
       "actions": [],
@@ -18,35 +18,48 @@
       "evidence_entries": [
         {
           "label": "Authoritative rule",
+          "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "type": "PUBLIC_SOURCE",
+          "source_date": "Effective May 6, 2023",
+          "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04G"
         },
         {
           "label": "Rule profile",
+          "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "type": "VERSION",
+          "source_date": "Effective May 6, 2023",
+          "type": "RULE_VERSION",
           "value": "RM-2-5 application profile"
+        },
+        {
+          "label": "Rule value",
+          "measurements": [
+            {
+              "kind": "REQUIREMENT",
+              "unit": "ft",
+              "value": 40
+            }
+          ],
+          "privacy": "PUBLIC_AUTHORITY",
+          "source_date": "Evaluated October 2, 2026",
+          "type": "COMPARISON_INPUT",
+          "value": "40 ft plus angled-plane conditions"
         }
       ],
       "exact_calculation": null,
       "explanation": "The same conditional RM-2-5 base profile used in the public view applies here.",
       "item_id": "P50_BASE_HEIGHT",
       "item_kind": "RULE",
-      "name": "height rule",
+      "mapped_observation": null,
+      "name": "Height rule",
+      "precision": null,
       "privacy": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX",
       "regulatory_use_state": null,
       "result_state": "CONDITIONAL",
       "rule_family": "STRUCTURE_HEIGHT",
       "section": "HEIGHT_FAR",
-      "state_label": "Base rule · Conditional",
-      "summary_entries": [
-        {
-          "group": "CONDITIONAL",
-          "label": "RM-2-5 base height rule"
-        }
-      ],
       "template_key": "CONDITIONAL_BASE_RULE",
       "template_values": {
         "name": "height rule",
@@ -67,32 +80,62 @@
       "context_state": null,
       "context_type": null,
       "derived_requirement": null,
-      "display_fact": "Project comparison needs evidence",
+      "display_fact": "Needs evidence",
       "display_requirement": null,
       "eligibility_state": null,
       "evidence_entries": [
         {
           "label": "Authoritative rule",
+          "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "type": "PUBLIC_SOURCE",
+          "source_date": "Effective May 6, 2023",
+          "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04G"
         },
         {
           "label": "Rule profile",
+          "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "type": "VERSION",
+          "source_date": "Effective May 6, 2023",
+          "type": "RULE_VERSION",
           "value": "RM-2-5 application profile"
         },
         {
-          "label": "Private plan fact",
+          "label": "Project review status",
+          "measurements": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
-          "type": "PRIVATE_PLAN_STATUS",
+          "source_date": null,
+          "type": "PRIVATE_PROJECT_REVIEW",
+          "value": "Height evidence remains under review"
+        },
+        {
+          "label": "Private plan fact",
+          "measurements": [],
+          "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "source_date": null,
+          "type": "PRIVATE_PLAN_FACT",
           "value": "The plan labels 40 ft, but its measurement method has not been reconciled to the City’s rules"
         },
         {
-          "label": "Evidence needed",
+          "label": "Unverified comparison input",
+          "measurements": [
+            {
+              "kind": "FACT",
+              "unit": "ft",
+              "value": 40
+            }
+          ],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "source_date": null,
+          "type": "COMPARISON_INPUT",
+          "value": "Plan label: 40 ft; City measurement reconciliation pending"
+        },
+        {
+          "label": "Evidence needed",
+          "measurements": [],
+          "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "source_date": null,
           "type": "BLOCKER_EVIDENCE",
           "value": "Dimensioned grade, highest-point, roof-treatment, and angled-plane analysis"
         }
@@ -101,19 +144,14 @@
       "explanation": "The plan’s labelled height cannot be compared yet because its measurement method has not been reconciled to the City’s height rules.",
       "item_id": "P50_PROJECT_HEIGHT",
       "item_kind": "COMPARISON",
-      "name": "project-height check",
+      "mapped_observation": null,
+      "name": "Project height",
+      "precision": null,
       "privacy": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX",
       "regulatory_use_state": null,
       "result_state": "NEEDS_EVIDENCE",
       "rule_family": "STRUCTURE_HEIGHT",
       "section": "HEIGHT_FAR",
-      "state_label": "Project comparison · Needs evidence",
-      "summary_entries": [
-        {
-          "group": "NEEDS_EVIDENCE",
-          "label": "Project height comparison"
-        }
-      ],
       "template_key": "NEEDS_EVIDENCE",
       "template_values": {
         "blocker": "a project-height check needs a dimensioned height analysis using the City’s required grade and roof measurement rules",
@@ -136,35 +174,48 @@
       "evidence_entries": [
         {
           "label": "Authoritative rule",
+          "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "type": "PUBLIC_SOURCE",
+          "source_date": "Effective May 6, 2023",
+          "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04G"
         },
         {
           "label": "Rule profile",
+          "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "type": "VERSION",
+          "source_date": "Effective May 6, 2023",
+          "type": "RULE_VERSION",
           "value": "RM-2-5 application profile"
+        },
+        {
+          "label": "Rule value",
+          "measurements": [
+            {
+              "kind": "REQUIREMENT",
+              "unit": "ratio",
+              "value": 1.35
+            }
+          ],
+          "privacy": "PUBLIC_AUTHORITY",
+          "source_date": "Evaluated October 2, 2026",
+          "type": "COMPARISON_INPUT",
+          "value": "1.35 selected maximum"
         }
       ],
       "exact_calculation": null,
       "explanation": "The same conditional RM-2-5 base profile used in the public view applies here.",
       "item_id": "P50_BASE_FAR",
       "item_kind": "RULE",
+      "mapped_observation": null,
       "name": "FAR rule",
+      "precision": null,
       "privacy": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX",
       "regulatory_use_state": null,
       "result_state": "CONDITIONAL",
       "rule_family": "FAR",
       "section": "HEIGHT_FAR",
-      "state_label": "Base rule · Conditional",
-      "summary_entries": [
-        {
-          "group": "CONDITIONAL",
-          "label": "RM-2-5 base FAR rule"
-        }
-      ],
       "template_key": "CONDITIONAL_BASE_RULE",
       "template_values": {
         "name": "FAR rule",
@@ -185,32 +236,62 @@
       "context_state": null,
       "context_type": null,
       "derived_requirement": null,
-      "display_fact": "Project comparison needs evidence",
+      "display_fact": "Needs evidence",
       "display_requirement": null,
       "eligibility_state": null,
       "evidence_entries": [
         {
           "label": "Authoritative rule",
+          "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "type": "PUBLIC_SOURCE",
+          "source_date": "Effective May 6, 2023",
+          "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
           "value": "San Diego Municipal Code Table 131-04G"
         },
         {
           "label": "Rule profile",
+          "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
-          "type": "VERSION",
+          "source_date": "Effective May 6, 2023",
+          "type": "RULE_VERSION",
           "value": "RM-2-5 application profile"
         },
         {
-          "label": "Private plan fact",
+          "label": "Project review status",
+          "measurements": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
-          "type": "PRIVATE_PLAN_STATUS",
+          "source_date": null,
+          "type": "PRIVATE_PROJECT_REVIEW",
+          "value": "FAR evidence remains under review"
+        },
+        {
+          "label": "Private plan fact",
+          "measurements": [],
+          "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "source_date": null,
+          "type": "PRIVATE_PLAN_FACT",
           "value": "The plan labels FAR 1.10, but the counted floor area and premises area are not independently verified"
         },
         {
-          "label": "Evidence needed",
+          "label": "Unverified comparison input",
+          "measurements": [
+            {
+              "kind": "FACT",
+              "unit": "ratio",
+              "value": 1.1
+            }
+          ],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "source_date": null,
+          "type": "COMPARISON_INPUT",
+          "value": "Plan label: FAR 1.10; counted floor area and premises area pending"
+        },
+        {
+          "label": "Evidence needed",
+          "measurements": [],
+          "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "source_date": null,
           "type": "BLOCKER_EVIDENCE",
           "value": "Code-compatible floor-area worksheet and verified legal premises area"
         }
@@ -219,19 +300,14 @@
       "explanation": "The plan’s counted floor area and legal premises area have not yet been independently verified.",
       "item_id": "P50_PROJECT_FAR",
       "item_kind": "COMPARISON",
-      "name": "project FAR check",
+      "mapped_observation": null,
+      "name": "Project FAR",
+      "precision": null,
       "privacy": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX",
       "regulatory_use_state": null,
       "result_state": "NEEDS_EVIDENCE",
       "rule_family": "FAR",
       "section": "HEIGHT_FAR",
-      "state_label": "Project comparison · Needs evidence",
-      "summary_entries": [
-        {
-          "group": "NEEDS_EVIDENCE",
-          "label": "Project FAR comparison"
-        }
-      ],
       "template_key": "NEEDS_EVIDENCE",
       "template_values": {
         "blocker": "a project FAR check needs a floor-area worksheet showing what counts toward FAR and a verified legal premises area",
@@ -243,15 +319,14 @@
   "overall_state": "MORE_EVIDENCE_NEEDED",
   "privacy": "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX",
   "project_context": {
-    "application_date": "Not provided in this replay",
+    "application_date": null,
     "code_profile": "RM-2-5 application profile",
     "not_evaluated": [
-      "whole-project compliance"
+      "WHOLE_PROJECT_COMPLIANCE"
     ],
     "privacy_label": "Not for public indexing · no public cache",
     "project_id": "PRJ-1111087",
-    "status": "Private height and FAR evidence review",
-    "summary_entries": [],
+    "status_code": "EVIDENCE_REVIEW",
     "target_id": "private-evidence-status"
   },
   "provenance": [

@@ -1,11 +1,35 @@
 {
-  "context_states": [
-    "MAPPED_VERIFICATION_PENDING",
-    "MAPPED_VERIFIED",
-    "NO_MAPPED_INTERSECTION",
-    "SOURCE_UNAVAILABLE",
-    "NOT_EVALUATED"
-  ],
-  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
-  "doctrine": "Mapped geography is context, not eligibility or project compliance."
+  "context_matrix": {
+    "MAPPED_VERIFICATION_PENDING": [
+      true,
+      "PENDING",
+      "NOT_EVALUATED",
+      "NOT_USED_PENDING_VERIFICATION"
+    ],
+    "MAPPED_VERIFIED": [
+      true,
+      "VERIFIED",
+      "NOT_EVALUATED|ELIGIBLE|NOT_ELIGIBLE",
+      "CONTEXT_ONLY|APPLIES|DOES_NOT_APPLY"
+    ],
+    "NOT_EVALUATED": [
+      null,
+      "NOT_EVALUATED",
+      "NOT_EVALUATED",
+      "NOT_EVALUATED"
+    ],
+    "NO_MAPPED_INTERSECTION": [
+      false,
+      "NO_INTERSECTION",
+      "NOT_EVALUATED",
+      "CONTEXT_ONLY"
+    ],
+    "SOURCE_UNAVAILABLE": [
+      null,
+      "SOURCE_UNAVAILABLE",
+      "SOURCE_UNAVAILABLE",
+      "SOURCE_UNAVAILABLE"
+    ]
+  },
+  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d"
 }

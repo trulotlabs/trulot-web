@@ -7,7 +7,7 @@ import hashlib
 import json
 from typing import Any
 
-CONTRACT_VERSION = "bounded-feasibility-product-contract-v1-2026-10-02-p60c"
+CONTRACT_VERSION = "bounded-feasibility-product-contract-v2-2026-10-02-p60d"
 
 PRODUCT_STATES = {
     "MEETS_BASE_RULE",

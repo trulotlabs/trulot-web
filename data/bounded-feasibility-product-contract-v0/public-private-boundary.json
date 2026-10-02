@@ -1,4 +1,4 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v1-2026-10-02-p60c",
-  "hard_invariant": "No private fact may enter public parcel generation, indexing, metadata, cache keys, or public provenance."
+  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
+  "hard_invariant": "Evidence type and scope determine privacy; a producer privacy tag cannot downgrade private evidence."
 }

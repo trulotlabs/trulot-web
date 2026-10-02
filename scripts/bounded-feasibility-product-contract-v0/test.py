@@ -4,150 +4,91 @@ from __future__ import annotations
 import json
 import unittest
 
-from build import (
-    COMPARISON_SCOPES,
-    CONTEXT_STATES,
-    EVIDENCE_TYPES,
-    ITEM_KINDS,
-    OUTPUT,
-    SECTIONS,
-    SUMMARY_GROUPS,
-    TEMPLATES,
-    build_outputs,
-)
-from resolver import CONTRACT_VERSION, PRODUCT_STATES, map_state, overall_state, render
-
+from build import (COMPARISON_SCOPES, CONTEXT_STATES, EVIDENCE_TYPES, ELIGIBILITY_STATES,
+                   ITEM_KINDS, OUTPUT, PROJECT_STATUS_CODES, REGULATORY_USE_STATES,
+                   SECTIONS, TEMPLATES, VERIFICATION_STATES, build_outputs)
+from resolver import CONTRACT_VERSION, map_state, overall_state, render
 
 REPLAYS = ["public-rs-replay.json", "public-rm-replay.json", "private-project-replay.json", "blocked-project-replay.json"]
 
 
-class Packet59CorrectedContractTests(unittest.TestCase):
+class Packet60DSemanticContractTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.outputs = build_outputs()
 
-    def item(self, replay: str, item_id: str):
+    def item(self, replay, item_id):
         return next(item for item in self.outputs[replay]["items"] if item["item_id"] == item_id)
 
     def test_contract_is_materially_versioned(self):
-        self.assertEqual(CONTRACT_VERSION, "bounded-feasibility-product-contract-v1-2026-10-02-p60c")
+        self.assertEqual(CONTRACT_VERSION, "bounded-feasibility-product-contract-v2-2026-10-02-p60d")
         for name, value in self.outputs.items():
-            if name == "schema.json":
-                self.assertEqual(value["properties"]["contract_version"]["const"], CONTRACT_VERSION)
-            else:
-                self.assertEqual(value["contract_version"], CONTRACT_VERSION)
+            self.assertEqual(value["properties"]["contract_version"]["const"] if name == "schema.json" else value["contract_version"], CONTRACT_VERSION)
 
-    def test_taxonomies_are_closed(self):
+    def test_closed_taxonomies_and_no_producer_semantics(self):
         schema = self.outputs["schema.json"]
         item = schema["definitions"]["item"]["properties"]
         self.assertEqual(item["item_kind"]["enum"], ITEM_KINDS)
         self.assertEqual(item["section"]["enum"], SECTIONS)
         self.assertEqual(item["comparison_scope"]["enum"], COMPARISON_SCOPES + [None])
         self.assertEqual(item["context_state"]["enum"], CONTEXT_STATES + [None])
-        self.assertEqual(schema["definitions"]["summaryEntry"]["properties"]["group"]["enum"], SUMMARY_GROUPS)
+        self.assertEqual(item["verification_state"]["enum"], VERIFICATION_STATES + [None])
+        self.assertEqual(item["eligibility_state"]["enum"], ELIGIBILITY_STATES + [None])
+        self.assertEqual(item["regulatory_use_state"]["enum"], REGULATORY_USE_STATES + [None])
+        self.assertEqual(schema["definitions"]["projectContext"]["properties"]["status_code"]["enum"], PROJECT_STATUS_CODES)
         self.assertEqual(schema["definitions"]["evidenceEntry"]["properties"]["type"]["enum"], EVIDENCE_TYPES)
-        self.assertEqual(set(item["template_key"]["enum"]), set(TEMPLATES))
+        self.assertNotIn("state_label", item)
+        self.assertNotIn("summary_entries", item)
 
     def test_state_mapping_remains_conservative(self):
         self.assertEqual(map_state("RULE_REQUIREMENT_SATISFIED"), "MEETS_BASE_RULE")
-        self.assertEqual(map_state("STREET_SIDE_SETBACK_NOT_APPLICABLE"), "NOT_APPLICABLE")
         self.assertEqual(overall_state(["MEETS_BASE_RULE", "NEEDS_EVIDENCE"]), "PARTIAL_EVALUATION")
-        self.assertNotIn("LIKELY", json.dumps(self.outputs["states.json"]))
-        with self.assertRaises(ValueError):
-            map_state("UNCONTROLLED_NEW_STATE")
+        with self.assertRaises(ValueError): map_state("UNCONTROLLED_NEW_STATE")
 
-    def test_schema_required_fields_exist_in_every_replay(self):
+    def test_schema_shape_and_templates(self):
         schema = self.outputs["schema.json"]
-        top_required = schema["required"]
-        item_required = schema["definitions"]["item"]["required"]
         for name in REPLAYS:
             replay = self.outputs[name]
-            self.assertEqual(set(replay), set(top_required), name)
+            self.assertEqual(set(replay), set(schema["required"]), name)
             for item in replay["items"]:
-                self.assertEqual(set(item), set(item_required), f"{name}:{item['item_id']}")
-                self.assertGreaterEqual(len(item["evidence_entries"]), 1)
-
-    def test_templates_reproduce_every_stored_answer(self):
-        for name in REPLAYS:
-            for item in self.outputs[name]["items"]:
-                template = TEMPLATES[item["template_key"]]
-                self.assertEqual(template.format(**item["template_values"]), item["answer"])
+                self.assertEqual(set(item), set(schema["definitions"]["item"]["required"]))
+                self.assertEqual(TEMPLATES[item["template_key"]].format(**item["template_values"]), item["answer"])
+                self.assertTrue(item["evidence_entries"])
         self.assertEqual(render("NOT_APPLICABLE", {}), "This rule does not apply to this parcel.")
 
-    def test_rs_semantics_are_corrected(self):
-        replay = self.outputs["public-rs-replay.json"]
-        street = self.item("public-rs-replay.json", "RS17_STREET_SIDE")
+    def test_precision_context_and_failure_support(self):
         rear = self.item("public-rs-replay.json", "RS17_REAR")
-        self.assertEqual(street["result_state"], "NOT_APPLICABLE")
-        self.assertEqual(street["summary_entries"], [{"group": "NOT_APPLICABLE", "label": "Street-side setback"}])
-        self.assertEqual(rear["base_requirement"], "13 ft")
-        self.assertEqual(rear["derived_requirement"], "23.5 ft")
-        self.assertEqual(rear["exact_calculation"], "235.02 ft lot depth × 10% = 23.502 ft")
-        summary_groups = [entry["group"] for item in replay["items"] for entry in item["summary_entries"]]
-        self.assertNotIn("MEETS_BASE_RULE", [entry["group"] for entry in street["summary_entries"]])
-        self.assertIn("NOT_APPLICABLE", summary_groups)
-
-    def test_rm_facts_contexts_and_rules_are_distinct(self):
-        zone = self.item("public-rm-replay.json", "RM25_ZONE")
+        self.assertEqual(rear["precision"], {"exact_value": 23.502, "display_value": 23.5, "decimal_places": 1, "unit": "ft"})
         sda = self.item("public-rm-replay.json", "RM25_SDA")
-        fire = self.item("public-rm-replay.json", "RM25_FIRE")
-        self.assertEqual((zone["item_kind"], zone["result_state"]), ("FACT", None))
-        for context in (sda, fire):
-            self.assertEqual(context["item_kind"], "CONTEXT")
-            self.assertNotIn("MEETS_BASE_RULE", [entry["group"] for entry in context["summary_entries"]])
-        self.assertEqual(sda["context_state"], "MAPPED_VERIFICATION_PENDING")
-        self.assertEqual(sda["regulatory_use_state"], "Not used pending verification")
-        self.assertEqual(self.item("public-rm-replay.json", "RM25_BASE_HEIGHT")["result_state"], "CONDITIONAL")
-        self.assertEqual(self.item("public-rm-replay.json", "RM25_PROJECT_HEIGHT")["result_state"], "NOT_EVALUATED")
+        self.assertEqual((sda["mapped_observation"], sda["verification_state"], sda["eligibility_state"], sda["regulatory_use_state"]), (True, "PENDING", "NOT_EVALUATED", "NOT_USED_PENDING_VERIFICATION"))
+        self.assertIn("DOES_NOT_MEET_BASE_RULE", self.outputs["summary-contract.json"]["groups"])
 
-    def test_private_status_and_comparison_scope_are_payload_data(self):
-        replay = self.outputs["private-project-replay.json"]
-        project = replay["project_context"]
-        self.assertEqual(project["project_id"], "PRJ-1111087")
-        self.assertEqual(project["application_date"], "January 29, 2024")
-        self.assertIn("Ordinance O-21618", project["code_profile"])
-        self.assertEqual(replay["items"][0]["comparison_scope"], "THIS_DIMENSION_ONLY")
-        self.assertEqual(replay["privacy"], "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX")
+    def test_private_scope_and_project_status(self):
+        private = self.outputs["private-project-replay.json"]
+        self.assertEqual(private["project_context"]["status_code"], "SUBMITTAL_ISSUANCE_NOT_PROVEN")
+        self.assertEqual(private["project_context"]["application_date"], "2024-01-29")
+        self.assertEqual(private["items"][0]["comparison_scope"], "THIS_DIMENSION_ONLY")
+        for name in ("private-project-replay.json", "blocked-project-replay.json"):
+            self.assertEqual(self.outputs[name]["privacy"], "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX")
+            self.assertIsNotNone(self.outputs[name]["project_context"])
 
-    def test_blocked_replay_separates_base_rules_and_project_comparisons(self):
-        replay = self.outputs["blocked-project-replay.json"]
-        base = [item for item in replay["items"] if item["item_kind"] == "RULE"]
-        comparisons = [item for item in replay["items"] if item["item_kind"] == "COMPARISON"]
-        self.assertEqual({item["result_state"] for item in base}, {"CONDITIONAL"})
-        self.assertEqual({item["result_state"] for item in comparisons}, {"NEEDS_EVIDENCE"})
-        self.assertTrue(all(item["blocker"] for item in comparisons))
-
-    def test_public_private_boundary(self):
+    def test_public_private_boundary_and_dates(self):
         for name in ("public-rs-replay.json", "public-rm-replay.json"):
             replay = self.outputs[name]
             self.assertEqual(replay["privacy"], "PUBLIC")
             self.assertIsNone(replay["project_context"])
-            serialized = json.dumps(replay)
-            for marker in ("PRJ-", "PRIVATE_AUTHORIZED_EVIDENCE", "source_sha256", "/Users/"):
-                self.assertNotIn(marker, serialized)
-        for name in ("private-project-replay.json", "blocked-project-replay.json"):
-            self.assertIsNotNone(self.outputs[name]["project_context"])
-            self.assertEqual(self.outputs[name]["privacy"], "PRIVATE_NO_PUBLIC_CACHE_OR_INDEX")
+            self.assertNotRegex(json.dumps(replay), r"PRJ-|PRIVATE_AUTHORIZED|private plan|/Users/")
+        mapping = [entry for item in self.outputs["public-rm-replay.json"]["items"] for entry in item["evidence_entries"] if entry["type"] in {"PUBLIC_MAPPING", "MAPPING_OBSERVATION"}]
+        self.assertTrue(mapping and all(entry["source_date"] for entry in mapping))
 
-    def test_no_prohibited_claims_or_empty_evidence(self):
-        deny = [text.lower() for text in self.outputs["prohibited-statements.json"]["denylist"]]
-        for name in REPLAYS:
-            for item in self.outputs[name]["items"]:
-                text = f"{item['answer']} {item['explanation']}".lower()
-                for claim in deny:
-                    self.assertNotIn(claim.lower(), text)
-                self.assertTrue(all(entry["label"].strip() and entry["value"].strip() for entry in item["evidence_entries"]))
-
-    def test_decision_and_scope(self):
-        self.assertIn("development capacity", self.outputs["scope.json"]["classifications"]["OUTSIDE_V0_SCOPE"])
-        self.assertEqual(self.outputs["decision.json"]["readiness"], "FEASIBILITY_RENDERER_GENERIC_AND_INTEGRATION_SAFE")
-        self.assertEqual(self.outputs["decision.json"]["next"], "NEXT_FEASIBILITY_STEP: final independent product verification")
-        self.assertFalse(self.outputs["decision.json"]["production_wired"])
-
-    def test_deterministic_rebuild_and_committed_outputs(self):
+    def test_language_decision_and_integrity(self):
+        public_copy = json.dumps([self.outputs["public-rs-replay.json"], self.outputs["public-rm-replay.json"]])
+        self.assertNotRegex(public_copy, r"(?i)not provided in this replay|raw acquisition|unit band")
+        self.assertIn("applicable RS lot-area band and any steep-hillside rule", public_copy)
+        self.assertEqual(self.outputs["decision.json"]["readiness"], "FEASIBILITY_CONTRACT_SEMANTICALLY_ENFORCED_AND_INTEGRATION_SAFE")
+        self.assertEqual(self.outputs["decision.json"]["next"], "NEXT_FEASIBILITY_STEP: final external verification")
         self.assertEqual(build_outputs(), build_outputs())
-        for name, value in self.outputs.items():
-            self.assertEqual(json.loads((OUTPUT / name).read_text()), value, name)
+        for name, value in self.outputs.items(): self.assertEqual(json.loads((OUTPUT / name).read_text()), value, name)
 
     def test_no_secret_or_production_material(self):
         serialized = json.dumps(self.outputs)

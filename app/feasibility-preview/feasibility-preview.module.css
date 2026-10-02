@@ -99,6 +99,7 @@
 .evidence dl div { border-left: 2px solid #dde3e0; padding-left: 9px; }
 .evidence dt { color: #7a837f; font-size: .6rem; font-weight: 720; letter-spacing: .035em; text-transform: uppercase; }
 .evidence dd { margin: 3px 0 0; color: #65706c; font-size: .66rem; line-height: 1.42; }
+.evidence small { display: block; margin-top: 2px; color: #858d89; font-size: .6rem; }
 .evidence a { color: #465f8f; text-underline-offset: 2px; }
 .footer { max-width: 1180px; margin: 0 auto; border-top: 1px solid var(--line); padding-top: 18px; color: #7b847f; font-size: .64rem; }
 

@@ -45,5 +45,5 @@ export default async function FeasibilityPreviewPage({
     if (!(error instanceof FeasibilityPreviewError)) throw error;
     return <PreviewContractError />;
   }
-  return <FeasibilityPreview selectedView={mode} payload={preview.payload} templates={preview.templates} />;
+  return <FeasibilityPreview selectedView={mode} payload={preview.payload} renderer={preview.renderer} />;
 }
