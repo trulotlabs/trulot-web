@@ -1,5 +1,5 @@
 {
-  "$id": "trulot://schemas/bounded-feasibility-product-contract-v2",
+  "$id": "trulot://schemas/bounded-feasibility-product-contract-v3",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "additionalProperties": false,
   "definitions": {
@@ -76,6 +76,35 @@
       ],
       "type": "object"
     },
+    "comparison": {
+      "additionalProperties": false,
+      "properties": {
+        "comparator": {
+          "enum": [
+            "MIN",
+            "MAX",
+            "EXACT"
+          ]
+        },
+        "fact_value": {
+          "type": "number"
+        },
+        "requirement_value": {
+          "type": "number"
+        },
+        "unit": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "comparator",
+        "requirement_value",
+        "fact_value",
+        "unit"
+      ],
+      "type": "object"
+    },
     "evidenceEntry": {
       "additionalProperties": false,
       "properties": {
@@ -95,6 +124,19 @@
             "PRIVATE_AUTHORIZED_EVIDENCE"
           ]
         },
+        "project_status_code": {
+          "enum": [
+            "SUBMITTAL_ISSUANCE_NOT_PROVEN",
+            "CITY_ISSUED",
+            "REFERENCE_SHEETS_APPROVAL_NOT_VERIFIED",
+            "EVIDENCE_REVIEW",
+            null
+          ],
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "source_date": {
           "type": [
             "string",
@@ -110,6 +152,10 @@
             "RULE_VERSION",
             "COMPARISON_INPUT",
             "MAPPING_OBSERVATION",
+            "VERIFICATION_RECORD",
+            "ELIGIBILITY_RULE",
+            "ELIGIBILITY_PREDICATE",
+            "REGULATORY_DETERMINATION",
             "BLOCKER_EVIDENCE",
             "PRIVATE_PLAN_STATUS",
             "PRIVATE_AUTHORIZED_EVIDENCE",
@@ -134,7 +180,8 @@
         "value",
         "privacy",
         "source_date",
-        "measurements"
+        "measurements",
+        "project_status_code"
       ],
       "type": "object"
     },
@@ -164,6 +211,16 @@
             },
             {
               "$ref": "#/definitions/blocker"
+            }
+          ]
+        },
+        "comparison": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/definitions/comparison"
             }
           ]
         },
@@ -334,13 +391,13 @@
         },
         "template_key": {
           "enum": [
+            "COMPARISON_DOES_NOT_MEET",
+            "COMPARISON_MEETS",
             "CONDITIONAL_BASE_RULE",
             "CONDITIONAL_CURRENT_RULE",
             "FACT_IDENTIFIED",
             "MAPPED_CONTEXT",
             "MAPPED_CONTEXT_PENDING",
-            "MINIMUM_COMPARISON_DOES_NOT_MEET",
-            "MINIMUM_COMPARISON_MEETS",
             "NEEDS_EVIDENCE",
             "NOT_APPLICABLE",
             "NOT_EVALUATED",
@@ -379,6 +436,7 @@
         "section",
         "result_state",
         "comparison_scope",
+        "comparison",
         "template_key",
         "template_values",
         "answer",
@@ -442,6 +500,11 @@
         "exact_value": {
           "type": "number"
         },
+        "rounding_rule": {
+          "enum": [
+            "HALF_UP"
+          ]
+        },
         "unit": {
           "minLength": 1,
           "type": "string"
@@ -451,6 +514,7 @@
         "exact_value",
         "display_value",
         "decimal_places",
+        "rounding_rule",
         "unit"
       ],
       "type": "object"
@@ -496,6 +560,12 @@
             "EVIDENCE_REVIEW"
           ]
         },
+        "status_context": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
         "target_id": {
           "minLength": 1,
           "type": "string"
@@ -505,6 +575,7 @@
         "target_id",
         "project_id",
         "status_code",
+        "status_context",
         "application_date",
         "code_profile",
         "privacy_label",
@@ -570,7 +641,7 @@
       "type": "array"
     },
     "contract_version": {
-      "const": "bounded-feasibility-product-contract-v2-2026-10-02-p60d"
+      "const": "bounded-feasibility-product-contract-v3-2026-10-02-p60e"
     },
     "items": {
       "items": {
@@ -633,13 +704,17 @@
     "actions",
     "provenance"
   ],
-  "title": "Bounded Feasibility Product Contract V2",
+  "title": "Bounded Feasibility Product Contract V3",
   "type": "object",
   "validation_order": [
     "STRUCTURAL_SCHEMA",
     "SEMANTIC_INVARIANTS",
-    "PRIVACY",
+    "SCOPE_PRIVACY",
+    "COMPARATOR_ARITHMETIC",
     "DETERMINISTIC_TEMPLATE",
-    "EVIDENCE_CONSISTENCY"
+    "EVIDENCE_TYPE_REQUIREMENTS",
+    "EVIDENCE_VALUE_CONSISTENCY",
+    "PRECISION_ROUNDING",
+    "PROJECT_STATUS_EVIDENCE"
   ]
 }

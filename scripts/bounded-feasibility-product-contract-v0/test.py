@@ -12,7 +12,7 @@ from resolver import CONTRACT_VERSION, map_state, overall_state, render
 REPLAYS = ["public-rs-replay.json", "public-rm-replay.json", "private-project-replay.json", "blocked-project-replay.json"]
 
 
-class Packet60DSemanticContractTests(unittest.TestCase):
+class Packet60EComparisonContractTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.outputs = build_outputs()
@@ -21,7 +21,7 @@ class Packet60DSemanticContractTests(unittest.TestCase):
         return next(item for item in self.outputs[replay]["items"] if item["item_id"] == item_id)
 
     def test_contract_is_materially_versioned(self):
-        self.assertEqual(CONTRACT_VERSION, "bounded-feasibility-product-contract-v2-2026-10-02-p60d")
+        self.assertEqual(CONTRACT_VERSION, "bounded-feasibility-product-contract-v3-2026-10-02-p60e")
         for name, value in self.outputs.items():
             self.assertEqual(value["properties"]["contract_version"]["const"] if name == "schema.json" else value["contract_version"], CONTRACT_VERSION)
 
@@ -58,7 +58,7 @@ class Packet60DSemanticContractTests(unittest.TestCase):
 
     def test_precision_context_and_failure_support(self):
         rear = self.item("public-rs-replay.json", "RS17_REAR")
-        self.assertEqual(rear["precision"], {"exact_value": 23.502, "display_value": 23.5, "decimal_places": 1, "unit": "ft"})
+        self.assertEqual(rear["precision"], {"exact_value": 23.502, "display_value": 23.5, "decimal_places": 1, "rounding_rule": "HALF_UP", "unit": "ft"})
         sda = self.item("public-rm-replay.json", "RM25_SDA")
         self.assertEqual((sda["mapped_observation"], sda["verification_state"], sda["eligibility_state"], sda["regulatory_use_state"]), (True, "PENDING", "NOT_EVALUATED", "NOT_USED_PENDING_VERIFICATION"))
         self.assertIn("DOES_NOT_MEET_BASE_RULE", self.outputs["summary-contract.json"]["groups"])
@@ -85,7 +85,7 @@ class Packet60DSemanticContractTests(unittest.TestCase):
         public_copy = json.dumps([self.outputs["public-rs-replay.json"], self.outputs["public-rm-replay.json"]])
         self.assertNotRegex(public_copy, r"(?i)not provided in this replay|raw acquisition|unit band")
         self.assertIn("applicable RS lot-area band and any steep-hillside rule", public_copy)
-        self.assertEqual(self.outputs["decision.json"]["readiness"], "FEASIBILITY_CONTRACT_SEMANTICALLY_ENFORCED_AND_INTEGRATION_SAFE")
+        self.assertEqual(self.outputs["decision.json"]["readiness"], "FEASIBILITY_CONTRACT_COMPARISON_ENFORCED_AND_READY_FOR_INTEGRATION")
         self.assertEqual(self.outputs["decision.json"]["next"], "NEXT_FEASIBILITY_STEP: final external verification")
         self.assertEqual(build_outputs(), build_outputs())
         for name, value in self.outputs.items(): self.assertEqual(json.loads((OUTPUT / name).read_text()), value, name)

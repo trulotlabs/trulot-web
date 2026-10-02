@@ -1,11 +1,16 @@
 {
+  "comparators": [
+    "MIN",
+    "MAX",
+    "EXACT"
+  ],
   "comparison_scopes": [
     "PARCEL_RULE",
     "THIS_DIMENSION_ONLY",
     "PROJECT_SPECIFIC",
     "EXISTING_STRUCTURE"
   ],
-  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
+  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
   "item_kinds": [
     "FACT",
     "RULE",

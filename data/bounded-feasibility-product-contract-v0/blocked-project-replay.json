@@ -1,13 +1,14 @@
 {
   "actions": [],
   "base_facts": [],
-  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
+  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
   "items": [
     {
       "actions": [],
       "answer": "Base height rule: 40 ft plus angled-plane conditions.",
       "base_requirement": null,
       "blocker": null,
+      "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
@@ -20,6 +21,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective May 6, 2023",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -29,6 +31,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective May 6, 2023",
           "type": "RULE_VERSION",
           "value": "RM-2-5 application profile"
@@ -43,6 +46,7 @@
             }
           ],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Evaluated October 2, 2026",
           "type": "COMPARISON_INPUT",
           "value": "40 ft plus angled-plane conditions"
@@ -69,13 +73,14 @@
     },
     {
       "actions": [],
-      "answer": "The project-height check cannot be evaluated yet because a project-height check needs a dimensioned height analysis using the City’s required grade and roof measurement rules.",
+      "answer": "This check cannot be completed yet. A dimensioned height analysis using the City’s required grade and roof measurement rules is needed.",
       "base_requirement": null,
       "blocker": {
         "code": "CODE_HEIGHT_ANALYSIS",
-        "missing": "a project-height check needs a dimensioned height analysis using the City’s required grade and roof measurement rules",
+        "missing": "A dimensioned height analysis using the City’s required grade and roof measurement rules is needed.",
         "why": "A plan label cannot be compared until its grade, highest point, roof treatment, and angled-plane measurements use the City’s method."
       },
+      "comparison": null,
       "comparison_scope": "PROJECT_SPECIFIC",
       "context_state": null,
       "context_type": null,
@@ -88,6 +93,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective May 6, 2023",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -97,6 +103,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective May 6, 2023",
           "type": "RULE_VERSION",
           "value": "RM-2-5 application profile"
@@ -105,14 +112,16 @@
           "label": "Project review status",
           "measurements": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "project_status_code": "EVIDENCE_REVIEW",
           "source_date": null,
           "type": "PRIVATE_PROJECT_REVIEW",
-          "value": "Height evidence remains under review"
+          "value": "Project evidence remains under review"
         },
         {
           "label": "Private plan fact",
           "measurements": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "project_status_code": null,
           "source_date": null,
           "type": "PRIVATE_PLAN_FACT",
           "value": "The plan labels 40 ft, but its measurement method has not been reconciled to the City’s rules"
@@ -127,6 +136,7 @@
             }
           ],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "project_status_code": null,
           "source_date": null,
           "type": "COMPARISON_INPUT",
           "value": "Plan label: 40 ft; City measurement reconciliation pending"
@@ -135,6 +145,7 @@
           "label": "Evidence needed",
           "measurements": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "project_status_code": null,
           "source_date": null,
           "type": "BLOCKER_EVIDENCE",
           "value": "Dimensioned grade, highest-point, roof-treatment, and angled-plane analysis"
@@ -154,8 +165,7 @@
       "section": "HEIGHT_FAR",
       "template_key": "NEEDS_EVIDENCE",
       "template_values": {
-        "blocker": "a project-height check needs a dimensioned height analysis using the City’s required grade and roof measurement rules",
-        "name": "project-height check"
+        "blocker": "A dimensioned height analysis using the City’s required grade and roof measurement rules is needed."
       },
       "verification_state": null
     },
@@ -164,6 +174,7 @@
       "answer": "Base FAR rule: 1.35 selected maximum.",
       "base_requirement": null,
       "blocker": null,
+      "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
@@ -176,6 +187,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective May 6, 2023",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -185,6 +197,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective May 6, 2023",
           "type": "RULE_VERSION",
           "value": "RM-2-5 application profile"
@@ -199,6 +212,7 @@
             }
           ],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Evaluated October 2, 2026",
           "type": "COMPARISON_INPUT",
           "value": "1.35 selected maximum"
@@ -225,13 +239,14 @@
     },
     {
       "actions": [],
-      "answer": "The project FAR check cannot be evaluated yet because a project FAR check needs a floor-area worksheet showing what counts toward FAR and a verified legal premises area.",
+      "answer": "This check cannot be completed yet. A floor-area worksheet showing what counts toward FAR and a verified legal premises area is needed.",
       "base_requirement": null,
       "blocker": {
         "code": "CODE_GFA_AND_PREMISES_AREA",
-        "missing": "a project FAR check needs a floor-area worksheet showing what counts toward FAR and a verified legal premises area",
+        "missing": "A floor-area worksheet showing what counts toward FAR and a verified legal premises area is needed.",
         "why": "The counted floor area and legal premises area must both use the applicable City definitions."
       },
+      "comparison": null,
       "comparison_scope": "PROJECT_SPECIFIC",
       "context_state": null,
       "context_type": null,
@@ -244,6 +259,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective May 6, 2023",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -253,6 +269,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective May 6, 2023",
           "type": "RULE_VERSION",
           "value": "RM-2-5 application profile"
@@ -261,14 +278,16 @@
           "label": "Project review status",
           "measurements": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "project_status_code": "EVIDENCE_REVIEW",
           "source_date": null,
           "type": "PRIVATE_PROJECT_REVIEW",
-          "value": "FAR evidence remains under review"
+          "value": "Project evidence remains under review"
         },
         {
           "label": "Private plan fact",
           "measurements": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "project_status_code": null,
           "source_date": null,
           "type": "PRIVATE_PLAN_FACT",
           "value": "The plan labels FAR 1.10, but the counted floor area and premises area are not independently verified"
@@ -283,6 +302,7 @@
             }
           ],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "project_status_code": null,
           "source_date": null,
           "type": "COMPARISON_INPUT",
           "value": "Plan label: FAR 1.10; counted floor area and premises area pending"
@@ -291,6 +311,7 @@
           "label": "Evidence needed",
           "measurements": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "project_status_code": null,
           "source_date": null,
           "type": "BLOCKER_EVIDENCE",
           "value": "Code-compatible floor-area worksheet and verified legal premises area"
@@ -310,8 +331,7 @@
       "section": "HEIGHT_FAR",
       "template_key": "NEEDS_EVIDENCE",
       "template_values": {
-        "blocker": "a project FAR check needs a floor-area worksheet showing what counts toward FAR and a verified legal premises area",
-        "name": "project FAR check"
+        "blocker": "A floor-area worksheet showing what counts toward FAR and a verified legal premises area is needed."
       },
       "verification_state": null
     }
@@ -327,6 +347,7 @@
     "privacy_label": "Not for public indexing · no public cache",
     "project_id": "PRJ-1111087",
     "status_code": "EVIDENCE_REVIEW",
+    "status_context": null,
     "target_id": "private-evidence-status"
   },
   "provenance": [

@@ -8,6 +8,9 @@ node scripts/bounded-feasibility-preview-v0/test-60b.mjs
 node scripts/bounded-feasibility-preview-v0/test-60c.mjs
 node scripts/bounded-feasibility-preview-v0/test-60d-adversarial.mjs
 node scripts/bounded-feasibility-preview-v0/test-60d-positive.mjs
+node scripts/bounded-feasibility-preview-v0/test-60e-reviewer-probes.mjs
+node scripts/bounded-feasibility-preview-v0/test-60e-positive.mjs
+node scripts/bounded-feasibility-preview-v0/test-60e-mutations.mjs
 ```
 
 Run the local preview:

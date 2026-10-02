@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+import assert from "node:assert/strict";
+import fs from "node:fs";
+import Module from "node:module";
+import path from "node:path";
+import ts from "typescript";
+import { fileURLToPath } from "node:url";
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
+Module._extensions[".ts"] = (loaded, file) => loaded._compile(ts.transpileModule(fs.readFileSync(file, "utf8"), { compilerOptions: { module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022, esModuleInterop: true }, fileName: file }).outputText, file);
+const require = Module.createRequire(import.meta.url);
+const preview = require(path.join(root, "lib/bounded-feasibility-preview.ts")); const presentation = require(path.join(root, "lib/feasibility-preview-presentation.ts"));
+const renderer = preview.loadFeasibilityRenderer(root); const schema = preview.loadFeasibilitySchema(root); const clone = (value) => JSON.parse(JSON.stringify(value));
+const load = (mode) => clone(preview.loadFeasibilityPreview(mode, root).payload); const validate = (payload) => preview.validateFeasibilityPreviewPayload(payload, renderer.templates, schema); const refresh = (item) => { item.answer = presentation.renderItemAnswer(item, renderer.templates); };
+const comparison = (payload) => payload.items.find((item) => item.item_kind === "COMPARISON" && item.result_state === "MEETS_BASE_RULE");
+function configure(payload, comparator, requirement, fact, state) { const item = comparison(payload); item.comparison = { comparator, requirement_value: requirement, fact_value: fact, unit: "sq ft" }; item.result_state = state; item.template_key = state === "MEETS_BASE_RULE" ? "COMPARISON_MEETS" : "COMPARISON_DOES_NOT_MEET"; item.template_values.requirement = `${requirement} sq ft ${comparator === "MIN" ? "minimum" : comparator === "MAX" ? "maximum" : "exact"}`; item.display_requirement = item.template_values.requirement; item.display_fact = `${fact} sq ft`; const input = item.evidence_entries.find((entry) => entry.type === "COMPARISON_INPUT"); input.value = `${requirement} sq ft requirement; ${fact} sq ft fact`; input.measurements = [{ kind: "REQUIREMENT", value: requirement, unit: "sq ft" }, { kind: "FACT", value: fact, unit: "sq ft" }]; refresh(item); return item; }
+
+for (const [comparator, requirement, fact, state] of [["MIN", 5000, 6000, "MEETS_BASE_RULE"], ["MIN", 5000, 4000, "DOES_NOT_MEET_BASE_RULE"], ["MAX", 5000, 4000, "MEETS_BASE_RULE"], ["MAX", 5000, 6000, "DOES_NOT_MEET_BASE_RULE"], ["EXACT", 5000, 5000, "MEETS_BASE_RULE"], ["EXACT", 5000, 5001, "DOES_NOT_MEET_BASE_RULE"]]) { const payload = load("rs"); const item = configure(payload, comparator, requirement, fact, state); const validated = validate(payload); assert.equal(validated.items.find((candidate) => candidate.item_id === item.item_id).result_state, state); }
+
+const rs = validate(load("rs")); const rm = validate(load("rm")); const privateProject = validate(load("private")); const blocked = validate(load("blocked"));
+assert.ok(rm.items.some((item) => item.item_kind === "FACT")); assert.ok(rm.items.some((item) => item.context_state === "MAPPED_VERIFICATION_PENDING")); assert.ok(rm.items.some((item) => item.context_state === "MAPPED_VERIFIED")); assert.ok(rs.items.some((item) => item.result_state === "NOT_APPLICABLE")); assert.ok(blocked.items.some((item) => item.result_state === "NEEDS_EVIDENCE")); assert.ok(rm.items.some((item) => item.result_state === "NOT_EVALUATED")); assert.equal(privateProject.project_context.status_code, "SUBMITTAL_ISSUANCE_NOT_PROVEN");
+
+const eligible = load("rm"); const fire = eligible.items.find((item) => item.context_type === "FIRE"); fire.eligibility_state = "ELIGIBLE"; fire.regulatory_use_state = "APPLIES"; for (const [type, label] of [["ELIGIBILITY_RULE", "Eligibility rule"], ["ELIGIBILITY_PREDICATE", "Eligibility predicates"], ["REGULATORY_DETERMINATION", "Regulatory determination"]]) fire.evidence_entries.push({ type, label, value: `${label} evaluated`, privacy: "PUBLIC_AUTHORITY", source_date: "Evaluated October 2, 2026", measurements: [], project_status_code: null }); validate(eligible);
+
+const existingNeeds = load("private"); existingNeeds.scope = "EXISTING_STRUCTURE"; existingNeeds.overall_state = "MORE_EVIDENCE_NEEDED"; const need = existingNeeds.items[0]; need.result_state = "NEEDS_EVIDENCE"; need.comparison_scope = "EXISTING_STRUCTURE"; need.comparison = null; need.template_key = "NEEDS_EVIDENCE"; need.template_values = { blocker: "a current survey tying the building frame to the property lines" }; need.blocker = { code: "CURRENT_SURVEY_STRUCTURE_GEOMETRY", missing: "a current survey tying the building frame to the property lines", why: "A rule does not establish existing building geometry." }; need.evidence_entries.push({ type: "BLOCKER_EVIDENCE", label: "Evidence needed", value: "Current survey-controlled building-frame geometry", privacy: "PRIVATE_AUTHORIZED_EVIDENCE", source_date: null, measurements: [], project_status_code: null }); refresh(need); validate(existingNeeds);
+
+const existingConclusive = load("private"); existingConclusive.scope = "EXISTING_STRUCTURE"; existingConclusive.items[0].comparison_scope = "EXISTING_STRUCTURE"; existingConclusive.items[0].evidence_entries.push({ type: "PRIVATE_SURVEY", label: "Current survey", value: "Survey-controlled setback evidence", privacy: "PRIVATE_AUTHORIZED_EVIDENCE", source_date: "Surveyed September 1, 2026", measurements: [], project_status_code: null }); validate(existingConclusive);
+
+const issued = load("private"); issued.project_context.status_code = "CITY_ISSUED"; issued.project_context.status_context = null; const status = issued.items[0].evidence_entries.find((entry) => entry.type === "PRIVATE_PLAN_STATUS"); status.project_status_code = "CITY_ISSUED"; status.value = "City issuance record verified"; validate(issued);
+
+const selectedSummary = presentation.buildSummary(privateProject).find((group) => group.group === "MEETS_SELECTED_RULE"); assert.ok(selectedSummary?.items.length === 1); assert.equal(renderer.projectStatusLabels.SUBMITTAL_ISSUANCE_NOT_PROVEN, "Construction-document submittal — issuance not proven"); assert.equal(renderer.projectStatusLabels.EVIDENCE_REVIEW, "Private project evidence review");
+console.log("PASS Packet 60E positive fixtures: MIN/MAX/EXACT, context, applicability, blockers, private/existing scope, eligibility, and evidenced project statuses");

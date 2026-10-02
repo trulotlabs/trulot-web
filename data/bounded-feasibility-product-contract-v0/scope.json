@@ -1,5 +1,5 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
+  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
   "matrix": {
     "EXISTING_STRUCTURE": "PRIVATE only; project context required",
     "PRIVATE_PROJECT": "PRIVATE only; project context required",

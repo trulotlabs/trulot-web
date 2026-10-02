@@ -2,8 +2,8 @@ import type { EligibilityState, EvidenceEntry, FeasibilityItem, PreviewPayload, 
 
 export const SECTION_ORDER: Section[] = ["BASE_FACTS", "PARCEL_DIMENSIONS", "SETBACKS", "HEIGHT_FAR", "MAPPED_CONTEXT", "EVIDENCE_NEEDED"];
 export const SECTION_LABELS: Record<Section, string> = { BASE_FACTS: "Base facts", PARCEL_DIMENSIONS: "Parcel dimensions", SETBACKS: "Setbacks", HEIGHT_FAR: "Height and FAR", MAPPED_CONTEXT: "Mapped context", EVIDENCE_NEEDED: "Evidence needed" };
-export const SUMMARY_ORDER: SummaryGroup[] = ["MEETS_BASE_RULE", "DOES_NOT_MEET_BASE_RULE", "CONDITIONAL", "NEEDS_EVIDENCE", "MAPPED_CONTEXT", "NOT_APPLICABLE", "NOT_EVALUATED", "SOURCE_UNAVAILABLE", "OUTSIDE_CURRENT_SCOPE"];
-export const SUMMARY_LABELS: Record<SummaryGroup, string> = { MEETS_BASE_RULE: "Meets base rule", DOES_NOT_MEET_BASE_RULE: "Does not meet base rule", CONDITIONAL: "Conditional", NEEDS_EVIDENCE: "Needs evidence", NOT_EVALUATED: "Not evaluated", MAPPED_CONTEXT: "Mapped context", NOT_APPLICABLE: "Not applicable", SOURCE_UNAVAILABLE: "Source unavailable", OUTSIDE_CURRENT_SCOPE: "Outside current scope" };
+export const SUMMARY_ORDER: SummaryGroup[] = ["MEETS_BASE_RULE", "DOES_NOT_MEET_BASE_RULE", "MEETS_SELECTED_RULE", "DOES_NOT_MEET_SELECTED_RULE", "CONDITIONAL", "NEEDS_EVIDENCE", "MAPPED_CONTEXT", "NOT_APPLICABLE", "NOT_EVALUATED", "SOURCE_UNAVAILABLE", "OUTSIDE_CURRENT_SCOPE"];
+export const SUMMARY_LABELS: Record<SummaryGroup, string> = { MEETS_BASE_RULE: "Meets base rule", DOES_NOT_MEET_BASE_RULE: "Does not meet base rule", MEETS_SELECTED_RULE: "Meets selected rule", DOES_NOT_MEET_SELECTED_RULE: "Does not meet selected rule", CONDITIONAL: "Conditional", NEEDS_EVIDENCE: "Needs evidence", NOT_EVALUATED: "Not evaluated", MAPPED_CONTEXT: "Mapped context", NOT_APPLICABLE: "Not applicable", SOURCE_UNAVAILABLE: "Source unavailable", OUTSIDE_CURRENT_SCOPE: "Outside current scope" };
 export const OVERALL_LABELS: Record<PreviewPayload["overall_state"], string> = { BASE_PARCEL_RULES_EVALUATED: "Base parcel rules evaluated", PARTIAL_EVALUATION: "Partial evaluation", MORE_EVIDENCE_NEEDED: "More evidence needed", OUTSIDE_CURRENT_SCOPE: "Outside current scope", SOURCE_UNAVAILABLE: "Source unavailable" };
 export const VERIFICATION_LABELS: Record<VerificationState, string> = { PENDING: "Pending", VERIFIED: "Verified", NO_INTERSECTION: "No intersection", SOURCE_UNAVAILABLE: "Source unavailable", NOT_EVALUATED: "Not evaluated" };
 export const ELIGIBILITY_LABELS: Record<EligibilityState, string> = { NOT_EVALUATED: "Not evaluated", ELIGIBLE: "Eligible", NOT_ELIGIBLE: "Not eligible", SOURCE_UNAVAILABLE: "Source unavailable" };
@@ -27,7 +27,9 @@ function summaryForItem(item: FeasibilityItem): { group: SummaryGroup; text: str
   if (item.item_kind === "FACT") return null;
   if (item.item_kind === "CONTEXT") { const group: SummaryGroup = item.context_state === "SOURCE_UNAVAILABLE" ? "SOURCE_UNAVAILABLE" : item.context_state === "NOT_EVALUATED" ? "NOT_EVALUATED" : "MAPPED_CONTEXT"; return { group, text: item.name, target: item.item_id }; }
   if (!item.result_state) return null;
-  return { group: item.result_state, text: item.name, target: item.item_id };
+  const scoped = item.comparison_scope === "THIS_DIMENSION_ONLY" || item.comparison_scope === "PROJECT_SPECIFIC" || item.comparison_scope === "EXISTING_STRUCTURE";
+  const group = scoped && item.result_state === "MEETS_BASE_RULE" ? "MEETS_SELECTED_RULE" : scoped && item.result_state === "DOES_NOT_MEET_BASE_RULE" ? "DOES_NOT_MEET_SELECTED_RULE" : item.result_state;
+  return { group, text: item.name, target: item.item_id };
 }
 export function buildSummary(payload: PreviewPayload): SummarySection[] {
   const entries = payload.items.map(summaryForItem).filter((entry): entry is NonNullable<typeof entry> => entry !== null);
@@ -39,4 +41,4 @@ export function cardFactLabel(item: FeasibilityItem): string { if (item.item_kin
 export function cardRequirementLabel(item: FeasibilityItem): string { if (item.item_kind === "CONTEXT") return "Context status"; if (item.item_kind === "FACT") return "Fact source"; return "Rule requirement"; }
 export function projectStatusLabel(code: ProjectStatusCode, labels: Record<ProjectStatusCode, string>): string { return labels[code]; }
 export function formatApplicationDate(value: string | null): string { if (!value) return "Application date unavailable"; const parsed = new Date(`${value}T00:00:00Z`); return new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(parsed); }
-export function evidenceSourceDate(entry: EvidenceEntry): string | null { if (entry.source_date) return entry.source_date; return ["PUBLIC_AUTHORITY", "PUBLIC_MAPPING", "PUBLIC_CODE", "RULE_VERSION", "MAPPING_OBSERVATION"].includes(entry.type) ? "Source date unavailable" : null; }
+export function evidenceSourceDate(entry: EvidenceEntry): string | null { if (entry.source_date) return entry.source_date; return ["PUBLIC_AUTHORITY", "PUBLIC_MAPPING", "PUBLIC_CODE", "RULE_VERSION", "MAPPING_OBSERVATION", "VERIFICATION_RECORD", "ELIGIBILITY_RULE", "ELIGIBILITY_PREDICATE", "REGULATORY_DETERMINATION"].includes(entry.type) ? "Source date unavailable" : null; }

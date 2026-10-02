@@ -17,13 +17,19 @@
       "value": "Public parcel sources only"
     }
   ],
-  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
+  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
   "items": [
     {
       "actions": [],
       "answer": "Meets the 5,000 sq ft minimum lot area rule.",
       "base_requirement": null,
       "blocker": null,
+      "comparison": {
+        "comparator": "MIN",
+        "fact_value": 22096.32,
+        "requirement_value": 5000,
+        "unit": "sq ft"
+      },
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
@@ -36,6 +42,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -45,6 +52,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "RULE_VERSION",
           "value": "RS-1-7"
@@ -53,6 +61,7 @@
           "label": "Parcel facts",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Recorded September 24, 2026",
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
@@ -72,6 +81,7 @@
             }
           ],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Evaluated October 2, 2026",
           "type": "COMPARISON_INPUT",
           "value": "5,000 sq ft minimum; exact Code-defined area 22,096.320 sq ft"
@@ -89,7 +99,7 @@
       "result_state": "MEETS_BASE_RULE",
       "rule_family": "MINIMUM_LOT_AREA",
       "section": "PARCEL_DIMENSIONS",
-      "template_key": "MINIMUM_COMPARISON_MEETS",
+      "template_key": "COMPARISON_MEETS",
       "template_values": {
         "name": "lot area",
         "requirement": "5,000 sq ft minimum"
@@ -101,6 +111,12 @@
       "answer": "Meets the 50 ft minimum lot width rule.",
       "base_requirement": null,
       "blocker": null,
+      "comparison": {
+        "comparator": "MIN",
+        "fact_value": 94,
+        "requirement_value": 50,
+        "unit": "ft"
+      },
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
@@ -113,6 +129,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -122,6 +139,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "RULE_VERSION",
           "value": "RS-1-7"
@@ -130,6 +148,7 @@
           "label": "Parcel facts",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Recorded September 24, 2026",
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
@@ -149,6 +168,7 @@
             }
           ],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Evaluated October 2, 2026",
           "type": "COMPARISON_INPUT",
           "value": "50 ft minimum; exact Code-defined width 94.00 ft"
@@ -166,7 +186,7 @@
       "result_state": "MEETS_BASE_RULE",
       "rule_family": "MINIMUM_LOT_WIDTH",
       "section": "PARCEL_DIMENSIONS",
-      "template_key": "MINIMUM_COMPARISON_MEETS",
+      "template_key": "COMPARISON_MEETS",
       "template_values": {
         "name": "lot width",
         "requirement": "50 ft minimum"
@@ -178,6 +198,12 @@
       "answer": "Meets the 95 ft minimum lot depth rule.",
       "base_requirement": null,
       "blocker": null,
+      "comparison": {
+        "comparator": "MIN",
+        "fact_value": 235.02,
+        "requirement_value": 95,
+        "unit": "ft"
+      },
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
@@ -190,6 +216,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -199,6 +226,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "RULE_VERSION",
           "value": "RS-1-7"
@@ -207,6 +235,7 @@
           "label": "Parcel facts",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Recorded September 24, 2026",
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
@@ -226,6 +255,7 @@
             }
           ],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Evaluated October 2, 2026",
           "type": "COMPARISON_INPUT",
           "value": "95 ft minimum; exact Code-defined depth 235.02 ft"
@@ -243,7 +273,7 @@
       "result_state": "MEETS_BASE_RULE",
       "rule_family": "MINIMUM_LOT_DEPTH",
       "section": "PARCEL_DIMENSIONS",
-      "template_key": "MINIMUM_COMPARISON_MEETS",
+      "template_key": "COMPARISON_MEETS",
       "template_values": {
         "name": "lot depth",
         "requirement": "95 ft minimum"
@@ -255,6 +285,12 @@
       "answer": "Meets the 50 ft minimum frontage rule.",
       "base_requirement": null,
       "blocker": null,
+      "comparison": {
+        "comparator": "MIN",
+        "fact_value": 94,
+        "requirement_value": 50,
+        "unit": "ft"
+      },
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
@@ -267,6 +303,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -276,6 +313,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "RULE_VERSION",
           "value": "RS-1-7"
@@ -284,6 +322,7 @@
           "label": "Parcel facts",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Recorded September 24, 2026",
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
@@ -303,6 +342,7 @@
             }
           ],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Evaluated October 2, 2026",
           "type": "COMPARISON_INPUT",
           "value": "50 ft minimum; exact supported frontage 94.00 ft"
@@ -320,7 +360,7 @@
       "result_state": "MEETS_BASE_RULE",
       "rule_family": "MINIMUM_STREET_FRONTAGE",
       "section": "PARCEL_DIMENSIONS",
-      "template_key": "MINIMUM_COMPARISON_MEETS",
+      "template_key": "COMPARISON_MEETS",
       "template_values": {
         "name": "frontage",
         "requirement": "50 ft minimum"
@@ -332,6 +372,7 @@
       "answer": "Current front-setback rule: 15 ft starting point. Additional conditions may still modify this requirement.",
       "base_requirement": "15 ft table base",
       "blocker": null,
+      "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
@@ -344,6 +385,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -353,6 +395,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "RULE_VERSION",
           "value": "RS-1-7"
@@ -361,6 +404,7 @@
           "label": "Parcel facts",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Recorded September 24, 2026",
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
@@ -375,6 +419,7 @@
             }
           ],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Evaluated October 2, 2026",
           "type": "COMPARISON_INPUT",
           "value": "15 ft starting point"
@@ -404,6 +449,7 @@
       "answer": "Current calculated rear setback rule: 23.5 ft. Additional conditions may still modify this requirement.",
       "base_requirement": "13 ft",
       "blocker": null,
+      "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
@@ -416,6 +462,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -425,6 +472,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "RULE_VERSION",
           "value": "RS-1-7"
@@ -433,6 +481,7 @@
           "label": "Parcel facts",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Recorded September 24, 2026",
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
@@ -462,6 +511,7 @@
             }
           ],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Evaluated October 2, 2026",
           "type": "COMPARISON_INPUT",
           "value": "235.02 ft lot depth × 10% = 23.502 ft; displayed as 23.5 ft; 13 ft is the table base"
@@ -477,6 +527,7 @@
         "decimal_places": 1,
         "display_value": 23.5,
         "exact_value": 23.502,
+        "rounding_rule": "HALF_UP",
         "unit": "ft"
       },
       "privacy": "PUBLIC",
@@ -496,6 +547,7 @@
       "answer": "Current interior-side setback rule: 4 ft per side starting point. Additional conditions may still modify this requirement.",
       "base_requirement": "4 ft",
       "blocker": null,
+      "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
@@ -508,6 +560,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -517,6 +570,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "RULE_VERSION",
           "value": "RS-1-7"
@@ -525,6 +579,7 @@
           "label": "Parcel facts",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Recorded September 24, 2026",
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
@@ -544,6 +599,7 @@
             }
           ],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Evaluated October 2, 2026",
           "type": "COMPARISON_INPUT",
           "value": "4 ft ordinary base per side; 94 ft Code-defined lot width"
@@ -573,6 +629,7 @@
       "answer": "This rule does not apply to this parcel.",
       "base_requirement": null,
       "blocker": null,
+      "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
@@ -585,6 +642,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -594,6 +652,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "RULE_VERSION",
           "value": "RS-1-7"
@@ -602,6 +661,7 @@
           "label": "Parcel facts",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Recorded September 24, 2026",
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
@@ -616,6 +676,7 @@
             }
           ],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Evaluated October 2, 2026",
           "type": "COMPARISON_INPUT",
           "value": "5 ft rule; recorded line roles show no street-side property line"
@@ -639,13 +700,14 @@
     },
     {
       "actions": [],
-      "answer": "The existing-building setback check cannot be evaluated yet because an existing-building setback check needs a current survey tying the building frame to the property lines.",
+      "answer": "This check cannot be completed yet. A current survey tying the building frame to the property lines is needed.",
       "base_requirement": null,
       "blocker": {
         "code": "CURRENT_SURVEY_STRUCTURE_GEOMETRY",
-        "missing": "an existing-building setback check needs a current survey tying the building frame to the property lines",
+        "missing": "A current survey tying the building frame to the property lines is needed.",
         "why": "A setback rule by itself does not establish where an existing building sits."
       },
+      "comparison": null,
       "comparison_scope": "EXISTING_STRUCTURE",
       "context_state": null,
       "context_type": null,
@@ -658,6 +720,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -667,6 +730,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "RULE_VERSION",
           "value": "RS-1-7"
@@ -675,6 +739,7 @@
           "label": "Parcel facts",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Recorded September 24, 2026",
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
@@ -683,6 +748,7 @@
           "label": "Evidence needed",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": null,
           "type": "BLOCKER_EVIDENCE",
           "value": "Current survey-controlled building-frame geometry"
@@ -702,8 +768,7 @@
       "section": "SETBACKS",
       "template_key": "NEEDS_EVIDENCE",
       "template_values": {
-        "blocker": "an existing-building setback check needs a current survey tying the building frame to the property lines",
-        "name": "existing-building setback check"
+        "blocker": "A current survey tying the building frame to the property lines is needed."
       },
       "verification_state": null
     },
@@ -712,6 +777,7 @@
       "answer": "Base height rule: 24 ft at applicable setback lines and 30 ft overall.",
       "base_requirement": null,
       "blocker": null,
+      "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
@@ -724,6 +790,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -733,6 +800,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "RULE_VERSION",
           "value": "RS-1-7"
@@ -741,6 +809,7 @@
           "label": "Parcel facts",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Recorded September 24, 2026",
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
@@ -760,6 +829,7 @@
             }
           ],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Evaluated October 2, 2026",
           "type": "COMPARISON_INPUT",
           "value": "24 ft at applicable setback lines; 30 ft overall"
@@ -789,6 +859,7 @@
       "answer": "Base FAR rule: the applicable RS lot-area band and any steep-hillside rule.",
       "base_requirement": null,
       "blocker": null,
+      "comparison": null,
       "comparison_scope": "PARCEL_RULE",
       "context_state": null,
       "context_type": null,
@@ -801,6 +872,7 @@
           "label": "Authoritative rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",
@@ -810,6 +882,7 @@
           "label": "Rule profile",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "RULE_VERSION",
           "value": "RS-1-7"
@@ -818,6 +891,7 @@
           "label": "Parcel facts",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Recorded September 24, 2026",
           "type": "PUBLIC_PARCEL_FACT",
           "value": "Recorded public parcel evaluation"
@@ -826,6 +900,7 @@
           "label": "FAR rule location",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective April 24, 2025",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf",

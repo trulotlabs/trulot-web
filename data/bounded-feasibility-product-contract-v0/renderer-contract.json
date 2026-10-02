@@ -1,22 +1,22 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
+  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
   "copy_versioned": true,
   "free_form_conclusion_generation": false,
   "project_status_labels": {
     "CITY_ISSUED": "City-issued record",
-    "EVIDENCE_REVIEW": "Private height and FAR evidence review",
+    "EVIDENCE_REVIEW": "Private project evidence review",
     "REFERENCE_SHEETS_APPROVAL_NOT_VERIFIED": "Reference-sheet approval not verified",
-    "SUBMITTAL_ISSUANCE_NOT_PROVEN": "Fourth construction-document submittal — issuance not proven"
+    "SUBMITTAL_ISSUANCE_NOT_PROVEN": "Construction-document submittal — issuance not proven"
   },
   "templates": {
+    "COMPARISON_DOES_NOT_MEET": "Does not meet the {requirement} {name} rule.",
+    "COMPARISON_MEETS": "Meets the {requirement} {name} rule.",
     "CONDITIONAL_BASE_RULE": "Base {name}: {requirement}.",
     "CONDITIONAL_CURRENT_RULE": "Current {name}: {requirement}. Additional conditions may still modify this requirement.",
     "FACT_IDENTIFIED": "{name}: {fact}.",
     "MAPPED_CONTEXT": "Mapped {name} context is identified.",
     "MAPPED_CONTEXT_PENDING": "{name} geometry was detected. Verification is pending.",
-    "MINIMUM_COMPARISON_DOES_NOT_MEET": "Does not meet the {requirement} {name} rule.",
-    "MINIMUM_COMPARISON_MEETS": "Meets the {requirement} {name} rule.",
-    "NEEDS_EVIDENCE": "The {name} cannot be evaluated yet because {blocker}.",
+    "NEEDS_EVIDENCE": "This check cannot be completed yet. {blocker}",
     "NOT_APPLICABLE": "This rule does not apply to this parcel.",
     "NOT_EVALUATED": "{name}: not evaluated.",
     "NO_MAPPED_CONTEXT": "No mapped {name} intersection was identified by the recorded source.",

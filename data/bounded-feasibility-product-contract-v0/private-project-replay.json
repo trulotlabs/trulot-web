@@ -1,18 +1,24 @@
 {
   "actions": [],
   "base_facts": [],
-  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
+  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
   "items": [
     {
       "actions": [],
       "answer": "The proposed 5 ft 11-1/2 in enclosed-ADU frame setback meets the selected 4 ft interior-side setback rule. This comparison applies only to this dimension.",
       "base_requirement": null,
       "blocker": null,
+      "comparison": {
+        "comparator": "MIN",
+        "fact_value": 5.958333,
+        "requirement_value": 4,
+        "unit": "ft"
+      },
       "comparison_scope": "THIS_DIMENSION_ONLY",
       "context_state": null,
       "context_type": null,
       "derived_requirement": null,
-      "display_fact": "5 ft 11-1/2 in proposed enclosed-ADU frame setback",
+      "display_fact": "5 ft 11-1/2 in (5.958333 ft) proposed enclosed-ADU frame setback",
       "display_requirement": "4 ft selected application-date minimum",
       "eligibility_state": null,
       "evidence_entries": [
@@ -20,14 +26,16 @@
           "label": "Plan status",
           "measurements": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "project_status_code": "SUBMITTAL_ISSUANCE_NOT_PROVEN",
           "source_date": "Application recorded January 29, 2024",
           "type": "PRIVATE_PLAN_STATUS",
-          "value": "Fourth construction-document submittal; issuance not proven"
+          "value": "Construction-document submittal; issuance not proven"
         },
         {
           "label": "Private plan fact",
           "measurements": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "project_status_code": null,
           "source_date": "Application recorded January 29, 2024",
           "type": "PRIVATE_PLAN_FACT",
           "value": "Architectural Site Plan A0.1, page 15"
@@ -36,6 +44,7 @@
           "label": "Applicable rule",
           "measurements": [],
           "privacy": "PUBLIC_AUTHORITY",
+          "project_status_code": null,
           "source_date": "Effective May 6, 2023",
           "type": "PUBLIC_CODE",
           "url": "https://docs.sandiego.gov/council_reso_ordinance/rao2023/O-21618.pdf",
@@ -46,8 +55,8 @@
           "measurements": [
             {
               "kind": "FACT",
-              "unit": "ft plus 11-1/2 in",
-              "value": 5
+              "unit": "ft",
+              "value": 5.958333
             },
             {
               "kind": "REQUIREMENT",
@@ -56,14 +65,16 @@
             }
           ],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "project_status_code": null,
           "source_date": "Evaluated October 2, 2026",
           "type": "COMPARISON_INPUT",
-          "value": "5 ft 11-1/2 in proposed enclosed-ADU frame setback; 4 ft selected minimum"
+          "value": "Exact setback 5.958333 ft (5 ft 11-1/2 in); selected minimum 4 ft"
         },
         {
           "label": "Privacy",
           "measurements": [],
           "privacy": "PRIVATE_AUTHORIZED_EVIDENCE",
+          "project_status_code": null,
           "source_date": null,
           "type": "PRIVACY_NOTICE",
           "value": "Private authorized evidence · excluded from public caching and indexing"
@@ -103,6 +114,7 @@
     "privacy_label": "Not for public indexing · no public cache",
     "project_id": "PRJ-1111087",
     "status_code": "SUBMITTAL_ISSUANCE_NOT_PROVEN",
+    "status_context": "Fourth construction-document submittal",
     "target_id": "private-scope-status"
   },
   "provenance": [

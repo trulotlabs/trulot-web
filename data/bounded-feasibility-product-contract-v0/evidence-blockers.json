@@ -2,19 +2,19 @@
   "blockers": [
     {
       "code": "CURRENT_SURVEY_STRUCTURE_GEOMETRY",
-      "missing": "an existing-building setback check needs a current survey tying the building frame to the property lines",
+      "missing": "A current survey tying the building frame to the property lines is needed.",
       "why": "A setback rule by itself does not establish where an existing building sits."
     },
     {
       "code": "CODE_HEIGHT_ANALYSIS",
-      "missing": "a project-height check needs a dimensioned height analysis using the City’s required grade and roof measurement rules",
+      "missing": "A dimensioned height analysis using the City’s required grade and roof measurement rules is needed.",
       "why": "A plan label cannot be compared until its grade, highest point, roof treatment, and angled-plane measurements use the City’s method."
     },
     {
       "code": "CODE_GFA_AND_PREMISES_AREA",
-      "missing": "a project FAR check needs a floor-area worksheet showing what counts toward FAR and a verified legal premises area",
+      "missing": "A floor-area worksheet showing what counts toward FAR and a verified legal premises area is needed.",
       "why": "The counted floor area and legal premises area must both use the applicable City definitions."
     }
   ],
-  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d"
+  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e"
 }

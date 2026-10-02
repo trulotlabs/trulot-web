@@ -33,8 +33,8 @@ const privateProject = bundles.private.payload;
 const blocked = bundles.blocked.payload;
 
 assert.equal(rs.contract_version, preview.CONTRACT_VERSION);
-const unsafeV1 = clone(rs); unsafeV1.contract_version = "bounded-feasibility-product-contract-v1-2026-10-02-p60c";
-assert.throws(() => preview.validateFeasibilityPreviewPayload(unsafeV1, templates, schema), /constant/i);
+const unsafeV2 = clone(rs); unsafeV2.contract_version = "bounded-feasibility-product-contract-v2-2026-10-02-p60d";
+assert.throws(() => preview.validateFeasibilityPreviewPayload(unsafeV2, templates, schema), /constant/i);
 assert.equal(rs.items.filter((item) => item.result_state === "MEETS_BASE_RULE").length, 4);
 assert.equal(rs.items.find((item) => item.rule_family === "STREET_SIDE_SETBACK").result_state, "NOT_APPLICABLE");
 assert.equal(rs.items.find((item) => item.rule_family === "REAR_SETBACK").exact_calculation, "235.02 ft lot depth × 10% = 23.502 ft");
@@ -110,16 +110,16 @@ for (const payload of [rs, rm, privateProject, blocked]) for (const item of payl
 
 const evidenceDir = path.join(root, "data/bounded-feasibility-preview-v0/review-evidence");
 const screenshotManifest = {
-  "public-rs-desktop.png": "8f8fb02f9b50355e18401690292a99840d1417bb31d5f376f956152e1971d620",
-  "public-rs-mobile.png": "d2c8f9041a801deffca8cb6e1d535a36230d6c7a120af94b102f2837d068d963",
-  "public-rs-rear-setback-expanded.png": "64f30af0ee0dcf0451d3174075258fda7102db31f0e1d4ef2a46a10398f2e249",
+  "public-rs-desktop.png": "46c70d7869d358535dd44c6fa182a8f437af916bc52bef172eb52927af4e1ea2",
+  "public-rs-mobile.png": "b2299829f16c5fa5d6499bb97c247c741d2227dcfaf95f010c2544df6b56d5f7",
+  "public-rs-rear-setback-expanded.png": "c2c1b2aa3a16091c33b48c128d84885aaeef39c306cdc70882c14453affb7305",
   "public-rm-desktop.png": "811ab0f02a3e7728b9364a169f0946cfd56e7fc5926dd9a302f7407b4d69ba34",
   "public-rm-mobile.png": "e4a7e2aae5a991296a89d1ddce225dd0e3abda92afaab3239b147e05c7f0c604",
-  "public-rm-sda-context-expanded.png": "c41ae200c65f9b918497bcf1cf062976a984ab4b50b89ad791f99624ff3dc78b",
-  "private-project-desktop.png": "e5d0ac731474e0b7c2d706f753010cb60f0eb2c7aa37fb97edbdf7d3bea884b8",
-  "private-project-mobile.png": "edc92aafa57eb80b6744cbd036a87f8844ed7ebd15d3b6549434c09688ecf1a5",
-  "private-project-status-expanded.png": "02b8324d305e13bd0f2d864d95914e9b2e89ba70f370da2f4b636f4834de2ea6",
-  "height-far-blocked-desktop.png": "b85baaa741a8f6883e6022d9f0338bf6cde45db8719d26b2c5726c7aeed0e8ee",
+  "public-rm-sda-context-expanded.png": "c35bf26b1ab833abb9383bc05fcce3604c07e6f9bcb4846dece149a5c9255651",
+  "private-project-desktop.png": "340e2b357fa33aef05234e46939d8a03c3024e7c11d867c0b035f1114f059191",
+  "private-project-mobile.png": "e59ff64b309161d6619f8a2e2e6ba935ab78cec491afda71201af0f01b475272",
+  "private-project-status-expanded.png": "90fb4c2ad47aae2495df3a09008955a3827445d0c86faca682c0bf84aebef32d",
+  "height-far-blocked-desktop.png": "458f930df293150530d2a3eddeaf7828882c0c22e2aef691f8d96376a8bf1e01",
 };
 const evidenceReadme = fs.readFileSync(path.join(evidenceDir, "README.md"), "utf8");
 for (const [name, expected] of Object.entries(screenshotManifest)) {
@@ -127,4 +127,4 @@ for (const [name, expected] of Object.entries(screenshotManifest)) {
   assert.equal(actual, expected, name); assert.match(evidenceReadme, new RegExp(`${name.replaceAll(".", "\\.")}[^\\n]+${expected}`));
 }
 
-console.log("PASS Packet 60 preview: sealed V2 contract payloads, hard gate, derived summaries/evidence, containment, and fail-closed validation");
+console.log("PASS Packet 60 preview: sealed V3 contract payloads, hard gate, derived summaries/evidence, containment, and fail-closed validation");

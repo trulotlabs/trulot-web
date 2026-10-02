@@ -1,4 +1,5 @@
 {
-  "contract_version": "bounded-feasibility-product-contract-v2-2026-10-02-p60d",
-  "hard_invariant": "Evidence type and scope determine privacy; a producer privacy tag cannot downgrade private evidence."
+  "contract_version": "bounded-feasibility-product-contract-v3-2026-10-02-p60e",
+  "hard_invariant": "Evidence type and scope determine privacy; a producer privacy tag cannot downgrade private evidence.",
+  "residual_producer_trust": "A validator cannot prove intentionally misclassified prose is public. Evidence types must originate from trusted upstream adapters."
 }

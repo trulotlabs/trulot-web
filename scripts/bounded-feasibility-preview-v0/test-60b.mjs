@@ -56,4 +56,4 @@ assert.match(allCopy, /22,096 sq ft Code-defined area/);
 assert.doesNotMatch(allCopy, /not accepted|numerator and denominator were not sealed|eligibility predicates|retained boundary sliver/);
 assert.match(allCopy, /Private authorized evidence · excluded from public caching and indexing/);
 
-console.log("PASS Packet 60B regression: accepted taxonomy, SDA state, rear precision, derived summaries, evidence, language, and containment remain encoded in V2 data");
+console.log("PASS Packet 60B regression: accepted taxonomy, SDA state, rear precision, derived summaries, evidence, language, and containment remain encoded in V3 data");
