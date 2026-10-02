@@ -1,0 +1,11 @@
+{
+  "artifacts": {
+    "candidate-inventory.json": "e5e6dee9acfd7b2bbbb4558f2720f1be7445b890b5357c7481bb830004838f8f",
+    "decision.json": "083c6b0d81a760e5b0841241e68dc9f2a5bb9019f9cea0508e16a74888492cc9",
+    "provenance.json": "987f73e5906dd2c03b887b49b06e6731ccbef5792458531b6543d1ba9c82bbe9",
+    "rule-selection.json": "c485169a1c8057b5c18e8e86757866b843886419a4b43bb7480ea10cf2b8b7ee",
+    "selection.json": "6a6e270a2be2866e42cb7cfc020d169e6078569cf088fb3d3c120bf86b8b9e97"
+  },
+  "bundle_sha256": "78235a29ad875c68d3e8189eeebd216617ac23c9205a9cbf79c67e86814695b8",
+  "contract_version": "approved-plan-fourth-benchmark-v0-2026-10-02-p57"
+}

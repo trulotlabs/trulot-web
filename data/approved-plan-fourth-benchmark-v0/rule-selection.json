@@ -1,0 +1,18 @@
+{
+  "authoritative_rule": null,
+  "bounded_plan_fact": null,
+  "candidate_rule_families_on_eligible_projects": [],
+  "comparison": {
+    "performed": false,
+    "state": "PLAN_RULE_EVALUATION_UNRESOLVED"
+  },
+  "contract_version": "approved-plan-fourth-benchmark-v0-2026-10-02-p57",
+  "excluded_already_represented_families": [
+    "INTERIOR_SIDE_SETBACK",
+    "RETAINING_WALL_PERMIT_TRIGGER",
+    "DRIVEWAY_WIDTH"
+  ],
+  "predicate_resolution": "FOURTH_BENCHMARK_RULE_SELECTION_UNRESOLVED",
+  "scoped_result": null,
+  "selected_rule_family": "SELECTED_RULE_FAMILY: NONE"
+}

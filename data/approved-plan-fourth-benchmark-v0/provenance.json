@@ -1,0 +1,24 @@
+{
+  "contract_version": "approved-plan-fourth-benchmark-v0-2026-10-02-p57",
+  "inputs": [
+    {
+      "artifact": "Packet 41 candidate inventory",
+      "path": "data/approved-plan-golden-corpus-v0/candidate-inventory.json",
+      "privacy": "REPOSITORY_BOUNDED_EVIDENCE"
+    },
+    {
+      "artifact": "Packet 41 source manifest",
+      "path": "data/approved-plan-golden-corpus-v0/manifest.json",
+      "privacy": "REPOSITORY_BOUNDED_EVIDENCE"
+    },
+    {
+      "artifact": "Local TruLot Projects filename inventory",
+      "contents_ingested": false,
+      "privacy": "PRIVATE_VALIDATION_EVIDENCE"
+    }
+  ],
+  "new_external_research": false,
+  "private_plan_published": false,
+  "private_source_paths_published": false,
+  "source_hashes_reverified": true
+}

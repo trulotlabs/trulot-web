@@ -1,0 +1,50 @@
+{
+  "candidate_dispositions": [
+    {
+      "eligible": false,
+      "exclusion_reasons": [
+        "EXCLUDED_PRIMARY_PARCEL"
+      ],
+      "project_id": "PRJ-1111087"
+    },
+    {
+      "eligible": false,
+      "exclusion_reasons": [
+        "EXCLUDED_PRIMARY_PARCEL"
+      ],
+      "project_id": "PRJ-1140985"
+    },
+    {
+      "eligible": false,
+      "exclusion_reasons": [
+        "EXCLUDED_PRIMARY_PARCEL"
+      ],
+      "project_id": "PRJ-1110168"
+    },
+    {
+      "eligible": false,
+      "exclusion_reasons": [
+        "NO_PLAN_SET",
+        "PARCEL_IDENTITY_UNRESOLVED",
+        "NO_DIRECT_PLAN_DIMENSION",
+        "NO_SEALED_RULE_CANDIDATE"
+      ],
+      "project_id": "3927-UTAH-ROW-PROPOSAL"
+    },
+    {
+      "eligible": false,
+      "exclusion_reasons": [
+        "NO_PLAN_SET",
+        "PARCEL_IDENTITY_UNRESOLVED",
+        "NO_DIRECT_PLAN_DIMENSION",
+        "NO_SEALED_RULE_CANDIDATE"
+      ],
+      "project_id": "4324-MEADE-ROW-PROPOSAL"
+    }
+  ],
+  "contract_version": "approved-plan-fourth-benchmark-v0-2026-10-02-p57",
+  "private_plan_contents_newly_ingested": false,
+  "selected_project_id": null,
+  "selection_reason": "Every plan-bearing candidate is on excluded APN 5442140600. The only different-address candidates are correspondence-only records without plan sets, resolved APNs, direct dimensions, or sealed rule candidates.",
+  "state": "FOURTH_BENCHMARK_PROJECT_NOT_AVAILABLE"
+}

@@ -1,0 +1,13 @@
+{
+  "architecture": "BENCHMARK_EXPANSION_STILL_HIGH_VALUE",
+  "capacity_calculated": false,
+  "comparison": "PLAN_RULE_EVALUATION_UNRESOLVED",
+  "contract_version": "approved-plan-fourth-benchmark-v0-2026-10-02-p57",
+  "corpus": "FOUR_PROJECT_BENCHMARK_CORPUS_NOT_ESTABLISHED",
+  "next": "NEXT_FEASIBILITY_STEP: fifth approved-plan benchmark",
+  "production_wired": false,
+  "project": "FOURTH_BENCHMARK_PROJECT_NOT_AVAILABLE",
+  "selected_rule_family": "SELECTED_RULE_FAMILY: NONE",
+  "transferability": "FOUR_PROJECT_TRANSFERABILITY_NOT_SUPPORTED: no unused authorized parcel has a qualifying plan set with a direct fact and sealed public rule predicates",
+  "whole_project_compliance_concluded": false
+}
