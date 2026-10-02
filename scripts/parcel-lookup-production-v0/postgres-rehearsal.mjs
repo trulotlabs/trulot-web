@@ -152,16 +152,39 @@ assert.equal(await sha256File(source), expectedSourceSha256, "sealed Parcel V2 n
 runPsql(`
   drop schema if exists trulot_v2 cascade;
   drop function if exists public.parcel_lookup_v0_search(text, text, integer);
-  drop role if exists anon;
-  drop role if exists authenticated;
-  drop role if exists service_role;
-  create role anon nologin;
-  create role authenticated nologin;
-  create role service_role nologin bypassrls;
-  create extension if not exists postgis;
-  create extension if not exists pgcrypto;
+  create schema if not exists extensions;
+  create extension if not exists postgis with schema extensions;
+  create extension if not exists pgcrypto with schema extensions;
+  do $roles$
+  begin
+    if not exists (select 1 from pg_roles where rolname = 'anon') then
+      create role anon nologin;
+    end if;
+    if not exists (select 1 from pg_roles where rolname = 'authenticated') then
+      create role authenticated nologin;
+    end if;
+    if not exists (select 1 from pg_roles where rolname = 'service_role') then
+      create role service_role nologin bypassrls;
+    end if;
+  end
+  $roles$;
   create schema trulot_v2;
   revoke all on schema trulot_v2 from public;
+  create table public.postgis_shadow_calls (function_name text not null);
+  create function public.st_x(extensions.geometry)
+  returns double precision language plpgsql as $shadow$
+  begin
+    insert into public.postgis_shadow_calls values ('st_x');
+    return -999;
+  end
+  $shadow$;
+  create function public.st_y(extensions.geometry)
+  returns double precision language plpgsql as $shadow$
+  begin
+    insert into public.postgis_shadow_calls values ('st_y');
+    return -999;
+  end
+  $shadow$;
   create table trulot_v2.parcel_acquisition (
     acquisition_id text primary key,
     dataset_id text not null,
@@ -186,7 +209,7 @@ runPsql(`
     situs_zip text,
     situs_juris text not null,
     approximate_geometry_area_sqft double precision not null,
-    point_on_surface geometry(Point,4326) not null,
+    point_on_surface extensions.geometry(Point,4326) not null,
     geometry_sha256 text not null,
     primary key (acquisition_id, source_object_id),
     unique (acquisition_id, apn_norm)
@@ -344,12 +367,46 @@ const security = {
   limitBound: "PASS",
   malformedRejected: "PASS",
   injectionInert: "PASS",
+  extensionsQualifiedPostgis: "PASS",
+  hostilePublicPostgisShadowsIgnored: "PASS",
 };
 for (const role of ["anon", "authenticated", "service_role"]) {
   expectPsqlFailure(`set role ${role}; select count(*) from trulot_v2.parcel_lookup_v0`, /permission denied|does not exist/i);
 }
 expectPsqlFailure("set role anon; select * from public.parcel_lookup_v0_search('5442140600','EXACT_APN',1)", /permission denied/i);
 assert.equal(Number(runPsql("set role service_role; select count(*) from public.parcel_lookup_v0_search('5442140600','EXACT_APN',1)")), 1);
+for (const input of ["5442140600", "544-214-06-00", "544 214 06 00"]) {
+  const normalized = lookup.normalizeApnInput(input);
+  assert.equal(normalized.state, "VALID", input);
+  const result = JSON.parse(runPsql(`
+    set search_path = public;
+    set role service_role;
+    select row_to_json(found)
+    from public.parcel_lookup_v0_search('${normalized.canonical}', 'EXACT_APN', 1) found
+  `));
+  assert.equal(result.apn, "5442140600", input);
+  assert.equal(result.apn_display, "544-214-06-00", input);
+  assert.ok(Number.isFinite(result.longitude), input);
+  assert.ok(Number.isFinite(result.latitude), input);
+  assert.notEqual(result.longitude, -999, input);
+  assert.notEqual(result.latitude, -999, input);
+}
+const addressRpc = JSON.parse(runPsql(`
+  set search_path = public;
+  set role service_role;
+  select row_to_json(found)
+  from public.parcel_lookup_v0_search('639 N 67TH ST', 'EXACT_ADDRESS', 10) found
+`));
+assert.equal(addressRpc.apn, "5442140600");
+assert.equal(addressRpc.apn_display, "544-214-06-00");
+assert.ok(Number.isFinite(addressRpc.longitude));
+assert.ok(Number.isFinite(addressRpc.latitude));
+assert.equal(Number(runPsql(`
+  set search_path = public;
+  set role service_role;
+  select count(*) from public.parcel_lookup_v0_search('1501 FRONT ST', 'EXACT_ADDRESS', 11)
+`)), 11);
+assert.equal(Number(runPsql("select count(*) from public.postgis_shadow_calls")), 0);
 expectPsqlFailure("set role service_role; select * from public.parcel_lookup_v0_search('5442140600','EXACT_APN',51)", /invalid lookup limit/i);
 expectPsqlFailure("set role service_role; select * from public.parcel_lookup_v0_search('x','AUTOCOMPLETE',10)", /invalid lookup query/i);
 expectPsqlFailure(
@@ -361,13 +418,26 @@ const functionDefinition = runPsql("select pg_get_functiondef('public.parcel_loo
 assert.doesNotMatch(functionDefinition, /\bexecute\b/i);
 assert.match(functionDefinition, /SET search_path TO ''/);
 assert.match(functionDefinition, /SET statement_timeout TO '1500ms'/);
+assert.match(functionDefinition, /extensions\.st_x\(item\.point_on_surface\)/i);
+assert.match(functionDefinition, /extensions\.st_y\(item\.point_on_surface\)/i);
+assert.doesNotMatch(functionDefinition, /public\.st_[xy]\(/i);
 
 const environment = JSON.parse(runPsql(`select json_build_object(
   'postgresVersion', current_setting('server_version'),
-  'postgisVersion', postgis_lib_version(),
+  'postgisVersion', extensions.postgis_lib_version(),
+  'postgisSchema', (select extnamespace::regnamespace::text from pg_extension where extname = 'postgis'),
+  'stXSchema', (select n.nspname from pg_proc p join pg_namespace n on n.oid=p.pronamespace where p.oid='extensions.st_x(extensions.geometry)'::regprocedure),
+  'stYSchema', (select n.nspname from pg_proc p join pg_namespace n on n.oid=p.pronamespace where p.oid='extensions.st_y(extensions.geometry)'::regprocedure),
+  'basePointTypeSchema', (select n.nspname from pg_attribute a join pg_type t on t.oid=a.atttypid join pg_namespace n on n.oid=t.typnamespace where a.attrelid='trulot_v2.parcel_base_sangis_v2'::regclass and a.attname='point_on_surface'),
+  'lookupPointTypeSchema', (select n.nspname from pg_attribute a join pg_type t on t.oid=a.atttypid join pg_namespace n on n.oid=t.typnamespace where a.attrelid='trulot_v2.parcel_lookup_v0'::regclass and a.attname='point_on_surface'),
   'jit', current_setting('jit'),
   'sharedBuffers', current_setting('shared_buffers')
 )`));
+assert.equal(environment.postgisSchema, "extensions");
+assert.equal(environment.stXSchema, "extensions");
+assert.equal(environment.stYSchema, "extensions");
+assert.equal(environment.basePointTypeSchema, "extensions");
+assert.equal(environment.lookupPointTypeSchema, "extensions");
 
 const report = {
   contractVersion: "parcel-lookup-production-v0-postgres-rehearsal-2026-10-01-p45",

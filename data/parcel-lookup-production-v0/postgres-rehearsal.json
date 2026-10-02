@@ -12,8 +12,13 @@
     "pinMismatchRejected": true
   },
   "environment": {
-    "postgresVersion": "16.4 (Debian 16.4-1.pgdg110+2)",
-    "postgisVersion": "3.4.3",
+    "postgresVersion": "17.6",
+    "postgisVersion": "3.3.7",
+    "postgisSchema": "extensions",
+    "stXSchema": "extensions",
+    "stYSchema": "extensions",
+    "basePointTypeSchema": "extensions",
+    "lookupPointTypeSchema": "extensions",
     "jit": "on",
     "sharedBuffers": "128MB"
   },
@@ -54,24 +59,24 @@
   "plans": [
     {
       "name": "exactApn",
-      "planningTimeMs": 12.451,
-      "executionTimeMs": 1.381,
+      "planningTimeMs": 0.388,
+      "executionTimeMs": 0.098,
       "nodes": [
         {
           "nodeType": "Limit",
           "indexName": null,
           "actualRows": 1,
           "planRows": 1,
-          "sharedHitBlocks": 1,
-          "sharedReadBlocks": 3
+          "sharedHitBlocks": 2,
+          "sharedReadBlocks": 2
         },
         {
           "nodeType": "Index Scan",
           "indexName": "parcel_lookup_v0_apn_prefix_idx",
           "actualRows": 1,
           "planRows": 1,
-          "sharedHitBlocks": 1,
-          "sharedReadBlocks": 3
+          "sharedHitBlocks": 2,
+          "sharedReadBlocks": 2
         }
       ],
       "sequentialScan": false,
@@ -81,8 +86,8 @@
     },
     {
       "name": "apnPrefix",
-      "planningTimeMs": 14.934,
-      "executionTimeMs": 2.252,
+      "planningTimeMs": 0.467,
+      "executionTimeMs": 0.232,
       "nodes": [
         {
           "nodeType": "Limit",
@@ -116,24 +121,24 @@
     },
     {
       "name": "exactAddress",
-      "planningTimeMs": 11.991,
-      "executionTimeMs": 2.092,
+      "planningTimeMs": 0.349,
+      "executionTimeMs": 0.071,
       "nodes": [
         {
           "nodeType": "Limit",
           "indexName": null,
           "actualRows": 1,
           "planRows": 3,
-          "sharedHitBlocks": 1,
-          "sharedReadBlocks": 3
+          "sharedHitBlocks": 3,
+          "sharedReadBlocks": 1
         },
         {
           "nodeType": "Index Scan",
           "indexName": "parcel_lookup_v0_address_exact_idx",
           "actualRows": 1,
           "planRows": 3,
-          "sharedHitBlocks": 1,
-          "sharedReadBlocks": 3
+          "sharedHitBlocks": 3,
+          "sharedReadBlocks": 1
         }
       ],
       "sequentialScan": false,
@@ -143,8 +148,8 @@
     },
     {
       "name": "unitAddress",
-      "planningTimeMs": 11.9,
-      "executionTimeMs": 2.357,
+      "planningTimeMs": 0.353,
+      "executionTimeMs": 0.103,
       "nodes": [
         {
           "nodeType": "Limit",
@@ -170,40 +175,40 @@
     },
     {
       "name": "autocomplete",
-      "planningTimeMs": 18.358,
-      "executionTimeMs": 5.618,
+      "planningTimeMs": 1.175,
+      "executionTimeMs": 0.678,
       "nodes": [
         {
           "nodeType": "Limit",
           "indexName": null,
           "actualRows": 1,
           "planRows": 1,
-          "sharedHitBlocks": 7,
-          "sharedReadBlocks": 53
+          "sharedHitBlocks": 60,
+          "sharedReadBlocks": 0
         },
         {
           "nodeType": "Sort",
           "indexName": null,
           "actualRows": 1,
           "planRows": 1,
-          "sharedHitBlocks": 7,
-          "sharedReadBlocks": 53
+          "sharedHitBlocks": 60,
+          "sharedReadBlocks": 0
         },
         {
           "nodeType": "Bitmap Heap Scan",
           "indexName": null,
           "actualRows": 1,
           "planRows": 1,
-          "sharedHitBlocks": 4,
-          "sharedReadBlocks": 53
+          "sharedHitBlocks": 57,
+          "sharedReadBlocks": 0
         },
         {
           "nodeType": "Bitmap Index Scan",
           "indexName": "parcel_lookup_v0_address_search_idx",
           "actualRows": 1,
           "planRows": 1,
-          "sharedHitBlocks": 3,
-          "sharedReadBlocks": 53
+          "sharedHitBlocks": 56,
+          "sharedReadBlocks": 0
         }
       ],
       "sequentialScan": false,
@@ -215,18 +220,18 @@
   "timings": {
     "autocomplete": {
       "sampleCount": 200,
-      "medianMs": 0.755,
-      "p95Ms": 0.968
+      "medianMs": 0.507,
+      "p95Ms": 0.762
     },
     "exactAddress": {
       "sampleCount": 200,
-      "medianMs": 0.019,
-      "p95Ms": 0.07
+      "medianMs": 0.013,
+      "p95Ms": 0.036
     },
     "exactApn": {
       "sampleCount": 200,
       "medianMs": 0.016,
-      "p95Ms": 0.048
+      "p95Ms": 0.032
     }
   },
   "performanceConditions": {
@@ -245,6 +250,8 @@
     "noDynamicSql": "PASS",
     "limitBound": "PASS",
     "malformedRejected": "PASS",
-    "injectionInert": "PASS"
+    "injectionInert": "PASS",
+    "extensionsQualifiedPostgis": "PASS",
+    "hostilePublicPostgisShadowsIgnored": "PASS"
   }
 }

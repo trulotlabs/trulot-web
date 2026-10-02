@@ -22,9 +22,18 @@ const postgresReport = JSON.parse(read("data/parcel-lookup-production-v0/postgre
 assert.equal(postgresReport.source.acquisitionId, "sangis-20260924T183743Z");
 assert.equal(postgresReport.source.alteredCaseRunRejected, true);
 assert.equal(postgresReport.source.normalizedRowsSha256, "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868");
+assert.equal(postgresReport.environment.postgresVersion, "17.6");
+assert.equal(postgresReport.environment.postgisVersion, "3.3.7");
+assert.equal(postgresReport.environment.postgisSchema, "extensions");
+assert.equal(postgresReport.environment.stXSchema, "extensions");
+assert.equal(postgresReport.environment.stYSchema, "extensions");
+assert.equal(postgresReport.environment.basePointTypeSchema, "extensions");
+assert.equal(postgresReport.environment.lookupPointTypeSchema, "extensions");
 assert.equal(postgresReport.correctness.rows, 393_733);
 assert.equal(postgresReport.correctness.distinctApns, 393_733);
 assert.equal(postgresReport.correctness.apnSetSha256, "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25");
+assert.equal(postgresReport.security.extensionsQualifiedPostgis, "PASS");
+assert.equal(postgresReport.security.hostilePublicPostgisShadowsIgnored, "PASS");
 for (const key of ["exactApn", "exactAddress", "autocomplete"]) {
   assert.equal(report.timings[key].sampleCount, 200);
   assert.equal(report.timings[key].targetMet, true);

@@ -147,15 +147,21 @@ for (const required of [
   "set search_path = ''",
   "set statement_timeout = '1500ms'",
   "grant execute on function public.parcel_lookup_v0_search",
+  "extensions.geometry(Point, 4326)",
+  "extensions.st_x(item.point_on_surface)",
+  "extensions.st_y(item.point_on_surface)",
 ]) assert.ok(migration.toLowerCase().includes(required.toLowerCase()), required);
 assert.ok(migration.includes("sangis-20260924T183743Z"));
 assert.ok(!migration.includes("SANGIS-20260924T183743Z"));
 assert.doesNotMatch(migration, /lower\s*\(\s*(?:\w+\.)?acquisition_id\s*\)/i);
 assert.doesNotMatch(migration, /acquisition_id\s+ilike/i);
+assert.doesNotMatch(migration, /public\.st_[xy]\s*\(/i);
 const postgresRehearsal = read("scripts/parcel-lookup-production-v0/postgres-rehearsal.mjs");
 assert.ok(postgresRehearsal.includes('const expectedAcquisition = "sangis-20260924T183743Z"'));
 assert.ok(postgresRehearsal.includes('const alteredCaseAcquisition = "SANGIS-20260924T183743Z"'));
 assert.ok(postgresRehearsal.includes("alteredCaseRunRejected: true"));
+assert.ok(postgresRehearsal.includes("create extension if not exists postgis with schema extensions"));
+assert.ok(postgresRehearsal.includes("hostilePublicPostgisShadowsIgnored: \"PASS\""));
 assert.doesNotMatch(migration, /grant\s+select\s+on\s+.*parcel_lookup_v0/i);
 assert.doesNotMatch(migration, /^\s*execute\s+/im);
 assert.match(migration, /revoke all on table trulot_v2\.parcel_lookup_v0[\s\S]*service_role/i);

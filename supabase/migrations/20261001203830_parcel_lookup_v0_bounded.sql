@@ -80,7 +80,7 @@ create table trulot_v2.parcel_lookup_v0 (
   situs_zip text,
   situs_juris text not null check (situs_juris = 'SD'),
   approximate_geometry_area_sqft double precision not null check (approximate_geometry_area_sqft > 0),
-  point_on_surface geometry(Point, 4326) not null,
+  point_on_surface extensions.geometry(Point, 4326) not null,
   geometry_sha256 text not null check (geometry_sha256 ~ '^[a-f0-9]{64}$'),
   derived_contract_version text not null
     check (derived_contract_version = 'parcel-lookup-production-v0-p45'),
@@ -297,7 +297,7 @@ begin
       select item.apn_norm, item.apn_display, item.address,
         item.normalized_address, item.normalized_unit_address,
         item.situs_zip, item.situs_juris,
-        public.st_x(item.point_on_surface), public.st_y(item.point_on_surface),
+        extensions.st_x(item.point_on_surface), extensions.st_y(item.point_on_surface),
         item.approximate_geometry_area_sqft
       from trulot_v2.parcel_lookup_v0 item
       where item.acquisition_id = expected_acquisition and item.apn_norm = p_query
@@ -310,7 +310,7 @@ begin
       select item.apn_norm, item.apn_display, item.address,
         item.normalized_address, item.normalized_unit_address,
         item.situs_zip, item.situs_juris,
-        public.st_x(item.point_on_surface), public.st_y(item.point_on_surface),
+        extensions.st_x(item.point_on_surface), extensions.st_y(item.point_on_surface),
         item.approximate_geometry_area_sqft
       from trulot_v2.parcel_lookup_v0 item
       where item.acquisition_id = expected_acquisition
@@ -325,7 +325,7 @@ begin
       select item.apn_norm, item.apn_display, item.address,
         item.normalized_address, item.normalized_unit_address,
         item.situs_zip, item.situs_juris,
-        public.st_x(item.point_on_surface), public.st_y(item.point_on_surface),
+        extensions.st_x(item.point_on_surface), extensions.st_y(item.point_on_surface),
         item.approximate_geometry_area_sqft
       from trulot_v2.parcel_lookup_v0 item
       where item.acquisition_id = expected_acquisition
@@ -346,7 +346,7 @@ begin
       select item.apn_norm, item.apn_display, item.address,
         item.normalized_address, item.normalized_unit_address,
         item.situs_zip, item.situs_juris,
-        public.st_x(item.point_on_surface), public.st_y(item.point_on_surface),
+        extensions.st_x(item.point_on_surface), extensions.st_y(item.point_on_surface),
         item.approximate_geometry_area_sqft
       from trulot_v2.parcel_lookup_v0 item
       where item.acquisition_id = expected_acquisition
