@@ -1,0 +1,147 @@
+import assert from "node:assert/strict";
+import test from "node:test";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { createRequire } from "node:module";
+import sitemap from "../app/sitemap";
+import {
+  buildLocalWaypointHandoff,
+  evaluateLaMesaFrontDoor,
+  laMesaAduPreviewEnabled,
+  resolveLaMesaFrontDoor,
+  type HomeownerAnswers,
+} from "../lib/la-mesa-adu-front-door";
+import { buildLaMesaFrontDoorDataset } from "../lib/la-mesa-adu-front-door-server";
+
+const dataset = buildLaMesaFrontDoorDataset();
+
+function exact(query: string) {
+  const result = resolveLaMesaFrontDoor(query, dataset);
+  assert.equal(result.state, "EXACT_MATCH");
+  assert.equal(result.candidates.length, 1);
+  return result.candidates[0];
+}
+
+const singleFamilyAnswers: HomeownerAnswers = {
+  existingUse: { value: "ONE_DETACHED_HOUSE", provenance: "USER_PROVIDED" },
+  aduIdea: { value: "NEW_DETACHED_ADU", provenance: "USER_PROVIDED" },
+};
+
+test("preview gate requires explicit opt-in and is impossible in production", () => {
+  assert.equal(laMesaAduPreviewEnabled({ NODE_ENV: "development", TRULOT_LA_MESA_ADU_PREVIEW: "1" }), true);
+  assert.equal(laMesaAduPreviewEnabled({ NODE_ENV: "test", TRULOT_LA_MESA_ADU_PREVIEW: "1" }), true);
+  assert.equal(laMesaAduPreviewEnabled({ NODE_ENV: "development" }), false);
+  assert.equal(laMesaAduPreviewEnabled({ NODE_ENV: "production", TRULOT_LA_MESA_ADU_PREVIEW: "1" }), false);
+});
+
+test("raw and formatted APNs reuse the existing Parcel Lookup parser", () => {
+  assert.equal(exact("4640301100").apn, "4640301100");
+  assert.equal(exact("464-030-11-00").apn, "4640301100");
+});
+
+test("full and partial addresses resolve ranked jurisdiction-aware candidates", () => {
+  const full = exact("5836 Pawnee Drive");
+  assert.equal(full.jurisdiction, "CITY_OF_LA_MESA");
+  assert.equal(full.confidence, "EXACT");
+  const partial = resolveLaMesaFrontDoor("5836 Paw", dataset);
+  assert.equal(partial.state, "PARTIAL_MATCHES");
+  assert.equal(partial.candidates[0]?.apn, "4640301100");
+});
+
+test("duplicate and cross-jurisdiction address never selects a silent first row", () => {
+  const result = resolveLaMesaFrontDoor("100 Preview Lane", dataset);
+  assert.equal(result.state, "MULTIPLE_MATCHES");
+  assert.equal(result.candidates.length, 3);
+  assert.equal(result.candidates.every((candidate) => candidate.ambiguous), true);
+  assert.deepEqual(new Set(result.candidates.map((candidate) => candidate.jurisdiction)), new Set(["CITY_OF_LA_MESA", "CITY_OF_SAN_DIEGO"]));
+});
+
+test("out-of-jurisdiction and unresolved jurisdiction suppress La Mesa rules", () => {
+  const unresolved = exact("9365 Carmichael Drive");
+  const result = evaluateLaMesaFrontDoor(unresolved, dataset);
+  assert.equal(result.jurisdictionConfirmed, false);
+  assert.equal(result.headline, "This property is not currently confirmed within the City of La Mesa.");
+  assert.equal(result.pathways.length, 0);
+});
+
+test("initial supported parcel remains needs-evidence until homeowner intake", () => {
+  const result = evaluateLaMesaFrontDoor(exact("4640301100"), dataset);
+  assert.equal(result.answerCategory, "Needs property evidence");
+  assert.equal(result.pathways.length, 0);
+  assert.match(result.headline, /need a few facts/i);
+});
+
+test("single-family answers re-run the shared evaluator and select only the relevant 2026 pathway", () => {
+  const result = evaluateLaMesaFrontDoor(exact("4640301100"), dataset, singleFamilyAnswers);
+  assert.equal(result.answerCategory, "Conditional");
+  assert.deepEqual(result.pathways.map((pathway) => pathway.id), ["SF_DETACHED_66323_ADU"]);
+  assert.equal(result.homeownerAnswers?.existingUse.provenance, "USER_PROVIDED");
+  assert.match(result.futureChangeNotice ?? "", /January 1, 2027/);
+  assert.doesNotMatch(JSON.stringify(result), /two detached|permit approval.*true/i);
+});
+
+test("conversion intake asks only the relevant existing-space follow-up", () => {
+  const answers: HomeownerAnswers = {
+    existingUse: { value: "ONE_DETACHED_HOUSE", provenance: "USER_PROVIDED" },
+    aduIdea: { value: "CONVERSION", provenance: "USER_PROVIDED" },
+    existingSpace: { value: "NOT_SURE", provenance: "USER_PROVIDED" },
+  };
+  const result = evaluateLaMesaFrontDoor(exact("4640301100"), dataset, answers);
+  assert.equal(result.answerCategory, "Needs project details");
+  assert.deepEqual(result.pathways.map((pathway) => pathway.id), ["SF_CONVERSION_66323_ADU"]);
+});
+
+test("Scenic and Hillside contexts use restrained homeowner language", () => {
+  const scenic = evaluateLaMesaFrontDoor(exact("4912600700"), dataset, singleFamilyAnswers);
+  const hillside = evaluateLaMesaFrontDoor(exact("4752412200"), dataset, singleFamilyAnswers);
+  assert.match(scenic.mappedContexts[0]?.label ?? "", /Scenic Preservation/);
+  assert.match(hillside.mappedContexts[0]?.label ?? "", /Hillside/);
+  for (const result of [scenic, hillside]) {
+    assert.match(result.mappedContexts[0]?.explanation ?? "", /does not automatically prevent an ADU/);
+  }
+});
+
+test("R3 does not infer multifamily and unsupported/TBD remains outside scope", () => {
+  const r3 = evaluateLaMesaFrontDoor(exact("4640201000"), dataset);
+  const unsupported = evaluateLaMesaFrontDoor(exact("4641310100"), dataset);
+  assert.equal(r3.answerCategory, "Needs property evidence");
+  assert.equal(r3.pathways.length, 0);
+  assert.equal(unsupported.answerCategory, "Outside current scope");
+  assert.equal(unsupported.pathways.length, 0);
+});
+
+test("lead contract requires consent and remains local-only", () => {
+  const evaluation = evaluateLaMesaFrontDoor(exact("4640301100"), dataset, singleFamilyAnswers);
+  assert.equal(buildLocalWaypointHandoff(evaluation, { name: "A Homeowner", email: "owner@example.com", phone: "", consentToContact: false }), null);
+  const handoff = buildLocalWaypointHandoff(evaluation, { name: "A Homeowner", email: "owner@example.com", phone: "", consentToContact: true });
+  assert.equal(handoff?.delivery, "LOCAL_FIXTURE_ONLY");
+  assert.equal(handoff?.consentReceipt.granted, true);
+  assert.deepEqual(handoff?.selectedPathwayIds, ["SF_DETACHED_66323_ADU"]);
+});
+
+test("route is noindex, noncanonical, and absent from sitemap", async () => {
+  const localRequire = createRequire(import.meta.url);
+  localRequire.extensions[".css"] = (module) => { module.exports = { __esModule: true, default: new Proxy({}, { get: (_, key) => String(key) }) }; };
+  const { metadata } = await import("../app/la-mesa-adu/page");
+  assert.deepEqual(metadata.robots, { index: false, follow: false, noarchive: true, nosnippet: true, noimageindex: true });
+  assert.equal("alternates" in metadata, false);
+  assert.equal(sitemap().some((entry) => entry.url.includes("la-mesa-adu")), false);
+});
+
+test("initial mobile-first presentation has labels, restrained branding, and no lead form", async () => {
+  const localRequire = createRequire(import.meta.url);
+  localRequire.extensions[".css"] = (module) => { module.exports = { __esModule: true, default: new Proxy({}, { get: (_, key) => String(key) }) }; };
+  const { default: LaMesaAduClient } = await import("../app/la-mesa-adu/LaMesaAduClient");
+  const html = renderToStaticMarkup(createElement(LaMesaAduClient, { dataset }));
+  assert.match(html, /Property address or APN/);
+  assert.match(html, /Powered by TruLot property intelligence/);
+  assert.match(html, /Private local preview/);
+  assert.doesNotMatch(html, /consent to be contacted|Approved|Buildable|Guaranteed/);
+});
+
+test("public output contains no packet paths, hashes, URL answers, or private provenance", () => {
+  const result = evaluateLaMesaFrontDoor(exact("4640301100"), dataset, singleFamilyAnswers);
+  const text = JSON.stringify(result);
+  assert.doesNotMatch(text, /Packet 6|fixture path|sha256|PRIVATE_|private survey/i);
+  assert.doesNotMatch(text, /\?existingUse|\?aduIdea/);
+});

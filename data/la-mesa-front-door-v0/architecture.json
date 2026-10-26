@@ -1,0 +1,24 @@
+{
+  "architecture": [
+    "LaMesaADU.com branded front door",
+    "jurisdiction-aware parcel resolution",
+    "TruLot La Mesa parcel truth",
+    "Packet 64 geometry",
+    "Packet 65 residential profiles",
+    "Packet 66 ADU envelope",
+    "Packet 67 V4 evaluation",
+    "homeowner presentation"
+  ],
+  "productionRecommendation": "Render the branded front door directly on LaMesaADU.com, then link resolved parcel intelligence to one canonical TruLot parcel location after public launch authorization.",
+  "seoDoctrine": {
+    "generalInformationCanonical": "LaMesaADU.com may own original general ADU information pages.",
+    "parcelIntelligenceCanonical": "One future TruLot La Mesa parcel URL is canonical for parcel-specific intelligence.",
+    "duplicateParcelResults": false,
+    "currentRouteIndexable": false,
+    "sitemapIncluded": false
+  },
+  "runtimeNetworkDependenciesAdded": 0,
+  "productionParcelLookupChanged": false,
+  "secondRuleEngineCreated": false,
+  "liveLeadDelivery": false
+}

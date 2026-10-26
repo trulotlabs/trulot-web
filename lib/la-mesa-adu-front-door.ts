@@ -1,0 +1,416 @@
+import {
+  searchParcelLookup,
+  type ParcelLookupRecord,
+} from "./parcel-lookup-contract";
+
+export const LA_MESA_ADU_PREVIEW_ENV = "TRULOT_LA_MESA_ADU_PREVIEW";
+
+export type LaMesaPreviewEnvironment = {
+  NODE_ENV?: string;
+  TRULOT_LA_MESA_ADU_PREVIEW?: string;
+};
+
+export function laMesaAduPreviewEnabled(
+  environment: LaMesaPreviewEnvironment = process.env,
+): boolean {
+  return (
+    environment.TRULOT_LA_MESA_ADU_PREVIEW === "1" &&
+    (environment.NODE_ENV === "development" || environment.NODE_ENV === "test")
+  );
+}
+
+export type FrontDoorJurisdiction =
+  | "CITY_OF_LA_MESA"
+  | "CITY_OF_SAN_DIEGO"
+  | "UNRESOLVED";
+
+export type FrontDoorCandidate = {
+  address: string | null;
+  apn: string;
+  apnDisplay: string;
+  jurisdiction: FrontDoorJurisdiction;
+  jurisdictionLabel: string;
+  confidence: "EXACT" | "PARTIAL";
+  rank: number;
+  ambiguous: boolean;
+  authority: "SEALED_PUBLIC_BENCHMARK" | "SYNTHETIC_TEST_FIXTURE";
+};
+
+export type FrontDoorLookupResult = {
+  state:
+    | "EXACT_MATCH"
+    | "MULTIPLE_MATCHES"
+    | "PARTIAL_MATCHES"
+    | "NO_MATCH"
+    | "INVALID_QUERY";
+  candidates: FrontDoorCandidate[];
+  message: string | null;
+};
+
+export type UserProvidedValue<T extends string> = {
+  value: T;
+  provenance: "USER_PROVIDED";
+};
+
+export type ExistingUse =
+  | "ONE_DETACHED_HOUSE"
+  | "TWO_OR_MORE_DWELLINGS"
+  | "VACANT_LAND"
+  | "NOT_SURE";
+export type AduIdea =
+  | "NEW_DETACHED_ADU"
+  | "ATTACHED_ADDITION"
+  | "CONVERSION"
+  | "JADU"
+  | "NOT_SURE";
+export type ExistingSpace = "YES" | "NO" | "NOT_SURE";
+
+export type HomeownerAnswers = {
+  existingUse: UserProvidedValue<ExistingUse>;
+  aduIdea: UserProvidedValue<AduIdea>;
+  existingSpace?: UserProvidedValue<ExistingSpace>;
+};
+
+export type FrontDoorAnswerCategory =
+  | "Likely state/local pathway available"
+  | "Conditional"
+  | "Needs property evidence"
+  | "Needs project details"
+  | "Outside current scope"
+  | "Source unavailable";
+
+export type FrontDoorPathway = {
+  id: string;
+  label: string;
+  category: FrontDoorAnswerCategory;
+  reason: string;
+  majorConstraint: string;
+  stillNeeded: string[];
+};
+
+export type FrontDoorEvaluation = {
+  parcel: FrontDoorCandidate;
+  jurisdictionConfirmed: boolean;
+  baseZone: string | null;
+  baseProfile: string | null;
+  answerCategory: FrontDoorAnswerCategory;
+  headline: string;
+  mappedContexts: Array<{ id: string; label: string; explanation: string }>;
+  specificPlanMessage: string | null;
+  missingFacts: string[];
+  pathways: FrontDoorPathway[];
+  homeownerAnswers: HomeownerAnswers | null;
+  userAnswerLimits: string[];
+  evidenceSources: Array<{ label: string; publisher: string; date: string; url: string }>;
+  evaluationDate: string | null;
+  futureChangeNotice: string | null;
+  errorMessage: string | null;
+};
+
+export type FrontDoorPublicEvaluation = {
+  baseZone: string | null;
+  baseProfile: string | null;
+  answerCategory: FrontDoorAnswerCategory;
+  mappedModifierIds: string[];
+  missingFacts: string[];
+  pathwayCatalog: Array<{ id: string; label: string }>;
+  evidenceSources: Array<{ label: string; publisher: string; date: string; url: string }>;
+  evaluationDate: string | null;
+  specificPlanBoundaryUnresolved: boolean;
+  available: boolean;
+};
+
+export type LaMesaFrontDoorDataset = {
+  records: ParcelLookupRecord[];
+  evaluations: Record<string, FrontDoorPublicEvaluation>;
+};
+
+function jurisdictionFor(recordValue: ParcelLookupRecord): FrontDoorJurisdiction {
+  if (recordValue.jurisdiction === "City of La Mesa") return "CITY_OF_LA_MESA";
+  if (recordValue.jurisdiction === "City of San Diego") return "CITY_OF_SAN_DIEGO";
+  return "UNRESOLVED";
+}
+
+export function resolveLaMesaFrontDoor(
+  query: string,
+  dataset: LaMesaFrontDoorDataset,
+): FrontDoorLookupResult {
+  const response = searchParcelLookup(dataset.records, query, { maximumResults: 10 });
+  const invalid =
+    response.state === "INVALID_APN" ||
+    response.state === "MALFORMED_QUERY" ||
+    response.state === "EMPTY_QUERY";
+  const ambiguous = response.totalMatches > 1;
+  const candidates = response.candidates.map((candidate) => ({
+    address: candidate.record.address,
+    apn: candidate.record.apn,
+    apnDisplay: candidate.record.apnDisplay,
+    jurisdiction: jurisdictionFor(candidate.record),
+    jurisdictionLabel: candidate.record.jurisdiction,
+    confidence:
+      candidate.matchReason === "exact_apn" ||
+      candidate.matchReason === "exact_address" ||
+      candidate.matchReason === "exact_unit_address"
+        ? "EXACT" as const
+        : "PARTIAL" as const,
+    rank: candidate.rank,
+    ambiguous,
+    authority: candidate.record.sourceObjectId >= 6_899_000
+      ? "SYNTHETIC_TEST_FIXTURE" as const
+      : "SEALED_PUBLIC_BENCHMARK" as const,
+  }));
+  const state = invalid
+    ? "INVALID_QUERY" as const
+    : response.state === "MULTIPLE_MATCHES"
+      ? "MULTIPLE_MATCHES" as const
+      : response.state === "PARTIAL_MATCHES"
+        ? "PARTIAL_MATCHES" as const
+        : response.state === "EXACT_MATCH"
+          ? "EXACT_MATCH" as const
+          : "NO_MATCH" as const;
+  const message =
+    state === "INVALID_QUERY"
+      ? "Enter a fuller address or all 10 APN digits. TruLot will not guess missing parcel identity."
+      : state === "NO_MATCH"
+        ? "No parcel matched this bounded La Mesa preview."
+        : state === "MULTIPLE_MATCHES"
+          ? "More than one parcel shares this address. Choose the correct APN and jurisdiction."
+          : state === "PARTIAL_MATCHES"
+            ? "Choose the matching parcel."
+            : null;
+  return { state, candidates, message };
+}
+
+const OVERLAY_LABELS: Record<string, string> = {
+  LM_OVERLAY_H: "Hillside area detected",
+  LM_OVERLAY_P: "Scenic Preservation area detected",
+  LM_OVERLAY_F: "Floodway context detected",
+  LM_OVERLAY_D: "Urban Design context detected",
+  LM_OVERLAY_MU: "Mixed-use context detected",
+  LM_OVERLAY_G: "Grossmont Center context detected",
+};
+
+function selectedPathwayIds(answers: HomeownerAnswers): string[] {
+  const use = answers.existingUse.value;
+  const idea = answers.aduIdea.value;
+  if (use === "ONE_DETACHED_HOUSE") {
+    if (idea === "NEW_DETACHED_ADU") return ["SF_DETACHED_66323_ADU"];
+    if (idea === "ATTACHED_ADDITION") return ["SF_LOCAL_66314_ADU"];
+    if (idea === "CONVERSION") return ["SF_CONVERSION_66323_ADU"];
+    if (idea === "JADU") return ["SF_JADU_66323"];
+  }
+  if (use === "TWO_OR_MORE_DWELLINGS") {
+    if (idea === "NEW_DETACHED_ADU") return ["MF_DETACHED_EXISTING_66323_ADU"];
+    if (idea === "CONVERSION") return ["MF_CONVERSION_66323_ADU"];
+  }
+  return [];
+}
+
+function pathways(
+  ids: string[],
+  catalog: Array<{ id: string; label: string }>,
+  answers: HomeownerAnswers,
+  hasMappedContext: boolean,
+): FrontDoorPathway[] {
+  return ids.flatMap((id) => {
+    const entry = catalog.find((candidate) => candidate.id === id);
+    if (!entry) return [];
+    const conversionUnclear =
+      id.includes("CONVERSION") && answers.existingSpace?.value !== "YES";
+    return [{
+      id,
+      label: entry.label,
+      category: conversionUnclear ? "Needs project details" : "Conditional",
+      reason: conversionUnclear
+        ? "The selected idea depends on qualifying existing garage or accessory space."
+        : "Your answers match the basic dwelling and project-form predicates for this 2026 pathway.",
+      majorConstraint: hasMappedContext
+        ? "Mapped context may add project-specific review; it does not automatically prevent this pathway."
+        : "Legal dwelling status and project-specific standards still require verification.",
+      stillNeeded: conversionUnclear
+        ? ["Whether qualifying conversion space exists", "Legal status of the existing structure"]
+        : ["Legal status of the existing dwelling", "Project dimensions and site-specific review"],
+    }];
+  });
+}
+
+export function evaluateLaMesaFrontDoor(
+  candidate: FrontDoorCandidate,
+  dataset: LaMesaFrontDoorDataset,
+  answers: HomeownerAnswers | null = null,
+): FrontDoorEvaluation {
+  const limits = [
+    "Homeowner answers do not establish legal or permitted dwelling status.",
+    "A survey, exact building dimensions, and fire/access compliance are not established here.",
+    "This preliminary screen is not permit approval or whole-project compliance.",
+  ];
+  if (candidate.jurisdiction !== "CITY_OF_LA_MESA") {
+    return {
+      parcel: candidate,
+      jurisdictionConfirmed: false,
+      baseZone: null,
+      baseProfile: null,
+      answerCategory: "Source unavailable",
+      headline: "This property is not currently confirmed within the City of La Mesa.",
+      mappedContexts: [],
+      specificPlanMessage: null,
+      missingFacts: ["Confirmed City of La Mesa jurisdiction"],
+      pathways: [],
+      homeownerAnswers: answers,
+      userAnswerLimits: limits,
+      evidenceSources: [],
+      evaluationDate: null,
+      futureChangeNotice: null,
+      errorMessage: null,
+    };
+  }
+  if (candidate.authority === "SYNTHETIC_TEST_FIXTURE") {
+    return {
+      parcel: candidate,
+      jurisdictionConfirmed: true,
+      baseZone: null,
+      baseProfile: null,
+      answerCategory: "Outside current scope",
+      headline: "This local ambiguity fixture does not carry parcel rule evidence.",
+      mappedContexts: [],
+      specificPlanMessage: null,
+      missingFacts: ["Sealed public parcel evidence"],
+      pathways: [],
+      homeownerAnswers: answers,
+      userAnswerLimits: limits,
+      evidenceSources: [],
+      evaluationDate: null,
+      futureChangeNotice: null,
+      errorMessage: null,
+    };
+  }
+  const details = dataset.evaluations[candidate.apn];
+  if (!details?.available) {
+    return {
+      parcel: candidate,
+      jurisdictionConfirmed: true,
+      baseZone: details?.baseZone ?? null,
+      baseProfile: details?.baseProfile ?? null,
+      answerCategory: details?.answerCategory ?? "Source unavailable",
+      headline: details?.answerCategory === "Outside current scope"
+        ? "TruLot found the parcel, but its operative residential profile is outside the current evaluation scope."
+        : "Detailed ADU evaluation is temporarily unavailable.",
+      mappedContexts: [],
+      specificPlanMessage: details?.specificPlanBoundaryUnresolved
+        ? "Specific-plan applicability needs review before TruLot can narrow the rules further."
+        : null,
+      missingFacts: details?.missingFacts ?? [],
+      pathways: [],
+      homeownerAnswers: answers,
+      userAnswerLimits: limits,
+      evidenceSources: details?.evidenceSources ?? [],
+      evaluationDate: details?.evaluationDate ?? null,
+      futureChangeNotice: null,
+      errorMessage: details ? null : "Detailed ADU evaluation is temporarily unavailable.",
+    };
+  }
+  const mappedContexts = details.mappedModifierIds.map((id) => ({
+    id,
+    label: OVERLAY_LABELS[id] ?? "Mapped planning context detected",
+    explanation: "This does not automatically prevent an ADU, but it may add project-specific requirements.",
+  }));
+  const specificPlanMessage = details.specificPlanBoundaryUnresolved
+    ? "Specific-plan applicability needs review before TruLot can narrow the rules further."
+    : null;
+  let chosen: FrontDoorPathway[] = [];
+  let category = details.answerCategory;
+  let headline = "We found the property and its zoning. To narrow the ADU options, we need a few facts about what is currently on the property.";
+  if (answers) {
+    const ids = selectedPathwayIds(answers);
+    chosen = pathways(ids, details.pathwayCatalog, answers, mappedContexts.length > 0);
+    if (answers.existingUse.value === "NOT_SURE") {
+      category = "Needs property evidence";
+      headline = "We still need the property’s dwelling type before narrowing the ADU pathways.";
+    } else if (answers.existingUse.value === "VACANT_LAND") {
+      category = "Needs property evidence";
+      headline = "Vacant-land development requires dwelling and project evidence beyond this preliminary ADU screen.";
+    } else if (answers.aduIdea.value === "NOT_SURE" || !chosen.length) {
+      category = "Needs project details";
+      headline = "The property context is available. Choose an ADU idea to narrow the relevant pathway.";
+    } else if (chosen.some((pathway) => pathway.category === "Needs project details")) {
+      category = "Needs project details";
+      headline = "One pathway may fit, but TruLot still needs a project detail before narrowing it further.";
+    } else {
+      category = "Conditional";
+      headline = "Your answers identify a preliminary 2026 pathway. Legal status and project-specific conditions still need verification.";
+    }
+  }
+  return {
+    parcel: candidate,
+    jurisdictionConfirmed: true,
+    baseZone: details.baseZone,
+    baseProfile: details.baseProfile,
+    answerCategory: category,
+    headline,
+    mappedContexts,
+    specificPlanMessage,
+    missingFacts: details.missingFacts,
+    pathways: chosen,
+    homeownerAnswers: answers,
+    userAnswerLimits: limits,
+    evidenceSources: details.evidenceSources,
+    evaluationDate: details.evaluationDate,
+    futureChangeNotice:
+      "California ADU rules change January 1, 2027. TruLot is evaluating this property under current 2026 rules.",
+    errorMessage: null,
+  };
+}
+
+export type LocalLeadDraft = {
+  name: string;
+  email: string;
+  phone: string;
+  consentToContact: boolean;
+};
+
+export type WaypointAduHandoff = {
+  contractVersion: "lamesaadu-waypoint-handoff-v0";
+  parcel: { apn: string; address: string | null; jurisdiction: "CITY_OF_LA_MESA" };
+  evaluationDate: string;
+  selectedPathwayIds: string[];
+  unresolvedFacts: string[];
+  homeownerAnswers: HomeownerAnswers;
+  profiles: { municipal: string; adu: "LA_MESA_ADU_2026" };
+  contact: { name: string; email: string; phone: string | null };
+  consentReceipt: { granted: true; purpose: "OPTIONAL_PROFESSIONAL_FOLLOW_UP" };
+  delivery: "LOCAL_FIXTURE_ONLY";
+};
+
+export function buildLocalWaypointHandoff(
+  evaluation: FrontDoorEvaluation,
+  lead: LocalLeadDraft,
+): WaypointAduHandoff | null {
+  if (
+    !lead.consentToContact ||
+    !lead.name.trim() ||
+    !/^\S+@\S+\.\S+$/.test(lead.email.trim()) ||
+    !evaluation.jurisdictionConfirmed ||
+    !evaluation.homeownerAnswers ||
+    !evaluation.evaluationDate
+  ) return null;
+  return {
+    contractVersion: "lamesaadu-waypoint-handoff-v0",
+    parcel: {
+      apn: evaluation.parcel.apn,
+      address: evaluation.parcel.address,
+      jurisdiction: "CITY_OF_LA_MESA",
+    },
+    evaluationDate: evaluation.evaluationDate,
+    selectedPathwayIds: evaluation.pathways.map((pathway) => pathway.id),
+    unresolvedFacts: evaluation.missingFacts,
+    homeownerAnswers: evaluation.homeownerAnswers,
+    profiles: { municipal: "LA_MESA_TITLE24_2026_10_04", adu: "LA_MESA_ADU_2026" },
+    contact: {
+      name: lead.name.trim(),
+      email: lead.email.trim(),
+      phone: lead.phone.trim() || null,
+    },
+    consentReceipt: { granted: true, purpose: "OPTIONAL_PROFESSIONAL_FOLLOW_UP" },
+    delivery: "LOCAL_FIXTURE_ONLY",
+  };
+}

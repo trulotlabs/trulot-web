@@ -1,0 +1,19 @@
+{
+  "contractVersion": "lamesaadu-waypoint-handoff-v0",
+  "required": [
+    "parcel.apn",
+    "parcel.jurisdiction",
+    "evaluationDate",
+    "selectedPathwayIds",
+    "unresolvedFacts",
+    "homeownerAnswers",
+    "profiles",
+    "contact.name",
+    "contact.email",
+    "consentReceipt"
+  ],
+  "optional": ["parcel.address", "contact.phone"],
+  "delivery": "LOCAL_FIXTURE_ONLY",
+  "personalDataMinimized": true,
+  "liveSendAuthorized": false
+}

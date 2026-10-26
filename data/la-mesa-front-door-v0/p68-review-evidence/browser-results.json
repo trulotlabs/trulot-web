@@ -1,0 +1,31 @@
+{
+  "states": [
+    "desktop-landing",
+    "desktop-selected-unknown",
+    "desktop-fact-intake",
+    "desktop-conditional-result",
+    "desktop-unsupported",
+    "desktop-out-of-jurisdiction",
+    "mobile-landing",
+    "mobile-selected-unknown",
+    "mobile-fact-intake",
+    "mobile-conditional-result",
+    "mobile-unsupported",
+    "mobile-out-of-jurisdiction"
+  ],
+  "consoleErrors": [],
+  "checks": {
+    "desktopFocusAfterSelection": true,
+    "desktopKeyboardRadioFlow": true,
+    "desktopDisclosureOpen": true,
+    "desktopNoOverflow": true,
+    "desktopMinTapTargets": true,
+    "desktopNoindex": "noindex, nofollow, noarchive, nosnippet, noimageindex",
+    "mobileFocusAfterSelection": true,
+    "mobileKeyboardRadioFlow": true,
+    "mobileDisclosureOpen": true,
+    "mobileNoOverflow": true,
+    "mobileMinTapTargets": true,
+    "mobileNoindex": "noindex, nofollow, noarchive, nosnippet, noimageindex"
+  }
+}
