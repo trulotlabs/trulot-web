@@ -13,6 +13,10 @@ import { extractApnFromSlug } from "@/lib/parcel-slug";
 import { parcelServingV2ShadowEnabled, runParcelServingV2Shadow } from "@/lib/parcel-serving-v2-shadow";
 import { verifiedStandardsEnabled } from "@/lib/rs17-shadow-gate";
 import { CopyApnButton } from "./copy-apn-button";
+import {
+  DevelopmentRulesSection,
+  DevelopmentRulesSummary,
+} from "./parcel-feasibility";
 import { SourcesMethodologyLink } from "./sources-methodology-link";
 
 const BASE_URL = "https://trulot-web.vercel.app";
@@ -246,7 +250,10 @@ export default async function ParcelPage({
   }
 
   let standardsShadow: string | null = null;
-  if (verifiedStandardsEnabled()) {
+  if (
+    data.feasibility.readiness !== "READY" &&
+    verifiedStandardsEnabled()
+  ) {
     try {
       standardsShadow = await (await import("@/lib/rs17-runtime-shadow")).renderRs17RuntimeShadow(result);
     } catch {
@@ -348,6 +355,8 @@ export default async function ParcelPage({
           </div>
         </section>
 
+        <DevelopmentRulesSummary feasibility={data.feasibility} />
+
         <section className="border-b border-slate-100 py-4" id="facts">
           <div className="flex items-baseline justify-between gap-3"><SectionHeading id="property-facts">Property facts</SectionHeading><SectionSource /></div>
           <p className="mt-1 text-xs text-slate-500">Values from public records. Source and confidence remain available for each item.</p>
@@ -411,6 +420,7 @@ export default async function ParcelPage({
                 ))}
               </ul>
             </div>
+            <DevelopmentRulesSection feasibility={data.feasibility} />
             {standardsShadow ? <div data-testid="rs17-runtime-shadow" className="col-span-full rounded border-2 border-amber-400 bg-amber-50 p-4 [&_h2]:text-lg [&_h2]:font-semibold [&_h3]:mt-4 [&_h3]:font-semibold [&_p]:my-3 [&_table]:w-full [&_th]:p-2 [&_th]:text-left [&_td]:p-2 [&_td]:align-top [&_summary]:cursor-pointer [&_summary]:py-3 [&_a]:underline [&_code]:break-all [&_details]:border-t [&_details]:border-amber-200"><div dangerouslySetInnerHTML={{ __html: standardsShadow }} /></div> : null}
           </div>
           <div className="mt-3 rounded border border-sky-200 bg-sky-50 px-3 py-3">

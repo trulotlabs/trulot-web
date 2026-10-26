@@ -1,0 +1,39 @@
+{
+  "contract_version": "parcel-page-public-feasibility-evidence-v0-2026-10-26",
+  "parcels": [
+    {
+      "apn": "6341302200",
+      "jurisdiction_id": "CITY_OF_SAN_DIEGO",
+      "coastal_context": "OUTSIDE_COASTAL",
+      "measurements": {
+        "lot_width_ft": 94,
+        "lot_depth_ft": 235.02,
+        "street_frontage_ft": 94
+      },
+      "measurement_source": {
+        "label": "Recorded Parcel Map 17383 public legal-lot evidence",
+        "date": "Recorded public map",
+        "url": "https://arcc-acclaim.sdcounty.ca.gov/"
+      },
+      "fire": null
+    },
+    {
+      "apn": "5442140600",
+      "jurisdiction_id": "CITY_OF_SAN_DIEGO",
+      "coastal_context": "OUTSIDE_COASTAL",
+      "measurements": {
+        "lot_width_ft": null,
+        "lot_depth_ft": null,
+        "street_frontage_ft": null
+      },
+      "measurement_source": null,
+      "fire": {
+        "mapped": true,
+        "verification": "VERIFIED",
+        "label": "City of San Diego Fire Hazard Severity Zone Map 2025",
+        "date": "Effective 2025-08-30",
+        "url": null
+      }
+    }
+  ]
+}

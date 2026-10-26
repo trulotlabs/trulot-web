@@ -27,6 +27,12 @@ import {
   type SdaReconciliationStatus,
 } from "./sda-source-reconciliation";
 import { buildTruthProvenance, buildParcelPageSourceEntries, type ParcelPageSourceEntry } from "./source-freshness";
+import {
+  buildPublicParcelFeasibility,
+  type PublicParcelFeasibilityOutput,
+  type PublicMeasurementInput,
+} from "./public-parcel-feasibility";
+import { getLocalPublicParcelFeasibilityEvidence } from "./public-parcel-feasibility-evidence";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -179,6 +185,7 @@ export interface ParcelPageV1Data {
     disclaimer: string;
   };
   fieldMapping: SourceRegistryRow[];
+  feasibility: PublicParcelFeasibilityOutput;
 }
 
 export interface ParcelTruth {
@@ -624,6 +631,24 @@ function buildSourceTable(row: RawRow): SourceRegistryEntry[] {
     parcelViewRebuiltAt: generatedAt,
     pageCalculatedAt,
   });
+}
+
+function mergeSourceEntries(
+  current: SourceRegistryEntry[],
+  additions: SourceRegistryEntry[],
+): SourceRegistryEntry[] {
+  const result = [...current];
+  const keys = new Set(
+    result.map((entry) => `${entry.url ?? ""}|${entry.dataset}|${entry.publisher}`),
+  );
+  for (const entry of additions) {
+    const key = `${entry.url ?? ""}|${entry.dataset}|${entry.publisher}`;
+    if (!keys.has(key)) {
+      keys.add(key);
+      result.push(entry);
+    }
+  }
+  return result;
 }
 
 function buildFieldMappingReport(): SourceRegistryRow[] {
@@ -1200,6 +1225,77 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
 
   const signals = buildSignalFacts(parcelRow, overlays);
   const methodology = staticMethodology();
+  const localFeasibilityEvidence = getLocalPublicParcelFeasibilityEvidence(apnNorm);
+  const lotAreaMeasurement: PublicMeasurementInput = {
+    value: num(parcelRow.lot_area_sqft),
+    unit: "sq ft",
+    sourceLabel: "SanGIS public parcel area",
+    sourceDate: refreshedAt,
+    sourceUrl: null,
+    availability: num(parcelRow.lot_area_sqft) === null ? "MISSING" : "AVAILABLE",
+  };
+  const feasibility = buildPublicParcelFeasibility({
+    jurisdictionId: "CITY_OF_SAN_DIEGO",
+    parcelId: apnNorm,
+    address,
+    ruleProfileVersion: "SD_CURRENT_2026_07_15",
+    baseZoneCode: zoneName || null,
+    measurements: {
+      LOT_AREA: lotAreaMeasurement,
+      ...(localFeasibilityEvidence?.measurements ?? {}),
+    },
+    coastalContext: localFeasibilityEvidence?.coastalContext ?? "UNKNOWN",
+    contexts: {
+      sda: {
+        mapped:
+          sourceStatus.sda.observedMembership === "inside"
+            ? true
+            : sourceStatus.sda.observedMembership === "outside"
+              ? false
+              : null,
+        verification:
+          sourceStatus.sda.observedMembership === "unavailable"
+            ? "SOURCE_UNAVAILABLE"
+            : "PENDING",
+        sourceLabel: "City public mapped SDA geometry under source reconciliation",
+        sourceDate: refreshedAt,
+        sourceUrl: null,
+      },
+      fire: localFeasibilityEvidence?.fire,
+      tpa: {
+        mapped: overlays.tpa,
+        verification: overlays.unavailable ? "SOURCE_UNAVAILABLE" : "VERIFIED",
+        sourceLabel: "Mapped public Transit Priority Area context",
+        sourceDate: refreshedAt,
+        sourceUrl: null,
+      },
+    },
+    sourceFreshness: refreshedAt,
+  });
+  if (feasibility.readiness === "READY") {
+    const sdaContext = feasibility.contexts.find((context) => context.type === "SDA");
+    const sdaProgram = programFacts.find(
+      (program) => program.name === "Sustainable Development Area",
+    );
+    if (sdaContext && sdaProgram) {
+      sdaProgram.value = `${sdaContext.answer} Eligibility: ${sdaContext.eligibility.toLowerCase().replaceAll("_", " ")}. Regulatory use: ${sdaContext.regulatoryUse.toLowerCase().replaceAll("_", " ")}.`;
+      sdaProgram.displayState = "verification_pending";
+      sdaProgram.sourceLabel = "Reconciled public SDA context";
+    }
+    const fireContext = feasibility.contexts.find(
+      (context) => context.type === "FIRE",
+    );
+    if (fireContext) {
+      programFacts.push({
+        name: "Fire context",
+        value: `${fireContext.answer} Regulatory use: context only; project compliance is not evaluated.`,
+        displayState: "mapped_overlay",
+        sourceLabel: "Validated public mapped Fire context",
+        confidenceTier: "mapped",
+        nullBehavior: "Omit when no validated public Fire context is available.",
+      });
+    }
+  }
 
   const copyToCheck = [
     ...snapshot.map((item) => item.value ?? ""),
@@ -1284,9 +1380,13 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     },
     signals,
     signalsEmptyState: signals.length === 0 ? "No development signals are available from the current public record fields for this parcel." : null,
-    sources: buildSourceTable(parcelRow),
+    sources: mergeSourceEntries(
+      buildSourceTable(parcelRow),
+      feasibility.sourceRegistryAdditions,
+    ),
     methodology,
     fieldMapping: buildFieldMappingReport(),
+    feasibility,
   };
 
   const overlayProvenance = buildTruthProvenance("overlay_layers_tpa_sda_ctcac_v1", "check_parcel_overlays", "Validated point-overlay RPC response; membership is not regulatory eligibility.", "check_parcel_overlays");
