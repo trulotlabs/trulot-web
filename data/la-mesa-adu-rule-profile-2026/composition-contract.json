@@ -1,0 +1,24 @@
+{
+  "inputs": [
+    "data/la-mesa-residential-rule-profile-v0/rule-profiles.json",
+    "data/la-mesa-residential-rule-profile-v0/modifier-registry.json",
+    "data/la-mesa-residential-rule-profile-v0/specific-plan-registry.json",
+    "CA_ADU_2026",
+    "LA_MESA_ADU_2026"
+  ],
+  "not_outputs": [
+    "parcel eligibility",
+    "development capacity",
+    "approval prediction"
+  ],
+  "order": [
+    "select Packet 65 base profile",
+    "attach mapped Packet 65 modifiers without proving triggers",
+    "select date-valid state ADU profile",
+    "apply local ADU implementation only within state authority",
+    "retain unresolved predicates"
+  ],
+  "output": "EFFECTIVE_ADU_RULE_ENVELOPE",
+  "packet65_integrity_file_sha256": "2f75fd1691e09f35c7abeba2841637d65a097e6ed371e1d318a9ddb7a3b22275",
+  "state_fallback": "LOCAL_TEXT_SUPERSEDED_BY_STATE_LAW"
+}

@@ -1,0 +1,53 @@
+{
+  "conflict_tests": [
+    "local stricter than state guarantee",
+    "local permitted by state",
+    "stale local owner occupancy",
+    "state setback override",
+    "state height override",
+    "discretionary review conflict",
+    "2027 contamination"
+  ],
+  "negative_tests": [
+    {
+      "expected": "REJECT_FUTURE_EFFECTIVE_RULE",
+      "id": "N_2027_IN_2026",
+      "input": "evaluation_date=2026-12-31 and detached_count=2"
+    },
+    {
+      "expected": "REJECT_HISTORICAL_OVERRIDE",
+      "id": "N_2023_OVERRIDE",
+      "input": "historical guide controls owner occupancy"
+    },
+    {
+      "expected": "REJECT_MAP_AS_DENIAL",
+      "id": "N_OVERLAY_DENIAL",
+      "input": "mapped H/P/F means ADU denied"
+    },
+    {
+      "expected": "REJECT_ELIGIBILITY_FROM_ZONING",
+      "id": "N_ZONING_ELIGIBILITY",
+      "input": "R1 zoning means eligible"
+    },
+    {
+      "expected": "REJECT_GUESSED_DWELLING_TYPE",
+      "id": "N_GUESS_DWELLING",
+      "input": "residential zone means single-family exists"
+    },
+    {
+      "expected": "REJECT_SUPERSEDED_RULE",
+      "id": "N_SUPERSEDED_BLOCK",
+      "input": "stale local owner rule blocks state path"
+    },
+    {
+      "expected": "REJECT_UNADOPTED_PLAN",
+      "id": "N_DRAFT_PLAN",
+      "input": "draft Downtown update applied"
+    },
+    {
+      "expected": "REJECT_UNSOURCED_RULE",
+      "id": "N_UNSOURCED",
+      "input": "rule without source_ids"
+    }
+  ]
+}

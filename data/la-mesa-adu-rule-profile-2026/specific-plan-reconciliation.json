@@ -1,0 +1,29 @@
+{
+  "draft_downtown_update": {
+    "included": false,
+    "reason": "not adopted"
+  },
+  "guaranteed_path_override": "conflicting plan standard ignored; valid objective/safety rules preserved",
+  "plans": [
+    {
+      "plan_id": "DOWNTOWN_VILLAGE_ADOPTED_1990",
+      "rule": "objective adopted-plan standards may apply only where state law permits; conflicting or discretionary standards cannot defeat \u00a766323 or the \u00a766321 floor",
+      "status": "CONDITIONAL"
+    },
+    {
+      "plan_id": "GROSSMONT_ADOPTED_1994",
+      "rule": "same bounded composition; project facts and plan text required",
+      "status": "CONDITIONAL"
+    },
+    {
+      "plan_id": "LA_MESA_SPRINGS_ADOPTED_1989",
+      "rule": "same bounded composition; project facts and plan text required",
+      "status": "CONDITIONAL"
+    }
+  ],
+  "sources": [
+    "LM_TITLE24_2026",
+    "CA_GOV_66321",
+    "CA_GOV_66323_2026"
+  ]
+}

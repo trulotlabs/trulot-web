@@ -1,0 +1,27 @@
+{
+  "activation_guard": "evaluation_date >= 2027-01-01",
+  "changes": [
+    {
+      "2026_rule": "one detached new-construction \u00a766323 ADU",
+      "2027_rule": "two detached new-construction \u00a766323 ADUs",
+      "affected_pathway": "SF_DETACHED_66323_ADU",
+      "change_id": "AB956_TWO_DETACHED_SF",
+      "la_mesa_text_action": "2026 matrix must be updated before use for 2027 conclusions",
+      "section": "\u00a766323(a)(2)",
+      "source_id": "AB956_CH791_2026"
+    },
+    {
+      "2026_rule": "one JADU may combine with the one detached 2026 unit",
+      "2027_rule": "local agency need not approve a JADU on a lot where two detached \u00a766323 units have been constructed",
+      "affected_pathway": "SF_JADU_66323",
+      "change_id": "AB956_JADU_COMBINATION",
+      "la_mesa_text_action": "update combination presentation",
+      "section": "\u00a766323(b)",
+      "source_id": "AB956_CH791_2026"
+    }
+  ],
+  "current_profile_mutated": false,
+  "effective_date": "2027-01-01",
+  "profile_id": "CA_ADU_2027",
+  "status": "INACTIVE_FUTURE"
+}

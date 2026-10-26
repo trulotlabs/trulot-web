@@ -1,0 +1,13 @@
+{
+  "authority_matrix_complete": true,
+  "conflicts_explicit": true,
+  "current_local_sources_pinned": true,
+  "current_state_sources_pinned": true,
+  "decision": "LA_MESA_ADU_2026_RULE_PROFILE_READY",
+  "future_2027_applied": false,
+  "overlay_specific_plan_classified": true,
+  "parcel_eligibility_published": false,
+  "pathways_sealed": true,
+  "property_facts_defined": true,
+  "provenance_complete": true
+}

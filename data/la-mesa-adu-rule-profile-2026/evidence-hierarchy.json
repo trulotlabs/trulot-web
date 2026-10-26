@@ -1,0 +1,33 @@
+{
+  "default_priority": [
+    {
+      "rank": 1,
+      "type": "operative statute"
+    },
+    {
+      "rank": 2,
+      "type": "operative local ordinance where valid"
+    },
+    {
+      "rank": 3,
+      "type": "adopted specific plan where applicable and not preempted"
+    },
+    {
+      "rank": 4,
+      "type": "official City implementation matrix/guidance"
+    },
+    {
+      "rank": 5,
+      "type": "HCD authoritative interpretive guidance"
+    },
+    {
+      "rank": 6,
+      "type": "historical guidebook supporting only"
+    }
+  ],
+  "historical_can_control": false,
+  "issue_override": {
+    "building_fire_flood_safety": "applicable building/fire/flood law may independently control after ADU zoning pathway selected",
+    "state_preemption_or_statutory_meaning": "operative statute before every local source; HCD interpretation supports but does not displace text"
+  }
+}

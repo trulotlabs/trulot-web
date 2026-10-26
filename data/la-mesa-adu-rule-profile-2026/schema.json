@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "no_capacity_calculation": {
+      "const": true
+    },
+    "no_parcel_eligibility": {
+      "const": true
+    },
+    "profile_id": {
+      "const": "LA_MESA_ADU_2026"
+    },
+    "rules": {
+      "minItems": 25,
+      "type": "array"
+    }
+  },
+  "required": [
+    "profile_id",
+    "evaluation_period",
+    "pathway_ids",
+    "rules",
+    "no_parcel_eligibility",
+    "no_capacity_calculation"
+  ],
+  "title": "La Mesa ADU Rule Profile 2026",
+  "type": "object"
+}

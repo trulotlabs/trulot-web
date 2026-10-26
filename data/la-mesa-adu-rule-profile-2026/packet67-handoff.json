@@ -1,0 +1,23 @@
+{
+  "inputs": [
+    "Packet 64 parcel geometry classification",
+    "Packet 65 base profile selection",
+    "Packet 66 current ADU rule envelope",
+    "required property facts",
+    "source versions",
+    "effective evaluation date"
+  ],
+  "must_preserve": [
+    "no eligibility from zoning alone",
+    "date-valid profile selection",
+    "source-backed/conditional/unknown separation"
+  ],
+  "not_performed_here": true,
+  "packet": "67",
+  "tasks": [
+    "select benchmark parcels",
+    "acquire and validate missing property facts",
+    "evaluate through V4",
+    "test jurisdiction-neutral route/lookup integration"
+  ]
+}

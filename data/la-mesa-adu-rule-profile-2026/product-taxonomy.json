@@ -1,0 +1,17 @@
+{
+  "allowed": [
+    "Likely state/local pathway available",
+    "Conditional",
+    "Needs property evidence",
+    "Needs project details",
+    "Outside current scope",
+    "Source unavailable"
+  ],
+  "prohibited": [
+    "Approved",
+    "Buildable",
+    "Guaranteed",
+    "whole-project compliance"
+  ],
+  "ui_implemented": false
+}

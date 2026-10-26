@@ -1,0 +1,60 @@
+{
+  "mapped_overlay_is_automatic_denial": false,
+  "overlays": [
+    {
+      "local_rules_that_may_remain": "objective grading, access, fire and life-safety requirements supported by applicable authority",
+      "modifier_id": "LM_OVERLAY_H",
+      "name": "Hillside",
+      "preemption": "cannot add unauthorized zoning/design standards to \u00a766323 units or defeat the protected 800-square-foot \u00a766314 floor",
+      "required_facts": [
+        "slope",
+        "grading_scope",
+        "access_geometry",
+        "fire_review",
+        "numeric setback trigger"
+      ],
+      "sources": [
+        "LM_TITLE24_2026",
+        "CA_GOV_66321",
+        "CA_GOV_66323_2026"
+      ],
+      "status": "CONDITIONAL"
+    },
+    {
+      "local_rules_that_may_remain": "objective, ministerial grading or design standards within state bounds",
+      "modifier_id": "LM_OVERLAY_P",
+      "name": "Scenic Preservation",
+      "preemption": "discretionary Planning Commission/design review cannot block a state-mandated pathway",
+      "required_facts": [
+        "grading_scope",
+        "objective_standard_text",
+        "historic_resource_status"
+      ],
+      "sources": [
+        "LM_TITLE24_2026",
+        "CA_GOV_66317",
+        "CA_GOV_66323_2026"
+      ],
+      "status": "CONDITIONAL"
+    },
+    {
+      "local_rules_that_may_remain": "building, floodplain, watercourse and FEMA/state safety requirements independent of zoning entitlement",
+      "modifier_id": "LM_OVERLAY_F",
+      "name": "Floodway",
+      "preemption": "mapped overlay alone is not ADU denial or eligibility",
+      "required_facts": [
+        "FEMA_flood_zone",
+        "base_flood_elevation",
+        "watercourse",
+        "finished_floor",
+        "City_Engineer_review"
+      ],
+      "sources": [
+        "LM_TITLE24_2026",
+        "CA_GOV_66323_2026"
+      ],
+      "status": "CONDITIONAL_SAFETY"
+    }
+  ],
+  "unresolved_result": "CONDITIONAL"
+}

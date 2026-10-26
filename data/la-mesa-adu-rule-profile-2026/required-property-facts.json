@@ -1,0 +1,198 @@
+{
+  "facts": [
+    {
+      "applies_to": "all",
+      "classification": "REQUIRED_FOR_PROFILE",
+      "fact_id": "evaluation_date",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "all",
+      "classification": "REQUIRED_FOR_PROFILE",
+      "fact_id": "jurisdiction",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "all",
+      "classification": "REQUIRED_FOR_PATHWAY",
+      "fact_id": "base_zone",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "all",
+      "classification": "REQUIRED_FOR_PATHWAY",
+      "fact_id": "primary_dwelling_type",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "all",
+      "classification": "REQUIRED_FOR_PATHWAY",
+      "fact_id": "primary_dwelling_existing_or_proposed",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "multifamily",
+      "classification": "REQUIRED_FOR_PATHWAY",
+      "fact_id": "existing_attached_dwelling_unit_count",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "conversion",
+      "classification": "REQUIRED_FOR_PATHWAY",
+      "fact_id": "qualifying_existing_space",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "conversion/local",
+      "classification": "REQUIRED_FOR_PATHWAY",
+      "fact_id": "space_legal_or_permitted_status",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "conversion",
+      "classification": "REQUIRED_FOR_PATHWAY",
+      "fact_id": "accessory_structure_status",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "all",
+      "classification": "REQUIRED_FOR_PATHWAY",
+      "fact_id": "project_form",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "size/parking",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "adu_bedroom_count",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "all",
+      "classification": "REQUIRED_FOR_PATHWAY",
+      "fact_id": "proposed_adu_sq_ft",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "attached/local",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "primary_dwelling_floor_area",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "coverage/local",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "lot_area",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "siting",
+      "classification": "ONLY_NEEDED_FOR_MODIFIER",
+      "fact_id": "lot_dimensions",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "setbacks",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "front_side_rear_street_side_context",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "conversion/replacement",
+      "classification": "REQUIRED_FOR_PATHWAY",
+      "fact_id": "existing_structure_footprint",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "overlay",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "overlay_intersections",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "specific plan",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "specific_plan_version",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "H/P",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "slope_and_grading_scope",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "fire",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "fire_sprinkler_primary_requirement",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "fire",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "fire_access_distance_and_route",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "F",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "flood_safety_facts",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "parking/height",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "public_transit_walking_distance",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "height",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "major_transit_or_high_quality_corridor",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "parking/design",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "historic_district_or_resource_status",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "parking",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "car_share_within_one_block",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "parking",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "on_street_permit_availability",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "JADU occupancy",
+      "classification": "REQUIRED_FOR_PATHWAY",
+      "fact_id": "sanitation_shared",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "JADU occupancy",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "owner_entity_type",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "rental",
+      "classification": "REQUIRED_FOR_PROJECT",
+      "fact_id": "rental_term",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    },
+    {
+      "applies_to": "wastewater",
+      "classification": "REQUIRED_FOR_MODIFIER",
+      "fact_id": "onsite_wastewater_system",
+      "unknown_behavior": "NO_FINAL_ELIGIBILITY"
+    }
+  ],
+  "unknown_dwelling_type_default": null,
+  "zoning_never_implies_dwelling_type": true
+}

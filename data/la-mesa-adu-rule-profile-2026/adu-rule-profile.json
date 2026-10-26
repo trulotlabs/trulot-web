@@ -1,0 +1,790 @@
+{
+  "evaluation_period": [
+    "2026-01-01",
+    "2026-12-31"
+  ],
+  "no_capacity_calculation": true,
+  "no_parcel_eligibility": true,
+  "pathway_ids": [
+    "SF_LOCAL_66314_ADU",
+    "SF_CONVERSION_66323_ADU",
+    "SF_DETACHED_66323_ADU",
+    "SF_JADU_66323",
+    "MF_CONVERSION_66323_ADU",
+    "MF_DETACHED_EXISTING_66323_ADU",
+    "MF_DETACHED_PROPOSED_66323_ADU"
+  ],
+  "profile_id": "LA_MESA_ADU_2026",
+  "rules": [
+    {
+      "authority_class": "STATE_FLOOR_LOCAL_MODIFIER",
+      "conditions": [
+        "single-family predicate",
+        "local objective standards"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU"
+      ],
+      "rule_id": "R_UNIT_SF_LOCAL",
+      "source_ids": [
+        "CA_GOV_66314",
+        "HCD_ADU_HANDBOOK_2026",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "status": "CONDITIONAL",
+      "statutory_section": "\u00a766314",
+      "topic": "unit_count",
+      "value": "at least 1"
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "qualifying proposed/existing space"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_CONVERSION_66323_ADU"
+      ],
+      "rule_id": "R_UNIT_SF_CONVERSION",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "STATE_GUARANTEE",
+      "statutory_section": "\u00a766323(a)(1)",
+      "topic": "unit_count",
+      "value": 1
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "evaluation date in 2026"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_DETACHED_66323_ADU"
+      ],
+      "rule_id": "R_UNIT_SF_DETACHED",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "STATE_GUARANTEE",
+      "statutory_section": "\u00a766323(a)(2)",
+      "topic": "unit_count",
+      "value": 1
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "within proposed/existing single-family residence"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_JADU_66323"
+      ],
+      "rule_id": "R_UNIT_JADU",
+      "source_ids": [
+        "CA_GOV_66333",
+        "CA_GOV_66323_2026"
+      ],
+      "status": "STATE_GUARANTEE",
+      "statutory_section": "\u00a766323(a)(1), \u00a766333",
+      "topic": "unit_count",
+      "value": 1
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "existing attached multifamily units",
+        "qualifying non-livable space"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "MF_CONVERSION_66323_ADU"
+      ],
+      "rule_id": "R_UNIT_MF_CONV",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "STATE_GUARANTEE",
+      "statutory_section": "\u00a766323(a)(3)",
+      "topic": "unit_count",
+      "value": "max(1, floor-or-statutorily-determined 25% ceiling); no parcel calculation here"
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "existing multifamily structure"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "MF_DETACHED_EXISTING_66323_ADU"
+      ],
+      "rule_id": "R_UNIT_MF_EXISTING",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "STATE_GUARANTEE",
+      "statutory_section": "\u00a766323(a)(4)",
+      "topic": "unit_count",
+      "value": "min(8, existing units on lot)"
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "proposed multifamily dwelling"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_UNIT_MF_PROPOSED",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "STATE_GUARANTEE",
+      "statutory_section": "\u00a766323(a)(4)",
+      "topic": "unit_count",
+      "value": 2
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_DETACHED_66323_ADU"
+      ],
+      "rule_id": "R_SIZE_66323_DET",
+      "source_ids": [
+        "CA_GOV_66323_2026"
+      ],
+      "status": "STATE_GUARANTEE",
+      "statutory_section": "\u00a766323(a)(2)",
+      "topic": "maximum_size",
+      "value": {
+        "sq_ft": 800
+      }
+    },
+    {
+      "authority_class": "STATE_FLOOR_LOCAL_MODIFIER",
+      "conditions": [
+        "conversion existing space exempt from size cap"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU"
+      ],
+      "rule_id": "R_SIZE_LOCAL",
+      "source_ids": [
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "status": "CONDITIONAL",
+      "statutory_section": "\u00a766321(b)(2)",
+      "topic": "local_maximum_size",
+      "value": {
+        "local_sq_ft": 1200,
+        "multi_bedroom_floor_sq_ft": 1000,
+        "one_bedroom_floor_sq_ft": 850
+      }
+    },
+    {
+      "authority_class": "STATE_FLOOR_LOCAL_MODIFIER",
+      "conditions": [
+        "850/1000 statutory bedroom floors also apply where local maximum imposed"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU"
+      ],
+      "rule_id": "R_SIZE_ATTACHED",
+      "source_ids": [
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "status": "CONDITIONAL",
+      "statutory_section": "\u00a7\u00a766314(d)(5), 66321(b)(2)-(3)",
+      "topic": "attached_relationship",
+      "value": {
+        "local_percent_primary": 50,
+        "minimum_protected_sq_ft": 800
+      }
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "existing accessory structure conversion"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_CONVERSION_66323_ADU"
+      ],
+      "rule_id": "R_CONVERSION_EXPANSION",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "STATE_GUARANTEE",
+      "statutory_section": "\u00a766323(a)(1)(A)",
+      "topic": "expansion",
+      "value": {
+        "purpose": "ingress_egress_only",
+        "sq_ft": 150
+      }
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "new attached/detached ADU; conversion exception separate"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_SETBACK_NEW",
+      "source_ids": [
+        "CA_GOV_66314",
+        "CA_GOV_66323_2026"
+      ],
+      "status": "STATE_FLOOR",
+      "statutory_section": "\u00a7\u00a766314(d)(7), 66323",
+      "topic": "side_rear_setback",
+      "value": {
+        "max_feet": 4
+      }
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "existing space or same location/dimensions replacement"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_CONVERSION_66323_ADU",
+        "MF_CONVERSION_66323_ADU",
+        "SF_JADU_66323"
+      ],
+      "rule_id": "R_SETBACK_CONVERSION",
+      "source_ids": [
+        "CA_GOV_66314",
+        "CA_GOV_66323_2026"
+      ],
+      "status": "STATE_GUARANTEE",
+      "statutory_section": "\u00a7\u00a766314(d)(7), 66323(a)(1)",
+      "topic": "setback",
+      "value": "existing setbacks; fire/safety access remains"
+    },
+    {
+      "authority_class": "STATE_FLOOR_LOCAL_MODIFIER",
+      "conditions": [
+        "site layout and all other valid standards"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU"
+      ],
+      "rule_id": "R_SETBACK_FRONT",
+      "source_ids": [
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "status": "CONDITIONAL",
+      "statutory_section": "\u00a766321(b)(3)",
+      "topic": "front_setback",
+      "value": "local zone standard unless needed to permit protected 800 sq ft"
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "\u00a766323 unit"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_DETACHED_66323_ADU"
+      ],
+      "rule_id": "R_SETBACK_66323_FRONT",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "STATE_GUARANTEE",
+      "statutory_section": "\u00a766323(b)",
+      "topic": "front_setback",
+      "value": "no local front setback imposed"
+    },
+    {
+      "authority_class": "STATE_FLOOR_LOCAL_MODIFIER",
+      "conditions": [
+        "transit requires half-mile walking distance to major transit stop or high-quality corridor",
+        "roof-pitch alignment evidence"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_HEIGHT_DETACHED",
+      "source_ids": [
+        "CA_GOV_66321",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "STATE_FLOOR",
+      "statutory_section": "\u00a766321(b)(4)(A)-(C)",
+      "topic": "height_floor",
+      "value": {
+        "base_feet": 16,
+        "multistory_multifamily_feet": 18,
+        "transit_feet": 18,
+        "transit_roof_pitch_extra_feet": 2
+      }
+    },
+    {
+      "authority_class": "STATE_FLOOR_LOCAL_MODIFIER",
+      "conditions": [
+        "attached ADU",
+        "no requirement beyond two stories"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU"
+      ],
+      "rule_id": "R_HEIGHT_ATTACHED",
+      "source_ids": [
+        "CA_GOV_66321",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "STATE_FLOOR",
+      "statutory_section": "\u00a766321(b)(4)(D)",
+      "topic": "height_floor",
+      "value": "25 feet or primary-dwelling zoning height, whichever lower"
+    },
+    {
+      "authority_class": "LOCAL_CONTROLS",
+      "conditions": [
+        "only if pathway permits local objective height standard",
+        "never below state floor"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_HEIGHT_LOCAL",
+      "source_ids": [
+        "LM_ADU_MATRIX_2026",
+        "LM_TITLE24_2026"
+      ],
+      "status": "CONDITIONAL",
+      "statutory_section": "matrix p.2 / LMMC \u00a724.05.030",
+      "topic": "local_height_presentation",
+      "value": {
+        "R1E_R1R_R1S_R1_R1A": 20,
+        "R2": 20,
+        "R3_RB": 30
+      }
+    },
+    {
+      "authority_class": "STATE_FLOOR_LOCAL_MODIFIER",
+      "conditions": [
+        "pathway and lot facts"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU"
+      ],
+      "rule_id": "R_COVERAGE_LOCAL",
+      "source_ids": [
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "status": "CONDITIONAL",
+      "statutory_section": "\u00a766321(b)(3)",
+      "topic": "lot_coverage",
+      "value": {
+        "cannot_preclude_sq_ft": 800,
+        "local_percent": 40
+      }
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_COVERAGE_66323",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "WAIVED",
+      "statutory_section": "\u00a766323(b)",
+      "topic": "coverage_far_open_space",
+      "value": "local zoning coverage/FAR/open-space standards do not apply"
+    },
+    {
+      "authority_class": "LOCAL_CONTROLS",
+      "conditions": [
+        "City 2026 matrix"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_PARKING_LOCAL",
+      "source_ids": [
+        "LM_ADU_MATRIX_2026"
+      ],
+      "status": "LOCAL_MORE_PERMISSIVE",
+      "statutory_section": "matrix p.2",
+      "topic": "adu_parking",
+      "value": 0
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_PARKING_STATE",
+      "source_ids": [
+        "CA_GOV_66314",
+        "CA_GOV_66322"
+      ],
+      "status": "STATE_FLOOR",
+      "statutory_section": "\u00a7\u00a766314(d)(10)-(11), 66322(a)",
+      "topic": "parking_ceiling",
+      "value": "max one per unit or bedroom, whichever less; none for \u00a766322 exemptions or \u00a766323 units"
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "garage/carport/covered or uncovered parking demolished with or converted to ADU"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_REPLACEMENT_PARKING",
+      "source_ids": [
+        "CA_GOV_66314",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "PROHIBITED",
+      "statutory_section": "\u00a766314(d)(11)",
+      "topic": "replacement_parking",
+      "value": 0
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "building-code facts"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_FIRE_SPRINKLERS",
+      "source_ids": [
+        "CA_GOV_66314",
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "CONDITIONAL",
+      "statutory_section": "\u00a7\u00a766314(d)(12), 66323(d)",
+      "topic": "fire_sprinklers",
+      "value": "ADU/JADU sprinklers only when required for primary residence; ADU/JADU does not trigger primary sprinklers"
+    },
+    {
+      "authority_class": "UNRESOLVED",
+      "conditions": [
+        "distance",
+        "access",
+        "applicable fire/building standard"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_FIRE_150",
+      "source_ids": [
+        "LM_ADU_MATRIX_2026",
+        "CA_GOV_66323_2026"
+      ],
+      "status": "UNRESOLVED",
+      "statutory_section": "matrix p.2 / \u00a766323(d)",
+      "topic": "fire_access_distance",
+      "value": "City matrix says required at 150 feet from rear of ADU to curb; cannot be treated as independent sprinkler rule without project/fire authority"
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "qualified-buyer separate-sale exception only"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_OWNER_ADU",
+      "source_ids": [
+        "CA_GOV_66315",
+        "CA_GOV_66341",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "PROHIBITED_GENERAL_REQUIREMENT",
+      "statutory_section": "\u00a7\u00a766315, 66341(c)(3)",
+      "topic": "owner_occupancy",
+      "value": false
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "sanitation arrangement",
+        "owner entity"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_JADU_66323"
+      ],
+      "rule_id": "R_OWNER_JADU",
+      "source_ids": [
+        "CA_GOV_66333",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "CONDITIONAL_REQUIRED",
+      "statutory_section": "\u00a766333(b)",
+      "topic": "owner_occupancy",
+      "value": "required only if sanitation shared; government/land-trust/housing-organization exceptions"
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "if rented"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_RENT_ADU",
+      "source_ids": [
+        "CA_GOV_66315",
+        "CA_GOV_66323_2026",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "status": "REQUIRED",
+      "statutory_section": "\u00a7\u00a766315, 66323(e), 66333(g)",
+      "topic": "rental_duration",
+      "value": "longer than 30 days"
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "deed restrictions and statutory predicates"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_SEPARATE_SALE",
+      "source_ids": [
+        "CA_GOV_66341"
+      ],
+      "status": "CONDITIONAL_EXCEPTION",
+      "statutory_section": "\u00a766341",
+      "topic": "separate_sale",
+      "value": "not ordinary; qualified-nonprofit/qualified-buyer path only unless a separately authorized local conveyance program applies"
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_MINISTERIAL",
+      "source_ids": [
+        "CA_GOV_66317",
+        "CA_GOV_66323_2026"
+      ],
+      "status": "REQUIRED",
+      "statutory_section": "\u00a7\u00a766317(a), 66323(a)",
+      "topic": "review",
+      "value": "ministerial; no discretionary hearing"
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "completed application",
+        "applicant delay tolls clock"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_TIMING",
+      "source_ids": [
+        "CA_GOV_66317",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "REQUIRED",
+      "statutory_section": "\u00a766317",
+      "topic": "complete_application_review",
+      "value": {
+        "days": 60,
+        "result": "approve_or_deny"
+      }
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [
+        "detached garage replaced by ADU"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_DEMOLITION",
+      "source_ids": [
+        "CA_GOV_66314",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "REQUIRED_COORDINATION",
+      "statutory_section": "\u00a766314(e)-(f)",
+      "topic": "garage_demolition",
+      "value": "review and issue garage demolition permit with ADU permit; no notice/placard except architecturally and historically significant district"
+    },
+    {
+      "authority_class": "LOCAL_CONTROLS",
+      "conditions": [
+        "adopted and objective",
+        "does not unreasonably restrict"
+      ],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_LOCAL_66314_ADU"
+      ],
+      "rule_id": "R_OBJECTIVE_LOCAL",
+      "source_ids": [
+        "CA_GOV_66314",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "CONDITIONAL",
+      "statutory_section": "\u00a7\u00a766313(i), 66314(b)(1), 66316",
+      "topic": "objective_standards",
+      "value": "numeric/verifiable parking, height, setback, landscape, architecture, maximum size, and historic-resource standards may apply within state limits"
+    },
+    {
+      "authority_class": "STATE_CONTROLS",
+      "conditions": [],
+      "parcel_conclusion": false,
+      "pathway_ids": [
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "rule_id": "R_OBJECTIVE_66323",
+      "source_ids": [
+        "CA_GOV_66323_2026"
+      ],
+      "status": "LIMITED",
+      "statutory_section": "\u00a766323(b)",
+      "topic": "objective_standards",
+      "value": "only standards expressly authorized by \u00a766323"
+    }
+  ]
+}

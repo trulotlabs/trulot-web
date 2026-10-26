@@ -1,0 +1,55 @@
+{
+  "automatic_more_permissive_selection": false,
+  "conflicts": [
+    {
+      "classification": "LOCAL_TEXT_SUPERSEDED",
+      "id": "C_STALE_OWNER",
+      "local_text": "any ADU owner-occupancy assumption from older material",
+      "result": "state rule used",
+      "state_text": "\u00a766315 prohibits general ADU owner occupancy"
+    },
+    {
+      "classification": "STATE_FLOOR_LOCAL_MODIFIER",
+      "id": "C_FRONT_SETBACK",
+      "local_text": "zone front setback",
+      "result": "conditional siting, never denial from local front setback alone",
+      "state_text": "\u00a766321 protects an 800-square-foot ADU; \u00a766323 bars unlisted standards"
+    },
+    {
+      "classification": "STATE_FLOOR_LOCAL_MODIFIER",
+      "id": "C_HEIGHT",
+      "local_text": "City matrix 20/30-foot zone presentation",
+      "result": "apply more permissive valid local limit but never below state floor",
+      "state_text": "\u00a766321 supplies 16/18/20 and attached floors"
+    },
+    {
+      "classification": "LOCAL_TEXT_SUPERSEDED",
+      "id": "C_DESIGN_REVIEW",
+      "local_text": "overlay or plan discretionary review",
+      "result": "cannot block state-mandated path",
+      "state_text": "ADU review is ministerial; \u00a766323 bars unlisted standards"
+    },
+    {
+      "classification": "UNRESOLVED",
+      "id": "C_FIRE_150",
+      "local_text": "matrix 150-foot rear-to-curb phrase",
+      "result": "do not infer sprinkler or denial; require fire/access authority and project facts",
+      "state_text": "sprinkler limit ties ADU to primary-residence requirement"
+    },
+    {
+      "classification": "STATE_FLOOR_LOCAL_MODIFIER",
+      "id": "C_LOT_COVERAGE",
+      "local_text": "40-percent matrix value",
+      "result": "conditional only on local \u00a766314 path",
+      "state_text": "cannot preclude protected 800-square-foot ADU; no coverage on \u00a766323 units"
+    },
+    {
+      "classification": "STATE_FLOOR_LOCAL_MODIFIER",
+      "id": "C_SPECIFIC_PLAN",
+      "local_text": "adopted plan or draft update",
+      "result": "only adopted objective nonconflicting standards; draft excluded",
+      "state_text": "ministerial/state floor and \u00a766323 limits"
+    }
+  ],
+  "unresolved_policy": "CONDITIONAL_OR_UNRESOLVED"
+}

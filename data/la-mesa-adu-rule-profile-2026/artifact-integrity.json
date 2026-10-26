@@ -1,0 +1,82 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": {
+      "bytes": 770,
+      "sha256": "227ef8e1676a893da6a592966edf46c5ef4f5d550113e9a9d81f725f389666d1"
+    },
+    "adu-rule-profile.json": {
+      "bytes": 22677,
+      "sha256": "8dcad9679583609cb30ee38d521778c8ef67006a81cd8e6d88f91b771cc0eabc"
+    },
+    "authority-matrix.json": {
+      "bytes": 10085,
+      "sha256": "7e9ecf53f7ab4db0b560af8d6e7c58e6085c7da522cc1bd076af998552dca295"
+    },
+    "benchmarks.json": {
+      "bytes": 4707,
+      "sha256": "d8164df9cb4db64ab3b72ce438efffd0e4b4b82537ea10f7928fcca8f85b2342"
+    },
+    "ca-adu-2027-delta.json": {
+      "bytes": 1062,
+      "sha256": "39e25114f742d6ce4bef5eff2668d7961ea360bbb1b83239329afc2b2bb80f10"
+    },
+    "composition-contract.json": {
+      "bytes": 852,
+      "sha256": "ea03f8967e9d4336285e43cf7c699b58ca28e638f407f68e1e7bd495c7b46c91"
+    },
+    "conflicts.json": {
+      "bytes": 2257,
+      "sha256": "e16b7144b5e3ebb3bf599259d6d094d35003743b3ce2da32ae94b36348fafb2f"
+    },
+    "decision.json": {
+      "bytes": 412,
+      "sha256": "cb83652a472964232883bc998f0ea68d7bd9a6fc0139ee7bee1d223922e6cabd"
+    },
+    "evidence-hierarchy.json": {
+      "bytes": 883,
+      "sha256": "f62618848562689f68e056d8066cba899b7f1cf6eb9592e0ebc918ba8811afd6"
+    },
+    "overlay-reconciliation.json": {
+      "bytes": 1931,
+      "sha256": "ee362e9f0e47ea20777d1ac2510d60a0e4cf3060896f27d978429d5e1e660eee"
+    },
+    "packet67-handoff.json": {
+      "bytes": 625,
+      "sha256": "e383af3fe128a1267e0fe4f201e7a2bec86cfd635d15661de665ece67109bff1"
+    },
+    "pathways.json": {
+      "bytes": 3230,
+      "sha256": "399d123dde7d74a0512e671e4c9f854f623fd82efa3da6e6a7f8a10a1fadc3c7"
+    },
+    "product-taxonomy.json": {
+      "bytes": 332,
+      "sha256": "2531ba1968c608e83b48c9594c20b584aa024ad52c1d49bea267cfa3c0825fdf"
+    },
+    "profiles.json": {
+      "bytes": 1453,
+      "sha256": "f750824c4778464f91913ddc8d713cb75fab6dea34e15fd5b54587b041485c1c"
+    },
+    "required-property-facts.json": {
+      "bytes": 6104,
+      "sha256": "495653808b367b73b99e5e84fcafeaa696391b6bd31e69af4d33b0a1a56fc35f"
+    },
+    "schema.json": {
+      "bytes": 550,
+      "sha256": "dd9d68dd998db1368ce3f605e083006e2d4fd7663a400a9845e85fda63df8404"
+    },
+    "source-captures.json": {
+      "bytes": 12941,
+      "sha256": "54a4cbb278dcd38b6dcec8314343d0f8c7a08f8bf717dedec63a90c62334b297"
+    },
+    "specific-plan-reconciliation.json": {
+      "bytes": 910,
+      "sha256": "3490aff277d6f3bd1e5862f1163b148073cd5c0518c0371a57487d3c2c3b569a"
+    },
+    "test-cases.json": {
+      "bytes": 1433,
+      "sha256": "2f5ea46013927b1473d3513874fdd35e801788c093ba47adf9f8735a3e5f026a"
+    }
+  },
+  "profile_id": "LA_MESA_ADU_2026"
+}

@@ -1,0 +1,373 @@
+{
+  "allowed_classes": [
+    "STATE_CONTROLS",
+    "LOCAL_CONTROLS",
+    "STATE_FLOOR_LOCAL_MODIFIER",
+    "LOCAL_TEXT_SUPERSEDED",
+    "UNRESOLVED"
+  ],
+  "entries": [
+    {
+      "classification": "STATE_FLOOR_LOCAL_MODIFIER",
+      "local_operation": "applies_within_state_floor",
+      "rule_id": "R_UNIT_SF_LOCAL",
+      "source_ids": [
+        "CA_GOV_66314",
+        "HCD_ADU_HANDBOOK_2026",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_UNIT_SF_CONVERSION",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_UNIT_SF_DETACHED",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_UNIT_JADU",
+      "source_ids": [
+        "CA_GOV_66333",
+        "CA_GOV_66323_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_UNIT_MF_CONV",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_UNIT_MF_EXISTING",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_UNIT_MF_PROPOSED",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_SIZE_66323_DET",
+      "source_ids": [
+        "CA_GOV_66323_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_FLOOR_LOCAL_MODIFIER",
+      "local_operation": "applies_within_state_floor",
+      "rule_id": "R_SIZE_LOCAL",
+      "source_ids": [
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_FLOOR_LOCAL_MODIFIER",
+      "local_operation": "applies_within_state_floor",
+      "rule_id": "R_SIZE_ATTACHED",
+      "source_ids": [
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_CONVERSION_EXPANSION",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_SETBACK_NEW",
+      "source_ids": [
+        "CA_GOV_66314",
+        "CA_GOV_66323_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_SETBACK_CONVERSION",
+      "source_ids": [
+        "CA_GOV_66314",
+        "CA_GOV_66323_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_FLOOR_LOCAL_MODIFIER",
+      "local_operation": "applies_within_state_floor",
+      "rule_id": "R_SETBACK_FRONT",
+      "source_ids": [
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_SETBACK_66323_FRONT",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_FLOOR_LOCAL_MODIFIER",
+      "local_operation": "applies_within_state_floor",
+      "rule_id": "R_HEIGHT_DETACHED",
+      "source_ids": [
+        "CA_GOV_66321",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_FLOOR_LOCAL_MODIFIER",
+      "local_operation": "applies_within_state_floor",
+      "rule_id": "R_HEIGHT_ATTACHED",
+      "source_ids": [
+        "CA_GOV_66321",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "LOCAL_CONTROLS",
+      "local_operation": "applies_if_objective_and_pathway_allows",
+      "rule_id": "R_HEIGHT_LOCAL",
+      "source_ids": [
+        "LM_ADU_MATRIX_2026",
+        "LM_TITLE24_2026"
+      ],
+      "state_controls": false
+    },
+    {
+      "classification": "STATE_FLOOR_LOCAL_MODIFIER",
+      "local_operation": "applies_within_state_floor",
+      "rule_id": "R_COVERAGE_LOCAL",
+      "source_ids": [
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_COVERAGE_66323",
+      "source_ids": [
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "LOCAL_CONTROLS",
+      "local_operation": "applies_if_objective_and_pathway_allows",
+      "rule_id": "R_PARKING_LOCAL",
+      "source_ids": [
+        "LM_ADU_MATRIX_2026"
+      ],
+      "state_controls": false
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_PARKING_STATE",
+      "source_ids": [
+        "CA_GOV_66314",
+        "CA_GOV_66322"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_REPLACEMENT_PARKING",
+      "source_ids": [
+        "CA_GOV_66314",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_FIRE_SPRINKLERS",
+      "source_ids": [
+        "CA_GOV_66314",
+        "CA_GOV_66323_2026",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "UNRESOLVED",
+      "local_operation": "conditional_no_conclusion",
+      "rule_id": "R_FIRE_150",
+      "source_ids": [
+        "LM_ADU_MATRIX_2026",
+        "CA_GOV_66323_2026"
+      ],
+      "state_controls": false
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_OWNER_ADU",
+      "source_ids": [
+        "CA_GOV_66315",
+        "CA_GOV_66341",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_OWNER_JADU",
+      "source_ids": [
+        "CA_GOV_66333",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_RENT_ADU",
+      "source_ids": [
+        "CA_GOV_66315",
+        "CA_GOV_66323_2026",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_SEPARATE_SALE",
+      "source_ids": [
+        "CA_GOV_66341"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_MINISTERIAL",
+      "source_ids": [
+        "CA_GOV_66317",
+        "CA_GOV_66323_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_TIMING",
+      "source_ids": [
+        "CA_GOV_66317",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_DEMOLITION",
+      "source_ids": [
+        "CA_GOV_66314",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "LOCAL_CONTROLS",
+      "local_operation": "applies_if_objective_and_pathway_allows",
+      "rule_id": "R_OBJECTIVE_LOCAL",
+      "source_ids": [
+        "CA_GOV_66314",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": false
+    },
+    {
+      "classification": "STATE_CONTROLS",
+      "local_operation": "preempted_or_only_if_state_authorized",
+      "rule_id": "R_OBJECTIVE_66323",
+      "source_ids": [
+        "CA_GOV_66323_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "LOCAL_TEXT_SUPERSEDED",
+      "local_operation": "do_not_apply",
+      "rule_id": "A_STALE_ADU_OWNER_OCCUPANCY",
+      "source_ids": [
+        "CA_GOV_66315",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "state_controls": true
+    },
+    {
+      "classification": "LOCAL_TEXT_SUPERSEDED",
+      "local_operation": "cannot_block_ministerial_ADU",
+      "rule_id": "A_DISCRETIONARY_DESIGN_REVIEW",
+      "source_ids": [
+        "CA_GOV_66317",
+        "CA_GOV_66323_2026",
+        "LM_TITLE24_2026"
+      ],
+      "state_controls": true
+    }
+  ],
+  "silent_reconciliation_prohibited": true
+}

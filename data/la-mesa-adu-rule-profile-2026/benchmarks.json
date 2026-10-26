@@ -1,0 +1,186 @@
+{
+  "scenarios": [
+    {
+      "controlling_source_ids": [
+        "CA_GOV_66323_2026",
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "final_parcel_eligibility": null,
+      "id": "B1",
+      "potential_pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323"
+      ],
+      "scenario": "ordinary single-family R1 lot",
+      "unresolved_predicates": [
+        "dwelling/space/project facts"
+      ]
+    },
+    {
+      "controlling_source_ids": [
+        "CA_GOV_66323_2026",
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "final_parcel_eligibility": null,
+      "id": "B2",
+      "potential_pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323"
+      ],
+      "scenario": "R1S + Hillside",
+      "unresolved_predicates": [
+        "H trigger",
+        "grading",
+        "access",
+        "fire",
+        "project facts"
+      ]
+    },
+    {
+      "controlling_source_ids": [
+        "CA_GOV_66323_2026",
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "final_parcel_eligibility": null,
+      "id": "B3",
+      "potential_pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323"
+      ],
+      "scenario": "R1E + Scenic",
+      "unresolved_predicates": [
+        "P trigger",
+        "grading",
+        "objective-standard text",
+        "project facts"
+      ]
+    },
+    {
+      "controlling_source_ids": [
+        "CA_GOV_66323_2026",
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "final_parcel_eligibility": null,
+      "id": "B4",
+      "potential_pathway_ids": [
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "scenario": "R3 multifamily",
+      "unresolved_predicates": [
+        "existing/proposed status",
+        "unit count",
+        "qualifying space"
+      ]
+    },
+    {
+      "controlling_source_ids": [
+        "CA_GOV_66323_2026",
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "final_parcel_eligibility": null,
+      "id": "B5",
+      "potential_pathway_ids": [
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "scenario": "R3 + D/MU/P",
+      "unresolved_predicates": [
+        "each overlay trigger",
+        "objective standard applicability",
+        "dwelling facts"
+      ]
+    },
+    {
+      "controlling_source_ids": [
+        "CA_GOV_66323_2026",
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "final_parcel_eligibility": null,
+      "id": "B6",
+      "potential_pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "scenario": "adopted specific-plan parcel",
+      "unresolved_predicates": [
+        "adopted plan identity/version",
+        "objective standard",
+        "preemption review"
+      ]
+    },
+    {
+      "controlling_source_ids": [
+        "CA_GOV_66323_2026",
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "final_parcel_eligibility": null,
+      "id": "B7",
+      "potential_pathway_ids": [
+        "SF_LOCAL_66314_ADU",
+        "SF_CONVERSION_66323_ADU",
+        "SF_DETACHED_66323_ADU",
+        "SF_JADU_66323",
+        "MF_CONVERSION_66323_ADU",
+        "MF_DETACHED_EXISTING_66323_ADU",
+        "MF_DETACHED_PROPOSED_66323_ADU"
+      ],
+      "scenario": "floodway parcel",
+      "unresolved_predicates": [
+        "flood zone",
+        "elevation",
+        "watercourse",
+        "safety review"
+      ]
+    },
+    {
+      "controlling_source_ids": [
+        "CA_GOV_66323_2026",
+        "CA_GOV_66321",
+        "LM_ADU_MATRIX_2026"
+      ],
+      "final_parcel_eligibility": null,
+      "id": "B8",
+      "potential_pathway_ids": [],
+      "scenario": "missing primary-dwelling facts",
+      "unresolved_predicates": [
+        "primary dwelling type and existing/proposed status"
+      ]
+    },
+    {
+      "controlling_source_ids": [
+        "AB956_CH791_2026"
+      ],
+      "final_parcel_eligibility": null,
+      "id": "B9",
+      "potential_pathway_ids": [
+        "SF_DETACHED_66323_ADU"
+      ],
+      "scenario": "2027 future-effective scenario",
+      "unresolved_predicates": [
+        "evaluation date 2027+",
+        "updated local sources"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "closed_pathway_ids": [
+    "SF_LOCAL_66314_ADU",
+    "SF_CONVERSION_66323_ADU",
+    "SF_DETACHED_66323_ADU",
+    "SF_JADU_66323",
+    "MF_CONVERSION_66323_ADU",
+    "MF_DETACHED_EXISTING_66323_ADU",
+    "MF_DETACHED_PROPOSED_66323_ADU"
+  ],
+  "generic_adu_allowed_result_prohibited": true,
+  "pathways": [
+    {
+      "basis": "\u00a766314 local-ordinance path",
+      "coexistence": "may combine with \u00a766323 units subject to project facts",
+      "count_rule": "at least one additional local-ordinance ADU; evaluated separately from \u00a766323 units",
+      "dwelling_context": "PROPOSED_OR_EXISTING_SINGLE_FAMILY",
+      "form": "ATTACHED_OR_DETACHED",
+      "pathway_id": "SF_LOCAL_66314_ADU",
+      "standards_scope": "valid objective local standards within state floors"
+    },
+    {
+      "basis": "\u00a766323(a)(1)",
+      "coexistence": "one JADU and one 2026 detached \u00a766323 ADU may combine",
+      "count_rule": "one",
+      "dwelling_context": "PROPOSED_OR_EXISTING_SINGLE_FAMILY",
+      "form": "CONVERSION",
+      "pathway_id": "SF_CONVERSION_66323_ADU",
+      "standards_scope": "only \u00a766323-authorized standards and building/health/safety"
+    },
+    {
+      "basis": "\u00a766323(a)(2), operative 2026",
+      "coexistence": "conversion ADU and JADU may combine",
+      "count_rule": "one in 2026",
+      "dwelling_context": "PROPOSED_OR_EXISTING_SINGLE_FAMILY",
+      "form": "DETACHED_NEW",
+      "pathway_id": "SF_DETACHED_66323_ADU",
+      "standards_scope": "800 sf; \u00a766321 height; side/rear no more than 4 ft"
+    },
+    {
+      "basis": "\u00a766323(a)(1), \u00a7\u00a766333-66339",
+      "coexistence": "may combine with 2026 conversion and detached paths",
+      "count_rule": "one",
+      "dwelling_context": "PROPOSED_OR_EXISTING_SINGLE_FAMILY",
+      "form": "JADU",
+      "pathway_id": "SF_JADU_66323",
+      "standards_scope": "JADU statute plus \u00a766323"
+    },
+    {
+      "basis": "\u00a766323(a)(3)",
+      "coexistence": "may combine with multifamily detached path",
+      "count_rule": "at least one; up to 25 percent of existing multifamily dwelling units",
+      "dwelling_context": "EXISTING_MULTIFAMILY_STRUCTURE",
+      "form": "CONVERSION_NON_LIVABLE_SPACE",
+      "pathway_id": "MF_CONVERSION_66323_ADU",
+      "standards_scope": "only \u00a766323-authorized standards and building/health/safety"
+    },
+    {
+      "basis": "\u00a766323(a)(4)",
+      "coexistence": "may combine with multifamily conversion path",
+      "count_rule": "up to eight, not exceeding existing units on lot",
+      "dwelling_context": "EXISTING_MULTIFAMILY_STRUCTURE",
+      "form": "DETACHED_NEW",
+      "pathway_id": "MF_DETACHED_EXISTING_66323_ADU",
+      "standards_scope": "\u00a766321 height; side/rear no more than 4 ft"
+    },
+    {
+      "basis": "\u00a766323(a)(4)",
+      "coexistence": "no existing-space conversion path until qualifying space exists",
+      "count_rule": "up to two",
+      "dwelling_context": "PROPOSED_MULTIFAMILY_STRUCTURE",
+      "form": "DETACHED_NEW",
+      "pathway_id": "MF_DETACHED_PROPOSED_66323_ADU",
+      "standards_scope": "\u00a766321 height; side/rear no more than 4 ft"
+    }
+  ],
+  "total_development_capacity_calculated": false
+}

@@ -1,0 +1,55 @@
+{
+  "active_combined_profile": "LA_MESA_ADU_2026",
+  "evaluation_date_contract": "Caller must supply an ISO date; profile selection is date-bounded.",
+  "profiles": [
+    {
+      "effective_from": "2026-01-01",
+      "effective_through": "2026-12-31",
+      "future_rules_applied": false,
+      "jurisdiction": "CALIFORNIA",
+      "profile_id": "CA_ADU_2026",
+      "source_ids": [
+        "CA_GOV_66313",
+        "CA_GOV_66314",
+        "CA_GOV_66315",
+        "CA_GOV_66317",
+        "CA_GOV_66321",
+        "CA_GOV_66322",
+        "CA_GOV_66323_2026",
+        "CA_GOV_66333",
+        "CA_GOV_66341",
+        "HCD_ADU_HANDBOOK_2026"
+      ],
+      "status": "ACTIVE"
+    },
+    {
+      "composes": [
+        "LA_MESA_TITLE24_2026_10_04",
+        "CA_ADU_2026"
+      ],
+      "effective_from": "2026-01-01",
+      "effective_through": "2026-12-31",
+      "future_rules_applied": false,
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "profile_id": "LA_MESA_ADU_2026",
+      "source_ids": [
+        "LM_ADU_WEB_2026",
+        "LM_ADU_MATRIX_2026",
+        "LM_TITLE24_2026",
+        "LM_BUILDING_2026"
+      ],
+      "status": "ACTIVE"
+    },
+    {
+      "activation_guard": "evaluation_date >= 2027-01-01",
+      "effective_from": "2027-01-01",
+      "effective_through": null,
+      "jurisdiction": "CALIFORNIA",
+      "profile_id": "CA_ADU_2027",
+      "source_ids": [
+        "AB956_CH791_2026"
+      ],
+      "status": "INACTIVE_FUTURE"
+    }
+  ]
+}
