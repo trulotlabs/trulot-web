@@ -1,0 +1,11 @@
+{
+  "constraint": "no duplicated rule engine",
+  "focus": [
+    "branded acquisition surface",
+    "address/APN entry",
+    "La Mesa-specific homeowner copy",
+    "same TruLot engine underneath",
+    "lead capture/WaypointADU handoff"
+  ],
+  "next_step": "LAMESAADU_FRONT_DOOR_INTEGRATION"
+}

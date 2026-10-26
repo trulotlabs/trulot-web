@@ -25,6 +25,11 @@ import {
   deriveStateLabel,
 } from "./feasibility-preview-presentation";
 import type { ParcelPageSourceEntry } from "./source-freshness";
+import {
+  LA_MESA_PUBLIC_PROFILES,
+  buildLaMesaDetails,
+  buildLaMesaPayload,
+} from "./la-mesa-public-feasibility";
 
 export const PUBLIC_FEASIBILITY_ERROR_CODES = [
   "FEASIBILITY_PROFILE_UNAVAILABLE",
@@ -35,7 +40,10 @@ export const PUBLIC_FEASIBILITY_ERROR_CODES = [
 
 export type PublicFeasibilityErrorCode =
   (typeof PUBLIC_FEASIBILITY_ERROR_CODES)[number];
-export type PublicJurisdictionId = "CITY_OF_SAN_DIEGO" | (string & {});
+export type PublicJurisdictionId =
+  | "CITY_OF_SAN_DIEGO"
+  | "CITY_OF_LA_MESA"
+  | (string & {});
 export type PublicMeasurementKey =
   | "LOT_AREA"
   | "LOT_WIDTH"
@@ -64,6 +72,16 @@ export interface PublicMappedContextInput {
 }
 
 /** Narrow public input with no project, plan, survey, or private fields. */
+export interface PublicLaMesaEvaluationInput {
+  evaluationDate: string;
+  aduProfile: "LA_MESA_ADU_2026";
+  selectionState: "READY" | "PROFILE_UNAVAILABLE" | "JURISDICTION_UNRESOLVED";
+  baseProfile: string | null;
+  modifierIds: string[];
+  missingPropertyFacts: string[];
+  publicEvidenceOnly: true;
+}
+
 export interface PublicParcelFeasibilityInput {
   jurisdictionId: PublicJurisdictionId;
   parcelId: string;
@@ -83,6 +101,7 @@ export interface PublicParcelFeasibilityInput {
     tpa?: PublicMappedContextInput;
   };
   sourceFreshness: string | null;
+  laMesa?: PublicLaMesaEvaluationInput;
 }
 
 export interface PublicFeasibilitySummaryCount {
@@ -133,6 +152,40 @@ export interface PublicFeasibilityContextRecord {
 }
 
 /** Presentation-safe output; private/project fields are not representable. */
+export type PublicLaMesaAnswerCategory =
+  | "Likely state/local pathway available"
+  | "Conditional"
+  | "Needs property evidence"
+  | "Needs project details"
+  | "Outside current scope"
+  | "Source unavailable";
+
+export interface PublicJurisdictionFeasibilityDetails {
+  evaluationEffectiveDate: string;
+  municipalCodeProfile: string;
+  developmentRules: {
+    baseProfile: string | null;
+    evaluationState: ProductState;
+  };
+  aduPathwaySummary: {
+    profile: string | null;
+    answerCategory: PublicLaMesaAnswerCategory;
+    selectedPathwayIds: string[];
+    pathwayCatalog: Array<{ id: string; label: string }>;
+    currentDetachedSingleFamilyCount: number;
+    permitApprovalConclusion: null;
+    finalParcelEligibility: null;
+  };
+  mappedModifiers: string[];
+  unresolvedPredicates: string[];
+  publicEvidenceSources: Array<{
+    label: string;
+    publisher: string;
+    date: string;
+    url: string;
+  }>;
+}
+
 export interface PublicParcelFeasibilityOutput {
   readiness: "READY" | "UNSUPPORTED_PROFILE" | "UNAVAILABLE";
   jurisdictionId: PublicJurisdictionId;
@@ -143,6 +196,7 @@ export interface PublicParcelFeasibilityOutput {
   sourceRegistryAdditions: ParcelPageSourceEntry[];
   sectionMessage: string | null;
   errorCode: PublicFeasibilityErrorCode | null;
+  jurisdictionDetails: PublicJurisdictionFeasibilityDetails | null;
 }
 
 export interface PublicRuleProfile {
@@ -150,7 +204,7 @@ export interface PublicRuleProfile {
   zoneCode: string;
   version: string;
   coastalContexts: Array<PublicParcelFeasibilityInput["coastalContext"]>;
-  kind: "RS" | "RM";
+  kind: "RS" | "RM" | "LA_MESA_ADU";
 }
 
 const PROFILES: readonly PublicRuleProfile[] = [
@@ -168,6 +222,7 @@ const PROFILES: readonly PublicRuleProfile[] = [
     coastalContexts: ["OUTSIDE_COASTAL"],
     kind: "RM",
   },
+  ...LA_MESA_PUBLIC_PROFILES,
 ] as const;
 
 const renderer = validateRendererContract(rendererContractJson);
@@ -1002,6 +1057,10 @@ function present(
     sourceRegistryAdditions: sourceRegistry(payload),
     sectionMessage: null,
     errorCode: null,
+    jurisdictionDetails:
+      input.jurisdictionId === "CITY_OF_LA_MESA"
+        ? buildLaMesaDetails(input)
+        : null,
   };
 }
 
@@ -1019,6 +1078,7 @@ function unavailable(
     sourceRegistryAdditions: [],
     sectionMessage: "Detailed rule evaluation temporarily unavailable.",
     errorCode,
+    jurisdictionDetails: null,
   };
 }
 
@@ -1026,7 +1086,11 @@ export function buildPublicParcelFeasibility(
   input: PublicParcelFeasibilityInput,
 ): PublicParcelFeasibilityOutput {
   const profile = selectProfile(input);
-  if (!profile) {
+  const laMesaBoundedFallback =
+    input.jurisdictionId === "CITY_OF_LA_MESA" &&
+    input.laMesa &&
+    input.laMesa.selectionState !== "READY";
+  if (!profile && !laMesaBoundedFallback) {
     return {
       readiness: "UNSUPPORTED_PROFILE",
       jurisdictionId: input.jurisdictionId,
@@ -1038,11 +1102,15 @@ export function buildPublicParcelFeasibility(
       sectionMessage:
         "Detailed development-rule evaluation is not yet available for this zone.",
       errorCode: "FEASIBILITY_PROFILE_UNAVAILABLE",
+      jurisdictionDetails: null,
     };
   }
   let source: PreviewPayload;
   try {
-    source = buildPayload(input, profile);
+    source =
+      input.jurisdictionId === "CITY_OF_LA_MESA"
+        ? buildLaMesaPayload(input)
+        : buildPayload(input, profile!);
   } catch (error) {
     console.error(
       `[FEASIBILITY_BUILD_FAILED] ${error instanceof Error ? error.name : "UNKNOWN"}`,

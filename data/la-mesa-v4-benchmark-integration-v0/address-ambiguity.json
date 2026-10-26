@@ -1,0 +1,8 @@
+{
+  "addressed_la_mesa_parcels": 16728,
+  "cross_jurisdiction_address_strings": 7,
+  "distinct_address_strings": 13212,
+  "duplicate_address_groups": 186,
+  "policy": "Return deterministic candidate set keyed by jurisdiction + APN/source identity; require explicit selection when multiple candidates remain.",
+  "silent_address_only_choice": false
+}

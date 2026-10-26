@@ -1,0 +1,41 @@
+{
+  "mapping": [
+    {
+      "concept": "pathway available",
+      "guard": "all pathway predicates established; still not permit approval",
+      "public_answer": "Likely state/local pathway available",
+      "v4_state": "CONDITIONAL"
+    },
+    {
+      "concept": "conditional",
+      "guard": "controlling modifier/project predicate unresolved",
+      "public_answer": "Conditional",
+      "v4_state": "CONDITIONAL"
+    },
+    {
+      "concept": "needs evidence",
+      "guard": "required public property fact missing",
+      "public_answer": "Needs property evidence",
+      "v4_state": "NEEDS_EVIDENCE"
+    },
+    {
+      "concept": "not evaluated",
+      "guard": "property pathway established but project input absent",
+      "public_answer": "Needs project details",
+      "v4_state": "NOT_EVALUATED"
+    },
+    {
+      "concept": "source unavailable",
+      "guard": "authoritative source or jurisdiction unavailable",
+      "public_answer": "Source unavailable",
+      "v4_state": "SOURCE_UNAVAILABLE"
+    },
+    {
+      "concept": "outside current scope",
+      "guard": "unsupported profile/pathway",
+      "public_answer": "Outside current scope",
+      "v4_state": "OUTSIDE_CURRENT_SCOPE"
+    }
+  ],
+  "second_state_system_created": false
+}

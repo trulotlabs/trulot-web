@@ -1,0 +1,13 @@
+{
+  "current_public_exposure": false,
+  "future_shape": "/parcel/la-mesa/[slug]",
+  "implemented": false,
+  "reason": "A route would create a reachable surface before public/indexing authorization.",
+  "requirements": {
+    "canonical": "self-referential La Mesa canonical only after launch authorization",
+    "metadata": "City of La Mesa jurisdiction, bounded public-source wording",
+    "robots": "noindex,nofollow until explicit public authorization",
+    "sitemap": "excluded until explicit public authorization",
+    "structured_data": "no LocalBusiness/Place claim unless source-backed and reviewed"
+  }
+}

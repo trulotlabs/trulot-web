@@ -1,0 +1,234 @@
+{
+  "jurisdiction": {
+    "aduProfile": "LA_MESA_ADU_2026",
+    "displayName": "City of La Mesa",
+    "evaluationDateRule": "2026 profile requires 2026-01-01 through 2026-12-31; 2027 requires explicit date and profile",
+    "futureProfileActiveByDefault": false,
+    "futureStateProfile": "CA_ADU_2027",
+    "id": "CITY_OF_LA_MESA",
+    "mappedContextTypes": [
+      "HILLSIDE",
+      "SCENIC_PRESERVATION",
+      "FLOODWAY",
+      "URBAN_DESIGN",
+      "MIXED_USE",
+      "GROSSMONT_CENTER",
+      "SPECIFIC_PLAN"
+    ],
+    "municipalCodeProfile": "LA_MESA_TITLE24_2026_10_04",
+    "profileSelectionArtifact": "data/la-mesa-residential-rule-profile-v0/profile-selection.ndjson.gz",
+    "residentialProfileSet": "data/la-mesa-residential-rule-profile-v0/rule-profiles.json",
+    "stateProfile": "CA_ADU_2026"
+  },
+  "pathways": {
+    "multifamilyExisting2026": [
+      {
+        "answerCategory": "Needs project details",
+        "id": "MF_CONVERSION_66323_ADU",
+        "label": "Existing multifamily conversion path",
+        "v4StateWhenDwellingKnown": "CONDITIONAL"
+      },
+      {
+        "answerCategory": "Needs project details",
+        "id": "MF_DETACHED_EXISTING_66323_ADU",
+        "label": "Existing multifamily detached path",
+        "v4StateWhenDwellingKnown": "CONDITIONAL"
+      }
+    ],
+    "multifamilyProposed2026": [
+      {
+        "answerCategory": "Needs project details",
+        "id": "MF_DETACHED_PROPOSED_66323_ADU",
+        "label": "Proposed multifamily detached path",
+        "v4StateWhenDwellingKnown": "CONDITIONAL"
+      }
+    ],
+    "singleFamily2026": [
+      {
+        "answerCategory": "Needs project details",
+        "id": "SF_LOCAL_66314_ADU",
+        "label": "Local-ordinance ADU path",
+        "v4StateWhenDwellingKnown": "CONDITIONAL"
+      },
+      {
+        "answerCategory": "Needs project details",
+        "id": "SF_CONVERSION_66323_ADU",
+        "label": "Existing-space ADU path",
+        "v4StateWhenDwellingKnown": "CONDITIONAL"
+      },
+      {
+        "answerCategory": "Needs project details",
+        "detachedCount": 1,
+        "id": "SF_DETACHED_66323_ADU",
+        "label": "Detached 2026 state path",
+        "v4StateWhenDwellingKnown": "CONDITIONAL"
+      },
+      {
+        "answerCategory": "Needs project details",
+        "id": "SF_JADU_66323",
+        "label": "Junior ADU path",
+        "v4StateWhenDwellingKnown": "CONDITIONAL"
+      }
+    ]
+  },
+  "privateEvidenceTypesRejected": [
+    "PRIVATE_PLAN_STATUS",
+    "PRIVATE_AUTHORIZED_EVIDENCE",
+    "PRIVATE_PLAN_FACT",
+    "PRIVATE_SURVEY",
+    "PRIVATE_PROJECT_REVIEW",
+    "PRIVACY_NOTICE"
+  ],
+  "profiles": [
+    {
+      "aduProfileVersion": "CA_ADU_2026",
+      "coastalContexts": [
+        "NOT_APPLICABLE"
+      ],
+      "combinedProfile": "LA_MESA_ADU_2026",
+      "effectiveFrom": "2026-01-01",
+      "effectiveThrough": "2026-12-31",
+      "jurisdictionId": "CITY_OF_LA_MESA",
+      "kind": "LA_MESA_ADU",
+      "version": "LA_MESA_TITLE24_2026_10_04",
+      "zoneCode": "R1E"
+    },
+    {
+      "aduProfileVersion": "CA_ADU_2026",
+      "coastalContexts": [
+        "NOT_APPLICABLE"
+      ],
+      "combinedProfile": "LA_MESA_ADU_2026",
+      "effectiveFrom": "2026-01-01",
+      "effectiveThrough": "2026-12-31",
+      "jurisdictionId": "CITY_OF_LA_MESA",
+      "kind": "LA_MESA_ADU",
+      "version": "LA_MESA_TITLE24_2026_10_04",
+      "zoneCode": "R1R"
+    },
+    {
+      "aduProfileVersion": "CA_ADU_2026",
+      "coastalContexts": [
+        "NOT_APPLICABLE"
+      ],
+      "combinedProfile": "LA_MESA_ADU_2026",
+      "effectiveFrom": "2026-01-01",
+      "effectiveThrough": "2026-12-31",
+      "jurisdictionId": "CITY_OF_LA_MESA",
+      "kind": "LA_MESA_ADU",
+      "version": "LA_MESA_TITLE24_2026_10_04",
+      "zoneCode": "R1S"
+    },
+    {
+      "aduProfileVersion": "CA_ADU_2026",
+      "coastalContexts": [
+        "NOT_APPLICABLE"
+      ],
+      "combinedProfile": "LA_MESA_ADU_2026",
+      "effectiveFrom": "2026-01-01",
+      "effectiveThrough": "2026-12-31",
+      "jurisdictionId": "CITY_OF_LA_MESA",
+      "kind": "LA_MESA_ADU",
+      "version": "LA_MESA_TITLE24_2026_10_04",
+      "zoneCode": "R1"
+    },
+    {
+      "aduProfileVersion": "CA_ADU_2026",
+      "coastalContexts": [
+        "NOT_APPLICABLE"
+      ],
+      "combinedProfile": "LA_MESA_ADU_2026",
+      "effectiveFrom": "2026-01-01",
+      "effectiveThrough": "2026-12-31",
+      "jurisdictionId": "CITY_OF_LA_MESA",
+      "kind": "LA_MESA_ADU",
+      "version": "LA_MESA_TITLE24_2026_10_04",
+      "zoneCode": "R1A"
+    },
+    {
+      "aduProfileVersion": "CA_ADU_2026",
+      "coastalContexts": [
+        "NOT_APPLICABLE"
+      ],
+      "combinedProfile": "LA_MESA_ADU_2026",
+      "effectiveFrom": "2026-01-01",
+      "effectiveThrough": "2026-12-31",
+      "jurisdictionId": "CITY_OF_LA_MESA",
+      "kind": "LA_MESA_ADU",
+      "version": "LA_MESA_TITLE24_2026_10_04",
+      "zoneCode": "R2"
+    },
+    {
+      "aduProfileVersion": "CA_ADU_2026",
+      "coastalContexts": [
+        "NOT_APPLICABLE"
+      ],
+      "combinedProfile": "LA_MESA_ADU_2026",
+      "effectiveFrom": "2026-01-01",
+      "effectiveThrough": "2026-12-31",
+      "jurisdictionId": "CITY_OF_LA_MESA",
+      "kind": "LA_MESA_ADU",
+      "version": "LA_MESA_TITLE24_2026_10_04",
+      "zoneCode": "R3"
+    },
+    {
+      "aduProfileVersion": "CA_ADU_2026",
+      "coastalContexts": [
+        "NOT_APPLICABLE"
+      ],
+      "combinedProfile": "LA_MESA_ADU_2026",
+      "effectiveFrom": "2026-01-01",
+      "effectiveThrough": "2026-12-31",
+      "jurisdictionId": "CITY_OF_LA_MESA",
+      "kind": "LA_MESA_ADU",
+      "version": "LA_MESA_TITLE24_2026_10_04",
+      "zoneCode": "RB"
+    }
+  ],
+  "publicAnswerTaxonomy": [
+    "Likely state/local pathway available",
+    "Conditional",
+    "Needs property evidence",
+    "Needs project details",
+    "Outside current scope",
+    "Source unavailable"
+  ],
+  "registry_version": "la-mesa-v4-jurisdiction-registry-2026-10-26",
+  "sources": [
+    {
+      "date": "2026-10-15",
+      "id": "LM_ZONING",
+      "label": "City of La Mesa zoning and overlays",
+      "publisher": "City of La Mesa",
+      "url": "https://www.cityoflamesa.gov/426/Planning-Zoning"
+    },
+    {
+      "date": "2026-10-04",
+      "id": "LM_TITLE24",
+      "label": "La Mesa Municipal Code Title 24",
+      "publisher": "City of La Mesa",
+      "url": "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+    },
+    {
+      "date": "2026",
+      "id": "CA_ADU_STATUTE",
+      "label": "California State ADU Law",
+      "publisher": "California Legislature",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=GOV&division=1.&title=7.&part=&chapter=13."
+    },
+    {
+      "date": "2026",
+      "id": "LM_ADU_MATRIX",
+      "label": "La Mesa 2026 ADU and JADU Development Matrix",
+      "publisher": "City of La Mesa",
+      "url": "https://www.cityoflamesa.gov/DocumentCenter/View/26946/City-of-La-Mesa-ADU--JADU-Development-Matrix?bidId="
+    },
+    {
+      "date": "March 2026",
+      "id": "HCD_ADU",
+      "label": "California HCD ADU Handbook",
+      "publisher": "California HCD",
+      "url": "https://www.hcd.ca.gov/sites/default/files/docs/policy-and-research/adu-handbook-update.pdf"
+    }
+  ]
+}

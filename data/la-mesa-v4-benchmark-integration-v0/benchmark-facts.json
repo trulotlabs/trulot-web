@@ -1,0 +1,578 @@
+{
+  "benchmarks": [
+    {
+      "address": "5836 PAWNEE DR",
+      "adu_profile": "LA_MESA_ADU_2026",
+      "apn": "4640301100",
+      "base_profile": "CITY_OF_LA_MESA::R1::LA_MESA_TITLE24_2026_10_04",
+      "category": "ordinary R1",
+      "evaluation_date": "2026-10-26",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "known_property_facts": [
+        {
+          "fact": "address",
+          "source": "SanGIS parcel record",
+          "status": "PUBLIC_RECORDED",
+          "value": "5836 PAWNEE DR"
+        },
+        {
+          "fact": "jurisdiction_scope",
+          "source": "Packet 64 sealed City-boundary classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "IN_SCOPE_CONFIRMED"
+        },
+        {
+          "fact": "base_zone",
+          "source": "City zoning geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "R1"
+        },
+        {
+          "fact": "mapped_modifiers",
+          "source": "City overlay geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": []
+        },
+        {
+          "fact": "specific_plan_state",
+          "source": "City specific-plan geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": "NONE"
+        },
+        {
+          "fact": "approximate_geometry_area_sqft",
+          "source": "SanGIS parcel geometry / Packet 64 intersections",
+          "status": "DERIVED_APPROXIMATE_NOT_LEGAL_LOT_AREA",
+          "value": 8713.995
+        }
+      ],
+      "missing_property_facts": [
+        "fire_sprinkler_primary_requirement",
+        "legal_structure_status",
+        "primary_dwelling_existing_or_proposed",
+        "primary_dwelling_type",
+        "project_form",
+        "proposed_adu_size",
+        "qualifying_conversion_space"
+      ],
+      "modifier_ids": [],
+      "private_evidence_used": false,
+      "provenance": [
+        "SanGIS public parcel identity",
+        "City of La Mesa zoning/overlay/specific-plan GIS",
+        "Packet 64 sealed classification",
+        "Packet 65 sealed profile selection",
+        "Packet 66 sealed 2026 ADU envelope"
+      ]
+    },
+    {
+      "address": "9470 GROSSMONT BLVD",
+      "adu_profile": "LA_MESA_ADU_2026",
+      "apn": "4912600700",
+      "base_profile": "CITY_OF_LA_MESA::R1E::LA_MESA_TITLE24_2026_10_04",
+      "category": "R1E scenic single-family subtype",
+      "evaluation_date": "2026-10-26",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "known_property_facts": [
+        {
+          "fact": "address",
+          "source": "SanGIS parcel record",
+          "status": "PUBLIC_RECORDED",
+          "value": "9470 GROSSMONT BLVD"
+        },
+        {
+          "fact": "jurisdiction_scope",
+          "source": "Packet 64 sealed City-boundary classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "IN_SCOPE_CONFIRMED"
+        },
+        {
+          "fact": "base_zone",
+          "source": "City zoning geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "R1E"
+        },
+        {
+          "fact": "mapped_modifiers",
+          "source": "City overlay geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": [
+            "P"
+          ]
+        },
+        {
+          "fact": "specific_plan_state",
+          "source": "City specific-plan geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": "NONE"
+        },
+        {
+          "fact": "approximate_geometry_area_sqft",
+          "source": "SanGIS parcel geometry / Packet 64 intersections",
+          "status": "DERIVED_APPROXIMATE_NOT_LEGAL_LOT_AREA",
+          "value": 9304.508
+        }
+      ],
+      "missing_property_facts": [
+        "fire_sprinkler_primary_requirement",
+        "grading_scope",
+        "legal_structure_status",
+        "objective_overlay_standard_applicability",
+        "primary_dwelling_existing_or_proposed",
+        "primary_dwelling_type",
+        "project_form",
+        "proposed_adu_size",
+        "qualifying_conversion_space",
+        "slope"
+      ],
+      "modifier_ids": [
+        "LM_OVERLAY_P"
+      ],
+      "private_evidence_used": false,
+      "provenance": [
+        "SanGIS public parcel identity",
+        "City of La Mesa zoning/overlay/specific-plan GIS",
+        "Packet 64 sealed classification",
+        "Packet 65 sealed profile selection",
+        "Packet 66 sealed 2026 ADU envelope"
+      ]
+    },
+    {
+      "address": "8884 ECHO DR",
+      "adu_profile": "LA_MESA_ADU_2026",
+      "apn": "4994920400",
+      "base_profile": "CITY_OF_LA_MESA::R1R::LA_MESA_TITLE24_2026_10_04",
+      "category": "R1R single-family subtype",
+      "evaluation_date": "2026-10-26",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "known_property_facts": [
+        {
+          "fact": "address",
+          "source": "SanGIS parcel record",
+          "status": "PUBLIC_RECORDED",
+          "value": "8884 ECHO DR"
+        },
+        {
+          "fact": "jurisdiction_scope",
+          "source": "Packet 64 sealed City-boundary classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "IN_SCOPE_CONFIRMED"
+        },
+        {
+          "fact": "base_zone",
+          "source": "City zoning geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "R1R"
+        },
+        {
+          "fact": "mapped_modifiers",
+          "source": "City overlay geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": [
+            "P"
+          ]
+        },
+        {
+          "fact": "specific_plan_state",
+          "source": "City specific-plan geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": "NONE"
+        },
+        {
+          "fact": "approximate_geometry_area_sqft",
+          "source": "SanGIS parcel geometry / Packet 64 intersections",
+          "status": "DERIVED_APPROXIMATE_NOT_LEGAL_LOT_AREA",
+          "value": 11197.56
+        }
+      ],
+      "missing_property_facts": [
+        "fire_sprinkler_primary_requirement",
+        "grading_scope",
+        "legal_structure_status",
+        "objective_overlay_standard_applicability",
+        "primary_dwelling_existing_or_proposed",
+        "primary_dwelling_type",
+        "project_form",
+        "proposed_adu_size",
+        "qualifying_conversion_space",
+        "slope"
+      ],
+      "modifier_ids": [
+        "LM_OVERLAY_P"
+      ],
+      "private_evidence_used": false,
+      "provenance": [
+        "SanGIS public parcel identity",
+        "City of La Mesa zoning/overlay/specific-plan GIS",
+        "Packet 64 sealed classification",
+        "Packet 65 sealed profile selection",
+        "Packet 66 sealed 2026 ADU envelope"
+      ]
+    },
+    {
+      "address": "5877 BALTIMORE DR",
+      "adu_profile": "LA_MESA_ADU_2026",
+      "apn": "4640201000",
+      "base_profile": "CITY_OF_LA_MESA::R3::LA_MESA_TITLE24_2026_10_04",
+      "category": "R3 multifamily",
+      "evaluation_date": "2026-10-26",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "known_property_facts": [
+        {
+          "fact": "address",
+          "source": "SanGIS parcel record",
+          "status": "PUBLIC_RECORDED",
+          "value": "5877 BALTIMORE DR"
+        },
+        {
+          "fact": "jurisdiction_scope",
+          "source": "Packet 64 sealed City-boundary classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "IN_SCOPE_CONFIRMED"
+        },
+        {
+          "fact": "base_zone",
+          "source": "City zoning geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "R3"
+        },
+        {
+          "fact": "mapped_modifiers",
+          "source": "City overlay geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": []
+        },
+        {
+          "fact": "specific_plan_state",
+          "source": "City specific-plan geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": "NONE"
+        },
+        {
+          "fact": "approximate_geometry_area_sqft",
+          "source": "SanGIS parcel geometry / Packet 64 intersections",
+          "status": "DERIVED_APPROXIMATE_NOT_LEGAL_LOT_AREA",
+          "value": 35838.794
+        }
+      ],
+      "missing_property_facts": [
+        "fire_sprinkler_primary_requirement",
+        "legal_structure_status",
+        "primary_dwelling_existing_or_proposed",
+        "primary_dwelling_type",
+        "project_form",
+        "proposed_adu_size",
+        "qualifying_conversion_space"
+      ],
+      "modifier_ids": [],
+      "private_evidence_used": false,
+      "provenance": [
+        "SanGIS public parcel identity",
+        "City of La Mesa zoning/overlay/specific-plan GIS",
+        "Packet 64 sealed classification",
+        "Packet 65 sealed profile selection",
+        "Packet 66 sealed 2026 ADU envelope"
+      ]
+    },
+    {
+      "address": "4284 SUMMIT DR",
+      "adu_profile": "LA_MESA_ADU_2026",
+      "apn": "4752412200",
+      "base_profile": "CITY_OF_LA_MESA::R1S::LA_MESA_TITLE24_2026_10_04",
+      "category": "hillside overlay",
+      "evaluation_date": "2026-10-26",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "known_property_facts": [
+        {
+          "fact": "address",
+          "source": "SanGIS parcel record",
+          "status": "PUBLIC_RECORDED",
+          "value": "4284 SUMMIT DR"
+        },
+        {
+          "fact": "jurisdiction_scope",
+          "source": "Packet 64 sealed City-boundary classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "IN_SCOPE_CONFIRMED"
+        },
+        {
+          "fact": "base_zone",
+          "source": "City zoning geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "R1S"
+        },
+        {
+          "fact": "mapped_modifiers",
+          "source": "City overlay geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": [
+            "H"
+          ]
+        },
+        {
+          "fact": "specific_plan_state",
+          "source": "City specific-plan geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": "NONE"
+        },
+        {
+          "fact": "approximate_geometry_area_sqft",
+          "source": "SanGIS parcel geometry / Packet 64 intersections",
+          "status": "DERIVED_APPROXIMATE_NOT_LEGAL_LOT_AREA",
+          "value": 18297.696
+        }
+      ],
+      "missing_property_facts": [
+        "fire_access_route",
+        "fire_sprinkler_primary_requirement",
+        "grading_scope",
+        "legal_structure_status",
+        "objective_overlay_standard_applicability",
+        "primary_dwelling_existing_or_proposed",
+        "primary_dwelling_type",
+        "project_form",
+        "proposed_adu_size",
+        "qualifying_conversion_space",
+        "rear_to_curb_distance",
+        "slope"
+      ],
+      "modifier_ids": [
+        "LM_OVERLAY_H"
+      ],
+      "private_evidence_used": false,
+      "provenance": [
+        "SanGIS public parcel identity",
+        "City of La Mesa zoning/overlay/specific-plan GIS",
+        "Packet 64 sealed classification",
+        "Packet 65 sealed profile selection",
+        "Packet 66 sealed 2026 ADU envelope"
+      ]
+    },
+    {
+      "address": "5264 WOOD ST",
+      "adu_profile": "LA_MESA_ADU_2026",
+      "apn": "4904720700",
+      "base_profile": "CITY_OF_LA_MESA::R3::LA_MESA_TITLE24_2026_10_04",
+      "category": "scenic plus mixed-use overlay",
+      "evaluation_date": "2026-10-26",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "known_property_facts": [
+        {
+          "fact": "address",
+          "source": "SanGIS parcel record",
+          "status": "PUBLIC_RECORDED",
+          "value": "5264 WOOD ST"
+        },
+        {
+          "fact": "jurisdiction_scope",
+          "source": "Packet 64 sealed City-boundary classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "IN_SCOPE_CONFIRMED"
+        },
+        {
+          "fact": "base_zone",
+          "source": "City zoning geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "R3"
+        },
+        {
+          "fact": "mapped_modifiers",
+          "source": "City overlay geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": [
+            "MU",
+            "P",
+            "D"
+          ]
+        },
+        {
+          "fact": "specific_plan_state",
+          "source": "City specific-plan geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": "NONE"
+        },
+        {
+          "fact": "approximate_geometry_area_sqft",
+          "source": "SanGIS parcel geometry / Packet 64 intersections",
+          "status": "DERIVED_APPROXIMATE_NOT_LEGAL_LOT_AREA",
+          "value": 5469.166
+        }
+      ],
+      "missing_property_facts": [
+        "fire_sprinkler_primary_requirement",
+        "grading_scope",
+        "legal_structure_status",
+        "objective_overlay_standard_applicability",
+        "primary_dwelling_existing_or_proposed",
+        "primary_dwelling_type",
+        "project_form",
+        "proposed_adu_size",
+        "qualifying_conversion_space",
+        "slope"
+      ],
+      "modifier_ids": [
+        "LM_OVERLAY_MU",
+        "LM_OVERLAY_P",
+        "LM_OVERLAY_D"
+      ],
+      "private_evidence_used": false,
+      "provenance": [
+        "SanGIS public parcel identity",
+        "City of La Mesa zoning/overlay/specific-plan GIS",
+        "Packet 64 sealed classification",
+        "Packet 65 sealed profile selection",
+        "Packet 66 sealed 2026 ADU envelope"
+      ]
+    },
+    {
+      "address": "8285 FLETCHER PKWY",
+      "adu_profile": null,
+      "apn": "4646002300",
+      "base_profile": null,
+      "category": "adopted specific-plan area",
+      "evaluation_date": "2026-10-26",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "known_property_facts": [
+        {
+          "fact": "address",
+          "source": "SanGIS parcel record",
+          "status": "PUBLIC_RECORDED",
+          "value": "8285 FLETCHER PKWY"
+        },
+        {
+          "fact": "jurisdiction_scope",
+          "source": "Packet 64 sealed City-boundary classification",
+          "status": "PUBLIC_MAPPED",
+          "value": "IN_SCOPE_CONFIRMED"
+        },
+        {
+          "fact": "base_zone",
+          "source": "City zoning geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED",
+          "value": null
+        },
+        {
+          "fact": "mapped_modifiers",
+          "source": "City overlay geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": [
+            "D",
+            "F",
+            "G"
+          ]
+        },
+        {
+          "fact": "specific_plan_state",
+          "source": "City specific-plan geometry, Packet 64 sealed classification",
+          "status": "PUBLIC_MAPPED_CONTEXT",
+          "value": "SPECIFIC_PLAN_BOUNDARY_REVIEW"
+        },
+        {
+          "fact": "approximate_geometry_area_sqft",
+          "source": "SanGIS parcel geometry / Packet 64 intersections",
+          "status": "DERIVED_APPROXIMATE_NOT_LEGAL_LOT_AREA",
+          "value": 56064.03
+        }
+      ],
+      "missing_property_facts": [
+        "base_flood_elevation",
+        "fire_sprinkler_primary_requirement",
+        "flood_zone",
+        "legal_structure_status",
+        "operative_specific_plan_rule",
+        "primary_dwelling_existing_or_proposed",
+        "primary_dwelling_type",
+        "project_form",
+        "proposed_adu_size",
+        "qualifying_conversion_space",
+        "specific_plan_boundary_resolution",
+        "watercourse_review"
+      ],
+      "modifier_ids": [
+        "LM_OVERLAY_D",
+        "LM_OVERLAY_F",
+        "LM_OVERLAY_G"
+      ],
+      "private_evidence_used": false,
+      "provenance": [
+        "SanGIS public parcel identity",
+        "City of La Mesa zoning/overlay/specific-plan GIS",
+        "Packet 64 sealed classification",
+        "Packet 65 sealed profile selection",
+        "Packet 66 sealed 2026 ADU envelope"
+      ]
+    },
+    {
+      "address": "9365 CARMICHAEL DR",
+      "adu_profile": null,
+      "apn": "4953350500",
+      "base_profile": null,
+      "category": "jurisdiction-boundary mismatch",
+      "evaluation_date": "2026-10-26",
+      "jurisdiction": "UNRESOLVED",
+      "known_property_facts": [
+        {
+          "fact": "address",
+          "source": "SanGIS parcel record",
+          "status": "PUBLIC_RECORDED",
+          "value": "9365 CARMICHAEL DR"
+        }
+      ],
+      "missing_property_facts": [
+        "fire_sprinkler_primary_requirement",
+        "legal_structure_status",
+        "primary_dwelling_existing_or_proposed",
+        "primary_dwelling_type",
+        "project_form",
+        "proposed_adu_size",
+        "qualifying_conversion_space"
+      ],
+      "modifier_ids": [],
+      "private_evidence_used": false,
+      "provenance": [
+        "SanGIS public parcel identity",
+        "City of La Mesa zoning/overlay/specific-plan GIS",
+        "Packet 64 sealed classification",
+        "Packet 65 sealed profile selection",
+        "Packet 66 sealed 2026 ADU envelope"
+      ]
+    },
+    {
+      "address": null,
+      "adu_profile": null,
+      "apn": "4641310100",
+      "base_profile": null,
+      "category": "mapped TBD/unsupported zoning",
+      "evaluation_date": "2026-10-26",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "known_property_facts": [
+        {
+          "fact": "address",
+          "source": "SanGIS parcel record",
+          "status": "PUBLIC_RECORDED",
+          "value": null
+        }
+      ],
+      "missing_property_facts": [
+        "fire_sprinkler_primary_requirement",
+        "legal_structure_status",
+        "primary_dwelling_existing_or_proposed",
+        "primary_dwelling_type",
+        "project_form",
+        "proposed_adu_size",
+        "qualifying_conversion_space"
+      ],
+      "modifier_ids": [],
+      "private_evidence_used": false,
+      "provenance": [
+        "SanGIS public parcel identity",
+        "City of La Mesa zoning/overlay/specific-plan GIS",
+        "Packet 64 sealed classification",
+        "Packet 65 sealed profile selection",
+        "Packet 66 sealed 2026 ADU envelope"
+      ]
+    }
+  ],
+  "evaluation_date": "2026-10-26",
+  "fact_doctrine": "Only public facts required by a selected pathway are admitted; unknown dwelling type never defaults from zoning."
+}

@@ -46,12 +46,17 @@ function rmInput(): PublicParcelFeasibilityInput {
 }
 
 test("profile registry is jurisdiction and version explicit", () => {
+  const profiles = listPublicFeasibilityProfiles();
   assert.deepEqual(
-    listPublicFeasibilityProfiles().map((profile) => [profile.jurisdictionId, profile.zoneCode, profile.version]),
+    profiles.filter((profile) => profile.jurisdictionId === "CITY_OF_SAN_DIEGO").map((profile) => [profile.zoneCode, profile.version]),
     [
-      ["CITY_OF_SAN_DIEGO", "RS-1-7", "SD_CURRENT_2026_07_15"],
-      ["CITY_OF_SAN_DIEGO", "RM-2-5", "SD_CURRENT_2026_07_15"],
+      ["RS-1-7", "SD_CURRENT_2026_07_15"],
+      ["RM-2-5", "SD_CURRENT_2026_07_15"],
     ],
+  );
+  assert.deepEqual(
+    profiles.filter((profile) => profile.jurisdictionId === "CITY_OF_LA_MESA").map((profile) => profile.zoneCode),
+    ["R1E", "R1R", "R1S", "R1", "R1A", "R2", "R3", "RB"],
   );
 });
 

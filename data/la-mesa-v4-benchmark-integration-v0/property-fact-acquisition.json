@@ -1,0 +1,24 @@
+{
+  "forced_pathway_conclusion": false,
+  "private_or_authenticated_sources_used": false,
+  "result": "No authoritative public source in the sealed benchmark evidence establishes existing/proposed dwelling type, legal structure status, or project form for any benchmark. Those facts remain missing.",
+  "scope": "authoritative public facts needed to select a 2026 ADU pathway",
+  "sources_reviewed": [
+    {
+      "result": "parcel identity, address, and approximate mapped geometry only; no authoritative dwelling-type fact admitted",
+      "source": "SanGIS public parcel records"
+    },
+    {
+      "result": "zoning and mapped context only; zoning is not dwelling-type evidence",
+      "source": "City of La Mesa zoning, overlay, planned-land-use, and specific-plan GIS"
+    },
+    {
+      "result": "base residential profile and mapped modifier selection only",
+      "source": "Packet 65 sealed profile selection"
+    },
+    {
+      "result": "required pathway predicates identified; no parcel-specific dwelling fact",
+      "source": "City 2026 ADU matrix and operative state law"
+    }
+  ]
+}

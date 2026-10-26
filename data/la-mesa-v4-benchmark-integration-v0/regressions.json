@@ -1,0 +1,18 @@
+{
+  "browser_qa": "bounded presentation harness; no route implemented",
+  "runtime_network_calls_added": 0,
+  "san_diego": [
+    {
+      "apn": "6341302200",
+      "expected": "existing Packet 62 RS summary unchanged"
+    },
+    {
+      "apn": "5442140600",
+      "expected": "existing Packet 62 RM/SDA/privacy output unchanged"
+    }
+  ],
+  "unknown_jurisdiction": {
+    "expected": "UNSUPPORTED_PROFILE with no rules/contexts",
+    "id": "SYNTHETIC_JURISDICTION"
+  }
+}

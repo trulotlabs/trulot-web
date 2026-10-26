@@ -1,0 +1,60 @@
+{
+  "reviewed": [
+    {
+      "apn": "4640301100",
+      "checks": {
+        "answer_wording": "PASS",
+        "authority_precedence": "PASS",
+        "no_overclaim": "PASS",
+        "rule_selection": "PASS",
+        "source_provenance": "PASS",
+        "unresolved_predicates": "PASS"
+      }
+    },
+    {
+      "apn": "4752412200",
+      "checks": {
+        "answer_wording": "PASS",
+        "authority_precedence": "PASS",
+        "no_overclaim": "PASS",
+        "rule_selection": "PASS",
+        "source_provenance": "PASS",
+        "unresolved_predicates": "PASS"
+      }
+    },
+    {
+      "apn": "4912600700",
+      "checks": {
+        "answer_wording": "PASS",
+        "authority_precedence": "PASS",
+        "no_overclaim": "PASS",
+        "rule_selection": "PASS",
+        "source_provenance": "PASS",
+        "unresolved_predicates": "PASS"
+      }
+    },
+    {
+      "apn": "4640201000",
+      "checks": {
+        "answer_wording": "PASS",
+        "authority_precedence": "PASS",
+        "no_overclaim": "PASS",
+        "rule_selection": "PASS",
+        "source_provenance": "PASS",
+        "unresolved_predicates": "PASS"
+      }
+    },
+    {
+      "apn": "4646002300",
+      "checks": {
+        "answer_wording": "PASS",
+        "authority_precedence": "PASS",
+        "no_overclaim": "PASS",
+        "rule_selection": "FAIL_CLOSED_PASS",
+        "source_provenance": "PASS",
+        "unresolved_predicates": "PASS"
+      }
+    }
+  ],
+  "reviewer_scope": "artifact/code review; no public route"
+}

@@ -1,0 +1,198 @@
+{
+  "current_detached_single_family_count": 1,
+  "future_2027_rule_applied": false,
+  "public_only": true,
+  "results": [
+    {
+      "adu_profile": "LA_MESA_ADU_2026",
+      "answer_category": "Needs property evidence",
+      "apn": "4640301100",
+      "base_profile": "CITY_OF_LA_MESA::R1::LA_MESA_TITLE24_2026_10_04",
+      "evaluation_date": "2026-10-26",
+      "evidence_refs": [
+        "City zoning and mapped context",
+        "La Mesa Title 24",
+        "California State ADU Law",
+        "La Mesa 2026 ADU/JADU Development Matrix",
+        "March 2026 HCD ADU Handbook"
+      ],
+      "final_parcel_eligibility": null,
+      "modifier_ids": [],
+      "pathway_results": [],
+      "permit_approval_conclusion": null,
+      "private_evidence": false,
+      "reason": "Public evidence does not establish the existing or proposed primary dwelling type; no ADU pathway is selected.",
+      "v4_state": "NEEDS_EVIDENCE"
+    },
+    {
+      "adu_profile": "LA_MESA_ADU_2026",
+      "answer_category": "Needs property evidence",
+      "apn": "4912600700",
+      "base_profile": "CITY_OF_LA_MESA::R1E::LA_MESA_TITLE24_2026_10_04",
+      "evaluation_date": "2026-10-26",
+      "evidence_refs": [
+        "City zoning and mapped context",
+        "La Mesa Title 24",
+        "California State ADU Law",
+        "La Mesa 2026 ADU/JADU Development Matrix",
+        "March 2026 HCD ADU Handbook"
+      ],
+      "final_parcel_eligibility": null,
+      "modifier_ids": [
+        "LM_OVERLAY_P"
+      ],
+      "pathway_results": [],
+      "permit_approval_conclusion": null,
+      "private_evidence": false,
+      "reason": "Public evidence does not establish the existing or proposed primary dwelling type; no ADU pathway is selected.",
+      "v4_state": "NEEDS_EVIDENCE"
+    },
+    {
+      "adu_profile": "LA_MESA_ADU_2026",
+      "answer_category": "Needs property evidence",
+      "apn": "4994920400",
+      "base_profile": "CITY_OF_LA_MESA::R1R::LA_MESA_TITLE24_2026_10_04",
+      "evaluation_date": "2026-10-26",
+      "evidence_refs": [
+        "City zoning and mapped context",
+        "La Mesa Title 24",
+        "California State ADU Law",
+        "La Mesa 2026 ADU/JADU Development Matrix",
+        "March 2026 HCD ADU Handbook"
+      ],
+      "final_parcel_eligibility": null,
+      "modifier_ids": [
+        "LM_OVERLAY_P"
+      ],
+      "pathway_results": [],
+      "permit_approval_conclusion": null,
+      "private_evidence": false,
+      "reason": "Public evidence does not establish the existing or proposed primary dwelling type; no ADU pathway is selected.",
+      "v4_state": "NEEDS_EVIDENCE"
+    },
+    {
+      "adu_profile": "LA_MESA_ADU_2026",
+      "answer_category": "Needs property evidence",
+      "apn": "4640201000",
+      "base_profile": "CITY_OF_LA_MESA::R3::LA_MESA_TITLE24_2026_10_04",
+      "evaluation_date": "2026-10-26",
+      "evidence_refs": [
+        "City zoning and mapped context",
+        "La Mesa Title 24",
+        "California State ADU Law",
+        "La Mesa 2026 ADU/JADU Development Matrix",
+        "March 2026 HCD ADU Handbook"
+      ],
+      "final_parcel_eligibility": null,
+      "modifier_ids": [],
+      "pathway_results": [],
+      "permit_approval_conclusion": null,
+      "private_evidence": false,
+      "reason": "Public evidence does not establish the existing or proposed primary dwelling type; no ADU pathway is selected.",
+      "v4_state": "NEEDS_EVIDENCE"
+    },
+    {
+      "adu_profile": "LA_MESA_ADU_2026",
+      "answer_category": "Needs property evidence",
+      "apn": "4752412200",
+      "base_profile": "CITY_OF_LA_MESA::R1S::LA_MESA_TITLE24_2026_10_04",
+      "evaluation_date": "2026-10-26",
+      "evidence_refs": [
+        "City zoning and mapped context",
+        "La Mesa Title 24",
+        "California State ADU Law",
+        "La Mesa 2026 ADU/JADU Development Matrix",
+        "March 2026 HCD ADU Handbook"
+      ],
+      "final_parcel_eligibility": null,
+      "modifier_ids": [
+        "LM_OVERLAY_H"
+      ],
+      "pathway_results": [],
+      "permit_approval_conclusion": null,
+      "private_evidence": false,
+      "reason": "Public evidence does not establish the existing or proposed primary dwelling type; no ADU pathway is selected.",
+      "v4_state": "NEEDS_EVIDENCE"
+    },
+    {
+      "adu_profile": "LA_MESA_ADU_2026",
+      "answer_category": "Needs property evidence",
+      "apn": "4904720700",
+      "base_profile": "CITY_OF_LA_MESA::R3::LA_MESA_TITLE24_2026_10_04",
+      "evaluation_date": "2026-10-26",
+      "evidence_refs": [
+        "City zoning and mapped context",
+        "La Mesa Title 24",
+        "California State ADU Law",
+        "La Mesa 2026 ADU/JADU Development Matrix",
+        "March 2026 HCD ADU Handbook"
+      ],
+      "final_parcel_eligibility": null,
+      "modifier_ids": [
+        "LM_OVERLAY_MU",
+        "LM_OVERLAY_P",
+        "LM_OVERLAY_D"
+      ],
+      "pathway_results": [],
+      "permit_approval_conclusion": null,
+      "private_evidence": false,
+      "reason": "Public evidence does not establish the existing or proposed primary dwelling type; no ADU pathway is selected.",
+      "v4_state": "NEEDS_EVIDENCE"
+    },
+    {
+      "adu_profile": null,
+      "answer_category": "Outside current scope",
+      "apn": "4646002300",
+      "base_profile": null,
+      "evaluation_date": "2026-10-26",
+      "evidence_refs": [
+        "City zoning and mapped context"
+      ],
+      "final_parcel_eligibility": null,
+      "modifier_ids": [
+        "LM_OVERLAY_D",
+        "LM_OVERLAY_F",
+        "LM_OVERLAY_G"
+      ],
+      "pathway_results": [],
+      "permit_approval_conclusion": null,
+      "private_evidence": false,
+      "reason": "No supported operative residential base profile is available.",
+      "v4_state": "OUTSIDE_CURRENT_SCOPE"
+    },
+    {
+      "adu_profile": null,
+      "answer_category": "Source unavailable",
+      "apn": "4953350500",
+      "base_profile": null,
+      "evaluation_date": "2026-10-26",
+      "evidence_refs": [
+        "City zoning and mapped context"
+      ],
+      "final_parcel_eligibility": null,
+      "modifier_ids": [],
+      "pathway_results": [],
+      "permit_approval_conclusion": null,
+      "private_evidence": false,
+      "reason": "City jurisdiction is unresolved; La Mesa evaluation is not selected.",
+      "v4_state": "SOURCE_UNAVAILABLE"
+    },
+    {
+      "adu_profile": null,
+      "answer_category": "Outside current scope",
+      "apn": "4641310100",
+      "base_profile": null,
+      "evaluation_date": "2026-10-26",
+      "evidence_refs": [
+        "City zoning and mapped context"
+      ],
+      "final_parcel_eligibility": null,
+      "modifier_ids": [],
+      "pathway_results": [],
+      "permit_approval_conclusion": null,
+      "private_evidence": false,
+      "reason": "No supported operative residential base profile is available.",
+      "v4_state": "OUTSIDE_CURRENT_SCOPE"
+    }
+  ]
+}

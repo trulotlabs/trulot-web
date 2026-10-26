@@ -1,0 +1,17 @@
+{
+  "production_changed": false,
+  "ranking": [
+    "exact normalized APN plus resolved jurisdiction",
+    "exact normalized address within selected jurisdiction",
+    "address candidates returned for disambiguation",
+    "never select by address string alone"
+  ],
+  "same_apn_edge_case": "require source object and jurisdiction resolution; do not overwrite one jurisdiction with another",
+  "serving_requirements": [
+    "jurisdiction-aware serving row",
+    "authoritative jurisdiction ID and confidence",
+    "jurisdiction-specific route builder",
+    "duplicate-address candidate list",
+    "APN plus jurisdiction composite identity where needed"
+  ]
+}

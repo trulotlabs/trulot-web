@@ -1,0 +1,12 @@
+{
+  "adu_results_map_to_v4": true,
+  "benchmarks_fail_closed": true,
+  "current_2026_law_enforced": true,
+  "decision": "LA_MESA_V4_BENCHMARK_INTEGRATION_READY",
+  "jurisdiction_registry_works": true,
+  "overclaim": false,
+  "public_la_mesa_route": false,
+  "public_private_containment": true,
+  "routing_lookup_defined": true,
+  "san_diego_regression_clean": true
+}

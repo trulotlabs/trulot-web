@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "current_detached_single_family_count": {
+      "const": 1
+    },
+    "future_2027_rule_applied": {
+      "const": false
+    },
+    "public_only": {
+      "const": true
+    },
+    "results": {
+      "maxItems": 9,
+      "minItems": 9,
+      "type": "array"
+    }
+  },
+  "required": [
+    "results",
+    "public_only",
+    "current_detached_single_family_count",
+    "future_2027_rule_applied"
+  ],
+  "type": "object"
+}

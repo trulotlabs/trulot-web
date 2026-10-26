@@ -1,0 +1,66 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": {
+      "bytes": 589,
+      "sha256": "a9e6760785f2947871fe330d672f0f73808bc991526347e2ee71786f3fce8bde"
+    },
+    "address-ambiguity.json": {
+      "bytes": 350,
+      "sha256": "272414e683a5a4afd6f5c4bc5b99c9c78f528f35cb6ec452d0ae740384dc3cc7"
+    },
+    "benchmark-facts.json": {
+      "bytes": 18812,
+      "sha256": "ed7ba7a4c16481314efe8df96e61776dd59556d93a38ecbe66319d53723e04f5"
+    },
+    "benchmark-results.json": {
+      "bytes": 6894,
+      "sha256": "f0d89af480cc7e9ba1915628f46c1dca935d18d790d75c0313a73fa0ce2fff82"
+    },
+    "decision.json": {
+      "bytes": 367,
+      "sha256": "85a7283a9cbe045fefb65fa9757e681379dda18b8a15e6714eb3331b3738e887"
+    },
+    "jurisdiction-registry.json": {
+      "bytes": 7281,
+      "sha256": "fb5605c4e967b5a7520270448be467758e29220da654b430d79a1afd45c85e2b"
+    },
+    "manual-review.json": {
+      "bytes": 1511,
+      "sha256": "7d56ecdedaf168fd1eca114087a0761f21d8425b737d09cadae6527c53460070"
+    },
+    "packet68-handoff.json": {
+      "bytes": 292,
+      "sha256": "77c9cbba9d5c7c7a5f26fe7197ce69c820d0dec70468fff0e6a7f39a40ae4d84"
+    },
+    "parcel-lookup-design.json": {
+      "bytes": 658,
+      "sha256": "5cc5b6f40414c0e68c54c0c9d44762eb5373a898727e870ead0934d1241cf3f8"
+    },
+    "property-fact-acquisition.json": {
+      "bytes": 1100,
+      "sha256": "a61ad31af3ad4d0cc457acf6c413e73a4134f802a97f4ea4de019600793f682d"
+    },
+    "regressions.json": {
+      "bytes": 471,
+      "sha256": "0d2b78538da483564ba7bf3b5e1cc23bc44dcf9f25b89d1d5977274f66aca2ad"
+    },
+    "route-design.json": {
+      "bytes": 613,
+      "sha256": "f27b0f15c94707cd3b8891c4689a2d7b7aa4bc0f8843a571bcc41d01c77518ff"
+    },
+    "schema.json": {
+      "bytes": 504,
+      "sha256": "6c58debf054743a30e8851549bc14ece646a27ce796f34ca671ffa087fec70ff"
+    },
+    "v4-state-mapping.json": {
+      "bytes": 1255,
+      "sha256": "f6567320a88639cefd11918c0f01744015212afb83a8489c7f32bbe6c05f60f0"
+    }
+  },
+  "input_seals": {
+    "packet64": "a83f8ebf0e78bba86f0d2a76ecb9efdda8dbd7de6e5cd3613b519fc30fed144b",
+    "packet65": "2f75fd1691e09f35c7abeba2841637d65a097e6ed371e1d318a9ddb7a3b22275",
+    "packet66": "f6f5adae6cc397371a2b96cc33ccaccdbced5b64384a5b2dc9806f3e7c2c7dc7"
+  }
+}
