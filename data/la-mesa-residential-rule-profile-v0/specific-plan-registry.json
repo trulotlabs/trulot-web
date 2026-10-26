@@ -1,0 +1,34 @@
+{
+  "draft_materials_excluded": true,
+  "plans": [
+    {
+      "draft_excluded": "2024-2026 update materials",
+      "id": "LM_SP_DOWNTOWN_1990",
+      "name": "Downtown Village",
+      "precedence": 300,
+      "rule_selection": "UNRESOLVED_SUBAREA_TABLE_REQUIRED",
+      "source": "LM_DOWNTOWN_PLAN",
+      "status": "ADOPTED_CURRENT",
+      "version": "ADOPTED_1990"
+    },
+    {
+      "id": "LM_SP_GROSSMONT_1994",
+      "name": "Grossmont",
+      "precedence": 300,
+      "rule_selection": "UNRESOLVED_SUBAREA_TABLE_REQUIRED",
+      "source": "LM_CODE_24_16",
+      "status": "ADOPTED_CURRENT",
+      "version": "ADOPTED_1994"
+    },
+    {
+      "id": "LM_SP_EASTRIDGE_1989",
+      "name": "Eastridge",
+      "precedence": 300,
+      "rule_selection": "UNRESOLVED_TRACT_PLAN_REQUIRED",
+      "source": "PACKET64",
+      "status": "ADOPTED_CURRENT",
+      "version": "ADOPTED_1989"
+    }
+  ],
+  "precedence_note": "Plan override applies only where adopted plan text identifies the applicable rule/subarea; otherwise unresolved."
+}

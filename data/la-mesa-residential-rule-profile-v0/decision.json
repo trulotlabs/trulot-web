@@ -1,0 +1,14 @@
+{
+  "criteria": {
+    "draft_plans_excluded": true,
+    "eight_zones_profiled": true,
+    "numeric_rules_source_backed": true,
+    "operators_units_sealed": true,
+    "overlays_classified": true,
+    "packet64_readiness_respected": true,
+    "provenance_complete": true
+  },
+  "decision": "LA_MESA_RESIDENTIAL_RULE_PROFILE_V0_READY",
+  "parcel_feasibility_calculated": false,
+  "public_conclusion": false
+}

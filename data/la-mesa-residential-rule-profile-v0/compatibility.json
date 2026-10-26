@@ -1,0 +1,9 @@
+{
+  "adu_rules_applied": false,
+  "base_identity_stable": true,
+  "future_program_profiles": [
+    "CA_ADU_2026",
+    "CA_ADU_2027"
+  ],
+  "rule": "Program-law profiles compose after base-zone identity; they do not rewrite municipal base profile IDs."
+}

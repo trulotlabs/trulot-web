@@ -1,0 +1,1822 @@
+{
+  "jurisdiction": "CITY_OF_LA_MESA",
+  "municipal_code_profile": "LA_MESA_TITLE24_2026_10_04",
+  "profile_set_sha256": "9325d761ad29fa6160235ea24f3e2b528bb75248971c996af6b956349e1ed68f",
+  "profiles": [
+    {
+      "compatible_future_program_profiles": [
+        "CA_ADU_2026",
+        "CA_ADU_2027"
+      ],
+      "effective_text_date": "2026-10-04",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "municipal_code_profile": "LA_MESA_TITLE24_2026_10_04",
+      "parcel_specific_conclusion": false,
+      "profile_id": "CITY_OF_LA_MESA::R1E::LA_MESA_TITLE24_2026_10_04",
+      "rules": {
+        "density": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010(A), 24.05.020(A)(1)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "base one-family use"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "note": "Zone intent expects 1–2 du/acre; it is not encoded as a parcel capacity limit.",
+          "operator": "EXACT_REQUIREMENT",
+          "status": "CONDITIONAL",
+          "unit": "dwelling_units_per_lot",
+          "value": 1
+        },
+        "far": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "NOT_SPECIFIED",
+          "display_precision": 2,
+          "note": "No base residential FAR standard stated in the captured current sections.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "NOT_SPECIFIED",
+          "unit": "ratio",
+          "value": null
+        },
+        "front_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 20
+        },
+        "height": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "filled-site reduction within 30 feet of property line",
+            "15-foot slope branch when average natural slope >=25%"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "note": "Base table maximum; measurement datum and explicit slope branches are preserved.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": 20
+        },
+        "interior_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 15
+        },
+        "lot_coverage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MAXIMUM_LIMIT",
+          "status": "DIRECT",
+          "unit": "percent",
+          "value": 40
+        },
+        "minimum_lot_area": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "square_feet",
+          "value": 21800
+        },
+        "minimum_lot_depth": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 100
+        },
+        "minimum_lot_width": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 100
+        },
+        "minimum_street_frontage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 width of a lot",
+            "source_id": "LM_CODE_24_01"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 1,
+          "formula": "0.5 * required_lot_width_ft",
+          "note": "The front lot line may not be less than one-half the required width.",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "open_space": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(H)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "residential development",
+            "required setbacks/parking/yards/building separation cannot count"
+          ],
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "500*min(units,10) + 400*min(max(units-10,0),10) + 300*max(units-20,0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "square_feet",
+          "value": null
+        },
+        "parking": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "Chapter 24.04 use-specific parking standards"
+          ],
+          "derivation_class": "MODIFIER_DEPENDENT",
+          "display_precision": 0,
+          "note": "Not needed to resolve the sealed base parcel geometry profile.",
+          "operator": "FORMULA",
+          "status": "MODIFIER_DEPENDENT",
+          "unit": "spaces",
+          "value": null
+        },
+        "rear_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 30
+        },
+        "street_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 reduced front setback; 24.05.030(E)(4)",
+            "source_id": "LM_CODE_24_01"
+          },
+          "conditions": [
+            "corner lot",
+            "secondary street boundary opposite the designated interior side lot line"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "formula": "front_setback_ft - 5",
+          "operator": "FORMULA",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": null
+        }
+      },
+      "zone": "R1E"
+    },
+    {
+      "compatible_future_program_profiles": [
+        "CA_ADU_2026",
+        "CA_ADU_2027"
+      ],
+      "effective_text_date": "2026-10-04",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "municipal_code_profile": "LA_MESA_TITLE24_2026_10_04",
+      "parcel_specific_conclusion": false,
+      "profile_id": "CITY_OF_LA_MESA::R1R::LA_MESA_TITLE24_2026_10_04",
+      "rules": {
+        "density": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010(B), 24.05.020(A)(1)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "base one-family use"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "note": "Zone intent says up to 3 du/acre; no buildout calculation.",
+          "operator": "EXACT_REQUIREMENT",
+          "status": "CONDITIONAL",
+          "unit": "dwelling_units_per_lot",
+          "value": 1
+        },
+        "far": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "NOT_SPECIFIED",
+          "display_precision": 2,
+          "note": "No base residential FAR standard stated in the captured current sections.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "NOT_SPECIFIED",
+          "unit": "ratio",
+          "value": null
+        },
+        "front_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 20
+        },
+        "height": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "filled-site reduction within 30 feet of property line",
+            "15-foot slope branch when average natural slope >=25%"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "note": "Base table maximum; measurement datum and explicit slope branches are preserved.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": 20
+        },
+        "interior_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 10
+        },
+        "lot_coverage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MAXIMUM_LIMIT",
+          "status": "DIRECT",
+          "unit": "percent",
+          "value": 40
+        },
+        "minimum_lot_area": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "square_feet",
+          "value": 15000
+        },
+        "minimum_lot_depth": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 80
+        },
+        "minimum_lot_width": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 80
+        },
+        "minimum_street_frontage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 width of a lot",
+            "source_id": "LM_CODE_24_01"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 1,
+          "formula": "0.5 * required_lot_width_ft",
+          "note": "The front lot line may not be less than one-half the required width.",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "open_space": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(H)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "residential development",
+            "required setbacks/parking/yards/building separation cannot count"
+          ],
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "500*min(units,10) + 400*min(max(units-10,0),10) + 300*max(units-20,0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "square_feet",
+          "value": null
+        },
+        "parking": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "Chapter 24.04 use-specific parking standards"
+          ],
+          "derivation_class": "MODIFIER_DEPENDENT",
+          "display_precision": 0,
+          "note": "Not needed to resolve the sealed base parcel geometry profile.",
+          "operator": "FORMULA",
+          "status": "MODIFIER_DEPENDENT",
+          "unit": "spaces",
+          "value": null
+        },
+        "rear_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 30
+        },
+        "street_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 reduced front setback; 24.05.030(E)(4)",
+            "source_id": "LM_CODE_24_01"
+          },
+          "conditions": [
+            "corner lot",
+            "secondary street boundary opposite the designated interior side lot line"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "formula": "front_setback_ft - 5",
+          "operator": "FORMULA",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": null
+        }
+      },
+      "zone": "R1R"
+    },
+    {
+      "compatible_future_program_profiles": [
+        "CA_ADU_2026",
+        "CA_ADU_2027"
+      ],
+      "effective_text_date": "2026-10-04",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "municipal_code_profile": "LA_MESA_TITLE24_2026_10_04",
+      "parcel_specific_conclusion": false,
+      "profile_id": "CITY_OF_LA_MESA::R1S::LA_MESA_TITLE24_2026_10_04",
+      "rules": {
+        "density": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.020(A)(1)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "EXACT_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "dwelling_units_per_lot",
+          "value": 1
+        },
+        "far": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "NOT_SPECIFIED",
+          "display_precision": 2,
+          "note": "No base residential FAR standard stated in the captured current sections.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "NOT_SPECIFIED",
+          "unit": "ratio",
+          "value": null
+        },
+        "front_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 20
+        },
+        "height": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "filled-site reduction within 30 feet of property line",
+            "15-foot slope branch when average natural slope >=25%"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "note": "Base table maximum; measurement datum and explicit slope branches are preserved.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": 20
+        },
+        "interior_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 10
+        },
+        "lot_coverage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MAXIMUM_LIMIT",
+          "status": "DIRECT",
+          "unit": "percent",
+          "value": 40
+        },
+        "minimum_lot_area": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "square_feet",
+          "value": 10000
+        },
+        "minimum_lot_depth": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 80
+        },
+        "minimum_lot_width": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 80
+        },
+        "minimum_street_frontage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 width of a lot",
+            "source_id": "LM_CODE_24_01"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 1,
+          "formula": "0.5 * required_lot_width_ft",
+          "note": "The front lot line may not be less than one-half the required width.",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "open_space": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(H)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "residential development",
+            "required setbacks/parking/yards/building separation cannot count"
+          ],
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "500*min(units,10) + 400*min(max(units-10,0),10) + 300*max(units-20,0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "square_feet",
+          "value": null
+        },
+        "parking": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "Chapter 24.04 use-specific parking standards"
+          ],
+          "derivation_class": "MODIFIER_DEPENDENT",
+          "display_precision": 0,
+          "note": "Not needed to resolve the sealed base parcel geometry profile.",
+          "operator": "FORMULA",
+          "status": "MODIFIER_DEPENDENT",
+          "unit": "spaces",
+          "value": null
+        },
+        "rear_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 30
+        },
+        "street_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 reduced front setback; 24.05.030(E)(4)",
+            "source_id": "LM_CODE_24_01"
+          },
+          "conditions": [
+            "corner lot",
+            "secondary street boundary opposite the designated interior side lot line"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "formula": "front_setback_ft - 5",
+          "operator": "FORMULA",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": null
+        }
+      },
+      "zone": "R1S"
+    },
+    {
+      "compatible_future_program_profiles": [
+        "CA_ADU_2026",
+        "CA_ADU_2027"
+      ],
+      "effective_text_date": "2026-10-04",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "municipal_code_profile": "LA_MESA_TITLE24_2026_10_04",
+      "parcel_specific_conclusion": false,
+      "profile_id": "CITY_OF_LA_MESA::R1::LA_MESA_TITLE24_2026_10_04",
+      "rules": {
+        "density": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010(D), 24.05.020(A)(1)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "base one-family use"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "note": "Intent references 7 du/net acre; not converted to capacity.",
+          "operator": "EXACT_REQUIREMENT",
+          "status": "CONDITIONAL",
+          "unit": "dwelling_units_per_lot",
+          "value": 1
+        },
+        "far": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "NOT_SPECIFIED",
+          "display_precision": 2,
+          "note": "No base residential FAR standard stated in the captured current sections.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "NOT_SPECIFIED",
+          "unit": "ratio",
+          "value": null
+        },
+        "front_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "R1/R1A/R2 garage condition: 20 feet where a shorter driveway would result"
+          ],
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 15
+        },
+        "height": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "filled-site reduction within 30 feet of property line",
+            "15-foot slope branch when average natural slope >=25%"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "note": "Base table maximum; measurement datum and explicit slope branches are preserved.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": 20
+        },
+        "interior_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 5
+        },
+        "lot_coverage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MAXIMUM_LIMIT",
+          "status": "DIRECT",
+          "unit": "percent",
+          "value": 40
+        },
+        "minimum_lot_area": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "square_feet",
+          "value": 6000
+        },
+        "minimum_lot_depth": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 70
+        },
+        "minimum_lot_width": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 60
+        },
+        "minimum_street_frontage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 width of a lot",
+            "source_id": "LM_CODE_24_01"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 1,
+          "formula": "0.5 * required_lot_width_ft",
+          "note": "The front lot line may not be less than one-half the required width.",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "open_space": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(H)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "residential development",
+            "required setbacks/parking/yards/building separation cannot count"
+          ],
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "500*min(units,10) + 400*min(max(units-10,0),10) + 300*max(units-20,0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "square_feet",
+          "value": null
+        },
+        "parking": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "Chapter 24.04 use-specific parking standards"
+          ],
+          "derivation_class": "MODIFIER_DEPENDENT",
+          "display_precision": 0,
+          "note": "Not needed to resolve the sealed base parcel geometry profile.",
+          "operator": "FORMULA",
+          "status": "MODIFIER_DEPENDENT",
+          "unit": "spaces",
+          "value": null
+        },
+        "rear_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 15
+        },
+        "street_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 reduced front setback; 24.05.030(E)(4)",
+            "source_id": "LM_CODE_24_01"
+          },
+          "conditions": [
+            "corner lot",
+            "secondary street boundary opposite the designated interior side lot line"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "formula": "front_setback_ft - 5",
+          "operator": "FORMULA",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": null
+        }
+      },
+      "zone": "R1"
+    },
+    {
+      "compatible_future_program_profiles": [
+        "CA_ADU_2026",
+        "CA_ADU_2027"
+      ],
+      "effective_text_date": "2026-10-04",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "municipal_code_profile": "LA_MESA_TITLE24_2026_10_04",
+      "parcel_specific_conclusion": false,
+      "profile_id": "CITY_OF_LA_MESA::R1A::LA_MESA_TITLE24_2026_10_04",
+      "rules": {
+        "density": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.020(A)(2)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "second dwelling must be detached"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "formula": "2 if lot_area_sqft >= 9000 else 1",
+          "operator": "FORMULA",
+          "status": "CONDITIONAL",
+          "unit": "dwelling_units_per_lot",
+          "value": null
+        },
+        "far": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "NOT_SPECIFIED",
+          "display_precision": 2,
+          "note": "No base residential FAR standard stated in the captured current sections.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "NOT_SPECIFIED",
+          "unit": "ratio",
+          "value": null
+        },
+        "front_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "R1/R1A/R2 garage condition: 20 feet where a shorter driveway would result"
+          ],
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 15
+        },
+        "height": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "filled-site reduction within 30 feet of property line",
+            "15-foot slope branch when average natural slope >=25%"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "note": "Base table maximum; measurement datum and explicit slope branches are preserved.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": 20
+        },
+        "interior_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 5
+        },
+        "lot_coverage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MAXIMUM_LIMIT",
+          "status": "DIRECT",
+          "unit": "percent",
+          "value": 40
+        },
+        "minimum_lot_area": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "square_feet",
+          "value": 6000
+        },
+        "minimum_lot_depth": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 70
+        },
+        "minimum_lot_width": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 60
+        },
+        "minimum_street_frontage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 width of a lot",
+            "source_id": "LM_CODE_24_01"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 1,
+          "formula": "0.5 * required_lot_width_ft",
+          "note": "The front lot line may not be less than one-half the required width.",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "open_space": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(H)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "residential development",
+            "required setbacks/parking/yards/building separation cannot count"
+          ],
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "500*min(units,10) + 400*min(max(units-10,0),10) + 300*max(units-20,0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "square_feet",
+          "value": null
+        },
+        "parking": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "Chapter 24.04 use-specific parking standards"
+          ],
+          "derivation_class": "MODIFIER_DEPENDENT",
+          "display_precision": 0,
+          "note": "Not needed to resolve the sealed base parcel geometry profile.",
+          "operator": "FORMULA",
+          "status": "MODIFIER_DEPENDENT",
+          "unit": "spaces",
+          "value": null
+        },
+        "rear_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 15
+        },
+        "street_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 reduced front setback; 24.05.030(E)(4)",
+            "source_id": "LM_CODE_24_01"
+          },
+          "conditions": [
+            "corner lot",
+            "secondary street boundary opposite the designated interior side lot line"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "formula": "front_setback_ft - 5",
+          "operator": "FORMULA",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": null
+        }
+      },
+      "zone": "R1A"
+    },
+    {
+      "compatible_future_program_profiles": [
+        "CA_ADU_2026",
+        "CA_ADU_2027"
+      ],
+      "effective_text_date": "2026-10-04",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "municipal_code_profile": "LA_MESA_TITLE24_2026_10_04",
+      "parcel_specific_conclusion": false,
+      "profile_id": "CITY_OF_LA_MESA::R2::LA_MESA_TITLE24_2026_10_04",
+      "rules": {
+        "density": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010(F), 24.05.020(A)(3), (B)(3)(c)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "one- or two-family use directly permitted",
+            "apartment requires site development plan",
+            "14 du/net acre zone intent"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "operator": "FORMULA",
+          "status": "CONDITIONAL",
+          "unit": "square_feet_net_land_per_dwelling",
+          "value": 3000
+        },
+        "far": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "NOT_SPECIFIED",
+          "display_precision": 2,
+          "note": "No base residential FAR standard stated in the captured current sections.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "NOT_SPECIFIED",
+          "unit": "ratio",
+          "value": null
+        },
+        "front_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "R1/R1A/R2 garage condition: 20 feet where a shorter driveway would result"
+          ],
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 15
+        },
+        "height": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "filled-site reduction within 30 feet of property line",
+            "15-foot slope branch when average natural slope >=25%"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "note": "Base table maximum; measurement datum and explicit slope branches are preserved.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": 20
+        },
+        "interior_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "(5 * building_stories) + (4 if applicable_wall_length_ft > 100 else 0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "lot_coverage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "NOT_SPECIFIED",
+          "display_precision": 0,
+          "note": "Dash in the controlling table; no FAR inference.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "NOT_SPECIFIED",
+          "unit": "percent",
+          "value": null
+        },
+        "minimum_lot_area": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "square_feet",
+          "value": 6000
+        },
+        "minimum_lot_depth": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 70
+        },
+        "minimum_lot_width": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 60
+        },
+        "minimum_street_frontage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 width of a lot",
+            "source_id": "LM_CODE_24_01"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 1,
+          "formula": "0.5 * required_lot_width_ft",
+          "note": "The front lot line may not be less than one-half the required width.",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "open_space": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(H)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "residential development",
+            "required setbacks/parking/yards/building separation cannot count"
+          ],
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "500*min(units,10) + 400*min(max(units-10,0),10) + 300*max(units-20,0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "square_feet",
+          "value": null
+        },
+        "parking": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "Chapter 24.04 use-specific parking standards"
+          ],
+          "derivation_class": "MODIFIER_DEPENDENT",
+          "display_precision": 0,
+          "note": "Not needed to resolve the sealed base parcel geometry profile.",
+          "operator": "FORMULA",
+          "status": "MODIFIER_DEPENDENT",
+          "unit": "spaces",
+          "value": null
+        },
+        "rear_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "(5 * building_stories) + (4 if applicable_wall_length_ft > 100 else 0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "street_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 front setback",
+            "source_id": "LM_CODE_24_01"
+          },
+          "conditions": [
+            "each boundary abutting a public street"
+          ],
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "front_setback_ft",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        }
+      },
+      "zone": "R2"
+    },
+    {
+      "compatible_future_program_profiles": [
+        "CA_ADU_2026",
+        "CA_ADU_2027"
+      ],
+      "effective_text_date": "2026-10-04",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "municipal_code_profile": "LA_MESA_TITLE24_2026_10_04",
+      "parcel_specific_conclusion": false,
+      "profile_id": "CITY_OF_LA_MESA::R3::LA_MESA_TITLE24_2026_10_04",
+      "rules": {
+        "density": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010(G/H), 24.05.025",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "may reduce no lower than 1895 only through density-bonus procedure"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "CONDITIONAL",
+          "unit": "square_feet_net_lot_per_dwelling",
+          "value": 2420
+        },
+        "far": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "NOT_SPECIFIED",
+          "display_precision": 2,
+          "note": "No base residential FAR standard stated in the captured current sections.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "NOT_SPECIFIED",
+          "unit": "ratio",
+          "value": null
+        },
+        "front_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 15
+        },
+        "height": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "filled-site reduction within 30 feet of property line",
+            "15-foot slope branch when average natural slope >=25%",
+            "R3/RB special permit may increase height"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "note": "Base table maximum; measurement datum and explicit slope branches are preserved.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": 30
+        },
+        "interior_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "(5 * building_stories) + (4 if applicable_wall_length_ft > 100 else 0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "lot_coverage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "NOT_SPECIFIED",
+          "display_precision": 0,
+          "note": "Dash in the controlling table; no FAR inference.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "NOT_SPECIFIED",
+          "unit": "percent",
+          "value": null
+        },
+        "minimum_lot_area": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "square_feet",
+          "value": 14000
+        },
+        "minimum_lot_depth": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 70
+        },
+        "minimum_lot_width": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 70
+        },
+        "minimum_street_frontage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 width of a lot",
+            "source_id": "LM_CODE_24_01"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 1,
+          "formula": "0.5 * required_lot_width_ft",
+          "note": "The front lot line may not be less than one-half the required width.",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "open_space": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(H)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "residential development",
+            "required setbacks/parking/yards/building separation cannot count"
+          ],
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "500*min(units,10) + 400*min(max(units-10,0),10) + 300*max(units-20,0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "square_feet",
+          "value": null
+        },
+        "parking": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "Chapter 24.04 use-specific parking standards"
+          ],
+          "derivation_class": "MODIFIER_DEPENDENT",
+          "display_precision": 0,
+          "note": "Not needed to resolve the sealed base parcel geometry profile.",
+          "operator": "FORMULA",
+          "status": "MODIFIER_DEPENDENT",
+          "unit": "spaces",
+          "value": null
+        },
+        "rear_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "(5 * building_stories) + (4 if applicable_wall_length_ft > 100 else 0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "street_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 front setback",
+            "source_id": "LM_CODE_24_01"
+          },
+          "conditions": [
+            "each boundary abutting a public street"
+          ],
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "front_setback_ft",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        }
+      },
+      "zone": "R3"
+    },
+    {
+      "compatible_future_program_profiles": [
+        "CA_ADU_2026",
+        "CA_ADU_2027"
+      ],
+      "effective_text_date": "2026-10-04",
+      "jurisdiction": "CITY_OF_LA_MESA",
+      "municipal_code_profile": "LA_MESA_TITLE24_2026_10_04",
+      "parcel_specific_conclusion": false,
+      "profile_id": "CITY_OF_LA_MESA::RB::LA_MESA_TITLE24_2026_10_04",
+      "rules": {
+        "density": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010(G/H), 24.05.025",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "may reduce no lower than 1895 only through density-bonus procedure"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "CONDITIONAL",
+          "unit": "square_feet_net_lot_per_dwelling",
+          "value": 2420
+        },
+        "far": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "NOT_SPECIFIED",
+          "display_precision": 2,
+          "note": "No base residential FAR standard stated in the captured current sections.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "NOT_SPECIFIED",
+          "unit": "ratio",
+          "value": null
+        },
+        "front_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 15
+        },
+        "height": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "filled-site reduction within 30 feet of property line",
+            "15-foot slope branch when average natural slope >=25%",
+            "R3/RB special permit may increase height"
+          ],
+          "derivation_class": "CONDITIONAL",
+          "display_precision": 0,
+          "note": "Base table maximum; measurement datum and explicit slope branches are preserved.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "CONDITIONAL",
+          "unit": "feet",
+          "value": 30
+        },
+        "interior_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "(5 * building_stories) + (4 if applicable_wall_length_ft > 100 else 0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "lot_coverage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "NOT_SPECIFIED",
+          "display_precision": 0,
+          "note": "Dash in the controlling table; no FAR inference.",
+          "operator": "MAXIMUM_LIMIT",
+          "status": "NOT_SPECIFIED",
+          "unit": "percent",
+          "value": null
+        },
+        "minimum_lot_area": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "square_feet",
+          "value": 14000
+        },
+        "minimum_lot_depth": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 70
+        },
+        "minimum_lot_width": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "DIRECT_TEXT",
+          "display_precision": 0,
+          "operator": "MINIMUM_REQUIREMENT",
+          "status": "DIRECT",
+          "unit": "feet",
+          "value": 70
+        },
+        "minimum_street_frontage": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 width of a lot",
+            "source_id": "LM_CODE_24_01"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 1,
+          "formula": "0.5 * required_lot_width_ft",
+          "note": "The front lot line may not be less than one-half the required width.",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "open_space": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(H)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "residential development",
+            "required setbacks/parking/yards/building separation cannot count"
+          ],
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "500*min(units,10) + 400*min(max(units-10,0),10) + 300*max(units-20,0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "square_feet",
+          "value": null
+        },
+        "parking": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.010",
+            "source_id": "LM_CODE_24_05"
+          },
+          "conditions": [
+            "Chapter 24.04 use-specific parking standards"
+          ],
+          "derivation_class": "MODIFIER_DEPENDENT",
+          "display_precision": 0,
+          "note": "Not needed to resolve the sealed base parcel geometry profile.",
+          "operator": "FORMULA",
+          "status": "MODIFIER_DEPENDENT",
+          "unit": "spaces",
+          "value": null
+        },
+        "rear_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.05.030(B)",
+            "source_id": "LM_CODE_24_05"
+          },
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "(5 * building_stories) + (4 if applicable_wall_length_ft > 100 else 0)",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        },
+        "street_side_setback": {
+          "citation": {
+            "profile_version": "LA_MESA_TITLE24_2026_10_04",
+            "section": "24.01.100 front setback",
+            "source_id": "LM_CODE_24_01"
+          },
+          "conditions": [
+            "each boundary abutting a public street"
+          ],
+          "derivation_class": "FORMULA",
+          "display_precision": 0,
+          "formula": "front_setback_ft",
+          "operator": "FORMULA",
+          "status": "FORMULA",
+          "unit": "feet",
+          "value": null
+        }
+      },
+      "zone": "RB"
+    }
+  ],
+  "rule_families": [
+    "minimum_lot_area",
+    "minimum_lot_width",
+    "minimum_lot_depth",
+    "minimum_street_frontage",
+    "front_setback",
+    "interior_side_setback",
+    "street_side_setback",
+    "rear_setback",
+    "height",
+    "lot_coverage",
+    "far",
+    "density",
+    "open_space",
+    "parking"
+  ],
+  "schema_version": "1.0.0",
+  "zones": [
+    "R1E",
+    "R1R",
+    "R1S",
+    "R1",
+    "R1A",
+    "R2",
+    "R3",
+    "RB"
+  ]
+}

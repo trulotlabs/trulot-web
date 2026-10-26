@@ -1,0 +1,19 @@
+{
+  "design_only": true,
+  "keys": [
+    "jurisdiction",
+    "zone",
+    "municipal_code_profile",
+    "overlay_signature",
+    "adopted_specific_plan_version"
+  ],
+  "migration_created": false,
+  "production_loaded": false,
+  "tables": [
+    "jurisdiction_rule_profiles",
+    "jurisdiction_rule_versions",
+    "jurisdiction_rule_modifiers",
+    "jurisdiction_rule_sources",
+    "parcel_profile_selections"
+  ]
+}

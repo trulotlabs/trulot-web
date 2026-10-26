@@ -1,0 +1,196 @@
+{
+  "benchmarks": [
+    {
+      "apn": "4640301100",
+      "base_zone": "R1",
+      "coverage_category": "CLEAN_BASE_RESIDENTIAL_PROFILE",
+      "modifier_ids": [],
+      "packet64_readiness": "RULE_PROFILE_READY",
+      "provenance_refs": [
+        "PACKET64",
+        "LM_CODE_24_05"
+      ],
+      "readiness": "RULE_PROFILE_READY",
+      "selected_base_profile": "CITY_OF_LA_MESA::R1::LA_MESA_TITLE24_2026_10_04",
+      "specific_plan_ids": [],
+      "unresolved_rule_families": []
+    },
+    {
+      "apn": "4912600700",
+      "base_zone": "R1E",
+      "coverage_category": "CONDITIONAL_REVIEW_REQUIRED_PROFILE",
+      "modifier_ids": [
+        "LM_OVERLAY_P"
+      ],
+      "packet64_readiness": "RULE_PROFILE_REVIEW_REQUIRED",
+      "provenance_refs": [
+        "PACKET64",
+        "LM_CODE_24_05"
+      ],
+      "readiness": "RULE_PROFILE_REVIEW_REQUIRED",
+      "selected_base_profile": "CITY_OF_LA_MESA::R1E::LA_MESA_TITLE24_2026_10_04",
+      "specific_plan_ids": [],
+      "unresolved_rule_families": [
+        "grading",
+        "minimum_lot_depth",
+        "minimum_lot_width",
+        "packet64_classification_review",
+        "review"
+      ]
+    },
+    {
+      "apn": "4994920400",
+      "base_zone": "R1R",
+      "coverage_category": "CONDITIONAL_REVIEW_REQUIRED_PROFILE",
+      "modifier_ids": [
+        "LM_OVERLAY_P"
+      ],
+      "packet64_readiness": "RULE_PROFILE_REVIEW_REQUIRED",
+      "provenance_refs": [
+        "PACKET64",
+        "LM_CODE_24_05"
+      ],
+      "readiness": "RULE_PROFILE_REVIEW_REQUIRED",
+      "selected_base_profile": "CITY_OF_LA_MESA::R1R::LA_MESA_TITLE24_2026_10_04",
+      "specific_plan_ids": [],
+      "unresolved_rule_families": [
+        "grading",
+        "minimum_lot_depth",
+        "minimum_lot_width",
+        "packet64_classification_review",
+        "review"
+      ]
+    },
+    {
+      "apn": "4640201000",
+      "base_zone": "R3",
+      "coverage_category": "CLEAN_BASE_RESIDENTIAL_PROFILE",
+      "modifier_ids": [],
+      "packet64_readiness": "RULE_PROFILE_READY",
+      "provenance_refs": [
+        "PACKET64",
+        "LM_CODE_24_05"
+      ],
+      "readiness": "RULE_PROFILE_READY",
+      "selected_base_profile": "CITY_OF_LA_MESA::R3::LA_MESA_TITLE24_2026_10_04",
+      "specific_plan_ids": [],
+      "unresolved_rule_families": []
+    },
+    {
+      "apn": "4752412200",
+      "base_zone": "R1S",
+      "coverage_category": "CONDITIONAL_REVIEW_REQUIRED_PROFILE",
+      "modifier_ids": [
+        "LM_OVERLAY_H"
+      ],
+      "packet64_readiness": "RULE_PROFILE_REVIEW_REQUIRED",
+      "provenance_refs": [
+        "PACKET64",
+        "LM_CODE_24_05"
+      ],
+      "readiness": "RULE_PROFILE_REVIEW_REQUIRED",
+      "selected_base_profile": "CITY_OF_LA_MESA::R1S::LA_MESA_TITLE24_2026_10_04",
+      "specific_plan_ids": [],
+      "unresolved_rule_families": [
+        "grading",
+        "interior_side_setback",
+        "minimum_lot_area",
+        "packet64_classification_review",
+        "review"
+      ]
+    },
+    {
+      "apn": "4904720700",
+      "base_zone": "R3",
+      "coverage_category": "CONDITIONAL_REVIEW_REQUIRED_PROFILE",
+      "modifier_ids": [
+        "LM_OVERLAY_MU",
+        "LM_OVERLAY_P",
+        "LM_OVERLAY_D"
+      ],
+      "packet64_readiness": "RULE_PROFILE_REVIEW_REQUIRED",
+      "provenance_refs": [
+        "PACKET64",
+        "LM_CODE_24_05"
+      ],
+      "readiness": "RULE_PROFILE_REVIEW_REQUIRED",
+      "selected_base_profile": "CITY_OF_LA_MESA::R3::LA_MESA_TITLE24_2026_10_04",
+      "specific_plan_ids": [],
+      "unresolved_rule_families": [
+        "density",
+        "front_setback",
+        "grading",
+        "height",
+        "interior_side_setback",
+        "minimum_lot_depth",
+        "minimum_lot_width",
+        "open_space",
+        "packet64_classification_review",
+        "parking",
+        "rear_setback",
+        "review"
+      ]
+    },
+    {
+      "apn": "4646002300",
+      "base_zone": null,
+      "coverage_category": "UNAVAILABLE_PROFILE",
+      "modifier_ids": [
+        "LM_OVERLAY_D",
+        "LM_OVERLAY_F",
+        "LM_OVERLAY_G"
+      ],
+      "packet64_readiness": "RULE_PROFILE_UNAVAILABLE",
+      "provenance_refs": [
+        "PACKET64",
+        "LM_CODE_24_05"
+      ],
+      "readiness": "RULE_PROFILE_UNAVAILABLE",
+      "selected_base_profile": null,
+      "specific_plan_ids": [
+        "LM_SP_GROSSMONT_1994"
+      ],
+      "unresolved_rule_families": [
+        "base_zone"
+      ]
+    },
+    {
+      "apn": "4953350500",
+      "base_zone": null,
+      "coverage_category": "UNAVAILABLE_PROFILE",
+      "modifier_ids": [],
+      "packet64_benchmark_category": "jurisdiction-boundary mismatch",
+      "packet64_readiness": "RULE_PROFILE_UNAVAILABLE",
+      "provenance_refs": [
+        "PACKET64"
+      ],
+      "readiness": "RULE_PROFILE_UNAVAILABLE",
+      "selected_base_profile": null,
+      "specific_plan_ids": [],
+      "unresolved_rule_families": [
+        "base_zone",
+        "jurisdiction_scope"
+      ]
+    },
+    {
+      "apn": "4641310100",
+      "base_zone": null,
+      "coverage_category": "UNAVAILABLE_PROFILE",
+      "modifier_ids": [],
+      "packet64_benchmark_category": "mapped TBD/unsupported zoning",
+      "packet64_readiness": "RULE_PROFILE_UNAVAILABLE",
+      "provenance_refs": [
+        "PACKET64"
+      ],
+      "readiness": "RULE_PROFILE_UNAVAILABLE",
+      "selected_base_profile": null,
+      "specific_plan_ids": [],
+      "unresolved_rule_families": [
+        "base_zone",
+        "jurisdiction_scope"
+      ]
+    }
+  ],
+  "feasibility_run": false,
+  "missing": []
+}

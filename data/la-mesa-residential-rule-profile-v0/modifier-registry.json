@@ -1,0 +1,220 @@
+{
+  "composition": "base profile + applicable validated modifier records",
+  "conflict_policy": "specific sourced precedence; otherwise CONDITIONAL/UNRESOLVED",
+  "modifiers": [
+    {
+      "affected": [
+        "minimum_lot_area",
+        "interior_side_setback",
+        "grading",
+        "review"
+      ],
+      "classification": "APPLIES_ONLY_WITH_ANOTHER_PREDICATE",
+      "code": "H",
+      "detail": "Mapped intersection selects the modifier record, not the optional setback outcome.",
+      "id": "LM_OVERLAY_H",
+      "operations": [
+        "tighten",
+        "add condition",
+        "add review"
+      ],
+      "precedence": 200,
+      "resolved": false,
+      "source": "LM_CODE_24_13",
+      "trigger": "mapped H plus project/tract and plan facts"
+    },
+    {
+      "affected": [
+        "minimum_lot_width",
+        "minimum_lot_depth",
+        "grading",
+        "review"
+      ],
+      "classification": "APPLIES_ONLY_WITH_ANOTHER_PREDICATE",
+      "code": "P",
+      "detail": "Width/depth addition requires proposed earth-slope dimensions.",
+      "id": "LM_OVERLAY_P",
+      "operations": [
+        "tighten",
+        "add condition",
+        "add review"
+      ],
+      "precedence": 200,
+      "resolved": false,
+      "source": "LM_CODE_24_09",
+      "trigger": "mapped P plus explicit cut/fill/tree/watercourse predicates"
+    },
+    {
+      "affected": [
+        "floor_elevation",
+        "grading",
+        "permit_review"
+      ],
+      "classification": "MODIFIES_RESIDENTIAL_BASE_DEVELOPMENT_STANDARDS",
+      "code": "F",
+      "detail": "City zoning overlay remains distinct from independent FEMA/state floodplain rules.",
+      "id": "LM_OVERLAY_F",
+      "operations": [
+        "tighten",
+        "add condition",
+        "add review"
+      ],
+      "precedence": 200,
+      "resolved": false,
+      "source": "LM_CODE_24_08",
+      "trigger": "mapped F plus new/substantial improvement and watercourse facts"
+    },
+    {
+      "affected": [
+        "design_review"
+      ],
+      "classification": "CONTEXT_ONLY",
+      "code": "D",
+      "detail": "No numeric base rule is replaced by Chapter 24.11 itself.",
+      "id": "LM_OVERLAY_D",
+      "operations": [
+        "add review"
+      ],
+      "precedence": 150,
+      "resolved": true,
+      "source": "LM_CODE_24_11",
+      "trigger": "mapped D plus new development or major renovation"
+    },
+    {
+      "affected": [
+        "density",
+        "front_setback",
+        "interior_side_setback",
+        "rear_setback",
+        "height",
+        "open_space",
+        "parking",
+        "review"
+      ],
+      "classification": "APPLIES_ONLY_WITH_ANOTHER_PREDICATE",
+      "code": "MU",
+      "detail": "Mapped MU on another base zone is a legal-trigger mismatch, not an automatic override.",
+      "id": "LM_OVERLAY_MU",
+      "operations": [
+        "replace",
+        "add condition",
+        "add review"
+      ],
+      "precedence": 250,
+      "resolved": false,
+      "source": "LM_CODE_24_18",
+      "trigger": "mapped MU; underlying RB-D or C-D; qualifying project type/scope; applicant election where allowed"
+    },
+    {
+      "affected": [
+        "all_development_standards",
+        "review"
+      ],
+      "classification": "SPECIFIC_PLAN_CONTROLLED",
+      "code": "G",
+      "detail": "Specific-plan table/subarea must be selected before replacing a base rule.",
+      "id": "LM_OVERLAY_G",
+      "operations": [
+        "replace",
+        "add review"
+      ],
+      "precedence": 300,
+      "resolved": false,
+      "source": "LM_CODE_24_16",
+      "trigger": "mapped G plus adopted Grossmont plan/subarea"
+    },
+    {
+      "affected": [
+        "access",
+        "dedication",
+        "landscaping"
+      ],
+      "classification": "MODIFIES_RESIDENTIAL_BASE_DEVELOPMENT_STANDARDS",
+      "code": "BG",
+      "detail": "Underlying numeric building standards remain unless expressly stated.",
+      "id": "LM_OVERLAY_BG",
+      "operations": [
+        "add condition",
+        "add review"
+      ],
+      "precedence": 200,
+      "resolved": true,
+      "source": "LM_CODE_24_17",
+      "trigger": "mapped BG and qualifying construction/subdivision"
+    },
+    {
+      "affected": [
+        "tract_specific_standards"
+      ],
+      "classification": "UNRESOLVED",
+      "code": "BT",
+      "detail": "V0 does not infer missing tract facts.",
+      "id": "LM_OVERLAY_BT",
+      "operations": [
+        "add condition"
+      ],
+      "precedence": 200,
+      "resolved": false,
+      "source": "LM_CODE_24_10",
+      "trigger": "mapped BT plus controlling tract-document facts"
+    },
+    {
+      "affected": [
+        "plan_specific_standards"
+      ],
+      "classification": "UNRESOLVED",
+      "code": "NP",
+      "detail": "Plan predicate is not represented in Packet 64.",
+      "id": "LM_OVERLAY_NP",
+      "operations": [
+        "add condition"
+      ],
+      "precedence": 200,
+      "resolved": false,
+      "source": "LM_CODE_24_12_14_15",
+      "trigger": "mapped NP plus controlling neighborhood-plan facts"
+    },
+    {
+      "affected": [
+        "plan_specific_standards"
+      ],
+      "classification": "UNRESOLVED",
+      "code": "NP2",
+      "detail": "Plan predicate is not represented in Packet 64.",
+      "id": "LM_OVERLAY_NP2",
+      "operations": [
+        "add condition"
+      ],
+      "precedence": 200,
+      "resolved": false,
+      "source": "LM_CODE_24_12_14_15",
+      "trigger": "mapped NP2 plus controlling neighborhood-plan facts"
+    },
+    {
+      "affected": [
+        "front_setback",
+        "interior_side_setback",
+        "grading",
+        "fire_access"
+      ],
+      "classification": "APPLIES_ONLY_WITH_ANOTHER_PREDICATE",
+      "code": "MH",
+      "detail": "15-foot front; one side may be 5 feet only with opposite side >=15 feet and dwelling separation >=20 feet.",
+      "id": "LM_OVERLAY_MH",
+      "operations": [
+        "replace",
+        "add condition",
+        "add review"
+      ],
+      "precedence": 220,
+      "resolved": false,
+      "source": "LM_CODE_24_12_14_15",
+      "trigger": "mapped MH plus Document 35123 and dwelling/site configuration"
+    }
+  ],
+  "precedence_default": [
+    "adopted_specific_plan",
+    "overlay_modifier",
+    "base_zone"
+  ]
+}

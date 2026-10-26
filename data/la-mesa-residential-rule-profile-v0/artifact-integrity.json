@@ -1,0 +1,68 @@
+{
+  "baseline_commit": "768b5fe40b9d05dbe973af17be370f74f702ae38",
+  "files": {
+    "README.md": {
+      "bytes": 1005,
+      "sha256": "6bfa8f93e104f69a3bb2263fba1cdcf017989429b8703e929239701d568b28ab"
+    },
+    "benchmark-replay.json": {
+      "bytes": 5553,
+      "sha256": "52cb3f27dbc11b775a4a1cd128fbbc0ac4d9edd5e6a1137d2d08a61a94d674b5"
+    },
+    "compatibility.json": {
+      "bytes": 254,
+      "sha256": "af0fd9bb941cb37f2486dfa0e27f3059017b12ffe436046d8ac560054089996c"
+    },
+    "coverage.json": {
+      "bytes": 1578,
+      "sha256": "7a8928e1d51a8c011fd19ecce0870ba23f880dd569138a79c0c8bb8a3e48c4dc"
+    },
+    "decision.json": {
+      "bytes": 407,
+      "sha256": "72fe1010aa74fb27b0547637244c6975ea0e85fb679a029c0f8db54fb3e914ea"
+    },
+    "definitions.json": {
+      "bytes": 4558,
+      "sha256": "ad8c430b34209492f24a1134462a07016e4ba955b5ec5192301a690986aa7f1b"
+    },
+    "golden-verification.json": {
+      "bytes": 3918,
+      "sha256": "ab58895432e8e69849e4f926284a91e659443ad6f6f21088e3dc2833aec02a00"
+    },
+    "modifier-registry.json": {
+      "bytes": 6241,
+      "sha256": "63fa10942e07258465045e11a10e584ab33ff6b370ed759283dcdbc39d313c9c"
+    },
+    "packet66-handoff.json": {
+      "bytes": 543,
+      "sha256": "f3f17c9fe0801c30ce0a8d8d80ff1d684d67a57d3203b2b2434111e56686d768"
+    },
+    "production-load-design.json": {
+      "bytes": 413,
+      "sha256": "fed73bc809df4a12e10e04e916e778fdad392513dca14a4b2a48ecb5739413d5"
+    },
+    "profile-selection.ndjson.gz": {
+      "bytes": 88288,
+      "sha256": "a9e46fa26838c9978acc8639d1a31c7bc4b7abbc01a251f73b4c76e13e5e09e5"
+    },
+    "rule-profiles.json": {
+      "bytes": 62626,
+      "sha256": "e178c8232ede237329d1230b8a9645d4270008c1c584ea2fbc6c6d33b9e1ba03"
+    },
+    "schema.json": {
+      "bytes": 781,
+      "sha256": "2f795d57f3368302fb3f44cc8b793b6e3bfd18938f31a051e324cc2733331a0f"
+    },
+    "source-captures.json": {
+      "bytes": 12292,
+      "sha256": "53d6b0bebaafb83bde97b93472afc67bd31315eceaf3a9500fafb2c9e47847e3"
+    },
+    "specific-plan-registry.json": {
+      "bytes": 1034,
+      "sha256": "9e25a364d20b021afb79a4b1926650ee9cccc89c9cef850f49743aec77385ebc"
+    }
+  },
+  "fingerprint": "1a5e377b2a1718233420175ccf0686d6597354a98be41527652ef0e21ca47b31",
+  "packet64_input_sha256": "b33bc2cf417f2ba3ddbfd067067a341cbda54b8b899ec204fd1a5dcd56d3716f",
+  "schema_version": "1.0.0"
+}

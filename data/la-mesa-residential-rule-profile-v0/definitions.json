@@ -1,0 +1,135 @@
+{
+  "definitions": [
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "Area/width/depth definitions govern measured lot characteristics.",
+      "status": "NOT_SEPARATELY_DEFINED",
+      "term": "lot"
+    },
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "Do not substitute a common-language meaning.",
+      "status": "NOT_SEPARATELY_DEFINED",
+      "term": "premises"
+    },
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "Shortest horizontal distance between opposite boundaries along a line whose midpoint is 30 feet from front lot line; front lot line at least half required width.",
+      "status": "DIRECT",
+      "term": "lot_width"
+    },
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "Horizontal bisecting line from midpoint of front lot line; handle/access road excluded.",
+      "status": "DIRECT",
+      "term": "lot_depth"
+    },
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "Front lot line must be at least one-half required lot width; no broader frontage definition captured.",
+      "status": "FORMULA",
+      "term": "frontage"
+    },
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "Setback is distance from structure to property line; front/rear/side measurement definitions control.",
+      "status": "DIRECT",
+      "term": "yard_setback"
+    },
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "Vertical distance from average of highest and lowest foundation points to plate line of uppermost story, subject to 24.05.030 slope/fill branches.",
+      "status": "DIRECT",
+      "term": "building_height"
+    },
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "GFA is total floor area of all floors excluding storage cellars/basements, measured from exterior surfaces including walls/partitions.",
+      "status": "DIRECT",
+      "term": "floor_area"
+    },
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "Proportion covered by principal/accessory structures with explicit inclusions/exclusions.",
+      "status": "DIRECT",
+      "term": "lot_coverage"
+    },
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "Zone-specific use/density text; never converted by this artifact to capacity.",
+      "status": "CONDITIONAL",
+      "term": "density"
+    },
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "Operational treatment derives from multiple street boundaries and reduced-front-setback definition; no standalone definition captured.",
+      "status": "CONDITIONAL",
+      "term": "corner_lot"
+    },
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "No standalone definition captured in the operative sections.",
+      "status": "UNRESOLVED",
+      "term": "through_lot"
+    },
+    {
+      "citation": {
+        "profile_version": "LA_MESA_TITLE24_2026_10_04",
+        "section": "24.01.100",
+        "source_id": "LM_CODE_24_01"
+      },
+      "meaning": "Rear-setback measurement branches address converging/trapezoidal lots; no general standalone definition captured.",
+      "status": "FORMULA",
+      "term": "irregular_lot"
+    }
+  ],
+  "source": "LM_CODE_24_01"
+}

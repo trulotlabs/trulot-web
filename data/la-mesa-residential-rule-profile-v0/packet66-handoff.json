@@ -1,0 +1,22 @@
+{
+  "municipal_code_profile": "LA_MESA_TITLE24_2026_10_04",
+  "receives": [
+    "rule-profiles.json",
+    "modifier-registry.json",
+    "specific-plan-registry.json",
+    "profile-selection.ndjson.gz",
+    "source-captures.json"
+  ],
+  "scope": "Packet 66 adds ADU/state-law reconciliation without rebuilding base zoning.",
+  "unresolved_modifiers": [
+    "LM_OVERLAY_H",
+    "LM_OVERLAY_P",
+    "LM_OVERLAY_F",
+    "LM_OVERLAY_MU",
+    "LM_OVERLAY_G",
+    "LM_OVERLAY_BT",
+    "LM_OVERLAY_NP",
+    "LM_OVERLAY_NP2",
+    "LM_OVERLAY_MH"
+  ]
+}
