@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "La Mesa parcel lookup serving row V0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "apnRaw",
+    "apnNormalized",
+    "apnFormatted",
+    "situsAddressRaw",
+    "normalizedAddress",
+    "jurisdictionId",
+    "lookupReadiness",
+    "canonicalScopeState",
+    "sourceVersion"
+  ],
+  "privacy": "PUBLIC_IDENTITY_ONLY"
+}

@@ -1,0 +1,49 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": {
+      "bytes": 2094,
+      "sha256": "a5c60fa2f104f9a3b24dc015090b54480514e971c571ca6b177a02a50292f857"
+    },
+    "cross-jurisdiction-comparison.ndjson.gz": {
+      "bytes": 1206,
+      "sha256": "9be799d7da327304cef79b3d0359afc77918d43adc7f70b750f53a5df01915cc"
+    },
+    "duplicate-address-report.json": {
+      "bytes": 471634,
+      "sha256": "e0003db52e5d5fcc78ba1d457bff92f02c4cd3964ff16833b1a5c6d11cdbef4f"
+    },
+    "evaluation-index.ndjson.gz": {
+      "bytes": 264720,
+      "sha256": "f9f44ff5581ad547d453c875c8bf3aff9a9603ca6005ac527d366f59c986ce4b"
+    },
+    "future-route-design.json": {
+      "bytes": 376,
+      "sha256": "41012388df80c435562a0c65fc8162fe0a49c356a90f831ff77271dd8b7e390d"
+    },
+    "production-serving-design.json": {
+      "bytes": 416,
+      "sha256": "7b6e6936e680d50ac982c9bcc25e33c37d0e6c4c5e9a73d1914716fe8c0bfff4"
+    },
+    "random-sample.json": {
+      "bytes": 21053,
+      "sha256": "85c6b6865c73c36c6b47beb4f52120926aa2365209fd1465fe994f7dbd230fbf"
+    },
+    "receipt.json": {
+      "bytes": 1601,
+      "sha256": "05043cb6f2eafa8e1468b58dafb435b000b6350ef33f5b3ad6de5d0cdacc029a"
+    },
+    "row-count-report.json": {
+      "bytes": 459,
+      "sha256": "3ab1e0acd814306ce75b0760b88b330cc9fe45702ba9ea05dfa07cf60d0c3e17"
+    },
+    "schema.json": {
+      "bytes": 421,
+      "sha256": "54a888dd8c32c569ffe678baab7f4c779eb0a707cab613f4ba7288c437ef9768"
+    },
+    "serving-rows.ndjson.gz": {
+      "bytes": 561569,
+      "sha256": "38938e67a5a88bf229643c55490c1f996a19eff412d2f3c82d357d237fb32b9f"
+    }
+  }
+}

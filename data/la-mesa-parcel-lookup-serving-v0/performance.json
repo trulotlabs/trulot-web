@@ -1,0 +1,55 @@
+{
+  "measuredAt": "2026-10-26 local Packet 69 validation",
+  "runtime": "v22.22.3",
+  "canonicalRows": 17391,
+  "residentSearchRows": 17418,
+  "loadAndParseMs": 116.243,
+  "artifactBytes": {
+    "servingRowsGzip": 561569,
+    "comparisonRowsGzip": 1206,
+    "evaluationIndexGzip": 264720
+  },
+  "searches": [
+    {
+      "query": "4640301100",
+      "iterations": 100,
+      "medianMs": 0.129,
+      "p95Ms": 0.151,
+      "candidateCount": 1,
+      "ambiguityPresent": false
+    },
+    {
+      "query": "5836 Pawnee Drive",
+      "iterations": 100,
+      "medianMs": 6.878,
+      "p95Ms": 7.047,
+      "candidateCount": 1,
+      "ambiguityPresent": false
+    },
+    {
+      "query": "5836 Paw",
+      "iterations": 100,
+      "medianMs": 6.589,
+      "p95Ms": 7.596,
+      "candidateCount": 1,
+      "ambiguityPresent": false
+    },
+    {
+      "query": "Pawnee",
+      "iterations": 100,
+      "medianMs": 5.798,
+      "p95Ms": 6.15,
+      "candidateCount": 10,
+      "ambiguityPresent": true
+    },
+    {
+      "query": "5700 Baltimore Drive",
+      "iterations": 100,
+      "medianMs": 7.179,
+      "p95Ms": 7.699,
+      "candidateCount": 10,
+      "ambiguityPresent": true
+    }
+  ],
+  "doctrine": "Local/private in-memory linear search over 17,418 public identity rows; maximum 10 returned candidates."
+}

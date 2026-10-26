@@ -1,6 +1,6 @@
 import {
   searchParcelLookup,
-  type ParcelLookupRecord,
+  type ParcelLookupSearchRecord,
 } from "./parcel-lookup-contract";
 
 export const LA_MESA_ADU_PREVIEW_ENV = "TRULOT_LA_MESA_ADU_PREVIEW";
@@ -22,10 +22,13 @@ export function laMesaAduPreviewEnabled(
 export type FrontDoorJurisdiction =
   | "CITY_OF_LA_MESA"
   | "CITY_OF_SAN_DIEGO"
+  | "OUTSIDE_LA_MESA"
   | "UNRESOLVED";
 
 export type FrontDoorCandidate = {
   address: string | null;
+  displayAddress: string;
+  unit: string | null;
   apn: string;
   apnDisplay: string;
   jurisdiction: FrontDoorJurisdiction;
@@ -33,7 +36,11 @@ export type FrontDoorCandidate = {
   confidence: "EXACT" | "PARTIAL";
   rank: number;
   ambiguous: boolean;
-  authority: "SEALED_PUBLIC_BENCHMARK" | "SYNTHETIC_TEST_FIXTURE";
+  canonicalScopeState: "IN_SCOPE_CONFIRMED" | "JURISDICTION_UNRESOLVED" | "OUTSIDE_CANONICAL_SCOPE";
+  authority:
+    | "SEALED_PUBLIC_BENCHMARK"
+    | "SEALED_PUBLIC_SERVING"
+    | "CROSS_JURISDICTION_COMPARISON";
 };
 
 export type FrontDoorLookupResult = {
@@ -120,14 +127,27 @@ export type FrontDoorPublicEvaluation = {
   available: boolean;
 };
 
-export type LaMesaFrontDoorDataset = {
-  records: ParcelLookupRecord[];
-  evaluations: Record<string, FrontDoorPublicEvaluation>;
+export type LaMesaFrontDoorSearchRecord = ParcelLookupSearchRecord & {
+  jurisdictionId:
+    | "CITY_OF_LA_MESA"
+    | "CITY_OF_SAN_DIEGO"
+    | "OTHER_JURISDICTION"
+    | "JURISDICTION_UNRESOLVED";
+  jurisdictionDisplayName: string;
+  canonicalScopeState: FrontDoorCandidate["canonicalScopeState"];
+  authority: FrontDoorCandidate["authority"];
 };
 
-function jurisdictionFor(recordValue: ParcelLookupRecord): FrontDoorJurisdiction {
-  if (recordValue.jurisdiction === "City of La Mesa") return "CITY_OF_LA_MESA";
-  if (recordValue.jurisdiction === "City of San Diego") return "CITY_OF_SAN_DIEGO";
+export type LaMesaFrontDoorDataset = {
+  records: LaMesaFrontDoorSearchRecord[];
+  evaluations: Record<string, FrontDoorPublicEvaluation>;
+  canonicalCount: number;
+};
+
+function jurisdictionFor(recordValue: LaMesaFrontDoorSearchRecord): FrontDoorJurisdiction {
+  if (recordValue.jurisdictionId === "CITY_OF_LA_MESA") return "CITY_OF_LA_MESA";
+  if (recordValue.jurisdictionId === "CITY_OF_SAN_DIEGO") return "CITY_OF_SAN_DIEGO";
+  if (recordValue.jurisdictionId === "OTHER_JURISDICTION") return "OUTSIDE_LA_MESA";
   return "UNRESOLVED";
 }
 
@@ -143,10 +163,12 @@ export function resolveLaMesaFrontDoor(
   const ambiguous = response.totalMatches > 1;
   const candidates = response.candidates.map((candidate) => ({
     address: candidate.record.address,
+    displayAddress: candidate.record.displayAddress,
+    unit: candidate.record.unit,
     apn: candidate.record.apn,
     apnDisplay: candidate.record.apnDisplay,
     jurisdiction: jurisdictionFor(candidate.record),
-    jurisdictionLabel: candidate.record.jurisdiction,
+    jurisdictionLabel: candidate.record.jurisdictionDisplayName,
     confidence:
       candidate.matchReason === "exact_apn" ||
       candidate.matchReason === "exact_address" ||
@@ -155,9 +177,8 @@ export function resolveLaMesaFrontDoor(
         : "PARTIAL" as const,
     rank: candidate.rank,
     ambiguous,
-    authority: candidate.record.sourceObjectId >= 6_899_000
-      ? "SYNTHETIC_TEST_FIXTURE" as const
-      : "SEALED_PUBLIC_BENCHMARK" as const,
+    canonicalScopeState: candidate.record.canonicalScopeState,
+    authority: candidate.record.authority,
   }));
   const state = invalid
     ? "INVALID_QUERY" as const
@@ -169,7 +190,9 @@ export function resolveLaMesaFrontDoor(
           ? "EXACT_MATCH" as const
           : "NO_MATCH" as const;
   const message =
-    state === "INVALID_QUERY"
+    response.totalMatches > response.candidates.length
+      ? "Keep typing to narrow the results."
+      : state === "INVALID_QUERY"
       ? "Enter a fuller address or all 10 APN digits. TruLot will not guess missing parcel identity."
       : state === "NO_MATCH"
         ? "No parcel matched this bounded La Mesa preview."
@@ -244,37 +267,22 @@ export function evaluateLaMesaFrontDoor(
     "A survey, exact building dimensions, and fire/access compliance are not established here.",
     "This preliminary screen is not permit approval or whole-project compliance.",
   ];
-  if (candidate.jurisdiction !== "CITY_OF_LA_MESA") {
+  if (
+    candidate.jurisdiction !== "CITY_OF_LA_MESA" ||
+    candidate.canonicalScopeState !== "IN_SCOPE_CONFIRMED"
+  ) {
     return {
       parcel: candidate,
       jurisdictionConfirmed: false,
       baseZone: null,
       baseProfile: null,
       answerCategory: "Source unavailable",
-      headline: "This property is not currently confirmed within the City of La Mesa.",
+      headline: candidate.canonicalScopeState === "JURISDICTION_UNRESOLVED"
+        ? "This parcel is recorded with La Mesa situs data, but its City jurisdiction needs review."
+        : "This property is not currently confirmed within the City of La Mesa.",
       mappedContexts: [],
       specificPlanMessage: null,
       missingFacts: ["Confirmed City of La Mesa jurisdiction"],
-      pathways: [],
-      homeownerAnswers: answers,
-      userAnswerLimits: limits,
-      evidenceSources: [],
-      evaluationDate: null,
-      futureChangeNotice: null,
-      errorMessage: null,
-    };
-  }
-  if (candidate.authority === "SYNTHETIC_TEST_FIXTURE") {
-    return {
-      parcel: candidate,
-      jurisdictionConfirmed: true,
-      baseZone: null,
-      baseProfile: null,
-      answerCategory: "Outside current scope",
-      headline: "This local ambiguity fixture does not carry parcel rule evidence.",
-      mappedContexts: [],
-      specificPlanMessage: null,
-      missingFacts: ["Sealed public parcel evidence"],
       pathways: [],
       homeownerAnswers: answers,
       userAnswerLimits: limits,

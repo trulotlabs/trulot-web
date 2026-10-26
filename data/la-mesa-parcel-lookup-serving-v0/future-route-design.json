@@ -1,0 +1,10 @@
+{
+  "shape": "/parcel/la-mesa/[slug]",
+  "slugRule": "formatted APN plus normalized address words when an address exists; APN-only fallback otherwise",
+  "examples": [
+    "464-030-11-00-5836-pawnee-dr",
+    "apn-4641310100"
+  ],
+  "canonicalIdentity": "APN resolved within CITY_OF_LA_MESA; jurisdiction-unresolved rows do not receive public routes",
+  "implemented": false
+}

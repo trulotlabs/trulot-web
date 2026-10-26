@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "packet69-browser-review-evidence-v0",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 1000
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 1092,
+      "sha256": "11384c717b042033db111b3b6ad12e8dc4b280f941c342daecd05bcf1c63c02b"
+    },
+    {
+      "file": "browser-results.json",
+      "bytes": 1526,
+      "sha256": "359ef2098d704f43d7be039828c7ab112028a228d673deee87fdc4ceb5c43c15"
+    },
+    {
+      "file": "desktop-duplicate-selected.png",
+      "bytes": 453636,
+      "sha256": "662624f7f499b4562b41302177a9c9306e141d74acf00eef82526fc620f8072b"
+    },
+    {
+      "file": "desktop-jurisdiction-conflict.png",
+      "bytes": 330626,
+      "sha256": "2300612ed130a8fa1c8861f309eff692ddf9425dc45e332086231d89846a6ac0"
+    },
+    {
+      "file": "desktop-landing.png",
+      "bytes": 248535,
+      "sha256": "2b2e1c1af86b1e7c40dda4996fa1dd4c5bedb9c3e8aa3a37fed435f1739c820c"
+    },
+    {
+      "file": "desktop-missing-address-apn.png",
+      "bytes": 458298,
+      "sha256": "861d3aa0cebcdadbc43336829e171c4a0b48aa22e7374a379635f36583c0a9b0"
+    },
+    {
+      "file": "desktop-ordinary-selected.png",
+      "bytes": 450436,
+      "sha256": "d83637f0a8c1de36bc11881e40496b432e04162b2ca1439ff4b907b76b9c96ca"
+    },
+    {
+      "file": "desktop-partial-search.png",
+      "bytes": 278479,
+      "sha256": "5dca2a3d83ceafd7c799f51f94f0643dc357368c9490080875f098b7d013c4e2"
+    },
+    {
+      "file": "desktop-single-family-flow.png",
+      "bytes": 673387,
+      "sha256": "f35966da55c0e06e70e78f878c56efe72dff246c51c7ca53ed31f22d14804459"
+    },
+    {
+      "file": "desktop-unsupported-tbd.png",
+      "bytes": 349809,
+      "sha256": "7612ab4d5c9e45e371ee99a9278299fd1e0fefa59d27eff8f6ee443c8e02934e"
+    },
+    {
+      "file": "mobile-duplicate-selected.png",
+      "bytes": 335506,
+      "sha256": "214b11f87d17dfc74b32e0048c013cf0e3c6dbe7f416e9091d4408c1ae24a978"
+    },
+    {
+      "file": "mobile-jurisdiction-conflict.png",
+      "bytes": 242729,
+      "sha256": "b5a441242b91d01df39c14611cefe70f54076c6ef4f560d6f42a596ed2824942"
+    },
+    {
+      "file": "mobile-landing.png",
+      "bytes": 160876,
+      "sha256": "951e561b38723000ded949dbcaeebf398bb2a5026cbb5a56a476736c434d50fe"
+    },
+    {
+      "file": "mobile-missing-address-apn.png",
+      "bytes": 313322,
+      "sha256": "c436a253f17c8d949a4743f59cefb400be6026fae8d7222be220496b377290ab"
+    },
+    {
+      "file": "mobile-ordinary-selected.png",
+      "bytes": 306838,
+      "sha256": "2a591e54eb366cfeabbe7066fd7c00295a8c37d307f0d0c306c85cebeefe8d71"
+    },
+    {
+      "file": "mobile-partial-search.png",
+      "bytes": 205968,
+      "sha256": "66c378f1723d815bdd8bd31c4ca92dc7254f63b9b4d35ae1341191b3cff8d371"
+    },
+    {
+      "file": "mobile-single-family-flow.png",
+      "bytes": 419423,
+      "sha256": "4804604b4c236e6561993cb9066b7b952e87c17623682fb0541d754ce1677084"
+    },
+    {
+      "file": "mobile-unsupported-tbd.png",
+      "bytes": 254011,
+      "sha256": "f3a20e2476b94b21cfff1cf9ceb7fd4afc88e6426dc8805ac89bde10ed84bcd8"
+    }
+  ]
+}

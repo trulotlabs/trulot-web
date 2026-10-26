@@ -48,20 +48,28 @@ test("full and partial addresses resolve ranked jurisdiction-aware candidates", 
   assert.equal(partial.candidates[0]?.apn, "4640301100");
 });
 
-test("duplicate and cross-jurisdiction address never selects a silent first row", () => {
-  const result = resolveLaMesaFrontDoor("100 Preview Lane", dataset);
-  assert.equal(result.state, "MULTIPLE_MATCHES");
-  assert.equal(result.candidates.length, 3);
-  assert.equal(result.candidates.every((candidate) => candidate.ambiguous), true);
-  assert.deepEqual(new Set(result.candidates.map((candidate) => candidate.jurisdiction)), new Set(["CITY_OF_LA_MESA", "CITY_OF_SAN_DIEGO"]));
+test("duplicate and cross-jurisdiction addresses never select a silent first row", () => {
+  const duplicate = resolveLaMesaFrontDoor("5700 Baltimore Drive", dataset);
+  assert.equal(duplicate.state, "MULTIPLE_MATCHES");
+  assert.equal(duplicate.candidates.every((candidate) => candidate.ambiguous), true);
+  assert.match(duplicate.message ?? "", /Keep typing/);
+
+  const crossJurisdiction = resolveLaMesaFrontDoor("3740 Riviera Drive", dataset);
+  assert.equal(crossJurisdiction.state, "MULTIPLE_MATCHES");
+  assert.equal(crossJurisdiction.candidates.every((candidate) => candidate.ambiguous), true);
+  assert.equal(dataset.records.some((record) => record.normalizedAddress === "3740 RIVIERA DR" && record.jurisdictionId === "CITY_OF_SAN_DIEGO"), true);
 });
 
 test("out-of-jurisdiction and unresolved jurisdiction suppress La Mesa rules", () => {
-  const unresolved = exact("9365 Carmichael Drive");
-  const result = evaluateLaMesaFrontDoor(unresolved, dataset);
-  assert.equal(result.jurisdictionConfirmed, false);
-  assert.equal(result.headline, "This property is not currently confirmed within the City of La Mesa.");
-  assert.equal(result.pathways.length, 0);
+  const outside = evaluateLaMesaFrontDoor(exact("4234411508"), dataset);
+  assert.equal(outside.jurisdictionConfirmed, false);
+  assert.equal(outside.headline, "This property is not currently confirmed within the City of La Mesa.");
+  assert.equal(outside.pathways.length, 0);
+
+  const unresolved = evaluateLaMesaFrontDoor(exact("7601960217"), dataset);
+  assert.equal(unresolved.jurisdictionConfirmed, false);
+  assert.equal(unresolved.answerCategory, "Source unavailable");
+  assert.match(unresolved.headline, /jurisdiction needs review/);
 });
 
 test("initial supported parcel remains needs-evidence until homeowner intake", () => {
@@ -103,7 +111,7 @@ test("Scenic and Hillside contexts use restrained homeowner language", () => {
 
 test("R3 does not infer multifamily and unsupported/TBD remains outside scope", () => {
   const r3 = evaluateLaMesaFrontDoor(exact("4640201000"), dataset);
-  const unsupported = evaluateLaMesaFrontDoor(exact("4641310100"), dataset);
+  const unsupported = evaluateLaMesaFrontDoor(exact("4645231900"), dataset);
   assert.equal(r3.answerCategory, "Needs property evidence");
   assert.equal(r3.pathways.length, 0);
   assert.equal(unsupported.answerCategory, "Outside current scope");
@@ -136,6 +144,7 @@ test("initial mobile-first presentation has labels, restrained branding, and no 
   assert.match(html, /Property address or APN/);
   assert.match(html, /Powered by TruLot property intelligence/);
   assert.match(html, /Private local preview/);
+  assert.match(html, /17,391 sealed La Mesa parcel records/);
   assert.doesNotMatch(html, /consent to be contacted|Approved|Buildable|Guaranteed/);
 });
 

@@ -1,0 +1,15 @@
+{
+  "canonicalRows": 17391,
+  "uniqueCanonicalApns": 17391,
+  "addressedRows": 16728,
+  "missingAddressRows": 663,
+  "distinctAddressStrings": 13212,
+  "duplicateAddressGroups": 186,
+  "extraDuplicateAddressRows": 3516,
+  "rowsInDuplicateGroups": 3702,
+  "jurisdictionUnresolvedRows": 4,
+  "crossJurisdictionAddressStrings": 7,
+  "crossJurisdictionComparisonRows": 27,
+  "excludedBoundaryOverlapApn": "4953350500",
+  "excludedBoundaryOverlapPresent": false
+}

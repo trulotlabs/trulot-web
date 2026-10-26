@@ -1,0 +1,14 @@
+{
+  "recommendation": "Extend the existing private lookup materialization/RPC into one jurisdiction-keyed serving architecture.",
+  "key": [
+    "jurisdiction_id",
+    "apn_normalized"
+  ],
+  "requirements": [
+    "explicit jurisdiction filter",
+    "candidate jurisdiction in every response",
+    "no address-only selection",
+    "independent regulatory lookup by APN after selection"
+  ],
+  "implemented": false
+}

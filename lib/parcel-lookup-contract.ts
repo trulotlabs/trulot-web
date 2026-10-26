@@ -23,7 +23,17 @@ export type ParcelLookupZone = {
   role: string;
 };
 
-export type ParcelLookupRecord = {
+export type ParcelLookupSearchRecord = {
+  apn: string;
+  apnDisplay: string;
+  address: string | null;
+  unit: string | null;
+  displayAddress: string;
+  normalizedAddress: string | null;
+  normalizedUnitAddress: string | null;
+};
+
+export type ParcelLookupRecord = ParcelLookupSearchRecord & {
   apn: string;
   apnDisplay: string;
   parcelId: number | null;
@@ -48,8 +58,8 @@ export type ParcelLookupRecord = {
   existingUnits: number | null;
 };
 
-export type ParcelLookupCandidate = {
-  record: ParcelLookupRecord;
+export type ParcelLookupCandidate<T extends ParcelLookupSearchRecord = ParcelLookupRecord> = {
+  record: T;
   rank: number;
   matchReason:
     | "exact_apn"
@@ -64,11 +74,11 @@ export type ParcelLookupCandidate = {
 
 export type ParcelLookupOpenState = "READY" | "SELECTED_PARCEL_UNAVAILABLE";
 
-export type ParcelLookupResponse = {
+export type ParcelLookupResponse<T extends ParcelLookupSearchRecord = ParcelLookupRecord> = {
   inputType: ParcelLookupInputType;
   state: ParcelLookupState;
   normalizedQuery: string | null;
-  candidates: ParcelLookupCandidate[];
+  candidates: ParcelLookupCandidate<T>[];
   totalMatches: number;
 };
 
@@ -151,7 +161,10 @@ export function normalizeAddress(input: string): string {
     .replace(/\bUNIT 0+(\d+)\b/g, "UNIT $1");
 }
 
-function rankAddress(record: ParcelLookupRecord, query: string): Omit<ParcelLookupCandidate, "rank"> | null {
+function rankAddress<T extends ParcelLookupSearchRecord>(
+  record: T,
+  query: string,
+): Omit<ParcelLookupCandidate<T>, "rank"> | null {
   const baseAddress = record.normalizedAddress;
   const unitAddress = record.normalizedUnitAddress && record.normalizedUnitAddress !== baseAddress
     ? record.normalizedUnitAddress
@@ -188,13 +201,13 @@ const MATCH_ORDER: Record<ParcelLookupCandidate["matchReason"], number> = {
   incidental_unit_match: 7,
 };
 
-function finalize(
+function finalize<T extends ParcelLookupSearchRecord>(
   inputType: ParcelLookupInputType,
   state: ParcelLookupState,
   normalizedQuery: string | null,
-  matches: Array<Omit<ParcelLookupCandidate, "rank">>,
+  matches: Array<Omit<ParcelLookupCandidate<T>, "rank">>,
   maximumResults: number,
-): ParcelLookupResponse {
+): ParcelLookupResponse<T> {
   const ordered = matches.sort((a, b) => {
     const reason = MATCH_ORDER[a.matchReason] - MATCH_ORDER[b.matchReason];
     if (reason) return reason;
@@ -210,11 +223,11 @@ function finalize(
   };
 }
 
-export function searchParcelLookup(
-  records: ParcelLookupRecord[],
+export function searchParcelLookup<T extends ParcelLookupSearchRecord>(
+  records: T[],
   input: string,
   options: { maximumResults?: number; sourceAvailable?: boolean } = {},
-): ParcelLookupResponse {
+): ParcelLookupResponse<T> {
   const maximumResults = options.maximumResults ?? 10;
   if (options.sourceAvailable === false) return finalize("MALFORMED", "SOURCE_UNAVAILABLE", null, [], maximumResults);
   const trimmed = input.trim();
@@ -244,7 +257,7 @@ export function searchParcelLookup(
   if (query.length < 2) return finalize("MALFORMED", "MALFORMED_QUERY", query || null, [], maximumResults);
   const matches = records
     .map((record) => rankAddress(record, query))
-    .filter((candidate): candidate is Omit<ParcelLookupCandidate, "rank"> => candidate !== null);
+    .filter((candidate): candidate is Omit<ParcelLookupCandidate<T>, "rank"> => candidate !== null);
   const exactCount = matches.filter((candidate) =>
     candidate.matchReason === "exact_address" || candidate.matchReason === "exact_unit_address").length;
   const state: ParcelLookupState = exactCount === 1

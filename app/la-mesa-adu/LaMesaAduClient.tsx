@@ -106,7 +106,7 @@ function ParcelIdentity({ candidate }: { candidate: FrontDoorCandidate }) {
     <div className={styles.identity}>
       <div>
         <p className={styles.kicker}>Selected property</p>
-        <h2>{candidate.address ?? `APN ${candidate.apnDisplay}`}</h2>
+        <h2>{candidate.displayAddress}</h2>
         <p>APN {candidate.apnDisplay}</p>
       </div>
       <span className={candidate.jurisdiction === "CITY_OF_LA_MESA" ? styles.confirmed : styles.unresolved}>
@@ -299,7 +299,7 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
   }
 
   const showIntake = selected?.jurisdiction === "CITY_OF_LA_MESA" &&
-    selected.authority === "SEALED_PUBLIC_BENCHMARK" &&
+    selected.canonicalScopeState === "IN_SCOPE_CONFIRMED" &&
     evaluation?.answerCategory !== "Outside current scope" &&
     evaluation?.answerCategory !== "Source unavailable";
 
@@ -334,7 +334,7 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
             />
             <button type="submit">Find property</button>
           </div>
-          <p>Searches {dataset.records.length} sealed local preview records. No production lookup is used.</p>
+          <p>Searches {dataset.canonicalCount.toLocaleString()} sealed La Mesa parcel records. No production lookup is used.</p>
         </form>
       </section>
 
@@ -352,7 +352,7 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
               {lookup.candidates.map((candidate) => (
                 <li key={`${candidate.jurisdiction}-${candidate.apn}`}>
                   <button onClick={() => choose(candidate)} type="button">
-                    <span><strong>{candidate.address ?? `APN ${candidate.apnDisplay}`}</strong><small>APN {candidate.apnDisplay}</small></span>
+                    <span><strong>{candidate.displayAddress}</strong><small>APN {candidate.apnDisplay}</small></span>
                     <span><small>{candidate.jurisdictionLabel}</small><b>{candidate.confidence === "EXACT" ? "Exact match" : "Possible match"}</b></span>
                   </button>
                 </li>

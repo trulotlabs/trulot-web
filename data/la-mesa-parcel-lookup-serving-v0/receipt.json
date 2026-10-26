@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "la-mesa-parcel-lookup-serving-v0",
+  "canonicalPopulation": "SanGIS situs_juris = LM",
+  "sourceRows": {
+    "filename": "rows.ndjson.gz",
+    "sha256": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868"
+  },
+  "inputSeals": {
+    "packet63": "ce1a18d4bd11eada67da9f8e1261ac067ba8e9b82cc8d2e9d71d13fb75c36cca",
+    "packet64": "a83f8ebf0e78bba86f0d2a76ecb9efdda8dbd7de6e5cd3613b519fc30fed144b",
+    "packet65": "2f75fd1691e09f35c7abeba2841637d65a097e6ed371e1d318a9ddb7a3b22275",
+    "packet66": "f6f5adae6cc397371a2b96cc33ccaccdbced5b64384a5b2dc9806f3e7c2c7dc7",
+    "packet67": "b52bc272226705ff111b3a83a69170219fbae82f74db8ba7793e845e8a3357f8"
+  },
+  "canonicalApnFingerprint": "11440df9a1fb2a72592000dc656f75dcec9bf7ed9d90e9efcb9ebba8e700a467",
+  "artifacts": {
+    "servingArtifact": {
+      "bytes": 561569,
+      "sha256": "38938e67a5a88bf229643c55490c1f996a19eff412d2f3c82d357d237fb32b9f",
+      "contentSha256": "9c396921e1f4f48f7503edfd927b00373433619d4be17a12a9da9d5145095369"
+    },
+    "comparisonArtifact": {
+      "bytes": 1206,
+      "sha256": "9be799d7da327304cef79b3d0359afc77918d43adc7f70b750f53a5df01915cc",
+      "contentSha256": "bcc7486e59728f7a7ef3922f86e46ed363be3ce7256c2777ceecedf32ac1bfb3"
+    },
+    "evaluationArtifact": {
+      "bytes": 264720,
+      "sha256": "f9f44ff5581ad547d453c875c8bf3aff9a9603ca6005ac527d366f59c986ce4b",
+      "contentSha256": "42411cb7c7d5190ce4157a22c781332870b1872f6eaf4b65123b4f8e6664b4ab"
+    }
+  },
+  "evaluationEngine": "buildPublicParcelFeasibility / LA_MESA_ADU_2026",
+  "productionAccess": false
+}

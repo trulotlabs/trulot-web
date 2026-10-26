@@ -1,0 +1,506 @@
+{
+  "method": "SHA-256(APN|packet69), round-robin across zone/address/overlay/specific-plan/readiness strata",
+  "count": 100,
+  "samples": [
+    {
+      "apn": "4906220500",
+      "stratum": "C|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "076c93f78355eb99472266bd9bdba050e25772eabf80b79c4ac784fe2b26ee70"
+    },
+    {
+      "apn": "4906222000",
+      "stratum": "C|ADDRESS_AND_APN|NO_OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "ea9d16cf68d7928ad57e9518a163b09da1f79edd5ed3e3cf996671607ac69140"
+    },
+    {
+      "apn": "4750201400",
+      "stratum": "C|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "00c8227eda53b12b5880f440e1916ec64555353a20bc4464ecabdcf6462b44f3"
+    },
+    {
+      "apn": "4645232400",
+      "stratum": "C|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "b03560035d96d65ef80dba4f79d7fc8b51b6b3de0925aff8c928f8eb1fa8bb8a"
+    },
+    {
+      "apn": "4902604800",
+      "stratum": "C|ADDRESS_AND_APN|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "09a36a46e5613e943e26cd108ea7a5acad1049132ec1f29325b9a64435564316"
+    },
+    {
+      "apn": "4902004400",
+      "stratum": "C|ADDRESS_AND_APN|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_UNAVAILABLE",
+      "score": "51ce3f14c306d770127d273f4d3143a394dbf015c4509c078db37df93b2b9e3d"
+    },
+    {
+      "apn": "4941002000",
+      "stratum": "C|ADDRESS_AND_APN|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "4b5e04abf40d289e7878aad8608e20ab8d9dcc586f0a8f883a33f174b6d1135f"
+    },
+    {
+      "apn": "4902601100",
+      "stratum": "C|ADDRESS_AND_APN|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_UNAVAILABLE",
+      "score": "47485dfebbb341f8efe09f39d94f1f2ebacede81c7373936b3d26ae76261d2fe"
+    },
+    {
+      "apn": "4643900800",
+      "stratum": "C|APN_ONLY|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "9f72adf915f25c862870e08125a31ea69f6da87997049a5a0dd149e6fb49ecd0"
+    },
+    {
+      "apn": "4703621600",
+      "stratum": "C|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "0c0af8c6e3b0a04212b80089e8e5affc33d591f6b788bdb26942e828ddf12453"
+    },
+    {
+      "apn": "4902105000",
+      "stratum": "C|APN_ONLY|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "16f4c408b70bfdc307b77bed7d168ed2a232590eef625b70b42192daa5a96067"
+    },
+    {
+      "apn": "4902004900",
+      "stratum": "C|APN_ONLY|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_UNAVAILABLE",
+      "score": "05a5d2145433cad33c37c9fd0bddc75f916931e4a5efaba1317880e3f85a9ad0"
+    },
+    {
+      "apn": "4903402400",
+      "stratum": "C|APN_ONLY|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "9abcbd85b3eda4a7cbb7fdd41ef36fb7130c72ef4233ae693188cc3fe26424b8"
+    },
+    {
+      "apn": "7602340100",
+      "stratum": "CD|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "241225e4d6ddb2edfa2c828f4b5ba933b52f7bf11b0a98d4b4a629f2ee67bcae"
+    },
+    {
+      "apn": "4942810400",
+      "stratum": "CD|ADDRESS_AND_APN|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "07cc3d1a5a04357ba240fe93378c2e5739ddb9752aca6ad9069108cbf68bf195"
+    },
+    {
+      "apn": "4705722136",
+      "stratum": "CD|ADDRESS_AND_APN|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "027cc65da2d706a858a09f516c7de127f1758d142a0eb107fc050b8a4ecd521e"
+    },
+    {
+      "apn": "4944041100",
+      "stratum": "CD|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "1fa0dca92a6ceec5d76c31d829dd11bb403195fb821900cfccaa228f346d3383"
+    },
+    {
+      "apn": "4944041200",
+      "stratum": "CD|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "b5470bd960942d6b1ee686fdc876428ce744e43affaa3e61d67cc4b76c4f5cf5"
+    },
+    {
+      "apn": "4944211000",
+      "stratum": "CD|APN_ONLY|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "0e17ff9a3aecbd1e17a12b135931349711cec0e66cda5144d91b01019526a1ca"
+    },
+    {
+      "apn": "4705722200",
+      "stratum": "CD|APN_ONLY|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "f929f264d0cf94a1968f376aae5ceff9032e2fa809a3d6784d9ddb8c357ee364"
+    },
+    {
+      "apn": "4705811100",
+      "stratum": "Civic Center|ADDRESS_AND_APN|NO_OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "19b5fb05b802c5ae022a20e59c45a943115b0634b6f26be1247c2f8430d4ce05"
+    },
+    {
+      "apn": "4942405700",
+      "stratum": "Civic Center|APN_ONLY|NO_OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "5499af4d1fe58c113bf8ff44619f3e9f960e9e0194eb1085fc19d61293abcd8b"
+    },
+    {
+      "apn": "4705711400",
+      "stratum": "Civic Center|APN_ONLY|NO_OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "6f9d275ef9a9bcbe865dc36f50c813f81704620459abeef6976d489eb0b078e3"
+    },
+    {
+      "apn": "4705811200",
+      "stratum": "Civic Center|APN_ONLY|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "ecba67116c08a6b3ea3e091b347a95c4b6b22155b304070756135092ba4e687c"
+    },
+    {
+      "apn": "4906223500",
+      "stratum": "CM|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "034a234bff98638cd57083789a47e16a6f65fea80e6cd96bc99c16954411e0f1"
+    },
+    {
+      "apn": "4700500700",
+      "stratum": "CM|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "18b28148869a3a4aa95f219532836b299471ee9daa3d61e301eccbc5bd886765"
+    },
+    {
+      "apn": "4646002600",
+      "stratum": "CM|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "4aa95b63cbfd83671e0a8070b5b67c8239baf97e90466c058f7f18e9fcb90966"
+    },
+    {
+      "apn": "4906313400",
+      "stratum": "CM|ADDRESS_AND_APN|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "844403ef3f5244e3e0f27d71ff7f890379d128ba8039c11cd951bb0a8dcbc2a2"
+    },
+    {
+      "apn": "4690212100",
+      "stratum": "CM|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "05fa649ab5eaaa554a658eacd8defab2c51b9e0ceb9d90a5524890afb7ad1317"
+    },
+    {
+      "apn": "4700501600",
+      "stratum": "CM|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "fea13e909ed12835f03c0478caac65bda6118efcf96e399b192970d8aa40e6d8"
+    },
+    {
+      "apn": "4912301500",
+      "stratum": "CN|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "0e2a2149f93c2d615799e485dcad24cb20ebafb95f5b8c70bed186b436fc1ffb"
+    },
+    {
+      "apn": "4867711500",
+      "stratum": "CN|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "2eb55fc5d35db74410ba666bf4d53e3f3b30ad3766cc4e3ae5ca174278339b63"
+    },
+    {
+      "apn": "4855501200",
+      "stratum": "CN|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "026de9cd5cec37aab8e1894e33326ae79e93c8c8ae0980d8dd67a908e48c9f23"
+    },
+    {
+      "apn": "4868401200",
+      "stratum": "CN|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "2d60eb4b89b873a4afe355f78cbcba0e31a7a0a28c9a7155e68c60ce1fe91641"
+    },
+    {
+      "apn": "4867500800",
+      "stratum": "CN|ADDRESS_AND_APN|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "1947433c15549608913fa4928080ea63afbf68430376d9cf2d7b57f099e61ed6"
+    },
+    {
+      "apn": "4944412300",
+      "stratum": "CN|ADDRESS_AND_APN|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "24c879c8593112c955f804954bb4e3424510768b5518147b07f991cdec1d3e32"
+    },
+    {
+      "apn": "4912301600",
+      "stratum": "CN|APN_ONLY|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "2cf4be60fcf65df8ebd7f5ba5ecdf8aa9dca2472c658b7c4d33ef415e99ac339"
+    },
+    {
+      "apn": "4944430301",
+      "stratum": "CN|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "166d6b11aa659d37195b03d99ae5bb73c6acb570335acd6cdd2f49d3365c9c9e"
+    },
+    {
+      "apn": "4944411000",
+      "stratum": "CN|APN_ONLY|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "61f4afe0d7af0f41e0a0a7731f057b5555397f34763e3ae690d5391ecc0f0f0a"
+    },
+    {
+      "apn": "4700610800",
+      "stratum": "M|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "022633e145db4b44f1637071a2d4ff0a2270e6d536aec389022c9698bfd14eec"
+    },
+    {
+      "apn": "4700611200",
+      "stratum": "M|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "c83e1261cb21e1b72fba59459b00304b94be24c62c8e38e93f64a00c80251027"
+    },
+    {
+      "apn": "7602366300",
+      "stratum": "M|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "097b7de3b8225cbf1c93993893e7471a46ea7841de3aea707228fc9956e408bf"
+    },
+    {
+      "apn": "4701301000",
+      "stratum": "M|ADDRESS_AND_APN|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "9a7d665a2bf24bab36e36a7de73a9fb3438b3be852039adc3ce2b025132ebf88"
+    },
+    {
+      "apn": "4700721100",
+      "stratum": "M|APN_ONLY|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "02b2fa060c6dc5ffb198588dedefe790dbd844962114109308ac152dc67a1b29"
+    },
+    {
+      "apn": "4906312700",
+      "stratum": "M|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "9cdadcd6606194b6e4d33a90e6c33092fa8b04a566477a1e7388fcbf3a2b8aa1"
+    },
+    {
+      "apn": "7602343800",
+      "stratum": "MacArthur|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "6e5366d0f5089f09cc4099e7a59f9d11e8aa81087e0afcf65a784b8c8b927eb5"
+    },
+    {
+      "apn": "4948200100",
+      "stratum": "MacArthur|APN_ONLY|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "f619eae25db1c31afc084d1c74d4276e44d2b534698cfb215f20eb64068f753b"
+    },
+    {
+      "apn": "4941700400",
+      "stratum": "MacArthur|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "93fbbc347699020c70a31e1deab242a1161cdc5c582f6f08c0ee4f36d841196b"
+    },
+    {
+      "apn": "4866702300",
+      "stratum": "NO_ZONE|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "8f3c0cf16b7a96afea9f8caa1bd01886ec1bb87b1889619b94bc9281d9b849ee"
+    },
+    {
+      "apn": "7746913124",
+      "stratum": "NO_ZONE|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "056920d0785ba51e563405bb3f64f3944820a855169de3f27f7497f0149737c2"
+    },
+    {
+      "apn": "4646002100",
+      "stratum": "NO_ZONE|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "cee44bb8b16f4dab51526351029aa9f95bca2e393c85b30d0339b671a88895fe"
+    },
+    {
+      "apn": "4646002400",
+      "stratum": "NO_ZONE|ADDRESS_AND_APN|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_UNAVAILABLE",
+      "score": "1408be248b3aa34147c353220118de34eb143825c6007bf7f92020521e1164fc"
+    },
+    {
+      "apn": "7601960220",
+      "stratum": "NO_ZONE|APN_ONLY|NO_OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "4156ba2b0fd337560b36a922a4efee6af1737a92e12d4dccad325bf640aa7b63"
+    },
+    {
+      "apn": "4646002500",
+      "stratum": "NO_ZONE|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "f47d2fc5904d3d018491305104d40f8ea3250867da09b8d8e5fb46b7e89e5e23"
+    },
+    {
+      "apn": "4906210700",
+      "stratum": "NO_ZONE|APN_ONLY|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_UNAVAILABLE",
+      "score": "7bf80670b966e95712a04220eaabbbcd58381bfcbc7fa2a048214c45059fd4a9"
+    },
+    {
+      "apn": "4940510600",
+      "stratum": "R1|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "0000d6854f565b7269be4b8ff32c3496d28dd9af0a1cef03f5fcc73148ea25ba"
+    },
+    {
+      "apn": "4867801200",
+      "stratum": "R1|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "6306f128f38536143ff5fda4ba10129a3686af1ab94a227fa82401c5de3a2d92"
+    },
+    {
+      "apn": "4706131000",
+      "stratum": "R1|ADDRESS_AND_APN|NO_OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "02cba83e0479bb73b3c0b5a6bd8482f0f581950c735bce7ae9cc2c2ac8a11d1d"
+    },
+    {
+      "apn": "4941204900",
+      "stratum": "R1|ADDRESS_AND_APN|NO_OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "2e6ca0f12440b3aafe3799bdd33b809a6b67615a061d79a9d043cec01eb6f413"
+    },
+    {
+      "apn": "4948511900",
+      "stratum": "R1|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "00f34d2cd9281be163d97629aafcb553f9fba292fe7b8690a63d15fee6700169"
+    },
+    {
+      "apn": "4753010200",
+      "stratum": "R1|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "6dfce279493f9d41209d53a0ea89611e1edacdd984c7c6f14ada6a712cdca8ea"
+    },
+    {
+      "apn": "4854821800",
+      "stratum": "R1|ADDRESS_AND_APN|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "15b71e51ca1fa40cb50df021ae1212fc179eebf6c7b471de44c8ebcc24fa05ec"
+    },
+    {
+      "apn": "4706622600",
+      "stratum": "R1|ADDRESS_AND_APN|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "1026eae12ee0e7f87f940e2ee6e1e7579f84b7d36d818e34bfe4fd7a584ddf38"
+    },
+    {
+      "apn": "4694805400",
+      "stratum": "R1|APN_ONLY|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "035b84aa2261f7e9492f85ab5c0af830e863fdb397160c5361dc96f7ae70ebcd"
+    },
+    {
+      "apn": "4948712600",
+      "stratum": "R1|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "184e94161f20aab08671a38ab12cf1020b7fafe2f71863807ffda8ccaab71d3b"
+    },
+    {
+      "apn": "4856002100",
+      "stratum": "R1|APN_ONLY|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "575cea7e4dbd1f6b264cec6487bbfc6fe73f71ae9f7cd73bb7c941ce00f858b6"
+    },
+    {
+      "apn": "4941701100",
+      "stratum": "R1|APN_ONLY|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "231ed47974f4addcc9b96f15a4eb02048885c1f65481245850c255ebe75d3f07"
+    },
+    {
+      "apn": "4683902900",
+      "stratum": "R1A|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "0027fc25b883c9854012b5b2b3773339b1f0083d748ced7f9f38d44f442cc55a"
+    },
+    {
+      "apn": "4683404900",
+      "stratum": "R1A|APN_ONLY|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "321eb1e0672800cb1f41ce92aa9c530ee324448e0b02ecc1c5ff795144da5303"
+    },
+    {
+      "apn": "4964101900",
+      "stratum": "R1E|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "05dbe5fbaca6afdd1c4345480c596c1c20d333b6c6e8a4d93a9ca057b310963e"
+    },
+    {
+      "apn": "4951902000",
+      "stratum": "R1E|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "446fe7cb684383dba539aae9b9ba33ef8d4ee0fd06e7e372b58011a48ea3e695"
+    },
+    {
+      "apn": "4995210500",
+      "stratum": "R1R|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "00332e9cfba99815f188b9c6c4b1fddcd149c56d47d9b0790a6faa48882e5ed6"
+    },
+    {
+      "apn": "4995003500",
+      "stratum": "R1R|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "a33472f20504b8d15d93f44e7602ff7c0b9bcf5bc15651111765b370fd61a7c6"
+    },
+    {
+      "apn": "4994926100",
+      "stratum": "R1R|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "0a06db9aee78918996bf56741a7c239791a11b1a4b877968c44df11083d4d4bd"
+    },
+    {
+      "apn": "4752411200",
+      "stratum": "R1S|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "00023cc9c552daf144047f4ec7414f01be5fce622bc24a9a9e26528ecc5de5c3"
+    },
+    {
+      "apn": "4990300300",
+      "stratum": "R1S|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "0ea39916652c8aca04d2bcd3518e9c3ec53f6e61fe6cd47fd77822d34113ddb5"
+    },
+    {
+      "apn": "4904033600",
+      "stratum": "R1S|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "000d424385df9bd29cf0b6009c1b914055953546ec8642d4846a37c85281674a"
+    },
+    {
+      "apn": "4991910700",
+      "stratum": "R1S|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_UNAVAILABLE",
+      "score": "0a4733b69938219ad97916eb95714e23e26bbe551d5201f31b69f26eb4f0b05a"
+    },
+    {
+      "apn": "4756221900",
+      "stratum": "R1S|ADDRESS_AND_APN|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "0106ae0c079407fa684a3a88106b3f049d3f1d2fee3f4f72abd5d6e6f329ebd6"
+    },
+    {
+      "apn": "4755751100",
+      "stratum": "R1S|ADDRESS_AND_APN|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "00fada874958ebcb88046e29128c4ac90293c46677acc50aeca3cb2f920c085a"
+    },
+    {
+      "apn": "4990101011",
+      "stratum": "R1S|ADDRESS_AND_APN|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_UNAVAILABLE",
+      "score": "05846e9e57d59f04cf1dc86614ad7b4cac837ac3fcecab068730d95c275c8268"
+    },
+    {
+      "apn": "4912600900",
+      "stratum": "R1S|APN_ONLY|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "07d43607ddb564b42ab75ae0a96fb819595cc0fc991cd1fd69ab5073dd51301c"
+    },
+    {
+      "apn": "4917900200",
+      "stratum": "R1S|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "032d2c61fe1625da1bd512ece8f6196b69513b5e79142075ef93da3a9490dfcd"
+    },
+    {
+      "apn": "4756213200",
+      "stratum": "R1S|APN_ONLY|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "4e7ce2a263b614229482320a96e5b2fc01eba746044c6ed42c38b6f5abe7f0db"
+    },
+    {
+      "apn": "4751401300",
+      "stratum": "R1S|APN_ONLY|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_UNAVAILABLE",
+      "score": "8eee838d6ffb5ad02a5a925aa6ef52c3167c8c09bae157685706a504a25bd3ba"
+    },
+    {
+      "apn": "4946420200",
+      "stratum": "R1S|APN_ONLY|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "0137e717cefcfc34dc97ea910bb2e4276b2aa21c08c92ab977ffb327ca94d2d0"
+    },
+    {
+      "apn": "4990101300",
+      "stratum": "R1S|APN_ONLY|OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_UNAVAILABLE",
+      "score": "23154fa8f496326d5cd7905a9d0334e048307b46cc98c07a5c6ffe5fc238f596"
+    },
+    {
+      "apn": "4863620700",
+      "stratum": "R2|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "037b931b3a99fa575bf1d18ade8e2e0b17228411cb6f169f2062ded61e269a1a"
+    },
+    {
+      "apn": "4942911400",
+      "stratum": "R2|ADDRESS_AND_APN|NO_OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "000846234cc0eb5e2ef23c215740d41e44c7f3d47095b675cc7fa603b76cb768"
+    },
+    {
+      "apn": "4944520300",
+      "stratum": "R2|ADDRESS_AND_APN|NO_OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "026765babcb5d7a5000ff050ce81c0f7c77ad2440b1ca0a222732797daccf1c9"
+    },
+    {
+      "apn": "4703620600",
+      "stratum": "R2|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "039907247043aab939513d0e4478993f601de0c22d137d6415ffd13bc5314bc2"
+    },
+    {
+      "apn": "4942720500",
+      "stratum": "R2|ADDRESS_AND_APN|OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "6d1d138bf6ac2274d28ef6b1ed5cbcbdf7c9ae3e4b33a809e3f25ef070363967"
+    },
+    {
+      "apn": "4905800400",
+      "stratum": "R2|APN_ONLY|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "1655e67fcd40f776e0c375f6732672c4fdc9695997ff5699a98ecd32b74f6f29"
+    },
+    {
+      "apn": "4706021300",
+      "stratum": "R2|APN_ONLY|NO_OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "01242444bae1fbecc3e785394e48fd86d25b80c7cef075fb7d75690591875b56"
+    },
+    {
+      "apn": "4944531800",
+      "stratum": "R2|APN_ONLY|NO_OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "0aea45c4cefa3f3456b5489080b066380ee5069282d47acf83237e0d893ded1c"
+    },
+    {
+      "apn": "4867500700",
+      "stratum": "R2|APN_ONLY|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "d1d38b6bf83d77d63321473d19d79491de0c9c54af56e4a383dbe16fcb768532"
+    },
+    {
+      "apn": "4706901906",
+      "stratum": "R3|ADDRESS_AND_APN|NO_OVERLAY|NONE|RULE_PROFILE_READY",
+      "score": "000721451c95a8ebfd4b0d16f9889b490645d1d1a8e793f910c42e5b201791f5"
+    },
+    {
+      "apn": "4946130600",
+      "stratum": "R3|ADDRESS_AND_APN|NO_OVERLAY|ONE_ADOPTED_SPECIFIC_PLAN|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "00b2a616cf8b7211a5ca89747a96e59fa795777c1d49828fa128faa702496077"
+    },
+    {
+      "apn": "4943000700",
+      "stratum": "R3|ADDRESS_AND_APN|NO_OVERLAY|SPECIFIC_PLAN_BOUNDARY_REVIEW|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "90614941fe4bfc80ce082d5098d6f4173d5291e135f31d55c4a1c9e9c69cb68a"
+    },
+    {
+      "apn": "4866702655",
+      "stratum": "R3|ADDRESS_AND_APN|OVERLAY|NONE|RULE_PROFILE_REVIEW_REQUIRED",
+      "score": "00036f51bc0f8656e92f9de45dfb956e53bcee0979f5858d307bfa7682e6355e"
+    }
+  ]
+}
