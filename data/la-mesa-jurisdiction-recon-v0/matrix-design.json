@@ -1,0 +1,76 @@
+{
+  "adu_rule_matrix": {
+    "claim_boundary": "No parcel eligibility from zoning alone.",
+    "fields": [
+      "permitted_adu_types",
+      "unit_count",
+      "jadu_availability",
+      "minimum_size",
+      "maximum_size",
+      "front_setback",
+      "side_setback",
+      "rear_setback",
+      "height",
+      "lot_coverage_exceptions",
+      "parking",
+      "owner_occupancy",
+      "rental_duration",
+      "fire_sprinklers",
+      "overlay_constraints",
+      "historic_constraints",
+      "conversion_rules",
+      "multifamily_rules",
+      "objective_standards",
+      "permit_review_timing",
+      "state_law_fallback"
+    ],
+    "required_dimensions": [
+      "primary_dwelling_type",
+      "existing_or_proposed",
+      "local_code_effective_date",
+      "state_law_effective_date",
+      "specific_plan_version",
+      "overlay_context"
+    ]
+  },
+  "registry_design": {
+    "avoid_overversioning": "Source checksums and acquisition timestamps remain provenance, not registry key dimensions unless they change operative rules.",
+    "example": "CITY_OF_LA_MESA + R1 + LMMC_<effective-date> + CA_ADU_2026 + NONE + P -> sealed profile",
+    "key": [
+      "jurisdiction_id",
+      "zone_code",
+      "municipal_code_profile_version",
+      "adu_state_law_profile_version",
+      "specific_plan_id_or_none",
+      "rule_modifying_overlay_signature"
+    ]
+  },
+  "residential_rule_matrix": {
+    "fields": [
+      "minimum_lot_area",
+      "width",
+      "depth",
+      "frontage",
+      "front_setback",
+      "interior_side_setback",
+      "street_side_setback",
+      "rear_setback",
+      "height",
+      "lot_coverage",
+      "far",
+      "density",
+      "open_space",
+      "parking_when_adu_relevant",
+      "overlay_modifiers",
+      "special_lot_formulas"
+    ],
+    "state_enum": [
+      "directly_stated",
+      "formula",
+      "conditional",
+      "not_specified",
+      "modifier_dependent",
+      "unresolved"
+    ]
+  }
+}

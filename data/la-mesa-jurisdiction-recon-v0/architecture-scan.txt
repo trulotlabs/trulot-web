@@ -1,0 +1,94 @@
+data/parcel-page-feasibility-v0/public-parcel-evidence.json:6:      "jurisdiction_id": "CITY_OF_SAN_DIEGO",
+data/parcel-page-feasibility-v0/public-parcel-evidence.json:7:      "coastal_context": "OUTSIDE_COASTAL",
+data/parcel-page-feasibility-v0/public-parcel-evidence.json:18:      "fire": null
+data/parcel-page-feasibility-v0/public-parcel-evidence.json:22:      "jurisdiction_id": "CITY_OF_SAN_DIEGO",
+data/parcel-page-feasibility-v0/public-parcel-evidence.json:23:      "coastal_context": "OUTSIDE_COASTAL",
+data/parcel-page-feasibility-v0/public-parcel-evidence.json:30:      "fire": {
+data/parcel-page-feasibility-v0/public-parcel-evidence.json:33:        "label": "City of San Diego Fire Hazard Severity Zone Map 2025",
+app/parcel/san-diego/[slug]/page.tsx:308:          <Link href="/parcel/san-diego" className="hover:text-slate-800">San Diego parcels</Link>
+app/parcel/san-diego/[slug]/page.tsx:319:        <details className="mt-3 rounded border border-amber-200 bg-amber-50 text-sm text-amber-950" data-testid="sda-reconciliation-notice">
+app/parcel/san-diego/[slug]/page.tsx:345:              <Link href="/parcel/san-diego" className="rounded border border-slate-300 px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Search another parcel</Link>
+app/parcel/san-diego/[slug]/page.tsx:645:          TruLot · Public parcel records for San Diego, explained ·{" "}
+app/parcel/san-diego/[slug]/page.tsx:647:          <Link href="/parcel/san-diego" className="text-sky-800 hover:underline">Browse parcels</Link>
+lib/parcel-page-v1.ts:28:} from "./sda-source-reconciliation";
+lib/parcel-page-v1.ts:44:  | { tpa: boolean; ctcac: boolean; unavailable: false }
+lib/parcel-page-v1.ts:45:  | { tpa: null; ctcac: null; unavailable: true }
+lib/parcel-page-v1.ts:46:) & { sda: SdaReconciliationStatus };
+lib/parcel-page-v1.ts:54:  sda: SdaReconciliationStatus;
+lib/parcel-page-v1.ts:193:  overlays: { tpa: TruthFact<boolean>; ctcac: TruthFact<boolean>; sda: TruthFact<boolean> };
+lib/parcel-page-v1.ts:325:    sda: applySdaReconciliationPolicy(null),
+lib/parcel-page-v1.ts:496:function buildSignalFacts(row: RawRow, overlays: Pick<OverlayFlags, "tpa">): SignalFact[] {
+lib/parcel-page-v1.ts:513:  if (overlays.tpa === true) {
+lib/parcel-page-v1.ts:547:      flags: { tpa: null, ctcac: null, unavailable: true, sda: applySdaReconciliationPolicy(null) },
+lib/parcel-page-v1.ts:569:    tpa: parsed.data.tpa,
+lib/parcel-page-v1.ts:572:    sda: applySdaReconciliationPolicy(parsed.data.sda),
+lib/parcel-page-v1.ts:574:  const hasOverlay = flags.tpa === true || flags.ctcac === true;
+lib/parcel-page-v1.ts:623:      "TruLot compiles and explains public parcel records. This page is not legal, financial, or land-use advice, and it is not a substitute for official records or city determinations. Public datasets can lag, change, or contain errors, so confirm important details with the County Assessor and the City of San Diego.",
+lib/parcel-page-v1.ts:667:    { fieldName: "zoning.programs.tpa", sourceTableView: "check_parcel_overlays(lat,lng)", availableNow: "yes", nullBehavior: "Show overlay unavailable state.", sourceLabel: "Overlay lookup function", confidenceTier: "mapped" },
+lib/parcel-page-v1.ts:668:    { fieldName: "zoning.programs.sda", sourceTableView: "check_parcel_overlays(lat,lng)", availableNow: "yes", nullBehavior: "Show overlay unavailable state.", sourceLabel: "Overlay lookup function", confidenceTier: "mapped" },
+lib/parcel-page-v1.ts:845:  const overlayProvenance = buildTruthProvenance("overlay_layers_tpa_sda_ctcac_v1", "check_parcel_overlays", "Overlay source not evaluated.");
+lib/parcel-page-v1.ts:852:      tpa: unavailableMembership, ctcac: unavailableMembership,
+lib/parcel-page-v1.ts:853:      sda: { state: "unknown", value: null, sourceState: "not_evaluated", derivation: "conditional", provenance: { ...overlayProvenance, basis: SDA_RECONCILIATION_MESSAGE } },
+lib/parcel-page-v1.ts:926:  const city = str(parcelRow.city) || "San Diego";
+lib/parcel-page-v1.ts:935:  const sdaRegulatoryConclusionAllowed = canUseSdaForRegulatoryConclusion(overlays.sda);
+lib/parcel-page-v1.ts:955:    sda: overlays.sda,
+lib/parcel-page-v1.ts:960:  ) || sourceStatus.sda.state === "source_reconciliation_pending"
+lib/parcel-page-v1.ts:1030:          tpa: overlays.tpa,
+lib/parcel-page-v1.ts:1074:      tpa: overlays.tpa,
+lib/parcel-page-v1.ts:1134:        : overlays.tpa
+lib/parcel-page-v1.ts:1146:      sourceLabel: "City of San Diego SDA source",
+lib/parcel-page-v1.ts:1172:        tpa: overlays.tpa,
+lib/parcel-page-v1.ts:1175:      })} ${sdaRegulatoryConclusionAllowed
+lib/parcel-page-v1.ts:1238:    jurisdictionId: "CITY_OF_SAN_DIEGO",
+lib/parcel-page-v1.ts:1247:    coastalContext: localFeasibilityEvidence?.coastalContext ?? "UNKNOWN",
+lib/parcel-page-v1.ts:1249:      sda: {
+lib/parcel-page-v1.ts:1251:          sourceStatus.sda.observedMembership === "inside"
+lib/parcel-page-v1.ts:1253:            : sourceStatus.sda.observedMembership === "outside"
+lib/parcel-page-v1.ts:1257:          sourceStatus.sda.observedMembership === "unavailable"
+lib/parcel-page-v1.ts:1264:      fire: localFeasibilityEvidence?.fire,
+lib/parcel-page-v1.ts:1265:      tpa: {
+lib/parcel-page-v1.ts:1266:        mapped: overlays.tpa,
+lib/parcel-page-v1.ts:1276:    const sdaContext = feasibility.contexts.find((context) => context.type === "SDA");
+lib/parcel-page-v1.ts:1277:    const sdaProgram = programFacts.find(
+lib/parcel-page-v1.ts:1280:    if (sdaContext && sdaProgram) {
+lib/parcel-page-v1.ts:1281:      sdaProgram.value = `${sdaContext.answer} Eligibility: ${sdaContext.eligibility.toLowerCase().replaceAll("_", " ")}. Regulatory use: ${sdaContext.regulatoryUse.toLowerCase().replaceAll("_", " ")}.`;
+lib/parcel-page-v1.ts:1282:      sdaProgram.displayState = "verification_pending";
+lib/parcel-page-v1.ts:1283:      sdaProgram.sourceLabel = "Reconciled public SDA context";
+lib/parcel-page-v1.ts:1285:    const fireContext = feasibility.contexts.find(
+lib/parcel-page-v1.ts:1288:    if (fireContext) {
+lib/parcel-page-v1.ts:1291:        value: `${fireContext.answer} Regulatory use: context only; project compliance is not evaluated.`,
+lib/parcel-page-v1.ts:1392:  const overlayProvenance = buildTruthProvenance("overlay_layers_tpa_sda_ctcac_v1", "check_parcel_overlays", "Validated point-overlay RPC response; membership is not regulatory eligibility.", "check_parcel_overlays");
+lib/parcel-page-v1.ts:1413:        tpa: membership(overlays.tpa), ctcac: membership(overlays.ctcac),
+lib/parcel-page-v1.ts:1414:        sda: { state: "unknown", value: null, sourceState: sourceStatus.overlays.sourceState, derivation: "conditional", provenance: { ...overlayProvenance, basis: SDA_RECONCILIATION_MESSAGE, methodology: "SDA source reconciliation policy" } },
+lib/public-parcel-feasibility-evidence.ts:8:  coastalContext: "OUTSIDE_COASTAL" | "INSIDE_COASTAL" | "UNKNOWN";
+lib/public-parcel-feasibility-evidence.ts:12:  fire?: PublicMappedContextInput;
+lib/public-parcel-feasibility-evidence.ts:41:          coastalContext: parcel.coastal_context as LocalPublicParcelFeasibilityEvidence["coastalContext"],
+lib/public-parcel-feasibility-evidence.ts:47:          fire: parcel.fire
+lib/public-parcel-feasibility-evidence.ts:49:                mapped: parcel.fire.mapped,
+lib/public-parcel-feasibility-evidence.ts:50:                verification: parcel.fire.verification as PublicMappedContextInput["verification"],
+lib/public-parcel-feasibility-evidence.ts:51:                sourceLabel: parcel.fire.label,
+lib/public-parcel-feasibility-evidence.ts:52:                sourceDate: parcel.fire.date,
+lib/public-parcel-feasibility-evidence.ts:53:                sourceUrl: parcel.fire.url,
+lib/public-parcel-feasibility.ts:38:export type PublicJurisdictionId = "CITY_OF_SAN_DIEGO" | (string & {});
+lib/public-parcel-feasibility.ts:74:  coastalContext:
+lib/public-parcel-feasibility.ts:81:    sda?: PublicMappedContextInput;
+lib/public-parcel-feasibility.ts:82:    fire?: PublicMappedContextInput;
+lib/public-parcel-feasibility.ts:83:    tpa?: PublicMappedContextInput;
+lib/public-parcel-feasibility.ts:152:  coastalContexts: Array<PublicParcelFeasibilityInput["coastalContext"]>;
+lib/public-parcel-feasibility.ts:158:    jurisdictionId: "CITY_OF_SAN_DIEGO",
+lib/public-parcel-feasibility.ts:159:    zoneCode: "RS-1-7",
+lib/public-parcel-feasibility.ts:161:    coastalContexts: ["OUTSIDE_COASTAL"],
+lib/public-parcel-feasibility.ts:165:    jurisdictionId: "CITY_OF_SAN_DIEGO",
+lib/public-parcel-feasibility.ts:166:    zoneCode: "RM-2-5",
+lib/public-parcel-feasibility.ts:168:    coastalContexts: ["OUTSIDE_COASTAL"],
+lib/public-parcel-feasibility.ts:195:        profile.coastalContexts.includes(input.coastalContext),
+lib/public-parcel-feasibility.ts:323:      value: "San Diego Municipal Code residential base-zone standards",
+lib/public-parcel-feasibility.ts:692:        "The supported Code-defined lot area is compared only with the RS-1-7 base minimum.",
+lib/public-parcel-feasibility.ts:702:        "The supported Code-defined lot width is compared only with the RS-1-7 base minimum.",
+lib/public-parcel-feasibility.ts:712:        "The supported Code-defined lot depth is compared only with the RS-1-7 base minimum.",
+lib/public-parcel-feasibility.ts:722:        "The supported frontage is compared only with the selected RS-1-7 base requirement.",
+lib/public-parcel-feasibility.ts:833:  if (input.contexts.sda) {
+lib/public-parcel-feasibility.ts:834:    items.push(contextItem("RM25_SDA", "SDA", "SDA", input.contexts.sda));
+lib/public-parcel-feasibility.ts:836:  if (input.contexts.fire) {
+lib/public-parcel-feasibility.ts:837:    items.push(contextItem("RM25_FIRE", "FIRE", "Fire", input.contexts.fire));
+lib/public-parcel-feasibility.ts:927:          ? "City of San Diego"

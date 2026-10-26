@@ -1,0 +1,24 @@
+{
+  "already_jurisdiction_neutral": [
+    "PublicJurisdictionId accepts registered strings",
+    "public input/output DTO carries jurisdictionId",
+    "profile selection keys jurisdiction, zone, version, and context",
+    "measurement and evidence DTOs are generic",
+    "privacy validation and fail-closed output are generic"
+  ],
+  "real_blockers": [
+    "canonical route and slug helper are /parcel/san-diego specific",
+    "Parcel V1 loader hard-codes CITY_OF_SAN_DIEGO and City-specific overlay RPC/SDA/TPA/coastal semantics",
+    "production Parcel Lookup contract and serving schema require jurisdiction SD",
+    "profile builders contain San Diego-specific rule IDs/text/municipal-code URL",
+    "evidence registry schema exposes coastal/fire slots rather than a generic context collection",
+    "SEO/footer/disclaimer copy is San Diego-specific"
+  ],
+  "scan_file": "architecture-scan.txt",
+  "trivial_extensions": [
+    "add CITY_OF_LA_MESA constant/registry entries after rules are sealed",
+    "generalize public authority label and source URL from profile data",
+    "add La Mesa overlay context record types",
+    "add jurisdiction-aware metadata labels"
+  ]
+}

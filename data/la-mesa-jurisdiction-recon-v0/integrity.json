@@ -1,0 +1,215 @@
+{
+  "files": [
+    {
+      "bytes": 16131,
+      "path": "README.md",
+      "sha256": "72b8501bb872515e67ad1c35ce895f5dd35ff3af9462dce698136cf06400ffff"
+    },
+    {
+      "bytes": 41307,
+      "path": "analysis.json",
+      "sha256": "9409f49a7e0ff326576694a7d46b6413e338bd93d89a8eb5d7a5cbc33496f80f"
+    },
+    {
+      "bytes": 1174,
+      "path": "architecture-audit.json",
+      "sha256": "7af48ee9ba7468937330bd4349d89490f7b48febc233dfe67eeeadf5e034b91c"
+    },
+    {
+      "bytes": 9879,
+      "path": "architecture-scan.txt",
+      "sha256": "419c1689141e7e9e091b47b9d7681ee59df9cca2d590193eb1ed7a0069faa18c"
+    },
+    {
+      "bytes": 5493,
+      "path": "benchmarks.json",
+      "sha256": "ae05e68e418f2b7f3bb13989ec1b7134fa526f492fc5ea3c5d4a47a337aa4a72"
+    },
+    {
+      "bytes": 1950,
+      "path": "matrix-design.json",
+      "sha256": "cec8a655471aeaa66740de1ace30c5ef1451bd7e8ddcbbe6b9047f17204059db"
+    },
+    {
+      "bytes": 1178,
+      "path": "point-joins.json",
+      "sha256": "b5e20fa2d213f78007cebe9c171a5f7da30bfdcb89275e0f2dcf7a666e38b25d"
+    },
+    {
+      "bytes": 3611,
+      "path": "risk-register.json",
+      "sha256": "f592b8d4b3da4757a8b1c663c82f6bedd0afc91072221a024b390ef9080880c1"
+    },
+    {
+      "bytes": 13087,
+      "path": "source-manifest.json",
+      "sha256": "94d04236ddc82b6dd9be80ea76ac1b171258ee3c43cbe1761f85dd225179de60"
+    },
+    {
+      "bytes": 3056,
+      "path": "source-snapshots/metadata/boundary-layer.json.gz",
+      "sha256": "1fb0e0d70c812dabaa8ed1458d61e3acbfe917577089423073805e35f52869a9"
+    },
+    {
+      "bytes": 1727,
+      "path": "source-snapshots/metadata/boundary-service.json.gz",
+      "sha256": "4ddf850858c174f85238eb7e70f77d2000c7079d6cdc15838abf3b98843b3b13"
+    },
+    {
+      "bytes": 4302,
+      "path": "source-snapshots/metadata/overlays-layer.json.gz",
+      "sha256": "d17a55f9b08fe8fbd003142ef8b0e9877105c8e48b392879c1a10dd9273defc3"
+    },
+    {
+      "bytes": 3603,
+      "path": "source-snapshots/metadata/overlays-service.json.gz",
+      "sha256": "f8b5b69accc0b1aa86db63b3d5282985423e54cbb90f5a6d7bf97c70e9ea2b25"
+    },
+    {
+      "bytes": 6301,
+      "path": "source-snapshots/metadata/planned-land-use-layer.json.gz",
+      "sha256": "c193d19e8dfc804be2ef197988adf4e842e96d76c55a7e2afd9b4f2e32930f95"
+    },
+    {
+      "bytes": 1727,
+      "path": "source-snapshots/metadata/planned-land-use-service.json.gz",
+      "sha256": "4ddf850858c174f85238eb7e70f77d2000c7079d6cdc15838abf3b98843b3b13"
+    },
+    {
+      "bytes": 2763,
+      "path": "source-snapshots/metadata/property-lines-layer.json.gz",
+      "sha256": "2dc7017b53aa0be76dba32511ad663e6232e69c7901d75ad837e3b82e9c10bbc"
+    },
+    {
+      "bytes": 1727,
+      "path": "source-snapshots/metadata/property-lines-service.json.gz",
+      "sha256": "4ddf850858c174f85238eb7e70f77d2000c7079d6cdc15838abf3b98843b3b13"
+    },
+    {
+      "bytes": 4182,
+      "path": "source-snapshots/metadata/specific-plans-layer.json.gz",
+      "sha256": "ec2d5b618f96ad8fc5f07a68bdd1c06697906fd17c318d7625d533894e4d54d5"
+    },
+    {
+      "bytes": 2442,
+      "path": "source-snapshots/metadata/specific-plans-service.json.gz",
+      "sha256": "27810a3f225c1d139e81d5738f2ca3401d10fbf19baaba00b79580486dc8ef97"
+    },
+    {
+      "bytes": 5324,
+      "path": "source-snapshots/metadata/zoning-layer.json.gz",
+      "sha256": "3a6a1bfa4a0f960401d8179def7d80ae8d315553c302d42ff896502ae0470df1"
+    },
+    {
+      "bytes": 3603,
+      "path": "source-snapshots/metadata/zoning-service.json.gz",
+      "sha256": "f8b5b69accc0b1aa86db63b3d5282985423e54cbb90f5a6d7bf97c70e9ea2b25"
+    },
+    {
+      "bytes": 71294,
+      "path": "source-snapshots/normalized/boundary.ndjson.gz",
+      "sha256": "21467f31544daefa52417c150065c5c809a0a4153845f05c51e090b42117bc12"
+    },
+    {
+      "bytes": 1605671,
+      "path": "source-snapshots/normalized/overlays.ndjson.gz",
+      "sha256": "e5aac707616b6f30a4157f54a71c996a0f603f45155a047918c7891853cf03fb"
+    },
+    {
+      "bytes": 3152923,
+      "path": "source-snapshots/normalized/planned-land-use.ndjson.gz",
+      "sha256": "da7b4f2987289e02f1fbc53508e9fc3be3ce3b52b77d8d6d01119940f5d1e489"
+    },
+    {
+      "bytes": 2384013,
+      "path": "source-snapshots/normalized/property-lines.ndjson.gz",
+      "sha256": "a44de4ec86aec5b2c0609cfb65633d29884eb687e756c12d82f44e127103cae5"
+    },
+    {
+      "bytes": 241091,
+      "path": "source-snapshots/normalized/specific-plans.ndjson.gz",
+      "sha256": "567a6f0e0501d7c705d6f2772b1c64a8335384ab55ddd455b703ef6a99ff71c8"
+    },
+    {
+      "bytes": 7576693,
+      "path": "source-snapshots/normalized/zoning.ndjson.gz",
+      "sha256": "0ec70420a46564ea9e3bbf065cfa79fa316d3f21c7648f56e0258e870cbc69df"
+    },
+    {
+      "bytes": 71394,
+      "path": "source-snapshots/raw/boundary-000000.geojson.gz",
+      "sha256": "2a9b383d66b5b5cca58de05acea599da2b6fc013b397c67eedab283107aa661f"
+    },
+    {
+      "bytes": 1606754,
+      "path": "source-snapshots/raw/overlays-000000.geojson.gz",
+      "sha256": "0117f5eeef232adbbd90021e77a83d531b9be4132bd0e5cf09ac2e5acac32f89"
+    },
+    {
+      "bytes": 3150818,
+      "path": "source-snapshots/raw/planned-land-use-000000.geojson.gz",
+      "sha256": "273731900a303f3d4492183af6ac17dbb02ce0038e1d7bf4803e6dfef61021c8"
+    },
+    {
+      "bytes": 2384162,
+      "path": "source-snapshots/raw/property-lines-000000.geojson.gz",
+      "sha256": "3889ff3eebea711180fcb917639a272abadf862901f13ad6e254a13cc40bfb77"
+    },
+    {
+      "bytes": 241199,
+      "path": "source-snapshots/raw/specific-plans-000000.geojson.gz",
+      "sha256": "d16dc0de960462afa5218b43165d88b30ba2eb22068116b49d50f04994512be4"
+    },
+    {
+      "bytes": 868985,
+      "path": "source-snapshots/raw/zoning-000000.geojson.gz",
+      "sha256": "a755fa1f389e4473b592c6bb977f02a0675257ffeec54d0a1f75fcf7ed8e4092"
+    },
+    {
+      "bytes": 853943,
+      "path": "source-snapshots/raw/zoning-002000.geojson.gz",
+      "sha256": "4a29ba7ee3fe1b7c5d82c4a42748baa67a368595efc3203f76cafabd2756e837"
+    },
+    {
+      "bytes": 887578,
+      "path": "source-snapshots/raw/zoning-004000.geojson.gz",
+      "sha256": "8812071829f2a7e2d1eff9baf2ef96e103b0dc8d98cfdb7135abd69105c14de0"
+    },
+    {
+      "bytes": 870631,
+      "path": "source-snapshots/raw/zoning-006000.geojson.gz",
+      "sha256": "99ddb25aad1fe3e8a0af33dc6e530fe0f656fa9461391acecacfa5a49132817b"
+    },
+    {
+      "bytes": 873877,
+      "path": "source-snapshots/raw/zoning-008000.geojson.gz",
+      "sha256": "fd279a4b757e7dbc1d052931cd7f654a1af0e49bb55fc402ee498f7e092435e4"
+    },
+    {
+      "bytes": 924704,
+      "path": "source-snapshots/raw/zoning-010000.geojson.gz",
+      "sha256": "6a8652c320adcfff43fb0fe452fa468b0fae87eb1683c5e5c729e952bbf6df87"
+    },
+    {
+      "bytes": 928531,
+      "path": "source-snapshots/raw/zoning-012000.geojson.gz",
+      "sha256": "2743ac9c1550e0b6c085cd8897f4e437b95b5b0c45075a672c207cea3a4c8d54"
+    },
+    {
+      "bytes": 844409,
+      "path": "source-snapshots/raw/zoning-014000.geojson.gz",
+      "sha256": "510e502b94d8261da2dc220111f2f6cec27c8e0cefb1c850f9f3e85b8cee9997"
+    },
+    {
+      "bytes": 554495,
+      "path": "source-snapshots/raw/zoning-016000.geojson.gz",
+      "sha256": "c052b46466dc51352c0855c347bc5c465bcf4a7edf87a9edbdc2cb98c13dbcbb"
+    },
+    {
+      "bytes": 5949,
+      "path": "zone-inventory.json",
+      "sha256": "4d25849b119786b227a2b8de8cc7d6f7d2cf06b07ec5d02df77b22bfcea00440"
+    }
+  ],
+  "schema_version": 1
+}

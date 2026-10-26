@@ -1,0 +1,76 @@
+{
+  "risks": [
+    {
+      "severity": "HIGH",
+      "risk": "Zoning authority ambiguity",
+      "evidence": "City service calls layers official/current while layer text says planning reference and not property-rights evidence.",
+      "mitigation": "Treat as mapped observation; require Title 24/adopted-plan corroboration and City confirmation for verified/current labeling."
+    },
+    {
+      "severity": "HIGH",
+      "risk": "Specific-plan overrides",
+      "evidence": "1,511 La Mesa-attributed parcel points fall in three adopted plan polygons; base zoning alone may be incomplete.",
+      "mitigation": "Version each adopted plan and suppress conclusions until the applicable plan is bound."
+    },
+    {
+      "severity": "HIGH",
+      "risk": "Code/state-law mismatch",
+      "evidence": "Local code and guidance can lag California ADU law.",
+      "mitigation": "Reconcile every ADU rule to effective state statute and HCD guidance."
+    },
+    {
+      "severity": "HIGH",
+      "risk": "AB 956 2027 boundary",
+      "evidence": "AB 956 was chaptered September 29, 2026 and changes the future profile.",
+      "mitigation": "Keep CA_ADU_2026 through 2026-12-31 and a separately sealed CA_ADU_2027 effective 2027-01-01."
+    },
+    {
+      "severity": "MEDIUM",
+      "risk": "Split zoning",
+      "evidence": "No multi-code representative-point or APN grouping was observed, but point joins cannot prove full-parcel absence.",
+      "mitigation": "Packet 64 must intersect full county parcel polygons with dissolved base-zone geometry and quantify coverage."
+    },
+    {
+      "severity": "HIGH",
+      "risk": "Overlay modifiers",
+      "evidence": "Hillside, scenic, floodway, design, mixed use, Grossmont and tract overlays may modify rules.",
+      "mitigation": "Classify every overlay as context or rule-modifying before rule selection."
+    },
+    {
+      "severity": "MEDIUM",
+      "risk": "Parcel fabric/key mismatch",
+      "evidence": "17,422 City zoning features collapse to 14,175 APNs because condo/common geometry repeats; 14 features lack APNs.",
+      "mitigation": "Never replace County identity; join spatially and dedupe geometry."
+    },
+    {
+      "severity": "MEDIUM",
+      "risk": "Geometry validity",
+      "evidence": "GeoJSON exports contain 2 invalid zoning, 1 invalid overlay, 5 invalid land-use and 2 invalid specific-plan geometries.",
+      "mitigation": "Apply pinned make-valid policy and prove area/count invariance before load."
+    },
+    {
+      "severity": "MEDIUM",
+      "risk": "Address normalization",
+      "evidence": "663 County LM parcels lack address; city casing/format differs.",
+      "mitigation": "APN is primary identity; address remains search alias with jurisdiction disambiguation."
+    },
+    {
+      "severity": "MEDIUM",
+      "risk": "Permit incompleteness",
+      "evidence": "MaintStar and monthly project lists do not establish a complete parcel-addressable export.",
+      "mitigation": "Keep permit activity phase two and unknown when no deterministic linkage exists."
+    },
+    {
+      "severity": "HIGH",
+      "risk": "Proposed versus adopted plans",
+      "evidence": "Downtown and Grossmont updates are publicly described as draft/in progress.",
+      "mitigation": "Bind only adopted documents; store proposals separately and exclude from current conclusions."
+    },
+    {
+      "severity": "LOW",
+      "risk": "2023 ADU guidance stale",
+      "evidence": "Guidebook/quick sheet predates current 2026 state materials.",
+      "mitigation": "Historical/supporting only; never current-law authority by itself."
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "preliminary_only": true,
+  "representative_point_counts": {
+    "C": 528,
+    "CD": 281,
+    "CM": 56,
+    "CN": 102,
+    "Civic Center": 7,
+    "M": 76,
+    "MacArthur": 4,
+    "R1": 8685,
+    "R1A": 325,
+    "R1E": 95,
+    "R1R": 180,
+    "R1S": 2336,
+    "R2": 640,
+    "R3": 3600,
+    "RB": 406,
+    "TBD": 66
+  },
+  "residential_codes": [
+    "R1E",
+    "R1R",
+    "R1S",
+    "R1",
+    "R1A",
+    "R2",
+    "R3",
+    "RB"
+  ],
+  "zones": [
+    {
+      "area_sq_ft": 26452771.898,
+      "code": "C",
+      "distinct_apns": 395,
+      "feature_count": 528,
+      "name": "General Commercial",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "preliminary_classification": "unknown"
+    },
+    {
+      "area_sq_ft": 25669774.549,
+      "code": "CD",
+      "distinct_apns": 158,
+      "feature_count": 281,
+      "name": "Downtown Commercial",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "preliminary_classification": "unknown"
+    },
+    {
+      "area_sq_ft": 3291763.284,
+      "code": "CM",
+      "distinct_apns": 56,
+      "feature_count": 56,
+      "name": "Light Industrial and Commercial Service",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "preliminary_classification": "unknown"
+    },
+    {
+      "area_sq_ft": 3512166.184,
+      "code": "CN",
+      "distinct_apns": 100,
+      "feature_count": 102,
+      "name": "Neighborhood Commercial",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "preliminary_classification": "unknown"
+    },
+    {
+      "area_sq_ft": 525471.361,
+      "code": "Civic Center",
+      "distinct_apns": 7,
+      "feature_count": 7,
+      "name": "Civic Center",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "preliminary_classification": "unknown"
+    },
+    {
+      "area_sq_ft": 1654122.55,
+      "code": "M",
+      "distinct_apns": 73,
+      "feature_count": 76,
+      "name": "Industrial Service and Manufacturing",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "preliminary_classification": "unknown"
+    },
+    {
+      "area_sq_ft": 2811023.508,
+      "code": "MacArthur",
+      "distinct_apns": 2,
+      "feature_count": 4,
+      "name": "MacArthur Park",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "preliminary_classification": "unknown"
+    },
+    {
+      "area_sq_ft": 99026613.027,
+      "code": "R1",
+      "distinct_apns": 8576,
+      "feature_count": 8687,
+      "name": "Urban Residential",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+      ],
+      "preliminary_classification": "residential"
+    },
+    {
+      "area_sq_ft": 2762491.827,
+      "code": "R1A",
+      "distinct_apns": 325,
+      "feature_count": 325,
+      "name": "Urban Residential Alternative",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+      ],
+      "preliminary_classification": "residential"
+    },
+    {
+      "area_sq_ft": 2708597.396,
+      "code": "R1E",
+      "distinct_apns": 95,
+      "feature_count": 95,
+      "name": "Semi-Rural Estate",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+      ],
+      "preliminary_classification": "residential"
+    },
+    {
+      "area_sq_ft": 3621459.003,
+      "code": "R1R",
+      "distinct_apns": 180,
+      "feature_count": 181,
+      "name": "Semi-Rural Residential",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+      ],
+      "preliminary_classification": "residential"
+    },
+    {
+      "area_sq_ft": 48113417.791,
+      "code": "R1S",
+      "distinct_apns": 2309,
+      "feature_count": 2344,
+      "name": "Suburban Residential",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+      ],
+      "preliminary_classification": "residential"
+    },
+    {
+      "area_sq_ft": 11143787.915,
+      "code": "R2",
+      "distinct_apns": 544,
+      "feature_count": 640,
+      "name": "Medium-Low Density Residential",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+      ],
+      "preliminary_classification": "residential"
+    },
+    {
+      "area_sq_ft": 468483311.558,
+      "code": "R3",
+      "distinct_apns": 1045,
+      "feature_count": 3610,
+      "name": "Multiple-Unit Residential",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+      ],
+      "preliminary_classification": "residential"
+    },
+    {
+      "area_sq_ft": 37685063.076,
+      "code": "RB",
+      "distinct_apns": 234,
+      "feature_count": 406,
+      "name": "Residential Business",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+      ],
+      "preliminary_classification": "residential"
+    },
+    {
+      "area_sq_ft": 2555366.999,
+      "code": "TBD",
+      "distinct_apns": 76,
+      "feature_count": 80,
+      "name": null,
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "preliminary_classification": "unknown"
+    }
+  ]
+}

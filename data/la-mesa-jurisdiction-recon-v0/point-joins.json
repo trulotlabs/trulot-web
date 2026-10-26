@@ -1,0 +1,73 @@
+{
+  "overlay_multi": 0,
+  "overlay_no_code": 13824,
+  "overlays_by_representative_point": {
+    "BT": 81,
+    "D": 507,
+    "D-MU": 556,
+    "F": 2,
+    "F-D": 39,
+    "F-D-MU": 60,
+    "F-G-D": 1,
+    "F-MU": 3,
+    "F-P": 134,
+    "G": 15,
+    "G-D": 337,
+    "H": 231,
+    "MH": 55,
+    "MU": 53,
+    "NP": 35,
+    "NP2": 72,
+    "P": 1326,
+    "P-BG": 11,
+    "P-D": 24,
+    "P-D-MU": 15,
+    "P-MU": 10
+  },
+  "specific_plan_multi": 0,
+  "specific_plan_outside": 15880,
+  "specific_plans_by_representative_point": {
+    "Downtown Village": 924,
+    "Eastridge": 227,
+    "Grossmont": 360
+  },
+  "zones_by_representative_point": {
+    "C": 528,
+    "CD": 281,
+    "CM": 56,
+    "CN": 102,
+    "Civic Center": 7,
+    "M": 76,
+    "MacArthur": 4,
+    "R1": 8685,
+    "R1A": 325,
+    "R1E": 95,
+    "R1R": 180,
+    "R1S": 2336,
+    "R2": 640,
+    "R3": 3600,
+    "RB": 406,
+    "TBD": 66
+  },
+  "zoning_multi": 0,
+  "zoning_multi_sample": [],
+  "zoning_unmapped": 4,
+  "zoning_unmapped_sample": [
+    [
+      "7601960219",
+      null
+    ],
+    [
+      "7601960218",
+      null
+    ],
+    [
+      "7601960217",
+      null
+    ],
+    [
+      "7601960220",
+      null
+    ]
+  ]
+}

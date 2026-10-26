@@ -1,0 +1,155 @@
+{
+  "benchmarks": [
+    {
+      "address": "5836 PAWNEE DR",
+      "apn": "4640301100",
+      "category": "ordinary R1",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": null,
+      "overlay_names": null,
+      "zone": "R1",
+      "zone_label": "R1"
+    },
+    {
+      "address": "9470 GROSSMONT BLVD",
+      "apn": "4912600700",
+      "category": "R1E scenic single-family subtype",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": "P",
+      "overlay_names": "P - Scenic Preservation Overlay",
+      "zone": "R1E",
+      "zone_label": "R1E-P"
+    },
+    {
+      "address": "8884 ECHO DR",
+      "apn": "4994920400",
+      "category": "R1R single-family subtype",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": "P",
+      "overlay_names": "P - Scenic Preservation Overlay",
+      "zone": "R1R",
+      "zone_label": "R1R-P"
+    },
+    {
+      "address": "5877 BALTIMORE DR",
+      "apn": "4640201000",
+      "category": "R3 multifamily",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": null,
+      "overlay_names": null,
+      "zone": "R3",
+      "zone_label": "R3"
+    },
+    {
+      "address": "4284 SUMMIT DR",
+      "apn": "4752412200",
+      "category": "hillside overlay",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": "H",
+      "overlay_names": "H - Hillside Overlay",
+      "zone": "R1S",
+      "zone_label": "R1S-H"
+    },
+    {
+      "address": "5264 WOOD ST",
+      "apn": "4904720700",
+      "category": "scenic plus mixed-use overlay",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": "P-MU",
+      "overlay_names": "P - Scenic Preservation Overlay; MU - Mixed Use Overlay",
+      "zone": "R3",
+      "zone_label": "R3-P-MU"
+    },
+    {
+      "address": "8285 FLETCHER PKWY",
+      "apn": "4646002300",
+      "category": "adopted specific-plan area",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": "F-G-D",
+      "overlay_names": "F - Floodway Overlay; G - Grossmont Center Overlay; D - Urban Design Overlay",
+      "zone": "CM",
+      "zone_label": "CM-F-G-D"
+    },
+    {
+      "address": "9365 CARMICHAEL DR",
+      "apn": "4953350500",
+      "category": "jurisdiction-boundary mismatch",
+      "manual_proof": [
+        "Resolve situs_juris versus representative-point boundary conflict",
+        "maximum-area intersection using county parcel geometry",
+        "City/County jurisdiction confirmation before public routing"
+      ],
+      "overlay_codes": null,
+      "overlay_names": null,
+      "zone": null,
+      "zone_label": null
+    },
+    {
+      "address": null,
+      "apn": "4641310100",
+      "category": "mapped TBD/unsupported zoning",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": null,
+      "overlay_names": null,
+      "zone": "TBD",
+      "zone_label": null
+    }
+  ],
+  "selection_note": "Public APNs and addresses only. No known permit/ADU parcel was selected because a parcel-addressable public permit export was not established."
+}

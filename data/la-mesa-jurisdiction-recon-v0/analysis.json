@@ -1,0 +1,1467 @@
+{
+  "benchmarks": [
+    {
+      "address": "5836 PAWNEE DR",
+      "apn": "4640301100",
+      "category": "ordinary R1",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": null,
+      "overlay_names": null,
+      "zone": "R1",
+      "zone_label": "R1"
+    },
+    {
+      "address": "9470 GROSSMONT BLVD",
+      "apn": "4912600700",
+      "category": "R1E scenic single-family subtype",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": "P",
+      "overlay_names": "P - Scenic Preservation Overlay",
+      "zone": "R1E",
+      "zone_label": "R1E-P"
+    },
+    {
+      "address": "8884 ECHO DR",
+      "apn": "4994920400",
+      "category": "R1R single-family subtype",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": "P",
+      "overlay_names": "P - Scenic Preservation Overlay",
+      "zone": "R1R",
+      "zone_label": "R1R-P"
+    },
+    {
+      "address": "5877 BALTIMORE DR",
+      "apn": "4640201000",
+      "category": "R3 multifamily",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": null,
+      "overlay_names": null,
+      "zone": "R3",
+      "zone_label": "R3"
+    },
+    {
+      "address": "4284 SUMMIT DR",
+      "apn": "4752412200",
+      "category": "hillside overlay",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": "H",
+      "overlay_names": "H - Hillside Overlay",
+      "zone": "R1S",
+      "zone_label": "R1S-H"
+    },
+    {
+      "address": "5264 WOOD ST",
+      "apn": "4904720700",
+      "category": "scenic plus mixed-use overlay",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": "P-MU",
+      "overlay_names": "P - Scenic Preservation Overlay; MU - Mixed Use Overlay",
+      "zone": "R3",
+      "zone_label": "R3-P-MU"
+    },
+    {
+      "address": "8285 FLETCHER PKWY",
+      "apn": "4646002300",
+      "category": "adopted specific-plan area",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": "F-G-D",
+      "overlay_names": "F - Floodway Overlay; G - Grossmont Center Overlay; D - Urban Design Overlay",
+      "zone": "CM",
+      "zone_label": "CM-F-G-D"
+    },
+    {
+      "address": "9365 CARMICHAEL DR",
+      "apn": "4953350500",
+      "category": "jurisdiction-boundary mismatch",
+      "manual_proof": [
+        "Resolve situs_juris versus representative-point boundary conflict",
+        "maximum-area intersection using county parcel geometry",
+        "City/County jurisdiction confirmation before public routing"
+      ],
+      "overlay_codes": null,
+      "overlay_names": null,
+      "zone": null,
+      "zone_label": null
+    },
+    {
+      "address": null,
+      "apn": "4641310100",
+      "category": "mapped TBD/unsupported zoning",
+      "manual_proof": [
+        "SanGIS parcel identity and geometry",
+        "City zoning observation",
+        "overlay/specific-plan point membership",
+        "Title 24 profile version",
+        "parcel dimensions from authoritative survey or recorded map before dimensional conclusions",
+        "current state/local ADU source version"
+      ],
+      "overlay_codes": null,
+      "overlay_names": null,
+      "zone": "TBD",
+      "zone_label": null
+    }
+  ],
+  "boundary": {
+    "bounds_wgs84": [
+      -117.053494985138,
+      32.7436258694991,
+      -116.981818923376,
+      32.7960805131778
+    ],
+    "features": 1,
+    "normalized_sha256": "69eaebfff0f201289dbb55767d7134a2fcbb6a5e2ec841100dd3b3f828364079",
+    "properties": {
+      "CODE": "LM",
+      "GISAcreage": 5783.269195255322,
+      "GlobalID": "53bc0df8-86f8-499b-b35d-73a1c82017ee",
+      "Incorporated": "Yes",
+      "Jurisdiction": "City of La Mesa",
+      "NAME": "City Boundary",
+      "OBJECTID": 1,
+      "Shape__Area": 251918198.45410156,
+      "Shape__Length": 136373.90777714737,
+      "SqeMi": 9.036358118758733
+    },
+    "valid": true,
+    "validity": "Valid Geometry"
+  },
+  "city_property_lines": {
+    "features": 2,
+    "properties": [
+      {
+        "OBJECTID": 1,
+        "Shape__Length": 3984130.713846494
+      },
+      {
+        "OBJECTID": 2,
+        "Shape__Length": 154.85248913551246
+      }
+    ],
+    "valid": 2
+  },
+  "county_parcels": {
+    "boundary_representative_point": {
+      "accepted_rows": 17388,
+      "apn_fingerprint_sha256": "98504f028c013a3b0c9c210775c4e2cf2aa151ff56269b981341835e61e274e0",
+      "distinct_apns": 17388,
+      "missing_addresses": 659
+    },
+    "comparison": {
+      "boundary_point_only": 1,
+      "boundary_point_only_sample": [
+        "4953350500"
+      ],
+      "in_both": 17387,
+      "situs_lm_only": 4,
+      "situs_lm_only_sample": [
+        "7601960217",
+        "7601960218",
+        "7601960219",
+        "7601960220"
+      ]
+    },
+    "situs_lm": {
+      "accepted_rows": 17391,
+      "apn_fingerprint_sha256": "11440df9a1fb2a72592000dc656f75dcec9bf7ed9d90e9efcb9ebba8e700a467",
+      "distinct_apns": 17391,
+      "invalid_or_missing_geometries": 0,
+      "missing_addresses": 663,
+      "missing_apns": 0
+    }
+  },
+  "observed_at": "2026-10-26",
+  "overlays": [
+    {
+      "code_name": "<BASE_ONLY>|<BASE_ONLY>",
+      "ordinance_urls": [],
+      "parcel_count_estimate": 11656,
+      "polygon_count": 585,
+      "zone_codes": [
+        "C",
+        "CD",
+        "CM",
+        "CN",
+        "Civic Center",
+        "M",
+        "MacArthur",
+        "R1",
+        "R1A",
+        "R1E",
+        "R1S",
+        "R2",
+        "R3",
+        "RB",
+        "TBD"
+      ]
+    },
+    {
+      "code_name": "BT|BT - Briercrest Tract Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 87,
+      "polygon_count": 3,
+      "zone_codes": [
+        "C",
+        "R1S",
+        "R2"
+      ]
+    },
+    {
+      "code_name": "D-MU|D - Urban Design Overlay; MU - Mixed Use Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 574,
+      "polygon_count": 87,
+      "zone_codes": [
+        "C",
+        "CD",
+        "CM",
+        "CN",
+        "M",
+        "MacArthur",
+        "R1",
+        "R2",
+        "R3",
+        "RB",
+        "TBD"
+      ]
+    },
+    {
+      "code_name": "D|D - Urban Design Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 515,
+      "polygon_count": 87,
+      "zone_codes": [
+        "C",
+        "CD",
+        "CM",
+        "CN",
+        "Civic Center",
+        "M",
+        "MacArthur",
+        "R1",
+        "R1S",
+        "R2",
+        "R3",
+        "RB",
+        "TBD"
+      ]
+    },
+    {
+      "code_name": "F-D-MU|F - Floodway Overlay; D - Urban Design Overlay; MU - Mixed Use Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 82,
+      "polygon_count": 8,
+      "zone_codes": [
+        "C",
+        "R1",
+        "RB"
+      ]
+    },
+    {
+      "code_name": "F-D|F - Floodway Overlay; D - Urban Design Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 51,
+      "polygon_count": 3,
+      "zone_codes": [
+        "CM",
+        "R1",
+        "R3",
+        "TBD"
+      ]
+    },
+    {
+      "code_name": "F-G-D|F - Floodway Overlay; G - Grossmont Center Overlay; D - Urban Design Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 3,
+      "polygon_count": 1,
+      "zone_codes": [
+        "CM",
+        "TBD"
+      ]
+    },
+    {
+      "code_name": "F-MU|F - Floodway Overlay; MU - Mixed Use Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 4,
+      "polygon_count": 1,
+      "zone_codes": [
+        "R1",
+        "RB"
+      ]
+    },
+    {
+      "code_name": "F-P|F - Floodway Overlay; P - Scenic Preservation Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 137,
+      "polygon_count": 7,
+      "zone_codes": [
+        "R1",
+        "R1E",
+        "R1S"
+      ]
+    },
+    {
+      "code_name": "F|F - Floodway Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 3,
+      "polygon_count": 1,
+      "zone_codes": [
+        "CM"
+      ]
+    },
+    {
+      "code_name": "G-D|G - Grossmont Center Overlay; D - Urban Design Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 128,
+      "polygon_count": 27,
+      "zone_codes": [
+        "C",
+        "CM",
+        "CN",
+        "R1",
+        "R1S",
+        "R2",
+        "R3",
+        "RB",
+        "TBD"
+      ]
+    },
+    {
+      "code_name": "G|G - Grossmont Center Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 24,
+      "polygon_count": 3,
+      "zone_codes": [
+        "C",
+        "R1",
+        "R1S",
+        "R2",
+        "R3",
+        "TBD"
+      ]
+    },
+    {
+      "code_name": "H|H - Hillside Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.13HIOVZOH"
+      ],
+      "parcel_count_estimate": 370,
+      "polygon_count": 9,
+      "zone_codes": [
+        "R1",
+        "R1S",
+        "TBD"
+      ]
+    },
+    {
+      "code_name": "MH|MH - Mobile Home Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 83,
+      "polygon_count": 1,
+      "zone_codes": [
+        "R1",
+        "R1S"
+      ]
+    },
+    {
+      "code_name": "MU|MU - Mixed Use Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 24,
+      "polygon_count": 4,
+      "zone_codes": [
+        "C",
+        "R1",
+        "R3",
+        "RB"
+      ]
+    },
+    {
+      "code_name": "NP2|NP2 - Neighborhood Preservation Overlay 2",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 78,
+      "polygon_count": 2,
+      "zone_codes": [
+        "R1S",
+        "TBD"
+      ]
+    },
+    {
+      "code_name": "NP|NP - Neighborhood Preservation Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+      ],
+      "parcel_count_estimate": 41,
+      "polygon_count": 1,
+      "zone_codes": [
+        "R1",
+        "R3"
+      ]
+    },
+    {
+      "code_name": "P-BG|P - Scenic Preservation Overlay; BG - Bowling Green Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.09SCPROVZO"
+      ],
+      "parcel_count_estimate": 23,
+      "polygon_count": 1,
+      "zone_codes": [
+        "R1R",
+        "TBD"
+      ]
+    },
+    {
+      "code_name": "P-D-MU|P - Scenic Preservation Overlay; D - Urban Design Overlay; MU - Mixed Use Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.09SCPROVZO"
+      ],
+      "parcel_count_estimate": 23,
+      "polygon_count": 6,
+      "zone_codes": [
+        "CN",
+        "R1S",
+        "R3",
+        "RB"
+      ]
+    },
+    {
+      "code_name": "P-D|P - Scenic Preservation Overlay; D - Urban Design Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.09SCPROVZO"
+      ],
+      "parcel_count_estimate": 18,
+      "polygon_count": 2,
+      "zone_codes": [
+        "CN",
+        "R1S",
+        "R3",
+        "RB",
+        "TBD"
+      ]
+    },
+    {
+      "code_name": "P-MU|P - Scenic Preservation Overlay; MU - Mixed Use Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.09SCPROVZO"
+      ],
+      "parcel_count_estimate": 20,
+      "polygon_count": 5,
+      "zone_codes": [
+        "C",
+        "R1",
+        "R3",
+        "RB"
+      ]
+    },
+    {
+      "code_name": "P|P - Scenic Preservation Overlay",
+      "ordinance_urls": [
+        "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.09SCPROVZO"
+      ],
+      "parcel_count_estimate": 1405,
+      "polygon_count": 76,
+      "zone_codes": [
+        "C",
+        "CN",
+        "R1",
+        "R1E",
+        "R1R",
+        "R1S",
+        "R3",
+        "RB",
+        "TBD"
+      ]
+    }
+  ],
+  "parcel_lookup_compatibility": {
+    "addressed_rows": 16728,
+    "addresses_seen_in_other_jurisdictions": 7,
+    "apn_lookup_source_ready": true,
+    "current_runtime_contract_ready": false,
+    "distinct_addresses": 13212,
+    "duplicate_address_groups": 186,
+    "duplicate_address_rows": 3516
+  },
+  "planned_land_use": {
+    "distinct_designations": [
+      "Civic Center",
+      "Community Park",
+      "Downtown Commercial",
+      "Elementary School",
+      "High School",
+      "Light Industrial",
+      "Local Serving Commercial",
+      "Middle School",
+      "Mixed Density Residential",
+      "Mixed Use Urban",
+      "Multiple Unit Residential",
+      "Neighborhood Park",
+      "Open Space",
+      "Other Governmental / Institutional Facilities",
+      "Public Safety Facility",
+      "Public Works Facility",
+      "Railroad / Trolley Right-of-Way",
+      "Regional Park",
+      "Regional Serving Commercial",
+      "Restricted Multiple Unit Residential",
+      "Rural Residential",
+      "Semi-Rural Residential",
+      "Suburban Residential",
+      "Transportation Right-of-Way",
+      "Trolley Station",
+      "Urban Residential"
+    ],
+    "features": 913
+  },
+  "point_joins": {
+    "overlay_multi": 0,
+    "overlay_no_code": 13824,
+    "overlays_by_representative_point": {
+      "BT": 81,
+      "D": 507,
+      "D-MU": 556,
+      "F": 2,
+      "F-D": 39,
+      "F-D-MU": 60,
+      "F-G-D": 1,
+      "F-MU": 3,
+      "F-P": 134,
+      "G": 15,
+      "G-D": 337,
+      "H": 231,
+      "MH": 55,
+      "MU": 53,
+      "NP": 35,
+      "NP2": 72,
+      "P": 1326,
+      "P-BG": 11,
+      "P-D": 24,
+      "P-D-MU": 15,
+      "P-MU": 10
+    },
+    "specific_plan_multi": 0,
+    "specific_plan_outside": 15880,
+    "specific_plans_by_representative_point": {
+      "Downtown Village": 924,
+      "Eastridge": 227,
+      "Grossmont": 360
+    },
+    "zones_by_representative_point": {
+      "C": 528,
+      "CD": 281,
+      "CM": 56,
+      "CN": 102,
+      "Civic Center": 7,
+      "M": 76,
+      "MacArthur": 4,
+      "R1": 8685,
+      "R1A": 325,
+      "R1E": 95,
+      "R1R": 180,
+      "R1S": 2336,
+      "R2": 640,
+      "R3": 3600,
+      "RB": 406,
+      "TBD": 66
+    },
+    "zoning_multi": 0,
+    "zoning_multi_sample": [],
+    "zoning_unmapped": 4,
+    "zoning_unmapped_sample": [
+      [
+        "7601960219",
+        null
+      ],
+      [
+        "7601960218",
+        null
+      ],
+      [
+        "7601960217",
+        null
+      ],
+      [
+        "7601960220",
+        null
+      ]
+    ]
+  },
+  "sources": [
+    {
+      "editing_info": {
+        "dataLastEditDate": 1792062055805,
+        "lastEditDate": 1792062055805,
+        "schemaLastEditDate": 1792062055805
+      },
+      "feature_count": 17422,
+      "fields": [
+        {
+          "alias": "Zone Label",
+          "name": "ZONE_LABEL",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Zone Name",
+          "name": "ZONE_NAME",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Overlay Codes",
+          "name": "OVERLAY_CODES",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Overlay Names",
+          "name": "OVERLAY_NAMES",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Has Overlay",
+          "name": "HAS_OVERLAY",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Zoning Status",
+          "name": "ZONE_STATUS",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Zoning Code (Municode)",
+          "name": "ORD_URL",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Zone Code",
+          "name": "ZONE_CODE",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "APN",
+          "name": "APN",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Parcel ID",
+          "name": "PARCELNUM",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Situs Address",
+          "name": "SITUS_FULL_ADDRESS",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Situs ZIP",
+          "name": "SITUS_ZIPCD",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Submap",
+          "name": "SUBMAP_CD",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Subdivision Name",
+          "name": "SUBDIVISION",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Legal Description",
+          "name": "LEGAL_DESC",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Document Number",
+          "name": "DOC_NUMBER",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Unit Quantity",
+          "name": "UNIT_QTY",
+          "type": "esriFieldTypeSmallInteger"
+        },
+        {
+          "alias": "Acreage",
+          "name": "ACREAGE",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "alias": "OBJECTID",
+          "name": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "alias": "Shape__Area",
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "alias": "Shape__Length",
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "geometry_invalid_count": 2,
+      "geometry_valid_count": 17420,
+      "max_record_count": 2000,
+      "name": "zoning",
+      "normalized_sha256": "b8a082968cdea8b23dbcd99ec3f5d333ae76e7c1894bb4099564a7a3672c0fa7",
+      "raw_pages": [
+        {
+          "bytes": 3330691,
+          "file": "000000.geojson",
+          "sha256": "678929d9a922836f13f4999242d31185f782af5139d935b9bb637c8a5f3d3878"
+        },
+        {
+          "bytes": 3305458,
+          "file": "002000.geojson",
+          "sha256": "3f5b3ab67d8ee32def1aeb6baa0542101998581d5a40be7bacd535f1ff399196"
+        },
+        {
+          "bytes": 3421813,
+          "file": "004000.geojson",
+          "sha256": "5b7d548a587d3d202459c93e02e6ce7897a4610843d967478dc16fa30daec931"
+        },
+        {
+          "bytes": 3349807,
+          "file": "006000.geojson",
+          "sha256": "22a20b323cb7c8ca3f42b29e600915493236730650826bac82653bb61e6e3921"
+        },
+        {
+          "bytes": 3349518,
+          "file": "008000.geojson",
+          "sha256": "e1c17bf640f6b36ac19fa2ea56b8748759908eb400b0125bd6419ebb87d93cb8"
+        },
+        {
+          "bytes": 3525029,
+          "file": "010000.geojson",
+          "sha256": "e0e879dfff1cd004df56e5e7f8e3cddb18dd3fdf4271759220d5e12d5e3f90d2"
+        },
+        {
+          "bytes": 3525849,
+          "file": "012000.geojson",
+          "sha256": "d5bdca90aba5c12f04fb6d8f3817a1086797410f1337610095edb543731f7ba4"
+        },
+        {
+          "bytes": 3252372,
+          "file": "014000.geojson",
+          "sha256": "cbf2e0fba649ce24975d181d103a40e8388a72c820d299e0ab880614dba9f061"
+        },
+        {
+          "bytes": 2205024,
+          "file": "016000.geojson",
+          "sha256": "93dc2e3134f90dbeeb01fb6c94745f4957a249e7f5ec79de26c703085577e51c"
+        }
+      ],
+      "spatial_reference": {
+        "latestWkid": 2230,
+        "wkid": 102646
+      },
+      "supported_query_formats": "JSON, geoJSON, PBF"
+    },
+    {
+      "editing_info": {
+        "dataLastEditDate": 1792062001975,
+        "lastEditDate": 1792062001975,
+        "schemaLastEditDate": 1792062001975
+      },
+      "feature_count": 920,
+      "fields": [
+        {
+          "alias": "Zone Label",
+          "name": "ZONE_LABEL",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Has Overlay",
+          "name": "IS_OVERLAY",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Zone Code",
+          "name": "ZONE_CODE",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Zone Name",
+          "name": "ZONE_NAME",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Overlay Codes",
+          "name": "OVERLAY_CODES",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Overlay Names",
+          "name": "OVERLAY_NAMES",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Zoning Code (Municode)",
+          "name": "ORD_URL",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Overlay Code (Municode)",
+          "name": "OVERLAY_ORD_URL",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Has Overlay",
+          "name": "HAS_OVERLAY",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Object ID",
+          "name": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "alias": "Shape__Area",
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "alias": "Shape__Length",
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "geometry_invalid_count": 1,
+      "geometry_valid_count": 919,
+      "max_record_count": 2000,
+      "name": "overlays",
+      "normalized_sha256": "7d854ea16a6cdb10aa56c1261c040031e5d306eeec5c06147b55df5f0da63dd0",
+      "raw_pages": [
+        {
+          "bytes": 5128779,
+          "file": "000000.geojson",
+          "sha256": "cb109e915ac2808a8c0cfad79421e3b89077b5ad140591cd03634d58a7562700"
+        }
+      ],
+      "spatial_reference": {
+        "latestWkid": 2230,
+        "wkid": 102646
+      },
+      "supported_query_formats": "JSON, geoJSON, PBF"
+    },
+    {
+      "editing_info": {
+        "dataLastEditDate": 1782947295441,
+        "lastEditDate": 1792612853487,
+        "schemaLastEditDate": 1792612853487
+      },
+      "feature_count": 1,
+      "fields": [
+        {
+          "alias": "Object ID (1)",
+          "name": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "alias": "Name",
+          "name": "NAME",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Code",
+          "name": "CODE",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Square Miles",
+          "name": "SqeMi",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "alias": "Global ID",
+          "name": "GlobalID",
+          "type": "esriFieldTypeGlobalID"
+        },
+        {
+          "alias": "Jurisdiction",
+          "name": "Jurisdiction",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Incorporated",
+          "name": "Incorporated",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Acreage (GIS)",
+          "name": "GISAcreage",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "alias": "Shape__Area",
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "alias": "Shape__Length",
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "geometry_invalid_count": 0,
+      "geometry_valid_count": 1,
+      "max_record_count": 2000,
+      "name": "boundary",
+      "normalized_sha256": "69eaebfff0f201289dbb55767d7134a2fcbb6a5e2ec841100dd3b3f828364079",
+      "raw_pages": [
+        {
+          "bytes": 211642,
+          "file": "000000.geojson",
+          "sha256": "73e09f80e3b309ad00e9c7112ad860cb270157e9bf42141de290660086c0897f"
+        }
+      ],
+      "spatial_reference": {
+        "latestWkid": 2230,
+        "wkid": 102646
+      },
+      "supported_query_formats": "JSON, geoJSON, PBF"
+    },
+    {
+      "editing_info": {
+        "dataLastEditDate": 1782947295144,
+        "lastEditDate": 1792612853487,
+        "schemaLastEditDate": 1792612853487
+      },
+      "feature_count": 2,
+      "fields": [
+        {
+          "alias": "OBJECTID",
+          "name": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "alias": "Shape__Length",
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "geometry_invalid_count": 0,
+      "geometry_valid_count": 2,
+      "max_record_count": 2000,
+      "name": "property-lines",
+      "normalized_sha256": "b53e77f15738d77d7f01f4543ccf8ed99e7d475a8cc7de354aa79f67ac7fd505",
+      "raw_pages": [
+        {
+          "bytes": 8355808,
+          "file": "000000.geojson",
+          "sha256": "ed778d69cb7d8b3c485e2232b07b36ce9a513c54da33cbd602457771280ad4b5"
+        }
+      ],
+      "spatial_reference": {
+        "latestWkid": 2230,
+        "wkid": 102646
+      },
+      "supported_query_formats": "JSON, geoJSON, PBF"
+    },
+    {
+      "editing_info": {
+        "dataLastEditDate": 1785390408560,
+        "lastEditDate": 1792612853487,
+        "schemaLastEditDate": 1792612853487
+      },
+      "feature_count": 913,
+      "fields": [
+        {
+          "alias": "Land Use Designation",
+          "name": "LU_DESIG",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Land Use Category",
+          "name": "LU_CATEGORY",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Land Use Code",
+          "name": "LU_CODE",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Sub-Type",
+          "name": "SUBTYPE",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Density Range",
+          "name": "DENSITY_RANGE",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Min Dwelling Units per Acre",
+          "name": "DU_MIN",
+          "type": "esriFieldTypeSmallInteger"
+        },
+        {
+          "alias": "Max Dwelling Units per Acre",
+          "name": "DU_MAX",
+          "type": "esriFieldTypeSmallInteger"
+        },
+        {
+          "alias": "Consistent Zoning (Table LD-4)",
+          "name": "ZONE_CONSISTENT",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Acreage",
+          "name": "Acreage",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "alias": "General Plan Element",
+          "name": "GP_ELEMENT",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Data Source",
+          "name": "DATA_SOURCE",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Last Updated",
+          "name": "LAST_UPDATE",
+          "type": "esriFieldTypeDate"
+        },
+        {
+          "alias": "Edited By",
+          "name": "EDITED_BY",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Object ID",
+          "name": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "alias": "Shape__Area",
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "alias": "Shape__Length",
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        }
+      ],
+      "geometry_invalid_count": 5,
+      "geometry_valid_count": 908,
+      "max_record_count": 2000,
+      "name": "planned-land-use",
+      "normalized_sha256": "e2148ab212bb15a4ff007047cc5748c8c39c47da976eb0adfdbfdefac382ee7c",
+      "raw_pages": [
+        {
+          "bytes": 9740761,
+          "file": "000000.geojson",
+          "sha256": "4b655c48ccd03a066e0654c962b6344dd0a90f8d699432a2a31d17841b7a4a7f"
+        }
+      ],
+      "spatial_reference": {
+        "latestWkid": 2230,
+        "wkid": 102646
+      },
+      "supported_query_formats": "JSON, geoJSON, PBF"
+    },
+    {
+      "editing_info": {
+        "dataLastEditDate": 1760041709567,
+        "lastEditDate": 1769613779113,
+        "schemaLastEditDate": 1760041944281
+      },
+      "feature_count": 3,
+      "fields": [
+        {
+          "alias": "OBJECTID",
+          "name": "OBJECTID",
+          "type": "esriFieldTypeOID"
+        },
+        {
+          "alias": "Specific Plan",
+          "name": "SpecificPl",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Specific Zone",
+          "name": "SpecificZo",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Adoption",
+          "name": "Adoption_Date",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Plan Document (PDF)",
+          "name": "Document",
+          "type": "esriFieldTypeString"
+        },
+        {
+          "alias": "Shape__Area",
+          "name": "Shape__Area",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "alias": "Shape__Length",
+          "name": "Shape__Length",
+          "type": "esriFieldTypeDouble"
+        },
+        {
+          "alias": "GlobalID",
+          "name": "GlobalID",
+          "type": "esriFieldTypeGlobalID"
+        }
+      ],
+      "geometry_invalid_count": 2,
+      "geometry_valid_count": 1,
+      "max_record_count": 2000,
+      "name": "specific-plans",
+      "normalized_sha256": "f59c1f9318211924bae56c400329a798fa9aa5baf595c8a8e99d3fb2eea5fabb",
+      "raw_pages": [
+        {
+          "bytes": 731005,
+          "file": "000000.geojson",
+          "sha256": "32efd557433b3fee1c3e63d97c3919b5df6001bc71596987680fd6d8c33f690c"
+        }
+      ],
+      "spatial_reference": {
+        "latestWkid": 2230,
+        "wkid": 102646
+      },
+      "supported_query_formats": "JSON, geoJSON, PBF"
+    }
+  ],
+  "specific_plans": [
+    {
+      "adoption_date": "1990",
+      "area_sq_ft_source": 7181832.3076171875,
+      "document_url": "https://www.cityoflamesa.gov/DocumentView.aspx?DID=1172",
+      "geometry_valid": false,
+      "name": "Downtown Village",
+      "parcel_count_estimate": 731,
+      "properties": {
+        "Adoption_Date": "1990",
+        "Document": "https://www.cityoflamesa.gov/DocumentView.aspx?DID=1172",
+        "GlobalID": "4bd4e735-0c56-40d9-9482-a2752b502d87",
+        "OBJECTID": 1,
+        "Shape__Area": 7181832.3076171875,
+        "Shape__Length": 105800.67690433795,
+        "SpecificPl": "Downtown Village",
+        "SpecificZo": "Downtown"
+      }
+    },
+    {
+      "adoption_date": "1994",
+      "area_sq_ft_source": 10441371.014648438,
+      "document_url": "https://www.cityoflamesa.gov/DocumentView.aspx?DID=2192",
+      "geometry_valid": false,
+      "name": "Grossmont",
+      "parcel_count_estimate": 155,
+      "properties": {
+        "Adoption_Date": "1994",
+        "Document": "https://www.cityoflamesa.gov/DocumentView.aspx?DID=2192",
+        "GlobalID": "bff470e8-1ac2-4e54-89c8-6db916f6c602",
+        "OBJECTID": 3,
+        "Shape__Area": 10441371.014648438,
+        "Shape__Length": 71768.56714342578,
+        "SpecificPl": "Grossmont",
+        "SpecificZo": "Grossmont"
+      }
+    },
+    {
+      "adoption_date": "1989",
+      "area_sq_ft_source": 7035109.4560546875,
+      "document_url": "https://www.cityoflamesa.gov/DocumentCenter/View/2191/Eastridge-Specific-Plan?bidId=",
+      "geometry_valid": true,
+      "name": "Eastridge",
+      "parcel_count_estimate": 349,
+      "properties": {
+        "Adoption_Date": "1989",
+        "Document": "https://www.cityoflamesa.gov/DocumentCenter/View/2191/Eastridge-Specific-Plan?bidId=",
+        "GlobalID": "b1f60ab9-0d47-4d5c-9f2a-07cb4ff6d353",
+        "OBJECTID": 22,
+        "Shape__Area": 7035109.4560546875,
+        "Shape__Length": 48172.85795922795,
+        "SpecificPl": "Eastridge",
+        "SpecificZo": "Eastridge"
+      }
+    }
+  ],
+  "zoning": {
+    "apn_fingerprint_sha256": "9f9bfacb11a18b66d81f761126d1191192b31642c8f35353ce57d1bf8a7aca01",
+    "apns_not_in_county": 4,
+    "county_lm_not_zoned": 3237,
+    "distinct_apns": 14175,
+    "duplicate_feature_apns": 3233,
+    "features": 17422,
+    "missing_addresses": 14,
+    "missing_apns": 14,
+    "proposed_states": {
+      "BOUNDARY_SLIVER": 0,
+      "INDETERMINATE": 0,
+      "MULTI_ZONE": 0,
+      "SINGLE_ZONE": 14175,
+      "UNMAPPED": 3237
+    },
+    "source_split_flag_count": 0,
+    "split_examples": [],
+    "zones": [
+      {
+        "area_sq_ft": 26452771.898,
+        "code": "C",
+        "distinct_apns": 395,
+        "feature_count": 528,
+        "name": "General Commercial",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+        ],
+        "preliminary_classification": "unknown"
+      },
+      {
+        "area_sq_ft": 25669774.549,
+        "code": "CD",
+        "distinct_apns": 158,
+        "feature_count": 281,
+        "name": "Downtown Commercial",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+        ],
+        "preliminary_classification": "unknown"
+      },
+      {
+        "area_sq_ft": 3291763.284,
+        "code": "CM",
+        "distinct_apns": 56,
+        "feature_count": 56,
+        "name": "Light Industrial and Commercial Service",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+        ],
+        "preliminary_classification": "unknown"
+      },
+      {
+        "area_sq_ft": 3512166.184,
+        "code": "CN",
+        "distinct_apns": 100,
+        "feature_count": 102,
+        "name": "Neighborhood Commercial",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+        ],
+        "preliminary_classification": "unknown"
+      },
+      {
+        "area_sq_ft": 525471.361,
+        "code": "Civic Center",
+        "distinct_apns": 7,
+        "feature_count": 7,
+        "name": "Civic Center",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+        ],
+        "preliminary_classification": "unknown"
+      },
+      {
+        "area_sq_ft": 1654122.55,
+        "code": "M",
+        "distinct_apns": 73,
+        "feature_count": 76,
+        "name": "Industrial Service and Manufacturing",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+        ],
+        "preliminary_classification": "unknown"
+      },
+      {
+        "area_sq_ft": 2811023.508,
+        "code": "MacArthur",
+        "distinct_apns": 2,
+        "feature_count": 4,
+        "name": "MacArthur Park",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+        ],
+        "preliminary_classification": "unknown"
+      },
+      {
+        "area_sq_ft": 99026613.027,
+        "code": "R1",
+        "distinct_apns": 8576,
+        "feature_count": 8687,
+        "name": "Urban Residential",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+        ],
+        "preliminary_classification": "residential"
+      },
+      {
+        "area_sq_ft": 2762491.827,
+        "code": "R1A",
+        "distinct_apns": 325,
+        "feature_count": 325,
+        "name": "Urban Residential Alternative",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+        ],
+        "preliminary_classification": "residential"
+      },
+      {
+        "area_sq_ft": 2708597.396,
+        "code": "R1E",
+        "distinct_apns": 95,
+        "feature_count": 95,
+        "name": "Semi-Rural Estate",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+        ],
+        "preliminary_classification": "residential"
+      },
+      {
+        "area_sq_ft": 3621459.003,
+        "code": "R1R",
+        "distinct_apns": 180,
+        "feature_count": 181,
+        "name": "Semi-Rural Residential",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+        ],
+        "preliminary_classification": "residential"
+      },
+      {
+        "area_sq_ft": 48113417.791,
+        "code": "R1S",
+        "distinct_apns": 2309,
+        "feature_count": 2344,
+        "name": "Suburban Residential",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+        ],
+        "preliminary_classification": "residential"
+      },
+      {
+        "area_sq_ft": 11143787.915,
+        "code": "R2",
+        "distinct_apns": 544,
+        "feature_count": 640,
+        "name": "Medium-Low Density Residential",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+        ],
+        "preliminary_classification": "residential"
+      },
+      {
+        "area_sq_ft": 468483311.558,
+        "code": "R3",
+        "distinct_apns": 1045,
+        "feature_count": 3610,
+        "name": "Multiple-Unit Residential",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+        ],
+        "preliminary_classification": "residential"
+      },
+      {
+        "area_sq_ft": 37685063.076,
+        "code": "RB",
+        "distinct_apns": 234,
+        "feature_count": 406,
+        "name": "Residential Business",
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+        ],
+        "preliminary_classification": "residential"
+      },
+      {
+        "area_sq_ft": 2555366.999,
+        "code": "TBD",
+        "distinct_apns": 76,
+        "feature_count": 80,
+        "name": null,
+        "ordinance_urls": [
+          "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+        ],
+        "preliminary_classification": "unknown"
+      }
+    ]
+  }
+}
