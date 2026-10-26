@@ -1,0 +1,55 @@
+{
+  "files": [
+    {
+      "bytes": 771,
+      "path": "design.json",
+      "sha256": "b1ed8193a9b5d2afc0eb27141da6c26bd810fc62473d8d4c3b722696766d79f4"
+    },
+    {
+      "bytes": 1031,
+      "path": "fingerprints.json",
+      "sha256": "b778c7759d1a3576478558d43c147261a4dd0f7a43dbedb6a4d7d3789d91a7dc"
+    },
+    {
+      "bytes": 2026547,
+      "path": "geometry-repair-receipts.ndjson.gz",
+      "sha256": "52b7d9b15660a143c7cb9f4a0515c38db03995199d725da21ae849918c1ddabe"
+    },
+    {
+      "bytes": 553775,
+      "path": "normalized-overlays.geojson.gz",
+      "sha256": "198140faf8efc1f2a0efd4a73b6f1b8444bdd838227e50090ad4c401fd801782"
+    },
+    {
+      "bytes": 2301215,
+      "path": "normalized-planned-land-use.geojson.gz",
+      "sha256": "7c66d89636e9212c50e85db4ea6cd2b42347f8ed69f1f8dfa17f85fc25a917b3"
+    },
+    {
+      "bytes": 179851,
+      "path": "normalized-specific-plans.geojson.gz",
+      "sha256": "3949e095a633b8e5cbb4e08d47c4b102d2df81beb38cddf729f7c855f7767532"
+    },
+    {
+      "bytes": 1587810,
+      "path": "normalized-zoning.geojson.gz",
+      "sha256": "ce5f42df603dddca1a77936e9303b9323aad318b497bfbf1bec46b2d5d836813"
+    },
+    {
+      "bytes": 1136833,
+      "path": "parcel-classification.ndjson.gz",
+      "sha256": "b33bc2cf417f2ba3ddbfd067067a341cbda54b8b899ec204fd1a5dcd56d3716f"
+    },
+    {
+      "bytes": 1997,
+      "path": "receipt.json",
+      "sha256": "b6638969fa25e74d201641e308ea73b1d7646f85ce5d95f5902130e2d7643839"
+    },
+    {
+      "bytes": 27142,
+      "path": "report.json",
+      "sha256": "8e3ec8920f12960d03ab2079493a4f8ed712980ffcfec446eb7a78b033187efd"
+    }
+  ],
+  "schema_version": "la-mesa-geometry-classification-v1"
+}

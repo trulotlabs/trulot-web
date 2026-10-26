@@ -1,0 +1,22 @@
+{
+  "packet65_contract": {
+    "artifact": "parcel-classification.ndjson.gz",
+    "constraint": "Packet 65 consumes sealed classifications and performs no geometry reanalysis.",
+    "fields": [
+      "apn",
+      "jurisdiction_scope_state",
+      "base_zoning_state",
+      "selected_zone",
+      "material_zones",
+      "sliver_zones",
+      "mapped_overlays",
+      "mapped_overlay_signature",
+      "specific_plan_state",
+      "specific_plans",
+      "rule_profile_readiness",
+      "source_versions",
+      "provenance_refs"
+    ]
+  },
+  "production_load_design": "Use shared jurisdiction-keyed TruLot canonical tables with isolated jurisdiction staging and explicit jurisdiction_id on every key; validate in staging before selection. No production SQL executed."
+}

@@ -1,0 +1,1063 @@
+{
+  "benchmark_replay": [
+    {
+      "apn": "4640301100",
+      "category": "ordinary R1",
+      "geometry_anomaly": false,
+      "jurisdiction_state": "IN_SCOPE_CONFIRMED",
+      "overlays": [],
+      "rule_profile_readiness": "RULE_PROFILE_READY",
+      "selected_zone": "R1",
+      "specific_plan_state": "NONE",
+      "specific_plans": [],
+      "zones": [
+        "R1"
+      ],
+      "zoning_state": "SINGLE_ZONE"
+    },
+    {
+      "apn": "4912600700",
+      "category": "R1E scenic single-family subtype",
+      "geometry_anomaly": false,
+      "jurisdiction_state": "IN_SCOPE_CONFIRMED",
+      "overlays": [
+        "P"
+      ],
+      "rule_profile_readiness": "RULE_PROFILE_REVIEW_REQUIRED",
+      "selected_zone": "R1E",
+      "specific_plan_state": "NONE",
+      "specific_plans": [],
+      "zones": [
+        "R1E"
+      ],
+      "zoning_state": "SINGLE_ZONE"
+    },
+    {
+      "apn": "4994920400",
+      "category": "R1R single-family subtype",
+      "geometry_anomaly": false,
+      "jurisdiction_state": "IN_SCOPE_CONFIRMED",
+      "overlays": [
+        "P"
+      ],
+      "rule_profile_readiness": "RULE_PROFILE_REVIEW_REQUIRED",
+      "selected_zone": "R1R",
+      "specific_plan_state": "NONE",
+      "specific_plans": [],
+      "zones": [
+        "R1R"
+      ],
+      "zoning_state": "SINGLE_ZONE"
+    },
+    {
+      "apn": "4640201000",
+      "category": "R3 multifamily",
+      "geometry_anomaly": false,
+      "jurisdiction_state": "IN_SCOPE_CONFIRMED",
+      "overlays": [],
+      "rule_profile_readiness": "RULE_PROFILE_READY",
+      "selected_zone": "R3",
+      "specific_plan_state": "NONE",
+      "specific_plans": [],
+      "zones": [
+        "R3",
+        "R1"
+      ],
+      "zoning_state": "BOUNDARY_SLIVER"
+    },
+    {
+      "apn": "4752412200",
+      "category": "hillside overlay",
+      "geometry_anomaly": false,
+      "jurisdiction_state": "IN_SCOPE_CONFIRMED",
+      "overlays": [
+        "H"
+      ],
+      "rule_profile_readiness": "RULE_PROFILE_REVIEW_REQUIRED",
+      "selected_zone": "R1S",
+      "specific_plan_state": "NONE",
+      "specific_plans": [],
+      "zones": [
+        "R1S"
+      ],
+      "zoning_state": "SINGLE_ZONE"
+    },
+    {
+      "apn": "4904720700",
+      "category": "scenic plus mixed-use overlay",
+      "geometry_anomaly": false,
+      "jurisdiction_state": "IN_SCOPE_CONFIRMED",
+      "overlays": [
+        "MU",
+        "P",
+        "D"
+      ],
+      "rule_profile_readiness": "RULE_PROFILE_REVIEW_REQUIRED",
+      "selected_zone": "R3",
+      "specific_plan_state": "NONE",
+      "specific_plans": [],
+      "zones": [
+        "R3"
+      ],
+      "zoning_state": "SINGLE_ZONE"
+    },
+    {
+      "apn": "4646002300",
+      "category": "adopted specific-plan area",
+      "geometry_anomaly": false,
+      "jurisdiction_state": "IN_SCOPE_CONFIRMED",
+      "overlays": [
+        "D",
+        "F",
+        "G"
+      ],
+      "rule_profile_readiness": "RULE_PROFILE_UNAVAILABLE",
+      "selected_zone": null,
+      "specific_plan_state": "SPECIFIC_PLAN_BOUNDARY_REVIEW",
+      "specific_plans": [
+        "Grossmont"
+      ],
+      "zones": [
+        "CM",
+        "TBD"
+      ],
+      "zoning_state": "MULTI_ZONE"
+    },
+    {
+      "apn": "4953350500",
+      "category": "jurisdiction-boundary mismatch",
+      "geometry_anomaly": true,
+      "jurisdiction_state": "INDETERMINATE_JURISDICTION",
+      "overlays": [],
+      "rule_profile_readiness": "RULE_PROFILE_UNAVAILABLE",
+      "selected_zone": null,
+      "specific_plan_state": "NOT_EVALUATED",
+      "specific_plans": [],
+      "zones": [],
+      "zoning_state": "NOT_CLASSIFIED_OUTSIDE_CANONICAL_SCOPE"
+    },
+    {
+      "apn": "4641310100",
+      "category": "mapped TBD/unsupported zoning",
+      "geometry_anomaly": true,
+      "jurisdiction_state": "OUT_OF_SCOPE_CONFIRMED",
+      "overlays": [],
+      "rule_profile_readiness": "RULE_PROFILE_UNAVAILABLE",
+      "selected_zone": null,
+      "specific_plan_state": "NOT_EVALUATED",
+      "specific_plans": [],
+      "zones": [],
+      "zoning_state": "NOT_CLASSIFIED_OUTSIDE_CANONICAL_SCOPE"
+    }
+  ],
+  "canonical_parcels": 17391,
+  "coverage_anomalies": {
+    "over_tolerance": 0,
+    "under_tolerance": 9
+  },
+  "coverage_policy": {
+    "absolute_tolerance_sqft": 25.0,
+    "percent_tolerance": 0.5
+  },
+  "decision": "LA_MESA_GEOMETRY_CLASSIFICATION_READY_FOR_RULE_PROFILES",
+  "distinct_zone_codes": [
+    "C",
+    "CD",
+    "CM",
+    "CN",
+    "Civic Center",
+    "M",
+    "MacArthur",
+    "R1",
+    "R1A",
+    "R1E",
+    "R1R",
+    "R1S",
+    "R2",
+    "R3",
+    "RB",
+    "TBD"
+  ],
+  "duplicate_zoning_analysis": {
+    "cause_examples": {
+      "condo_or_common_parcel_republication": [
+        "4640202613",
+        "4640202756",
+        "4640202815",
+        "4640202913",
+        "4640203335",
+        "4640203480",
+        "4640203544",
+        "4640203649",
+        "4640203747",
+        "4640203852"
+      ],
+      "multipart_or_segmented_same_zone_geometry": [
+        "4641203134"
+      ]
+    },
+    "cause_group_counts": {
+      "condo_or_common_parcel_republication": 110,
+      "multipart_or_segmented_same_zone_geometry": 1
+    },
+    "distinct_non_null_apns": 14175,
+    "doctrine": "APN is diagnostic only; dissolve uses zone/status/ordinance semantics and never APN alone.",
+    "extra_features_in_repeated_groups": 3233,
+    "features": 17422,
+    "missing_apn_features": 14,
+    "repeated_apn_groups": 111
+  },
+  "jurisdiction_discrepancies": [
+    {
+      "apn": "7601960217",
+      "canonical_scope": true,
+      "city_intersection_area_sqft": 0.0,
+      "city_intersection_pct": 0.0,
+      "overlay_juris": "CN",
+      "parcel_area_sqft": 12796779.906943,
+      "point_on_surface_in_city": false,
+      "situs_community": "FALLBROOK",
+      "situs_juris": "LM",
+      "state": "INDETERMINATE_JURISDICTION"
+    },
+    {
+      "apn": "7601960218",
+      "canonical_scope": true,
+      "city_intersection_area_sqft": 0.0,
+      "city_intersection_pct": 0.0,
+      "overlay_juris": "CN",
+      "parcel_area_sqft": 12796779.906943,
+      "point_on_surface_in_city": false,
+      "situs_community": "FALLBROOK",
+      "situs_juris": "LM",
+      "state": "INDETERMINATE_JURISDICTION"
+    },
+    {
+      "apn": "7601960219",
+      "canonical_scope": true,
+      "city_intersection_area_sqft": 0.0,
+      "city_intersection_pct": 0.0,
+      "overlay_juris": "CN",
+      "parcel_area_sqft": 12796779.906943,
+      "point_on_surface_in_city": false,
+      "situs_community": "FALLBROOK",
+      "situs_juris": "LM",
+      "state": "INDETERMINATE_JURISDICTION"
+    },
+    {
+      "apn": "7601960220",
+      "canonical_scope": true,
+      "city_intersection_area_sqft": 0.0,
+      "city_intersection_pct": 0.0,
+      "overlay_juris": "CN",
+      "parcel_area_sqft": 12796779.906943,
+      "point_on_surface_in_city": false,
+      "situs_community": "FALLBROOK",
+      "situs_juris": "LM",
+      "state": "INDETERMINATE_JURISDICTION"
+    },
+    {
+      "apn": "4953350500",
+      "canonical_scope": false,
+      "city_intersection_area_sqft": 11432.376715,
+      "city_intersection_pct": 99.895448475,
+      "overlay_juris": "CN",
+      "parcel_area_sqft": 11444.341949,
+      "point_on_surface_in_city": true,
+      "situs_community": "LA MESA",
+      "situs_juris": "CN",
+      "state": "INDETERMINATE_JURISDICTION"
+    }
+  ],
+  "max_zones_per_parcel": 4,
+  "overlay_combination_counts": {
+    "BG+P": 14,
+    "BT": 84,
+    "D": 804,
+    "D+F": 123,
+    "D+F+G": 2,
+    "D+F+MU": 70,
+    "D+G": 353,
+    "D+H+P": 1,
+    "D+MU": 919,
+    "D+MU+P": 30,
+    "D+P": 26,
+    "F": 3,
+    "F+MU": 3,
+    "F+P": 138,
+    "G": 17,
+    "H": 342,
+    "H+NP2": 1,
+    "MH": 57,
+    "MU": 14,
+    "MU+P": 11,
+    "NP": 99,
+    "NP2": 77,
+    "P": 1333
+  },
+  "overlay_counts_any_intersection": {
+    "BG": 14,
+    "BT": 84,
+    "D": 2328,
+    "F": 339,
+    "G": 372,
+    "H": 344,
+    "MH": 57,
+    "MU": 1047,
+    "NP": 99,
+    "NP2": 78,
+    "P": 1553
+  },
+  "parcels_affected_by_repaired_source_geometry": {
+    "overlays": 13,
+    "planned-land-use": 557,
+    "specific-plans": 1318,
+    "zoning": 5
+  },
+  "planned_land_use_state_counts": {
+    "MULTI_DESIGNATION": 609,
+    "SINGLE_DESIGNATION": 12602,
+    "SLIVER": 4176,
+    "UNMAPPED": 4
+  },
+  "qa_samples": {
+    "boundary_sliver": {
+      "apn": "4640201000",
+      "overlays": [],
+      "source_feature_ids": {
+        "overlays": [
+          811
+        ],
+        "planned-land-use": [
+          777,
+          890
+        ],
+        "specific-plans": [],
+        "zoning": [
+          253,
+          647,
+          1568,
+          1608,
+          1670,
+          2321,
+          2699,
+          3163,
+          3419,
+          3599,
+          5005,
+          5581,
+          5723,
+          6578,
+          6736,
+          6790,
+          6899,
+          7183,
+          7328,
+          7364,
+          8236,
+          8250,
+          8389,
+          9735,
+          9800,
+          9921,
+          10051,
+          10528,
+          10576,
+          10590,
+          10780,
+          10782,
+          11698,
+          11811,
+          11864,
+          12481,
+          12575,
+          13616,
+          13757,
+          13796,
+          15084,
+          15311,
+          15663,
+          17020
+        ]
+      },
+      "specific_plans": [],
+      "zones": [
+        {
+          "code": "R3",
+          "component_count": 1,
+          "intersection_area_sqft": 35838.793621,
+          "parcel_coverage_pct": 99.999879108,
+          "semantic_key": [
+            "R3",
+            "ZONED",
+            "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+          ],
+          "source_ids_sha256": "7ac0d3283ba51ddd2fb835c24dbf501123ad8a2f431255329334ad4b4f5568e7",
+          "zone_coverage_pct": 0.155159071355
+        },
+        {
+          "code": "R1",
+          "component_count": 2,
+          "intersection_area_sqft": 0.011051,
+          "parcel_coverage_pct": 3.0836e-05,
+          "semantic_key": [
+            "R1",
+            "ZONED",
+            "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+          ],
+          "source_ids_sha256": "0888a7520b7d90bc2a532f87da6e06b424a8c624539eca0ade250e39fc77539b",
+          "zone_coverage_pct": 1.3086e-08
+        }
+      ],
+      "zoning_state": "BOUNDARY_SLIVER"
+    },
+    "invalid_source_repair": {
+      "apn": "4990100100",
+      "overlays": [
+        {
+          "code": "H",
+          "component_count": 1,
+          "geometrically_material": true,
+          "intersection_area_sqft": 610287.957269,
+          "mapped_state": "MAPPED_INTERSECTION",
+          "parcel_coverage_pct": 99.727949036,
+          "source_ids_sha256": "2b9d2ae67f10a4b6f00fa58aa790428d8c9313c49d9084bcd50ded1588245089"
+        }
+      ],
+      "source_feature_ids": {
+        "overlays": [
+          605,
+          658
+        ],
+        "planned-land-use": [
+          213,
+          874
+        ],
+        "specific-plans": [
+          22
+        ],
+        "zoning": [
+          790,
+          1269,
+          1343,
+          1607,
+          3095,
+          3242,
+          3272,
+          3455,
+          3589,
+          4351,
+          4423,
+          4696,
+          5094,
+          5344,
+          5402,
+          5425,
+          6393,
+          6576,
+          7031,
+          8063,
+          8729,
+          8765,
+          9320,
+          9493,
+          9690,
+          10004,
+          10020,
+          11485,
+          11530,
+          12777,
+          12858,
+          13239,
+          13277,
+          14126,
+          16092,
+          16179,
+          16258,
+          16720
+        ]
+      },
+      "specific_plans": [
+        {
+          "code": "Eastridge",
+          "component_count": 1,
+          "geometrically_material": true,
+          "intersection_area_sqft": 512664.815854,
+          "mapped_state": "MAPPED_INTERSECTION",
+          "parcel_coverage_pct": 83.775224497,
+          "source_ids_sha256": "741451fddea5a4c87ab16f573c86fe57287c9883428ecdfe0289c645e17ffbe2"
+        }
+      ],
+      "zones": [
+        {
+          "code": "R1S",
+          "component_count": 1,
+          "intersection_area_sqft": 611952.708861,
+          "parcel_coverage_pct": 99.99998826,
+          "semantic_key": [
+            "R1S",
+            "ZONED",
+            "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+          ],
+          "source_ids_sha256": "3a911af561fe3a15c1760c4e8fb2394e90279474fabd2ac96e3586e9e5a17a73",
+          "zone_coverage_pct": 1.673967801517
+        },
+        {
+          "code": "TBD",
+          "component_count": 37,
+          "intersection_area_sqft": 0.066535,
+          "parcel_coverage_pct": 1.0873e-05,
+          "semantic_key": [
+            "TBD",
+            "TBD",
+            "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+          ],
+          "source_ids_sha256": "6bac450517e1f809f7b188757b55c853446070e23244aaee496ff90dfad73931",
+          "zone_coverage_pct": 2.607245e-06
+        }
+      ],
+      "zoning_state": "BOUNDARY_SLIVER"
+    },
+    "jurisdiction_discrepancy": {
+      "apn": "4953350500",
+      "discrepancy": {
+        "apn": "4953350500",
+        "canonical_scope": false,
+        "city_intersection_area_sqft": 11432.376715,
+        "city_intersection_pct": 99.895448475,
+        "overlay_juris": "CN",
+        "parcel_area_sqft": 11444.341949,
+        "point_on_surface_in_city": true,
+        "situs_community": "LA MESA",
+        "situs_juris": "CN",
+        "state": "INDETERMINATE_JURISDICTION"
+      }
+    },
+    "ordinary_single_zone": {
+      "apn": "4635800100",
+      "overlays": [],
+      "source_feature_ids": {
+        "overlays": [
+          622
+        ],
+        "planned-land-use": [
+          262
+        ],
+        "specific-plans": [],
+        "zoning": [
+          987
+        ]
+      },
+      "specific_plans": [],
+      "zones": [
+        {
+          "code": "R1S",
+          "component_count": 1,
+          "intersection_area_sqft": 6722.418495,
+          "parcel_coverage_pct": 99.999859831,
+          "semantic_key": [
+            "R1S",
+            "ZONED",
+            "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO_CH24.05REZODEST"
+          ],
+          "source_ids_sha256": "3a911af561fe3a15c1760c4e8fb2394e90279474fabd2ac96e3586e9e5a17a73",
+          "zone_coverage_pct": 0.018388859049
+        }
+      ],
+      "zoning_state": "SINGLE_ZONE"
+    },
+    "overlay_heavy": {
+      "apn": "4646002300",
+      "overlays": [
+        {
+          "code": "D",
+          "component_count": 1,
+          "geometrically_material": true,
+          "intersection_area_sqft": 53972.211667,
+          "mapped_state": "MAPPED_INTERSECTION",
+          "parcel_coverage_pct": 96.131826274,
+          "source_ids_sha256": "c5d45f5a77b3740cb172b06c67a439775d5cc7350a6443f4af3e48cf61d78a46"
+        },
+        {
+          "code": "F",
+          "component_count": 1,
+          "geometrically_material": true,
+          "intersection_area_sqft": 53972.211667,
+          "mapped_state": "MAPPED_INTERSECTION",
+          "parcel_coverage_pct": 96.131826274,
+          "source_ids_sha256": "a65d05f4a0e6c5dc242a833c5630014716b53a711900199ec4b247e7dba283da"
+        },
+        {
+          "code": "G",
+          "component_count": 1,
+          "geometrically_material": true,
+          "intersection_area_sqft": 53972.211667,
+          "mapped_state": "MAPPED_INTERSECTION",
+          "parcel_coverage_pct": 96.131826274,
+          "source_ids_sha256": "e1d1fdef9d7c86611f858008cecacb165f96df1b5126ab59fa270e396bc5b960"
+        }
+      ],
+      "source_feature_ids": {
+        "overlays": [
+          2
+        ],
+        "planned-land-use": [
+          142,
+          877,
+          890
+        ],
+        "specific-plans": [
+          3
+        ],
+        "zoning": [
+          1952,
+          4579
+        ]
+      },
+      "specific_plans": [
+        {
+          "code": "Grossmont",
+          "component_count": 1,
+          "geometrically_material": true,
+          "intersection_area_sqft": 53972.211667,
+          "mapped_state": "MAPPED_INTERSECTION",
+          "parcel_coverage_pct": 96.131826274,
+          "source_ids_sha256": "b130d086e945005dccde9902a4f20b8c7c70a680a2d019523a5102dd7d031dfa"
+        }
+      ],
+      "zones": [
+        {
+          "code": "CM",
+          "component_count": 1,
+          "intersection_area_sqft": 53972.752045,
+          "parcel_coverage_pct": 96.132788762,
+          "semantic_key": [
+            "CM",
+            "ZONED",
+            "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+          ],
+          "source_ids_sha256": "9c90878fbfaf1cdc6c5e8090bd0fe7548bedd359861ae52388e6ce5d857082ca",
+          "zone_coverage_pct": 1.639630035825
+        },
+        {
+          "code": "TBD",
+          "component_count": 1,
+          "intersection_area_sqft": 2091.277503,
+          "parcel_coverage_pct": 3.724848758,
+          "semantic_key": [
+            "TBD",
+            "TBD",
+            "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+          ],
+          "source_ids_sha256": "6bac450517e1f809f7b188757b55c853446070e23244aaee496ff90dfad73931",
+          "zone_coverage_pct": 0.081949205845
+        }
+      ],
+      "zoning_state": "MULTI_ZONE"
+    },
+    "specific_plan_boundary": {
+      "apn": "4646002300",
+      "overlays": [
+        {
+          "code": "D",
+          "component_count": 1,
+          "geometrically_material": true,
+          "intersection_area_sqft": 53972.211667,
+          "mapped_state": "MAPPED_INTERSECTION",
+          "parcel_coverage_pct": 96.131826274,
+          "source_ids_sha256": "c5d45f5a77b3740cb172b06c67a439775d5cc7350a6443f4af3e48cf61d78a46"
+        },
+        {
+          "code": "F",
+          "component_count": 1,
+          "geometrically_material": true,
+          "intersection_area_sqft": 53972.211667,
+          "mapped_state": "MAPPED_INTERSECTION",
+          "parcel_coverage_pct": 96.131826274,
+          "source_ids_sha256": "a65d05f4a0e6c5dc242a833c5630014716b53a711900199ec4b247e7dba283da"
+        },
+        {
+          "code": "G",
+          "component_count": 1,
+          "geometrically_material": true,
+          "intersection_area_sqft": 53972.211667,
+          "mapped_state": "MAPPED_INTERSECTION",
+          "parcel_coverage_pct": 96.131826274,
+          "source_ids_sha256": "e1d1fdef9d7c86611f858008cecacb165f96df1b5126ab59fa270e396bc5b960"
+        }
+      ],
+      "source_feature_ids": {
+        "overlays": [
+          2
+        ],
+        "planned-land-use": [
+          142,
+          877,
+          890
+        ],
+        "specific-plans": [
+          3
+        ],
+        "zoning": [
+          1952,
+          4579
+        ]
+      },
+      "specific_plans": [
+        {
+          "code": "Grossmont",
+          "component_count": 1,
+          "geometrically_material": true,
+          "intersection_area_sqft": 53972.211667,
+          "mapped_state": "MAPPED_INTERSECTION",
+          "parcel_coverage_pct": 96.131826274,
+          "source_ids_sha256": "b130d086e945005dccde9902a4f20b8c7c70a680a2d019523a5102dd7d031dfa"
+        }
+      ],
+      "zones": [
+        {
+          "code": "CM",
+          "component_count": 1,
+          "intersection_area_sqft": 53972.752045,
+          "parcel_coverage_pct": 96.132788762,
+          "semantic_key": [
+            "CM",
+            "ZONED",
+            "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+          ],
+          "source_ids_sha256": "9c90878fbfaf1cdc6c5e8090bd0fe7548bedd359861ae52388e6ce5d857082ca",
+          "zone_coverage_pct": 1.639630035825
+        },
+        {
+          "code": "TBD",
+          "component_count": 1,
+          "intersection_area_sqft": 2091.277503,
+          "parcel_coverage_pct": 3.724848758,
+          "semantic_key": [
+            "TBD",
+            "TBD",
+            "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+          ],
+          "source_ids_sha256": "6bac450517e1f809f7b188757b55c853446070e23244aaee496ff90dfad73931",
+          "zone_coverage_pct": 0.081949205845
+        }
+      ],
+      "zoning_state": "MULTI_ZONE"
+    },
+    "tbd": {
+      "apn": "4641310100",
+      "discrepancy": null
+    },
+    "true_multi_zone": {
+      "apn": "4646001500",
+      "overlays": [
+        {
+          "code": "D",
+          "component_count": 1,
+          "geometrically_material": true,
+          "intersection_area_sqft": 137548.445304,
+          "mapped_state": "MAPPED_INTERSECTION",
+          "parcel_coverage_pct": 96.874449253,
+          "source_ids_sha256": "c5d45f5a77b3740cb172b06c67a439775d5cc7350a6443f4af3e48cf61d78a46"
+        },
+        {
+          "code": "F",
+          "component_count": 1,
+          "geometrically_material": true,
+          "intersection_area_sqft": 137548.445304,
+          "mapped_state": "MAPPED_INTERSECTION",
+          "parcel_coverage_pct": 96.874449253,
+          "source_ids_sha256": "a65d05f4a0e6c5dc242a833c5630014716b53a711900199ec4b247e7dba283da"
+        }
+      ],
+      "source_feature_ids": {
+        "overlays": [
+          524
+        ],
+        "planned-land-use": [
+          142,
+          877,
+          890
+        ],
+        "specific-plans": [],
+        "zoning": [
+          814,
+          5716,
+          6007,
+          14595,
+          14904
+        ]
+      },
+      "specific_plans": [],
+      "zones": [
+        {
+          "code": "CM",
+          "component_count": 1,
+          "intersection_area_sqft": 139646.883984,
+          "parcel_coverage_pct": 98.352365567,
+          "semantic_key": [
+            "CM",
+            "ZONED",
+            "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+          ],
+          "source_ids_sha256": "9c90878fbfaf1cdc6c5e8090bd0fe7548bedd359861ae52388e6ce5d857082ca",
+          "zone_coverage_pct": 4.242311475911
+        },
+        {
+          "code": "TBD",
+          "component_count": 1,
+          "intersection_area_sqft": 2264.727065,
+          "parcel_coverage_pct": 1.595032111,
+          "semantic_key": [
+            "TBD",
+            "TBD",
+            "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO"
+          ],
+          "source_ids_sha256": "6bac450517e1f809f7b188757b55c853446070e23244aaee496ff90dfad73931",
+          "zone_coverage_pct": 0.088746034008
+        }
+      ],
+      "zoning_state": "MULTI_ZONE"
+    },
+    "unmapped": {
+      "apn": "7601960217",
+      "overlays": [],
+      "source_feature_ids": {
+        "overlays": [],
+        "planned-land-use": [],
+        "specific-plans": [],
+        "zoning": []
+      },
+      "specific_plans": [],
+      "zones": [],
+      "zoning_state": "UNMAPPED"
+    }
+  },
+  "repair_summary": {
+    "invalid_counts": {
+      "overlays": 1,
+      "planned-land-use": 5,
+      "specific-plans": 2,
+      "zoning": 2
+    },
+    "policy": {
+      "grid_feet": 0.0001,
+      "max_area_delta_pct": 0.1,
+      "max_component_increase": 10,
+      "operation": "GEOS make_valid, polygonal extraction, union_all, set_precision"
+    },
+    "unresolved_repairs": []
+  },
+  "residential_subset": {
+    "R1": {
+      "boundary_sliver": 156,
+      "clean_base_zone_only": 8173,
+      "multi_zone": 53,
+      "overlay_affected": 299,
+      "specific_plan_affected": 187,
+      "total": 8686,
+      "unresolved": 57
+    },
+    "R1A": {
+      "boundary_sliver": 7,
+      "clean_base_zone_only": 325,
+      "multi_zone": 0,
+      "overlay_affected": 0,
+      "specific_plan_affected": 0,
+      "total": 325,
+      "unresolved": 0
+    },
+    "R1E": {
+      "boundary_sliver": 4,
+      "clean_base_zone_only": 0,
+      "multi_zone": 0,
+      "overlay_affected": 95,
+      "specific_plan_affected": 0,
+      "total": 95,
+      "unresolved": 0
+    },
+    "R1R": {
+      "boundary_sliver": 1,
+      "clean_base_zone_only": 0,
+      "multi_zone": 0,
+      "overlay_affected": 180,
+      "specific_plan_affected": 0,
+      "total": 180,
+      "unresolved": 1
+    },
+    "R1S": {
+      "boundary_sliver": 74,
+      "clean_base_zone_only": 797,
+      "multi_zone": 0,
+      "overlay_affected": 1539,
+      "specific_plan_affected": 317,
+      "total": 2336,
+      "unresolved": 41
+    },
+    "R2": {
+      "boundary_sliver": 51,
+      "clean_base_zone_only": 434,
+      "multi_zone": 0,
+      "overlay_affected": 52,
+      "specific_plan_affected": 157,
+      "total": 640,
+      "unresolved": 0
+    },
+    "R3": {
+      "boundary_sliver": 1242,
+      "clean_base_zone_only": 2418,
+      "multi_zone": 3,
+      "overlay_affected": 1018,
+      "specific_plan_affected": 441,
+      "total": 3604,
+      "unresolved": 10
+    },
+    "RB": {
+      "boundary_sliver": 156,
+      "clean_base_zone_only": 28,
+      "multi_zone": 0,
+      "overlay_affected": 378,
+      "specific_plan_affected": 156,
+      "total": 406,
+      "unresolved": 26
+    }
+  },
+  "rule_profile_readiness_counts": {
+    "RULE_PROFILE_READY": 12285,
+    "RULE_PROFILE_REVIEW_REQUIRED": 4878,
+    "RULE_PROFILE_UNAVAILABLE": 228
+  },
+  "schema_version": "la-mesa-geometry-classification-v1",
+  "sliver_policy": {
+    "or_secondary_area_sqft_lt": 100.0,
+    "secondary_pct_lt": 1.0
+  },
+  "specific_plan_state_counts": {
+    "NONE": 15753,
+    "ONE_ADOPTED_SPECIFIC_PLAN": 1307,
+    "SPECIFIC_PLAN_BOUNDARY_REVIEW": 331
+  },
+  "tbd_parcels": 221,
+  "threshold_sensitivity": {
+    "area_histogram_sqft": {
+      "[0,25)": 1944,
+      "[100,200)": 0,
+      "[1000,inf)": 55,
+      "[200,500)": 3,
+      "[25,50)": 3,
+      "[50,100)": 2,
+      "[500,1000)": 5
+    },
+    "area_thresholds_sqft": {
+      "100": 1949,
+      "200": 1949,
+      "25": 1944,
+      "50": 1947
+    },
+    "percent_histogram": {
+      "[0,0.25)": 1948,
+      "[0.25,0.5)": 4,
+      "[0.5,1)": 0,
+      "[1,2)": 51,
+      "[10,100.000001)": 1,
+      "[2,5)": 3,
+      "[5,10)": 5
+    },
+    "percent_thresholds": {
+      "0.25": 1948,
+      "0.5": 1952,
+      "1.0": 1952,
+      "2.0": 2003
+    },
+    "second_zone_intersections": 2012
+  },
+  "top_zone_combinations": [
+    [
+      "R1",
+      8475
+    ],
+    [
+      "R3",
+      2358
+    ],
+    [
+      "R1S",
+      2262
+    ],
+    [
+      "R1+R3",
+      660
+    ],
+    [
+      "R2",
+      589
+    ],
+    [
+      "C",
+      337
+    ],
+    [
+      "R1A",
+      318
+    ],
+    [
+      "CN+R1+R3",
+      277
+    ],
+    [
+      "C+R3",
+      276
+    ],
+    [
+      "CD",
+      275
+    ],
+    [
+      "RB",
+      250
+    ],
+    [
+      "R1R",
+      179
+    ],
+    [
+      "R1+RB",
+      91
+    ],
+    [
+      "R1E",
+      91
+    ],
+    [
+      "CN",
+      87
+    ],
+    [
+      "CM+R3",
+      87
+    ],
+    [
+      "C+R1",
+      85
+    ],
+    [
+      "M",
+      75
+    ],
+    [
+      "R1+R3+RB",
+      69
+    ],
+    [
+      "R1+TBD",
+      60
+    ]
+  ],
+  "zoning_classification_counts": {
+    "BOUNDARY_SLIVER": 1951,
+    "INDETERMINATE": 5,
+    "MULTI_ZONE": 58,
+    "SINGLE_ZONE": 15373,
+    "UNMAPPED": 4
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "canonical_apn_population": "11440df9a1fb2a72592000dc656f75dcec9bf7ed9d90e9efcb9ebba8e700a467",
+  "final_parcel_classification_table": "0ec1af07d67e29a5334783cc0349c7e8085bd0d9d2aefc61095d44b72c0e6821",
+  "normalized_overlay_geometry": "755573e03b823a4e442c01505591de5caca666c2526f47664f714cd01986f023",
+  "normalized_planned_land_use_geometry": "30c17ed9b2506dab8576df37a8a46241e1bf5a5b2d597a3e9df55a718ffc724c",
+  "normalized_specific_plan_geometry": "c46b48cbc37269cbda0c0734458e3e96830fdd497980189473e52fabfb83a7a6",
+  "normalized_zoning_geometry": "140db8680d4d8521da2a853669b996627b933a189f00a6afaea790965e4d72b5",
+  "overlay_classification": "ffc9fb6867eaa6847c96b8fc4b25d0477409186b9fae7ea337cc33a180cccb6e",
+  "parcel_zoning_classification": "69930727cdf017b0056db32a34db237a85ff31c3a1641111f8e7393283058f26",
+  "planned_land_use_classification": "b85117579069ce54d202df94db251f298f80b9a46bd08a269c66a98bf2744039",
+  "specific_plan_classification": "023754b059707562b25a393ea6dbeb1e23264d6def5c7c184c1c5e4fd0cfdb62"
+}
