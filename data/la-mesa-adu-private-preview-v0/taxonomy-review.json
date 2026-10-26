@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "la-mesa-adu-taxonomy-review-v0",
+  "categories": [
+    { "category": "Likely state/local pathway available", "homeownerComprehension": "PASS_WITH_WORDING_NOTE", "runtimeUse": "RESERVED_NOT_EMITTED_BY_CURRENT_FRONT_DOOR", "note": "If later surfaced, present as 'Likely pathway identified — verification still required' while preserving the semantic contract." },
+    { "category": "Conditional", "homeownerComprehension": "PASS", "note": "The headline and constraint text make continued verification explicit." },
+    { "category": "Needs property evidence", "homeownerComprehension": "PASS", "note": "Reads as a request for facts rather than an error." },
+    { "category": "Needs project details", "homeownerComprehension": "PASS", "note": "Explains the project detail still needed." },
+    { "category": "Outside current scope", "homeownerComprehension": "PASS", "note": "States that the parcel was found while detailed evaluation is unavailable." },
+    { "category": "Source unavailable", "homeownerComprehension": "PASS", "note": "Withholds conclusions and explains jurisdiction or temporary evaluation limits." }
+  ]
+}

@@ -244,6 +244,7 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
   const [existingSpace, setExistingSpace] = useState<ExistingSpace | null>(null);
   const [intakeError, setIntakeError] = useState<string | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const candidatesRef = useRef<HTMLElement>(null);
   const resultRef = useRef<HTMLDivElement>(null);
   const inputId = useId();
 
@@ -253,6 +254,7 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
     setLookup(result);
     setSelected(null);
     setEvaluation(null);
+    window.setTimeout(() => candidatesRef.current?.focus(), 0);
   }
 
   function choose(candidate: FrontDoorCandidate) {
@@ -339,7 +341,12 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
       </section>
 
       {lookup ? (
-        <section aria-live="polite" className={styles.candidates}>
+        <section
+          aria-live="polite"
+          className={styles.candidates}
+          ref={candidatesRef}
+          tabIndex={-1}
+        >
           <div className={styles.sectionHeading}>
             <div>
               <p className={styles.kicker}>Search result</p>

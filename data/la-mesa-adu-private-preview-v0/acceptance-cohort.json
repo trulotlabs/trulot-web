@@ -1,0 +1,189 @@
+{
+  "schemaVersion": "la-mesa-adu-private-preview-acceptance-v0",
+  "selectionDoctrine": "Deterministic real-parcel cohort spanning ordinary, mapped-context, ambiguity, unsupported, and fail-closed states.",
+  "cases": [
+    {
+      "id": "ordinary-r1-benchmark",
+      "coverage": [
+        "ORDINARY_R1",
+        "DETACHED_FLOW"
+      ],
+      "apn": "4640301100",
+      "query": "5836 Pawnee Drive",
+      "expectedInitialCategory": "Needs property evidence",
+      "intake": {
+        "existingUse": "ONE_DETACHED_HOUSE",
+        "aduIdea": "NEW_DETACHED_ADU"
+      },
+      "expectedResultCategory": "Conditional",
+      "expectedPathway": "SF_DETACHED_66323_ADU"
+    },
+    {
+      "id": "ordinary-r1-additional",
+      "coverage": [
+        "ORDINARY_R1",
+        "ADDITIONAL_NON_GOLDEN",
+        "NOT_SURE_FLOW"
+      ],
+      "apn": "4640301200",
+      "query": "464-030-12-00",
+      "expectedInitialCategory": "Needs property evidence",
+      "intake": {
+        "existingUse": "NOT_SURE",
+        "aduIdea": "NOT_SURE"
+      },
+      "expectedResultCategory": "Needs property evidence",
+      "expectedPathway": null
+    },
+    {
+      "id": "ordinary-r1s-additional",
+      "coverage": [
+        "ORDINARY_R1S",
+        "ADDITIONAL_NON_GOLDEN"
+      ],
+      "apn": "4635800100",
+      "query": "5498 Pennsylvania Lane",
+      "expectedInitialCategory": "Needs property evidence",
+      "intake": {
+        "existingUse": "ONE_DETACHED_HOUSE",
+        "aduIdea": "ATTACHED_ADDITION"
+      },
+      "expectedResultCategory": "Conditional",
+      "expectedPathway": "SF_LOCAL_66314_ADU"
+    },
+    {
+      "id": "scenic-preservation",
+      "coverage": [
+        "SCENIC_PRESERVATION",
+        "CONDITIONAL_CONTEXT"
+      ],
+      "apn": "4912600700",
+      "query": "4912600700",
+      "expectedInitialCategory": "Needs property evidence",
+      "intake": {
+        "existingUse": "ONE_DETACHED_HOUSE",
+        "aduIdea": "NEW_DETACHED_ADU"
+      },
+      "expectedResultCategory": "Conditional",
+      "expectedPathway": "SF_DETACHED_66323_ADU"
+    },
+    {
+      "id": "hillside",
+      "coverage": [
+        "HILLSIDE",
+        "CONDITIONAL_CONTEXT"
+      ],
+      "apn": "4752412200",
+      "query": "4284 Summit Drive",
+      "expectedInitialCategory": "Needs property evidence",
+      "intake": {
+        "existingUse": "ONE_DETACHED_HOUSE",
+        "aduIdea": "NEW_DETACHED_ADU"
+      },
+      "expectedResultCategory": "Conditional",
+      "expectedPathway": "SF_DETACHED_66323_ADU"
+    },
+    {
+      "id": "r3-multifamily",
+      "coverage": [
+        "R3",
+        "MULTIFAMILY_FLOW"
+      ],
+      "apn": "4640201000",
+      "query": "5877 Baltimore Drive",
+      "expectedInitialCategory": "Needs property evidence",
+      "intake": {
+        "existingUse": "TWO_OR_MORE_DWELLINGS",
+        "aduIdea": "NEW_DETACHED_ADU"
+      },
+      "expectedResultCategory": "Conditional",
+      "expectedPathway": "MF_DETACHED_EXISTING_66323_ADU"
+    },
+    {
+      "id": "combined-overlays",
+      "coverage": [
+        "COMBINED_OVERLAY",
+        "MULTIFAMILY_FLOW",
+        "CONVERSION_FLOW"
+      ],
+      "apn": "4904720700",
+      "query": "490-472-07-00",
+      "expectedInitialCategory": "Needs property evidence",
+      "intake": {
+        "existingUse": "TWO_OR_MORE_DWELLINGS",
+        "aduIdea": "CONVERSION",
+        "existingSpace": "YES"
+      },
+      "expectedResultCategory": "Conditional",
+      "expectedPathway": "MF_CONVERSION_66323_ADU"
+    },
+    {
+      "id": "large-duplicate-address",
+      "coverage": [
+        "DUPLICATE_ADDRESS",
+        "LARGE_CONDO_GROUP"
+      ],
+      "apn": "4640203301",
+      "query": "5700 Baltimore Drive",
+      "expectedInitialCategory": "Needs property evidence",
+      "intake": null,
+      "expectedResultCategory": "Needs property evidence",
+      "expectedPathway": null
+    },
+    {
+      "id": "ordinary-duplicate-address",
+      "coverage": [
+        "DUPLICATE_ADDRESS",
+        "ORDINARY_COLLISION"
+      ],
+      "apn": "4745510700",
+      "query": "3706 King Street",
+      "expectedInitialCategory": "Needs property evidence",
+      "intake": null,
+      "expectedResultCategory": "Needs property evidence",
+      "expectedPathway": null
+    },
+    {
+      "id": "missing-address",
+      "coverage": [
+        "APN_ONLY",
+        "MISSING_ADDRESS"
+      ],
+      "apn": "4640202200",
+      "query": "464 020 22 00",
+      "expectedInitialCategory": "Needs property evidence",
+      "intake": {
+        "existingUse": "ONE_DETACHED_HOUSE",
+        "aduIdea": "JADU"
+      },
+      "expectedResultCategory": "Conditional",
+      "expectedPathway": "SF_JADU_66323"
+    },
+    {
+      "id": "unsupported-tbd",
+      "coverage": [
+        "UNSUPPORTED",
+        "TBD"
+      ],
+      "apn": "4645231900",
+      "query": "4645231900",
+      "expectedInitialCategory": "Outside current scope",
+      "intake": null,
+      "expectedResultCategory": "Outside current scope",
+      "expectedPathway": null
+    },
+    {
+      "id": "jurisdiction-conflict",
+      "coverage": [
+        "JURISDICTION_CONFLICT",
+        "FAIL_CLOSED"
+      ],
+      "apn": "7601960217",
+      "query": "760-196-02-17",
+      "expectedInitialCategory": "Source unavailable",
+      "intake": null,
+      "expectedResultCategory": "Source unavailable",
+      "expectedPathway": null
+    }
+  ]
+}

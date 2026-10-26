@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "la-mesa-adu-private-preview-fix-log-v0",
+  "issues": [
+    {
+      "id": "SEARCH_RESULT_FOCUS",
+      "classification": "MATERIAL_FRICTION",
+      "observed": "Keyboard focus remained on the search control after results rendered.",
+      "fix": "Move focus to the announced candidate region after each search.",
+      "scope": "LaMesaADU client only",
+      "status": "RESOLVED",
+      "regressionEvidence": [
+        "12 mobile cohort cases",
+        "12 desktop cohort cases",
+        "restart focus",
+        "no console or page errors"
+      ]
+    }
+  ],
+  "remainingMaterialIssues": []
+}

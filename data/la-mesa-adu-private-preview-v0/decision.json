@@ -1,0 +1,12 @@
+{
+  "decision": "LAMESAADU_PRIVATE_PREVIEW_READY_FOR_HUMAN_PILOT",
+  "nextStep": "LAMESAADU_PROTECTED_PRIVATE_PREVIEW",
+  "cohortCases": 12,
+  "mobileCasesPassed": 12,
+  "desktopCasesPassed": 12,
+  "materialIssuesFound": 1,
+  "materialIssuesResolved": 1,
+  "remainingMaterialIssues": 0,
+  "deploymentPerformed": false,
+  "productionAccess": false
+}

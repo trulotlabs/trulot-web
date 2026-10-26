@@ -1,0 +1,97 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": {
+      "bytes": 1103,
+      "sha256": "cc69ad64759a9a7433f4210851485e448b809dedf02b248cf70b025981272afe"
+    },
+    "acceptance-cohort.json": {
+      "bytes": 5346,
+      "sha256": "3325605470a356c72703ab58a6650af30803ae526077a6a8849c2022fa2950de"
+    },
+    "acceptance-log.json": {
+      "bytes": 6494,
+      "sha256": "3adea5d845e760b0a79f5a776c0f3e39f1ef79cf792d3539f8f3210efcae5714"
+    },
+    "decision.json": {
+      "bytes": 349,
+      "sha256": "2be77d03f734347d87088a0c388d30a8dd14f4f4523b61e93e5f5e5810d7bbd5"
+    },
+    "fix-log.json": {
+      "bytes": 615,
+      "sha256": "ce55a6e49059cd7ea0d561b5428d621f0249c89d8d3d8882fa4d5a80d9f899cd"
+    },
+    "pilot-observation-template.md": {
+      "bytes": 362,
+      "sha256": "5e35c51ce08b62fb9e79d8a7a3e8168e748ed78ad4d756274be59afc10967d4d"
+    },
+    "pilot-operating-plan.md": {
+      "bytes": 889,
+      "sha256": "804d17ca78b6907934de7ae40f285937254c374e2141c223f5f33787e348606d"
+    },
+    "protected-preview-design.md": {
+      "bytes": 699,
+      "sha256": "1025c20f80969e8d8b957ae9efa5c1d42edc43095f8437875fe0fd89ee66daf9"
+    },
+    "review-evidence/README.md": {
+      "bytes": 814,
+      "sha256": "781e9e7db3f1af795f51ddf80b267f959e477de09c9fa9e6448d9e772f458109"
+    },
+    "review-evidence/browser-results.json": {
+      "bytes": 12791,
+      "sha256": "ed0d9cecfd58e70caa00dc0d5b8384be0db02ca1610e6aacb2d03323bd9ccba6"
+    },
+    "review-evidence/desktop-addressless.png": {
+      "bytes": 558508,
+      "sha256": "fccda24d8b2d84925322a35b47de38a192061d76b1954f8d10beee7369d92a89"
+    },
+    "review-evidence/desktop-combined-overlay.png": {
+      "bytes": 675947,
+      "sha256": "fe6c18e991233eb33325a0c7531310b21d810ed4ee761be6b267f132d98aa35d"
+    },
+    "review-evidence/desktop-duplicate-candidates.png": {
+      "bytes": 295997,
+      "sha256": "6302cec30c25352cd9e4bff3959dc897ba4b05952985d32b24086c4ff938e857"
+    },
+    "review-evidence/desktop-jurisdiction-conflict.png": {
+      "bytes": 330344,
+      "sha256": "389ef426a14f38c4e5f24d8d0a22cf2ab050ddb2077cf0e531ecf4fcaa1724af"
+    },
+    "review-evidence/desktop-ordinary-r1-flow.png": {
+      "bytes": 553215,
+      "sha256": "11a5c7daf04d7c2abb8deefd1b2d43926f20229286cb50e132cc6d2c3ae9f3bf"
+    },
+    "review-evidence/desktop-r1s-flow.png": {
+      "bytes": 554096,
+      "sha256": "da7587586d88cb12bee60cb841dbb989d990e0e4d7a74020f34dbece57a4c225"
+    },
+    "review-evidence/desktop-scenic-conditional.png": {
+      "bytes": 572693,
+      "sha256": "a986d8215a14c6ef7f0afcb073de21e553859006b891f043f5f56289cd81c8db"
+    },
+    "review-evidence/mobile-duplicate-candidates.png": {
+      "bytes": 286045,
+      "sha256": "2e1a5a6a15e0026fe4c556a3b9431bdafd84246ed154587d543ef6cf4240bd2d"
+    },
+    "review-evidence/mobile-hillside-conditional.png": {
+      "bytes": 388130,
+      "sha256": "8f2e79f0e27017db2c6586c20f9110047fc4ca3ac959ca947bd0a73daa881275"
+    },
+    "review-evidence/mobile-ordinary-r1-flow.png": {
+      "bytes": 378806,
+      "sha256": "36dc5bc4cc4619a6309208c11518471b0785aea5b83e129d1084c2d6cb7c9e42"
+    },
+    "review-evidence/mobile-unsupported-tbd.png": {
+      "bytes": 254011,
+      "sha256": "f3a20e2476b94b21cfff1cf9ceb7fd4afc88e6426dc8805ac89bde10ed84bcd8"
+    },
+    "source-link-validation.json": {
+      "bytes": 2125,
+      "sha256": "a6fd86bd184d57d0d7d434579a7a7cfe3770a98eee09de9f989c71b80a1e6174"
+    },
+    "taxonomy-review.json": {
+      "bytes": 1149,
+      "sha256": "5890e03f07ae7d4ef5f46fabf7ca95e2e143c7657e9cf606c7f81a24798d3f95"
+    }
+  }
+}

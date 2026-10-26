@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "la-mesa-adu-private-preview-acceptance-log-v0",
+  "cohortSize": 12,
+  "records": [
+    {
+      "id": "ordinary-r1-benchmark",
+      "apn": "4640301100",
+      "queryUsed": "5836 Pawnee Drive",
+      "selectionBehavior": "UNIQUE_EXACT_CANDIDATE",
+      "candidateCount": 1,
+      "initialState": "Needs property evidence",
+      "intakePath": {
+        "existingUse": "ONE_DETACHED_HOUSE",
+        "aduIdea": "NEW_DETACHED_ADU"
+      },
+      "resultCategory": "Conditional",
+      "evidenceState": "PUBLIC_SOURCE_DISCLOSURE_AVAILABLE",
+      "mobileResult": "PASS",
+      "desktopResult": "PASS",
+      "issueClassification": "NONE"
+    },
+    {
+      "id": "ordinary-r1-additional",
+      "apn": "4640301200",
+      "queryUsed": "464-030-12-00",
+      "selectionBehavior": "UNIQUE_EXACT_CANDIDATE",
+      "candidateCount": 1,
+      "initialState": "Needs property evidence",
+      "intakePath": {
+        "existingUse": "NOT_SURE",
+        "aduIdea": "NOT_SURE"
+      },
+      "resultCategory": "Needs property evidence",
+      "evidenceState": "PUBLIC_SOURCE_DISCLOSURE_AVAILABLE",
+      "mobileResult": "PASS",
+      "desktopResult": "PASS",
+      "issueClassification": "NONE"
+    },
+    {
+      "id": "ordinary-r1s-additional",
+      "apn": "4635800100",
+      "queryUsed": "5498 Pennsylvania Lane",
+      "selectionBehavior": "UNIQUE_EXACT_CANDIDATE",
+      "candidateCount": 1,
+      "initialState": "Needs property evidence",
+      "intakePath": {
+        "existingUse": "ONE_DETACHED_HOUSE",
+        "aduIdea": "ATTACHED_ADDITION"
+      },
+      "resultCategory": "Conditional",
+      "evidenceState": "PUBLIC_SOURCE_DISCLOSURE_AVAILABLE",
+      "mobileResult": "PASS",
+      "desktopResult": "PASS",
+      "issueClassification": "NONE"
+    },
+    {
+      "id": "scenic-preservation",
+      "apn": "4912600700",
+      "queryUsed": "4912600700",
+      "selectionBehavior": "UNIQUE_EXACT_CANDIDATE",
+      "candidateCount": 1,
+      "initialState": "Needs property evidence",
+      "intakePath": {
+        "existingUse": "ONE_DETACHED_HOUSE",
+        "aduIdea": "NEW_DETACHED_ADU"
+      },
+      "resultCategory": "Conditional",
+      "evidenceState": "PUBLIC_SOURCE_DISCLOSURE_AVAILABLE",
+      "mobileResult": "PASS",
+      "desktopResult": "PASS",
+      "issueClassification": "NONE"
+    },
+    {
+      "id": "hillside",
+      "apn": "4752412200",
+      "queryUsed": "4284 Summit Drive",
+      "selectionBehavior": "UNIQUE_EXACT_CANDIDATE",
+      "candidateCount": 1,
+      "initialState": "Needs property evidence",
+      "intakePath": {
+        "existingUse": "ONE_DETACHED_HOUSE",
+        "aduIdea": "NEW_DETACHED_ADU"
+      },
+      "resultCategory": "Conditional",
+      "evidenceState": "PUBLIC_SOURCE_DISCLOSURE_AVAILABLE",
+      "mobileResult": "PASS",
+      "desktopResult": "PASS",
+      "issueClassification": "NONE"
+    },
+    {
+      "id": "r3-multifamily",
+      "apn": "4640201000",
+      "queryUsed": "5877 Baltimore Drive",
+      "selectionBehavior": "UNIQUE_EXACT_CANDIDATE",
+      "candidateCount": 1,
+      "initialState": "Needs property evidence",
+      "intakePath": {
+        "existingUse": "TWO_OR_MORE_DWELLINGS",
+        "aduIdea": "NEW_DETACHED_ADU"
+      },
+      "resultCategory": "Conditional",
+      "evidenceState": "PUBLIC_SOURCE_DISCLOSURE_AVAILABLE",
+      "mobileResult": "PASS",
+      "desktopResult": "PASS",
+      "issueClassification": "NONE"
+    },
+    {
+      "id": "combined-overlays",
+      "apn": "4904720700",
+      "queryUsed": "490-472-07-00",
+      "selectionBehavior": "UNIQUE_EXACT_CANDIDATE",
+      "candidateCount": 1,
+      "initialState": "Needs property evidence",
+      "intakePath": {
+        "existingUse": "TWO_OR_MORE_DWELLINGS",
+        "aduIdea": "CONVERSION",
+        "existingSpace": "YES"
+      },
+      "resultCategory": "Conditional",
+      "evidenceState": "PUBLIC_SOURCE_DISCLOSURE_AVAILABLE",
+      "mobileResult": "PASS",
+      "desktopResult": "PASS",
+      "issueClassification": "NONE"
+    },
+    {
+      "id": "large-duplicate-address",
+      "apn": "4640203301",
+      "queryUsed": "5700 Baltimore Drive",
+      "selectionBehavior": "EXPLICIT_CANDIDATE_SELECTION",
+      "candidateCount": 10,
+      "initialState": "Needs property evidence",
+      "intakePath": "NOT_APPLICABLE",
+      "resultCategory": "Needs property evidence",
+      "evidenceState": "PUBLIC_SOURCE_DISCLOSURE_AVAILABLE",
+      "mobileResult": "PASS",
+      "desktopResult": "PASS",
+      "issueClassification": "NONE"
+    },
+    {
+      "id": "ordinary-duplicate-address",
+      "apn": "4745510700",
+      "queryUsed": "3706 King Street",
+      "selectionBehavior": "EXPLICIT_CANDIDATE_SELECTION",
+      "candidateCount": 2,
+      "initialState": "Needs property evidence",
+      "intakePath": "NOT_APPLICABLE",
+      "resultCategory": "Needs property evidence",
+      "evidenceState": "PUBLIC_SOURCE_DISCLOSURE_AVAILABLE",
+      "mobileResult": "PASS",
+      "desktopResult": "PASS",
+      "issueClassification": "NONE"
+    },
+    {
+      "id": "missing-address",
+      "apn": "4640202200",
+      "queryUsed": "464 020 22 00",
+      "selectionBehavior": "UNIQUE_EXACT_CANDIDATE",
+      "candidateCount": 1,
+      "initialState": "Needs property evidence",
+      "intakePath": {
+        "existingUse": "ONE_DETACHED_HOUSE",
+        "aduIdea": "JADU"
+      },
+      "resultCategory": "Conditional",
+      "evidenceState": "PUBLIC_SOURCE_DISCLOSURE_AVAILABLE",
+      "mobileResult": "PASS",
+      "desktopResult": "PASS",
+      "issueClassification": "NONE"
+    },
+    {
+      "id": "unsupported-tbd",
+      "apn": "4645231900",
+      "queryUsed": "4645231900",
+      "selectionBehavior": "UNIQUE_EXACT_CANDIDATE",
+      "candidateCount": 1,
+      "initialState": "Outside current scope",
+      "intakePath": "NOT_APPLICABLE",
+      "resultCategory": "Outside current scope",
+      "evidenceState": "PUBLIC_SOURCE_DISCLOSURE_AVAILABLE",
+      "mobileResult": "PASS",
+      "desktopResult": "PASS",
+      "issueClassification": "NONE"
+    },
+    {
+      "id": "jurisdiction-conflict",
+      "apn": "7601960217",
+      "queryUsed": "760-196-02-17",
+      "selectionBehavior": "UNIQUE_EXACT_CANDIDATE",
+      "candidateCount": 1,
+      "initialState": "Source unavailable",
+      "intakePath": "NOT_APPLICABLE",
+      "resultCategory": "Source unavailable",
+      "evidenceState": "WITHHELD_WITH_EVALUATION",
+      "mobileResult": "PASS",
+      "desktopResult": "PASS",
+      "issueClassification": "NONE"
+    }
+  ]
+}

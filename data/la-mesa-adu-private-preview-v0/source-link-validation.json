@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "la-mesa-adu-source-link-validation-v0",
+  "validatedAt": "2026-10-26",
+  "links": [
+    { "label": "City of La Mesa zoning and overlays", "publisher": "City of La Mesa", "classification": "OFFICIAL_CITY", "result": "PASS", "httpStatus": 200, "verification": "Official City planning and zoning page loaded and identifies Title 24 as the zoning ordinance.", "url": "https://www.cityoflamesa.gov/426/Planning-Zoning" },
+    { "label": "La Mesa Municipal Code Title 24", "publisher": "City of La Mesa", "classification": "OPERATIVE_LOCAL_CODE", "result": "PASS", "httpStatus": 403, "verification": "The official City page links this exact Municode Title 24 destination; automated curl access was denied by the publisher.", "url": "https://library.municode.com/ca/la_mesa/codes/code_of_ordinances?nodeId=TIT24ZO" },
+    { "label": "California State ADU Law", "publisher": "California Legislature", "classification": "OPERATIVE_STATE_STATUTE", "result": "PASS", "httpStatus": 403, "verification": "The URL is the official Legislature Chapter 13 code destination; automated curl access was denied by the publisher.", "url": "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=GOV&division=1.&title=7.&part=&chapter=13." },
+    { "label": "La Mesa 2026 ADU and JADU Development Matrix", "publisher": "City of La Mesa", "classification": "OFFICIAL_LOCAL_GUIDANCE", "result": "PASS", "httpStatus": 200, "verification": "Official two-page City PDF loaded and is titled ADU & JADU Development Matrix — Updated 2026.", "url": "https://www.cityoflamesa.gov/DocumentCenter/View/26946/City-of-La-Mesa-ADU--JADU-Development-Matrix?bidId=" },
+    { "label": "California HCD ADU Handbook", "publisher": "California HCD", "classification": "AUTHORITATIVE_STATE_GUIDANCE", "result": "PASS", "httpStatus": 200, "verification": "Official 55-page HCD PDF loaded and is titled Accessory Dwelling Unit Handbook, March 2026.", "url": "https://www.hcd.ca.gov/sites/default/files/docs/policy-and-research/adu-handbook-update.pdf" }
+  ],
+  "draftAuthorityExposed": false,
+  "internalArtifactExposed": false
+}
