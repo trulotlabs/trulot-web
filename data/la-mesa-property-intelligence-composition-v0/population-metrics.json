@@ -1,0 +1,27 @@
+{
+  "denominator": 17391,
+  "preselectionReady": 11770,
+  "confirmationRequired": 15648,
+  "conflict": 3626,
+  "activeChange": 3,
+  "unknown": 709,
+  "condo": 3370,
+  "accessoryCandidateTailored": 2110,
+  "currentnessStates": {
+    "ACTIVE_CHANGE_IN_PROGRESS": 3,
+    "CONFLICTING_EVIDENCE": 499,
+    "CURRENTNESS_UNKNOWN": 709,
+    "LATER_CHANGE_OBSERVED": 6,
+    "OBSERVATIONAL_SUPPORT_ONLY": 1034,
+    "RECORDED_CURRENT_ENOUGH_FOR_PRESELECTION": 11802,
+    "RECORDED_STALE_POSSIBLE": 3338
+  },
+  "dwellingStates": {
+    "CONDO": 3370,
+    "CONFLICTING": 508,
+    "MULTIFAMILY_LIKELY": 1137,
+    "SINGLE_FAMILY_LIKELY": 10633,
+    "UNKNOWN": 1743
+  },
+  "boundedPermitEvidenceParcels": 50
+}

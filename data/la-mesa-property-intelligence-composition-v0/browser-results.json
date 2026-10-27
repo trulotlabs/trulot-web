@@ -1,0 +1,64 @@
+{
+  "reviewDate": "2026-10-27",
+  "route": "/la-mesa-adu",
+  "runtime": "local protected preview",
+  "viewports": {
+    "desktopBrowserWindow": "1495x988",
+    "mobileEmulation": "400x721"
+  },
+  "cases": [
+    {
+      "apn": "4685100900",
+      "case": "Bruce Court",
+      "desktop": "PASS",
+      "mobile": "PASS",
+      "proof": "Recorded-single-family confirmation appeared first with Yes, No, and Not sure; choosing Yes revealed the ADU-idea question next without a footprint prompt."
+    },
+    {
+      "apn": "4641801100",
+      "case": "finaled ADU",
+      "desktop": "PASS",
+      "mobile": "PASS",
+      "proof": "Later-change warning and one current-configuration question appeared without treating the ADU evidence as a completed legal dwelling count."
+    },
+    {
+      "apn": "4944102400",
+      "case": "active development",
+      "desktop": "PASS",
+      "mobile": "PASS",
+      "proof": "Active-change warning appeared with current-configuration choices while the page explicitly kept ADU pathway evaluation unavailable for the unsupported zoning profile."
+    },
+    {
+      "apn": "4640203301",
+      "case": "condominium",
+      "desktop": "PASS",
+      "mobile": "PASS",
+      "proof": "Condominium-specific confirmation appeared and no ADU pathway was automatically selected."
+    },
+    {
+      "apn": "4640202200",
+      "case": "missing data",
+      "desktop": "PASS",
+      "mobile": "PASS",
+      "proof": "The page used the blank current-property question and made no recorded dwelling claim."
+    },
+    {
+      "apn": "4635801000",
+      "case": "accessory candidate",
+      "desktop": "PASS",
+      "mobile": "PASS",
+      "proof": "The accessory question appeared only after choosing the conversion pathway, retained the older 2017 Spring mapping qualifier, and offered Yes, No, and Not sure without a garage or ADU classification."
+    }
+  ],
+  "layout": {
+    "desktopOverflow": false,
+    "mobileOverflow": false,
+    "questionOrder": "PASS"
+  },
+  "console": {
+    "messages": 0,
+    "packet76Errors": 0,
+    "status": "PASS"
+  },
+  "notes": "Browser review used only the local protected preview and sealed repository artifacts. No production request was made."
+}

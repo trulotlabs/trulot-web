@@ -1,0 +1,538 @@
+{
+  "cases": {
+    "bruceCourt": {
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_LA_MESA",
+          "apn": "4685100900"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_SINGLE_FAMILY_LIKELY",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "SINGLE_FAMILY_LIKELY",
+        "condoState": "NOT_RECORDED_CONDO",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_CHANGE_FOUND_IN_BOUNDED_QUERY",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "BOUNDED_PACKET_74_COHORT",
+        "structureObservation": {
+          "observedFootprintCount": 1,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "NO_LATER_CHANGE_KNOWN",
+          "evidenceReference": "packet75:parcel-structure-summaries.ndjson.gz#4685100900"
+        },
+        "currentnessState": "RECORDED_CURRENT_ENOUGH_FOR_PRESELECTION",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "packet73:property-characteristics.ndjson.gz#4685100900",
+          "packet75:parcel-structure-summaries.ndjson.gz#4685100900",
+          "packet74:cohort-results.json#4685100900"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": true,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": true,
+          "CURRENTNESS_WARNING": false,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": true,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "questions": {
+        "primary": {
+          "kind": "RECORDED_CONFIRMATION",
+          "prompt": "Public property records indicate one detached residence. Is that still correct?",
+          "preselectedUse": "ONE_DETACHED_HOUSE"
+        },
+        "accessory": null
+      }
+    },
+    "finaledAdu": {
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_LA_MESA",
+          "apn": "4641801100"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_RESIDENTIAL_CONFLICT",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "CONFLICTING",
+        "condoState": "NOT_RECORDED_CONDO",
+        "assessorHints": [
+          "ASSESSOR_ADU_HINT_REQUIRES_CURRENT_CONFIGURATION_REVIEW"
+        ],
+        "permitChangeSignal": "FINALED_EXPLICIT_CHANGE",
+        "explicitAduPermitEvidence": "FINALED",
+        "permitEvidenceScope": "BOUNDED_PACKET_74_COHORT",
+        "structureObservation": {
+          "observedFootprintCount": 2,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "LATER_CHANGE_OBSERVED",
+          "evidenceReference": "packet75:parcel-structure-summaries.ndjson.gz#4641801100"
+        },
+        "currentnessState": "LATER_CHANGE_OBSERVED",
+        "conflicts": [
+          {
+            "conflictType": "RECORDED_CHARACTERISTIC_CONFLICT",
+            "sourceA": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4641801100"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4641801100#ASSESSOR_ADU_HINT_REQUIRES_CURRENT_CONFIGURATION_REVIEW"
+            },
+            "affectedFact": "DWELLING_CONFIGURATION",
+            "currentnessRelevance": "ASSESSOR_ADU_HINT_REQUIRES_CURRENT_CONFIGURATION_REVIEW",
+            "resolutionState": "HOMEOWNER_CONFIRMATION_REQUIRED",
+            "allowedUse": "QUESTION_SELECTION"
+          },
+          {
+            "conflictType": "RECORDED_CHARACTERISTIC_CONFLICT",
+            "sourceA": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4641801100"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4641801100#DETACHED_USE_AND_MULTIPLE_RECORDED_UNITS"
+            },
+            "affectedFact": "DWELLING_CONFIGURATION",
+            "currentnessRelevance": "DETACHED_USE_AND_MULTIPLE_RECORDED_UNITS",
+            "resolutionState": "HOMEOWNER_CONFIRMATION_REQUIRED",
+            "allowedUse": "QUESTION_SELECTION"
+          },
+          {
+            "conflictType": "LATER_CHANGE_VS_RECORDED_STATE",
+            "sourceA": {
+              "authority": "EXPLICIT_FINALED_PERMIT_FACT",
+              "evidenceReference": "packet74:cohort-results.json#4641801100"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4641801100"
+            },
+            "affectedFact": "DWELLING_CONFIGURATION",
+            "currentnessRelevance": "A later explicit change prevents stale recorded configuration from being preselected.",
+            "resolutionState": "HOMEOWNER_CONFIRMATION_REQUIRED",
+            "allowedUse": "CURRENTNESS_WARNING"
+          },
+          {
+            "conflictType": "OLDER_GEOMETRY_VS_LATER_CHANGE",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet75:parcel-structure-summaries.ndjson.gz#4641801100"
+            },
+            "sourceB": {
+              "authority": "EXPLICIT_FINALED_PERMIT_FACT",
+              "evidenceReference": "packet74:cohort-results.json#4641801100"
+            },
+            "affectedFact": "STRUCTURE_CURRENTNESS",
+            "currentnessRelevance": "The observation predates the later change and cannot represent current configuration.",
+            "resolutionState": "UNRESOLVED",
+            "allowedUse": "CURRENTNESS_WARNING"
+          }
+        ],
+        "conflictReasons": [
+          "RECORDED_CHARACTERISTIC_CONFLICT",
+          "RECORDED_CHARACTERISTIC_CONFLICT",
+          "LATER_CHANGE_VS_RECORDED_STATE",
+          "OLDER_GEOMETRY_VS_LATER_CHANGE"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "packet73:property-characteristics.ndjson.gz#4641801100",
+          "packet75:parcel-structure-summaries.ndjson.gz#4641801100",
+          "packet74:cohort-results.json#4641801100"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "questions": {
+        "primary": {
+          "kind": "CURRENT_CONFIGURATION",
+          "prompt": "Public records are not consistent about the current property configuration. What is currently on the property?",
+          "preselectedUse": null
+        },
+        "accessory": null
+      }
+    },
+    "activeDevelopment": {
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_LA_MESA",
+          "apn": "4944102400"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_RESIDENTIAL_CONFLICT",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "CONFLICTING",
+        "condoState": "NOT_RECORDED_CONDO",
+        "assessorHints": [],
+        "permitChangeSignal": "ACTIVE_EXPLICIT_CHANGE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "BOUNDED_PACKET_74_COHORT",
+        "structureObservation": {
+          "observedFootprintCount": 1,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "LATER_CHANGE_OBSERVED",
+          "evidenceReference": "packet75:parcel-structure-summaries.ndjson.gz#4944102400"
+        },
+        "currentnessState": "ACTIVE_CHANGE_IN_PROGRESS",
+        "conflicts": [
+          {
+            "conflictType": "RECORDED_CHARACTERISTIC_CONFLICT",
+            "sourceA": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4944102400"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4944102400#LATER_CHANGE_EVIDENCE:LA_MESA_PROJECT_2021-40_UNDER_CONSTRUCTION_2026-05-12"
+            },
+            "affectedFact": "DWELLING_CONFIGURATION",
+            "currentnessRelevance": "LATER_CHANGE_EVIDENCE:LA_MESA_PROJECT_2021-40_UNDER_CONSTRUCTION_2026-05-12",
+            "resolutionState": "HOMEOWNER_CONFIRMATION_REQUIRED",
+            "allowedUse": "QUESTION_SELECTION"
+          },
+          {
+            "conflictType": "LATER_CHANGE_VS_RECORDED_STATE",
+            "sourceA": {
+              "authority": "EXPLICIT_ISSUED_CHANGE_SIGNAL",
+              "evidenceReference": "packet74:cohort-results.json#4944102400"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4944102400"
+            },
+            "affectedFact": "DWELLING_CONFIGURATION",
+            "currentnessRelevance": "A later explicit change prevents stale recorded configuration from being preselected.",
+            "resolutionState": "HOMEOWNER_CONFIRMATION_REQUIRED",
+            "allowedUse": "CURRENTNESS_WARNING"
+          },
+          {
+            "conflictType": "OLDER_GEOMETRY_VS_LATER_CHANGE",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet75:parcel-structure-summaries.ndjson.gz#4944102400"
+            },
+            "sourceB": {
+              "authority": "EXPLICIT_ISSUED_CHANGE_SIGNAL",
+              "evidenceReference": "packet74:cohort-results.json#4944102400"
+            },
+            "affectedFact": "STRUCTURE_CURRENTNESS",
+            "currentnessRelevance": "The observation predates the later change and cannot represent current configuration.",
+            "resolutionState": "UNRESOLVED",
+            "allowedUse": "CURRENTNESS_WARNING"
+          }
+        ],
+        "conflictReasons": [
+          "RECORDED_CHARACTERISTIC_CONFLICT",
+          "LATER_CHANGE_VS_RECORDED_STATE",
+          "OLDER_GEOMETRY_VS_LATER_CHANGE"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "packet73:property-characteristics.ndjson.gz#4944102400",
+          "packet75:parcel-structure-summaries.ndjson.gz#4944102400",
+          "packet74:cohort-results.json#4944102400"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "questions": {
+        "primary": {
+          "kind": "CURRENT_CONFIGURATION",
+          "prompt": "Public records are not consistent about the current property configuration. What is currently on the property?",
+          "preselectedUse": null
+        },
+        "accessory": null
+      }
+    },
+    "expiredAdu": {
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_LA_MESA",
+          "apn": "4705321100"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_RESIDENTIAL_CONFLICT",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "CONFLICTING",
+        "condoState": "NOT_RECORDED_CONDO",
+        "assessorHints": [
+          "ASSESSOR_ADU_HINT_REQUIRES_CURRENT_CONFIGURATION_REVIEW"
+        ],
+        "permitChangeSignal": "EXPIRED_OR_WITHDRAWN_PROPOSAL",
+        "explicitAduPermitEvidence": "EXPIRED_OR_WITHDRAWN",
+        "permitEvidenceScope": "BOUNDED_PACKET_74_COHORT",
+        "structureObservation": {
+          "observedFootprintCount": 1,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "NO_LATER_CHANGE_KNOWN",
+          "evidenceReference": "packet75:parcel-structure-summaries.ndjson.gz#4705321100"
+        },
+        "currentnessState": "CONFLICTING_EVIDENCE",
+        "conflicts": [
+          {
+            "conflictType": "RECORDED_CHARACTERISTIC_CONFLICT",
+            "sourceA": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4705321100"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4705321100#ASSESSOR_ADU_HINT_REQUIRES_CURRENT_CONFIGURATION_REVIEW"
+            },
+            "affectedFact": "DWELLING_CONFIGURATION",
+            "currentnessRelevance": "ASSESSOR_ADU_HINT_REQUIRES_CURRENT_CONFIGURATION_REVIEW",
+            "resolutionState": "HOMEOWNER_CONFIRMATION_REQUIRED",
+            "allowedUse": "QUESTION_SELECTION"
+          },
+          {
+            "conflictType": "RECORDED_CHARACTERISTIC_CONFLICT",
+            "sourceA": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4705321100"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4705321100#DETACHED_USE_AND_MULTIPLE_RECORDED_UNITS"
+            },
+            "affectedFact": "DWELLING_CONFIGURATION",
+            "currentnessRelevance": "DETACHED_USE_AND_MULTIPLE_RECORDED_UNITS",
+            "resolutionState": "HOMEOWNER_CONFIRMATION_REQUIRED",
+            "allowedUse": "QUESTION_SELECTION"
+          }
+        ],
+        "conflictReasons": [
+          "RECORDED_CHARACTERISTIC_CONFLICT",
+          "RECORDED_CHARACTERISTIC_CONFLICT"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "packet73:property-characteristics.ndjson.gz#4705321100",
+          "packet75:parcel-structure-summaries.ndjson.gz#4705321100",
+          "packet74:cohort-results.json#4705321100"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "questions": {
+        "primary": {
+          "kind": "CURRENT_CONFIGURATION",
+          "prompt": "Public records are not consistent about the current property configuration. What is currently on the property?",
+          "preselectedUse": null
+        },
+        "accessory": null
+      }
+    },
+    "condo": {
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_LA_MESA",
+          "apn": "4640203301"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_CONDO",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "CONDO",
+        "condoState": "RECORDED_CONDO",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_CHANGE_FOUND_IN_BOUNDED_QUERY",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "BOUNDED_PACKET_74_COHORT",
+        "structureObservation": {
+          "observedFootprintCount": 10,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": true,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet75:parcel-structure-summaries.ndjson.gz#4640203301"
+        },
+        "currentnessState": "RECORDED_STALE_POSSIBLE",
+        "conflicts": [
+          {
+            "conflictType": "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet75:parcel-structure-summaries.ndjson.gz#4640203301"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "packet73:property-characteristics.ndjson.gz#4640203301"
+            },
+            "affectedFact": "UNIT_LEVEL_STRUCTURE_ASSIGNMENT",
+            "currentnessRelevance": "Common-parcel geometry cannot be assigned to an individual unit.",
+            "resolutionState": "UNIT_LEVEL_INFERENCE_BLOCKED",
+            "allowedUse": "PRELIMINARY_SCREENING_ONLY"
+          }
+        ],
+        "conflictReasons": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "packet73:property-characteristics.ndjson.gz#4640203301",
+          "packet75:parcel-structure-summaries.ndjson.gz#4640203301",
+          "packet74:cohort-results.json#4640203301"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": true,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "questions": {
+        "primary": {
+          "kind": "CONDO_CONFIRMATION",
+          "prompt": "Public property records indicate a condominium. Is that still correct?",
+          "preselectedUse": "CONDOMINIUM"
+        },
+        "accessory": null
+      }
+    },
+    "missingData": {
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_LA_MESA",
+          "apn": "4640202200"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_CHANGE_FOUND_IN_BOUNDED_QUERY",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "BOUNDED_PACKET_74_COHORT",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet75:parcel-structure-summaries.ndjson.gz#4640202200"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "packet73:property-characteristics.ndjson.gz#4640202200",
+          "packet75:parcel-structure-summaries.ndjson.gz#4640202200",
+          "packet74:cohort-results.json#4640202200"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "questions": {
+        "primary": null,
+        "accessory": null
+      }
+    },
+    "accessoryStructure": {
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_LA_MESA",
+          "apn": "4635801000"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_SINGLE_FAMILY_LIKELY",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "SINGLE_FAMILY_LIKELY",
+        "condoState": "NOT_RECORDED_CONDO",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 2,
+          "accessoryStructureCandidate": true,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_PARTIAL",
+          "evidenceReference": "packet75:parcel-structure-summaries.ndjson.gz#4635801000"
+        },
+        "currentnessState": "RECORDED_CURRENT_ENOUGH_FOR_PRESELECTION",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "packet73:property-characteristics.ndjson.gz#4635801000",
+          "packet75:parcel-structure-summaries.ndjson.gz#4635801000"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": true,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": true,
+          "CURRENTNESS_WARNING": false,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": true,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "questions": {
+        "primary": {
+          "kind": "RECORDED_CONFIRMATION",
+          "prompt": "Public property records indicate one detached residence. Is that still correct?",
+          "preselectedUse": "ONE_DETACHED_HOUSE"
+        },
+        "accessory": {
+          "prompt": "Older mapping shows a detached secondary structure on the parcel. Is that structure still there?",
+          "observationDate": "2017-Spring"
+        }
+      }
+    }
+  }
+}

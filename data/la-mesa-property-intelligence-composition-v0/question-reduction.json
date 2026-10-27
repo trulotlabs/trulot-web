@@ -1,0 +1,13 @@
+{
+  "packet73Baseline": {
+    "confirmationPrompt": 15141,
+    "blankExistingUsePrompt": 2250
+  },
+  "packet76": {
+    "recordedOrCondoConfirmationPrompt": 15140,
+    "blankExistingUsePrompt": 1743,
+    "conflictSpecificPrompt": 508,
+    "accessoryStructureTailoredPrompt": 2110
+  },
+  "interpretation": "Conflict prompts replace unsafe recorded preselection; accessory prompts are conditional follow-ups rather than extra independent confirmations."
+}

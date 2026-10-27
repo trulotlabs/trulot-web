@@ -24,7 +24,7 @@ type ServingArtifactRow = {
 type EvaluationArtifactRow = FrontDoorPublicEvaluation & { apn: string };
 
 const ARTIFACT_ROOT = "data/la-mesa-parcel-lookup-serving-v0";
-const PROPERTY_ARTIFACT_ROOT = "data/la-mesa-assessor-property-intelligence-v0";
+const PROPERTY_ARTIFACT_ROOT = "data/la-mesa-property-intelligence-composition-v0";
 let cached: LaMesaFrontDoorDataset | null = null;
 
 function loadRows<T>(name: string, root = ARTIFACT_ROOT): T[] {
@@ -65,8 +65,9 @@ export function buildLaMesaFrontDoorDataset(): LaMesaFrontDoorDataset {
   const evaluationRows = loadRows<EvaluationArtifactRow>("evaluation-index.ndjson.gz");
   let propertyIntelligence: LaMesaFrontDoorDataset["propertyIntelligence"] = {};
   try {
-    const assessorRows = loadRows<FrontDoorPropertyIntelligence & { apn: string }>("property-characteristics.ndjson.gz", PROPERTY_ARTIFACT_ROOT);
-    propertyIntelligence = Object.fromEntries(assessorRows.map(({ apn, ...intelligence }) => [apn, intelligence]));
+    const composedRows = loadRows<FrontDoorPropertyIntelligence>("composed-property-intelligence.ndjson.gz", PROPERTY_ARTIFACT_ROOT);
+    if (composedRows.length !== canonical.length) throw new Error("composed property-intelligence population mismatch");
+    propertyIntelligence = Object.fromEntries(composedRows.map((intelligence) => [intelligence.parcelIdentity.apn, intelligence]));
   } catch {
     // Property intelligence is an optional enhancement. The existing intake remains available.
     propertyIntelligence = {};

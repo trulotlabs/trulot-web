@@ -82,15 +82,16 @@ test("Bruce Ct gets recorded single-family confirmation with no raw age", () => 
 });
 
 test("multifamily, condo, missing, ADU hint, and later-development benchmarks remain bounded", () => {
-  assert.equal(dataset.propertyIntelligence["4640201000"].preliminaryDwellingState, "RECORDED_MULTIFAMILY_LIKELY");
+  assert.equal(dataset.propertyIntelligence["4640201000"].preliminaryDwellingState, "MULTIFAMILY_LIKELY");
+  assert.equal(dataset.propertyIntelligence["4640201000"].recordedDwellingState, "RECORDED_MULTIFAMILY_LIKELY");
   assert.equal(propertyConfirmationFor(dataset.propertyIntelligence["4640201000"])?.prompt, "Public property records indicate multiple dwelling units. Is that still correct?");
-  assert.equal(dataset.propertyIntelligence["4640203301"].preliminaryDwellingState, "RECORDED_CONDO");
+  assert.equal(dataset.propertyIntelligence["4640203301"].preliminaryDwellingState, "CONDO");
   assert.equal(propertyConfirmationFor(dataset.propertyIntelligence["4640203301"])?.preselectedUse, "CONDOMINIUM");
-  assert.equal(dataset.propertyIntelligence["4640202200"].preliminaryDwellingState, "RECORDED_TYPE_UNKNOWN");
+  assert.equal(dataset.propertyIntelligence["4640202200"].preliminaryDwellingState, "UNKNOWN");
   assert.equal(propertyConfirmationFor(dataset.propertyIntelligence["4640202200"]), null);
-  assert.equal(dataset.propertyIntelligence["4705321100"].preliminaryDwellingState, "RECORDED_RESIDENTIAL_CONFLICT");
-  assert.equal(dataset.propertyIntelligence["4705321100"].conflictReasons.includes("ASSESSOR_ADU_HINT_REQUIRES_CURRENT_CONFIGURATION_REVIEW"), true);
-  assert.equal(dataset.propertyIntelligence["4944102400"].preliminaryDwellingState, "RECORDED_RESIDENTIAL_CONFLICT");
+  assert.equal(dataset.propertyIntelligence["4705321100"].preliminaryDwellingState, "CONFLICTING");
+  assert.equal(dataset.propertyIntelligence["4705321100"].assessorHints.includes("ASSESSOR_ADU_HINT_REQUIRES_CURRENT_CONFIGURATION_REVIEW"), true);
+  assert.equal(dataset.propertyIntelligence["4944102400"].preliminaryDwellingState, "CONFLICTING");
 });
 
 test("homeowner correction is preserved separately and recorded disagreement remains a conflict", () => {
@@ -99,9 +100,10 @@ test("homeowner correction is preserved separately and recorded disagreement rem
     aduIdea: { value: "NOT_SURE", provenance: "USER_PROVIDED" },
   };
   const result = evaluateLaMesaFrontDoor(candidate("4685100900"), dataset, answers);
-  assert.equal(result.propertyIntelligence?.preliminaryDwellingState, "RECORDED_SINGLE_FAMILY_LIKELY");
+  assert.equal(result.propertyIntelligence?.preliminaryDwellingState, "SINGLE_FAMILY_LIKELY");
+  assert.equal(result.propertyIntelligence?.recordedDwellingState, "RECORDED_SINGLE_FAMILY_LIKELY");
   assert.equal(result.homeownerAnswers?.existingUse.provenance, "USER_PROVIDED");
-  assert.equal(result.propertyFactConflicts.includes("HOMEOWNER_ANSWER_DIFFERS_FROM_RECORDED_CHARACTERISTIC"), true);
+  assert.equal(result.propertyFactConflicts.includes("HOMEOWNER_VS_RECORDED_STATE"), true);
 });
 
 test("condo confirmation never derives an automatic ADU pathway", () => {
@@ -129,11 +131,11 @@ test("all 17,391 canonical parcels have an exact bounded state partition", () =>
     counts[intelligence.preliminaryDwellingState] = (counts[intelligence.preliminaryDwellingState] ?? 0) + 1;
   }
   assert.deepEqual(counts, {
-    RECORDED_MULTIFAMILY_LIKELY: 1138,
-    RECORDED_TYPE_UNKNOWN: 1745,
-    RECORDED_CONDO: 3370,
-    RECORDED_SINGLE_FAMILY_LIKELY: 10633,
-    RECORDED_RESIDENTIAL_CONFLICT: 505,
+    MULTIFAMILY_LIKELY: 1137,
+    UNKNOWN: 1743,
+    CONDO: 3370,
+    SINGLE_FAMILY_LIKELY: 10633,
+    CONFLICTING: 508,
   });
-  assert.equal(Object.values(dataset.propertyIntelligence).filter((value) => value.eligibleForPreselection).length, 11771);
+  assert.equal(Object.values(dataset.propertyIntelligence).filter((value) => value.eligibleForPreselection).length, 11770);
 });

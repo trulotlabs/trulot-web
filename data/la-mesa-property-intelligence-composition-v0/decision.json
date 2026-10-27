@@ -1,0 +1,5 @@
+{
+  "decision": "LA_MESA_PROPERTY_INTELLIGENCE_COMPOSITION_READY",
+  "nextStep": "SAN_DIEGO_PROPERTY_INTELLIGENCE_EXTENSION",
+  "rationale": "The composition engine, conflicts, questions, V4 boundary, fail-closed behavior, and protected-preview integration are bounded. Extending the reusable assessor/currentness contract to San Diego offers the largest next accuracy payoff without waiting for unresolved La Mesa bulk-permit rights."
+}

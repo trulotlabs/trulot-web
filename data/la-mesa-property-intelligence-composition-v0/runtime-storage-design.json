@@ -1,0 +1,18 @@
+{
+  "migrationApplied": false,
+  "futureTables": [
+    "property_fact",
+    "permit_evidence",
+    "structure_observation",
+    "property_intelligence_conflict",
+    "composed_currentness_snapshot"
+  ],
+  "runtimeInput": "sealed composed derived facts only",
+  "failClosed": "If the composed artifact is missing or corrupt, the protected preview uses Packet 68 blank homeowner intake and parcel/zoning evaluation continues.",
+  "rightsBoundary": [
+    "no live permit query",
+    "no raw permit history",
+    "no raw footprint polygon",
+    "no raw assessor presentation fields"
+  ]
+}

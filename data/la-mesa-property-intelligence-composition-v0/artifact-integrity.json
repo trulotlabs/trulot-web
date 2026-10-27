@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "la-mesa-property-intelligence-composition-v0",
+  "algorithm": "sha256",
+  "composedContentSha256": "fb4f0059cd95f47e99a869236d495121612ac76b8110c8c5bc5bb0ee99bf512b",
+  "files": {
+    "README.md": {
+      "bytes": 759,
+      "sha256": "60b1b600034e09473c230802b309589b45e6949302bc6af12c6e9d2c46901819"
+    },
+    "accuracy-uplift.json": {
+      "bytes": 302,
+      "sha256": "7a97efd7638c60f048cc82a7f4921c5d6566d84575c77c7f31ca38cf926d0fdb"
+    },
+    "authority-order.json": {
+      "bytes": 358,
+      "sha256": "2393e35626e44240b733d20ed71b20d5e10ecfdc441f8c491103875cf48ee7ad"
+    },
+    "browser-results.json": {
+      "bytes": 2202,
+      "sha256": "a828a7d1be5886c2642d424d4dfa332f97f003a024e39c8c903c44523807400a"
+    },
+    "case-results.json": {
+      "bytes": 23463,
+      "sha256": "06b57fe73b2330ad99d289dd6eeaa660ee139ccbafb9848e31fff58980127841"
+    },
+    "composed-property-intelligence.ndjson.gz": {
+      "bytes": 462369,
+      "sha256": "f6949c73039e37c299e22e35cda672f888c66e062eb82b75f7290b1d55017fb8"
+    },
+    "contract.json": {
+      "bytes": 710,
+      "sha256": "00898fc03301836ddbb9717f7069803da10aec8585e308c919d3a37d149ddbab"
+    },
+    "decision.json": {
+      "bytes": 438,
+      "sha256": "418be80bf2894ae9eb95bf2f1af6cdcc92854f75792857b1052b376bcac8a515"
+    },
+    "evaluation-use-matrix.json": {
+      "bytes": 977,
+      "sha256": "1695e5fe575e1d6ea28473116c56ef663875229e6941e773ed8b10ca52d34090"
+    },
+    "population-metrics.json": {
+      "bytes": 693,
+      "sha256": "a4aece7dd25c8f491fd8ea14579e9ae563a1b70b8b14fd494ba1f77ad674229e"
+    },
+    "question-reduction.json": {
+      "bytes": 453,
+      "sha256": "54bff0896d2f89a2579078f8c1c20f250dcbf1a0dd3f0b3338a9a4dfe84969ae"
+    },
+    "runtime-storage-design.json": {
+      "bytes": 585,
+      "sha256": "a9972395c088226ae1db3fceb45b2cb441bf84b3e818879f8883d7e48b560e55"
+    },
+    "san-diego-applicability.json": {
+      "bytes": 547,
+      "sha256": "e794952eb8342643eb64c81afb5e26849ac4b94ae4588c2416135fd2c031f464"
+    }
+  }
+}

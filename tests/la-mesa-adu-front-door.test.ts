@@ -111,7 +111,7 @@ test("initial supported parcel remains needs-evidence while recorded facts short
   assert.equal(result.answerCategory, "Needs property evidence");
   assert.equal(result.pathways.length, 0);
   assert.match(result.headline, /recorded property characteristic/i);
-  assert.equal(result.propertyIntelligence?.provenance, "RECORDED_PROPERTY_CHARACTERISTIC");
+  assert.equal(result.propertyIntelligence?.provenance, "COMPOSED_PROPERTY_INTELLIGENCE");
 });
 
 test("single-family answers re-run the shared evaluator and select only the relevant 2026 pathway", () => {
@@ -149,9 +149,19 @@ test("R3 zoning does not infer dwelling type while separate assessor facts may s
   const unsupported = evaluateLaMesaFrontDoor(exact("4645231900"), dataset);
   assert.equal(r3.answerCategory, "Needs property evidence");
   assert.equal(r3.pathways.length, 0);
-  assert.equal(r3.propertyIntelligence?.preliminaryDwellingState, "RECORDED_MULTIFAMILY_LIKELY");
+  assert.equal(r3.propertyIntelligence?.preliminaryDwellingState, "MULTIFAMILY_LIKELY");
+  assert.equal(r3.propertyIntelligence?.recordedDwellingState, "RECORDED_MULTIFAMILY_LIKELY");
   assert.equal(unsupported.answerCategory, "Outside current scope");
   assert.equal(unsupported.pathways.length, 0);
+});
+
+test("active change remains visible while an unsupported zoning profile keeps pathways unavailable", () => {
+  const active = evaluateLaMesaFrontDoor(exact("4944102400"), dataset);
+  assert.equal(active.answerCategory, "Outside current scope");
+  assert.equal(active.propertyIntelligence?.currentnessState, "ACTIVE_CHANGE_IN_PROGRESS");
+  assert.match(active.headline, /recorded project may be changing the property configuration/i);
+  assert.match(active.headline, /ADU pathway evaluation remains unavailable/i);
+  assert.equal(active.pathways.length, 0);
 });
 
 test("lead contract requires consent and remains local-only", () => {

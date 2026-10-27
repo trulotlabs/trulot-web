@@ -2,7 +2,9 @@
 
 import { useId, useRef, useState } from "react";
 import {
+  accessoryStructureQuestionFor,
   buildLocalWaypointHandoff,
+  currentConfigurationQuestionFor,
   evaluateLaMesaFrontDoor,
   propertyConfirmationFor,
   resolveLaMesaFrontDoor,
@@ -323,10 +325,16 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
 
   const showIntake = selected?.jurisdiction === "CITY_OF_LA_MESA" &&
     selected.canonicalScopeState === "IN_SCOPE_CONFIRMED" &&
-    evaluation?.answerCategory !== "Outside current scope" &&
-    evaluation?.answerCategory !== "Source unavailable";
+    evaluation?.answerCategory !== "Source unavailable" &&
+    (evaluation?.answerCategory !== "Outside current scope" || Boolean(evaluation?.propertyIntelligence));
   const confirmationModel = selected
     ? propertyConfirmationFor(dataset.propertyIntelligence[selected.apn])
+    : null;
+  const currentConfigurationPrompt = selected
+    ? currentConfigurationQuestionFor(dataset.propertyIntelligence[selected.apn])
+    : null;
+  const accessoryQuestion = selected
+    ? accessoryStructureQuestionFor(dataset.propertyIntelligence[selected.apn])
     : null;
   const showExistingUseQuestion = !confirmationModel || propertyConfirmation === "NO";
 
@@ -409,11 +417,14 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
                   <RadioGroup legend={confirmationModel.prompt} name="property-record-confirmation" onChange={confirmRecordedProperty} options={PROPERTY_CONFIRMATION_OPTIONS} value={propertyConfirmation} />
                 ) : null}
                 {showExistingUseQuestion ? (
-                  <RadioGroup legend="What is currently on the property?" name="existing-use" onChange={setExistingUse} options={EXISTING_USE_OPTIONS} value={existingUse} />
+                  <RadioGroup legend={currentConfigurationPrompt ?? "What is currently on the property?"} name="existing-use" onChange={setExistingUse} options={EXISTING_USE_OPTIONS} value={existingUse} />
                 ) : null}
                 {existingUse ? <RadioGroup legend="What are you considering?" name="adu-idea" onChange={setAduIdea} options={ADU_IDEA_OPTIONS} value={aduIdea} /> : null}
                 {aduIdea === "CONVERSION" ? (
-                  <RadioGroup legend="Is there an existing garage or accessory structure you may want to convert?" name="existing-space" onChange={setExistingSpace} options={EXISTING_SPACE_OPTIONS} value={existingSpace} />
+                  <>
+                    {accessoryQuestion ? <p className={styles.observationNote}>Observation source: older {accessoryQuestion.observationDate.replace("-", " ")} mapping. Please confirm the current condition.</p> : null}
+                    <RadioGroup legend={accessoryQuestion?.prompt ?? "Is there an existing garage or accessory structure you may want to convert?"} name="existing-space" onChange={setExistingSpace} options={EXISTING_SPACE_OPTIONS} value={existingSpace} />
+                  </>
                 ) : null}
                 <button className={styles.primaryButton} type="submit">Update my options</button>
                 <p aria-live="polite" className={styles.formMessage}>{intakeError}</p>

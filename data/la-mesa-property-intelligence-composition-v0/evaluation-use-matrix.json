@@ -1,0 +1,37 @@
+{
+  "recordedDwellingState": {
+    "pathwaySelection": "WITH_CONFIRMATION",
+    "preliminaryScreening": true,
+    "questionPreselection": true,
+    "currentnessWarning": true,
+    "compliance": false
+  },
+  "explicitPermitChange": {
+    "pathwaySelection": false,
+    "preliminaryScreening": true,
+    "questionPreselection": false,
+    "currentnessWarning": true,
+    "compliance": false
+  },
+  "structureObservation": {
+    "pathwaySelection": false,
+    "preliminaryScreening": true,
+    "questionPreselection": "TAILOR_ONLY",
+    "currentnessWarning": true,
+    "compliance": false
+  },
+  "homeownerFact": {
+    "pathwaySelection": "PRELIMINARY_ONLY",
+    "preliminaryScreening": true,
+    "questionPreselection": false,
+    "currentnessWarning": false,
+    "compliance": false
+  },
+  "conflict": {
+    "pathwaySelection": false,
+    "preliminaryScreening": true,
+    "questionPreselection": "CONFLICT_PROMPT",
+    "currentnessWarning": true,
+    "compliance": false
+  }
+}

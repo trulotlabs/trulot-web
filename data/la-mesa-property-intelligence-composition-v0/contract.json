@@ -1,0 +1,26 @@
+{
+  "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+  "fields": [
+    "parcelIdentity",
+    "recordedDwellingState",
+    "recordedUnitCount",
+    "condoState",
+    "assessorHints",
+    "permitChangeSignal",
+    "explicitAduPermitEvidence",
+    "structureObservation",
+    "currentnessState",
+    "conflicts",
+    "homeownerFacts",
+    "provenanceReferences",
+    "permittedEvaluationUses"
+  ],
+  "presentationExclusions": [
+    "raw assessor field names",
+    "raw permit histories",
+    "raw footprint polygons",
+    "owner identity",
+    "mailing address"
+  ],
+  "v4Boundary": "V4 consumes only the normalized V4 property-intelligence input, never source records directly."
+}

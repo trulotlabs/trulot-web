@@ -2,7 +2,13 @@ import {
   searchParcelLookup,
   type ParcelLookupSearchRecord,
 } from "./parcel-lookup-contract";
-import type { AssessorPropertyIntelligence, PreliminaryDwellingState } from "./property-intelligence";
+import {
+  applyHomeownerFacts,
+  selectPropertyQuestions,
+  type ComposedDwellingState,
+  type ComposedPropertyIntelligence,
+} from "./property-intelligence-composition";
+import type { PreliminaryDwellingState as RecordedDwellingState } from "./property-intelligence";
 
 export const LA_MESA_ADU_PREVIEW_ENV = "TRULOT_LA_MESA_ADU_PREVIEW";
 
@@ -152,31 +158,51 @@ export type LaMesaFrontDoorDataset = {
   canonicalCount: number;
 };
 
-export type FrontDoorPropertyIntelligence = Pick<
-  AssessorPropertyIntelligence,
-  "provenance" | "preliminaryDwellingState" | "eligibleForPreselection" | "conflictReasons" | "currentnessLimit"
->;
+export type FrontDoorPropertyIntelligence = ComposedPropertyIntelligence;
 
 export type PropertyConfirmationModel = {
-  recordedState: PreliminaryDwellingState;
+  recordedState: ComposedDwellingState | RecordedDwellingState;
   prompt: string;
   preselectedUse: ExistingUse | null;
 };
 
 export function propertyConfirmationFor(
-  intelligence: FrontDoorPropertyIntelligence | null | undefined,
+  intelligence: FrontDoorPropertyIntelligence | {
+    provenance: "RECORDED_PROPERTY_CHARACTERISTIC";
+    preliminaryDwellingState: RecordedDwellingState;
+    eligibleForPreselection: boolean;
+  } | null | undefined,
 ): PropertyConfirmationModel | null {
   if (!intelligence) return null;
-  if (intelligence.eligibleForPreselection && intelligence.preliminaryDwellingState === "RECORDED_SINGLE_FAMILY_LIKELY") {
-    return { recordedState: intelligence.preliminaryDwellingState, prompt: "Public property records indicate one detached residence. Is that still correct?", preselectedUse: "ONE_DETACHED_HOUSE" };
+  if (intelligence.provenance === "RECORDED_PROPERTY_CHARACTERISTIC") {
+    if (intelligence.eligibleForPreselection && intelligence.preliminaryDwellingState === "RECORDED_SINGLE_FAMILY_LIKELY") {
+      return { recordedState: intelligence.preliminaryDwellingState, prompt: "Public property records indicate one detached residence. Is that still correct?", preselectedUse: "ONE_DETACHED_HOUSE" };
+    }
+    if (intelligence.eligibleForPreselection && intelligence.preliminaryDwellingState === "RECORDED_MULTIFAMILY_LIKELY") {
+      return { recordedState: intelligence.preliminaryDwellingState, prompt: "Public property records indicate multiple dwelling units. Is that still correct?", preselectedUse: "TWO_OR_MORE_DWELLINGS" };
+    }
+    if (intelligence.preliminaryDwellingState === "RECORDED_CONDO") {
+      return { recordedState: intelligence.preliminaryDwellingState, prompt: "Public property records indicate a condominium. Is that still correct?", preselectedUse: "CONDOMINIUM" };
+    }
+    return null;
   }
-  if (intelligence.eligibleForPreselection && intelligence.preliminaryDwellingState === "RECORDED_MULTIFAMILY_LIKELY") {
-    return { recordedState: intelligence.preliminaryDwellingState, prompt: "Public property records indicate multiple dwelling units. Is that still correct?", preselectedUse: "TWO_OR_MORE_DWELLINGS" };
-  }
-  if (intelligence.preliminaryDwellingState === "RECORDED_CONDO") {
-    return { recordedState: intelligence.preliminaryDwellingState, prompt: "Public property records indicate a condominium. Is that still correct?", preselectedUse: "CONDOMINIUM" };
-  }
-  return null;
+  const question = selectPropertyQuestions(intelligence).primary;
+  if (!question || question.kind === "CURRENT_CONFIGURATION") return null;
+  return { recordedState: intelligence.preliminaryDwellingState, prompt: question.prompt, preselectedUse: question.preselectedUse };
+}
+
+export function accessoryStructureQuestionFor(
+  intelligence: FrontDoorPropertyIntelligence | null | undefined,
+): { prompt: string; observationDate: string } | null {
+  return intelligence ? selectPropertyQuestions(intelligence).accessory : null;
+}
+
+export function currentConfigurationQuestionFor(
+  intelligence: FrontDoorPropertyIntelligence | null | undefined,
+): string | null {
+  if (!intelligence) return null;
+  const question = selectPropertyQuestions(intelligence).primary;
+  return question?.kind === "CURRENT_CONFIGURATION" ? question.prompt : null;
 }
 
 function jurisdictionFor(recordValue: LaMesaFrontDoorSearchRecord): FrontDoorJurisdiction {
@@ -330,17 +356,25 @@ export function evaluateLaMesaFrontDoor(
     };
   }
   const details = dataset.evaluations[candidate.apn];
-  const propertyIntelligence = dataset.propertyIntelligence[candidate.apn] ?? null;
+  const basePropertyIntelligence = dataset.propertyIntelligence[candidate.apn] ?? null;
+  const propertyIntelligence = basePropertyIntelligence && answers
+    ? applyHomeownerFacts(basePropertyIntelligence, answers)
+    : basePropertyIntelligence;
   if (!details?.available) {
+    const unavailableHeadline = propertyIntelligence?.currentnessState === "ACTIVE_CHANGE_IN_PROGRESS"
+      ? "A recorded project may be changing the property configuration. Please tell us what is currently on the property. ADU pathway evaluation remains unavailable for this parcel."
+      : propertyIntelligence?.currentnessState === "LATER_CHANGE_OBSERVED"
+        ? "A later recorded change means older property details may no longer describe the current configuration. Please tell us what is currently on the property. ADU pathway evaluation remains unavailable for this parcel."
+        : details?.answerCategory === "Outside current scope"
+          ? "TruLot found the parcel, but its operative residential profile is outside the current evaluation scope."
+          : "Detailed ADU evaluation is temporarily unavailable.";
     return {
       parcel: candidate,
       jurisdictionConfirmed: true,
       baseZone: details?.baseZone ?? null,
       baseProfile: details?.baseProfile ?? null,
       answerCategory: details?.answerCategory ?? "Source unavailable",
-      headline: details?.answerCategory === "Outside current scope"
-        ? "TruLot found the parcel, but its operative residential profile is outside the current evaluation scope."
-        : "Detailed ADU evaluation is temporarily unavailable.",
+      headline: unavailableHeadline,
       mappedContexts: [],
       specificPlanMessage: details?.specificPlanBoundaryUnresolved
         ? "Specific-plan applicability needs review before TruLot can narrow the rules further."
@@ -364,9 +398,9 @@ export function evaluateLaMesaFrontDoor(
   }));
   const evidenceSources = propertyIntelligence
     ? [...details.evidenceSources, {
-        label: "Public parcel and recorded property characteristics",
+        label: "Composed public property evidence",
         publisher: "SanGIS / San Diego County Assessor-Recorder-County Clerk",
-        date: "Acquired September 24, 2026",
+        date: "Sealed local evidence through October 2026",
         url: "https://gis.sangis.org/",
       }]
     : details.evidenceSources;
@@ -376,7 +410,11 @@ export function evaluateLaMesaFrontDoor(
   let chosen: FrontDoorPathway[] = [];
   let category = details.answerCategory;
   let headline = "We found the property and its zoning. To narrow the ADU options, we need a few facts about what is currently on the property.";
-  if (propertyIntelligence?.preliminaryDwellingState === "RECORDED_RESIDENTIAL_CONFLICT") {
+  if (propertyIntelligence?.currentnessState === "ACTIVE_CHANGE_IN_PROGRESS") {
+    headline = "A recorded project may be changing the property configuration. Please tell us what is currently on the property.";
+  } else if (propertyIntelligence?.currentnessState === "LATER_CHANGE_OBSERVED") {
+    headline = "A later recorded change means older property details may no longer describe the current configuration. Please tell us what is currently on the property.";
+  } else if (propertyIntelligence?.preliminaryDwellingState === "CONFLICTING") {
     headline = "Public records are not consistent about the current property configuration. Please tell us what is currently on the property.";
   } else if (propertyConfirmationFor(propertyIntelligence)) {
     headline = "We found a recorded property characteristic that can shorten the intake after you confirm it.";
@@ -387,7 +425,7 @@ export function evaluateLaMesaFrontDoor(
     chosen = pathways(ids, details.pathwayCatalog, answers, mappedContexts.length > 0);
     const expectedUse = propertyConfirmationFor(propertyIntelligence)?.preselectedUse;
     if (expectedUse && answers.existingUse.value !== expectedUse && answers.existingUse.value !== "NOT_SURE") {
-      propertyFactConflicts.push("HOMEOWNER_ANSWER_DIFFERS_FROM_RECORDED_CHARACTERISTIC");
+      if (!propertyFactConflicts.includes("HOMEOWNER_VS_RECORDED_STATE")) propertyFactConflicts.push("HOMEOWNER_VS_RECORDED_STATE");
     }
     if (answers.existingUse.value === "NOT_SURE") {
       category = "Needs property evidence";

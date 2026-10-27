@@ -1,0 +1,10 @@
+{
+  "order": [
+    "EXPLICIT_FINALED_PERMIT_FACT",
+    "EXPLICIT_ISSUED_CHANGE_SIGNAL",
+    "RECORDED_ASSESSOR_CHARACTERISTIC",
+    "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+    "USER_PROVIDED"
+  ],
+  "doctrine": "Ordering governs preliminary support, stale-assumption invalidation, and question selection. Conflicts are retained and never silently overwritten."
+}
