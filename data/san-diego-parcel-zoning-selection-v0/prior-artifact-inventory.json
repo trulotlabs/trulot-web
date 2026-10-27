@@ -1,0 +1,11 @@
+{
+  "git_history": "NO_ROW_ARTIFACT_FOUND",
+  "recovery_result": "REBUILD_REQUIRED_AND_EXACTLY_REPRODUCED",
+  "repository_evidence": [
+    "data/base-zoning-v2/mapping-report.json",
+    "data/zoning-serving-v2/report.json",
+    "data/base-zoning-v2/golden-fixture.json"
+  ],
+  "retained_exact_artifact": "NOT_FOUND",
+  "retained_sealed_inputs": "COMPLETE"
+}

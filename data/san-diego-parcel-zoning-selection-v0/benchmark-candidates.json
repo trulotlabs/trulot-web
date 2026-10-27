@@ -1,0 +1,718 @@
+{
+  "modifier_limit": "No sealed Citywide modifier layer is joined; even ordinary candidates remain modifier-review-required.",
+  "profiles": {
+    "RM-2-5": {
+      "coastal": [
+        {
+          "apn": "6371913500",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RM-2-5",
+          "modifier_review_required": true,
+          "rank": "00044176c9bd47c006e62245eb5e0c30188976bd6a90ea1803e4a3cb0aa616f4",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "4156132318",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RM-2-5",
+          "modifier_review_required": true,
+          "rank": "003858f50c68fd78151acdc84958638f1ba25c52e9074b8db3b4fa321cd49cbe",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "4231611702",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RM-2-5",
+          "modifier_review_required": true,
+          "rank": "003d56b515b59afbeb94a6f341afcb49ebaec054f1e5ba8d67d2a55d73501e68",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "edge": [
+        {
+          "apn": "3603502200",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "000d69476f9833e226d3178b7ec80ee7e0b87b67cf361308ebec1bd09d6c0d15",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "6454101111",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RM-2-5",
+          "modifier_review_required": true,
+          "rank": "000f657efd910c602c59852487e43b33556a87f9323a80790208561f52995cec",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "4164512711",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RM-2-5",
+          "modifier_review_required": true,
+          "rank": "0011102ef0213b7693fe71166d096045d20b2a12a40cac67701527de36b0d6b3",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "ordinary": [
+        {
+          "apn": "3111901734",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RM-2-5",
+          "modifier_review_required": true,
+          "rank": "000485a956332fc8a3806b56b397ece0e62b096898f83a947ebff053c9e82e90",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "6370404903",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RM-2-5",
+          "modifier_review_required": true,
+          "rank": "0009c164a0c73191e4e4292d176d8c3ae0d651db69015f75dfca7a78d02abaa9",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "4516132313",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RM-2-5",
+          "modifier_review_required": true,
+          "rank": "000b317b49ec19daa0f77b431fc8016f7b5107a820c2f4c889b53535426b7e57",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    },
+    "RS-1-1": {
+      "coastal": [
+        {
+          "apn": "3580201600",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-1",
+          "modifier_review_required": true,
+          "rank": "01d0b69c360c8adbe5ea34f6f27e3a7a15a9e13c6c20632d8abd16cd3bc41fc6",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3580701700",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-1",
+          "modifier_review_required": true,
+          "rank": "02d75d804976877144ded0003dfaaf29167d7b66751d1c18ba642859f9b9bbec",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "6340921900",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-1",
+          "modifier_review_required": true,
+          "rank": "032ab9ff70688dcc0d918ede5601c3931dbb387ce685ed226e9691b6c4eae5c8",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "edge": [
+        {
+          "apn": "5424703000",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "000326bc7ca70b00276945c8c0909b893af38a67a8440f420f7744ed2f91570b",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "4374704000",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-1",
+          "modifier_review_required": true,
+          "rank": "0003ee0664a0fdfe3eed59ec0ae52eeacbd8309cdb6b73e975a45cd0455e86dd",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "6693700800",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "00171c366934aafdaa9aae419ecba582aedf8e5bc06f35a6da470c696b5643d5",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "ordinary": [
+        {
+          "apn": "5392640900",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-1",
+          "modifier_review_required": true,
+          "rank": "01cf80aa006f3228042ca0216f027b9c069d6a73e0f9c0902d5fc9a6b3165034",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "5394410100",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-1",
+          "modifier_review_required": true,
+          "rank": "0206cf1fa6c104fd5a83d6bab723833ac9ee73e3c199685e3e9551c53bc8f68f",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "5500110100",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-1",
+          "modifier_review_required": true,
+          "rank": "0210915ae3fab203a28b5115d09d870b61e957a6a3201044b8fec18869c3ee2e",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    },
+    "RS-1-13": {
+      "coastal": [
+        {
+          "apn": "2985722300",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-13",
+          "modifier_review_required": true,
+          "rank": "000e5399fc445f8bab01def15af20a9ea076217f614fcc9bfbeebbf678595f44",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "2985901415",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-13",
+          "modifier_review_required": true,
+          "rank": "00a5994964c91a48e3c0888c060e54e859d2a1796df20e6de39d92e7e77cf4da",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3080731801",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-13",
+          "modifier_review_required": true,
+          "rank": "00c54f3bdcc1726668e99245f7c376e96763451f65854e09d3139738b65fb844",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "edge": [
+        {
+          "apn": "3193715100",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-13",
+          "modifier_review_required": true,
+          "rank": "0070b4afc19d481a46a66b4bfb1761a3d02bf595aec41645d46ca1ebcaa8555b",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "3192810100",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-13",
+          "modifier_review_required": true,
+          "rank": "009b8943f19842dd4aea8e87a6d7d18ed46208c2175f1070da4a79af158fbc88",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "3080731606",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-13",
+          "modifier_review_required": true,
+          "rank": "00b55eb368f16704b300c905ed55e84174863edb077b62812d1160eef235940d",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "ordinary": [
+        {
+          "apn": "3193004200",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-13",
+          "modifier_review_required": true,
+          "rank": "000baa84022edd7b74a7033365f5b3301f492c6bdc33cf6f9a8227ee461614cf",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3192300500",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-13",
+          "modifier_review_required": true,
+          "rank": "002d2d2a47b948f64858eb6e8623f9308c0f37d177d6b1c125c68461f4ae8a5a",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3137110600",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-13",
+          "modifier_review_required": true,
+          "rank": "003262cac715aa0590b09435626b697ef9f7c49625719cd8ac13c823b95f2a5b",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    },
+    "RS-1-14": {
+      "coastal": [
+        {
+          "apn": "3113861100",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-14",
+          "modifier_review_required": true,
+          "rank": "00a8f7661992d5ebe9f6ad568e01a7d81c3d66304e49bc3579c55365d6ff5f8e",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3095401842",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-14",
+          "modifier_review_required": true,
+          "rank": "00aed4ef5a183f1ef499a1025e8e206df66570fcd73ee938128d9cfecc4f8542",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3114222500",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-14",
+          "modifier_review_required": true,
+          "rank": "00b065d1b58059cc6b5f20fe7f05d1fe75afc67ec8ccd4b85a77710a385cb0e3",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "edge": [
+        {
+          "apn": "3116302500",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-14",
+          "modifier_review_required": true,
+          "rank": "00078fcc9ea462847563ed54eb5e68816d5f72d24410c8756747437b6f942ba9",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "7602284300",
+          "coastal_context": "BOUNDARY_AMBIGUOUS",
+          "dominant_zone": "RS-1-14",
+          "modifier_review_required": true,
+          "rank": "000b715e56b79dce50505d8e71348fa2f4f64724251cd4ec43c440a8c47a8ef2",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "3120940300",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-14",
+          "modifier_review_required": true,
+          "rank": "000f73eb5a2983c421ea9d185c9099e042d82b57337f0b1a89b202e5d73176a1",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "ordinary": [
+        {
+          "apn": "3164708100",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-14",
+          "modifier_review_required": true,
+          "rank": "00003eb1a226bd3fd4db364c4c4f28332e5c26a7a9ed0b88abe4a6596024d50f",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3180703500",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-14",
+          "modifier_review_required": true,
+          "rank": "0001f77f9b1d4994509a441c728cde29316aebcc65ce31c7700fa4d7ad97f88e",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "6452010900",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-14",
+          "modifier_review_required": true,
+          "rank": "0002f90778b10c2a2af7b5b3fbac9bcfc99437fa6e23ff64ada8c9f333f266c8",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    },
+    "RS-1-2": {
+      "coastal": [
+        {
+          "apn": "3525800100",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-2",
+          "modifier_review_required": true,
+          "rank": "00588af4333efd408c2471f9debc44d32103be50ba6e267180c7736a68e5fe11",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3527206800",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-2",
+          "modifier_review_required": true,
+          "rank": "00fb0688069bf39525e9fe872dbecafe7b1f2811cb33f6277449af2dfe31f9cf",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3526902100",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-2",
+          "modifier_review_required": true,
+          "rank": "0134e1d8d3fc0012083bb403947df63cce6d875a0394aa6458d21aed9c733316",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "edge": [
+        {
+          "apn": "3511741758",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RM-3-7",
+          "modifier_review_required": true,
+          "rank": "0004f43d906314ebbd3ca80ef3e807f8da8238918d8d48cbef318687029ca60f",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "3712310100",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "004fc18dcf2a203bead7558478b4bc1ada67ea2b95998c4467613f981be0dd0d",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "4563600800",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "005e4ca893426fde3138ddf82dcebc8003ee3f4193757735513b6e68e9e416cc",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "ordinary": [
+        {
+          "apn": "3580903000",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-2",
+          "modifier_review_required": true,
+          "rank": "002fb772efe922295f5bc42737c10e23c20cc33c9d1f6e3a34cdb3118b727f76",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3525122000",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-2",
+          "modifier_review_required": true,
+          "rank": "003d2225d5a36d54570c8a7d8e824e38023e366df8535f8ddd918a9f506af136",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3587141900",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-2",
+          "modifier_review_required": true,
+          "rank": "004d7c2773597c4c53312df73321681ecc2f8794437cd59b44be5ce4c1a27105",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    },
+    "RS-1-4": {
+      "coastal": [
+        {
+          "apn": "5324410600",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-4",
+          "modifier_review_required": true,
+          "rank": "0029c32d4dd05ef355ba24206de8181275b00af2c3dd50759423f7d171b395e6",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3571100400",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-4",
+          "modifier_review_required": true,
+          "rank": "003b4fafa2ca7cdb9d50e0d536b119c4a8272931e81dc579975c5f5a96c97750",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3440431000",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-4",
+          "modifier_review_required": true,
+          "rank": "007bd8428464c67fa472575909f8076d4a16c88422e6ecc0a71cae42e48d691e",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "edge": [
+        {
+          "apn": "6771000200",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-4",
+          "modifier_review_required": true,
+          "rank": "00afb426df1b2799464000a7aed948be4ed0e2d54b77ee92c901f7be2e73c850",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "4292401000",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "00b31dd7c043499eb3397be9c617a653669cc3ee513d7e28dd411ea1937ee4fb",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "3572721800",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-4",
+          "modifier_review_required": true,
+          "rank": "00fe539d121d9d6cca3dd475c964a8fb199139f932d0aa7ef2db34ebc09cca96",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "ordinary": [
+        {
+          "apn": "3584120400",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-4",
+          "modifier_review_required": true,
+          "rank": "002f02ce462c631e1979814d27f32fc752c57c8e4dc2adaf8ce2f5416c842af3",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3587505800",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-4",
+          "modifier_review_required": true,
+          "rank": "0069dca881661e093a5f926cd2dfc7085fe0d78efbf6b9beea85309b06b099f8",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "4291310300",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-4",
+          "modifier_review_required": true,
+          "rank": "0077d0dd5d26f456eecea0bc986c65c73e23056a530d6db4ea70b59e319a4a49",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    },
+    "RS-1-6": {
+      "coastal": [
+        {
+          "apn": "3011820500",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-6",
+          "modifier_review_required": true,
+          "rank": "004bb169b7c664f9c6c1cea7ce2b39e00a9ee2d83ae2bd6f5638aada3145950b",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3003430400",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-6",
+          "modifier_review_required": true,
+          "rank": "00943f69e4fb5e0a153a537200a102693e7bd13d0e5947ea44402408e263d9ab",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3011950200",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-6",
+          "modifier_review_required": true,
+          "rank": "009d4ca3545a6eea2341fcf93e61cd2e25baac270756a34ee7f96561d1078a79",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "edge": [
+        {
+          "apn": "3002813000",
+          "coastal_context": "BOUNDARY_AMBIGUOUS",
+          "dominant_zone": "RS-1-6",
+          "modifier_review_required": true,
+          "rank": "00d43b30061abad48e38c95c142ab114949b1fc38f9fffd898a7d60687c9abd9",
+          "selection_ready": false,
+          "zoning_state": "INDETERMINATE"
+        },
+        {
+          "apn": "4794030100",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-4",
+          "modifier_review_required": true,
+          "rank": "010a1bf2a83118eac7cd17c389b7766e281f2a4186026aa1a7ef73272a83a113",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "3003656124",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RM-3-7",
+          "modifier_review_required": true,
+          "rank": "0186c99d498bb4c92ac050c3bd2f37ecd1ac0ab4b7c395f39b5e6eef4f1b7c28",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "ordinary": [
+        {
+          "apn": "5424530800",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-6",
+          "modifier_review_required": true,
+          "rank": "002fcfb9c944fd8d8074b761e38380204ab59ef4c4c6abf0dfda44de27e5552b",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "5425001100",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-6",
+          "modifier_review_required": true,
+          "rank": "00422fdcb94bee48806e0b091d655b85f8425a8526ed543d0abe860ab4c1cbcb",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "5442130600",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-6",
+          "modifier_review_required": true,
+          "rank": "0064d436caa2805185e29a0fb810c40426b1315b7070b9ee1de974de6c25f5d3",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    },
+    "RS-1-7": {
+      "coastal": [
+        {
+          "apn": "5310812300",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "0000245319659b7ab9245c7ed10969374339211d548df4a6eba1789184a59d1e",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3506320400",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "00009ce5b7f012313b02319629cb6f6468afab645d5d051f2ef5ffdbc6e1fe53",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3512231100",
+          "coastal_context": "INSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "000de91682f429d1330b8bb91e8964f814a39f36b03f192cfb95a3b7a038658e",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "edge": [
+        {
+          "apn": "4272101051",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "0000128dfa99a863e75a2a3fc3b0284199843ac75bc98e3de8c36140089bf137",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "5424703000",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "000326bc7ca70b00276945c8c0909b893af38a67a8440f420f7744ed2f91570b",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "4304211000",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "0003507d68774c495b35ddb3697b918db84884dffa461f385381d98f6a2770bb",
+          "selection_ready": false,
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "ordinary": [
+        {
+          "apn": "4301520100",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "0003931024d7f09b7da57e1baf5309be452b220b899a2eebd919890e44f1f4f6",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3485706100",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "0004056ed89c92e18dee93e2b8bdadd3ddbbc4d081aa97f30a6b864477bf766c",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "5390660800",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "dominant_zone": "RS-1-7",
+          "modifier_review_required": true,
+          "rank": "000773d38ed0566a84eafdcb1736ef5700e621171040d3adb1d2c297a05dbbe0",
+          "selection_ready": true,
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    }
+  },
+  "selection_method": "smallest SHA-256(APN) within each deterministic cohort"
+}

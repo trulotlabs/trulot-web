@@ -1,0 +1,18 @@
+{
+  "no_feasibility_conclusion": true,
+  "one_row_per_apn": true,
+  "required": [
+    "apn",
+    "zoning_state",
+    "dominant_zone",
+    "selected_zone",
+    "material_zones",
+    "sliver_zones",
+    "coastal_context",
+    "source_version",
+    "source_fingerprints",
+    "provenance",
+    "profile_selection"
+  ],
+  "schema": "SanDiegoParcelZoningSelectionV0"
+}

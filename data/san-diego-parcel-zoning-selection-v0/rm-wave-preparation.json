@@ -1,0 +1,71 @@
+{
+  "zones": [
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 23,
+        "INSIDE_COASTAL": 7811,
+        "OUTSIDE_COASTAL": 41536
+      },
+      "modifier_complexity": "REVIEW_REQUIRED_UNTIL_MODIFIER_LAYER_JOIN",
+      "multi_zone_association": 15729,
+      "profile_ready_potential": 33382,
+      "single_zone": 33237,
+      "sliver_association": 338,
+      "unique_apns": 49370,
+      "zone": "RM-1-1"
+    },
+    {
+      "coastal_split": {
+        "OUTSIDE_COASTAL": 5179
+      },
+      "modifier_complexity": "REVIEW_REQUIRED_UNTIL_MODIFIER_LAYER_JOIN",
+      "multi_zone_association": 2203,
+      "profile_ready_potential": 2974,
+      "single_zone": 2889,
+      "sliver_association": 87,
+      "unique_apns": 5179,
+      "zone": "RM-1-3"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 455,
+        "INSIDE_COASTAL": 2069,
+        "OUTSIDE_COASTAL": 19105
+      },
+      "modifier_complexity": "REVIEW_REQUIRED_UNTIL_MODIFIER_LAYER_JOIN",
+      "multi_zone_association": 8664,
+      "profile_ready_potential": 12469,
+      "single_zone": 12795,
+      "sliver_association": 70,
+      "unique_apns": 21629,
+      "zone": "RM-3-7"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 1,
+        "INSIDE_COASTAL": 493,
+        "OUTSIDE_COASTAL": 8761
+      },
+      "modifier_complexity": "REVIEW_REQUIRED_UNTIL_MODIFIER_LAYER_JOIN",
+      "multi_zone_association": 4428,
+      "profile_ready_potential": 4806,
+      "single_zone": 4805,
+      "sliver_association": 4,
+      "unique_apns": 9255,
+      "zone": "RM-3-9"
+    },
+    {
+      "coastal_split": {
+        "INSIDE_COASTAL": 117,
+        "OUTSIDE_COASTAL": 3682
+      },
+      "modifier_complexity": "REVIEW_REQUIRED_UNTIL_MODIFIER_LAYER_JOIN",
+      "multi_zone_association": 2660,
+      "profile_ready_potential": 1047,
+      "single_zone": 1046,
+      "sliver_association": 78,
+      "unique_apns": 3799,
+      "zone": "RM-4-10"
+    }
+  ]
+}

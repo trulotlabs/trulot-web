@@ -1,0 +1,140 @@
+{
+  "supported_profiles": [
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 10,
+        "INSIDE_COASTAL": 2824,
+        "OUTSIDE_COASTAL": 33120
+      },
+      "mapping_or_coastal_review_required": 14921,
+      "modifier_context": "UNRESOLVED_REVIEW_REQUIRED",
+      "modifier_review_required": 21033,
+      "multi_zone_association": 14709,
+      "profile_review_required": 35954,
+      "profile_selection_ready": 21033,
+      "single_zone": 20617,
+      "sliver_association": 430,
+      "unique_apns": 35954,
+      "zone": "RM-2-5"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 13,
+        "INSIDE_COASTAL": 562,
+        "OUTSIDE_COASTAL": 4178
+      },
+      "mapping_or_coastal_review_required": 4236,
+      "modifier_context": "UNRESOLVED_REVIEW_REQUIRED",
+      "modifier_review_required": 517,
+      "multi_zone_association": 4193,
+      "profile_review_required": 4753,
+      "profile_selection_ready": 517,
+      "single_zone": 515,
+      "sliver_association": 30,
+      "unique_apns": 4753,
+      "zone": "RS-1-1"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 3,
+        "INSIDE_COASTAL": 432,
+        "OUTSIDE_COASTAL": 4925
+      },
+      "mapping_or_coastal_review_required": 1425,
+      "modifier_context": "UNRESOLVED_REVIEW_REQUIRED",
+      "modifier_review_required": 3935,
+      "multi_zone_association": 1333,
+      "profile_review_required": 5360,
+      "profile_selection_ready": 3935,
+      "single_zone": 3922,
+      "sliver_association": 68,
+      "unique_apns": 5360,
+      "zone": "RS-1-13"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 269,
+        "INSIDE_COASTAL": 1721,
+        "OUTSIDE_COASTAL": 53210
+      },
+      "mapping_or_coastal_review_required": 8662,
+      "modifier_context": "UNRESOLVED_REVIEW_REQUIRED",
+      "modifier_review_required": 46538,
+      "multi_zone_association": 8381,
+      "profile_review_required": 55200,
+      "profile_selection_ready": 46538,
+      "single_zone": 46620,
+      "sliver_association": 104,
+      "unique_apns": 55200,
+      "zone": "RS-1-14"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 36,
+        "INSIDE_COASTAL": 1160,
+        "OUTSIDE_COASTAL": 2507
+      },
+      "mapping_or_coastal_review_required": 1294,
+      "modifier_context": "UNRESOLVED_REVIEW_REQUIRED",
+      "modifier_review_required": 2409,
+      "multi_zone_association": 1274,
+      "profile_review_required": 3703,
+      "profile_selection_ready": 2409,
+      "single_zone": 2405,
+      "sliver_association": 16,
+      "unique_apns": 3703,
+      "zone": "RS-1-2"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 14,
+        "INSIDE_COASTAL": 1670,
+        "OUTSIDE_COASTAL": 4241
+      },
+      "mapping_or_coastal_review_required": 1617,
+      "modifier_context": "UNRESOLVED_REVIEW_REQUIRED",
+      "modifier_review_required": 4308,
+      "multi_zone_association": 1592,
+      "profile_review_required": 5925,
+      "profile_selection_ready": 4308,
+      "single_zone": 4295,
+      "sliver_association": 16,
+      "unique_apns": 5925,
+      "zone": "RS-1-4"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 30,
+        "INSIDE_COASTAL": 1708,
+        "OUTSIDE_COASTAL": 1804
+      },
+      "mapping_or_coastal_review_required": 608,
+      "modifier_context": "UNRESOLVED_REVIEW_REQUIRED",
+      "modifier_review_required": 2934,
+      "multi_zone_association": 540,
+      "profile_review_required": 3542,
+      "profile_selection_ready": 2934,
+      "single_zone": 2936,
+      "sliver_association": 3,
+      "unique_apns": 3542,
+      "zone": "RS-1-6"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 147,
+        "INSIDE_COASTAL": 10205,
+        "OUTSIDE_COASTAL": 119148
+      },
+      "mapping_or_coastal_review_required": 21740,
+      "modifier_context": "UNRESOLVED_REVIEW_REQUIRED",
+      "modifier_review_required": 107760,
+      "multi_zone_association": 21212,
+      "profile_review_required": 129500,
+      "profile_selection_ready": 107760,
+      "single_zone": 107610,
+      "sliver_association": 288,
+      "unique_apns": 129500,
+      "zone": "RS-1-7"
+    }
+  ]
+}

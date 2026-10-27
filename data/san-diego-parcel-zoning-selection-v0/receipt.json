@@ -1,0 +1,39 @@
+{
+  "apn_fingerprint": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+  "capacity": false,
+  "coastal_state_counts": {
+    "BOUNDARY_AMBIGUOUS": 1530,
+    "INSIDE_COASTAL": 46455,
+    "OUTSIDE_COASTAL": 345748
+  },
+  "decision": "SAN_DIEGO_PARCEL_ZONING_SELECTION_ARTIFACT_REBUILT",
+  "distinct_apns": 393733,
+  "duplicate_apns": 0,
+  "inputs": {
+    "coastal_sha256": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+    "mapping_sha256": "e90e223b3b06017b95e191aee8ec1de918dbb45abf836c4f209ae1c345cbf088",
+    "parcel_source_sha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+    "zoning_source_sha256": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6"
+  },
+  "mapping_fingerprint": "313aa7ad46747bb97499a113842ac848de8f7357134e0558210692a1913a8ccf",
+  "outputs": {
+    "packet78-profile-selection.ndjson.gz": {
+      "bytes": 14931704,
+      "sha256": "cd154bef5903e413b0fe0dd50e33725b429261e6fa441a1edfe32a7d28fb5477"
+    },
+    "parcel-zoning-selection.ndjson.gz": {
+      "bytes": 22406200,
+      "content_fingerprint": "292875935d6b83c6e2472699e2e065567cca237a1bc5bad14f70cc8fa079ed7a",
+      "sha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf"
+    }
+  },
+  "production": false,
+  "rows": 393733,
+  "zoning_state_counts": {
+    "BOUNDARY_SLIVER": 1097,
+    "INDETERMINATE": 1641,
+    "MULTI_ZONE": 73064,
+    "SINGLE_ZONE": 317604,
+    "UNMAPPED": 327
+  }
+}

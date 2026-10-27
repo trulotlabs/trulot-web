@@ -1,0 +1,17 @@
+{
+  "files": {
+    "README.md": "74bf3c7104f6e6f090b92eac78551e906751024ac4a2cb11defbc19a1e89394a",
+    "benchmark-candidates.json": "371cd907b8d0fc243bbfdc5ec30d06964627c976d95f38002f6e6cd456246bf6",
+    "benchmark-regression.json": "44bd38a0407f913cb0c65cd83ed5be0dd4b2bb12195d06695270fe2ddb19faa8",
+    "packet78-exact-coverage.json": "fdcfe345a26a79b644ea3918b5201618c651b23d68c355ccb3c57d6c11f3a471",
+    "packet78-profile-selection.ndjson.gz": "cd154bef5903e413b0fe0dd50e33725b429261e6fa441a1edfe32a7d28fb5477",
+    "parcel-zoning-selection.ndjson.gz": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+    "prior-artifact-inventory.json": "393cd617a863bab8f31181d8c5d846cdc2ddbbb2e2526a9c421db34f13741c72",
+    "rebuild-receipt.json": "766a6ebd1f44c9429bcbaff1a261e189b64c213675919f5fa96147b086916a24",
+    "receipt.json": "d7ce4f855997b20292b15195c379e65b7dae3536626401497973990d5d316d13",
+    "residential-support-map.json": "4b872cd258fc8a8b5e5aaf196c9ce38c604e12538eacaec4d1ddab8dced4805b",
+    "residential-zone-report.json": "3439a7b435b16d6dc3a883fa92e4e927f50672ae25dd24381bf1942e70248c9a",
+    "rm-wave-preparation.json": "5e5d3d830b94641509695b2655990e594a624421023fe5ab483a1771ed05fc3b",
+    "schema.json": "4105934154cb17741bb19078db1b8aeec2c6bc28cbce86b1c2910ea450721674"
+  }
+}

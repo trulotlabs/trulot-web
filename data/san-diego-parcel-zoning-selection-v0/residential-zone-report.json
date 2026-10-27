@@ -1,0 +1,422 @@
+{
+  "zones": [
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 147,
+        "INSIDE_COASTAL": 10205,
+        "OUTSIDE_COASTAL": 119148
+      },
+      "indeterminate_association": 390,
+      "multi_zone_association": 21212,
+      "single_zone": 107610,
+      "sliver_association": 288,
+      "unique_apns": 129500,
+      "unsupported_or_mixed": 21890,
+      "zone": "RS-1-7"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 269,
+        "INSIDE_COASTAL": 1721,
+        "OUTSIDE_COASTAL": 53210
+      },
+      "indeterminate_association": 95,
+      "multi_zone_association": 8381,
+      "single_zone": 46620,
+      "sliver_association": 104,
+      "unique_apns": 55200,
+      "unsupported_or_mixed": 8580,
+      "zone": "RS-1-14"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 23,
+        "INSIDE_COASTAL": 7811,
+        "OUTSIDE_COASTAL": 41536
+      },
+      "indeterminate_association": 66,
+      "multi_zone_association": 15729,
+      "single_zone": 33237,
+      "sliver_association": 338,
+      "unique_apns": 49370,
+      "unsupported_or_mixed": 16133,
+      "zone": "RM-1-1"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 10,
+        "INSIDE_COASTAL": 2824,
+        "OUTSIDE_COASTAL": 33120
+      },
+      "indeterminate_association": 198,
+      "multi_zone_association": 14709,
+      "single_zone": 20617,
+      "sliver_association": 430,
+      "unique_apns": 35954,
+      "unsupported_or_mixed": 15337,
+      "zone": "RM-2-5"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 455,
+        "INSIDE_COASTAL": 2069,
+        "OUTSIDE_COASTAL": 19105
+      },
+      "indeterminate_association": 100,
+      "multi_zone_association": 8664,
+      "single_zone": 12795,
+      "sliver_association": 70,
+      "unique_apns": 21629,
+      "unsupported_or_mixed": 8834,
+      "zone": "RM-3-7"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 1,
+        "INSIDE_COASTAL": 493,
+        "OUTSIDE_COASTAL": 8761
+      },
+      "indeterminate_association": 18,
+      "multi_zone_association": 4428,
+      "single_zone": 4805,
+      "sliver_association": 4,
+      "unique_apns": 9255,
+      "unsupported_or_mixed": 4450,
+      "zone": "RM-3-9"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 14,
+        "INSIDE_COASTAL": 1670,
+        "OUTSIDE_COASTAL": 4241
+      },
+      "indeterminate_association": 22,
+      "multi_zone_association": 1592,
+      "single_zone": 4295,
+      "sliver_association": 16,
+      "unique_apns": 5925,
+      "unsupported_or_mixed": 1630,
+      "zone": "RS-1-4"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 3,
+        "INSIDE_COASTAL": 432,
+        "OUTSIDE_COASTAL": 4925
+      },
+      "indeterminate_association": 37,
+      "multi_zone_association": 1333,
+      "single_zone": 3922,
+      "sliver_association": 68,
+      "unique_apns": 5360,
+      "unsupported_or_mixed": 1438,
+      "zone": "RS-1-13"
+    },
+    {
+      "coastal_split": {
+        "OUTSIDE_COASTAL": 5179
+      },
+      "indeterminate_association": 0,
+      "multi_zone_association": 2203,
+      "single_zone": 2889,
+      "sliver_association": 87,
+      "unique_apns": 5179,
+      "unsupported_or_mixed": 2290,
+      "zone": "RM-1-3"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 13,
+        "INSIDE_COASTAL": 562,
+        "OUTSIDE_COASTAL": 4178
+      },
+      "indeterminate_association": 15,
+      "multi_zone_association": 4193,
+      "single_zone": 515,
+      "sliver_association": 30,
+      "unique_apns": 4753,
+      "unsupported_or_mixed": 4238,
+      "zone": "RS-1-1"
+    },
+    {
+      "coastal_split": {
+        "INSIDE_COASTAL": 117,
+        "OUTSIDE_COASTAL": 3682
+      },
+      "indeterminate_association": 15,
+      "multi_zone_association": 2660,
+      "single_zone": 1046,
+      "sliver_association": 78,
+      "unique_apns": 3799,
+      "unsupported_or_mixed": 2753,
+      "zone": "RM-4-10"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 36,
+        "INSIDE_COASTAL": 1160,
+        "OUTSIDE_COASTAL": 2507
+      },
+      "indeterminate_association": 8,
+      "multi_zone_association": 1274,
+      "single_zone": 2405,
+      "sliver_association": 16,
+      "unique_apns": 3703,
+      "unsupported_or_mixed": 1298,
+      "zone": "RS-1-2"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 30,
+        "INSIDE_COASTAL": 1708,
+        "OUTSIDE_COASTAL": 1804
+      },
+      "indeterminate_association": 63,
+      "multi_zone_association": 540,
+      "single_zone": 2936,
+      "sliver_association": 3,
+      "unique_apns": 3542,
+      "unsupported_or_mixed": 606,
+      "zone": "RS-1-6"
+    },
+    {
+      "coastal_split": {
+        "INSIDE_COASTAL": 74,
+        "OUTSIDE_COASTAL": 3107
+      },
+      "indeterminate_association": 0,
+      "multi_zone_association": 923,
+      "single_zone": 2206,
+      "sliver_association": 52,
+      "unique_apns": 3181,
+      "unsupported_or_mixed": 975,
+      "zone": "RM-1-2"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 1,
+        "INSIDE_COASTAL": 1796,
+        "OUTSIDE_COASTAL": 1378
+      },
+      "indeterminate_association": 14,
+      "multi_zone_association": 896,
+      "single_zone": 2264,
+      "sliver_association": 1,
+      "unique_apns": 3175,
+      "unsupported_or_mixed": 911,
+      "zone": "RM-2-4"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 8,
+        "INSIDE_COASTAL": 182,
+        "OUTSIDE_COASTAL": 2353
+      },
+      "indeterminate_association": 107,
+      "multi_zone_association": 534,
+      "single_zone": 1894,
+      "sliver_association": 8,
+      "unique_apns": 2543,
+      "unsupported_or_mixed": 649,
+      "zone": "RX-1-2"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 3,
+        "INSIDE_COASTAL": 141,
+        "OUTSIDE_COASTAL": 2169
+      },
+      "indeterminate_association": 2,
+      "multi_zone_association": 1076,
+      "single_zone": 1234,
+      "sliver_association": 1,
+      "unique_apns": 2313,
+      "unsupported_or_mixed": 1079,
+      "zone": "RM-3-8"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 4,
+        "INSIDE_COASTAL": 2,
+        "OUTSIDE_COASTAL": 2264
+      },
+      "indeterminate_association": 15,
+      "multi_zone_association": 1373,
+      "single_zone": 866,
+      "sliver_association": 16,
+      "unique_apns": 2270,
+      "unsupported_or_mixed": 1404,
+      "zone": "RS-1-8"
+    },
+    {
+      "coastal_split": {
+        "OUTSIDE_COASTAL": 2208
+      },
+      "indeterminate_association": 0,
+      "multi_zone_association": 612,
+      "single_zone": 1596,
+      "sliver_association": 0,
+      "unique_apns": 2208,
+      "unsupported_or_mixed": 612,
+      "zone": "RX-1-1"
+    },
+    {
+      "coastal_split": {
+        "INSIDE_COASTAL": 130,
+        "OUTSIDE_COASTAL": 2007
+      },
+      "indeterminate_association": 98,
+      "multi_zone_association": 1275,
+      "single_zone": 764,
+      "sliver_association": 0,
+      "unique_apns": 2137,
+      "unsupported_or_mixed": 1373,
+      "zone": "RM-2-6"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 21,
+        "INSIDE_COASTAL": 879,
+        "OUTSIDE_COASTAL": 586
+      },
+      "indeterminate_association": 17,
+      "multi_zone_association": 503,
+      "single_zone": 964,
+      "sliver_association": 2,
+      "unique_apns": 1486,
+      "unsupported_or_mixed": 522,
+      "zone": "RS-1-5"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 1,
+        "INSIDE_COASTAL": 3,
+        "OUTSIDE_COASTAL": 1382
+      },
+      "indeterminate_association": 19,
+      "multi_zone_association": 448,
+      "single_zone": 895,
+      "sliver_association": 24,
+      "unique_apns": 1386,
+      "unsupported_or_mixed": 491,
+      "zone": "RS-1-11"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 1,
+        "OUTSIDE_COASTAL": 1365
+      },
+      "indeterminate_association": 7,
+      "multi_zone_association": 414,
+      "single_zone": 941,
+      "sliver_association": 4,
+      "unique_apns": 1366,
+      "unsupported_or_mixed": 425,
+      "zone": "RT-1-2"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 1,
+        "INSIDE_COASTAL": 1225,
+        "OUTSIDE_COASTAL": 13
+      },
+      "indeterminate_association": 4,
+      "multi_zone_association": 1050,
+      "single_zone": 185,
+      "sliver_association": 0,
+      "unique_apns": 1239,
+      "unsupported_or_mixed": 1054,
+      "zone": "RM-5-12"
+    },
+    {
+      "coastal_split": {
+        "OUTSIDE_COASTAL": 995
+      },
+      "indeterminate_association": 6,
+      "multi_zone_association": 251,
+      "single_zone": 733,
+      "sliver_association": 5,
+      "unique_apns": 995,
+      "unsupported_or_mixed": 262,
+      "zone": "RS-1-12"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 6,
+        "INSIDE_COASTAL": 60,
+        "OUTSIDE_COASTAL": 823
+      },
+      "indeterminate_association": 9,
+      "multi_zone_association": 657,
+      "single_zone": 223,
+      "sliver_association": 0,
+      "unique_apns": 889,
+      "unsupported_or_mixed": 666,
+      "zone": "RS-1-3"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 1,
+        "INSIDE_COASTAL": 9,
+        "OUTSIDE_COASTAL": 856
+      },
+      "indeterminate_association": 4,
+      "multi_zone_association": 36,
+      "single_zone": 826,
+      "sliver_association": 0,
+      "unique_apns": 866,
+      "unsupported_or_mixed": 40,
+      "zone": "RS-1-9"
+    },
+    {
+      "coastal_split": {
+        "OUTSIDE_COASTAL": 393
+      },
+      "indeterminate_association": 1,
+      "multi_zone_association": 50,
+      "single_zone": 342,
+      "sliver_association": 0,
+      "unique_apns": 393,
+      "unsupported_or_mixed": 51,
+      "zone": "RM-4-11"
+    },
+    {
+      "coastal_split": {
+        "INSIDE_COASTAL": 214
+      },
+      "indeterminate_association": 7,
+      "multi_zone_association": 2,
+      "single_zone": 205,
+      "sliver_association": 0,
+      "unique_apns": 214,
+      "unsupported_or_mixed": 9,
+      "zone": "RT-1-4"
+    },
+    {
+      "coastal_split": {
+        "BOUNDARY_AMBIGUOUS": 15,
+        "INSIDE_COASTAL": 44
+      },
+      "indeterminate_association": 20,
+      "multi_zone_association": 7,
+      "single_zone": 32,
+      "sliver_association": 0,
+      "unique_apns": 59,
+      "unsupported_or_mixed": 27,
+      "zone": "RS-1-10"
+    },
+    {
+      "coastal_split": {
+        "INSIDE_COASTAL": 33,
+        "OUTSIDE_COASTAL": 13
+      },
+      "indeterminate_association": 0,
+      "multi_zone_association": 15,
+      "single_zone": 31,
+      "sliver_association": 0,
+      "unique_apns": 46,
+      "unsupported_or_mixed": 15,
+      "zone": "RT-1-5"
+    }
+  ]
+}

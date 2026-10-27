@@ -1,0 +1,11 @@
+{
+  "after_percent": 71.671077,
+  "after_unique_apns": 234029,
+  "before_percent": 49.586564,
+  "before_unique_apns": 161916,
+  "metric": "unique APNs with any association to an observed residential zone",
+  "packet78_incremental_unique_apns": 72113,
+  "packet78_selected_zone_unique_apns": 77586,
+  "percentage_point_gain": 22.084512,
+  "residential_unique_apns": 326532
+}

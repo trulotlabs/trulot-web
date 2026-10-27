@@ -1,0 +1,122 @@
+{
+  "benchmarks": {
+    "5442140600": {
+      "apn": "5442140600",
+      "coastal_area_share_percent": 0.0,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "dominant_zone": "RM-2-5",
+      "material_zones": [
+        {
+          "area_sqft": 20050.977271785116,
+          "parcel_share_percent": 98.56339899379815,
+          "source_geometry_states": [
+            "VALID_SOURCE"
+          ],
+          "source_object_ids": [
+            1888
+          ],
+          "zone": "RM-2-5"
+        },
+        {
+          "area_sqft": 292.2510223303839,
+          "parcel_share_percent": 1.4366010060182235,
+          "source_geometry_states": [
+            "VALID_SOURCE"
+          ],
+          "source_object_ids": [
+            1866
+          ],
+          "zone": "RS-1-6"
+        }
+      ],
+      "profile_selection": {
+        "modifier_review_required": false,
+        "selection_ready": false,
+        "state": "MULTI_ZONE_REVIEW",
+        "supported_profile": null
+      },
+      "provenance": {
+        "classification_method": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastal_method": "coastal-overlay-union-positive-area-v1",
+        "parcel_geometry_sha256": "05073c1c7e7c910e4b60ce05df6c80b2fb61dd3da2d0cd99f4d42d20f3c176be",
+        "parcel_source_object_id": 7815,
+        "zoning_source_object_ids": [
+          1866,
+          1888
+        ]
+      },
+      "selected_zone": null,
+      "sliver_zones": [],
+      "source_fingerprints": {
+        "classification": "e90e223b3b06017b95e191aee8ec1de918dbb45abf836c4f209ae1c345cbf088",
+        "coastal": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+        "parcel": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+        "zoning": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6"
+      },
+      "source_version": {
+        "coastal": "coastal-city-sd-20260930T143055Z",
+        "parcel": "sangis-20260924T183743Z",
+        "zoning": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoning_state": "MULTI_ZONE"
+    },
+    "6341302200": {
+      "apn": "6341302200",
+      "coastal_area_share_percent": 0.0,
+      "coastal_context": "OUTSIDE_COASTAL",
+      "dominant_zone": "RS-1-7",
+      "material_zones": [
+        {
+          "area_sqft": 21841.444780896963,
+          "parcel_share_percent": 100.0,
+          "source_geometry_states": [
+            "VALID_SOURCE"
+          ],
+          "source_object_ids": [
+            1324
+          ],
+          "zone": "RS-1-7"
+        }
+      ],
+      "profile_selection": {
+        "modifier_review_required": true,
+        "selection_ready": true,
+        "state": "PROFILE_READY_MODIFIER_REVIEW_REQUIRED",
+        "supported_profile": "RS-1-7"
+      },
+      "provenance": {
+        "classification_method": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastal_method": "coastal-overlay-union-positive-area-v1",
+        "parcel_geometry_sha256": "3cda3f101571d027e172d7eb281041711dbb63680b6fc3fee21bbaa31ef5b5ff",
+        "parcel_source_object_id": 654272,
+        "zoning_source_object_ids": [
+          1324
+        ]
+      },
+      "selected_zone": "RS-1-7",
+      "sliver_zones": [],
+      "source_fingerprints": {
+        "classification": "e90e223b3b06017b95e191aee8ec1de918dbb45abf836c4f209ae1c345cbf088",
+        "coastal": "f27abb9fe4b64990f9fe422102ce319144218be3770df471fa328cbbfbd403d6",
+        "parcel": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+        "zoning": "7f65bfd9bb0ea11fda8537e3fc121c0d8e37f15c37f82d1f00afa7a0fa6542b6"
+      },
+      "source_version": {
+        "coastal": "coastal-city-sd-20260930T143055Z",
+        "parcel": "sangis-20260924T183743Z",
+        "zoning": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoning_state": "SINGLE_ZONE"
+    }
+  },
+  "expected": {
+    "5442140600": {
+      "coastal": "OUTSIDE_COASTAL",
+      "zone": "RM-2-5"
+    },
+    "6341302200": {
+      "coastal": "OUTSIDE_COASTAL",
+      "zone": "RS-1-7"
+    }
+  }
+}

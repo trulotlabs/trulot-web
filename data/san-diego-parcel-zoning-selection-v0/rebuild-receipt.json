@@ -1,0 +1,43 @@
+{
+  "classification_byte_identical": true,
+  "classification_runs": [
+    {
+      "mapping_fingerprint": "313aa7ad46747bb97499a113842ac848de8f7357134e0558210692a1913a8ccf",
+      "mapping_sha256": "e90e223b3b06017b95e191aee8ec1de918dbb45abf836c4f209ae1c345cbf088",
+      "state_counts": {
+        "BOUNDARY_SLIVER": 1097,
+        "INDETERMINATE": 1641,
+        "MULTI_ZONE": 73064,
+        "SINGLE_ZONE": 317604,
+        "UNMAPPED": 327
+      }
+    },
+    {
+      "mapping_fingerprint": "313aa7ad46747bb97499a113842ac848de8f7357134e0558210692a1913a8ccf",
+      "mapping_sha256": "e90e223b3b06017b95e191aee8ec1de918dbb45abf836c4f209ae1c345cbf088",
+      "state_counts": {
+        "BOUNDARY_SLIVER": 1097,
+        "INDETERMINATE": 1641,
+        "MULTI_ZONE": 73064,
+        "SINGLE_ZONE": 317604,
+        "UNMAPPED": 327
+      }
+    }
+  ],
+  "disposable_boundary": "Unix-socket-only local PostGIS; stopped after verification",
+  "intersection_export": {
+    "query_sha256": "5d997d2dd857c826e388f4113630845af89449b16aca80ae5226c2c95b241b8a",
+    "sha256": "ded72029daf9f74a81efb39159f25513c720e8cc80a8fd8c66a757006f991945"
+  },
+  "method": "original Parcel V2 local import + original Base Zoning V2 local import + original read-only PostGIS intersection export + original classifier",
+  "production_access": false,
+  "selection_build_byte_identical": true,
+  "source_counts": {
+    "accepted_zoning": 3680,
+    "city_parcels": 393733,
+    "countywide_parcels": 1088430,
+    "repaired_zoning": 26,
+    "zoning_features": 3706
+  },
+  "source_reacquisition": false
+}
