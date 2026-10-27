@@ -1,0 +1,8 @@
+{
+  "decision": "IMMUTABLE_SHARDED_PUBLIC_SNAPSHOT",
+  "futureSdACohort": 318701,
+  "indexingActivated": false,
+  "packet11RequiredForIndexing": false,
+  "productionDbMutationRequired": false,
+  "sitemapActivated": false
+}

@@ -1,0 +1,112 @@
+{
+  "mode": "off",
+  "reviewed": [
+    {
+      "apn": "6341302200",
+      "case": "1456 27th",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/634-130-22-00-1456-27th-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "5442140600",
+      "case": "639 67th",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/544-214-06-00-639-n-67th-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "3061952600",
+      "case": "ordinary RS",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/306-195-26-00-2600-packet-85-fixture-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "3063900723",
+      "case": "ordinary RM",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/306-390-07-23-723-packet-85-fixture-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "3064100100",
+      "case": "RX",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/306-410-01-00-100-packet-85-fixture-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "4360531400",
+      "case": "RT",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/436-053-14-00-1400-packet-85-fixture-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "3061953000",
+      "case": "boundary sliver",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/306-195-30-00-3000-packet-85-fixture-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "4304211000",
+      "case": "multi-zone",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/430-421-10-00-4927-whitehaven-way",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "4303410600",
+      "case": "indeterminate",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/430-341-06-00-2112-erie-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "3031701800",
+      "case": "APN-only",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/303-170-18-00-1800-packet-85-fixture-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "5333641301",
+      "case": "stacked/common-address",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/533-364-13-01-1501-front-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "3506320400",
+      "case": "inside Coastal",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/350-632-04-00-7553-cabrillo-ave",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "4360200200",
+      "case": "Coastal boundary",
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/436-020-02-00-200-packet-85-fixture-st",
+      "placeJsonLd": true
+    }
+  ],
+  "consoleErrors": [],
+  "productionAccess": false,
+  "sitemapActivated": false
+}

@@ -1,0 +1,11 @@
+{
+  "deploymentBundleImpactBytes": 4499423,
+  "largestShardCompressedBytes": 108085,
+  "largestShardRows": 10309,
+  "largestShardUncompressedBytes": 9118300,
+  "shardCount": 208,
+  "snapshotCompressedBytes": 4447587,
+  "snapshotUncompressedBytes": 342397607,
+  "sourceCompressedBytes": 22406200,
+  "sourceUncompressedBytes": 521723059
+}

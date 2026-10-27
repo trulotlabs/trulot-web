@@ -33,6 +33,11 @@ import {
   type PublicMeasurementInput,
 } from "./public-parcel-feasibility";
 import { getLocalPublicParcelFeasibilityEvidence } from "./public-parcel-feasibility-evidence";
+import {
+  getSanDiegoPublicZoning,
+  sanDiegoPublicZoningSnapshotEnabled,
+  type SanDiegoPublicZoningDto,
+} from "./san-diego-public-zoning-snapshot";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -49,6 +54,7 @@ export type ConfidenceTier = "recorded" | "mapped" | "conditional";
 
 export interface ParcelPageSourceStatus {
   parcel: SourceStatus;
+  zoning: SourceStatus;
   permits: SourceStatus;
   overlays: SourceStatus;
   sda: SdaReconciliationStatus;
@@ -162,6 +168,8 @@ export interface ParcelPageV1Data {
     citation: SourcedFact<string>;
     programs: ProgramFact[];
     interpretation: SnapshotFact[];
+    publicSnapshot?: SanDiegoPublicZoningDto | null;
+    snapshotState?: "OFF" | "FOUND" | "UNAVAILABLE";
   };
   similarLots: {
     criteriaLabel: string;
@@ -320,6 +328,7 @@ function defaultSourceStatus(): SourceStatus {
 function emptySourceStatus(): ParcelPageSourceStatus {
   return {
     parcel: defaultSourceStatus(),
+    zoning: defaultSourceStatus(),
     permits: defaultSourceStatus(),
     overlays: defaultSourceStatus(),
     sda: applySdaReconciliationPolicy(null),
@@ -933,7 +942,16 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
   const overlaysResult = await getOverlayFlags(lat, lng);
   const overlays = overlaysResult.flags;
   const sdaRegulatoryConclusionAllowed = canUseSdaForRegulatoryConclusion(overlays.sda);
-  const similarLotsResult = await fetchSimilarLots(parcelRow);
+  const snapshotEnabled = sanDiegoPublicZoningSnapshotEnabled();
+  const snapshotResult = snapshotEnabled ? getSanDiegoPublicZoning(apnNorm) : null;
+  const publicSnapshot = snapshotResult?.state === "found" ? snapshotResult.zoning : null;
+  const snapshotUnavailable = snapshotEnabled && snapshotResult?.state !== "found";
+  const currentZoneName = str(parcelRow.zone_name);
+  const zoneName = snapshotEnabled ? (publicSnapshot?.selectedZone ?? "") : currentZoneName;
+  const runtimeParcelRow = snapshotEnabled
+    ? { ...parcelRow, zone_name: zoneName || null, base_zone: zoneName || null }
+    : parcelRow;
+  const similarLotsResult = await fetchSimilarLots(runtimeParcelRow);
   const similarLots = similarLotsResult.similarLots;
   const permits = permitsResult.rows;
   // The display fallback is not a situs address. Keep addressless parcels on
@@ -944,7 +962,6 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
   const refreshedAt = formatShortDate(parcelRow.generated_at);
   const staleDays = daysOld(parcelRow.generated_at);
   const stale = staleDays !== null && staleDays > 60;
-  const zoneName = str(parcelRow.zone_name);
   const lotSize = formatSqFt(num(parcelRow.lot_area_sqft));
   const buildingSize = formatSqFt(num(parcelRow.total_lvg_area));
   const existingUse = SD_LAND_USE_CODES[str(parcelRow.nucleus_use_cd)] ?? null;
@@ -953,12 +970,17 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     parcel: buildSourceStatus("found", {
       freshness: refreshedAt,
     }),
+    zoning: snapshotUnavailable
+      ? buildSourceStatus("source_unavailable", { publicMessage: "Mapped zoning is temporarily unavailable." })
+      : zoneName || publicSnapshot
+        ? buildSourceStatus("found", { freshness: publicSnapshot?.sourceReceipt.snapshotVersion ?? refreshedAt })
+        : buildSourceStatus("not_found", { publicMessage: "Mapped zoning is not available for this parcel." }),
     permits: permitsResult.status,
     overlays: overlaysResult.status,
     sda: overlays.sda,
     similarLots: similarLotsResult.status,
   };
-  const pageStatus: Exclude<CanonicalResultState, "invalid_request"> = [sourceStatus.permits, sourceStatus.overlays, sourceStatus.similarLots].some(
+  const pageStatus: Exclude<CanonicalResultState, "invalid_request"> = [sourceStatus.zoning, sourceStatus.permits, sourceStatus.overlays, sourceStatus.similarLots].some(
     (item) => item.status === "source_unavailable" || item.status === "partial",
   ) || sourceStatus.sda.state === "source_reconciliation_pending"
     ? "partial"
@@ -1161,15 +1183,48 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     },
   ];
 
+  const snapshotInterpretation: SnapshotFact[] = publicSnapshot ? [
+    {
+      value: publicSnapshot.zoningState === "SINGLE_ZONE"
+        ? `The immutable public snapshot maps this parcel to ${publicSnapshot.selectedZone}.`
+        : publicSnapshot.zoningState === "BOUNDARY_SLIVER"
+          ? `The immutable public snapshot maps ${publicSnapshot.selectedZone} as the principal zone and preserves boundary-sliver evidence for review.`
+          : publicSnapshot.zoningState === "MULTI_ZONE"
+            ? "The immutable public snapshot preserves multiple material zones; no single base zone is selected."
+            : publicSnapshot.zoningState === "INDETERMINATE"
+              ? "The mapped zoning evidence is indeterminate and requires review."
+              : "The immutable public snapshot does not map a base zone for this parcel.",
+      sourceLabel: "Sealed San Diego public zoning snapshot",
+      confidenceTier: "mapped",
+      nullBehavior: "Show the verified snapshot state without flattening review-required evidence.",
+    },
+    {
+      value: `Coastal context: ${publicSnapshot.coastalState.replaceAll("_", " ").toLowerCase()}. Profile support: ${publicSnapshot.profileSupportState.replaceAll("_", " ").toLowerCase()}.`,
+      sourceLabel: "Sealed zoning, Coastal, and residential-profile receipts",
+      confidenceTier: "conditional",
+      nullBehavior: "Preserve ambiguity and modifier review requirements.",
+    },
+  ] : snapshotUnavailable ? [{
+    value: "The immutable public zoning snapshot is unavailable. Existing zoning is not used as a fallback while the snapshot gate is enabled.",
+    sourceLabel: "San Diego public zoning snapshot availability control",
+    confidenceTier: "conditional",
+    nullBehavior: "Show zoning unavailable and keep the page noindex.",
+  }] : [];
+
   const zoningInterpretation: SnapshotFact[] = [
     {
-      value: zoneName
+      value: snapshotEnabled
+        ? snapshotInterpretation[0]?.value ?? "Mapped zoning is temporarily unavailable."
+        : zoneName
         ? `This parcel is mapped to ${zoneName}, and that mapped zone should be read separately from permit history and conditional program rules.`
         : "Mapped zoning is not available from the current parcel record.",
-      sourceLabel: zoneName ? "Mapped base zone" : "TODO — zoning adapter",
-      confidenceTier: zoneName ? "mapped" : "conditional",
+      sourceLabel: snapshotEnabled
+        ? snapshotInterpretation[0]?.sourceLabel ?? "San Diego public zoning snapshot availability control"
+        : zoneName ? "Mapped base zone" : "TODO — zoning adapter",
+      confidenceTier: snapshotEnabled ? snapshotInterpretation[0]?.confidenceTier ?? "conditional" : zoneName ? "mapped" : "conditional",
       nullBehavior: "Show cautious zoning fallback copy.",
     },
+    ...snapshotInterpretation.slice(1),
     {
       value: `${formatUnaffectedOverlaySummary({
         tpa: overlays.tpa,
@@ -1340,8 +1395,12 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     zoning: {
       baseCode: {
         value: zoneName || null,
-        sourceLabel: "Mapped base zone",
-        confidenceTier: "mapped",
+        sourceLabel: publicSnapshot
+          ? "Sealed San Diego public zoning snapshot"
+          : snapshotUnavailable
+            ? "San Diego public zoning snapshot availability control"
+            : "Mapped base zone",
+        confidenceTier: snapshotUnavailable ? "conditional" : "mapped",
         nullBehavior: `Show “${NULL_PUBLIC_RECORD}”.`,
       },
       plainName: {
@@ -1368,6 +1427,8 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
       },
       programs: programFacts,
       interpretation: zoningInterpretation,
+      publicSnapshot,
+      snapshotState: snapshotEnabled ? (publicSnapshot ? "FOUND" : "UNAVAILABLE") : "OFF",
     },
     similarLots,
     permits: {

@@ -1,0 +1,24 @@
+{
+  "currentRuntimeComparisonBasis": "Existing sealed local Parcel Page and lookup fixtures; no production source was queried.",
+  "differences": [
+    {"apn":"5442140600","case":"639 67th","difference":"The immutable source preserves MULTI_ZONE RM-2-5/RS-1-6 and does not collapse the page to the current dominant/base zone."},
+    {"apn":"4304211000","case":"multi-zone","difference":"The immutable source preserves MULTI_ZONE RS-1-7/OR-1-1 and withholds a selected zone."},
+    {"apn":"4303410600","case":"indeterminate","difference":"The immutable source preserves INDETERMINATE RS-1-7/CC-3-9 and withholds a selected zone."},
+    {"apn":"7600360300","case":"unmapped","difference":"The immutable source reports UNMAPPED without falling back to a runtime base-zone claim."}
+  ],
+  "benchmarks": [
+    {"apn":"6341302200","case":"1456 27th","zoningState":"SINGLE_ZONE","selectedZone":"RS-1-7"},
+    {"apn":"5442140600","case":"639 67th","zoningState":"MULTI_ZONE","selectedZone":null},
+    {"apn":"3061952600","case":"ordinary RS","zoningState":"SINGLE_ZONE","selectedZone":"RS-1-14"},
+    {"apn":"3063900723","case":"ordinary RM","zoningState":"SINGLE_ZONE","selectedZone":"RM-2-4"},
+    {"apn":"3064100100","case":"RX","zoningState":"SINGLE_ZONE","selectedZone":"RX-1-2"},
+    {"apn":"4360531400","case":"RT","zoningState":"SINGLE_ZONE","selectedZone":"RT-1-2"},
+    {"apn":"3061953000","case":"boundary sliver","zoningState":"BOUNDARY_SLIVER","selectedZone":"AR-1-1"},
+    {"apn":"4304211000","case":"multi-zone","zoningState":"MULTI_ZONE","selectedZone":null},
+    {"apn":"4303410600","case":"indeterminate","zoningState":"INDETERMINATE","selectedZone":null},
+    {"apn":"3031701800","case":"APN-only","zoningState":"SINGLE_ZONE","selectedZone":"AR-1-1"},
+    {"apn":"5333641301","case":"stacked/common-address","zoningState":"SINGLE_ZONE","selectedZone":"CCPD-RE"},
+    {"apn":"3506320400","case":"inside Coastal","zoningState":"SINGLE_ZONE","selectedZone":"RS-1-7"},
+    {"apn":"4360200200","case":"Coastal boundary","zoningState":"SINGLE_ZONE","selectedZone":"RS-1-7"}
+  ]
+}

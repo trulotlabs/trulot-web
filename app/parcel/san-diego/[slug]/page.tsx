@@ -196,7 +196,10 @@ export async function generateMetadata({
     apn: { value: data.identity.apn, rights: "PUBLIC_REDISPLAY_OK" },
     address: { value: publicAddress, rights: "PUBLIC_REDISPLAY_OK" },
     jurisdiction: { value: "City of San Diego", rights: "PUBLIC_REDISPLAY_OK" },
-    zoningState: { value: data.zoning.baseCode.value ? "MAPPED" : "UNMAPPED", rights: "PUBLIC_REDISPLAY_OK" },
+    zoningState: {
+      value: data.zoning.publicSnapshot?.zoningState ?? (data.zoning.baseCode.value ? "MAPPED" : "UNMAPPED"),
+      rights: "PUBLIC_REDISPLAY_OK",
+    },
     baseZoning: { value: data.zoning.baseCode.value, rights: "PUBLIC_REDISPLAY_OK" },
     overlays: {
       value: data.zoning.programs,
@@ -209,7 +212,9 @@ export async function generateMetadata({
   return parcelMetadata({
     payload,
     jurisdiction: "SAN_DIEGO",
-    state: effectiveParcelIndexState("SAN_DIEGO", "INDEXABLE"),
+    state: data.zoning.snapshotState === "UNAVAILABLE"
+      ? "NOINDEX_TEMPORARY"
+      : effectiveParcelIndexState("SAN_DIEGO", "INDEXABLE"),
   });
 }
 
@@ -385,6 +390,19 @@ export default async function ParcelPage({
               <p className="mt-1 text-xl font-semibold text-slate-950">{data.zoning.baseCode.value ?? "Not available"}</p>
               <p className="mt-1 text-xs leading-5 text-slate-600">{data.zoning.plainName.value ?? "Plain-language zone description unavailable."}</p>
               <SourceMeta fact={data.zoning.plainName.value ? data.zoning.plainName : data.zoning.baseCode} context="base zoning" />
+              {data.zoning.publicSnapshot ? (
+                <dl className="mt-3 space-y-1 border-t border-slate-200 pt-2 text-xs text-slate-600">
+                  <div className="flex justify-between gap-2"><dt>Mapping state</dt><dd className="font-medium text-slate-800">{data.zoning.publicSnapshot.zoningState.replaceAll("_", " ")}</dd></div>
+                  <div className="flex justify-between gap-2"><dt>Coastal context</dt><dd className="font-medium text-slate-800">{data.zoning.publicSnapshot.coastalState.replaceAll("_", " ")}</dd></div>
+                  <div className="flex justify-between gap-2"><dt>Profile state</dt><dd className="text-right font-medium text-slate-800">{data.zoning.publicSnapshot.profileSupportState.replaceAll("_", " ")}</dd></div>
+                  {data.zoning.publicSnapshot.materialZones.map((zone) => (
+                    <div key={`${zone.zone}-${zone.role}`} className="flex justify-between gap-2">
+                      <dt>{zone.role === "BOUNDARY_SLIVER" ? "Boundary sliver" : "Mapped zone"}</dt>
+                      <dd className="font-medium text-slate-800">{zone.zone} · {zone.parcelSharePercent.toFixed(2)}%</dd>
+                    </div>
+                  ))}
+                </dl>
+              ) : null}
             </div>
             <div className="rounded border border-slate-200 bg-white">
               <h3 className="border-b border-slate-100 px-3 py-2 text-sm font-semibold text-slate-900">Programs &amp; overlays</h3>

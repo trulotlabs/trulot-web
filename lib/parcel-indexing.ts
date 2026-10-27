@@ -22,6 +22,10 @@ export const PARCEL_INDEX_CONTROL = Object.freeze({
   activation: Object.freeze({ SAN_DIEGO: false, LA_MESA: false }),
 });
 
+export function sanDiegoIndexingRequested(env: Readonly<Record<string, string | undefined>> = process.env): boolean {
+  return env.TRULOT_SD_INDEXING === "1";
+}
+
 export type PublicRightsClass =
   | "PUBLIC_REDISPLAY_OK"
   | "PUBLIC_BOUNDED_SUMMARY_ONLY"
@@ -102,9 +106,14 @@ export function canonicalParcelUrl(
 export function effectiveParcelIndexState(
   jurisdiction: ParcelJurisdiction,
   requested: ParcelIndexState,
+  env: Readonly<Record<string, string | undefined>> = process.env,
 ): ParcelIndexState {
   if (requested !== "INDEXABLE") return requested;
-  if (PARCEL_INDEX_CONTROL.killSwitch || !PARCEL_INDEX_CONTROL.activation[jurisdiction]) {
+  if (
+    PARCEL_INDEX_CONTROL.killSwitch
+    || !PARCEL_INDEX_CONTROL.activation[jurisdiction]
+    || (jurisdiction === "SAN_DIEGO" && !sanDiegoIndexingRequested(env))
+  ) {
     return "NOINDEX_TEMPORARY";
   }
   return "INDEXABLE";
