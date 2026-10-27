@@ -1,0 +1,22 @@
+{
+  "capacity": false,
+  "definitions": "REUSED_FROM_RS_RULE_PROFILE_V0",
+  "existing_benchmark_replay": {
+    "5442140600": "UNCHANGED_BY_CONSTRUCTION",
+    "6341302200": "UNCHANGED_BY_CONSTRUCTION"
+  },
+  "generic_family_schema": true,
+  "production": false,
+  "property_intelligence_dependency": false,
+  "ui": false,
+  "v4_rule_record_fields": [
+    "rule_family",
+    "representation",
+    "operator",
+    "value",
+    "conditions",
+    "footnote_ids",
+    "unresolved_dependencies",
+    "public_evaluation_state"
+  ]
+}

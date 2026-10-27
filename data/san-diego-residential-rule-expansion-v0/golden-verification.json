@@ -1,0 +1,81 @@
+{
+  "manual_verification": [
+    {
+      "apn": "2748323700",
+      "modifiers": "REVIEW_REQUIRED",
+      "rule_row": "VERIFIED_BOTH_COASTAL_CONTEXTS",
+      "zone": "RS-1-14",
+      "zoning": "VERIFIED_SEALED_FIXTURE"
+    },
+    {
+      "apn": "5810934600",
+      "modifiers": "REVIEW_REQUIRED",
+      "rule_row": "VERIFIED_BOTH_COASTAL_CONTEXTS",
+      "zone": "RS-1-1",
+      "zoning": "VERIFIED_SEALED_FIXTURE"
+    },
+    {
+      "apn": "3013428200",
+      "modifiers": "REVIEW_REQUIRED",
+      "rule_row": "VERIFIED_INSIDE_COASTAL",
+      "zone": "RS-1-4",
+      "zoning": "VERIFIED_SEALED_FIXTURE"
+    }
+  ],
+  "samples": [
+    {
+      "apn": "2748323700",
+      "coastal_version": "OUTSIDE_COASTAL",
+      "family": "RS",
+      "modifier_state": "UNRESOLVED",
+      "profile_version": "2026-09-30-v0",
+      "provenance_refs": [
+        "data/base-zoning-v2/golden-fixture.json",
+        "coastal-context-v0/coastal-city-sd-20260930T143055Z/parcel-coastal-mapping.ndjson"
+      ],
+      "readiness": "SUPPORTED_PROFILE_REVIEW_REQUIRED",
+      "unresolved_families": [
+        "PARCEL_MODIFIERS"
+      ],
+      "zone": "RS-1-14"
+    },
+    {
+      "apn": "3013428200",
+      "coastal_version": "INSIDE_COASTAL",
+      "family": "RS",
+      "modifier_state": "UNRESOLVED",
+      "profile_version": "2026-09-30-v0",
+      "provenance_refs": [
+        "data/inside-coastal-rs-standards-v0/fixtures.json",
+        "coastal-context-v0/coastal-city-sd-20260930T143055Z/parcel-coastal-mapping.ndjson"
+      ],
+      "readiness": "SUPPORTED_PROFILE_REVIEW_REQUIRED",
+      "unresolved_families": [
+        "PARCEL_MODIFIERS"
+      ],
+      "zone": "RS-1-4"
+    },
+    {
+      "apn": "5810934600",
+      "coastal_version": "OUTSIDE_COASTAL",
+      "family": "RS",
+      "modifier_state": "UNRESOLVED",
+      "profile_version": "2026-09-30-v0",
+      "provenance_refs": [
+        "data/base-zoning-v2/golden-fixture.json",
+        "coastal-context-v0/coastal-city-sd-20260930T143055Z/parcel-coastal-mapping.ndjson"
+      ],
+      "readiness": "SUPPORTED_PROFILE_REVIEW_REQUIRED",
+      "unresolved_families": [
+        "PARCEL_MODIFIERS"
+      ],
+      "zone": "RS-1-1"
+    }
+  ],
+  "state": "BOUNDED_SAMPLE_ONLY",
+  "unrepresented_selected_zones": [
+    "RS-1-13",
+    "RS-1-2",
+    "RS-1-6"
+  ]
+}

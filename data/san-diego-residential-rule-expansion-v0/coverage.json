@@ -1,0 +1,14 @@
+{
+  "after_supported_associations": 243937,
+  "after_supported_percent": 67.772514,
+  "before_supported_associations": 165454,
+  "before_supported_percent": 45.967744,
+  "conditional_review_required_population": null,
+  "metric_basis": "zone associations, not unique parcels; exact parcel selection requires the absent sealed row artifact",
+  "packet_78_additional_supported_associations": 78483,
+  "percentage_point_increase": 21.80477,
+  "reason_exact_populations_unavailable": "parcel-base-zoning-map.ndjson.gz and parcel-intelligence-serving-v2.ndjson.gz are not present locally; aggregate counts cannot reconstruct APNs, zoning state, Coastal state, or modifiers",
+  "residential_zone_associations": 359935,
+  "supported_single_zone_residential_population": null,
+  "unsupported_residential_population": null
+}

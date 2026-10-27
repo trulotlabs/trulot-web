@@ -1,0 +1,21 @@
+{
+  "files": {
+    "README.md": "5f5612325a246d88d83b58d13192400a3dd55e5c6da49f6032e08b667cfb3772",
+    "compatibility.json": "767bbc3713802768377e99cd3b0213284c838823cd8908fba0d18957aadd73f5",
+    "coverage-ranking.json": "5b5c76ba4e516225547a20dd2407094d9a79fe9022f48ae99fcc03341db9f6ce",
+    "coverage.json": "487cd198f83ffc0b8c0779e4ba4aff40685500c71bd057c415b287148bb8b78a",
+    "decision.json": "9704fd6ac7b92225a8c457af794e0dddc8204136531245b390b1a65c5866b00b",
+    "family-schema.json": "844fb180d883db0c77aa5c25bb29101739f8b5f74ccd9aff9401677966065d52",
+    "footnotes.json": "87de1998c4bffef14640087b13e01bcd6d09ca87b5be0edf7a77d6b91976f942",
+    "golden-verification.json": "b1a7782e555b433b506ac6f7a54e686275b91efad819b006e2c6c12e3c2b6232",
+    "next-zone-opportunity.json": "7a9917876f7d1886b61a4494536ecc17225d393474808665f229320e83e76772",
+    "profile-selection-sample.ndjson.gz": "cf6b6dab38c344f8d409565dec51a32e052816d941cb2a0a7b195100218d0c2e",
+    "residential-zone-inventory.json": "ebf85e140e8b7fe3716605e870a4a6e24361b1230839dc7602efcb766a283e19",
+    "rule-profiles.json": "4639a5a37f9970dc89440521db06f1bd49850f9ed0cc1f791567d596989fab65"
+  },
+  "source_inputs": {
+    "inside_standards": "f6d0a9b0c2eb3370017a2d01437fdccee5b6746a98a9aeb9e3c68ca780afe392",
+    "outside_standards": "5227e1f1d1ef0732e2f4283e35e341b67744f843b25328653497b79a030932da",
+    "zoning_report": "96f83ef68f1853a32c54b758b896db02c1b0a543a5fe0203a754abf21752ba32"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "decision": "SAN_DIEGO_RESIDENTIAL_RULE_EXPANSION_PARTIAL",
+  "packet_11_frozen": true,
+  "production_access": false,
+  "public_activation": false,
+  "reason": "Six additional RS dual-version profiles are sealed, but the missing sealed parcel-level zoning output prevents the required citywide APN selection artifact, per-zone single/multi and Coastal splits, exact unique-parcel coverage, and 2-3 goldens per zone.",
+  "selected_additional_zones": [
+    "RS-1-14",
+    "RS-1-4",
+    "RS-1-13",
+    "RS-1-1",
+    "RS-1-2",
+    "RS-1-6"
+  ],
+  "useful_sealed_work": true
+}

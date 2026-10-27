@@ -1,0 +1,79 @@
+{
+  "definitions_ref": "data/rs-rule-profile-v0/definitions.json",
+  "formula_source_refs": [
+    "data/rs-rule-profile-v0/setbacks.json",
+    "data/rs-rule-profile-v0/height.json",
+    "data/rs-rule-profile-v0/far.json",
+    "data/rs-rule-profile-v0/lot-coverage.json"
+  ],
+  "formulas": {
+    "far": {
+      "hillside": "max(non_steep_hillside_area, minimum_zone_lot_area) + 0.25 * remaining_lot_area",
+      "ordinary": "table_or_section_131_0446_band",
+      "representation": "CONDITIONAL"
+    },
+    "front_cul_de_sac": {
+      "expression": "max(5, table_front_setback_ft - 5)",
+      "representation": "FORMULA",
+      "required_facts": [
+        "FRONTS_CUL_DE_SAC",
+        "REDUCTION_ELECTED"
+      ]
+    },
+    "front_slope": {
+      "representation": "CONDITIONAL",
+      "required_facts": [
+        "AT_LEAST_HALF_FRONT_50_FT_DEPTH_HAS_MIN_SLOPE_25_PERCENT",
+        "SETBACK_IS_CLOSEST_TO_STREET",
+        "REDUCTION_ELECTED"
+      ],
+      "result_ft": 6
+    },
+    "height_envelope": {
+      "branches": [
+        "45_DEGREES_IF_LT_75",
+        "30_DEGREES_IF_75_TO_150",
+        "NOT_APPLICABLE_IF_GT_150"
+      ],
+      "representation": "CONDITIONAL",
+      "selector": "code_lot_width_ft"
+    },
+    "interior_side_narrow_lot": {
+      "expression": "0.08 * code_lot_width_ft",
+      "representation": "FORMULA",
+      "required_facts": [
+        "LOT_WIDTH_LT_ZONE_MIN"
+      ]
+    },
+    "lot_coverage": {
+      "hillside_max_percent": 50,
+      "otherwise": "NOT_SPECIFIED",
+      "representation": "CONDITIONAL",
+      "unknown": "UNRESOLVED"
+    },
+    "rear_deep": {
+      "expression": "max(table_rear_setback_ft, 0.10 * code_lot_depth_ft)",
+      "representation": "FORMULA",
+      "required_facts": [
+        "LOT_DEPTH_GT_150"
+      ]
+    },
+    "rear_shallow": {
+      "expression": "max(5, 0.10 * code_lot_depth_ft)",
+      "representation": "FORMULA",
+      "required_facts": [
+        "LOT_DEPTH_LT_100"
+      ]
+    }
+  },
+  "missing_fact_policy": "UNRESOLVED_REVIEW_REQUIRED",
+  "modifier_interfaces": [
+    "FIRE_OFFICIAL_BUFFER",
+    "STEEP_HILLSIDE",
+    "COASTAL",
+    "COMMUNITY_PLAN_OR_SPECIFIC_PLAN",
+    "PROGRAM_GEOGRAPHY"
+  ],
+  "parameterization": "Every formula receives the selected zone row's table value; benchmark values are never embedded as universal constants.",
+  "schema_id": "RS_TABLE_131_04D_GENERIC_V1"
+}
