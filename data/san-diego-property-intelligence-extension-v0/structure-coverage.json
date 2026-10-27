@@ -1,0 +1,18 @@
+{
+  "source": "City of San Diego/SANDAG Building Outlines",
+  "sourceRecords": 386217,
+  "observationVintage": "Spring 2017 imagery baseline",
+  "parcelDenominator": 393733,
+  "states": {
+    "AMBIGUOUS_ONLY": 83846,
+    "MULTIPLE_FOOTPRINTS": 35158,
+    "NO_FOOTPRINT_RECORD": 12056,
+    "ONE_FOOTPRINT": 136434,
+    "STACKED_GROUP_WITHOUT_FOOTPRINTS": 17798,
+    "STACKED_GROUP_WITH_FOOTPRINTS": 108441
+  },
+  "directHistoricalFootprintParcels": 171592,
+  "currentStructureGeometrySupportedCitywide": 0,
+  "dwellingCountInferred": false,
+  "rights": "public GIS; bounded summaries only; raw polygons not repackaged"
+}

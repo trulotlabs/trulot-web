@@ -1,0 +1,45 @@
+{
+  "denominator": 393733,
+  "fields": {
+    "NUCLEUS_USE_CD": {
+      "available": true,
+      "observedCodes": 204
+    },
+    "UNITQTY": {
+      "available": true,
+      "positive": 372314,
+      "zeroOrUnknown": 21419,
+      "malformedOrNull": 0,
+      "useUnitConflicts": 2979
+    },
+    "TOTAL_LVG_AREA": {
+      "available": true,
+      "positive": 369082,
+      "unknownOrZero": 24651
+    },
+    "ASR_IMPR": {
+      "available": true,
+      "retainedInRawAcquisition": true,
+      "positive": 373847,
+      "zeroOrOther": 19886,
+      "meaning": "assessed improvement value, never area",
+      "measurement": "scan-raw-assessor.py over the sealed raw acquisition, restricted to the accepted 393,733 APNs"
+    },
+    "assessorAduHint": {
+      "available": true,
+      "count": 4577,
+      "limit": "hint only"
+    },
+    "garageConversionMarker": {
+      "available": true,
+      "affirmative": 13292,
+      "limit": "hint only"
+    },
+    "YEAR_EFFECTIVE": {
+      "available": true,
+      "present": 380658,
+      "usedAsAge": false
+    }
+  },
+  "semantics": "The same sealed SanGIS/County ARCC field definitions apply countywide; these are recorded characteristics, not legal/current as-built truth."
+}

@@ -1,0 +1,2726 @@
+{
+  "count": 25,
+  "rows": [
+    {
+      "apn": "2392600700",
+      "address": "0",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "STACKED_GROUP_WITH_FOOTPRINTS"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2392600700",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2392600700",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "STACKED_GROUP_WITH_FOOTPRINTS",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2392600700"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": true,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2392600700"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [
+          {
+            "conflictType": "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2392600700"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "sangis-arcc-parcel-base-20260924:2392600700"
+            },
+            "affectedFact": "UNIT_LEVEL_STRUCTURE_ASSIGNMENT",
+            "currentnessRelevance": "Common-parcel geometry cannot be assigned to an individual unit.",
+            "resolutionState": "UNIT_LEVEL_INFERENCE_BLOCKED",
+            "allowedUse": "PRELIMINARY_SCREENING_ONLY"
+          }
+        ],
+        "conflictReasons": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2392600700",
+          "packet39:parcel-footprint-summary.ndjson#2392600700"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ]
+      }
+    },
+    {
+      "apn": "2410601100",
+      "address": "0",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "NO_FOOTPRINT_RECORD"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2410601100",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2410601100",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "NO_FOOTPRINT_RECORD",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2410601100"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2410601100"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2410601100",
+          "packet39:parcel-footprint-summary.ndjson#2410601100"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2410603700",
+      "address": "0 ROCKWOOD RD",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "STACKED_GROUP_WITH_FOOTPRINTS"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2410603700",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2410603700",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "STACKED_GROUP_WITH_FOOTPRINTS",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2410603700"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": true,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2410603700"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [
+          {
+            "conflictType": "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2410603700"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "sangis-arcc-parcel-base-20260924:2410603700"
+            },
+            "affectedFact": "UNIT_LEVEL_STRUCTURE_ASSIGNMENT",
+            "currentnessRelevance": "Common-parcel geometry cannot be assigned to an individual unit.",
+            "resolutionState": "UNIT_LEVEL_INFERENCE_BLOCKED",
+            "allowedUse": "PRELIMINARY_SCREENING_ONLY"
+          }
+        ],
+        "conflictReasons": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2410603700",
+          "packet39:parcel-footprint-summary.ndjson#2410603700"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ]
+      }
+    },
+    {
+      "apn": "2410603800",
+      "address": "0 ROCKWOOD RD",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "MULTIPLE_FOOTPRINTS"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2410603800",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2410603800",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "MULTIPLE_FOOTPRINTS",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2410603800"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 20,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2410603800"
+        },
+        "currentnessState": "OBSERVATIONAL_SUPPORT_ONLY",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2410603800",
+          "packet39:parcel-footprint-summary.ndjson#2410603800"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "OBSERVATIONAL_SUPPORT_ONLY",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2410810800",
+      "address": "0",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "STACKED_GROUP_WITH_FOOTPRINTS"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2410810800",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2410810800",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "STACKED_GROUP_WITH_FOOTPRINTS",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2410810800"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": true,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2410810800"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [
+          {
+            "conflictType": "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2410810800"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "sangis-arcc-parcel-base-20260924:2410810800"
+            },
+            "affectedFact": "UNIT_LEVEL_STRUCTURE_ASSIGNMENT",
+            "currentnessRelevance": "Common-parcel geometry cannot be assigned to an individual unit.",
+            "resolutionState": "UNIT_LEVEL_INFERENCE_BLOCKED",
+            "allowedUse": "PRELIMINARY_SCREENING_ONLY"
+          }
+        ],
+        "conflictReasons": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2410810800",
+          "packet39:parcel-footprint-summary.ndjson#2410810800"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ]
+      }
+    },
+    {
+      "apn": "2410900900",
+      "address": "0 SAN PASQUAL VALLEY RD",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "NO_FOOTPRINT_RECORD"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2410900900",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2410900900",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "NO_FOOTPRINT_RECORD",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2410900900"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2410900900"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2410900900",
+          "packet39:parcel-footprint-summary.ndjson#2410900900"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2410901300",
+      "address": "0 SAN PASQUAL VALLEY RD",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "NO_FOOTPRINT_RECORD",
+        "ADDITIONAL_USE_CODE"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "610",
+          "sourceMeaning": "NOT_MAPPED_IN_PACKET_73",
+          "normalizedClass": "NONRESIDENTIAL",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2410901300",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2410901300",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "NONRESIDENTIAL",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "NO_FOOTPRINT_RECORD",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2410901300"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2410901300"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2410901300",
+          "packet39:parcel-footprint-summary.ndjson#2410901300"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2410902500",
+      "address": "15500 SAN PASQUAL VALLEY RD",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "STACKED_GROUP_WITH_FOOTPRINTS"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2410902500",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2410902500",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "STACKED_GROUP_WITH_FOOTPRINTS",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2410902500"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": true,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2410902500"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [
+          {
+            "conflictType": "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2410902500"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "sangis-arcc-parcel-base-20260924:2410902500"
+            },
+            "affectedFact": "UNIT_LEVEL_STRUCTURE_ASSIGNMENT",
+            "currentnessRelevance": "Common-parcel geometry cannot be assigned to an individual unit.",
+            "resolutionState": "UNIT_LEVEL_INFERENCE_BLOCKED",
+            "allowedUse": "PRELIMINARY_SCREENING_ONLY"
+          }
+        ],
+        "conflictReasons": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2410902500",
+          "packet39:parcel-footprint-summary.ndjson#2410902500"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ]
+      }
+    },
+    {
+      "apn": "2410902900",
+      "address": "14895 SAN PASQUAL VALLEY RD",
+      "strata": [
+        "RECORDED_SINGLE_FAMILY_LIKELY",
+        "ONE_FOOTPRINT"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "111",
+          "sourceMeaning": "SINGLE FAMILY RESIDENCE",
+          "normalizedClass": "DETACHED_FAMILY_HINT",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": 1,
+        "preliminaryDwellingState": "RECORDED_SINGLE_FAMILY_LIKELY",
+        "eligibleForPreselection": true,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2410902900",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2410902900",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "DETACHED_FAMILY_HINT",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          },
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2410902900",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2410902900",
+            "factType": "RECORDED_UNIT_COUNT",
+            "value": 1,
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          },
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2410902900",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2410902900",
+            "factType": "TOTAL_LIVING_AREA",
+            "value": 2159,
+            "derivationClass": "DIRECT_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "ONE_FOOTPRINT",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2410902900"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_SINGLE_FAMILY_LIKELY",
+        "recordedUnitCount": 1,
+        "preliminaryDwellingState": "SINGLE_FAMILY_LIKELY",
+        "condoState": "NOT_RECORDED_CONDO",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 1,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2410902900"
+        },
+        "currentnessState": "RECORDED_STALE_POSSIBLE",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2410902900",
+          "packet39:parcel-footprint-summary.ndjson#2410902900"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": true,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": true,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": true,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "SINGLE_FAMILY_LIKELY",
+        "dwellingStateProvenance": "RECORDED",
+        "currentnessState": "RECORDED_STALE_POSSIBLE",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2410903000",
+      "address": "0 ROCKWOOD RD",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "NO_FOOTPRINT_RECORD"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2410903000",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2410903000",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "NO_FOOTPRINT_RECORD",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2410903000"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2410903000"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2410903000",
+          "packet39:parcel-footprint-summary.ndjson#2410903000"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2411003100",
+      "address": "14983 OLD MILKY WAY",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "STACKED_GROUP_WITH_FOOTPRINTS"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "850",
+          "sourceMeaning": "NON-TAXABLE",
+          "normalizedClass": "NONRESIDENTIAL",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2411003100",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2411003100",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "NONRESIDENTIAL",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "STACKED_GROUP_WITH_FOOTPRINTS",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2411003100"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": true,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2411003100"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [
+          {
+            "conflictType": "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2411003100"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "sangis-arcc-parcel-base-20260924:2411003100"
+            },
+            "affectedFact": "UNIT_LEVEL_STRUCTURE_ASSIGNMENT",
+            "currentnessRelevance": "Common-parcel geometry cannot be assigned to an individual unit.",
+            "resolutionState": "UNIT_LEVEL_INFERENCE_BLOCKED",
+            "allowedUse": "PRELIMINARY_SCREENING_ONLY"
+          }
+        ],
+        "conflictReasons": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2411003100",
+          "packet39:parcel-footprint-summary.ndjson#2411003100"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ]
+      }
+    },
+    {
+      "apn": "2411003200",
+      "address": "0 OLD MILKY WAY",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "NO_FOOTPRINT_RECORD"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2411003200",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2411003200",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "NO_FOOTPRINT_RECORD",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2411003200"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2411003200"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2411003200",
+          "packet39:parcel-footprint-summary.ndjson#2411003200"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2411003300",
+      "address": "0 HIGHLAND VALLEY RD",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "NO_FOOTPRINT_RECORD"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2411003300",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2411003300",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "NO_FOOTPRINT_RECORD",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2411003300"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2411003300"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2411003300",
+          "packet39:parcel-footprint-summary.ndjson#2411003300"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2411003400",
+      "address": "15480 OLD MILKY WAY",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "STACKED_GROUP_WITH_FOOTPRINTS"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "850",
+          "sourceMeaning": "NON-TAXABLE",
+          "normalizedClass": "NONRESIDENTIAL",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2411003400",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2411003400",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "NONRESIDENTIAL",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "STACKED_GROUP_WITH_FOOTPRINTS",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2411003400"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": true,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2411003400"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [
+          {
+            "conflictType": "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2411003400"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "sangis-arcc-parcel-base-20260924:2411003400"
+            },
+            "affectedFact": "UNIT_LEVEL_STRUCTURE_ASSIGNMENT",
+            "currentnessRelevance": "Common-parcel geometry cannot be assigned to an individual unit.",
+            "resolutionState": "UNIT_LEVEL_INFERENCE_BLOCKED",
+            "allowedUse": "PRELIMINARY_SCREENING_ONLY"
+          }
+        ],
+        "conflictReasons": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2411003400",
+          "packet39:parcel-footprint-summary.ndjson#2411003400"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ]
+      }
+    },
+    {
+      "apn": "2411004300",
+      "address": "0 HIGHLAND VALLEY RD",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "NO_FOOTPRINT_RECORD"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2411004300",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2411004300",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "NO_FOOTPRINT_RECORD",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2411004300"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2411004300"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2411004300",
+          "packet39:parcel-footprint-summary.ndjson#2411004300"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2411004400",
+      "address": "0 HIGHLAND VALLEY RD",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "NO_FOOTPRINT_RECORD"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2411004400",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2411004400",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "NO_FOOTPRINT_RECORD",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2411004400"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2411004400"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2411004400",
+          "packet39:parcel-footprint-summary.ndjson#2411004400"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2411801200",
+      "address": "0",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "NO_FOOTPRINT_RECORD"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2411801200",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2411801200",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "NO_FOOTPRINT_RECORD",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2411801200"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2411801200"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2411801200",
+          "packet39:parcel-footprint-summary.ndjson#2411801200"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2420600300",
+      "address": "0",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "NO_FOOTPRINT_RECORD"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2420600300",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2420600300",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "NO_FOOTPRINT_RECORD",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2420600300"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2420600300"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2420600300",
+          "packet39:parcel-footprint-summary.ndjson#2420600300"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2420600400",
+      "address": "0",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "NO_FOOTPRINT_RECORD"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2420600400",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2420600400",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "NO_FOOTPRINT_RECORD",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2420600400"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2420600400"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2420600400",
+          "packet39:parcel-footprint-summary.ndjson#2420600400"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "2420601100",
+      "address": "0",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "MULTIPLE_FOOTPRINTS"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2420601100",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2420601100",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "MULTIPLE_FOOTPRINTS",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2420601100"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 136,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": true,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2420601100"
+        },
+        "currentnessState": "OBSERVATIONAL_SUPPORT_ONLY",
+        "conflicts": [
+          {
+            "conflictType": "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2420601100"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "sangis-arcc-parcel-base-20260924:2420601100"
+            },
+            "affectedFact": "UNIT_LEVEL_STRUCTURE_ASSIGNMENT",
+            "currentnessRelevance": "Common-parcel geometry cannot be assigned to an individual unit.",
+            "resolutionState": "UNIT_LEVEL_INFERENCE_BLOCKED",
+            "allowedUse": "PRELIMINARY_SCREENING_ONLY"
+          }
+        ],
+        "conflictReasons": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2420601100",
+          "packet39:parcel-footprint-summary.ndjson#2420601100"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "OBSERVATIONAL_SUPPORT_ONLY",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ]
+      }
+    },
+    {
+      "apn": "2420800600",
+      "address": "0",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "STACKED_GROUP_WITH_FOOTPRINTS"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2420800600",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2420800600",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "STACKED_GROUP_WITH_FOOTPRINTS",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2420800600"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": true,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2420800600"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [
+          {
+            "conflictType": "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2420800600"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "sangis-arcc-parcel-base-20260924:2420800600"
+            },
+            "affectedFact": "UNIT_LEVEL_STRUCTURE_ASSIGNMENT",
+            "currentnessRelevance": "Common-parcel geometry cannot be assigned to an individual unit.",
+            "resolutionState": "UNIT_LEVEL_INFERENCE_BLOCKED",
+            "allowedUse": "PRELIMINARY_SCREENING_ONLY"
+          }
+        ],
+        "conflictReasons": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2420800600",
+          "packet39:parcel-footprint-summary.ndjson#2420800600"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ]
+      }
+    },
+    {
+      "apn": "2421000300",
+      "address": "0",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "AMBIGUOUS_ONLY"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2421000300",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2421000300",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "AMBIGUOUS_ONLY",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2421000300"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": true,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2421000300"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [
+          {
+            "conflictType": "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2421000300"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "sangis-arcc-parcel-base-20260924:2421000300"
+            },
+            "affectedFact": "UNIT_LEVEL_STRUCTURE_ASSIGNMENT",
+            "currentnessRelevance": "Common-parcel geometry cannot be assigned to an individual unit.",
+            "resolutionState": "UNIT_LEVEL_INFERENCE_BLOCKED",
+            "allowedUse": "PRELIMINARY_SCREENING_ONLY"
+          }
+        ],
+        "conflictReasons": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2421000300",
+          "packet39:parcel-footprint-summary.ndjson#2421000300"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ]
+      }
+    },
+    {
+      "apn": "2421000500",
+      "address": "0",
+      "strata": [
+        "RECORDED_TYPE_UNKNOWN",
+        "NO_FOOTPRINT_RECORD"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "000",
+          "sourceMeaning": "UNZONED/OTHER",
+          "normalizedClass": "UNKNOWN_OTHER",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "eligibleForPreselection": false,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "2421000500",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:2421000500",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "UNKNOWN_OTHER",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "NO_FOOTPRINT_RECORD",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "2421000500"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_TYPE_UNKNOWN",
+        "recordedUnitCount": null,
+        "preliminaryDwellingState": "UNKNOWN",
+        "condoState": "UNKNOWN",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 0,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#2421000500"
+        },
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:2421000500",
+          "packet39:parcel-footprint-summary.ndjson#2421000500"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": false,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": false,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": false,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "UNKNOWN",
+        "dwellingStateProvenance": "UNKNOWN",
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "5442140600",
+      "address": "639 67TH ST",
+      "strata": [
+        "RECORDED_SINGLE_FAMILY_LIKELY",
+        "ONE_FOOTPRINT"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "111",
+          "sourceMeaning": "SINGLE FAMILY RESIDENCE",
+          "normalizedClass": "DETACHED_FAMILY_HINT",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": 1,
+        "preliminaryDwellingState": "RECORDED_SINGLE_FAMILY_LIKELY",
+        "eligibleForPreselection": true,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "5442140600",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:5442140600",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "DETACHED_FAMILY_HINT",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          },
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "5442140600",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:5442140600",
+            "factType": "RECORDED_UNIT_COUNT",
+            "value": 1,
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          },
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "5442140600",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:5442140600",
+            "factType": "TOTAL_LIVING_AREA",
+            "value": 719,
+            "derivationClass": "DIRECT_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "ONE_FOOTPRINT",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "5442140600"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_SINGLE_FAMILY_LIKELY",
+        "recordedUnitCount": 1,
+        "preliminaryDwellingState": "SINGLE_FAMILY_LIKELY",
+        "condoState": "NOT_RECORDED_CONDO",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 1,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": false,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#5442140600"
+        },
+        "currentnessState": "RECORDED_STALE_POSSIBLE",
+        "conflicts": [],
+        "conflictReasons": [],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:5442140600",
+          "packet39:parcel-footprint-summary.ndjson#5442140600"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": true,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": true,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": true,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "SINGLE_FAMILY_LIKELY",
+        "dwellingStateProvenance": "RECORDED",
+        "currentnessState": "RECORDED_STALE_POSSIBLE",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": []
+      }
+    },
+    {
+      "apn": "6341302200",
+      "address": "1456 27TH ST",
+      "strata": [
+        "RECORDED_SINGLE_FAMILY_LIKELY",
+        "MULTIPLE_FOOTPRINTS"
+      ],
+      "assessor": {
+        "provenance": "RECORDED_PROPERTY_CHARACTERISTIC",
+        "use": {
+          "originalCode": "110",
+          "sourceMeaning": "SINGLE FAMILY RESIDENCE - GENERIC",
+          "normalizedClass": "DETACHED_FAMILY_HINT",
+          "assessorAduHint": false
+        },
+        "recordedUnitCount": 1,
+        "preliminaryDwellingState": "RECORDED_SINGLE_FAMILY_LIKELY",
+        "eligibleForPreselection": true,
+        "facts": [
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "6341302200",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:6341302200",
+            "factType": "ASSESSOR_USE_CLASS",
+            "value": "DETACHED_FAMILY_HINT",
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          },
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "6341302200",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:6341302200",
+            "factType": "RECORDED_UNIT_COUNT",
+            "value": 1,
+            "derivationClass": "NORMALIZED_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING",
+              "PRESELECT_WITH_CONFIRMATION",
+              "CONFLICT_DETECTION"
+            ]
+          },
+          {
+            "jurisdiction": "CITY_OF_SAN_DIEGO",
+            "apn": "6341302200",
+            "sourceId": "SANGIS_ARCC_PARCEL_BASE_20260924",
+            "authorityClass": "RECORDED_PROPERTY_CHARACTERISTIC",
+            "recordedDate": null,
+            "sourceUpdateDate": null,
+            "acquisitionDate": "2026-09-24",
+            "currentnessState": "RECORDED_NOT_CURRENT_AS_BUILT_TRUTH",
+            "conflictState": "NONE",
+            "evidenceReference": "sangis-arcc-parcel-base-20260924:6341302200",
+            "factType": "TOTAL_LIVING_AREA",
+            "value": 988,
+            "derivationClass": "DIRECT_RECORDED",
+            "permittedEvaluationUses": [
+              "PRELIMINARY_SCREENING"
+            ]
+          }
+        ],
+        "conflictReasons": [],
+        "currentnessLimit": "Recorded assessor characteristics may lag current as-built conditions and require homeowner confirmation."
+      },
+      "footprintState": "MULTIPLE_FOOTPRINTS",
+      "composition": {
+        "contractVersion": "jurisdiction-neutral-property-intelligence-composition-v0",
+        "parcelIdentity": {
+          "jurisdiction": "CITY_OF_SAN_DIEGO",
+          "apn": "6341302200"
+        },
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "recordedDwellingState": "RECORDED_SINGLE_FAMILY_LIKELY",
+        "recordedUnitCount": 1,
+        "preliminaryDwellingState": "SINGLE_FAMILY_LIKELY",
+        "condoState": "NOT_RECORDED_CONDO",
+        "assessorHints": [],
+        "permitChangeSignal": "NO_BOUNDED_PERMIT_EVIDENCE",
+        "explicitAduPermitEvidence": "NONE",
+        "permitEvidenceScope": "NOT_AVAILABLE",
+        "structureObservation": {
+          "observedFootprintCount": 2,
+          "accessoryStructureCandidate": false,
+          "stackedOrAmbiguous": true,
+          "observationDate": "2017-Spring",
+          "currentnessState": "CURRENTNESS_UNKNOWN",
+          "evidenceReference": "packet39:parcel-footprint-summary.ndjson#6341302200"
+        },
+        "currentnessState": "RECORDED_STALE_POSSIBLE",
+        "conflicts": [
+          {
+            "conflictType": "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+            "sourceA": {
+              "authority": "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+              "evidenceReference": "packet39:parcel-footprint-summary.ndjson#6341302200"
+            },
+            "sourceB": {
+              "authority": "RECORDED_ASSESSOR_CHARACTERISTIC",
+              "evidenceReference": "sangis-arcc-parcel-base-20260924:6341302200"
+            },
+            "affectedFact": "UNIT_LEVEL_STRUCTURE_ASSIGNMENT",
+            "currentnessRelevance": "Common-parcel geometry cannot be assigned to an individual unit.",
+            "resolutionState": "UNIT_LEVEL_INFERENCE_BLOCKED",
+            "allowedUse": "PRELIMINARY_SCREENING_ONLY"
+          }
+        ],
+        "conflictReasons": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "homeownerFacts": null,
+        "provenanceReferences": [
+          "sangis-arcc-parcel-base-20260924:6341302200",
+          "packet39:parcel-footprint-summary.ndjson#6341302200"
+        ],
+        "permittedEvaluationUses": {
+          "PATHWAY_SELECTION": true,
+          "PRELIMINARY_SCREENING": true,
+          "QUESTION_PRESELECTION": true,
+          "CURRENTNESS_WARNING": true,
+          "COMPLIANCE": false
+        },
+        "eligibleForPreselection": true,
+        "currentnessLimit": "This composition supports preliminary questions and screening only; it does not establish legal or permitted configuration."
+      },
+      "v4": {
+        "preliminaryDwellingState": "SINGLE_FAMILY_LIKELY",
+        "dwellingStateProvenance": "RECORDED",
+        "currentnessState": "RECORDED_STALE_POSSIBLE",
+        "activeChange": false,
+        "explicitAduPermitEvidence": "NONE",
+        "accessoryStructureCandidate": false,
+        "unresolvedConflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ]
+      }
+    }
+  ],
+  "permitStrataGaps": {
+    "knownAdu": "assessor hint only; no Citywide permit proof",
+    "activeProject": "synthetic contract test only",
+    "expiredOrCancelled": "synthetic contract test only",
+    "noPermitHistory": "not asserted because the corpus is unavailable"
+  },
+  "namedBenchmarks": {
+    "6341302200": {
+      "zoningStratum": "RS-1-7",
+      "recordedState": "RECORDED_SINGLE_FAMILY_LIKELY",
+      "recordedUnits": 1,
+      "recordedLivingAreaSqFt": 988,
+      "assessedImprovementValue": 113000,
+      "rawYearEffectiveCode": "10",
+      "yearEffectiveUsedAsAge": false,
+      "boundedPublicPermitObservation": "address-linked plumbing record with no stated configuration change",
+      "complianceEvidenceSufficient": false
+    },
+    "5442140600": {
+      "zoningStratum": "RM-2-5",
+      "recordedState": "RECORDED_SINGLE_FAMILY_LIKELY",
+      "recordedUnits": 1,
+      "recordedLivingAreaSqFt": 719,
+      "assessedImprovementValue": 68814,
+      "rawYearEffectiveCode": "50",
+      "yearEffectiveUsedAsAge": false,
+      "privateProjectEvidenceExcluded": true,
+      "publicPermitComposition": "NOT_AVAILABLE",
+      "currentness": "RECORDED_STALE_POSSIBLE"
+    }
+  }
+}

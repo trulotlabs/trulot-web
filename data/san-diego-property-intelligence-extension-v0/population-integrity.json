@@ -1,0 +1,12 @@
+{
+  "rows": 393733,
+  "distinctApns": 393733,
+  "duplicates": 0,
+  "parcelV2": {
+    "acquisitionId": "sangis-20260924T183743Z",
+    "rawSourceSha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+    "apnSetFingerprint": "93047eb112077a71314bd492602df41b864e75402fbff78996290185acc6cd25",
+    "fullRowFingerprint": "a30e506477248e46a66416821b8d12f58cec07e60a065860af5c0d595062006f"
+  },
+  "localSortedNewlineApnSha256": "e247b647ecff8bb0f138e55f7e362f35c301ac591f8f1e5c5c3538ab1433a97f"
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "san-diego-property-intelligence-extension-v0",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": {
+      "bytes": 575,
+      "sha256": "a94d11f3248309b67bf4eb48b540fc53e51099f6c20c11a11fbebe6cd6895ea2"
+    },
+    "accuracy-uplift.json": {
+      "bytes": 481,
+      "sha256": "80a46fab216d6c7482f197bf733b94cbc7f30f79e53250ac2aa31c886923b931"
+    },
+    "assessor-coverage.json": {
+      "bytes": 1213,
+      "sha256": "67faf6286b68fd342574ff29ad836d5db337a2aef66729e6d114cc4501566c81"
+    },
+    "benchmark-cohort.json": {
+      "bytes": 108360,
+      "sha256": "c6a80fa46e3ee6ee4559f65226f684f498e342eea06e69595adf27d762f551fc"
+    },
+    "composition-and-rights.json": {
+      "bytes": 2046,
+      "sha256": "423dd48411bb50dedab79d3017d32a84a0499f114c051a624b04f7ea5bf874bf"
+    },
+    "decision.json": {
+      "bytes": 566,
+      "sha256": "5971ce2247006342b36a438c892561b609209cc996a2e90b32d1012c9567c385"
+    },
+    "permit-inventory.json": {
+      "bytes": 1484,
+      "sha256": "e4d9582c4a385023bb74b37fefea23c1bbe422e33a462a1d8f833aa68055c526"
+    },
+    "population-integrity.json": {
+      "bytes": 513,
+      "sha256": "5a6bc810c6d6501355f3c20f3d45ccffab26514e9d584a3cb39e8a3edd0d26e4"
+    },
+    "population-metrics.json": {
+      "bytes": 974,
+      "sha256": "fbbe619ebf4e672d5732d71b786edd85f6fe9a3a4fba0d4b7ac5edb4d4debca5"
+    },
+    "structure-coverage.json": {
+      "bytes": 620,
+      "sha256": "3c61b9af515e530db134da909a6003b09fb55aa77fb051f9ad222c3019424d61"
+    },
+    "use-code-mapping.json": {
+      "bytes": 13992,
+      "sha256": "86123929dafbaf35768bf1c1d2fc772ceb6e9ca952937301aae29ff61b89635b"
+    }
+  }
+}

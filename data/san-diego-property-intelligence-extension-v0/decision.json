@@ -1,0 +1,13 @@
+{
+  "decision": "SAN_DIEGO_PROPERTY_INTELLIGENCE_EXTENSION_RECON_ONLY: sealed Citywide permit/currentness evidence is unavailable and the Citywide structure layer is historical Spring 2017 observation only",
+  "runtimeIntegration": false,
+  "nextStep": "CITYWIDE_RULE_PROFILE_EXPANSION",
+  "futureSmallestIntegration": [
+    "recorded-property confirmation",
+    "explicit currentness warning",
+    "normalized permit change signal after a sealed corpus exists",
+    "no raw permit/footprint display"
+  ],
+  "packet11Frozen": true,
+  "productionDependency": false
+}

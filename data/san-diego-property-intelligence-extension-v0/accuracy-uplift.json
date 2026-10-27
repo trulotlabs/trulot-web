@@ -1,0 +1,11 @@
+{
+  "recordedPropertyCoverage": 348290,
+  "currentnessQualifiedCoverage": 0,
+  "conflictsDetected": 277133,
+  "assessorConflictParcels": 4807,
+  "geometryConflictParcels": 275309,
+  "laterChangeDetected": 0,
+  "stalePreselectionHeldOutByDecision": 230370,
+  "accessoryContextCandidates": 13187,
+  "limitation": "Coverage and held-out currentness counts are not final feasibility accuracy percentages; conflict subtype counts overlap and the unique union is reported separately."
+}

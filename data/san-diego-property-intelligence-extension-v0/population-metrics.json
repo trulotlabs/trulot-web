@@ -1,0 +1,35 @@
+{
+  "denominator": 393733,
+  "units": {
+    "positive": 372314,
+    "zeroOrUnknown": 21419,
+    "malformedOrNull": 0,
+    "useUnitConflicts": 2979
+  },
+  "dwellingStates": {
+    "RECORDED_CONDO": 113113,
+    "RECORDED_MULTIFAMILY_LIKELY": 24790,
+    "RECORDED_RESIDENTIAL_CONFLICT": 4807,
+    "RECORDED_SINGLE_FAMILY_LIKELY": 205580,
+    "RECORDED_TYPE_UNKNOWN": 45443
+  },
+  "prePermitStructureEligible": 230370,
+  "prePermitStructureIneligible": 163363,
+  "currentnessStates": {
+    "CONFLICTING_EVIDENCE": 4807,
+    "CURRENTNESS_UNKNOWN": 35209,
+    "OBSERVATIONAL_SUPPORT_ONLY": 10234,
+    "RECORDED_STALE_POSSIBLE": 343483
+  },
+  "currentnessQualifiedForIntegration": 0,
+  "assessorConflictParcels": 4807,
+  "geometryConflictParcels": 275309,
+  "composedConflictParcels": 277133,
+  "accessoryContextCandidates": 13187,
+  "questionSelection": {
+    "confirmationReady": 230370,
+    "blankQuestion": 45443,
+    "conflictSpecific": 4807,
+    "condoSpecific": 113113
+  }
+}

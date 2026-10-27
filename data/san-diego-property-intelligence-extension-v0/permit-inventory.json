@@ -1,0 +1,53 @@
+{
+  "runtimeContract": "public.parcel_permit_terminal_v2",
+  "knownSystems": [
+    "City of San Diego Accela Citizen Access",
+    "OpenDSD approvals index"
+  ],
+  "availableFields": [
+    "record_id",
+    "record_number",
+    "record_type",
+    "status",
+    "normalized_stage",
+    "opened_date",
+    "issued_date",
+    "finaled_date",
+    "completed_date",
+    "expired_date",
+    "last_activity_date",
+    "address_full",
+    "apn_norm",
+    "description",
+    "project_id"
+  ],
+  "sealedCitywideRecordCorpusAvailableLocally": false,
+  "recordsMeasured": 0,
+  "parcelCoverageMeasured": 0,
+  "linkage": {
+    "exactApn": 0,
+    "uniqueAddress": 0,
+    "ambiguous": 0,
+    "unresolved": 0,
+    "state": "NOT_MEASURABLE"
+  },
+  "evidenceClassesSupportedByGenericCode": [
+    "ADU",
+    "JADU",
+    "ADDITION",
+    "GARAGE_CONVERSION",
+    "DEMOLITION",
+    "NEW_DWELLING"
+  ],
+  "normalizedStatuses": [
+    "APPLIED",
+    "UNDER_REVIEW",
+    "ISSUED",
+    "FINALED_COMPLETE",
+    "EXPIRED",
+    "WITHDRAWN",
+    "UNKNOWN"
+  ],
+  "cancelledVocabularyBoundary": "Cancelled/void vocabulary must preserve the original status and map to the withdrawn/cancelled terminal class only after City vocabulary is observed in a sealed corpus; ambiguous CLOSED remains UNKNOWN from status alone.",
+  "limitation": "Schemas, normalizers, and bounded public observations exist, but no sealed Citywide permit rows/acquisition receipt were found. No production query or reacquisition was performed."
+}

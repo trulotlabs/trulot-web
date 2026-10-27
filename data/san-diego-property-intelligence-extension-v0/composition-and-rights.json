@@ -1,0 +1,64 @@
+{
+  "genericArchitecture": {
+    "contract": "jurisdiction-neutral-property-intelligence-composition-v0",
+    "authorityOrderChanged": false,
+    "currentnessStateMachineChanged": false,
+    "conflictModelChanged": false,
+    "questionSelectionChanged": false,
+    "v4ContractChanged": false
+  },
+  "sourceAdapters": [
+    "Citywide SanGIS assessor selection",
+    "City historical outline summary",
+    "City permit corpus unavailable"
+  ],
+  "sourceRights": [
+    {
+      "source": "sealed SanGIS/County ARCC parcel acquisition",
+      "classification": "ALREADY_LAWFULLY_HELD_SEALED_AND_PUBLIC_REUSE_ALLOWED",
+      "outputBoundary": "bounded derived recorded characteristics"
+    },
+    {
+      "source": "sealed City/SANDAG Building Outlines acquisition",
+      "classification": "ALREADY_LAWFULLY_HELD_SEALED_AND_PUBLIC_REUSE_ALLOWED",
+      "outputBoundary": "bounded summaries; no raw polygon redisplay"
+    },
+    {
+      "source": "City permit runtime schema and bounded observations",
+      "classification": "INTERNAL_ONLY_UNTIL_CITYWIDE_ACQUISITION_AND_RIGHTS_RECEIPT",
+      "outputBoundary": "no Citywide claims"
+    },
+    {
+      "source": "unsealed City permit corpus",
+      "classification": "RIGHTS_AND_COMPLETENESS_UNCLEAR",
+      "outputBoundary": "not used"
+    },
+    {
+      "source": "operator project corpus",
+      "classification": "PRIVATE_NOT_PUBLIC",
+      "outputBoundary": "not used"
+    }
+  ],
+  "publicInputs": [
+    "sealed SanGIS/ARCC assessor fields",
+    "public City/SANDAG historical outline summaries",
+    "bounded public permit observation for the named RS benchmark narrative only"
+  ],
+  "privateEvidenceExcluded": true,
+  "privateDetailsPersisted": false,
+  "redisplayRightsExpanded": false,
+  "allowedUses": [
+    "pathway selection after confirmation",
+    "preliminary screening",
+    "homeowner questions",
+    "currentness warning"
+  ],
+  "prohibitedUses": [
+    "zoning truth change",
+    "rule-profile change",
+    "Coastal change",
+    "SDA change",
+    "compliance",
+    "capacity"
+  ]
+}
