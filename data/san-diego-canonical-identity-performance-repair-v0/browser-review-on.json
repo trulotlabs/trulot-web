@@ -1,0 +1,630 @@
+{
+  "mode": "on",
+  "reviewed": [
+    {
+      "apn": "5333641301",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/533-364-13-01-1501-front-st-unit-101",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 2504,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "5333641302",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/533-364-13-02-1501-front-st-unit-102",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 923.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "6341302200",
+      "categories": {
+        "stacked": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/634-130-22-00-1456-27th-st",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 953.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "5442140600",
+      "categories": {
+        "stacked": false,
+        "zoningState": "MULTI_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/544-214-06-00-639-n-67th-st",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 923.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "3031701800",
+      "categories": {
+        "stacked": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/apn-3031701800",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 922.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411801",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-01-14690-via-fiesta-unit-01",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 931,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411802",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-02-14690-via-fiesta-unit-02",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 925.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411803",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-03-14690-via-fiesta-unit-03",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 928.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411804",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-04-14690-via-fiesta-unit-04",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 930,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411805",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-05-14650-via-fiesta-unit-04",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 926,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411806",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-06-14650-via-fiesta-unit-03",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 923.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411807",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-07-14650-via-fiesta-unit-02",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 921.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411808",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-08-14650-via-fiesta-unit-01",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 923,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411809",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-09-14654-via-fiesta-unit-04",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 922,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411810",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-10-14654-via-fiesta-unit-03",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 924.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411811",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-11-14654-via-fiesta-unit-02",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 922.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411812",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-12-14654-via-fiesta-unit-01",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 962.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411813",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-13-14656-via-fiesta-unit-05",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 924.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411814",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-14-14656-via-fiesta-unit-04",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 920.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411815",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-15-14656-via-fiesta-unit-03",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 922.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411816",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-16-14656-via-fiesta-unit-02",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 921.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411817",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-17-14656-via-fiesta-unit-01",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 917.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411901",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-01-14652-via-fiesta-unit-05",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 923.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411902",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-02-14652-via-fiesta-unit-02",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 922.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411903",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-03-14652-via-fiesta-unit-04",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 924.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411904",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-04-14652-via-fiesta-unit-03",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 920.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411905",
+      "categories": {
+        "stacked": true,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-05-14652-via-fiesta-unit-01",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 924.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672310100",
+      "categories": {
+        "stacked": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-01-00-15735-concord-ridge-ter",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 928.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672310200",
+      "categories": {
+        "stacked": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-02-00-15739-concord-ridge-ter",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 917.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2983003800",
+      "categories": {
+        "stacked": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "INSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/298-300-38-00-15808-highland-ct",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 916.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2983003900",
+      "categories": {
+        "stacked": false,
+        "zoningState": "INDETERMINATE",
+        "coastalState": "INSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/298-300-39-00-15830-highland-ct",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 914,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673000100",
+      "categories": {
+        "stacked": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/267-300-01-00-7890-cerro-del-sur",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 922.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2674700100",
+      "categories": {
+        "stacked": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/267-470-01-00-8184-auberge-cir",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 926.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "3051600800",
+      "categories": {
+        "stacked": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/305-160-08-00-6060-blue-dawn-trl",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 938,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2410902500",
+      "categories": {
+        "stacked": true,
+        "zoningState": "INDETERMINATE",
+        "coastalState": "OUTSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/241-090-25-00-15500-san-pasqual-valley-rd",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 915.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "5335900100",
+      "categories": {
+        "stacked": true,
+        "zoningState": "UNMAPPED",
+        "coastalState": "INSIDE_COASTAL"
+      },
+      "canonical": "https://trulot.com/parcel/san-diego/533-590-01-00-1600-pacific-hwy",
+      "robots": "noindex, follow, noarchive",
+      "elapsedMs": 954.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    }
+  ],
+  "stageDelayMs": {
+    "exactParcel": 80,
+    "similarParcel": 90,
+    "permits": 120,
+    "overlays": 100
+  },
+  "serialStageFloorMs": 390,
+  "parallelStageFloorMs": 200,
+  "redirectPair": "PASS",
+  "consoleErrors": [],
+  "productionAccess": false,
+  "indexing": "OFF",
+  "sitemap": "OFF"
+}

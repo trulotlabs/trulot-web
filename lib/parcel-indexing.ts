@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import {
-  canonicalJurisdictionParcelPath,
   formatApnForDisplay,
   normalizeApnDigits,
   type ParcelJurisdictionSlug,
 } from "./parcel-slug";
+import { canonicalParcelIdentity } from "./parcel-identity";
 
 export const TRULOT_PRODUCTION_ORIGIN = "https://trulot.com" as const;
 
@@ -92,7 +92,12 @@ export function canonicalParcelPathFor(
   apn: string,
   address?: string | null,
 ): string {
-  return canonicalJurisdictionParcelPath(JURISDICTION_SLUG[jurisdiction], apn, address);
+  return canonicalParcelIdentity({
+    apn,
+    jurisdiction: JURISDICTION_SLUG[jurisdiction],
+    address,
+    provenance: "public-parcel-payload",
+  }).canonicalPath;
 }
 
 export function canonicalParcelUrl(
@@ -100,7 +105,12 @@ export function canonicalParcelUrl(
   apn: string,
   address?: string | null,
 ): string {
-  return new URL(canonicalParcelPathFor(jurisdiction, apn, address), TRULOT_PRODUCTION_ORIGIN).toString();
+  return canonicalParcelIdentity({
+    apn,
+    jurisdiction: JURISDICTION_SLUG[jurisdiction],
+    address,
+    provenance: "public-parcel-payload",
+  }).canonicalUrl;
 }
 
 export function effectiveParcelIndexState(
@@ -176,7 +186,7 @@ export function hasMeaningfulPublicParcelContent(payload: PublicParcelPayload): 
   return parcelSpecificFacts.length >= 2;
 }
 
-export function parcelPlaceJsonLd(payload: PublicParcelPayload): Record<string, unknown> {
+export function parcelPlaceJsonLd(payload: PublicParcelPayload, canonicalUrl?: string): Record<string, unknown> {
   const json: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Place",
@@ -187,6 +197,7 @@ export function parcelPlaceJsonLd(payload: PublicParcelPayload): Record<string, 
       value: formatApnForDisplay(payload.apn),
     },
   };
+  if (canonicalUrl) json.url = canonicalUrl;
   if (payload.address) {
     json.address = {
       "@type": "PostalAddress",

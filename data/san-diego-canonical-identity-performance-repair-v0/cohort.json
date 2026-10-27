@@ -1,0 +1,13 @@
+{
+  "candidateCount": 318701,
+  "canonicalChangesFromPacket86": 54300,
+  "excludedIdentityAnomalies": 0,
+  "collisions": 0,
+  "apnOnlyPages": 9767,
+  "addressedPages": 308934,
+  "exclusions": {
+    "zoning_state_indeterminate": 1641,
+    "zoning_state_multi_zone": 73064,
+    "zoning_state_unmapped": 327
+  }
+}

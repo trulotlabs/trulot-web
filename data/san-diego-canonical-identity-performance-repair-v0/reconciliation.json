@@ -1,0 +1,44 @@
+{
+  "corpus": {
+    "apns": 393733,
+    "stackedApns": 126239,
+    "stackedGroups": 5446
+  },
+  "outcomes": {
+    "acquisitionCanonicalEqualsServingCanonical": 307103,
+    "servingCanonicalAddsUnit": 86630,
+    "servingCanonicalDiffersOtherReason": 0,
+    "ambiguous": 0,
+    "missingServingIdentity": 0,
+    "collisionRisk": 0
+  },
+  "stackedOutcomes": {
+    "acquisitionCanonicalEqualsServingCanonical": 40215,
+    "servingCanonicalAddsUnit": 86024,
+    "servingCanonicalDiffersOtherReason": 0,
+    "ambiguous": 0,
+    "missingServingIdentity": 0,
+    "collisionRisk": 0
+  },
+  "collisionAudit": {
+    "oneCanonicalPerApn": true,
+    "duplicateCanonicals": 0,
+    "crossJurisdictionCollisions": 0,
+    "apnBearingCanonicals": 393733,
+    "apnOnly": 14846,
+    "unitSuffixes": 86630
+  },
+  "failedPair": [
+    {
+      "apn": "5333641301",
+      "acquisition": "https://trulot.com/parcel/san-diego/533-364-13-01-1501-front-st",
+      "repaired": "https://trulot.com/parcel/san-diego/533-364-13-01-1501-front-st-unit-101"
+    },
+    {
+      "apn": "5333641302",
+      "acquisition": "https://trulot.com/parcel/san-diego/533-364-13-02-1501-front-st",
+      "repaired": "https://trulot.com/parcel/san-diego/533-364-13-02-1501-front-st-unit-102"
+    }
+  ],
+  "precedence": "Use deterministic public APN-linked address plus public situs_suite when present; otherwise address; otherwise APN-only. APN is identity, descriptive text is slug material."
+}

@@ -284,7 +284,7 @@ export default async function ParcelPage({
   if (excludedFields.length) {
     emitParcelIndexMetric(undefined, { name: "serializer_exclusion", jurisdiction: "SAN_DIEGO", value: excludedFields.length });
   }
-  const placeJsonLd = parcelPlaceJsonLd(structuredPayload);
+  const placeJsonLd = parcelPlaceJsonLd(structuredPayload, data.canonicalIdentity.canonicalUrl);
 
   return (
     <main className="min-h-screen bg-white text-slate-900">

@@ -14,10 +14,10 @@ import {
 } from "./permit-linkage";
 import {
   canonicalParcelPath,
-  canonicalParcelSlug,
   formatApnForDisplay,
   normalizeApnDigits,
 } from "./parcel-slug";
+import { canonicalParcelIdentity, type CanonicalParcelIdentity } from "./parcel-identity";
 import {
   applySdaReconciliationPolicy,
   canUseSdaForRegulatoryConclusion,
@@ -141,6 +141,7 @@ export interface ParcelPageV1Data {
   apnNorm: string;
   canonicalSlug: string;
   canonicalPath: string;
+  canonicalIdentity: CanonicalParcelIdentity;
   identity: {
     address: string;
     city: string;
@@ -865,7 +866,7 @@ function emptyTruth(status: "not_found" | "source_unavailable" | "invalid_reques
   };
 }
 
-export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV1Result> {
+async function loadParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV1Result> {
   const rawDigits = rawApnOrSlug.replace(/\D/g, "");
   if (!rawDigits) {
     return {
@@ -935,13 +936,8 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
   const city = str(parcelRow.city) || "San Diego";
   const state = str(parcelRow.state) || "CA";
   const zip = str(parcelRow.situs_zip || parcelRow.zip || parcelRow.zip_code) || null;
-  const permitsResult = await fetchPermitsForParcel({ apnNorm, address, city, state, zip });
-
   const lat = num(parcelRow.lat);
   const lng = num(parcelRow.lng);
-  const overlaysResult = await getOverlayFlags(lat, lng);
-  const overlays = overlaysResult.flags;
-  const sdaRegulatoryConclusionAllowed = canUseSdaForRegulatoryConclusion(overlays.sda);
   const snapshotEnabled = sanDiegoPublicZoningSnapshotEnabled();
   const snapshotResult = snapshotEnabled ? getSanDiegoPublicZoning(apnNorm) : null;
   const publicSnapshot = snapshotResult?.state === "found" ? snapshotResult.zoning : null;
@@ -951,14 +947,28 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
   const runtimeParcelRow = snapshotEnabled
     ? { ...parcelRow, zone_name: zoneName || null, base_zone: zoneName || null }
     : parcelRow;
-  const similarLotsResult = await fetchSimilarLots(runtimeParcelRow);
+  // These reads share only the established public parcel identity. Starting
+  // them together removes avoidable serial latency without changing their
+  // independent error or privacy semantics.
+  const [permitsResult, overlaysResult, similarLotsResult] = await Promise.all([
+    fetchPermitsForParcel({ apnNorm, address, city, state, zip }),
+    getOverlayFlags(lat, lng),
+    fetchSimilarLots(runtimeParcelRow),
+  ]);
+  const overlays = overlaysResult.flags;
+  const sdaRegulatoryConclusionAllowed = canUseSdaForRegulatoryConclusion(overlays.sda);
   const similarLots = similarLotsResult.similarLots;
   const permits = permitsResult.rows;
   // The display fallback is not a situs address. Keep addressless parcels on
   // the APN-only canonical instead of slugging the display string "APN …".
   const canonicalAddress = str(parcelRow.address) || null;
-  const canonicalSlug = canonicalParcelSlug(apnNorm, canonicalAddress);
-  const canonicalPath = canonicalParcelPath(apnNorm, canonicalAddress);
+  const canonicalIdentity = canonicalParcelIdentity({
+    apn: apnNorm,
+    jurisdiction: "san-diego",
+    address: canonicalAddress,
+    provenance: "parcel_page_api_v2.address",
+  });
+  const { canonicalSlug, canonicalPath } = canonicalIdentity;
   const refreshedAt = formatShortDate(parcelRow.generated_at);
   const staleDays = daysOld(parcelRow.generated_at);
   const stale = staleDays !== null && staleDays > 60;
@@ -1373,6 +1383,7 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
     apnNorm,
     canonicalSlug,
     canonicalPath,
+    canonicalIdentity,
     identity: {
       address,
       city,
@@ -1480,6 +1491,23 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
       permits: permitTruth,
     },
   };
+}
+
+type ParcelPageLoadCache = Map<string, { expiresAt: number; promise: Promise<ParcelPageV1Result> }>;
+const processCache = globalThis as typeof globalThis & { __trulotParcelPageLoads?: ParcelPageLoadCache };
+const parcelPageLoads = processCache.__trulotParcelPageLoads ??= new Map();
+
+// Metadata and the page render in separate React scopes. This process-wide,
+// two-second public-data coalescer removes duplicate APN/RPC work while
+// preserving the existing near-real-time source behavior.
+export function getParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV1Result> {
+  const key = rawApnOrSlug.replace(/\D/g, "") || rawApnOrSlug;
+  const now = Date.now(); const existing = parcelPageLoads.get(key);
+  if (existing && existing.expiresAt > now) return existing.promise;
+  const promise = loadParcelPageV1Result(rawApnOrSlug);
+  parcelPageLoads.set(key, { expiresAt: now + 2_000, promise });
+  const timer = setTimeout(() => { if (parcelPageLoads.get(key)?.promise === promise) parcelPageLoads.delete(key); }, 2_000);
+  timer.unref?.(); return promise;
 }
 
 export async function getParcelPageV1Data(rawApnOrSlug: string): Promise<ParcelPageV1Data | null> {

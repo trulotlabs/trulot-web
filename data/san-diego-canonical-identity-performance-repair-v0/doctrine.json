@@ -1,0 +1,11 @@
+{
+  "identityVersion": "parcel-identity-v1",
+  "ownership": "lib/parcel-identity.ts",
+  "publicServingPrecedence": [
+    "public stable address plus public stable unit",
+    "public stable address",
+    "APN-only"
+  ],
+  "redirect": "Any parseable alternate slug redirects once to the APN-specific canonical; canonical input renders without a redirect.",
+  "liveProductionDependency": false
+}
