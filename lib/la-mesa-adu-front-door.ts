@@ -7,16 +7,17 @@ export const LA_MESA_ADU_PREVIEW_ENV = "TRULOT_LA_MESA_ADU_PREVIEW";
 
 export type LaMesaPreviewEnvironment = {
   NODE_ENV?: string;
+  VERCEL_ENV?: string;
   TRULOT_LA_MESA_ADU_PREVIEW?: string;
 };
 
 export function laMesaAduPreviewEnabled(
   environment: LaMesaPreviewEnvironment = process.env,
 ): boolean {
-  return (
-    environment.TRULOT_LA_MESA_ADU_PREVIEW === "1" &&
-    (environment.NODE_ENV === "development" || environment.NODE_ENV === "test")
-  );
+  if (environment.TRULOT_LA_MESA_ADU_PREVIEW !== "1") return false;
+  if (environment.VERCEL_ENV === "production") return false;
+  if (environment.VERCEL_ENV === "preview") return true;
+  return environment.NODE_ENV === "development" || environment.NODE_ENV === "test";
 }
 
 export type FrontDoorJurisdiction =

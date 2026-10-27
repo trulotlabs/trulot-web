@@ -27,11 +27,45 @@ const singleFamilyAnswers: HomeownerAnswers = {
   aduIdea: { value: "NEW_DETACHED_ADU", provenance: "USER_PROVIDED" },
 };
 
-test("preview gate requires explicit opt-in and is impossible in production", () => {
-  assert.equal(laMesaAduPreviewEnabled({ NODE_ENV: "development", TRULOT_LA_MESA_ADU_PREVIEW: "1" }), true);
-  assert.equal(laMesaAduPreviewEnabled({ NODE_ENV: "test", TRULOT_LA_MESA_ADU_PREVIEW: "1" }), true);
-  assert.equal(laMesaAduPreviewEnabled({ NODE_ENV: "development" }), false);
-  assert.equal(laMesaAduPreviewEnabled({ NODE_ENV: "production", TRULOT_LA_MESA_ADU_PREVIEW: "1" }), false);
+test("preview gate follows the explicit environment matrix", () => {
+  const cases = [
+    ["development", undefined, "1", true],
+    ["test", undefined, "1", true],
+    ["production", "preview", "1", true],
+    ["production", "production", "1", false],
+    ["production", undefined, "1", false],
+    ["development", "preview", "1", true],
+    ["development", "production", "1", false],
+    ["production", "preview", undefined, false],
+    ["production", "preview", "0", false],
+    ["development", undefined, undefined, false],
+    ["production", "preview", " 1", false],
+    ["production", "preview", "1 ", false],
+    ["production", "PREVIEW", "1", false],
+  ] as const;
+
+  for (const [NODE_ENV, VERCEL_ENV, TRULOT_LA_MESA_ADU_PREVIEW, expected] of cases) {
+    assert.equal(
+      laMesaAduPreviewEnabled({ NODE_ENV, VERCEL_ENV, TRULOT_LA_MESA_ADU_PREVIEW }),
+      expected,
+      JSON.stringify({ NODE_ENV, VERCEL_ENV, TRULOT_LA_MESA_ADU_PREVIEW }),
+    );
+  }
+});
+
+test("Vercel production always vetoes the preview gate", () => {
+  for (const NODE_ENV of [undefined, "development", "test", "production"]) {
+    for (const flag of [undefined, "0", "1", " 1", "true"]) {
+      assert.equal(
+        laMesaAduPreviewEnabled({ NODE_ENV, VERCEL_ENV: "production", TRULOT_LA_MESA_ADU_PREVIEW: flag }),
+        false,
+      );
+    }
+  }
+});
+
+test("Vercel Preview alone is insufficient without the exact opt-in flag", () => {
+  assert.equal(laMesaAduPreviewEnabled({ NODE_ENV: "production", VERCEL_ENV: "preview" }), false);
 });
 
 test("raw and formatted APNs reuse the existing Parcel Lookup parser", () => {
