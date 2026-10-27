@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-10-27",
+  "environment": "local Next.js development server with loopback-only dummy Supabase URL",
+  "productionAccess": false,
+  "cases": [
+    {
+      "id": "la-mesa-addressed-single-zone",
+      "requestPath": "/parcel/la-mesa/464-030-11-00-5836-pawnee-dr",
+      "result": "200",
+      "canonical": "https://trulot.com/parcel/la-mesa/464-030-11-00-5836-pawnee-dr",
+      "robots": "noindex, follow, noarchive",
+      "jsonLd": "Place with APN PropertyValue and public PostalAddress"
+    },
+    {
+      "id": "la-mesa-apn-only",
+      "requestPath": "/parcel/la-mesa/apn-4640202200",
+      "result": "200",
+      "canonical": "https://trulot.com/parcel/la-mesa/apn-4640202200",
+      "robots": "noindex, follow, noarchive",
+      "jsonLd": "Place with APN PropertyValue and no address"
+    },
+    {
+      "id": "la-mesa-duplicate-address",
+      "requestPath": "/parcel/la-mesa/apn-4640203301",
+      "result": "307 then 200",
+      "canonical": "https://trulot.com/parcel/la-mesa/464-020-33-01-5700-baltimore-dr-unit-01",
+      "robots": "noindex, follow, noarchive",
+      "identity": "APN and unit remain explicit"
+    },
+    {
+      "id": "la-mesa-boundary-sliver",
+      "requestPath": "/parcel/la-mesa/apn-4640201000",
+      "result": "307 then 200",
+      "canonical": "https://trulot.com/parcel/la-mesa/464-020-10-00-5877-baltimore-dr",
+      "robots": "noindex, follow, noarchive",
+      "mappingState": "BOUNDARY_SLIVER"
+    },
+    {
+      "id": "la-mesa-multi-zone",
+      "requestPath": "/parcel/la-mesa/apn-4646001500",
+      "result": "307 then 200",
+      "canonical": "https://trulot.com/parcel/la-mesa/464-600-15-00-8165-fletcher-pkwy",
+      "robots": "noindex, follow, noarchive",
+      "mappingState": "MULTI_ZONE",
+      "qualification": "requires review; no eligibility or capacity claim"
+    },
+    {
+      "id": "la-mesa-jurisdiction-unresolved",
+      "requestPath": "/parcel/la-mesa/apn-7601960217",
+      "result": "404",
+      "canonical": null,
+      "robots": "noindex, follow"
+    },
+    {
+      "id": "la-mesa-unknown",
+      "requestPath": "/parcel/la-mesa/apn-0000000000",
+      "result": "404",
+      "canonical": null,
+      "robots": "noindex, follow"
+    },
+    {
+      "id": "la-mesa-private-front-door",
+      "requestPath": "/la-mesa-adu",
+      "result": "404 without private preview enablement",
+      "canonical": null,
+      "robots": "noindex, nofollow, noarchive, nosnippet, noimageindex"
+    },
+    {
+      "id": "san-diego-source-unavailable",
+      "requestPath": "/parcel/san-diego/apn-4640301100",
+      "result": "200 unavailable state",
+      "canonical": "https://trulot.com/parcel/san-diego/apn-4640301100",
+      "robots": "noindex, follow, noarchive",
+      "metadata": "does not promise zoning, permits, eligibility, or capacity"
+    }
+  ],
+  "console": {
+    "applicationErrors": 0,
+    "notes": ["React development and hot-reload informational messages only"]
+  }
+}

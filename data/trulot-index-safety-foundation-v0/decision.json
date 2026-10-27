@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "packet": 84,
+  "decision": "TRULOT_INDEX_SAFETY_FOUNDATION_READY",
+  "baselineCommit": "9159b9524ee65721cabfacd464a29bedc2273651",
+  "baselineTree": "59c056b1e808576e17f365e71341f7e5048a37db",
+  "productionOrigin": "https://trulot.com",
+  "indexing": {
+    "killSwitch": true,
+    "sanDiegoActive": false,
+    "laMesaActive": false,
+    "parcelSitemapEntries": 0
+  },
+  "futureCohortMaximums": {
+    "sanDiego": 318701,
+    "laMesa": 17160
+  },
+  "preservation": {
+    "productionAccess": false,
+    "productionDatabaseMutation": false,
+    "packet11Frozen": true,
+    "productionZoningLoad": false,
+    "selectedSnapshotChanged": false,
+    "deployment": false,
+    "push": false,
+    "originalCheckoutTouched": false
+  }
+}

@@ -29,7 +29,17 @@ export function canonicalParcelSlug(apn: string, address?: string | null): strin
 }
 
 export function canonicalParcelPath(apn: string, address?: string | null): string {
-  return `/parcel/san-diego/${canonicalParcelSlug(apn, address)}`;
+  return canonicalJurisdictionParcelPath("san-diego", apn, address);
+}
+
+export type ParcelJurisdictionSlug = "san-diego" | "la-mesa";
+
+export function canonicalJurisdictionParcelPath(
+  jurisdiction: ParcelJurisdictionSlug,
+  apn: string,
+  address?: string | null,
+): string {
+  return `/parcel/${jurisdiction}/${canonicalParcelSlug(apn, address)}`;
 }
 
 export function extractApnFromSlug(slug: string): string | null {

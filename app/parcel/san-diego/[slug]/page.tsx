@@ -5,10 +5,17 @@ import { after } from "next/server";
 import type { ReactNode } from "react";
 import {
   getParcelPageV1Result,
-  type FaqItem,
   type ProgramDisplayState,
   type SourcedFact,
 } from "@/lib/parcel-page-v1";
+import {
+  canonicalParcelUrl,
+  effectiveParcelIndexState,
+  parcelMetadata,
+  parcelPlaceJsonLd,
+  parcelRobotsFor,
+  serializePublicParcel,
+} from "@/lib/parcel-indexing";
 import { extractApnFromSlug } from "@/lib/parcel-slug";
 import { parcelServingV2ShadowEnabled, runParcelServingV2Shadow } from "@/lib/parcel-serving-v2-shadow";
 import { verifiedStandardsEnabled } from "@/lib/rs17-shadow-gate";
@@ -19,14 +26,9 @@ import {
 } from "./parcel-feasibility";
 import { SourcesMethodologyLink } from "./sources-methodology-link";
 
-const BASE_URL = "https://trulot-web.vercel.app";
 const NULL_PUBLIC_RECORD = "Not available in public records";
 
 export const dynamic = "force-dynamic";
-
-function absoluteUrl(path: string): string {
-  return `${BASE_URL}${path}`;
-}
 
 function confidenceLabel(confidence: SourcedFact["confidenceTier"]): string {
   if (confidence === "recorded") return "Recorded fact";
@@ -157,28 +159,6 @@ function SourceUnavailableState({
   );
 }
 
-function FaqJsonLd({ faq }: { faq: FaqItem[] }) {
-  const json = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faq.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  };
-
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(json) }}
-    />
-  );
-}
-
 export async function generateMetadata({
   params,
 }: {
@@ -190,6 +170,7 @@ export async function generateMetadata({
     return {
       title: "Parcel not found | TruLot",
       description: "Public parcel record not found.",
+      robots: parcelRobotsFor("NOT_FOUND"),
     };
   }
 
@@ -199,25 +180,37 @@ export async function generateMetadata({
       return {
         title: "Parcel record temporarily unavailable | TruLot",
         description: "Public parcel records are temporarily unavailable.",
+        alternates: { canonical: canonicalParcelUrl("SAN_DIEGO", apn) },
+        robots: parcelRobotsFor("NOINDEX_TEMPORARY"),
       };
     }
     return {
       title: "Parcel not found | TruLot",
       description: "Public parcel record not found.",
+      robots: parcelRobotsFor("NOT_FOUND"),
     };
   }
   const data = result.data;
-
-  const title = `${data.identity.address}, ${data.identity.city}, ${data.identity.state}${data.identity.zip ? ` ${data.identity.zip}` : ""} — zoning, permits, and public parcel records | TruLot`;
-  const description = `Public parcel record for ${data.identity.address}, ${data.identity.city} (APN ${data.identity.apn}): lot size, zoning, mapped overlays, permit activity, nearby precedents, and sources.`;
-
-  return {
-    title,
-    description,
-    alternates: {
-      canonical: absoluteUrl(data.canonicalPath),
+  const publicAddress = data.canonicalSlug.startsWith("apn-") ? null : data.identity.address;
+  const { payload } = serializePublicParcel({
+    apn: { value: data.identity.apn, rights: "PUBLIC_REDISPLAY_OK" },
+    address: { value: publicAddress, rights: "PUBLIC_REDISPLAY_OK" },
+    jurisdiction: { value: "City of San Diego", rights: "PUBLIC_REDISPLAY_OK" },
+    zoningState: { value: data.zoning.baseCode.value ? "MAPPED" : "UNMAPPED", rights: "PUBLIC_REDISPLAY_OK" },
+    baseZoning: { value: data.zoning.baseCode.value, rights: "PUBLIC_REDISPLAY_OK" },
+    overlays: {
+      value: data.zoning.programs,
+      rights: "PUBLIC_BOUNDED_SUMMARY_ONLY",
+      boundedValue: data.zoning.programs
+        .filter((program) => program.displayState === "mapped_overlay")
+        .map((program) => ({ name: program.name, state: program.displayState })),
     },
-  };
+  });
+  return parcelMetadata({
+    payload,
+    jurisdiction: "SAN_DIEGO",
+    state: effectiveParcelIndexState("SAN_DIEGO", "INDEXABLE"),
+  });
 }
 
 export default async function ParcelPage({
@@ -265,23 +258,13 @@ export default async function ParcelPage({
   const primaryFacts = data.facts.slice(0, 6).filter(({ fact }) => fact.value);
   const additionalFacts = data.facts.filter(({ fact }, index) => index >= 6 || !fact.value);
   const unavailableFactCount = additionalFacts.filter(({ fact }) => !fact.value).length;
-  const placeJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Place",
-    name: pageTitle,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: data.identity.address,
-      addressLocality: data.identity.city,
-      addressRegion: data.identity.state,
-      postalCode: data.identity.zip ?? undefined,
-    },
-    identifier: {
-      "@type": "PropertyValue",
-      name: "APN",
-      value: data.identity.apn,
-    },
-  };
+  const publicAddress = data.canonicalSlug.startsWith("apn-") ? null : data.identity.address;
+  const { payload: structuredPayload } = serializePublicParcel({
+    apn: { value: data.identity.apn, rights: "PUBLIC_REDISPLAY_OK" },
+    address: { value: publicAddress, rights: "PUBLIC_REDISPLAY_OK" },
+    jurisdiction: { value: "City of San Diego", rights: "PUBLIC_REDISPLAY_OK" },
+  });
+  const placeJsonLd = parcelPlaceJsonLd(structuredPayload);
 
   return (
     <main className="min-h-screen bg-white text-slate-900">
@@ -289,8 +272,6 @@ export default async function ParcelPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(placeJsonLd) }}
       />
-      <FaqJsonLd faq={data.methodology.faq} />
-
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto flex h-14 max-w-[960px] items-center justify-between px-5">
           <div className="text-base font-semibold text-slate-900">
@@ -618,7 +599,7 @@ export default async function ParcelPage({
           </div>
 
           <h3 className="mt-4 text-[15px] font-semibold text-slate-900">Frequently asked questions</h3>
-          <div className="mt-2 space-y-2" itemScope itemType="https://schema.org/FAQPage">
+          <div className="mt-2 space-y-2">
             {data.methodology.faq.map((item) => (
               <details key={item.question} className="rounded border border-slate-200 bg-white">
                 <summary className="cursor-pointer rounded px-3 py-2 text-sm font-medium text-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">

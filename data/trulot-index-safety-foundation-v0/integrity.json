@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "sha256",
+  "files": {
+    "browser-results.json": "e14e91dade0eab47b210950b0c8877ce3372b705dffb5d891ac46a9de116d324",
+    "decision.json": "c0bcbdfdd1be572bccadde313ec4282e17dc146c768aff173470e0b637985c1c"
+  }
+}

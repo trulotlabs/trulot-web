@@ -936,8 +936,11 @@ export async function getParcelPageV1Result(rawApnOrSlug: string): Promise<Parce
   const similarLotsResult = await fetchSimilarLots(parcelRow);
   const similarLots = similarLotsResult.similarLots;
   const permits = permitsResult.rows;
-  const canonicalSlug = canonicalParcelSlug(apnNorm, address);
-  const canonicalPath = canonicalParcelPath(apnNorm, address);
+  // The display fallback is not a situs address. Keep addressless parcels on
+  // the APN-only canonical instead of slugging the display string "APN …".
+  const canonicalAddress = str(parcelRow.address) || null;
+  const canonicalSlug = canonicalParcelSlug(apnNorm, canonicalAddress);
+  const canonicalPath = canonicalParcelPath(apnNorm, canonicalAddress);
   const refreshedAt = formatShortDate(parcelRow.generated_at);
   const staleDays = daysOld(parcelRow.generated_at);
   const stale = staleDays !== null && staleDays > 60;

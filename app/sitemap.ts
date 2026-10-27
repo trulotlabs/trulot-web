@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { activeParcelSitemapEntries } from "@/lib/parcel-sitemap";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -8,5 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
+    ...activeParcelSitemapEntries(),
   ];
 }
