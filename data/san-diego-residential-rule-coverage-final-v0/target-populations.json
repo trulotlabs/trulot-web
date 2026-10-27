@@ -1,0 +1,101 @@
+{
+  "basis": "exact Packet 79 associations with incremental set difference from Packet 81 support",
+  "zones": {
+    "RM-4-11": {
+      "boundary_ambiguous": 0,
+      "incremental_unique_apns": 347,
+      "indeterminate": 1,
+      "inside_coastal": 0,
+      "multi_zone": 50,
+      "outside_coastal": 393,
+      "profile_ready": 342,
+      "single_zone": 342,
+      "sliver": 0,
+      "unique_apns": 393
+    },
+    "RS-1-10": {
+      "boundary_ambiguous": 15,
+      "incremental_unique_apns": 51,
+      "indeterminate": 20,
+      "inside_coastal": 44,
+      "multi_zone": 7,
+      "outside_coastal": 0,
+      "profile_ready": 29,
+      "single_zone": 32,
+      "sliver": 0,
+      "unique_apns": 59
+    },
+    "RS-1-12": {
+      "boundary_ambiguous": 0,
+      "incremental_unique_apns": 851,
+      "indeterminate": 6,
+      "inside_coastal": 0,
+      "multi_zone": 251,
+      "outside_coastal": 995,
+      "profile_ready": 738,
+      "single_zone": 733,
+      "sliver": 5,
+      "unique_apns": 995
+    },
+    "RS-1-3": {
+      "boundary_ambiguous": 6,
+      "incremental_unique_apns": 305,
+      "indeterminate": 9,
+      "inside_coastal": 60,
+      "multi_zone": 657,
+      "outside_coastal": 823,
+      "profile_ready": 223,
+      "single_zone": 223,
+      "sliver": 0,
+      "unique_apns": 889
+    },
+    "RS-1-5": {
+      "boundary_ambiguous": 21,
+      "incremental_unique_apns": 1007,
+      "indeterminate": 17,
+      "inside_coastal": 879,
+      "multi_zone": 503,
+      "outside_coastal": 586,
+      "profile_ready": 959,
+      "single_zone": 964,
+      "sliver": 2,
+      "unique_apns": 1486
+    },
+    "RS-1-9": {
+      "boundary_ambiguous": 1,
+      "incremental_unique_apns": 835,
+      "indeterminate": 4,
+      "inside_coastal": 9,
+      "multi_zone": 36,
+      "outside_coastal": 856,
+      "profile_ready": 826,
+      "single_zone": 826,
+      "sliver": 0,
+      "unique_apns": 866
+    },
+    "RT-1-4": {
+      "boundary_ambiguous": 0,
+      "incremental_unique_apns": 213,
+      "indeterminate": 7,
+      "inside_coastal": 214,
+      "multi_zone": 2,
+      "outside_coastal": 0,
+      "profile_ready": 205,
+      "single_zone": 205,
+      "sliver": 0,
+      "unique_apns": 214
+    },
+    "RT-1-5": {
+      "boundary_ambiguous": 0,
+      "incremental_unique_apns": 33,
+      "indeterminate": 0,
+      "inside_coastal": 33,
+      "multi_zone": 15,
+      "outside_coastal": 13,
+      "profile_ready": 31,
+      "single_zone": 31,
+      "sliver": 0,
+      "unique_apns": 46
+    }
+  }
+}

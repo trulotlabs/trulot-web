@@ -1,0 +1,103 @@
+{
+  "no_capacity": true,
+  "one_candidate_per_profile": [
+    {
+      "apn": "3576930300",
+      "coastal_context": "OUTSIDE_COASTAL",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+      "rule_row": "VERIFIED_RS-1-5_SOURCE_TABLE",
+      "zone": "RS-1-5",
+      "zone_check": "VERIFIED_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "3196600200",
+      "coastal_context": "OUTSIDE_COASTAL",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+      "rule_row": "VERIFIED_RS-1-12_SOURCE_TABLE",
+      "zone": "RS-1-12",
+      "zone_check": "VERIFIED_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "3641311700",
+      "coastal_context": "OUTSIDE_COASTAL",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+      "rule_row": "VERIFIED_RS-1-9_SOURCE_TABLE",
+      "zone": "RS-1-9",
+      "zone_check": "VERIFIED_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "4456413911",
+      "coastal_context": "OUTSIDE_COASTAL",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "profile_version": "RM_FINAL_OUTSIDE_COASTAL_2026_07_15",
+      "rule_row": "VERIFIED_RM-4-11_SOURCE_TABLE",
+      "zone": "RM-4-11",
+      "zone_check": "VERIFIED_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "4256503000",
+      "coastal_context": "OUTSIDE_COASTAL",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+      "rule_row": "VERIFIED_RS-1-3_SOURCE_TABLE",
+      "zone": "RS-1-3",
+      "zone_check": "VERIFIED_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "4508111000",
+      "coastal_context": "INSIDE_COASTAL",
+      "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "profile_version": "RT_FINAL_INSIDE_COASTAL_2026_09_10",
+      "rule_row": "VERIFIED_RT-1-4_SOURCE_TABLE",
+      "zone": "RT-1-4",
+      "zone_check": "VERIFIED_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "2985800300",
+      "coastal_context": "INSIDE_COASTAL",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+      "rule_row": "VERIFIED_RS-1-10_SOURCE_TABLE",
+      "zone": "RS-1-10",
+      "zone_check": "VERIFIED_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "5385301000",
+      "coastal_context": "INSIDE_COASTAL",
+      "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "profile_version": "RT_FINAL_INSIDE_COASTAL_2026_09_10",
+      "rule_row": "VERIFIED_RT-1-5_SOURCE_TABLE",
+      "zone": "RT-1-5",
+      "zone_check": "VERIFIED_PACKET79_EXACT_ROW"
+    }
+  ],
+  "ordinary_preferred_inside_coastal_used_when_no_ordinary_exists": true,
+  "state": "VERIFIED"
+}

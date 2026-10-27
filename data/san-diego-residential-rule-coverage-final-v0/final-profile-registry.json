@@ -1,0 +1,446 @@
+{
+  "all_observed_residential_zones_registered": true,
+  "families": {
+    "RM": 12,
+    "RS": 14,
+    "RT": 3,
+    "RX": 2
+  },
+  "profile_count": 31,
+  "profiles": [
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RM",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "9586e004c22ec151d1a27da73d1235e34faff29f8a909c4db726c0f5ef395b8d",
+      "source": "data/san-diego-rm-rule-expansion-wave1-v0",
+      "source_artifact_sha256": "67aa84075a117041fcf3c46f68d84f34afcc4b33aea051b55ed51e04294697cd",
+      "zone": "RM-1-1"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RM",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "dc9a46c7b4ab8b2a541d46771dc87ebc9e70c40b1829f27b7c0dcb7082d4db19",
+      "source": "data/san-diego-residential-rule-expansion-wave2-v0",
+      "source_artifact_sha256": "d55055f02f5d5116b0a8eadda665c80f15ac4dca535869ee4bd6fd27b4bae2a9",
+      "zone": "RM-1-2"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RM",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "38e6548bb04f31a940efcea942abfb5b4d7823bb361eb7960feb09ddd391bf2e",
+      "source": "data/san-diego-rm-rule-expansion-wave1-v0",
+      "source_artifact_sha256": "67aa84075a117041fcf3c46f68d84f34afcc4b33aea051b55ed51e04294697cd",
+      "zone": "RM-1-3"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RM",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "2c17e3e14cbd842ef167ba798f2381237ce2eb42fac84b7f56bc2283c3642aca",
+      "source": "data/san-diego-residential-rule-expansion-wave2-v0",
+      "source_artifact_sha256": "d55055f02f5d5116b0a8eadda665c80f15ac4dca535869ee4bd6fd27b4bae2a9",
+      "zone": "RM-2-4"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RM",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "ab5fe1806c77f4bcdac799a968b1b3fc21eb5debcc3fe7f53be062622a975854",
+      "source": "data/rm-rule-profile-v0",
+      "source_artifact_sha256": "c3c861601026ef1268c30d4b0bab4daeb9b4365d184502eff9c79c50f8aaa476",
+      "zone": "RM-2-5"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RM",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "13b5375667a49eca3f9ad4cefaf68a5ed4b71b486dc0e57c016702baef7b2256",
+      "source": "data/san-diego-residential-rule-expansion-wave2-v0",
+      "source_artifact_sha256": "d55055f02f5d5116b0a8eadda665c80f15ac4dca535869ee4bd6fd27b4bae2a9",
+      "zone": "RM-2-6"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RM",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "afcec286ca3ee41fafb041cc5073572816b16d2a51bf2b7a58bf79d888780758",
+      "source": "data/san-diego-rm-rule-expansion-wave1-v0",
+      "source_artifact_sha256": "67aa84075a117041fcf3c46f68d84f34afcc4b33aea051b55ed51e04294697cd",
+      "zone": "RM-3-7"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RM",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "c6ca0fc68420c281039e1a3b3ba62c1fc3fd6c1cb55dc2c78fc08d80d25c8a46",
+      "source": "data/san-diego-residential-rule-expansion-wave2-v0",
+      "source_artifact_sha256": "d55055f02f5d5116b0a8eadda665c80f15ac4dca535869ee4bd6fd27b4bae2a9",
+      "zone": "RM-3-8"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RM",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "9ce13976ba96a8b96ae65c3a072f48f662fcfdf105f9bb942bbeca9ee7e24a47",
+      "source": "data/san-diego-rm-rule-expansion-wave1-v0",
+      "source_artifact_sha256": "67aa84075a117041fcf3c46f68d84f34afcc4b33aea051b55ed51e04294697cd",
+      "zone": "RM-3-9"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RM",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "15211d267ea70453437379e1d5281dc8e55209fb33e316a178f0b060ddd94477",
+      "source": "data/san-diego-rm-rule-expansion-wave1-v0",
+      "source_artifact_sha256": "67aa84075a117041fcf3c46f68d84f34afcc4b33aea051b55ed51e04294697cd",
+      "zone": "RM-4-10"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RM",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "281b54136a9e2364f0170476a771a5329e6303044fde010b9b9aa06edbe6399e",
+      "source": "data/san-diego-residential-rule-coverage-final-v0",
+      "source_artifact_sha256": "db72ad8e1ad3de5f204d909c14f5b95c7df292f861e0b5adb53a6ecae1218f80",
+      "zone": "RM-4-11"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RM",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "140fda94a59a690f3dbd6f2baa616d21ecfed494550f881becc15fd73b1c7510",
+      "source": "data/san-diego-residential-rule-expansion-wave2-v0",
+      "source_artifact_sha256": "d55055f02f5d5116b0a8eadda665c80f15ac4dca535869ee4bd6fd27b4bae2a9",
+      "zone": "RM-5-12"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "2b1921a52b4969a7d6424e0ab785de51c7a99d98989c6713aea74df01bb6cf51",
+      "source": "data/san-diego-residential-rule-expansion-v0",
+      "source_artifact_sha256": "223890ad22e2977bb883af6be4d2e78a18cd2dd72a268741dd0adfac5d04f7d8",
+      "zone": "RS-1-1"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "1abab069aa531855457ec1f10f1e00bd7cb5196e55453f9be1010dbb49996f8d",
+      "source": "data/san-diego-residential-rule-coverage-final-v0",
+      "source_artifact_sha256": "db72ad8e1ad3de5f204d909c14f5b95c7df292f861e0b5adb53a6ecae1218f80",
+      "zone": "RS-1-10"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "305a6d20f35baaa62a1626d5738421f9befacdc1334d452f15d602c7c255e25e",
+      "source": "data/san-diego-residential-rule-expansion-wave2-v0",
+      "source_artifact_sha256": "d55055f02f5d5116b0a8eadda665c80f15ac4dca535869ee4bd6fd27b4bae2a9",
+      "zone": "RS-1-11"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "4ae58a1f199b952a256941dc34439229a1a63386b85201f0817b027c5279c803",
+      "source": "data/san-diego-residential-rule-coverage-final-v0",
+      "source_artifact_sha256": "db72ad8e1ad3de5f204d909c14f5b95c7df292f861e0b5adb53a6ecae1218f80",
+      "zone": "RS-1-12"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "ec941a54ba69cccf61bea03a0651a4a73f32b46c641b21fe1e7961f264fc345a",
+      "source": "data/san-diego-residential-rule-expansion-v0",
+      "source_artifact_sha256": "223890ad22e2977bb883af6be4d2e78a18cd2dd72a268741dd0adfac5d04f7d8",
+      "zone": "RS-1-13"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "1902eb9625d3607a5bc9bbf6956682b8ba23c1808d15686158e4cbd61d881a80",
+      "source": "data/san-diego-residential-rule-expansion-v0",
+      "source_artifact_sha256": "223890ad22e2977bb883af6be4d2e78a18cd2dd72a268741dd0adfac5d04f7d8",
+      "zone": "RS-1-14"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "90779ac941716c90d9effc1a7f81c8156469f7fe69c8da709aa478624c2e0bc1",
+      "source": "data/san-diego-residential-rule-expansion-v0",
+      "source_artifact_sha256": "223890ad22e2977bb883af6be4d2e78a18cd2dd72a268741dd0adfac5d04f7d8",
+      "zone": "RS-1-2"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "02508181e9a400feb4148320ff171b69410207af9a4c5b7e03433e7bf165f352",
+      "source": "data/san-diego-residential-rule-coverage-final-v0",
+      "source_artifact_sha256": "db72ad8e1ad3de5f204d909c14f5b95c7df292f861e0b5adb53a6ecae1218f80",
+      "zone": "RS-1-3"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "2284fa771bee9de08e0b3de70328234ad82b7f664578a07c566648b676e2eea7",
+      "source": "data/san-diego-residential-rule-expansion-v0",
+      "source_artifact_sha256": "223890ad22e2977bb883af6be4d2e78a18cd2dd72a268741dd0adfac5d04f7d8",
+      "zone": "RS-1-4"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "3916a170cd4c715ea27c38ff11cbbcf01f59164169ca201424ee931ec6acb8f3",
+      "source": "data/san-diego-residential-rule-coverage-final-v0",
+      "source_artifact_sha256": "db72ad8e1ad3de5f204d909c14f5b95c7df292f861e0b5adb53a6ecae1218f80",
+      "zone": "RS-1-5"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "785cf14ba8c5826e577ed0d5a30d6af8c9edc360276f63816e5676755473cd08",
+      "source": "data/san-diego-residential-rule-expansion-v0",
+      "source_artifact_sha256": "223890ad22e2977bb883af6be4d2e78a18cd2dd72a268741dd0adfac5d04f7d8",
+      "zone": "RS-1-6"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "1d48ec062fd76e1710f7a037a3a4ffa54a8f8d67a48ce534ee355590a98874f4",
+      "source": "data/rs-rule-profile-v0",
+      "source_artifact_sha256": "f14c7c817de2b91a63af01dec8930cda13d28fdd1d8d7a36cdf07059f7ede046",
+      "zone": "RS-1-7"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "a5e8041c21d683f6015f676c4b83934bc1dea5d885b9196f7c02503fb95461df",
+      "source": "data/san-diego-residential-rule-expansion-wave2-v0",
+      "source_artifact_sha256": "d55055f02f5d5116b0a8eadda665c80f15ac4dca535869ee4bd6fd27b4bae2a9",
+      "zone": "RS-1-8"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RS",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "7d509540419ec1f9c8e6518fc2ffe1158acde5276bf7f64c6c5fcb824818505d",
+      "source": "data/san-diego-residential-rule-coverage-final-v0",
+      "source_artifact_sha256": "db72ad8e1ad3de5f204d909c14f5b95c7df292f861e0b5adb53a6ecae1218f80",
+      "zone": "RS-1-9"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RT",
+      "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "c59e3729805faa069555e7d6efbdb793a991e57d63d9c0b4397068904b6329ce",
+      "source": "data/san-diego-residential-rule-expansion-wave2-v0",
+      "source_artifact_sha256": "d55055f02f5d5116b0a8eadda665c80f15ac4dca535869ee4bd6fd27b4bae2a9",
+      "zone": "RT-1-2"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RT",
+      "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "b0573b161d40c7842a755b72bc155ea595716bc6d5156772eee7a2120f8a4879",
+      "source": "data/san-diego-residential-rule-coverage-final-v0",
+      "source_artifact_sha256": "db72ad8e1ad3de5f204d909c14f5b95c7df292f861e0b5adb53a6ecae1218f80",
+      "zone": "RT-1-4"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RT",
+      "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "49bc669095ca86a5f685646dcb39a724fde9988de2a0aed4ecc7b30f417d9d68",
+      "source": "data/san-diego-residential-rule-coverage-final-v0",
+      "source_artifact_sha256": "db72ad8e1ad3de5f204d909c14f5b95c7df292f861e0b5adb53a6ecae1218f80",
+      "zone": "RT-1-5"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RX",
+      "family_schema": "RX_TABLE_131_04E_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "2c03f4d9634c0ac8737b80e6f83f0aad6cd54a0e4b00ed1a51696d0f3a18b12c",
+      "source": "data/san-diego-residential-rule-expansion-wave2-v0",
+      "source_artifact_sha256": "d55055f02f5d5116b0a8eadda665c80f15ac4dca535869ee4bd6fd27b4bae2a9",
+      "zone": "RX-1-1"
+    },
+    {
+      "coastal_contexts": [
+        "OUTSIDE_COASTAL",
+        "INSIDE_COASTAL"
+      ],
+      "family": "RX",
+      "family_schema": "RX_TABLE_131_04E_GENERIC_V1",
+      "inside_legal_version": "INSIDE_COASTAL_2026_09_10",
+      "outside_legal_version": "OUTSIDE_COASTAL_2026_07_15",
+      "profile_fingerprint": "076563e609f979d48ac2c7c12c6c0c1d75f8f858ff25f409061264cde670b754",
+      "source": "data/san-diego-residential-rule-expansion-wave2-v0",
+      "source_artifact_sha256": "d55055f02f5d5116b0a8eadda665c80f15ac4dca535869ee4bd6fd27b4bae2a9",
+      "zone": "RX-1-2"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "blockers": {
+    "citywide_currentness": "Permit and property-intelligence currentness remain unresolved.",
+    "production_zoning_selection": "Packet 11 frozen; no selected production snapshot.",
+    "program_eligibility": "ADU/SB9/SB79 and other program eligibility are outside base-profile coverage.",
+    "public_activation": "No runtime/public activation authorized or implemented."
+  },
+  "near_complete_local_profile_coverage": true,
+  "packet_11_frozen": true,
+  "production_ready": false,
+  "selected_snapshot_change": false
+}

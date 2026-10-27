@@ -1,0 +1,35 @@
+{
+  "largest_accuracy_gap": "permit_currentness_source",
+  "ranking": [
+    {
+      "evidence": "Base-zone profile coverage does not establish current permit or entitlement state.",
+      "gap": "permit_currentness_source",
+      "rank": 1
+    },
+    {
+      "evidence": "Rule coverage does not refresh source-age or property-event intelligence.",
+      "gap": "property_intelligence_currentness",
+      "rank": 2
+    },
+    {
+      "evidence": "Packet 11 remains frozen; no production snapshot is selected.",
+      "gap": "production_zoning_readiness",
+      "rank": 3
+    },
+    {
+      "evidence": "Modifier review remains unresolved by design on every selected profile.",
+      "gap": "modifier_specific_plan_completeness",
+      "rank": 4
+    },
+    {
+      "evidence": "Zero residential APNs remain without a supported observed base-zone profile.",
+      "gap": "remaining_unsupported_zone_profiles",
+      "rank": 5
+    },
+    {
+      "evidence": "No larger evidenced local base-profile gap remains.",
+      "gap": "other",
+      "rank": 6
+    }
+  ]
+}

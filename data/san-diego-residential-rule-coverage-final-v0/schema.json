@@ -1,0 +1,10 @@
+{
+  "ambiguous_or_indeterminate_policy": "FAIL_CLOSED",
+  "citywide_granularity": "one row per residential APN",
+  "citywide_support": "SanDiegoResidentialCitywideSupportV0",
+  "multi_zone_policy": "REVIEW_REQUIRED",
+  "no_feasibility_result": true,
+  "registry": "SanDiegoResidentialProfileRegistryV0",
+  "selection_granularity": "one APN-target-zone association",
+  "target_selection": "SanDiegoResidentialCoverageFinalTargetSelectionV0"
+}

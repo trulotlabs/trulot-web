@@ -1,0 +1,23 @@
+{
+  "decision": "SAN_DIEGO_RESIDENTIAL_RULE_COVERAGE_FINALIZED",
+  "deployment": false,
+  "failed_profiles": [],
+  "next_step": "SAN_DIEGO_PERMIT_CURRENTNESS_SOURCE",
+  "packet_11_frozen": true,
+  "production_access": false,
+  "production_db_mutation": false,
+  "production_zoning_load": false,
+  "public_activation": false,
+  "selected_snapshot_change": false,
+  "stop_broad_expansion": "STOP_BROAD_RESIDENTIAL_RULE_EXPANSION",
+  "successful_profiles": [
+    "RS-1-5",
+    "RS-1-12",
+    "RS-1-9",
+    "RM-4-11",
+    "RS-1-3",
+    "RT-1-4",
+    "RS-1-10",
+    "RT-1-5"
+  ]
+}

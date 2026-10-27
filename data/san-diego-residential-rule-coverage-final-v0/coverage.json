@@ -1,0 +1,19 @@
+{
+  "after_packet82_percent": 100.0,
+  "after_packet82_unique_apns": 326532,
+  "before_packet82_unique_apns": 322891,
+  "metric": "unique residential APNs with any association to a supported profile",
+  "overlap_rule": "APNs counted once using set unions",
+  "packet82_incremental_unique_apns": 3641,
+  "profile_ready_unique_apns": 260318,
+  "residential_unique_apns": 326532,
+  "review_required_unique_apns": 66214,
+  "target_association_rows": 4948,
+  "target_unique_apns": 4946,
+  "thresholds": {
+    "99_5_percent": true,
+    "99_9_percent": true,
+    "99_percent": true
+  },
+  "unsupported_unique_apns": 0
+}

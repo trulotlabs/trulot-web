@@ -1,0 +1,17 @@
+{
+  "capacity_calculation": false,
+  "new_family_models": false,
+  "representations": [
+    "DIRECT",
+    "FORMULA",
+    "CONDITIONAL",
+    "NOT_SPECIFIED",
+    "MODIFIER_DEPENDENT",
+    "UNRESOLVED"
+  ],
+  "schema_refs": {
+    "RM_TABLE_131_04G_GENERIC_V1": "data/san-diego-rm-rule-expansion-wave1-v0/family-schema.json",
+    "RS_TABLE_131_04D_GENERIC_V1": "data/san-diego-residential-rule-expansion-v0/family-schema.json",
+    "RT_TABLE_131_04F_GENERIC_V1": "data/san-diego-residential-rule-expansion-wave2-v0/family-schemas.json"
+  }
+}

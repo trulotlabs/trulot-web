@@ -1,0 +1,611 @@
+{
+  "available_counts": {
+    "RM-4-11": {
+      "edge": 51,
+      "inside_coastal": 0,
+      "ordinary": 342
+    },
+    "RS-1-10": {
+      "edge": 30,
+      "inside_coastal": 29,
+      "ordinary": 0
+    },
+    "RS-1-12": {
+      "edge": 262,
+      "inside_coastal": 0,
+      "ordinary": 733
+    },
+    "RS-1-3": {
+      "edge": 666,
+      "inside_coastal": 16,
+      "ordinary": 207
+    },
+    "RS-1-5": {
+      "edge": 528,
+      "inside_coastal": 719,
+      "ordinary": 239
+    },
+    "RS-1-9": {
+      "edge": 40,
+      "inside_coastal": 2,
+      "ordinary": 824
+    },
+    "RT-1-4": {
+      "edge": 9,
+      "inside_coastal": 205,
+      "ordinary": 0
+    },
+    "RT-1-5": {
+      "edge": 15,
+      "inside_coastal": 31,
+      "ordinary": 0
+    }
+  },
+  "empty_categories_not_invented": true,
+  "profiles": {
+    "RM-4-11": {
+      "edge": [
+        {
+          "apn": "4660311304",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RM_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RM-4-11",
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "4672730300",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RM_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RM-4-11",
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "4671502500",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RM_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RM-4-11",
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "inside_coastal": [],
+      "ordinary": [
+        {
+          "apn": "4456413911",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RM_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RM-4-11",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "4660402200",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RM_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RM-4-11",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "4456321300",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RM_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RM-4-11",
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    },
+    "RS-1-10": {
+      "edge": [
+        {
+          "apn": "2985803300",
+          "coastal_context": "BOUNDARY_AMBIGUOUS",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "UNRESOLVED_COASTAL_VERSION",
+          "zone": "RS-1-10",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "2985802100",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RS-1-10",
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "2985803600",
+          "coastal_context": "BOUNDARY_AMBIGUOUS",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "UNRESOLVED_COASTAL_VERSION",
+          "zone": "RS-1-10",
+          "zoning_state": "INDETERMINATE"
+        }
+      ],
+      "inside_coastal": [
+        {
+          "apn": "2985800300",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RS-1-10",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3023100400",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RS-1-10",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "2985901000",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RS-1-10",
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "ordinary": []
+    },
+    "RS-1-12": {
+      "edge": [
+        {
+          "apn": "3202801800",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-12",
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "3053272100",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-12",
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "3053271800",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-12",
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "inside_coastal": [],
+      "ordinary": [
+        {
+          "apn": "3196600200",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-12",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3195320400",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-12",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3062610500",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-12",
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    },
+    "RS-1-3": {
+      "edge": [
+        {
+          "apn": "4256502400",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-3",
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "4283800600",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-3",
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "6760310470",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-3",
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "inside_coastal": [
+        {
+          "apn": "3013501000",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RS-1-3",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3013500500",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RS-1-3",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3013101300",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RS-1-3",
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "ordinary": [
+        {
+          "apn": "4256503000",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-3",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "6772510400",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-3",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "5440731600",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-3",
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    },
+    "RS-1-5": {
+      "edge": [
+        {
+          "apn": "3515711200",
+          "coastal_context": "BOUNDARY_AMBIGUOUS",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "UNRESOLVED_COASTAL_VERSION",
+          "zone": "RS-1-5",
+          "zoning_state": "INDETERMINATE"
+        },
+        {
+          "apn": "3576721000",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-5",
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "4177300400",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-5",
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "inside_coastal": [
+        {
+          "apn": "3502521900",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RS-1-5",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3574611800",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RS-1-5",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3513301100",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RS-1-5",
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "ordinary": [
+        {
+          "apn": "3576930300",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-5",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3576602100",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-5",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3576601800",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-5",
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    },
+    "RS-1-9": {
+      "edge": [
+        {
+          "apn": "3201222800",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-9",
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "2986024500",
+          "coastal_context": "BOUNDARY_AMBIGUOUS",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "UNRESOLVED_COASTAL_VERSION",
+          "zone": "RS-1-9",
+          "zoning_state": "INDETERMINATE"
+        },
+        {
+          "apn": "3641122900",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-9",
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "inside_coastal": [
+        {
+          "apn": "2986011500",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RS-1-9",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "2986010400",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RS-1-9",
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "ordinary": [
+        {
+          "apn": "3641311700",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-9",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3200922000",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-9",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "3641511500",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RS_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RS-1-9",
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ]
+    },
+    "RT-1-4": {
+      "edge": [
+        {
+          "apn": "4508123800",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RT_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RT-1-4",
+          "zoning_state": "INDETERMINATE"
+        },
+        {
+          "apn": "4508202300",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RT_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RT-1-4",
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "4508124000",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RT_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RT-1-4",
+          "zoning_state": "INDETERMINATE"
+        }
+      ],
+      "inside_coastal": [
+        {
+          "apn": "4508111000",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RT_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RT-1-4",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "4508130900",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RT_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RT-1-4",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "4508114600",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RT_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RT-1-4",
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "ordinary": []
+    },
+    "RT-1-5": {
+      "edge": [
+        {
+          "apn": "4361000300",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RT_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RT-1-5",
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "4361101500",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RT_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RT-1-5",
+          "zoning_state": "MULTI_ZONE"
+        },
+        {
+          "apn": "4361002600",
+          "coastal_context": "OUTSIDE_COASTAL",
+          "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+          "profile_ready": false,
+          "profile_version": "RT_FINAL_OUTSIDE_COASTAL_2026_07_15",
+          "zone": "RT-1-5",
+          "zoning_state": "MULTI_ZONE"
+        }
+      ],
+      "inside_coastal": [
+        {
+          "apn": "5385301000",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RT_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RT-1-5",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "5385302900",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RT_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RT-1-5",
+          "zoning_state": "SINGLE_ZONE"
+        },
+        {
+          "apn": "5385302700",
+          "coastal_context": "INSIDE_COASTAL",
+          "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+          "profile_ready": true,
+          "profile_version": "RT_FINAL_INSIDE_COASTAL_2026_09_10",
+          "zone": "RT-1-5",
+          "zoning_state": "SINGLE_ZONE"
+        }
+      ],
+      "ordinary": []
+    }
+  },
+  "ranking": "SHA256(zone|category|apn), ascending"
+}

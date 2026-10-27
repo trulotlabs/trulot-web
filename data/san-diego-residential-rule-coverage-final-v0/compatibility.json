@@ -1,0 +1,26 @@
+{
+  "capacity": false,
+  "existing_benchmarks": {
+    "RM-2-5:5442140600": "UNCHANGED_BY_CONSTRUCTION",
+    "RS-1-7:6341302200": "UNCHANGED_BY_CONSTRUCTION"
+  },
+  "la_mesa": "UNCHANGED",
+  "packet78": "UNCHANGED",
+  "packet80": "UNCHANGED",
+  "packet81": "UNCHANGED",
+  "production_parcel_lookup": "UNCHANGED",
+  "rt_family": "EXTENDED_WITH_SAME_SCHEMA",
+  "runtime_activation": false,
+  "rx_family": "UNCHANGED",
+  "v4_rule_fields": [
+    "rule_family",
+    "representation",
+    "operator",
+    "value",
+    "conditions",
+    "footnote_ids",
+    "unresolved_dependencies",
+    "source_fingerprint",
+    "public_evaluation_state"
+  ]
+}

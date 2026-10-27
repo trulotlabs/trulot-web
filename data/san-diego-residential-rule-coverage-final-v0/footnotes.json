@@ -1,0 +1,154 @@
+{
+  "footnotes": {
+    "131-04D:1": {
+      "extraction_fingerprint": "72cbca327c3786251d9d937f8c16310563975d8a3117bddb808cf270448a4b09",
+      "number": 1,
+      "page": 36,
+      "state": "SOURCE_TEXT",
+      "text": "For lots where at least one-half of the front 50 feet of the lot depth has a minimum slope gradient of 25 percent, the setback closest to the street frontage may be reduced to a minimum 6 feet.",
+      "text_sha256": "785cceebb1e3bdaec136a888f138611e27db260af0e5a7a90ec713f5c57acc81",
+      "version": "TABLE_131_04D_9_2026"
+    },
+    "131-04D:2": {
+      "extraction_fingerprint": "b07fedd2c8b2a0cfaef8d6ce07ddeb63e39fdb9700d6fb6ffd470bef1f433834",
+      "number": 2,
+      "page": 36,
+      "state": "SOURCE_TEXT",
+      "text": "See Section 131.0443(a)(4).",
+      "text_sha256": "ca90021d252762b6481d8fbd8629224936f290dea0319c1db95156447f389bd3",
+      "version": "TABLE_131_04D_9_2026"
+    },
+    "131-04D:3": {
+      "extraction_fingerprint": "505f375f28e605daec9f8c6a3bd5238b085196eaef35ff677da91fa9876ca310",
+      "number": 3,
+      "page": 36,
+      "state": "SOURCE_TEXT",
+      "text": "See Section 131.0443(a)(2).",
+      "text_sha256": "ec372440b6e9d704cc5b51e2c1b050d0c2856884a317e462cf781fe15c62815e",
+      "version": "TABLE_131_04D_9_2026"
+    },
+    "131-04D:4": {
+      "extraction_fingerprint": "dd23be5fc79f076d4c3a65bf6c93cefb10bcbc48b100b993505b12c9f83074f7",
+      "number": 4,
+      "page": 36,
+      "state": "SOURCE_TEXT",
+      "text": "See Section 131.0444(b).",
+      "text_sha256": "eade8c415a921cbc7700d1aa0a402f0797cb8c130b17ba46095f3ccb19322a49",
+      "version": "TABLE_131_04D_9_2026"
+    },
+    "131-04D:5": {
+      "extraction_fingerprint": "9a619ea51f72fe49cb9ec05a441ab368862bc7be27d089f85ce5874b0c762c3b",
+      "number": 5,
+      "page": 36,
+      "state": "SOURCE_TEXT",
+      "text": "See Section 131.0446(a).",
+      "text_sha256": "0f0037f39fdf24d92d03b88441b0c8d9a7210e44d6042c59dffd3e95f1e734b7",
+      "version": "TABLE_131_04D_9_2026"
+    },
+    "131-04D:6": {
+      "extraction_fingerprint": "a5a95dbb24474eb681b2ac75882121ee8fca5c94f89cb388ebc5c7da2b6a7f43",
+      "number": 6,
+      "page": 36,
+      "state": "SOURCE_TEXT",
+      "text": "See Section 131.0443(a)(3).",
+      "text_sha256": "6424b8fc5cf9a450a1cfc2bf329faba90618ccc85895bc7607c8bbbde0f8c50d",
+      "version": "TABLE_131_04D_9_2026"
+    },
+    "131-04D:8": {
+      "extraction_fingerprint": "b43a048542aab9c51912fc65bb15bffd490c1e4d7dd0f33b4a6d6b7d9e0bf891",
+      "note": "The source prints Bedroom regulation(8) for RS-1-8 through RS-1-14 but supplies no footnote 8.",
+      "number": 8,
+      "page": 35,
+      "state": "MISSING_IN_SOURCE",
+      "text": null,
+      "text_sha256": null,
+      "version": "TABLE_131_04D_9_2026"
+    },
+    "FN1": {
+      "derivation_class": "PROCESS",
+      "extraction_fingerprint": "b290a5b79dafc5fd6afc223499f5a94a8daa5c34b546578373ceb799d79abab9",
+      "families": [
+        "DENSITY"
+      ],
+      "section": "113.0222",
+      "source_text": "One dwelling unit per specified square foot of lot area as determined in accordance with Section 113.0222.",
+      "trigger": "DENSITY_RULE_USED",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN14": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "492cae02b95ce2ed08225ad2e8ac2e39f92e88010f4b1920cfc5db61f74d0d43",
+      "families": [
+        "FRONT_SETBACK_MINIMUM",
+        "INTERIOR_SIDE_SETBACK_MINIMUM",
+        "STREET_SIDE_SETBACK_MINIMUM",
+        "REAR_SETBACK_MINIMUM"
+      ],
+      "section": "131.0443(g)",
+      "source_text": "See Section 131.0443(g).",
+      "trigger": "ZONE_RM_4_10_OR_RM_4_11",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN16": {
+      "derivation_class": "CONDITIONAL",
+      "extraction_fingerprint": "e64ddbd5f1c7597b4d5db5eeac963fdecb640f84ad340e7b30e75847f5cd2af9",
+      "families": [
+        "ARCHITECTURAL_PROJECTIONS"
+      ],
+      "section": "131.0461(c)",
+      "source_text": "See Section 131.0461(c).",
+      "trigger": "ZONE_RM_2_4_TO_RM_5_12",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN2": {
+      "derivation_class": "EXCEPTION",
+      "extraction_fingerprint": "24f02a24ddf778d857d7c42970953d198956248815143f61bf56c89e8814e611",
+      "families": [
+        "DENSITY"
+      ],
+      "section": "143.0701_ET_SEQ",
+      "source_text": "An exception to maximum permitted density may be permitted under Chapter 14, Article 3, Division 7.",
+      "trigger": "AFFORDABLE_HOUSING_REGULATIONS_APPLY",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN25": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "825ed87d7323cfb4517b6212fec1a761df3fd12fb866b3cfa4c87e6a565dbb70",
+      "families": [
+        "PRIVATE_EXTERIOR_OPEN_SPACE"
+      ],
+      "section": "131.0455(d)",
+      "source_text": "See Section 131.0455(d).",
+      "trigger": "ZONE_RM_4_10_TO_RM_5_12",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN37": {
+      "derivation_class": "MODIFIER",
+      "extraction_fingerprint": "d8d37f81079928df51b6f58e37dbe174e89f01aabdc288beac4a14bea15a151f",
+      "families": [
+        "STRUCTURE_HEIGHT_MAXIMUM"
+      ],
+      "section": "113.0270(a)(4)(D)",
+      "source_text": "Within the Coastal Height Limit Overlay Zone in the Peninsula Community Plan area, the base-zone maximum structure height is 30 feet, determined under Section 113.0270(a)(4)(D).",
+      "trigger": "COASTAL_HEIGHT_LIMIT_OVERLAY_AND_PENINSULA_COMMUNITY_PLAN",
+      "version": "TABLE_131_04G_9_2026"
+    }
+  },
+  "material_footnote_completeness": "COMPLETE_WITH_ORPHAN_STATES_EXPLICIT",
+  "missing_reference_policy": "FAIL_VALIDATION",
+  "used_footnotes": [
+    "131-04D:1",
+    "131-04D:2",
+    "131-04D:3",
+    "131-04D:4",
+    "131-04D:5",
+    "131-04D:6",
+    "131-04D:8",
+    "FN1",
+    "FN14",
+    "FN16",
+    "FN2",
+    "FN25",
+    "FN37"
+  ]
+}

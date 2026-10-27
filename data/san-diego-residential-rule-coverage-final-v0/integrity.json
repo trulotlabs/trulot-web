@@ -1,0 +1,32 @@
+{
+  "contract_version": "san-diego-residential-rule-coverage-final-2026-10-27-v0",
+  "files": {
+    "README.md": "2ccd1845b2fe63e3c09876b813bb59ac2e26070e9a29572667c52ae29dd13c8f",
+    "accuracy-bottlenecks.json": "fe2c387350aee2e7d17e4b5ceea3fcbf4e98acacbc2ed8b3ead78c88f694fea0",
+    "apn-profile-selection.ndjson.gz": "6d1584e302b02e7dd4c31bf16cbd50f5ac7fa8baf4887222b16a840782d1a4b1",
+    "citywide-residential-support.ndjson.gz": "92231ccbc1628dc00a234590c6417eef7a78d48beebb8d86a29a9b227ad8a118",
+    "compatibility.json": "2cea28c2932e93be420feabe632573a36c2c46b075b2ccd35310f1bc01be6fba",
+    "coverage.json": "796de56c25e07baf475c21b78a875feb5102ea69062f8c701276423c84edc133",
+    "decision.json": "6101382bb3624a2af37343a6e44a704147beb0b5ea7cdb65d06d2f49699d11ba",
+    "family-schemas.json": "5d13090c47fd358a8318ec4b2f9ea2081a85269778c53e55c272c3312ba83524",
+    "final-profile-registry.json": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+    "footnotes.json": "3bfb54fc36d73e4437e6b1a1dd3e0053eeb24f428e3d44e31fb461a9ad0f0bfe",
+    "golden-candidates.json": "8f4908b65f40646278e812a3b796935dcd63a70c81a73dfdcc08f3535770fef4",
+    "manual-verification.json": "bd0d48eef5837e9a4b4bdb54a59bbb66e90f954ff3ff71ab3df96ca2f1113894",
+    "production-readiness.json": "2496d9531f2375bd88d27cb30492ce87b58f5e626c661d93a047b273f4e2b398",
+    "remaining-unsupported-audit.json": "e1d462b15de43d5653dac6af9efae62212160c3d2db745b1b2101e75e190591d",
+    "remaining-unsupported.ndjson.gz": "9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64",
+    "rule-profiles.json": "db72ad8e1ad3de5f204d909c14f5b95c7df292f861e0b5adb53a6ecae1218f80",
+    "schema.json": "ba1c3bf208cdfe76f2ee19772029d7ee1811b6d7e00438ae48848ed39f32ea91",
+    "source-version-receipts.json": "4fe9777aabb46fd23f8b78f4f28c0c791c4ceafaa47291df7ef12c00a90deaf4",
+    "target-populations.json": "3089848413fa6339416b1006a165dd18591cb2dab0bbd3647e36b098a4584a33"
+  },
+  "inputs": {
+    "current_division4_pdf": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "inside_rs": "f6d0a9b0c2eb3370017a2d01437fdccee5b6746a98a9aeb9e3c68ca780afe392",
+    "outside_rs": "5227e1f1d1ef0732e2f4283e35e341b67744f843b25328653497b79a030932da",
+    "packet79_selection": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+    "packet80_integrity": "67aa84075a117041fcf3c46f68d84f34afcc4b33aea051b55ed51e04294697cd",
+    "packet81_integrity": "d55055f02f5d5116b0a8eadda665c80f15ac4dca535869ee4bd6fd27b4bae2a9"
+  }
+}

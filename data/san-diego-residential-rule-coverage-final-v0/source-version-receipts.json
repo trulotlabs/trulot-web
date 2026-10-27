@@ -1,0 +1,33 @@
+{
+  "current_division4": {
+    "locators": [
+      "Table 131-04D pp.33-39",
+      "Table 131-04F pp.38-39",
+      "Table 131-04G pp.40-44",
+      "131.0441-131.0464"
+    ],
+    "sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "url": "https://docs.sandiego.gov/municode/MuniCodeChapter13/Ch13Art01Division04.pdf"
+  },
+  "inside_chain_sha256": "43738472705dd79538fbe64b36c4333ff048613afa2eb9f65b258f8b1b4fdcd5",
+  "inside_version": {
+    "components": [
+      "O-21836",
+      "LCP-6-SAN-24-0038-3",
+      "O-22117",
+      "O-21934",
+      "LCP-6-SAN-25-0037-1"
+    ],
+    "effective_from": "2026-09-10",
+    "excluded_pending": "O-22109"
+  },
+  "outside_version": {
+    "components": [
+      "O-21836",
+      "O-21934",
+      "O-22109"
+    ],
+    "effective_from": "2026-07-15"
+  },
+  "verified_as_of": "2026-10-27"
+}

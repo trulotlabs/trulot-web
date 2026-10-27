@@ -1,0 +1,20 @@
+{
+  "classifications": [
+    "unsupported_low_count_zone",
+    "zoning_unmapped_or_indeterminate",
+    "multi_zone_unresolved",
+    "modifier_or_source_gap",
+    "specialized_or_planned_district",
+    "other"
+  ],
+  "finding": "NO_RESIDENTIAL_APN_REMAINS_WITHOUT_A_SUPPORTED_BASE_PROFILE; review states remain and are not compliance conclusions.",
+  "supported_but_review_required_counts": {
+    "COASTAL_BOUNDARY_AMBIGUOUS": 567,
+    "MULTI_ZONE_UNRESOLVED": 64520,
+    "PROFILE_SELECTED": 260318,
+    "SELECTION_OR_MAPPING_REVIEW": 45,
+    "ZONING_INDETERMINATE": 1082
+  },
+  "unsupported_apns": 0,
+  "unsupported_reason_counts": {}
+}
