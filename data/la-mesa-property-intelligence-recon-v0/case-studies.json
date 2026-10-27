@@ -1,0 +1,1442 @@
+{
+  "activeDevelopmentEvidence": {
+    "sampleConflict": {
+      "address": "4757 PALM AVE",
+      "apn": "4944102400",
+      "cityDescription": "64-unit mixed-use project, six affordable units, grading underway",
+      "cityProject": "2021-40",
+      "cityStatus": "Under Construction",
+      "use": "CURRENTNESS_AND_CONFLICT_SIGNAL_NOT_PERMIT_HISTORY"
+    },
+    "sourceDate": "2026-05-12"
+  },
+  "additional": [
+    {
+      "address": "5836 PAWNEE DR",
+      "apn": "4640301100",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "ONE_DETACHED_SINGLE_FAMILY_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "63",
+        "garageConversionMarker": "N",
+        "nucleusUseCode": "111",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 1092,
+        "unitQuantity": 1
+      },
+      "categories": [
+        "ORDINARY_R1"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4640301100",
+        "footprint_areas_sqft": [
+          1505.8
+        ],
+        "structure_count_observed": 1
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2018-03-13",
+        "latestCreatedDate": "2023-02-01",
+        "query": "5836 PAWNEE DR",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Combo Building Permit": 1,
+          "Encroachment": 1
+        },
+        "recordsReturned": 2,
+        "resultTruncated": false,
+        "statuses": {
+          "FINAL": 1,
+          "Issued": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R1",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "5830 PAWNEE DR",
+      "apn": "4640301200",
+      "assessor": {
+        "additionAreaSqft": 252,
+        "derivedRecordedDwellingState": "ONE_DETACHED_SINGLE_FAMILY_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "75",
+        "garageConversionMarker": " ",
+        "nucleusUseCode": "111",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 1644,
+        "unitQuantity": 1
+      },
+      "categories": [
+        "ORDINARY_R1",
+        "RECENT_PERMIT"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4640301200",
+        "footprint_areas_sqft": [
+          2730.83
+        ],
+        "structure_count_observed": 1
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2000-11-01",
+        "latestCreatedDate": "2025-08-13",
+        "query": "5830 PAWNEE DR",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Combo Building Permit": 1,
+          "Encroachment": 1,
+          "Mechanical Permit": 1,
+          "Plumbing Permit": 1
+        },
+        "recordsReturned": 4,
+        "resultTruncated": false,
+        "statuses": {
+          "FINAL": 3,
+          "Issued": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R1",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "5498 PENNSYLVANIA LN",
+      "apn": "4635800100",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "ONE_DETACHED_SINGLE_FAMILY_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "66",
+        "garageConversionMarker": "N",
+        "nucleusUseCode": "110",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE - GENERIC",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 1716,
+        "unitQuantity": 1
+      },
+      "categories": [
+        "R1S"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4635800100",
+        "footprint_areas_sqft": [
+          3439.43
+        ],
+        "structure_count_observed": 1
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2019-08-20",
+        "latestCreatedDate": "2019-08-29",
+        "query": "5498 PENNSYLVANIA LN",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "BLDG-PRE-ROOFING": 1,
+          "Building Permit": 1,
+          "FINAL ACTIVITY": 1
+        },
+        "recordsReturned": 3,
+        "resultTruncated": false,
+        "statuses": {
+          "Completed": 2,
+          "FINAL": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R1S",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "9470 GROSSMONT BLVD",
+      "apn": "4912600700",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "ONE_DETACHED_SINGLE_FAMILY_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "52",
+        "garageConversionMarker": "N",
+        "nucleusUseCode": "110",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE - GENERIC",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 1800,
+        "unitQuantity": 1
+      },
+      "categories": [
+        "SCENIC"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4912600700",
+        "footprint_areas_sqft": [
+          1267.56,
+          321.85,
+          320.24
+        ],
+        "structure_count_observed": 3
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2005-06-21",
+        "latestCreatedDate": "2005-06-21",
+        "query": "9470 GROSSMONT BLVD",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Annexation": 1
+        },
+        "recordsReturned": 1,
+        "resultTruncated": false,
+        "statuses": {
+          "Approved (Closed)": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R1E",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": [
+          "LM_OVERLAY_P"
+        ]
+      }
+    },
+    {
+      "address": "4284 SUMMIT DR",
+      "apn": "4752412200",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "ONE_DETACHED_SINGLE_FAMILY_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "86",
+        "garageConversionMarker": "N",
+        "nucleusUseCode": "111",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 2009,
+        "unitQuantity": 1
+      },
+      "categories": [
+        "HILLSIDE"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4752412200",
+        "footprint_areas_sqft": [
+          2164.69
+        ],
+        "structure_count_observed": 1
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2007-06-21",
+        "latestCreatedDate": "2022-01-13",
+        "query": "4284 SUMMIT DR",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Combo Building Permit": 3,
+          "Encroachment Permit": 2,
+          "Special Permit": 1
+        },
+        "recordsReturned": 6,
+        "resultTruncated": false,
+        "statuses": {
+          "Approved (Closed)": 1,
+          "FINAL": 3,
+          "ISSUED": 2
+        }
+      },
+      "zoning": {
+        "baseZone": "R1S",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": [
+          "LM_OVERLAY_H"
+        ]
+      }
+    },
+    {
+      "address": "5877 BALTIMORE DR",
+      "apn": "4640201000",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "MULTIPLE_DWELLING_UNITS_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "00",
+        "garageConversionMarker": " ",
+        "nucleusUseCode": "150",
+        "nucleusUseDescription": "16 - 60 UNITS GENERIC",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 0,
+        "unitQuantity": 21
+      },
+      "categories": [
+        "R3_MULTIFAMILY"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4640201000",
+        "footprint_areas_sqft": [
+          6605.73,
+          2489.37,
+          1196.94
+        ],
+        "structure_count_observed": 3
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2007-02-12",
+        "latestCreatedDate": "2025-06-20",
+        "query": "5877 BALTIMORE DR",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Combo Building Permit": 1,
+          "Encroachment": 1,
+          "Encroachment Permit": 1
+        },
+        "recordsReturned": 3,
+        "resultTruncated": false,
+        "statuses": {
+          "FINAL": 2,
+          "Issued": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R3",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "5264 WOOD ST",
+      "apn": "4904720700",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "ONE_DETACHED_SINGLE_FAMILY_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "37",
+        "garageConversionMarker": "N",
+        "nucleusUseCode": "111",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 1140,
+        "unitQuantity": 1
+      },
+      "categories": [
+        "R3_COMBINED_OVERLAYS"
+      ],
+      "conflictNotes": [
+        "No portal search result is not evidence that no permit exists."
+      ],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4904720700",
+        "footprint_areas_sqft": [
+          1123.05,
+          547.32
+        ],
+        "structure_count_observed": 2
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": null,
+        "latestCreatedDate": null,
+        "query": "5264 WOOD ST",
+        "queryKind": "ADDRESS",
+        "recordTypes": {},
+        "recordsReturned": 0,
+        "resultTruncated": false,
+        "statuses": {}
+      },
+      "zoning": {
+        "baseZone": "R3",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": [
+          "LM_OVERLAY_MU",
+          "LM_OVERLAY_P",
+          "LM_OVERLAY_D"
+        ]
+      }
+    },
+    {
+      "address": "5700 BALTIMORE DR",
+      "apn": "4640203301",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "CONDO_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "76",
+        "garageConversionMarker": "N",
+        "nucleusUseCode": "171",
+        "nucleusUseDescription": "CONDOS ATTACHED",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 1038,
+        "unitQuantity": 1
+      },
+      "categories": [
+        "CONDO_COMMON_ADDRESS"
+      ],
+      "conflictNotes": [
+        "Footprints match stacked tax parcels and cannot be treated as unit-level structures."
+      ],
+      "footprints": {
+        "ambiguous_or_stacked_match": true,
+        "apn": "4640203301",
+        "footprint_areas_sqft": [
+          6967.22,
+          5533.55,
+          5502.38,
+          5405.36,
+          2587.19,
+          2587.19,
+          2587.17,
+          268.51,
+          260.97,
+          180.87
+        ],
+        "structure_count_observed": 10
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "LOWER_BOUND_100_RESULTS",
+        "earliestCreatedDate": "2023-03-20",
+        "latestCreatedDate": "2026-01-09",
+        "query": "5700 BALTIMORE DR",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Alteration": 5,
+          "Case": 2,
+          "Electrical": 80,
+          "Mechanical": 12,
+          "Plumbing": 1
+        },
+        "recordsReturned": 100,
+        "resultTruncated": true,
+        "statuses": {
+          "Approved: Permit Fees Due": 5,
+          "Closed": 1,
+          "Finaled": 48,
+          "In Progress": 1,
+          "Inspections Complete": 1,
+          "Issued": 43,
+          "Withdrawn": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R3",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "3706 KING ST",
+      "apn": "4745510700",
+      "assessor": {
+        "additionAreaSqft": 99999,
+        "derivedRecordedDwellingState": "MULTIPLE_DWELLING_UNITS_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "64",
+        "garageConversionMarker": " ",
+        "nucleusUseCode": "140",
+        "nucleusUseDescription": "5 - 15 UNITS GENERIC",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 3519,
+        "unitQuantity": 5
+      },
+      "categories": [
+        "DUPLICATE_ADDRESS",
+        "MULTIFAMILY"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4745510700",
+        "footprint_areas_sqft": [
+          986.24
+        ],
+        "structure_count_observed": 1
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "1996-04-11",
+        "latestCreatedDate": "2024-01-11",
+        "query": "3706 KING ST",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Mechanical": 1,
+          "Mechanical Permit": 1
+        },
+        "recordsReturned": 2,
+        "resultTruncated": false,
+        "statuses": {
+          "FINAL": 1,
+          "Finaled": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R2",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": null,
+      "apn": "4640202200",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "UNKNOWN_OR_NONRESIDENTIAL",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "  ",
+        "garageConversionMarker": " ",
+        "nucleusUseCode": "000",
+        "nucleusUseDescription": "UNKNOWN",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 0,
+        "unitQuantity": 0
+      },
+      "categories": [
+        "MISSING_ADDRESS"
+      ],
+      "conflictNotes": [
+        "No portal search result is not evidence that no permit exists."
+      ],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4640202200",
+        "footprint_areas_sqft": [],
+        "structure_count_observed": 0
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": null,
+        "latestCreatedDate": null,
+        "query": "4640202200",
+        "queryKind": "APN",
+        "recordTypes": {},
+        "recordsReturned": 0,
+        "resultTruncated": false,
+        "statuses": {}
+      },
+      "zoning": {
+        "baseZone": "R1",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": null,
+      "apn": "4645231900",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "UNKNOWN_OR_NONRESIDENTIAL",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "  ",
+        "garageConversionMarker": " ",
+        "nucleusUseCode": "000",
+        "nucleusUseDescription": "UNKNOWN",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 0,
+        "unitQuantity": 0
+      },
+      "categories": [
+        "UNSUPPORTED_ZONING",
+        "MISSING_ADDRESS"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4645231900",
+        "footprint_areas_sqft": [],
+        "structure_count_observed": 0
+      },
+      "permits": {
+        "apnLink": "SEARCHABLE_BY_APN_RESPONSE_DOES_NOT_ECHO_APN",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2019-09-26",
+        "latestCreatedDate": "2020-03-03",
+        "query": "4645231900",
+        "queryKind": "APN",
+        "recordTypes": {
+          "Combo Building Permit": 1,
+          "Encroachment Permit": 1
+        },
+        "recordsReturned": 2,
+        "resultTruncated": false,
+        "statuses": {
+          "ISSUED": 2
+        }
+      },
+      "zoning": {
+        "baseZone": "TBD",
+        "currentAnswerCategory": "Outside current scope",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "4560 3RD ST",
+      "apn": "4946110900",
+      "assessor": {
+        "additionAreaSqft": 798,
+        "derivedRecordedDwellingState": "MULTIPLE_DWELLING_UNITS_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "38",
+        "garageConversionMarker": "N",
+        "nucleusUseCode": "112",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE W/GRANNY FLAT",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 2249,
+        "unitQuantity": 2
+      },
+      "categories": [
+        "ASSESSOR_GRANNY_FLAT_HINT"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4946110900",
+        "footprint_areas_sqft": [
+          2634.04,
+          403.65,
+          169.56
+        ],
+        "structure_count_observed": 3
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "1998-11-04",
+        "latestCreatedDate": "2021-04-05",
+        "query": "4560 3RD ST",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Combo Building Permit": 7,
+          "Electrical Permit": 1,
+          "Plumbing Permit": 1
+        },
+        "recordsReturned": 9,
+        "resultTruncated": false,
+        "statuses": {
+          "EXPIRED": 2,
+          "FINAL": 4,
+          "ISSUED": 3
+        }
+      },
+      "zoning": {
+        "baseZone": "R1",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "4573 3RD ST",
+      "apn": "4946120500",
+      "assessor": {
+        "additionAreaSqft": 617,
+        "derivedRecordedDwellingState": "MULTIPLE_DWELLING_UNITS_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "55",
+        "garageConversionMarker": "N",
+        "nucleusUseCode": "109",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE WITH ADU",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 1751,
+        "unitQuantity": 2
+      },
+      "categories": [
+        "ASSESSOR_ADU_HINT"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4946120500",
+        "footprint_areas_sqft": [
+          2330.75
+        ],
+        "structure_count_observed": 1
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2006-06-22",
+        "latestCreatedDate": "2021-06-07",
+        "query": "4573 3RD ST",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Combo Building Permit": 2,
+          "Plumbing Permit": 2
+        },
+        "recordsReturned": 4,
+        "resultTruncated": false,
+        "statuses": {
+          "EXPIRED": 1,
+          "FINAL": 1,
+          "Finaled": 1,
+          "Issued": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R1",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "4109 69TH ST",
+      "apn": "4742211500",
+      "assessor": {
+        "additionAreaSqft": 407,
+        "derivedRecordedDwellingState": "MULTIPLE_DWELLING_UNITS_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "53",
+        "garageConversionMarker": "Y",
+        "nucleusUseCode": "109",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE WITH ADU",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 2211,
+        "unitQuantity": 3
+      },
+      "categories": [
+        "ASSESSOR_ADU_HINT"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4742211500",
+        "footprint_areas_sqft": [
+          1837.73,
+          452.84
+        ],
+        "structure_count_observed": 2
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2007-02-16",
+        "latestCreatedDate": "2021-12-21",
+        "query": "4109 69TH ST",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Combo Building Permit": 2
+        },
+        "recordsReturned": 2,
+        "resultTruncated": false,
+        "statuses": {
+          "EXPIRED": 1,
+          "FINAL": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R1",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "4595 70TH ST",
+      "apn": "4693022200",
+      "assessor": {
+        "additionAreaSqft": 313,
+        "derivedRecordedDwellingState": "MULTIPLE_DWELLING_UNITS_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "52",
+        "garageConversionMarker": "N",
+        "nucleusUseCode": "109",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE WITH ADU",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 1980,
+        "unitQuantity": 2
+      },
+      "categories": [
+        "ASSESSOR_ADU_HINT"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4693022200",
+        "footprint_areas_sqft": [
+          1874.92,
+          814.56,
+          510.59
+        ],
+        "structure_count_observed": 3
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2011-05-31",
+        "latestCreatedDate": "2024-12-20",
+        "query": "4595 70TH ST",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Electrical": 1,
+          "Mechanical Permit": 1
+        },
+        "recordsReturned": 2,
+        "resultTruncated": false,
+        "statuses": {
+          "FINAL": 1,
+          "Issued": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R1",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "5740 AMARILLO AVE",
+      "apn": "4905510900",
+      "assessor": {
+        "additionAreaSqft": 638,
+        "derivedRecordedDwellingState": "MULTIPLE_DWELLING_UNITS_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "59",
+        "garageConversionMarker": "N",
+        "nucleusUseCode": "109",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE WITH ADU",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 1787,
+        "unitQuantity": 2
+      },
+      "categories": [
+        "ASSESSOR_ADU_HINT"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4905510900",
+        "footprint_areas_sqft": [
+          2329.26
+        ],
+        "structure_count_observed": 1
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2021-05-21",
+        "latestCreatedDate": "2022-05-06",
+        "query": "5740 AMARILLO AVE",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Combo Building Permit": 1,
+          "Electrical": 1,
+          "Solar - PV": 1
+        },
+        "recordsReturned": 3,
+        "resultTruncated": false,
+        "statuses": {
+          "FINAL": 1,
+          "Finaled": 1,
+          "Issued": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R1",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "4757 PALM AVE",
+      "apn": "4944102400",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "UNKNOWN_OR_NONRESIDENTIAL",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "00",
+        "garageConversionMarker": " ",
+        "nucleusUseCode": "200",
+        "nucleusUseDescription": "OTHER_OFFICIAL_DOMAIN_CODE",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 0,
+        "unitQuantity": 0
+      },
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "conflictNotes": [
+        "City active-development list says 64-unit mixed-use project under construction while the older assessor/2017-footprint observations cannot establish its current completed condition."
+      ],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4944102400",
+        "footprint_areas_sqft": [
+          10224.66
+        ],
+        "structure_count_observed": 1
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2007-09-10",
+        "latestCreatedDate": "2026-06-12",
+        "query": "4757 PALM AVE",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Alteration": 3,
+          "Case": 2,
+          "Combo Building Permit": 4,
+          "Construction": 5,
+          "Electrical": 1,
+          "Encroachment": 10,
+          "Encroachment Permit": 5,
+          "Grading": 1,
+          "Landscape": 1,
+          "New Construction (Res)": 1,
+          "Revision": 1,
+          "Site Development Plan and Design Review": 1
+        },
+        "recordsReturned": 35,
+        "resultTruncated": false,
+        "statuses": {
+          "Approved (Closed)": 1,
+          "Closed": 3,
+          "FINAL": 5,
+          "Finaled": 2,
+          "ISSUED": 4,
+          "Issued": 17,
+          "Plan Check Expired": 1,
+          "Pre-Con Meeting Complete": 1,
+          "Pre-Con Meeting Pending": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "CD",
+        "currentAnswerCategory": "Outside current scope",
+        "mappedModifierIds": [
+          "LM_OVERLAY_D"
+        ]
+      }
+    },
+    {
+      "address": "9407 JERICHO RD",
+      "apn": "4866701800",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "UNKNOWN_OR_NONRESIDENTIAL",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "61",
+        "garageConversionMarker": " ",
+        "nucleusUseCode": "710",
+        "nucleusUseDescription": "OTHER_OFFICIAL_DOMAIN_CODE",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 10605,
+        "unitQuantity": 1
+      },
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4866701800",
+        "footprint_areas_sqft": [
+          14745.87,
+          8700.62,
+          545.25
+        ],
+        "structure_count_observed": 3
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "1996-09-23",
+        "latestCreatedDate": "2026-06-16",
+        "query": "9407 JERICHO RD",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Appeal": 1,
+          "Building Permit": 5,
+          "Case": 1,
+          "Combo Building Permit": 5,
+          "Demolition": 1,
+          "Encroachment": 6,
+          "Encroachment Permit": 4,
+          "Grading": 2,
+          "Grading Permit": 1,
+          "Improvements": 1,
+          "Landscape": 1,
+          "Mechanical Permit": 1,
+          "Planning Project": 1,
+          "Plumbing Permit": 1,
+          "Retaining Wall": 1,
+          "Revision": 1,
+          "Sign Permit": 1
+        },
+        "recordsReturned": 34,
+        "resultTruncated": false,
+        "statuses": {
+          "Approved (Closed)": 1,
+          "Closed": 1,
+          "Denied (Closed)": 1,
+          "EXPIRED": 3,
+          "FINAL": 11,
+          "ISSUED": 1,
+          "Issued": 13,
+          "VOID": 1,
+          "WITHDRWN": 2
+        }
+      },
+      "zoning": {
+        "baseZone": "R3",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "5220 WILSON ST",
+      "apn": "4906603100",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "UNKNOWN_OR_NONRESIDENTIAL",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "00",
+        "garageConversionMarker": " ",
+        "nucleusUseCode": "890",
+        "nucleusUseDescription": "OTHER_OFFICIAL_DOMAIN_CODE",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 0,
+        "unitQuantity": 0
+      },
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4906603100",
+        "footprint_areas_sqft": [
+          7080.95
+        ],
+        "structure_count_observed": 1
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2020-05-21",
+        "latestCreatedDate": "2026-05-21",
+        "query": "5220 WILSON ST",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Case": 1,
+          "Construction": 3,
+          "Demolition": 1,
+          "Electrical": 1,
+          "Encroachment": 15,
+          "Grading": 1,
+          "Landscape": 1,
+          "New Construction (Res)": 1,
+          "Revision": 4,
+          "Site Development Plan and Design Review": 1,
+          "Solar - PV": 1,
+          "Zoning Information Letter": 1
+        },
+        "recordsReturned": 31,
+        "resultTruncated": false,
+        "statuses": {
+          "Approved (Closed)": 1,
+          "Closed": 2,
+          "Finaled": 4,
+          "Issued": 19,
+          "Pre-Con Meeting Complete": 1,
+          "Pre-Con Meeting Pending": 2,
+          "Void": 1,
+          "Wait for Fee Payment": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "RB",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": [
+          "LM_OVERLAY_D",
+          "LM_OVERLAY_MU"
+        ]
+      }
+    },
+    {
+      "address": "7285 UNIVERSITY AVE",
+      "apn": "4741811900",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "UNKNOWN_OR_NONRESIDENTIAL",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "00",
+        "garageConversionMarker": " ",
+        "nucleusUseCode": "210",
+        "nucleusUseDescription": "OTHER_OFFICIAL_DOMAIN_CODE",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 3600,
+        "unitQuantity": 1
+      },
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4741811900",
+        "footprint_areas_sqft": [
+          1260.53
+        ],
+        "structure_count_observed": 1
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "1999-06-29",
+        "latestCreatedDate": "2026-03-13",
+        "query": "7285 UNIVERSITY AVE",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Combo Building Permit": 1,
+          "Electrical": 1,
+          "Landscape": 1,
+          "Legacy Case": 1,
+          "New Construction (Res)": 1
+        },
+        "recordsReturned": 5,
+        "resultTruncated": false,
+        "statuses": {
+          "Approved: Permit Fees Due": 1,
+          "FINAL": 1,
+          "In Progress": 1,
+          "Plan Check Expired": 2
+        }
+      },
+      "zoning": {
+        "baseZone": "C",
+        "currentAnswerCategory": "Outside current scope",
+        "mappedModifierIds": [
+          "LM_OVERLAY_D",
+          "LM_OVERLAY_F",
+          "LM_OVERLAY_MU"
+        ]
+      }
+    },
+    {
+      "address": "7735 UNIVERSITY AVE",
+      "apn": "4706900300",
+      "assessor": {
+        "additionAreaSqft": 0,
+        "derivedRecordedDwellingState": "UNKNOWN_OR_NONRESIDENTIAL",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "75",
+        "garageConversionMarker": " ",
+        "nucleusUseCode": "217",
+        "nucleusUseDescription": "OTHER_OFFICIAL_DOMAIN_CODE",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 2592,
+        "unitQuantity": 1
+      },
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4706900300",
+        "footprint_areas_sqft": [
+          2005.68,
+          1325.31
+        ],
+        "structure_count_observed": 2
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2023-07-10",
+        "latestCreatedDate": "2024-08-29",
+        "query": "7735 UNIVERSITY AVE",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Alteration": 1,
+          "Electrical": 1
+        },
+        "recordsReturned": 2,
+        "resultTruncated": false,
+        "statuses": {
+          "Finaled": 2
+        }
+      },
+      "zoning": {
+        "baseZone": "C",
+        "currentAnswerCategory": "Outside current scope",
+        "mappedModifierIds": [
+          "LM_OVERLAY_D",
+          "LM_OVERLAY_MU"
+        ]
+      }
+    },
+    {
+      "address": "4326 AVON DR",
+      "apn": "4705321100",
+      "assessor": {
+        "additionAreaSqft": 1313,
+        "derivedRecordedDwellingState": "MULTIPLE_DWELLING_UNITS_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "61",
+        "garageConversionMarker": "N",
+        "nucleusUseCode": "109",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE WITH ADU",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 4282,
+        "unitQuantity": 2
+      },
+      "categories": [
+        "KNOWN_ADU_PERMIT_ACTIVITY"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4705321100",
+        "footprint_areas_sqft": [
+          3496.06
+        ],
+        "structure_count_observed": 1
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2019-06-27",
+        "latestCreatedDate": "2023-04-06",
+        "query": "4326 AVON DR",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Accessory Dwelling Unit": 1,
+          "Combo Building Permit": 1,
+          "Revision": 1,
+          "Solar - PV": 1
+        },
+        "recordsReturned": 4,
+        "resultTruncated": false,
+        "statuses": {
+          "EXPIRED": 1,
+          "Finaled": 1,
+          "Inspections Complete": 1,
+          "Plan Check Expired": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R1",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "8470 ABILENE TER",
+      "apn": "4852600500",
+      "assessor": {
+        "additionAreaSqft": 784,
+        "derivedRecordedDwellingState": "MULTIPLE_DWELLING_UNITS_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "53",
+        "garageConversionMarker": "Y",
+        "nucleusUseCode": "112",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE W/GRANNY FLAT",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 1934,
+        "unitQuantity": 2
+      },
+      "categories": [
+        "ORDINARY_R1",
+        "ADU_HINT"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4852600500",
+        "footprint_areas_sqft": [
+          2230.52
+        ],
+        "structure_count_observed": 1
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "1998-03-31",
+        "latestCreatedDate": "2019-11-05",
+        "query": "8470 ABILENE TER",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Combo Building Permit": 2,
+          "Plumbing Permit": 1
+        },
+        "recordsReturned": 3,
+        "resultTruncated": false,
+        "statuses": {
+          "FINAL": 3
+        }
+      },
+      "zoning": {
+        "baseZone": "R1",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    },
+    {
+      "address": "6964 COLORADO AVE",
+      "apn": "4641801100",
+      "assessor": {
+        "additionAreaSqft": 814,
+        "derivedRecordedDwellingState": "MULTIPLE_DWELLING_UNITS_RECORDED_MATCH",
+        "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+        "effectiveYearRaw": "60",
+        "garageConversionMarker": "N",
+        "nucleusUseCode": "109",
+        "nucleusUseDescription": "SINGLE FAMILY RESIDENCE WITH ADU",
+        "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+        "totalLivingAreaSqft": 2237,
+        "unitQuantity": 2
+      },
+      "categories": [
+        "KNOWN_ADU_PERMIT_ACTIVITY"
+      ],
+      "conflictNotes": [],
+      "footprints": {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4641801100",
+        "footprint_areas_sqft": [
+          2247.76,
+          162.3
+        ],
+        "structure_count_observed": 2
+      },
+      "permits": {
+        "apnLink": "NO_APN_LINK_IN_RESPONSE",
+        "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+        "earliestCreatedDate": "2022-11-29",
+        "latestCreatedDate": "2025-10-17",
+        "query": "6964 COLORADO AVE",
+        "queryKind": "ADDRESS",
+        "recordTypes": {
+          "Accessory Dwelling Unit": 1,
+          "BLDG-DRYWALL": 1,
+          "BLDG-FINAL APPROVAL": 1,
+          "BLDG-FOOTINGS/REINFORCEMENT": 1,
+          "BLDG-INSULATION INSPECTION": 1,
+          "BLDG-ROOF SHEATH": 1,
+          "BLDG-SHEAR PANEL": 1,
+          "ELEC-SERVICE PANEL": 1,
+          "PLMG- GAS PIPING & SHUT OFF": 1,
+          "PLMG-BLDG DRAINS (UG)": 1,
+          "PLMG-BLDG SEWER (UG)": 1,
+          "PLMG-D/W/V PIPING": 1,
+          "PLMG-GAS MTR CLEARANCE": 1,
+          "PLMG-SHOWER PAN": 1,
+          "PROGRESS INSPECTION": 5,
+          "ROUGH FRAMING,ELEC,MECH,PLUMB": 1
+        },
+        "recordsReturned": 20,
+        "resultTruncated": false,
+        "statuses": {
+          "Completed (Pass)": 19,
+          "Finaled": 1
+        }
+      },
+      "zoning": {
+        "baseZone": "R1S",
+        "currentAnswerCategory": "Needs property evidence",
+        "mappedModifierIds": []
+      }
+    }
+  ],
+  "primary": {
+    "address": "6910 BRUCE CT",
+    "apn": "4685100900",
+    "assessor": {
+      "additionAreaSqft": 450,
+      "derivedRecordedDwellingState": "ONE_DETACHED_SINGLE_FAMILY_RECORDED_MATCH",
+      "effectiveYearAllowedUse": "NOT_BUILDING_AGE",
+      "effectiveYearRaw": "53",
+      "garageConversionMarker": "N",
+      "nucleusUseCode": "111",
+      "nucleusUseDescription": "SINGLE FAMILY RESIDENCE",
+      "sourceCurrentness": "LAND_USE_IRREGULAR; UNITQTY_WEEKLY_FROM_MPR; PAR_FIELDS_WEEKLY_BUT_NOT_CURRENT_AS_BUILT_TRUTH",
+      "totalLivingAreaSqft": 1572,
+      "unitQuantity": 1
+    },
+    "automaticKnowledge": [
+      "canonical parcel identity and address",
+      "R1 mapped zoning context with no mapped modifier in sealed evaluation",
+      "assessor use 111 single-family residence hint",
+      "recorded UNITQTY 1",
+      "recorded total living area 1,572 sq ft and addition area 450 sq ft, both qualified",
+      "three public portal records (1997 roof, 2021 plumbing, 2023 reroof) shown final/finaled",
+      "one Spring-2017 observational footprint (~3,039 sq ft)"
+    ],
+    "categories": [
+      "6910_BRUCE_CASE",
+      "ORDINARY_R1"
+    ],
+    "conflictNotes": [],
+    "footprints": {
+      "ambiguous_or_stacked_match": false,
+      "apn": "4685100900",
+      "footprint_areas_sqft": [
+        3038.85
+      ],
+      "structure_count_observed": 1
+    },
+    "permits": {
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "1997-05-08",
+      "latestCreatedDate": "2023-10-30",
+      "query": "6910 BRUCE CT",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Alteration": 1,
+        "Building Permit": 1,
+        "Plumbing Permit": 1
+      },
+      "recordsReturned": 3,
+      "resultTruncated": false,
+      "statuses": {
+        "FINAL": 2,
+        "Finaled": 1
+      }
+    },
+    "questionReduction": "Dwelling type could be preselected as one detached house for confirmation after integration/currentness gates; it must not be silently suppressed. Project form, existing/proposed state, qualifying space, size, sprinkler and site questions remain.",
+    "remainingUncertain": [
+      "current legal as-built dwelling count",
+      "whether any unreturned/older permit exists",
+      "century/building year (YEAR_EFFECTIVE 53 is prohibited as age)",
+      "whether footprint includes garage/eaves/nonliving area",
+      "current structure configuration after Spring 2017",
+      "ADU/JADU/conversion eligibility predicates and project facts"
+    ],
+    "zoning": {
+      "baseZone": "R1",
+      "currentAnswerCategory": "Needs property evidence",
+      "mappedModifierIds": []
+    }
+  },
+  "schemaVersion": "la-mesa-property-intelligence-case-studies-v0"
+}

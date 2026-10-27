@@ -1,0 +1,329 @@
+{
+  "accessoryStructureCandidateDoctrine": {
+    "label": "ACCESSORY_STRUCTURE_CANDIDATE",
+    "minimumConditions": [
+      "two or more detached footprint polygons assigned to the same non-stacked parcel",
+      "secondary footprint materially smaller than largest footprint",
+      "plausible accessory-size range",
+      "separation and parcel-position signals"
+    ],
+    "prohibitedInferences": [
+      "garage",
+      "ADU",
+      "habitable space",
+      "legal structure",
+      "permitted structure",
+      "current presence after 2017"
+    ],
+    "stackedParcelRule": "Do not emit unit-level candidates where one physical parcel geometry is shared by multiple APNs."
+  },
+  "classification": "OBSERVATIONAL_GEOMETRY",
+  "join": {
+    "canonical_parcels": 17391,
+    "counts": {
+      "ambiguous_or_stacked_match": 3262,
+      "multiple_footprints": 7141,
+      "no_footprint": 1138,
+      "one_footprint": 9112,
+      "with_any_footprint": 16253
+    },
+    "method": {
+      "area_crs": "EPSG:2230 US survey feet",
+      "assignment": "Each outline is counted for every canonical tax parcel polygon covering its representative interior point. This preserves stacked condo/mobile-home ambiguity rather than forcing a false one-to-one match.",
+      "source_bbox": "ordinary La Mesa parcel extent; four sealed jurisdiction-conflict outliers outside the City remain zero-footprint"
+    },
+    "outline_area_sqft": {
+      "counted_apn_assignments": 61878,
+      "max": 726080.09,
+      "median": 1689.84,
+      "min": 150.03,
+      "p25": 680.42,
+      "p75": 4335.4,
+      "p95": 10696.69
+    },
+    "parcel_total_footprint_area_sqft": {
+      "max": 923903.52,
+      "median": 2731.04,
+      "min": 152.81,
+      "p25": 2169.13,
+      "p75": 4773.91,
+      "p95": 57104.23,
+      "parcels": 16253
+    },
+    "samples": [
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4685100900",
+        "footprint_areas_sqft": [
+          3038.85
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4640301100",
+        "footprint_areas_sqft": [
+          1505.8
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4640301200",
+        "footprint_areas_sqft": [
+          2730.83
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4635800100",
+        "footprint_areas_sqft": [
+          3439.43
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4912600700",
+        "footprint_areas_sqft": [
+          1267.56,
+          321.85,
+          320.24
+        ],
+        "structure_count_observed": 3
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4752412200",
+        "footprint_areas_sqft": [
+          2164.69
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4640201000",
+        "footprint_areas_sqft": [
+          6605.73,
+          2489.37,
+          1196.94
+        ],
+        "structure_count_observed": 3
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4904720700",
+        "footprint_areas_sqft": [
+          1123.05,
+          547.32
+        ],
+        "structure_count_observed": 2
+      },
+      {
+        "ambiguous_or_stacked_match": true,
+        "apn": "4640203301",
+        "footprint_areas_sqft": [
+          6967.22,
+          5533.55,
+          5502.38,
+          5405.36,
+          2587.19,
+          2587.19,
+          2587.17,
+          268.51,
+          260.97,
+          180.87
+        ],
+        "structure_count_observed": 10
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4745510700",
+        "footprint_areas_sqft": [
+          986.24
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4640202200",
+        "footprint_areas_sqft": [],
+        "structure_count_observed": 0
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4645231900",
+        "footprint_areas_sqft": [],
+        "structure_count_observed": 0
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4946110900",
+        "footprint_areas_sqft": [
+          2634.04,
+          403.65,
+          169.56
+        ],
+        "structure_count_observed": 3
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4946120500",
+        "footprint_areas_sqft": [
+          2330.75
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4742211500",
+        "footprint_areas_sqft": [
+          1837.73,
+          452.84
+        ],
+        "structure_count_observed": 2
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4693022200",
+        "footprint_areas_sqft": [
+          1874.92,
+          814.56,
+          510.59
+        ],
+        "structure_count_observed": 3
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4905510900",
+        "footprint_areas_sqft": [
+          2329.26
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4944102400",
+        "footprint_areas_sqft": [
+          10224.66
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4866701800",
+        "footprint_areas_sqft": [
+          14745.87,
+          8700.62,
+          545.25
+        ],
+        "structure_count_observed": 3
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4906603100",
+        "footprint_areas_sqft": [
+          7080.95
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4741811900",
+        "footprint_areas_sqft": [
+          1260.53
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4706900300",
+        "footprint_areas_sqft": [
+          2005.68,
+          1325.31
+        ],
+        "structure_count_observed": 2
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4705321100",
+        "footprint_areas_sqft": [
+          3496.06
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4852600500",
+        "footprint_areas_sqft": [
+          2230.52
+        ],
+        "structure_count_observed": 1
+      },
+      {
+        "ambiguous_or_stacked_match": false,
+        "apn": "4641801100",
+        "footprint_areas_sqft": [
+          2247.76,
+          162.3
+        ],
+        "structure_count_observed": 2
+      }
+    ],
+    "source": {
+      "assigned_outline_features": 19835,
+      "content_sha256": "1895e34e2b26b6fd018ff775733d532de0451773c9a396b292fc2b40650166f5",
+      "downloaded_outline_features": 30999,
+      "outline_features_matching_multiple_apns": 791,
+      "outside_canonical_parcels": 11164
+    },
+    "structure_count_distribution": {
+      "0": 1138,
+      "1": 9112,
+      "10": 177,
+      "11": 1,
+      "12": 167,
+      "13": 5,
+      "14": 63,
+      "15": 97,
+      "18": 61,
+      "19": 80,
+      "2": 3406,
+      "20": 65,
+      "21": 21,
+      "22": 93,
+      "23": 1,
+      "3": 992,
+      "32": 48,
+      "35": 1,
+      "36": 1,
+      "4": 451,
+      "40": 128,
+      "5": 189,
+      "50": 1,
+      "52": 284,
+      "6": 216,
+      "7": 225,
+      "8": 114,
+      "9": 254
+    }
+  },
+  "license": "SanGIS public download is available, but the SANDAG/SanGIS MOA restricts resale, repackaging, repurposing, and automatic redistribution without written consent. Production storage/redisplay requires written terms confirmation.",
+  "source": {
+    "captureContentSha256": "1895e34e2b26b6fd018ff775733d532de0451773c9a396b292fc2b40650166f5",
+    "capturedPaginatedCount": 30999,
+    "featureCountInBoundingCapture": 30999,
+    "geometryQuality": "plan-view observational outlines; not surveyed or permit evidence",
+    "hasParcelKey": false,
+    "lastUpdateReported": "2018-08-02",
+    "name": "SanGIS BUILDING_OUTLINES",
+    "preflightCount": 30994,
+    "preflightToCaptureDrift": 5,
+    "publisher": "SANDAG/SanGIS",
+    "sourceImagery": "Spring 2017 EagleView/Pictometry imagery",
+    "transactionalConsistency": "NOT_GUARANTEED; service reported five more bbox features during the bounded capture and has no last-edit timestamp",
+    "updateFrequency": "No current schedule established",
+    "url": "https://gis.sangis.org/maps/rest/services/Public/Basemap/MapServer/5036"
+  }
+}

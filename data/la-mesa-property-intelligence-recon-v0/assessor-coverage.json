@@ -1,0 +1,69 @@
+{
+  "canonicalApnFingerprint": "11440df9a1fb2a72592000dc656f75dcec9bf7ed9d90e9efcb9ebba8e700a467",
+  "denominator": 17391,
+  "fields": {
+    "assessed_improvement_value_positive": {
+      "classification": "RECORDED_PROPERTY_CHARACTERISTIC",
+      "count": 16575,
+      "percent": 95.31
+    },
+    "assessor_adu_or_granny_flat_use_hint": {
+      "classification": "ASSESSOR_USE_HINT",
+      "count": 350,
+      "percent": 2.01
+    },
+    "effective_year_nonblank_not_building_age": {
+      "classification": "NOT_RELIABLE_FOR_BUILDING_AGE",
+      "count": 16011,
+      "percent": 92.06
+    },
+    "garage_conversion_marker_y": {
+      "classification": "ASSESSOR_USE_HINT",
+      "count": 1127,
+      "percent": 6.48
+    },
+    "nucleus_use_non_unknown": {
+      "classification": "ASSESSOR_USE_HINT",
+      "count": 17132,
+      "percent": 98.51
+    },
+    "recorded_unit_count_positive": {
+      "classification": "RECORDED_UNIT_COUNT",
+      "count": 16432,
+      "percent": 94.49
+    },
+    "reliable_year_built": {
+      "classification": "UNAVAILABLE",
+      "count": 0,
+      "percent": 0.0
+    },
+    "total_living_area_positive_valid_range": {
+      "classification": "RECORDED_PROPERTY_CHARACTERISTIC_INCOMPLETE",
+      "count": 16276,
+      "percent": 93.59
+    },
+    "unit_count_field_present_including_zero": {
+      "classification": "RECORDED_UNIT_COUNT_WITH_ZERO_AMBIGUITY",
+      "count": 17391,
+      "percent": 100.0
+    }
+  },
+  "notes": [
+    "Percentages are computed against the sealed 17,391-APN population.",
+    "The two extra LM-attributed source rows are excluded because Packet 64/69 canonical scope is controlling.",
+    "A positive recorded field is coverage, not proof of current legal as-built condition."
+  ],
+  "preliminaryDwellingTypeStates": {
+    "CONDO_RECORDED_MATCH": 3370,
+    "MULTIPLE_DWELLING_UNITS_RECORDED_MATCH": 1454,
+    "ONE_DETACHED_SINGLE_FAMILY_RECORDED_MATCH": 10633,
+    "RESIDENTIAL_RECORDED_CONFLICT_OR_WEAK": 187,
+    "UNKNOWN_OR_NONRESIDENTIAL": 1747
+  },
+  "rawLmRowsObserved": 17393,
+  "rawRowsExcludedBySealedCanonicalScope": [
+    "4990203600",
+    "4990300100"
+  ],
+  "schemaVersion": "la-mesa-property-intelligence-recon-v0"
+}

@@ -1,0 +1,239 @@
+{
+ "extent": {
+  "ymin": 3833187.770705638,
+  "xmin": -13090828.90096519,
+  "ymax": 3963396.4157094373,
+  "xmax": -12922014.488495065,
+  "spatialReference": {
+   "falseM": -100000,
+   "xyTolerance": 0.001,
+   "mUnits": 10000,
+   "zUnits": 10000,
+   "latestWkid": 3857,
+   "zTolerance": 0.001,
+   "wkid": 102100,
+   "xyUnits": 10000,
+   "mTolerance": 0.001,
+   "falseX": -20037700,
+   "falseY": -30241100,
+   "falseZ": -100000
+  }
+ },
+ "maxRecordCount": 1000,
+ "datesInUnknownTimezone": false,
+ "ownershipBasedAccessControlForFeatures": {"allowOthersToQuery": true},
+ "type": "Feature Layer",
+ "maxSelectionCount": 2000,
+ "subtypes": [],
+ "relationships": [],
+ "cimVersion": "3.7.0",
+ "isDataArchived": false,
+ "id": 5036,
+ "archivingInfo": {
+  "startArchivingMoment": -1,
+  "supportsQueryWithHistoricMoment": false
+ },
+ "spatialReference": {
+  "falseM": -100000,
+  "xyTolerance": 0.001,
+  "mUnits": 10000,
+  "zUnits": 10000,
+  "latestWkid": 3857,
+  "zTolerance": 0.001,
+  "wkid": 102100,
+  "xyUnits": 10000,
+  "mTolerance": 0.001,
+  "falseX": -20037700,
+  "falseY": -30241100,
+  "falseZ": -100000
+ },
+ "subtypeFieldName": null,
+ "supportsStatistics": true,
+ "hasLastEditTime": false,
+ "standardMaxRecordCount": 4000,
+ "isDataVersioned": false,
+ "hasGeometryProperties": true,
+ "supportsAdvancedQueries": true,
+ "parentLayer": null,
+ "subLayers": [],
+ "currentVersion": 12.1,
+ "referenceScale": 0,
+ "canScaleSymbols": false,
+ "name": "BUILDING_OUTLINES",
+ "displayField": "COMMENT",
+ "fields": [
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "shape",
+   "alias": "Shape",
+   "type": "esriFieldTypeGeometry"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "comment",
+   "length": 254,
+   "alias": "COMMENT",
+   "type": "esriFieldTypeString"
+  },
+  {
+   "nullable": false,
+   "domain": null,
+   "name": "objectid_1",
+   "alias": "FID",
+   "type": "esriFieldTypeOID"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "warehouse.sangis.BUILDING_OUTLINES.area",
+   "alias": "warehouse.sangis.BUILDING_OUTLINES.area",
+   "type": "esriFieldTypeDouble"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "st_area(shape)",
+   "alias": "st_area(shape)",
+   "type": "esriFieldTypeDouble"
+  },
+  {
+   "nullable": true,
+   "domain": null,
+   "name": "st_perimeter(shape)",
+   "alias": "st_perimeter(shape)",
+   "type": "esriFieldTypeDouble"
+  }
+ ],
+ "maxRecordCountFactor": 1,
+ "dateFieldsTimeReference": null,
+ "preferredTimeReference": null,
+ "useStandardizedQueries": true,
+ "sourceSpatialReference": {
+  "falseM": -100000,
+  "xyTolerance": 0.00328083333333333,
+  "mUnits": 10000,
+  "zUnits": 10000,
+  "latestWkid": 2230,
+  "zTolerance": 0.001,
+  "wkid": 102646,
+  "xyUnits": 3048.00609601219,
+  "mTolerance": 0.001,
+  "falseX": -118608900,
+  "falseY": -91259500,
+  "falseZ": -100000
+ },
+ "description": "This dataset contains building outline polygons to support the ongoing development and maintenance of SANDAG's land inventory system (SPACECORE). The SanGIS Parcels feature class and the imagery captured by EagleView/Pictometry during the San Diego regional imagery acquisition partnership project in Spring 2017 were the basis for defining where building outlines were created using EagleView/Pictometry's ChangeFinder methodology. Additional buildings within road rights-of-way were also delineated by the EagleView/Pictometry team. SANDAG will be adding attribution to this dataset as part of our SPACECORE integration process.",
+ "canModifyLayer": false,
+ "supportedSpatialRelationships": [
+  "esriSpatialRelIntersects",
+  "esriSpatialRelContains",
+  "esriSpatialRelCrosses",
+  "esriSpatialRelEnvelopeIntersects",
+  "esriSpatialRelIndexIntersects",
+  "esriSpatialRelOverlaps",
+  "esriSpatialRelTouches",
+  "esriSpatialRelWithin",
+  "esriSpatialRelRelation"
+ ],
+ "geometryProperties": {
+  "shapeAreaFieldName": "st_area(shape)",
+  "shapeLengthFieldName": "st_perimeter(shape)",
+  "units": "esriFeet",
+  "mapUnits": {"uwkid": 9003}
+ },
+ "standardMaxRecordCountNoGeometry": 32000,
+ "indexes": [
+  {
+   "name": "r95_sde_rowid_uk",
+   "isUnique": true,
+   "description": "",
+   "fields": "objectid_1",
+   "isAscending": true
+  },
+  {
+   "name": "a81_ix1",
+   "isUnique": true,
+   "description": "",
+   "fields": "shape",
+   "isAscending": true
+  }
+ ],
+ "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+ "supportsDatumTransformation": true,
+ "minScale": 4513.9887049999998,
+ "supportsDynamicLegends": true,
+ "hasAttachments": false,
+ "advancedQueryCapabilities": {
+  "supportsSqlExpression": true,
+  "supportsQueryWithResultType": true,
+  "supportsQueryRelatedPagination": true,
+  "supportsSqlFormat": false,
+  "useStandardizedQueries": true,
+  "supportsResultPaginationToken": false,
+  "supportsQueryWithCacheHint": false,
+  "supportsQueryWithDatumTransformation": true,
+  "supportsCurrentUserQueries": true,
+  "supportsQueryWithLodSR": false,
+  "supportsPagination": true,
+  "supportsMaxRecordCountFactor": false,
+  "supportsStatistics": true,
+  "supportsTrueCurve": true,
+  "supportsOrderBy": true,
+  "supportsLod": false,
+  "supportsQueryWithDistance": true,
+  "supportsCountDistinct": true,
+  "supportsAdvancedQueryRelated": true,
+  "supportsReturningQueryExtent": true,
+  "supportsDistinct": true,
+  "supportsTimeRelation": true,
+  "supportsQueryAnalytic": true,
+  "supportsPercentileStatistics": true,
+  "supportsHavingClause": true
+ },
+ "subtypeField": null,
+ "serviceItemId": "6455425e4a7c4e73be45d192504b6194",
+ "supportsCoordinatesQuantization": true,
+ "capabilities": "Map,Data",
+ "maxScale": 0,
+ "supportsExceedsLimitStatistics": true,
+ "defaultVisibility": true,
+ "advancedQueryAnalyticCapabilities": {
+  "supportsAsync": false,
+  "supportsLinearRegression": true,
+  "supportsPercentileAnalytic": false
+ },
+ "hasMetadata": true,
+ "tileMaxRecordCount": 4000,
+ "typeIdField": null,
+ "defaultSubtypeCode": null,
+ "supportedQueryFormats": "JSON, geoJSON, PBF",
+ "hasLabels": false,
+ "drawingInfo": {
+  "renderer": {
+   "symbol": {
+    "outline": null,
+    "color": [
+     225,
+     225,
+     225,
+     255
+    ],
+    "style": "esriSFSSolid",
+    "type": "esriSFS"
+   },
+   "type": "simple"
+  },
+  "scaleSymbols": true,
+  "transparency": 0,
+  "labelingInfo": null
+ },
+ "geometryField": {
+  "name": "shape",
+  "alias": "Shape",
+  "type": "esriFieldTypeGeometry"
+ },
+ "copyrightText": "SANDAG, EagleView/Pictometry",
+ "geometryType": "esriGeometryPolygon"
+}

@@ -1,0 +1,40 @@
+{
+  "bounds": {
+    "conservative": {
+      "count": 11993,
+      "definition": "Needs-property-evidence parcels with matching assessor detached-single-family+UNITQTY=1 or multifamily-use+UNITQTY>=2 states. Could preselect a pathway question for confirmation after source licensing, currentness, and conflict gates.",
+      "percentOfAll": 68.96,
+      "percentOfNeedsPropertyEvidence": 74.35
+    },
+    "optimistic": {
+      "count": 15289,
+      "definition": "Adds condo and residential weak/conflict states with positive UNITQTY; these require resolution and should not suppress questions.",
+      "percentOfAll": 87.91,
+      "percentOfNeedsPropertyEvidence": 94.78
+    }
+  },
+  "currentEvaluation": {
+    "Needs property evidence": 16131,
+    "Outside current scope": 1256,
+    "Source unavailable": 4
+  },
+  "denominator": 17391,
+  "footprintCoverage": {
+    "count": 16253,
+    "multipleCount": 7141,
+    "multiplePercent": 41.06,
+    "percent": 93.46
+  },
+  "notEligibility": "Neither bound is final eligibility or a legal/as-built conclusion.",
+  "permitCoverage": {
+    "countywide": "NOT_COMPUTED_NO_AUTHORIZED_BULK_EXPORT",
+    "purposefulSampleSize": 25,
+    "purposefulSampleWithResults": 23,
+    "warning": "92% in a purposeful sample is not a population estimate."
+  },
+  "recentChangeEvidence": {
+    "countywide": "UNKNOWN",
+    "purposefulSampleRecord2021OrLater": 19,
+    "purposefulSampleSize": 25
+  }
+}

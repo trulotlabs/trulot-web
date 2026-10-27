@@ -1,0 +1,94 @@
+{
+  "authorityHierarchy": [
+    "CITY_OR_COUNTY_PERMIT_OR_OFFICIAL_PROPERTY_RECORD",
+    "COUNTY_ASSESSOR_RECORDED_CHARACTERISTIC",
+    "CITY_PARCEL_OR_PROPERTY_RECORD",
+    "OFFICIAL_GIS_BUILDING_FOOTPRINT",
+    "RECENT_LICENSED_IMAGERY_OBSERVATION",
+    "HOMEOWNER_ASSERTION"
+  ],
+  "changeStates": [
+    "NO_LATER_CHANGE_OBSERVED",
+    "LATER_CHANGE_OBSERVED",
+    "CURRENTNESS_PARTIAL",
+    "CURRENTNESS_UNKNOWN"
+  ],
+  "closedFactClasses": {
+    "CURRENTNESS_CHANGE_EVIDENCE": [
+      "imagery date",
+      "later footprint change",
+      "recent permit",
+      "demolition/rebuild signal"
+    ],
+    "OBSERVATIONAL_GEOMETRY": [
+      "building footprint",
+      "observed structure count",
+      "accessory structure candidate",
+      "approximate footprint area",
+      "footprint change"
+    ],
+    "PERMIT_DERIVED_FACT": [
+      "permit number",
+      "permit type",
+      "project description when public",
+      "status",
+      "milestone dates",
+      "legal addition/ADU/garage-conversion evidence only when scope and status support"
+    ],
+    "RECORDED_PROPERTY_CHARACTERISTIC": [
+      "assessor use type",
+      "assessor building/use type",
+      "recorded unit count",
+      "effective-year raw value",
+      "improvement area"
+    ],
+    "USER_PROVIDED_FACT": [
+      "Packet 68 answers and corrections"
+    ]
+  },
+  "confidenceClasses": [
+    "RECORDED_CURRENT",
+    "RECORDED_STALE_POSSIBLE",
+    "OBSERVATIONAL_CURRENT",
+    "OBSERVATIONAL_STALE",
+    "CONFLICTING_EVIDENCE",
+    "UNKNOWN"
+  ],
+  "conflictDoctrine": [
+    "Preserve each evidence item independently.",
+    "Prefer a more authoritative and more recent project-specific record, but retain contrary evidence.",
+    "Never silently overwrite assessor data with footprint/imagery or homeowner statements.",
+    "A later issued/finaled permit can supersede an older assessor hint only for the scope the permit establishes.",
+    "Escalate unresolved conflict and keep homeowner confirmation."
+  ],
+  "currentnessRequiredFields": [
+    "recordedOrObservedDate",
+    "sourceUpdateDate",
+    "retrievalDate",
+    "laterChangeEvidence",
+    "currentnessState"
+  ],
+  "schema": {
+    "apn": "canonical parcel identifier",
+    "conflictState": "NONE|LOWER_AUTHORITY_CONFLICT|HIGHER_AUTHORITY_CONFLICT|UNRESOLVED",
+    "currentnessState": "RECORDED_CURRENT|RECORDED_STALE_POSSIBLE|OBSERVATIONAL_CURRENT|OBSERVATIONAL_STALE|CONFLICTING_EVIDENCE|UNKNOWN",
+    "derivationClass": "DIRECT_RECORDED|PERMIT_DERIVED|OBSERVATIONAL|USER_ASSERTED|DERIVED_WITH_RULE",
+    "evidenceReference": "immutable receipt/record reference",
+    "factId": "stable identifier",
+    "factType": "closed vocabulary",
+    "jurisdictionId": "nullable jurisdiction scope",
+    "permittedEvaluationUses": [
+      "PATHWAY_SELECTION",
+      "PRELIMINARY_SCREENING",
+      "HOMEOWNER_QUESTION_PRESELECT",
+      "COMPLIANCE_CONCLUSION"
+    ],
+    "recordedOrObservedDate": "date/null",
+    "retrievalDate": "date",
+    "sourceAuthority": "authority enum",
+    "sourceId": "manifest reference",
+    "sourceUpdateDate": "date/null",
+    "value": "typed value"
+  },
+  "schemaVersion": "jurisdiction-neutral-property-fact-v0"
+}

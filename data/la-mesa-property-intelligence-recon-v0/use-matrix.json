@@ -1,0 +1,33 @@
+{
+  "CURRENTNESS_CHANGE_EVIDENCE": {
+    "complianceConclusion": "NO",
+    "homeownerQuestionSuppression": "NO_WHEN_CHANGE_OR_PARTIAL_CURRENTNESS",
+    "pathwaySelection": "NO_DIRECTLY; MAY INVALIDATE_STALE_PRESELECTION",
+    "preliminaryScreening": "YES"
+  },
+  "OBSERVATIONAL_GEOMETRY": {
+    "complianceConclusion": "NO",
+    "homeownerQuestionSuppression": "NO",
+    "pathwaySelection": "NO",
+    "preliminaryScreening": "YES_AS_CANDIDATE_ONLY"
+  },
+  "PERMIT_DERIVED_FACT": {
+    "complianceConclusion": "ONLY_NARROW_FACT_ESTABLISHED_BY_AUTHORITATIVE_RECORD; NOT OVERALL ADU COMPLIANCE",
+    "homeownerQuestionSuppression": "POTENTIALLY_AFTER_CURRENTNESS_AND_CONFLICT_CHECK",
+    "pathwaySelection": "YES_WHEN_PARCEL_MATCHED_AND_ISSUED_OR_FINALED_SCOPE_ESTABLISHES_FACT",
+    "preliminaryScreening": "YES"
+  },
+  "RECORDED_PROPERTY_CHARACTERISTIC": {
+    "complianceConclusion": "NO",
+    "homeownerQuestionSuppression": "PRESELECT_AND_CONFIRM_ONLY_UNTIL_INTEGRATION_VALIDATION",
+    "pathwaySelection": "YES_WITH_CURRENTNESS_AND_CONFLICT_GATES_FOR_SUPPORTED_USE_PLUS_UNIT_FIELDS",
+    "preliminaryScreening": "YES"
+  },
+  "USER_PROVIDED_FACT": {
+    "complianceConclusion": "NO_WITHOUT_REQUIRED_PROJECT_EVIDENCE",
+    "homeownerQuestionSuppression": "NOT_APPLICABLE",
+    "pathwaySelection": "YES_UNDER_PACKET_68_CONTRACT",
+    "preliminaryScreening": "YES"
+  },
+  "zoningRule": "Zoning never establishes existing dwelling type or unit count."
+}

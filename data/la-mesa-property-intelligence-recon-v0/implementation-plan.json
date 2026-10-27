@@ -1,0 +1,150 @@
+{
+  "costs": {
+    "ActiveProjectsAndHcd": "public documents/data; processing LOW",
+    "MaintStar": "public portal free for sampled searches; API/license/ongoing bulk cost UNKNOWN",
+    "ParcelQuest": "25 searches/30 days free; subscription/report fees beyond that; production cost UNKNOWN/MATERIAL_POSSIBLE",
+    "RecentImagery": "licensed imagery likely MATERIAL_OR_UNKNOWN",
+    "SanGISFootprints": "public endpoint; storage/processing LOW, production license/consent UNKNOWN"
+  },
+  "precedence": [
+    "Preserve all source facts; authority and currentness choose a usable fact, not destructive replacement.",
+    "Parcel-matched issued/finaled permit scope outranks older assessor characteristic for that fact.",
+    "Assessor characteristics can preselect recorded dwelling type/unit questions when currentness and conflicts pass.",
+    "Observational geometry can create candidates or stale/change warnings only.",
+    "Homeowner correction is retained and creates a conflict/review state when it disagrees with stronger recorded evidence."
+  ],
+  "questionReduction": {
+    "conflictingEvidence": "ASK_AND_SHOW_NEUTRAL_CONFLICT",
+    "existingOrProposed": "ALWAYS_ASK",
+    "fireSprinklerPrimaryRequirement": "ALWAYS_ASK",
+    "primaryDwellingType": "PRESELECT_AND_USER_CONFIRM only for supported recorded match with currentness/conflict gates",
+    "projectForm": "ALWAYS_ASK",
+    "proposedAduSize": "ALWAYS_ASK",
+    "qualifyingConversionSpace": "ASK_WHEN_RELEVANT",
+    "site/grading/slope/access": "UNCHANGED; ask when pathway requires"
+  },
+  "runtimeComposition": [
+    "parcel identity",
+    "zoning/rules",
+    "property intelligence",
+    "homeowner-provided facts",
+    "V4 feasibility"
+  ],
+  "sequence": [
+    {
+      "packet": 73,
+      "scope": "Assessor/property-characteristic integration using the already sealed SanGIS fields; resolve licensing, encode domain, currentness and conflict gates; preselect only."
+    },
+    {
+      "packet": 74,
+      "scope": "Negotiate/establish authorized La Mesa permit acquisition, stable APN/address linkage, pagination, status normalization and source receipts."
+    },
+    {
+      "packet": 75,
+      "scope": "Building-footprint/currentness layer only after written reuse permission and newer-source strategy; retain observational labels and stacked-parcel guards."
+    },
+    {
+      "packet": 76,
+      "scope": "Compose property intelligence into V4 and reduce homeowner questions only after provenance/currentness/conflict acceptance."
+    }
+  ],
+  "sourcePriority": [
+    {
+      "gate": "rights/currentness and derivation validation",
+      "rank": 1,
+      "source": "County Assessor characteristics already present in sealed SanGIS parcel acquisition",
+      "value": "highest immediate coverage; no new network acquisition"
+    },
+    {
+      "gate": "City/vendor bulk access, terms, stable pagination/schema and APN linkage",
+      "rank": 2,
+      "source": "La Mesa MaintStar permit history",
+      "value": "project-specific currentness and legal-status evidence"
+    },
+    {
+      "gate": "2017 staleness, stacked parcels, written reuse permission",
+      "rank": 3,
+      "source": "SanGIS building outlines",
+      "value": "93.46% observational footprint coverage and structure candidates"
+    },
+    {
+      "gate": "source/license/cost not established",
+      "rank": 4,
+      "source": "newer licensed imagery/change evidence",
+      "value": "detect later change"
+    },
+    {
+      "gate": "not complete permit ledger and lacks APN",
+      "rank": 5,
+      "source": "active planning projects",
+      "value": "targeted currentness/conflict signal"
+    }
+  ],
+  "stopRules": [
+    "Before suppressing a question require provenance, acceptable authority, adequate currentness, and no unresolved conflict.",
+    "Before stronger pathway selection require a supported fact type, adequate currentness, and no higher-authority conflict.",
+    "Compliance conclusions still require the project/survey/permit evidence applicable to that conclusion.",
+    "Stop production ingestion if terms do not authorize storage, processing and intended redisplay.",
+    "Stop on canonical APN/fingerprint drift, source schema drift, pagination truncation, ambiguous APN/address joins or stacked-geometry misuse."
+  ],
+  "storageDesign": {
+    "permit_record": [
+      "jurisdiction_id",
+      "source_record_id",
+      "apn_nullable",
+      "normalized_address",
+      "permit_type",
+      "status",
+      "application_at",
+      "issued_at",
+      "finaled_at",
+      "description_public",
+      "source_id"
+    ],
+    "property_fact": [
+      "fact_id",
+      "jurisdiction_id",
+      "apn",
+      "fact_type",
+      "typed_value",
+      "source_id",
+      "authority",
+      "recorded_at",
+      "retrieved_at",
+      "currentness_state",
+      "derivation_class",
+      "conflict_state",
+      "evidence_ref",
+      "allowed_uses"
+    ],
+    "property_fact_conflict": [
+      "conflict_id",
+      "apn",
+      "fact_type",
+      "evidence_fact_ids",
+      "state",
+      "resolution_fact_id",
+      "resolved_at"
+    ],
+    "property_source_receipt": [
+      "source_id",
+      "jurisdiction_id",
+      "retrieved_at",
+      "source_update_at",
+      "content_sha256",
+      "terms_class",
+      "license_note"
+    ],
+    "structure_observation": [
+      "observation_id",
+      "jurisdiction_id",
+      "apn",
+      "geometry_ref",
+      "observed_at",
+      "area",
+      "candidate_class",
+      "ambiguity_state",
+      "source_id"
+    ]
+  }
+}

@@ -1,0 +1,673 @@
+{
+  "recordsReturned": 280,
+  "rows": [
+    {
+      "address": "6910 BRUCE CT",
+      "apn": "4685100900",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "6910_BRUCE_CASE",
+        "ORDINARY_R1"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "1997-05-08",
+      "latestCreatedDate": "2023-10-30",
+      "query": "6910 BRUCE CT",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Alteration": 1,
+        "Building Permit": 1,
+        "Plumbing Permit": 1
+      },
+      "recordsReturned": 3,
+      "resultTruncated": false,
+      "statuses": {
+        "FINAL": 2,
+        "Finaled": 1
+      }
+    },
+    {
+      "address": "5836 PAWNEE DR",
+      "apn": "4640301100",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "ORDINARY_R1"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2018-03-13",
+      "latestCreatedDate": "2023-02-01",
+      "query": "5836 PAWNEE DR",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Combo Building Permit": 1,
+        "Encroachment": 1
+      },
+      "recordsReturned": 2,
+      "resultTruncated": false,
+      "statuses": {
+        "FINAL": 1,
+        "Issued": 1
+      }
+    },
+    {
+      "address": "5830 PAWNEE DR",
+      "apn": "4640301200",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "ORDINARY_R1",
+        "RECENT_PERMIT"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2000-11-01",
+      "latestCreatedDate": "2025-08-13",
+      "query": "5830 PAWNEE DR",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Combo Building Permit": 1,
+        "Encroachment": 1,
+        "Mechanical Permit": 1,
+        "Plumbing Permit": 1
+      },
+      "recordsReturned": 4,
+      "resultTruncated": false,
+      "statuses": {
+        "FINAL": 3,
+        "Issued": 1
+      }
+    },
+    {
+      "address": "5498 PENNSYLVANIA LN",
+      "apn": "4635800100",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "R1S"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2019-08-20",
+      "latestCreatedDate": "2019-08-29",
+      "query": "5498 PENNSYLVANIA LN",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "BLDG-PRE-ROOFING": 1,
+        "Building Permit": 1,
+        "FINAL ACTIVITY": 1
+      },
+      "recordsReturned": 3,
+      "resultTruncated": false,
+      "statuses": {
+        "Completed": 2,
+        "FINAL": 1
+      }
+    },
+    {
+      "address": "9470 GROSSMONT BLVD",
+      "apn": "4912600700",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "SCENIC"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2005-06-21",
+      "latestCreatedDate": "2005-06-21",
+      "query": "9470 GROSSMONT BLVD",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Annexation": 1
+      },
+      "recordsReturned": 1,
+      "resultTruncated": false,
+      "statuses": {
+        "Approved (Closed)": 1
+      }
+    },
+    {
+      "address": "4284 SUMMIT DR",
+      "apn": "4752412200",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "HILLSIDE"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2007-06-21",
+      "latestCreatedDate": "2022-01-13",
+      "query": "4284 SUMMIT DR",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Combo Building Permit": 3,
+        "Encroachment Permit": 2,
+        "Special Permit": 1
+      },
+      "recordsReturned": 6,
+      "resultTruncated": false,
+      "statuses": {
+        "Approved (Closed)": 1,
+        "FINAL": 3,
+        "ISSUED": 2
+      }
+    },
+    {
+      "address": "5877 BALTIMORE DR",
+      "apn": "4640201000",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "R3_MULTIFAMILY"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2007-02-12",
+      "latestCreatedDate": "2025-06-20",
+      "query": "5877 BALTIMORE DR",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Combo Building Permit": 1,
+        "Encroachment": 1,
+        "Encroachment Permit": 1
+      },
+      "recordsReturned": 3,
+      "resultTruncated": false,
+      "statuses": {
+        "FINAL": 2,
+        "Issued": 1
+      }
+    },
+    {
+      "address": "5264 WOOD ST",
+      "apn": "4904720700",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "R3_COMBINED_OVERLAYS"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": null,
+      "latestCreatedDate": null,
+      "query": "5264 WOOD ST",
+      "queryKind": "ADDRESS",
+      "recordTypes": {},
+      "recordsReturned": 0,
+      "resultTruncated": false,
+      "statuses": {}
+    },
+    {
+      "address": "5700 BALTIMORE DR",
+      "apn": "4640203301",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "CONDO_COMMON_ADDRESS"
+      ],
+      "completeness": "LOWER_BOUND_100_RESULTS",
+      "earliestCreatedDate": "2023-03-20",
+      "latestCreatedDate": "2026-01-09",
+      "query": "5700 BALTIMORE DR",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Alteration": 5,
+        "Case": 2,
+        "Electrical": 80,
+        "Mechanical": 12,
+        "Plumbing": 1
+      },
+      "recordsReturned": 100,
+      "resultTruncated": true,
+      "statuses": {
+        "Approved: Permit Fees Due": 5,
+        "Closed": 1,
+        "Finaled": 48,
+        "In Progress": 1,
+        "Inspections Complete": 1,
+        "Issued": 43,
+        "Withdrawn": 1
+      }
+    },
+    {
+      "address": "3706 KING ST",
+      "apn": "4745510700",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "DUPLICATE_ADDRESS",
+        "MULTIFAMILY"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "1996-04-11",
+      "latestCreatedDate": "2024-01-11",
+      "query": "3706 KING ST",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Mechanical": 1,
+        "Mechanical Permit": 1
+      },
+      "recordsReturned": 2,
+      "resultTruncated": false,
+      "statuses": {
+        "FINAL": 1,
+        "Finaled": 1
+      }
+    },
+    {
+      "address": null,
+      "apn": "4640202200",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "MISSING_ADDRESS"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": null,
+      "latestCreatedDate": null,
+      "query": "4640202200",
+      "queryKind": "APN",
+      "recordTypes": {},
+      "recordsReturned": 0,
+      "resultTruncated": false,
+      "statuses": {}
+    },
+    {
+      "address": null,
+      "apn": "4645231900",
+      "apnLink": "SEARCHABLE_BY_APN_RESPONSE_DOES_NOT_ECHO_APN",
+      "categories": [
+        "UNSUPPORTED_ZONING",
+        "MISSING_ADDRESS"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2019-09-26",
+      "latestCreatedDate": "2020-03-03",
+      "query": "4645231900",
+      "queryKind": "APN",
+      "recordTypes": {
+        "Combo Building Permit": 1,
+        "Encroachment Permit": 1
+      },
+      "recordsReturned": 2,
+      "resultTruncated": false,
+      "statuses": {
+        "ISSUED": 2
+      }
+    },
+    {
+      "address": "4560 3RD ST",
+      "apn": "4946110900",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "ASSESSOR_GRANNY_FLAT_HINT"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "1998-11-04",
+      "latestCreatedDate": "2021-04-05",
+      "query": "4560 3RD ST",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Combo Building Permit": 7,
+        "Electrical Permit": 1,
+        "Plumbing Permit": 1
+      },
+      "recordsReturned": 9,
+      "resultTruncated": false,
+      "statuses": {
+        "EXPIRED": 2,
+        "FINAL": 4,
+        "ISSUED": 3
+      }
+    },
+    {
+      "address": "4573 3RD ST",
+      "apn": "4946120500",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "ASSESSOR_ADU_HINT"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2006-06-22",
+      "latestCreatedDate": "2021-06-07",
+      "query": "4573 3RD ST",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Combo Building Permit": 2,
+        "Plumbing Permit": 2
+      },
+      "recordsReturned": 4,
+      "resultTruncated": false,
+      "statuses": {
+        "EXPIRED": 1,
+        "FINAL": 1,
+        "Finaled": 1,
+        "Issued": 1
+      }
+    },
+    {
+      "address": "4109 69TH ST",
+      "apn": "4742211500",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "ASSESSOR_ADU_HINT"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2007-02-16",
+      "latestCreatedDate": "2021-12-21",
+      "query": "4109 69TH ST",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Combo Building Permit": 2
+      },
+      "recordsReturned": 2,
+      "resultTruncated": false,
+      "statuses": {
+        "EXPIRED": 1,
+        "FINAL": 1
+      }
+    },
+    {
+      "address": "4595 70TH ST",
+      "apn": "4693022200",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "ASSESSOR_ADU_HINT"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2011-05-31",
+      "latestCreatedDate": "2024-12-20",
+      "query": "4595 70TH ST",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Electrical": 1,
+        "Mechanical Permit": 1
+      },
+      "recordsReturned": 2,
+      "resultTruncated": false,
+      "statuses": {
+        "FINAL": 1,
+        "Issued": 1
+      }
+    },
+    {
+      "address": "5740 AMARILLO AVE",
+      "apn": "4905510900",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "ASSESSOR_ADU_HINT"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2021-05-21",
+      "latestCreatedDate": "2022-05-06",
+      "query": "5740 AMARILLO AVE",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Combo Building Permit": 1,
+        "Electrical": 1,
+        "Solar - PV": 1
+      },
+      "recordsReturned": 3,
+      "resultTruncated": false,
+      "statuses": {
+        "FINAL": 1,
+        "Finaled": 1,
+        "Issued": 1
+      }
+    },
+    {
+      "address": "4757 PALM AVE",
+      "apn": "4944102400",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2007-09-10",
+      "latestCreatedDate": "2026-06-12",
+      "query": "4757 PALM AVE",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Alteration": 3,
+        "Case": 2,
+        "Combo Building Permit": 4,
+        "Construction": 5,
+        "Electrical": 1,
+        "Encroachment": 10,
+        "Encroachment Permit": 5,
+        "Grading": 1,
+        "Landscape": 1,
+        "New Construction (Res)": 1,
+        "Revision": 1,
+        "Site Development Plan and Design Review": 1
+      },
+      "recordsReturned": 35,
+      "resultTruncated": false,
+      "statuses": {
+        "Approved (Closed)": 1,
+        "Closed": 3,
+        "FINAL": 5,
+        "Finaled": 2,
+        "ISSUED": 4,
+        "Issued": 17,
+        "Plan Check Expired": 1,
+        "Pre-Con Meeting Complete": 1,
+        "Pre-Con Meeting Pending": 1
+      }
+    },
+    {
+      "address": "9407 JERICHO RD",
+      "apn": "4866701800",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "1996-09-23",
+      "latestCreatedDate": "2026-06-16",
+      "query": "9407 JERICHO RD",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Appeal": 1,
+        "Building Permit": 5,
+        "Case": 1,
+        "Combo Building Permit": 5,
+        "Demolition": 1,
+        "Encroachment": 6,
+        "Encroachment Permit": 4,
+        "Grading": 2,
+        "Grading Permit": 1,
+        "Improvements": 1,
+        "Landscape": 1,
+        "Mechanical Permit": 1,
+        "Planning Project": 1,
+        "Plumbing Permit": 1,
+        "Retaining Wall": 1,
+        "Revision": 1,
+        "Sign Permit": 1
+      },
+      "recordsReturned": 34,
+      "resultTruncated": false,
+      "statuses": {
+        "Approved (Closed)": 1,
+        "Closed": 1,
+        "Denied (Closed)": 1,
+        "EXPIRED": 3,
+        "FINAL": 11,
+        "ISSUED": 1,
+        "Issued": 13,
+        "VOID": 1,
+        "WITHDRWN": 2
+      }
+    },
+    {
+      "address": "5220 WILSON ST",
+      "apn": "4906603100",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2020-05-21",
+      "latestCreatedDate": "2026-05-21",
+      "query": "5220 WILSON ST",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Case": 1,
+        "Construction": 3,
+        "Demolition": 1,
+        "Electrical": 1,
+        "Encroachment": 15,
+        "Grading": 1,
+        "Landscape": 1,
+        "New Construction (Res)": 1,
+        "Revision": 4,
+        "Site Development Plan and Design Review": 1,
+        "Solar - PV": 1,
+        "Zoning Information Letter": 1
+      },
+      "recordsReturned": 31,
+      "resultTruncated": false,
+      "statuses": {
+        "Approved (Closed)": 1,
+        "Closed": 2,
+        "Finaled": 4,
+        "Issued": 19,
+        "Pre-Con Meeting Complete": 1,
+        "Pre-Con Meeting Pending": 2,
+        "Void": 1,
+        "Wait for Fee Payment": 1
+      }
+    },
+    {
+      "address": "7285 UNIVERSITY AVE",
+      "apn": "4741811900",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "1999-06-29",
+      "latestCreatedDate": "2026-03-13",
+      "query": "7285 UNIVERSITY AVE",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Combo Building Permit": 1,
+        "Electrical": 1,
+        "Landscape": 1,
+        "Legacy Case": 1,
+        "New Construction (Res)": 1
+      },
+      "recordsReturned": 5,
+      "resultTruncated": false,
+      "statuses": {
+        "Approved: Permit Fees Due": 1,
+        "FINAL": 1,
+        "In Progress": 1,
+        "Plan Check Expired": 2
+      }
+    },
+    {
+      "address": "7735 UNIVERSITY AVE",
+      "apn": "4706900300",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2023-07-10",
+      "latestCreatedDate": "2024-08-29",
+      "query": "7735 UNIVERSITY AVE",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Alteration": 1,
+        "Electrical": 1
+      },
+      "recordsReturned": 2,
+      "resultTruncated": false,
+      "statuses": {
+        "Finaled": 2
+      }
+    },
+    {
+      "address": "4326 AVON DR",
+      "apn": "4705321100",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "KNOWN_ADU_PERMIT_ACTIVITY"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2019-06-27",
+      "latestCreatedDate": "2023-04-06",
+      "query": "4326 AVON DR",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Accessory Dwelling Unit": 1,
+        "Combo Building Permit": 1,
+        "Revision": 1,
+        "Solar - PV": 1
+      },
+      "recordsReturned": 4,
+      "resultTruncated": false,
+      "statuses": {
+        "EXPIRED": 1,
+        "Finaled": 1,
+        "Inspections Complete": 1,
+        "Plan Check Expired": 1
+      }
+    },
+    {
+      "address": "8470 ABILENE TER",
+      "apn": "4852600500",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "ORDINARY_R1",
+        "ADU_HINT"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "1998-03-31",
+      "latestCreatedDate": "2019-11-05",
+      "query": "8470 ABILENE TER",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Combo Building Permit": 2,
+        "Plumbing Permit": 1
+      },
+      "recordsReturned": 3,
+      "resultTruncated": false,
+      "statuses": {
+        "FINAL": 3
+      }
+    },
+    {
+      "address": "6964 COLORADO AVE",
+      "apn": "4641801100",
+      "apnLink": "NO_APN_LINK_IN_RESPONSE",
+      "categories": [
+        "KNOWN_ADU_PERMIT_ACTIVITY"
+      ],
+      "completeness": "PORTAL_RETURNED_COMPLETE_PAGE_TOTAL_UNDISCLOSED",
+      "earliestCreatedDate": "2022-11-29",
+      "latestCreatedDate": "2025-10-17",
+      "query": "6964 COLORADO AVE",
+      "queryKind": "ADDRESS",
+      "recordTypes": {
+        "Accessory Dwelling Unit": 1,
+        "BLDG-DRYWALL": 1,
+        "BLDG-FINAL APPROVAL": 1,
+        "BLDG-FOOTINGS/REINFORCEMENT": 1,
+        "BLDG-INSULATION INSPECTION": 1,
+        "BLDG-ROOF SHEATH": 1,
+        "BLDG-SHEAR PANEL": 1,
+        "ELEC-SERVICE PANEL": 1,
+        "PLMG- GAS PIPING & SHUT OFF": 1,
+        "PLMG-BLDG DRAINS (UG)": 1,
+        "PLMG-BLDG SEWER (UG)": 1,
+        "PLMG-D/W/V PIPING": 1,
+        "PLMG-GAS MTR CLEARANCE": 1,
+        "PLMG-SHOWER PAN": 1,
+        "PROGRESS INSPECTION": 5,
+        "ROUGH FRAMING,ELEC,MECH,PLUMB": 1
+      },
+      "recordsReturned": 20,
+      "resultTruncated": false,
+      "statuses": {
+        "Completed (Pass)": 19,
+        "Finaled": 1
+      }
+    }
+  ],
+  "sampleSize": 25,
+  "schemaVersion": "la-mesa-property-intelligence-permit-sample-v0",
+  "selection": "purposeful required-category sample; percentages are sample observations, not population estimates",
+  "withRecordCreated2021OrLater": 19,
+  "withRecordCreated2021OrLaterPercent": 76.0,
+  "withRecords": 23,
+  "withRecordsPercent": 92.0
+}

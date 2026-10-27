@@ -1,0 +1,76 @@
+{
+  "imageryInventory": [
+    {
+      "authority": "official GIS derivative of licensed imagery",
+      "automatedComparison": "technically feasible only after a newer licensed observation and rights are secured",
+      "date": "Spring 2017",
+      "source": "Spring 2017 EagleView/Pictometry-derived SanGIS outlines",
+      "storageRedisplay": "raw imagery not acquired; outline redistribution restricted/unclear"
+    },
+    {
+      "reason": "No terms-compliant acquisition/storage/comparison path established.",
+      "source": "consumer web imagery",
+      "status": "EXCLUDED"
+    }
+  ],
+  "retrievedAt": "2026-10-26",
+  "schemaVersion": "la-mesa-property-intelligence-source-manifest-v0",
+  "sources": [
+    {
+      "access": "existing sealed local acquisition",
+      "authority": "COUNTY_ASSESSOR_RECORDED_CHARACTERISTIC_VIA_SANGIS",
+      "id": "SANGIS_PARCELS_ARCC_20260924",
+      "license": "PUBLIC_ACCESS_REUSE_RESTRICTIONS_REQUIRE_REVIEW",
+      "metadataSha256": "2a9a213057cd8cb4d64bb851cba9408e7367ca28b92b4731bf7a7c9742dea0b9",
+      "name": "SanGIS Parcel Base / County ARCC MPR and PAR characteristics",
+      "sourceSha256": "07913d1007d0e2f5b80c681c19c76bb1338f4b06d99c401c1784744bbd1a4544",
+      "url": "https://gis.sangis.org/"
+    },
+    {
+      "access": "APN/property search; up to 25 free searches in 30 days; subscription beyond limit; reports may have fees",
+      "authority": "OFFICIAL_ACCESS_PATH_VENDOR_HOSTED",
+      "automation": "No authorized bulk/API/export established",
+      "id": "ARCC_PARCELQUEST",
+      "license": "VENDOR_TERMS_AND_STORAGE_REDISPLAY_RIGHTS_UNRESOLVED",
+      "name": "County ARCC property records / ParcelQuest",
+      "url": "https://www.sdarcc.gov/content/arcc/home/divisions/assessor/property-records.html"
+    },
+    {
+      "access": "anonymous address/APN/record/document search; session cookie; pagination; no export observed",
+      "authority": "OFFICIAL_CITY_PERMIT_PORTAL",
+      "id": "LM_MAINTSTAR_PUBLIC",
+      "license": "PUBLIC_ACCESS_BUT_AUTOMATED_REUSE_UNCLEAR",
+      "name": "City of La Mesa MaintStar public permit search",
+      "sampleSha256": "8706f291e3bea0ea68ad5109251eeb13867df2a06bb434a55b940797855d0b26",
+      "url": "https://h9.maintstar.co/LaMesa/portal/"
+    },
+    {
+      "access": "public ArcGIS REST query with pagination",
+      "authority": "OFFICIAL_GIS_OBSERVATION",
+      "captureContentSha256": "1895e34e2b26b6fd018ff775733d532de0451773c9a396b292fc2b40650166f5",
+      "id": "SANGIS_BUILDING_OUTLINES_2017",
+      "license": "LICENSED_RESTRICTED_REPACKAGING_OR_AUTOMATIC_REDISTRIBUTION_WITHOUT_CONSENT",
+      "metadataSha256": "f63c606ea81f8fb8ad4987a65535ed979428368bcf43771b4d584c11bbaa92cc",
+      "name": "SanGIS BUILDING_OUTLINES",
+      "url": "https://gis.sangis.org/maps/rest/services/Public/Basemap/MapServer/5036"
+    },
+    {
+      "access": "public PDF; project/address/status/type/description/applicant/units; no APN; not complete permit ledger",
+      "authority": "OFFICIAL_CITY_PROJECT_STATUS",
+      "id": "LM_ACTIVE_DEVELOPMENT_20260512",
+      "license": "PUBLIC_ACCESS_REUSE_NOT_EXPRESSLY_ESTABLISHED",
+      "name": "City of La Mesa Active Development Project list",
+      "sha256": "fae4765b0351bda48bf0053f8459269048aa41fa863239cf018d5adec31130de",
+      "url": "https://www.cityoflamesa.gov/DocumentCenter/View/25415/2025-07-31-Active-Development-Projects-List"
+    },
+    {
+      "access": "public aggregate jurisdiction data since 2018",
+      "allowedUse": "jurisdiction trend/benchmark only; never parcel evidence",
+      "authority": "OFFICIAL_STATE_AGGREGATE_REPORTING",
+      "id": "HCD_APR",
+      "license": "PUBLIC_GOVERNMENT_REPORT; VERIFY_RAW_REDISTRIBUTION_TERMS",
+      "name": "California HCD Annual Progress Reports",
+      "url": "https://www.hcd.ca.gov/apr"
+    }
+  ]
+}

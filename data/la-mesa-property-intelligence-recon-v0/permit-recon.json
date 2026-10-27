@@ -1,0 +1,136 @@
+{
+  "anonymousSearch": true,
+  "configurationObserved": {
+    "disableAnonymousSearch": false,
+    "portalVersion": "26.10.5.6848"
+  },
+  "coverageConclusion": "23 of 25 purposeful sample searches returned at least one record; one common-address condo query hit the 100-result page cap. The sample is biased toward required edge and active-development cases and is not a countywide coverage estimate.",
+  "detailProbe": "One normal public-detail GET shape could not be established and returned server error; recon stopped rather than guessing parameters.",
+  "fieldsNotEstablished": [
+    "separate application date",
+    "separate issue date",
+    "separate final date beyond one milestone",
+    "APN echoed on response",
+    "valuation",
+    "inspection history/detail",
+    "plan/project relationship",
+    "bulk export"
+  ],
+  "fieldsObserved": [
+    "record number",
+    "created date",
+    "record subtype (msType)",
+    "record type",
+    "milestone date",
+    "milestone label",
+    "address",
+    "status"
+  ],
+  "officialEntry": "https://cityoflamesa.gov/111/Building",
+  "portal": "https://h9.maintstar.co/LaMesa/portal/",
+  "search": {
+    "documentedBy": "public portal client used by anonymous Search tab",
+    "endpoint": "GET /api/Public/Record/Search",
+    "exportObserved": false,
+    "observedResultCap": 100,
+    "paginationParameters": [
+      "skip",
+      "take"
+    ],
+    "queryModes": [
+      "record number",
+      "address",
+      "parcel number",
+      "document name"
+    ],
+    "rateLimitPublished": false,
+    "session": "ASP.NET session cookie established by public portal"
+  },
+  "source": "La Mesa MaintStar public portal",
+  "statusDoctrine": {
+    "APPLIED": [
+      "applied",
+      "submitted"
+    ],
+    "EXPIRED": [
+      "expired",
+      "plan check expired"
+    ],
+    "FINALED_COMPLETE": [
+      "final",
+      "finaled",
+      "inspections complete",
+      "completed only when record semantics establish completion"
+    ],
+    "ISSUED": [
+      "issued"
+    ],
+    "UNDER_REVIEW": [
+      "in progress",
+      "plan review",
+      "fees due"
+    ],
+    "UNKNOWN": [
+      "unmapped/ambiguous"
+    ],
+    "WITHDRAWN": [
+      "withdrawn",
+      "withdrwn",
+      "void"
+    ]
+  },
+  "strongUseRule": "Only issued/finaled permit records may strengthen legal/current-condition inference, and a finaled project-specific record must still be matched to the parcel and scope. Applied/under-review records are currentness signals only.",
+  "taxonomy": {
+    "ACCESSORY_BUILDING": [
+      "accessory building"
+    ],
+    "ADDITION": [
+      "addition"
+    ],
+    "ADU": [
+      "accessory dwelling unit",
+      "adu"
+    ],
+    "DEMOLITION": [
+      "demolition"
+    ],
+    "ELECTRICAL_PLUMBING_ONLY": [
+      "electrical",
+      "plumbing",
+      "mechanical"
+    ],
+    "GARAGE_CONVERSION": [
+      "garage conversion"
+    ],
+    "GRADING": [
+      "grading"
+    ],
+    "JADU": [
+      "junior accessory dwelling unit",
+      "jadu"
+    ],
+    "NEW_DWELLING": [
+      "new construction",
+      "new residential"
+    ],
+    "OTHER": [
+      "encroachment",
+      "case",
+      "revision",
+      "inspection",
+      "unknown"
+    ],
+    "REMODEL": [
+      "alteration",
+      "remodel",
+      "combo building permit where description supports"
+    ],
+    "RETAINING_WALL": [
+      "retaining wall"
+    ],
+    "SOLAR": [
+      "solar - pv"
+    ]
+  },
+  "terms": "No portal-specific reuse or automated-access grant was located. Public anonymous access does not by itself authorize production bulk ingestion or redistribution."
+}

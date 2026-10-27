@@ -1,0 +1,77 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 2380,
+      "sha256": "d9ce301fc88edb0fc17c7370fb8e621d20827b0e1fdb8b450d423063d44a7178"
+    },
+    "assessor-coverage.json": {
+      "bytes": 2194,
+      "sha256": "0731006a204dc1f2ce43e63393c99cf0e1eefff98401d91dfd0b4fda55882a2b"
+    },
+    "assessor-sample.json": {
+      "bytes": 44455,
+      "sha256": "3c047a94f065b69f2eb48c62a14424244a65dc4033803f7e1688c56579dd73e9"
+    },
+    "build.py": {
+      "bytes": 684,
+      "sha256": "03c83f4b1051699787a0e564cc17bf504365bf5096d326ea7e1ae5127a6d952a"
+    },
+    "case-studies.json": {
+      "bytes": 45810,
+      "sha256": "005fc0d392ab6ec4311d72f73ea47cd7b7480c693dbf7fd728c6f7b588752ab0"
+    },
+    "coverage-uplift.json": {
+      "bytes": 1426,
+      "sha256": "702c5c90112c10f4d9f3ec967e56e88c99f687993c531e33dc14eb13c55258bc"
+    },
+    "decision.json": {
+      "bytes": 810,
+      "sha256": "401cf6b8571304c63ae6929a33caf5585939cba9be3987e3fb38e16f75f0db3e"
+    },
+    "fact-model.json": {
+      "bytes": 3169,
+      "sha256": "15f61d33124438eb44c6bd089f0cedb1807f1caf1fa4c3ac66a452321a824aa8"
+    },
+    "footprint-recon.json": {
+      "bytes": 8892,
+      "sha256": "5cd0848636cbd1b824293a69d170ac3748e14ec7ef3bac417950f12754c01ec3"
+    },
+    "implementation-plan.json": {
+      "bytes": 5524,
+      "sha256": "124930ec98a5344afc87f4894bc3e4980deb92e91cd56325b5641fd8f3e47e1b"
+    },
+    "permit-recon.json": {
+      "bytes": 3565,
+      "sha256": "f8d597931d99b87f8a6ee37998cf56aae7b9999ea31db8b2df8735ca67cbb483"
+    },
+    "permit-sample.json": {
+      "bytes": 18529,
+      "sha256": "1895eb3f5e659a4300f9e019449e88abe01820ba03de14fdd448515d3c62fc56"
+    },
+    "source-captures/active-development-projects-2026-05-12.pdf": {
+      "bytes": 137056,
+      "sha256": "fae4765b0351bda48bf0053f8459269048aa41fa863239cf018d5adec31130de"
+    },
+    "source-captures/building-layer-metadata.json": {
+      "bytes": 6401,
+      "sha256": "f63c606ea81f8fb8ad4987a65535ed979428368bcf43771b4d584c11bbaa92cc"
+    },
+    "source-captures/maintstar-portal-configuration.json": {
+      "bytes": 8900,
+      "sha256": "f078c461fb6b3bbef3a73fd4dfc154ec880da2322f37d2072b6155089e473a27"
+    },
+    "source-manifest.json": {
+      "bytes": 3822,
+      "sha256": "6a3104cd27c84eb467c1a0897c3b26f2f47af13b6cc5088a466d1ffbccfec58e"
+    },
+    "use-matrix.json": {
+      "bytes": 1452,
+      "sha256": "d8a19c1aaba074759499176aba9562c3e5e45b936439ae710df3e753694755e6"
+    },
+    "validate.py": {
+      "bytes": 1564,
+      "sha256": "85d48842b1bd667562cd09d373acfe3d213335f65dfd7772d19e63affb27e2c9"
+    }
+  },
+  "schemaVersion": "la-mesa-property-intelligence-integrity-v0"
+}
