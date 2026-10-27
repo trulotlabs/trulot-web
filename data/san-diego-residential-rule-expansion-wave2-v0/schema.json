@@ -1,0 +1,42 @@
+{
+  "multi_zone_policy": "REVIEW_REQUIRED",
+  "no_feasibility_result": true,
+  "profile_families": {
+    "RM_TABLE_131_04G_GENERIC_V1": {
+      "basis": "existing Packet 80 generic RM architecture",
+      "cross_family_reuse": false,
+      "formula_branches": [
+        "RM1",
+        "RM2",
+        "RM3",
+        "RM5"
+      ]
+    },
+    "RS_TABLE_131_04D_GENERIC_V1": {
+      "basis": "existing Packet 78 generic RS architecture",
+      "cross_family_reuse": false,
+      "sealed_source_rows": 25
+    },
+    "RT_TABLE_131_04F_GENERIC_V1": {
+      "basis": "Table 131-04F and 131.0441-131.0464",
+      "cross_family_reuse": false,
+      "formula_branches": [
+        "RT_FRONT_DEPTH",
+        "RT_ZERO_SIDE",
+        "RT_HEIGHT_STORY_FOUNDATION",
+        "RT_FAR_STORY"
+      ]
+    },
+    "RX_TABLE_131_04E_GENERIC_V1": {
+      "basis": "Table 131-04E and 131.0441-131.0464",
+      "cross_family_reuse": false,
+      "formula_branches": [
+        "RX_DETACHED",
+        "RX_ATTACHED",
+        "RX_1_2_ALLEY"
+      ]
+    }
+  },
+  "selection_granularity": "one APN-target-zone association",
+  "unknown_coastal_policy": "UNRESOLVED_REVIEW_REQUIRED"
+}

@@ -1,0 +1,25 @@
+{
+  "decision": "SAN_DIEGO_RESIDENTIAL_RULE_EXPANSION_WAVE2_READY",
+  "deferred_profiles": [],
+  "deployment": false,
+  "next_step": "SAN_DIEGO_RULE_COVERAGE_FINALIZATION",
+  "packet_11_frozen": true,
+  "production_access": false,
+  "production_zoning_load": false,
+  "public_activation": false,
+  "rt_decision": "SEALED_OWN_FAMILY",
+  "rx_decision": "SEALED_OWN_FAMILY",
+  "selected_snapshot_change": false,
+  "successful_profiles": [
+    "RM-1-2",
+    "RM-2-4",
+    "RM-2-6",
+    "RM-3-8",
+    "RM-5-12",
+    "RS-1-11",
+    "RS-1-8",
+    "RX-1-2",
+    "RX-1-1",
+    "RT-1-2"
+  ]
+}

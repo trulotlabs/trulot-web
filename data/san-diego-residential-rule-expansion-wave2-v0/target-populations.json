@@ -1,0 +1,115 @@
+{
+  "basis": "exact Packet 79 APN-zone associations; never summed for coverage",
+  "zones": {
+    "RM-1-2": {
+      "boundary_ambiguous": 0,
+      "indeterminate": 0,
+      "inside_coastal": 74,
+      "multi_zone": 923,
+      "outside_coastal": 3107,
+      "profile_ready": 2206,
+      "single_zone": 2206,
+      "sliver": 52,
+      "unique_apns": 3181
+    },
+    "RM-2-4": {
+      "boundary_ambiguous": 1,
+      "indeterminate": 14,
+      "inside_coastal": 1796,
+      "multi_zone": 896,
+      "outside_coastal": 1378,
+      "profile_ready": 2265,
+      "single_zone": 2264,
+      "sliver": 1,
+      "unique_apns": 3175
+    },
+    "RM-2-6": {
+      "boundary_ambiguous": 0,
+      "indeterminate": 98,
+      "inside_coastal": 130,
+      "multi_zone": 1275,
+      "outside_coastal": 2007,
+      "profile_ready": 764,
+      "single_zone": 764,
+      "sliver": 0,
+      "unique_apns": 2137
+    },
+    "RM-3-8": {
+      "boundary_ambiguous": 3,
+      "indeterminate": 2,
+      "inside_coastal": 141,
+      "multi_zone": 1076,
+      "outside_coastal": 2169,
+      "profile_ready": 1235,
+      "single_zone": 1234,
+      "sliver": 1,
+      "unique_apns": 2313
+    },
+    "RM-5-12": {
+      "boundary_ambiguous": 1,
+      "indeterminate": 4,
+      "inside_coastal": 1225,
+      "multi_zone": 1050,
+      "outside_coastal": 13,
+      "profile_ready": 185,
+      "single_zone": 185,
+      "sliver": 0,
+      "unique_apns": 1239
+    },
+    "RS-1-11": {
+      "boundary_ambiguous": 1,
+      "indeterminate": 19,
+      "inside_coastal": 3,
+      "multi_zone": 448,
+      "outside_coastal": 1382,
+      "profile_ready": 896,
+      "single_zone": 895,
+      "sliver": 24,
+      "unique_apns": 1386
+    },
+    "RS-1-8": {
+      "boundary_ambiguous": 4,
+      "indeterminate": 15,
+      "inside_coastal": 2,
+      "multi_zone": 1373,
+      "outside_coastal": 2264,
+      "profile_ready": 869,
+      "single_zone": 866,
+      "sliver": 16,
+      "unique_apns": 2270
+    },
+    "RT-1-2": {
+      "boundary_ambiguous": 1,
+      "indeterminate": 7,
+      "inside_coastal": 0,
+      "multi_zone": 414,
+      "outside_coastal": 1365,
+      "profile_ready": 943,
+      "single_zone": 941,
+      "sliver": 4,
+      "unique_apns": 1366
+    },
+    "RX-1-1": {
+      "boundary_ambiguous": 0,
+      "indeterminate": 0,
+      "inside_coastal": 0,
+      "multi_zone": 612,
+      "outside_coastal": 2208,
+      "profile_ready": 1596,
+      "single_zone": 1596,
+      "sliver": 0,
+      "unique_apns": 2208
+    },
+    "RX-1-2": {
+      "boundary_ambiguous": 8,
+      "indeterminate": 107,
+      "inside_coastal": 182,
+      "multi_zone": 534,
+      "outside_coastal": 2353,
+      "profile_ready": 1894,
+      "single_zone": 1894,
+      "sliver": 8,
+      "unique_apns": 2543
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "no_capacity": true,
+  "ordinary_candidate_per_profile": [
+    {
+      "apn": "5342802533",
+      "coastal_version": "RM_WAVE2_OUTSIDE_COASTAL_2026_07_15",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "formula_semantics": "VERIFIED_AGAINST_OWN_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "rule_row": "VERIFIED_RM-1-2_SOURCE_TABLE",
+      "zone": "RM-1-2",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "6450101403",
+      "coastal_version": "RM_WAVE2_OUTSIDE_COASTAL_2026_07_15",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "formula_semantics": "VERIFIED_AGAINST_OWN_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "rule_row": "VERIFIED_RM-2-4_SOURCE_TABLE",
+      "zone": "RM-2-4",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "3414910218",
+      "coastal_version": "RM_WAVE2_OUTSIDE_COASTAL_2026_07_15",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "formula_semantics": "VERIFIED_AGAINST_OWN_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "rule_row": "VERIFIED_RM-2-6_SOURCE_TABLE",
+      "zone": "RM-2-6",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "7743609260",
+      "coastal_version": "RM_WAVE2_OUTSIDE_COASTAL_2026_07_15",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "formula_semantics": "VERIFIED_AGAINST_OWN_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "rule_row": "VERIFIED_RM-3-8_SOURCE_TABLE",
+      "zone": "RM-3-8",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "6745205100",
+      "coastal_version": "RM_WAVE2_OUTSIDE_COASTAL_2026_07_15",
+      "family_schema": "RM_TABLE_131_04G_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "formula_semantics": "VERIFIED_AGAINST_OWN_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "rule_row": "VERIFIED_RM-5-12_SOURCE_TABLE",
+      "zone": "RM-5-12",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "3052411200",
+      "coastal_version": "RS_WAVE2_OUTSIDE_COASTAL_2026_07_15",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "formula_semantics": "VERIFIED_AGAINST_OWN_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "rule_row": "VERIFIED_RS-1-11_SOURCE_TABLE",
+      "zone": "RS-1-11",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "3660711700",
+      "coastal_version": "RS_WAVE2_OUTSIDE_COASTAL_2026_07_15",
+      "family_schema": "RS_TABLE_131_04D_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "formula_semantics": "VERIFIED_AGAINST_OWN_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "rule_row": "VERIFIED_RS-1-8_SOURCE_TABLE",
+      "zone": "RS-1-8",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "3051222400",
+      "coastal_version": "RX_WAVE2_OUTSIDE_COASTAL_2026_07_15",
+      "family_schema": "RX_TABLE_131_04E_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "formula_semantics": "VERIFIED_AGAINST_OWN_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "rule_row": "VERIFIED_RX-1-2_SOURCE_TABLE",
+      "zone": "RX-1-2",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "3051813300",
+      "coastal_version": "RX_WAVE2_OUTSIDE_COASTAL_2026_07_15",
+      "family_schema": "RX_TABLE_131_04E_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "formula_semantics": "VERIFIED_AGAINST_OWN_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "rule_row": "VERIFIED_RX-1-1_SOURCE_TABLE",
+      "zone": "RX-1-1",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "3593250400",
+      "coastal_version": "RT_WAVE2_OUTSIDE_COASTAL_2026_07_15",
+      "family_schema": "RT_TABLE_131_04F_GENERIC_V1",
+      "footnotes": "VERIFIED_ALL_REFERENCES_PRESENT",
+      "formula_semantics": "VERIFIED_AGAINST_OWN_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "no_project_compliance": true,
+      "rule_row": "VERIFIED_RT-1-2_SOURCE_TABLE",
+      "zone": "RT-1-2",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    }
+  ],
+  "state": "VERIFIED",
+  "verification_scope": [
+    "APN zoning",
+    "family",
+    "Coastal version",
+    "source row",
+    "footnotes",
+    "formula semantics",
+    "modifier state"
+  ]
+}

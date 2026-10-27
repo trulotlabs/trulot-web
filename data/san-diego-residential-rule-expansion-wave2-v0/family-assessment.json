@@ -1,0 +1,33 @@
+{
+  "RT": {
+    "common_table": "131-04F",
+    "compatible_setback_height_far_structure": true,
+    "consistent_definitions": true,
+    "decision": "SEALED_OWN_FAMILY",
+    "not_reused_from": [
+      "RS",
+      "RM",
+      "RX"
+    ],
+    "stable_coastal_versioning": true,
+    "zones": [
+      "RT-1-2"
+    ]
+  },
+  "RX": {
+    "common_table": "131-04E",
+    "compatible_setback_height_far_structure": true,
+    "consistent_definitions": true,
+    "decision": "SEALED_OWN_FAMILY",
+    "not_reused_from": [
+      "RS",
+      "RM",
+      "RT"
+    ],
+    "stable_coastal_versioning": true,
+    "zones": [
+      "RX-1-2",
+      "RX-1-1"
+    ]
+  }
+}

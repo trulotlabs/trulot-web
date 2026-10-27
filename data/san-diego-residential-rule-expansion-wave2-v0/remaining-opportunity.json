@@ -1,0 +1,71 @@
+{
+  "basis": "exact incremental unique APNs after Packet 81",
+  "ranked": [
+    {
+      "category": "easy_same_family_extension",
+      "family": "RS",
+      "incremental_percent_of_residential": 0.308392,
+      "incremental_unique_apns": 1007,
+      "unique_apns": 1486,
+      "zone": "RS-1-5"
+    },
+    {
+      "category": "easy_same_family_extension",
+      "family": "RS",
+      "incremental_percent_of_residential": 0.260618,
+      "incremental_unique_apns": 851,
+      "unique_apns": 995,
+      "zone": "RS-1-12"
+    },
+    {
+      "category": "easy_same_family_extension",
+      "family": "RS",
+      "incremental_percent_of_residential": 0.255718,
+      "incremental_unique_apns": 835,
+      "unique_apns": 866,
+      "zone": "RS-1-9"
+    },
+    {
+      "category": "easy_same_family_extension",
+      "family": "RM",
+      "incremental_percent_of_residential": 0.106268,
+      "incremental_unique_apns": 347,
+      "unique_apns": 393,
+      "zone": "RM-4-11"
+    },
+    {
+      "category": "easy_same_family_extension",
+      "family": "RS",
+      "incremental_percent_of_residential": 0.093406,
+      "incremental_unique_apns": 305,
+      "unique_apns": 889,
+      "zone": "RS-1-3"
+    },
+    {
+      "category": "easy_same_family_extension",
+      "family": "RT",
+      "incremental_percent_of_residential": 0.065231,
+      "incremental_unique_apns": 213,
+      "unique_apns": 214,
+      "zone": "RT-1-4"
+    },
+    {
+      "category": "low_value_defer",
+      "family": "RS",
+      "incremental_percent_of_residential": 0.015619,
+      "incremental_unique_apns": 51,
+      "unique_apns": 59,
+      "zone": "RS-1-10"
+    },
+    {
+      "category": "low_value_defer",
+      "family": "RT",
+      "incremental_percent_of_residential": 0.010106,
+      "incremental_unique_apns": 33,
+      "unique_apns": 46,
+      "zone": "RT-1-5"
+    }
+  ],
+  "recommended_next_step": "SAN_DIEGO_RULE_COVERAGE_FINALIZATION",
+  "stop_rule_assessment": "CONTINUE_ONE_BOUNDED_FINALIZATION_WAVE_FOR_REMAINING_SAME_FAMILY_RS_RT;_DEFER_LOW_VALUE_AND_MODIFIER_HEAVY_CASES"
+}

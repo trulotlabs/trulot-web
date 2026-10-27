@@ -1,0 +1,476 @@
+{
+  "footnotes": {
+    "131-04D:1": {
+      "extraction_fingerprint": "72cbca327c3786251d9d937f8c16310563975d8a3117bddb808cf270448a4b09",
+      "number": 1,
+      "page": 36,
+      "state": "SOURCE_TEXT",
+      "text": "For lots where at least one-half of the front 50 feet of the lot depth has a minimum slope gradient of 25 percent, the setback closest to the street frontage may be reduced to a minimum 6 feet.",
+      "text_sha256": "785cceebb1e3bdaec136a888f138611e27db260af0e5a7a90ec713f5c57acc81",
+      "version": "TABLE_131_04D_9_2026"
+    },
+    "131-04D:6": {
+      "extraction_fingerprint": "a5a95dbb24474eb681b2ac75882121ee8fca5c94f89cb388ebc5c7da2b6a7f43",
+      "number": 6,
+      "page": 36,
+      "state": "SOURCE_TEXT",
+      "text": "See Section 131.0443(a)(3).",
+      "text_sha256": "6424b8fc5cf9a450a1cfc2bf329faba90618ccc85895bc7607c8bbbde0f8c50d",
+      "version": "TABLE_131_04D_9_2026"
+    },
+    "131-04D:8": {
+      "extraction_fingerprint": "b43a048542aab9c51912fc65bb15bffd490c1e4d7dd0f33b4a6d6b7d9e0bf891",
+      "note": "The source prints Bedroom regulation(8) for RS-1-8 through RS-1-14 but supplies no footnote 8.",
+      "number": 8,
+      "page": 35,
+      "state": "MISSING_IN_SOURCE",
+      "text": null,
+      "text_sha256": null,
+      "version": "TABLE_131_04D_9_2026"
+    },
+    "FN1": {
+      "derivation_class": "PROCESS",
+      "extraction_fingerprint": "b290a5b79dafc5fd6afc223499f5a94a8daa5c34b546578373ceb799d79abab9",
+      "families": [
+        "DENSITY"
+      ],
+      "section": "113.0222",
+      "source_text": "One dwelling unit per specified square foot of lot area as determined in accordance with Section 113.0222.",
+      "trigger": "DENSITY_RULE_USED",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN10": {
+      "derivation_class": "EXCEPTION",
+      "extraction_fingerprint": "a129613668567c397dc9d583cf38d57ccc6478099bf7a698fcd0e3eb25918905",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0443(e)(4)",
+      "source_text": "See Section 131.0443(e)(4).",
+      "trigger": "FN10",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN11": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "b19ae096b3e8cda226b9cd6bcde3a46b334471911454d98b011854f4ae6faaf6",
+      "families": [
+        "FRONT_SETBACK_MINIMUM",
+        "FRONT_SETBACK_STANDARD"
+      ],
+      "section": "131.0443(f)(1)",
+      "source_text": "See Section 131.0443(f)(1).",
+      "trigger": "ZONE_RM_3_7_TO_RM_3_9",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN12": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "ea1812575bb276a620c4a8b6ed41acf6c95e1317541b9b5f97786150196258de",
+      "families": [
+        "INTERIOR_SIDE_SETBACK_MINIMUM"
+      ],
+      "section": "131.0443(f)(2)",
+      "source_text": "See Section 131.0443(f)(2).",
+      "trigger": "ZONE_RM_3_7_TO_RM_3_9",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN13": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "0e2e0e9582c1fe005e51119883b3dbc2b670678137ac8267931d772d81bdbd14",
+      "families": [
+        "STREET_SIDE_SETBACK_MINIMUM"
+      ],
+      "section": "131.0443(f)(3)",
+      "source_text": "See Section 131.0443(f)(3).",
+      "trigger": "ZONE_RM_3_7_TO_RM_3_9",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN15": {
+      "derivation_class": "CONDITIONAL",
+      "extraction_fingerprint": "46ce39d763f85a97faa727ecb964e4c77af004471793514fc430c61a5d22d277",
+      "families": [
+        "ARCHITECTURAL_PROJECTIONS"
+      ],
+      "section": "131.0461(a)",
+      "source_text": "See Section 131.0461(a).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN16": {
+      "derivation_class": "CONDITIONAL",
+      "extraction_fingerprint": "e64ddbd5f1c7597b4d5db5eeac963fdecb640f84ad340e7b30e75847f5cd2af9",
+      "families": [
+        "ARCHITECTURAL_PROJECTIONS"
+      ],
+      "section": "131.0461(c)",
+      "source_text": "See Section 131.0461(c).",
+      "trigger": "ZONE_RM_2_4_TO_RM_5_12",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN17": {
+      "derivation_class": "GEOMETRIC_LIMIT",
+      "extraction_fingerprint": "abd4f9163e93a257b4c24f7c783dbdb7895448179ff82936d2bab077359837d2",
+      "families": [
+        "STRUCTURE_HEIGHT_MAXIMUM"
+      ],
+      "section": "131.0444(e)",
+      "source_text": "See Section 131.0444(e).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN18": {
+      "derivation_class": "GEOMETRIC_LIMIT",
+      "extraction_fingerprint": "c7e35e7f3b415789ddbeefdd59250c0486105ae4d228be7fbd1592bf3304ad84",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0444(f)",
+      "source_text": "See Section 131.0444(f).",
+      "trigger": "FN18",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN2": {
+      "derivation_class": "EXCEPTION",
+      "extraction_fingerprint": "24f02a24ddf778d857d7c42970953d198956248815143f61bf56c89e8814e611",
+      "families": [
+        "DENSITY"
+      ],
+      "section": "143.0701_ET_SEQ",
+      "source_text": "An exception to maximum permitted density may be permitted under Chapter 14, Article 3, Division 7.",
+      "trigger": "AFFORDABLE_HOUSING_REGULATIONS_APPLY",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN22": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "df7f87d0933c002b5438e233108afc0b662599d647e75c175428c7ae2d9ee695",
+      "families": [
+        "PRIVATE_EXTERIOR_OPEN_SPACE"
+      ],
+      "section": "131.0455(a)",
+      "source_text": "See Section 131.0455(a).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN23": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "6aff06ca99dd9f9a7f72b730bc4e8fac120aecb7d0f303c4bb99751b900cf42e",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0455(b)",
+      "source_text": "See Section 131.0455(b).",
+      "trigger": "FN23",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN24": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "f68ebe308dce270019d21519cfd19d6bb6e3d8bb4f2a9d9958729fa541b8401e",
+      "families": [
+        "PRIVATE_EXTERIOR_OPEN_SPACE"
+      ],
+      "section": "131.0455(c)",
+      "source_text": "See Section 131.0455(c).",
+      "trigger": "ZONE_RM_3_7_TO_RM_3_9",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN25": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "825ed87d7323cfb4517b6212fec1a761df3fd12fb866b3cfa4c87e6a565dbb70",
+      "families": [
+        "PRIVATE_EXTERIOR_OPEN_SPACE"
+      ],
+      "section": "131.0455(d)",
+      "source_text": "See Section 131.0455(d).",
+      "trigger": "ZONE_RM_4_10_TO_RM_5_12",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN26": {
+      "derivation_class": "CONDITIONAL",
+      "extraction_fingerprint": "0e1002bbc3787b001de14051f43055e6d0f301f67a18b0c81e5ef093a92da9a5",
+      "families": [
+        "SUPPLEMENTAL_REQUIREMENTS"
+      ],
+      "section": "131.0464(d)",
+      "source_text": "See Section 131.0464(d).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN27": {
+      "derivation_class": "CONDITIONAL",
+      "extraction_fingerprint": "0d1e27ed7834af9f672fb49ebbc9d46621db9f432a9c12c28a11ac9d4d547bcf",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0464(e)",
+      "source_text": "See Section 131.0464(e).",
+      "trigger": "FN27",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN28": {
+      "derivation_class": "CONDITIONAL",
+      "extraction_fingerprint": "dfaf76a581e243230414884e87bb56acff6c9e3bcade29351a3f12be5cf4cc06",
+      "families": [
+        "SUPPLEMENTAL_REQUIREMENTS"
+      ],
+      "section": "131.0464(f)",
+      "source_text": "See Section 131.0464(f).",
+      "trigger": "ZONE_RM_3_7_TO_RM_3_9",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN29": {
+      "derivation_class": "MODIFIER",
+      "extraction_fingerprint": "08f5e11e27fc9057a95883b52070895f5d871bf84f1f6d2c9b7c091f79182f1d",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "Table 131-04G note 29",
+      "source_text": "Within the Peninsula and Ocean Beach community plan areas, maximum FAR is 0.70.",
+      "trigger": "FN29",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN3": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "4036e86e7f2293ff30ea4f13fb79eedac91d92149dc08dc7ef7e4dfa978aaac0",
+      "families": [
+        "FRONT_SETBACK_MINIMUM",
+        "FRONT_SETBACK_STANDARD"
+      ],
+      "section": "131.0443(d)(1)",
+      "source_text": "See Section 131.0443(d)(1).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN30": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "fff112e7f652d69baec002344040fe134ec332f6f8918c4637ecbdf0e46d8463",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0443(h)(1)",
+      "source_text": "See Section 131.0443(h)(1).",
+      "trigger": "FN30",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN31": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "074eb7152899791eccd45f144614eeb7c71f4447ae9b0eda0baef7ffd8fad519",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0443(h)(2)",
+      "source_text": "See Section 131.0443(h)(2).",
+      "trigger": "FN31",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN32": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "ab8a41c61caae41082ea6546e9cf930263e309546c44eea3483d56a7e8b18108",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0443(h)(3)",
+      "source_text": "See Section 131.0443(h)(3).",
+      "trigger": "FN32",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN33": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "c1614f85c59849c8f648fc11fa0dc9ce9c96f14891222269f79d12e674d8bdb8",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0443(h)(4)",
+      "source_text": "See Section 131.0443(h)(4).",
+      "trigger": "FN33",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN34": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "3e5138581c8ccb816e8cc198b4c85bc9de6544c5aac6d7c45613df6b933cf3be",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0445(c)",
+      "source_text": "See Section 131.0445(c).",
+      "trigger": "FN34",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN35": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "df16d7a2c28706115547a7628d29d91c6f58dba4a7ed07fe3e2dde626fe5d71a",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0446(f)",
+      "source_text": "See Section 131.0446(f).",
+      "trigger": "FN35",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN36": {
+      "derivation_class": "MODIFIER",
+      "extraction_fingerprint": "dc432eb44f9a4d798318b034634cb72a434cd522b1bd6f2fb2222d4a8cc1ea35",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "Table 131-04G note 36",
+      "source_text": "Within La Jolla, Pacific Beach, and Torrey Pines community plan areas, density is one dwelling unit or two guest rooms per 1,500 square feet of lot area.",
+      "trigger": "FN36",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN37": {
+      "derivation_class": "MODIFIER",
+      "extraction_fingerprint": "d8d37f81079928df51b6f58e37dbe174e89f01aabdc288beac4a14bea15a151f",
+      "families": [
+        "STRUCTURE_HEIGHT_MAXIMUM"
+      ],
+      "section": "113.0270(a)(4)(D)",
+      "source_text": "Within the Coastal Height Limit Overlay Zone in the Peninsula Community Plan area, the base-zone maximum structure height is 30 feet, determined under Section 113.0270(a)(4)(D).",
+      "trigger": "COASTAL_HEIGHT_LIMIT_OVERLAY_AND_PENINSULA_COMMUNITY_PLAN",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN38": {
+      "derivation_class": "MODIFIER",
+      "extraction_fingerprint": "944745291df9544483ff9fb3bcd53b058f851578f3c46595b9650ea4e59231f0",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "Table 131-04G note 38",
+      "source_text": "Within the Peninsula and Ocean Beach community plan areas, maximum FAR is 1.0.",
+      "trigger": "FN38",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN39": {
+      "derivation_class": "MODIFIER",
+      "extraction_fingerprint": "2d01c635fb26143aba3c33d69c5b4cabdf78fd5b1babad9d02bc36858ef39c5c",
+      "families": [
+        "FLOOR_AREA_RATIO_MAXIMUM"
+      ],
+      "section": "TABLE_131_04G_NOTE_39",
+      "source_text": "For development in a historic district, on State Historic Resources Inventory property, or on a designated historical resource site, maximum FAR shall not increase.",
+      "trigger": "HISTORIC_RESOURCE_CONTEXT",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN4": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "a9fa43752ff2afd13f9ad83d3b89598bde3682c7a3ea5e2ca33641d0a4d1a35f",
+      "families": [
+        "INTERIOR_SIDE_SETBACK_MINIMUM",
+        "INTERIOR_SIDE_SETBACK_STANDARD"
+      ],
+      "section": "131.0443(d)(2)",
+      "source_text": "See Section 131.0443(d)(2).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN5": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "36513a901a1d3b02d8858cebe1d2558c060f38901296a58be404562fb9a24a7a",
+      "families": [
+        "STREET_SIDE_SETBACK_MINIMUM"
+      ],
+      "section": "131.0443(d)(3)",
+      "source_text": "See Section 131.0443(d)(3).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN6": {
+      "derivation_class": "EXCEPTION",
+      "extraction_fingerprint": "9db6b075b1ba3ab4f61a94baa18adb137ea8b378493c4ddb2b400688a0c36d38",
+      "families": [
+        "REAR_SETBACK_MINIMUM"
+      ],
+      "section": "131.0443(d)(4)",
+      "source_text": "See Section 131.0443(d)(4).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN7": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "38cbe6170d63e73f32a51acd9d3e0e1409983cc68fcfe99c5f7919f45bebb988",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0443(e)(1)",
+      "source_text": "See Section 131.0443(e)(1).",
+      "trigger": "FN7",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN8": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "0636d0f43072af7b7b22797a3ee98bbc1574f3271baa91146c92c9081def45b7",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0443(e)(2)",
+      "source_text": "See Section 131.0443(e)(2).",
+      "trigger": "FN8",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN9": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "e82ea1d1031de083010af82ab1ce627cf942fb69b2e287c0b7c6b3542bd7fd48",
+      "families": [
+        "MATERIAL_TABLE_RULE"
+      ],
+      "section": "131.0443(e)(3)",
+      "source_text": "See Section 131.0443(e)(3).",
+      "trigger": "FN9",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "RX_FN1": {
+      "derivation_class": "EXCEPTION",
+      "extraction_fingerprint": "236b390276487e8a0d3afc47873ab6a9393ce24ba8be0e302827268fc8dc9aca",
+      "families": [
+        "MINIMUM_LOT_WIDTH",
+        "MINIMUM_STREET_FRONTAGE",
+        "MINIMUM_CORNER_LOT_WIDTH"
+      ],
+      "section": "131.0442(c)",
+      "source_text": "For RX-1-2 lots abutting an alley with access from the alley, minimum lot width, street frontage, and corner-lot width are 25 feet.",
+      "trigger": "RX_1_2_ALLEY_ACCESS",
+      "version": "TABLE_131_04G_9_2026"
+    }
+  },
+  "material_footnote_completeness": "COMPLETE_FOR_ALL_REFERENCED_MATERIAL_FOOTNOTES",
+  "missing_reference_policy": "FAIL_VALIDATION",
+  "used_footnotes": [
+    "131-04D:1",
+    "131-04D:6",
+    "131-04D:8",
+    "FN1",
+    "FN10",
+    "FN11",
+    "FN12",
+    "FN13",
+    "FN15",
+    "FN16",
+    "FN17",
+    "FN18",
+    "FN2",
+    "FN22",
+    "FN23",
+    "FN24",
+    "FN25",
+    "FN26",
+    "FN27",
+    "FN28",
+    "FN29",
+    "FN3",
+    "FN30",
+    "FN31",
+    "FN32",
+    "FN33",
+    "FN34",
+    "FN35",
+    "FN36",
+    "FN37",
+    "FN38",
+    "FN39",
+    "FN4",
+    "FN5",
+    "FN6",
+    "FN7",
+    "FN8",
+    "FN9",
+    "RX_FN1"
+  ]
+}

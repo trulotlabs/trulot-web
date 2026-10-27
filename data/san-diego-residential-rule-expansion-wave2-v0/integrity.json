@@ -1,0 +1,27 @@
+{
+  "contract_version": "san-diego-residential-rule-expansion-wave2-2026-10-27-v0",
+  "files": {
+    "README.md": "0332b7e50423687b6a379cbc5658b575717ffcaef067f5c09ff8bd11fc8fad8c",
+    "apn-profile-selection.ndjson.gz": "e3feecb3bfd98fdc70203f2b2d2ca19d463cdce6b8081686860ca22f37f465bf",
+    "compatibility.json": "204ef52758decc2f992c50e5a9a84d69ac56d05a0dc417026aed401fefca8a0a",
+    "coverage.json": "ec841859eb81047f82a46fcb9edfb951871ae51fce400324c0bd0375de8c2614",
+    "decision.json": "86e4e9e8e7bfffcf4f0a84bf118614c2063592f4fce6c2f16468d3efbcf1ea73",
+    "family-assessment.json": "6bcc8b66ef7641db6b805558b5aa5176bfd6bf836ace9e91aae86e355220ddb6",
+    "family-schemas.json": "bdcb936a5c638c8680ac68ca45c2e3427d6eae131c9d8208fe2fa93a0e375e7d",
+    "footnotes.json": "07aeebfa4a7c592d0edb35a35b2ff1bdf6c49c87023971a07714e7ce9448b30d",
+    "golden-candidates.json": "2a9a69527ee5d6d57471425f2c875866de2374bda53f157df60a80e71522ef43",
+    "manual-verification.json": "68cb5e0a981e721e0fb28257bd4990821e3cd1892911536be79e28b8e0bb945d",
+    "remaining-opportunity.json": "13253efc8c111f5c7661c89ef13102ece7167e18d17ddfd8be599aa2a1dcacaa",
+    "rule-profiles.json": "6fac309d65619fdf331d132a719e4ea488b2d4eb8229a0076b2a03b5d679b037",
+    "schema.json": "d45c5d8f5ac453eb58bf2bfafaa0184450b1dce2bda68398861a53f00def09c1",
+    "source-version-receipts.json": "c06407e6a325d457dda1bc0e267a8a6f6c2105e57080595240638f272a81ac87",
+    "target-populations.json": "00796b713464dc5a7599c1cebf1393cb8a9e5fc2fcaeea518ec913f27004aa94"
+  },
+  "inputs": {
+    "current_division4_pdf": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "inside_rs": "f6d0a9b0c2eb3370017a2d01437fdccee5b6746a98a9aeb9e3c68ca780afe392",
+    "outside_rs": "5227e1f1d1ef0732e2f4283e35e341b67744f843b25328653497b79a030932da",
+    "packet79_selection": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+    "packet80_integrity": "67aa84075a117041fcf3c46f68d84f34afcc4b33aea051b55ed51e04294697cd"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "capacity": false,
+  "existing_benchmarks": {
+    "RM-2-5:5442140600": "UNCHANGED_BY_CONSTRUCTION",
+    "RS-1-7:6341302200": "UNCHANGED_BY_CONSTRUCTION"
+  },
+  "la_mesa": "UNCHANGED",
+  "packet78_profiles": "UNCHANGED",
+  "packet80_profiles": "UNCHANGED",
+  "production_parcel_lookup": "UNCHANGED",
+  "runtime_activation": false,
+  "v4_rule_record_fields": [
+    "rule_family",
+    "representation",
+    "operator",
+    "value",
+    "conditions",
+    "footnote_ids",
+    "unresolved_dependencies",
+    "source_fingerprint",
+    "public_evaluation_state"
+  ]
+}
