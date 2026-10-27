@@ -1,4 +1,4 @@
-import { canonicalParcelUrl, PARCEL_INDEX_CONTROL, type ParcelJurisdiction } from "./parcel-indexing";
+import { canonicalParcelUrl, emitParcelIndexMetric, PARCEL_INDEX_CONTROL, type ParcelJurisdiction } from "./parcel-indexing";
 
 export const PARCEL_SITEMAP_SHARD_SIZE = 25_000;
 export const FUTURE_COHORT_MAXIMUM = Object.freeze({
@@ -64,8 +64,11 @@ export function buildParcelSitemapIndex(
 }
 
 export function activeParcelSitemapEntries(): Array<{ url: string; lastModified: string }> {
-  return [
+  const entries = [
     ...buildParcelSitemapIndex("SAN_DIEGO", []),
     ...buildParcelSitemapIndex("LA_MESA", []),
   ];
+  emitParcelIndexMetric(undefined, { name: "sitemap_count", jurisdiction: "SAN_DIEGO", value: 0 });
+  emitParcelIndexMetric(undefined, { name: "sitemap_count", jurisdiction: "LA_MESA", value: 0 });
+  return entries;
 }

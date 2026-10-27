@@ -62,6 +62,15 @@ type SnapshotReaderOptions = {
 
 const DEFAULT_ROOT = join(process.cwd(), "data/san-diego-public-zoning-snapshot-v0");
 
+function defaultSnapshotMetricSink(metric: SnapshotMetric): void {
+  console.info(JSON.stringify({
+    event: "trulot_sd_public_zoning_snapshot",
+    metric: metric.name,
+    snapshotVersion: SAN_DIEGO_PUBLIC_ZONING_SNAPSHOT_VERSION,
+    value: metric.value,
+  }));
+}
+
 export function sanDiegoPublicZoningSnapshotEnabled(env: Readonly<Record<string, string | undefined>> = process.env): boolean {
   return env.TRULOT_SD_PUBLIC_ZONING_SNAPSHOT === "1";
 }
@@ -145,7 +154,7 @@ export function createSanDiegoPublicZoningReader(options: SnapshotReaderOptions 
       const apn = normalizeApnDigits(rawApn);
       const fallbackKey = `${SAN_DIEGO_PUBLIC_ZONING_SNAPSHOT_VERSION}:${apn.slice(0, 3)}`;
       if (rawDigits.length !== 10 || !/^\d{10}$/.test(apn)) {
-        options.metricSink?.({ name: "snapshot_unavailable", value: 1 });
+        (options.metricSink ?? defaultSnapshotMetricSink)({ name: "snapshot_unavailable", value: 1 });
         return { state: "source_unavailable", zoning: null, cacheKey: fallbackKey, reason: "invalid_apn" };
       }
       try {
@@ -154,13 +163,13 @@ export function createSanDiegoPublicZoningReader(options: SnapshotReaderOptions 
         const shard = loadShard(apn.slice(0, 3), manifest);
         const zoning = shard?.get(apn) ?? null;
         if (!zoning) {
-          options.metricSink?.({ name: "snapshot_not_found", value: 1 });
+          (options.metricSink ?? defaultSnapshotMetricSink)({ name: "snapshot_not_found", value: 1 });
           return { state: "not_found", zoning: null, cacheKey };
         }
-        options.metricSink?.({ name: "snapshot_found", value: 1 });
+        (options.metricSink ?? defaultSnapshotMetricSink)({ name: "snapshot_found", value: 1 });
         return { state: "found", zoning, cacheKey };
       } catch (error) {
-        options.metricSink?.({ name: "snapshot_unavailable", value: 1 });
+        (options.metricSink ?? defaultSnapshotMetricSink)({ name: "snapshot_unavailable", value: 1 });
         return {
           state: "source_unavailable",
           zoning: null,

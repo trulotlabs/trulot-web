@@ -10,6 +10,7 @@ import {
 } from "@/lib/parcel-page-v1";
 import {
   canonicalParcelUrl,
+  emitParcelIndexMetric,
   effectiveParcelIndexState,
   parcelMetadata,
   parcelPlaceJsonLd,
@@ -225,11 +226,19 @@ export default async function ParcelPage({
 }) {
   const { slug } = await params;
   const apn = extractApnFromSlug(slug);
-  if (!apn) notFound();
+  if (!apn) {
+    emitParcelIndexMetric(undefined, { name: "route_404", jurisdiction: "SAN_DIEGO", value: 1 });
+    notFound();
+  }
 
   const result = await getParcelPageV1Result(apn);
-  if (result.status === "invalid_request" || result.status === "not_found") notFound();
+  if (result.status === "invalid_request" || result.status === "not_found") {
+    emitParcelIndexMetric(undefined, { name: "route_404", jurisdiction: "SAN_DIEGO", value: 1 });
+    notFound();
+  }
   if (result.status === "source_unavailable" || !result.data) {
+    emitParcelIndexMetric(undefined, { name: "source_unavailable", jurisdiction: "SAN_DIEGO", value: 1 });
+    emitParcelIndexMetric(undefined, { name: "noindex", jurisdiction: "SAN_DIEGO", value: 1 });
     return (
       <SourceUnavailableState
         title="This parcel record is temporarily unavailable"
@@ -244,6 +253,7 @@ export default async function ParcelPage({
   }
 
   if (slug !== data.canonicalSlug) {
+    emitParcelIndexMetric(undefined, { name: "canonical_mismatch", jurisdiction: "SAN_DIEGO", value: 1 });
     redirect(data.canonicalPath);
   }
 
@@ -264,11 +274,16 @@ export default async function ParcelPage({
   const additionalFacts = data.facts.filter(({ fact }, index) => index >= 6 || !fact.value);
   const unavailableFactCount = additionalFacts.filter(({ fact }) => !fact.value).length;
   const publicAddress = data.canonicalSlug.startsWith("apn-") ? null : data.identity.address;
-  const { payload: structuredPayload } = serializePublicParcel({
+  const { payload: structuredPayload, excludedFields } = serializePublicParcel({
     apn: { value: data.identity.apn, rights: "PUBLIC_REDISPLAY_OK" },
     address: { value: publicAddress, rights: "PUBLIC_REDISPLAY_OK" },
     jurisdiction: { value: "City of San Diego", rights: "PUBLIC_REDISPLAY_OK" },
   });
+  emitParcelIndexMetric(undefined, { name: "route_2xx", jurisdiction: "SAN_DIEGO", value: 1 });
+  emitParcelIndexMetric(undefined, { name: "noindex", jurisdiction: "SAN_DIEGO", value: 1 });
+  if (excludedFields.length) {
+    emitParcelIndexMetric(undefined, { name: "serializer_exclusion", jurisdiction: "SAN_DIEGO", value: excludedFields.length });
+  }
   const placeJsonLd = parcelPlaceJsonLd(structuredPayload);
 
   return (

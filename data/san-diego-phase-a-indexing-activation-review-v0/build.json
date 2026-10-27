@@ -1,0 +1,24 @@
+{
+  "packet": 86,
+  "mode": "isolated-production-candidate-build",
+  "command": "npm run build -- --webpack",
+  "build": "PASS",
+  "buildId": "M59kEs8WmhjAM_-MPPjhj",
+  "artifactSha256": "11323a6bbfdff41c53db351c8a0e0a313449364dacd75ad4bed2e0eacc6fc418",
+  "baselineCommit": "f0cebde0147d26205f6af55db90269ab3a209453",
+  "snapshotManifestSha256": "8ef738de1739c2670566f3ac64e659bec320d4cdcbd257b2e6c371bbbfabfc5c",
+  "routeTrace": {
+    "path": ".next/server/app/parcel/san-diego/[slug]/page.js.nft.json",
+    "snapshotManifestCount": 1,
+    "snapshotShardCount": 208,
+    "expectedSnapshotShardCount": 208,
+    "complete": true
+  },
+  "gates": {
+    "snapshot": "OFF",
+    "indexing": "OFF",
+    "sitemap": "OFF"
+  },
+  "productionAccess": false,
+  "productionMutation": false
+}

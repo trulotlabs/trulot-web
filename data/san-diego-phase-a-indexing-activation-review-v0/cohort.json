@@ -1,0 +1,13 @@
+{
+  "addressedCandidates": 308934,
+  "apnOnlyCandidates": 9767,
+  "candidateCount": 318701,
+  "exclusions": {
+    "zoning_state_indeterminate": 1641,
+    "zoning_state_multi_zone": 73064,
+    "zoning_state_unmapped": 327
+  },
+  "identityAnomalies": 0,
+  "parcelRowsSha256": "95c92f14bf4489946c6632f8032c2e08735b8fec11940cdace69db19c0625868",
+  "snapshotManifestSha256": "8ef738de1739c2670566f3ac64e659bec320d4cdcbd257b2e6c371bbbfabfc5c"
+}

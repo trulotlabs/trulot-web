@@ -1,0 +1,24 @@
+{
+  "decision": "SAN_DIEGO_PHASE_A_INDEXING_ACTIVATION_REVIEW_PARTIAL",
+  "indexingOff": true,
+  "killSwitchOn": true,
+  "monitoring": [
+    "snapshot_found",
+    "snapshot_not_found",
+    "snapshot_unavailable",
+    "canonical_mismatch",
+    "noindex",
+    "route_404",
+    "route_2xx",
+    "serializer_exclusion",
+    "privacy_filter_failure",
+    "sitemap_count"
+  ],
+  "reason": "Production deployment, environment mutation, promotion, and canary authorization are absent.",
+  "rolloutRecommendation": {
+    "criteria": "lowest APNs among addressed, single-zone, source-complete, non-thin records with non-ambiguous Coastal state",
+    "initialCohort": 5000,
+    "option": "A"
+  },
+  "sitemapOff": true
+}

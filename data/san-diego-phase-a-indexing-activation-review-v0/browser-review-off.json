@@ -1,0 +1,191 @@
+{
+  "mode": "off",
+  "reviewed": [
+    {
+      "apn": "2410902500",
+      "categories": [
+        "coastal_outside",
+        "indeterminate"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/241-090-25-00-15500-san-pasqual-valley-rd",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "2410902900",
+      "categories": [
+        "coastal_outside",
+        "multi_zone"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/241-090-29-00-14895-san-pasqual-valley-rd",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "2672310100",
+      "categories": [
+        "ordinary_single_zone"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-01-00-15735-concord-ridge-ter",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "2672310200",
+      "categories": [
+        "ordinary_single_zone"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-02-00-15739-concord-ridge-ter",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "2672310300",
+      "categories": [
+        "ordinary_single_zone"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-03-00-15743-concord-ridge-ter",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "2672310400",
+      "categories": [
+        "ordinary_single_zone"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-04-00-15749-concord-ridge-ter",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "2672310500",
+      "categories": [
+        "ordinary_single_zone"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-05-00-15755-concord-ridge-ter",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "2734201900",
+      "categories": [
+        "boundary_sliver"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/273-420-19-00-17190-poblado-way",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "2746512900",
+      "categories": [
+        "boundary_sliver"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/274-651-29-00-12567-pomerado-ct",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "2983003700",
+      "categories": [
+        "coastal_boundary"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/298-300-37-00-15818-highland-ct",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "2983003800",
+      "categories": [
+        "coastal_inside"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/298-300-38-00-15808-highland-ct",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "2983003900",
+      "categories": [
+        "coastal_inside"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/298-300-39-00-15830-highland-ct",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "3031701800",
+      "categories": [
+        "apn_only"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/apn-3031701800",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "5333641301",
+      "categories": [
+        "stacked_common_address"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/533-364-13-01-1501-front-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "5333641302",
+      "categories": [
+        "stacked_common_address"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/533-364-13-02-1501-front-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "5335900100",
+      "categories": [
+        "unmapped"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/533-590-01-00-1600-pacific-hwy",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "5442140600",
+      "categories": [
+        "multi_zone",
+        "named_benchmarks"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/544-214-06-00-639-n-67th-st",
+      "placeJsonLd": true
+    },
+    {
+      "apn": "6341302200",
+      "categories": [
+        "named_benchmarks"
+      ],
+      "status": 200,
+      "robots": "noindex, follow, noarchive",
+      "canonical": "https://trulot.com/parcel/san-diego/634-130-22-00-1456-27th-st",
+      "placeJsonLd": true
+    }
+  ],
+  "consoleErrors": [],
+  "productionAccess": false,
+  "sitemapActivated": false
+}

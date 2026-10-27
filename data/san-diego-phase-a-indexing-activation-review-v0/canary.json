@@ -1,0 +1,594 @@
+{
+  "cases": [
+    {
+      "address": "15500 SAN PASQUAL VALLEY RD",
+      "apn": "2410902500",
+      "canonical": "https://trulot.com/parcel/san-diego/241-090-25-00-15500-san-pasqual-valley-rd",
+      "categories": [
+        "coastal_outside",
+        "indeterminate"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 56.63999783593309,
+          "role": "MATERIAL",
+          "zone": "AR-1-1"
+        },
+        {
+          "parcelSharePercent": 42.388057696465495,
+          "role": "MATERIAL",
+          "zone": "AG-1-1"
+        }
+      ],
+      "profileSupportState": "MAPPING_REVIEW_REQUIRED",
+      "selectedZone": null,
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "INDETERMINATE"
+    },
+    {
+      "address": "14895 SAN PASQUAL VALLEY RD",
+      "apn": "2410902900",
+      "canonical": "https://trulot.com/parcel/san-diego/241-090-29-00-14895-san-pasqual-valley-rd",
+      "categories": [
+        "coastal_outside",
+        "multi_zone"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 98.91575143264805,
+          "role": "MATERIAL",
+          "zone": "AR-1-1"
+        },
+        {
+          "parcelSharePercent": 1.0842485673490412,
+          "role": "MATERIAL",
+          "zone": "AG-1-1"
+        }
+      ],
+      "profileSupportState": "MAPPING_REVIEW_REQUIRED",
+      "selectedZone": null,
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "MULTI_ZONE"
+    },
+    {
+      "address": "15735 CONCORD RIDGE TER",
+      "apn": "2672310100",
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-01-00-15735-concord-ridge-ter",
+      "categories": [
+        "ordinary_single_zone"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 99.99999999999999,
+          "role": "MATERIAL",
+          "zone": "RX-1-2"
+        }
+      ],
+      "profileSupportState": "SUPPORTED_MODIFIER_REVIEW_REQUIRED",
+      "selectedZone": "RX-1-2",
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "SINGLE_ZONE"
+    },
+    {
+      "address": "15739 CONCORD RIDGE TER",
+      "apn": "2672310200",
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-02-00-15739-concord-ridge-ter",
+      "categories": [
+        "ordinary_single_zone"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 100.0,
+          "role": "MATERIAL",
+          "zone": "RX-1-2"
+        }
+      ],
+      "profileSupportState": "SUPPORTED_MODIFIER_REVIEW_REQUIRED",
+      "selectedZone": "RX-1-2",
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "SINGLE_ZONE"
+    },
+    {
+      "address": "15743 CONCORD RIDGE TER",
+      "apn": "2672310300",
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-03-00-15743-concord-ridge-ter",
+      "categories": [
+        "ordinary_single_zone"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 100.0,
+          "role": "MATERIAL",
+          "zone": "RX-1-2"
+        }
+      ],
+      "profileSupportState": "SUPPORTED_MODIFIER_REVIEW_REQUIRED",
+      "selectedZone": "RX-1-2",
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "SINGLE_ZONE"
+    },
+    {
+      "address": "15749 CONCORD RIDGE TER",
+      "apn": "2672310400",
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-04-00-15749-concord-ridge-ter",
+      "categories": [
+        "ordinary_single_zone"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 100.00000000000001,
+          "role": "MATERIAL",
+          "zone": "RX-1-2"
+        }
+      ],
+      "profileSupportState": "SUPPORTED_MODIFIER_REVIEW_REQUIRED",
+      "selectedZone": "RX-1-2",
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "SINGLE_ZONE"
+    },
+    {
+      "address": "15755 CONCORD RIDGE TER",
+      "apn": "2672310500",
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-05-00-15755-concord-ridge-ter",
+      "categories": [
+        "ordinary_single_zone"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 100.0,
+          "role": "MATERIAL",
+          "zone": "RX-1-2"
+        }
+      ],
+      "profileSupportState": "SUPPORTED_MODIFIER_REVIEW_REQUIRED",
+      "selectedZone": "RX-1-2",
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "SINGLE_ZONE"
+    },
+    {
+      "address": "17190 POBLADO WAY",
+      "apn": "2734201900",
+      "canonical": "https://trulot.com/parcel/san-diego/273-420-19-00-17190-poblado-way",
+      "categories": [
+        "boundary_sliver"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 99.99885358354025,
+          "role": "MATERIAL",
+          "zone": "RS-1-14"
+        },
+        {
+          "parcelSharePercent": 0.0011464166431449081,
+          "role": "BOUNDARY_SLIVER",
+          "zone": "RM-1-1"
+        }
+      ],
+      "profileSupportState": "SUPPORTED_MODIFIER_REVIEW_REQUIRED",
+      "selectedZone": "RS-1-14",
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "BOUNDARY_SLIVER"
+    },
+    {
+      "address": "12567 POMERADO CT",
+      "apn": "2746512900",
+      "canonical": "https://trulot.com/parcel/san-diego/274-651-29-00-12567-pomerado-ct",
+      "categories": [
+        "boundary_sliver"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 99.99955994730081,
+          "role": "MATERIAL",
+          "zone": "RS-1-14"
+        },
+        {
+          "parcelSharePercent": 0.00044005292975333023,
+          "role": "BOUNDARY_SLIVER",
+          "zone": "CC-1-3"
+        }
+      ],
+      "profileSupportState": "SUPPORTED_MODIFIER_REVIEW_REQUIRED",
+      "selectedZone": "RS-1-14",
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "BOUNDARY_SLIVER"
+    },
+    {
+      "address": "15818 HIGHLAND CT",
+      "apn": "2983003700",
+      "canonical": "https://trulot.com/parcel/san-diego/298-300-37-00-15818-highland-ct",
+      "categories": [
+        "coastal_boundary"
+      ],
+      "coastalState": "BOUNDARY_AMBIGUOUS",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 98.1590497263501,
+          "role": "MATERIAL",
+          "zone": "RS-1-4"
+        }
+      ],
+      "profileSupportState": "MAPPING_REVIEW_REQUIRED",
+      "selectedZone": null,
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "INDETERMINATE"
+    },
+    {
+      "address": "15808 HIGHLAND CT",
+      "apn": "2983003800",
+      "canonical": "https://trulot.com/parcel/san-diego/298-300-38-00-15808-highland-ct",
+      "categories": [
+        "coastal_inside"
+      ],
+      "coastalState": "INSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 100.0,
+          "role": "MATERIAL",
+          "zone": "RS-1-4"
+        }
+      ],
+      "profileSupportState": "SUPPORTED_MODIFIER_REVIEW_REQUIRED",
+      "selectedZone": "RS-1-4",
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "SINGLE_ZONE"
+    },
+    {
+      "address": "15830 HIGHLAND CT",
+      "apn": "2983003900",
+      "canonical": "https://trulot.com/parcel/san-diego/298-300-39-00-15830-highland-ct",
+      "categories": [
+        "coastal_inside"
+      ],
+      "coastalState": "INSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 94.63494755010996,
+          "role": "MATERIAL",
+          "zone": "RS-1-4"
+        }
+      ],
+      "profileSupportState": "MAPPING_REVIEW_REQUIRED",
+      "selectedZone": null,
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "INDETERMINATE"
+    },
+    {
+      "address": null,
+      "apn": "3031701800",
+      "canonical": "https://trulot.com/parcel/san-diego/apn-3031701800",
+      "categories": [
+        "apn_only"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 100.00000000000001,
+          "role": "MATERIAL",
+          "zone": "AR-1-1"
+        }
+      ],
+      "profileSupportState": "UNSUPPORTED_PROFILE",
+      "selectedZone": "AR-1-1",
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "SINGLE_ZONE"
+    },
+    {
+      "address": "1501 FRONT ST",
+      "apn": "5333641301",
+      "canonical": "https://trulot.com/parcel/san-diego/533-364-13-01-1501-front-st",
+      "categories": [
+        "stacked_common_address"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 100.0,
+          "role": "MATERIAL",
+          "zone": "CCPD-RE"
+        }
+      ],
+      "profileSupportState": "UNSUPPORTED_PROFILE",
+      "selectedZone": "CCPD-RE",
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "SINGLE_ZONE"
+    },
+    {
+      "address": "1501 FRONT ST",
+      "apn": "5333641302",
+      "canonical": "https://trulot.com/parcel/san-diego/533-364-13-02-1501-front-st",
+      "categories": [
+        "stacked_common_address"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 100.0,
+          "role": "MATERIAL",
+          "zone": "CCPD-RE"
+        }
+      ],
+      "profileSupportState": "UNSUPPORTED_PROFILE",
+      "selectedZone": "CCPD-RE",
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "SINGLE_ZONE"
+    },
+    {
+      "address": "1600 PACIFIC HWY",
+      "apn": "5335900100",
+      "canonical": "https://trulot.com/parcel/san-diego/533-590-01-00-1600-pacific-hwy",
+      "categories": [
+        "unmapped"
+      ],
+      "coastalState": "INSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [],
+      "profileSupportState": "MAPPING_REVIEW_REQUIRED",
+      "selectedZone": null,
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "UNMAPPED"
+    },
+    {
+      "address": "639 N 67TH ST",
+      "apn": "5442140600",
+      "canonical": "https://trulot.com/parcel/san-diego/544-214-06-00-639-n-67th-st",
+      "categories": [
+        "multi_zone",
+        "named_benchmarks"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 98.56339899379815,
+          "role": "MATERIAL",
+          "zone": "RM-2-5"
+        },
+        {
+          "parcelSharePercent": 1.4366010060182235,
+          "role": "MATERIAL",
+          "zone": "RS-1-6"
+        }
+      ],
+      "profileSupportState": "MAPPING_REVIEW_REQUIRED",
+      "selectedZone": null,
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "MULTI_ZONE"
+    },
+    {
+      "address": "1456 27TH ST",
+      "apn": "6341302200",
+      "canonical": "https://trulot.com/parcel/san-diego/634-130-22-00-1456-27th-st",
+      "categories": [
+        "named_benchmarks"
+      ],
+      "coastalState": "OUTSIDE_COASTAL",
+      "expectedRobots": "noindex, follow, noarchive",
+      "materialZones": [
+        {
+          "parcelSharePercent": 100.0,
+          "role": "MATERIAL",
+          "zone": "RS-1-7"
+        }
+      ],
+      "profileSupportState": "SUPPORTED_MODIFIER_REVIEW_REQUIRED",
+      "selectedZone": "RS-1-7",
+      "sourceReceipt": {
+        "classificationVersion": "base-zoning-city-sd-v2-area-coverage-v1",
+        "coastalVersion": "coastal-city-sd-20260930T143055Z",
+        "packet79ArtifactSha256": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+        "parcelAcquisition": "sangis-20260924T183743Z",
+        "profileRegistrySha256": "cc4d3b6a79e3f954c9c70879cdd2936091ff9202e418c23b0481a92dd6e7bd7f",
+        "snapshotVersion": "sd-public-zoning-2026-10-27-v0",
+        "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+      },
+      "zoningState": "SINGLE_ZONE"
+    }
+  ],
+  "categories": {
+    "apn_only": [
+      "3031701800"
+    ],
+    "boundary_sliver": [
+      "2734201900",
+      "2746512900"
+    ],
+    "coastal_boundary": [
+      "2983003700"
+    ],
+    "coastal_inside": [
+      "2983003800",
+      "2983003900"
+    ],
+    "coastal_outside": [
+      "2410902500",
+      "2410902900"
+    ],
+    "indeterminate": [
+      "2410902500"
+    ],
+    "multi_zone": [
+      "5442140600",
+      "2410902900"
+    ],
+    "named_benchmarks": [
+      "6341302200",
+      "5442140600"
+    ],
+    "ordinary_single_zone": [
+      "2672310100",
+      "2672310200",
+      "2672310300",
+      "2672310400",
+      "2672310500"
+    ],
+    "stacked_common_address": [
+      "5333641301",
+      "5333641302"
+    ],
+    "unmapped": [
+      "5335900100"
+    ]
+  },
+  "productionExecuted": false
+}

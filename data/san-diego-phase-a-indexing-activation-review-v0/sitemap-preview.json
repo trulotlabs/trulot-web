@@ -1,0 +1,92 @@
+{
+  "duplicateCount": 0,
+  "firstCanonical": "https://trulot.com/parcel/san-diego/apn-2410901300",
+  "invalidUrlCount": 0,
+  "lastCanonical": "https://trulot.com/parcel/san-diego/776-340-71-44-1305-hollister-st",
+  "lastmod": "2026-09-24",
+  "lastmodSource": "Sealed parcel/zoning acquisition date; never request/build time",
+  "published": false,
+  "shardCount": 13,
+  "shards": [
+    {
+      "bytes": 142746,
+      "file": "sitemap-preview/sitemap-00.xml.gz",
+      "sha256": "9b7a54a9bdd1af79c518b457a9b647fae563068063d6d3cb5cf353f39ea319e0",
+      "urls": 25000
+    },
+    {
+      "bytes": 137659,
+      "file": "sitemap-preview/sitemap-01.xml.gz",
+      "sha256": "e4d2d72767d7ec399e9b29bf7ea21215981dc72fc20c747f411648a14c06d5b0",
+      "urls": 25000
+    },
+    {
+      "bytes": 136100,
+      "file": "sitemap-preview/sitemap-02.xml.gz",
+      "sha256": "1e627733a30e4aa66eb369cdacfa837bc5d3d81792c242f13b41942c6675b6a6",
+      "urls": 25000
+    },
+    {
+      "bytes": 130412,
+      "file": "sitemap-preview/sitemap-03.xml.gz",
+      "sha256": "b408b2f199681cbb2fd352bfb82596ea0ed2287cba752a1a5765af09cb77e259",
+      "urls": 25000
+    },
+    {
+      "bytes": 141713,
+      "file": "sitemap-preview/sitemap-04.xml.gz",
+      "sha256": "ac0996422afffb3ca8828716be7e91261870e5d75c59c5c2e032f952b07f97cf",
+      "urls": 25000
+    },
+    {
+      "bytes": 135833,
+      "file": "sitemap-preview/sitemap-05.xml.gz",
+      "sha256": "5ae31ef54a55fae6667e4d7bdd69d6d18321d6b48ea9e23fa919c7b49fb527d2",
+      "urls": 25000
+    },
+    {
+      "bytes": 129072,
+      "file": "sitemap-preview/sitemap-06.xml.gz",
+      "sha256": "9d59ee85dd537f78e22776f5f151a9169befb6d25c111d4d7221e3b1cc9148d0",
+      "urls": 25000
+    },
+    {
+      "bytes": 135233,
+      "file": "sitemap-preview/sitemap-07.xml.gz",
+      "sha256": "d4ce5ccd87743c2b0c4958b53a4939ac834cd119d68bcec01967c33a198cf271",
+      "urls": 25000
+    },
+    {
+      "bytes": 140870,
+      "file": "sitemap-preview/sitemap-08.xml.gz",
+      "sha256": "9c4b5dd0f51d5d0f525b9dc08d967c636d74ddd49442005a31096ebc7df2f652",
+      "urls": 25000
+    },
+    {
+      "bytes": 107624,
+      "file": "sitemap-preview/sitemap-09.xml.gz",
+      "sha256": "e85882a85a6fdd172e0ae755157db5a4bc1a4264d5394be3a2d79f7710971640",
+      "urls": 25000
+    },
+    {
+      "bytes": 142742,
+      "file": "sitemap-preview/sitemap-10.xml.gz",
+      "sha256": "c5ea9a699e44dc8f0e908d3368163aac1d321d9bd9fcd4d1d02e8128f96bb777",
+      "urls": 25000
+    },
+    {
+      "bytes": 137169,
+      "file": "sitemap-preview/sitemap-11.xml.gz",
+      "sha256": "bc9b2730766a00ed07c1eaaaf0769c1a0a2f2ec5ec179726a2a4217610791dbb",
+      "urls": 25000
+    },
+    {
+      "bytes": 104104,
+      "file": "sitemap-preview/sitemap-12.xml.gz",
+      "sha256": "200399cab2c2b08d3fad27b264d809167e2832938098b7ca6349d11b9b107967",
+      "urls": 18701
+    }
+  ],
+  "urlCount": 318701,
+  "urlSetSha256": "1db52ccf2adb5e8015f785caffa29e7adcdaf9f8ae9470a1b0e501f768084c37"
+}

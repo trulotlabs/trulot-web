@@ -242,9 +242,18 @@ export type ParcelIndexMetric = {
   value: number;
 };
 
+function defaultParcelIndexMetricSink(metric: ParcelIndexMetric): void {
+  console.info(JSON.stringify({
+    event: "trulot_parcel_index",
+    metric: metric.name,
+    jurisdiction: metric.jurisdiction,
+    value: metric.value,
+  }));
+}
+
 export function emitParcelIndexMetric(
   sink: ((metric: ParcelIndexMetric) => void) | undefined,
   metric: ParcelIndexMetric,
 ): void {
-  sink?.(metric);
+  (sink ?? defaultParcelIndexMetricSink)(metric);
 }

@@ -1,0 +1,64 @@
+{
+  "currentness": {
+    "lastmod": "2026-09-24",
+    "parcelAcquisition": "sangis-20260924T183743Z",
+    "result": "PASS",
+    "wording": "mapped/historical",
+    "zoningAcquisition": "zoning-city-sd-20260924T201131Z"
+  },
+  "exposure": {
+    "futureExcludedStates": [
+      "MULTI_ZONE",
+      "INDETERMINATE",
+      "UNMAPPED"
+    ],
+    "futureIncludedStates": [
+      "SINGLE_ZONE",
+      "BOUNDARY_SLIVER"
+    ],
+    "laMesaActivation": false,
+    "privateAndSearchRoutesExcluded": true,
+    "result": "PASS"
+  },
+  "privacy": {
+    "forbiddenFields": [
+      "homeowner",
+      "owner_or_mailing",
+      "private_project",
+      "survey",
+      "maintstar",
+      "private_permit",
+      "private_hash_or_path",
+      "authenticated_state"
+    ],
+    "matches": 0,
+    "result": "PASS"
+  },
+  "programLanguage": {
+    "claimsExcluded": [
+      "ADU eligibility",
+      "SB 9 eligibility",
+      "SB 79 eligibility",
+      "development capacity",
+      "legal unit count",
+      "permit completion"
+    ],
+    "result": "PASS"
+  },
+  "rights": {
+    "fields": {
+      "apn": "PUBLIC_REDISPLAY_OK",
+      "coastalState": "PUBLIC_BOUNDED_SUMMARY_ONLY",
+      "dominantZone": "PUBLIC_BOUNDED_SUMMARY_ONLY",
+      "jurisdiction": "PUBLIC_REDISPLAY_OK",
+      "materialZones": "PUBLIC_BOUNDED_SUMMARY_ONLY",
+      "modifierReviewState": "PUBLIC_BOUNDED_SUMMARY_ONLY",
+      "profileSupportState": "PUBLIC_BOUNDED_SUMMARY_ONLY",
+      "profileVersion": "PUBLIC_BOUNDED_SUMMARY_ONLY",
+      "selectedZone": "PUBLIC_BOUNDED_SUMMARY_ONLY",
+      "sourceReceipt": "PUBLIC_BOUNDED_SUMMARY_ONLY",
+      "zoningState": "PUBLIC_BOUNDED_SUMMARY_ONLY"
+    },
+    "result": "PASS"
+  }
+}
