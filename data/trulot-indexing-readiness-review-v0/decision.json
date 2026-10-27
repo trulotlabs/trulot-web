@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "trulot-indexing-readiness-review-v0",
+  "reviewDate": "2026-10-27",
+  "baseline": {
+    "commit": "9fc875046850181ed7b0beba5abd2c1a9cbbfecf",
+    "tree": "654fa8586d2c60e071f0522cfd6202e4257b6373"
+  },
+  "dimensions": {
+    "PUBLIC_PAGE_READY": "The response may be exposed without private data or unsupported claims.",
+    "INDEX_READY": "The public response also has confirmed jurisdiction, one stable canonical URL, useful unique content, rights-cleared fields, deterministic source state, metadata, robots behavior, and sitemap eligibility.",
+    "FEASIBILITY_READY": "The page may show only the bounded rule conclusions supported for that parcel; this is independent of INDEX_READY.",
+    "PROGRAM_ELIGIBILITY_READY": "A named program may use eligibility language only after every required eligibility predicate and source is verified; mapped context alone is insufficient."
+  },
+  "sanDiego": {
+    "decision": "SAN_DIEGO_INDEXING_NOT_READY: Packet 11 production zoning selection is frozen and canonical-host, parcel robots, sitemap, error-state, and public-output controls are incomplete",
+    "canonicalApns": 393733,
+    "uniqueCanonicalApns": 393733,
+    "missingSitusAddresses": 14846,
+    "stackedApns": 126239,
+    "stackedGroups": 5446,
+    "routeAlgorithmCollisionCount": 0,
+    "zoningStates": {
+      "SINGLE_ZONE": 317604,
+      "BOUNDARY_SLIVER": 1097,
+      "MULTI_ZONE": 73064,
+      "INDETERMINATE": 1641,
+      "UNMAPPED": 327
+    },
+    "coastalStates": {
+      "OUTSIDE_COASTAL": 345748,
+      "INSIDE_COASTAL": 46455,
+      "BOUNDARY_AMBIGUOUS": 1530
+    },
+    "indexingClasses": {
+      "fullZoningLabelCandidate": 318701,
+      "reviewQualifiedZoningCandidate": 74705,
+      "zoningUnavailableCandidate": 327,
+      "identityOrJurisdictionUncertain": 0
+    },
+    "residentialRules": {
+      "profiles": 31,
+      "supportedResidentialApns": 326532,
+      "profileSelectedModifierReviewRequired": 260318,
+      "reviewRequired": 66214,
+      "unsupported": 0,
+      "families": ["RS", "RM", "RX", "RT"]
+    },
+    "phaseA": {
+      "currentIndexReady": 0,
+      "evidenceQualifiedAfterRequiredFixes": 318701,
+      "gate": "Confirmed Packet 79 identity; SINGLE_ZONE or BOUNDARY_SLIVER; rights-cleared identity/zoning/context payload; approved production selection; corrected canonical host; explicit robots/error policy; stable sitemap entry. Coastal boundary ambiguity remains a disclosed review state and is not used as eligibility."
+    },
+    "phaseB": {
+      "evidenceQualifiedRuleSummaryCandidates": 260318,
+      "gate": "Phase A plus a selected 31-profile base rule, source fingerprint, Coastal version, and explicit unresolved-modifier language."
+    },
+    "packet11Impact": "The current route reads parcel_page_api_v2 and check_parcel_overlays rather than the sealed Packet 79 selection. This review has no production access and cannot establish that the runtime population and zoning selection reproduce the sealed 393,733-row corpus. The frozen production selection must be resolved, or an equivalently approved immutable public snapshot must be introduced, before sitemap publication."
+  },
+  "laMesa": {
+    "decision": "LA_MESA_INDEXING_NOT_READY: the canonical parcel route, public-output contract, rights filter, metadata, robots policy, and sitemap do not exist",
+    "canonicalApns": 17391,
+    "confirmedJurisdiction": 17387,
+    "jurisdictionUnresolved": 4,
+    "addressed": 16728,
+    "missingAddress": 663,
+    "duplicateAddressGroups": 186,
+    "rowsInDuplicateAddressGroups": 3702,
+    "zoningStates": {
+      "SINGLE_ZONE": 15373,
+      "BOUNDARY_SLIVER": 1951,
+      "MULTI_ZONE": 58,
+      "INDETERMINATE": 5,
+      "UNMAPPED": 4
+    },
+    "ruleReadiness": {
+      "RULE_PROFILE_READY": 12171,
+      "RULE_PROFILE_REVIEW_REQUIRED": 3960,
+      "RULE_PROFILE_UNAVAILABLE": 1260
+    },
+    "phaseA": {
+      "currentIndexReady": 0,
+      "evidenceQualifiedAfterRequiredFixes": 17160,
+      "addressed": 16583,
+      "apnOnlyFallback": 577,
+      "gate": "IN_SCOPE_CONFIRMED; DETERMINISTIC_MAPPED_OBSERVATION; SINGLE_ZONE or BOUNDARY_SLIVER; selected zone present; APN-specific canonical route; rights-cleared parcel/zoning/context payload only."
+    },
+    "phaseB": {
+      "evidenceQualifiedCleanRuleCandidates": 12171,
+      "gate": "Phase A plus CLEAN_BASE_RESIDENTIAL_PROFILE and explicit modifier/specific-plan qualification."
+    },
+    "permitRightsImpact": "MaintStar reuse and bulk-redisplay rights are unresolved. That blocks indexed permit histories, permit-derived currentness, and permit-backed ADU claims, but does not block rights-cleared parcel identity, zoning, overlays, specific-plan context, or sourced base-rule summaries."
+  },
+  "overallDecision": "TRULOT_INDEXING_READY_AFTER_BOUNDED_FIXES",
+  "nextPacket": "Implement an index-safety foundation without publishing a sitemap: one production-domain canonical helper; explicit per-state robots metadata and error behavior; rights-filtered public-output serializers; an APN-only fallback; La Mesa canonical route behind noindex; deterministic sitemap cohort generators that emit nothing until the San Diego production-selection and La Mesa route acceptance gates are separately approved."
+}

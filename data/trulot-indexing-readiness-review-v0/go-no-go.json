@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "trulot-indexing-readiness-review-v0/go-no-go",
+  "values": ["YES", "NO", "NOT REQUIRED FOR PHASE A"],
+  "sanDiego": {
+    "canonical parcel identity": "YES",
+    "jurisdiction confirmed": "YES",
+    "public route": "YES",
+    "canonical URL": "NO",
+    "sitemap": "NO",
+    "robots": "NO",
+    "zoning source": "NO",
+    "rule source": "YES",
+    "modifier state": "YES",
+    "source rights": "YES",
+    "privacy": "YES",
+    "metadata": "NO",
+    "JSON-LD": "NO",
+    "error behavior": "NO",
+    "monitoring": "NO",
+    "rollback": "NO"
+  },
+  "laMesa": {
+    "canonical parcel identity": "YES",
+    "jurisdiction confirmed": "YES",
+    "public route": "NO",
+    "canonical URL": "NO",
+    "sitemap": "NO",
+    "robots": "NO",
+    "zoning source": "YES",
+    "rule source": "YES",
+    "modifier state": "YES",
+    "source rights": "NO",
+    "privacy": "YES",
+    "metadata": "NO",
+    "JSON-LD": "NO",
+    "error behavior": "NO",
+    "monitoring": "NO",
+    "rollback": "NO"
+  },
+  "notes": {
+    "sanDiegoZoningSource": "The sealed local Packet 79 source is ready, but the public runtime does not consume a selected immutable Packet 79 snapshot while Packet 11 is frozen.",
+    "sanDiegoPublicRoute": "The route exists, but route existence alone does not satisfy INDEX_READY.",
+    "sourceRights": "YES means the proposed Phase A field allowlist has a supportable rights boundary; it does not approve excluded property-intelligence fields.",
+    "laMesaSourceRights": "Parcel/zoning fields can be isolated, but the route lacks an enforced rights filter and the broader property-intelligence sources include unresolved reuse limits."
+  }
+}

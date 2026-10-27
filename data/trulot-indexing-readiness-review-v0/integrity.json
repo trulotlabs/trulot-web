@@ -1,0 +1,22 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": {
+      "bytes": 11869,
+      "sha256": "d045efb88113547c6ece59e2cbb9e43d790af2a6196a2e0413b6ecf594d6589a"
+    },
+    "decision.json": {
+      "bytes": 5243,
+      "sha256": "a64c45a0a2443d92b00211d9656a74ff42764a0bca6584af1c11a9b6f8880d1b"
+    },
+    "go-no-go.json": {
+      "bytes": 1663,
+      "sha256": "630b542e1e1775f9c8b1e544e305d7e548228e753c7cb9dfd2bab09f5a903475"
+    },
+    "public-output-contracts.json": {
+      "bytes": 3946,
+      "sha256": "111626c7f0031aafca53fbe20885e01f0f3b050dbc923282cfa250d077ed3911"
+    }
+  },
+  "schemaVersion": "trulot-indexing-readiness-review-v0"
+}

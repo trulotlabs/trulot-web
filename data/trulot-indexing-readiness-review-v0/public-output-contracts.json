@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "trulot-indexing-readiness-review-v0/public-output-contracts",
+  "commonExclusions": [
+    "owner name or mailing address",
+    "homeowner answers",
+    "lead or authenticated-user data",
+    "private project facts, plan status, survey evidence, hashes, or filesystem paths",
+    "raw permit histories or descriptions without redisplay rights",
+    "raw building footprints or full derived geometry",
+    "eligibility or compliance inferred only from mapped context"
+  ],
+  "sanDiego": {
+    "allowedPhaseA": [
+      "canonical APN and formatted APN",
+      "public situs address or APN-only fallback",
+      "City of San Diego jurisdiction label",
+      "public ZIP and community fields when present",
+      "bounded parcel area and recorded assessor characteristics with source/currentness caveats",
+      "selected base-zone label or an explicit review/unavailable state",
+      "Coastal, TPA, fire, community-plan, and other mapped context labeled as mapped context",
+      "source names, versions, refresh dates, and methodology links"
+    ],
+    "allowedPhaseB": [
+      "31-profile sourced base-rule summaries",
+      "Conditional, Needs evidence, Not evaluated, Source unavailable, and review-required states",
+      "modifier and specific-plan review flags without resolving them"
+    ],
+    "excludedUntilLater": [
+      "current dwelling configuration or legal unit count",
+      "current structure count or as-built geometry",
+      "recent ADU completion or absence of later work",
+      "existing-building compliance",
+      "ADU, SB 9, SB 79, Complete Communities, SDA, or TPA eligibility unless every required predicate is verified",
+      "capacity or approval predictions"
+    ]
+  },
+  "laMesa": {
+    "allowedPhaseA": [
+      "canonical APN and formatted APN",
+      "public situs address or APN-only fallback",
+      "confirmed City of La Mesa jurisdiction",
+      "selected zoning label or explicit review state",
+      "mapped overlays, planned land use, and adopted specific-plan context with mapped-context labels",
+      "source versions, refresh dates, and methodology links"
+    ],
+    "allowedPhaseB": [
+      "sourced base residential rule summaries",
+      "Conditional, Needs property evidence, Needs project details, Outside current scope, Source unavailable, and modifier-review states",
+      "bounded 2026 ADU rule context only after a separate public-output rights and product review"
+    ],
+    "rightsClasses": {
+      "assessorDerivedFacts": "PUBLIC_BOUNDED_SUMMARY_ONLY after the existing countywide acquisition/reuse receipt is explicitly linked; raw characteristics, owner data, and mailing data remain excluded",
+      "maintStarPermits": "RIGHTS_UNCLEAR and PRIVATE_INTERNAL_ONLY for indexed output until written reuse and bounded redisplay authorization exists",
+      "buildingFootprints": "PUBLIC_BOUNDED_SUMMARY_ONLY where the source receipt permits it; raw polygons and full derived geometry are excluded",
+      "derivedCurrentness": "PRIVATE_INTERNAL_ONLY when any input is rights-limited; a future bounded warning may be public only after every contributing input is cleared",
+      "homeownerProvidedData": "PRIVATE_INTERNAL_ONLY"
+    }
+  },
+  "metadata": {
+    "required": ["title", "description", "production-domain canonical URL", "jurisdiction", "APN", "address when public and present", "explicit robots state"],
+    "prohibited": ["private facts", "unsupported ADU/program eligibility", "permit or currentness claims not present in the public payload"]
+  },
+  "jsonLd": {
+    "type": "Place",
+    "rules": [
+      "Use minimal Place plus PropertyValue(APN).",
+      "Include PostalAddress only when a public situs address exists.",
+      "Do not use Residence or a residence subtype without current property-intelligence support.",
+      "Do not emit generic duplicate FAQPage markup on every parcel page unless each answer is accurate for that parcel."
+    ]
+  }
+}
