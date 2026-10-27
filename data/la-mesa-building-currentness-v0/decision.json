@@ -1,0 +1,16 @@
+{
+  "basis": [
+    "All canonical parcels receive a bounded structure summary.",
+    "Observation and legal/permit truth remain separate.",
+    "Later-change evidence suppresses stale geometry claims.",
+    "Rights boundaries are explicit and raw polygons are not committed or exposed."
+  ],
+  "decision": "LA_MESA_BUILDING_CURRENTNESS_LAYER_READY",
+  "limitations": [
+    "2017 geometry is stale observational evidence.",
+    "Permit currentness is limited to the sealed Packet 74 cohort.",
+    "Public raw/full derived geometry redisplay remains prohibited pending rights clearance.",
+    "No production or private-preview runtime integration occurred."
+  ],
+  "nextStep": "LA_MESA_PROPERTY_INTELLIGENCE_COMPOSITION"
+}

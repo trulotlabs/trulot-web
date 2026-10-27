@@ -1,0 +1,49 @@
+{
+  "allowedUses": [
+    "observed structure presence",
+    "footprint count",
+    "approximate footprint area",
+    "detached-secondary-structure candidate",
+    "geometry-change comparison",
+    "preliminary screening",
+    "question tailoring"
+  ],
+  "approvedLanguage": [
+    "Older mapping shows a detached secondary structure on the parcel.",
+    "Is that structure still there?",
+    "Older mapping may no longer reflect the current property configuration."
+  ],
+  "assessorInteraction": "Preserve recorded assessor state and observational footprint state separately. Neither overrides the other; conflicts remain explicit.",
+  "multipleFootprints": "May represent a primary and accessory structure, multifamily complex, detached ancillary buildings, commercial buildings, stacked artifacts, or parcel overlap. No use is assigned without corroboration.",
+  "noFootprint": {
+    "notEquivalentTo": [
+      "vacant",
+      "no building",
+      "no dwelling"
+    ],
+    "possibleReasons": [
+      "source omission",
+      "later construction",
+      "geometry issue",
+      "stacked parcel behavior"
+    ],
+    "state": "NO_FOOTPRINT_OBSERVED_IN_SOURCE"
+  },
+  "permitInteraction": {
+    "finaledAduOrAdditionAfter2017": "LATER_CHANGE_OBSERVED",
+    "issuedOrInProgress": "LATER_CHANGE_OBSERVED",
+    "noPermitFound": "NO_LATER_CHANGE_KNOWN is a bounded absence-of-found-change state, never proof of current configuration"
+  },
+  "prohibitedInferences": [
+    "legal structure status",
+    "occupancy",
+    "dwelling count",
+    "permitted use",
+    "garage classification",
+    "ADU classification",
+    "current as-built geometry",
+    "compliance"
+  ],
+  "questionReduction": "An observational hint may tailor a question but never suppress homeowner confirmation or establish use/current existence.",
+  "sourceAuthority": "OBSERVATIONAL_GEOMETRY"
+}

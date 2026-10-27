@@ -1,0 +1,45 @@
+{
+  "jurisdictionNeutral": true,
+  "migrationApplied": false,
+  "sanDiegoReview": "Schema is reusable because jurisdiction, authority, dates, ambiguity, and evidence are explicit. No San Diego activation or behavior change is made.",
+  "tables": {
+    "geometry_source_receipt": [
+      "source_id",
+      "authority",
+      "source_url",
+      "observation_date",
+      "publication_date",
+      "retrieval_date",
+      "source_checksum",
+      "normalized_checksum",
+      "rights_state"
+    ],
+    "observation_conflict": [
+      "jurisdiction",
+      "apn",
+      "conflict_type",
+      "evidence_refs",
+      "resolution_state"
+    ],
+    "structure_currentness": [
+      "jurisdiction",
+      "apn",
+      "state",
+      "assessor_evidence_ref",
+      "permit_evidence_ref",
+      "computed_at"
+    ],
+    "structure_observation": [
+      "jurisdiction",
+      "apn",
+      "observation_id",
+      "source_id",
+      "source_receipt_id",
+      "geometry_date",
+      "derived_measurements",
+      "ambiguity_state",
+      "currentness_state",
+      "evidence_reference"
+    ]
+  }
+}

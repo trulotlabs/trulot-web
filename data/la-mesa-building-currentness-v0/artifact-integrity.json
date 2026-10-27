@@ -1,0 +1,74 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "README.md": {
+      "bytes": 1640,
+      "sha256": "b847a77ca9765b85fb9a71d9da54c89c086b08450630d706f216052097e7c6de"
+    },
+    "accessory-candidate-uplift.json": {
+      "bytes": 633,
+      "sha256": "6c94d39e745bff538a94a917534b474f32be43b7a0365d268c415a53cf7e30bd"
+    },
+    "assessor-footprint-matrix.json": {
+      "bytes": 3142,
+      "sha256": "d21f055f4d41f60d4028a799b44433153561d22d98bc2c97e6eff21ecb926bfa"
+    },
+    "candidate-threshold-sensitivity.json": {
+      "bytes": 4424,
+      "sha256": "3dbeb0e165af6c9786c9348f106bb82ebcd2bc0f6a0400388d27826f7d17519c"
+    },
+    "case-results.json": {
+      "bytes": 6046,
+      "sha256": "feb4cb47f71907b484e89bf9b558e88f5d17afb1ffe682dbcb0150f57791369f"
+    },
+    "cohort-results.json": {
+      "bytes": 26574,
+      "sha256": "0c571c30063fa059f15d34fc344ed72d43da5a0989d9759207c7208388bb94ec"
+    },
+    "decision.json": {
+      "bytes": 721,
+      "sha256": "0f246403afcec3f5de9545126c4da64e72ced063b9f74b27d6c7d5f6edbe5a8b"
+    },
+    "doctrine.json": {
+      "bytes": 1856,
+      "sha256": "d4ea775f227693743e83ccadd0327897663ae7788b35aa42696bd204331a6bba"
+    },
+    "parcel-structure-summaries.ndjson.gz": {
+      "bytes": 257078,
+      "sha256": "ffd107fc4243aad656145f73854267653c7d784c9e0821331ea185e0fed7f056"
+    },
+    "population-metrics.json": {
+      "bytes": 655,
+      "sha256": "223c43e26d286a56a6237c6352f017b25d759e4cb6cb51f5671359765559b2df"
+    },
+    "runtime-composition-design.json": {
+      "bytes": 861,
+      "sha256": "ed2b115d54ba0a24fce7f35bcfb2786a2202f48157fac82f8b6bc2317c0dc2e8"
+    },
+    "source-receipt.json": {
+      "bytes": 1528,
+      "sha256": "bed22a318daff62be537ee06dad0df57653ab904089aab1a578cd1680d5f31cb"
+    },
+    "storage-design.json": {
+      "bytes": 1088,
+      "sha256": "aa0d77b3571aee76263e7832423963164b2e92c9e1ce1b3cc686781fddad56a5"
+    },
+    "structure-observation-schema.json": {
+      "bytes": 1002,
+      "sha256": "adcd69e3306c665a4c2d934077ef9e3c8668a9cedcae7b5334f80818b98571bc"
+    },
+    "structure-observations.ndjson.gz": {
+      "bytes": 4691890,
+      "sha256": "40d7d93b040a528a6f71efc8f9556bcb7d8462a82dd3ad3265af3e66f209c89d"
+    },
+    "use-matrix.json": {
+      "bytes": 271,
+      "sha256": "66b3303186c8c91698a643104003bf7a3755b6db38cfaff0a962e7edcf351f5d"
+    },
+    "validate.py": {
+      "bytes": 7000,
+      "sha256": "a6c9803659cc6558725c8ecd81fcd0582283b681985419426008a0e690f181a0"
+    }
+  },
+  "schemaVersion": "la-mesa-building-currentness-v0"
+}

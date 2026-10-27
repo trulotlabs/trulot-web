@@ -1,0 +1,20 @@
+{
+  "accessoryStructureCandidate": 2219,
+  "caution": "Counts describe observational outline coverage and must not be read as dwelling coverage.",
+  "currentnessStates": {
+    "CURRENTNESS_PARTIAL": 12134,
+    "CURRENTNESS_UNKNOWN": 4399,
+    "LATER_CHANGE_OBSERVED": 9,
+    "NO_LATER_CHANGE_KNOWN": 30,
+    "OBSERVATIONAL_STALE": 819
+  },
+  "denominator": 17391,
+  "multipleFootprints": 7141,
+  "noFootprint": 1138,
+  "observationsAssignedToParcels": 61878,
+  "oneFootprint": 9112,
+  "outlineFeaturesMatchingMultipleApns": 791,
+  "schemaVersion": "la-mesa-building-currentness-v0",
+  "stackedOrAmbiguous": 3262,
+  "uniqueSourceOutlinesAssigned": 19835
+}

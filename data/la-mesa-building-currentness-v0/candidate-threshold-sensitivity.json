@@ -1,0 +1,132 @@
+{
+  "scenarios": [
+    {
+      "parcelCandidateCount": 2219,
+      "scenario": "selected",
+      "thresholds": {
+        "maximumSecondaryAreaSqft": 1200.0,
+        "maximumSecondaryToPrimaryRatio": 0.45,
+        "minimumParcelCoverageRatio": 0.9,
+        "minimumParcelEdgeClearanceFeet": 0.0,
+        "minimumSecondaryAreaSqft": 120.0,
+        "minimumSecondaryToPrimaryRatio": 0.05,
+        "minimumSeparationFeet": 3.0
+      }
+    },
+    {
+      "parcelCandidateCount": 1724,
+      "scenario": "ratio_conservative",
+      "thresholds": {
+        "maximumSecondaryAreaSqft": 1200.0,
+        "maximumSecondaryToPrimaryRatio": 0.3,
+        "minimumParcelCoverageRatio": 0.9,
+        "minimumParcelEdgeClearanceFeet": 0.0,
+        "minimumSecondaryAreaSqft": 120.0,
+        "minimumSecondaryToPrimaryRatio": 0.05,
+        "minimumSeparationFeet": 3.0
+      }
+    },
+    {
+      "parcelCandidateCount": 2379,
+      "scenario": "ratio_permissive",
+      "thresholds": {
+        "maximumSecondaryAreaSqft": 1200.0,
+        "maximumSecondaryToPrimaryRatio": 0.6,
+        "minimumParcelCoverageRatio": 0.9,
+        "minimumParcelEdgeClearanceFeet": 0.0,
+        "minimumSecondaryAreaSqft": 120.0,
+        "minimumSecondaryToPrimaryRatio": 0.05,
+        "minimumSeparationFeet": 3.0
+      }
+    },
+    {
+      "parcelCandidateCount": 1852,
+      "scenario": "area_conservative",
+      "thresholds": {
+        "maximumSecondaryAreaSqft": 1000.0,
+        "maximumSecondaryToPrimaryRatio": 0.45,
+        "minimumParcelCoverageRatio": 0.9,
+        "minimumParcelEdgeClearanceFeet": 0.0,
+        "minimumSecondaryAreaSqft": 200.0,
+        "minimumSecondaryToPrimaryRatio": 0.05,
+        "minimumSeparationFeet": 3.0
+      }
+    },
+    {
+      "parcelCandidateCount": 2248,
+      "scenario": "area_permissive",
+      "thresholds": {
+        "maximumSecondaryAreaSqft": 1500.0,
+        "maximumSecondaryToPrimaryRatio": 0.45,
+        "minimumParcelCoverageRatio": 0.9,
+        "minimumParcelEdgeClearanceFeet": 0.0,
+        "minimumSecondaryAreaSqft": 80.0,
+        "minimumSecondaryToPrimaryRatio": 0.05,
+        "minimumSeparationFeet": 3.0
+      }
+    },
+    {
+      "parcelCandidateCount": 1817,
+      "scenario": "separation_conservative",
+      "thresholds": {
+        "maximumSecondaryAreaSqft": 1200.0,
+        "maximumSecondaryToPrimaryRatio": 0.45,
+        "minimumParcelCoverageRatio": 0.9,
+        "minimumParcelEdgeClearanceFeet": 0.0,
+        "minimumSecondaryAreaSqft": 120.0,
+        "minimumSecondaryToPrimaryRatio": 0.05,
+        "minimumSeparationFeet": 6.0
+      }
+    },
+    {
+      "parcelCandidateCount": 2609,
+      "scenario": "separation_permissive",
+      "thresholds": {
+        "maximumSecondaryAreaSqft": 1200.0,
+        "maximumSecondaryToPrimaryRatio": 0.45,
+        "minimumParcelCoverageRatio": 0.9,
+        "minimumParcelEdgeClearanceFeet": 0.0,
+        "minimumSecondaryAreaSqft": 120.0,
+        "minimumSecondaryToPrimaryRatio": 0.05,
+        "minimumSeparationFeet": 1.0
+      }
+    },
+    {
+      "parcelCandidateCount": 1725,
+      "scenario": "edge_1ft",
+      "thresholds": {
+        "maximumSecondaryAreaSqft": 1200.0,
+        "maximumSecondaryToPrimaryRatio": 0.45,
+        "minimumParcelCoverageRatio": 0.9,
+        "minimumParcelEdgeClearanceFeet": 1.0,
+        "minimumSecondaryAreaSqft": 120.0,
+        "minimumSecondaryToPrimaryRatio": 0.05,
+        "minimumSeparationFeet": 3.0
+      }
+    },
+    {
+      "parcelCandidateCount": 1386,
+      "scenario": "edge_3ft",
+      "thresholds": {
+        "maximumSecondaryAreaSqft": 1200.0,
+        "maximumSecondaryToPrimaryRatio": 0.45,
+        "minimumParcelCoverageRatio": 0.9,
+        "minimumParcelEdgeClearanceFeet": 3.0,
+        "minimumSecondaryAreaSqft": 120.0,
+        "minimumSecondaryToPrimaryRatio": 0.05,
+        "minimumSeparationFeet": 3.0
+      }
+    }
+  ],
+  "schemaVersion": "la-mesa-building-currentness-v0",
+  "selectedPolicy": {
+    "maximumSecondaryAreaSqft": 1200.0,
+    "maximumSecondaryToPrimaryRatio": 0.45,
+    "minimumParcelCoverageRatio": 0.9,
+    "minimumParcelEdgeClearanceFeet": 0.0,
+    "minimumSecondaryAreaSqft": 120.0,
+    "minimumSecondaryToPrimaryRatio": 0.05,
+    "minimumSeparationFeet": 3.0
+  },
+  "selectionRationale": "The edge threshold remains zero because mapped parcel distance is not a legal setback test. Area, ratio, coverage, and three-foot detached separation bound the observational hint."
+}

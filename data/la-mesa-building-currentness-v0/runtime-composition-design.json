@@ -1,0 +1,27 @@
+{
+  "bruceBehavior": "Keep the existing recorded-property confirmation; footprint commentary adds no useful signal.",
+  "currentnessConflictBehavior": "Older mapping may no longer reflect the current property configuration.",
+  "futureFlow": [
+    "parcel identity",
+    "zoning/rules",
+    "assessor facts",
+    "permit facts when authorized",
+    "structure observations",
+    "homeowner answers",
+    "currentness/conflict resolution",
+    "V4 feasibility"
+  ],
+  "permitProductionIntegration": false,
+  "privatePreviewIntegration": "NOT_INTEGRATED_RIGHTS_UNRESOLVED",
+  "publicIndexing": false,
+  "rawGeometryInUi": false,
+  "secondaryCandidateBehavior": {
+    "answers": [
+      "Yes",
+      "No",
+      "Not sure"
+    ],
+    "copy": "Older mapping shows a detached secondary structure. Is that structure still there?",
+    "sourceDateVisible": true
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "capture": {
+    "compressedFileSha256": "2ff8f3bd686140820e5cc263b51e6031396a154010d13cbab36c34e44e88619e",
+    "immutableSnapshotRule": "The retained 30,999-feature capture is immutable; Packet 75 made no live source request.",
+    "normalizedGeometrySha256": "fa6cefe9f1f948804a22560100014f3c423781a3ba05ce5ec9da224ca538fd0d",
+    "preflightCount": 30994,
+    "preflightToCaptureDrift": 5,
+    "retainedCaptureCount": 30999,
+    "sourceContentSha256": "1895e34e2b26b6fd018ff775733d532de0451773c9a396b292fc2b40650166f5",
+    "transactionalConsistency": "NOT_GUARANTEED"
+  },
+  "geometryValidity": {
+    "areaCrs": "EPSG:2230 US survey feet",
+    "inputCount": 30999,
+    "invalidBeforeNormalization": 0,
+    "invalidOrEmptyAfterNormalization": 0,
+    "repairApplied": 0,
+    "validNormalized": 30999
+  },
+  "license": {
+    "internalAnalysis": "Allowed only within current access rights and terms.",
+    "packetOutput": "Bounded derived observations only; no raw polygon coordinates are committed.",
+    "publicRedisplay": "Raw footprints and full derived geometry are not authorized for public redistribution."
+  },
+  "schemaVersion": "la-mesa-building-currentness-v0",
+  "source": {
+    "authority": "OBSERVATIONAL_GEOMETRY",
+    "imageryVintage": "Spring 2017 EagleView/Pictometry imagery",
+    "layer": 5036,
+    "name": "SanGIS BUILDING_OUTLINES",
+    "retrievalDate": "2026-10-26",
+    "sourcePublicationDate": "2018-08-02",
+    "url": "https://gis.sangis.org/maps/rest/services/Public/Basemap/MapServer/5036"
+  }
+}

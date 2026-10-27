@@ -1,0 +1,106 @@
+{
+  "cells": [
+    {
+      "combination": "RECORDED_CONDO::MULTIPLE_FOOTPRINTS::STACKED_OR_AMBIGUOUS",
+      "count": 2661
+    },
+    {
+      "combination": "RECORDED_CONDO::NO_FOOTPRINT::UNAMBIGUOUS",
+      "count": 368
+    },
+    {
+      "combination": "RECORDED_CONDO::ONE_FOOTPRINT::STACKED_OR_AMBIGUOUS",
+      "count": 245
+    },
+    {
+      "combination": "RECORDED_CONDO::ONE_FOOTPRINT::UNAMBIGUOUS",
+      "count": 96
+    },
+    {
+      "combination": "RECORDED_MULTIFAMILY_LIKELY::MULTIPLE_FOOTPRINTS::STACKED_OR_AMBIGUOUS",
+      "count": 2
+    },
+    {
+      "combination": "RECORDED_MULTIFAMILY_LIKELY::MULTIPLE_FOOTPRINTS::UNAMBIGUOUS",
+      "count": 580
+    },
+    {
+      "combination": "RECORDED_MULTIFAMILY_LIKELY::NO_FOOTPRINT::UNAMBIGUOUS",
+      "count": 11
+    },
+    {
+      "combination": "RECORDED_MULTIFAMILY_LIKELY::ONE_FOOTPRINT::STACKED_OR_AMBIGUOUS",
+      "count": 2
+    },
+    {
+      "combination": "RECORDED_MULTIFAMILY_LIKELY::ONE_FOOTPRINT::UNAMBIGUOUS",
+      "count": 543
+    },
+    {
+      "combination": "RECORDED_RESIDENTIAL_CONFLICT::MULTIPLE_FOOTPRINTS::STACKED_OR_AMBIGUOUS",
+      "count": 144
+    },
+    {
+      "combination": "RECORDED_RESIDENTIAL_CONFLICT::MULTIPLE_FOOTPRINTS::UNAMBIGUOUS",
+      "count": 184
+    },
+    {
+      "combination": "RECORDED_RESIDENTIAL_CONFLICT::NO_FOOTPRINT::UNAMBIGUOUS",
+      "count": 9
+    },
+    {
+      "combination": "RECORDED_RESIDENTIAL_CONFLICT::ONE_FOOTPRINT::UNAMBIGUOUS",
+      "count": 168
+    },
+    {
+      "combination": "RECORDED_SINGLE_FAMILY_LIKELY::MULTIPLE_FOOTPRINTS::STACKED_OR_AMBIGUOUS",
+      "count": 7
+    },
+    {
+      "combination": "RECORDED_SINGLE_FAMILY_LIKELY::MULTIPLE_FOOTPRINTS::UNAMBIGUOUS",
+      "count": 3065
+    },
+    {
+      "combination": "RECORDED_SINGLE_FAMILY_LIKELY::NO_FOOTPRINT::UNAMBIGUOUS",
+      "count": 41
+    },
+    {
+      "combination": "RECORDED_SINGLE_FAMILY_LIKELY::ONE_FOOTPRINT::STACKED_OR_AMBIGUOUS",
+      "count": 2
+    },
+    {
+      "combination": "RECORDED_SINGLE_FAMILY_LIKELY::ONE_FOOTPRINT::UNAMBIGUOUS",
+      "count": 7518
+    },
+    {
+      "combination": "RECORDED_TYPE_UNKNOWN::MULTIPLE_FOOTPRINTS::STACKED_OR_AMBIGUOUS",
+      "count": 189
+    },
+    {
+      "combination": "RECORDED_TYPE_UNKNOWN::MULTIPLE_FOOTPRINTS::UNAMBIGUOUS",
+      "count": 309
+    },
+    {
+      "combination": "RECORDED_TYPE_UNKNOWN::NO_FOOTPRINT::UNAMBIGUOUS",
+      "count": 709
+    },
+    {
+      "combination": "RECORDED_TYPE_UNKNOWN::ONE_FOOTPRINT::STACKED_OR_AMBIGUOUS",
+      "count": 10
+    },
+    {
+      "combination": "RECORDED_TYPE_UNKNOWN::ONE_FOOTPRINT::UNAMBIGUOUS",
+      "count": 528
+    }
+  ],
+  "highlighted": {
+    "condoStackedGeometry": 2906,
+    "recordedMultifamilyLikelyMultipleFootprints": 580,
+    "recordedMultifamilyLikelyOneFootprint": 543,
+    "recordedSingleFamilyLikelyMultipleFootprints": 3065,
+    "recordedSingleFamilyLikelyOneFootprint": 7518,
+    "unknownNoFootprint": 709
+  },
+  "interpretation": "Geometry can tailor questions, but it does not establish use, dwelling count, or current legal configuration.",
+  "schemaVersion": "la-mesa-building-currentness-v0"
+}

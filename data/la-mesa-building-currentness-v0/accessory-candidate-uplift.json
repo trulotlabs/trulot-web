@@ -1,0 +1,19 @@
+{
+  "candidateParcels": 2219,
+  "example": {
+    "address": "6795 COLORADO AVE",
+    "answers": [
+      "Yes",
+      "No",
+      "Not sure"
+    ],
+    "apn": "4635801000",
+    "geometryDate": "2017-Spring",
+    "limitations": "The hint does not classify use, prove current existence, or remove homeowner confirmation.",
+    "prompt": "Older mapping shows a detached secondary structure. Is that structure still there?"
+  },
+  "questionTailoringEligibleWithConfirmation": 2219,
+  "recordedSingleFamilyLikelyCandidates": 1773,
+  "schemaVersion": "la-mesa-building-currentness-v0",
+  "suppressedForLaterChangeOrUnknownCurrentness": 0
+}

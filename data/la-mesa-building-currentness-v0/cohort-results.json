@@ -1,0 +1,922 @@
+{
+  "coverage": {
+    "6910_BRUCE_CASE": 1,
+    "ACCESSORY_STRUCTURE_CANDIDATE": 4,
+    "ADU_HINT": 1,
+    "ASSESSOR_ADU_HINT": 4,
+    "ASSESSOR_GRANNY_FLAT_HINT": 1,
+    "CONDO_COMMON_ADDRESS": 1,
+    "DETERMINISTIC_STRATIFIED_SAMPLE": 25,
+    "DUPLICATE_ADDRESS": 1,
+    "HILLSIDE": 1,
+    "KNOWN_ADU_PERMIT_ACTIVITY": 2,
+    "MISSING_ADDRESS": 2,
+    "MODIFIER_LM_OVERLAY_D": 19,
+    "MODIFIER_LM_OVERLAY_F": 7,
+    "MODIFIER_LM_OVERLAY_G": 5,
+    "MODIFIER_LM_OVERLAY_MU": 8,
+    "MODIFIER_LM_OVERLAY_P": 3,
+    "MULTIFAMILY": 1,
+    "MULTIPLE_FOOTPRINTS": 19,
+    "NO_FOOTPRINT": 7,
+    "ONE_FOOTPRINT": 24,
+    "ORDINARY_R1": 4,
+    "R1S": 1,
+    "R3_COMBINED_OVERLAYS": 1,
+    "R3_MULTIFAMILY": 1,
+    "RECENT_ACTIVE_DEVELOPMENT": 5,
+    "RECENT_PERMIT": 1,
+    "RECORDED_CONDO": 2,
+    "RECORDED_MULTIFAMILY_LIKELY": 5,
+    "RECORDED_RESIDENTIAL_CONFLICT": 9,
+    "RECORDED_SINGLE_FAMILY_LIKELY": 9,
+    "RECORDED_TYPE_UNKNOWN": 25,
+    "SCENIC": 1,
+    "UNSUPPORTED_ZONING": 1,
+    "ZONE_C": 10,
+    "ZONE_CD": 2,
+    "ZONE_CM": 6,
+    "ZONE_CN": 4,
+    "ZONE_UNKNOWN": 3
+  },
+  "rows": [
+    {
+      "accessoryStructureCandidate": false,
+      "address": "6910 BRUCE CT",
+      "apn": "4685100900",
+      "baseZone": "R1",
+      "categories": [
+        "6910_BRUCE_CASE",
+        "ONE_FOOTPRINT",
+        "ORDINARY_R1",
+        "RECORDED_SINGLE_FAMILY_LIKELY"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "5836 PAWNEE DR",
+      "apn": "4640301100",
+      "baseZone": "R1",
+      "categories": [
+        "ONE_FOOTPRINT",
+        "ORDINARY_R1",
+        "RECORDED_SINGLE_FAMILY_LIKELY"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "5830 PAWNEE DR",
+      "apn": "4640301200",
+      "baseZone": "R1",
+      "categories": [
+        "ONE_FOOTPRINT",
+        "ORDINARY_R1",
+        "RECENT_PERMIT",
+        "RECORDED_SINGLE_FAMILY_LIKELY"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "5498 PENNSYLVANIA LN",
+      "apn": "4635800100",
+      "baseZone": "R1S",
+      "categories": [
+        "ONE_FOOTPRINT",
+        "R1S",
+        "RECORDED_SINGLE_FAMILY_LIKELY"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "9470 GROSSMONT BLVD",
+      "apn": "4912600700",
+      "baseZone": "R1E",
+      "categories": [
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_SINGLE_FAMILY_LIKELY",
+        "SCENIC"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "P",
+      "observedFootprintCount": 3,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "4284 SUMMIT DR",
+      "apn": "4752412200",
+      "baseZone": "R1S",
+      "categories": [
+        "HILLSIDE",
+        "ONE_FOOTPRINT",
+        "RECORDED_SINGLE_FAMILY_LIKELY"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "H",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": true,
+      "address": "5877 BALTIMORE DR",
+      "apn": "4640201000",
+      "baseZone": "R3",
+      "categories": [
+        "ACCESSORY_STRUCTURE_CANDIDATE",
+        "MULTIPLE_FOOTPRINTS",
+        "R3_MULTIFAMILY",
+        "RECORDED_MULTIFAMILY_LIKELY"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 3,
+      "safeForQuestionTailoring": true,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "5264 WOOD ST",
+      "apn": "4904720700",
+      "baseZone": "R3",
+      "categories": [
+        "MULTIPLE_FOOTPRINTS",
+        "R3_COMBINED_OVERLAYS",
+        "RECORDED_SINGLE_FAMILY_LIKELY"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D+MU+P",
+      "observedFootprintCount": 2,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "5700 BALTIMORE DR",
+      "apn": "4640203301",
+      "baseZone": "R3",
+      "categories": [
+        "CONDO_COMMON_ADDRESS",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_CONDO"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 10,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 10
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "3706 KING ST",
+      "apn": "4745510700",
+      "baseZone": "R2",
+      "categories": [
+        "DUPLICATE_ADDRESS",
+        "MULTIFAMILY",
+        "ONE_FOOTPRINT",
+        "RECORDED_MULTIFAMILY_LIKELY"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": null,
+      "apn": "4640202200",
+      "baseZone": "R1",
+      "categories": [
+        "MISSING_ADDRESS",
+        "NO_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 0,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": null,
+      "apn": "4645231900",
+      "baseZone": "TBD",
+      "categories": [
+        "MISSING_ADDRESS",
+        "NO_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "UNSUPPORTED_ZONING"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 0,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "4560 3RD ST",
+      "apn": "4946110900",
+      "baseZone": "R1",
+      "categories": [
+        "ASSESSOR_GRANNY_FLAT_HINT",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_RESIDENTIAL_CONFLICT"
+      ],
+      "currentnessState": "LATER_CHANGE_OBSERVED",
+      "mappedOverlays": "",
+      "observedFootprintCount": 3,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "4573 3RD ST",
+      "apn": "4946120500",
+      "baseZone": "R1",
+      "categories": [
+        "ASSESSOR_ADU_HINT",
+        "ONE_FOOTPRINT",
+        "RECORDED_RESIDENTIAL_CONFLICT"
+      ],
+      "currentnessState": "LATER_CHANGE_OBSERVED",
+      "mappedOverlays": "",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": true,
+      "address": "4109 69TH ST",
+      "apn": "4742211500",
+      "baseZone": "R1",
+      "categories": [
+        "ACCESSORY_STRUCTURE_CANDIDATE",
+        "ASSESSOR_ADU_HINT",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_RESIDENTIAL_CONFLICT"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 2,
+      "safeForQuestionTailoring": true,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "4595 70TH ST",
+      "apn": "4693022200",
+      "baseZone": "R1",
+      "categories": [
+        "ASSESSOR_ADU_HINT",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_RESIDENTIAL_CONFLICT"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 3,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "5740 AMARILLO AVE",
+      "apn": "4905510900",
+      "baseZone": "R1",
+      "categories": [
+        "ASSESSOR_ADU_HINT",
+        "ONE_FOOTPRINT",
+        "RECORDED_RESIDENTIAL_CONFLICT"
+      ],
+      "currentnessState": "LATER_CHANGE_OBSERVED",
+      "mappedOverlays": "",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "4757 PALM AVE",
+      "apn": "4944102400",
+      "baseZone": "CD",
+      "categories": [
+        "ONE_FOOTPRINT",
+        "RECENT_ACTIVE_DEVELOPMENT",
+        "RECORDED_RESIDENTIAL_CONFLICT"
+      ],
+      "currentnessState": "LATER_CHANGE_OBSERVED",
+      "mappedOverlays": "D",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "9407 JERICHO RD",
+      "apn": "4866701800",
+      "baseZone": "R3",
+      "categories": [
+        "MULTIPLE_FOOTPRINTS",
+        "RECENT_ACTIVE_DEVELOPMENT",
+        "RECORDED_TYPE_UNKNOWN"
+      ],
+      "currentnessState": "LATER_CHANGE_OBSERVED",
+      "mappedOverlays": "",
+      "observedFootprintCount": 3,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "5220 WILSON ST",
+      "apn": "4906603100",
+      "baseZone": "RB",
+      "categories": [
+        "ONE_FOOTPRINT",
+        "RECENT_ACTIVE_DEVELOPMENT",
+        "RECORDED_TYPE_UNKNOWN"
+      ],
+      "currentnessState": "LATER_CHANGE_OBSERVED",
+      "mappedOverlays": "D+MU",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "7285 UNIVERSITY AVE",
+      "apn": "4741811900",
+      "baseZone": "C",
+      "categories": [
+        "ONE_FOOTPRINT",
+        "RECENT_ACTIVE_DEVELOPMENT",
+        "RECORDED_TYPE_UNKNOWN"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D+F+MU",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "7735 UNIVERSITY AVE",
+      "apn": "4706900300",
+      "baseZone": "C",
+      "categories": [
+        "MULTIPLE_FOOTPRINTS",
+        "RECENT_ACTIVE_DEVELOPMENT",
+        "RECORDED_TYPE_UNKNOWN"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D+MU",
+      "observedFootprintCount": 2,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "4326 AVON DR",
+      "apn": "4705321100",
+      "baseZone": "R1",
+      "categories": [
+        "KNOWN_ADU_PERMIT_ACTIVITY",
+        "ONE_FOOTPRINT",
+        "RECORDED_RESIDENTIAL_CONFLICT"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "8470 ABILENE TER",
+      "apn": "4852600500",
+      "baseZone": "R1",
+      "categories": [
+        "ADU_HINT",
+        "ONE_FOOTPRINT",
+        "ORDINARY_R1",
+        "RECORDED_RESIDENTIAL_CONFLICT"
+      ],
+      "currentnessState": "LATER_CHANGE_OBSERVED",
+      "mappedOverlays": "",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "6964 COLORADO AVE",
+      "apn": "4641801100",
+      "baseZone": "R1S",
+      "categories": [
+        "KNOWN_ADU_PERMIT_ACTIVITY",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_RESIDENTIAL_CONFLICT"
+      ],
+      "currentnessState": "LATER_CHANGE_OBSERVED",
+      "mappedOverlays": "",
+      "observedFootprintCount": 2,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "7440 COLONY DR",
+      "apn": "7746913108",
+      "baseZone": null,
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_UNKNOWN"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 40,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 40
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "8165 FLETCHER PKWY",
+      "apn": "4646001500",
+      "baseZone": null,
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_F",
+        "ONE_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_UNKNOWN"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D+F",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "8191 FLETCHER PKWY",
+      "apn": "4646002400",
+      "baseZone": null,
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_F",
+        "MODIFIER_LM_OVERLAY_G",
+        "NO_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_UNKNOWN"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "mappedOverlays": "D+F+G",
+      "observedFootprintCount": 0,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "5307 LAKE MURRAY BLVD",
+      "apn": "4643901600",
+      "baseZone": "C",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ONE_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_C"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "8784 GROSSMONT BLVD",
+      "apn": "4906605300",
+      "baseZone": "C",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_C"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D",
+      "observedFootprintCount": 5,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "7200 UNIVERSITY AVE",
+      "apn": "4741202600",
+      "baseZone": "C",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_F",
+        "MODIFIER_LM_OVERLAY_MU",
+        "ONE_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_C"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D+F+MU",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "8625 FLETCHER PKWY",
+      "apn": "7602375300",
+      "baseZone": "C",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_G",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_MULTIFAMILY_LIKELY",
+        "ZONE_C"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "mappedOverlays": "D+G",
+      "observedFootprintCount": 4,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 4
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "7681 UNIVERSITY AVE",
+      "apn": "4704222252",
+      "baseZone": "C",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_MU",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_CONDO",
+        "ZONE_C"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "mappedOverlays": "D+MU",
+      "observedFootprintCount": 6,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 6
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "7309 UNIVERSITY AVE",
+      "apn": "4750501900",
+      "baseZone": "C",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_F",
+        "MODIFIER_LM_OVERLAY_MU",
+        "ONE_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_C"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D+F+MU",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "9000 WAKARUSA ST",
+      "apn": "7602367400",
+      "baseZone": "C",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_G",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_C"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "mappedOverlays": "D+G",
+      "observedFootprintCount": 12,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 12
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "7400 EL CAJON BLVD",
+      "apn": "4691442800",
+      "baseZone": "C",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_MU",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_C"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D+MU",
+      "observedFootprintCount": 2,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "8940 DAILEY RD",
+      "apn": "4948403100",
+      "baseZone": "C",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_MU",
+        "MODIFIER_LM_OVERLAY_P",
+        "NO_FOOTPRINT",
+        "RECORDED_MULTIFAMILY_LIKELY",
+        "ZONE_C"
+      ],
+      "currentnessState": "LATER_CHANGE_OBSERVED",
+      "mappedOverlays": "D+MU+P",
+      "observedFootprintCount": 0,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "8764 CAMPO RD",
+      "apn": "4992630300",
+      "baseZone": "C",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_P",
+        "ONE_FOOTPRINT",
+        "RECORDED_SINGLE_FAMILY_LIKELY",
+        "ZONE_C"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "P",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "4705 4TH ST",
+      "apn": "4942810500",
+      "baseZone": "CD",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "ONE_FOOTPRINT",
+        "RECORDED_SINGLE_FAMILY_LIKELY",
+        "ZONE_CD"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": true,
+      "address": "7974 UNIVERSITY AVE",
+      "apn": "4703401300",
+      "baseZone": "CD",
+      "categories": [
+        "ACCESSORY_STRUCTURE_CANDIDATE",
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_MU",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_CD"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D+MU",
+      "observedFootprintCount": 3,
+      "safeForQuestionTailoring": true,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "8349 HERCULES ST",
+      "apn": "4904361100",
+      "baseZone": "CM",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "NO_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_CM"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 0,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "8380 CENTER DR",
+      "apn": "4906313400",
+      "baseZone": "CM",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "ONE_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_CM"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": true,
+      "address": "5151 70TH ST",
+      "apn": "4690113200",
+      "baseZone": "CM",
+      "categories": [
+        "ACCESSORY_STRUCTURE_CANDIDATE",
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_F",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_CM"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D+F",
+      "observedFootprintCount": 3,
+      "safeForQuestionTailoring": true,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "7851 FLETCHER PKWY",
+      "apn": "4700501500",
+      "baseZone": "CM",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_F",
+        "MODIFIER_LM_OVERLAY_MU",
+        "ONE_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_CM"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D+F+MU",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "8372 CENTER DR",
+      "apn": "4906313300",
+      "baseZone": "CM",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_G",
+        "MULTIPLE_FOOTPRINTS",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_CM"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D+G",
+      "observedFootprintCount": 2,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "6950 ALVARADO RD",
+      "apn": "4681130200",
+      "baseZone": "CM",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_F",
+        "ONE_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_CM"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "F",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "5104 JACKSON DR",
+      "apn": "4940711500",
+      "baseZone": "CN",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ONE_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_CN"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "6140 LAKE MURRAY BLVD",
+      "apn": "6750100800",
+      "baseZone": "CN",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "ONE_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_CN"
+      ],
+      "currentnessState": "NO_LATER_CHANGE_KNOWN",
+      "mappedOverlays": "D",
+      "observedFootprintCount": 1,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "5900 SEVERIN DR",
+      "apn": "4867500200",
+      "baseZone": "CN",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_G",
+        "NO_FOOTPRINT",
+        "RECORDED_MULTIFAMILY_LIKELY",
+        "ZONE_CN"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "mappedOverlays": "D+G",
+      "observedFootprintCount": 0,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "address": "4200 SPRING ST",
+      "apn": "4994830200",
+      "baseZone": "CN",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_MU",
+        "MODIFIER_LM_OVERLAY_P",
+        "NO_FOOTPRINT",
+        "RECORDED_TYPE_UNKNOWN",
+        "ZONE_CN"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "mappedOverlays": "D+MU+P",
+      "observedFootprintCount": 0,
+      "safeForQuestionTailoring": false,
+      "stackedOrAmbiguousCount": 0
+    }
+  ],
+  "schemaVersion": "la-mesa-building-currentness-v0",
+  "size": 50
+}

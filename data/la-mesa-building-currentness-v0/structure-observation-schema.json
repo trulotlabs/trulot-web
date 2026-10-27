@@ -1,0 +1,34 @@
+{
+  "authority": "OBSERVATIONAL_GEOMETRY",
+  "currentnessStates": [
+    "OBSERVATIONAL_STALE",
+    "CURRENTNESS_PARTIAL",
+    "LATER_CHANGE_OBSERVED",
+    "NO_LATER_CHANGE_KNOWN",
+    "CURRENTNESS_UNKNOWN"
+  ],
+  "geometryStorage": "Private source geometry remains referenced by content hash and source line; the bounded committed observation contains a representative point and measurements, not polygons.",
+  "legalUseField": "PROHIBITED",
+  "requiredFields": [
+    "jurisdiction",
+    "apn",
+    "observationId",
+    "sourceId",
+    "geometryDate",
+    "footprintAreaSqft",
+    "parcelIntersectionAreaSqft",
+    "parcelCoverageRatio",
+    "representativePoint",
+    "relationToLargestFootprint",
+    "ambiguityState",
+    "observationCurrentnessState",
+    "evidenceReference"
+  ],
+  "roles": [
+    "PRIMARY_FOOTPRINT_CANDIDATE",
+    "SECONDARY_FOOTPRINT_CANDIDATE",
+    "AMBIGUOUS_FOOTPRINT",
+    "STACKED_PARCEL_FOOTPRINT"
+  ],
+  "schemaVersion": "jurisdiction-neutral-structure-observation-v0"
+}
