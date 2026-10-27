@@ -18,6 +18,9 @@ import {
   serializePublicParcel,
 } from "@/lib/parcel-indexing";
 import { extractApnFromSlug } from "@/lib/parcel-slug";
+import { getSanDiegoPublicIdentity } from "@/lib/san-diego-public-identity";
+import { getSanDiegoPublicZoning, sanDiegoPublicZoningSnapshotEnabled } from "@/lib/san-diego-public-zoning-snapshot";
+import { createParcelServerTiming } from "@/lib/parcel-server-timing";
 import { parcelServingV2ShadowEnabled, runParcelServingV2Shadow } from "@/lib/parcel-serving-v2-shadow";
 import { verifiedStandardsEnabled } from "@/lib/rs17-shadow-gate";
 import { CopyApnButton } from "./copy-apn-button";
@@ -165,6 +168,10 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+  const timing = createParcelServerTiming("metadata");
+  timing.mark("route_entry");
+  const finishMetadata = timing.begin("metadata_generation");
+  try {
   const { slug } = await params;
   const apn = extractApnFromSlug(slug);
   if (!apn) {
@@ -175,9 +182,9 @@ export async function generateMetadata({
     };
   }
 
-  const result = await getParcelPageV1Result(apn);
-  if (!result.data) {
-    if (result.status === "source_unavailable") {
+  const identityResult = timing.measureSync("identity", () => getSanDiegoPublicIdentity(apn));
+  if (identityResult.state !== "found") {
+    if (identityResult.state === "source_unavailable") {
       return {
         title: "Parcel record temporarily unavailable | TruLot",
         description: "Public parcel records are temporarily unavailable.",
@@ -191,32 +198,32 @@ export async function generateMetadata({
       robots: parcelRobotsFor("NOT_FOUND"),
     };
   }
-  const data = result.data;
-  const publicAddress = data.canonicalSlug.startsWith("apn-") ? null : data.identity.address;
+  const snapshotEnabled = sanDiegoPublicZoningSnapshotEnabled();
+  const snapshot = timing.measureSync("zoning_snapshot", () => snapshotEnabled ? getSanDiegoPublicZoning(apn) : null);
+  const publicSnapshot = snapshot?.state === "found" ? snapshot.zoning : null;
+  const publicAddress = identityResult.address.displayAddress;
   const { payload } = serializePublicParcel({
-    apn: { value: data.identity.apn, rights: "PUBLIC_REDISPLAY_OK" },
+    apn: { value: identityResult.identity.apn, rights: "PUBLIC_REDISPLAY_OK" },
     address: { value: publicAddress, rights: "PUBLIC_REDISPLAY_OK" },
     jurisdiction: { value: "City of San Diego", rights: "PUBLIC_REDISPLAY_OK" },
     zoningState: {
-      value: data.zoning.publicSnapshot?.zoningState ?? (data.zoning.baseCode.value ? "MAPPED" : "UNMAPPED"),
+      value: publicSnapshot?.zoningState ?? "UNMAPPED",
       rights: "PUBLIC_REDISPLAY_OK",
     },
-    baseZoning: { value: data.zoning.baseCode.value, rights: "PUBLIC_REDISPLAY_OK" },
-    overlays: {
-      value: data.zoning.programs,
-      rights: "PUBLIC_BOUNDED_SUMMARY_ONLY",
-      boundedValue: data.zoning.programs
-        .filter((program) => program.displayState === "mapped_overlay")
-        .map((program) => ({ name: program.name, state: program.displayState })),
-    },
+    baseZoning: { value: publicSnapshot?.selectedZone ?? null, rights: "PUBLIC_REDISPLAY_OK" },
   });
   return parcelMetadata({
     payload,
     jurisdiction: "SAN_DIEGO",
-    state: data.zoning.snapshotState === "UNAVAILABLE"
+    state: snapshotEnabled && !publicSnapshot
       ? "NOINDEX_TEMPORARY"
       : effectiveParcelIndexState("SAN_DIEGO", "INDEXABLE"),
+    canonicalIdentity: identityResult.identity,
   });
+  } finally {
+    finishMetadata();
+    timing.finish();
+  }
 }
 
 export default async function ParcelPage({

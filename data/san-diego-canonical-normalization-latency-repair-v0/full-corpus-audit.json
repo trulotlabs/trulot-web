@@ -1,0 +1,14 @@
+{
+  "total": 393733,
+  "uniqueCanonicalIdentities": 393733,
+  "unchangedFromPriorSealedContract": 393733,
+  "changedFromPriorSealedContract": 0,
+  "productionObservedDirectionalRepairs": 1,
+  "productionObservedUnitRepairs": 3,
+  "directionalSourceAddresses": 12866,
+  "leadingZeroUnitSourceAddresses": 14210,
+  "otherUnitSourceAddresses": 72254,
+  "apnOnly": 14846,
+  "ambiguous": 0,
+  "collisions": 0
+}

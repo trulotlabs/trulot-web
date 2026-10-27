@@ -1,0 +1,4896 @@
+{
+  "packet88Cases": 36,
+  "expandedCases": 126,
+  "uniqueCases": 138,
+  "cases": [
+    {
+      "apn": "5333641301",
+      "categories": [
+        "packet88",
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "5333641301",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "1501",
+          "preDirection": null,
+          "streetName": "FRONT",
+          "streetSuffix": "ST",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "101",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92101-2974",
+          "displayAddress": "1501 FRONT ST UNIT 101",
+          "canonicalAddressTokens": [
+            "1501",
+            "FRONT",
+            "ST",
+            "UNIT",
+            "101"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "533-364-13-01-1501-front-st-unit-101",
+        "canonicalPath": "/parcel/san-diego/533-364-13-01-1501-front-st-unit-101",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/533-364-13-01-1501-front-st-unit-101"
+      }
+    },
+    {
+      "apn": "5333641302",
+      "categories": [
+        "packet88",
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "5333641302",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "1501",
+          "preDirection": null,
+          "streetName": "FRONT",
+          "streetSuffix": "ST",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "102",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92101-2974",
+          "displayAddress": "1501 FRONT ST UNIT 102",
+          "canonicalAddressTokens": [
+            "1501",
+            "FRONT",
+            "ST",
+            "UNIT",
+            "102"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "533-364-13-02-1501-front-st-unit-102",
+        "canonicalPath": "/parcel/san-diego/533-364-13-02-1501-front-st-unit-102",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/533-364-13-02-1501-front-st-unit-102"
+      }
+    },
+    {
+      "apn": "6341302200",
+      "categories": [
+        "packet88"
+      ],
+      "identity": {
+        "apn": "6341302200",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "1456",
+          "preDirection": null,
+          "streetName": "27TH",
+          "streetSuffix": "ST",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92154-3238",
+          "displayAddress": "1456 27TH ST",
+          "canonicalAddressTokens": [
+            "1456",
+            "27TH",
+            "ST"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "634-130-22-00-1456-27th-st",
+        "canonicalPath": "/parcel/san-diego/634-130-22-00-1456-27th-st",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/634-130-22-00-1456-27th-st"
+      }
+    },
+    {
+      "apn": "5442140600",
+      "categories": [
+        "packet88",
+        "directional"
+      ],
+      "identity": {
+        "apn": "5442140600",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "639",
+          "preDirection": "N",
+          "streetName": "67TH",
+          "streetSuffix": "ST",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92114-2910",
+          "displayAddress": "639 N 67TH ST",
+          "canonicalAddressTokens": [
+            "639",
+            "N",
+            "67TH",
+            "ST"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "544-214-06-00-639-n-67th-st",
+        "canonicalPath": "/parcel/san-diego/544-214-06-00-639-n-67th-st",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/544-214-06-00-639-n-67th-st"
+      }
+    },
+    {
+      "apn": "3031701800",
+      "categories": [
+        "packet88"
+      ],
+      "identity": {
+        "apn": "3031701800",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": null,
+          "preDirection": null,
+          "streetName": null,
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": null,
+          "displayAddress": null,
+          "canonicalAddressTokens": [],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "apn-3031701800",
+        "canonicalPath": "/parcel/san-diego/apn-3031701800",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/apn-3031701800"
+      }
+    },
+    {
+      "apn": "2692411801",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411801",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14690",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "01",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-3881",
+          "displayAddress": "14690 VIA FIESTA UNIT 01",
+          "canonicalAddressTokens": [
+            "14690",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "01"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-01-14690-via-fiesta-unit-01",
+        "canonicalPath": "/parcel/san-diego/269-241-18-01-14690-via-fiesta-unit-01",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-01-14690-via-fiesta-unit-01"
+      }
+    },
+    {
+      "apn": "2692411802",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411802",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14690",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "02",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-3881",
+          "displayAddress": "14690 VIA FIESTA UNIT 02",
+          "canonicalAddressTokens": [
+            "14690",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "02"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-02-14690-via-fiesta-unit-02",
+        "canonicalPath": "/parcel/san-diego/269-241-18-02-14690-via-fiesta-unit-02",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-02-14690-via-fiesta-unit-02"
+      }
+    },
+    {
+      "apn": "2692411803",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411803",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14690",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "03",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-3882",
+          "displayAddress": "14690 VIA FIESTA UNIT 03",
+          "canonicalAddressTokens": [
+            "14690",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "03"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-03-14690-via-fiesta-unit-03",
+        "canonicalPath": "/parcel/san-diego/269-241-18-03-14690-via-fiesta-unit-03",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-03-14690-via-fiesta-unit-03"
+      }
+    },
+    {
+      "apn": "2692411804",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411804",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14690",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "04",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-3882",
+          "displayAddress": "14690 VIA FIESTA UNIT 04",
+          "canonicalAddressTokens": [
+            "14690",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "04"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-04-14690-via-fiesta-unit-04",
+        "canonicalPath": "/parcel/san-diego/269-241-18-04-14690-via-fiesta-unit-04",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-04-14690-via-fiesta-unit-04"
+      }
+    },
+    {
+      "apn": "2692411805",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411805",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14650",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "04",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-3899",
+          "displayAddress": "14650 VIA FIESTA UNIT 04",
+          "canonicalAddressTokens": [
+            "14650",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "04"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-05-14650-via-fiesta-unit-04",
+        "canonicalPath": "/parcel/san-diego/269-241-18-05-14650-via-fiesta-unit-04",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-05-14650-via-fiesta-unit-04"
+      }
+    },
+    {
+      "apn": "2692411806",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411806",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14650",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "03",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-3899",
+          "displayAddress": "14650 VIA FIESTA UNIT 03",
+          "canonicalAddressTokens": [
+            "14650",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "03"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-06-14650-via-fiesta-unit-03",
+        "canonicalPath": "/parcel/san-diego/269-241-18-06-14650-via-fiesta-unit-03",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-06-14650-via-fiesta-unit-03"
+      }
+    },
+    {
+      "apn": "2692411807",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411807",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14650",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "02",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-3899",
+          "displayAddress": "14650 VIA FIESTA UNIT 02",
+          "canonicalAddressTokens": [
+            "14650",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "02"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-07-14650-via-fiesta-unit-02",
+        "canonicalPath": "/parcel/san-diego/269-241-18-07-14650-via-fiesta-unit-02",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-07-14650-via-fiesta-unit-02"
+      }
+    },
+    {
+      "apn": "2692411808",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411808",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14650",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "01",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-3899",
+          "displayAddress": "14650 VIA FIESTA UNIT 01",
+          "canonicalAddressTokens": [
+            "14650",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "01"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-08-14650-via-fiesta-unit-01",
+        "canonicalPath": "/parcel/san-diego/269-241-18-08-14650-via-fiesta-unit-01",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-08-14650-via-fiesta-unit-01"
+      }
+    },
+    {
+      "apn": "2692411809",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411809",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14654",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "04",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4803",
+          "displayAddress": "14654 VIA FIESTA UNIT 04",
+          "canonicalAddressTokens": [
+            "14654",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "04"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-09-14654-via-fiesta-unit-04",
+        "canonicalPath": "/parcel/san-diego/269-241-18-09-14654-via-fiesta-unit-04",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-09-14654-via-fiesta-unit-04"
+      }
+    },
+    {
+      "apn": "2692411810",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411810",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14654",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "03",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4802",
+          "displayAddress": "14654 VIA FIESTA UNIT 03",
+          "canonicalAddressTokens": [
+            "14654",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "03"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-10-14654-via-fiesta-unit-03",
+        "canonicalPath": "/parcel/san-diego/269-241-18-10-14654-via-fiesta-unit-03",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-10-14654-via-fiesta-unit-03"
+      }
+    },
+    {
+      "apn": "2692411811",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411811",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14654",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "02",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4802",
+          "displayAddress": "14654 VIA FIESTA UNIT 02",
+          "canonicalAddressTokens": [
+            "14654",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "02"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-11-14654-via-fiesta-unit-02",
+        "canonicalPath": "/parcel/san-diego/269-241-18-11-14654-via-fiesta-unit-02",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-11-14654-via-fiesta-unit-02"
+      }
+    },
+    {
+      "apn": "2692411812",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411812",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14654",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "01",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4802",
+          "displayAddress": "14654 VIA FIESTA UNIT 01",
+          "canonicalAddressTokens": [
+            "14654",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "01"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-12-14654-via-fiesta-unit-01",
+        "canonicalPath": "/parcel/san-diego/269-241-18-12-14654-via-fiesta-unit-01",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-12-14654-via-fiesta-unit-01"
+      }
+    },
+    {
+      "apn": "2692411813",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411813",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14656",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "05",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4804",
+          "displayAddress": "14656 VIA FIESTA UNIT 05",
+          "canonicalAddressTokens": [
+            "14656",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "05"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-13-14656-via-fiesta-unit-05",
+        "canonicalPath": "/parcel/san-diego/269-241-18-13-14656-via-fiesta-unit-05",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-13-14656-via-fiesta-unit-05"
+      }
+    },
+    {
+      "apn": "2692411814",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411814",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14656",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "04",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4804",
+          "displayAddress": "14656 VIA FIESTA UNIT 04",
+          "canonicalAddressTokens": [
+            "14656",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "04"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-14-14656-via-fiesta-unit-04",
+        "canonicalPath": "/parcel/san-diego/269-241-18-14-14656-via-fiesta-unit-04",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-14-14656-via-fiesta-unit-04"
+      }
+    },
+    {
+      "apn": "2692411815",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411815",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14656",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "03",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4804",
+          "displayAddress": "14656 VIA FIESTA UNIT 03",
+          "canonicalAddressTokens": [
+            "14656",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "03"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-15-14656-via-fiesta-unit-03",
+        "canonicalPath": "/parcel/san-diego/269-241-18-15-14656-via-fiesta-unit-03",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-15-14656-via-fiesta-unit-03"
+      }
+    },
+    {
+      "apn": "2692411816",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411816",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14656",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "02",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4804",
+          "displayAddress": "14656 VIA FIESTA UNIT 02",
+          "canonicalAddressTokens": [
+            "14656",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "02"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-16-14656-via-fiesta-unit-02",
+        "canonicalPath": "/parcel/san-diego/269-241-18-16-14656-via-fiesta-unit-02",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-16-14656-via-fiesta-unit-02"
+      }
+    },
+    {
+      "apn": "2692411817",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411817",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14656",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "01",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4804",
+          "displayAddress": "14656 VIA FIESTA UNIT 01",
+          "canonicalAddressTokens": [
+            "14656",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "01"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-18-17-14656-via-fiesta-unit-01",
+        "canonicalPath": "/parcel/san-diego/269-241-18-17-14656-via-fiesta-unit-01",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-18-17-14656-via-fiesta-unit-01"
+      }
+    },
+    {
+      "apn": "2692411901",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411901",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14652",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "05",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4800",
+          "displayAddress": "14652 VIA FIESTA UNIT 05",
+          "canonicalAddressTokens": [
+            "14652",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "05"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-19-01-14652-via-fiesta-unit-05",
+        "canonicalPath": "/parcel/san-diego/269-241-19-01-14652-via-fiesta-unit-05",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-19-01-14652-via-fiesta-unit-05"
+      }
+    },
+    {
+      "apn": "2692411902",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411902",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14652",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "02",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4800",
+          "displayAddress": "14652 VIA FIESTA UNIT 02",
+          "canonicalAddressTokens": [
+            "14652",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "02"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-19-02-14652-via-fiesta-unit-02",
+        "canonicalPath": "/parcel/san-diego/269-241-19-02-14652-via-fiesta-unit-02",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-19-02-14652-via-fiesta-unit-02"
+      }
+    },
+    {
+      "apn": "2692411903",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411903",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14652",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "04",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4800",
+          "displayAddress": "14652 VIA FIESTA UNIT 04",
+          "canonicalAddressTokens": [
+            "14652",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "04"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-19-03-14652-via-fiesta-unit-04",
+        "canonicalPath": "/parcel/san-diego/269-241-19-03-14652-via-fiesta-unit-04",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-19-03-14652-via-fiesta-unit-04"
+      }
+    },
+    {
+      "apn": "2692411904",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411904",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14652",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "03",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4800",
+          "displayAddress": "14652 VIA FIESTA UNIT 03",
+          "canonicalAddressTokens": [
+            "14652",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "03"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-19-04-14652-via-fiesta-unit-03",
+        "canonicalPath": "/parcel/san-diego/269-241-19-04-14652-via-fiesta-unit-03",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-19-04-14652-via-fiesta-unit-03"
+      }
+    },
+    {
+      "apn": "2692411905",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411905",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14652",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "01",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4800",
+          "displayAddress": "14652 VIA FIESTA UNIT 01",
+          "canonicalAddressTokens": [
+            "14652",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "01"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-19-05-14652-via-fiesta-unit-01",
+        "canonicalPath": "/parcel/san-diego/269-241-19-05-14652-via-fiesta-unit-01",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-19-05-14652-via-fiesta-unit-01"
+      }
+    },
+    {
+      "apn": "2672310100",
+      "categories": [
+        "packet88"
+      ],
+      "identity": {
+        "apn": "2672310100",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15735",
+          "preDirection": null,
+          "streetName": "CONCORD RIDGE",
+          "streetSuffix": "TER",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4160",
+          "displayAddress": "15735 CONCORD RIDGE TER",
+          "canonicalAddressTokens": [
+            "15735",
+            "CONCORD",
+            "RIDGE",
+            "TER"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-01-00-15735-concord-ridge-ter",
+        "canonicalPath": "/parcel/san-diego/267-231-01-00-15735-concord-ridge-ter",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-01-00-15735-concord-ridge-ter"
+      }
+    },
+    {
+      "apn": "2672310200",
+      "categories": [
+        "packet88"
+      ],
+      "identity": {
+        "apn": "2672310200",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15739",
+          "preDirection": null,
+          "streetName": "CONCORD RIDGE",
+          "streetSuffix": "TER",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4160",
+          "displayAddress": "15739 CONCORD RIDGE TER",
+          "canonicalAddressTokens": [
+            "15739",
+            "CONCORD",
+            "RIDGE",
+            "TER"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-02-00-15739-concord-ridge-ter",
+        "canonicalPath": "/parcel/san-diego/267-231-02-00-15739-concord-ridge-ter",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-02-00-15739-concord-ridge-ter"
+      }
+    },
+    {
+      "apn": "2983003800",
+      "categories": [
+        "packet88"
+      ],
+      "identity": {
+        "apn": "2983003800",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15808",
+          "preDirection": null,
+          "streetName": "HIGHLAND",
+          "streetSuffix": "CT",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92075-2458",
+          "displayAddress": "15808 HIGHLAND CT",
+          "canonicalAddressTokens": [
+            "15808",
+            "HIGHLAND",
+            "CT"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "298-300-38-00-15808-highland-ct",
+        "canonicalPath": "/parcel/san-diego/298-300-38-00-15808-highland-ct",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/298-300-38-00-15808-highland-ct"
+      }
+    },
+    {
+      "apn": "2983003900",
+      "categories": [
+        "packet88"
+      ],
+      "identity": {
+        "apn": "2983003900",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15830",
+          "preDirection": null,
+          "streetName": "HIGHLAND",
+          "streetSuffix": "CT",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92075-2458",
+          "displayAddress": "15830 HIGHLAND CT",
+          "canonicalAddressTokens": [
+            "15830",
+            "HIGHLAND",
+            "CT"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "298-300-39-00-15830-highland-ct",
+        "canonicalPath": "/parcel/san-diego/298-300-39-00-15830-highland-ct",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/298-300-39-00-15830-highland-ct"
+      }
+    },
+    {
+      "apn": "2673000100",
+      "categories": [
+        "packet88"
+      ],
+      "identity": {
+        "apn": "2673000100",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "7890",
+          "preDirection": null,
+          "streetName": "CERRO DEL SUR",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": null,
+          "displayAddress": "7890 CERRO DEL SUR",
+          "canonicalAddressTokens": [
+            "7890",
+            "CERRO",
+            "DEL",
+            "SUR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-300-01-00-7890-cerro-del-sur",
+        "canonicalPath": "/parcel/san-diego/267-300-01-00-7890-cerro-del-sur",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-300-01-00-7890-cerro-del-sur"
+      }
+    },
+    {
+      "apn": "2674700100",
+      "categories": [
+        "packet88"
+      ],
+      "identity": {
+        "apn": "2674700100",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "8184",
+          "preDirection": null,
+          "streetName": "AUBERGE",
+          "streetSuffix": "CIR",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4204",
+          "displayAddress": "8184 AUBERGE CIR",
+          "canonicalAddressTokens": [
+            "8184",
+            "AUBERGE",
+            "CIR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-470-01-00-8184-auberge-cir",
+        "canonicalPath": "/parcel/san-diego/267-470-01-00-8184-auberge-cir",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-470-01-00-8184-auberge-cir"
+      }
+    },
+    {
+      "apn": "3051600800",
+      "categories": [
+        "packet88"
+      ],
+      "identity": {
+        "apn": "3051600800",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "6060",
+          "preDirection": null,
+          "streetName": "BLUE DAWN",
+          "streetSuffix": "TRL",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92130-6943",
+          "displayAddress": "6060 BLUE DAWN TRL",
+          "canonicalAddressTokens": [
+            "6060",
+            "BLUE",
+            "DAWN",
+            "TRL"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "305-160-08-00-6060-blue-dawn-trl",
+        "canonicalPath": "/parcel/san-diego/305-160-08-00-6060-blue-dawn-trl",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/305-160-08-00-6060-blue-dawn-trl"
+      }
+    },
+    {
+      "apn": "2410902500",
+      "categories": [
+        "packet88",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2410902500",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15500",
+          "preDirection": null,
+          "streetName": "SAN PASQUAL VALLEY",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92027",
+          "displayAddress": "15500 SAN PASQUAL VALLEY RD",
+          "canonicalAddressTokens": [
+            "15500",
+            "SAN",
+            "PASQUAL",
+            "VALLEY",
+            "RD"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "241-090-25-00-15500-san-pasqual-valley-rd",
+        "canonicalPath": "/parcel/san-diego/241-090-25-00-15500-san-pasqual-valley-rd",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/241-090-25-00-15500-san-pasqual-valley-rd"
+      }
+    },
+    {
+      "apn": "5335900100",
+      "categories": [
+        "packet88",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "5335900100",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "1600",
+          "preDirection": null,
+          "streetName": "PACIFIC",
+          "streetSuffix": "HWY",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92101-2429",
+          "displayAddress": "1600 PACIFIC HWY",
+          "canonicalAddressTokens": [
+            "1600",
+            "PACIFIC",
+            "HWY"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "533-590-01-00-1600-pacific-hwy",
+        "canonicalPath": "/parcel/san-diego/533-590-01-00-1600-pacific-hwy",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/533-590-01-00-1600-pacific-hwy"
+      }
+    },
+    {
+      "apn": "2673111300",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673111300",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15604",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15604 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15604",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-13-00-15604-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-13-00-15604-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-13-00-15604-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673111400",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673111400",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15608",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15608 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15608",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-14-00-15608-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-14-00-15608-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-14-00-15608-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673111500",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673111500",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15614",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15614 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15614",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-15-00-15614-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-15-00-15614-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-15-00-15614-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673111600",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673111600",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15626",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15626 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15626",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-16-00-15626-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-16-00-15626-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-16-00-15626-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673111700",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673111700",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15630",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15630 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15630",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-17-00-15630-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-17-00-15630-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-17-00-15630-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673111800",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673111800",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15633",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15633 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15633",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-18-00-15633-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-18-00-15633-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-18-00-15633-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673111900",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673111900",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15629",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15629 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15629",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-19-00-15629-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-19-00-15629-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-19-00-15629-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673112000",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673112000",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15625",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15625 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15625",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-20-00-15625-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-20-00-15625-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-20-00-15625-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673112100",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673112100",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15621",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15621 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15621",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-21-00-15621-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-21-00-15621-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-21-00-15621-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673112200",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673112200",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15617",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15617 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15617",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-22-00-15617-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-22-00-15617-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-22-00-15617-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673112300",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673112300",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15613",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15613 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15613",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-23-00-15613-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-23-00-15613-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-23-00-15613-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673112400",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673112400",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15609",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15609 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15609",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-24-00-15609-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-24-00-15609-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-24-00-15609-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673112500",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673112500",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15605",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "N",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5100",
+          "displayAddress": "15605 RISING RIVER PL N",
+          "canonicalAddressTokens": [
+            "15605",
+            "RISING",
+            "RIVER",
+            "PL",
+            "N"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-311-25-00-15605-rising-river-pl-n",
+        "canonicalPath": "/parcel/san-diego/267-311-25-00-15605-rising-river-pl-n",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-311-25-00-15605-rising-river-pl-n"
+      }
+    },
+    {
+      "apn": "2673120100",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673120100",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15595",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "S",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5104",
+          "displayAddress": "15595 RISING RIVER PL S",
+          "canonicalAddressTokens": [
+            "15595",
+            "RISING",
+            "RIVER",
+            "PL",
+            "S"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-312-01-00-15595-rising-river-pl-s",
+        "canonicalPath": "/parcel/san-diego/267-312-01-00-15595-rising-river-pl-s",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-312-01-00-15595-rising-river-pl-s"
+      }
+    },
+    {
+      "apn": "2673120200",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673120200",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15591",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "S",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5104",
+          "displayAddress": "15591 RISING RIVER PL S",
+          "canonicalAddressTokens": [
+            "15591",
+            "RISING",
+            "RIVER",
+            "PL",
+            "S"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-312-02-00-15591-rising-river-pl-s",
+        "canonicalPath": "/parcel/san-diego/267-312-02-00-15591-rising-river-pl-s",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-312-02-00-15591-rising-river-pl-s"
+      }
+    },
+    {
+      "apn": "2673120300",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673120300",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15587",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "S",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5104",
+          "displayAddress": "15587 RISING RIVER PL S",
+          "canonicalAddressTokens": [
+            "15587",
+            "RISING",
+            "RIVER",
+            "PL",
+            "S"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-312-03-00-15587-rising-river-pl-s",
+        "canonicalPath": "/parcel/san-diego/267-312-03-00-15587-rising-river-pl-s",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-312-03-00-15587-rising-river-pl-s"
+      }
+    },
+    {
+      "apn": "2673120400",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673120400",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15583",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "S",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5104",
+          "displayAddress": "15583 RISING RIVER PL S",
+          "canonicalAddressTokens": [
+            "15583",
+            "RISING",
+            "RIVER",
+            "PL",
+            "S"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-312-04-00-15583-rising-river-pl-s",
+        "canonicalPath": "/parcel/san-diego/267-312-04-00-15583-rising-river-pl-s",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-312-04-00-15583-rising-river-pl-s"
+      }
+    },
+    {
+      "apn": "2673120500",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673120500",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15579",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "S",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5104",
+          "displayAddress": "15579 RISING RIVER PL S",
+          "canonicalAddressTokens": [
+            "15579",
+            "RISING",
+            "RIVER",
+            "PL",
+            "S"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-312-05-00-15579-rising-river-pl-s",
+        "canonicalPath": "/parcel/san-diego/267-312-05-00-15579-rising-river-pl-s",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-312-05-00-15579-rising-river-pl-s"
+      }
+    },
+    {
+      "apn": "2673120600",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673120600",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15575",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "S",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5104",
+          "displayAddress": "15575 RISING RIVER PL S",
+          "canonicalAddressTokens": [
+            "15575",
+            "RISING",
+            "RIVER",
+            "PL",
+            "S"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-312-06-00-15575-rising-river-pl-s",
+        "canonicalPath": "/parcel/san-diego/267-312-06-00-15575-rising-river-pl-s",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-312-06-00-15575-rising-river-pl-s"
+      }
+    },
+    {
+      "apn": "2673120700",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673120700",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15571",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "S",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5104",
+          "displayAddress": "15571 RISING RIVER PL S",
+          "canonicalAddressTokens": [
+            "15571",
+            "RISING",
+            "RIVER",
+            "PL",
+            "S"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-312-07-00-15571-rising-river-pl-s",
+        "canonicalPath": "/parcel/san-diego/267-312-07-00-15571-rising-river-pl-s",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-312-07-00-15571-rising-river-pl-s"
+      }
+    },
+    {
+      "apn": "2673120800",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673120800",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15567",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "S",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5104",
+          "displayAddress": "15567 RISING RIVER PL S",
+          "canonicalAddressTokens": [
+            "15567",
+            "RISING",
+            "RIVER",
+            "PL",
+            "S"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-312-08-00-15567-rising-river-pl-s",
+        "canonicalPath": "/parcel/san-diego/267-312-08-00-15567-rising-river-pl-s",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-312-08-00-15567-rising-river-pl-s"
+      }
+    },
+    {
+      "apn": "2673120900",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673120900",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15558",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "S",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5104",
+          "displayAddress": "15558 RISING RIVER PL S",
+          "canonicalAddressTokens": [
+            "15558",
+            "RISING",
+            "RIVER",
+            "PL",
+            "S"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-312-09-00-15558-rising-river-pl-s",
+        "canonicalPath": "/parcel/san-diego/267-312-09-00-15558-rising-river-pl-s",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-312-09-00-15558-rising-river-pl-s"
+      }
+    },
+    {
+      "apn": "2673121000",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673121000",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15562",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "S",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5104",
+          "displayAddress": "15562 RISING RIVER PL S",
+          "canonicalAddressTokens": [
+            "15562",
+            "RISING",
+            "RIVER",
+            "PL",
+            "S"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-312-10-00-15562-rising-river-pl-s",
+        "canonicalPath": "/parcel/san-diego/267-312-10-00-15562-rising-river-pl-s",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-312-10-00-15562-rising-river-pl-s"
+      }
+    },
+    {
+      "apn": "2673121100",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673121100",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15566",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "S",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5104",
+          "displayAddress": "15566 RISING RIVER PL S",
+          "canonicalAddressTokens": [
+            "15566",
+            "RISING",
+            "RIVER",
+            "PL",
+            "S"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-312-11-00-15566-rising-river-pl-s",
+        "canonicalPath": "/parcel/san-diego/267-312-11-00-15566-rising-river-pl-s",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-312-11-00-15566-rising-river-pl-s"
+      }
+    },
+    {
+      "apn": "2673121200",
+      "categories": [
+        "directional"
+      ],
+      "identity": {
+        "apn": "2673121200",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15570",
+          "preDirection": null,
+          "streetName": "RISING RIVER",
+          "streetSuffix": "PL",
+          "postDirection": "S",
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-5104",
+          "displayAddress": "15570 RISING RIVER PL S",
+          "canonicalAddressTokens": [
+            "15570",
+            "RISING",
+            "RIVER",
+            "PL",
+            "S"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-312-12-00-15570-rising-river-pl-s",
+        "canonicalPath": "/parcel/san-diego/267-312-12-00-15570-rising-river-pl-s",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-312-12-00-15570-rising-river-pl-s"
+      }
+    },
+    {
+      "apn": "2692411906",
+      "categories": [
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411906",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14660",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "01",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4806",
+          "displayAddress": "14660 VIA FIESTA UNIT 01",
+          "canonicalAddressTokens": [
+            "14660",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "01"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-19-06-14660-via-fiesta-unit-01",
+        "canonicalPath": "/parcel/san-diego/269-241-19-06-14660-via-fiesta-unit-01",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-19-06-14660-via-fiesta-unit-01"
+      }
+    },
+    {
+      "apn": "2692411907",
+      "categories": [
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411907",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14660",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "03",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4806",
+          "displayAddress": "14660 VIA FIESTA UNIT 03",
+          "canonicalAddressTokens": [
+            "14660",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "03"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-19-07-14660-via-fiesta-unit-03",
+        "canonicalPath": "/parcel/san-diego/269-241-19-07-14660-via-fiesta-unit-03",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-19-07-14660-via-fiesta-unit-03"
+      }
+    },
+    {
+      "apn": "2692411908",
+      "categories": [
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411908",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14660",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "04",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4806",
+          "displayAddress": "14660 VIA FIESTA UNIT 04",
+          "canonicalAddressTokens": [
+            "14660",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "04"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-19-08-14660-via-fiesta-unit-04",
+        "canonicalPath": "/parcel/san-diego/269-241-19-08-14660-via-fiesta-unit-04",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-19-08-14660-via-fiesta-unit-04"
+      }
+    },
+    {
+      "apn": "2692411911",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692411911",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14682",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "10",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-3887",
+          "displayAddress": "14682 VIA FIESTA UNIT 10",
+          "canonicalAddressTokens": [
+            "14682",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "10"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-19-11-14682-via-fiesta-unit-10",
+        "canonicalPath": "/parcel/san-diego/269-241-19-11-14682-via-fiesta-unit-10",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-19-11-14682-via-fiesta-unit-10"
+      }
+    },
+    {
+      "apn": "2692412211",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692412211",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14680",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "10",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-3884",
+          "displayAddress": "14680 VIA FIESTA UNIT 10",
+          "canonicalAddressTokens": [
+            "14680",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "10"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-22-11-14680-via-fiesta-unit-10",
+        "canonicalPath": "/parcel/san-diego/269-241-22-11-14680-via-fiesta-unit-10",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-22-11-14680-via-fiesta-unit-10"
+      }
+    },
+    {
+      "apn": "2692412230",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692412230",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14684",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "10",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-3888",
+          "displayAddress": "14684 VIA FIESTA UNIT 10",
+          "canonicalAddressTokens": [
+            "14684",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "10"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-22-30-14684-via-fiesta-unit-10",
+        "canonicalPath": "/parcel/san-diego/269-241-22-30-14684-via-fiesta-unit-10",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-22-30-14684-via-fiesta-unit-10"
+      }
+    },
+    {
+      "apn": "2692412311",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2692412311",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14692",
+          "preDirection": null,
+          "streetName": "VIA FIESTA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "10",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-3883",
+          "displayAddress": "14692 VIA FIESTA UNIT 10",
+          "canonicalAddressTokens": [
+            "14692",
+            "VIA",
+            "FIESTA",
+            "UNIT",
+            "10"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "269-241-23-11-14692-via-fiesta-unit-10",
+        "canonicalPath": "/parcel/san-diego/269-241-23-11-14692-via-fiesta-unit-10",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/269-241-23-11-14692-via-fiesta-unit-10"
+      }
+    },
+    {
+      "apn": "2725300310",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300310",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12732",
+          "preDirection": null,
+          "streetName": "CAMINO DE LA BRECCIA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "10",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1518",
+          "displayAddress": "12732 CAMINO DE LA BRECCIA UNIT 10",
+          "canonicalAddressTokens": [
+            "12732",
+            "CAMINO",
+            "DE",
+            "LA",
+            "BRECCIA",
+            "UNIT",
+            "10"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-03-10-12732-camino-de-la-breccia-unit-10",
+        "canonicalPath": "/parcel/san-diego/272-530-03-10-12732-camino-de-la-breccia-unit-10",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-03-10-12732-camino-de-la-breccia-unit-10"
+      }
+    },
+    {
+      "apn": "2725300311",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300311",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12732",
+          "preDirection": null,
+          "streetName": "CAMINO DE LA BRECCIA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "11",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1518",
+          "displayAddress": "12732 CAMINO DE LA BRECCIA UNIT 11",
+          "canonicalAddressTokens": [
+            "12732",
+            "CAMINO",
+            "DE",
+            "LA",
+            "BRECCIA",
+            "UNIT",
+            "11"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-03-11-12732-camino-de-la-breccia-unit-11",
+        "canonicalPath": "/parcel/san-diego/272-530-03-11-12732-camino-de-la-breccia-unit-11",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-03-11-12732-camino-de-la-breccia-unit-11"
+      }
+    },
+    {
+      "apn": "2725300312",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300312",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12732",
+          "preDirection": null,
+          "streetName": "CAMINO DE LA BRECCIA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "12",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1518",
+          "displayAddress": "12732 CAMINO DE LA BRECCIA UNIT 12",
+          "canonicalAddressTokens": [
+            "12732",
+            "CAMINO",
+            "DE",
+            "LA",
+            "BRECCIA",
+            "UNIT",
+            "12"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-03-12-12732-camino-de-la-breccia-unit-12",
+        "canonicalPath": "/parcel/san-diego/272-530-03-12-12732-camino-de-la-breccia-unit-12",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-03-12-12732-camino-de-la-breccia-unit-12"
+      }
+    },
+    {
+      "apn": "2725300313",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300313",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12728",
+          "preDirection": null,
+          "streetName": "CAMINO DE LA BRECCIA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "13",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1519",
+          "displayAddress": "12728 CAMINO DE LA BRECCIA UNIT 13",
+          "canonicalAddressTokens": [
+            "12728",
+            "CAMINO",
+            "DE",
+            "LA",
+            "BRECCIA",
+            "UNIT",
+            "13"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-03-13-12728-camino-de-la-breccia-unit-13",
+        "canonicalPath": "/parcel/san-diego/272-530-03-13-12728-camino-de-la-breccia-unit-13",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-03-13-12728-camino-de-la-breccia-unit-13"
+      }
+    },
+    {
+      "apn": "2725300314",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300314",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12728",
+          "preDirection": null,
+          "streetName": "CAMINO DE LA BRECCIA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "14",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1519",
+          "displayAddress": "12728 CAMINO DE LA BRECCIA UNIT 14",
+          "canonicalAddressTokens": [
+            "12728",
+            "CAMINO",
+            "DE",
+            "LA",
+            "BRECCIA",
+            "UNIT",
+            "14"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-03-14-12728-camino-de-la-breccia-unit-14",
+        "canonicalPath": "/parcel/san-diego/272-530-03-14-12728-camino-de-la-breccia-unit-14",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-03-14-12728-camino-de-la-breccia-unit-14"
+      }
+    },
+    {
+      "apn": "2725300315",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300315",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12728",
+          "preDirection": null,
+          "streetName": "CAMINO DE LA BRECCIA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "15",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1519",
+          "displayAddress": "12728 CAMINO DE LA BRECCIA UNIT 15",
+          "canonicalAddressTokens": [
+            "12728",
+            "CAMINO",
+            "DE",
+            "LA",
+            "BRECCIA",
+            "UNIT",
+            "15"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-03-15-12728-camino-de-la-breccia-unit-15",
+        "canonicalPath": "/parcel/san-diego/272-530-03-15-12728-camino-de-la-breccia-unit-15",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-03-15-12728-camino-de-la-breccia-unit-15"
+      }
+    },
+    {
+      "apn": "2725300316",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300316",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12724",
+          "preDirection": null,
+          "streetName": "CAMINO DE LA BRECCIA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "16",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1521",
+          "displayAddress": "12724 CAMINO DE LA BRECCIA UNIT 16",
+          "canonicalAddressTokens": [
+            "12724",
+            "CAMINO",
+            "DE",
+            "LA",
+            "BRECCIA",
+            "UNIT",
+            "16"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-03-16-12724-camino-de-la-breccia-unit-16",
+        "canonicalPath": "/parcel/san-diego/272-530-03-16-12724-camino-de-la-breccia-unit-16",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-03-16-12724-camino-de-la-breccia-unit-16"
+      }
+    },
+    {
+      "apn": "2725300317",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300317",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12724",
+          "preDirection": null,
+          "streetName": "CAMINO DE LA BRECCIA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "17",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1521",
+          "displayAddress": "12724 CAMINO DE LA BRECCIA UNIT 17",
+          "canonicalAddressTokens": [
+            "12724",
+            "CAMINO",
+            "DE",
+            "LA",
+            "BRECCIA",
+            "UNIT",
+            "17"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-03-17-12724-camino-de-la-breccia-unit-17",
+        "canonicalPath": "/parcel/san-diego/272-530-03-17-12724-camino-de-la-breccia-unit-17",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-03-17-12724-camino-de-la-breccia-unit-17"
+      }
+    },
+    {
+      "apn": "2725300318",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300318",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12724",
+          "preDirection": null,
+          "streetName": "CAMINO DE LA BRECCIA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "18",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1521",
+          "displayAddress": "12724 CAMINO DE LA BRECCIA UNIT 18",
+          "canonicalAddressTokens": [
+            "12724",
+            "CAMINO",
+            "DE",
+            "LA",
+            "BRECCIA",
+            "UNIT",
+            "18"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-03-18-12724-camino-de-la-breccia-unit-18",
+        "canonicalPath": "/parcel/san-diego/272-530-03-18-12724-camino-de-la-breccia-unit-18",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-03-18-12724-camino-de-la-breccia-unit-18"
+      }
+    },
+    {
+      "apn": "2725300319",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300319",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12724",
+          "preDirection": null,
+          "streetName": "CAMINO DE LA BRECCIA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "19",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1521",
+          "displayAddress": "12724 CAMINO DE LA BRECCIA UNIT 19",
+          "canonicalAddressTokens": [
+            "12724",
+            "CAMINO",
+            "DE",
+            "LA",
+            "BRECCIA",
+            "UNIT",
+            "19"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-03-19-12724-camino-de-la-breccia-unit-19",
+        "canonicalPath": "/parcel/san-diego/272-530-03-19-12724-camino-de-la-breccia-unit-19",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-03-19-12724-camino-de-la-breccia-unit-19"
+      }
+    },
+    {
+      "apn": "2725300720",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300720",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "17822",
+          "preDirection": null,
+          "streetName": "AVENIDA CORDILLERA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "20",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1516",
+          "displayAddress": "17822 AVENIDA CORDILLERA UNIT 20",
+          "canonicalAddressTokens": [
+            "17822",
+            "AVENIDA",
+            "CORDILLERA",
+            "UNIT",
+            "20"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-07-20-17822-avenida-cordillera-unit-20",
+        "canonicalPath": "/parcel/san-diego/272-530-07-20-17822-avenida-cordillera-unit-20",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-07-20-17822-avenida-cordillera-unit-20"
+      }
+    },
+    {
+      "apn": "2725300721",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300721",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "17822",
+          "preDirection": null,
+          "streetName": "AVENIDA CORDILLERA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "21",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1516",
+          "displayAddress": "17822 AVENIDA CORDILLERA UNIT 21",
+          "canonicalAddressTokens": [
+            "17822",
+            "AVENIDA",
+            "CORDILLERA",
+            "UNIT",
+            "21"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-07-21-17822-avenida-cordillera-unit-21",
+        "canonicalPath": "/parcel/san-diego/272-530-07-21-17822-avenida-cordillera-unit-21",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-07-21-17822-avenida-cordillera-unit-21"
+      }
+    },
+    {
+      "apn": "2725300722",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300722",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "17822",
+          "preDirection": null,
+          "streetName": "AVENIDA CORDILLERA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "22",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1516",
+          "displayAddress": "17822 AVENIDA CORDILLERA UNIT 22",
+          "canonicalAddressTokens": [
+            "17822",
+            "AVENIDA",
+            "CORDILLERA",
+            "UNIT",
+            "22"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-07-22-17822-avenida-cordillera-unit-22",
+        "canonicalPath": "/parcel/san-diego/272-530-07-22-17822-avenida-cordillera-unit-22",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-07-22-17822-avenida-cordillera-unit-22"
+      }
+    },
+    {
+      "apn": "2725300723",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300723",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "17822",
+          "preDirection": null,
+          "streetName": "AVENIDA CORDILLERA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "23",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1516",
+          "displayAddress": "17822 AVENIDA CORDILLERA UNIT 23",
+          "canonicalAddressTokens": [
+            "17822",
+            "AVENIDA",
+            "CORDILLERA",
+            "UNIT",
+            "23"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-07-23-17822-avenida-cordillera-unit-23",
+        "canonicalPath": "/parcel/san-diego/272-530-07-23-17822-avenida-cordillera-unit-23",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-07-23-17822-avenida-cordillera-unit-23"
+      }
+    },
+    {
+      "apn": "2725300724",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300724",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "17832",
+          "preDirection": null,
+          "streetName": "AVENIDA CORDILLERA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "24",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1515",
+          "displayAddress": "17832 AVENIDA CORDILLERA UNIT 24",
+          "canonicalAddressTokens": [
+            "17832",
+            "AVENIDA",
+            "CORDILLERA",
+            "UNIT",
+            "24"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-07-24-17832-avenida-cordillera-unit-24",
+        "canonicalPath": "/parcel/san-diego/272-530-07-24-17832-avenida-cordillera-unit-24",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-07-24-17832-avenida-cordillera-unit-24"
+      }
+    },
+    {
+      "apn": "2725300725",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300725",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "17832",
+          "preDirection": null,
+          "streetName": "AVENIDA CORDILLERA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "25",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1515",
+          "displayAddress": "17832 AVENIDA CORDILLERA UNIT 25",
+          "canonicalAddressTokens": [
+            "17832",
+            "AVENIDA",
+            "CORDILLERA",
+            "UNIT",
+            "25"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-07-25-17832-avenida-cordillera-unit-25",
+        "canonicalPath": "/parcel/san-diego/272-530-07-25-17832-avenida-cordillera-unit-25",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-07-25-17832-avenida-cordillera-unit-25"
+      }
+    },
+    {
+      "apn": "2725300726",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300726",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "17832",
+          "preDirection": null,
+          "streetName": "AVENIDA CORDILLERA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "26",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1515",
+          "displayAddress": "17832 AVENIDA CORDILLERA UNIT 26",
+          "canonicalAddressTokens": [
+            "17832",
+            "AVENIDA",
+            "CORDILLERA",
+            "UNIT",
+            "26"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-07-26-17832-avenida-cordillera-unit-26",
+        "canonicalPath": "/parcel/san-diego/272-530-07-26-17832-avenida-cordillera-unit-26",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-07-26-17832-avenida-cordillera-unit-26"
+      }
+    },
+    {
+      "apn": "2725300727",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300727",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "17832",
+          "preDirection": null,
+          "streetName": "AVENIDA CORDILLERA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "27",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1515",
+          "displayAddress": "17832 AVENIDA CORDILLERA UNIT 27",
+          "canonicalAddressTokens": [
+            "17832",
+            "AVENIDA",
+            "CORDILLERA",
+            "UNIT",
+            "27"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-07-27-17832-avenida-cordillera-unit-27",
+        "canonicalPath": "/parcel/san-diego/272-530-07-27-17832-avenida-cordillera-unit-27",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-07-27-17832-avenida-cordillera-unit-27"
+      }
+    },
+    {
+      "apn": "2725300728",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300728",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "17842",
+          "preDirection": null,
+          "streetName": "AVENIDA CORDILLERA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "28",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1514",
+          "displayAddress": "17842 AVENIDA CORDILLERA UNIT 28",
+          "canonicalAddressTokens": [
+            "17842",
+            "AVENIDA",
+            "CORDILLERA",
+            "UNIT",
+            "28"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-07-28-17842-avenida-cordillera-unit-28",
+        "canonicalPath": "/parcel/san-diego/272-530-07-28-17842-avenida-cordillera-unit-28",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-07-28-17842-avenida-cordillera-unit-28"
+      }
+    },
+    {
+      "apn": "2725300729",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300729",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "17842",
+          "preDirection": null,
+          "streetName": "AVENIDA CORDILLERA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "29",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1514",
+          "displayAddress": "17842 AVENIDA CORDILLERA UNIT 29",
+          "canonicalAddressTokens": [
+            "17842",
+            "AVENIDA",
+            "CORDILLERA",
+            "UNIT",
+            "29"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-07-29-17842-avenida-cordillera-unit-29",
+        "canonicalPath": "/parcel/san-diego/272-530-07-29-17842-avenida-cordillera-unit-29",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-07-29-17842-avenida-cordillera-unit-29"
+      }
+    },
+    {
+      "apn": "2725300730",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2725300730",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "17842",
+          "preDirection": null,
+          "streetName": "AVENIDA CORDILLERA",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "30",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-1514",
+          "displayAddress": "17842 AVENIDA CORDILLERA UNIT 30",
+          "canonicalAddressTokens": [
+            "17842",
+            "AVENIDA",
+            "CORDILLERA",
+            "UNIT",
+            "30"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "272-530-07-30-17842-avenida-cordillera-unit-30",
+        "canonicalPath": "/parcel/san-diego/272-530-07-30-17842-avenida-cordillera-unit-30",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/272-530-07-30-17842-avenida-cordillera-unit-30"
+      }
+    },
+    {
+      "apn": "2731900509",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900509",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12102",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7029",
+          "displayAddress": "12102 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12102",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-09-12102-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-09-12102-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-09-12102-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900510",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900510",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12102",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "B",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7029",
+          "displayAddress": "12102 RANCHO BERNARDO RD UNIT B",
+          "canonicalAddressTokens": [
+            "12102",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "B"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-10-12102-rancho-bernardo-rd-unit-b",
+        "canonicalPath": "/parcel/san-diego/273-190-05-10-12102-rancho-bernardo-rd-unit-b",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-10-12102-rancho-bernardo-rd-unit-b"
+      }
+    },
+    {
+      "apn": "2731900511",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900511",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12104",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7028",
+          "displayAddress": "12104 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12104",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-11-12104-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-11-12104-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-11-12104-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900513",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900513",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12110",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7027",
+          "displayAddress": "12110 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12110",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-13-12110-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-13-12110-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-13-12110-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900514",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900514",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12110",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "B",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7027",
+          "displayAddress": "12110 RANCHO BERNARDO RD UNIT B",
+          "canonicalAddressTokens": [
+            "12110",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "B"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-14-12110-rancho-bernardo-rd-unit-b",
+        "canonicalPath": "/parcel/san-diego/273-190-05-14-12110-rancho-bernardo-rd-unit-b",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-14-12110-rancho-bernardo-rd-unit-b"
+      }
+    },
+    {
+      "apn": "2731900515",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900515",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12112",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7026",
+          "displayAddress": "12112 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12112",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-15-12112-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-15-12112-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-15-12112-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900516",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900516",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12112",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "B",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7026",
+          "displayAddress": "12112 RANCHO BERNARDO RD UNIT B",
+          "canonicalAddressTokens": [
+            "12112",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "B"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-16-12112-rancho-bernardo-rd-unit-b",
+        "canonicalPath": "/parcel/san-diego/273-190-05-16-12112-rancho-bernardo-rd-unit-b",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-16-12112-rancho-bernardo-rd-unit-b"
+      }
+    },
+    {
+      "apn": "2731900517",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900517",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12114",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7025",
+          "displayAddress": "12114 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12114",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-17-12114-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-17-12114-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-17-12114-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900518",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900518",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12114",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "B",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7025",
+          "displayAddress": "12114 RANCHO BERNARDO RD UNIT B",
+          "canonicalAddressTokens": [
+            "12114",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "B"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-18-12114-rancho-bernardo-rd-unit-b",
+        "canonicalPath": "/parcel/san-diego/273-190-05-18-12114-rancho-bernardo-rd-unit-b",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-18-12114-rancho-bernardo-rd-unit-b"
+      }
+    },
+    {
+      "apn": "2731900519",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900519",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12120",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7024",
+          "displayAddress": "12120 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12120",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-19-12120-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-19-12120-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-19-12120-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900521",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900521",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12122",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7023",
+          "displayAddress": "12122 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12122",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-21-12122-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-21-12122-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-21-12122-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900522",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900522",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12122",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "B",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7023",
+          "displayAddress": "12122 RANCHO BERNARDO RD UNIT B",
+          "canonicalAddressTokens": [
+            "12122",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "B"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-22-12122-rancho-bernardo-rd-unit-b",
+        "canonicalPath": "/parcel/san-diego/273-190-05-22-12122-rancho-bernardo-rd-unit-b",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-22-12122-rancho-bernardo-rd-unit-b"
+      }
+    },
+    {
+      "apn": "2731900523",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900523",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12124",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7022",
+          "displayAddress": "12124 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12124",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-23-12124-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-23-12124-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-23-12124-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900526",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900526",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12130",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "B",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7021",
+          "displayAddress": "12130 RANCHO BERNARDO RD UNIT B",
+          "canonicalAddressTokens": [
+            "12130",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "B"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-26-12130-rancho-bernardo-rd-unit-b",
+        "canonicalPath": "/parcel/san-diego/273-190-05-26-12130-rancho-bernardo-rd-unit-b",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-26-12130-rancho-bernardo-rd-unit-b"
+      }
+    },
+    {
+      "apn": "2731900527",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900527",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12132",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7020",
+          "displayAddress": "12132 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12132",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-27-12132-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-27-12132-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-27-12132-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900528",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900528",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12132",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "B",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7020",
+          "displayAddress": "12132 RANCHO BERNARDO RD UNIT B",
+          "canonicalAddressTokens": [
+            "12132",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "B"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-28-12132-rancho-bernardo-rd-unit-b",
+        "canonicalPath": "/parcel/san-diego/273-190-05-28-12132-rancho-bernardo-rd-unit-b",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-28-12132-rancho-bernardo-rd-unit-b"
+      }
+    },
+    {
+      "apn": "2731900529",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900529",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12134",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7019",
+          "displayAddress": "12134 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12134",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-29-12134-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-29-12134-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-29-12134-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900530",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900530",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12134",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "B",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7019",
+          "displayAddress": "12134 RANCHO BERNARDO RD UNIT B",
+          "canonicalAddressTokens": [
+            "12134",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "B"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-30-12134-rancho-bernardo-rd-unit-b",
+        "canonicalPath": "/parcel/san-diego/273-190-05-30-12134-rancho-bernardo-rd-unit-b",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-30-12134-rancho-bernardo-rd-unit-b"
+      }
+    },
+    {
+      "apn": "2731900531",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900531",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12136",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7018",
+          "displayAddress": "12136 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12136",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-31-12136-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-31-12136-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-31-12136-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900532",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900532",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12136",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "B",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7018",
+          "displayAddress": "12136 RANCHO BERNARDO RD UNIT B",
+          "canonicalAddressTokens": [
+            "12136",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "B"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-32-12136-rancho-bernardo-rd-unit-b",
+        "canonicalPath": "/parcel/san-diego/273-190-05-32-12136-rancho-bernardo-rd-unit-b",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-32-12136-rancho-bernardo-rd-unit-b"
+      }
+    },
+    {
+      "apn": "2731900533",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900533",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12140",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7017",
+          "displayAddress": "12140 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12140",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-33-12140-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-33-12140-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-33-12140-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900534",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900534",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12140",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "B",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7017",
+          "displayAddress": "12140 RANCHO BERNARDO RD UNIT B",
+          "canonicalAddressTokens": [
+            "12140",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "B"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-34-12140-rancho-bernardo-rd-unit-b",
+        "canonicalPath": "/parcel/san-diego/273-190-05-34-12140-rancho-bernardo-rd-unit-b",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-34-12140-rancho-bernardo-rd-unit-b"
+      }
+    },
+    {
+      "apn": "2731900535",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900535",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12142",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7016",
+          "displayAddress": "12142 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12142",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-35-12142-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-35-12142-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-35-12142-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2731900536",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900536",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12142",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "B",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7016",
+          "displayAddress": "12142 RANCHO BERNARDO RD UNIT B",
+          "canonicalAddressTokens": [
+            "12142",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "B"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-36-12142-rancho-bernardo-rd-unit-b",
+        "canonicalPath": "/parcel/san-diego/273-190-05-36-12142-rancho-bernardo-rd-unit-b",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-36-12142-rancho-bernardo-rd-unit-b"
+      }
+    },
+    {
+      "apn": "2731900537",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2731900537",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "12144",
+          "preDirection": null,
+          "streetName": "RANCHO BERNARDO",
+          "streetSuffix": "RD",
+          "postDirection": null,
+          "unitDesignator": "UNIT",
+          "unitIdentifier": "A",
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92128-7015",
+          "displayAddress": "12144 RANCHO BERNARDO RD UNIT A",
+          "canonicalAddressTokens": [
+            "12144",
+            "RANCHO",
+            "BERNARDO",
+            "RD",
+            "UNIT",
+            "A"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "273-190-05-37-12144-rancho-bernardo-rd-unit-a",
+        "canonicalPath": "/parcel/san-diego/273-190-05-37-12144-rancho-bernardo-rd-unit-a",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/273-190-05-37-12144-rancho-bernardo-rd-unit-a"
+      }
+    },
+    {
+      "apn": "2392600700",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2392600700",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": null,
+          "preDirection": null,
+          "streetName": null,
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": null,
+          "displayAddress": null,
+          "canonicalAddressTokens": [],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "apn-2392600700",
+        "canonicalPath": "/parcel/san-diego/apn-2392600700",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/apn-2392600700"
+      }
+    },
+    {
+      "apn": "2410603700",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2410603700",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": null,
+          "preDirection": null,
+          "streetName": null,
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92027",
+          "displayAddress": null,
+          "canonicalAddressTokens": [],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "apn-2410603700",
+        "canonicalPath": "/parcel/san-diego/apn-2410603700",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/apn-2410603700"
+      }
+    },
+    {
+      "apn": "2410810800",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2410810800",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": null,
+          "preDirection": null,
+          "streetName": null,
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": null,
+          "displayAddress": null,
+          "canonicalAddressTokens": [],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "apn-2410810800",
+        "canonicalPath": "/parcel/san-diego/apn-2410810800",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/apn-2410810800"
+      }
+    },
+    {
+      "apn": "2411003100",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2411003100",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "14983",
+          "preDirection": null,
+          "streetName": "OLD MILKY",
+          "streetSuffix": "WAY",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92027-7100",
+          "displayAddress": "14983 OLD MILKY WAY",
+          "canonicalAddressTokens": [
+            "14983",
+            "OLD",
+            "MILKY",
+            "WAY"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "241-100-31-00-14983-old-milky-way",
+        "canonicalPath": "/parcel/san-diego/241-100-31-00-14983-old-milky-way",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/241-100-31-00-14983-old-milky-way"
+      }
+    },
+    {
+      "apn": "2411003400",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2411003400",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15480",
+          "preDirection": null,
+          "streetName": "OLD MILKY WAY",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92027",
+          "displayAddress": "15480 OLD MILKY WAY",
+          "canonicalAddressTokens": [
+            "15480",
+            "OLD",
+            "MILKY",
+            "WAY"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "241-100-34-00-15480-old-milky-way",
+        "canonicalPath": "/parcel/san-diego/241-100-34-00-15480-old-milky-way",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/241-100-34-00-15480-old-milky-way"
+      }
+    },
+    {
+      "apn": "2420800600",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2420800600",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": null,
+          "preDirection": null,
+          "streetName": null,
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": null,
+          "displayAddress": null,
+          "canonicalAddressTokens": [],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "apn-2420800600",
+        "canonicalPath": "/parcel/san-diego/apn-2420800600",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/apn-2420800600"
+      }
+    },
+    {
+      "apn": "2421000600",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2421000600",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": null,
+          "preDirection": null,
+          "streetName": null,
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": null,
+          "displayAddress": null,
+          "canonicalAddressTokens": [],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "apn-2421000600",
+        "canonicalPath": "/parcel/san-diego/apn-2421000600",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/apn-2421000600"
+      }
+    },
+    {
+      "apn": "2421001000",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2421001000",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": null,
+          "preDirection": null,
+          "streetName": null,
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": null,
+          "displayAddress": null,
+          "canonicalAddressTokens": [],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "apn-2421001000",
+        "canonicalPath": "/parcel/san-diego/apn-2421001000",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/apn-2421001000"
+      }
+    },
+    {
+      "apn": "2421100600",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2421100600",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": null,
+          "preDirection": null,
+          "streetName": null,
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": null,
+          "displayAddress": null,
+          "canonicalAddressTokens": [],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "apn-2421100600",
+        "canonicalPath": "/parcel/san-diego/apn-2421100600",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/apn-2421100600"
+      }
+    },
+    {
+      "apn": "2421302700",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2421302700",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": null,
+          "preDirection": null,
+          "streetName": null,
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": null,
+          "displayAddress": null,
+          "canonicalAddressTokens": [],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "apn-2421302700",
+        "canonicalPath": "/parcel/san-diego/apn-2421302700",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/apn-2421302700"
+      }
+    },
+    {
+      "apn": "2421401100",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2421401100",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": null,
+          "preDirection": null,
+          "streetName": null,
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": null,
+          "displayAddress": null,
+          "canonicalAddressTokens": [],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "apn-2421401100",
+        "canonicalPath": "/parcel/san-diego/apn-2421401100",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/apn-2421401100"
+      }
+    },
+    {
+      "apn": "2672311001",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311001",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15779",
+          "preDirection": null,
+          "streetName": "CONCORD RIDGE",
+          "streetSuffix": "TER",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4160",
+          "displayAddress": "15779 CONCORD RIDGE TER",
+          "canonicalAddressTokens": [
+            "15779",
+            "CONCORD",
+            "RIDGE",
+            "TER"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-10-01-15779-concord-ridge-ter",
+        "canonicalPath": "/parcel/san-diego/267-231-10-01-15779-concord-ridge-ter",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-10-01-15779-concord-ridge-ter"
+      }
+    },
+    {
+      "apn": "2672311002",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311002",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15783",
+          "preDirection": null,
+          "streetName": "CONCORD RIDGE",
+          "streetSuffix": "TER",
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4160",
+          "displayAddress": "15783 CONCORD RIDGE TER",
+          "canonicalAddressTokens": [
+            "15783",
+            "CONCORD",
+            "RIDGE",
+            "TER"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-10-02-15783-concord-ridge-ter",
+        "canonicalPath": "/parcel/san-diego/267-231-10-02-15783-concord-ridge-ter",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-10-02-15783-concord-ridge-ter"
+      }
+    },
+    {
+      "apn": "2672311101",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311101",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15780",
+          "preDirection": null,
+          "streetName": "PASEO DEL SUR",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4180",
+          "displayAddress": "15780 PASEO DEL SUR",
+          "canonicalAddressTokens": [
+            "15780",
+            "PASEO",
+            "DEL",
+            "SUR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-11-01-15780-paseo-del-sur",
+        "canonicalPath": "/parcel/san-diego/267-231-11-01-15780-paseo-del-sur",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-11-01-15780-paseo-del-sur"
+      }
+    },
+    {
+      "apn": "2672311102",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311102",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15776",
+          "preDirection": null,
+          "streetName": "PASEO DEL SUR",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4180",
+          "displayAddress": "15776 PASEO DEL SUR",
+          "canonicalAddressTokens": [
+            "15776",
+            "PASEO",
+            "DEL",
+            "SUR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-11-02-15776-paseo-del-sur",
+        "canonicalPath": "/parcel/san-diego/267-231-11-02-15776-paseo-del-sur",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-11-02-15776-paseo-del-sur"
+      }
+    },
+    {
+      "apn": "2672311201",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311201",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15772",
+          "preDirection": null,
+          "streetName": "PASEO DEL SUR",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4180",
+          "displayAddress": "15772 PASEO DEL SUR",
+          "canonicalAddressTokens": [
+            "15772",
+            "PASEO",
+            "DEL",
+            "SUR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-12-01-15772-paseo-del-sur",
+        "canonicalPath": "/parcel/san-diego/267-231-12-01-15772-paseo-del-sur",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-12-01-15772-paseo-del-sur"
+      }
+    },
+    {
+      "apn": "2672311202",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311202",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15768",
+          "preDirection": null,
+          "streetName": "PASEO DEL SUR",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4180",
+          "displayAddress": "15768 PASEO DEL SUR",
+          "canonicalAddressTokens": [
+            "15768",
+            "PASEO",
+            "DEL",
+            "SUR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-12-02-15768-paseo-del-sur",
+        "canonicalPath": "/parcel/san-diego/267-231-12-02-15768-paseo-del-sur",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-12-02-15768-paseo-del-sur"
+      }
+    },
+    {
+      "apn": "2672311301",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311301",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15764",
+          "preDirection": null,
+          "streetName": "PASEO DEL SUR",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4180",
+          "displayAddress": "15764 PASEO DEL SUR",
+          "canonicalAddressTokens": [
+            "15764",
+            "PASEO",
+            "DEL",
+            "SUR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-13-01-15764-paseo-del-sur",
+        "canonicalPath": "/parcel/san-diego/267-231-13-01-15764-paseo-del-sur",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-13-01-15764-paseo-del-sur"
+      }
+    },
+    {
+      "apn": "2672311302",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311302",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15760",
+          "preDirection": null,
+          "streetName": "PASEO DEL SUR",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4180",
+          "displayAddress": "15760 PASEO DEL SUR",
+          "canonicalAddressTokens": [
+            "15760",
+            "PASEO",
+            "DEL",
+            "SUR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-13-02-15760-paseo-del-sur",
+        "canonicalPath": "/parcel/san-diego/267-231-13-02-15760-paseo-del-sur",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-13-02-15760-paseo-del-sur"
+      }
+    },
+    {
+      "apn": "2672311401",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311401",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15756",
+          "preDirection": null,
+          "streetName": "PASEO DEL SUR",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4180",
+          "displayAddress": "15756 PASEO DEL SUR",
+          "canonicalAddressTokens": [
+            "15756",
+            "PASEO",
+            "DEL",
+            "SUR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-14-01-15756-paseo-del-sur",
+        "canonicalPath": "/parcel/san-diego/267-231-14-01-15756-paseo-del-sur",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-14-01-15756-paseo-del-sur"
+      }
+    },
+    {
+      "apn": "2672311402",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311402",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15752",
+          "preDirection": null,
+          "streetName": "PASEO DEL SUR",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4180",
+          "displayAddress": "15752 PASEO DEL SUR",
+          "canonicalAddressTokens": [
+            "15752",
+            "PASEO",
+            "DEL",
+            "SUR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-14-02-15752-paseo-del-sur",
+        "canonicalPath": "/parcel/san-diego/267-231-14-02-15752-paseo-del-sur",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-14-02-15752-paseo-del-sur"
+      }
+    },
+    {
+      "apn": "2672311501",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311501",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15748",
+          "preDirection": null,
+          "streetName": "PASEO DEL SUR",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4180",
+          "displayAddress": "15748 PASEO DEL SUR",
+          "canonicalAddressTokens": [
+            "15748",
+            "PASEO",
+            "DEL",
+            "SUR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-15-01-15748-paseo-del-sur",
+        "canonicalPath": "/parcel/san-diego/267-231-15-01-15748-paseo-del-sur",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-15-01-15748-paseo-del-sur"
+      }
+    },
+    {
+      "apn": "2672311502",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311502",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15744",
+          "preDirection": null,
+          "streetName": "PASEO DEL SUR",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4180",
+          "displayAddress": "15744 PASEO DEL SUR",
+          "canonicalAddressTokens": [
+            "15744",
+            "PASEO",
+            "DEL",
+            "SUR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-15-02-15744-paseo-del-sur",
+        "canonicalPath": "/parcel/san-diego/267-231-15-02-15744-paseo-del-sur",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-15-02-15744-paseo-del-sur"
+      }
+    },
+    {
+      "apn": "2672311601",
+      "categories": [
+        "stacked"
+      ],
+      "identity": {
+        "apn": "2672311601",
+        "jurisdiction": "san-diego",
+        "address": {
+          "houseNumber": "15740",
+          "preDirection": null,
+          "streetName": "PASEO DEL SUR",
+          "streetSuffix": null,
+          "postDirection": null,
+          "unitDesignator": null,
+          "unitIdentifier": null,
+          "city": "SAN DIEGO",
+          "state": "CA",
+          "zip": "92127-4180",
+          "displayAddress": "15740 PASEO DEL SUR",
+          "canonicalAddressTokens": [
+            "15740",
+            "PASEO",
+            "DEL",
+            "SUR"
+          ],
+          "provenance": "sealed-sangis-structured-situs",
+          "version": "public-address-v1"
+        },
+        "canonicalSlug": "267-231-16-01-15740-paseo-del-sur",
+        "canonicalPath": "/parcel/san-diego/267-231-16-01-15740-paseo-del-sur",
+        "canonicalUrl": "https://trulot.com/parcel/san-diego/267-231-16-01-15740-paseo-del-sur"
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "cases": [
+    {
+      "apn": "5442140600",
+      "observedProductionSlug": "544-214-06-00-639-67th-st",
+      "authoritativeSlug": "544-214-06-00-639-n-67th-st",
+      "observedMatchesAuthoritative": false,
+      "repairedRuntimeMatchesAuthoritative": true,
+      "redirectCount": 1
+    },
+    {
+      "apn": "2692411801",
+      "observedProductionSlug": "269-241-18-01-14690-via-fiesta-unit-1",
+      "authoritativeSlug": "269-241-18-01-14690-via-fiesta-unit-01",
+      "observedMatchesAuthoritative": false,
+      "repairedRuntimeMatchesAuthoritative": true,
+      "redirectCount": 1
+    },
+    {
+      "apn": "2692411802",
+      "observedProductionSlug": "269-241-18-02-14690-via-fiesta-unit-2",
+      "authoritativeSlug": "269-241-18-02-14690-via-fiesta-unit-02",
+      "observedMatchesAuthoritative": false,
+      "repairedRuntimeMatchesAuthoritative": true,
+      "redirectCount": 1
+    },
+    {
+      "apn": "2692411803",
+      "observedProductionSlug": "269-241-18-03-14690-via-fiesta-unit-3",
+      "authoritativeSlug": "269-241-18-03-14690-via-fiesta-unit-03",
+      "observedMatchesAuthoritative": false,
+      "repairedRuntimeMatchesAuthoritative": true,
+      "redirectCount": 1
+    }
+  ]
+}

@@ -1,0 +1,2387 @@
+{
+  "mode": "on",
+  "reviewed": [
+    {
+      "apn": "5333641301",
+      "categories": [
+        "packet88",
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/533-364-13-01-1501-front-st-unit-101",
+      "ttfbMs": 1813,
+      "elapsedMs": 1836.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "5333641302",
+      "categories": [
+        "packet88",
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/533-364-13-02-1501-front-st-unit-102",
+      "ttfbMs": 305.5,
+      "elapsedMs": 425.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "6341302200",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/634-130-22-00-1456-27th-st",
+      "ttfbMs": 282.8,
+      "elapsedMs": 342.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "5442140600",
+      "categories": [
+        "packet88",
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/544-214-06-00-639-n-67th-st",
+      "ttfbMs": 252.2,
+      "elapsedMs": 334,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "3031701800",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/apn-3031701800",
+      "ttfbMs": 253.2,
+      "elapsedMs": 330.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411801",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-01-14690-via-fiesta-unit-01",
+      "ttfbMs": 256.7,
+      "elapsedMs": 326.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411802",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-02-14690-via-fiesta-unit-02",
+      "ttfbMs": 253.3,
+      "elapsedMs": 327.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411803",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-03-14690-via-fiesta-unit-03",
+      "ttfbMs": 254.7,
+      "elapsedMs": 339.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411804",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-04-14690-via-fiesta-unit-04",
+      "ttfbMs": 254.7,
+      "elapsedMs": 322.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411805",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-05-14650-via-fiesta-unit-04",
+      "ttfbMs": 254.6,
+      "elapsedMs": 317.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411806",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-06-14650-via-fiesta-unit-03",
+      "ttfbMs": 254.9,
+      "elapsedMs": 320.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411807",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-07-14650-via-fiesta-unit-02",
+      "ttfbMs": 254.5,
+      "elapsedMs": 324.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411808",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-08-14650-via-fiesta-unit-01",
+      "ttfbMs": 255.2,
+      "elapsedMs": 310.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411809",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-09-14654-via-fiesta-unit-04",
+      "ttfbMs": 254.1,
+      "elapsedMs": 315.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411810",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-10-14654-via-fiesta-unit-03",
+      "ttfbMs": 255.6,
+      "elapsedMs": 320.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411811",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-11-14654-via-fiesta-unit-02",
+      "ttfbMs": 254.8,
+      "elapsedMs": 325.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411812",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-12-14654-via-fiesta-unit-01",
+      "ttfbMs": 253.1,
+      "elapsedMs": 321.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411813",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-13-14656-via-fiesta-unit-05",
+      "ttfbMs": 256.4,
+      "elapsedMs": 360.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411814",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-14-14656-via-fiesta-unit-04",
+      "ttfbMs": 256,
+      "elapsedMs": 330.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411815",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-15-14656-via-fiesta-unit-03",
+      "ttfbMs": 254.1,
+      "elapsedMs": 321.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411816",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-16-14656-via-fiesta-unit-02",
+      "ttfbMs": 254.1,
+      "elapsedMs": 316.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411817",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-17-14656-via-fiesta-unit-01",
+      "ttfbMs": 252.2,
+      "elapsedMs": 327,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411901",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-01-14652-via-fiesta-unit-05",
+      "ttfbMs": 252.4,
+      "elapsedMs": 323.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411902",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-02-14652-via-fiesta-unit-02",
+      "ttfbMs": 254.7,
+      "elapsedMs": 329.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411903",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-03-14652-via-fiesta-unit-04",
+      "ttfbMs": 254.7,
+      "elapsedMs": 320.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411904",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-04-14652-via-fiesta-unit-03",
+      "ttfbMs": 252.3,
+      "elapsedMs": 314.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411905",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-05-14652-via-fiesta-unit-01",
+      "ttfbMs": 254.6,
+      "elapsedMs": 309.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672310100",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-01-00-15735-concord-ridge-ter",
+      "ttfbMs": 254.1,
+      "elapsedMs": 334.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672310200",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-02-00-15739-concord-ridge-ter",
+      "ttfbMs": 254.1,
+      "elapsedMs": 312.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2983003800",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/298-300-38-00-15808-highland-ct",
+      "ttfbMs": 255.2,
+      "elapsedMs": 315.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2983003900",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/298-300-39-00-15830-highland-ct",
+      "ttfbMs": 258,
+      "elapsedMs": 321.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673000100",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-300-01-00-7890-cerro-del-sur",
+      "ttfbMs": 253.5,
+      "elapsedMs": 327.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2674700100",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-470-01-00-8184-auberge-cir",
+      "ttfbMs": 255.5,
+      "elapsedMs": 330.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "3051600800",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/305-160-08-00-6060-blue-dawn-trl",
+      "ttfbMs": 255.1,
+      "elapsedMs": 337.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2410902500",
+      "categories": [
+        "packet88",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/241-090-25-00-15500-san-pasqual-valley-rd",
+      "ttfbMs": 252.7,
+      "elapsedMs": 312.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "5335900100",
+      "categories": [
+        "packet88",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/533-590-01-00-1600-pacific-hwy",
+      "ttfbMs": 251.7,
+      "elapsedMs": 355.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673111300",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-13-00-15604-rising-river-pl-n",
+      "ttfbMs": 255.3,
+      "elapsedMs": 332.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673111400",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-14-00-15608-rising-river-pl-n",
+      "ttfbMs": 256.9,
+      "elapsedMs": 333.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673111500",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-15-00-15614-rising-river-pl-n",
+      "ttfbMs": 252.7,
+      "elapsedMs": 330.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673111600",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-16-00-15626-rising-river-pl-n",
+      "ttfbMs": 256.4,
+      "elapsedMs": 323.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673111700",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-17-00-15630-rising-river-pl-n",
+      "ttfbMs": 251.2,
+      "elapsedMs": 321.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673111800",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-18-00-15633-rising-river-pl-n",
+      "ttfbMs": 256.4,
+      "elapsedMs": 318.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673111900",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-19-00-15629-rising-river-pl-n",
+      "ttfbMs": 252.5,
+      "elapsedMs": 329.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673112000",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-20-00-15625-rising-river-pl-n",
+      "ttfbMs": 258.4,
+      "elapsedMs": 320.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673112100",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-21-00-15621-rising-river-pl-n",
+      "ttfbMs": 253.1,
+      "elapsedMs": 328.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673112200",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-22-00-15617-rising-river-pl-n",
+      "ttfbMs": 255.6,
+      "elapsedMs": 329.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673112300",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-23-00-15613-rising-river-pl-n",
+      "ttfbMs": 254.5,
+      "elapsedMs": 322,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673112400",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-24-00-15609-rising-river-pl-n",
+      "ttfbMs": 254,
+      "elapsedMs": 329.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673112500",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-311-25-00-15605-rising-river-pl-n",
+      "ttfbMs": 254.7,
+      "elapsedMs": 339,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673120100",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-312-01-00-15595-rising-river-pl-s",
+      "ttfbMs": 253.5,
+      "elapsedMs": 324.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673120200",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-312-02-00-15591-rising-river-pl-s",
+      "ttfbMs": 255.4,
+      "elapsedMs": 325.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673120300",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-312-03-00-15587-rising-river-pl-s",
+      "ttfbMs": 254.2,
+      "elapsedMs": 314.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673120400",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-312-04-00-15583-rising-river-pl-s",
+      "ttfbMs": 255.7,
+      "elapsedMs": 325.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673120500",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-312-05-00-15579-rising-river-pl-s",
+      "ttfbMs": 253.6,
+      "elapsedMs": 336.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673120600",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-312-06-00-15575-rising-river-pl-s",
+      "ttfbMs": 253.6,
+      "elapsedMs": 315.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673120700",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-312-07-00-15571-rising-river-pl-s",
+      "ttfbMs": 252.5,
+      "elapsedMs": 326.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673120800",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-312-08-00-15567-rising-river-pl-s",
+      "ttfbMs": 253.3,
+      "elapsedMs": 324.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673120900",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-312-09-00-15558-rising-river-pl-s",
+      "ttfbMs": 254.4,
+      "elapsedMs": 321.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673121000",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-312-10-00-15562-rising-river-pl-s",
+      "ttfbMs": 253.2,
+      "elapsedMs": 314.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673121100",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-312-11-00-15566-rising-river-pl-s",
+      "ttfbMs": 254.5,
+      "elapsedMs": 327,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673121200",
+      "categories": [
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-312-12-00-15570-rising-river-pl-s",
+      "ttfbMs": 255.6,
+      "elapsedMs": 321.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411906",
+      "categories": [
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-06-14660-via-fiesta-unit-01",
+      "ttfbMs": 256.1,
+      "elapsedMs": 329.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411907",
+      "categories": [
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-07-14660-via-fiesta-unit-03",
+      "ttfbMs": 256.9,
+      "elapsedMs": 327,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411908",
+      "categories": [
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-08-14660-via-fiesta-unit-04",
+      "ttfbMs": 256.1,
+      "elapsedMs": 360.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411911",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-11-14682-via-fiesta-unit-10",
+      "ttfbMs": 255.7,
+      "elapsedMs": 326.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692412211",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-22-11-14680-via-fiesta-unit-10",
+      "ttfbMs": 256.2,
+      "elapsedMs": 323.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692412230",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-22-30-14684-via-fiesta-unit-10",
+      "ttfbMs": 254.4,
+      "elapsedMs": 329.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692412311",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-23-11-14692-via-fiesta-unit-10",
+      "ttfbMs": 253.2,
+      "elapsedMs": 320.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300310",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-03-10-12732-camino-de-la-breccia-unit-10",
+      "ttfbMs": 253.1,
+      "elapsedMs": 349.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300311",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-03-11-12732-camino-de-la-breccia-unit-11",
+      "ttfbMs": 253.1,
+      "elapsedMs": 323.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300312",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-03-12-12732-camino-de-la-breccia-unit-12",
+      "ttfbMs": 252.7,
+      "elapsedMs": 325.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300313",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-03-13-12728-camino-de-la-breccia-unit-13",
+      "ttfbMs": 253,
+      "elapsedMs": 326.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300314",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-03-14-12728-camino-de-la-breccia-unit-14",
+      "ttfbMs": 252.3,
+      "elapsedMs": 320.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300315",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-03-15-12728-camino-de-la-breccia-unit-15",
+      "ttfbMs": 250.6,
+      "elapsedMs": 316.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300316",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-03-16-12724-camino-de-la-breccia-unit-16",
+      "ttfbMs": 253.6,
+      "elapsedMs": 312.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300317",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-03-17-12724-camino-de-la-breccia-unit-17",
+      "ttfbMs": 254.6,
+      "elapsedMs": 319.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300318",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-03-18-12724-camino-de-la-breccia-unit-18",
+      "ttfbMs": 252,
+      "elapsedMs": 326.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300319",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-03-19-12724-camino-de-la-breccia-unit-19",
+      "ttfbMs": 254.6,
+      "elapsedMs": 308.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300720",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-07-20-17822-avenida-cordillera-unit-20",
+      "ttfbMs": 254.9,
+      "elapsedMs": 324.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300721",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-07-21-17822-avenida-cordillera-unit-21",
+      "ttfbMs": 253.9,
+      "elapsedMs": 328.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300722",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-07-22-17822-avenida-cordillera-unit-22",
+      "ttfbMs": 254,
+      "elapsedMs": 321.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300723",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-07-23-17822-avenida-cordillera-unit-23",
+      "ttfbMs": 252.1,
+      "elapsedMs": 320.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300724",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-07-24-17832-avenida-cordillera-unit-24",
+      "ttfbMs": 250,
+      "elapsedMs": 321,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300725",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-07-25-17832-avenida-cordillera-unit-25",
+      "ttfbMs": 252.8,
+      "elapsedMs": 327.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300726",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-07-26-17832-avenida-cordillera-unit-26",
+      "ttfbMs": 252.9,
+      "elapsedMs": 315.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300727",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-07-27-17832-avenida-cordillera-unit-27",
+      "ttfbMs": 252,
+      "elapsedMs": 316.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300728",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-07-28-17842-avenida-cordillera-unit-28",
+      "ttfbMs": 255.1,
+      "elapsedMs": 324.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300729",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-07-29-17842-avenida-cordillera-unit-29",
+      "ttfbMs": 251.4,
+      "elapsedMs": 311.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2725300730",
+      "categories": [
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/272-530-07-30-17842-avenida-cordillera-unit-30",
+      "ttfbMs": 254.8,
+      "elapsedMs": 325.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900509",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-09-12102-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 255.3,
+      "elapsedMs": 326.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900510",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-10-12102-rancho-bernardo-rd-unit-b",
+      "ttfbMs": 254.7,
+      "elapsedMs": 324.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900511",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-11-12104-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 255.9,
+      "elapsedMs": 332.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900513",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-13-12110-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 256.6,
+      "elapsedMs": 334.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900514",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-14-12110-rancho-bernardo-rd-unit-b",
+      "ttfbMs": 252.3,
+      "elapsedMs": 303.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900515",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-15-12112-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 254.6,
+      "elapsedMs": 326.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900516",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-16-12112-rancho-bernardo-rd-unit-b",
+      "ttfbMs": 256.6,
+      "elapsedMs": 351.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900517",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-17-12114-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 252.1,
+      "elapsedMs": 324.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900518",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-18-12114-rancho-bernardo-rd-unit-b",
+      "ttfbMs": 254.4,
+      "elapsedMs": 324.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900519",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-19-12120-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 252.8,
+      "elapsedMs": 328,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900521",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-21-12122-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 254.9,
+      "elapsedMs": 325.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900522",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-22-12122-rancho-bernardo-rd-unit-b",
+      "ttfbMs": 252.8,
+      "elapsedMs": 311.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900523",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-23-12124-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 254.4,
+      "elapsedMs": 323,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900526",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-26-12130-rancho-bernardo-rd-unit-b",
+      "ttfbMs": 253.5,
+      "elapsedMs": 327.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900527",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-27-12132-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 254,
+      "elapsedMs": 327.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900528",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-28-12132-rancho-bernardo-rd-unit-b",
+      "ttfbMs": 253.7,
+      "elapsedMs": 315.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900529",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-29-12134-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 254,
+      "elapsedMs": 330.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900530",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-30-12134-rancho-bernardo-rd-unit-b",
+      "ttfbMs": 255.5,
+      "elapsedMs": 349.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900531",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-31-12136-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 257.6,
+      "elapsedMs": 338,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900532",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-32-12136-rancho-bernardo-rd-unit-b",
+      "ttfbMs": 258.5,
+      "elapsedMs": 343.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900533",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-33-12140-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 256.2,
+      "elapsedMs": 325.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900534",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-34-12140-rancho-bernardo-rd-unit-b",
+      "ttfbMs": 251.7,
+      "elapsedMs": 336.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900535",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-35-12142-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 253.4,
+      "elapsedMs": 353.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900536",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-36-12142-rancho-bernardo-rd-unit-b",
+      "ttfbMs": 255.9,
+      "elapsedMs": 335.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2731900537",
+      "categories": [
+        "alphanumericUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/273-190-05-37-12144-rancho-bernardo-rd-unit-a",
+      "ttfbMs": 255.1,
+      "elapsedMs": 328.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2392600700",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/apn-2392600700",
+      "ttfbMs": 251.6,
+      "elapsedMs": 323.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2410603700",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/apn-2410603700",
+      "ttfbMs": 253.8,
+      "elapsedMs": 313.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2410810800",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/apn-2410810800",
+      "ttfbMs": 253.6,
+      "elapsedMs": 316.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2411003100",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/241-100-31-00-14983-old-milky-way",
+      "ttfbMs": 255,
+      "elapsedMs": 316.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2411003400",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/241-100-34-00-15480-old-milky-way",
+      "ttfbMs": 252.1,
+      "elapsedMs": 312.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2420800600",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/apn-2420800600",
+      "ttfbMs": 252.3,
+      "elapsedMs": 326,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2421000600",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/apn-2421000600",
+      "ttfbMs": 255.7,
+      "elapsedMs": 309.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2421001000",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/apn-2421001000",
+      "ttfbMs": 249.9,
+      "elapsedMs": 324.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2421100600",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/apn-2421100600",
+      "ttfbMs": 251.4,
+      "elapsedMs": 321.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2421302700",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/apn-2421302700",
+      "ttfbMs": 252.3,
+      "elapsedMs": 321,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2421401100",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/apn-2421401100",
+      "ttfbMs": 252.3,
+      "elapsedMs": 304.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 0,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311001",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-10-01-15779-concord-ridge-ter",
+      "ttfbMs": 256.5,
+      "elapsedMs": 322.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311002",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-10-02-15783-concord-ridge-ter",
+      "ttfbMs": 267.4,
+      "elapsedMs": 346.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311101",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-11-01-15780-paseo-del-sur",
+      "ttfbMs": 256.1,
+      "elapsedMs": 320.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311102",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-11-02-15776-paseo-del-sur",
+      "ttfbMs": 258.1,
+      "elapsedMs": 328.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311201",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-12-01-15772-paseo-del-sur",
+      "ttfbMs": 256.2,
+      "elapsedMs": 324.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311202",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-12-02-15768-paseo-del-sur",
+      "ttfbMs": 254.5,
+      "elapsedMs": 319.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311301",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-13-01-15764-paseo-del-sur",
+      "ttfbMs": 252,
+      "elapsedMs": 314,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311302",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-13-02-15760-paseo-del-sur",
+      "ttfbMs": 258.4,
+      "elapsedMs": 323.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311401",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-14-01-15756-paseo-del-sur",
+      "ttfbMs": 253.3,
+      "elapsedMs": 314.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311402",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-14-02-15752-paseo-del-sur",
+      "ttfbMs": 257.4,
+      "elapsedMs": 327,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311501",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-15-01-15748-paseo-del-sur",
+      "ttfbMs": 255.2,
+      "elapsedMs": 326.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311502",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-15-02-15744-paseo-del-sur",
+      "ttfbMs": 254.7,
+      "elapsedMs": 315.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672311601",
+      "categories": [
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-16-01-15740-paseo-del-sur",
+      "ttfbMs": 255.2,
+      "elapsedMs": 320.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    }
+  ],
+  "redirects": [
+    {
+      "apn": "2692411801",
+      "from": "269-241-18-01-14690-via-fiesta-unit-1",
+      "to": "http://127.0.0.1:4592/parcel/san-diego/269-241-18-01-14690-via-fiesta-unit-01",
+      "coreInvocations": 2
+    },
+    {
+      "apn": "2692411802",
+      "from": "269-241-18-02-14690-via-fiesta-unit-2",
+      "to": "http://127.0.0.1:4592/parcel/san-diego/269-241-18-02-14690-via-fiesta-unit-02",
+      "coreInvocations": 2
+    },
+    {
+      "apn": "2692411803",
+      "from": "269-241-18-03-14690-via-fiesta-unit-3",
+      "to": "http://127.0.0.1:4592/parcel/san-diego/269-241-18-03-14690-via-fiesta-unit-03",
+      "coreInvocations": 2
+    },
+    {
+      "apn": "5442140600",
+      "from": "544-214-06-00-639-67th-st",
+      "to": "http://127.0.0.1:4592/parcel/san-diego/544-214-06-00-639-n-67th-st",
+      "coreInvocations": 2
+    }
+  ],
+  "performance": {
+    "cases": 138,
+    "medianMs": 254.4,
+    "p75Ms": 255.6,
+    "p95Ms": 258.4,
+    "maximumMs": 1813,
+    "coldMs": 1836.5
+  },
+  "stageDelayMs": {
+    "exactParcel": 80,
+    "similarParcel": 90,
+    "permits": 120,
+    "overlays": 100
+  },
+  "stageTimingMs": {
+    "route_entry": {
+      "count": 296,
+      "median": 0.001,
+      "p95": 0.001,
+      "maximum": 0.009
+    },
+    "identity": {
+      "count": 296,
+      "median": 0.097,
+      "p95": 1.117,
+      "maximum": 18.268
+    },
+    "zoning_snapshot": {
+      "count": 296,
+      "median": 0.058,
+      "p95": 1.006,
+      "maximum": 22.149
+    },
+    "metadata_generation": {
+      "count": 150,
+      "median": 0.406,
+      "p95": 6.325,
+      "maximum": 41.364
+    },
+    "total_server": {
+      "count": 296,
+      "median": 18.219,
+      "p95": 215.983,
+      "maximum": 313.282
+    },
+    "core_parcel": {
+      "count": 146,
+      "median": 85.144,
+      "p95": 86.667,
+      "maximum": 165.091
+    },
+    "similar_lots": {
+      "count": 146,
+      "median": 96.787,
+      "p95": 97.981,
+      "maximum": 121.386
+    },
+    "overlays": {
+      "count": 146,
+      "median": 106.518,
+      "p95": 107.928,
+      "maximum": 135.848
+    },
+    "permits": {
+      "count": 146,
+      "median": 127.842,
+      "p95": 129.115,
+      "maximum": 137.76
+    },
+    "feasibility_rules": {
+      "count": 146,
+      "median": 0.005,
+      "p95": 0.015,
+      "maximum": 4.346
+    },
+    "page_render_preparation": {
+      "count": 146,
+      "median": 0.384,
+      "p95": 0.572,
+      "maximum": 9.789
+    }
+  },
+  "stageTimingByOperation": {
+    "metadata": {
+      "route_entry": {
+        "count": 150,
+        "median": 0,
+        "p95": 0.001,
+        "maximum": 0.001
+      },
+      "identity": {
+        "count": 150,
+        "median": 0.074,
+        "p95": 2.921,
+        "maximum": 18.268
+      },
+      "zoning_snapshot": {
+        "count": 150,
+        "median": 0.05,
+        "p95": 3.12,
+        "maximum": 22.149
+      },
+      "metadata_generation": {
+        "count": 150,
+        "median": 0.406,
+        "p95": 6.325,
+        "maximum": 41.364
+      },
+      "total_server": {
+        "count": 150,
+        "median": 0.506,
+        "p95": 6.415,
+        "maximum": 41.584
+      }
+    },
+    "page": {
+      "route_entry": {
+        "count": 146,
+        "median": 0.001,
+        "p95": 0.001,
+        "maximum": 0.009
+      },
+      "core_parcel": {
+        "count": 146,
+        "median": 85.144,
+        "p95": 86.667,
+        "maximum": 165.091
+      },
+      "identity": {
+        "count": 146,
+        "median": 0.102,
+        "p95": 0.13,
+        "maximum": 0.239
+      },
+      "zoning_snapshot": {
+        "count": 146,
+        "median": 0.066,
+        "p95": 0.077,
+        "maximum": 0.16
+      },
+      "similar_lots": {
+        "count": 146,
+        "median": 96.787,
+        "p95": 97.981,
+        "maximum": 121.386
+      },
+      "overlays": {
+        "count": 146,
+        "median": 106.518,
+        "p95": 107.928,
+        "maximum": 135.848
+      },
+      "permits": {
+        "count": 146,
+        "median": 127.842,
+        "p95": 129.115,
+        "maximum": 137.76
+      },
+      "feasibility_rules": {
+        "count": 146,
+        "median": 0.005,
+        "p95": 0.015,
+        "maximum": 4.346
+      },
+      "page_render_preparation": {
+        "count": 146,
+        "median": 0.384,
+        "p95": 0.572,
+        "maximum": 9.789
+      },
+      "total_server": {
+        "count": 146,
+        "median": 214.14,
+        "p95": 216.462,
+        "maximum": 313.282
+      }
+    }
+  },
+  "consoleErrors": [],
+  "productionAccess": false,
+  "indexing": "OFF",
+  "sitemap": "OFF"
+}

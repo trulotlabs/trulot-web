@@ -1,0 +1,804 @@
+{
+  "mode": "off",
+  "reviewed": [
+    {
+      "apn": "5333641301",
+      "categories": [
+        "packet88",
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/533-364-13-01-1501-front-st-unit-101",
+      "ttfbMs": 1812,
+      "elapsedMs": 1833.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "5333641302",
+      "categories": [
+        "packet88",
+        "nonZeroPaddedUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/533-364-13-02-1501-front-st-unit-102",
+      "ttfbMs": 256.9,
+      "elapsedMs": 276.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "6341302200",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/634-130-22-00-1456-27th-st",
+      "ttfbMs": 279.9,
+      "elapsedMs": 351.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "5442140600",
+      "categories": [
+        "packet88",
+        "directional"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/544-214-06-00-639-n-67th-st",
+      "ttfbMs": 264,
+      "elapsedMs": 338.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "3031701800",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/apn-3031701800",
+      "ttfbMs": 252.4,
+      "elapsedMs": 329.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411801",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-01-14690-via-fiesta-unit-01",
+      "ttfbMs": 250.9,
+      "elapsedMs": 327.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411802",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-02-14690-via-fiesta-unit-02",
+      "ttfbMs": 253.5,
+      "elapsedMs": 324.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411803",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-03-14690-via-fiesta-unit-03",
+      "ttfbMs": 252.4,
+      "elapsedMs": 327.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411804",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-04-14690-via-fiesta-unit-04",
+      "ttfbMs": 253.3,
+      "elapsedMs": 332.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411805",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-05-14650-via-fiesta-unit-04",
+      "ttfbMs": 255.7,
+      "elapsedMs": 314.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411806",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-06-14650-via-fiesta-unit-03",
+      "ttfbMs": 256.1,
+      "elapsedMs": 328.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411807",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-07-14650-via-fiesta-unit-02",
+      "ttfbMs": 257,
+      "elapsedMs": 351.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411808",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-08-14650-via-fiesta-unit-01",
+      "ttfbMs": 257.2,
+      "elapsedMs": 325.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411809",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-09-14654-via-fiesta-unit-04",
+      "ttfbMs": 253.4,
+      "elapsedMs": 322.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411810",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-10-14654-via-fiesta-unit-03",
+      "ttfbMs": 257,
+      "elapsedMs": 342.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411811",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-11-14654-via-fiesta-unit-02",
+      "ttfbMs": 253.8,
+      "elapsedMs": 326.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411812",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-12-14654-via-fiesta-unit-01",
+      "ttfbMs": 256.6,
+      "elapsedMs": 360.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411813",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-13-14656-via-fiesta-unit-05",
+      "ttfbMs": 249.9,
+      "elapsedMs": 332.3,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411814",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-14-14656-via-fiesta-unit-04",
+      "ttfbMs": 255.2,
+      "elapsedMs": 344.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411815",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-15-14656-via-fiesta-unit-03",
+      "ttfbMs": 255.7,
+      "elapsedMs": 333.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411816",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-16-14656-via-fiesta-unit-02",
+      "ttfbMs": 251.1,
+      "elapsedMs": 322.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411817",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-18-17-14656-via-fiesta-unit-01",
+      "ttfbMs": 254.5,
+      "elapsedMs": 333.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411901",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-01-14652-via-fiesta-unit-05",
+      "ttfbMs": 253.3,
+      "elapsedMs": 321.4,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411902",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-02-14652-via-fiesta-unit-02",
+      "ttfbMs": 253.7,
+      "elapsedMs": 341.6,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411903",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-03-14652-via-fiesta-unit-04",
+      "ttfbMs": 252.4,
+      "elapsedMs": 326,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411904",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-04-14652-via-fiesta-unit-03",
+      "ttfbMs": 252.5,
+      "elapsedMs": 323.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2692411905",
+      "categories": [
+        "packet88",
+        "leadingZeroUnit",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/269-241-19-05-14652-via-fiesta-unit-01",
+      "ttfbMs": 252.6,
+      "elapsedMs": 340.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672310100",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-01-00-15735-concord-ridge-ter",
+      "ttfbMs": 254.1,
+      "elapsedMs": 327.7,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2672310200",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-231-02-00-15739-concord-ridge-ter",
+      "ttfbMs": 253.2,
+      "elapsedMs": 321.9,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2983003800",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/298-300-38-00-15808-highland-ct",
+      "ttfbMs": 255.1,
+      "elapsedMs": 319.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2983003900",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/298-300-39-00-15830-highland-ct",
+      "ttfbMs": 251.2,
+      "elapsedMs": 326.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2673000100",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-300-01-00-7890-cerro-del-sur",
+      "ttfbMs": 252.1,
+      "elapsedMs": 318.8,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2674700100",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/267-470-01-00-8184-auberge-cir",
+      "ttfbMs": 255.8,
+      "elapsedMs": 322.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "3051600800",
+      "categories": [
+        "packet88"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/305-160-08-00-6060-blue-dawn-trl",
+      "ttfbMs": 256.1,
+      "elapsedMs": 370.2,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "2410902500",
+      "categories": [
+        "packet88",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/241-090-25-00-15500-san-pasqual-valley-rd",
+      "ttfbMs": 254.3,
+      "elapsedMs": 326.1,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    },
+    {
+      "apn": "5335900100",
+      "categories": [
+        "packet88",
+        "stacked"
+      ],
+      "canonical": "https://trulot.com/parcel/san-diego/533-590-01-00-1600-pacific-hwy",
+      "ttfbMs": 255.8,
+      "elapsedMs": 347.5,
+      "requests": {
+        "exactParcel": 1,
+        "similarParcel": 1,
+        "permits": 1,
+        "overlays": 1
+      }
+    }
+  ],
+  "redirects": [
+    {
+      "apn": "2692411801",
+      "from": "269-241-18-01-14690-via-fiesta-unit-1",
+      "to": "http://127.0.0.1:4592/parcel/san-diego/269-241-18-01-14690-via-fiesta-unit-01",
+      "coreInvocations": 2
+    },
+    {
+      "apn": "2692411802",
+      "from": "269-241-18-02-14690-via-fiesta-unit-2",
+      "to": "http://127.0.0.1:4592/parcel/san-diego/269-241-18-02-14690-via-fiesta-unit-02",
+      "coreInvocations": 2
+    },
+    {
+      "apn": "2692411803",
+      "from": "269-241-18-03-14690-via-fiesta-unit-3",
+      "to": "http://127.0.0.1:4592/parcel/san-diego/269-241-18-03-14690-via-fiesta-unit-03",
+      "coreInvocations": 2
+    },
+    {
+      "apn": "5442140600",
+      "from": "544-214-06-00-639-67th-st",
+      "to": "http://127.0.0.1:4592/parcel/san-diego/544-214-06-00-639-n-67th-st",
+      "coreInvocations": 2
+    }
+  ],
+  "performance": {
+    "cases": 36,
+    "medianMs": 254.1,
+    "p75Ms": 256.1,
+    "p95Ms": 279.9,
+    "maximumMs": 1812,
+    "coldMs": 1833.8
+  },
+  "stageDelayMs": {
+    "exactParcel": 80,
+    "similarParcel": 90,
+    "permits": 120,
+    "overlays": 100
+  },
+  "stageTimingMs": {
+    "route_entry": {
+      "count": 92,
+      "median": 0.001,
+      "p95": 0.001,
+      "maximum": 0.009
+    },
+    "identity": {
+      "count": 92,
+      "median": 0.096,
+      "p95": 2.912,
+      "maximum": 17.834
+    },
+    "zoning_snapshot": {
+      "count": 92,
+      "median": 0,
+      "p95": 0.001,
+      "maximum": 0.077
+    },
+    "metadata_generation": {
+      "count": 48,
+      "median": 0.367,
+      "p95": 7.67,
+      "maximum": 18.738
+    },
+    "total_server": {
+      "count": 92,
+      "median": 7.763,
+      "p95": 216.334,
+      "maximum": 290.095
+    },
+    "core_parcel": {
+      "count": 44,
+      "median": 85.311,
+      "p95": 86.932,
+      "maximum": 144.159
+    },
+    "similar_lots": {
+      "count": 44,
+      "median": 96.727,
+      "p95": 98.881,
+      "maximum": 122.338
+    },
+    "overlays": {
+      "count": 44,
+      "median": 106.737,
+      "p95": 109.896,
+      "maximum": 123.945
+    },
+    "permits": {
+      "count": 44,
+      "median": 128.178,
+      "p95": 129.187,
+      "maximum": 132.32
+    },
+    "feasibility_rules": {
+      "count": 44,
+      "median": 0.01,
+      "p95": 1.334,
+      "maximum": 4.285
+    },
+    "page_render_preparation": {
+      "count": 44,
+      "median": 0.4,
+      "p95": 2.418,
+      "maximum": 10.346
+    }
+  },
+  "stageTimingByOperation": {
+    "metadata": {
+      "route_entry": {
+        "count": 48,
+        "median": 0,
+        "p95": 0.001,
+        "maximum": 0.001
+      },
+      "identity": {
+        "count": 48,
+        "median": 0.076,
+        "p95": 7.396,
+        "maximum": 17.834
+      },
+      "zoning_snapshot": {
+        "count": 48,
+        "median": 0,
+        "p95": 0,
+        "maximum": 0.077
+      },
+      "metadata_generation": {
+        "count": 48,
+        "median": 0.367,
+        "p95": 7.67,
+        "maximum": 18.738
+      },
+      "total_server": {
+        "count": 48,
+        "median": 0.473,
+        "p95": 7.763,
+        "maximum": 18.932
+      }
+    },
+    "page": {
+      "route_entry": {
+        "count": 44,
+        "median": 0.001,
+        "p95": 0.001,
+        "maximum": 0.009
+      },
+      "core_parcel": {
+        "count": 44,
+        "median": 85.311,
+        "p95": 86.932,
+        "maximum": 144.159
+      },
+      "identity": {
+        "count": 44,
+        "median": 0.098,
+        "p95": 0.13,
+        "maximum": 0.32
+      },
+      "zoning_snapshot": {
+        "count": 44,
+        "median": 0,
+        "p95": 0.001,
+        "maximum": 0.008
+      },
+      "similar_lots": {
+        "count": 44,
+        "median": 96.727,
+        "p95": 98.881,
+        "maximum": 122.338
+      },
+      "overlays": {
+        "count": 44,
+        "median": 106.737,
+        "p95": 109.896,
+        "maximum": 123.945
+      },
+      "permits": {
+        "count": 44,
+        "median": 128.178,
+        "p95": 129.187,
+        "maximum": 132.32
+      },
+      "feasibility_rules": {
+        "count": 44,
+        "median": 0.01,
+        "p95": 1.334,
+        "maximum": 4.285
+      },
+      "page_render_preparation": {
+        "count": 44,
+        "median": 0.4,
+        "p95": 2.418,
+        "maximum": 10.346
+      },
+      "total_server": {
+        "count": 44,
+        "median": 214.926,
+        "p95": 216.683,
+        "maximum": 290.095
+      }
+    }
+  },
+  "consoleErrors": [],
+  "productionAccess": false,
+  "indexing": "OFF",
+  "sitemap": "OFF"
+}

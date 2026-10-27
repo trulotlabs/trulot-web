@@ -1,0 +1,7 @@
+{
+  "identityVersion": "parcel-identity-v2",
+  "addressVersion": "public-address-v1",
+  "directionals": "N/S/E/W/NE/NW/SE/SW are semantic public situs tokens and are retained in order.",
+  "units": "Unit identifiers are opaque source values. Numeric, alphanumeric, hyphenated, fractional, and leading-zero identifiers are never numerically coerced.",
+  "provenance": "sealed-sangis-structured-situs"
+}

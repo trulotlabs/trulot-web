@@ -99,7 +99,7 @@ export function fixture(payload, options = {}) {
       return load(`${target}.tsx`);
     }
     vm.runInNewContext(code, {
-      module: loadedModule, exports: loadedModule.exports, require: localRequire, process: { env: options.env ?? {} }, Buffer, performance,
+      module: loadedModule, exports: loadedModule.exports, require: localRequire, process: { env: options.env ?? {}, cwd: () => root }, Buffer, URL, performance,
     }, { filename });
     return loadedModule.exports;
   }

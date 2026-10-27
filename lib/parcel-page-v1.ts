@@ -33,6 +33,8 @@ import {
   type PublicMeasurementInput,
 } from "./public-parcel-feasibility";
 import { getLocalPublicParcelFeasibilityEvidence } from "./public-parcel-feasibility-evidence";
+import { getSanDiegoPublicIdentity } from "./san-diego-public-identity";
+import { createParcelServerTiming } from "./parcel-server-timing";
 import {
   getSanDiegoPublicZoning,
   sanDiegoPublicZoningSnapshotEnabled,
@@ -812,6 +814,7 @@ async function fetchSimilarLots(
 
   const matches: SimilarParcelFact[] = withDistance.map(({ row, distanceMiles }) => {
     const apn = normalizeApnDigits(str(row.apn_norm));
+    const publicIdentity = getSanDiegoPublicIdentity(apn);
     const firstPermit = (permitMap.get(apn) ?? [])[0] ?? null;
     const permitStatus = normalizePermitStatus(firstPermit?.status);
     const permitDate = formatPermitMonth(firstPermit?.opened_date);
@@ -823,8 +826,8 @@ async function fetchSimilarLots(
       sourceLabel: firstPermit ? "City permit record" : "Parcel and permit records",
       confidenceTier: firstPermit ? "recorded" : "mapped",
       nullBehavior: "Omit row if parcel address is unavailable.",
-      url: canonicalParcelPath(apn, str(row.address)),
-      address: str(row.address) || `APN ${formatApnForDisplay(apn)}`,
+      url: publicIdentity.state === "found" ? publicIdentity.identity.canonicalPath : canonicalParcelPath(apn, str(row.address)),
+      address: publicIdentity.state === "found" ? (publicIdentity.address.displayAddress ?? `APN ${formatApnForDisplay(apn)}`) : str(row.address) || `APN ${formatApnForDisplay(apn)}`,
       permitStatus,
       permitDate,
       distanceMiles,
@@ -866,7 +869,9 @@ function emptyTruth(status: "not_found" | "source_unavailable" | "invalid_reques
   };
 }
 
-async function loadParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV1Result> {
+type ParcelTiming = ReturnType<typeof createParcelServerTiming>;
+
+async function loadParcelPageV1ResultImpl(rawApnOrSlug: string, timing: ParcelTiming): Promise<ParcelPageV1Result> {
   const rawDigits = rawApnOrSlug.replace(/\D/g, "");
   if (!rawDigits) {
     return {
@@ -884,12 +889,13 @@ async function loadParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV
   }
 
   const apnNorm = normalizeApnDigits(rawApnOrSlug);
-  const { data: parcel, error: parcelError } = await supabase
-    .from("parcel_page_api_v2")
-    .select("*")
-    .eq("apn_norm", apnNorm)
-    .maybeSingle()
-    .then(response => response, () => ({ data: null, error: { code: "", message: "Query failed" } }));
+  const { data: parcel, error: parcelError } = await timing.measure("core_parcel", async () => {
+    try {
+      return await supabase.from("parcel_page_api_v2").select("*").eq("apn_norm", apnNorm).maybeSingle();
+    } catch {
+      return { data: null, error: { code: "", message: "Query failed" } };
+    }
+  });
 
   if (parcelError) {
     return {
@@ -932,14 +938,23 @@ async function loadParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV
     };
   }
   const parcelRow = parcel;
-  const address = formatAddress(parcelRow);
+  const canonicalIdentity = timing.measureSync("identity", () => {
+    const sealed = getSanDiegoPublicIdentity(apnNorm);
+    return sealed.state === "found" ? sealed.identity : canonicalParcelIdentity({
+      apn: apnNorm,
+      jurisdiction: "san-diego",
+      address: str(parcelRow.address) || null,
+      provenance: "parcel_page_api_v2.address:fallback",
+    });
+  });
+  const address = canonicalIdentity.canonicalDisplayAddress ?? formatAddress(parcelRow);
   const city = str(parcelRow.city) || "San Diego";
   const state = str(parcelRow.state) || "CA";
   const zip = str(parcelRow.situs_zip || parcelRow.zip || parcelRow.zip_code) || null;
   const lat = num(parcelRow.lat);
   const lng = num(parcelRow.lng);
   const snapshotEnabled = sanDiegoPublicZoningSnapshotEnabled();
-  const snapshotResult = snapshotEnabled ? getSanDiegoPublicZoning(apnNorm) : null;
+  const snapshotResult = timing.measureSync("zoning_snapshot", () => snapshotEnabled ? getSanDiegoPublicZoning(apnNorm) : null);
   const publicSnapshot = snapshotResult?.state === "found" ? snapshotResult.zoning : null;
   const snapshotUnavailable = snapshotEnabled && snapshotResult?.state !== "found";
   const currentZoneName = str(parcelRow.zone_name);
@@ -951,23 +966,17 @@ async function loadParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV
   // them together removes avoidable serial latency without changing their
   // independent error or privacy semantics.
   const [permitsResult, overlaysResult, similarLotsResult] = await Promise.all([
-    fetchPermitsForParcel({ apnNorm, address, city, state, zip }),
-    getOverlayFlags(lat, lng),
-    fetchSimilarLots(runtimeParcelRow),
+    timing.measure("permits", () => fetchPermitsForParcel({ apnNorm, address, city, state, zip })),
+    timing.measure("overlays", () => getOverlayFlags(lat, lng)),
+    timing.measure("similar_lots", () => fetchSimilarLots(runtimeParcelRow)),
   ]);
   const overlays = overlaysResult.flags;
+  const finishRenderPreparation = timing.begin("page_render_preparation");
   const sdaRegulatoryConclusionAllowed = canUseSdaForRegulatoryConclusion(overlays.sda);
   const similarLots = similarLotsResult.similarLots;
   const permits = permitsResult.rows;
   // The display fallback is not a situs address. Keep addressless parcels on
   // the APN-only canonical instead of slugging the display string "APN …".
-  const canonicalAddress = str(parcelRow.address) || null;
-  const canonicalIdentity = canonicalParcelIdentity({
-    apn: apnNorm,
-    jurisdiction: "san-diego",
-    address: canonicalAddress,
-    provenance: "parcel_page_api_v2.address",
-  });
   const { canonicalSlug, canonicalPath } = canonicalIdentity;
   const refreshedAt = formatShortDate(parcelRow.generated_at);
   const staleDays = daysOld(parcelRow.generated_at);
@@ -1302,7 +1311,7 @@ async function loadParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV
     sourceUrl: null,
     availability: num(parcelRow.lot_area_sqft) === null ? "MISSING" : "AVAILABLE",
   };
-  const feasibility = buildPublicParcelFeasibility({
+  const feasibility = timing.measureSync("feasibility_rules", () => buildPublicParcelFeasibility({
     jurisdictionId: "CITY_OF_SAN_DIEGO",
     parcelId: apnNorm,
     address,
@@ -1339,7 +1348,7 @@ async function loadParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV
       },
     },
     sourceFreshness: refreshedAt,
-  });
+  }));
   if (feasibility.readiness === "READY") {
     const sdaContext = feasibility.contexts.find((context) => context.type === "SDA");
     const sdaProgram = programFacts.find(
@@ -1476,6 +1485,7 @@ async function loadParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV
     : sourceStatus.permits.sourceState === "partial"
     ? { state: "partial", value: permitFacts, sourceState: "partial", provenance: permitProvenance, derivation: "deterministic_derived" }
     : { state: "supported", value: permitFacts, sourceState: "available", provenance: permitProvenance, derivation: "deterministic_derived" };
+  finishRenderPreparation();
   return {
     status: pageStatus, data, sourceStatus,
     truth: {
@@ -1493,21 +1503,18 @@ async function loadParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV
   };
 }
 
-type ParcelPageLoadCache = Map<string, { expiresAt: number; promise: Promise<ParcelPageV1Result> }>;
-const processCache = globalThis as typeof globalThis & { __trulotParcelPageLoads?: ParcelPageLoadCache };
-const parcelPageLoads = processCache.__trulotParcelPageLoads ??= new Map();
+async function loadParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV1Result> {
+  const timing = createParcelServerTiming("page");
+  timing.mark("route_entry");
+  try {
+    return await loadParcelPageV1ResultImpl(rawApnOrSlug, timing);
+  } finally {
+    timing.finish();
+  }
+}
 
-// Metadata and the page render in separate React scopes. This process-wide,
-// two-second public-data coalescer removes duplicate APN/RPC work while
-// preserving the existing near-real-time source behavior.
 export function getParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV1Result> {
-  const key = rawApnOrSlug.replace(/\D/g, "") || rawApnOrSlug;
-  const now = Date.now(); const existing = parcelPageLoads.get(key);
-  if (existing && existing.expiresAt > now) return existing.promise;
-  const promise = loadParcelPageV1Result(rawApnOrSlug);
-  parcelPageLoads.set(key, { expiresAt: now + 2_000, promise });
-  const timer = setTimeout(() => { if (parcelPageLoads.get(key)?.promise === promise) parcelPageLoads.delete(key); }, 2_000);
-  timer.unref?.(); return promise;
+  return loadParcelPageV1Result(rawApnOrSlug);
 }
 
 export async function getParcelPageV1Data(rawApnOrSlug: string): Promise<ParcelPageV1Data | null> {

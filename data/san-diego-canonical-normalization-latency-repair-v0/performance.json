@@ -1,0 +1,272 @@
+{
+  "environment": "Local production-equivalent Next.js Node runtime with bounded loopback Supabase fixture; no production access.",
+  "acceptanceBudget": {
+    "preferredMedianMs": 2000,
+    "warningMs": 3000,
+    "hardFailureMs": 5000
+  },
+  "snapshotOn": {
+    "cases": 36,
+    "medianMs": 254.3,
+    "p75Ms": 255.7,
+    "p95Ms": 288.2,
+    "maximumMs": 1854.1,
+    "coldMs": 1883.8
+  },
+  "snapshotOff": {
+    "cases": 36,
+    "medianMs": 254.1,
+    "p75Ms": 256.1,
+    "p95Ms": 279.9,
+    "maximumMs": 1812,
+    "coldMs": 1833.8
+  },
+  "coreStageTimings": {
+    "snapshotOn": {
+      "metadata": {
+        "route_entry": {
+          "count": 48,
+          "median": 0,
+          "p95": 0.001,
+          "maximum": 0.001
+        },
+        "identity": {
+          "count": 48,
+          "median": 0.077,
+          "p95": 9.838,
+          "maximum": 19.004
+        },
+        "zoning_snapshot": {
+          "count": 48,
+          "median": 0.055,
+          "p95": 6.969,
+          "maximum": 22.127
+        },
+        "metadata_generation": {
+          "count": 48,
+          "median": 0.41,
+          "p95": 17.149,
+          "maximum": 41.39
+        },
+        "total_server": {
+          "count": 48,
+          "median": 0.521,
+          "p95": 17.249,
+          "maximum": 41.594
+        }
+      },
+      "page": {
+        "route_entry": {
+          "count": 44,
+          "median": 0.001,
+          "p95": 0.001,
+          "maximum": 0.009
+        },
+        "core_parcel": {
+          "count": 44,
+          "median": 85.062,
+          "p95": 87.194,
+          "maximum": 168.018
+        },
+        "identity": {
+          "count": 44,
+          "median": 0.102,
+          "p95": 0.139,
+          "maximum": 0.274
+        },
+        "zoning_snapshot": {
+          "count": 44,
+          "median": 0.067,
+          "p95": 0.078,
+          "maximum": 0.144
+        },
+        "similar_lots": {
+          "count": 44,
+          "median": 96.658,
+          "p95": 103.38,
+          "maximum": 115.647
+        },
+        "overlays": {
+          "count": 44,
+          "median": 106.633,
+          "p95": 107.946,
+          "maximum": 117.294
+        },
+        "permits": {
+          "count": 44,
+          "median": 127.999,
+          "p95": 129.249,
+          "maximum": 136.16
+        },
+        "feasibility_rules": {
+          "count": 44,
+          "median": 0.009,
+          "p95": 0.132,
+          "maximum": 4.025
+        },
+        "page_render_preparation": {
+          "count": 44,
+          "median": 0.391,
+          "p95": 0.963,
+          "maximum": 9.728
+        },
+        "total_server": {
+          "count": 44,
+          "median": 214.235,
+          "p95": 221.296,
+          "maximum": 317.344
+        }
+      }
+    },
+    "snapshotOff": {
+      "metadata": {
+        "route_entry": {
+          "count": 48,
+          "median": 0,
+          "p95": 0.001,
+          "maximum": 0.001
+        },
+        "identity": {
+          "count": 48,
+          "median": 0.076,
+          "p95": 7.396,
+          "maximum": 17.834
+        },
+        "zoning_snapshot": {
+          "count": 48,
+          "median": 0,
+          "p95": 0,
+          "maximum": 0.077
+        },
+        "metadata_generation": {
+          "count": 48,
+          "median": 0.367,
+          "p95": 7.67,
+          "maximum": 18.738
+        },
+        "total_server": {
+          "count": 48,
+          "median": 0.473,
+          "p95": 7.763,
+          "maximum": 18.932
+        }
+      },
+      "page": {
+        "route_entry": {
+          "count": 44,
+          "median": 0.001,
+          "p95": 0.001,
+          "maximum": 0.009
+        },
+        "core_parcel": {
+          "count": 44,
+          "median": 85.311,
+          "p95": 86.932,
+          "maximum": 144.159
+        },
+        "identity": {
+          "count": 44,
+          "median": 0.098,
+          "p95": 0.13,
+          "maximum": 0.32
+        },
+        "zoning_snapshot": {
+          "count": 44,
+          "median": 0,
+          "p95": 0.001,
+          "maximum": 0.008
+        },
+        "similar_lots": {
+          "count": 44,
+          "median": 96.727,
+          "p95": 98.881,
+          "maximum": 122.338
+        },
+        "overlays": {
+          "count": 44,
+          "median": 106.737,
+          "p95": 109.896,
+          "maximum": 123.945
+        },
+        "permits": {
+          "count": 44,
+          "median": 128.178,
+          "p95": 129.187,
+          "maximum": 132.32
+        },
+        "feasibility_rules": {
+          "count": 44,
+          "median": 0.01,
+          "p95": 1.334,
+          "maximum": 4.285
+        },
+        "page_render_preparation": {
+          "count": 44,
+          "median": 0.4,
+          "p95": 2.418,
+          "maximum": 10.346
+        },
+        "total_server": {
+          "count": 44,
+          "median": 214.926,
+          "p95": 216.683,
+          "maximum": 290.095
+        }
+      }
+    }
+  },
+  "invocationProof": {
+    "canonicalCasesPerMode": 36,
+    "coreParcelPerCanonicalRequest": 1,
+    "overlayPerCanonicalRequest": 1,
+    "metadataCoreParcelReads": 0,
+    "metadataPermitReads": 0,
+    "metadataOverlayReads": 0,
+    "metadataSimilarLotReads": 0
+  },
+  "concurrencyProof": {
+    "fixtureDelaysMs": {
+      "exactParcel": 80,
+      "similarParcel": 90,
+      "permits": 120,
+      "overlays": 100
+    },
+    "serialLowerBoundMs": 390,
+    "observedPageServerMedianMs": 214.235,
+    "conclusion": "After the core parcel read, permits, overlays, and similar-lot work overlap; page server duration is below the serial sum."
+  },
+  "duplicateWorkAudit": "Metadata uses immutable public identity plus optional immutable zoning only. The page owns the sole live parcel/enrichment waterfall. Process-wide two-second coalescing was removed because metadata and page can run in distinct React/serverless scopes.",
+  "cacheScopeAudit": "Identity and zoning readers cache verified prefix shards only within one warm Node process. Correctness and one-live-loader behavior do not depend on cache survival across metadata/page scopes, instances, or cold invocations.",
+  "runtimeArchitecture": {
+    "rendering": "force-dynamic",
+    "runtime": "Next.js Node.js default (filesystem-backed immutable snapshots require Node)",
+    "preferredRegionConfiguredInRepository": false,
+    "functionRegion": "not established by repository evidence",
+    "databaseRegion": "not established by repository evidence",
+    "connectionStartup": "Supabase HTTP client; measured within the bounded fixture, production network variance requires canary",
+    "functionSplitting": "metadata and page may execute in separate scopes/instances; design no longer depends on shared process state"
+  },
+  "dependencyCriticality": {
+    "critical": [
+      "public identity",
+      "canonical",
+      "core parcel",
+      "zoning snapshot",
+      "safe feasibility/rule state"
+    ],
+    "noncritical": [
+      "permits/activity",
+      "overlays beyond safe first-response context",
+      "similar lots",
+      "nearby activity"
+    ]
+  },
+  "repair": [
+    "single immutable structured identity source",
+    "metadata decoupled from live parcel/permit/overlay/similar queries",
+    "independent enrichment calls remain concurrent",
+    "unreliable process coalescer removed",
+    "gated identifier-free stage timing added"
+  ],
+  "decision": "SAN_DIEGO_CANONICAL_NORMALIZATION_AND_LATENCY_REPAIR_READY"
+}

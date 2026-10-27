@@ -1,0 +1,7 @@
+{
+  "root": "data/san-diego-public-identity-v0",
+  "manifestSha256": "34f96a186c510710c62bc59cceb8a12a89bb60f388a3d10b38b44beb9ce71ab4",
+  "rows": 393733,
+  "shards": 208,
+  "bytes": 11785953
+}

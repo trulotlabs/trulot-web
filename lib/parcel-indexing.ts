@@ -4,7 +4,7 @@ import {
   normalizeApnDigits,
   type ParcelJurisdictionSlug,
 } from "./parcel-slug";
-import { canonicalParcelIdentity } from "./parcel-identity";
+import { canonicalParcelIdentity, type CanonicalParcelIdentity } from "./parcel-identity";
 
 export const TRULOT_PRODUCTION_ORIGIN = "https://trulot.com" as const;
 
@@ -213,6 +213,7 @@ export function parcelMetadata(params: {
   payload: PublicParcelPayload;
   jurisdiction: ParcelJurisdiction;
   state: ParcelIndexState;
+  canonicalIdentity?: CanonicalParcelIdentity;
 }): Metadata {
   const { payload, jurisdiction, state } = params;
   const place = payload.address ?? `APN ${formatApnForDisplay(payload.apn)}`;
@@ -227,7 +228,7 @@ export function parcelMetadata(params: {
   return {
     title: `${place} — public parcel record | TruLot`,
     description,
-    alternates: { canonical: canonicalParcelUrl(jurisdiction, payload.apn, payload.address) },
+    alternates: { canonical: params.canonicalIdentity?.canonicalUrl ?? canonicalParcelUrl(jurisdiction, payload.apn, payload.address) },
     robots: parcelRobotsFor(state),
     other: {
       "trulot:jurisdiction": payload.jurisdiction,

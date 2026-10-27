@@ -1,0 +1,31 @@
+{
+  "identityVersion": "parcel-identity-v2",
+  "addressVersion": "public-address-v1",
+  "preconditions": [
+    "production snapshot OFF",
+    "San Diego indexing OFF",
+    "San Diego sitemap OFF",
+    "global indexing kill switch ON",
+    "Packet 11 frozen",
+    "clean committed candidate"
+  ],
+  "procedure": [
+    "Deploy only to a protected bounded canary",
+    "Keep indexing and sitemap controls OFF",
+    "Enable identifier-free TRULOT_PARCEL_SERVER_TIMING only for the bounded observation window",
+    "Verify the four Packet 89 APNs plus the 36-case canonical set byte-for-byte",
+    "Require every legacy slug to redirect once with no loop",
+    "Measure cold and repeated requests with snapshot OFF then ON",
+    "Stop and roll back on any canonical mismatch, repeated response above 5000 ms, privacy/robots regression, or source-truth regression",
+    "Disable timing after evidence collection"
+  ],
+  "gates": {
+    "canonical": "exact byte parity",
+    "warningMs": 3000,
+    "hardFailureMs": 5000,
+    "preferredMedianMs": 2000,
+    "indexing": "OFF",
+    "sitemap": "OFF"
+  },
+  "authorizedNow": false
+}
