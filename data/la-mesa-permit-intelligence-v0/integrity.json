@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "la-mesa-permit-intelligence-integrity-v0",
+  "algorithm": "sha256",
+  "files": {
+    "README.md": {
+      "bytes": 958,
+      "sha256": "031541b61c45d07eaed2f5a8131865ae6ff04b52db48192d16f2ec2c81ff989c"
+    },
+    "case-traces.json": {
+      "bytes": 110247,
+      "sha256": "1ac8f4f72508924c97b0cbf8d37331375b5013afbeac948f8d8a6ba903c40ee8"
+    },
+    "cohort-results.json": {
+      "bytes": 45239,
+      "sha256": "054fb9bd1c65949b0c1f851fc4751ddff405dc7fa5dad4905e6ee1ddf6eb9dab"
+    },
+    "decision.json": {
+      "bytes": 991,
+      "sha256": "f675fcce467bf3fe051fee28897b90087375fd33d3da94f11e5f5d045fbead52"
+    },
+    "doctrine.json": {
+      "bytes": 1595,
+      "sha256": "b2487403d57e44b910f4f2055cd7247b0e33d8b1c29e2d7ffb9fb585cc62edac"
+    },
+    "normalized-permit-records.json": {
+      "bytes": 1148948,
+      "sha256": "ffb89c7481018d97af27e925c09924e59b2fc182c997cd6ac173ecfebbc45c67"
+    },
+    "permit-schema.json": {
+      "bytes": 708,
+      "sha256": "e78755931856d301cbce178db7ad069789ef6567650ff0555034b62c41d22c4d"
+    },
+    "source-captures/maintstar-bounded-capture.json": {
+      "bytes": 947793,
+      "sha256": "a0245678acfbc897c36dff0b09b1d951e8f7ae39080e95c35902f11a7035d186"
+    },
+    "source-contract.json": {
+      "bytes": 2709,
+      "sha256": "68e3a3e0d09090701579e90b93cccc7d82b80ea9f0e903d32d965dce42812336"
+    }
+  }
+}

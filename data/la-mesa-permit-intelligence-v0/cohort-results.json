@@ -1,0 +1,1864 @@
+{
+  "schemaVersion": "la-mesa-permit-cohort-v0",
+  "metrics": {
+    "cohortQueries": 50,
+    "successfulQueries": 50,
+    "sourceUnavailableQueries": 0,
+    "queriesWithRecords": 47,
+    "cohortHitRate": 0.94,
+    "normalizedRecordCount": 825,
+    "completenessRateAmongSuccessful": 1,
+    "parcelLinkageRate": 0.7466666666666667,
+    "completenessStates": {
+      "COMPLETE_FOR_QUERY": 49,
+      "PAGINATED_COMPLETE": 1
+    },
+    "linkageStates": {
+      "ADDRESS_GROUP_LINKED": 167,
+      "PARCEL_LINKED": 616,
+      "UNRESOLVED": 42
+    },
+    "categoryDistribution": {
+      "ADU": 6,
+      "DEMOLITION": 2,
+      "ELECTRICAL": 237,
+      "GRADING": 13,
+      "MECHANICAL": 65,
+      "NEW_DWELLING": 4,
+      "OTHER": 432,
+      "PLUMBING": 37,
+      "REMODEL": 23,
+      "RETAINING_WALL": 1,
+      "SOLAR": 5
+    },
+    "normalizedStatusDistribution": {
+      "EXPIRED": 88,
+      "FINALED_COMPLETE": 451,
+      "ISSUED": 198,
+      "UNDER_REVIEW": 6,
+      "UNKNOWN": 74,
+      "WITHDRAWN": 8
+    },
+    "rawStatusVocabulary": [
+      "APPROVED",
+      "Approved (Closed)",
+      "Approved: Permit Fees Due",
+      "COFO",
+      "Closed",
+      "Closed - Final",
+      "Completed",
+      "Completed (Pass)",
+      "DENIED",
+      "Denied (Closed)",
+      "EXP APPL",
+      "EXPIRED",
+      "FINAL",
+      "Final",
+      "Finaled",
+      "Finaled with CofO",
+      "ISSUED",
+      "In Progress",
+      "Inspections Complete",
+      "Inspections Finaled",
+      "Issued",
+      "Plan Check Expired",
+      "Pre-Con Meeting Complete",
+      "Pre-Con Meeting Pending",
+      "VOID",
+      "Void",
+      "WITHDRWN",
+      "Wait for Fee Payment",
+      "Withdrawn",
+      "Withdrawn (Closed)"
+    ],
+    "latencyMs": {
+      "sessionSetup": 211.1,
+      "minimum": 648.9,
+      "maximum": 3013.5,
+      "mean": 1367.0539999999996
+    },
+    "warning": "This deliberately stratified 50-query cohort is not a population estimate."
+  },
+  "rows": [
+    {
+      "cohortIndex": 1,
+      "apn": "4685100900",
+      "address": "6910 BRUCE CT",
+      "query": "6910 BRUCE CT",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "6910_BRUCE_CASE",
+        "ORDINARY_R1"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 3,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 3
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 3
+      },
+      "categoryCounts": {
+        "REMODEL": 1,
+        "PLUMBING": 1,
+        "OTHER": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 953.6,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 2,
+      "apn": "4640301100",
+      "address": "5836 PAWNEE DR",
+      "query": "5836 PAWNEE DR",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "ORDINARY_R1"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 2,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 2
+      },
+      "statusCounts": {
+        "ISSUED": 1,
+        "FINALED_COMPLETE": 1
+      },
+      "categoryCounts": {
+        "OTHER": 2
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 893.9,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 3,
+      "apn": "4640301200",
+      "address": "5830 PAWNEE DR",
+      "query": "5830 PAWNEE DR",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "ORDINARY_R1",
+        "RECENT_PERMIT"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 4,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 4
+      },
+      "statusCounts": {
+        "ISSUED": 1,
+        "FINALED_COMPLETE": 3
+      },
+      "categoryCounts": {
+        "OTHER": 2,
+        "MECHANICAL": 1,
+        "PLUMBING": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 959.1,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 4,
+      "apn": "4635800100",
+      "address": "5498 PENNSYLVANIA LN",
+      "query": "5498 PENNSYLVANIA LN",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "R1S"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 3,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 3
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 3
+      },
+      "categoryCounts": {
+        "OTHER": 3
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 832.4,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 5,
+      "apn": "4912600700",
+      "address": "9470 GROSSMONT BLVD",
+      "query": "9470 GROSSMONT BLVD",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "SCENIC"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 1,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 1
+      },
+      "statusCounts": {
+        "UNKNOWN": 1
+      },
+      "categoryCounts": {
+        "OTHER": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 812.5,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 6,
+      "apn": "4752412200",
+      "address": "4284 SUMMIT DR",
+      "query": "4284 SUMMIT DR",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "HILLSIDE"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 6,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "UNRESOLVED": 6
+      },
+      "statusCounts": {
+        "UNKNOWN": 1,
+        "FINALED_COMPLETE": 3,
+        "ISSUED": 2
+      },
+      "categoryCounts": {
+        "OTHER": 6
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 1185,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 7,
+      "apn": "4640201000",
+      "address": "5877 BALTIMORE DR",
+      "query": "5877 BALTIMORE DR",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "R3_MULTIFAMILY"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 3,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 3
+      },
+      "statusCounts": {
+        "ISSUED": 1,
+        "FINALED_COMPLETE": 2
+      },
+      "categoryCounts": {
+        "OTHER": 3
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 2503.5,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 8,
+      "apn": "4904720700",
+      "address": "5264 WOOD ST",
+      "query": "5264 WOOD ST",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "R3_COMBINED_OVERLAYS"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 0,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {},
+      "statusCounts": {},
+      "categoryCounts": {},
+      "ambiguousCandidateApns": [],
+      "latencyMs": 926.9,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 9,
+      "apn": "4640203301",
+      "address": "5700 BALTIMORE DR",
+      "query": "5700 BALTIMORE DR",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "CONDO_COMMON_ADDRESS"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 361,
+      "completeness": "PAGINATED_COMPLETE",
+      "linkageCounts": {
+        "PARCEL_LINKED": 230,
+        "ADDRESS_GROUP_LINKED": 126,
+        "UNRESOLVED": 5
+      },
+      "statusCounts": {
+        "UNKNOWN": 5,
+        "FINALED_COMPLETE": 223,
+        "ISSUED": 96,
+        "WITHDRAWN": 5,
+        "UNDER_REVIEW": 5,
+        "EXPIRED": 27
+      },
+      "categoryCounts": {
+        "OTHER": 73,
+        "REMODEL": 11,
+        "MECHANICAL": 51,
+        "ELECTRICAL": 206,
+        "PLUMBING": 19,
+        "SOLAR": 1
+      },
+      "ambiguousCandidateApns": [
+        "4640203301",
+        "4640203302",
+        "4640203303",
+        "4640203304",
+        "4640203305",
+        "4640203306",
+        "4640203307",
+        "4640203308",
+        "4640203309",
+        "4640203310",
+        "4640203311",
+        "4640203312",
+        "4640203313",
+        "4640203314",
+        "4640203315",
+        "4640203316",
+        "4640203317",
+        "4640203318",
+        "4640203319",
+        "4640203320",
+        "4640203321",
+        "4640203322",
+        "4640203323",
+        "4640203324",
+        "4640203325",
+        "4640203326",
+        "4640203327",
+        "4640203328",
+        "4640203329",
+        "4640203330",
+        "4640203331",
+        "4640203332",
+        "4640203333",
+        "4640203334",
+        "4640203335",
+        "4640203336",
+        "4640203337",
+        "4640203338",
+        "4640203339",
+        "4640203340",
+        "4640203341",
+        "4640203342",
+        "4640203343",
+        "4640203344",
+        "4640203345",
+        "4640203346",
+        "4640203347",
+        "4640203348",
+        "4640203349",
+        "4640203350",
+        "4640203351",
+        "4640203352",
+        "4640203353",
+        "4640203354",
+        "4640203355",
+        "4640203356",
+        "4640203357",
+        "4640203358",
+        "4640203359",
+        "4640203360",
+        "4640203361",
+        "4640203362",
+        "4640203363",
+        "4640203364",
+        "4640203365",
+        "4640203366",
+        "4640203367",
+        "4640203368",
+        "4640203369",
+        "4640203370",
+        "4640203371",
+        "4640203372",
+        "4640203373",
+        "4640203374",
+        "4640203375",
+        "4640203376",
+        "4640203377",
+        "4640203378",
+        "4640203379",
+        "4640203380",
+        "4640203381",
+        "4640203382",
+        "4640203401",
+        "4640203402",
+        "4640203403",
+        "4640203404",
+        "4640203405",
+        "4640203406",
+        "4640203407",
+        "4640203408",
+        "4640203409",
+        "4640203410",
+        "4640203411",
+        "4640203412",
+        "4640203413",
+        "4640203414",
+        "4640203415",
+        "4640203416",
+        "4640203417",
+        "4640203418",
+        "4640203419",
+        "4640203420",
+        "4640203421",
+        "4640203422",
+        "4640203423",
+        "4640203424",
+        "4640203425",
+        "4640203426",
+        "4640203427",
+        "4640203428",
+        "4640203429",
+        "4640203430",
+        "4640203431",
+        "4640203432",
+        "4640203433",
+        "4640203434",
+        "4640203435",
+        "4640203436",
+        "4640203437",
+        "4640203438",
+        "4640203439",
+        "4640203440",
+        "4640203441",
+        "4640203442",
+        "4640203443",
+        "4640203444",
+        "4640203445",
+        "4640203446",
+        "4640203447",
+        "4640203448",
+        "4640203449",
+        "4640203450",
+        "4640203451",
+        "4640203452",
+        "4640203453",
+        "4640203454",
+        "4640203455",
+        "4640203456",
+        "4640203457",
+        "4640203458",
+        "4640203459",
+        "4640203460",
+        "4640203461",
+        "4640203462",
+        "4640203463",
+        "4640203464",
+        "4640203465",
+        "4640203466",
+        "4640203467",
+        "4640203468",
+        "4640203469",
+        "4640203470",
+        "4640203471",
+        "4640203472",
+        "4640203473",
+        "4640203474",
+        "4640203475",
+        "4640203476",
+        "4640203477",
+        "4640203478",
+        "4640203479",
+        "4640203480",
+        "4640203481",
+        "4640203482",
+        "4640203483",
+        "4640203484",
+        "4640203485",
+        "4640203486",
+        "4640203501",
+        "4640203502",
+        "4640203503",
+        "4640203504",
+        "4640203505",
+        "4640203506",
+        "4640203507",
+        "4640203508",
+        "4640203509",
+        "4640203510",
+        "4640203511",
+        "4640203512",
+        "4640203513",
+        "4640203514",
+        "4640203515",
+        "4640203516",
+        "4640203517",
+        "4640203518",
+        "4640203519",
+        "4640203520",
+        "4640203521",
+        "4640203522",
+        "4640203523",
+        "4640203524",
+        "4640203525",
+        "4640203526",
+        "4640203527",
+        "4640203528",
+        "4640203529",
+        "4640203530",
+        "4640203531",
+        "4640203532",
+        "4640203533",
+        "4640203534",
+        "4640203535",
+        "4640203536",
+        "4640203537",
+        "4640203538",
+        "4640203539",
+        "4640203540",
+        "4640203541",
+        "4640203542",
+        "4640203543",
+        "4640203544",
+        "4640203545",
+        "4640203546",
+        "4640203547",
+        "4640203548",
+        "4640203549",
+        "4640203550",
+        "4640203551",
+        "4640203552",
+        "4640203553",
+        "4640203554",
+        "4640203555",
+        "4640203556",
+        "4640203557",
+        "4640203558",
+        "4640203559",
+        "4640203560",
+        "4640203561",
+        "4640203562",
+        "4640203563",
+        "4640203564",
+        "4640203565",
+        "4640203566",
+        "4640203567",
+        "4640203568",
+        "4640203569",
+        "4640203570",
+        "4640203571",
+        "4640203572",
+        "4640203573",
+        "4640203574",
+        "4640203575",
+        "4640203576",
+        "4640203577",
+        "4640203578",
+        "4640203579",
+        "4640203580",
+        "4640203581",
+        "4640203582",
+        "4640203583",
+        "4640203584",
+        "4640203585",
+        "4640203586"
+      ],
+      "latencyMs": 3013.5,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 10,
+      "apn": "4745510700",
+      "address": "3706 KING ST",
+      "query": "3706 KING ST",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DUPLICATE_ADDRESS",
+        "MULTIFAMILY"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 2,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "ADDRESS_GROUP_LINKED": 2
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 2
+      },
+      "categoryCounts": {
+        "MECHANICAL": 2
+      },
+      "ambiguousCandidateApns": [
+        "4745510700",
+        "4745510800"
+      ],
+      "latencyMs": 972.1,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 11,
+      "apn": "4640202200",
+      "address": null,
+      "query": "4640202200",
+      "queryKind": "APN",
+      "categories": [
+        "MISSING_ADDRESS"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 0,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {},
+      "statusCounts": {},
+      "categoryCounts": {},
+      "ambiguousCandidateApns": [],
+      "latencyMs": 1204.2,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 12,
+      "apn": "4645231900",
+      "address": null,
+      "query": "4645231900",
+      "queryKind": "APN",
+      "categories": [
+        "UNSUPPORTED_ZONING",
+        "MISSING_ADDRESS"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 2,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "UNRESOLVED": 2
+      },
+      "statusCounts": {
+        "ISSUED": 2
+      },
+      "categoryCounts": {
+        "OTHER": 2
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 2271.1,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 13,
+      "apn": "4946110900",
+      "address": "4560 3RD ST",
+      "query": "4560 3RD ST",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "ASSESSOR_GRANNY_FLAT_HINT"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 9,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 9
+      },
+      "statusCounts": {
+        "ISSUED": 3,
+        "FINALED_COMPLETE": 4,
+        "EXPIRED": 2
+      },
+      "categoryCounts": {
+        "OTHER": 6,
+        "ADU": 1,
+        "PLUMBING": 1,
+        "ELECTRICAL": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 1174.1,
+      "currentnessState": "LATER_PERMIT_CHANGE_OBSERVED"
+    },
+    {
+      "cohortIndex": 14,
+      "apn": "4946120500",
+      "address": "4573 3RD ST",
+      "query": "4573 3RD ST",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "ASSESSOR_ADU_HINT"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 4,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 4
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 2,
+        "ISSUED": 1,
+        "EXPIRED": 1
+      },
+      "categoryCounts": {
+        "ADU": 1,
+        "OTHER": 1,
+        "PLUMBING": 2
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 960.8,
+      "currentnessState": "LATER_PERMIT_CHANGE_OBSERVED"
+    },
+    {
+      "cohortIndex": 15,
+      "apn": "4742211500",
+      "address": "4109 69TH ST",
+      "query": "4109 69TH ST",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "ASSESSOR_ADU_HINT"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 2,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 2
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 1,
+        "EXPIRED": 1
+      },
+      "categoryCounts": {
+        "OTHER": 2
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 913.3,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 16,
+      "apn": "4693022200",
+      "address": "4595 70TH ST",
+      "query": "4595 70TH ST",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "ASSESSOR_ADU_HINT"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 2,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 2
+      },
+      "statusCounts": {
+        "ISSUED": 1,
+        "FINALED_COMPLETE": 1
+      },
+      "categoryCounts": {
+        "ELECTRICAL": 1,
+        "MECHANICAL": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 979.7,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 17,
+      "apn": "4905510900",
+      "address": "5740 AMARILLO AVE",
+      "query": "5740 AMARILLO AVE",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "ASSESSOR_ADU_HINT"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 3,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 3
+      },
+      "statusCounts": {
+        "ISSUED": 1,
+        "FINALED_COMPLETE": 2
+      },
+      "categoryCounts": {
+        "ELECTRICAL": 1,
+        "SOLAR": 1,
+        "ADU": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 1358.4,
+      "currentnessState": "LATER_PERMIT_CHANGE_OBSERVED"
+    },
+    {
+      "cohortIndex": 18,
+      "apn": "4944102400",
+      "address": "4757 PALM AVE",
+      "query": "4757 PALM AVE",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 35,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 35
+      },
+      "statusCounts": {
+        "ISSUED": 21,
+        "FINALED_COMPLETE": 7,
+        "UNKNOWN": 6,
+        "EXPIRED": 1
+      },
+      "categoryCounts": {
+        "OTHER": 29,
+        "ELECTRICAL": 1,
+        "REMODEL": 3,
+        "NEW_DWELLING": 1,
+        "GRADING": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 2325,
+      "currentnessState": "ACTIVE_CHANGE_IN_PROGRESS"
+    },
+    {
+      "cohortIndex": 19,
+      "apn": "4866701800",
+      "address": "9407 JERICHO RD",
+      "query": "9407 JERICHO RD",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 34,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 34
+      },
+      "statusCounts": {
+        "ISSUED": 14,
+        "UNKNOWN": 4,
+        "FINALED_COMPLETE": 11,
+        "EXPIRED": 3,
+        "WITHDRAWN": 2
+      },
+      "categoryCounts": {
+        "OTHER": 27,
+        "RETAINING_WALL": 1,
+        "GRADING": 3,
+        "DEMOLITION": 1,
+        "MECHANICAL": 1,
+        "PLUMBING": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 2350.4,
+      "currentnessState": "ACTIVE_CHANGE_IN_PROGRESS"
+    },
+    {
+      "cohortIndex": 20,
+      "apn": "4906603100",
+      "address": "5220 WILSON ST",
+      "query": "5220 WILSON ST",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 31,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 31
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 4,
+        "ISSUED": 19,
+        "UNKNOWN": 8
+      },
+      "categoryCounts": {
+        "OTHER": 26,
+        "SOLAR": 1,
+        "ELECTRICAL": 1,
+        "NEW_DWELLING": 1,
+        "GRADING": 1,
+        "DEMOLITION": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 2325.5,
+      "currentnessState": "ACTIVE_CHANGE_IN_PROGRESS"
+    },
+    {
+      "cohortIndex": 21,
+      "apn": "4741811900",
+      "address": "7285 UNIVERSITY AVE",
+      "query": "7285 UNIVERSITY AVE",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 5,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 5
+      },
+      "statusCounts": {
+        "UNDER_REVIEW": 1,
+        "EXPIRED": 2,
+        "UNKNOWN": 1,
+        "FINALED_COMPLETE": 1
+      },
+      "categoryCounts": {
+        "OTHER": 3,
+        "NEW_DWELLING": 1,
+        "ELECTRICAL": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 999.5,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 22,
+      "apn": "4706900300",
+      "address": "7735 UNIVERSITY AVE",
+      "query": "7735 UNIVERSITY AVE",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "RECENT_ACTIVE_DEVELOPMENT"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 2,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 2
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 2
+      },
+      "categoryCounts": {
+        "REMODEL": 1,
+        "ELECTRICAL": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 922.1,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 23,
+      "apn": "4705321100",
+      "address": "4326 AVON DR",
+      "query": "4326 AVON DR",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "KNOWN_ADU_PERMIT_ACTIVITY"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 4,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 4
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 2,
+        "EXPIRED": 2
+      },
+      "categoryCounts": {
+        "OTHER": 2,
+        "SOLAR": 1,
+        "ADU": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 962.9,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 24,
+      "apn": "4852600500",
+      "address": "8470 ABILENE TER",
+      "query": "8470 ABILENE TER",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "ORDINARY_R1",
+        "ADU_HINT"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 3,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 3
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 3
+      },
+      "categoryCounts": {
+        "ADU": 1,
+        "PLUMBING": 1,
+        "OTHER": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 914.3,
+      "currentnessState": "LATER_PERMIT_CHANGE_OBSERVED"
+    },
+    {
+      "cohortIndex": 25,
+      "apn": "4641801100",
+      "address": "6964 COLORADO AVE",
+      "query": "6964 COLORADO AVE",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "KNOWN_ADU_PERMIT_ACTIVITY"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 20,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 20
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 20
+      },
+      "categoryCounts": {
+        "ADU": 1,
+        "OTHER": 19
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 851.9,
+      "currentnessState": "LATER_PERMIT_CHANGE_OBSERVED"
+    },
+    {
+      "cohortIndex": 26,
+      "apn": "7746913108",
+      "address": "7440 COLONY DR",
+      "query": "7440 COLONY DR",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_UNKNOWN"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 12,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "ADDRESS_GROUP_LINKED": 4,
+        "PARCEL_LINKED": 1,
+        "UNRESOLVED": 7
+      },
+      "statusCounts": {
+        "UNKNOWN": 5,
+        "EXPIRED": 2,
+        "FINALED_COMPLETE": 5
+      },
+      "categoryCounts": {
+        "OTHER": 8,
+        "PLUMBING": 4
+      },
+      "ambiguousCandidateApns": [
+        "4691302600",
+        "7746913101",
+        "7746913102",
+        "7746913103",
+        "7746913104",
+        "7746913105",
+        "7746913106",
+        "7746913107",
+        "7746913108",
+        "7746913109",
+        "7746913110",
+        "7746913111",
+        "7746913112",
+        "7746913113",
+        "7746913114",
+        "7746913115",
+        "7746913116",
+        "7746913117",
+        "7746913118",
+        "7746913119",
+        "7746913120",
+        "7746913121",
+        "7746913122",
+        "7746913123",
+        "7746913124",
+        "7746913125",
+        "7746913126",
+        "7746913127",
+        "7746913128",
+        "7746913129",
+        "7746913130",
+        "7746913131",
+        "7746913132",
+        "7746913133",
+        "7746913134",
+        "7746913135",
+        "7746913136",
+        "7746913137",
+        "7746913138",
+        "7746913139",
+        "7746913140",
+        "7746913141",
+        "7746913142",
+        "7746913143",
+        "7746913144",
+        "7746913145",
+        "7746913146",
+        "7746913147",
+        "7746913148",
+        "7746913149"
+      ],
+      "latencyMs": 1161.6,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 27,
+      "apn": "4646001500",
+      "address": "8165 FLETCHER PKWY",
+      "query": "8165 FLETCHER PKWY",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_UNKNOWN",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_F"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 19,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 19
+      },
+      "statusCounts": {
+        "ISSUED": 8,
+        "FINALED_COMPLETE": 9,
+        "EXPIRED": 1,
+        "WITHDRAWN": 1
+      },
+      "categoryCounts": {
+        "OTHER": 17,
+        "PLUMBING": 1,
+        "GRADING": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 1267.2,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 28,
+      "apn": "4646002400",
+      "address": "8191 FLETCHER PKWY",
+      "query": "8191 FLETCHER PKWY",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_UNKNOWN",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_F",
+        "MODIFIER_LM_OVERLAY_G"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 21,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 21
+      },
+      "statusCounts": {
+        "UNKNOWN": 4,
+        "ISSUED": 2,
+        "FINALED_COMPLETE": 12,
+        "EXPIRED": 3
+      },
+      "categoryCounts": {
+        "OTHER": 18,
+        "REMODEL": 1,
+        "ELECTRICAL": 1,
+        "MECHANICAL": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 2182.6,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 29,
+      "apn": "4643901600",
+      "address": "5307 LAKE MURRAY BLVD",
+      "query": "5307 LAKE MURRAY BLVD",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_C"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 5,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 5
+      },
+      "statusCounts": {
+        "UNKNOWN": 1,
+        "FINALED_COMPLETE": 2,
+        "EXPIRED": 2
+      },
+      "categoryCounts": {
+        "OTHER": 4,
+        "ELECTRICAL": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 1072.2,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 30,
+      "apn": "4906605300",
+      "address": "8784 GROSSMONT BLVD",
+      "query": "8784 GROSSMONT BLVD",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_C",
+        "MODIFIER_LM_OVERLAY_D"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 18,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 18
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 8,
+        "UNKNOWN": 3,
+        "ISSUED": 3,
+        "EXPIRED": 4
+      },
+      "categoryCounts": {
+        "ELECTRICAL": 1,
+        "OTHER": 16,
+        "PLUMBING": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 2051.4,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 31,
+      "apn": "4741202600",
+      "address": "7200 UNIVERSITY AVE",
+      "query": "7200 UNIVERSITY AVE",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_C",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_F",
+        "MODIFIER_LM_OVERLAY_MU"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 2,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 2
+      },
+      "statusCounts": {
+        "ISSUED": 1,
+        "UNKNOWN": 1
+      },
+      "categoryCounts": {
+        "OTHER": 2
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 898.9,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 32,
+      "apn": "7602375300",
+      "address": "8625 FLETCHER PKWY",
+      "query": "8625 FLETCHER PKWY",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_C",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_G"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 3,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 3
+      },
+      "statusCounts": {
+        "UNKNOWN": 2,
+        "FINALED_COMPLETE": 1
+      },
+      "categoryCounts": {
+        "OTHER": 3
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 972.6,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 33,
+      "apn": "4704222252",
+      "address": "7681 UNIVERSITY AVE",
+      "query": "7681 UNIVERSITY AVE",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_C",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_MU"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 5,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 1,
+        "ADDRESS_GROUP_LINKED": 4
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 3,
+        "ISSUED": 2
+      },
+      "categoryCounts": {
+        "ELECTRICAL": 1,
+        "SOLAR": 1,
+        "OTHER": 3
+      },
+      "ambiguousCandidateApns": [
+        "4704222251",
+        "4704222252",
+        "4704222253",
+        "4704222254"
+      ],
+      "latencyMs": 1023.3,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 34,
+      "apn": "4750501900",
+      "address": "7309 UNIVERSITY AVE",
+      "query": "7309 UNIVERSITY AVE",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_C",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_MU",
+        "MODIFIER_LM_OVERLAY_F"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 2,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 2
+      },
+      "statusCounts": {
+        "UNKNOWN": 2
+      },
+      "categoryCounts": {
+        "OTHER": 2
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 903.7,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 35,
+      "apn": "7602367400",
+      "address": "9000 WAKARUSA ST",
+      "query": "9000 WAKARUSA ST",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_C",
+        "MODIFIER_LM_OVERLAY_G",
+        "MODIFIER_LM_OVERLAY_D"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 31,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "ADDRESS_GROUP_LINKED": 31
+      },
+      "statusCounts": {
+        "ISSUED": 2,
+        "FINALED_COMPLETE": 20,
+        "EXPIRED": 8,
+        "UNKNOWN": 1
+      },
+      "categoryCounts": {
+        "OTHER": 20,
+        "ELECTRICAL": 4,
+        "MECHANICAL": 6,
+        "GRADING": 1
+      },
+      "ambiguousCandidateApns": [
+        "4903703300",
+        "7602367400"
+      ],
+      "latencyMs": 2348.8,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 36,
+      "apn": "4691442800",
+      "address": "7400 EL CAJON BLVD",
+      "query": "7400 EL CAJON BLVD",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_C",
+        "MODIFIER_LM_OVERLAY_MU",
+        "MODIFIER_LM_OVERLAY_D"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 12,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 12
+      },
+      "statusCounts": {
+        "UNKNOWN": 4,
+        "ISSUED": 1,
+        "EXPIRED": 3,
+        "FINALED_COMPLETE": 4
+      },
+      "categoryCounts": {
+        "OTHER": 6,
+        "REMODEL": 1,
+        "ELECTRICAL": 5
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 1194.5,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 37,
+      "apn": "4948403100",
+      "address": "8940 DAILEY RD",
+      "query": "8940 DAILEY RD",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_C",
+        "MODIFIER_LM_OVERLAY_MU",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_P"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 3,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 3
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 1,
+        "UNKNOWN": 2
+      },
+      "categoryCounts": {
+        "NEW_DWELLING": 1,
+        "OTHER": 2
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 1048.3,
+      "currentnessState": "LATER_PERMIT_CHANGE_OBSERVED"
+    },
+    {
+      "cohortIndex": 38,
+      "apn": "4992630300",
+      "address": "8764 CAMPO RD",
+      "query": "8764 CAMPO RD",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_C",
+        "MODIFIER_LM_OVERLAY_P"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 1,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 1
+      },
+      "statusCounts": {
+        "UNKNOWN": 1
+      },
+      "categoryCounts": {
+        "OTHER": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 803,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 39,
+      "apn": "4942810500",
+      "address": "4705 4TH ST",
+      "query": "4705 4TH ST",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_CD",
+        "MODIFIER_LM_OVERLAY_D"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 2,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 2
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 1,
+        "ISSUED": 1
+      },
+      "categoryCounts": {
+        "OTHER": 1,
+        "MECHANICAL": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 925.1,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 40,
+      "apn": "4703401300",
+      "address": "7974 UNIVERSITY AVE",
+      "query": "7974 UNIVERSITY AVE",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_CD",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_MU"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 5,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 5
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 1,
+        "ISSUED": 2,
+        "UNKNOWN": 1,
+        "EXPIRED": 1
+      },
+      "categoryCounts": {
+        "OTHER": 3,
+        "REMODEL": 2
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 1023.5,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 41,
+      "apn": "4904361100",
+      "address": "8349 HERCULES ST",
+      "query": "8349 HERCULES ST",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_CM"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 0,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {},
+      "statusCounts": {},
+      "categoryCounts": {},
+      "ambiguousCandidateApns": [],
+      "latencyMs": 648.9,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 42,
+      "apn": "4906313400",
+      "address": "8380 CENTER DR",
+      "query": "8380 CENTER DR",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_CM",
+        "MODIFIER_LM_OVERLAY_D"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 14,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 2,
+        "UNRESOLVED": 12
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 9,
+        "UNKNOWN": 1,
+        "EXPIRED": 4
+      },
+      "categoryCounts": {
+        "MECHANICAL": 1,
+        "OTHER": 13
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 1170.1,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 43,
+      "apn": "4690113200",
+      "address": "5151 70TH ST",
+      "query": "5151 70TH ST",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_CM",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_F"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 21,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 21
+      },
+      "statusCounts": {
+        "UNKNOWN": 5,
+        "ISSUED": 2,
+        "EXPIRED": 6,
+        "FINALED_COMPLETE": 8
+      },
+      "categoryCounts": {
+        "OTHER": 19,
+        "ELECTRICAL": 1,
+        "PLUMBING": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 2184.6,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 44,
+      "apn": "4700501500",
+      "address": "7851 FLETCHER PKWY",
+      "query": "7851 FLETCHER PKWY",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_CM",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_F",
+        "MODIFIER_LM_OVERLAY_MU"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 8,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 8
+      },
+      "statusCounts": {
+        "FINALED_COMPLETE": 4,
+        "UNKNOWN": 2,
+        "EXPIRED": 2
+      },
+      "categoryCounts": {
+        "PLUMBING": 1,
+        "OTHER": 6,
+        "REMODEL": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 1032.1,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 45,
+      "apn": "4906313300",
+      "address": "8372 CENTER DR",
+      "query": "8372 CENTER DR",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_CM",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_G"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 12,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 2,
+        "UNRESOLVED": 10
+      },
+      "statusCounts": {
+        "UNKNOWN": 2,
+        "EXPIRED": 3,
+        "FINALED_COMPLETE": 6,
+        "ISSUED": 1
+      },
+      "categoryCounts": {
+        "OTHER": 10,
+        "GRADING": 2
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 2077.3,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 46,
+      "apn": "4681130200",
+      "address": "6950 ALVARADO RD",
+      "query": "6950 ALVARADO RD",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_CM",
+        "MODIFIER_LM_OVERLAY_F"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 2,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 2
+      },
+      "statusCounts": {
+        "ISSUED": 1,
+        "EXPIRED": 1
+      },
+      "categoryCounts": {
+        "OTHER": 1,
+        "ELECTRICAL": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 907.7,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 47,
+      "apn": "4940711500",
+      "address": "5104 JACKSON DR",
+      "query": "5104 JACKSON DR",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_CN"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 2,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 2
+      },
+      "statusCounts": {
+        "UNKNOWN": 1,
+        "EXPIRED": 1
+      },
+      "categoryCounts": {
+        "OTHER": 1,
+        "REMODEL": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 886.7,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 48,
+      "apn": "6750100800",
+      "address": "6140 LAKE MURRAY BLVD",
+      "query": "6140 LAKE MURRAY BLVD",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_CN",
+        "MODIFIER_LM_OVERLAY_D"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 23,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 23
+      },
+      "statusCounts": {
+        "UNKNOWN": 3,
+        "FINALED_COMPLETE": 16,
+        "ISSUED": 2,
+        "EXPIRED": 2
+      },
+      "categoryCounts": {
+        "OTHER": 15,
+        "ELECTRICAL": 4,
+        "PLUMBING": 3,
+        "GRADING": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 2259,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 49,
+      "apn": "4867500200",
+      "address": "5900 SEVERIN DR",
+      "query": "5900 SEVERIN DR",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_CN",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_G"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 24,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 24
+      },
+      "statusCounts": {
+        "ISSUED": 3,
+        "FINALED_COMPLETE": 15,
+        "UNKNOWN": 2,
+        "EXPIRED": 4
+      },
+      "categoryCounts": {
+        "OTHER": 20,
+        "ELECTRICAL": 3,
+        "GRADING": 1
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 2354.4,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    },
+    {
+      "cohortIndex": 50,
+      "apn": "4994830200",
+      "address": "4200 SPRING ST",
+      "query": "4200 SPRING ST",
+      "queryKind": "ADDRESS",
+      "categories": [
+        "DETERMINISTIC_STRATIFIED_SAMPLE",
+        "ZONE_CN",
+        "MODIFIER_LM_OVERLAY_D",
+        "MODIFIER_LM_OVERLAY_MU",
+        "MODIFIER_LM_OVERLAY_P"
+      ],
+      "httpStatus": 200,
+      "recordsReturned": 37,
+      "completeness": "COMPLETE_FOR_QUERY",
+      "linkageCounts": {
+        "PARCEL_LINKED": 37
+      },
+      "statusCounts": {
+        "ISSUED": 4,
+        "EXPIRED": 2,
+        "FINALED_COMPLETE": 26,
+        "UNKNOWN": 5
+      },
+      "categoryCounts": {
+        "OTHER": 32,
+        "REMODEL": 1,
+        "ELECTRICAL": 2,
+        "GRADING": 2
+      },
+      "ambiguousCandidateApns": [],
+      "latencyMs": 2389.5,
+      "currentnessState": "NO_PERMIT_CHANGE_FOUND"
+    }
+  ]
+}

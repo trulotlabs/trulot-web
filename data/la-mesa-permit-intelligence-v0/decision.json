@@ -1,0 +1,14 @@
+{
+  "decision": "LA_MESA_PERMIT_INTELLIGENCE_RECON_ONLY",
+  "reasons": [
+    "The public portal exposes no automation, storage, bulk-ingestion, or public-redisplay terms.",
+    "The endpoint enforces an undocumented HTTP 429 throttle without Retry-After guidance.",
+    "Search responses do not return APNs, so common-address results remain group-linked.",
+    "The endpoint reports total=-1; completeness requires explicit pagination to a short page."
+  ],
+  "currentAcquisitionRecommendation": "MANUAL_OPERATOR_VERIFICATION",
+  "longTermAcquisitionRecommendation": "PUBLIC_API_OR_CITY_BULK_EXPORT",
+  "smallestNextSourceRightsAction": "Request a City of La Mesa permit export or API plus written authorization for internal automated reuse and bounded public summaries.",
+  "nextEngineeringPacket": "LA_MESA_BUILDING_CURRENTNESS_LAYER",
+  "integrationDesign": "assessor facts + permit facts + structure observations + homeowner facts -> conflict/currentness resolution -> V4 feasibility"
+}

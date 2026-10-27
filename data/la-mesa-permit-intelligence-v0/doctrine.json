@@ -1,0 +1,37 @@
+{
+  "sourceTermsClassification": "PUBLIC_ACCESS_REUSE_UNCLEAR",
+  "completeness": [
+    "COMPLETE_FOR_QUERY",
+    "PAGINATED_COMPLETE",
+    "TRUNCATED",
+    "UNKNOWN_COMPLETENESS"
+  ],
+  "linkageHierarchy": [
+    "EXACT_SOURCE_APN",
+    "EXACT_PERMIT_PARCEL_NUMBER",
+    "EXACT_NORMALIZED_ADDRESS_UNIQUE",
+    "EXPLICIT_UNIT_SUBADDRESS",
+    "AMBIGUOUS_ADDRESS_CANDIDATE_SET",
+    "UNRESOLVED"
+  ],
+  "currentnessPriority": [
+    "LATER_FINALED_PERMIT",
+    "LATER_ISSUED_PERMIT",
+    "ASSESSOR_SNAPSHOT",
+    "OLDER_FINALED_PERMIT",
+    "OBSERVATIONAL_FOOTPRINT",
+    "HOMEOWNER_ASSERTION"
+  ],
+  "legalBoundaries": [
+    "Finaled records establish the displayed permit status, not current occupancy, present unit count, absence of later demolition, current as-built geometry, or whole-property compliance.",
+    "Issued, under-review, expired, and withdrawn records never establish completed work.",
+    "No result never means no property change."
+  ],
+  "failClosed": "Unavailable, incomplete, truncated, ambiguous, or terms-blocked permit intelligence leaves assessor/property state unchanged and marks permit intelligence unavailable.",
+  "homeownerQuestions": {
+    "finaledExplicitAdu": "Public permit records indicate an ADU was completed. Is that still correct?",
+    "activeAdu": "Public records show an ADU project may be underway. What is currently on the property?",
+    "suppressConfirmation": false
+  },
+  "publicDisplay": "Do not expose full histories or descriptions before rights/product review; a future UI may summarize 'Public permit records show...' with a source link."
+}

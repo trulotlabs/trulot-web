@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "jurisdiction-neutral-permit-record-v0",
+  "requiredFields": [
+    "jurisdiction",
+    "parcelApn",
+    "normalizedAddress",
+    "recordNumber",
+    "recordType",
+    "recordCategory",
+    "createdApplicationDate",
+    "issueDate",
+    "finalDate",
+    "visibleMilestoneDate",
+    "rawStatus",
+    "normalizedStatus",
+    "description",
+    "projectName",
+    "sourceUrl",
+    "retrievalDate",
+    "sourceAuthority",
+    "linkageMethod",
+    "linkageConfidence",
+    "linkageState",
+    "currentnessRelevance",
+    "evidenceReference"
+  ],
+  "missingDateDoctrine": "Missing dates remain null; visible milestone dates are never relabeled as issue/final dates without the source label."
+}

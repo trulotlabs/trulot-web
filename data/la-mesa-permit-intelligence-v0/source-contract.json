@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "la-mesa-maintstar-source-contract-v0",
+  "portal": "https://h9.maintstar.co/LaMesa/portal/",
+  "portalVersion": "26.10.5.6848",
+  "anonymousSearch": true,
+  "loginRequiredForSearch": false,
+  "request": {
+    "anonymous": true,
+    "endpoint": "/api/Public/Record/Search",
+    "method": "GET",
+    "parameters": [
+      "query",
+      "skip",
+      "take"
+    ],
+    "sessionCookieRequired": true
+  },
+  "responseShape": {
+    "envelope": [
+      "data",
+      "total",
+      "showMoreMode"
+    ],
+    "visibleRecordFields": [
+      "number",
+      "createdDate",
+      "msType",
+      "type",
+      "dateVal",
+      "datePrefix",
+      "address",
+      "status",
+      "description",
+      "msValue"
+    ]
+  },
+  "apnReturned": false,
+  "pagination": {
+    "classification": "PAGINATED_COMPLETE",
+    "commonAddressResultCount": 361,
+    "deterministicOrdering": "PASS: ordered msValue sequence was identical across the two page shapes.",
+    "firstShortPage": {
+      "returned": 61,
+      "skip": 300,
+      "take": 100
+    },
+    "maximumProvenPageSize": 100,
+    "moreThan100Retrievable": "PASS: 361 unique records retrieved through skip=300.",
+    "pageBoundaryProof": "PASS: skip 0/25/50/75 with take=25 exactly reproduced the take=100 first page.",
+    "parameters": [
+      "skip",
+      "take"
+    ],
+    "responseTotalBehavior": "The endpoint returned total=-1 and showMoreMode=true on all pagination pages; completeness therefore requires retrieval through a short page."
+  },
+  "rateBehavior": {
+    "doctrine": "Stop on 429; do not rotate sessions or retry until a separate cooldown.",
+    "firstSignalAfterConsecutiveFastSuccesses": 15,
+    "observed": true,
+    "retryAfterHeader": null,
+    "status": 429,
+    "successfulUniqueCohortQueriesAfterCooldown": 50
+  },
+  "schemaDriftReceipt": {
+    "rawStatuses": [
+      "APPROVED",
+      "Approved (Closed)",
+      "Approved: Permit Fees Due",
+      "COFO",
+      "Closed",
+      "Closed - Final",
+      "Completed",
+      "Completed (Pass)",
+      "DENIED",
+      "Denied (Closed)",
+      "EXP APPL",
+      "EXPIRED",
+      "FINAL",
+      "Final",
+      "Finaled",
+      "Finaled with CofO",
+      "ISSUED",
+      "In Progress",
+      "Inspections Complete",
+      "Inspections Finaled",
+      "Issued",
+      "Plan Check Expired",
+      "Pre-Con Meeting Complete",
+      "Pre-Con Meeting Pending",
+      "VOID",
+      "Void",
+      "WITHDRWN",
+      "Wait for Fee Payment",
+      "Withdrawn",
+      "Withdrawn (Closed)"
+    ],
+    "portalBundleSha256": "e2acee81500719f9c11ff92027d4f4d387180d7290fda5e29a139b301f650320",
+    "configurationSha256": "f078c461fb6b3bbef3a73fd4dfc154ec880da2322f37d2072b6155089e473a27"
+  }
+}
