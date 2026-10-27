@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import path from "node:path";
-import { fixture, root, renderToStaticMarkup } from "./parcel-v1-test-fixture.mjs";
+import { fixture, root, renderToResolvedMarkup } from "./parcel-v1-test-fixture.mjs";
 
 const overlay = { tpa: true, ctcac: false, sda: true };
 const cases = [
@@ -38,7 +38,7 @@ for (const [name, options, expected = "partial"] of cases) {
     assert.equal(result.truth.parcel.state, "unavailable", name);
     assert.equal(result.truth.parcel.value, null, name);
     assert.equal(result.truth.permits.sourceState, "not_evaluated", name);
-    assert.match(renderToStaticMarkup(await Page({ params })), /temporarily unavailable/, name);
+    assert.match(await renderToResolvedMarkup(await Page({ params })), /temporarily unavailable/, name);
   } else {
     assert.equal(result.truth.parcel.state, "supported", name);
     assert.equal(result.truth.parcel.value.apn, "3113333800", name);
@@ -56,7 +56,7 @@ for (const [name, options, expected = "partial"] of cases) {
     assert.equal(result.truth.overlays.sda.state, "unknown", name);
     assert.equal(result.truth.overlays.sda.value, null, name);
     assert.equal(result.truth.overlays.sda.derivation, "conditional", name);
-    const html = renderToStaticMarkup(await Page({ params }));
+    const html = await renderToResolvedMarkup(await Page({ params }));
     assert.match(html, /311-333-38-00/, name);
     if (unavailablePermits || partialPermits) {
       assert.match(html, unavailablePermits ? /Permit history unavailable/ : /Permit history incomplete/, name);

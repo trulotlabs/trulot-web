@@ -871,7 +871,11 @@ function emptyTruth(status: "not_found" | "source_unavailable" | "invalid_reques
 
 type ParcelTiming = ReturnType<typeof createParcelServerTiming>;
 
-async function loadParcelPageV1ResultImpl(rawApnOrSlug: string, timing: ParcelTiming): Promise<ParcelPageV1Result> {
+async function loadParcelPageV1ResultImpl(
+  rawApnOrSlug: string,
+  timing: ParcelTiming,
+  enrichment: "full" | "core",
+): Promise<ParcelPageV1Result> {
   const rawDigits = rawApnOrSlug.replace(/\D/g, "");
   if (!rawDigits) {
     return {
@@ -962,14 +966,33 @@ async function loadParcelPageV1ResultImpl(rawApnOrSlug: string, timing: ParcelTi
   const runtimeParcelRow = snapshotEnabled
     ? { ...parcelRow, zone_name: zoneName || null, base_zone: zoneName || null }
     : parcelRow;
-  // These reads share only the established public parcel identity. Starting
-  // them together removes avoidable serial latency without changing their
-  // independent error or privacy semantics.
-  const [permitsResult, overlaysResult, similarLotsResult] = await Promise.all([
-    timing.measure("permits", () => fetchPermitsForParcel({ apnNorm, address, city, state, zip })),
-    timing.measure("overlays", () => getOverlayFlags(lat, lng)),
-    timing.measure("similar_lots", () => fetchSimilarLots(runtimeParcelRow)),
-  ]);
+  // Permit and similar-lot reads are useful secondary evidence, but production
+  // timing shows they are substantially slower than the page's canonical/core
+  // truth. The canonical route can request a core result for its first HTML and
+  // stream these reads separately without converting "not evaluated" into an
+  // absence claim.
+  const deferredPermits = {
+    rows: [] as RawRow[],
+    status: defaultSourceStatus(),
+    excludedAmbiguousCount: 0,
+  };
+  const deferredSimilarLots = {
+    similarLots: {
+      criteriaLabel: "Same recorded base zone, similar lot size, within 0.5 miles.",
+      totalMatchCount: 0,
+      activityMatchCount: 0,
+      matches: [] as SimilarParcelFact[],
+      emptyState: "Nearby precedent matching has not been evaluated yet.",
+    },
+    status: defaultSourceStatus(),
+  };
+  const [permitsResult, overlaysResult, similarLotsResult] = enrichment === "full"
+    ? await Promise.all([
+        timing.measure("permits", () => fetchPermitsForParcel({ apnNorm, address, city, state, zip })),
+        timing.measure("overlays", () => getOverlayFlags(lat, lng)),
+        timing.measure("similar_lots", () => fetchSimilarLots(runtimeParcelRow)),
+      ])
+    : [deferredPermits, await timing.measure("overlays", () => getOverlayFlags(lat, lng)), deferredSimilarLots];
   const overlays = overlaysResult.flags;
   const finishRenderPreparation = timing.begin("page_render_preparation");
   const sdaRegulatoryConclusionAllowed = canUseSdaForRegulatoryConclusion(overlays.sda);
@@ -1000,7 +1023,7 @@ async function loadParcelPageV1ResultImpl(rawApnOrSlug: string, timing: ParcelTi
     similarLots: similarLotsResult.status,
   };
   const pageStatus: Exclude<CanonicalResultState, "invalid_request"> = [sourceStatus.zoning, sourceStatus.permits, sourceStatus.overlays, sourceStatus.similarLots].some(
-    (item) => item.status === "source_unavailable" || item.status === "partial",
+    (item) => item.sourceState === "source_unavailable" || item.sourceState === "partial",
   ) || sourceStatus.sda.state === "source_reconciliation_pending"
     ? "partial"
     : "found";
@@ -1480,7 +1503,9 @@ async function loadParcelPageV1ResultImpl(rawApnOrSlug: string, timing: ParcelTi
       : { state: "supported", value, sourceState: "available", provenance: overlayProvenance, derivation: "deterministic_derived" };
   }
   const permitProvenance = buildTruthProvenance("permit_terminal_city_sd_v2", "trulot_permit_parcel_link_v1", "Direct linked records in this source only; an empty result is not a claim that no permits exist.", "exact or unambiguous parsed APN linkage");
-  const permitTruth: TruthFact<PermitFact[]> = sourceStatus.permits.sourceState === "source_unavailable"
+  const permitTruth: TruthFact<PermitFact[]> = sourceStatus.permits.sourceState === "not_evaluated"
+    ? { state: "unavailable", value: null, sourceState: "not_evaluated", provenance: permitProvenance, derivation: "deterministic_derived" }
+    : sourceStatus.permits.sourceState === "source_unavailable"
     ? { state: "unavailable", value: null, sourceState: "source_unavailable", provenance: permitProvenance, derivation: "deterministic_derived" }
     : sourceStatus.permits.sourceState === "partial"
     ? { state: "partial", value: permitFacts, sourceState: "partial", provenance: permitProvenance, derivation: "deterministic_derived" }
@@ -1503,11 +1528,15 @@ async function loadParcelPageV1ResultImpl(rawApnOrSlug: string, timing: ParcelTi
   };
 }
 
-async function loadParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV1Result> {
-  const timing = createParcelServerTiming("page");
+async function loadParcelPageV1Result(
+  rawApnOrSlug: string,
+  enrichment: "full" | "core" = "full",
+  operation: "page" | "page_secondary" = "page",
+): Promise<ParcelPageV1Result> {
+  const timing = createParcelServerTiming(operation);
   timing.mark("route_entry");
   try {
-    return await loadParcelPageV1ResultImpl(rawApnOrSlug, timing);
+    return await loadParcelPageV1ResultImpl(rawApnOrSlug, timing, enrichment);
   } finally {
     timing.finish();
   }
@@ -1515,6 +1544,14 @@ async function loadParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV
 
 export function getParcelPageV1Result(rawApnOrSlug: string): Promise<ParcelPageV1Result> {
   return loadParcelPageV1Result(rawApnOrSlug);
+}
+
+export function getParcelPageV1CoreResult(rawApnOrSlug: string): Promise<ParcelPageV1Result> {
+  return loadParcelPageV1Result(rawApnOrSlug, "core");
+}
+
+export function getParcelPageV1SecondaryResult(rawApnOrSlug: string): Promise<ParcelPageV1Result> {
+  return loadParcelPageV1Result(rawApnOrSlug, "full", "page_secondary");
 }
 
 export async function getParcelPageV1Data(rawApnOrSlug: string): Promise<ParcelPageV1Data | null> {

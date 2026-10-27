@@ -9,13 +9,18 @@ import ts from "typescript";
 export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require = createRequire(import.meta.url);
 const React = require("react");
-export const { renderToStaticMarkup } = require("react-dom/server");
+export const { renderToReadableStream, renderToStaticMarkup } = require("react-dom/server");
+export async function renderToResolvedMarkup(node) {
+  const stream = await renderToReadableStream(node);
+  return new Response(stream).text();
+}
 
 // Execute the real TS modules and page with only the database/network boundary
 // replaced. Unknown imports fail closed; no credentials or network are exposed.
 export function fixture(payload, options = {}) {
   const { error = null, rejects = false, coordinates = true } = options;
   let rpcCalls = 0;
+  const fromCalls = [];
   const parcel = {
     apn_norm: "3113333800", address: "123 Fixture St", city: "San Diego", state: "CA",
     zone_name: "RS-1-7", base_zone: "RS-1-7", lot_area_sqft: 7000,
@@ -29,6 +34,7 @@ export function fixture(payload, options = {}) {
   };
   const client = {
     from(name) {
+      fromCalls.push(name);
       assert.ok(["parcel_page_api_v2", "trulot_permit_parcel_link_v1", "parcel_permit_terminal_v2"].includes(name), `Unexpected query: ${name}`);
       let single = false;
       const query = {
@@ -103,5 +109,5 @@ export function fixture(payload, options = {}) {
     }, { filename });
     return loadedModule.exports;
   }
-  return { load, rpcCalls: () => rpcCalls };
+  return { load, rpcCalls: () => rpcCalls, fromCalls: () => [...fromCalls] };
 }

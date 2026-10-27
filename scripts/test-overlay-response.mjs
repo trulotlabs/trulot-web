@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import path from "node:path";
-import { fixture, root, renderToStaticMarkup } from "./parcel-v1-test-fixture.mjs";
+import { fixture, root, renderToResolvedMarkup } from "./parcel-v1-test-fixture.mjs";
 
 const valid = { tpa: true, ctcac: true, sda: false };
 const validCases = [
@@ -43,7 +43,7 @@ for (const { name, payload, available = false, options = {} } of cases) {
   assert.equal(result.status, "partial", name); // SDA is pending even with a valid RPC.
   assert.equal(result.sourceStatus.parcel.status, "found", name);
   assert.equal(result.sourceStatus.permits.status, "found", name);
-  assert.equal(result.data.identity.address, "123 Fixture St", name);
+  assert.equal(result.data.identity.address, "7942 CALICO ST", name);
   assert.equal(result.data.permits.thisParcel[0].permitNumber, "FIXTURE-1", name);
   assert.equal(result.sourceStatus.sda.authoritative, false, name);
   assert.equal(result.sourceStatus.sda.state, "source_reconciliation_pending", name);
@@ -69,8 +69,8 @@ for (const { name, payload, available = false, options = {} } of cases) {
     assert.equal(result.sourceStatus.overlays.safeErrorCode, options.error ? "permission_denied" : options.rejects ? "query_failed" : options.coordinates === false ? "missing_input" : "schema_mismatch", name);
   }
   const Page = f.load(path.join(root, "app/parcel/san-diego/[slug]/page.tsx")).default;
-  const html = renderToStaticMarkup(await Page({ params: Promise.resolve({ slug: result.data.canonicalSlug }) }));
-  assert.match(html, /123 Fixture St/, name);
+  const html = await renderToResolvedMarkup(await Page({ params: Promise.resolve({ slug: result.data.canonicalSlug }) }));
+  assert.match(html, /7942 CALICO ST/, name);
   assert.match(html, /FIXTURE-1/, name);
   assert.match(html, /SDA source reconciliation pending/, name);
   if (!available) {
@@ -78,7 +78,7 @@ for (const { name, payload, available = false, options = {} } of cases) {
     assert.doesNotMatch(html, /private diagnostic|private transport diagnostic/, name);
     assert.match(html, /Source unavailable/, name);
   }
-  assert.equal(f.rpcCalls(), options.coordinates === false ? 0 : 2, name);
+  assert.equal(f.rpcCalls(), options.coordinates === false ? 0 : 3, name);
   console.log(`PASS ${name}`);
 }
 console.log(`Overlay parser, adapter and rendered-page regressions passed: ${cases.length} cases.`);

@@ -5,7 +5,7 @@ import vm from "node:vm";
 import {createRequire} from "node:module";
 import {fileURLToPath} from "node:url";
 import ts from "typescript";
-import {fixture as pageFixture,renderToStaticMarkup} from "../parcel-v1-test-fixture.mjs";
+import {fixture as pageFixture,renderToResolvedMarkup} from "../parcel-v1-test-fixture.mjs";
 
 const dir=path.dirname(fileURLToPath(import.meta.url)),root=path.resolve(dir,"../.."),require=createRequire(import.meta.url),cache=new Map();
 const read=p=>JSON.parse(fs.readFileSync(p,"utf8"));
@@ -70,7 +70,7 @@ const reversed=structuredClone(good);reversed.standards[0].parameters.reverse();
 // Real current Parcel V1 fixture comparison: insert only; removing insertion restores exact bytes.
 const fixture=pageFixture({tpa:true,ctcac:false,sda:true});const Page=fixture.load(path.join(root,'app/parcel/san-diego/[slug]/page.tsx')).default;
 const loaded=await fixture.load(path.join(root,'lib/parcel-page-v1.ts')).getParcelPageV1Result('3113333800');
-const current=renderToStaticMarkup(await Page({params:Promise.resolve({slug:loaded.data.canonicalSlug})}));
+const current=await renderToResolvedMarkup(await Page({params:Promise.resolve({slug:loaded.data.canonicalSlug})}));
 const anchor=current.indexOf('Current programs &amp; overlays');assert.ok(anchor>0);
 const insertion=current.lastIndexOf('<div class="rounded border border-slate-200 bg-white p-4">',anchor);assert.ok(insertion>0);
 const card=renderDisplay(good),shadow=current.slice(0,insertion)+card+current.slice(insertion);

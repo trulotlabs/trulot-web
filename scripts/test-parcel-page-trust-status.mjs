@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import path from "node:path";
-import { fixture, root, renderToStaticMarkup } from "./parcel-v1-test-fixture.mjs";
+import { fixture, root, renderToResolvedMarkup } from "./parcel-v1-test-fixture.mjs";
 
 const candidates = [
   { apn_norm: "2000000001", address: "201 Nearby St", city: "San Diego", state: "CA", base_zone: "RS-1-7", zone_name: "RS-1-7", lot_area_sqft: 7000, lat: 32.7505, lng: -117.19 },
@@ -21,7 +21,7 @@ async function load(options = {}, overlay = { tpa: true, ctcac: false, sda: true
   const f = fixture(overlay, options);
   const result = await f.load(path.join(root, "lib/parcel-page-v1.ts")).getParcelPageV1Result("3113333800");
   const Page = f.load(path.join(root, "app/parcel/san-diego/[slug]/page.tsx")).default;
-  const html = renderToStaticMarkup(await Page({ params: Promise.resolve({ slug: result.data.canonicalSlug }) }));
+  const html = await renderToResolvedMarkup(await Page({ params: Promise.resolve({ slug: result.data.canonicalSlug }) }));
   return { result, html };
 }
 

@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { after } from "next/server";
-import type { ReactNode } from "react";
+import { Suspense, type ReactNode } from "react";
 import {
-  getParcelPageV1Result,
+  getParcelPageV1CoreResult,
+  getParcelPageV1SecondaryResult,
+  type ParcelPageV1Data,
+  type ParcelTruth,
   type ProgramDisplayState,
   type SourcedFact,
 } from "@/lib/parcel-page-v1";
@@ -163,6 +166,155 @@ function SourceUnavailableState({
   );
 }
 
+function SecondaryParcelSections({
+  data,
+  permitTruth,
+}: {
+  data: ParcelPageV1Data;
+  permitTruth: ParcelTruth["permits"];
+}) {
+  const similarSnapshot = data.snapshot.filter((item) => item.sourceLabel === "Same-zone parcel query + permit records");
+  const permitSnapshot = data.snapshot.filter((item) => item.sourceLabel.startsWith("City permit"));
+  return (
+    <>
+    <section className="border-b border-slate-100 py-4" id="similar">
+      <div className="flex items-baseline justify-between gap-3"><SectionHeading id="similar-lots-precedents">Similar lots &amp; nearby precedents</SectionHeading><SectionSource /></div>
+      <p className="mt-1 text-sm text-slate-600">{data.similarLots.matches.length > 0 ? data.similarLots.activityMatchCount > 0 ? `${data.similarLots.activityMatchCount} nearby parcels have recorded development activity. ` : "No matched nearby parcels have recorded development activity in this source. " : ""}<span className="text-slate-500">{data.similarLots.criteriaLabel}</span></p>
+      {similarSnapshot.map((item) => <p key={item.value} className="mt-1 text-sm text-slate-600">{item.value}</p>)}
+      {data.similarLots.matches.length > 0 ? (
+        <div className="mt-3">
+          <div className="overflow-x-auto rounded border border-slate-200">
+            <table className="w-full border-collapse text-sm">
+              <thead className="bg-slate-50 text-left text-slate-700">
+                <tr>
+                  <th className="px-3 py-2 font-medium">Address</th><th className="px-3 py-2 font-medium">What happened</th><th className="px-3 py-2 font-medium">Permit status</th><th className="px-3 py-2 font-medium">Distance</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.similarLots.matches.slice(0, 3).map((match) => (
+                  <tr key={match.url} className="border-t border-slate-200">
+                    <td className="px-3 py-2 align-top"><Link href={match.url} className="text-sky-800 hover:underline">{match.address}</Link></td>
+                    <td className="px-3 py-2 align-top"><div>{match.value}</div><SourceMeta fact={match} context={`similar parcel ${match.address}`} /></td>
+                    <td className="px-3 py-2 align-top text-slate-700">{match.permitStatus ?? "—"}{match.permitDate ? ` · ${match.permitDate}` : ""}</td>
+                    <td className="px-3 py-2 align-top text-slate-700">{match.distanceMiles !== null ? `${match.distanceMiles.toFixed(1)} mi` : "—"}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {data.similarLots.matches.length > 3 ? <details className="mt-2 rounded border border-slate-200"><summary className="cursor-pointer rounded px-3 py-2 text-sm font-medium text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">View all {data.similarLots.matches.length}</summary><div className="overflow-x-auto border-t border-slate-200"><table className="w-full border-collapse text-sm"><tbody>{data.similarLots.matches.slice(3).map(match => <tr key={match.url} className="border-t border-slate-100 first:border-t-0"><td className="px-3 py-2"><Link href={match.url} className="text-sky-800 hover:underline">{match.address}</Link></td><td className="px-3 py-2">{match.value}<SourceMeta fact={match} context={`similar parcel ${match.address}`} /></td><td className="px-3 py-2">{match.permitStatus ?? "—"}{match.permitDate ? ` · ${match.permitDate}` : ""}</td><td className="px-3 py-2">{match.distanceMiles !== null ? `${match.distanceMiles.toFixed(1)} mi` : "—"}</td></tr>)}</tbody></table></div></details> : null}
+          <details className="mt-2 text-xs text-slate-500"><summary className="inline-flex min-h-6 cursor-pointer items-center rounded py-1 text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Matching and map notes</summary><p className="mt-1">A similar-lot map preview is unavailable. The parcel links use canonical URLs.</p></details>
+        </div>
+      ) : (
+        <div className="mt-2">
+          <EmptyState
+            title="No nearby precedents found"
+            body={data.similarLots.emptyState ?? "No matching nearby parcel precedents were returned for this parcel."}
+          />
+        </div>
+      )}
+    </section>
+
+    <section className="border-b border-slate-100 py-4" id="permits">
+      <div className="flex flex-wrap items-center gap-2">
+        <SectionHeading id="permit-development-activity">Permit &amp; development activity</SectionHeading>
+        <span className="rounded border border-slate-300 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
+          Recorded permit data
+        </span>
+        <span className="ml-auto"><SectionSource /></span>
+      </div>
+      <p className="mt-1 text-sm text-slate-500">Permit activity from available City records for this parcel, plus its nearby activity summary.</p>
+      {permitSnapshot.map((item) => <p key={item.value} className="mt-1 text-sm text-slate-600">{item.value}</p>)}
+      <div className="mt-3 grid gap-3 md:grid-cols-[1.4fr_1fr]">
+        <div>
+        <h3 className="text-sm font-semibold text-slate-900">This parcel</h3>
+        {data.permits.thisParcel.length > 0 ? (
+          <div className="mt-2 border-l-2 border-slate-200 pl-4">
+            <div className="space-y-3">
+              {data.permits.thisParcel.map((permit, index) => (
+                <div key={`${permit.permitNumber}-${index}`} className="relative">
+                  <span className="absolute -left-[21px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-sky-800 bg-white" />
+                  <p className="text-xs text-slate-500">{permit.date ?? "Date not available"}</p>
+                  <p className="text-sm leading-5 text-slate-800">
+                    {permit.value}
+                    {permit.permitNumber ? (
+                      <>
+                        {" "}—{" "}
+                        <a href={permit.permitUrl ?? "#"} className="text-sky-800 hover:underline">
+                          Permit #{permit.permitNumber}
+                        </a>
+                      </>
+                    ) : null}
+                    {permit.status ? ` · ${permit.status}` : ""}
+                  </p>
+                  <SourceMeta fact={permit} context={permit.permitNumber ? `permit ${permit.permitNumber}` : "permit record"} />
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="mt-2">
+            <EmptyState
+              title={permitTruth.state === "unavailable" ? "Permit history unavailable" : permitTruth.state === "partial" ? "Permit history incomplete" : "No linked permits in this source"}
+              body={data.permits.emptyState ?? "No linked permit records were found in the current direct permit-history source."}
+            />
+          </div>
+        )}
+        </div>
+        <div className="rounded border border-slate-200 bg-slate-50 p-3">
+        <h3 className="text-sm font-semibold text-slate-900">Nearby</h3>
+        <div className="mt-2 grid gap-2">
+          {data.permits.nearbySummary.map(({ label, fact }) => (
+            <div key={label}>
+              <p className="text-sm text-slate-800">
+                <span className="font-medium">{label}:</span>{" "}
+                {fact.value ?? NULL_PUBLIC_RECORD}
+              </p>
+              <SourceMeta fact={fact} context={label} />
+            </div>
+          ))}
+        </div>
+        </div>
+      </div>
+    </section>
+    </>
+  );
+}
+
+function SecondaryParcelLoading() {
+  return (
+    <div aria-live="polite" aria-busy="true">
+      <section className="border-b border-slate-100 py-4" id="similar">
+        <SectionHeading id="similar-lots-precedents">Similar lots &amp; nearby precedents</SectionHeading>
+        <p className="mt-2 text-sm text-slate-500">Loading nearby public-record context…</p>
+      </section>
+      <section className="border-b border-slate-100 py-4" id="permits">
+        <SectionHeading id="permit-development-activity">Permit &amp; development activity</SectionHeading>
+        <p className="mt-2 text-sm text-slate-500">Loading recorded permit activity…</p>
+      </section>
+    </div>
+  );
+}
+
+async function DeferredParcelActivity({ apn }: { apn: string }) {
+  const result = await getParcelPageV1SecondaryResult(apn);
+  if ((result.status !== "found" && result.status !== "partial") || !result.data) {
+    return (
+      <div>
+        <section className="border-b border-slate-100 py-4" id="similar">
+          <SectionHeading id="similar-lots-precedents">Similar lots &amp; nearby precedents</SectionHeading>
+          <div className="mt-2"><EmptyState title="Nearby precedent records unavailable" body="Nearby public-record context could not be loaded without delaying the parcel facts above." /></div>
+        </section>
+        <section className="border-b border-slate-100 py-4" id="permits">
+          <SectionHeading id="permit-development-activity">Permit &amp; development activity</SectionHeading>
+          <div className="mt-2"><EmptyState title="Permit history unavailable" body="Recorded permit activity could not be loaded without delaying the parcel facts above." /></div>
+        </section>
+      </div>
+    );
+  }
+  return <SecondaryParcelSections data={result.data} permitTruth={result.truth.permits} />;
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -238,7 +390,7 @@ export default async function ParcelPage({
     notFound();
   }
 
-  const result = await getParcelPageV1Result(apn);
+  const result = await getParcelPageV1CoreResult(apn);
   if (result.status === "invalid_request" || result.status === "not_found") {
     emitParcelIndexMetric(undefined, { name: "route_404", jurisdiction: "SAN_DIEGO", value: 1 });
     notFound();
@@ -256,7 +408,7 @@ export default async function ParcelPage({
   const data = result.data;
 
   if (parcelServingV2ShadowEnabled()) {
-    after(() => runParcelServingV2Shadow(slug, result));
+    after(async () => runParcelServingV2Shadow(slug, await getParcelPageV1SecondaryResult(apn)));
   }
 
   if (slug !== data.canonicalSlug) {
@@ -459,104 +611,9 @@ export default async function ParcelPage({
           </div>
         </section>
 
-        <section className="border-b border-slate-100 py-4" id="similar">
-          <div className="flex items-baseline justify-between gap-3"><SectionHeading id="similar-lots-precedents">Similar lots &amp; nearby precedents</SectionHeading><SectionSource /></div>
-          <p className="mt-1 text-sm text-slate-600">{data.similarLots.matches.length > 0 ? data.similarLots.activityMatchCount > 0 ? `${data.similarLots.activityMatchCount} nearby parcels have recorded development activity. ` : "No matched nearby parcels have recorded development activity in this source. " : ""}<span className="text-slate-500">{data.similarLots.criteriaLabel}</span></p>
-          {data.similarLots.matches.length > 0 ? (
-            <div className="mt-3">
-              <div className="overflow-x-auto rounded border border-slate-200">
-                <table className="w-full border-collapse text-sm">
-                  <thead className="bg-slate-50 text-left text-slate-700">
-                    <tr>
-                      <th className="px-3 py-2 font-medium">Address</th><th className="px-3 py-2 font-medium">What happened</th><th className="px-3 py-2 font-medium">Permit status</th><th className="px-3 py-2 font-medium">Distance</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.similarLots.matches.slice(0, 3).map((match) => (
-                      <tr key={match.url} className="border-t border-slate-200">
-                        <td className="px-3 py-2 align-top"><Link href={match.url} className="text-sky-800 hover:underline">{match.address}</Link></td>
-                        <td className="px-3 py-2 align-top"><div>{match.value}</div><SourceMeta fact={match} context={`similar parcel ${match.address}`} /></td>
-                        <td className="px-3 py-2 align-top text-slate-700">{match.permitStatus ?? "—"}{match.permitDate ? ` · ${match.permitDate}` : ""}</td>
-                        <td className="px-3 py-2 align-top text-slate-700">{match.distanceMiles !== null ? `${match.distanceMiles.toFixed(1)} mi` : "—"}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              {data.similarLots.matches.length > 3 ? <details className="mt-2 rounded border border-slate-200"><summary className="cursor-pointer rounded px-3 py-2 text-sm font-medium text-sky-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">View all {data.similarLots.matches.length}</summary><div className="overflow-x-auto border-t border-slate-200"><table className="w-full border-collapse text-sm"><tbody>{data.similarLots.matches.slice(3).map(match => <tr key={match.url} className="border-t border-slate-100 first:border-t-0"><td className="px-3 py-2"><Link href={match.url} className="text-sky-800 hover:underline">{match.address}</Link></td><td className="px-3 py-2">{match.value}<SourceMeta fact={match} context={`similar parcel ${match.address}`} /></td><td className="px-3 py-2">{match.permitStatus ?? "—"}{match.permitDate ? ` · ${match.permitDate}` : ""}</td><td className="px-3 py-2">{match.distanceMiles !== null ? `${match.distanceMiles.toFixed(1)} mi` : "—"}</td></tr>)}</tbody></table></div></details> : null}
-              <details className="mt-2 text-xs text-slate-500"><summary className="inline-flex min-h-6 cursor-pointer items-center rounded py-1 text-sky-800 underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-700">Matching and map notes</summary><p className="mt-1">A similar-lot map preview is unavailable. The parcel links use canonical URLs.</p></details>
-            </div>
-          ) : (
-            <div className="mt-2">
-              <EmptyState
-                title="No nearby precedents found"
-                body={data.similarLots.emptyState ?? "No matching nearby parcel precedents were returned for this parcel."}
-              />
-            </div>
-          )}
-        </section>
-
-        <section className="border-b border-slate-100 py-4" id="permits">
-          <div className="flex flex-wrap items-center gap-2">
-            <SectionHeading id="permit-development-activity">Permit &amp; development activity</SectionHeading>
-            <span className="rounded border border-slate-300 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">
-              Recorded permit data
-            </span>
-            <span className="ml-auto"><SectionSource /></span>
-          </div>
-          <p className="mt-1 text-sm text-slate-500">Permit activity from available City records for this parcel, plus its nearby activity summary.</p>
-          <div className="mt-3 grid gap-3 md:grid-cols-[1.4fr_1fr]">
-            <div>
-            <h3 className="text-sm font-semibold text-slate-900">This parcel</h3>
-            {data.permits.thisParcel.length > 0 ? (
-              <div className="mt-2 border-l-2 border-slate-200 pl-4">
-                <div className="space-y-3">
-                  {data.permits.thisParcel.map((permit, index) => (
-                    <div key={`${permit.permitNumber}-${index}`} className="relative">
-                      <span className="absolute -left-[21px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-sky-800 bg-white" />
-                      <p className="text-xs text-slate-500">{permit.date ?? "Date not available"}</p>
-                      <p className="text-sm leading-5 text-slate-800">
-                        {permit.value}
-                        {permit.permitNumber ? (
-                          <>
-                            {" "}—{" "}
-                            <a href={permit.permitUrl ?? "#"} className="text-sky-800 hover:underline">
-                              Permit #{permit.permitNumber}
-                            </a>
-                          </>
-                        ) : null}
-                        {permit.status ? ` · ${permit.status}` : ""}
-                      </p>
-                      <SourceMeta fact={permit} context={permit.permitNumber ? `permit ${permit.permitNumber}` : "permit record"} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <div className="mt-2">
-                <EmptyState
-                  title={result.truth.permits.state === "unavailable" ? "Permit history unavailable" : result.truth.permits.state === "partial" ? "Permit history incomplete" : "No linked permits in this source"}
-                  body={data.permits.emptyState ?? "No linked permit records were found in the current direct permit-history source."}
-                />
-              </div>
-            )}
-            </div>
-            <div className="rounded border border-slate-200 bg-slate-50 p-3">
-            <h3 className="text-sm font-semibold text-slate-900">Nearby</h3>
-            <div className="mt-2 grid gap-2">
-              {data.permits.nearbySummary.map(({ label, fact }) => (
-                <div key={label}>
-                  <p className="text-sm text-slate-800">
-                    <span className="font-medium">{label}:</span>{" "}
-                    {fact.value ?? NULL_PUBLIC_RECORD}
-                  </p>
-                  <SourceMeta fact={fact} context={label} />
-                </div>
-              ))}
-            </div>
-            </div>
-          </div>
-        </section>
+        <Suspense fallback={<SecondaryParcelLoading />}>
+          <DeferredParcelActivity apn={apn} />
+        </Suspense>
 
         <section className="border-b border-slate-100 py-4" id="signals">
           <div className="flex items-baseline justify-between gap-3"><SectionHeading id="development-potential-signals">Development potential signals</SectionHeading><SectionSource /></div>
