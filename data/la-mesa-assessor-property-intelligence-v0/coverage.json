@@ -1,0 +1,30 @@
+{
+  "artifactSha256": "8bf7112fc3c9bf0ac33b578fb18cf532a481ee81f63a8007c8e5c64fb8087e8e",
+  "canonicalApnFingerprint": "11440df9a1fb2a72592000dc656f75dcec9bf7ed9d90e9efcb9ebba8e700a467",
+  "denominator": 17391,
+  "eligibleForPreselection": 11771,
+  "notEligibleForPreselection": 5620,
+  "packet72Comparison": {
+    "expected": {
+      "condo": 3370,
+      "conflictOrWeak": 187,
+      "multifamily": 1454,
+      "single": 10633,
+      "unknownOrNonresidential": 1747
+    },
+    "note": "Packet 73 conservatively treats 350 assessor SFR-with-ADU/granny-flat hints as conflicts rather than ordinary multifamily use. The 316 formerly strong multi-unit matches move to conflict; the 34 formerly weak cases were already non-preselectable. One inconsistent condo and one sealed later-change fixture move from Packet 72 unknown to conflict."
+  },
+  "questionReduction": {
+    "blankQuestion": 2250,
+    "confirmationFlow": 15141,
+    "note": "Condo records receive a bounded confirmation but remain ineligible for automatic pathway preselection."
+  },
+  "schemaVersion": "la-mesa-assessor-property-intelligence-v0",
+  "states": {
+    "RECORDED_CONDO": 3370,
+    "RECORDED_MULTIFAMILY_LIKELY": 1138,
+    "RECORDED_RESIDENTIAL_CONFLICT": 505,
+    "RECORDED_SINGLE_FAMILY_LIKELY": 10633,
+    "RECORDED_TYPE_UNKNOWN": 1745
+  }
+}

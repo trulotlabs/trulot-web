@@ -1,0 +1,600 @@
+{
+  "mappings": [
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "UNKNOWN_OTHER",
+      "originalCode": "000",
+      "sourceMeaning": "UNZONED/OTHER"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "UNKNOWN_OTHER",
+      "originalCode": "069",
+      "sourceMeaning": "INFO PARCEL-MH SPACE IN RENTAL PARK"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "UNKNOWN_OTHER",
+      "originalCode": "091",
+      "sourceMeaning": "MANUFACTURED HOME IN RENTAL PARK"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "UNKNOWN_OTHER",
+      "originalCode": "097",
+      "sourceMeaning": "MH ON LEASED LAND - NOT A PARK"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "UNKNOWN_OTHER",
+      "originalCode": "099",
+      "sourceMeaning": "MH ON PRIVATE PROPERTY - NOT A PARK"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "UNKNOWN_OTHER",
+      "originalCode": "100",
+      "sourceMeaning": "UNKNOWN"
+    },
+    {
+      "assessorAduHint": true,
+      "normalizedClass": "DETACHED_FAMILY_HINT",
+      "originalCode": "109",
+      "sourceMeaning": "SINGLE FAMILY RESIDENCE WITH ADU"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "DETACHED_FAMILY_HINT",
+      "originalCode": "110",
+      "sourceMeaning": "SINGLE FAMILY RESIDENCE - GENERIC"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "DETACHED_FAMILY_HINT",
+      "originalCode": "111",
+      "sourceMeaning": "SINGLE FAMILY RESIDENCE"
+    },
+    {
+      "assessorAduHint": true,
+      "normalizedClass": "DETACHED_FAMILY_HINT",
+      "originalCode": "112",
+      "sourceMeaning": "SINGLE FAMILY RESIDENCE W/GRANNY FLAT"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "DETACHED_FAMILY_HINT",
+      "originalCode": "113",
+      "sourceMeaning": "SINGLE FAMILY GATED COMMUNITY"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "UNKNOWN_OTHER",
+      "originalCode": "114",
+      "sourceMeaning": "SINGLE FAMILY ATTACHED/PUD"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "DETACHED_FAMILY_HINT",
+      "originalCode": "115",
+      "sourceMeaning": "SINGLE FAMILY DETACHED/PUD"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "DETACHED_FAMILY_HINT",
+      "originalCode": "117",
+      "sourceMeaning": "SINGLE FAMILY WITH AG BUILDINGS"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "MULTIFAMILY_HINT",
+      "originalCode": "120",
+      "sourceMeaning": "DUPLEX - GENERIC"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "MULTIFAMILY_HINT",
+      "originalCode": "130",
+      "sourceMeaning": "2 - 4 UNITS - GENERIC"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "MULTIFAMILY_HINT",
+      "originalCode": "140",
+      "sourceMeaning": "5 - 15 UNITS GENERIC"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "MULTIFAMILY_HINT",
+      "originalCode": "150",
+      "sourceMeaning": "16 - 60 UNITS GENERIC"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "MULTIFAMILY_HINT",
+      "originalCode": "152",
+      "sourceMeaning": "16 - 60 UNITS SENIOR HOUSING"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "MULTIFAMILY_HINT",
+      "originalCode": "153",
+      "sourceMeaning": "16 - 60 UNITS - RESTRICTED RENTS"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "MULTIFAMILY_HINT",
+      "originalCode": "160",
+      "sourceMeaning": "61 UNITS AND UP GENERIC"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "MULTIFAMILY_HINT",
+      "originalCode": "163",
+      "sourceMeaning": "61 UNITS AND UP RESTRICTED HOUSING"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "CONDOMINIUM_HINT",
+      "originalCode": "170",
+      "sourceMeaning": "CONDOS AND OTHER RES CLASSIFICATIONS"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "CONDOMINIUM_HINT",
+      "originalCode": "171",
+      "sourceMeaning": "CONDOS ATTACHED"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "CONDOMINIUM_HINT",
+      "originalCode": "172",
+      "sourceMeaning": "CONDOS DETACHED"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "CONDOMINIUM_HINT",
+      "originalCode": "174",
+      "sourceMeaning": "SEPARATE SUB-IDS-PROJECT OPERATED AS LG APT"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "UNKNOWN_OTHER",
+      "originalCode": "190",
+      "sourceMeaning": "SPECIAL-SLIVER, SMALL PARCEL"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "UNKNOWN_OTHER",
+      "originalCode": "191",
+      "sourceMeaning": "COMMON AREA, RECREATION FACILITY FOR DEVELOP"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "UNKNOWN_OTHER",
+      "originalCode": "192",
+      "sourceMeaning": "PARCEL USED FOR ACCESS (DRVWY FOR MULT PRCLS)"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "UNKNOWN_OTHER",
+      "originalCode": "193",
+      "sourceMeaning": "SLIVER LEFT OVER-PARCEL NON-BUILDABLE"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "VACANT_LAND_HINT",
+      "originalCode": "200",
+      "sourceMeaning": "VACANT LAND COMMERCIAL"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "210",
+      "sourceMeaning": "GENERIC COMMERCIAL OFFICE/RETAIL 1-3 STORIES"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "211",
+      "sourceMeaning": "1 - 3 STORY OFFICE ONLY"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "212",
+      "sourceMeaning": "OFFICE/RETAIL BUILDING"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "213",
+      "sourceMeaning": "SINGLE TENANT STAND ALONE RETAIL BLDG"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "214",
+      "sourceMeaning": "CONVENIENCE STORE (7/11, CIRCLE K, ETC)"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "216",
+      "sourceMeaning": "SINGLE STORY STRIP RETAIL"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "217",
+      "sourceMeaning": "COMBINATION COMMERCIAL/RESIDENTIAL BUILDING"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "220",
+      "sourceMeaning": "GENERIC-4 AND MORE STORY OFFICE BUILDING"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "221",
+      "sourceMeaning": "4 AND MORE STORY OFFICE"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "230",
+      "sourceMeaning": "REGIONAL SHOPPING CENTER"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "240",
+      "sourceMeaning": "COMMUNITY SHOPPING CENTER"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "250",
+      "sourceMeaning": "NEIGHBORHOOD SHOPPING CENTER"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "260",
+      "sourceMeaning": "HOTEL/MOTEL - GENERIC"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "265",
+      "sourceMeaning": "MOTEL - INDEPENDENT"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "270",
+      "sourceMeaning": "SERVICE STATION - GENERIC"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "272",
+      "sourceMeaning": "SERVICE STATION WITH MINI-MART/RETAIL"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "273",
+      "sourceMeaning": "SERVICE STATION-CAR WASH W/MINI MART/RETAIL"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "280",
+      "sourceMeaning": "GENERIC MEDICAL/DENTAL OFFICE"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "281",
+      "sourceMeaning": "MEDICAL-DENTAL OFFICE"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "282",
+      "sourceMeaning": "VETERINARY OFFICES"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "284",
+      "sourceMeaning": "KENNELS"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "290",
+      "sourceMeaning": "REST HOME/CONVALESCENT HOSPITAL"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "291",
+      "sourceMeaning": "COMBINATION ASSISTED LIVING/SKILLED NURSING"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "294",
+      "sourceMeaning": "RETIREMENT/INDEPENDENT LIVING"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "300",
+      "sourceMeaning": "OFFICE CONDOS"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "310",
+      "sourceMeaning": "GARAGE PARKING LOT/USED CAR"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "311",
+      "sourceMeaning": "PARKING LOT MINIMAL IMPROVEMENTS"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "312",
+      "sourceMeaning": "PARKING STRUCTURE"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "320",
+      "sourceMeaning": "TRAILER PARK"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "322",
+      "sourceMeaning": "RV PARK"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "342",
+      "sourceMeaning": "MISC. RECREATIONAL"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "350",
+      "sourceMeaning": "GENERIC RESTAURANT/NIGHT CLUB/TAVERN"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "352",
+      "sourceMeaning": "CHAIN TYPE RESTAURANT"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "354",
+      "sourceMeaning": "BAR/TAVERN"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "355",
+      "sourceMeaning": "FAST FOOD RESTAURANT"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "360",
+      "sourceMeaning": "CAR WASH"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "370",
+      "sourceMeaning": "GROCERY/DRUG LARGE CHAIN GENERIC"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "380",
+      "sourceMeaning": "AUTO SALES/SERVICE AGENCY"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "381",
+      "sourceMeaning": "NEW CAR DEALERSHIP"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "382",
+      "sourceMeaning": "USED CAR LOT"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "390",
+      "sourceMeaning": "GENERIC- RADIO STATION/BANK/MISC"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "392",
+      "sourceMeaning": "BANK"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "VACANT_LAND_HINT",
+      "originalCode": "400",
+      "sourceMeaning": "VACANT INDUSTIAL"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "410",
+      "sourceMeaning": "FACTORY/LIGHT MANUFACTURING"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "411",
+      "sourceMeaning": "SINGLE TENANT INDUSTRIAL"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "430",
+      "sourceMeaning": "WAREHOUSE-PROCESSING/STORAGE/DISTRIBUTION"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "444",
+      "sourceMeaning": "UNKNOWN"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "454",
+      "sourceMeaning": "WINERY/BREWERY"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "460",
+      "sourceMeaning": "AUTOMOTIVE REPAIR GARAGES"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "490",
+      "sourceMeaning": "MISC INDUSTRY/SPECIAL"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "710",
+      "sourceMeaning": "CHURCH"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "720",
+      "sourceMeaning": "CHURCH RECTORY, PRKG &amp; OTHER CHURCH RELATED"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "750",
+      "sourceMeaning": "MORTUARY"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "760",
+      "sourceMeaning": "PUBLIC BUILDING - SCHOOL, FIREHOUSE, LIBRARY, ETC"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "770",
+      "sourceMeaning": "HOSPITAL"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "782",
+      "sourceMeaning": "PRESCHOOL AND CHILDCARE FACILITY"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "790",
+      "sourceMeaning": "MISC INST"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "810",
+      "sourceMeaning": "MEETING HALL/GYM"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "820",
+      "sourceMeaning": "GOLF COURSE"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "850",
+      "sourceMeaning": "NON-TAXABLE"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "860",
+      "sourceMeaning": "OPEN SPACE"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "861",
+      "sourceMeaning": "OPEN SPACE OWNED BY AN HOA"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "862",
+      "sourceMeaning": "OPEN SPACE OWNED BY A DEVELOPER"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "867",
+      "sourceMeaning": "STATE ASSESSED"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "887",
+      "sourceMeaning": "MILLS ACT (SINGLE FAM OWNER OCCUPIED)"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "888",
+      "sourceMeaning": "MILLS ACT (OTHER THAN SINGL FAM OWNER OCCUPIED)"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "NONRESIDENTIAL",
+      "originalCode": "890",
+      "sourceMeaning": "MISC/SPECIAL"
+    },
+    {
+      "assessorAduHint": false,
+      "normalizedClass": "UNKNOWN_OTHER",
+      "originalCode": "900",
+      "sourceMeaning": "VACANT TAXABLE GOVT OWNED PROPERTY"
+    }
+  ],
+  "schemaVersion": "assessor-use-code-mapping-v0",
+  "source": "SanGIS NUCLEUS_USE_CD domain metadata from sealed 2026-09-24 acquisition"
+}

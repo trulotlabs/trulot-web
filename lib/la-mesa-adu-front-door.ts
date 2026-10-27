@@ -2,6 +2,7 @@ import {
   searchParcelLookup,
   type ParcelLookupSearchRecord,
 } from "./parcel-lookup-contract";
+import type { AssessorPropertyIntelligence, PreliminaryDwellingState } from "./property-intelligence";
 
 export const LA_MESA_ADU_PREVIEW_ENV = "TRULOT_LA_MESA_ADU_PREVIEW";
 
@@ -63,6 +64,7 @@ export type UserProvidedValue<T extends string> = {
 export type ExistingUse =
   | "ONE_DETACHED_HOUSE"
   | "TWO_OR_MORE_DWELLINGS"
+  | "CONDOMINIUM"
   | "VACANT_LAND"
   | "NOT_SURE";
 export type AduIdea =
@@ -78,6 +80,8 @@ export type HomeownerAnswers = {
   aduIdea: UserProvidedValue<AduIdea>;
   existingSpace?: UserProvidedValue<ExistingSpace>;
 };
+
+export type PropertyRecordConfirmation = "YES" | "NO" | "NOT_SURE";
 
 export type FrontDoorAnswerCategory =
   | "Likely state/local pathway available"
@@ -108,6 +112,8 @@ export type FrontDoorEvaluation = {
   missingFacts: string[];
   pathways: FrontDoorPathway[];
   homeownerAnswers: HomeownerAnswers | null;
+  propertyIntelligence: FrontDoorPropertyIntelligence | null;
+  propertyFactConflicts: string[];
   userAnswerLimits: string[];
   evidenceSources: Array<{ label: string; publisher: string; date: string; url: string }>;
   evaluationDate: string | null;
@@ -142,8 +148,36 @@ export type LaMesaFrontDoorSearchRecord = ParcelLookupSearchRecord & {
 export type LaMesaFrontDoorDataset = {
   records: LaMesaFrontDoorSearchRecord[];
   evaluations: Record<string, FrontDoorPublicEvaluation>;
+  propertyIntelligence: Record<string, FrontDoorPropertyIntelligence>;
   canonicalCount: number;
 };
+
+export type FrontDoorPropertyIntelligence = Pick<
+  AssessorPropertyIntelligence,
+  "provenance" | "preliminaryDwellingState" | "eligibleForPreselection" | "conflictReasons" | "currentnessLimit"
+>;
+
+export type PropertyConfirmationModel = {
+  recordedState: PreliminaryDwellingState;
+  prompt: string;
+  preselectedUse: ExistingUse | null;
+};
+
+export function propertyConfirmationFor(
+  intelligence: FrontDoorPropertyIntelligence | null | undefined,
+): PropertyConfirmationModel | null {
+  if (!intelligence) return null;
+  if (intelligence.eligibleForPreselection && intelligence.preliminaryDwellingState === "RECORDED_SINGLE_FAMILY_LIKELY") {
+    return { recordedState: intelligence.preliminaryDwellingState, prompt: "Public property records indicate one detached residence. Is that still correct?", preselectedUse: "ONE_DETACHED_HOUSE" };
+  }
+  if (intelligence.eligibleForPreselection && intelligence.preliminaryDwellingState === "RECORDED_MULTIFAMILY_LIKELY") {
+    return { recordedState: intelligence.preliminaryDwellingState, prompt: "Public property records indicate multiple dwelling units. Is that still correct?", preselectedUse: "TWO_OR_MORE_DWELLINGS" };
+  }
+  if (intelligence.preliminaryDwellingState === "RECORDED_CONDO") {
+    return { recordedState: intelligence.preliminaryDwellingState, prompt: "Public property records indicate a condominium. Is that still correct?", preselectedUse: "CONDOMINIUM" };
+  }
+  return null;
+}
 
 function jurisdictionFor(recordValue: LaMesaFrontDoorSearchRecord): FrontDoorJurisdiction {
   if (recordValue.jurisdictionId === "CITY_OF_LA_MESA") return "CITY_OF_LA_MESA";
@@ -286,6 +320,8 @@ export function evaluateLaMesaFrontDoor(
       missingFacts: ["Confirmed City of La Mesa jurisdiction"],
       pathways: [],
       homeownerAnswers: answers,
+      propertyIntelligence: null,
+      propertyFactConflicts: [],
       userAnswerLimits: limits,
       evidenceSources: [],
       evaluationDate: null,
@@ -294,6 +330,7 @@ export function evaluateLaMesaFrontDoor(
     };
   }
   const details = dataset.evaluations[candidate.apn];
+  const propertyIntelligence = dataset.propertyIntelligence[candidate.apn] ?? null;
   if (!details?.available) {
     return {
       parcel: candidate,
@@ -311,6 +348,8 @@ export function evaluateLaMesaFrontDoor(
       missingFacts: details?.missingFacts ?? [],
       pathways: [],
       homeownerAnswers: answers,
+      propertyIntelligence,
+      propertyFactConflicts: propertyIntelligence?.conflictReasons ?? [],
       userAnswerLimits: limits,
       evidenceSources: details?.evidenceSources ?? [],
       evaluationDate: details?.evaluationDate ?? null,
@@ -323,18 +362,39 @@ export function evaluateLaMesaFrontDoor(
     label: OVERLAY_LABELS[id] ?? "Mapped planning context detected",
     explanation: "This does not automatically prevent an ADU, but it may add project-specific requirements.",
   }));
+  const evidenceSources = propertyIntelligence
+    ? [...details.evidenceSources, {
+        label: "Public parcel and recorded property characteristics",
+        publisher: "SanGIS / San Diego County Assessor-Recorder-County Clerk",
+        date: "Acquired September 24, 2026",
+        url: "https://gis.sangis.org/",
+      }]
+    : details.evidenceSources;
   const specificPlanMessage = details.specificPlanBoundaryUnresolved
     ? "Specific-plan applicability needs review before TruLot can narrow the rules further."
     : null;
   let chosen: FrontDoorPathway[] = [];
   let category = details.answerCategory;
   let headline = "We found the property and its zoning. To narrow the ADU options, we need a few facts about what is currently on the property.";
+  if (propertyIntelligence?.preliminaryDwellingState === "RECORDED_RESIDENTIAL_CONFLICT") {
+    headline = "Public records are not consistent about the current property configuration. Please tell us what is currently on the property.";
+  } else if (propertyConfirmationFor(propertyIntelligence)) {
+    headline = "We found a recorded property characteristic that can shorten the intake after you confirm it.";
+  }
+  const propertyFactConflicts = [...(propertyIntelligence?.conflictReasons ?? [])];
   if (answers) {
     const ids = selectedPathwayIds(answers);
     chosen = pathways(ids, details.pathwayCatalog, answers, mappedContexts.length > 0);
+    const expectedUse = propertyConfirmationFor(propertyIntelligence)?.preselectedUse;
+    if (expectedUse && answers.existingUse.value !== expectedUse && answers.existingUse.value !== "NOT_SURE") {
+      propertyFactConflicts.push("HOMEOWNER_ANSWER_DIFFERS_FROM_RECORDED_CHARACTERISTIC");
+    }
     if (answers.existingUse.value === "NOT_SURE") {
       category = "Needs property evidence";
       headline = "We still need the property’s dwelling type before narrowing the ADU pathways.";
+    } else if (answers.existingUse.value === "CONDOMINIUM") {
+      category = "Needs property evidence";
+      headline = "The recorded condominium characteristic is preserved, but parcel and unit identity need review before TruLot can narrow an ADU pathway.";
     } else if (answers.existingUse.value === "VACANT_LAND") {
       category = "Needs property evidence";
       headline = "Vacant-land development requires dwelling and project evidence beyond this preliminary ADU screen.";
@@ -361,8 +421,10 @@ export function evaluateLaMesaFrontDoor(
     missingFacts: details.missingFacts,
     pathways: chosen,
     homeownerAnswers: answers,
+    propertyIntelligence,
+    propertyFactConflicts,
     userAnswerLimits: limits,
-    evidenceSources: details.evidenceSources,
+    evidenceSources,
     evaluationDate: details.evaluationDate,
     futureChangeNotice:
       "California ADU rules change January 1, 2027. TruLot is evaluating this property under current 2026 rules.",

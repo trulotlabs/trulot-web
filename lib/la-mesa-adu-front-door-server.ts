@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { gunzipSync } from "node:zlib";
 import type {
+  FrontDoorPropertyIntelligence,
   FrontDoorPublicEvaluation,
   LaMesaFrontDoorDataset,
   LaMesaFrontDoorSearchRecord,
@@ -23,10 +24,11 @@ type ServingArtifactRow = {
 type EvaluationArtifactRow = FrontDoorPublicEvaluation & { apn: string };
 
 const ARTIFACT_ROOT = "data/la-mesa-parcel-lookup-serving-v0";
+const PROPERTY_ARTIFACT_ROOT = "data/la-mesa-assessor-property-intelligence-v0";
 let cached: LaMesaFrontDoorDataset | null = null;
 
-function loadRows<T>(name: string): T[] {
-  const compressed = readFileSync(join(process.cwd(), ARTIFACT_ROOT, name));
+function loadRows<T>(name: string, root = ARTIFACT_ROOT): T[] {
+  const compressed = readFileSync(join(process.cwd(), root, name));
   return gunzipSync(compressed)
     .toString("utf8")
     .split("\n")
@@ -61,6 +63,14 @@ export function buildLaMesaFrontDoorDataset(): LaMesaFrontDoorDataset {
   const canonical = loadRows<ServingArtifactRow>("serving-rows.ndjson.gz");
   const comparison = loadRows<ServingArtifactRow>("cross-jurisdiction-comparison.ndjson.gz");
   const evaluationRows = loadRows<EvaluationArtifactRow>("evaluation-index.ndjson.gz");
+  let propertyIntelligence: LaMesaFrontDoorDataset["propertyIntelligence"] = {};
+  try {
+    const assessorRows = loadRows<FrontDoorPropertyIntelligence & { apn: string }>("property-characteristics.ndjson.gz", PROPERTY_ARTIFACT_ROOT);
+    propertyIntelligence = Object.fromEntries(assessorRows.map(({ apn, ...intelligence }) => [apn, intelligence]));
+  } catch {
+    // Property intelligence is an optional enhancement. The existing intake remains available.
+    propertyIntelligence = {};
+  }
   cached = {
     canonicalCount: canonical.length,
     records: [
@@ -70,6 +80,7 @@ export function buildLaMesaFrontDoorDataset(): LaMesaFrontDoorDataset {
     evaluations: Object.fromEntries(
       evaluationRows.map(({ apn, ...evaluation }) => [apn, evaluation]),
     ),
+    propertyIntelligence,
   };
   return cached;
 }

@@ -158,8 +158,10 @@ test("taxonomy, source roles, freshness, and public links are bounded and explic
     dataset,
     answersFor({ existingUse: "ONE_DETACHED_HOUSE", aduIdea: "NEW_DETACHED_ADU" }),
   );
-  assert.equal(new Set(result.evidenceSources.map((value) => value.url)).size, sourceValidation.links.length);
-  assert.deepEqual(new Set(result.evidenceSources.map((value) => value.url)), new Set(sourceValidation.links.map((value) => value.url)));
+  const sourceUrls = new Set(result.evidenceSources.map((value) => value.url));
+  assert.equal(sourceUrls.size, sourceValidation.links.length + 1);
+  for (const source of sourceValidation.links) assert.equal(sourceUrls.has(source.url), true);
+  assert.equal(sourceUrls.has("https://gis.sangis.org/"), true);
   assert.match(result.futureChangeNotice ?? "", /January 1, 2027/);
   assert.equal(result.evaluationDate, "2026-10-26");
   assert.doesNotMatch(JSON.stringify(result.evidenceSources), /data\/|Packet|sha256|draft/i);

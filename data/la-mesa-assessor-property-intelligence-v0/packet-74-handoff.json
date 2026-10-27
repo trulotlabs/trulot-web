@@ -1,0 +1,19 @@
+{
+  "authorizedNextScope": "LA_MESA_PERMIT_INTELLIGENCE",
+  "liveIntegrationIncludedInPacket73": false,
+  "requiredCapabilities": [
+    "permit record acquisition with a terms-compliant bounded source contract",
+    "deterministic APN linkage with ambiguity and no-match states",
+    "complete pagination with truncation detection",
+    "permit and project status normalization without legal-status overclaim",
+    "later-change evidence ordered against assessor acquisition currentness",
+    "ADU permit evidence distinguished from assessor ADU hints",
+    "currentness conflict resolution that preserves both sources and homeowner input"
+  ],
+  "stopConditions": [
+    "do not treat an address match as APN linkage",
+    "do not treat no search result as no permit",
+    "do not overwrite Packet 73 recorded facts",
+    "do not expose raw permit records publicly before rights and display review"
+  ]
+}

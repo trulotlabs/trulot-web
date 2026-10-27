@@ -106,11 +106,12 @@ test("out-of-jurisdiction and unresolved jurisdiction suppress La Mesa rules", (
   assert.match(unresolved.headline, /jurisdiction needs review/);
 });
 
-test("initial supported parcel remains needs-evidence until homeowner intake", () => {
+test("initial supported parcel remains needs-evidence while recorded facts shorten intake to confirmation", () => {
   const result = evaluateLaMesaFrontDoor(exact("4640301100"), dataset);
   assert.equal(result.answerCategory, "Needs property evidence");
   assert.equal(result.pathways.length, 0);
-  assert.match(result.headline, /need a few facts/i);
+  assert.match(result.headline, /recorded property characteristic/i);
+  assert.equal(result.propertyIntelligence?.provenance, "RECORDED_PROPERTY_CHARACTERISTIC");
 });
 
 test("single-family answers re-run the shared evaluator and select only the relevant 2026 pathway", () => {
@@ -143,11 +144,12 @@ test("Scenic and Hillside contexts use restrained homeowner language", () => {
   }
 });
 
-test("R3 does not infer multifamily and unsupported/TBD remains outside scope", () => {
+test("R3 zoning does not infer dwelling type while separate assessor facts may support confirmation", () => {
   const r3 = evaluateLaMesaFrontDoor(exact("4640201000"), dataset);
   const unsupported = evaluateLaMesaFrontDoor(exact("4645231900"), dataset);
   assert.equal(r3.answerCategory, "Needs property evidence");
   assert.equal(r3.pathways.length, 0);
+  assert.equal(r3.propertyIntelligence?.preliminaryDwellingState, "RECORDED_MULTIFAMILY_LIKELY");
   assert.equal(unsupported.answerCategory, "Outside current scope");
   assert.equal(unsupported.pathways.length, 0);
 });

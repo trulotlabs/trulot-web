@@ -4,6 +4,7 @@ import { useId, useRef, useState } from "react";
 import {
   buildLocalWaypointHandoff,
   evaluateLaMesaFrontDoor,
+  propertyConfirmationFor,
   resolveLaMesaFrontDoor,
   type AduIdea,
   type ExistingSpace,
@@ -14,6 +15,7 @@ import {
   type HomeownerAnswers,
   type LocalLeadDraft,
   type LaMesaFrontDoorDataset,
+  type PropertyRecordConfirmation,
 } from "@/lib/la-mesa-adu-front-door";
 import styles from "./la-mesa-adu.module.css";
 
@@ -33,6 +35,11 @@ const ADU_IDEA_OPTIONS: Option<AduIdea>[] = [
   { value: "NOT_SURE", label: "Not sure yet" },
 ];
 const EXISTING_SPACE_OPTIONS: Option<ExistingSpace>[] = [
+  { value: "YES", label: "Yes" },
+  { value: "NO", label: "No" },
+  { value: "NOT_SURE", label: "Not sure" },
+];
+const PROPERTY_CONFIRMATION_OPTIONS: Option<PropertyRecordConfirmation>[] = [
   { value: "YES", label: "Yes" },
   { value: "NO", label: "No" },
   { value: "NOT_SURE", label: "Not sure" },
@@ -85,8 +92,9 @@ function SourceDisclosure({ evaluation }: { evaluation: FrontDoorEvaluation }) {
       <summary>Why TruLot says this</summary>
       <div className={styles.disclosureBody}>
         <p>
-          Public zoning and rule sources are kept separate from anything you tell us.
-          HCD guidance supports interpretation; operative law remains controlling.
+          Public zoning, rule, and recorded property sources are kept separate from anything
+          you tell us. Recorded characteristics may lag current conditions; operative law and
+          project-specific evidence remain controlling.
         </p>
         <ul>
           {evaluation.evidenceSources.map((source) => (
@@ -240,6 +248,7 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
   const [selected, setSelected] = useState<FrontDoorCandidate | null>(null);
   const [evaluation, setEvaluation] = useState<FrontDoorEvaluation | null>(null);
   const [existingUse, setExistingUse] = useState<ExistingUse | null>(null);
+  const [propertyConfirmation, setPropertyConfirmation] = useState<PropertyRecordConfirmation | null>(null);
   const [aduIdea, setAduIdea] = useState<AduIdea | null>(null);
   const [existingSpace, setExistingSpace] = useState<ExistingSpace | null>(null);
   const [intakeError, setIntakeError] = useState<string | null>(null);
@@ -263,6 +272,7 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
     setEvaluation(next);
     setLookup(null);
     setExistingUse(null);
+    setPropertyConfirmation(null);
     setAduIdea(null);
     setExistingSpace(null);
     setIntakeError(null);
@@ -274,8 +284,19 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
     setLookup(null);
     setSelected(null);
     setEvaluation(null);
+    setPropertyConfirmation(null);
     setIntakeError(null);
     window.setTimeout(() => inputRef.current?.focus(), 0);
+  }
+
+  function confirmRecordedProperty(value: PropertyRecordConfirmation) {
+    setPropertyConfirmation(value);
+    const model = selected ? propertyConfirmationFor(dataset.propertyIntelligence[selected.apn]) : null;
+    if (value === "YES") setExistingUse(model?.preselectedUse ?? null);
+    else if (value === "NOT_SURE") setExistingUse("NOT_SURE");
+    else setExistingUse(null);
+    setAduIdea(null);
+    setExistingSpace(null);
   }
 
   function reevaluate(event: React.FormEvent<HTMLFormElement>) {
@@ -304,6 +325,10 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
     selected.canonicalScopeState === "IN_SCOPE_CONFIRMED" &&
     evaluation?.answerCategory !== "Outside current scope" &&
     evaluation?.answerCategory !== "Source unavailable";
+  const confirmationModel = selected
+    ? propertyConfirmationFor(dataset.propertyIntelligence[selected.apn])
+    : null;
+  const showExistingUseQuestion = !confirmationModel || propertyConfirmation === "NO";
 
   return (
     <main className={styles.page}>
@@ -380,8 +405,13 @@ export default function LaMesaAduClient({ dataset }: { dataset: LaMesaFrontDoorD
               <h2 id="intake-heading">A few facts can narrow the pathways</h2>
               <p>Your answers are labeled as homeowner-provided and remain separate from recorded parcel facts.</p>
               <form onSubmit={reevaluate}>
-                <RadioGroup legend="What is currently on the property?" name="existing-use" onChange={setExistingUse} options={EXISTING_USE_OPTIONS} value={existingUse} />
-                <RadioGroup legend="What are you considering?" name="adu-idea" onChange={setAduIdea} options={ADU_IDEA_OPTIONS} value={aduIdea} />
+                {confirmationModel ? (
+                  <RadioGroup legend={confirmationModel.prompt} name="property-record-confirmation" onChange={confirmRecordedProperty} options={PROPERTY_CONFIRMATION_OPTIONS} value={propertyConfirmation} />
+                ) : null}
+                {showExistingUseQuestion ? (
+                  <RadioGroup legend="What is currently on the property?" name="existing-use" onChange={setExistingUse} options={EXISTING_USE_OPTIONS} value={existingUse} />
+                ) : null}
+                {existingUse ? <RadioGroup legend="What are you considering?" name="adu-idea" onChange={setAduIdea} options={ADU_IDEA_OPTIONS} value={aduIdea} /> : null}
                 {aduIdea === "CONVERSION" ? (
                   <RadioGroup legend="Is there an existing garage or accessory structure you may want to convert?" name="existing-space" onChange={setExistingSpace} options={EXISTING_SPACE_OPTIONS} value={existingSpace} />
                 ) : null}

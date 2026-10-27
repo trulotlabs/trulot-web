@@ -1,0 +1,23 @@
+{
+  "browser": "Chromium via Codex in-app browser",
+  "consoleErrors": [],
+  "desktop": {
+    "viewport": { "width": 1280, "height": 720 },
+    "bruceConfirmation": "PASS",
+    "bruceYesCompletedPathwayEvaluation": "PASS",
+    "bruceNoRevealedExistingFourChoiceQuestion": "PASS",
+    "bruceNotSureRetainedRecordedFactWithoutPreselection": "PASS",
+    "multifamilyConfirmationWithoutExactCountRedisplay": "PASS",
+    "condoConfirmation": "PASS",
+    "missingFactBlankQuestion": "PASS",
+    "conflictRestrainedCopyAndBlankQuestion": "PASS",
+    "limitsAndGenericSourceDisclosure": "PASS"
+  },
+  "mobile": {
+    "viewport": { "width": 390, "height": 844 },
+    "bruceConfirmation": "PASS",
+    "bruceYesCompletedPathwayEvaluation": "PASS",
+    "horizontalOverflow": false
+  },
+  "scope": "Private local preview only; no production endpoint was accessed."
+}

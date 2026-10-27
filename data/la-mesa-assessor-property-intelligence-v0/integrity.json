@@ -1,0 +1,29 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 888,
+      "sha256": "5d2c68e26941e1622d0b4a0864a84dbd2f9bd2506832359dc24446d8bea50db9"
+    },
+    "browser-qa.json": {
+      "bytes": 854,
+      "sha256": "e7ff670acb8cae0dc03776559cd49a321b83abaa54a656968a32ebb576c78253"
+    },
+    "coverage.json": {
+      "bytes": 1318,
+      "sha256": "d5aeddf9c6db2bec6a8be057010249e847d538b9fc6f22a95cdad4a9acdba765"
+    },
+    "packet-74-handoff.json": {
+      "bytes": 905,
+      "sha256": "49d33da711ee13b2f1696653534dd2b3dd5f5f9ceefdd81722144e7382c6dec1"
+    },
+    "property-characteristics.ndjson.gz": {
+      "bytes": 73674,
+      "sha256": "8bf7112fc3c9bf0ac33b578fb18cf532a481ee81f63a8007c8e5c64fb8087e8e"
+    },
+    "use-code-mapping.json": {
+      "bytes": 16867,
+      "sha256": "4447f3481d9ebf396dec05a9de14464608e4af9d2f5312705ba1f0e5ece6f0ce"
+    }
+  },
+  "schemaVersion": "la-mesa-assessor-property-intelligence-integrity-v0"
+}
