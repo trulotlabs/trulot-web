@@ -1,0 +1,121 @@
+{
+  "no_project_compliance": true,
+  "ordinary_candidate_per_target": [
+    {
+      "apn": "3730802328",
+      "coastal_version": "RM_WAVE1_OUTSIDE_COASTAL_2026_07_15",
+      "footnotes": [
+        "FN1",
+        "FN15",
+        "FN17",
+        "FN2",
+        "FN22",
+        "FN26",
+        "FN3",
+        "FN39",
+        "FN4",
+        "FN5",
+        "FN6"
+      ],
+      "formulas": "VERIFIED_AGAINST_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "profile_source_fingerprint": "52b265a27eced9ac529b86faa528de95bfad494ddf481345783c5025ab682e07",
+      "rule_row": "VERIFIED_RM-1-1_TABLE_131_04G",
+      "zone": "RM-1-1",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "5472301900",
+      "coastal_version": "RM_WAVE1_OUTSIDE_COASTAL_2026_07_15",
+      "footnotes": [
+        "FN1",
+        "FN11",
+        "FN12",
+        "FN13",
+        "FN16",
+        "FN2",
+        "FN24",
+        "FN28",
+        "FN37"
+      ],
+      "formulas": "VERIFIED_AGAINST_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "profile_source_fingerprint": "1c93de49d9e8356e74745d7b9d33888a12fe552a8c1a15c21418f4db0bdcc23b",
+      "rule_row": "VERIFIED_RM-3-7_TABLE_131_04G",
+      "zone": "RM-3-7",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "4380212321",
+      "coastal_version": "RM_WAVE1_OUTSIDE_COASTAL_2026_07_15",
+      "footnotes": [
+        "FN1",
+        "FN11",
+        "FN12",
+        "FN13",
+        "FN16",
+        "FN2",
+        "FN24",
+        "FN28",
+        "FN37"
+      ],
+      "formulas": "VERIFIED_AGAINST_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "profile_source_fingerprint": "04d8e12886c850cc9e34a91015ec5bf30849ffa56ecaf54563ceabf3d412c931",
+      "rule_row": "VERIFIED_RM-3-9_TABLE_131_04G",
+      "zone": "RM-3-9",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "4721703450",
+      "coastal_version": "RM_WAVE1_OUTSIDE_COASTAL_2026_07_15",
+      "footnotes": [
+        "FN1",
+        "FN15",
+        "FN17",
+        "FN2",
+        "FN22",
+        "FN26",
+        "FN3",
+        "FN39",
+        "FN4",
+        "FN5",
+        "FN6"
+      ],
+      "formulas": "VERIFIED_AGAINST_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "profile_source_fingerprint": "e70f76205cb1477672eb584940c92b1017724a312d76795470c1a4706cc4efb8",
+      "rule_row": "VERIFIED_RM-1-3_TABLE_131_04G",
+      "zone": "RM-1-3",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    },
+    {
+      "apn": "4447202602",
+      "coastal_version": "RM_WAVE1_OUTSIDE_COASTAL_2026_07_15",
+      "footnotes": [
+        "FN1",
+        "FN14",
+        "FN16",
+        "FN2",
+        "FN25",
+        "FN37"
+      ],
+      "formulas": "VERIFIED_AGAINST_FAMILY_SCHEMA",
+      "modifier_state": "UNRESOLVED_REVIEW_REQUIRED",
+      "profile_source_fingerprint": "c3e30c555523719762d6210d78ea30dea372466f2be17e36a7b288b73b4b7d70",
+      "rule_row": "VERIFIED_RM-4-10_TABLE_131_04G",
+      "zone": "RM-4-10",
+      "zoning": "VERIFIED_FROM_PACKET79_EXACT_ROW"
+    }
+  ],
+  "state": "VERIFIED",
+  "verification_scope": [
+    "APN zoning",
+    "zone row",
+    "Coastal version",
+    "footnotes",
+    "formulas",
+    "profile version",
+    "modifier state"
+  ]
+}

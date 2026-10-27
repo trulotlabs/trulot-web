@@ -1,0 +1,60 @@
+{
+  "basis": "exact Packet 79 APN-zone associations; counts are not summed for coverage",
+  "zones": {
+    "RM-1-1": {
+      "boundary_ambiguous": 23,
+      "indeterminate": 66,
+      "inside_coastal": 7811,
+      "multi_zone": 15729,
+      "outside_coastal": 41536,
+      "profile_ready": 33382,
+      "single_zone": 33237,
+      "sliver": 338,
+      "unique_apns": 49370
+    },
+    "RM-1-3": {
+      "boundary_ambiguous": 0,
+      "indeterminate": 0,
+      "inside_coastal": 0,
+      "multi_zone": 2203,
+      "outside_coastal": 5179,
+      "profile_ready": 2974,
+      "single_zone": 2889,
+      "sliver": 87,
+      "unique_apns": 5179
+    },
+    "RM-3-7": {
+      "boundary_ambiguous": 455,
+      "indeterminate": 100,
+      "inside_coastal": 2069,
+      "multi_zone": 8664,
+      "outside_coastal": 19105,
+      "profile_ready": 12469,
+      "single_zone": 12795,
+      "sliver": 70,
+      "unique_apns": 21629
+    },
+    "RM-3-9": {
+      "boundary_ambiguous": 1,
+      "indeterminate": 18,
+      "inside_coastal": 493,
+      "multi_zone": 4428,
+      "outside_coastal": 8761,
+      "profile_ready": 4806,
+      "single_zone": 4805,
+      "sliver": 4,
+      "unique_apns": 9255
+    },
+    "RM-4-10": {
+      "boundary_ambiguous": 0,
+      "indeterminate": 15,
+      "inside_coastal": 117,
+      "multi_zone": 2660,
+      "outside_coastal": 3682,
+      "profile_ready": 1047,
+      "single_zone": 1046,
+      "sliver": 78,
+      "unique_apns": 3799
+    }
+  }
+}

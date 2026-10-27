@@ -1,0 +1,16 @@
+{
+  "added_by_packet80_unique_apns": 71497,
+  "after_packet80_percent": 93.56694,
+  "after_packet80_unique_apns": 305526,
+  "before_packet80_percent": 71.671077,
+  "before_packet80_unique_apns": 234029,
+  "metric": "unique residential APNs with any association to a supported profile",
+  "overlap_rule": "APNs are counted once regardless of supported-zone associations",
+  "percentage_point_gain": 21.895863,
+  "profile_ready_unique_apns": 244112,
+  "residential_unique_apns": 326532,
+  "review_required_unique_apns": 61414,
+  "target_association_rows": 89232,
+  "target_unique_apns": 87008,
+  "unsupported_unique_apns": 21006
+}

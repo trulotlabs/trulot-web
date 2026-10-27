@@ -1,0 +1,19 @@
+{
+  "multi_zone_policy": "REVIEW_REQUIRED",
+  "no_feasibility_result": true,
+  "profile_schema": "RM_TABLE_131_04G_GENERIC_V1",
+  "required_selection_fields": [
+    "apn",
+    "zone",
+    "zoning_state",
+    "coastal_context",
+    "profile_version",
+    "profile_ready",
+    "modifier_review_state",
+    "source_fingerprints",
+    "provenance"
+  ],
+  "selection_granularity": "one row per APN-target-zone association",
+  "selection_schema": "SanDiegoRmWave1ApnProfileSelectionV0",
+  "unknown_coastal_policy": "UNRESOLVED_REVIEW_REQUIRED"
+}

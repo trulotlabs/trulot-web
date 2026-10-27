@@ -1,0 +1,132 @@
+{
+  "basis": "exact unique APNs not already covered after Packet 80",
+  "ranked": [
+    {
+      "family": "RM",
+      "incremental_percent_of_residential": 0.877096,
+      "incremental_unique_apns": 2864,
+      "unique_apns": 3181,
+      "zone": "RM-1-2"
+    },
+    {
+      "family": "RM",
+      "incremental_percent_of_residential": 0.81554,
+      "incremental_unique_apns": 2663,
+      "unique_apns": 3175,
+      "zone": "RM-2-4"
+    },
+    {
+      "family": "RX",
+      "incremental_percent_of_residential": 0.725503,
+      "incremental_unique_apns": 2369,
+      "unique_apns": 2543,
+      "zone": "RX-1-2"
+    },
+    {
+      "family": "RX",
+      "incremental_percent_of_residential": 0.606985,
+      "incremental_unique_apns": 1982,
+      "unique_apns": 2208,
+      "zone": "RX-1-1"
+    },
+    {
+      "family": "RM",
+      "incremental_percent_of_residential": 0.57391,
+      "incremental_unique_apns": 1874,
+      "unique_apns": 2137,
+      "zone": "RM-2-6"
+    },
+    {
+      "family": "RM",
+      "incremental_percent_of_residential": 0.466723,
+      "incremental_unique_apns": 1524,
+      "unique_apns": 2313,
+      "zone": "RM-3-8"
+    },
+    {
+      "family": "RS",
+      "incremental_percent_of_residential": 0.363211,
+      "incremental_unique_apns": 1186,
+      "unique_apns": 1386,
+      "zone": "RS-1-11"
+    },
+    {
+      "family": "RM",
+      "incremental_percent_of_residential": 0.35433,
+      "incremental_unique_apns": 1157,
+      "unique_apns": 1239,
+      "zone": "RM-5-12"
+    },
+    {
+      "family": "RT",
+      "incremental_percent_of_residential": 0.33718,
+      "incremental_unique_apns": 1101,
+      "unique_apns": 1366,
+      "zone": "RT-1-2"
+    },
+    {
+      "family": "RS",
+      "incremental_percent_of_residential": 0.335649,
+      "incremental_unique_apns": 1096,
+      "unique_apns": 2270,
+      "zone": "RS-1-8"
+    },
+    {
+      "family": "RS",
+      "incremental_percent_of_residential": 0.308392,
+      "incremental_unique_apns": 1007,
+      "unique_apns": 1486,
+      "zone": "RS-1-5"
+    },
+    {
+      "family": "RS",
+      "incremental_percent_of_residential": 0.274705,
+      "incremental_unique_apns": 897,
+      "unique_apns": 995,
+      "zone": "RS-1-12"
+    },
+    {
+      "family": "RS",
+      "incremental_percent_of_residential": 0.261843,
+      "incremental_unique_apns": 855,
+      "unique_apns": 866,
+      "zone": "RS-1-9"
+    },
+    {
+      "family": "RM",
+      "incremental_percent_of_residential": 0.110862,
+      "incremental_unique_apns": 362,
+      "unique_apns": 393,
+      "zone": "RM-4-11"
+    },
+    {
+      "family": "RS",
+      "incremental_percent_of_residential": 0.093406,
+      "incremental_unique_apns": 305,
+      "unique_apns": 889,
+      "zone": "RS-1-3"
+    },
+    {
+      "family": "RT",
+      "incremental_percent_of_residential": 0.065231,
+      "incremental_unique_apns": 213,
+      "unique_apns": 214,
+      "zone": "RT-1-4"
+    },
+    {
+      "family": "RS",
+      "incremental_percent_of_residential": 0.015619,
+      "incremental_unique_apns": 51,
+      "unique_apns": 59,
+      "zone": "RS-1-10"
+    },
+    {
+      "family": "RT",
+      "incremental_percent_of_residential": 0.010106,
+      "incremental_unique_apns": 33,
+      "unique_apns": 46,
+      "zone": "RT-1-5"
+    }
+  ],
+  "recommended_next_step": "SAN_DIEGO_RESIDENTIAL_RULE_EXPANSION_WAVE_2"
+}

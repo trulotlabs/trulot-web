@@ -1,0 +1,20 @@
+{
+  "decision": "SAN_DIEGO_RM_RULE_EXPANSION_WAVE1_READY",
+  "dual_coastal_versions": true,
+  "exact_apn_selection": true,
+  "exact_unique_coverage": true,
+  "failed_profiles": [],
+  "footnotes_complete": true,
+  "goldens_verified": true,
+  "packet_11_frozen": true,
+  "production_access": false,
+  "public_activation": false,
+  "successful_profiles": [
+    "RM-1-1",
+    "RM-3-7",
+    "RM-3-9",
+    "RM-1-3",
+    "RM-4-10"
+  ],
+  "v4_compatible": true
+}

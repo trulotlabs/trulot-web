@@ -1,0 +1,22 @@
+{
+  "all_rules_are_rule_facts_only": true,
+  "capacity": false,
+  "existing_benchmarks": {
+    "RM-2-5:5442140600": "UNCHANGED_BY_CONSTRUCTION",
+    "RS-1-7:6341302200": "UNCHANGED_BY_CONSTRUCTION"
+  },
+  "private_project_comparison": false,
+  "production": false,
+  "runtime_activation": false,
+  "v4_rule_record_fields": [
+    "rule_family",
+    "representation",
+    "operator",
+    "value",
+    "conditions",
+    "footnote_ids",
+    "unresolved_dependencies",
+    "source_fingerprint",
+    "public_evaluation_state"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "bespoke_zone_evaluators": false,
+  "capacity_calculation": false,
+  "closed_operator_semantics": [
+    "MIN",
+    "MAX",
+    "FORMULA",
+    "PROCESS",
+    "NOT_SPECIFIED"
+  ],
+  "definitions_refs": [
+    "data/rm-rule-profile-v0/height-definition.json",
+    "data/rm-rule-profile-v0/far-definition.json",
+    "data/rm-rule-profile-v0/lot-area-semantics.json",
+    "data/rm-rule-profile-v0/premises-area-semantics.json"
+  ],
+  "formula_families": {
+    "COMMON_OPEN_SPACE": "max(300 sq ft,25 sq ft per DU) when more than four DUs",
+    "FAR": "Table band selected by dwelling-unit count where applicable; GFA/premises per 113.0234",
+    "HEIGHT": "Table maximum plus 131.0444/113.0270 and footnote 37 modifier",
+    "PRIVATE_OPEN_SPACE": "zone-family branch in 131.0455",
+    "RM1_FRONT": "maximum 50% of envelope width at 15 ft; remainder at 20 ft; curving street 5/10 ft",
+    "RM1_SIDE": "one side: maximum 50% length at 5 ft, remainder max(8 ft,10% premises width); opposite side may use 5 ft; narrow-premises branches",
+    "RM3_FRONT": "maximum 50% envelope width at 10 ft; remainder at 20 ft; curving street 5/10 ft",
+    "RM3_SIDE": "max(5 ft,10% premises width), with bounded zero-side option",
+    "RM3_STREET_SIDE": "max(10 ft,10% premises width), with maximum 50% facade encroachment by 5 ft",
+    "RM4_SETBACK": "two contiguous northerly/easterly yards at least 15 ft; side/rear inherit more restrictive adjacent residential zone"
+  },
+  "missing_fact_policy": "UNRESOLVED_REVIEW_REQUIRED",
+  "modifier_interfaces": [
+    "COASTAL",
+    "FIRE",
+    "SLOPE_HILLSIDE",
+    "COMMUNITY_PLAN",
+    "SPECIFIC_PLAN",
+    "TRANSIT_PROGRAM",
+    "HISTORIC_RESOURCE"
+  ],
+  "schema_id": "RM_TABLE_131_04G_GENERIC_V1",
+  "zone_row_driven": true
+}

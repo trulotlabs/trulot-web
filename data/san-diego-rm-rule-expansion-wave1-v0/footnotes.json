@@ -1,0 +1,255 @@
+{
+  "contract_version": "san-diego-rm-rule-expansion-wave1-2026-10-27-v0",
+  "footnotes": {
+    "FN1": {
+      "derivation_class": "PROCESS",
+      "extraction_fingerprint": "b290a5b79dafc5fd6afc223499f5a94a8daa5c34b546578373ceb799d79abab9",
+      "families": [
+        "DENSITY"
+      ],
+      "section": "113.0222",
+      "source_text": "One dwelling unit per specified square foot of lot area as determined in accordance with Section 113.0222.",
+      "trigger": "DENSITY_RULE_USED",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN11": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "b19ae096b3e8cda226b9cd6bcde3a46b334471911454d98b011854f4ae6faaf6",
+      "families": [
+        "FRONT_SETBACK_MINIMUM",
+        "FRONT_SETBACK_STANDARD"
+      ],
+      "section": "131.0443(f)(1)",
+      "source_text": "See Section 131.0443(f)(1).",
+      "trigger": "ZONE_RM_3_7_TO_RM_3_9",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN12": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "ea1812575bb276a620c4a8b6ed41acf6c95e1317541b9b5f97786150196258de",
+      "families": [
+        "INTERIOR_SIDE_SETBACK_MINIMUM"
+      ],
+      "section": "131.0443(f)(2)",
+      "source_text": "See Section 131.0443(f)(2).",
+      "trigger": "ZONE_RM_3_7_TO_RM_3_9",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN13": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "0e2e0e9582c1fe005e51119883b3dbc2b670678137ac8267931d772d81bdbd14",
+      "families": [
+        "STREET_SIDE_SETBACK_MINIMUM"
+      ],
+      "section": "131.0443(f)(3)",
+      "source_text": "See Section 131.0443(f)(3).",
+      "trigger": "ZONE_RM_3_7_TO_RM_3_9",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN14": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "492cae02b95ce2ed08225ad2e8ac2e39f92e88010f4b1920cfc5db61f74d0d43",
+      "families": [
+        "FRONT_SETBACK_MINIMUM",
+        "INTERIOR_SIDE_SETBACK_MINIMUM",
+        "STREET_SIDE_SETBACK_MINIMUM",
+        "REAR_SETBACK_MINIMUM"
+      ],
+      "section": "131.0443(g)",
+      "source_text": "See Section 131.0443(g).",
+      "trigger": "ZONE_RM_4_10_OR_RM_4_11",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN15": {
+      "derivation_class": "CONDITIONAL",
+      "extraction_fingerprint": "46ce39d763f85a97faa727ecb964e4c77af004471793514fc430c61a5d22d277",
+      "families": [
+        "ARCHITECTURAL_PROJECTIONS"
+      ],
+      "section": "131.0461(a)",
+      "source_text": "See Section 131.0461(a).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN16": {
+      "derivation_class": "CONDITIONAL",
+      "extraction_fingerprint": "e64ddbd5f1c7597b4d5db5eeac963fdecb640f84ad340e7b30e75847f5cd2af9",
+      "families": [
+        "ARCHITECTURAL_PROJECTIONS"
+      ],
+      "section": "131.0461(c)",
+      "source_text": "See Section 131.0461(c).",
+      "trigger": "ZONE_RM_2_4_TO_RM_5_12",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN17": {
+      "derivation_class": "GEOMETRIC_LIMIT",
+      "extraction_fingerprint": "abd4f9163e93a257b4c24f7c783dbdb7895448179ff82936d2bab077359837d2",
+      "families": [
+        "STRUCTURE_HEIGHT_MAXIMUM"
+      ],
+      "section": "131.0444(e)",
+      "source_text": "See Section 131.0444(e).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN2": {
+      "derivation_class": "EXCEPTION",
+      "extraction_fingerprint": "24f02a24ddf778d857d7c42970953d198956248815143f61bf56c89e8814e611",
+      "families": [
+        "DENSITY"
+      ],
+      "section": "143.0701_ET_SEQ",
+      "source_text": "An exception to maximum permitted density may be permitted under Chapter 14, Article 3, Division 7.",
+      "trigger": "AFFORDABLE_HOUSING_REGULATIONS_APPLY",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN22": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "df7f87d0933c002b5438e233108afc0b662599d647e75c175428c7ae2d9ee695",
+      "families": [
+        "PRIVATE_EXTERIOR_OPEN_SPACE"
+      ],
+      "section": "131.0455(a)",
+      "source_text": "See Section 131.0455(a).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN24": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "f68ebe308dce270019d21519cfd19d6bb6e3d8bb4f2a9d9958729fa541b8401e",
+      "families": [
+        "PRIVATE_EXTERIOR_OPEN_SPACE"
+      ],
+      "section": "131.0455(c)",
+      "source_text": "See Section 131.0455(c).",
+      "trigger": "ZONE_RM_3_7_TO_RM_3_9",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN25": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "825ed87d7323cfb4517b6212fec1a761df3fd12fb866b3cfa4c87e6a565dbb70",
+      "families": [
+        "PRIVATE_EXTERIOR_OPEN_SPACE"
+      ],
+      "section": "131.0455(d)",
+      "source_text": "See Section 131.0455(d).",
+      "trigger": "ZONE_RM_4_10_TO_RM_5_12",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN26": {
+      "derivation_class": "CONDITIONAL",
+      "extraction_fingerprint": "0e1002bbc3787b001de14051f43055e6d0f301f67a18b0c81e5ef093a92da9a5",
+      "families": [
+        "SUPPLEMENTAL_REQUIREMENTS"
+      ],
+      "section": "131.0464(d)",
+      "source_text": "See Section 131.0464(d).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN28": {
+      "derivation_class": "CONDITIONAL",
+      "extraction_fingerprint": "dfaf76a581e243230414884e87bb56acff6c9e3bcade29351a3f12be5cf4cc06",
+      "families": [
+        "SUPPLEMENTAL_REQUIREMENTS"
+      ],
+      "section": "131.0464(f)",
+      "source_text": "See Section 131.0464(f).",
+      "trigger": "ZONE_RM_3_7_TO_RM_3_9",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN3": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "4036e86e7f2293ff30ea4f13fb79eedac91d92149dc08dc7ef7e4dfa978aaac0",
+      "families": [
+        "FRONT_SETBACK_MINIMUM",
+        "FRONT_SETBACK_STANDARD"
+      ],
+      "section": "131.0443(d)(1)",
+      "source_text": "See Section 131.0443(d)(1).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN37": {
+      "derivation_class": "MODIFIER",
+      "extraction_fingerprint": "d8d37f81079928df51b6f58e37dbe174e89f01aabdc288beac4a14bea15a151f",
+      "families": [
+        "STRUCTURE_HEIGHT_MAXIMUM"
+      ],
+      "section": "113.0270(a)(4)(D)",
+      "source_text": "Within the Coastal Height Limit Overlay Zone in the Peninsula Community Plan area, the base-zone maximum structure height is 30 feet, determined under Section 113.0270(a)(4)(D).",
+      "trigger": "COASTAL_HEIGHT_LIMIT_OVERLAY_AND_PENINSULA_COMMUNITY_PLAN",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN39": {
+      "derivation_class": "MODIFIER",
+      "extraction_fingerprint": "2d01c635fb26143aba3c33d69c5b4cabdf78fd5b1babad9d02bc36858ef39c5c",
+      "families": [
+        "FLOOR_AREA_RATIO_MAXIMUM"
+      ],
+      "section": "TABLE_131_04G_NOTE_39",
+      "source_text": "For development in a historic district, on State Historic Resources Inventory property, or on a designated historical resource site, maximum FAR shall not increase.",
+      "trigger": "HISTORIC_RESOURCE_CONTEXT",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN4": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "a9fa43752ff2afd13f9ad83d3b89598bde3682c7a3ea5e2ca33641d0a4d1a35f",
+      "families": [
+        "INTERIOR_SIDE_SETBACK_MINIMUM",
+        "INTERIOR_SIDE_SETBACK_STANDARD"
+      ],
+      "section": "131.0443(d)(2)",
+      "source_text": "See Section 131.0443(d)(2).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN5": {
+      "derivation_class": "FORMULA",
+      "extraction_fingerprint": "36513a901a1d3b02d8858cebe1d2558c060f38901296a58be404562fb9a24a7a",
+      "families": [
+        "STREET_SIDE_SETBACK_MINIMUM"
+      ],
+      "section": "131.0443(d)(3)",
+      "source_text": "See Section 131.0443(d)(3).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    },
+    "FN6": {
+      "derivation_class": "EXCEPTION",
+      "extraction_fingerprint": "9db6b075b1ba3ab4f61a94baa18adb137ea8b378493c4ddb2b400688a0c36d38",
+      "families": [
+        "REAR_SETBACK_MINIMUM"
+      ],
+      "section": "131.0443(d)(4)",
+      "source_text": "See Section 131.0443(d)(4).",
+      "trigger": "ZONE_RM_1_1_TO_RM_1_3",
+      "version": "TABLE_131_04G_9_2026"
+    }
+  },
+  "material_footnote_completeness": "COMPLETE_FOR_ALL_FIVE_TARGET_ROWS",
+  "source_artifact_sha256": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+  "used_footnotes": [
+    "FN1",
+    "FN11",
+    "FN12",
+    "FN13",
+    "FN14",
+    "FN15",
+    "FN16",
+    "FN17",
+    "FN2",
+    "FN22",
+    "FN24",
+    "FN25",
+    "FN26",
+    "FN28",
+    "FN3",
+    "FN37",
+    "FN39",
+    "FN4",
+    "FN5",
+    "FN6"
+  ]
+}

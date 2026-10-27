@@ -1,0 +1,26 @@
+{
+  "contract_version": "san-diego-rm-rule-expansion-wave1-2026-10-27-v0",
+  "files": {
+    "README.md": "40179ec3be5b83983eb3c46f76e021bd7c6729d0c8e618d70d526481a4c52422",
+    "apn-profile-selection.ndjson.gz": "26106f6c8aeb9ca06e53821065a97bc6a273bfdf6db925b13452d8eb8b365ee5",
+    "compatibility.json": "ab6babcafe4fa55113321e1b1175364fa6e51760c9526e70f8eba69660797641",
+    "coverage.json": "2cf4bbf8934b6daa353a6a7cddaf235c1c9afc74832d273fedd1235c7ca5ea47",
+    "decision.json": "b916fd28860c082bcdede0650d02ef8db861d15966f7b1d7af2210b295949b27",
+    "family-schema.json": "2916fcb0bdd8dfd08723febe74baec88daab925b5e714ce37dc98cd309fca6b7",
+    "footnotes.json": "d91ccec5ded3bbab32f1d04ff03753004b8a6fd7589e4abce79c7409fefb16c8",
+    "golden-candidates.json": "bac007a1c56a12bebbb389da35bd29d4caddc05eac76ba4fec290e9811bd32d4",
+    "manual-verification.json": "ab19df8ea0a64edbbb9d351bf0f4b050415883a68aaa8625445fb617cba913f8",
+    "remaining-opportunity.json": "d507fec7c0086a618acda7094f21ad0c847a86733c31470e1aa480e86a4d552a",
+    "rule-profiles.json": "4e2e75d16e21b10dccf404b870453f5320ecec5e3da40d1e4998090c85cb20de",
+    "schema.json": "d23d82e65dc32b9038f84bf26cf17fa01bd3e6838f21caab55bfc642e9b27dde",
+    "source-version-receipts.json": "d30ddb1b88ed3a91282172dc6a82d458c3a09ba92d71296f05c5aee0f8a7db16",
+    "target-populations.json": "ec6416356e26b122119bec3f33769f79f1f6b0ca874e3c5070bb779249617877"
+  },
+  "inputs": {
+    "current_division4_pdf": "9a15478c65d5498e79e85e3399d7c18ec198436cc008cf87c34e7408bf2aa538",
+    "inside_coastal_chain": "43738472705dd79538fbe64b36c4333ff048613afa2eb9f65b258f8b1b4fdcd5",
+    "packet79_receipt": "d7ce4f855997b20292b15195c379e65b7dae3536626401497973990d5d316d13",
+    "packet79_selection": "ce09b175011ce9907690cfdd598a7da185e229f0b0a2d42298263664d9acbeaf",
+    "rm_profile_v0": "c3c861601026ef1268c30d4b0bab4daeb9b4365d184502eff9c79c50f8aaa476"
+  }
+}
