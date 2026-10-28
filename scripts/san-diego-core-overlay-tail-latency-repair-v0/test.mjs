@@ -28,8 +28,8 @@ const expectedCoreColumns = [
 const loaderSource = fs.readFileSync(path.join(root, "lib/parcel-page-v1.ts"), "utf8");
 const routeSource = fs.readFileSync(path.join(root, "app/parcel/san-diego/[slug]/page.tsx"), "utf8");
 assert.doesNotMatch(loaderSource, /from\("parcel_page_api_v2"\)\.select\("\*"\)/);
-assert.match(routeSource, /export const preferredRegion = "sfo1";/);
 assert.match(routeSource, /export const dynamic = "force-dynamic";/);
+assert.doesNotMatch(routeSource, /preferredRegion|runtime\s*=\s*["']edge["']/);
 
 for (const [name, overlays] of [
   ["ordinary fast", { tpa: false, ctcac: false, sda: false }],
@@ -74,7 +74,7 @@ for (const [name, coreDelayMs, overlayDelayMs] of [
 
 console.log(JSON.stringify({
   result: "PASS",
-  preferredRegion: "sfo1",
+  regionDecision: "REGION_INCONCLUSIVE",
   coreColumnCount: expectedCoreColumns.length,
   excludedHeavyColumns: ["geom"],
   initialOverlayClassification: "TRUTH_CRITICAL",

@@ -36,10 +36,6 @@ import { SourcesMethodologyLink } from "./sources-methodology-link";
 const NULL_PUBLIC_RECORD = "Not available in public records";
 
 export const dynamic = "force-dynamic";
-// Both truth-critical initial reads are served by Supabase in us-west-1.
-// Keep this route close to that public data plane to reduce network-tail
-// variance without changing its source, freshness, or failure semantics.
-export const preferredRegion = "sfo1";
 
 function confidenceLabel(confidence: SourcedFact["confidenceTier"]): string {
   if (confidence === "recorded") return "Recorded fact";
