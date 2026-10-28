@@ -1,0 +1,55 @@
+{
+  "acquisitionPath": "C \u2014 Official downloadable bulk export",
+  "existingCorpusDecision": "NO_SEALED_CITYWIDE_CORPUS",
+  "outputBoundary": {
+    "boundedPublic": [
+      "parcel-level state, event class, source dates, warnings"
+    ],
+    "internal": [
+      "row-derived currentness and linkage evidence"
+    ],
+    "notApproved": [
+      "permit-holder contact, private operator evidence, protected plans"
+    ],
+    "rawPublic": [
+      "rights allow source rows with attribution, but Packet 98 does not approve publication"
+    ]
+  },
+  "sources": [
+    {
+      "kind": "bulk export",
+      "limits": "PDDL attribution; exclude permit-holder contact from artifacts",
+      "name": "City Open Data approvals export",
+      "rights": "PUBLIC_PROCESS_STORE_REDISPLAY_OK",
+      "use": "sealed internal corpus and bounded public summaries"
+    },
+    {
+      "kind": "public search UI",
+      "limits": "no bulk scraping",
+      "name": "OpenDSD Approvals",
+      "rights": "PUBLIC_PROCESS_ONLY",
+      "use": "manual record verification"
+    },
+    {
+      "kind": "public search UI",
+      "limits": "no bulk scraping",
+      "name": "Accela Citizen Access",
+      "rights": "PUBLIC_PROCESS_ONLY",
+      "use": "post-2018 category/status checks"
+    },
+    {
+      "kind": "public map UI",
+      "limits": "no bulk scraping",
+      "name": "Permit Finder",
+      "rights": "PUBLIC_PROCESS_ONLY",
+      "use": "manual location checks"
+    },
+    {
+      "kind": "PRA path",
+      "limits": "record-specific restrictions may apply",
+      "name": "Public Records Act request",
+      "rights": "PUBLIC_PROCESS_STORE_BOUNDED_SUMMARY",
+      "use": "pre-2003 and inspection-report gaps"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "citywideMeasurement": "Not promoted: Packet 77 committed aggregate assessor metrics and a 25-parcel benchmark, not a full per-APN assessor artifact. This prevents false citywide conflict precision.",
+  "conflictCases": 4,
+  "packet77DeterministicCohortSize": 25,
+  "rows": [
+    {
+      "apn": "2410902500",
+      "permitEvents": [
+        "ADDITION",
+        "DEMOLITION",
+        "MULTIFAMILY_NEW",
+        "NON_CONFIGURATION",
+        "REMODEL",
+        "UNIT_CHANGE"
+      ],
+      "permitStatuses": [
+        "APPLIED",
+        "CANCELLED",
+        "FINALED_COMPLETE",
+        "ISSUED",
+        "UNDER_REVIEW",
+        "UNKNOWN"
+      ],
+      "reasons": [
+        "NO_RECORDED_TYPE_PLUS_FINALED_DWELLING"
+      ],
+      "recordedState": "RECORDED_TYPE_UNKNOWN",
+      "recordedUnits": null
+    },
+    {
+      "apn": "2410902900",
+      "permitEvents": [
+        "NEW_DWELLING",
+        "NON_CONFIGURATION",
+        "UNIT_CHANGE"
+      ],
+      "permitStatuses": [
+        "APPLIED",
+        "CANCELLED",
+        "FINALED_COMPLETE",
+        "ISSUED",
+        "UNDER_REVIEW",
+        "UNKNOWN"
+      ],
+      "reasons": [
+        "RECORDED_ONE_UNIT_PLUS_UNIT_CHANGE"
+      ],
+      "recordedState": "RECORDED_SINGLE_FAMILY_LIKELY",
+      "recordedUnits": 1
+    },
+    {
+      "apn": "5442140600",
+      "permitEvents": [
+        "ADU",
+        "NON_CONFIGURATION"
+      ],
+      "permitStatuses": [
+        "CANCELLED",
+        "FINALED_COMPLETE",
+        "ISSUED",
+        "UNDER_REVIEW"
+      ],
+      "reasons": [
+        "RECORDED_SFR_PLUS_FINALED_ADU"
+      ],
+      "recordedState": "RECORDED_SINGLE_FAMILY_LIKELY",
+      "recordedUnits": 1
+    },
+    {
+      "apn": "6341302200",
+      "permitEvents": [
+        "MULTIFAMILY_NEW"
+      ],
+      "permitStatuses": [
+        "UNKNOWN"
+      ],
+      "reasons": [
+        "RECORDED_ONE_UNIT_PLUS_UNIT_CHANGE"
+      ],
+      "recordedState": "RECORDED_SINGLE_FAMILY_LIKELY",
+      "recordedUnits": 1
+    }
+  ],
+  "runtimeActivated": false
+}

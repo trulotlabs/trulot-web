@@ -1,0 +1,60 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 400,
+      "sha256": "e13b7e86092301a3c450a501659fa96751fd9ffcfefe97155978340772780646"
+    },
+    "accuracy-uplift.json": {
+      "bytes": 414,
+      "sha256": "969cc81ccad927f04d888189868ae90e540a804df5634f958742f0d686fcbeab"
+    },
+    "acquisition-receipt.json": {
+      "bytes": 2246,
+      "sha256": "b20b9ba7545431889ddae2382bdc1541d146cba29eaed21b169ff6a7ec399b53"
+    },
+    "assessor-conflict-preview.json": {
+      "bytes": 2003,
+      "sha256": "50385f2493b4638561bae2afca6759d2f3103a9871235cb2d66d71c4c87d80b2"
+    },
+    "benchmark-cohort.json": {
+      "bytes": 25659,
+      "sha256": "6cd3aaf09cfa2d6c59806de39a7df7b02d4e2ce93ce88f6a3e239f53ff19a73b"
+    },
+    "compatibility-and-refresh.json": {
+      "bytes": 866,
+      "sha256": "e8e70ee0a0fea3e0d90e8af02eca419c0e6a1974b0bf36f0f4bbfdef4cbc0d8e"
+    },
+    "completeness.json": {
+      "bytes": 726,
+      "sha256": "14795ddb6c10135fddedbfb23e18d9b4822c4bafe88a82b8c360ba818cf4b2b6"
+    },
+    "coverage.json": {
+      "bytes": 5765,
+      "sha256": "ade49dbf42a586159b48404415e9d39cf0904d3183dc956c3a82f1c22dd9e7d8"
+    },
+    "decision.json": {
+      "bytes": 509,
+      "sha256": "630d5a1c8ac9b41694917da8f9cfa806594052769a6899345a2d5d5cee330c79"
+    },
+    "doctrine.json": {
+      "bytes": 1562,
+      "sha256": "39df26d9853426fbd84fe182e4e0faa83361ec46db5b60cab89472e452ff4e38"
+    },
+    "manual-verification.json": {
+      "bytes": 9320,
+      "sha256": "ac4f0294feb7df71dec8bebd73460ded9667dfc734faf1f10062ae28e52d68ed"
+    },
+    "parcel-currentness-summary.ndjson.gz": {
+      "bytes": 2495626,
+      "sha256": "0ac0d0b02ac4db41b5dc749d1b5402b057722706f3f55587bd2da8bd4533c938"
+    },
+    "schema-and-vocabulary.json": {
+      "bytes": 11602,
+      "sha256": "96080dd3a8706f448e04c598a9ed031c2a24f525c9ec3f0b327b31199558b326"
+    },
+    "sources-rights.json": {
+      "bytes": 1703,
+      "sha256": "6ad7d7de04afd25cb17d479456b2656ced2de6c69d45cccc12056f92afdab604"
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "addressNormalization": "Uses parcel-identity-v2 display/canonical tokens and opaque unit tokens; no fuzzy assignment.",
+  "eventTaxonomy": [
+    "ADU",
+    "JADU",
+    "NEW_DWELLING",
+    "MULTIFAMILY_NEW",
+    "ADDITION",
+    "GARAGE_CONVERSION",
+    "DEMOLITION",
+    "REMODEL",
+    "UNIT_CHANGE",
+    "OTHER_CONFIGURATION_CHANGE",
+    "NON_CONFIGURATION",
+    "UNKNOWN"
+  ],
+  "failureClosed": [
+    "partial/unavailable source blocks rebuild promotion",
+    "ambiguous linkage remains group-level",
+    "unknown status cannot prove completion",
+    "missing APN/address remains unresolved",
+    "conflicts require review",
+    "stale acquisition produces warning"
+  ],
+  "linkageOrder": [
+    "EXACT_APN",
+    "PERMIT_PARCEL_NUMBER",
+    "EXACT_ADDRESS",
+    "UNIQUE_UNIT_ADDRESS",
+    "BUILDING_COMMON_ADDRESS_GROUP",
+    "AMBIGUOUS",
+    "UNRESOLVED"
+  ],
+  "signals": [
+    "NO_PERMIT_EVIDENCE",
+    "PROPOSAL_ONLY",
+    "ACTIVE_CHANGE_IN_PROGRESS",
+    "ISSUED_CHANGE",
+    "LATER_CHANGE_OBSERVED",
+    "CONFLICT_REQUIRES_REVIEW",
+    "PERMIT_HISTORY_PRESENT_NONCONFIGURATION",
+    "CURRENTNESS_UNKNOWN"
+  ],
+  "significance": {
+    "APPLIED": "proposal only",
+    "CANCELLED": "no completed-configuration inference",
+    "EXPIRED": "no completed-configuration inference",
+    "FINALED_COMPLETE": "finaled change only when source status is Completed",
+    "ISSUED": "issued change; not completed configuration",
+    "UNDER_REVIEW": "active change",
+    "UNKNOWN": "currentness unknown",
+    "WITHDRAWN": "no completed-configuration inference"
+  }
+}

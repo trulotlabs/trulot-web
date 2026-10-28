@@ -1,0 +1,23 @@
+{
+  "packet76": {
+    "architectureChange": false,
+    "conflicts": true,
+    "contract": "jurisdiction-neutral-property-intelligence-composition-v0",
+    "currentnessState": true,
+    "permitEvidence": true,
+    "preliminaryDwellingStateInput": true,
+    "questionSelection": true,
+    "v4NormalizedInput": true
+  },
+  "packet77": {
+    "assessorCompatibility": true,
+    "runtimeActivation": false
+  },
+  "refresh": {
+    "cadence": "daily source check; weekly sealed rebuild",
+    "deletionsWithdrawals": "full snapshot reconciliation; preserve prior evidence version and surface withdrawal",
+    "incremental": "compare source ETag/SHA then approval_id record hashes",
+    "versionPolicy": "immutable date+SHA receipt; promote only after deterministic validation"
+  },
+  "runtimeRecommendation": "A \u2014 precomputed parcel-level permit/currentness artifact"
+}

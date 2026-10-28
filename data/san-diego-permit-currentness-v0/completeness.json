@@ -1,0 +1,16 @@
+{
+  "apnAddress": "quantified in coverage.json",
+  "decision": "CITYWIDE_PERMIT_CORPUS_PARTIAL_BUT_USEFUL",
+  "geographic": "Citywide records with GIS linkage fields, but unlinked/grouped records remain",
+  "historical": "reliable digital history begins in 2003; pre-2003 gap",
+  "knownGaps": [
+    "pre-2003 ministerial records",
+    "distinct final-inspection indicator",
+    "parent/child relationships",
+    "operational fields omitted from curated export",
+    "historical corrections possible"
+  ],
+  "pagination": "complete single official export",
+  "permitType": "approvals include permits/maps/agreements and vocabulary drift",
+  "status": "Completed is usable; Close date alone is ambiguous; inspections omitted"
+}
