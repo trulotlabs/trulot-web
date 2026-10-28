@@ -1,0 +1,16 @@
+{
+  "withoutPacket100": {
+    "propertyPreselection": 0,
+    "currentnessWarnings": 0,
+    "propertySpecificFirstQuestions": 0,
+    "blankOrGenericFirstQuestions": 393733
+  },
+  "withPacket100": {
+    "propertyPreselection": 170180,
+    "currentnessWarnings": 393733,
+    "propertySpecificFirstQuestions": 357876,
+    "blankOrGenericFirstQuestions": 35857,
+    "accessoryFollowups": 8207
+  },
+  "claimBoundary": "Behavioral specificity comparison only; no accuracy claim."
+}

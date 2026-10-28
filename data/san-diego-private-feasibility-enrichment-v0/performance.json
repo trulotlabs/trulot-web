@@ -1,0 +1,33 @@
+{
+  "samples": 400,
+  "crossShardPrefixes": 200,
+  "lookupCold": {
+    "p50Ms": 0.077333,
+    "p95Ms": 5.645875,
+    "p99Ms": 10.323333,
+    "maxMs": 13.898083
+  },
+  "lookupWarm": {
+    "p50Ms": 0.000667,
+    "p95Ms": 0.003042,
+    "p99Ms": 0.004875,
+    "maxMs": 0.021375
+  },
+  "v4Enrichment": {
+    "p50Ms": 0.001958,
+    "p95Ms": 0.008,
+    "p99Ms": 0.015834,
+    "maxMs": 0.118958
+  },
+  "totalWarmEvaluation": {
+    "p50Ms": 0.0026249999999999997,
+    "p95Ms": 0.011208,
+    "p99Ms": 0.021209,
+    "maxMs": 0.14033299999999999
+  },
+  "heapBeforeBytes": 8629008,
+  "heapAfterBytes": 39331072,
+  "heapDeltaBytes": 30706064,
+  "maxCachedShards": 8,
+  "conclusion": "The bounded enrichment computation remains sub-millisecond at p99; total latency is dominated by Packet 100 shard lookup."
+}

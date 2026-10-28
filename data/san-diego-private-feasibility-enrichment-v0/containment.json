@@ -1,0 +1,18 @@
+{
+  "authenticatedServerOnly": true,
+  "publicAdapterAdded": false,
+  "anonymousRouteAdded": false,
+  "publicParcelPageChanged": false,
+  "indexingChanged": false,
+  "liveSanDiegoIndexableCohort": 5000,
+  "remainingSanDiegoNoindex": true,
+  "laMesaIndexing": false,
+  "sitemapChanged": false,
+  "robotsChanged": false,
+  "metadataChanged": false,
+  "jsonLdChanged": false,
+  "productionDatabaseTouched": false,
+  "packet11Frozen": true,
+  "userCorrectionsPersistedToPacket100": false,
+  "failureFallback": "previous V4 evidence flow with internal PROPERTY_INTELLIGENCE_UNAVAILABLE signal"
+}

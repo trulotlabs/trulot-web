@@ -1,0 +1,47 @@
+{
+  "complianceConclusionSupported": false,
+  "rows": [
+    {
+      "state": "RECORDED_CURRENT_ENOUGH_FOR_PRESELECTION",
+      "pathway": "bounded SFR/MF preselection",
+      "result": "CONDITIONAL",
+      "warning": "confirmation"
+    },
+    {
+      "state": "RECORDED_STALE_POSSIBLE",
+      "pathway": "preliminary SFR/MF with confirmation",
+      "result": "CONDITIONAL or NEEDS_EVIDENCE",
+      "warning": "record may be stale"
+    },
+    {
+      "state": "LATER_CHANGE_OBSERVED",
+      "pathway": "blocked",
+      "result": "NEEDS_EVIDENCE",
+      "warning": "later change"
+    },
+    {
+      "state": "ACTIVE_CHANGE_IN_PROGRESS",
+      "pathway": "blocked",
+      "result": "NEEDS_EVIDENCE",
+      "warning": "active work"
+    },
+    {
+      "state": "OBSERVATIONAL_SUPPORT_ONLY",
+      "pathway": "blocked",
+      "result": "NEEDS_EVIDENCE",
+      "warning": "observation only"
+    },
+    {
+      "state": "CONFLICTING_EVIDENCE",
+      "pathway": "blocked",
+      "result": "NEEDS_EVIDENCE",
+      "warning": "conflict preserved"
+    },
+    {
+      "state": "CURRENTNESS_UNKNOWN",
+      "pathway": "blocked",
+      "result": "NEEDS_EVIDENCE",
+      "warning": "current configuration required"
+    }
+  ]
+}

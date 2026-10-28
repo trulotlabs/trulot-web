@@ -1,0 +1,474 @@
+{
+  "named": {
+    "6341302200": {
+      "apn": "6341302200",
+      "strata": {
+        "dwelling": "SINGLE_FAMILY_LIKELY",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "RECORDED_PROPERTY_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RS"
+      },
+      "enrichment": {
+        "contractVersion": "private-feasibility-enrichment-v0",
+        "apn": "6341302200",
+        "resultState": "NEEDS_EVIDENCE",
+        "preliminaryPathway": "SINGLE_FAMILY",
+        "pathwayRequiresConfirmation": true,
+        "complianceConclusionSupported": false,
+        "currentnessState": "RECORDED_STALE_POSSIBLE",
+        "boundedAduEvidence": "NONE",
+        "warnings": [
+          "Recorded property facts may be stale; confirm the current configuration before relying on pathway assumptions.",
+          "Unresolved property-intelligence conflict: COMMON_PARCEL_GEOMETRY_AMBIGUITY."
+        ],
+        "questions": [
+          {
+            "order": 1,
+            "kind": "CURRENT_CONFIGURATION",
+            "prompt": "Public property records indicate one detached residence. Is that still correct?"
+          },
+          {
+            "order": 3,
+            "kind": "ADU_INTENT",
+            "prompt": "What dwelling or ADU project are you considering?"
+          },
+          {
+            "order": 6,
+            "kind": "EVIDENCE_REQUEST",
+            "prompt": "Please provide: Current survey, site plan, or photo sufficient to resolve structure placement."
+          }
+        ],
+        "evidenceRequests": [
+          "Current survey, site plan, or photo sufficient to resolve structure placement"
+        ],
+        "recordedFacts": {
+          "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+          "dwellingState": "SINGLE_FAMILY_LIKELY",
+          "conflictTypes": [
+            "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+          ]
+        },
+        "userCorrection": null,
+        "summary": "Public property records indicate one detached residence. Confirm the current configuration before relying on pathway assumptions.",
+        "internalSignals": []
+      }
+    },
+    "5442140600": {
+      "apn": "5442140600",
+      "strata": {
+        "dwelling": "CONFLICTING",
+        "currentness": "LATER_CHANGE_OBSERVED",
+        "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "FINALED",
+        "conflictTypes": [
+          "LATER_CHANGE_VS_RECORDED_STATE"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "MULTI_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RM"
+      },
+      "enrichment": {
+        "contractVersion": "private-feasibility-enrichment-v0",
+        "apn": "5442140600",
+        "resultState": "NEEDS_EVIDENCE",
+        "preliminaryPathway": null,
+        "pathwayRequiresConfirmation": false,
+        "complianceConclusionSupported": false,
+        "currentnessState": "LATER_CHANGE_OBSERVED",
+        "boundedAduEvidence": "FINALED",
+        "warnings": [
+          "A later recorded change blocks stale layout assumptions until the current configuration is confirmed.",
+          "Conflicting dwelling evidence blocks automatic pathway selection.",
+          "A finaled ADU-related record indicates a later change, but does not establish the exact current unit count.",
+          "Unresolved property-intelligence conflict: LATER_CHANGE_VS_RECORDED_STATE."
+        ],
+        "questions": [
+          {
+            "order": 1,
+            "kind": "CURRENT_CONFIGURATION",
+            "prompt": "Public records show a later property change. What is the current dwelling and unit configuration?"
+          },
+          {
+            "order": 2,
+            "kind": "EXISTING_USE",
+            "prompt": "How is the property currently used?"
+          },
+          {
+            "order": 3,
+            "kind": "ADU_INTENT",
+            "prompt": "What dwelling or ADU project are you considering?"
+          },
+          {
+            "order": 6,
+            "kind": "EVIDENCE_REQUEST",
+            "prompt": "Please provide: Current dwelling and unit configuration from the homeowner or current site documentation."
+          }
+        ],
+        "evidenceRequests": [
+          "Current dwelling and unit configuration from the homeowner or current site documentation"
+        ],
+        "recordedFacts": {
+          "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+          "dwellingState": "CONFLICTING",
+          "conflictTypes": [
+            "LATER_CHANGE_VS_RECORDED_STATE"
+          ]
+        },
+        "userCorrection": null,
+        "summary": "Public records show a later permitted configuration change. Current property configuration should be confirmed before applying existing-structure assumptions.",
+        "internalSignals": []
+      }
+    }
+  },
+  "finaledAdu": {
+    "apn": "2672402700",
+    "strata": {
+      "dwelling": "CONFLICTING",
+      "currentness": "LATER_CHANGE_OBSERVED",
+      "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+      "aduEvidence": "FINALED",
+      "conflictTypes": [
+        "RECORDED_CHARACTERISTIC_CONFLICT"
+      ],
+      "accessoryCandidate": false,
+      "zoningState": "SINGLE_ZONE",
+      "coastalContext": "OUTSIDE_COASTAL",
+      "zoningFamily": "RX"
+    },
+    "enrichment": {
+      "contractVersion": "private-feasibility-enrichment-v0",
+      "apn": "2672402700",
+      "resultState": "NEEDS_EVIDENCE",
+      "preliminaryPathway": null,
+      "pathwayRequiresConfirmation": false,
+      "complianceConclusionSupported": false,
+      "currentnessState": "LATER_CHANGE_OBSERVED",
+      "boundedAduEvidence": "FINALED",
+      "warnings": [
+        "A later recorded change blocks stale layout assumptions until the current configuration is confirmed.",
+        "Conflicting dwelling evidence blocks automatic pathway selection.",
+        "A finaled ADU-related record indicates a later change, but does not establish the exact current unit count.",
+        "Unresolved property-intelligence conflict: RECORDED_CHARACTERISTIC_CONFLICT."
+      ],
+      "questions": [
+        {
+          "order": 1,
+          "kind": "CURRENT_CONFIGURATION",
+          "prompt": "Public records show a later property change. What is the current dwelling and unit configuration?"
+        },
+        {
+          "order": 2,
+          "kind": "EXISTING_USE",
+          "prompt": "How is the property currently used?"
+        },
+        {
+          "order": 3,
+          "kind": "ADU_INTENT",
+          "prompt": "What dwelling or ADU project are you considering?"
+        },
+        {
+          "order": 6,
+          "kind": "EVIDENCE_REQUEST",
+          "prompt": "Please provide: Current dwelling and unit configuration from the homeowner or current site documentation; Assessor correction or current property documentation."
+        }
+      ],
+      "evidenceRequests": [
+        "Current dwelling and unit configuration from the homeowner or current site documentation",
+        "Assessor correction or current property documentation"
+      ],
+      "recordedFacts": {
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "dwellingState": "CONFLICTING",
+        "conflictTypes": [
+          "RECORDED_CHARACTERISTIC_CONFLICT"
+        ]
+      },
+      "userCorrection": null,
+      "summary": "Public records show a later permitted configuration change. Current property configuration should be confirmed before applying existing-structure assumptions.",
+      "internalSignals": []
+    }
+  },
+  "activeAdu": {
+    "apn": "2692122900",
+    "strata": {
+      "dwelling": "CONFLICTING",
+      "currentness": "ACTIVE_CHANGE_IN_PROGRESS",
+      "questionClass": "ACTIVE_CHANGE_CURRENT_CONFIGURATION",
+      "aduEvidence": "ACTIVE",
+      "conflictTypes": [],
+      "accessoryCandidate": false,
+      "zoningState": "SINGLE_ZONE",
+      "coastalContext": "OUTSIDE_COASTAL",
+      "zoningFamily": "AR"
+    },
+    "enrichment": {
+      "contractVersion": "private-feasibility-enrichment-v0",
+      "apn": "2692122900",
+      "resultState": "NEEDS_EVIDENCE",
+      "preliminaryPathway": null,
+      "pathwayRequiresConfirmation": false,
+      "complianceConclusionSupported": false,
+      "currentnessState": "ACTIVE_CHANGE_IN_PROGRESS",
+      "boundedAduEvidence": "ACTIVE",
+      "warnings": [
+        "Active work may change the property configuration; feasibility remains preliminary.",
+        "Conflicting dwelling evidence blocks automatic pathway selection.",
+        "An active ADU-related record does not establish completion or current occupancy."
+      ],
+      "questions": [
+        {
+          "order": 1,
+          "kind": "CURRENT_CONFIGURATION",
+          "prompt": "Public records show active work that may change the property. What is currently on the property?"
+        },
+        {
+          "order": 2,
+          "kind": "EXISTING_USE",
+          "prompt": "How is the property currently used?"
+        },
+        {
+          "order": 3,
+          "kind": "ADU_INTENT",
+          "prompt": "What dwelling or ADU project are you considering?"
+        },
+        {
+          "order": 6,
+          "kind": "EVIDENCE_REQUEST",
+          "prompt": "Please provide: Current dwelling and unit configuration from the homeowner or current site documentation; Current permit record or building plans."
+        }
+      ],
+      "evidenceRequests": [
+        "Current dwelling and unit configuration from the homeowner or current site documentation",
+        "Current permit record or building plans"
+      ],
+      "recordedFacts": {
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "dwellingState": "CONFLICTING",
+        "conflictTypes": []
+      },
+      "userCorrection": null,
+      "summary": "Public records show active work that may change the property configuration. Feasibility should remain preliminary until the current state is confirmed.",
+      "internalSignals": []
+    }
+  },
+  "expiredOrWithdrawnAdu": {
+    "apn": "2672413900",
+    "strata": {
+      "dwelling": "SINGLE_FAMILY_LIKELY",
+      "currentness": "RECORDED_STALE_POSSIBLE",
+      "questionClass": "RECORDED_PROPERTY_CONFIRMATION",
+      "aduEvidence": "EXPIRED_OR_WITHDRAWN",
+      "conflictTypes": [
+        "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+      ],
+      "accessoryCandidate": false,
+      "zoningState": "SINGLE_ZONE",
+      "coastalContext": "OUTSIDE_COASTAL",
+      "zoningFamily": "RX"
+    },
+    "enrichment": {
+      "contractVersion": "private-feasibility-enrichment-v0",
+      "apn": "2672413900",
+      "resultState": "NEEDS_EVIDENCE",
+      "preliminaryPathway": "SINGLE_FAMILY",
+      "pathwayRequiresConfirmation": true,
+      "complianceConclusionSupported": false,
+      "currentnessState": "RECORDED_STALE_POSSIBLE",
+      "boundedAduEvidence": "EXPIRED_OR_WITHDRAWN",
+      "warnings": [
+        "Recorded property facts may be stale; confirm the current configuration before relying on pathway assumptions.",
+        "An expired or withdrawn ADU proposal does not establish that an ADU exists.",
+        "Unresolved property-intelligence conflict: COMMON_PARCEL_GEOMETRY_AMBIGUITY."
+      ],
+      "questions": [
+        {
+          "order": 1,
+          "kind": "CURRENT_CONFIGURATION",
+          "prompt": "Public property records indicate one detached residence. Is that still correct?"
+        },
+        {
+          "order": 3,
+          "kind": "ADU_INTENT",
+          "prompt": "What dwelling or ADU project are you considering?"
+        },
+        {
+          "order": 6,
+          "kind": "EVIDENCE_REQUEST",
+          "prompt": "Please provide: Current survey, site plan, or photo sufficient to resolve structure placement."
+        }
+      ],
+      "evidenceRequests": [
+        "Current survey, site plan, or photo sufficient to resolve structure placement"
+      ],
+      "recordedFacts": {
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "dwellingState": "SINGLE_FAMILY_LIKELY",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ]
+      },
+      "userCorrection": null,
+      "summary": "Public property records indicate one detached residence. Confirm the current configuration before relying on pathway assumptions.",
+      "internalSignals": []
+    }
+  },
+  "condoOrStacked": {
+    "apn": "2672311001",
+    "strata": {
+      "dwelling": "CONDO",
+      "currentness": "RECORDED_STALE_POSSIBLE",
+      "questionClass": "CONDO_CONFIRMATION",
+      "aduEvidence": "NONE",
+      "conflictTypes": [
+        "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+      ],
+      "accessoryCandidate": false,
+      "zoningState": "SINGLE_ZONE",
+      "coastalContext": "OUTSIDE_COASTAL",
+      "zoningFamily": "RX"
+    },
+    "enrichment": {
+      "contractVersion": "private-feasibility-enrichment-v0",
+      "apn": "2672311001",
+      "resultState": "NEEDS_EVIDENCE",
+      "preliminaryPathway": null,
+      "pathwayRequiresConfirmation": false,
+      "complianceConclusionSupported": false,
+      "currentnessState": "RECORDED_STALE_POSSIBLE",
+      "boundedAduEvidence": "NONE",
+      "warnings": [
+        "Recorded property facts may be stale; confirm the current configuration before relying on pathway assumptions.",
+        "Condominium context requires unit-specific confirmation; ordinary single-family and multifamily pathways are not preselected.",
+        "Unresolved property-intelligence conflict: COMMON_PARCEL_GEOMETRY_AMBIGUITY."
+      ],
+      "questions": [
+        {
+          "order": 1,
+          "kind": "CURRENT_CONFIGURATION",
+          "prompt": "Public property records indicate a condominium. Is that still correct?"
+        },
+        {
+          "order": 3,
+          "kind": "ADU_INTENT",
+          "prompt": "What dwelling or ADU project are you considering?"
+        },
+        {
+          "order": 6,
+          "kind": "EVIDENCE_REQUEST",
+          "prompt": "Please provide: Current survey, site plan, or photo sufficient to resolve structure placement."
+        }
+      ],
+      "evidenceRequests": [
+        "Current survey, site plan, or photo sufficient to resolve structure placement"
+      ],
+      "recordedFacts": {
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "dwellingState": "CONDO",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ]
+      },
+      "userCorrection": null,
+      "summary": "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions.",
+      "internalSignals": []
+    }
+  },
+  "plainClosed": {
+    "finding": "Packet 100 supplies normalized currentness only. A plain Closed source status does not produce a later-change flag; Packet 101 does not reinterpret raw status."
+  },
+  "noPermit": {
+    "finding": "Absence of bounded permit evidence is not exposed as evidence that no changes ever occurred; confirmation/currentness limitations remain."
+  },
+  "demolitionNewConstruction": {
+    "finding": "Raw event rows are outside the Packet 101 boundary. Normalized later/active change states block layout assumptions and exact occupancy inference."
+  },
+  "commonAddress": {
+    "apn": "4236713603",
+    "strata": {
+      "dwelling": "CONFLICTING",
+      "currentness": "CONFLICTING_EVIDENCE",
+      "questionClass": "CONFLICT_CURRENT_CONFIGURATION",
+      "aduEvidence": "NONE",
+      "conflictTypes": [
+        "COMMON_ADDRESS_PERMIT_AMBIGUITY",
+        "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+        "LATER_CHANGE_VS_RECORDED_STATE"
+      ],
+      "accessoryCandidate": false,
+      "zoningState": "SINGLE_ZONE",
+      "coastalContext": "INSIDE_COASTAL",
+      "zoningFamily": "MBPD"
+    },
+    "enrichment": {
+      "contractVersion": "private-feasibility-enrichment-v0",
+      "apn": "4236713603",
+      "resultState": "NEEDS_EVIDENCE",
+      "preliminaryPathway": null,
+      "pathwayRequiresConfirmation": false,
+      "complianceConclusionSupported": false,
+      "currentnessState": "CONFLICTING_EVIDENCE",
+      "boundedAduEvidence": "NONE",
+      "warnings": [
+        "Recorded sources conflict; no source has been silently preferred.",
+        "Conflicting dwelling evidence blocks automatic pathway selection.",
+        "Unresolved property-intelligence conflict: COMMON_ADDRESS_PERMIT_AMBIGUITY.",
+        "Unresolved property-intelligence conflict: COMMON_PARCEL_GEOMETRY_AMBIGUITY.",
+        "Unresolved property-intelligence conflict: LATER_CHANGE_VS_RECORDED_STATE."
+      ],
+      "questions": [
+        {
+          "order": 1,
+          "kind": "CURRENT_CONFIGURATION",
+          "prompt": "Public records are not consistent about the property configuration. What is currently on the property?"
+        },
+        {
+          "order": 2,
+          "kind": "EXISTING_USE",
+          "prompt": "How is the property currently used?"
+        },
+        {
+          "order": 3,
+          "kind": "ADU_INTENT",
+          "prompt": "What dwelling or ADU project are you considering?"
+        },
+        {
+          "order": 6,
+          "kind": "EVIDENCE_REQUEST",
+          "prompt": "Please provide: Current dwelling and unit configuration from the homeowner or current site documentation; Current survey, site plan, or photo sufficient to resolve structure placement; APN-specific permit record or plans linking the work to this unit."
+        }
+      ],
+      "evidenceRequests": [
+        "Current dwelling and unit configuration from the homeowner or current site documentation",
+        "Current survey, site plan, or photo sufficient to resolve structure placement",
+        "APN-specific permit record or plans linking the work to this unit"
+      ],
+      "recordedFacts": {
+        "provenance": "COMPOSED_PROPERTY_INTELLIGENCE",
+        "dwellingState": "CONFLICTING",
+        "conflictTypes": [
+          "COMMON_ADDRESS_PERMIT_AMBIGUITY",
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+          "LATER_CHANGE_VS_RECORDED_STATE"
+        ]
+      },
+      "userCorrection": null,
+      "summary": "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions.",
+      "internalSignals": []
+    }
+  },
+  "limits": [
+    "No exact unit count inferred",
+    "No occupancy inferred",
+    "No legal configuration inferred",
+    "No raw project identifier exposed",
+    "Zoning and Coastal cohort labels are coverage dimensions only"
+  ]
+}

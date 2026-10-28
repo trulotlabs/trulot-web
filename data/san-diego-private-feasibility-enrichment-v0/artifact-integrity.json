@@ -1,0 +1,48 @@
+{
+  "deterministicSemanticEvidence": "PASS",
+  "falseCertaintyAudit": "PASS",
+  "fileCount": 10,
+  "files": {
+    "README.md": {
+      "bytes": 1222,
+      "sha256": "de3bd873a7a7f90e7001dd34d01c3cd34af02be3c0348cc48761e5d1e1130499"
+    },
+    "before-after.json": {
+      "bytes": 475,
+      "sha256": "e4c4f8135b89bb9210327a6843204423184a4ef62f5b68414c66647a91c4cc94"
+    },
+    "benchmark-cohort.json": {
+      "bytes": 526336,
+      "sha256": "a35439fb8ffb309c19efde5d5b723567294b91301cae3f7c974e0cd79a00a165"
+    },
+    "benchmark-findings.json": {
+      "bytes": 18578,
+      "sha256": "bcc5b022090264b81e451c7219c669d1c36d208e058613ce3e9720d14f3d84f1"
+    },
+    "containment.json": {
+      "bytes": 591,
+      "sha256": "d3d13aadf2b7f0fca39c8855c2b8d7eca583b77cf0efcd72f75acb31354de68c"
+    },
+    "decision.json": {
+      "bytes": 148,
+      "sha256": "25be8cf14928e63c2a7acda1b18706c04671ae42c750818178740bd6fed1b889"
+    },
+    "doctrine.json": {
+      "bytes": 796,
+      "sha256": "8525b18cf1c875fc9432c330245b6be3b138799891c9a58311060ae875e6edb8"
+    },
+    "feasibility-impact-matrix.json": {
+      "bytes": 1212,
+      "sha256": "ed852d927eb2671905f19d49d7a345257495ba7ee980e1e29f6d74dd60ccf078"
+    },
+    "performance.json": {
+      "bytes": 795,
+      "sha256": "bf8c3749916962af75e20a4ae577f2f83703b3f74807c07f0ca1c1baf925cdab"
+    },
+    "population-impact.json": {
+      "bytes": 1757,
+      "sha256": "88dfcdfebe34fb665282b47c37a7a49bbe0b1cb17b1b533ed4a2ec37bd857a63"
+    }
+  },
+  "sensitiveMaterialScan": "PASS"
+}

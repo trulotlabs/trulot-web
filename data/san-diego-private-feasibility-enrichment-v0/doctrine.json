@@ -1,0 +1,33 @@
+{
+  "contractVersion": "private-feasibility-enrichment-v0",
+  "inputBoundary": [
+    "normalized Packet 100 DTO only"
+  ],
+  "rawRowsForbidden": [
+    "permit",
+    "assessor",
+    "footprint geometry"
+  ],
+  "questionClassAuthoritative": true,
+  "questionOrder": [
+    "current configuration",
+    "existing dwelling/use",
+    "ADU/project intent",
+    "accessory/conversion context",
+    "project details",
+    "evidence request"
+  ],
+  "legalConclusions": false,
+  "persistence": {
+    "recordedEvidence": "immutable Packet 100",
+    "userCorrection": "user/org scoped",
+    "projectEvidence": "project scoped"
+  },
+  "outcomeCapture": [
+    "homeowner confirmation",
+    "uploaded plans",
+    "later permit final",
+    "project proceeds or stops"
+  ],
+  "historicalEvidenceMutation": false
+}
