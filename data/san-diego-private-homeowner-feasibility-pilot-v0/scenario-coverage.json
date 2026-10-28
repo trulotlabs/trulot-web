@@ -1,0 +1,41 @@
+{
+  "straightforward": [
+    "recorded SFR",
+    "recorded multifamily",
+    "condo",
+    "no bounded permit history"
+  ],
+  "currentness": [
+    "later finaled ADU",
+    "active ADU",
+    "issued ADU presentation fixture",
+    "expired/cancelled ADU",
+    "demolition/new-construction normalized transition",
+    "stale assessor likely"
+  ],
+  "conflicts": [
+    "assessor/permit conflict",
+    "structure ambiguity",
+    "common-address ambiguity",
+    "dwelling-state conflict",
+    "plain Closed presentation fixture"
+  ],
+  "zoning": [
+    "RS",
+    "RM",
+    "RX",
+    "RT",
+    "Coastal",
+    "multi-zone",
+    "review-required"
+  ],
+  "corrections": [
+    "recorded one house / homeowner two dwellings",
+    "recorded multifamily / homeowner one house",
+    "finaled ADU / homeowner present",
+    "finaled ADU / homeowner says not completed or differs",
+    "active ADU / homeowner says not started",
+    "old secondary structure / homeowner says no longer present"
+  ],
+  "boundary": "Issued and plain Closed are presentation fixtures because Packet 100 intentionally supplies normalized states rather than raw permit status. Demolition/new-construction is tested through normalized active/later transition behavior."
+}

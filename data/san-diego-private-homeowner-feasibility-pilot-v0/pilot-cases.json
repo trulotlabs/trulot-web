@@ -1,0 +1,2661 @@
+{
+  "count": 40,
+  "cases": [
+    {
+      "caseId": "pilot-01-2392600700",
+      "apn": "2392600700",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "LATER_CHANGE_OBSERVED",
+        "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "INDETERMINATE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AG",
+        "projectIntent": "DETACHED_ADU",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public records show a later property change. What is the current dwelling and unit configuration?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show a later permitted configuration change. Current property configuration should be confirmed before applying existing-structure assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-02-2410601100",
+      "apn": "2410601100",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "ACTIVE_CHANGE_IN_PROGRESS",
+        "questionClass": "ACTIVE_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "INDETERMINATE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AG",
+        "projectIntent": "ATTACHED_ADU",
+        "confirmation": "NO",
+        "correction": "ONE_DETACHED_HOUSE"
+      },
+      "firstQuestion": {
+        "text": "Public records show active work that may change the property. What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show active work that may change the property configuration. Feasibility should remain preliminary until the current state is confirmed."
+        ],
+        "whatWeDoNotKnow": [],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Review the recorded property information and correct it if it no longer matches the property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": null,
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PUBLIC_RECORD",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 4,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-03-2410603700",
+      "apn": "2410603700",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "ACTIVE_CHANGE_IN_PROGRESS",
+        "questionClass": "ACTIVE_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "INDETERMINATE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AG",
+        "projectIntent": "GARAGE_CONVERSION",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public records show active work that may change the property. What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show active work that may change the property configuration. Feasibility should remain preliminary until the current state is confirmed."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration.",
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-04-2410603800",
+      "apn": "2410603800",
+      "scenario": {
+        "dwelling": "UNKNOWN",
+        "currentness": "OBSERVATIONAL_SUPPORT_ONLY",
+        "questionClass": "BLANK",
+        "aduEvidence": "NONE",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "MULTI_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AR",
+        "projectIntent": "JADU",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 1
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Review the recorded property information and correct it if it no longer matches the property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": null,
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PUBLIC_RECORD",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 4,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-05-2410810800",
+      "apn": "2410810800",
+      "scenario": {
+        "dwelling": "UNKNOWN",
+        "currentness": "CURRENTNESS_UNKNOWN",
+        "questionClass": "BLANK",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "INDETERMINATE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AG",
+        "projectIntent": "ADDITIONAL_UNIT",
+        "confirmation": "NO",
+        "correction": "ONE_DETACHED_HOUSE"
+      },
+      "firstQuestion": {
+        "text": "What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 1
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-06-2410900900",
+      "apn": "2410900900",
+      "scenario": {
+        "dwelling": "UNKNOWN",
+        "currentness": "CURRENTNESS_UNKNOWN",
+        "questionClass": "BLANK",
+        "aduEvidence": "NONE",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "MULTI_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AR",
+        "projectIntent": "MULTIFAMILY_ADDITION",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 1
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": null,
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-07-2410901300",
+      "apn": "2410901300",
+      "scenario": {
+        "dwelling": "UNKNOWN",
+        "currentness": "CURRENTNESS_UNKNOWN",
+        "questionClass": "BLANK",
+        "aduEvidence": "NONE",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AR",
+        "projectIntent": "GENERAL",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 1
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Review the recorded property information and correct it if it no longer matches the property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": null,
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PUBLIC_RECORD",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 4,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-08-2410902500",
+      "apn": "2410902500",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "LATER_CHANGE_OBSERVED",
+        "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+          "LATER_CHANGE_VS_RECORDED_STATE"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "INDETERMINATE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AR",
+        "projectIntent": "DETACHED_ADU",
+        "confirmation": "NO",
+        "correction": "ONE_DETACHED_HOUSE"
+      },
+      "firstQuestion": {
+        "text": "Public records show a later property change. What is the current dwelling and unit configuration?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show a later permitted configuration change. Current property configuration should be confirmed before applying existing-structure assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-09-2410902900",
+      "apn": "2410902900",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "LATER_CHANGE_OBSERVED",
+        "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "LATER_CHANGE_VS_RECORDED_STATE"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "MULTI_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AR",
+        "projectIntent": "ATTACHED_ADU",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public records show a later property change. What is the current dwelling and unit configuration?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show a later permitted configuration change. Current property configuration should be confirmed before applying existing-structure assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration.",
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Recorded property information and later evidence disagree about the current configuration. Homeowner confirmation or a current permit document would help resolve it.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-10-2410903000",
+      "apn": "2410903000",
+      "scenario": {
+        "dwelling": "UNKNOWN",
+        "currentness": "CURRENTNESS_UNKNOWN",
+        "questionClass": "BLANK",
+        "aduEvidence": "NONE",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "MULTI_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AG",
+        "projectIntent": "GARAGE_CONVERSION",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 1
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Review the recorded property information and correct it if it no longer matches the property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": null,
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PUBLIC_RECORD",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 4,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-11-2420601100",
+      "apn": "2420601100",
+      "scenario": {
+        "dwelling": "UNKNOWN",
+        "currentness": "OBSERVATIONAL_SUPPORT_ONLY",
+        "questionClass": "BLANK",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "INDETERMINATE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AR",
+        "projectIntent": "JADU",
+        "confirmation": "NO",
+        "correction": "ONE_DETACHED_HOUSE"
+      },
+      "firstQuestion": {
+        "text": "What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 1
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-12-2421001000",
+      "apn": "2421001000",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "LATER_CHANGE_OBSERVED",
+        "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "MULTI_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AG",
+        "projectIntent": "ADDITIONAL_UNIT",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public records show a later property change. What is the current dwelling and unit configuration?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show a later permitted configuration change. Current property configuration should be confirmed before applying existing-structure assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration.",
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-13-2421310800",
+      "apn": "2421310800",
+      "scenario": {
+        "dwelling": "UNKNOWN",
+        "currentness": "OBSERVATIONAL_SUPPORT_ONLY",
+        "questionClass": "BLANK",
+        "aduEvidence": "NONE",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "INDETERMINATE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AG",
+        "projectIntent": "MULTIFAMILY_ADDITION",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 1
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Review the recorded property information and correct it if it no longer matches the property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": null,
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PUBLIC_RECORD",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 4,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-14-2421401000",
+      "apn": "2421401000",
+      "scenario": {
+        "dwelling": "UNKNOWN",
+        "currentness": "OBSERVATIONAL_SUPPORT_ONLY",
+        "questionClass": "BLANK",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "INDETERMINATE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AR",
+        "projectIntent": "GENERAL",
+        "confirmation": "NO",
+        "correction": "ONE_DETACHED_HOUSE"
+      },
+      "firstQuestion": {
+        "text": "What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 1
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-15-2672310100",
+      "apn": "2672310100",
+      "scenario": {
+        "dwelling": "SINGLE_FAMILY_LIKELY",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "RECORDED_PROPERTY_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "DETACHED_ADU",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate one detached residence. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public property records indicate one detached residence. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration."
+        ],
+        "preliminaryGuidance": "The single-family pathway appears consistent with preliminary review, conditional on the current property configuration.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": null,
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-16-2672310200",
+      "apn": "2672310200",
+      "scenario": {
+        "dwelling": "SINGLE_FAMILY_LIKELY",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "RECORDED_PROPERTY_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "ATTACHED_ADU",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate one detached residence. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public property records indicate one detached residence. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [],
+        "preliminaryGuidance": "The single-family pathway appears consistent with preliminary review, conditional on the current property configuration.",
+        "nextAction": "Review the recorded property information and correct it if it no longer matches the property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": null,
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PUBLIC_RECORD",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-17-2672310400",
+      "apn": "2672310400",
+      "scenario": {
+        "dwelling": "SINGLE_FAMILY_LIKELY",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "RECORDED_PROPERTY_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "GARAGE_CONVERSION",
+        "confirmation": "NO",
+        "correction": "TWO_OR_MORE_DWELLINGS"
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate one detached residence. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public property records indicate one detached residence. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [],
+        "preliminaryGuidance": "The multifamily pathway appears consistent with preliminary review, conditional on the current property configuration.",
+        "nextAction": "Review the recorded property information and correct it if it no longer matches the property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": null,
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PUBLIC_RECORD",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-18-2672310500",
+      "apn": "2672310500",
+      "scenario": {
+        "dwelling": "SINGLE_FAMILY_LIKELY",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "RECORDED_PROPERTY_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "JADU",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate one detached residence. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public property records indicate one detached residence. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration.",
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "The single-family pathway appears consistent with preliminary review, conditional on the current property configuration.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-19-2672311001",
+      "apn": "2672311001",
+      "scenario": {
+        "dwelling": "CONDO",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "CONDO_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "ADDITIONAL_UNIT",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate a condominium. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-20-2672311002",
+      "apn": "2672311002",
+      "scenario": {
+        "dwelling": "CONDO",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "CONDO_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "MULTIFAMILY_ADDITION",
+        "confirmation": "NO",
+        "correction": "ONE_DETACHED_HOUSE"
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate a condominium. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "The single-family pathway appears consistent with preliminary review, conditional on the current property configuration.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-21-2672311101",
+      "apn": "2672311101",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "LATER_CHANGE_OBSERVED",
+        "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+          "LATER_CHANGE_VS_RECORDED_STATE"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "GENERAL",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public records show a later property change. What is the current dwelling and unit configuration?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show a later permitted configuration change. Current property configuration should be confirmed before applying existing-structure assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration.",
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-22-2672311102",
+      "apn": "2672311102",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "LATER_CHANGE_OBSERVED",
+        "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+          "LATER_CHANGE_VS_RECORDED_STATE"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "DETACHED_ADU",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public records show a later property change. What is the current dwelling and unit configuration?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show a later permitted configuration change. Current property configuration should be confirmed before applying existing-structure assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-23-2672311201",
+      "apn": "2672311201",
+      "scenario": {
+        "dwelling": "CONDO",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "CONDO_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "ATTACHED_ADU",
+        "confirmation": "NO",
+        "correction": "ONE_DETACHED_HOUSE"
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate a condominium. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "The single-family pathway appears consistent with preliminary review, conditional on the current property configuration.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-24-2672311301",
+      "apn": "2672311301",
+      "scenario": {
+        "dwelling": "CONDO",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "CONDO_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "GARAGE_CONVERSION",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate a condominium. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration.",
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-25-2672326900",
+      "apn": "2672326900",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "ACTIVE_CHANGE_IN_PROGRESS",
+        "questionClass": "ACTIVE_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+          "LATER_CHANGE_VS_RECORDED_STATE"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "JADU",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public records show active work that may change the property. What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show active work that may change the property configuration. Feasibility should remain preliminary until the current state is confirmed."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-26-2672402700",
+      "apn": "2672402700",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "LATER_CHANGE_OBSERVED",
+        "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "FINALED",
+        "conflictTypes": [
+          "RECORDED_CHARACTERISTIC_CONFLICT"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "ADDITIONAL_UNIT",
+        "confirmation": "NO",
+        "correction": "ONE_DETACHED_HOUSE"
+      },
+      "firstQuestion": {
+        "text": "Public records show a later property change. What is the current dwelling and unit configuration?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 3,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show a later permitted configuration change. Current property configuration should be confirmed before applying existing-structure assumptions.",
+          "The homeowner reports that the work was not completed or differs from the record."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Review the recorded property information and correct it if it no longer matches the property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "A finaled City permit record and the homeowner's description do not agree. A current photo and permit document would help resolve the difference.",
+        "aduLifecycle": "A later permit record indicates completed/finaled ADU work. Confirm the current property configuration before relying on layout assumptions."
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PUBLIC_RECORD",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-27-2672413900",
+      "apn": "2672413900",
+      "scenario": {
+        "dwelling": "SINGLE_FAMILY_LIKELY",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "RECORDED_PROPERTY_CONFIRMATION",
+        "aduEvidence": "EXPIRED_OR_WITHDRAWN",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RX",
+        "projectIntent": "MULTIFAMILY_ADDITION",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate one detached residence. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 3,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public property records indicate one detached residence. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration.",
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "The single-family pathway appears consistent with preliminary review, conditional on the current property configuration.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": "A prior ADU proposal appears expired/cancelled; that does not establish an existing ADU."
+      },
+      "remainingQuestions": [
+        "What is the current status of the ADU-related work?"
+      ],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-28-2673001100",
+      "apn": "2673001100",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "LATER_CHANGE_OBSERVED",
+        "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "LATER_CHANGE_VS_RECORDED_STATE",
+          "RECORDED_CHARACTERISTIC_CONFLICT"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RS",
+        "projectIntent": "GENERAL",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public records show a later property change. What is the current dwelling and unit configuration?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show a later permitted configuration change. Current property configuration should be confirmed before applying existing-structure assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Review the recorded property information and correct it if it no longer matches the property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Recorded property information and later evidence disagree about the current configuration. Homeowner confirmation or a current permit document would help resolve it.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PUBLIC_RECORD",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-29-2673100700",
+      "apn": "2673100700",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "CONFLICTING_EVIDENCE",
+        "questionClass": "CONFLICT_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "RECORDED_CHARACTERISTIC_CONFLICT"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "MULTI_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RS",
+        "projectIntent": "DETACHED_ADU",
+        "confirmation": "NO",
+        "correction": "ONE_DETACHED_HOUSE"
+      },
+      "firstQuestion": {
+        "text": "Public records are not consistent about the property configuration. What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Review the recorded property information and correct it if it no longer matches the property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Recorded property information and later evidence disagree about the current configuration. Homeowner confirmation or a current permit document would help resolve it.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PUBLIC_RECORD",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-30-2692122900",
+      "apn": "2692122900",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "ACTIVE_CHANGE_IN_PROGRESS",
+        "questionClass": "ACTIVE_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "ACTIVE",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "AR",
+        "projectIntent": "ATTACHED_ADU",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public records show active work that may change the property. What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 3,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show active work that may change the property configuration. Feasibility should remain preliminary until the current state is confirmed.",
+          "The homeowner reports that work has not started."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide the current permit document or plans that identify this property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "City records show active ADU-related work, while the homeowner reports that work has not started. The current permit document would clarify the status.",
+        "aduLifecycle": "City records show active ADU-related work. Completion and current occupancy are not established."
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PERMIT_DOCUMENT",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-31-2723520600",
+      "apn": "2723520600",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "CONFLICTING_EVIDENCE",
+        "questionClass": "CONFLICT_CURRENT_CONFIGURATION",
+        "aduEvidence": "UNKNOWN",
+        "conflictTypes": [
+          "RECORDED_CHARACTERISTIC_CONFLICT"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RS",
+        "projectIntent": "GARAGE_CONVERSION",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public records are not consistent about the property configuration. What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 3,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Review the recorded property information and correct it if it no longer matches the property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Recorded property information and later evidence disagree about the current configuration. Homeowner confirmation or a current permit document would help resolve it.",
+        "aduLifecycle": "An ADU-related record exists, but its completion status is not clear."
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PUBLIC_RECORD",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-32-2735600311",
+      "apn": "2735600311",
+      "scenario": {
+        "dwelling": "CONDO",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "CONDO_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "MULTI_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RM",
+        "projectIntent": "JADU",
+        "confirmation": "NO",
+        "correction": "ONE_DETACHED_HOUSE"
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate a condominium. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "The single-family pathway appears consistent with preliminary review, conditional on the current property configuration.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-33-2735701200",
+      "apn": "2735701200",
+      "scenario": {
+        "dwelling": "MULTIFAMILY_LIKELY",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "RECORDED_PROPERTY_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "MULTI_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RM",
+        "projectIntent": "ADDITIONAL_UNIT",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate multiple dwelling units. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration."
+        ],
+        "preliminaryGuidance": "The multifamily pathway appears consistent with preliminary review, conditional on the current property configuration.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": null,
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-34-2748323700",
+      "apn": "2748323700",
+      "scenario": {
+        "dwelling": "UNKNOWN",
+        "currentness": "CURRENTNESS_UNKNOWN",
+        "questionClass": "BLANK",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "BOUNDARY_SLIVER",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RS",
+        "projectIntent": "MULTIFAMILY_ADDITION",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 1
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-35-3003052200",
+      "apn": "3003052200",
+      "scenario": {
+        "dwelling": "SINGLE_FAMILY_LIKELY",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "RECORDED_PROPERTY_CONFIRMATION",
+        "aduEvidence": "UNKNOWN",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "INSIDE_COASTAL",
+        "zoningFamily": "RS",
+        "projectIntent": "GENERAL",
+        "confirmation": "NO",
+        "correction": "TWO_OR_MORE_DWELLINGS"
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate one detached residence. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 3,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public property records indicate one detached residence. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [],
+        "preliminaryGuidance": "The multifamily pathway appears consistent with preliminary review, conditional on the current property configuration.",
+        "nextAction": "Review the recorded property information and correct it if it no longer matches the property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": null,
+        "aduLifecycle": "An ADU-related record exists, but its completion status is not clear."
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PUBLIC_RECORD",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 4,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-36-3041621200",
+      "apn": "3041621200",
+      "scenario": {
+        "dwelling": "SINGLE_FAMILY_LIKELY",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "RECORDED_PROPERTY_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [],
+        "accessoryCandidate": false,
+        "zoningState": "MULTI_ZONE",
+        "coastalContext": "BOUNDARY_AMBIGUOUS",
+        "zoningFamily": "CVPD",
+        "projectIntent": "DETACHED_ADU",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate one detached residence. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public property records indicate one detached residence. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration."
+        ],
+        "preliminaryGuidance": "The single-family pathway appears consistent with preliminary review, conditional on the current property configuration.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": null,
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-37-3591821600",
+      "apn": "3591821600",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "LATER_CHANGE_OBSERVED",
+        "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RT",
+        "projectIntent": "ATTACHED_ADU",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public records show a later property change. What is the current dwelling and unit configuration?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show a later permitted configuration change. Current property configuration should be confirmed before applying existing-structure assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-38-4236713603",
+      "apn": "4236713603",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "CONFLICTING_EVIDENCE",
+        "questionClass": "CONFLICT_CURRENT_CONFIGURATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_ADDRESS_PERMIT_AMBIGUITY",
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY",
+          "LATER_CHANGE_VS_RECORDED_STATE"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "INSIDE_COASTAL",
+        "zoningFamily": "MBPD",
+        "projectIntent": "GARAGE_CONVERSION",
+        "confirmation": "NO",
+        "correction": "ONE_DETACHED_HOUSE"
+      },
+      "firstQuestion": {
+        "text": "Public records are not consistent about the property configuration. What is currently on the property?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide the current permit document or plans that identify this property.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "A permit record is associated with a shared address and cannot yet be tied to this property unit. An APN-specific permit document would resolve it.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "PERMIT_DOCUMENT",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-39-5442140600",
+      "apn": "5442140600",
+      "scenario": {
+        "dwelling": "CONFLICTING",
+        "currentness": "LATER_CHANGE_OBSERVED",
+        "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+        "aduEvidence": "FINALED",
+        "conflictTypes": [
+          "LATER_CHANGE_VS_RECORDED_STATE"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "MULTI_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RM",
+        "projectIntent": "JADU",
+        "confirmation": "NOT_SURE",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public records show a later property change. What is the current dwelling and unit configuration?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 3,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public records show a later permitted configuration change. Current property configuration should be confirmed before applying existing-structure assumptions.",
+          "The homeowner reports that ADU-related work is present; this remains a user-provided statement."
+        ],
+        "whatWeDoNotKnow": [
+          "The homeowner is not sure of the current configuration.",
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "No dwelling pathway is selected until the current configuration is confirmed.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "City permit record",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Recorded property information and later evidence disagree about the current configuration. Homeowner confirmation or a current permit document would help resolve it.",
+        "aduLifecycle": "A later permit record indicates completed/finaled ADU work. Confirm the current property configuration before relying on layout assumptions."
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    },
+    {
+      "caseId": "pilot-40-6341302200",
+      "apn": "6341302200",
+      "scenario": {
+        "dwelling": "SINGLE_FAMILY_LIKELY",
+        "currentness": "RECORDED_STALE_POSSIBLE",
+        "questionClass": "RECORDED_PROPERTY_CONFIRMATION",
+        "aduEvidence": "NONE",
+        "conflictTypes": [
+          "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+        ],
+        "accessoryCandidate": false,
+        "zoningState": "SINGLE_ZONE",
+        "coastalContext": "OUTSIDE_COASTAL",
+        "zoningFamily": "RS",
+        "projectIntent": "ADDITIONAL_UNIT",
+        "confirmation": "YES",
+        "correction": null
+      },
+      "firstQuestion": {
+        "text": "Public property records indicate one detached residence. Is that still correct?",
+        "classification": "GOOD",
+        "necessary": true,
+        "understandable": true,
+        "answerable": true,
+        "bounded": true
+      },
+      "burden": {
+        "questionsBeforePreliminaryResult": 1,
+        "questionsBeforeUsefulNextAction": 2,
+        "redundantQuestions": 0,
+        "dataUnavailableQuestions": 0
+      },
+      "homeownerView": {
+        "headline": "Preliminary feasibility review",
+        "whatWeKnow": [
+          "Public property records indicate one detached residence. Confirm the current configuration before relying on pathway assumptions."
+        ],
+        "whatWeDoNotKnow": [
+          "A source disagreement remains unresolved."
+        ],
+        "preliminaryGuidance": "The single-family pathway appears consistent with preliminary review, conditional on the current property configuration.",
+        "nextAction": "Provide a current photo showing the relevant structure.",
+        "whyItMatters": "The current configuration affects which existing-structure assumptions and project questions are relevant.",
+        "evidenceProvenance": [
+          "Recorded property record",
+          "Older building mapping",
+          "Homeowner-provided answer"
+        ],
+        "contradiction": "Older building mapping and the recorded parcel configuration do not align clearly. A current photo may resolve the immediate question; a site plan is needed only if placement matters to the project.",
+        "aduLifecycle": null
+      },
+      "remainingQuestions": [],
+      "evidenceLevel": "CURRENT_PHOTO",
+      "correctionPreserved": true,
+      "sourceDisagreementPreserved": true,
+      "scores": {
+        "questionRelevance": 5,
+        "questionClarity": 5,
+        "evidenceDiscipline": 5,
+        "uncertaintyExplanation": 5,
+        "resultUsefulness": 5,
+        "nextActionClarity": 5,
+        "falseCertaintyRisk": 5,
+        "unnecessaryFrictionRisk": 5
+      }
+    }
+  ]
+}

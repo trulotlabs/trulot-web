@@ -1,0 +1,15 @@
+{
+  "samples": 100,
+  "sessionStart": {
+    "p50Ms": 0.012791,
+    "p95Ms": 8.903208,
+    "maxMs": 13.069459
+  },
+  "answerAndResultUpdate": {
+    "p50Ms": 0.01125,
+    "p95Ms": 0.033375,
+    "maxMs": 0.369083
+  },
+  "interactiveTargetMs": 100,
+  "passed": true
+}

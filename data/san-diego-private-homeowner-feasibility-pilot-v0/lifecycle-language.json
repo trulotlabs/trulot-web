@@ -1,0 +1,8 @@
+{
+  "finaled": "A later permit record indicates completed/finaled ADU work. Confirm the current property configuration before relying on layout assumptions.",
+  "active": "City records show active ADU-related work. Completion and current occupancy are not established.",
+  "issued": "A permit was issued, but completion is not established.",
+  "expiredOrCancelled": "A prior ADU proposal appears expired/cancelled; that does not establish an existing ADU.",
+  "unknown": "An ADU-related record exists, but its completion status is not clear.",
+  "plainClosed": "A permit record exists, but the available source does not establish whether the work was completed."
+}

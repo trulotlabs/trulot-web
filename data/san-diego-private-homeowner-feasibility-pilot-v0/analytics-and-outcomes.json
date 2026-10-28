@@ -1,0 +1,22 @@
+{
+  "allowedEvents": [
+    "parcel_started",
+    "first_question_answered",
+    "not_sure_selected",
+    "correction_provided",
+    "preliminary_result_reached",
+    "evidence_requested",
+    "evidence_supplied",
+    "session_abandoned",
+    "result_revisited"
+  ],
+  "contentPolicy": "Event name, bounded state, and timing only; no APN, address, answer text, evidence contents, permit identifiers, or user content.",
+  "outcomeHooks": [
+    "HOMEOWNER_CONFIGURATION_CONFIRMED",
+    "UPLOADED_EVIDENCE_RESOLVED_CONFLICT",
+    "PERMIT_STATUS_CHANGED",
+    "PROJECT_PROCEEDED",
+    "PROJECT_ABANDONED",
+    "CITY_DETERMINATION_OBTAINED"
+  ]
+}

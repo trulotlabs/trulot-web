@@ -1,0 +1,16 @@
+{
+  "scale": "1-5 where 5 is best/lowest risk",
+  "caseCount": 40,
+  "rates": {
+    "goodFirstQuestionRate": 1,
+    "clearNextActionRate": 1,
+    "misleadingCount": 0,
+    "redundantQuestionCount": 0,
+    "correctionPreservationFailures": 0,
+    "criticalFalseCertaintyFailures": 0,
+    "falseAlarmFindings": 0,
+    "privatePublicLeakageFailures": 0,
+    "misleadingAduLifecycleFailures": 0
+  },
+  "passed": true
+}

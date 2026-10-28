@@ -1,0 +1,17 @@
+{
+  "oldGenericFlow": {
+    "specificFirstQuestions": 0,
+    "blankOrGenericFirstQuestions": 40,
+    "conflictsSurfaced": 0,
+    "usefulNextActions": 0
+  },
+  "packet101Pilot": {
+    "specificFirstQuestions": 40,
+    "blankOrGenericFirstQuestions": 0,
+    "conflictsSurfaced": 28,
+    "evidenceRequests": 28,
+    "usefulNextActions": 40,
+    "falseCertaintyFailures": 0
+  },
+  "claimBoundary": "UX behavior comparison; not an accuracy claim."
+}

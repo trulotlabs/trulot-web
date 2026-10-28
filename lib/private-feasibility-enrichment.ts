@@ -136,7 +136,8 @@ export function enrichPrivateFeasibility(
 export function enrichPrivateFeasibilityFromLookup(
   lookup: PrivateLookupResult,
   previousV4: Omit<PrivateFeasibilityEnrichment, "internalSignals" | "resultState"> & { resultState: PrivateFeasibilityResultState },
+  options: { userExistingUse?: UserExistingUse; includeProjectQuestions?: boolean } = {},
 ): PrivateFeasibilityEnrichment {
-  if (lookup.status === "FOUND") return enrichPrivateFeasibility(lookup.value);
+  if (lookup.status === "FOUND") return enrichPrivateFeasibility(lookup.value, options);
   return { ...previousV4, resultState: lookup.status === "UNAVAILABLE" ? "SOURCE_UNAVAILABLE" : previousV4.resultState, internalSignals: lookup.status === "UNAVAILABLE" ? ["PROPERTY_INTELLIGENCE_UNAVAILABLE"] : [] };
 }

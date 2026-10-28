@@ -1,0 +1,17 @@
+{
+  "authenticatedHarnessOnly": true,
+  "routeAdded": false,
+  "publicParcelPageChanged": false,
+  "liveSanDiegoIndexableCohort": 5000,
+  "remainingSanDiegoNoindex": true,
+  "laMesaIndexing": false,
+  "sitemapChanged": false,
+  "robotsChanged": false,
+  "canonicalChanged": false,
+  "metadataChanged": false,
+  "jsonLdChanged": false,
+  "productionDatabaseTouched": false,
+  "packet11Frozen": true,
+  "publicPropertyIntelligenceActivated": false,
+  "userAnswersPersistedToSealedArtifacts": false
+}

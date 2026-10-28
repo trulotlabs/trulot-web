@@ -1,0 +1,53 @@
+{
+  "analyticsPrivacyAudit": "PASS",
+  "falseCertaintyAudit": "PASS",
+  "fileCount": 11,
+  "files": {
+    "README.md": {
+      "bytes": 410,
+      "sha256": "4f298f9e55ca3bd71f67645531dff6074cca5e118c58ea47d22fa389f3d2b35d"
+    },
+    "acceptance-rubric.json": {
+      "bytes": 415,
+      "sha256": "f17bcdd8f50a11749af6d09f11eb5930d65c4bb2d1bf02c7b955b10dc6c70fc3"
+    },
+    "analytics-and-outcomes.json": {
+      "bytes": 641,
+      "sha256": "2db431c94d592b7f01d0a3ef5e9bf99c9baecf5db7f18dfeb0c6b2e653d875e1"
+    },
+    "before-after-ux.json": {
+      "bytes": 445,
+      "sha256": "d5ee4179825962fcd21c0780169d7aa188dcdedf9f90d7bf843e3953f89a3cf4"
+    },
+    "containment.json": {
+      "bytes": 498,
+      "sha256": "ff21233e71c73db0ff9d179856ae2bdbed3120186a9fa70e120796b0416f3e25"
+    },
+    "decision.json": {
+      "bytes": 149,
+      "sha256": "f23e865304c3129f92d06085473b4a9814b34842da5a2b19b6b82a8301bd3611"
+    },
+    "lifecycle-language.json": {
+      "bytes": 665,
+      "sha256": "046e9bb5f33475860dd2166293b8a224a823886694953ed1bd1d12071764d218"
+    },
+    "performance.json": {
+      "bytes": 264,
+      "sha256": "95007fb4a2e47a7a8ff617f67d62137ce3880000dc818e6d7fb5bcb29642c325"
+    },
+    "pilot-cases.json": {
+      "bytes": 104072,
+      "sha256": "32105210abf6af11b5e5c2f5a52cdf36c055c474771b61b268bcfd9a98263349"
+    },
+    "real-user-pilot-design.json": {
+      "bytes": 386,
+      "sha256": "518e83ae86227e56c989571d5444d2efa95c9ee9cce553e5859ad1e5b0572034"
+    },
+    "scenario-coverage.json": {
+      "bytes": 1229,
+      "sha256": "08d931f7689c9fba62b04162536ba68e07b830d2229d83588d2cdea85e4669eb"
+    }
+  },
+  "publicIsolation": "PASS",
+  "sensitiveMaterialScan": "PASS"
+}
