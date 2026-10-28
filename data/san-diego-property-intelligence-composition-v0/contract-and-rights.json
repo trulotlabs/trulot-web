@@ -1,0 +1,25 @@
+{
+  "authorityOrder": [
+    "EXPLICIT_FINALED_PERMIT_FACT",
+    "EXPLICIT_ISSUED_CHANGE_SIGNAL",
+    "RECORDED_ASSESSOR_CHARACTERISTIC",
+    "OFFICIAL_OBSERVATIONAL_GEOMETRY",
+    "USER_PROVIDED"
+  ],
+  "contract": "jurisdiction-neutral-property-intelligence-composition-v0",
+  "homeownerFactsIncluded": false,
+  "permitHolderIncluded": false,
+  "privateProjectEvidenceIncluded": false,
+  "publicActivation": false,
+  "questionCatalog": {
+    "ACCESSORY": "Older mapping shows a detached secondary structure on the parcel. Is that structure still there?",
+    "ACTIVE_CHANGE_CURRENT_CONFIGURATION": "Public records show active work that may change the property configuration. What is currently on the property?",
+    "CONDO_CONFIRMATION": "Public property records indicate a condominium. Is that still correct?",
+    "CONFLICT_CURRENT_CONFIGURATION": "Public records are not consistent about the current property configuration. What is currently on the property?",
+    "LATER_CHANGE_CURRENT_CONFIGURATION": "Public records show a later permitted change. What is currently on the property?",
+    "RECORDED_PROPERTY_CONFIRMATION": "Public property records indicate a recorded residential configuration. Is that still correct?"
+  },
+  "rawGeometryIncluded": false,
+  "rawPermitRowsIncluded": false,
+  "rightsPropagation": "All inputs permit internal composition and bounded summaries; any unclear/restricted contributor fails public use closed."
+}

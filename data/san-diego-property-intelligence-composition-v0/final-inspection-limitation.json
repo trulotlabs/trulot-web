@@ -1,0 +1,13 @@
+{
+  "affectedLinkedParcels": 98848,
+  "completionSemantics": "UNKNOWN",
+  "materialEventAffectedParcels": 14053,
+  "plainClosedRecords": 171455,
+  "requiredEvidence": "City clarification/export distinguishing approved final inspection, expiration, and administrative close",
+  "wouldImprove": [
+    "CURRENTNESS_UNKNOWN",
+    "RECORDED_STALE_POSSIBLE",
+    "ACTIVE_CHANGE_IN_PROGRESS",
+    "CONFLICTING_EVIDENCE"
+  ]
+}

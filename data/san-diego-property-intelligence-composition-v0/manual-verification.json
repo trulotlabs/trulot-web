@@ -1,0 +1,396 @@
+{
+  "count": 30,
+  "finding": "Composition language remained bounded to recorded, observational, and permit lifecycle evidence.",
+  "rows": [
+    {
+      "apn": "2392600700",
+      "boundedInterpretation": {
+        "currentnessState": "LATER_CHANGE_OBSERVED",
+        "plainClosedNotFinaled": true,
+        "questionKind": "LATER_CHANGE_CURRENT_CONFIGURATION"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2410601100",
+      "boundedInterpretation": {
+        "currentnessState": "ACTIVE_CHANGE_IN_PROGRESS",
+        "plainClosedNotFinaled": true,
+        "questionKind": "ACTIVE_CHANGE_CURRENT_CONFIGURATION"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2410603700",
+      "boundedInterpretation": {
+        "currentnessState": "ACTIVE_CHANGE_IN_PROGRESS",
+        "plainClosedNotFinaled": true,
+        "questionKind": "ACTIVE_CHANGE_CURRENT_CONFIGURATION"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2410603800",
+      "boundedInterpretation": {
+        "currentnessState": "OBSERVATIONAL_SUPPORT_ONLY",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2410810800",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2410900900",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2410901300",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2410902500",
+      "boundedInterpretation": {
+        "currentnessState": "LATER_CHANGE_OBSERVED",
+        "plainClosedNotFinaled": true,
+        "questionKind": "LATER_CHANGE_CURRENT_CONFIGURATION"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2410902900",
+      "boundedInterpretation": {
+        "currentnessState": "LATER_CHANGE_OBSERVED",
+        "plainClosedNotFinaled": true,
+        "questionKind": "LATER_CHANGE_CURRENT_CONFIGURATION"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2410903000",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2411003100",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2411003200",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2411003300",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2411003400",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2411004300",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2411004400",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2411801200",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2420600300",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2420600400",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2420601100",
+      "boundedInterpretation": {
+        "currentnessState": "OBSERVATIONAL_SUPPORT_ONLY",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2420800600",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2421000300",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2421000500",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2421000600",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2421000900",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2421001000",
+      "boundedInterpretation": {
+        "currentnessState": "LATER_CHANGE_OBSERVED",
+        "plainClosedNotFinaled": true,
+        "questionKind": "LATER_CHANGE_CURRENT_CONFIGURATION"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2421100600",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2421302700",
+      "boundedInterpretation": {
+        "currentnessState": "CURRENTNESS_UNKNOWN",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    },
+    {
+      "apn": "2421310800",
+      "boundedInterpretation": {
+        "currentnessState": "OBSERVATIONAL_SUPPORT_ONLY",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "CITY_SD_APPROVALS_20261028"
+      ]
+    },
+    {
+      "apn": "2421401000",
+      "boundedInterpretation": {
+        "currentnessState": "OBSERVATIONAL_SUPPORT_ONLY",
+        "plainClosedNotFinaled": true,
+        "questionKind": "BLANK"
+      },
+      "sourceEvidence": [
+        "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "CITY_SANDAG_BUILDING_OUTLINES_2017",
+        "NO_BOUNDED_PERMIT_EVIDENCE"
+      ]
+    }
+  ]
+}

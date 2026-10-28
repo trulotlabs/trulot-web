@@ -1,0 +1,7 @@
+{
+  "assessor": "SANGIS_ARCC_PARCEL_BASE_20260924",
+  "composition": "san-diego-property-intelligence-composition-v0",
+  "permit": "CITY_SD_APPROVALS_20261028_SHA256_5b687cc9",
+  "refresh": "Packet 98 weekly rebuild followed by deterministic composition rebuild",
+  "structure": "CITY_SANDAG_BUILDING_OUTLINES_2017"
+}

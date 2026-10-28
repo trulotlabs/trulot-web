@@ -1,0 +1,48 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 294,
+      "sha256": "7f0fc298da3a2419b6c279d51c15e2f975de7c9972139fb81cab96f72e66c19f"
+    },
+    "assessor-derived-facts.ndjson.gz": {
+      "bytes": 4470565,
+      "sha256": "861090120bbe414df4c15777ea11cd6be9f1a4be3fcff74981653f81ae7070ac"
+    },
+    "benchmark-cohort.json": {
+      "bytes": 279464,
+      "sha256": "61fdc08dd6adc331e6370bd7e20bfb38894a9c0f30fdc1f7672ea751004267e3"
+    },
+    "contract-and-rights.json": {
+      "bytes": 1445,
+      "sha256": "53c00cbfdb470a1862a5f4f2e492f0f7cb7bcd0f801fffdba2b74a76658c635c"
+    },
+    "decision.json": {
+      "bytes": 222,
+      "sha256": "610321539023975d47f66b0fdedd030a0c054002b2b9b49d182939723a298419"
+    },
+    "final-inspection-limitation.json": {
+      "bytes": 419,
+      "sha256": "42b9069d397ecc5ea697b65898865c7087da7285bd75bbe946b949c7767ccde7"
+    },
+    "manual-verification.json": {
+      "bytes": 11321,
+      "sha256": "b35c8a371e6ec71b6effa9d3f64b8cd1e1ce467f8378c329192f6ccad794fe3e"
+    },
+    "parcel-property-intelligence.ndjson.gz": {
+      "bytes": 10474766,
+      "sha256": "13018420bd1291ef65b2058f2f39a404b5fd6555e4ded54e26ea62e6da8036ee"
+    },
+    "performance.json": {
+      "bytes": 533,
+      "sha256": "7f3b28c0656080878095b9e6ead1cae18ee2d9ffd73a837884afd425b957d79e"
+    },
+    "population-metrics.json": {
+      "bytes": 1328,
+      "sha256": "a7011030a3d9dada4768eae93aacac28c9b9a554208e5db6111cd6a750605cb3"
+    },
+    "source-versions.json": {
+      "bytes": 318,
+      "sha256": "258b12966e9c1f6d307246e0807f68198f887ba34a7d2d0f6206ff661915d042"
+    }
+  }
+}

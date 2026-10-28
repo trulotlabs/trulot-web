@@ -1,0 +1,44 @@
+{
+  "accessoryTailored": 8207,
+  "activeChange": 15166,
+  "conflictObjects": 314288,
+  "conflictTypes": {
+    "COMMON_ADDRESS_PERMIT_AMBIGUITY": 3,
+    "COMMON_PARCEL_GEOMETRY_AMBIGUITY": 275309,
+    "LATER_CHANGE_VS_RECORDED_STATE": 30767,
+    "RECORDED_CHARACTERISTIC_CONFLICT": 7606,
+    "RECORDED_HINT_VS_PROPOSAL": 603
+  },
+  "currentnessStates": {
+    "ACTIVE_CHANGE_IN_PROGRESS": 15166,
+    "CONFLICTING_EVIDENCE": 1278,
+    "CURRENTNESS_UNKNOWN": 30643,
+    "LATER_CHANGE_OBSERVED": 68959,
+    "OBSERVATIONAL_SUPPORT_ONLY": 5214,
+    "RECORDED_STALE_POSSIBLE": 272473
+  },
+  "currentnessUnknown": 30643,
+  "denominator": 393733,
+  "dwellingStates": {
+    "CONDO": 102293,
+    "CONFLICTING": 85403,
+    "MULTIFAMILY_LIKELY": 16269,
+    "SINGLE_FAMILY_LIKELY": 153911,
+    "UNKNOWN": 35857
+  },
+  "issuedChangeIncludedInActive": 10503,
+  "laterChange": 68959,
+  "permitSupportedQuestionChanges": 85403,
+  "plainClosedAffectedParcels": 98848,
+  "plainClosedMaterialEventParcels": 14053,
+  "plainClosedRecords": 171455,
+  "preselectionReady": 170180,
+  "questionSelection": {
+    "ACTIVE_CHANGE_CURRENT_CONFIGURATION": 15166,
+    "BLANK": 35857,
+    "CONDO_CONFIRMATION": 102293,
+    "CONFLICT_CURRENT_CONFIGURATION": 1278,
+    "LATER_CHANGE_CURRENT_CONFIGURATION": 68959,
+    "RECORDED_PROPERTY_CONFIRMATION": 170180
+  }
+}

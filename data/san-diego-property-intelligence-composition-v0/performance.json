@@ -1,0 +1,12 @@
+{
+  "assessorCompressedBytes": 4470565,
+  "buildSeconds": 185.674,
+  "coldLinearLookupMs": 1736.326,
+  "compressedBytes": 10474766,
+  "lookupArchitecture": "Future private runtime should load a read-only indexed snapshot or shard by APN prefix; do not linearly scan gzip per request.",
+  "measurement": "Two bounded linear gzip scans for APN 6341302200; unsuitable for per-request serving.",
+  "peakBuilderMemoryBytes": 634640556,
+  "processMaxRssBytes": 21135360,
+  "uncompressedBytes": 562081401,
+  "warmLinearLookupMs": 1711.46
+}
