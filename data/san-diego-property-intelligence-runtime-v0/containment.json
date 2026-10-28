@@ -1,0 +1,10 @@
+{
+  "integrationSurface": "authenticated server-only loader",
+  "authorization": {"authenticatedRequired":true,"ownerOrgIdRequired":true,"anonymousPublicUse":false},
+  "cache": {"key":"runtimeVersion + APN prefix","maximumShards":8,"userSpecificState":false,"homeownerFacts":false,"crossVersionMixing":false},
+  "refreshFlow":["Packet 98 permit rebuild","Packet 99 composition rebuild","Packet 100 shard rebuild","full validation","atomic version/manifest swap"],
+  "rollback":"one-step restore of the prior manifest/artifact version; no database rollback",
+  "monitoring":["lookup_found","lookup_not_found","lookup_unavailable","manifest_failure","shard_failure","version_mismatch"],
+  "monitoringPrivacy":"metrics contain no APN, address, user, organization, or private fact values",
+  "publicParcelPageChanged":false,"indexingChanged":false,"sitemapChanged":false,"robotsChanged":false,"canonicalChanged":false,"jsonLdChanged":false,"productionDatabaseTouched":false,"packet11Frozen":true
+}

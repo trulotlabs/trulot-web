@@ -1,0 +1,12 @@
+import assert from "node:assert/strict";
+import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { join } from "node:path";
+import { PrivatePropertyIntelligenceRuntime } from "../../lib/private-property-intelligence-runtime.ts";
+const root=join(process.cwd(),"data/san-diego-property-intelligence-runtime-v0");const metrics:string[]=[];const rt=new PrivatePropertyIntelligenceRuntime(root,x=>metrics.push(x),8);const auth={authenticated:true as const,ownerOrgId:"test-org"};
+const a=await rt.lookup("6341302200",auth);assert.equal(a.status,"FOUND");if(a.status==="FOUND"){assert.equal(a.value.preliminaryDwellingState,"SINGLE_FAMILY_LIKELY");assert.equal(a.value.currentnessState,"RECORDED_STALE_POSSIBLE");assert.equal(rt.toPrivateV4(a.value).activeChange,false);}
+const b=await rt.lookup("5442140600",auth);assert.equal(b.status,"FOUND");if(b.status==="FOUND"){assert.equal(b.value.boundedAduEvidence,"FINALED");assert.equal(b.value.laterChange,true);assert.equal(b.value.questionClass,"LATER_CHANGE_CURRENT_CONFIGURATION");assert.doesNotMatch(JSON.stringify(b),/PRJ-1111087/);}
+assert.equal((await rt.lookup("0000000000",auth)).status,"NOT_FOUND");assert.equal((await rt.lookup("6341302200",{} as never)).status,"UNAVAILABLE");
+const tmp="/private/tmp/trulot-packet100-runtime";await rm(tmp,{recursive:true,force:true});await mkdir(tmp,{recursive:true});const manifest=JSON.parse(await readFile(join(root,"manifest.json"),"utf8"));manifest.compositionVersion="unsupported";await writeFile(join(tmp,"manifest.json"),JSON.stringify(manifest));assert.equal((await new PrivatePropertyIntelligenceRuntime(tmp).lookup("6341302200",auth)).status,"UNAVAILABLE");
+manifest.compositionVersion="san-diego-property-intelligence-composition-v0";await writeFile(join(tmp,"manifest.json"),JSON.stringify(manifest));assert.equal((await new PrivatePropertyIntelligenceRuntime(tmp).lookup("6341302200",auth)).status,"UNAVAILABLE");
+await mkdir(join(tmp,"shards"),{recursive:true});const meta=manifest.shards.find((x:any)=>x.prefix==="634");await cp(join(root,meta.path),join(tmp,meta.path));const corrupt=await readFile(join(tmp,meta.path));corrupt[0]^=1;await writeFile(join(tmp,meta.path),corrupt);assert.equal((await new PrivatePropertyIntelligenceRuntime(tmp).lookup("6341302200",auth)).status,"UNAVAILABLE");
+assert.ok(metrics.includes("lookup_found")&&metrics.includes("lookup_not_found"));console.log("Packet 100 TypeScript runtime adapter and fail-closed tests: PASS");

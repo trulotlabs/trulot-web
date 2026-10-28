@@ -1,0 +1,10 @@
+{
+  "decision": "APN_PREFIX_IMMUTABLE_SHARDS",
+  "options": {
+    "A_APN_PREFIX_IMMUTABLE_SHARDS": {"coldLatency":"low bounded shard inflate","warmLatency":"negligible map lookup","memory":"bounded LRU","deploymentSize":"2.9 MB","reproducibility":"high","rollback":"manifest/version swap","privacy":"private loader only","mutation":"none","score":9},
+    "B_SINGLE_INDEXED_SQLITE": {"coldLatency":"low","warmLatency":"low","memory":"low","deploymentSize":"moderate","reproducibility":"high","rollback":"file swap","privacy":"strong server-only","mutation":"none","score":8},
+    "C_READ_ONLY_SNAPSHOT_TABLE": {"coldLatency":"network-bound","warmLatency":"network-bound","memory":"low","deploymentSize":"low","reproducibility":"high","rollback":"snapshot selection","privacy":"RLS/service boundary required","mutation":"requires production load","score":5},
+    "D_IN_MEMORY_FULL_ARTIFACT": {"coldLatency":"high","warmLatency":"negligible","memory":"high","deploymentSize":"large","reproducibility":"high","rollback":"artifact swap","privacy":"server-only","mutation":"none","score":5},
+    "E_OBJECT_BLOB_LOOKUP": {"coldLatency":"network-bound","warmLatency":"cache-dependent","memory":"bounded","deploymentSize":"low","reproducibility":"high","rollback":"object version swap","privacy":"signed/private object required","mutation":"object publication","score":6}
+  }
+}

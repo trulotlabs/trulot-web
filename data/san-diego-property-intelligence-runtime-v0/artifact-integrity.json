@@ -1,0 +1,29 @@
+{
+  "files": {
+    "README.md": {
+      "bytes": 393,
+      "sha256": "68c3423a2dcaf9eddfe79c69b8e7946d1423206a2258f845570d7866a451badd"
+    },
+    "architecture.json": {
+      "bytes": 1369,
+      "sha256": "317e5fad4f3756e96a92dccc40114ec31fd08e6a1c66384e2d524d945adcf8a4"
+    },
+    "containment.json": {
+      "bytes": 994,
+      "sha256": "c7fc3a3bdda7fa6871d4c802f4792ea298af42c498213508c72e5b85dfa70d29"
+    },
+    "manifest.json": {
+      "bytes": 54982,
+      "sha256": "b7fb98f3d98173833c0fe155124ab529ecc5bb1c1521adcd8dbd85ffafa6f5d4"
+    },
+    "performance.json": {
+      "bytes": 590,
+      "sha256": "bf71cff00b9becb1e0d8c752a17e965631f7282b1c6175d725a946de97f80c2c"
+    },
+    "private-demo.json": {
+      "bytes": 7849,
+      "sha256": "8112e3a1a2672aeeed4b3f509bf8450bd556206546cbdc31523a8f8709dc3d7f"
+    }
+  },
+  "shardsCoveredByManifest": true
+}

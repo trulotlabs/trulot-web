@@ -1,0 +1,205 @@
+{
+  "privateOnly": true,
+  "rows": [
+    {
+      "accessoryStructureCandidate": false,
+      "activeChange": false,
+      "apn": "6341302200",
+      "boundedAduEvidence": "NONE",
+      "conflictTypes": [
+        "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+      ],
+      "currentnessState": "RECORDED_STALE_POSSIBLE",
+      "laterChange": false,
+      "preliminaryDwellingState": "SINGLE_FAMILY_LIKELY",
+      "provenanceClass": "COMPOSED_PROPERTY_INTELLIGENCE",
+      "publicUseClassification": "PUBLIC_BOUNDED_SUMMARY_ELIGIBLE",
+      "questionClass": "RECORDED_PROPERTY_CONFIRMATION",
+      "sourceVersionReceipt": {
+        "assessor": "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "composition": "san-diego-property-intelligence-composition-v0",
+        "permit": "CITY_SD_APPROVALS_20261028_SHA256_5b687cc9",
+        "structure": "CITY_SANDAG_BUILDING_OUTLINES_2017"
+      }
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "activeChange": false,
+      "apn": "5442140600",
+      "boundedAduEvidence": "FINALED",
+      "conflictTypes": [
+        "LATER_CHANGE_VS_RECORDED_STATE"
+      ],
+      "currentnessState": "LATER_CHANGE_OBSERVED",
+      "laterChange": true,
+      "preliminaryDwellingState": "CONFLICTING",
+      "provenanceClass": "COMPOSED_PROPERTY_INTELLIGENCE",
+      "publicUseClassification": "PUBLIC_BOUNDED_SUMMARY_ELIGIBLE",
+      "questionClass": "LATER_CHANGE_CURRENT_CONFIGURATION",
+      "sourceVersionReceipt": {
+        "assessor": "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "composition": "san-diego-property-intelligence-composition-v0",
+        "permit": "CITY_SD_APPROVALS_20261028_SHA256_5b687cc9",
+        "structure": "CITY_SANDAG_BUILDING_OUTLINES_2017"
+      }
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "activeChange": false,
+      "apn": "2410810800",
+      "boundedAduEvidence": "NONE",
+      "conflictTypes": [
+        "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "laterChange": false,
+      "preliminaryDwellingState": "UNKNOWN",
+      "provenanceClass": "COMPOSED_PROPERTY_INTELLIGENCE",
+      "publicUseClassification": "PUBLIC_BOUNDED_SUMMARY_ELIGIBLE",
+      "questionClass": "BLANK",
+      "sourceVersionReceipt": {
+        "assessor": "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "composition": "san-diego-property-intelligence-composition-v0",
+        "permit": "CITY_SD_APPROVALS_20261028_SHA256_5b687cc9",
+        "structure": "CITY_SANDAG_BUILDING_OUTLINES_2017"
+      }
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "activeChange": false,
+      "apn": "2410900900",
+      "boundedAduEvidence": "NONE",
+      "conflictTypes": [],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "laterChange": false,
+      "preliminaryDwellingState": "UNKNOWN",
+      "provenanceClass": "COMPOSED_PROPERTY_INTELLIGENCE",
+      "publicUseClassification": "PUBLIC_BOUNDED_SUMMARY_ELIGIBLE",
+      "questionClass": "BLANK",
+      "sourceVersionReceipt": {
+        "assessor": "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "composition": "san-diego-property-intelligence-composition-v0",
+        "permit": "CITY_SD_APPROVALS_20261028_SHA256_5b687cc9",
+        "structure": "CITY_SANDAG_BUILDING_OUTLINES_2017"
+      }
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "activeChange": false,
+      "apn": "2410901300",
+      "boundedAduEvidence": "NONE",
+      "conflictTypes": [],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "laterChange": false,
+      "preliminaryDwellingState": "UNKNOWN",
+      "provenanceClass": "COMPOSED_PROPERTY_INTELLIGENCE",
+      "publicUseClassification": "PUBLIC_BOUNDED_SUMMARY_ELIGIBLE",
+      "questionClass": "BLANK",
+      "sourceVersionReceipt": {
+        "assessor": "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "composition": "san-diego-property-intelligence-composition-v0",
+        "permit": "CITY_SD_APPROVALS_20261028_SHA256_5b687cc9",
+        "structure": "CITY_SANDAG_BUILDING_OUTLINES_2017"
+      }
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "activeChange": false,
+      "apn": "2410903000",
+      "boundedAduEvidence": "NONE",
+      "conflictTypes": [],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "laterChange": false,
+      "preliminaryDwellingState": "UNKNOWN",
+      "provenanceClass": "COMPOSED_PROPERTY_INTELLIGENCE",
+      "publicUseClassification": "PUBLIC_BOUNDED_SUMMARY_ELIGIBLE",
+      "questionClass": "BLANK",
+      "sourceVersionReceipt": {
+        "assessor": "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "composition": "san-diego-property-intelligence-composition-v0",
+        "permit": "CITY_SD_APPROVALS_20261028_SHA256_5b687cc9",
+        "structure": "CITY_SANDAG_BUILDING_OUTLINES_2017"
+      }
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "activeChange": false,
+      "apn": "2411003100",
+      "boundedAduEvidence": "NONE",
+      "conflictTypes": [
+        "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "laterChange": false,
+      "preliminaryDwellingState": "UNKNOWN",
+      "provenanceClass": "COMPOSED_PROPERTY_INTELLIGENCE",
+      "publicUseClassification": "PUBLIC_BOUNDED_SUMMARY_ELIGIBLE",
+      "questionClass": "BLANK",
+      "sourceVersionReceipt": {
+        "assessor": "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "composition": "san-diego-property-intelligence-composition-v0",
+        "permit": "CITY_SD_APPROVALS_20261028_SHA256_5b687cc9",
+        "structure": "CITY_SANDAG_BUILDING_OUTLINES_2017"
+      }
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "activeChange": false,
+      "apn": "2411003200",
+      "boundedAduEvidence": "NONE",
+      "conflictTypes": [],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "laterChange": false,
+      "preliminaryDwellingState": "UNKNOWN",
+      "provenanceClass": "COMPOSED_PROPERTY_INTELLIGENCE",
+      "publicUseClassification": "PUBLIC_BOUNDED_SUMMARY_ELIGIBLE",
+      "questionClass": "BLANK",
+      "sourceVersionReceipt": {
+        "assessor": "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "composition": "san-diego-property-intelligence-composition-v0",
+        "permit": "CITY_SD_APPROVALS_20261028_SHA256_5b687cc9",
+        "structure": "CITY_SANDAG_BUILDING_OUTLINES_2017"
+      }
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "activeChange": false,
+      "apn": "2411003300",
+      "boundedAduEvidence": "NONE",
+      "conflictTypes": [],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "laterChange": false,
+      "preliminaryDwellingState": "UNKNOWN",
+      "provenanceClass": "COMPOSED_PROPERTY_INTELLIGENCE",
+      "publicUseClassification": "PUBLIC_BOUNDED_SUMMARY_ELIGIBLE",
+      "questionClass": "BLANK",
+      "sourceVersionReceipt": {
+        "assessor": "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "composition": "san-diego-property-intelligence-composition-v0",
+        "permit": "CITY_SD_APPROVALS_20261028_SHA256_5b687cc9",
+        "structure": "CITY_SANDAG_BUILDING_OUTLINES_2017"
+      }
+    },
+    {
+      "accessoryStructureCandidate": false,
+      "activeChange": false,
+      "apn": "2411003400",
+      "boundedAduEvidence": "NONE",
+      "conflictTypes": [
+        "COMMON_PARCEL_GEOMETRY_AMBIGUITY"
+      ],
+      "currentnessState": "CURRENTNESS_UNKNOWN",
+      "laterChange": false,
+      "preliminaryDwellingState": "UNKNOWN",
+      "provenanceClass": "COMPOSED_PROPERTY_INTELLIGENCE",
+      "publicUseClassification": "PUBLIC_BOUNDED_SUMMARY_ELIGIBLE",
+      "questionClass": "BLANK",
+      "sourceVersionReceipt": {
+        "assessor": "SANGIS_ARCC_PARCEL_BASE_20260924",
+        "composition": "san-diego-property-intelligence-composition-v0",
+        "permit": "CITY_SD_APPROVALS_20261028_SHA256_5b687cc9",
+        "structure": "CITY_SANDAG_BUILDING_OUTLINES_2017"
+      }
+    }
+  ]
+}

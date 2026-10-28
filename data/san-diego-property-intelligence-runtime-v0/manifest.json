@@ -1,0 +1,1889 @@
+{
+  "apnFingerprint": "e247b647ecff8bb0f138e55f7e362f35c301ac591f8f1e5c5c3538ab1433a97f",
+  "artifactFingerprint": "0d442709decaff6b8e5c0906c165f1e0af1d6720b7670096bd84efe7b417a410",
+  "assessorVersion": "SANGIS_ARCC_PARCEL_BASE_20260924",
+  "buildVersion": "packet-100-v0",
+  "compositionVersion": "san-diego-property-intelligence-composition-v0",
+  "permitVersion": "CITY_SD_APPROVALS_20261028_SHA256_5b687cc9",
+  "privateOnly": true,
+  "rowCount": 393733,
+  "runtimeVersion": "sd-property-intelligence-runtime-2026-10-28-v0",
+  "schemaVersion": "private-property-intelligence-runtime-v0",
+  "shardCount": 208,
+  "shards": [
+    {
+      "bytes": 475,
+      "firstApn": "2392600700",
+      "lastApn": "2392600700",
+      "path": "shards/239.ndjson.gz",
+      "prefix": "239",
+      "rows": 1,
+      "sha256": "f2570c58fd50bd5a614927b958b242af38ec2c2bc6985502a0826e6346dd5e48"
+    },
+    {
+      "bytes": 721,
+      "firstApn": "2410601100",
+      "lastApn": "2411801200",
+      "path": "shards/241.ndjson.gz",
+      "prefix": "241",
+      "rows": 16,
+      "sha256": "310d0e6415322cbfc2226c6fc1015a56721838e5bced5d69e443593b4c3a7cb3"
+    },
+    {
+      "bytes": 666,
+      "firstApn": "2420600300",
+      "lastApn": "2421401100",
+      "path": "shards/242.ndjson.gz",
+      "prefix": "242",
+      "rows": 14,
+      "sha256": "95344c987cae345d7916ae8499fbe50c9dbe98110f602eb6c6083d16a039d9c3"
+    },
+    {
+      "bytes": 501,
+      "firstApn": "2440700300",
+      "lastApn": "2440800100",
+      "path": "shards/244.ndjson.gz",
+      "prefix": "244",
+      "rows": 5,
+      "sha256": "d1dbeae3f39cc052b444545f6e17d14667383e125e9414784134141f02a6030b"
+    },
+    {
+      "bytes": 12436,
+      "firstApn": "2671500700",
+      "lastApn": "2674724200",
+      "path": "shards/267.ndjson.gz",
+      "prefix": "267",
+      "rows": 1660,
+      "sha256": "2cfd3337e96f94ef4c3e4a6b5c2556d0ef9698e33c98af46d02d3b0153c6eb4a"
+    },
+    {
+      "bytes": 4842,
+      "firstApn": "2692100500",
+      "lastApn": "2692932200",
+      "path": "shards/269.ndjson.gz",
+      "prefix": "269",
+      "rows": 557,
+      "sha256": "50109f3a52057dd83266abb81b648b64fdf57926ec0587c33a7fe0d4010ee500"
+    },
+    {
+      "bytes": 491,
+      "firstApn": "2701700300",
+      "lastApn": "2701701100",
+      "path": "shards/270.ndjson.gz",
+      "prefix": "270",
+      "rows": 4,
+      "sha256": "e191ef3bf6c988990d6521e959689e61037d3fafe970ea2024cf77e4c2b54c32"
+    },
+    {
+      "bytes": 493,
+      "firstApn": "2710810100",
+      "lastApn": "2710810200",
+      "path": "shards/271.ndjson.gz",
+      "prefix": "271",
+      "rows": 2,
+      "sha256": "6e2657c120f7e9b2195ff9dfd89760284bb729c52aa4353e90c9202e2d31cc3b"
+    },
+    {
+      "bytes": 20848,
+      "firstApn": "2720800200",
+      "lastApn": "2728000800",
+      "path": "shards/272.ndjson.gz",
+      "prefix": "272",
+      "rows": 2968,
+      "sha256": "e8367e1c2f17cae4bd87e3134659245413e7957d2052b79b6491b918971b7586"
+    },
+    {
+      "bytes": 28552,
+      "firstApn": "2730906800",
+      "lastApn": "2739210892",
+      "path": "shards/273.ndjson.gz",
+      "prefix": "273",
+      "rows": 4239,
+      "sha256": "cded3d688b4e411f4a68c90d4409e82cda9b37fee0732e4e71d6fb15c42ed7f0"
+    },
+    {
+      "bytes": 27914,
+      "firstApn": "2741100100",
+      "lastApn": "2749300800",
+      "path": "shards/274.ndjson.gz",
+      "prefix": "274",
+      "rows": 4069,
+      "sha256": "dd4eb1e0f97bf9c051b8af8024677e1909f1ccae5415f1e958b60db960200f3e"
+    },
+    {
+      "bytes": 674,
+      "firstApn": "2760100300",
+      "lastApn": "2760710100",
+      "path": "shards/276.ndjson.gz",
+      "prefix": "276",
+      "rows": 15,
+      "sha256": "3f62f06d525864ebe752bccc70650601a686de4052479189c37628e442811b80"
+    },
+    {
+      "bytes": 2526,
+      "firstApn": "2983001500",
+      "lastApn": "2986024700",
+      "path": "shards/298.ndjson.gz",
+      "prefix": "298",
+      "rows": 263,
+      "sha256": "4164918fe7c185bae1d2edef8863343eee646dd88f4c59077473c2e29bc7231e"
+    },
+    {
+      "bytes": 797,
+      "firstApn": "2990402400",
+      "lastApn": "2993001000",
+      "path": "shards/299.ndjson.gz",
+      "prefix": "299",
+      "rows": 32,
+      "sha256": "d239ba0508111dd316f5cba9b60c9d7b443b5315ab97de9c48bda986ed4dbbc1"
+    },
+    {
+      "bytes": 10834,
+      "firstApn": "3001100100",
+      "lastApn": "3004902500",
+      "path": "shards/300.ndjson.gz",
+      "prefix": "300",
+      "rows": 1354,
+      "sha256": "c7b8fdcd15be87209a67a473e06f729de5f95d193a18c459d11050c668291ce8"
+    },
+    {
+      "bytes": 12645,
+      "firstApn": "3010500700",
+      "lastApn": "3013502900",
+      "path": "shards/301.ndjson.gz",
+      "prefix": "301",
+      "rows": 1645,
+      "sha256": "30f8262205918978c322a3601f201e822c7380671282af8cd09024eaa9bcb218"
+    },
+    {
+      "bytes": 3437,
+      "firstApn": "3020900700",
+      "lastApn": "3023102200",
+      "path": "shards/302.ndjson.gz",
+      "prefix": "302",
+      "rows": 389,
+      "sha256": "dc687145f2c3d980cf890e828c00320777d71f65f6e8f7467ca2131b207c7509"
+    },
+    {
+      "bytes": 9171,
+      "firstApn": "3030701800",
+      "lastApn": "3032402000",
+      "path": "shards/303.ndjson.gz",
+      "prefix": "303",
+      "rows": 1180,
+      "sha256": "a4757c09b8c15317cf35f99fdaf80418a30078e4fdc661291d2968591c6f5115"
+    },
+    {
+      "bytes": 41849,
+      "firstApn": "3040102800",
+      "lastApn": "3046801400",
+      "path": "shards/304.ndjson.gz",
+      "prefix": "304",
+      "rows": 6062,
+      "sha256": "1a7f3da50cf00d3afe99722b0a371d219c806cdea319a06719621b4c9f1f8bd5"
+    },
+    {
+      "bytes": 27996,
+      "firstApn": "3050105400",
+      "lastApn": "3053434900",
+      "path": "shards/305.ndjson.gz",
+      "prefix": "305",
+      "rows": 4050,
+      "sha256": "dc7933b3d0a7b1b55b8577f6e7f48f9072813a8a0115953e4e37bf7488ac87d2"
+    },
+    {
+      "bytes": 32142,
+      "firstApn": "3060101600",
+      "lastApn": "3064513900",
+      "path": "shards/306.ndjson.gz",
+      "prefix": "306",
+      "rows": 4644,
+      "sha256": "08c4539d9b33f5ed088d3ac269eaa922d7724a2801d8cfb3250c873200287159"
+    },
+    {
+      "bytes": 49088,
+      "firstApn": "3070101200",
+      "lastApn": "3077900800",
+      "path": "shards/307.ndjson.gz",
+      "prefix": "307",
+      "rows": 7224,
+      "sha256": "295f0cf48af84bfcd5aaf82a93fad87d3a53ba13592d20a47562d1e0d2bd72cd"
+    },
+    {
+      "bytes": 15997,
+      "firstApn": "3080100300",
+      "lastApn": "3082981100",
+      "path": "shards/308.ndjson.gz",
+      "prefix": "308",
+      "rows": 2167,
+      "sha256": "7342fdd41262b35023578e5cbc96ae77239fb0408ac88a7be51b68635a4a1b65"
+    },
+    {
+      "bytes": 43481,
+      "firstApn": "3090100200",
+      "lastApn": "3095810300",
+      "path": "shards/309.ndjson.gz",
+      "prefix": "309",
+      "rows": 6298,
+      "sha256": "2dded6a53b3997b8bae72ff906d49625e9154c83fff028ee842e14482f70eb86"
+    },
+    {
+      "bytes": 1618,
+      "firstApn": "3100100100",
+      "lastApn": "3101410500",
+      "path": "shards/310.ndjson.gz",
+      "prefix": "310",
+      "rows": 134,
+      "sha256": "7c379ad9194c0293d1f6884986aa63776a0c098d26b8779e6ab57c3ce6c769d4"
+    },
+    {
+      "bytes": 49323,
+      "firstApn": "3110201400",
+      "lastApn": "3116902300",
+      "path": "shards/311.ndjson.gz",
+      "prefix": "311",
+      "rows": 7180,
+      "sha256": "31866fe6f7d91edcfbc26e16799a5228b2287c0deced6e443b3aa2c4460617be"
+    },
+    {
+      "bytes": 16805,
+      "firstApn": "3120100300",
+      "lastApn": "3123224100",
+      "path": "shards/312.ndjson.gz",
+      "prefix": "312",
+      "rows": 2396,
+      "sha256": "35683bf9917fd72ed4314fb9bbc15cddd50bb4343713d46505b111b75ac5d227"
+    },
+    {
+      "bytes": 67541,
+      "firstApn": "3130100400",
+      "lastApn": "3138250800",
+      "path": "shards/313.ndjson.gz",
+      "prefix": "313",
+      "rows": 10309,
+      "sha256": "fad69bc6c7beedf917f2d6bf3f3b26b5827878ccef63e5d463680cb20ec7d18f"
+    },
+    {
+      "bytes": 45065,
+      "firstApn": "3150204000",
+      "lastApn": "3156120200",
+      "path": "shards/315.ndjson.gz",
+      "prefix": "315",
+      "rows": 6667,
+      "sha256": "b2243f898aec0e80792126fc0d1e4919d12b215f75b76247f9c47aaa75e7954a"
+    },
+    {
+      "bytes": 24089,
+      "firstApn": "3160203900",
+      "lastApn": "3164814600",
+      "path": "shards/316.ndjson.gz",
+      "prefix": "316",
+      "rows": 3536,
+      "sha256": "f25c4d56ed644bdf399a81f88faadb235e0166b4907989a41cdcfdc2cc5839b3"
+    },
+    {
+      "bytes": 36478,
+      "firstApn": "3180111500",
+      "lastApn": "3186002000",
+      "path": "shards/318.ndjson.gz",
+      "prefix": "318",
+      "rows": 5215,
+      "sha256": "24e92ee9e5d04e9b1574c041a2786b5deda6f84881656ffc8a75e3f842a25adb"
+    },
+    {
+      "bytes": 55163,
+      "firstApn": "3190200400",
+      "lastApn": "3198212700",
+      "path": "shards/319.ndjson.gz",
+      "prefix": "319",
+      "rows": 8052,
+      "sha256": "7a6f6170880360721a0d7fe3482cd75d507a7cdd137e599c039a1f8e49e1e64d"
+    },
+    {
+      "bytes": 11925,
+      "firstApn": "3200102900",
+      "lastApn": "3202802000",
+      "path": "shards/320.ndjson.gz",
+      "prefix": "320",
+      "rows": 1625,
+      "sha256": "76ef3a2ffb4abb038ee83a7ddf33846124729b81863740203e19dcfe998f94bd"
+    },
+    {
+      "bytes": 528,
+      "firstApn": "3231010200",
+      "lastApn": "3231111700",
+      "path": "shards/323.ndjson.gz",
+      "prefix": "323",
+      "rows": 12,
+      "sha256": "d69fd7b956804a640a44b5db5eca0caaf7abf97dfeea3d9791bed0f2249984d3"
+    },
+    {
+      "bytes": 5321,
+      "firstApn": "3250210700",
+      "lastApn": "3251704400",
+      "path": "shards/325.ndjson.gz",
+      "prefix": "325",
+      "rows": 687,
+      "sha256": "7dcddda9f37c868c85b03375929ee4a883ab76af619bcc7488f9a5f7f3c79fcd"
+    },
+    {
+      "bytes": 2016,
+      "firstApn": "3400102900",
+      "lastApn": "3402002600",
+      "path": "shards/340.ndjson.gz",
+      "prefix": "340",
+      "rows": 187,
+      "sha256": "eb9778775f002439a78a9dd42cdf4b067ad238ccaa4af233a269662ff0456ad3"
+    },
+    {
+      "bytes": 39517,
+      "firstApn": "3410100700",
+      "lastApn": "3415235700",
+      "path": "shards/341.ndjson.gz",
+      "prefix": "341",
+      "rows": 5771,
+      "sha256": "df9de7310f1ec91f84cc4cdda6c7ff63b124fc6ea3aeac8d04014c28361f9e6e"
+    },
+    {
+      "bytes": 1854,
+      "firstApn": "3420101800",
+      "lastApn": "3421601000",
+      "path": "shards/342.ndjson.gz",
+      "prefix": "342",
+      "rows": 144,
+      "sha256": "befea1d80444f2bbad3e9bfbb6aff2330c12ecf5886e29114b5c9f03e45356af"
+    },
+    {
+      "bytes": 8821,
+      "firstApn": "3430100400",
+      "lastApn": "3433700900",
+      "path": "shards/343.ndjson.gz",
+      "prefix": "343",
+      "rows": 1187,
+      "sha256": "28a1fba03d9230c037fe6bc31fc0f1a24cd92f9d826bd02ec8b674e364194e43"
+    },
+    {
+      "bytes": 11465,
+      "firstApn": "3440100700",
+      "lastApn": "3443203106",
+      "path": "shards/344.ndjson.gz",
+      "prefix": "344",
+      "rows": 1562,
+      "sha256": "6789b899c0f9029a987ed47ea0457372c66e80ff17fd6ed709e325c411550c51"
+    },
+    {
+      "bytes": 24202,
+      "firstApn": "3450111500",
+      "lastApn": "3452603400",
+      "path": "shards/345.ndjson.gz",
+      "prefix": "345",
+      "rows": 3778,
+      "sha256": "767e7f2c4402262cacdd1d00353b93354b0d0856897995c8e0f33430e0721e45"
+    },
+    {
+      "bytes": 28529,
+      "firstApn": "3460500100",
+      "lastApn": "3468321500",
+      "path": "shards/346.ndjson.gz",
+      "prefix": "346",
+      "rows": 3982,
+      "sha256": "8893076989fd0c614e4b6e12e90de0aa11dd40c1d34e02a88d595c1e5a91541e"
+    },
+    {
+      "bytes": 13606,
+      "firstApn": "3471303400",
+      "lastApn": "3474133300",
+      "path": "shards/347.ndjson.gz",
+      "prefix": "347",
+      "rows": 1982,
+      "sha256": "24ebae40c632fc22721a7bfffa2d1299990f91416d4dc5b73ec7972eacbf625c"
+    },
+    {
+      "bytes": 34626,
+      "firstApn": "3480105900",
+      "lastApn": "3488501300",
+      "path": "shards/348.ndjson.gz",
+      "prefix": "348",
+      "rows": 4931,
+      "sha256": "c9553e636844a82fb9222554d437e576d5fd51847dd9d7432a5493a30e379446"
+    },
+    {
+      "bytes": 584,
+      "firstApn": "3490100300",
+      "lastApn": "3490400800",
+      "path": "shards/349.ndjson.gz",
+      "prefix": "349",
+      "rows": 11,
+      "sha256": "e216dd7c78e41b767c37e49dee450e96e933caf852db430d63513ae4627b4ee3"
+    },
+    {
+      "bytes": 23508,
+      "firstApn": "3500100100",
+      "lastApn": "3508200400",
+      "path": "shards/350.ndjson.gz",
+      "prefix": "350",
+      "rows": 3142,
+      "sha256": "dbae66e22d94eeac3d2790bca9b743dd4b0bb4b186368f6f32ad6a5058fe18c2"
+    },
+    {
+      "bytes": 21528,
+      "firstApn": "3510110100",
+      "lastApn": "3517801300",
+      "path": "shards/351.ndjson.gz",
+      "prefix": "351",
+      "rows": 2672,
+      "sha256": "9884f99758aec7711aa1451603e574076c279207d02d62ab47361f510e0b1806"
+    },
+    {
+      "bytes": 10676,
+      "firstApn": "3520100200",
+      "lastApn": "3527702600",
+      "path": "shards/352.ndjson.gz",
+      "prefix": "352",
+      "rows": 1274,
+      "sha256": "c25803cf1ed6f34c38f91dcefe7b2341df691001d9b6f3e1ab34a9e07125143e"
+    },
+    {
+      "bytes": 4181,
+      "firstApn": "3530101500",
+      "lastApn": "3532803300",
+      "path": "shards/353.ndjson.gz",
+      "prefix": "353",
+      "rows": 477,
+      "sha256": "2fb600ced755ce3195694a6fe6db01e9ab34ce8a8f2c69e2865bd73047c467db"
+    },
+    {
+      "bytes": 15055,
+      "firstApn": "3550100600",
+      "lastApn": "3556605000",
+      "path": "shards/355.ndjson.gz",
+      "prefix": "355",
+      "rows": 1942,
+      "sha256": "512e95571cf0030674193037f8d88d277d2b85c87c4faf9a2bf957bfd23f12da"
+    },
+    {
+      "bytes": 6261,
+      "firstApn": "3560104000",
+      "lastApn": "3564101300",
+      "path": "shards/356.ndjson.gz",
+      "prefix": "356",
+      "rows": 763,
+      "sha256": "744f59dd9123d63c274b1c3b6b46fe6a77d79d6f3a15088e70c5bef3fafacdcf"
+    },
+    {
+      "bytes": 17337,
+      "firstApn": "3570110100",
+      "lastApn": "3577208700",
+      "path": "shards/357.ndjson.gz",
+      "prefix": "357",
+      "rows": 2129,
+      "sha256": "ef74c569cd174ab89fc13975f427f97f7ddb6c9e86b8b6b547c79bd0878c4470"
+    },
+    {
+      "bytes": 17822,
+      "firstApn": "3580100100",
+      "lastApn": "3587514800",
+      "path": "shards/358.ndjson.gz",
+      "prefix": "358",
+      "rows": 2331,
+      "sha256": "badb19dceeb033a255940400f23976275389e8fdd540751eb850053d539c9b9f"
+    },
+    {
+      "bytes": 19355,
+      "firstApn": "3590100500",
+      "lastApn": "3598202800",
+      "path": "shards/359.ndjson.gz",
+      "prefix": "359",
+      "rows": 2607,
+      "sha256": "63413a72aa50648483589c0c6f10e0cb4be1bdd83c5cefccaa44b25c31b4f0b6"
+    },
+    {
+      "bytes": 14452,
+      "firstApn": "3600110400",
+      "lastApn": "3606321400",
+      "path": "shards/360.ndjson.gz",
+      "prefix": "360",
+      "rows": 1813,
+      "sha256": "4b4eaef0e9f4a2f6a027cf9e86019acf2e6aac2b3dcce61932064d268aac90fb"
+    },
+    {
+      "bytes": 22140,
+      "firstApn": "3610120100",
+      "lastApn": "3618802100",
+      "path": "shards/361.ndjson.gz",
+      "prefix": "361",
+      "rows": 2901,
+      "sha256": "3fda792d74a3698f8886a6f9a80f2c3be7f4624a7ab4bc3646152936cc5b46f7"
+    },
+    {
+      "bytes": 8447,
+      "firstApn": "3620106900",
+      "lastApn": "3626922200",
+      "path": "shards/362.ndjson.gz",
+      "prefix": "362",
+      "rows": 1092,
+      "sha256": "a9f1b4220d8ecbffdc6efca0ffffe8298b32f043da71ed21be02ba2477f6b11f"
+    },
+    {
+      "bytes": 12275,
+      "firstApn": "3630600400",
+      "lastApn": "3633800200",
+      "path": "shards/363.ndjson.gz",
+      "prefix": "363",
+      "rows": 1673,
+      "sha256": "9e3a126d1622edc4c974e0529c6a174cfde32abd6b34561868cfa21369524642"
+    },
+    {
+      "bytes": 4878,
+      "firstApn": "3640100200",
+      "lastApn": "3641523000",
+      "path": "shards/364.ndjson.gz",
+      "prefix": "364",
+      "rows": 581,
+      "sha256": "320fd279b11eb572f98057c5dc54c33ae3f4d03b48b160bbd9065d966124f6df"
+    },
+    {
+      "bytes": 530,
+      "firstApn": "3650300200",
+      "lastApn": "3650800200",
+      "path": "shards/365.ndjson.gz",
+      "prefix": "365",
+      "rows": 5,
+      "sha256": "3891e9e5dffba7d5bbf04fe18da8e16b2f31549ecb8f0d118c8501ad47039f1c"
+    },
+    {
+      "bytes": 1575,
+      "firstApn": "3660100100",
+      "lastApn": "3660928300",
+      "path": "shards/366.ndjson.gz",
+      "prefix": "366",
+      "rows": 157,
+      "sha256": "9c6d87a035216cb032bc474d38e25a6ceb0a61712aa1e7580b21106aed251311"
+    },
+    {
+      "bytes": 527,
+      "firstApn": "3670201000",
+      "lastApn": "3670201500",
+      "path": "shards/367.ndjson.gz",
+      "prefix": "367",
+      "rows": 5,
+      "sha256": "337fb21792b31012267cb563063d871f800c03d16124b53676a9f6b17a68eee4"
+    },
+    {
+      "bytes": 547,
+      "firstApn": "3680100300",
+      "lastApn": "3680301700",
+      "path": "shards/368.ndjson.gz",
+      "prefix": "368",
+      "rows": 14,
+      "sha256": "a730fe72b3d36154cbbbdde69e14b481843d8fb8f06f9c6aa72c844106dc0b14"
+    },
+    {
+      "bytes": 8020,
+      "firstApn": "3690100300",
+      "lastApn": "3692301800",
+      "path": "shards/369.ndjson.gz",
+      "prefix": "369",
+      "rows": 1103,
+      "sha256": "038cd38bfae94ad6157b67347032d763a183fd47b329c74e2b47d413799b4600"
+    },
+    {
+      "bytes": 10514,
+      "firstApn": "3710100600",
+      "lastApn": "3712601343",
+      "path": "shards/371.ndjson.gz",
+      "prefix": "371",
+      "rows": 1405,
+      "sha256": "d082197f424fe3aaf20cec0006dad6e361d8c29b9b6049cd317762f2c8f96621"
+    },
+    {
+      "bytes": 9802,
+      "firstApn": "3720700100",
+      "lastApn": "3723001400",
+      "path": "shards/372.ndjson.gz",
+      "prefix": "372",
+      "rows": 1330,
+      "sha256": "d66304e0cc613979c1c9f4805f4dbd750eca1c8e28071b37695669af091c8cf6"
+    },
+    {
+      "bytes": 26416,
+      "firstApn": "3730300300",
+      "lastApn": "3735213220",
+      "path": "shards/373.ndjson.gz",
+      "prefix": "373",
+      "rows": 3751,
+      "sha256": "c93e0f24e4a5d08642b4a31b60676811aae5898f571cd22854dc851b066975f7"
+    },
+    {
+      "bytes": 517,
+      "firstApn": "3740100100",
+      "lastApn": "3740500300",
+      "path": "shards/374.ndjson.gz",
+      "prefix": "374",
+      "rows": 7,
+      "sha256": "4ab67a9ec500ddb3370073b14f94bcdbbe93b97db5cb2018bedba9e8de249f33"
+    },
+    {
+      "bytes": 472,
+      "firstApn": "3760100300",
+      "lastApn": "3760400200",
+      "path": "shards/376.ndjson.gz",
+      "prefix": "376",
+      "rows": 4,
+      "sha256": "0197586945bea0a31935056d2e4d842601593c3dacb417195732a84a75811ae3"
+    },
+    {
+      "bytes": 601,
+      "firstApn": "3830100400",
+      "lastApn": "3830800800",
+      "path": "shards/383.ndjson.gz",
+      "prefix": "383",
+      "rows": 13,
+      "sha256": "8c4d351bbeae9787c18e34ab3886318b9a2c17b1ef84475706fc5a8ec0ea4e9b"
+    },
+    {
+      "bytes": 29585,
+      "firstApn": "4150210100",
+      "lastApn": "4156401000",
+      "path": "shards/415.ndjson.gz",
+      "prefix": "415",
+      "rows": 3932,
+      "sha256": "bf7ed496feb7976e53e85fc45e48e5c0f257e331abdea77f227d2395273beeef"
+    },
+    {
+      "bytes": 22703,
+      "firstApn": "4160102600",
+      "lastApn": "4166802500",
+      "path": "shards/416.ndjson.gz",
+      "prefix": "416",
+      "rows": 2938,
+      "sha256": "d839dd8483c9c1274c3e25de9b47b3874d45a92167f973ea93f2ee50d573f987"
+    },
+    {
+      "bytes": 9591,
+      "firstApn": "4170101500",
+      "lastApn": "4177601844",
+      "path": "shards/417.ndjson.gz",
+      "prefix": "417",
+      "rows": 1219,
+      "sha256": "0b485e8151280586b0dc239c2841c7cc5b20559fbea1c1b2f31d1924032ebd70"
+    },
+    {
+      "bytes": 4677,
+      "firstApn": "4180210100",
+      "lastApn": "4183001500",
+      "path": "shards/418.ndjson.gz",
+      "prefix": "418",
+      "rows": 504,
+      "sha256": "64e6fa8fdecaf0321699ddc7645964bf5e0cbf924251ecac89b2644f15cac8e1"
+    },
+    {
+      "bytes": 23882,
+      "firstApn": "4190100300",
+      "lastApn": "4198702900",
+      "path": "shards/419.ndjson.gz",
+      "prefix": "419",
+      "rows": 3319,
+      "sha256": "66e80320d5096ea06f9ce0adece1c8f2c297aa1459392e1af5a1ffab0ef246f5"
+    },
+    {
+      "bytes": 17738,
+      "firstApn": "4200100100",
+      "lastApn": "4207602400",
+      "path": "shards/420.ndjson.gz",
+      "prefix": "420",
+      "rows": 2361,
+      "sha256": "e8d099e370cb028cf8a0d7536aeb189c83cc2c61b1c5243378d8ac7f7e5705c6"
+    },
+    {
+      "bytes": 9068,
+      "firstApn": "4210302200",
+      "lastApn": "4214111000",
+      "path": "shards/421.ndjson.gz",
+      "prefix": "421",
+      "rows": 1187,
+      "sha256": "d9c6ce35941afc923562b6e480a17cf85ee79b5ded0a11f8491c77d76c5896cc"
+    },
+    {
+      "bytes": 2010,
+      "firstApn": "4220202400",
+      "lastApn": "4220725200",
+      "path": "shards/422.ndjson.gz",
+      "prefix": "422",
+      "rows": 185,
+      "sha256": "37d6174c4c9d3080f6f88a94b422dfee11ff042f442dc690c5b9fad8585d4322"
+    },
+    {
+      "bytes": 41883,
+      "firstApn": "4230210400",
+      "lastApn": "4238300100",
+      "path": "shards/423.ndjson.gz",
+      "prefix": "423",
+      "rows": 5587,
+      "sha256": "7aac3f1bcd76b80392c769db49efeca5d58b1e18f0751229b8b70a0b06babbc4"
+    },
+    {
+      "bytes": 17198,
+      "firstApn": "4240110100",
+      "lastApn": "4245722100",
+      "path": "shards/424.ndjson.gz",
+      "prefix": "424",
+      "rows": 2246,
+      "sha256": "207482b1ef75d8337b6732e3c3f29d8e7ca99d14cfc5114dfe03837033253e93"
+    },
+    {
+      "bytes": 21433,
+      "firstApn": "4250110600",
+      "lastApn": "4258603100",
+      "path": "shards/425.ndjson.gz",
+      "prefix": "425",
+      "rows": 2751,
+      "sha256": "a63a35a6ed23ad284be4f6cfeab8b9cda3062443c1619425a3fdf3ae9d68dac7"
+    },
+    {
+      "bytes": 8638,
+      "firstApn": "4260100500",
+      "lastApn": "4265742500",
+      "path": "shards/426.ndjson.gz",
+      "prefix": "426",
+      "rows": 1105,
+      "sha256": "7632d725c1d3c2261e9983bb108abf147d3f76f4196cd2959778bccb57c14d32"
+    },
+    {
+      "bytes": 8811,
+      "firstApn": "4270102100",
+      "lastApn": "4275606400",
+      "path": "shards/427.ndjson.gz",
+      "prefix": "427",
+      "rows": 1109,
+      "sha256": "0a5228e3d0799dd61adc1ceac11fef2e994fa5ece6fd6ae4f7e875f4a5583789"
+    },
+    {
+      "bytes": 10830,
+      "firstApn": "4280200800",
+      "lastApn": "4285731100",
+      "path": "shards/428.ndjson.gz",
+      "prefix": "428",
+      "rows": 1418,
+      "sha256": "77d33e0b0ec8a9fb78cd4420ce189a7b8006d473b8d5c733065ecacb76675ed8"
+    },
+    {
+      "bytes": 19350,
+      "firstApn": "4290100600",
+      "lastApn": "4296604713",
+      "path": "shards/429.ndjson.gz",
+      "prefix": "429",
+      "rows": 2630,
+      "sha256": "b9c02f7425ed5f1629c9e8316a0770673619e550ee25d74aa1a4e0a83e718fed"
+    },
+    {
+      "bytes": 21045,
+      "firstApn": "4300302300",
+      "lastApn": "4309601900",
+      "path": "shards/430.ndjson.gz",
+      "prefix": "430",
+      "rows": 2652,
+      "sha256": "7e59e3699921dbdad5d6b7eea6337920be31efd90786ef7cee93673cdcdff6b1"
+    },
+    {
+      "bytes": 15015,
+      "firstApn": "4310700600",
+      "lastApn": "4317323522",
+      "path": "shards/431.ndjson.gz",
+      "prefix": "431",
+      "rows": 1849,
+      "sha256": "75bc20fea204d6dda20276aa6ae14fab2a3cef2f23b3d784cd86ad5ea36dc08b"
+    },
+    {
+      "bytes": 7319,
+      "firstApn": "4320100100",
+      "lastApn": "4325404000",
+      "path": "shards/432.ndjson.gz",
+      "prefix": "432",
+      "rows": 846,
+      "sha256": "81b808c682f554bcde23a138cdc87456054dc75c0aea6e2c66ec9da7664b8498"
+    },
+    {
+      "bytes": 9481,
+      "firstApn": "4330131600",
+      "lastApn": "4333015912",
+      "path": "shards/433.ndjson.gz",
+      "prefix": "433",
+      "rows": 1327,
+      "sha256": "a5ac105229a72e90df108e36247ade56b81a58cb75611b1743552826c28df36c"
+    },
+    {
+      "bytes": 13301,
+      "firstApn": "4340200400",
+      "lastApn": "4342001041",
+      "path": "shards/434.ndjson.gz",
+      "prefix": "434",
+      "rows": 2075,
+      "sha256": "616d988b2526efc1e9f002d1e919ca7714b12b7a68ad2662e33df5ba0308f5f1"
+    },
+    {
+      "bytes": 514,
+      "firstApn": "4354801600",
+      "lastApn": "4354801800",
+      "path": "shards/435.ndjson.gz",
+      "prefix": "435",
+      "rows": 3,
+      "sha256": "32f284ae85786391172bc68c157995ad7ac853e44af0201204426486a9ad2f34"
+    },
+    {
+      "bytes": 19015,
+      "firstApn": "4360200200",
+      "lastApn": "4367400200",
+      "path": "shards/436.ndjson.gz",
+      "prefix": "436",
+      "rows": 2543,
+      "sha256": "9075f0dd5cc5707e93aa3cb413c9f7e6f9bd36bd8031875ee510b615cf01a458"
+    },
+    {
+      "bytes": 19881,
+      "firstApn": "4370100600",
+      "lastApn": "4376720100",
+      "path": "shards/437.ndjson.gz",
+      "prefix": "437",
+      "rows": 2836,
+      "sha256": "244ac26bf3196f15ad9cce57c1b5b1896dacdeb13f64da4e2b74f84f778398e4"
+    },
+    {
+      "bytes": 20693,
+      "firstApn": "4380110100",
+      "lastApn": "4383711888",
+      "path": "shards/438.ndjson.gz",
+      "prefix": "438",
+      "rows": 2976,
+      "sha256": "edb89cedd196a21cd71031d362578b7b8afbf8b90fb3ba88bdbf96ba54efb56c"
+    },
+    {
+      "bytes": 9655,
+      "firstApn": "4390400100",
+      "lastApn": "4395500500",
+      "path": "shards/439.ndjson.gz",
+      "prefix": "439",
+      "rows": 1142,
+      "sha256": "184e0956663cdf10f44ab32037acf38641ff1cd3ce6f20711245f2212ac936de"
+    },
+    {
+      "bytes": 16672,
+      "firstApn": "4400110100",
+      "lastApn": "4407000300",
+      "path": "shards/440.ndjson.gz",
+      "prefix": "440",
+      "rows": 2019,
+      "sha256": "222a174ed534405c9d6565112d72684c337ac858d974cbc12ee8b54d0d053ac1"
+    },
+    {
+      "bytes": 12117,
+      "firstApn": "4410901900",
+      "lastApn": "4416600700",
+      "path": "shards/441.ndjson.gz",
+      "prefix": "441",
+      "rows": 1719,
+      "sha256": "f269bbc39e5802d5e7683d081d9f4b48684d60ffe55f1d90024e6f23b46c2b4c"
+    },
+    {
+      "bytes": 2488,
+      "firstApn": "4422601500",
+      "lastApn": "4427400700",
+      "path": "shards/442.ndjson.gz",
+      "prefix": "442",
+      "rows": 222,
+      "sha256": "524eb95f8e18181d6f1e867fcb90aaeb5a5f846c8c4d566f6f1bb96440bb58c2"
+    },
+    {
+      "bytes": 15456,
+      "firstApn": "4430400100",
+      "lastApn": "4438021200",
+      "path": "shards/443.ndjson.gz",
+      "prefix": "443",
+      "rows": 1945,
+      "sha256": "a8a1f2967c20c647c2db5af7b1e95aead674c973f89be30690ca00bcd018131b"
+    },
+    {
+      "bytes": 17310,
+      "firstApn": "4440200600",
+      "lastApn": "4447204700",
+      "path": "shards/444.ndjson.gz",
+      "prefix": "444",
+      "rows": 2183,
+      "sha256": "593762e34ec0d2bc616902efc9960f39f1799f5dca91b4aa3ab0f0360c45617c"
+    },
+    {
+      "bytes": 36786,
+      "firstApn": "4450110100",
+      "lastApn": "4457122800",
+      "path": "shards/445.ndjson.gz",
+      "prefix": "445",
+      "rows": 4920,
+      "sha256": "f3ceb4e85223337439cd6c1ae98605c375b150022cadc8a3d4d6f20d859d23c9"
+    },
+    {
+      "bytes": 18626,
+      "firstApn": "4460210100",
+      "lastApn": "4465130100",
+      "path": "shards/446.ndjson.gz",
+      "prefix": "446",
+      "rows": 2410,
+      "sha256": "0d78e8993ed9d88f6c4ad4c615e7bc172646a0d447067b48571db5b87460b629"
+    },
+    {
+      "bytes": 29860,
+      "firstApn": "4470100100",
+      "lastApn": "4477130800",
+      "path": "shards/447.ndjson.gz",
+      "prefix": "447",
+      "rows": 3890,
+      "sha256": "4b2938b34738cee5b27b7c710d3e6933f7deb06a06ece602eb6b63f0480e8a01"
+    },
+    {
+      "bytes": 33087,
+      "firstApn": "4480101700",
+      "lastApn": "4488000900",
+      "path": "shards/448.ndjson.gz",
+      "prefix": "448",
+      "rows": 4202,
+      "sha256": "fad8dc2e7577c4784bb5d2c8773857cf0e659024b8297f397cd98fea0f5b3705"
+    },
+    {
+      "bytes": 27141,
+      "firstApn": "4490110100",
+      "lastApn": "4498802115",
+      "path": "shards/449.ndjson.gz",
+      "prefix": "449",
+      "rows": 3669,
+      "sha256": "a9bd7f40953fc36b8ebe74771cf3de4ab1ecd547c3c30176cbc6e058ad3e9c4c"
+    },
+    {
+      "bytes": 16508,
+      "firstApn": "4500110100",
+      "lastApn": "4508423700",
+      "path": "shards/450.ndjson.gz",
+      "prefix": "450",
+      "rows": 2107,
+      "sha256": "1b0093537af814e3981667644dc8d0c8c64d7f6f0df35a655268a413c69b99fb"
+    },
+    {
+      "bytes": 20947,
+      "firstApn": "4510110100",
+      "lastApn": "4517550400",
+      "path": "shards/451.ndjson.gz",
+      "prefix": "451",
+      "rows": 2581,
+      "sha256": "d9343f1667ab45acea6501ecf8e3c035e4d1c0154f11b6d000f98ed41ea31a42"
+    },
+    {
+      "bytes": 34632,
+      "firstApn": "4520130100",
+      "lastApn": "4527180900",
+      "path": "shards/452.ndjson.gz",
+      "prefix": "452",
+      "rows": 4492,
+      "sha256": "1ca8bfd46abb9a4f254245a3a1a9f467b637d2fe133f142b106e0d02eaae2dd0"
+    },
+    {
+      "bytes": 37896,
+      "firstApn": "4530110100",
+      "lastApn": "4538351100",
+      "path": "shards/453.ndjson.gz",
+      "prefix": "453",
+      "rows": 4775,
+      "sha256": "d55cc701138568877b77b6aeb0594d19d15eea96a8f427b2f8922d0069725f23"
+    },
+    {
+      "bytes": 13977,
+      "firstApn": "4540810100",
+      "lastApn": "4547733100",
+      "path": "shards/454.ndjson.gz",
+      "prefix": "454",
+      "rows": 1727,
+      "sha256": "bd701b4ea0031354ada94b424e7e38c3a53481d2190b4b47d40c03f5cf5031a2"
+    },
+    {
+      "bytes": 8953,
+      "firstApn": "4550101400",
+      "lastApn": "4552200700",
+      "path": "shards/455.ndjson.gz",
+      "prefix": "455",
+      "rows": 1213,
+      "sha256": "a1125cab70c959ecd9c0716a93efe870add3f305226e0fc9d244b112abe8359b"
+    },
+    {
+      "bytes": 23951,
+      "firstApn": "4560110100",
+      "lastApn": "4565453200",
+      "path": "shards/456.ndjson.gz",
+      "prefix": "456",
+      "rows": 3494,
+      "sha256": "68c6a8d77fd8e566514042ac066716ff781960a6fbb643503d4022af37d8e818"
+    },
+    {
+      "bytes": 21333,
+      "firstApn": "4570410100",
+      "lastApn": "4579503600",
+      "path": "shards/457.ndjson.gz",
+      "prefix": "457",
+      "rows": 3049,
+      "sha256": "279633ef726bce03acd174d396b0f80be980660b9a3038f1a27a3cd6899d6fc8"
+    },
+    {
+      "bytes": 14464,
+      "firstApn": "4580102400",
+      "lastApn": "4587201600",
+      "path": "shards/458.ndjson.gz",
+      "prefix": "458",
+      "rows": 1862,
+      "sha256": "2854c6eac76982cf87cdbdca4639655ff6f328964bdb67b05d300e5d98268f05"
+    },
+    {
+      "bytes": 8671,
+      "firstApn": "4610210100",
+      "lastApn": "4616200900",
+      "path": "shards/461.ndjson.gz",
+      "prefix": "461",
+      "rows": 1050,
+      "sha256": "19645ab73c4e695e45ae56cac2cfb8df1237326f8260ed39e84bace14605e424"
+    },
+    {
+      "bytes": 10801,
+      "firstApn": "4620210100",
+      "lastApn": "4624402500",
+      "path": "shards/462.ndjson.gz",
+      "prefix": "462",
+      "rows": 1419,
+      "sha256": "660396c7e100f395126c7cc37ebed54899b08d80854dfa624532127abfb4d2a4"
+    },
+    {
+      "bytes": 12762,
+      "firstApn": "4630101000",
+      "lastApn": "4636132600",
+      "path": "shards/463.ndjson.gz",
+      "prefix": "463",
+      "rows": 1626,
+      "sha256": "e213402d5dc5e59efb690fd9b18863f2a6becd7986da69dc2f29c5aa0b2a7cdf"
+    },
+    {
+      "bytes": 617,
+      "firstApn": "4640100500",
+      "lastApn": "4641500600",
+      "path": "shards/464.ndjson.gz",
+      "prefix": "464",
+      "rows": 9,
+      "sha256": "0be596acfc8bb25a302024ac3ec69b32ba6cde38fac11ab65439e9cdddaf80f1"
+    },
+    {
+      "bytes": 15257,
+      "firstApn": "4650200100",
+      "lastApn": "4656548800",
+      "path": "shards/465.ndjson.gz",
+      "prefix": "465",
+      "rows": 1971,
+      "sha256": "0bb1fffa9e57cbed33167ac74d441ea243279eadc9c1bf33bd1a87fae061353f"
+    },
+    {
+      "bytes": 20663,
+      "firstApn": "4660210100",
+      "lastApn": "4669001700",
+      "path": "shards/466.ndjson.gz",
+      "prefix": "466",
+      "rows": 2686,
+      "sha256": "d5e89eda127cca29f75a99f0231d74848db5dc47187d1989aeb8d4f122984273"
+    },
+    {
+      "bytes": 14375,
+      "firstApn": "4670100100",
+      "lastApn": "4677001100",
+      "path": "shards/467.ndjson.gz",
+      "prefix": "467",
+      "rows": 1680,
+      "sha256": "8fbb31123feac2ea59965a33fe00857f15a8a66b358b43029c2fe4eeebd45e61"
+    },
+    {
+      "bytes": 10721,
+      "firstApn": "4680200100",
+      "lastApn": "4686102500",
+      "path": "shards/468.ndjson.gz",
+      "prefix": "468",
+      "rows": 1264,
+      "sha256": "0db1d64e753c48396aa2e9b167679d1b4ba9faa1d18cdaeac8c98552afc579c3"
+    },
+    {
+      "bytes": 2763,
+      "firstApn": "4690300400",
+      "lastApn": "4691703903",
+      "path": "shards/469.ndjson.gz",
+      "prefix": "469",
+      "rows": 261,
+      "sha256": "48da057a752e9a1cbf8b37227230f3a97f1d69c2c48db1e36d4fb8ad9be87024"
+    },
+    {
+      "bytes": 28661,
+      "firstApn": "4710100100",
+      "lastApn": "4718103000",
+      "path": "shards/471.ndjson.gz",
+      "prefix": "471",
+      "rows": 3723,
+      "sha256": "f53dd7bb5f73595c60af4dc07526d43e5d65d8fa9dc763c39315d90f3a9b0576"
+    },
+    {
+      "bytes": 19343,
+      "firstApn": "4720110100",
+      "lastApn": "4727400800",
+      "path": "shards/472.ndjson.gz",
+      "prefix": "472",
+      "rows": 2505,
+      "sha256": "8dcfdb5376c3846558e73345ba59bcc345f343fb2fe1eb5875b273b9e020fb55"
+    },
+    {
+      "bytes": 14054,
+      "firstApn": "4730100500",
+      "lastApn": "4736500200",
+      "path": "shards/473.ndjson.gz",
+      "prefix": "473",
+      "rows": 1780,
+      "sha256": "6d7e9ef3940b9b660d395009ef1e6060e147c808da59a28f718e6364c25a901e"
+    },
+    {
+      "bytes": 4886,
+      "firstApn": "4741300600",
+      "lastApn": "4746121000",
+      "path": "shards/474.ndjson.gz",
+      "prefix": "474",
+      "rows": 581,
+      "sha256": "8dd18756c648fc702c1bf3772ad27e8326b96a497a033aef95e57ef996f14218"
+    },
+    {
+      "bytes": 19949,
+      "firstApn": "4760110100",
+      "lastApn": "4766801700",
+      "path": "shards/476.ndjson.gz",
+      "prefix": "476",
+      "rows": 2494,
+      "sha256": "a50ab605f8f9421b2de80b0a04dd2ff09770bd3a1ca59daf25fe8f2df08a9325"
+    },
+    {
+      "bytes": 18113,
+      "firstApn": "4770101500",
+      "lastApn": "4777106400",
+      "path": "shards/477.ndjson.gz",
+      "prefix": "477",
+      "rows": 2340,
+      "sha256": "eb49c2c8bd404052281f092a70f44da072a167bbb2a6fc39ce573fabc2914a41"
+    },
+    {
+      "bytes": 6066,
+      "firstApn": "4780110100",
+      "lastApn": "4782841100",
+      "path": "shards/478.ndjson.gz",
+      "prefix": "478",
+      "rows": 742,
+      "sha256": "274226f70850583fd8ad6f7e58f1e5313390da6431f6a5008cdbcce0ffec9705"
+    },
+    {
+      "bytes": 932,
+      "firstApn": "4794010600",
+      "lastApn": "4794031100",
+      "path": "shards/479.ndjson.gz",
+      "prefix": "479",
+      "rows": 44,
+      "sha256": "cce8903e3619af43ebb06a3a383132e3423e7c7b64ca29c434d3a1ef4eb4383a"
+    },
+    {
+      "bytes": 6300,
+      "firstApn": "4850100100",
+      "lastApn": "4856302700",
+      "path": "shards/485.ndjson.gz",
+      "prefix": "485",
+      "rows": 782,
+      "sha256": "a01ac6a0fa317a5e241f6bf9e9e391d83d4943fe6f98465198a66df3b1095f67"
+    },
+    {
+      "bytes": 17648,
+      "firstApn": "5300100200",
+      "lastApn": "5307800100",
+      "path": "shards/530.ndjson.gz",
+      "prefix": "530",
+      "rows": 2194,
+      "sha256": "9acca54378c006f7f0d31c122067fc9a68afbc94648a8b4fb04875792eff2527"
+    },
+    {
+      "bytes": 18054,
+      "firstApn": "5310100100",
+      "lastApn": "5317121100",
+      "path": "shards/531.ndjson.gz",
+      "prefix": "531",
+      "rows": 2287,
+      "sha256": "9a586a937c9968d4412c2e877597a2323202d03f9ace67401a8c66799b2d47be"
+    },
+    {
+      "bytes": 10949,
+      "firstApn": "5320100100",
+      "lastApn": "5325201500",
+      "path": "shards/532.ndjson.gz",
+      "prefix": "532",
+      "rows": 1319,
+      "sha256": "f917f720e6941d0788dbfef2f1bea52e6a4411a659bfc222d5bba6bac2a2577a"
+    },
+    {
+      "bytes": 60855,
+      "firstApn": "5330110100",
+      "lastApn": "5336301000",
+      "path": "shards/533.ndjson.gz",
+      "prefix": "533",
+      "rows": 9709,
+      "sha256": "10e9e3016642b8bb276c9ff65b283f54e6ef44e08ad3275ad227c2232ba22513"
+    },
+    {
+      "bytes": 22121,
+      "firstApn": "5340111201",
+      "lastApn": "5344501100",
+      "path": "shards/534.ndjson.gz",
+      "prefix": "534",
+      "rows": 3033,
+      "sha256": "91a4f068db33c385c795e6972b8c33a91659083cbc254ae7bed9fbb993913450"
+    },
+    {
+      "bytes": 49878,
+      "firstApn": "5350410800",
+      "lastApn": "5357005431",
+      "path": "shards/535.ndjson.gz",
+      "prefix": "535",
+      "rows": 7393,
+      "sha256": "a68883fdff8a5de08ccf03ca3d66e7215badfc27b4c33b8c07885c85db687e0f"
+    },
+    {
+      "bytes": 11468,
+      "firstApn": "5380101900",
+      "lastApn": "5388400600",
+      "path": "shards/538.ndjson.gz",
+      "prefix": "538",
+      "rows": 1409,
+      "sha256": "8419eb943e27ba6ed58abfaa3ed07a1daa0b6d14a8f4a271f77ff8595073c19e"
+    },
+    {
+      "bytes": 22267,
+      "firstApn": "5390110100",
+      "lastApn": "5396021200",
+      "path": "shards/539.ndjson.gz",
+      "prefix": "539",
+      "rows": 2825,
+      "sha256": "7ab29191f4d3e050520739897803c0e813e1bcd96a829d4df035d02ca90a6439"
+    },
+    {
+      "bytes": 13079,
+      "firstApn": "5400100100",
+      "lastApn": "5407424400",
+      "path": "shards/540.ndjson.gz",
+      "prefix": "540",
+      "rows": 1662,
+      "sha256": "067f442811092b9bb5468f730567ad21a1afb19697a43f7776e9b8916b8e2e04"
+    },
+    {
+      "bytes": 12512,
+      "firstApn": "5410101200",
+      "lastApn": "5416504800",
+      "path": "shards/541.ndjson.gz",
+      "prefix": "541",
+      "rows": 1544,
+      "sha256": "155459c18fe170b8116d3fc6c132a4a24057793cea66aa38e7fa37c6f933e765"
+    },
+    {
+      "bytes": 15528,
+      "firstApn": "5420100100",
+      "lastApn": "5426900600",
+      "path": "shards/542.ndjson.gz",
+      "prefix": "542",
+      "rows": 2030,
+      "sha256": "f7e3833246366d5ac5529c2d6d732894e33a18057a064f3bb95ba9f49bc0040b"
+    },
+    {
+      "bytes": 9048,
+      "firstApn": "5430200200",
+      "lastApn": "5433661500",
+      "path": "shards/543.ndjson.gz",
+      "prefix": "543",
+      "rows": 1118,
+      "sha256": "3355da36962c7e9873e8b5992ade3c84ec584730113c9b2d418535a6907ffc27"
+    },
+    {
+      "bytes": 10573,
+      "firstApn": "5440110200",
+      "lastApn": "5442303500",
+      "path": "shards/544.ndjson.gz",
+      "prefix": "544",
+      "rows": 1268,
+      "sha256": "a352f4aa1250b7f21ecaed790faca7aff4c4d7cbae72a9ec5479a55bcdef2917"
+    },
+    {
+      "bytes": 17821,
+      "firstApn": "5450200400",
+      "lastApn": "5457021500",
+      "path": "shards/545.ndjson.gz",
+      "prefix": "545",
+      "rows": 2205,
+      "sha256": "fd52787673de6e6e8d3d8a4bcdc9870f762ed4689715c49cfffe6444d52b1f9b"
+    },
+    {
+      "bytes": 11569,
+      "firstApn": "5460300500",
+      "lastApn": "5464403200",
+      "path": "shards/546.ndjson.gz",
+      "prefix": "546",
+      "rows": 1386,
+      "sha256": "9b457d64646c305f2f5d0826f82fee4213aa0a8a35203db30a6ab30e248940d1"
+    },
+    {
+      "bytes": 10445,
+      "firstApn": "5470110100",
+      "lastApn": "5476601300",
+      "path": "shards/547.ndjson.gz",
+      "prefix": "547",
+      "rows": 1247,
+      "sha256": "669d140d8aefcf505d552e77a8405c437a1fadb6fe07219a217e3ddbbc7be2a0"
+    },
+    {
+      "bytes": 14607,
+      "firstApn": "5480100200",
+      "lastApn": "5485502600",
+      "path": "shards/548.ndjson.gz",
+      "prefix": "548",
+      "rows": 1838,
+      "sha256": "ca6ddf87c34ea6026780dfdf7784af3a5b998e6fc7e5336caaa76cf28665a0c2"
+    },
+    {
+      "bytes": 19859,
+      "firstApn": "5490210100",
+      "lastApn": "5496901500",
+      "path": "shards/549.ndjson.gz",
+      "prefix": "549",
+      "rows": 2606,
+      "sha256": "f7d0a8a442c7fef8e5fe70e254833dae2a92f5e47a447e18f89b04a8132a9bd4"
+    },
+    {
+      "bytes": 12685,
+      "firstApn": "5500110100",
+      "lastApn": "5507812400",
+      "path": "shards/550.ndjson.gz",
+      "prefix": "550",
+      "rows": 1587,
+      "sha256": "26b71673ebd45840c44f6ba4ff8b1d8d85e5b6b738cf0179ec256b5938edebb3"
+    },
+    {
+      "bytes": 14270,
+      "firstApn": "5510110100",
+      "lastApn": "5516404500",
+      "path": "shards/551.ndjson.gz",
+      "prefix": "551",
+      "rows": 1766,
+      "sha256": "7159854d07aa76f24fa751ae63b9a86b4be1806dd5c6d2255ac22929f7fb04c9"
+    },
+    {
+      "bytes": 7184,
+      "firstApn": "5520100800",
+      "lastApn": "5524602300",
+      "path": "shards/552.ndjson.gz",
+      "prefix": "552",
+      "rows": 893,
+      "sha256": "bc6ba54f40e223d9966c0daba498a62c3c0d9f15a901e1a9d21e1bd0e981fbd8"
+    },
+    {
+      "bytes": 3456,
+      "firstApn": "5530110100",
+      "lastApn": "5531301200",
+      "path": "shards/553.ndjson.gz",
+      "prefix": "553",
+      "rows": 392,
+      "sha256": "bc1dcde042fb7bdbf75807aab6baffe48bcd55b19788a8ccc8272d07c2efa59a"
+    },
+    {
+      "bytes": 2734,
+      "firstApn": "5640920200",
+      "lastApn": "5642321100",
+      "path": "shards/564.ndjson.gz",
+      "prefix": "564",
+      "rows": 283,
+      "sha256": "2431b5e126be55a80df1a08372b213b5b904ffec82c91aa9d867e11463109f08"
+    },
+    {
+      "bytes": 4522,
+      "firstApn": "5764321300",
+      "lastApn": "5767904300",
+      "path": "shards/576.ndjson.gz",
+      "prefix": "576",
+      "rows": 561,
+      "sha256": "afa36a31f61524931c38e917d5614c5c225e5da26eac834f1a390806bea7e35b"
+    },
+    {
+      "bytes": 3005,
+      "firstApn": "5772300100",
+      "lastApn": "5773914300",
+      "path": "shards/577.ndjson.gz",
+      "prefix": "577",
+      "rows": 308,
+      "sha256": "3b40b1f0f2e510d37f1fee0a7232c359cafb52c5de1c85635e07571a8a856e8b"
+    },
+    {
+      "bytes": 14984,
+      "firstApn": "5810100100",
+      "lastApn": "5816204100",
+      "path": "shards/581.ndjson.gz",
+      "prefix": "581",
+      "rows": 1976,
+      "sha256": "cb8b0a057661d42c93347df9c4d8cc057ba1b3b0b45d45c0961c56c0d38325df"
+    },
+    {
+      "bytes": 15176,
+      "firstApn": "5820232100",
+      "lastApn": "5824405300",
+      "path": "shards/582.ndjson.gz",
+      "prefix": "582",
+      "rows": 2165,
+      "sha256": "2be221412dfc7980d18d5da5c97ea7872ee9b08dc3ba572fd325b7a221fbcd5b"
+    },
+    {
+      "bytes": 15455,
+      "firstApn": "5830110100",
+      "lastApn": "5838404400",
+      "path": "shards/583.ndjson.gz",
+      "prefix": "583",
+      "rows": 2096,
+      "sha256": "1306517637d70431a7f329224ce18319b7eb42178279fd315012993d651ee860"
+    },
+    {
+      "bytes": 8629,
+      "firstApn": "5860710100",
+      "lastApn": "5863906400",
+      "path": "shards/586.ndjson.gz",
+      "prefix": "586",
+      "rows": 1129,
+      "sha256": "1a11cd8059c5605d6b5c56edf51d0121f30b8062648232c2e25b45f10f8afcf2"
+    },
+    {
+      "bytes": 13208,
+      "firstApn": "5870101200",
+      "lastApn": "5874431700",
+      "path": "shards/587.ndjson.gz",
+      "prefix": "587",
+      "rows": 1644,
+      "sha256": "8b293f26d81882e6885805f6c602bf4e36c49f5b2590c69d92c7425b0698182e"
+    },
+    {
+      "bytes": 10061,
+      "firstApn": "5880100200",
+      "lastApn": "5884703000",
+      "path": "shards/588.ndjson.gz",
+      "prefix": "588",
+      "rows": 1317,
+      "sha256": "c936f328bfed3d8b875db1eec311c615c4846285f9be49f62098ad52d14e6f7c"
+    },
+    {
+      "bytes": 22129,
+      "firstApn": "5890203100",
+      "lastApn": "5894444500",
+      "path": "shards/589.ndjson.gz",
+      "prefix": "589",
+      "rows": 3339,
+      "sha256": "c5ade0b01810074f7ba21b0572b5b1abe8c10363a7dc6d7bcef06a7a99f8b59c"
+    },
+    {
+      "bytes": 5373,
+      "firstApn": "5910110100",
+      "lastApn": "5913801900",
+      "path": "shards/591.ndjson.gz",
+      "prefix": "591",
+      "rows": 665,
+      "sha256": "323a067b5de5376eda6438b72dad54dbf543ade19c6480fd05b963305c76773d"
+    },
+    {
+      "bytes": 437,
+      "firstApn": "5950900400",
+      "lastApn": "5950900400",
+      "path": "shards/595.ndjson.gz",
+      "prefix": "595",
+      "rows": 1,
+      "sha256": "596a0c475938110e6cc5da2d629baba77627ceda8cfc87ef8d0aba32e8c885f9"
+    },
+    {
+      "bytes": 437,
+      "firstApn": "6030800600",
+      "lastApn": "6030800600",
+      "path": "shards/603.ndjson.gz",
+      "prefix": "603",
+      "rows": 1,
+      "sha256": "8a0e2240e5e3117bca0ade25db2d9b7e46328057f93aef6b2e52b2b62b8539b9"
+    },
+    {
+      "bytes": 1103,
+      "firstApn": "6160100100",
+      "lastApn": "6160211200",
+      "path": "shards/616.ndjson.gz",
+      "prefix": "616",
+      "rows": 69,
+      "sha256": "fbd2db162bdb6cb00e22e2a3079f36505a4f3108e0c5c2b7ca3f4a574764a750"
+    },
+    {
+      "bytes": 690,
+      "firstApn": "6210100200",
+      "lastApn": "6210302600",
+      "path": "shards/621.ndjson.gz",
+      "prefix": "621",
+      "rows": 18,
+      "sha256": "63c106c1b6541ffd66c1b42d7c1df1156000db283984541d80e2171f1216d98b"
+    },
+    {
+      "bytes": 1013,
+      "firstApn": "6221010100",
+      "lastApn": "6221820100",
+      "path": "shards/622.ndjson.gz",
+      "prefix": "622",
+      "rows": 53,
+      "sha256": "3b9f0f1feefb50e2294f2cc7346371bd7bffa1345a0dd67ec7004905fcfd3112"
+    },
+    {
+      "bytes": 603,
+      "firstApn": "6240700100",
+      "lastApn": "6240710500",
+      "path": "shards/624.ndjson.gz",
+      "prefix": "624",
+      "rows": 6,
+      "sha256": "d551ee3afe9e10df3d80b3af0d11bbd832ab0a72112efe96e882befb89054df1"
+    },
+    {
+      "bytes": 436,
+      "firstApn": "6260600700",
+      "lastApn": "6260600700",
+      "path": "shards/626.ndjson.gz",
+      "prefix": "626",
+      "rows": 1,
+      "sha256": "74e345defcde716fe27e5d6ec20b79525a9e2eed4fde880739c9ebd716d41397"
+    },
+    {
+      "bytes": 9721,
+      "firstApn": "6270210400",
+      "lastApn": "6273304800",
+      "path": "shards/627.ndjson.gz",
+      "prefix": "627",
+      "rows": 1205,
+      "sha256": "2597e079b973dcdfa74651e0810955536582d61be0774004977e44d590fae88c"
+    },
+    {
+      "bytes": 5535,
+      "firstApn": "6280100100",
+      "lastApn": "6282104600",
+      "path": "shards/628.ndjson.gz",
+      "prefix": "628",
+      "rows": 650,
+      "sha256": "13f9a75148c0f87179b1b8ab7c950fbaa03c875165d0874581717b853f14abc1"
+    },
+    {
+      "bytes": 7662,
+      "firstApn": "6290700100",
+      "lastApn": "6293026600",
+      "path": "shards/629.ndjson.gz",
+      "prefix": "629",
+      "rows": 1002,
+      "sha256": "091d13eeb439fafb2a6dc2284a9ea4c5a210890feec8e03cbe8ea34d4dcc542e"
+    },
+    {
+      "bytes": 23819,
+      "firstApn": "6300101700",
+      "lastApn": "6304406300",
+      "path": "shards/630.ndjson.gz",
+      "prefix": "630",
+      "rows": 3407,
+      "sha256": "e1a8f4b40c88fe4ea8da06f1af01b39034e781d5ed8f1e0ca1b12e412bbc88fe"
+    },
+    {
+      "bytes": 17500,
+      "firstApn": "6310133300",
+      "lastApn": "6313103000",
+      "path": "shards/631.ndjson.gz",
+      "prefix": "631",
+      "rows": 2443,
+      "sha256": "b890540718cad022e2c31f0d5fcb47678eed6c6d4e7f0c820fd8258b42004471"
+    },
+    {
+      "bytes": 7824,
+      "firstApn": "6330510100",
+      "lastApn": "6333905800",
+      "path": "shards/633.ndjson.gz",
+      "prefix": "633",
+      "rows": 1047,
+      "sha256": "81573811933e81ed155f187332a1cbb4187db13edc8d7a8712cc8533dc714828"
+    },
+    {
+      "bytes": 10872,
+      "firstApn": "6340100900",
+      "lastApn": "6342023000",
+      "path": "shards/634.ndjson.gz",
+      "prefix": "634",
+      "rows": 1458,
+      "sha256": "84d0d060a7df907168d01f45c5eadde04210bddacc4fd5d0345bf36d9404312b"
+    },
+    {
+      "bytes": 3253,
+      "firstApn": "6360100200",
+      "lastApn": "6360560800",
+      "path": "shards/636.ndjson.gz",
+      "prefix": "636",
+      "rows": 381,
+      "sha256": "3f2f27763ad231c2e1ffd7a8d49ce449ff528b0c4418b293eba1046ddbe1442c"
+    },
+    {
+      "bytes": 14848,
+      "firstApn": "6370100400",
+      "lastApn": "6372002100",
+      "path": "shards/637.ndjson.gz",
+      "prefix": "637",
+      "rows": 2063,
+      "sha256": "02bffdbef55def3c04c27bc826e2e4cb345e81f7b9ca71c91268f975a3936c0e"
+    },
+    {
+      "bytes": 13118,
+      "firstApn": "6380100700",
+      "lastApn": "6383300200",
+      "path": "shards/638.ndjson.gz",
+      "prefix": "638",
+      "rows": 1722,
+      "sha256": "6c46c06eb000360ab65a1e66e250becf76e99cf145d81cbc8f72c365f0ed1d14"
+    },
+    {
+      "bytes": 500,
+      "firstApn": "6440800300",
+      "lastApn": "6441002000",
+      "path": "shards/644.ndjson.gz",
+      "prefix": "644",
+      "rows": 3,
+      "sha256": "7cd1be80012f8a715af47efb6558bfaad5fcff7959998ed19fdf10899b95f81f"
+    },
+    {
+      "bytes": 31797,
+      "firstApn": "6450100800",
+      "lastApn": "6454101500",
+      "path": "shards/645.ndjson.gz",
+      "prefix": "645",
+      "rows": 4673,
+      "sha256": "f7a6b26c4bf321145d139eb510fc3c0f8368030ff07d486b281838f066b024a6"
+    },
+    {
+      "bytes": 8653,
+      "firstApn": "6460200900",
+      "lastApn": "6463001400",
+      "path": "shards/646.ndjson.gz",
+      "prefix": "646",
+      "rows": 1147,
+      "sha256": "5aefed9017a81f0bd1ea0efb382eddcf0d042960a61f3c948cebfd8165d77d81"
+    },
+    {
+      "bytes": 437,
+      "firstApn": "6471300100",
+      "lastApn": "6471300100",
+      "path": "shards/647.ndjson.gz",
+      "prefix": "647",
+      "rows": 1,
+      "sha256": "fdbd0a70a4f256a684a0e6f5fde9d204544ce7be9fbac20bb2d6fe7024cd6196"
+    },
+    {
+      "bytes": 597,
+      "firstApn": "6620200100",
+      "lastApn": "6620202600",
+      "path": "shards/662.ndjson.gz",
+      "prefix": "662",
+      "rows": 18,
+      "sha256": "edc8ee35941862e17adba7cae63916a4b7aa1520d48d0614c7010f09f41f03e4"
+    },
+    {
+      "bytes": 884,
+      "firstApn": "6630101100",
+      "lastApn": "6630300800",
+      "path": "shards/663.ndjson.gz",
+      "prefix": "663",
+      "rows": 37,
+      "sha256": "32000a25f4696c1ef93c2dfb98d7e52e1c73a44e71b69fb9d26eb14cd18ed2ec"
+    },
+    {
+      "bytes": 935,
+      "firstApn": "6640101300",
+      "lastApn": "6640200500",
+      "path": "shards/664.ndjson.gz",
+      "prefix": "664",
+      "rows": 42,
+      "sha256": "76f335f1c64872f2893ab8bafac6c74563dc0fe247e99ab70838f72fa9cab5ba"
+    },
+    {
+      "bytes": 4638,
+      "firstApn": "6650100100",
+      "lastApn": "6650905500",
+      "path": "shards/665.ndjson.gz",
+      "prefix": "665",
+      "rows": 548,
+      "sha256": "5cf4de860eae5b7ba3af827d2d4fc27a5050f80a7b4412f52ba7c2f271b202ee"
+    },
+    {
+      "bytes": 4151,
+      "firstApn": "6660100100",
+      "lastApn": "6664011400",
+      "path": "shards/666.ndjson.gz",
+      "prefix": "666",
+      "rows": 436,
+      "sha256": "5ac474fe89d9360780c450c395afa670d6000f932a6e50fabf1251b5205c7d4c"
+    },
+    {
+      "bytes": 2144,
+      "firstApn": "6670100600",
+      "lastApn": "6670809400",
+      "path": "shards/667.ndjson.gz",
+      "prefix": "667",
+      "rows": 208,
+      "sha256": "c6cce262d21e325da4ec1f806c4a038c07f59f3d5a7c48394b1bbb91010b21bf"
+    },
+    {
+      "bytes": 9130,
+      "firstApn": "6690100300",
+      "lastApn": "6693836600",
+      "path": "shards/669.ndjson.gz",
+      "prefix": "669",
+      "rows": 1246,
+      "sha256": "dc57c229042b407ebcabdf523c5ad82e6d1177e4cfc0f33ddbcc37f5ce145567"
+    },
+    {
+      "bytes": 10366,
+      "firstApn": "6700100300",
+      "lastApn": "6706820900",
+      "path": "shards/670.ndjson.gz",
+      "prefix": "670",
+      "rows": 1314,
+      "sha256": "0b5b4037c9330e245f9881e4e6279158b1c7700ce124579dc1b9855278256614"
+    },
+    {
+      "bytes": 8652,
+      "firstApn": "6710102300",
+      "lastApn": "6714602800",
+      "path": "shards/671.ndjson.gz",
+      "prefix": "671",
+      "rows": 1093,
+      "sha256": "660fd5d9fb0560d1aae0a55098afdf50a75754d9b173f59b60a49cee0fc5eb84"
+    },
+    {
+      "bytes": 12778,
+      "firstApn": "6720100200",
+      "lastApn": "6725004200",
+      "path": "shards/672.ndjson.gz",
+      "prefix": "672",
+      "rows": 1644,
+      "sha256": "59e4f5fbc0aad5277ecaea0701c6c6acc893e1e973b7af98a4fa86c41f0efc81"
+    },
+    {
+      "bytes": 8803,
+      "firstApn": "6730101900",
+      "lastApn": "6734712900",
+      "path": "shards/673.ndjson.gz",
+      "prefix": "673",
+      "rows": 1153,
+      "sha256": "cc7572ab0acd3422aa4540ffc2047e57a00eb3e08ad917bfc7c44a596199cdbd"
+    },
+    {
+      "bytes": 12123,
+      "firstApn": "6740100100",
+      "lastApn": "6745400432",
+      "path": "shards/674.ndjson.gz",
+      "prefix": "674",
+      "rows": 1674,
+      "sha256": "b64ea7b57e5bcdc1174161149fe9364d8cbefde5a35e13207d6adacfc2a632fb"
+    },
+    {
+      "bytes": 8959,
+      "firstApn": "6751200100",
+      "lastApn": "6754904000",
+      "path": "shards/675.ndjson.gz",
+      "prefix": "675",
+      "rows": 1188,
+      "sha256": "c16aad088aa919f5872d3a75a37370e7894c479e18c9b46f9d47d2f531b481b3"
+    },
+    {
+      "bytes": 10705,
+      "firstApn": "6760100100",
+      "lastApn": "6763402000",
+      "path": "shards/676.ndjson.gz",
+      "prefix": "676",
+      "rows": 1426,
+      "sha256": "bf3029415686699ab1018b95070bdc57420e77db50f361d05976b2469f2e99f0"
+    },
+    {
+      "bytes": 15236,
+      "firstApn": "6770100200",
+      "lastApn": "6774404700",
+      "path": "shards/677.ndjson.gz",
+      "prefix": "677",
+      "rows": 2096,
+      "sha256": "eec0d1360734b8f8883aa4b65417a37030746873ed204bb9cbd6df9671889ebb"
+    },
+    {
+      "bytes": 20846,
+      "firstApn": "6780100500",
+      "lastApn": "6787010300",
+      "path": "shards/678.ndjson.gz",
+      "prefix": "678",
+      "rows": 2992,
+      "sha256": "868a4ef33d0c91b18b0f5ca680ba34b9908e2d922c959c7d54f2e310f9fe4b8d"
+    },
+    {
+      "bytes": 13245,
+      "firstApn": "7600010001",
+      "lastApn": "7609502500",
+      "path": "shards/760.ndjson.gz",
+      "prefix": "760",
+      "rows": 1867,
+      "sha256": "a89b4ee81d5a94a68c73aa977976ad728ebdc4a8000ddd79970bd413e665fe96"
+    },
+    {
+      "bytes": 508,
+      "firstApn": "7724108102",
+      "lastApn": "7727603101",
+      "path": "shards/772.ndjson.gz",
+      "prefix": "772",
+      "rows": 5,
+      "sha256": "6153b6e7345ffb47dfe959c149dd00b91751286d7163d63e6ce67b67718dd199"
+    },
+    {
+      "bytes": 4081,
+      "firstApn": "7731011001",
+      "lastApn": "7735601743",
+      "path": "shards/773.ndjson.gz",
+      "prefix": "773",
+      "rows": 637,
+      "sha256": "1bd7dae00293f0de8d7f02aa1b6f0c25c65e9437db58f36dbf2313cd6cb3017b"
+    },
+    {
+      "bytes": 3996,
+      "firstApn": "7742446403",
+      "lastApn": "7745828689",
+      "path": "shards/774.ndjson.gz",
+      "prefix": "774",
+      "rows": 639,
+      "sha256": "2f687ca3eec58b3dc5fb4acae56056f295aeaccfbc673c9963ccd15253c06fe4"
+    },
+    {
+      "bytes": 6953,
+      "firstApn": "7754112201",
+      "lastApn": "7756417383",
+      "path": "shards/775.ndjson.gz",
+      "prefix": "775",
+      "rows": 1169,
+      "sha256": "f7814f6dac90404ebe46187d8ede5211f8842356f263ad73b2813ee113e0c945"
+    },
+    {
+      "bytes": 11868,
+      "firstApn": "7762702101",
+      "lastApn": "7766638159",
+      "path": "shards/776.ndjson.gz",
+      "prefix": "776",
+      "rows": 2183,
+      "sha256": "a6bdae38119f6e91e9ee1d751dc0e5a701c6e2ce40c4a2480a6d78eec2e3eb41"
+    }
+  ],
+  "structureVersion": "CITY_SANDAG_BUILDING_OUTLINES_2017",
+  "uniqueApns": 393733
+}
