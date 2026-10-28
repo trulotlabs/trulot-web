@@ -1,0 +1,12 @@
+{
+  "files": {
+    "README.md": "1fb1cfb36812e0ae0a155ca230b095773785dc57cf95d942f83ff2fb091e8036",
+    "expansion-options.json": "94a22e02f56bc2dbad521c1d4efc8004b7f427b93718a9a49cb6099ba7f233bb",
+    "launch-health-sample.json": "ea35f0dff0788534f3d1af0d77d11609ba1505f5e80d05c90dec8518cd1e99b9",
+    "next-45000-candidates.ndjson.gz": "dd84137a784f6cc0c358f672967f16bd64152ab20f74e7682f8f75954a9fd991",
+    "non-cohort-controls.json": "fccc7f530f47459a150fd7227ad1f91a5e2ad04261e4161650113161093d9c9c",
+    "observation.json": "ab857590b0ccbb480b7a2fc57f7530de77adeb35922c0f1b53456198cc3f3cf1"
+  },
+  "schemaVersion": 1,
+  "sensitiveMaterialScan": "PASS"
+}

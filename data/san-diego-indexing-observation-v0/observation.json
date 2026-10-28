@@ -1,0 +1,147 @@
+{
+  "baseline": {
+    "commit": "b5d444b41e790672079f62bc7f28817ea3cce504",
+    "deployment": "dpl_DcoZSpiiCt2wAZGGnrniKEymTJJi",
+    "deploymentState": "READY",
+    "laMesaIndexing": "OFF",
+    "packet11": "FROZEN",
+    "productionDatabase": "UNTOUCHED",
+    "sanDiegoIndexingRows": 5000,
+    "snapshot": "ON",
+    "tree": "24df4203b346c4f5006940dc3ce7aa414e0b3ceb"
+  },
+  "containment": {
+    "controlCount": 50,
+    "controlPass": 50,
+    "drift": false,
+    "launchCount": 50,
+    "launchPass": 50,
+    "routeControls": [
+      {
+        "pass": true,
+        "path": "/parcel/la-mesa/470-540-24-00",
+        "robots": "noindex",
+        "status": 404
+      },
+      {
+        "pass": true,
+        "path": "/parcel-lookup",
+        "robots": "noindex",
+        "status": 404
+      },
+      {
+        "pass": true,
+        "path": "/parcel-lookup-preview",
+        "robots": "noindex",
+        "status": 404
+      },
+      {
+        "pass": true,
+        "path": "/parcel-public-preview/6341302200",
+        "robots": "noindex",
+        "status": 404
+      },
+      {
+        "pass": true,
+        "path": "/parcel-v2-preview/6341302200",
+        "robots": "noindex",
+        "status": 404
+      },
+      {
+        "pass": true,
+        "path": "/parcel-v2-evidence/6341302200",
+        "robots": "noindex",
+        "status": 404
+      }
+    ]
+  },
+  "decision": "SAN_DIEGO_INDEXING_OBSERVATION_HEALTHY_HOLD_5000",
+  "launchReceipt": {
+    "apnFingerprint": "aeb9aa7f53b5b11da1f515672d1923f3043c18466194cd3e4408b7de0f1a9ff7",
+    "canonicalUrlFingerprint": "a62f6b9848119e261bf3bcac48e1fd40032f1f895ca200be775cb0c4184562b0",
+    "cohortVersion": "sd-phase-a-5000-2026-10-27-v0",
+    "drift": false,
+    "rowCount": 5000,
+    "sha256": "e6c68c486cf4210af0a5c1b537c00cf452b2343a1dc0e72512cf404babed94f1"
+  },
+  "nextStep": "CONTINUE_INDEXING_OBSERVATION",
+  "observedAt": "2026-10-28T03:30:47.742Z",
+  "performance": {
+    "interpretation": "The eight-request probe is a bounded stress-like observation and is not comparable to Packet 96 serial warm rounds. Packet 96 warm round 2 remained median 608 ms, p95 1769 ms, maximum 2057 ms, above3s 0, above5s 0.",
+    "parallelBoundedProbe": {
+      "above3s": 12,
+      "above5s": 1,
+      "count": 50,
+      "maxMs": 9614.35625,
+      "medianMs": 1268.5454170000012,
+      "minMs": 442.1127919999999,
+      "p95Ms": 4329.141792
+    },
+    "runtimeErrorsLastHour": 0
+  },
+  "reason": "Application, sitemap, canonical, privacy, and containment checks pass, but Search Console and attributable crawler evidence are unavailable too soon after launch. Expansion remains prepared but unauthorized.",
+  "rollback": {
+    "commit": "6de03ba64184b12e886b9c77cd701d95cce08bc0",
+    "deployment": "dpl_9ezgZwyrwzE75zrWbFN4GW2ePcVd",
+    "executed": false,
+    "state": "READY"
+  },
+  "runtimeSignals": {
+    "availableWindow": "30m on current plan",
+    "canonicalMismatch": 2,
+    "canonicalMismatchEvents": [
+      {
+        "classification": "alternate slug",
+        "path": "/parcel/san-diego/544-215-02-00-apn-544-215-02-00",
+        "redirected": true
+      },
+      {
+        "classification": "alternate slug",
+        "path": "/parcel/san-diego/549-101-01-00-745-65th-st",
+        "redirected": true
+      }
+    ],
+    "canonicalMismatchAttribution": "Attribution is unavailable. Both were alternate-slug requests that redirected; neither path was in the completed 100-page sample, which had exact final canonical parity. The available logs do not identify whether the requests were crawler, user, or monitoring traffic.",
+    "crawlerAttribution": "NOT_SUPPORTED",
+    "crawlerIdentityAvailable": false,
+    "privacyFilterFailure": 0,
+    "secondaryCrawlerAttribution": "NOT_SUPPORTED",
+    "secondaryWorkObserved": true,
+    "serializerExclusion": 0,
+    "snapshotUnavailable": 0
+  },
+  "schemaVersion": 1,
+  "searchConsole": {
+    "authorizedConnectedSource": false,
+    "canonicalSelection": null,
+    "googleIndexCounts": null,
+    "searchPerformance": null,
+    "sitemapDiscovery": null,
+    "state": "SEARCH_CONSOLE_UNAVAILABLE"
+  },
+  "sitemap": {
+    "allUrls": 5001,
+    "duplicates": 0,
+    "exact": true,
+    "invalid": 0,
+    "lastmods": [
+      "2026-10-28T02:46:44.068Z",
+      "2026-09-24"
+    ],
+    "parcelUrls": 5000,
+    "status": 200
+  },
+  "sourceCurrentness": {
+    "explicitSampleText": [
+      "Data status \u00b7 SDA verification pending \u00b7 stale parcel source \u00b7 some sources unavailable",
+      "Parcel view last rebuilt Apr 19, 2026",
+      "Mapped base zone",
+      "Recorded fact",
+      "Eligibility not yet evaluated"
+    ],
+    "historicalOrRecordedLanguageSamplePass": 50,
+    "mappedLanguageSamplePass": 50,
+    "programEligibilityCreep": false,
+    "restrictedPropertyIntelligenceFound": false
+  }
+}
