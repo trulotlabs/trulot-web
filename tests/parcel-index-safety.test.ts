@@ -56,7 +56,7 @@ test("canonical URLs are production-only, APN-bearing, and jurisdiction-specific
 test("closed index-state and HTTP contracts map deterministically", () => {
   assert.equal(effectiveParcelIndexState("SAN_DIEGO", "INDEXABLE"), "NOINDEX_TEMPORARY");
   assert.equal(effectiveParcelIndexState("LA_MESA", "INDEXABLE"), "NOINDEX_TEMPORARY");
-  assert.deepEqual(parcelRobotsFor("INDEXABLE"), { index: true, follow: true });
+  assert.deepEqual(parcelRobotsFor("INDEXABLE"), { index: true, follow: true, noarchive: true });
   assert.deepEqual(parcelRobotsFor("NOINDEX_TEMPORARY"), { index: false, follow: true, noarchive: true });
   assert.deepEqual(parcelRobotsFor("NOINDEX_PRIVATE"), { index: false, follow: false, noarchive: true, nosnippet: true });
   assert.equal(parcelHttpBehavior("NOT_FOUND"), "NOT_FOUND_404");

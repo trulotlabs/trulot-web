@@ -5,6 +5,7 @@ import {
   type ParcelJurisdictionSlug,
 } from "./parcel-slug";
 import { canonicalParcelIdentity, type CanonicalParcelIdentity } from "./parcel-identity";
+import { isSanDiegoPhaseALaunchMember } from "./san-diego-phase-a-membership";
 
 export const TRULOT_PRODUCTION_ORIGIN = "https://trulot.com" as const;
 
@@ -18,8 +19,8 @@ export type ParcelIndexState =
   | "OUTSIDE_SCOPE";
 
 export const PARCEL_INDEX_CONTROL = Object.freeze({
-  killSwitch: true,
-  activation: Object.freeze({ SAN_DIEGO: false, LA_MESA: false }),
+  killSwitch: false,
+  activation: Object.freeze({ SAN_DIEGO: true, LA_MESA: false }),
 });
 
 export function sanDiegoIndexingRequested(env: Readonly<Record<string, string | undefined>> = process.env): boolean {
@@ -117,12 +118,18 @@ export function effectiveParcelIndexState(
   jurisdiction: ParcelJurisdiction,
   requested: ParcelIndexState,
   env: Readonly<Record<string, string | undefined>> = process.env,
+  apn?: string,
 ): ParcelIndexState {
   if (requested !== "INDEXABLE") return requested;
   if (
     PARCEL_INDEX_CONTROL.killSwitch
     || !PARCEL_INDEX_CONTROL.activation[jurisdiction]
-    || (jurisdiction === "SAN_DIEGO" && !sanDiegoIndexingRequested(env))
+    || (jurisdiction === "SAN_DIEGO" && (
+      !sanDiegoIndexingRequested(env)
+      || env.TRULOT_SD_PUBLIC_ZONING_SNAPSHOT !== "1"
+      || !apn
+      || !isSanDiegoPhaseALaunchMember(apn)
+    ))
   ) {
     return "NOINDEX_TEMPORARY";
   }
@@ -130,7 +137,7 @@ export function effectiveParcelIndexState(
 }
 
 export function parcelRobotsFor(state: ParcelIndexState): NonNullable<Metadata["robots"]> {
-  if (state === "INDEXABLE") return { index: true, follow: true };
+  if (state === "INDEXABLE") return { index: true, follow: true, noarchive: true };
   if (state === "NOINDEX_PRIVATE") {
     return { index: false, follow: false, noarchive: true, nosnippet: true };
   }
@@ -243,6 +250,7 @@ export type ParcelIndexMetricName =
   | "route_404"
   | "source_unavailable"
   | "noindex"
+  | "indexable"
   | "canonical_mismatch"
   | "sitemap_count"
   | "serializer_exclusion"

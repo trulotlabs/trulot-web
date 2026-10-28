@@ -364,12 +364,15 @@ export async function generateMetadata({
     },
     baseZoning: { value: publicSnapshot?.selectedZone ?? null, rights: "PUBLIC_REDISPLAY_OK" },
   });
+  const launchSnapshotSafe = snapshotEnabled
+    && publicSnapshot?.zoningState === "SINGLE_ZONE"
+    && publicSnapshot.coastalState !== "BOUNDARY_AMBIGUOUS";
   return parcelMetadata({
     payload,
     jurisdiction: "SAN_DIEGO",
-    state: snapshotEnabled && !publicSnapshot
-      ? "NOINDEX_TEMPORARY"
-      : effectiveParcelIndexState("SAN_DIEGO", "INDEXABLE"),
+    state: launchSnapshotSafe
+      ? effectiveParcelIndexState("SAN_DIEGO", "INDEXABLE", process.env, apn)
+      : "NOINDEX_TEMPORARY",
     canonicalIdentity: identityResult.identity,
   });
   } finally {
@@ -438,8 +441,21 @@ export default async function ParcelPage({
     address: { value: publicAddress, rights: "PUBLIC_REDISPLAY_OK" },
     jurisdiction: { value: "City of San Diego", rights: "PUBLIC_REDISPLAY_OK" },
   });
+  const launchSnapshot = sanDiegoPublicZoningSnapshotEnabled()
+    ? getSanDiegoPublicZoning(apn)
+    : null;
+  const launchSnapshotSafe = launchSnapshot?.state === "found"
+    && launchSnapshot.zoning.zoningState === "SINGLE_ZONE"
+    && launchSnapshot.zoning.coastalState !== "BOUNDARY_AMBIGUOUS";
+  const routeIndexState = launchSnapshotSafe
+    ? effectiveParcelIndexState("SAN_DIEGO", "INDEXABLE", process.env, apn)
+    : "NOINDEX_TEMPORARY";
   emitParcelIndexMetric(undefined, { name: "route_2xx", jurisdiction: "SAN_DIEGO", value: 1 });
-  emitParcelIndexMetric(undefined, { name: "noindex", jurisdiction: "SAN_DIEGO", value: 1 });
+  emitParcelIndexMetric(undefined, {
+    name: routeIndexState === "INDEXABLE" ? "indexable" : "noindex",
+    jurisdiction: "SAN_DIEGO",
+    value: 1,
+  });
   if (excludedFields.length) {
     emitParcelIndexMetric(undefined, { name: "serializer_exclusion", jurisdiction: "SAN_DIEGO", value: excludedFields.length });
   }

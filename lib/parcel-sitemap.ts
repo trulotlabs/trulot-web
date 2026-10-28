@@ -1,4 +1,5 @@
 import { canonicalParcelUrl, emitParcelIndexMetric, PARCEL_INDEX_CONTROL, type ParcelJurisdiction } from "./parcel-indexing";
+import { sanDiegoPhaseALaunchEntries } from "./san-diego-phase-a-launch";
 
 export const PARCEL_SITEMAP_SHARD_SIZE = 25_000;
 export const FUTURE_COHORT_MAXIMUM = Object.freeze({
@@ -64,11 +65,17 @@ export function buildParcelSitemapIndex(
 }
 
 export function activeParcelSitemapEntries(): Array<{ url: string; lastModified: string }> {
-  const entries = [
-    ...buildParcelSitemapIndex("SAN_DIEGO", []),
-    ...buildParcelSitemapIndex("LA_MESA", []),
-  ];
-  emitParcelIndexMetric(undefined, { name: "sitemap_count", jurisdiction: "SAN_DIEGO", value: 0 });
+  const sanDiegoActive = !PARCEL_INDEX_CONTROL.killSwitch
+    && PARCEL_INDEX_CONTROL.activation.SAN_DIEGO
+    && process.env.TRULOT_SD_INDEXING === "1"
+    && process.env.TRULOT_SD_PUBLIC_ZONING_SNAPSHOT === "1";
+  const entries = sanDiegoActive
+    ? sanDiegoPhaseALaunchEntries().map((entry) => ({
+        url: entry.canonicalUrl,
+        lastModified: entry.lastmod,
+      }))
+    : [];
+  emitParcelIndexMetric(undefined, { name: "sitemap_count", jurisdiction: "SAN_DIEGO", value: entries.length });
   emitParcelIndexMetric(undefined, { name: "sitemap_count", jurisdiction: "LA_MESA", value: 0 });
   return entries;
 }
