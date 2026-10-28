@@ -21,6 +21,7 @@ export function fixture(payload, options = {}) {
   const { error = null, rejects = false, coordinates = true } = options;
   let rpcCalls = 0;
   const fromCalls = [];
+  const selectCalls = [];
   const parcel = {
     apn_norm: "3113333800", address: "123 Fixture St", city: "San Diego", state: "CA",
     zone_name: "RS-1-7", base_zone: "RS-1-7", lot_area_sqft: 7000,
@@ -32,6 +33,9 @@ export function fixture(payload, options = {}) {
     description: "Fixture roof repair", status: "Issued", opened_date: "2026-01-01",
     linkage_confidence: "exact_apn", apn_candidates: [parcel.apn_norm],
   };
+  const delay = (milliseconds) => milliseconds > 0
+    ? new Promise((resolve) => setTimeout(resolve, milliseconds))
+    : Promise.resolve();
   const client = {
     from(name) {
       fromCalls.push(name);
@@ -54,10 +58,13 @@ export function fixture(payload, options = {}) {
             : history ? options.permitError ?? null
             : similarParcels ? options.similarError ?? null
             : similarPermits ? options.similarPermitError ?? null : null;
-          return Promise.resolve({ data, error: queryError }).then(resolve, reject);
+          return delay(core ? options.coreDelayMs ?? 0 : 0)
+            .then(() => ({ data, error: queryError }))
+            .then(resolve, reject);
         },
       };
-      for (const method of ["select", "eq", "in", "order", "gte", "lte", "neq", "limit"]) query[method] = () => query;
+      query.select = (columns) => { selectCalls.push({ name, columns }); return query; };
+      for (const method of ["eq", "in", "order", "gte", "lte", "neq", "limit"]) query[method] = () => query;
       query.maybeSingle = () => { single = true; return query; };
       return query;
     },
@@ -67,6 +74,7 @@ export function fixture(payload, options = {}) {
       assert.equal(args.p_lat, parcel.lat);
       assert.equal(args.p_lng, parcel.lng);
       if (rejects) throw new Error("private transport diagnostic");
+      await delay(options.overlayDelayMs ?? 0);
       return { data: payload, error };
     },
   };
@@ -109,5 +117,10 @@ export function fixture(payload, options = {}) {
     }, { filename });
     return loadedModule.exports;
   }
-  return { load, rpcCalls: () => rpcCalls, fromCalls: () => [...fromCalls] };
+  return {
+    load,
+    rpcCalls: () => rpcCalls,
+    fromCalls: () => [...fromCalls],
+    selectCalls: () => selectCalls.map((call) => ({ ...call })),
+  };
 }

@@ -47,6 +47,31 @@ const supabase = createClient(
 );
 
 type RawRow = Record<string, unknown>;
+
+// Keep the first route read bounded to fields the Parcel V1 adapter actually
+// consumes. In particular, do not transfer the legacy PostGIS geometry or
+// presentation/search columns: the initial route only needs the public point
+// coordinates before it can run the truth-critical overlay lookup.
+export const PARCEL_PAGE_V1_CORE_COLUMNS = [
+  "apn_norm",
+  "address",
+  "city",
+  "state",
+  "situs_zip",
+  "situs_community",
+  "lat",
+  "lng",
+  "zone_name",
+  "base_zone",
+  "lot_area_sqft",
+  "total_lvg_area",
+  "nucleus_use_cd",
+  "year_effective",
+  "generated_at",
+  "nearby_project_count",
+  "nearby_active_count",
+  "nearby_completed_count",
+].join(",");
 type OverlayFlags = (
   | { tpa: boolean; ctcac: boolean; unavailable: false }
   | { tpa: null; ctcac: null; unavailable: true }
@@ -895,7 +920,11 @@ async function loadParcelPageV1ResultImpl(
   const apnNorm = normalizeApnDigits(rawApnOrSlug);
   const { data: parcel, error: parcelError } = await timing.measure("core_parcel", async () => {
     try {
-      return await supabase.from("parcel_page_api_v2").select("*").eq("apn_norm", apnNorm).maybeSingle();
+      return await supabase
+        .from("parcel_page_api_v2")
+        .select(PARCEL_PAGE_V1_CORE_COLUMNS)
+        .eq("apn_norm", apnNorm)
+        .maybeSingle();
     } catch {
       return { data: null, error: { code: "", message: "Query failed" } };
     }
@@ -941,7 +970,7 @@ async function loadParcelPageV1ResultImpl(
       },
     };
   }
-  const parcelRow = parcel;
+  const parcelRow: RawRow = parcel;
   const canonicalIdentity = timing.measureSync("identity", () => {
     const sealed = getSanDiegoPublicIdentity(apnNorm);
     return sealed.state === "found" ? sealed.identity : canonicalParcelIdentity({
