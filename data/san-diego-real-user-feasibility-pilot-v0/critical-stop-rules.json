@@ -1,0 +1,11 @@
+{
+  "stopImmediately": [
+    "private/public leakage",
+    "property facts cross organizations",
+    "raw private permit or project data appears",
+    "unsupported legal or compliance conclusion appears",
+    "user correction overwrites recorded evidence",
+    "serious misleading ADU lifecycle interpretation"
+  ],
+  "resumeAuthority": "Operator review required after a bounded fix and regression validation."
+}

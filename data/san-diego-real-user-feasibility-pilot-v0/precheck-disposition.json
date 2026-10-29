@@ -1,0 +1,13 @@
+{
+  "decision": "PILOT_UX_PRECHECK_NOT_COUNTED",
+  "realUserSessionsCounted": 0,
+  "reason": "The participant could not clearly determine what they were being asked to judge, so continuing would measure harness interpretation rather than feasibility usefulness.",
+  "repairScope": [
+    "address-first intake",
+    "plain-language property confirmation",
+    "separate current-property and project-intent questions",
+    "multiple-ADU intent",
+    "simplified participant feedback",
+    "start-over isolation"
+  ]
+}

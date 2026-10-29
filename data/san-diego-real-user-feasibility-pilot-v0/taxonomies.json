@@ -1,0 +1,7 @@
+{
+  "confusion": ["zoning terminology", "property-record terminology", "permit/currentness language", "project intent", "evidence request", "result state", "next action", "source/provenance", "other"],
+  "trust": ["source transparency helped", "recorded fact felt wrong", "permit evidence increased trust", "uncertainty increased trust", "uncertainty reduced trust", "user wanted more detail", "user wanted less detail"],
+  "actions": ["check another parcel", "upload evidence", "talk to professional", "estimate cost", "design ADU", "verify with City", "save/share result", "stop"],
+  "dataQuality": ["assessor", "permit linkage", "permit lifecycle", "structure observation", "zoning", "user misunderstanding", "source freshness", "other"],
+  "ideaStatuses": ["Captured", "Backlog", "Pilot acceptance criterion", "Ignore/Watch"]
+}

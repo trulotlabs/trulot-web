@@ -1,0 +1,6 @@
+{
+  "allowedAggregateMetrics": ["sessionsStarted", "preliminaryResultsReached", "clearNextActionReached", "notSureUsage", "corrections", "abandonments", "evidenceRequests", "trust", "questionConfusion", "resultConfusion", "observations", "averageQuestionsBeforeResult", "averageQuestionsBeforeClearNextAction", "projectIntents", "roles", "confusionCategories", "trustSignals", "notSureOutcomes", "questionBurden", "evidenceWillingness", "desiredActions", "dataQualitySources"],
+  "allowedCoarseEnums": ["supported project-intent category", "participant-role category", "confusion category", "trust signal", "Not-sure outcome", "question burden", "evidence type", "desired action", "data-quality source"],
+  "forbiddenPayloads": ["APN", "address", "participant identity", "answer text", "uploaded evidence contents", "permit identifiers", "free-form project details"],
+  "qualitativeNotes": "Private and separate; remove identifying details before any repository summary."
+}

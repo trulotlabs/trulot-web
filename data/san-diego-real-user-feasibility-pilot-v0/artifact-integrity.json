@@ -1,0 +1,34 @@
+{
+  "contentFreeAnalyticsSchema": "PASS",
+  "fileCount": 6,
+  "files": {
+    "README.md": {
+      "bytes": 953,
+      "sha256": "23694cfa3cee6c7198c893aacec91c52ff56f2897d44aecdc6768d64ddb07da1"
+    },
+    "analytics-schema.json": {
+      "bytes": 974,
+      "sha256": "01bd5412493167ca40caa059dc2ea873f8a704840dc1ab22ff81584728d86058"
+    },
+    "critical-stop-rules.json": {
+      "bytes": 413,
+      "sha256": "b9f42e3903bfc6746b437c319e0a427f52395b4336d19428953410fc59dbab27"
+    },
+    "precheck-disposition.json": {
+      "bytes": 516,
+      "sha256": "d2bbee743c5c83115249b29f284b0b6792739c409643e3cef2568c64bd8c1916"
+    },
+    "readiness.json": {
+      "bytes": 476,
+      "sha256": "0438637ea82902283fb0e7bdb70afe5bd90875f12af1cd07c3694d9bdee565ed"
+    },
+    "taxonomies.json": {
+      "bytes": 832,
+      "sha256": "0629c7a1def834d13edebd5fda2ad461abffa0eb5b9cfc1402372f714b881160"
+    }
+  },
+  "personalInformationScan": "PASS",
+  "pilotValidationAllowed": false,
+  "realUserSessionsObserved": 0,
+  "sensitiveMaterialScan": "PASS"
+}

@@ -44,11 +44,11 @@ function recordedUse(dto: PrivatePropertyIntelligenceDto): UserExistingUse | nul
 
 function primaryQuestion(dto: PrivatePropertyIntelligenceDto): string {
   if (CURRENT_CONFIGURATION_PROMPTS[dto.questionClass]) return CURRENT_CONFIGURATION_PROMPTS[dto.questionClass];
-  if (dto.questionClass === "CONDO_CONFIRMATION") return "Public property records indicate a condominium. Is that still correct?";
+  if (dto.questionClass === "CONDO_CONFIRMATION") return "Our records indicate this parcel is part of a condominium property. Is that correct for the unit or property you're reviewing?";
   if (dto.questionClass === "RECORDED_PROPERTY_CONFIRMATION") {
     return dto.preliminaryDwellingState === "MULTIFAMILY_LIKELY"
-      ? "Public property records indicate multiple dwelling units. Is that still correct?"
-      : "Public property records indicate one detached residence. Is that still correct?";
+      ? "Our records suggest this property has more than one dwelling unit. Is that still correct?"
+      : "Our records suggest this property has one main home. Is that still correct?";
   }
   return "What is currently on the property?";
 }
@@ -119,8 +119,12 @@ export function enrichPrivateFeasibility(
     : dto.currentnessState === "ACTIVE_CHANGE_IN_PROGRESS"
       ? "Public records show active work that may change the property configuration. Feasibility should remain preliminary until the current state is confirmed."
       : dto.preliminaryDwellingState === "SINGLE_FAMILY_LIKELY"
-        ? "Public property records indicate one detached residence. Confirm the current configuration before relying on pathway assumptions."
-        : "Property intelligence supports question selection only. Confirm the current configuration before relying on pathway assumptions.";
+      ? "Recorded property information suggests one main home."
+      : dto.preliminaryDwellingState === "MULTIFAMILY_LIKELY"
+        ? "Recorded property information suggests more than one dwelling unit."
+        : dto.preliminaryDwellingState === "CONDO"
+          ? "Recorded property information indicates this parcel is part of a condominium property."
+          : "Recorded property information is not enough to describe the current configuration. Confirmation is still needed.";
 
   return {
     contractVersion: "private-feasibility-enrichment-v0", apn: dto.apn,

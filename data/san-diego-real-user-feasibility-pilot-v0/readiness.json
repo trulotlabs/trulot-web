@@ -1,0 +1,11 @@
+{
+  "status": "PILOT_UX_PRECHECK_NOT_COUNTED",
+  "surface": "default-off authenticated private route",
+  "targetUsers": "3-5",
+  "targetSessions": "15-50",
+  "sessionsObserved": 0,
+  "precheckWalkthroughs": 1,
+  "precheckReason": "The participant could not clearly determine what they were being asked to judge, so continuing would measure harness interpretation rather than feasibility usefulness.",
+  "usersContactedAutomatically": 0,
+  "validationDecisionAllowed": false
+}

@@ -1,0 +1,4 @@
+import type { Metadata } from "next";import { notFound } from "next/navigation";import { sanDiegoPilotEnabled } from "@/lib/san-diego-real-user-pilot-security";import PilotClient from "./pilot-client";import styles from "./pilot.module.css";
+export const dynamic="force-dynamic";export const revalidate=0;export const runtime="nodejs";
+export const metadata:Metadata={title:"Private San Diego feasibility pilot | TruLot",description:"Private authenticated research pilot.",robots:{index:false,follow:false,noarchive:true,nosnippet:true,noimageindex:true}};
+export default function Page(){if(!sanDiegoPilotEnabled())notFound();return <main className={styles.shell}><header><p>Private research pilot</p><h1>San Diego property feasibility</h1><span>This pilot is private, preliminary, and does not determine legal configuration or project approval.</span></header><PilotClient operatorMode={process.env.TRULOT_SD_FEASIBILITY_PILOT_OPERATOR==="1"}/></main>;}
