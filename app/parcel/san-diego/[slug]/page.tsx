@@ -4,13 +4,16 @@ import { notFound, redirect } from "next/navigation";
 import { after } from "next/server";
 import { Suspense, type ReactNode } from "react";
 import {
-  getParcelPageV1CoreResult,
   getParcelPageV1SecondaryResult,
   type ParcelPageV1Data,
   type ParcelTruth,
   type ProgramDisplayState,
   type SourcedFact,
 } from "@/lib/parcel-page-v1";
+import {
+  coreAvailabilitySupportsIndexing,
+  getSanDiegoParcelCoreAvailability,
+} from "@/lib/san-diego-parcel-core-availability";
 import {
   canonicalParcelUrl,
   emitParcelIndexMetric,
@@ -334,6 +337,15 @@ export async function generateMetadata({
     };
   }
 
+  const coreAvailability = await getSanDiegoParcelCoreAvailability(apn);
+  if (coreAvailability.state === "NOT_FOUND") {
+    return {
+      title: "Parcel not found | TruLot",
+      description: "Public parcel record not found.",
+      robots: parcelRobotsFor("NOT_FOUND"),
+    };
+  }
+
   const identityResult = timing.measureSync("identity", () => getSanDiegoPublicIdentity(apn));
   if (identityResult.state !== "found") {
     if (identityResult.state === "source_unavailable") {
@@ -348,6 +360,14 @@ export async function generateMetadata({
       title: "Parcel not found | TruLot",
       description: "Public parcel record not found.",
       robots: parcelRobotsFor("NOT_FOUND"),
+    };
+  }
+  if (coreAvailability.state === "UNAVAILABLE") {
+    return {
+      title: "Parcel record temporarily unavailable | TruLot",
+      description: "Public parcel records are temporarily unavailable.",
+      alternates: { canonical: identityResult.identity.canonicalUrl },
+      robots: parcelRobotsFor("NOINDEX_TEMPORARY"),
     };
   }
   const snapshotEnabled = sanDiegoPublicZoningSnapshotEnabled();
@@ -370,7 +390,7 @@ export async function generateMetadata({
   return parcelMetadata({
     payload,
     jurisdiction: "SAN_DIEGO",
-    state: launchSnapshotSafe
+    state: launchSnapshotSafe && coreAvailabilitySupportsIndexing(coreAvailability.state)
       ? effectiveParcelIndexState("SAN_DIEGO", "INDEXABLE", process.env, apn)
       : "NOINDEX_TEMPORARY",
     canonicalIdentity: identityResult.identity,
@@ -393,12 +413,13 @@ export default async function ParcelPage({
     notFound();
   }
 
-  const result = await getParcelPageV1CoreResult(apn);
-  if (result.status === "invalid_request" || result.status === "not_found") {
+  const coreAvailability = await getSanDiegoParcelCoreAvailability(apn);
+  const result = coreAvailability.result;
+  if (coreAvailability.state === "NOT_FOUND") {
     emitParcelIndexMetric(undefined, { name: "route_404", jurisdiction: "SAN_DIEGO", value: 1 });
     notFound();
   }
-  if (result.status === "source_unavailable" || !result.data) {
+  if (coreAvailability.state === "UNAVAILABLE" || !result.data) {
     emitParcelIndexMetric(undefined, { name: "source_unavailable", jurisdiction: "SAN_DIEGO", value: 1 });
     emitParcelIndexMetric(undefined, { name: "noindex", jurisdiction: "SAN_DIEGO", value: 1 });
     return (

@@ -20,6 +20,7 @@ export async function renderToResolvedMarkup(node) {
 export function fixture(payload, options = {}) {
   const { error = null, rejects = false, coordinates = true } = options;
   let rpcCalls = 0;
+  let coreCalls = 0;
   const fromCalls = [];
   const selectCalls = [];
   const parcel = {
@@ -47,6 +48,7 @@ export function fixture(payload, options = {}) {
           const history = name === "trulot_permit_parcel_link_v1";
           const similarParcels = name === "parcel_page_api_v2" && !single;
           const similarPermits = name === "parcel_permit_terminal_v2";
+          if (core) coreCalls++;
           if ((core && options.coreReject) || (history && options.permitReject)) {
             return Promise.reject(new Error("private source failure")).then(resolve, reject);
           }
@@ -97,7 +99,7 @@ export function fixture(payload, options = {}) {
       if (id === "@supabase/supabase-js") return { createClient: () => client };
       if (id === "server-only") return {};
       if (id === "zod") return require(id);
-      if (id === "react") return React;
+      if (id === "react") return options.reactCache ? { ...React, cache: options.reactCache } : React;
       if (id.startsWith("node:")) return require(id);
       if (id === "react/jsx-runtime") return require(id);
       if (id === "next/link") return function FixtureLink({ children, ...props }) { return React.createElement("a", props, children); };
@@ -120,6 +122,7 @@ export function fixture(payload, options = {}) {
   return {
     load,
     rpcCalls: () => rpcCalls,
+    coreCalls: () => coreCalls,
     fromCalls: () => [...fromCalls],
     selectCalls: () => selectCalls.map((call) => ({ ...call })),
   };

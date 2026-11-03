@@ -13,7 +13,7 @@ const f = fixture({ tpa: true, ctcac: false, sda: true }, {
   },
 });
 const loader = f.load(path.join(root, "lib/parcel-page-v1.ts"));
-const result = await loader.getParcelPageV1Result("3113333800");
+const result = await loader.getParcelPageV1CoreResult("3113333800");
 assert.ok(result.data);
 const data = result.data;
 const pageModule = f.load(path.join(root, "app/parcel/san-diego/[slug]/page.tsx"));
@@ -45,7 +45,7 @@ for (const section of data.methodology.sections) {
 }
 for (const item of data.methodology.faq) {
   assert.ok(html.includes(item.question));
-  assert.ok(html.includes(item.answer));
+  assert.ok(html.includes(item.answer.replaceAll("'", "&#x27;")));
 }
 assert.ok(html.includes(data.methodology.disclaimer));
 assert.match(html, /<button[^>]+type="button"[^>]+aria-label="Copy APN/);
@@ -67,8 +67,9 @@ assert.match(sourcesLink, /getElementById\("sources-methodology"\)/);
 assert.match(sourcesLink, /disclosure\.open = true/);
 
 const metadata = await pageModule.generateMetadata({ params: Promise.resolve({ slug: data.canonicalSlug }) });
-assert.equal(metadata.alternates.canonical, `https://trulot-web.vercel.app${data.canonicalPath}`);
-assert.match(metadata.title, /zoning, permits, and public parcel records \| TruLot$/);
-assert.match(metadata.description, /lot size, zoning, mapped overlays, permit activity, nearby precedents, and sources/);
+assert.equal(metadata.alternates.canonical, `https://trulot.com${data.canonicalPath}`);
+assert.match(metadata.title, /public parcel record \| TruLot$/);
+assert.match(metadata.description, /Public parcel identity for .*APN 311-333-38-00/);
+assert.equal(metadata.robots.index, false);
 
 console.log("PASS Parcel Page density, provenance, rendered HTML, accessibility, and SEO checks");

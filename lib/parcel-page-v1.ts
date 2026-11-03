@@ -2,6 +2,7 @@ import type { CanonicalResultState, SafeSourceErrorCode, SourceStatus, TruthFact
 export type { CanonicalResultState, SafeSourceErrorCode, SourceStatus } from "./parcel-truth";
 import { parseOverlayResponse } from "./overlay-response";
 import { createClient } from "@supabase/supabase-js";
+import { cache } from "react";
 import {
   assertNoForbiddenCopy,
   assertNoForbiddenCopyInList,
@@ -72,6 +73,18 @@ export const PARCEL_PAGE_V1_CORE_COLUMNS = [
   "nearby_active_count",
   "nearby_completed_count",
 ].join(",");
+
+const getRequestParcelCoreResponse = cache(async (apnNorm: string) => {
+  try {
+    return await supabase
+      .from("parcel_page_api_v2")
+      .select(PARCEL_PAGE_V1_CORE_COLUMNS)
+      .eq("apn_norm", apnNorm)
+      .maybeSingle();
+  } catch {
+    return { data: null, error: { code: "", message: "Query failed" } };
+  }
+});
 type OverlayFlags = (
   | { tpa: boolean; ctcac: boolean; unavailable: false }
   | { tpa: null; ctcac: null; unavailable: true }
@@ -918,17 +931,10 @@ async function loadParcelPageV1ResultImpl(
   }
 
   const apnNorm = normalizeApnDigits(rawApnOrSlug);
-  const { data: parcel, error: parcelError } = await timing.measure("core_parcel", async () => {
-    try {
-      return await supabase
-        .from("parcel_page_api_v2")
-        .select(PARCEL_PAGE_V1_CORE_COLUMNS)
-        .eq("apn_norm", apnNorm)
-        .maybeSingle();
-    } catch {
-      return { data: null, error: { code: "", message: "Query failed" } };
-    }
-  });
+  const { data: parcel, error: parcelError } = await timing.measure(
+    "core_parcel",
+    () => getRequestParcelCoreResponse(apnNorm),
+  );
 
   if (parcelError) {
     return {
